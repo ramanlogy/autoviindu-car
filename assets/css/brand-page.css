@@ -1,0 +1,49 @@
+/* ═══════════════════════════════════════════
+   AUTOVIINDU — BRAND PAGE STYLES
+═══════════════════════════════════════════ */
+
+/* Brand hero override for colored backgrounds */
+.brand-hero-logo {
+  width: 56px;
+  height: 56px;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,.15);
+}
+
+/* Strength pills on brand page */
+.brand-strength-pill {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: #fff;
+  border-radius: var(--pill);
+  transition: all var(--ease);
+}
+
+/* Dealer card */
+.dealer-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r12);
+  padding: 14px 16px;
+}
+
+.dealer-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 5px;
+}
+
+.dealer-card-value {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+}

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ═══ CORE PAGES ═══ -->
+  <url>
+    <loc>https://www.autoviindu.com/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.autoviindu.com/assets/images/og/home.jpg</image:loc>
+      <image:title>AutoViindu – Nepal's Most Trusted Car Platform</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/new-cars</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.autoviindu.com/assets/images/og/new-cars.jpg</image:loc>
+      <image:title>New Cars in Nepal 2024 – Prices, Specs &amp; Reviews</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/electric-cars</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.autoviindu.com/assets/images/og/electric-cars.jpg</image:loc>
+      <image:title>Electric Cars in Nepal – Best EVs 2024</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/used-cars</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/compare</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/services</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/emi-calculator</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/about</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/contact</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/blog</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ═══ CAR DETAIL PAGES ═══ -->
+  <url>
+    <loc>https://www.autoviindu.com/cars/mg-hector-2024</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.autoviindu.com/assets/images/cars/mg-hector-2024-1.jpg</image:loc>
+      <image:title>MG Hector 2024 Price in Nepal – Specs, Variants &amp; EMI</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.autoviindu.com/assets/images/cars/mg-hector-2024-2.jpg</image:loc>
+      <image:title>MG Hector 2024 Interior</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/cars/toyota-prius-2024</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.autoviindu.com/assets/images/cars/toyota-prius-2024-1.jpg</image:loc>
+      <image:title>Toyota Prius 2024 Price in Nepal</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/cars/kia-seltos-2024</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.autoviindu.com/assets/images/cars/kia-seltos-2024-1.jpg</image:loc>
+      <image:title>Kia Seltos 2024 Price in Nepal</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/cars/honda-city-2024</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/cars/toyota-fortuner-2024</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/cars/hyundai-creta-2024</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/cars/byd-atto-3-2024</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/cars/suzuki-swift-2024</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══ BRAND PAGES ═══ -->
+  <url>
+    <loc>https://www.autoviindu.com/brands/mg</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/brands/toyota</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/brands/kia</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/brands/honda</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/brands/hyundai</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/brands/byd</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autoviindu.com/brands/suzuki</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+</urlset>

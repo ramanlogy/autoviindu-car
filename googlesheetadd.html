@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google Sheets Integration – AutoViindu Dev Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Fraunces:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0;
+      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
+      --border:#E4E8ED; --bg:#F5F7F9; --white:#fff;
+      --blue:#1D4ED8; --blue-l:#EFF6FF;
+      --gold:#B8920A; --gold-l:#FBF5E0;
+      --red:#C8271E; --red-l:#FEF2F2;
+      --r8:8px; --r12:12px; --r16:16px; --r20:20px;
+      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+      --font-m:'Fira Code','Consolas','Courier New',monospace;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--font-b);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.65;}
+    .wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+
+    /* TOPBAR */
+    .topbar{background:var(--ink);padding:10px 0;}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.4);}
+    .topbar-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(26,107,42,.3);border:1px solid rgba(26,107,42,.5);border-radius:999px;padding:3px 10px;font-size:11px;font-weight:700;color:#6ED88A;}
+    .topbar-badge i{width:10px;height:10px;}
+
+    /* HERO */
+    .hero{background:linear-gradient(145deg,#0B2A12,#1A6B2A 60%,#1f8535);padding:48px 0 52px;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
+    .hero-inner{position:relative;z-index:1;}
+    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:5px 13px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:16px;}
+    .hero-badge i{width:12px;height:12px;}
+    .hero h1{font-family:var(--font-d);font-size:clamp(26px,4vw,42px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:10px;}
+    .hero h1 em{font-style:italic;color:#6ED88A;}
+    .hero-desc{font-size:14.5px;color:rgba(255,255,255,.55);max-width:520px;line-height:1.75;}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+    .hero-meta-item{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.6);}
+    .hero-meta-item i{width:13px;height:13px;color:#6ED88A;}
+
+    /* CONTENT */
+    .content{padding:52px 0 80px;}
+
+    /* STEP CARD */
+    .step-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r16);overflow:hidden;margin-bottom:20px;}
+    .step-card-header{display:flex;align-items:center;gap:14px;padding:20px 24px;border-bottom:1px solid var(--border);background:var(--bg);}
+    .step-num{width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .step-title{font-size:15px;font-weight:800;color:var(--ink2);}
+    .step-sub{font-size:12.5px;color:var(--ink4);margin-top:2px;}
+    .step-body{padding:22px 24px;}
+    .step-body p{font-size:13.5px;color:var(--ink3);line-height:1.7;margin-bottom:12px;}
+    .step-body p:last-child{margin-bottom:0;}
+    .step-body strong{color:var(--ink2);font-weight:700;}
+
+    /* CODE BLOCK */
+    .code-wrap{position:relative;background:#0D1117;border-radius:var(--r8);overflow:hidden;margin:14px 0;}
+    .code-header{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:#161B22;border-bottom:1px solid #30363D;}
+    .code-lang{font-size:11px;font-weight:700;color:#58A6FF;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:6px;}
+    .code-lang i{width:12px;height:12px;}
+    .copy-btn{font-size:11.5px;font-weight:700;color:#8B949E;background:none;border:1px solid #30363D;border-radius:6px;padding:4px 10px;cursor:pointer;font-family:var(--font-b);transition:all .2s ease;}
+    .copy-btn:hover{color:#E6EDF3;border-color:#58A6FF;}
+    .copy-btn.copied{color:#3FB950;border-color:#3FB950;}
+    pre{padding:18px 20px;overflow-x:auto;font-family:var(--font-m);font-size:12.5px;line-height:1.75;color:#E6EDF3;}
+    .kw{color:#FF7B72;}   /* keywords */
+    .fn{color:#D2A8FF;}   /* functions */
+    .str{color:#A5D6FF;}  /* strings */
+    .cm{color:#8B949E;}   /* comments */
+    .vr{color:#79C0FF;}   /* variables */
+    .nm{color:#F0883E;}   /* numbers/types */
+
+    /* COLUMN TABLE */
+    .col-table{width:100%;border-collapse:collapse;font-size:13px;}
+    .col-table th{background:var(--bg);padding:9px 12px;font-size:11px;font-weight:800;color:var(--ink4);text-transform:uppercase;letter-spacing:.5px;text-align:left;border-bottom:1.5px solid var(--border);}
+    .col-table td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--ink3);vertical-align:top;}
+    .col-table tr:last-child td{border-bottom:none;}
+    .col-table td:first-child{font-family:var(--font-m);font-size:11.5px;color:var(--blue);background:var(--blue-l);}
+    .col-table td code{font-family:var(--font-m);font-size:11.5px;background:var(--bg);border:1px solid var(--border);padding:1px 5px;border-radius:3px;color:var(--ink3);}
+
+    /* NOTICE */
+    .notice{display:flex;align-items:flex-start;gap:11px;padding:14px 16px;border-radius:var(--r8);border:1.5px solid;margin:14px 0;}
+    .notice.info{background:var(--blue-l);border-color:rgba(29,78,216,.18);}
+    .notice.info i{color:var(--blue);}
+    .notice.warn{background:var(--gold-l);border-color:rgba(184,146,10,.2);}
+    .notice.warn i{color:var(--gold);}
+    .notice.tip{background:var(--green-l);border-color:rgba(26,107,42,.15);}
+    .notice.tip i{color:var(--green);}
+    .notice i{width:15px;height:15px;flex-shrink:0;margin-top:2px;}
+    .notice-text{font-size:13px;color:var(--ink3);line-height:1.65;}
+    .notice-text strong{color:var(--ink2);font-weight:700;}
+
+    /* SECTION DIVIDER */
+    .sec-divider{display:flex;align-items:center;gap:12px;margin:36px 0 24px;}
+    .sec-divider-line{flex:1;height:1px;background:var(--border);}
+    .sec-divider-label{font-size:11px;font-weight:800;color:var(--ink5);text-transform:uppercase;letter-spacing:.7px;white-space:nowrap;}
+
+    /* QUICK REF */
+    .qr-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    @media(max-width:600px){.qr-grid{grid-template-columns:1fr;}}
+    .qr-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r12);padding:16px 18px;}
+    .qr-card-title{font-size:12.5px;font-weight:800;color:var(--ink2);margin-bottom:6px;display:flex;align-items:center;gap:7px;}
+    .qr-card-title i{width:14px;height:14px;color:var(--green);}
+    .qr-card-body{font-size:12.5px;color:var(--ink4);line-height:1.6;}
+    .qr-card-body code{font-family:var(--font-m);font-size:11.5px;background:var(--bg);border:1px solid var(--border);padding:1px 5px;border-radius:3px;color:var(--ink3);}
+
+    /* CHECKLIST */
+    .checklist{list-style:none;display:flex;flex-direction:column;gap:8px;margin:12px 0;}
+    .checklist li{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--ink3);line-height:1.6;}
+    .checklist li::before{content:'';width:16px;height:16px;background:var(--green);border-radius:50%;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");background-size:10px;background-repeat:no-repeat;background-position:center;background-color:var(--green);}
+
+    /* FORM PAGES TABLE */
+    .pages-table{width:100%;border-collapse:collapse;font-size:13px;}
+    .pages-table th{background:var(--bg);padding:10px 14px;font-size:11px;font-weight:800;color:var(--ink4);text-transform:uppercase;letter-spacing:.5px;text-align:left;border-bottom:1.5px solid var(--border);}
+    .pages-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--ink3);vertical-align:middle;}
+    .pages-table tr:last-child td{border-bottom:none;}
+    .pages-table td:first-child{font-weight:700;color:var(--ink2);}
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:10.5px;font-weight:700;}
+    .badge.done{background:var(--green-l);color:var(--green);}
+    .badge.todo{background:var(--gold-l);color:var(--gold);}
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span>AutoViindu · Developer Integration Guide</span>
+    <span class="topbar-badge"><i data-lucide="code-2"></i>Internal Use</span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-badge"><i data-lucide="table-2"></i>Google Sheets Integration</div>
+    <h1>Connect Any Form to<br><em>Google Sheets</em></h1>
+    <p class="hero-desc">A single reusable pattern for all AutoViindu service pages. Add once, adapt per form — no backend, no database, no cost.</p>
+    <div class="hero-meta">
+      <span class="hero-meta-item"><i data-lucide="clock"></i>15 min setup per sheet</span>
+      <span class="hero-meta-item"><i data-lucide="zap"></i>No server required</span>
+      <span class="hero-meta-item"><i data-lucide="refresh-cw"></i>Reusable pattern</span>
+      <span class="hero-meta-item"><i data-lucide="layers"></i>Works on all form pages</span>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+<div class="wrap">
+
+  <!-- HOW IT WORKS -->
+  <div class="sec-divider"><div class="sec-divider-line"></div><div class="sec-divider-label">How It Works</div><div class="sec-divider-line"></div></div>
+
+  <div class="notice info">
+    <i data-lucide="info"></i>
+    <div class="notice-text">The form sends a JSON payload to a <strong>Google Apps Script Web App</strong>, which writes a row into a Google Sheet. The browser uses <code>mode:'no-cors'</code> so no response is received — but the data lands in the sheet reliably. The success screen shows immediately based on the submission attempt, not the response.</div>
+  </div>
+
+  <!-- STEP 1 — SHEET SETUP -->
+  <div class="sec-divider" style="margin-top:36px;"><div class="sec-divider-line"></div><div class="sec-divider-label">Step 1 — Create the Google Sheet</div><div class="sec-divider-line"></div></div>
+
+  <div class="step-card">
+    <div class="step-card-header">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Create a sheet and add column headers</div>
+        <div class="step-sub">One sheet per form page — headers must match the payload keys exactly</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p>Go to <strong>sheets.google.com</strong>, create a new spreadsheet, name it clearly (e.g. <em>AutoViindu – Parts Requests</em>), then paste the headers below into Row 1. Each column corresponds to one field in the form's data payload.</p>
+
+      <p><strong>Parts &amp; Accessories page — Row 1 headers:</strong></p>
+      <div style="overflow-x:auto;border:1.5px solid var(--border);border-radius:var(--r8);">
+        <table class="col-table">
+          <thead><tr><th>Column</th><th>Header text (paste exactly)</th><th>Where it comes from</th></tr></thead>
+          <tbody>
+            <tr><td>A</td><td>Timestamp</td><td>Auto-generated on submit</td></tr>
+            <tr><td>B</td><td>Ref</td><td>Auto-generated reference number</td></tr>
+            <tr><td>C</td><td>Request Type</td><td>Parts / Accessories / Both</td></tr>
+            <tr><td>D</td><td>Item Type</td><td>OEM / Aftermarket / Refurbished</td></tr>
+            <tr><td>E</td><td>Item Description</td><td>Free-text description</td></tr>
+            <tr><td>F</td><td>Part Code</td><td>OEM or aftermarket part number</td></tr>
+            <tr><td>G</td><td>Quantity</td><td>Number input</td></tr>
+            <tr><td>H</td><td>Installation Needed</td><td>Yes / No</td></tr>
+            <tr><td>I</td><td>Vehicle Brand</td><td>e.g. Hyundai</td></tr>
+            <tr><td>J</td><td>Vehicle Model</td><td>e.g. Creta</td></tr>
+            <tr><td>K</td><td>Variant</td><td>e.g. SX Diesel MT</td></tr>
+            <tr><td>L</td><td>Year</td><td>Year of manufacture</td></tr>
+            <tr><td>M</td><td>Fuel Type</td><td>Petrol / Diesel / EV / Hybrid</td></tr>
+            <tr><td>N</td><td>Full Name</td><td>Contact name</td></tr>
+            <tr><td>O</td><td>Mobile</td><td>Phone number</td></tr>
+            <tr><td>P</td><td>Delivery Address</td><td>Delivery location</td></tr>
+            <tr><td>Q</td><td>Email</td><td>Optional email</td></tr>
+            <tr><td>R</td><td>Delivery Method</td><td>Home Delivery / I will pick up</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="notice tip" style="margin-top:14px;">
+        <i data-lucide="lightbulb"></i>
+        <div class="notice-text"><strong>For other form pages</strong> — use the same pattern but change the columns to match that form's fields. The DOTM page would have columns for Service Category, DOTM-specific fields, etc. Each page gets its own sheet tab or separate spreadsheet.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2 — APPS SCRIPT -->
+  <div class="sec-divider"><div class="sec-divider-line"></div><div class="sec-divider-label">Step 2 — The Apps Script (paste once per sheet)</div><div class="sec-divider-line"></div></div>
+
+  <div class="step-card">
+    <div class="step-card-header">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Open Apps Script and paste the handler</div>
+        <div class="step-sub">Extensions → Apps Script → delete existing code → paste below</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p>In your Google Sheet go to <strong>Extensions → Apps Script</strong>. Delete any existing code and paste this. The <code>doPost</code> function runs every time the form submits.</p>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><i data-lucide="code-2"></i>Apps Script (Google)</span>
+          <button class="copy-btn" onclick="copyCode(this,'code-appsscript')">Copy</button>
+        </div>
+        <pre id="code-appsscript"><span class="cm">// Parts & Accessories — Apps Script handler
+// Paste into Extensions → Apps Script → Save → Deploy</span>
+
+<span class="kw">function</span> <span class="fn">doPost</span>(e) {
+  <span class="kw">try</span> {
+    <span class="kw">var</span> <span class="vr">data</span>    = JSON.<span class="fn">parse</span>(e.postData.contents);
+    <span class="kw">var</span> <span class="vr">sheet</span>   = SpreadsheetApp.<span class="fn">getActiveSpreadsheet</span>().<span class="fn">getActiveSheet</span>();
+
+    <span class="cm">// Append one row — order must match your column headers in Row 1</span>
+    <span class="vr">sheet</span>.<span class="fn">appendRow</span>([
+      <span class="vr">data</span>.timestamp,
+      <span class="vr">data</span>.ref,
+      <span class="vr">data</span>.requestType,
+      <span class="vr">data</span>.itemType,
+      <span class="vr">data</span>.itemDescription,
+      <span class="vr">data</span>.partCode,
+      <span class="vr">data</span>.quantity,
+      <span class="vr">data</span>.installationNeeded,
+      <span class="vr">data</span>.vehicleBrand,
+      <span class="vr">data</span>.vehicleModel,
+      <span class="vr">data</span>.variant,
+      <span class="vr">data</span>.year,
+      <span class="vr">data</span>.fuelType,
+      <span class="vr">data</span>.fullName,
+      <span class="vr">data</span>.mobile,
+      <span class="vr">data</span>.deliveryAddress,
+      <span class="vr">data</span>.email,
+      <span class="vr">data</span>.deliveryMethod
+    ]);
+
+    <span class="kw">return</span> ContentService
+      .<span class="fn">createTextOutput</span>(JSON.<span class="fn">stringify</span>({ <span class="str">status</span>: <span class="str">'ok'</span>, <span class="str">ref</span>: <span class="vr">data</span>.ref }))
+      .<span class="fn">setMimeType</span>(ContentService.MimeType.JSON);
+
+  } <span class="kw">catch</span>(err) {
+    <span class="kw">return</span> ContentService
+      .<span class="fn">createTextOutput</span>(JSON.<span class="fn">stringify</span>({ <span class="str">status</span>: <span class="str">'error'</span>, <span class="str">message</span>: err.<span class="fn">toString</span>() }))
+      .<span class="fn">setMimeType</span>(ContentService.MimeType.JSON);
+  }
+}</pre>
+      </div>
+
+      <div class="notice warn">
+        <i data-lucide="alert-triangle"></i>
+        <div class="notice-text"><strong>Key order matters.</strong> The array in <code>appendRow()</code> must be in the same order as your Row 1 headers. If you add or remove a field from the form, update both the sheet header AND the <code>appendRow</code> array together.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3 — DEPLOY -->
+  <div class="sec-divider"><div class="sec-divider-line"></div><div class="sec-divider-label">Step 3 — Deploy as Web App</div><div class="sec-divider-line"></div></div>
+
+  <div class="step-card">
+    <div class="step-card-header">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Deploy and copy the Web App URL</div>
+        <div class="step-sub">Do this once per script — redeploy when you change the script</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <ul class="checklist">
+        <li>In Apps Script, click <strong>Deploy → New Deployment</strong></li>
+        <li>Click the gear icon next to "Type" and select <strong>Web App</strong></li>
+        <li>Set <strong>"Execute as"</strong> → <em>Me</em></li>
+        <li>Set <strong>"Who has access"</strong> → <em>Anyone</em> (required for the form to post without login)</li>
+        <li>Click <strong>Deploy</strong> → authorize when prompted → copy the <strong>Web App URL</strong></li>
+      </ul>
+
+      <div class="notice warn" style="margin-top:14px;">
+        <i data-lucide="alert-triangle"></i>
+        <div class="notice-text"><strong>Redeploying after changes:</strong> If you edit the script, you must create a <strong>New Deployment</strong> (not update the existing one) to get a new URL — or use <em>Manage Deployments → Edit</em> and set version to "New version". The old URL will stop working if you just save without redeploying.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4 — THE HTML JS -->
+  <div class="sec-divider"><div class="sec-divider-line"></div><div class="sec-divider-label">Step 4 — The reusable JS pattern (same on every page)</div><div class="sec-divider-line"></div></div>
+
+  <div class="step-card">
+    <div class="step-card-header">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">The submit function — copy this pattern into every form page</div>
+        <div class="step-sub">Only the URL and payload object change between pages</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p>This is the <strong>complete, reusable submit block</strong>. Paste it into any form page. Change two things only: the <code>SHEETS_URL</code> constant and the <code>payload</code> object keys to match that page's fields.</p>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><i data-lucide="code-2"></i>JavaScript — paste into &lt;script&gt; on any form page</span>
+          <button class="copy-btn" onclick="copyCode(this,'code-js')">Copy</button>
+        </div>
+        <pre id="code-js"><span class="cm">/* ─── 1. PASTE YOUR WEB APP URL HERE ─────────────────────────────── */</span>
+<span class="kw">const</span> <span class="vr">SHEETS_URL</span> = <span class="str">'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec'</span>;
+<span class="cm">/* ──────────────────────────────────────────────────────────────────── */</span>
+
+<span class="cm">/**
+ * generateRef()
+ * Creates a short reference number like AV-284931.
+ * Same function on every page — no change needed.
+ */</span>
+<span class="kw">function</span> <span class="fn">generateRef</span>() {
+  <span class="kw">return</span> <span class="str">'AV-'</span> + Date.<span class="fn">now</span>().<span class="fn">toString</span>().<span class="fn">slice</span>(-<span class="nm">6</span>);
+}
+
+<span class="cm">/**
+ * submitToSheets(payload)
+ * Sends any object to Google Sheets.
+ * Same function on every page — no change needed.
+ */</span>
+<span class="kw">async function</span> <span class="fn">submitToSheets</span>(payload) {
+  <span class="kw">if</span> (!<span class="vr">SHEETS_URL</span> || <span class="vr">SHEETS_URL</span>.<span class="fn">includes</span>(<span class="str">'YOUR_DEPLOYMENT_ID'</span>)) {
+    <span class="cm">// Demo mode — log to console, don't error</span>
+    console.<span class="fn">log</span>(<span class="str">'[DEMO] Payload:'</span>, payload);
+    <span class="kw">await new</span> <span class="fn">Promise</span>(r => <span class="fn">setTimeout</span>(r, <span class="nm">700</span>));
+    <span class="kw">return</span>;
+  }
+  <span class="kw">await</span> <span class="fn">fetch</span>(<span class="vr">SHEETS_URL</span>, {
+    method: <span class="str">'POST'</span>,
+    mode:   <span class="str">'no-cors'</span>,      <span class="cm">// required — no response body returned</span>
+    headers: { <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span> },
+    body: JSON.<span class="fn">stringify</span>(payload)
+  });
+}
+
+<span class="cm">/**
+ * handleSubmit(event)
+ * ─── CHANGE THIS SECTION per form page ───────────────────────────
+ * Collect your form values, build the payload, call submitToSheets.
+ */</span>
+<span class="kw">async function</span> <span class="fn">handleSubmit</span>(event) {
+  event.<span class="fn">preventDefault</span>();
+
+  <span class="cm">// Basic validation — add your own checks here</span>
+  <span class="kw">const</span> <span class="vr">name</span>    = document.<span class="fn">getElementById</span>(<span class="str">'fullName'</span>)?.value.<span class="fn">trim</span>();
+  <span class="kw">const</span> <span class="vr">mobile</span>  = document.<span class="fn">getElementById</span>(<span class="str">'mobile'</span>)?.value.<span class="fn">trim</span>();
+  <span class="kw">if</span> (!<span class="vr">name</span> || !<span class="vr">mobile</span>) {
+    <span class="fn">alert</span>(<span class="str">'Please fill all required fields.'</span>);
+    <span class="kw">return</span>;
+  }
+
+  <span class="cm">// Disable button, show loading state</span>
+  <span class="kw">const</span> <span class="vr">btn</span> = event.target.<span class="fn">querySelector</span>(<span class="str">'.form-submit'</span>);
+  <span class="vr">btn</span>.disabled = <span class="kw">true</span>;
+  <span class="vr">btn</span>.textContent = <span class="str">'Submitting…'</span>;
+
+  <span class="cm">/* ─── BUILD YOUR PAYLOAD ────────────────────────────────────────
+     Keys here must match the data.XXXXX keys in your Apps Script.
+     Change these keys for each different form page.
+  ─────────────────────────────────────────────────────────────── */</span>
+  <span class="kw">const</span> <span class="vr">ref</span>     = <span class="fn">generateRef</span>();
+  <span class="kw">const</span> <span class="vr">payload</span> = {
+    ref,
+    timestamp:         <span class="kw">new</span> <span class="fn">Date</span>().<span class="fn">toLocaleString</span>(<span class="str">'en-GB'</span>, { timeZone: <span class="str">'Asia/Kathmandu'</span> }),
+
+    <span class="cm">// ↓ Page-specific fields — change these per form</span>
+    requestType:       <span class="fn">getRadioValue</span>(<span class="str">'req_type'</span>),
+    itemType:          <span class="fn">getRadioValue</span>(<span class="str">'item_type'</span>),
+    itemDescription:   <span class="fn">val</span>(<span class="str">'itemDescription'</span>),
+    partCode:          <span class="fn">val</span>(<span class="str">'partCode'</span>),
+    quantity:          <span class="fn">val</span>(<span class="str">'quantity'</span>),
+    installationNeeded:<span class="fn">getRadioValue</span>(<span class="str">'install'</span>),
+    vehicleBrand:      <span class="fn">val</span>(<span class="str">'vehicleBrand'</span>),
+    vehicleModel:      <span class="fn">val</span>(<span class="str">'vehicleModel'</span>),
+    variant:           <span class="fn">val</span>(<span class="str">'variant'</span>),
+    year:              <span class="fn">val</span>(<span class="str">'year'</span>),
+    fuelType:          <span class="fn">getRadioValue</span>(<span class="str">'fuel'</span>),
+    fullName:          <span class="vr">name</span>,
+    mobile:            <span class="vr">mobile</span>,
+    deliveryAddress:   <span class="fn">val</span>(<span class="str">'deliveryAddress'</span>),
+    email:             <span class="fn">val</span>(<span class="str">'email'</span>),
+    deliveryMethod:    <span class="fn">getRadioValue</span>(<span class="str">'delivery'</span>),
+  };
+
+  <span class="kw">try</span> {
+    <span class="kw">await</span> <span class="fn">submitToSheets</span>(payload);
+    <span class="cm">// Show success</span>
+    <span class="vr">btn</span>.textContent = <span class="str">'Request submitted — we\'ll be in touch shortly.'</span>;
+    <span class="vr">btn</span>.style.background = <span class="str">'var(--green-d)'</span>;
+    <span class="cm">// Optional: show ref number to user</span>
+    console.<span class="fn">log</span>(<span class="str">'Reference:'</span>, <span class="vr">ref</span>);
+  } <span class="kw">catch</span>(e) {
+    <span class="vr">btn</span>.disabled = <span class="kw">false</span>;
+    <span class="vr">btn</span>.textContent = <span class="str">'Submit Request'</span>;
+    console.<span class="fn">error</span>(<span class="str">'Submission error:'</span>, e);
+  }
+}
+
+<span class="cm">/* ─── HELPERS — same on every page, no changes needed ─── */</span>
+<span class="kw">function</span> <span class="fn">val</span>(id) {
+  <span class="kw">return</span> (document.<span class="fn">getElementById</span>(id)?.value || <span class="str">''</span>).<span class="fn">trim</span>();
+}
+<span class="kw">function</span> <span class="fn">getRadioValue</span>(name) {
+  <span class="kw">return</span> document.<span class="fn">querySelector</span>(<span class="str">`input[name="${name}"]:checked`</span>)?.value || <span class="str">''</span>;
+}</pre>
+      </div>
+
+      <div class="notice info">
+        <i data-lucide="info"></i>
+        <div class="notice-text"><strong>What changes between pages:</strong> Only the <code>SHEETS_URL</code> at the top, and the payload object keys. The <code>submitToSheets()</code>, <code>generateRef()</code>, <code>val()</code>, and <code>getRadioValue()</code> helpers are identical on every page.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT CHANGES PER PAGE -->
+  <div class="sec-divider"><div class="sec-divider-line"></div><div class="sec-divider-label">What to change per form page</div><div class="sec-divider-line"></div></div>
+
+  <div class="step-card">
+    <div class="step-card-header">
+      <div class="step-num" style="background:var(--blue)">i</div>
+      <div>
+        <div class="step-title">Three things differ per page — everything else is identical</div>
+        <div class="step-sub">Apply this checklist each time you add Sheets to a new form page</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <div style="overflow-x:auto;border:1.5px solid var(--border);border-radius:var(--r8);">
+        <table class="col-table">
+          <thead><tr><th>What changes</th><th>Where</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>SHEETS_URL</td><td>Top of <code>&lt;script&gt;</code></td><td>A different Web App URL per form (different sheet, different script)</td></tr>
+            <tr><td>payload keys</td><td>Inside <code>handleSubmit()</code></td><td>Match the field names in that page's form inputs</td></tr>
+            <tr><td>appendRow array</td><td>Inside Apps Script</td><td>Must be in same order as Row 1 headers in the sheet</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:16px;">Here's a full reference of what each form page needs:</p>
+
+      <div style="overflow-x:auto;border:1.5px solid var(--border);border-radius:var(--r8);margin-top:10px;">
+        <table class="pages-table">
+          <thead><tr><th>Page</th><th>Sheet name</th><th>Key extra fields</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>book-service.html</td>
+              <td>AutoViindu – Service Requests</td>
+              <td>serviceType, urgency, notes, fuelType, brand, model, year, regNumber, pickupRequired, appointmentNeeded</td>
+              <td><span class="badge done">Done</span></td>
+            </tr>
+            <tr>
+              <td>dotm-services.html</td>
+              <td>AutoViindu – DOTM Requests</td>
+              <td>requestType (individual/corporate), category, serviceDescription, vehicleType, fuelType, brand, model, year, regNumber, pickupRequired, appointmentNeeded + corporate fields if applicable</td>
+              <td><span class="badge todo">Add integration</span></td>
+            </tr>
+            <tr>
+              <td>other-services.html</td>
+              <td>AutoViindu – Other Service Requests</td>
+              <td>category, urgency, serviceDescription, vehicleType, fuelType, brand, model, variant, year, regNumber, pickupRequired, appointmentNeeded</td>
+              <td><span class="badge todo">Add integration</span></td>
+            </tr>
+            <tr>
+              <td>parts-accessories.html</td>
+              <td>AutoViindu – Parts Requests</td>
+              <td>requestType, itemType, itemDescription, partCode, quantity, installationNeeded, vehicleBrand, vehicleModel, variant, year, fuelType, deliveryAddress, deliveryMethod</td>
+              <td><span class="badge todo">Add integration</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM INPUT IDS REQUIRED -->
+  <div class="sec-divider"><div class="sec-divider-line"></div><div class="sec-divider-label">Required — add id="" to every form input</div><div class="sec-divider-line"></div></div>
+
+  <div class="step-card">
+    <div class="step-card-header">
+      <div class="step-num" style="background:var(--red)">!</div>
+      <div>
+        <div class="step-title">Every input needs an id attribute — the JS reads values by id</div>
+        <div class="step-sub">Radio buttons use the name attribute — those are already set</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p>The current form pages use <code>class="form-input"</code> but many inputs are missing <code>id=""</code>. The <code>val(id)</code> helper reads by id. You need to add an id to each input you want captured.</p>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><i data-lucide="code-2"></i>HTML — before and after</span>
+          <button class="copy-btn" onclick="copyCode(this,'code-ids')">Copy</button>
+        </div>
+        <pre id="code-ids"><span class="cm">&lt;!-- BEFORE (no id — JS cannot read this) --&gt;</span>
+&lt;<span class="kw">input</span> <span class="nm">class</span>=<span class="str">"form-input"</span> <span class="nm">type</span>=<span class="str">"text"</span> <span class="nm">placeholder</span>=<span class="str">"Your full name"</span>&gt;
+
+<span class="cm">&lt;!-- AFTER (id added — JS can read this with val('fullName')) --&gt;</span>
+&lt;<span class="kw">input</span> <span class="nm">id</span>=<span class="str">"fullName"</span> <span class="nm">class</span>=<span class="str">"form-input"</span> <span class="nm">type</span>=<span class="str">"text"</span> <span class="nm">placeholder</span>=<span class="str">"Your full name"</span>&gt;
+
+<span class="cm">&lt;!-- SELECT inputs same pattern --&gt;</span>
+&lt;<span class="kw">select</span> <span class="nm">id</span>=<span class="str">"year"</span> <span class="nm">class</span>=<span class="str">"form-select"</span>&gt;...&lt;/<span class="kw">select</span>&gt;
+
+<span class="cm">&lt;!-- TEXTAREA same pattern --&gt;</span>
+&lt;<span class="kw">textarea</span> <span class="nm">id</span>=<span class="str">"itemDescription"</span> <span class="nm">class</span>=<span class="str">"form-textarea"</span>&gt;&lt;/<span class="kw">textarea</span>&gt;
+
+<span class="cm">&lt;!-- RADIO — use name="" not id (already set in existing forms) --&gt;</span>
+&lt;<span class="kw">label</span> <span class="nm">class</span>=<span class="str">"radio-option"</span>&gt;
+  &lt;<span class="kw">input</span> <span class="nm">type</span>=<span class="str">"radio"</span> <span class="nm">name</span>=<span class="str">"fuel"</span> <span class="nm">value</span>=<span class="str">"petrol"</span>&gt;Petrol
+&lt;/<span class="kw">label</span>&gt;
+<span class="cm">&lt;!-- Read with: getRadioValue('fuel') → 'petrol' --&gt;</span></pre>
+      </div>
+
+      <p style="margin-top:8px;">For the <strong>Parts &amp; Accessories</strong> page specifically, here are the ids to add to each existing input:</p>
+      <div style="overflow-x:auto;border:1.5px solid var(--border);border-radius:var(--r8);margin-top:10px;">
+        <table class="col-table">
+          <thead><tr><th>id to add</th><th>Field</th><th>Input type</th></tr></thead>
+          <tbody>
+            <tr><td>itemDescription</td><td>Item Name or Description textarea</td><td>textarea</td></tr>
+            <tr><td>partCode</td><td>Part Code input</td><td>text input</td></tr>
+            <tr><td>quantity</td><td>Quantity input</td><td>number input</td></tr>
+            <tr><td>vehicleBrand</td><td>Vehicle Brand</td><td>text input</td></tr>
+            <tr><td>vehicleModel</td><td>Model Name</td><td>text input</td></tr>
+            <tr><td>variant</td><td>Variant / Trim</td><td>text input</td></tr>
+            <tr><td>year</td><td>Year of Manufacture</td><td>select</td></tr>
+            <tr><td>fullName</td><td>Full Name</td><td>text input</td></tr>
+            <tr><td>mobile</td><td>Mobile Number</td><td>tel input</td></tr>
+            <tr><td>deliveryAddress</td><td>Delivery Address</td><td>text input</td></tr>
+            <tr><td>email</td><td>Email</td><td>email input</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK REFERENCE -->
+  <div class="sec-divider"><div class="sec-divider-line"></div><div class="sec-divider-label">Quick Reference</div><div class="sec-divider-line"></div></div>
+
+  <div class="qr-grid">
+    <div class="qr-card">
+      <div class="qr-card-title"><i data-lucide="repeat-2"></i>Full checklist per new page</div>
+      <div class="qr-card-body">
+        1. Create new Google Sheet with headers<br>
+        2. Paste Apps Script, update <code>appendRow</code> fields<br>
+        3. Deploy as Web App, copy URL<br>
+        4. Add <code>id=""</code> to all form inputs<br>
+        5. Paste JS block, update <code>SHEETS_URL</code> and payload keys<br>
+        6. Change <code>onsubmit</code> on the <code>&lt;form&gt;</code> tag to <code>handleSubmit(event)</code>
+      </div>
+    </div>
+    <div class="qr-card">
+      <div class="qr-card-title"><i data-lucide="alert-triangle"></i>Common mistakes</div>
+      <div class="qr-card-body">
+        — Forgetting to redeploy after editing the script<br>
+        — appendRow array order doesn't match sheet headers<br>
+        — Input missing <code>id=""</code> so <code>val()</code> returns empty<br>
+        — Access set to "Only me" instead of "Anyone"<br>
+        — Old URL used after redeployment
+      </div>
+    </div>
+    <div class="qr-card">
+      <div class="qr-card-title"><i data-lucide="code-2"></i>Form tag — change onsubmit</div>
+      <div class="qr-card-body">
+        Every form's <code>&lt;form&gt;</code> tag must have:<br><br>
+        <code>onsubmit="handleSubmit(event)"</code><br><br>
+        Replace any existing <code>onsubmit</code> attribute with this. The function is defined in the JS block you paste.
+      </div>
+    </div>
+    <div class="qr-card">
+      <div class="qr-card-title"><i data-lucide="info"></i>Why no-cors?</div>
+      <div class="qr-card-body">
+        The browser blocks reading responses from different origins. <code>mode:'no-cors'</code> lets the request go through but hides the response. The data still reaches the sheet — you just can't read the confirmation back. That's why success state is shown immediately after the fetch resolves.
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div style="background:var(--ink);color:rgba(255,255,255,.25);padding:18px 0;text-align:center;font-size:12px;font-family:var(--font-b);">
+  AutoViindu · Internal Developer Guide · Google Sheets Integration
+</div>
+
+<script>
+  lucide.createIcons();
+
+  function copyCode(btn, id) {
+    const pre = document.getElementById(id);
+    const text = pre.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

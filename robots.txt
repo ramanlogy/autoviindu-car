@@ -1,0 +1,24 @@
+# ═══════════════════════════════════════
+# AutoViindu – robots.txt
+# https://www.autoviindu.com
+# ═══════════════════════════════════════
+
+User-agent: *
+Allow: /
+
+# Block admin and API routes (add your CMS/backend paths here)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /cart/
+Disallow: /*.json$
+
+# Allow Google Image Bot
+User-agent: Googlebot-Image
+Allow: /assets/images/
+
+# Crawl-delay for bots that respect it
+User-agent: *
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://www.autoviindu.com/sitemap.xml

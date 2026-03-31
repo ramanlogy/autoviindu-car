@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Extras & Offers – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
+      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
+      --border:#E4E8ED; --bg:#F5F7F9; --white:#ffffff;
+      --red:#C8271E;
+      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
+      --sh1:0 1px 4px rgba(0,0,0,.06); --sh2:0 4px 14px rgba(0,0,0,.08);
+      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
+      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
+    ::selection { background:rgba(26,107,42,.12); }
+    :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+    @media(min-width:640px){ .wrap{ padding:0 32px; } }
+    @media(min-width:1024px){ .wrap{ padding:0 48px; } }
+
+    /* BREADCRUMB */
+    .bc { background:var(--bg); border-bottom:1px solid var(--border); padding:11px 0; }
+    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
+    .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
+    .bc-inner a:hover { text-decoration:underline; }
+    .bc-inner i { width:12px; height:12px; }
+
+    /* HERO */
+    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:56px 0 0; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; padding-bottom:56px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .hero-badge i { width:13px; height:13px; color:var(--green-m); }
+    .hero h1 { font-family:var(--font-d); font-size:clamp(30px,5vw,52px); font-weight:800; color:#fff; line-height:1.08; margin-bottom:14px; }
+    .hero h1 em { font-style:italic; color:var(--green-m); }
+    .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:500px; line-height:1.75; margin-bottom:32px; }
+    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; }
+    .hero-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:var(--pill); padding:7px 14px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.8); }
+    .hero-pill i { width:13px; height:13px; color:var(--green-m); }
+
+    /* NAV STRIP */
+    .nav-strip { background:var(--white); border-bottom:1px solid var(--border); }
+    .nav-strip-inner { display:grid; grid-template-columns:repeat(3,1fr); }
+    @media(min-width:640px){ .nav-strip-inner{ grid-template-columns:repeat(6,1fr); } }
+    .nav-item { display:flex; flex-direction:column; gap:4px; padding:16px 12px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); text-decoration:none; }
+    .nav-item:last-child { border-right:none; }
+    @media(max-width:639px){ .nav-item:nth-child(3){ border-right:none; } }
+    .nav-item:hover { background:var(--green-l); }
+    .nav-item i { width:18px; height:18px; color:var(--ink5); margin-bottom:4px; }
+    .nav-item-name { font-size:11.5px; font-weight:800; color:var(--ink2); line-height:1.3; }
+    .nav-item-sub { font-size:10.5px; color:var(--ink5); }
+
+    /* SECTION */
+    .section { padding:72px 0; }
+    .section.alt { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
+    .eyebrow i { width:13px; height:13px; }
+    .sec-title { font-family:var(--font-d); font-size:clamp(22px,3.5vw,36px); font-weight:800; color:var(--ink); line-height:1.12; margin-bottom:8px; }
+    .sec-title em { font-style:italic; color:var(--green); }
+    .sec-sub { font-size:14.5px; color:var(--ink4); max-width:520px; line-height:1.75; margin-bottom:44px; }
+
+    /* SERVICES GRID */
+    .services-grid { display:grid; grid-template-columns:1fr; gap:16px; }
+    @media(min-width:480px){ .services-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .services-grid{ grid-template-columns:repeat(3,1fr); } }
+
+    .svc-card { display:flex; flex-direction:column; border:1.5px solid var(--border); border-radius:var(--r16); background:var(--white); overflow:hidden; transition:border-color var(--ease), box-shadow var(--ease); text-decoration:none; }
+    .svc-card:hover { border-color:var(--green); box-shadow:var(--sh2); }
+    .svc-card-top { padding:22px 22px 18px; flex:1; }
+    .svc-card-icon { width:40px; height:40px; background:var(--green-l); border-radius:var(--r10); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+    .svc-card-icon i { width:20px; height:20px; color:var(--green); }
+    .svc-card-title { font-family:var(--font-d); font-size:17px; font-weight:800; color:var(--ink); margin-bottom:7px; line-height:1.25; }
+    .svc-card-desc { font-size:13px; color:var(--ink4); line-height:1.7; margin-bottom:14px; }
+    .svc-card-tags { display:flex; flex-wrap:wrap; gap:5px; }
+    .svc-tag { display:inline-flex; align-items:center; gap:4px; background:var(--bg); border:1px solid var(--border); border-radius:var(--pill); padding:3px 9px; font-size:11.5px; color:var(--ink4); font-weight:600; }
+    .svc-card-foot { padding:13px 22px; background:var(--bg); border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
+    .svc-card-link { font-size:12.5px; font-weight:800; color:var(--green); display:flex; align-items:center; gap:5px; }
+    .svc-card-link i { width:13px; height:13px; }
+
+    /* OFFERS SECTION */
+    .offers-grid { display:grid; grid-template-columns:1fr; gap:10px; }
+    @media(min-width:600px){ .offers-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:960px){ .offers-grid{ grid-template-columns:repeat(3,1fr); } }
+
+    .offer-card { display:flex; align-items:flex-start; gap:13px; padding:16px 18px; border:1.5px solid var(--border); border-radius:var(--r12); background:var(--white); transition:border-color var(--ease); }
+    .offer-card:hover { border-color:var(--green); }
+    .offer-icon { width:36px; height:36px; background:var(--green-l); border-radius:var(--r8); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .offer-icon i { width:17px; height:17px; color:var(--green); }
+    .offer-title { font-size:13.5px; font-weight:800; color:var(--ink2); margin-bottom:3px; line-height:1.3; }
+    .offer-desc { font-size:12.5px; color:var(--ink4); line-height:1.6; }
+
+    /* BROWSE BANNER */
+    .browse-banner { background:linear-gradient(135deg,#0B2A12,#1A6B2A); border-radius:var(--r20); padding:40px 36px; display:grid; grid-template-columns:1fr; gap:28px; margin-bottom:0; }
+    @media(min-width:700px){ .browse-banner{ grid-template-columns:1fr 1fr; align-items:center; } }
+    .browse-banner h3 { font-family:var(--font-d); font-size:clamp(20px,3vw,30px); font-weight:800; color:#fff; line-height:1.15; margin-bottom:8px; }
+    .browse-banner h3 em { font-style:italic; color:var(--green-m); }
+    .browse-banner p { font-size:13.5px; color:rgba(255,255,255,.6); line-height:1.7; }
+    .browse-btns { display:flex; flex-direction:column; gap:10px; }
+    @media(min-width:400px){ .browse-btns{ flex-direction:row; flex-wrap:wrap; } }
+    .btn-white { display:inline-flex; align-items:center; gap:7px; background:#fff; border:none; border-radius:var(--r10); padding:12px 20px; font-family:var(--font-b); font-size:13.5px; font-weight:800; color:var(--green-d); cursor:pointer; text-decoration:none; transition:opacity var(--ease); }
+    .btn-white:hover { opacity:.9; }
+    .btn-white i { width:15px; height:15px; }
+    .btn-outline-white { display:inline-flex; align-items:center; gap:7px; background:transparent; border:1.5px solid rgba(255,255,255,.25); border-radius:var(--r10); padding:12px 20px; font-family:var(--font-b); font-size:13.5px; font-weight:800; color:#fff; cursor:pointer; text-decoration:none; transition:border-color var(--ease); }
+    .btn-outline-white:hover { border-color:rgba(255,255,255,.6); }
+    .btn-outline-white i { width:15px; height:15px; }
+
+    /* NOTICE */
+    .notice { display:flex; align-items:flex-start; gap:12px; padding:16px 18px; border-radius:var(--r12); background:var(--green-l); border:1.5px solid rgba(26,107,42,.15); }
+    .notice i { width:16px; height:16px; color:var(--green); flex-shrink:0; margin-top:2px; }
+    .notice-title { font-size:13px; font-weight:800; color:var(--ink2); margin-bottom:2px; }
+    .notice-text { font-size:12.5px; color:var(--ink4); line-height:1.6; }
+
+    /* SVC ITEM ROWS (for sub-lists) */
+    .svc-list { display:grid; grid-template-columns:1fr; gap:6px; }
+    @media(min-width:480px){ .svc-list{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .svc-list{ grid-template-columns:repeat(3,1fr); } }
+    .svc-item-row { display:flex; align-items:flex-start; gap:10px; padding:12px 14px; border:1.5px solid var(--border); border-radius:var(--r10); background:var(--white); transition:border-color var(--ease); }
+    .svc-item-row:hover { border-color:var(--green); }
+    .svc-item-row i { width:15px; height:15px; color:var(--ink5); flex-shrink:0; margin-top:2px; }
+    .svc-item-row span { font-size:13px; font-weight:600; color:var(--ink2); line-height:1.4; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { opacity:0; animation:fadeUp .45s ease forwards; }
+  </style>
+</head>
+<body>
+
+<!-- BREADCRUMB -->
+<nav class="bc">
+  <div class="wrap bc-inner">
+    <a href="/">Home</a>
+    <i data-lucide="chevron-right"></i>
+    <span>Services &amp; Extras</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner fade-up">
+      <div class="hero-badge"><i data-lucide="gift"></i>AutoViindu Services &amp; Offers</div>
+      <h1>Everything your car<br><em>needs — in one place</em></h1>
+      <p class="hero-desc">From buying a new car to insurance, finance, repairs, parts, and government paperwork — AutoViindu connects you with trusted providers across Nepal.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>New &amp; used cars</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Insurance &amp; finance</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Repairs &amp; maintenance</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>DOTM services</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Exclusive offers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAV STRIP -->
+<div class="nav-strip">
+  <div class="wrap" style="padding:0">
+    <div class="nav-strip-inner">
+      <a class="nav-item" href="/insurance-services.html">
+        <i data-lucide="shield-check"></i>
+        <div class="nav-item-name">Insurance</div>
+        <div class="nav-item-sub">Renew or compare</div>
+      </a>
+      <a class="nav-item" href="/finance.html">
+        <i data-lucide="banknote"></i>
+        <div class="nav-item-name">Finance</div>
+        <div class="nav-item-sub">Loans &amp; EMI</div>
+      </a>
+      <a class="nav-item" href="/maintenance-repairs.html">
+        <i data-lucide="wrench"></i>
+        <div class="nav-item-name">Maintenance &amp; Repairs</div>
+        <div class="nav-item-sub">Service, fix, restore</div>
+      </a>
+      <a class="nav-item" href="/parts-accessories.html">
+        <i data-lucide="package"></i>
+        <div class="nav-item-name">Parts &amp; Accessories</div>
+        <div class="nav-item-sub">Genuine &amp; aftermarket</div>
+      </a>
+      <a class="nav-item" href="/dotm-services.html">
+        <i data-lucide="file-text"></i>
+        <div class="nav-item-name">DOTM Services</div>
+        <div class="nav-item-sub">Bluebook, fitness &amp; more</div>
+      </a>
+      <a class="nav-item" href="/other-services.html">
+        <i data-lucide="more-horizontal"></i>
+        <div class="nav-item-name">Other Services</div>
+        <div class="nav-item-sub">Cosmetic, GPS, roadside</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ALL SERVICES -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="layout-grid"></i>Our Services</div>
+    <h2 class="sec-title">Five services,<br><em>one platform</em></h2>
+    <p class="sec-sub">We bring together the providers, paperwork, and care your vehicle needs — so you spend less time chasing and more time driving.</p>
+
+    <div class="services-grid">
+
+      <!-- Insurance -->
+      <a class="svc-card" href="/insurance-services.html">
+        <div class="svc-card-top">
+          <div class="svc-card-icon"><i data-lucide="shield-check"></i></div>
+          <div class="svc-card-title">Insurance</div>
+          <p class="svc-card-desc">Compare and renew vehicle insurance with verified providers. Get third-party or comprehensive cover in one sitting — no running around different offices.</p>
+          <div class="svc-card-tags">
+            <span class="svc-tag">Third-party</span>
+            <span class="svc-tag">Comprehensive</span>
+            <span class="svc-tag">Renewal</span>
+            <span class="svc-tag">New policy</span>
+          </div>
+        </div>
+        <div class="svc-card-foot">
+          <span class="svc-card-link"><i data-lucide="arrow-right"></i>Explore Insurance</span>
+        </div>
+      </a>
+
+      <!-- Finance -->
+      <a class="svc-card" href="/finance.html">
+        <div class="svc-card-top">
+          <div class="svc-card-icon"><i data-lucide="banknote"></i></div>
+          <div class="svc-card-title">Finance &amp; Loans</div>
+          <p class="svc-card-desc">Find vehicle loans from banks and financial institutions at competitive rates. Check eligibility, compare EMI plans, and apply — all through AutoViindu.</p>
+          <div class="svc-card-tags">
+            <span class="svc-tag">Bank loans</span>
+            <span class="svc-tag">EMI calculator</span>
+            <span class="svc-tag">Down payment plans</span>
+          </div>
+        </div>
+        <div class="svc-card-foot">
+          <span class="svc-card-link"><i data-lucide="arrow-right"></i>Explore Finance</span>
+        </div>
+      </a>
+
+      <!-- Maintenance & Repairs -->
+      <a class="svc-card" href="/maintenance-repairs.html">
+        <div class="svc-card-top">
+          <div class="svc-card-icon"><i data-lucide="wrench"></i></div>
+          <div class="svc-card-title">Maintenance &amp; Repairs</div>
+          <p class="svc-card-desc">Book servicing, oil changes, brake work, body repairs, and more at vetted workshops. We also offer free vehicle pickup and drop-off from your home or office.</p>
+          <div class="svc-card-tags">
+            <span class="svc-tag">Periodic service</span>
+            <span class="svc-tag">Body repair</span>
+            <span class="svc-tag">EV &amp; hybrid</span>
+            <span class="svc-tag">Pickup &amp; drop</span>
+          </div>
+        </div>
+        <div class="svc-card-foot">
+          <span class="svc-card-link"><i data-lucide="arrow-right"></i>Explore Repairs</span>
+        </div>
+      </a>
+
+      <!-- Parts & Accessories -->
+      <a class="svc-card" href="/parts-accessories.html">
+        <div class="svc-card-top">
+          <div class="svc-card-icon"><i data-lucide="package"></i></div>
+          <div class="svc-card-title">Parts &amp; Accessories</div>
+          <p class="svc-card-desc">Source genuine spare parts, aftermarket upgrades, and accessories for your vehicle. From engine components to seat covers and dashcams — all in one place.</p>
+          <div class="svc-card-tags">
+            <span class="svc-tag">Genuine parts</span>
+            <span class="svc-tag">Aftermarket</span>
+            <span class="svc-tag">Accessories</span>
+          </div>
+        </div>
+        <div class="svc-card-foot">
+          <span class="svc-card-link"><i data-lucide="arrow-right"></i>Explore Parts</span>
+        </div>
+      </a>
+
+      <!-- DOTM Services -->
+      <a class="svc-card" href="/dotm-services.html">
+        <div class="svc-card-top">
+          <div class="svc-card-icon"><i data-lucide="file-text"></i></div>
+          <div class="svc-card-title">DOTM Services</div>
+          <p class="svc-card-desc">Handle bluebook renewal, vehicle fitness testing, ownership transfers, number plate issues, and other DOTM-required paperwork through our assisted service.</p>
+          <div class="svc-card-tags">
+            <span class="svc-tag">Bluebook renewal</span>
+            <span class="svc-tag">Fitness certificate</span>
+            <span class="svc-tag">Ownership transfer</span>
+          </div>
+        </div>
+        <div class="svc-card-foot">
+          <span class="svc-card-link"><i data-lucide="arrow-right"></i>Explore DOTM</span>
+        </div>
+      </a>
+
+      <!-- Other Services -->
+      <a class="svc-card" href="/other-services.html">
+        <div class="svc-card-top">
+          <div class="svc-card-icon"><i data-lucide="more-horizontal"></i></div>
+          <div class="svc-card-title">Other Services</div>
+          <p class="svc-card-desc">Cosmetic car care, GPS and telematics fitments, roadside assistance, ceramic coating, dashcam installation, and more — from specialized providers near you.</p>
+          <div class="svc-card-tags">
+            <span class="svc-tag">Ceramic coating</span>
+            <span class="svc-tag">GPS &amp; telematics</span>
+            <span class="svc-tag">Roadside help</span>
+          </div>
+        </div>
+        <div class="svc-card-foot">
+          <span class="svc-card-link"><i data-lucide="arrow-right"></i>Explore Other Services</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- BROWSE CARS BANNER -->
+<section class="section alt" id="browse">
+  <div class="wrap">
+    <div class="browse-banner">
+      <div>
+        <h3>Browse <em>New &amp; Used</em><br>Cars on AutoViindu</h3>
+        <p style="margin-top:12px">Search from a wide range of verified new and used vehicles across Nepal. Filter by brand, budget, fuel type, location, and more.</p>
+      </div>
+      <div class="browse-btns">
+        <a href="/new-cars" class="btn-white"><i data-lucide="car"></i>Browse New Cars</a>
+        <a href="/used-cars" class="btn-outline-white"><i data-lucide="refresh-cw"></i>Browse Used Cars</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section class="section" id="offers">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="gift"></i>AutoViindu Extras</div>
+    <h2 class="sec-title">What you get when<br>you <em>work with us</em></h2>
+    <p class="sec-sub">These offers apply when you buy a car or book services through AutoViindu. No hidden conditions — just straightforward value for our customers.</p>
+
+    <div class="offers-grid">
+
+      <div class="offer-card">
+        <div class="offer-icon"><i data-lucide="car"></i></div>
+        <div>
+          <div class="offer-title">Free Vehicle Pickup &amp; Drop-off</div>
+          <div class="offer-desc">We collect your vehicle from your home or office for servicing and return it when done — no need to rearrange your day.</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon"><i data-lucide="paintbrush"></i></div>
+        <div>
+          <div class="offer-title">Free Ceramic Coating or Underbody Coating</div>
+          <div class="offer-desc">Get a free ceramic coat or underbody anti-rust treatment on select service packages — protecting your car's finish from day one.</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon"><i data-lucide="camera"></i></div>
+        <div>
+          <div class="offer-title">Dashcam Installation</div>
+          <div class="offer-desc">Complimentary dashcam fitting through our partner network when bundled with select vehicle service or purchase packages.</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon"><i data-lucide="shield"></i></div>
+        <div>
+          <div class="offer-title">Paint Protection Film (PPF)</div>
+          <div class="offer-desc">PPF installation offered as part of select cosmetic bundles — keeps your paint safe from stone chips and scratches on Nepal's roads.</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon"><i data-lucide="percent"></i></div>
+        <div>
+          <div class="offer-title">Loan Processing Fee Waiver</div>
+          <div class="offer-desc">When you arrange vehicle finance through AutoViindu, our banking partners waive the processing fee — saving you money upfront.</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon"><i data-lucide="tag"></i></div>
+        <div>
+          <div class="offer-title">Festival Bonus &amp; Cash Discounts</div>
+          <div class="offer-desc">Special discounts and festival bonuses on vehicle purchases and services during major Nepali festivals. Ask us what is currently available.</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon"><i data-lucide="fuel"></i></div>
+        <div>
+          <div class="offer-title">Fuel Vouchers</div>
+          <div class="offer-desc">Fuel vouchers are included with select new car purchases or major service bookings — so you drive away without stopping at the pump.</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon"><i data-lucide="package-open"></i></div>
+        <div>
+          <div class="offer-title">Free Accessories Upgrade</div>
+          <div class="offer-desc">Choose from a selection of accessories — floor mats, seat covers, phone mounts, and more — bundled free with qualifying purchases.</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon"><i data-lucide="users"></i></div>
+        <div>
+          <div class="offer-title">Referral Bonus</div>
+          <div class="offer-desc">Refer a friend who buys or books a service through AutoViindu and earn a referral reward. The more you refer, the more you earn.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:28px">
+      <div class="notice">
+        <i data-lucide="info"></i>
+        <div>
+          <div class="notice-title">Offers vary by provider and package</div>
+          <div class="notice-text">Not all extras apply to every transaction. When you submit a service request or car inquiry, our team will confirm which offers are available for your specific case. No offer is automatically applied — our staff will walk you through what is included.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

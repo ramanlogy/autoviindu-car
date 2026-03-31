@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Vehicle Financing in Nepal – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:   #1A6B2A;
+      --green-d: #145520;
+      --green-l: #EEF7F0;
+      --green-m: #4CAF6A;
+      --ink:     #0B0F14;
+      --ink2:    #1C2228;
+      --ink3:    #3D4754;
+      --ink4:    #6B7685;
+      --ink5:    #9AA3AE;
+      --border:  #E4E8ED;
+      --bg:      #F5F7F9;
+      --bg2:     #ECEEF2;
+      --white:   #ffffff;
+      --blue:    #1A4DB8;
+      --blue-l:  #EEF3FC;
+      --gold:    #B8900E;
+      --gold-l:  #FDF6E0;
+      --red:     #C8271E;
+      --red-l:   #FFF0EF;
+      --teal:    #0E7F73;
+      --teal-l:  #E6F5F4;
+      --purple:  #6B35C7;
+      --purple-l:#F0EBFA;
+      --r6:  6px;
+      --r8:  8px;
+      --r10: 10px;
+      --r12: 12px;
+      --r16: 16px;
+      --r20: 20px;
+      --pill: 999px;
+      --sh1: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --sh2: 0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
+      --sh3: 0 8px 24px rgba(0,0,0,.10), 0 4px 8px rgba(0,0,0,.05);
+      --ease: 0.2s cubic-bezier(0.4,0,0.2,1);
+      --font-d: 'Fraunces', Georgia, serif;
+      --font-b: 'DM Sans', system-ui, sans-serif;
+      --wrap: 1120px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-b);
+      background: var(--white);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    ::selection { background: rgba(26,107,42,.15); }
+    :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 4px; }
+
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+    @media(min-width: 640px) { .wrap { padding: 0 32px; } }
+    @media(min-width: 1024px) { .wrap { padding: 0 40px; } }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 11px 0;
+    }
+    .breadcrumb-inner {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: var(--ink4);
+    }
+    .breadcrumb-inner a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .breadcrumb-inner a:hover { text-decoration: underline; }
+    .breadcrumb-inner i { width: 12px; height: 12px; color: var(--ink5); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(145deg, #0B2A12 0%, #1A6B2A 55%, #1f8535 100%);
+      padding: 60px 0 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    @media(min-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr 1fr; align-items: end; gap: 0; }
+    }
+    .hero-content { padding-bottom: 52px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--pill);
+      padding: 5px 12px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: rgba(255,255,255,.75);
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-badge i { width: 13px; height: 13px; color: var(--green-m); }
+    .hero h1 {
+      font-family: var(--font-d);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .hero h1 em { font-style: italic; color: var(--green-m); }
+    .hero-desc {
+      font-size: 15.5px;
+      color: rgba(255,255,255,.65);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 28px;
+    }
+    .hero-stat {
+      flex: 1;
+      padding-right: 24px;
+      border-right: 1px solid rgba(255,255,255,.1);
+      margin-right: 24px;
+    }
+    .hero-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .hero-stat-val {
+      font-family: var(--font-d);
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+    .hero-stat-val span { color: var(--green-m); }
+    .hero-stat-label { font-size: 11.5px; color: rgba(255,255,255,.5); font-weight: 600; }
+    .hero-visual {
+      display: none;
+      align-self: end;
+    }
+    @media(min-width: 768px) { .hero-visual { display: block; } }
+    .hero-card-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-bottom: 0;
+    }
+    .hero-info-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--r12);
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-info-card-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--r8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-info-card-icon i { width: 18px; height: 18px; }
+    .hero-info-card-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+    .hero-info-card-sub { font-size: 11.5px; color: rgba(255,255,255,.45); }
+
+    /* ── HOW IT WORKS ── */
+    .how-section { padding: 72px 0 64px; background: var(--white); }
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 12px;
+    }
+    .section-eyebrow i { width: 13px; height: 13px; }
+    .section-title {
+      font-family: var(--font-d);
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .section-title em { font-style: italic; color: var(--green); }
+    .section-sub {
+      font-size: 15px;
+      color: var(--ink4);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      position: relative;
+    }
+    @media(min-width: 640px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
+    .step-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r16);
+      padding: 28px 24px;
+      position: relative;
+      transition: all var(--ease);
+    }
+    .step-card:hover {
+      border-color: var(--green);
+      box-shadow: var(--sh2);
+      transform: translateY(-2px);
+    }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      background: var(--green-l);
+      border-radius: var(--r8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-d);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+    .step-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--r10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .step-icon i { width: 22px; height: 22px; }
+    .step-title {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .step-desc {
+      font-size: 13.5px;
+      color: var(--ink4);
+      line-height: 1.65;
+    }
+    .step-connector {
+      display: none;
+    }
+    @media(min-width: 640px) {
+      .step-connector {
+        display: flex;
+        position: absolute;
+        top: 40px;
+        right: -14px;
+        z-index: 1;
+        width: 28px;
+        height: 28px;
+        background: var(--white);
+        border: 1.5px solid var(--border);
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+      }
+      .step-connector i { width: 13px; height: 13px; color: var(--ink5); }
+    }
+
+    /* ── ELIGIBILITY ── */
+    .eligibility-section {
+      padding: 64px 0;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .elig-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    @media(min-width: 768px) { .elig-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+    .elig-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .elig-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r12);
+      padding: 14px 16px;
+      transition: all var(--ease);
+    }
+    .elig-item:hover { border-color: var(--green); box-shadow: var(--sh1); }
+    .elig-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: var(--r6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .elig-dot i { width: 15px; height: 15px; }
+    .elig-item-title { font-size: 13.5px; font-weight: 700; color: var(--ink2); margin-bottom: 2px; }
+    .elig-item-desc { font-size: 12px; color: var(--ink4); line-height: 1.5; }
+
+    .providers-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .provider-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r12);
+      padding: 16px;
+      transition: all var(--ease);
+      cursor: default;
+    }
+    .provider-card:hover { border-color: var(--green); box-shadow: var(--sh1); }
+    .provider-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 4px;
+    }
+    .provider-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink2);
+      line-height: 1.3;
+    }
+    .provider-class {
+      font-size: 11px;
+      color: var(--ink4);
+      margin-top: 2px;
+    }
+
+    /* ── LOAN TABLES ── */
+    .loans-section { padding: 72px 0 80px; }
+    .tabs-bar {
+      display: flex;
+      gap: 6px;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r12);
+      padding: 5px;
+      margin-bottom: 36px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tabs-bar::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      flex: 1;
+      min-width: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 16px;
+      border-radius: var(--r8);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink4);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all var(--ease);
+      white-space: nowrap;
+    }
+    .tab-btn i { width: 15px; height: 15px; }
+    .tab-btn:hover { color: var(--ink2); background: var(--white); }
+    .tab-btn.active {
+      background: var(--white);
+      color: var(--green);
+      box-shadow: var(--sh1);
+    }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+
+    /* overview cards */
+    .overview-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    @media(min-width: 640px) { .overview-row { grid-template-columns: repeat(4, 1fr); } }
+    .overview-card {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r12);
+      padding: 16px 14px;
+    }
+    .overview-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--ink5);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .overview-label i { width: 12px; height: 12px; }
+    .overview-val {
+      font-family: var(--font-d);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .overview-note { font-size: 11px; color: var(--ink4); }
+
+    /* lender comparison */
+    .lenders-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media(min-width: 640px) { .lenders-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(min-width: 900px) { .lenders-grid { grid-template-columns: repeat(4, 1fr); } }
+    .lender-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r16);
+      overflow: hidden;
+      transition: all var(--ease);
+    }
+    .lender-card:hover { box-shadow: var(--sh3); transform: translateY(-3px); }
+    .lender-card.best { border-color: var(--green); }
+    .lender-head {
+      padding: 18px 18px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .lender-class-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      padding: 3px 8px;
+      border-radius: var(--pill);
+      margin-bottom: 10px;
+    }
+    .lender-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .lender-subtitle { font-size: 11.5px; color: var(--ink4); }
+    .lender-body { padding: 16px 18px; }
+    .lender-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--bg);
+    }
+    .lender-row:last-child { border-bottom: none; }
+    .lender-row-label { font-size: 11.5px; color: var(--ink4); font-weight: 500; }
+    .lender-row-val { font-size: 12.5px; font-weight: 700; color: var(--ink2); text-align: right; }
+    .lender-rate {
+      font-family: var(--font-d);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--green);
+      margin: 12px 0 4px;
+      line-height: 1;
+    }
+    .lender-rate-note { font-size: 11px; color: var(--ink4); }
+    .lender-na {
+      font-size: 13px;
+      color: var(--ink5);
+      font-style: italic;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .best-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--green-l);
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+      padding: 3px 8px;
+      border-radius: var(--pill);
+      margin-top: 8px;
+    }
+    .best-badge i { width: 10px; height: 10px; }
+
+    /* extra requirements */
+    .requirements-box {
+      margin-top: 28px;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r16);
+      padding: 24px;
+    }
+    .requirements-box h4 {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--ink2);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .requirements-box h4 i { width: 16px; height: 16px; color: var(--green); }
+    .req-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media(min-width: 640px) { .req-grid { grid-template-columns: 1fr 1fr; } }
+    .req-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 13px;
+      color: var(--ink3);
+      line-height: 1.5;
+    }
+    .req-item i { width: 14px; height: 14px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer-section {
+      padding: 40px 0 72px;
+      background: var(--white);
+    }
+    .disclaimer-box {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--r12);
+      padding: 20px 22px;
+      display: flex;
+      gap: 14px;
+    }
+    .disclaimer-box i { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+    .disclaimer-title { font-size: 13px; font-weight: 800; color: var(--ink2); margin-bottom: 5px; }
+    .disclaimer-text { font-size: 12.5px; color: var(--ink4); line-height: 1.65; }
+
+    /* ── EMI CALCULATOR ── */
+    .calc-section {
+      padding: 64px 0;
+      background: linear-gradient(160deg, var(--green) 0%, #145520 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .calc-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .calc-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    @media(min-width: 768px) { .calc-inner { grid-template-columns: 1fr 1fr; } }
+    .calc-text h2 {
+      font-family: var(--font-d);
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+    .calc-text h2 em { font-style: italic; color: var(--green-m); }
+    .calc-text p { font-size: 14.5px; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 24px; }
+    .calc-form {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--r16);
+      padding: 28px;
+      backdrop-filter: blur(8px);
+    }
+    .calc-field { margin-bottom: 18px; }
+    .calc-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,.65);
+      margin-bottom: 8px;
+    }
+    .calc-label span { color: #fff; font-size: 13.5px; font-family: var(--font-d); font-weight: 800; }
+    .calc-range {
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255,255,255,.15);
+      outline: none;
+      cursor: pointer;
+      -webkit-appearance: none;
+    }
+    .calc-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.3);
+      cursor: pointer;
+    }
+    .calc-result {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .calc-res-item {}
+    .calc-res-label { font-size: 11px; color: rgba(255,255,255,.5); font-weight: 600; margin-bottom: 3px; }
+    .calc-res-val {
+      font-family: var(--font-d);
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .calc-res-val.highlight { color: var(--green-m); }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards;
+    }
+    .fade-up-1 { animation-delay: .05s; }
+    .fade-up-2 { animation-delay: .12s; }
+    .fade-up-3 { animation-delay: .19s; }
+    .fade-up-4 { animation-delay: .26s; }
+  </style>
+</head>
+<body>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+  <div class="wrap breadcrumb-inner">
+    <a href="/">Home</a>
+    <i data-lucide="chevron-right"></i>
+    <a href="/services.html">Services</a>
+    <i data-lucide="chevron-right"></i>
+    <span>Vehicle Financing</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-content fade-up">
+        <div class="hero-badge">
+          <i data-lucide="landmark"></i>
+          FY 2082 / 83 — Nepal Market
+        </div>
+        <h1>Finance Your<br><em>Dream Car</em></h1>
+        <p class="hero-desc">Drive home today, pay in comfortable monthly installments. Vehicle financing in Nepal is more accessible than ever — through banks, finance companies, and hire purchase programs.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-val"><span>6%</span>+</div>
+            <div class="hero-stat-label">Rates From</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-val">10<span>yr</span></div>
+            <div class="hero-stat-label">Max Tenure (EV)</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-val">60<span>%</span></div>
+            <div class="hero-stat-label">LTV Coverage</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-up fade-up-2">
+        <div class="hero-card-stack" style="padding:0 0 0 40px">
+          <div class="hero-info-card">
+            <div class="hero-info-card-icon" style="background:rgba(76,175,106,.15)">
+              <i data-lucide="zap" style="color:#4CAF6A"></i>
+            </div>
+            <div>
+              <div class="hero-info-card-title">EV Green Loan Available</div>
+              <div class="hero-info-card-sub">Special rates + customs duty relief</div>
+            </div>
+          </div>
+          <div class="hero-info-card">
+            <div class="hero-info-card-icon" style="background:rgba(255,255,255,.1)">
+              <i data-lucide="building-2" style="color:rgba(255,255,255,.7)"></i>
+            </div>
+            <div>
+              <div class="hero-info-card-title">NRB-Regulated Lenders</div>
+              <div class="hero-info-card-sub">Class A, B, C banks &amp; hire purchase</div>
+            </div>
+          </div>
+          <div class="hero-info-card">
+            <div class="hero-info-card-icon" style="background:rgba(255,255,255,.1)">
+              <i data-lucide="shield-check" style="color:rgba(255,255,255,.7)"></i>
+            </div>
+            <div>
+              <div class="hero-info-card-title">Individuals &amp; Business Firms</div>
+              <div class="hero-info-card-sub">Personal and commercial loans</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="wrap">
+    <div class="section-eyebrow"><i data-lucide="list-ordered"></i>How it works</div>
+    <h2 class="section-title">Simple as <em>1, 2, 3</em></h2>
+    <p class="section-sub">Vehicle financing is straightforward. Pay a portion upfront, a bank covers the rest, and you repay over time in fixed monthly installments.</p>
+    <div class="steps-grid">
+      <div class="step-card fade-up fade-up-1" style="position:relative">
+        <div class="step-num">01</div>
+        <div class="step-icon" style="background:var(--green-l)">
+          <i data-lucide="wallet" style="color:var(--green)"></i>
+        </div>
+        <div class="step-title">Pay Your Down Payment</div>
+        <div class="step-desc">You contribute a minimum of 40% of the vehicle value upfront (50% for used vehicles). This is your down payment — the share you own from day one.</div>
+        <div class="step-connector">
+          <i data-lucide="arrow-right"></i>
+        </div>
+      </div>
+      <div class="step-card fade-up fade-up-2" style="position:relative">
+        <div class="step-num">02</div>
+        <div class="step-icon" style="background:var(--blue-l)">
+          <i data-lucide="landmark" style="color:var(--blue)"></i>
+        </div>
+        <div class="step-title">Bank Covers the Rest</div>
+        <div class="step-desc">A bank or financial institution lends you the remaining amount — up to 60% of the vehicle value (50% for used vehicles). They handle the disbursement directly.</div>
+        <div class="step-connector">
+          <i data-lucide="arrow-right"></i>
+        </div>
+      </div>
+      <div class="step-card fade-up fade-up-3">
+        <div class="step-num">03</div>
+        <div class="step-icon" style="background:var(--gold-l)">
+          <i data-lucide="calendar-check" style="color:var(--gold)"></i>
+        </div>
+        <div class="step-title">Repay in Monthly EMI</div>
+        <div class="step-desc">You repay the loan in Equated Monthly Installments (EMI) — fixed amounts spread over your chosen tenure, from 5 to 10 years depending on the vehicle and lender.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY & PROVIDERS -->
+<section class="eligibility-section">
+  <div class="wrap">
+    <div class="elig-grid">
+      <div>
+        <div class="section-eyebrow"><i data-lucide="user-check"></i>Eligibility</div>
+        <h2 class="section-title">Will I <em>Qualify?</em></h2>
+        <p style="font-size:14px;color:var(--ink4);line-height:1.7;max-width:420px">Most lenders look at a few basic things. If you have a steady income and can make the down payment, you are likely in a good position to apply.</p>
+        <div class="elig-list">
+          <div class="elig-item">
+            <div class="elig-dot" style="background:var(--green-l)">
+              <i data-lucide="banknote" style="color:var(--green)"></i>
+            </div>
+            <div>
+              <div class="elig-item-title">Steady Income</div>
+              <div class="elig-item-desc">Salaried, self-employed, or business income — lenders assess your repayment capacity.</div>
+            </div>
+          </div>
+          <div class="elig-item">
+            <div class="elig-dot" style="background:var(--blue-l)">
+              <i data-lucide="briefcase" style="color:var(--blue)"></i>
+            </div>
+            <div>
+              <div class="elig-item-title">Job Stability</div>
+              <div class="elig-item-desc">Consistent employment history or an established business demonstrates reliability.</div>
+            </div>
+          </div>
+          <div class="elig-item">
+            <div class="elig-dot" style="background:var(--gold-l)">
+              <i data-lucide="star" style="color:var(--gold)"></i>
+            </div>
+            <div>
+              <div class="elig-item-title">Credit History</div>
+              <div class="elig-item-desc">A clean credit record from CIB helps secure better rates and higher loan amounts.</div>
+            </div>
+          </div>
+          <div class="elig-item">
+            <div class="elig-dot" style="background:var(--purple-l)">
+              <i data-lucide="id-card" style="color:var(--purple)"></i>
+            </div>
+            <div>
+              <div class="elig-item-title">Valid Documentation</div>
+              <div class="elig-item-desc">Citizenship certificate, income proof, and Bluebook (for used vehicles) are standard requirements.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-eyebrow"><i data-lucide="building"></i>Loan Providers</div>
+        <h2 class="section-title">Who <em>Lends?</em></h2>
+        <p style="font-size:14px;color:var(--ink4);line-height:1.7;max-width:420px">All vehicle loan providers operate under Nepal Rastra Bank regulation. Choose the institution that best matches your needs and eligibility.</p>
+        <div class="providers-list">
+          <div class="provider-card">
+            <div class="provider-label" style="color:var(--green)">Class A</div>
+            <div class="provider-name">Commercial Banks</div>
+            <div class="provider-class">Best rates, longest tenure</div>
+          </div>
+          <div class="provider-card">
+            <div class="provider-label" style="color:var(--blue)">Class B</div>
+            <div class="provider-name">Development Banks</div>
+            <div class="provider-class">Competitive rates, wide reach</div>
+          </div>
+          <div class="provider-card">
+            <div class="provider-label" style="color:var(--gold)">Class C</div>
+            <div class="provider-name">Finance Companies</div>
+            <div class="provider-class">Flexible eligibility criteria</div>
+          </div>
+          <div class="provider-card">
+            <div class="provider-label" style="color:var(--purple)">NRB-Licensed</div>
+            <div class="provider-name">Hire Purchase</div>
+            <div class="provider-class">Vehicle-specialised financing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMI CALCULATOR -->
+<section class="calc-section">
+  <div class="wrap">
+    <div class="calc-inner">
+      <div class="calc-text">
+        <h2>Estimate Your<br><em>Monthly EMI</em></h2>
+        <p>Use our quick calculator to get a ballpark figure for your monthly repayment. Adjust the vehicle price, down payment, interest rate, and tenure to see how EMI changes.</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:rgba(255,255,255,.65)">
+            <i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green-m);flex-shrink:0"></i>
+            New ICE/HEV rates from 5.37% per annum
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:rgba(255,255,255,.65)">
+            <i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green-m);flex-shrink:0"></i>
+            New EV rates from 5.51% per annum
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:rgba(255,255,255,.65)">
+            <i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green-m);flex-shrink:0"></i>
+            Up to 10-year tenure for electric vehicles
+          </div>
+        </div>
+      </div>
+      <div class="calc-form">
+        <div class="calc-field">
+          <div class="calc-label">Vehicle Price (NPR) <span id="lbl-price">Rs. 40,00,000</span></div>
+          <input class="calc-range" type="range" id="r-price" min="500000" max="20000000" step="100000" value="4000000">
+        </div>
+        <div class="calc-field">
+          <div class="calc-label">Down Payment <span id="lbl-dp">40%</span></div>
+          <input class="calc-range" type="range" id="r-dp" min="40" max="60" step="5" value="40">
+        </div>
+        <div class="calc-field">
+          <div class="calc-label">Interest Rate (p.a.) <span id="lbl-rate">8%</span></div>
+          <input class="calc-range" type="range" id="r-rate" min="5" max="16" step="0.5" value="8">
+        </div>
+        <div class="calc-field" style="margin-bottom:0">
+          <div class="calc-label">Tenure <span id="lbl-tenure">7 years</span></div>
+          <input class="calc-range" type="range" id="r-tenure" min="1" max="10" step="1" value="7">
+        </div>
+        <div class="calc-result">
+          <div class="calc-res-item">
+            <div class="calc-res-label">Monthly EMI</div>
+            <div class="calc-res-val highlight" id="res-emi">—</div>
+          </div>
+          <div class="calc-res-item">
+            <div class="calc-res-label">Loan Amount</div>
+            <div class="calc-res-val" id="res-loan">—</div>
+          </div>
+          <div class="calc-res-item">
+            <div class="calc-res-label">Total Interest</div>
+            <div class="calc-res-val" id="res-interest">—</div>
+          </div>
+          <div class="calc-res-item">
+            <div class="calc-res-label">Total Payable</div>
+            <div class="calc-res-val" id="res-total">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOAN TABLES -->
+<section class="loans-section">
+  <div class="wrap">
+    <div class="section-eyebrow"><i data-lucide="table-2"></i>Loan Terms</div>
+    <h2 class="section-title" style="margin-bottom:8px">Compare <em>Loan Options</em></h2>
+    <p class="section-sub">Detailed terms for each vehicle and lender category — FY 2082/83.</p>
+
+    <div class="tabs-bar">
+      <button class="tab-btn active" onclick="switchTab('ice', this)">
+        <i data-lucide="fuel"></i> New ICE &amp; Hybrid
+      </button>
+      <button class="tab-btn" onclick="switchTab('ev', this)">
+        <i data-lucide="zap"></i> New Electric
+      </button>
+      <button class="tab-btn" onclick="switchTab('used', this)">
+        <i data-lucide="rotate-ccw"></i> Used Vehicles
+      </button>
+    </div>
+
+    <!-- ICE / HEV TAB -->
+    <div class="tab-pane active" id="pane-ice">
+      <div class="overview-row">
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="percent"></i>Interest Range</div>
+          <div class="overview-val">6.5%</div>
+          <div class="overview-note">up to ~13% p.a.</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="trending-up"></i>Loan Coverage</div>
+          <div class="overview-val">60%</div>
+          <div class="overview-note">of vehicle value (LTV)</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="wallet"></i>Down Payment</div>
+          <div class="overview-val">40%</div>
+          <div class="overview-note">minimum required</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="calendar"></i>Max Tenure</div>
+          <div class="overview-val">7 yr</div>
+          <div class="overview-note">Class A &amp; B banks</div>
+        </div>
+      </div>
+      <div class="lenders-grid">
+        <div class="lender-card best">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--green-l);color:var(--green)">Class A</div>
+            <div class="lender-name">Commercial Bank</div>
+            <div class="lender-subtitle">Personal &amp; Firm loans</div>
+            <div class="lender-rate">5.37 – 10.57%</div>
+            <div class="lender-rate-note">per annum</div>
+            <div class="best-badge"><i data-lucide="award"></i>Best Rates</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-row"><span class="lender-row-label">LTV Coverage</span><span class="lender-row-val">Up to 60%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Down Payment</span><span class="lender-row-val">Min 40%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Max Tenure</span><span class="lender-row-val">7 years</span></div>
+            <div class="lender-row"><span class="lender-row-label">Vehicle</span><span class="lender-row-val">Brand New</span></div>
+          </div>
+        </div>
+        <div class="lender-card">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--blue-l);color:var(--blue)">Class B</div>
+            <div class="lender-name">Development Bank</div>
+            <div class="lender-subtitle">Personal &amp; Firm loans</div>
+            <div class="lender-rate">5.06 – 12.54%</div>
+            <div class="lender-rate-note">per annum (approx)</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-row"><span class="lender-row-label">LTV Coverage</span><span class="lender-row-val">Up to 60%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Down Payment</span><span class="lender-row-val">Min 40%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Max Tenure</span><span class="lender-row-val">7 years</span></div>
+            <div class="lender-row"><span class="lender-row-label">Vehicle</span><span class="lender-row-val">Brand New</span></div>
+          </div>
+        </div>
+        <div class="lender-card">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--gold-l);color:var(--gold)">Class C</div>
+            <div class="lender-name">Finance Company</div>
+            <div class="lender-subtitle">Personal &amp; Firm loans</div>
+            <div class="lender-rate">6.40 – 15.19%</div>
+            <div class="lender-rate-note">per annum (approx)</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-row"><span class="lender-row-label">LTV Coverage</span><span class="lender-row-val">Up to 60%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Down Payment</span><span class="lender-row-val">Min 40%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Max Tenure</span><span class="lender-row-val">5 – 6 years</span></div>
+            <div class="lender-row"><span class="lender-row-label">Vehicle</span><span class="lender-row-val">Brand New</span></div>
+          </div>
+        </div>
+        <div class="lender-card">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--purple-l);color:var(--purple)">NRB-Licensed</div>
+            <div class="lender-name">Hire Purchase</div>
+            <div class="lender-subtitle">Personal &amp; Firm loans</div>
+            <div class="lender-rate">10 – 16%+</div>
+            <div class="lender-rate-note">per annum (approx)</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-row"><span class="lender-row-label">LTV Coverage</span><span class="lender-row-val">50 – 60%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Down Payment</span><span class="lender-row-val">Min 40 – 50%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Max Tenure</span><span class="lender-row-val">5 years</span></div>
+            <div class="lender-row"><span class="lender-row-label">Vehicle</span><span class="lender-row-val">Brand New</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="requirements-box">
+        <h4><i data-lucide="file-text"></i>Standard Requirements — New ICE &amp; Hybrid</h4>
+        <div class="req-grid">
+          <div class="req-item"><i data-lucide="check"></i>Citizenship certificate</div>
+          <div class="req-item"><i data-lucide="check"></i>Income proof (salary slip or tax returns)</div>
+          <div class="req-item"><i data-lucide="check"></i>Bluebook transfer required at disbursement</div>
+          <div class="req-item"><i data-lucide="check"></i>PAN and Firm Registration (for business loans)</div>
+          <div class="req-item"><i data-lucide="check"></i>Board Resolution &amp; Financial Statements (firms)</div>
+          <div class="req-item"><i data-lucide="check"></i>Comprehensive insurance mandatory</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EV TAB -->
+    <div class="tab-pane" id="pane-ev">
+      <div class="overview-row">
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="percent"></i>Interest Range</div>
+          <div class="overview-val">6%</div>
+          <div class="overview-note">up to ~12% p.a.</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="trending-up"></i>Loan Coverage</div>
+          <div class="overview-val">60%</div>
+          <div class="overview-note">of vehicle value (LTV)</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="wallet"></i>Down Payment</div>
+          <div class="overview-val">40%</div>
+          <div class="overview-note">minimum required</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="calendar"></i>Max Tenure</div>
+          <div class="overview-val">10 yr</div>
+          <div class="overview-note">Class A — longest in Nepal</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--green-l);border:1.5px solid rgba(26,107,42,.15);border-radius:var(--r12);margin-bottom:20px;font-size:13.5px;color:var(--green);font-weight:600">
+        <i data-lucide="zap" style="width:16px;height:16px;flex-shrink:0"></i>
+        Government Green Loan &amp; Customs Duty Relief available exclusively for new Battery Electric Vehicles (BEVs).
+      </div>
+      <div class="lenders-grid">
+        <div class="lender-card best">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--green-l);color:var(--green)">Class A</div>
+            <div class="lender-name">Commercial Bank</div>
+            <div class="lender-subtitle">Personal &amp; Firm loans</div>
+            <div class="lender-rate">5.51 – 9.90%</div>
+            <div class="lender-rate-note">per annum (approx)</div>
+            <div class="best-badge"><i data-lucide="award"></i>Green Loan Ready</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-row"><span class="lender-row-label">LTV Coverage</span><span class="lender-row-val">Up to 60%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Down Payment</span><span class="lender-row-val">Min 40%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Max Tenure</span><span class="lender-row-val">10 years</span></div>
+            <div class="lender-row"><span class="lender-row-label">Vehicle</span><span class="lender-row-val">Brand New BEV</span></div>
+          </div>
+        </div>
+        <div class="lender-card">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--blue-l);color:var(--blue)">Class B</div>
+            <div class="lender-name">Development Bank</div>
+            <div class="lender-subtitle">Personal &amp; Firm loans</div>
+            <div class="lender-rate">5.90 – 9.90%</div>
+            <div class="lender-rate-note">per annum (approx)</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-row"><span class="lender-row-label">LTV Coverage</span><span class="lender-row-val">Up to 60%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Down Payment</span><span class="lender-row-val">Min 40%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Max Tenure</span><span class="lender-row-val">7 years</span></div>
+            <div class="lender-row"><span class="lender-row-label">Vehicle</span><span class="lender-row-val">Brand New BEV</span></div>
+          </div>
+        </div>
+        <div class="lender-card">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--gold-l);color:var(--gold)">Class C</div>
+            <div class="lender-name">Finance Company</div>
+            <div class="lender-subtitle">Personal &amp; Firm loans</div>
+            <div class="lender-rate">6.40 – 10.40%</div>
+            <div class="lender-rate-note">per annum (approx)</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-row"><span class="lender-row-label">LTV Coverage</span><span class="lender-row-val">Up to 60%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Down Payment</span><span class="lender-row-val">Min 40%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Max Tenure</span><span class="lender-row-val">5 – 6 years</span></div>
+            <div class="lender-row"><span class="lender-row-label">Vehicle</span><span class="lender-row-val">Brand New BEV</span></div>
+          </div>
+        </div>
+        <div class="lender-card">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--purple-l);color:var(--purple)">NRB-Licensed</div>
+            <div class="lender-name">Hire Purchase</div>
+            <div class="lender-subtitle">Personal &amp; Firm loans</div>
+            <div class="lender-rate">10 – 14%+</div>
+            <div class="lender-rate-note">per annum (approx)</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-row"><span class="lender-row-label">LTV Coverage</span><span class="lender-row-val">50 – 60%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Down Payment</span><span class="lender-row-val">Min 40 – 50%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Max Tenure</span><span class="lender-row-val">5 years</span></div>
+            <div class="lender-row"><span class="lender-row-label">EV Programs</span><span class="lender-row-val">Limited</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="requirements-box">
+        <h4><i data-lucide="file-text"></i>Requirements — New Electric Vehicles (BEV)</h4>
+        <div class="req-grid">
+          <div class="req-item"><i data-lucide="check"></i>Citizenship certificate</div>
+          <div class="req-item"><i data-lucide="check"></i>Income proof (salary slip or tax returns)</div>
+          <div class="req-item"><i data-lucide="check"></i>Bluebook transfer required at disbursement</div>
+          <div class="req-item"><i data-lucide="check"></i>Standard documentation for individuals &amp; firms</div>
+          <div class="req-item"><i data-lucide="check"></i>Green Loan subsidy application (where applicable)</div>
+          <div class="req-item"><i data-lucide="check"></i>Comprehensive insurance mandatory</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USED VEHICLES TAB -->
+    <div class="tab-pane" id="pane-used">
+      <div class="overview-row">
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="percent"></i>Interest Range</div>
+          <div class="overview-val">8%</div>
+          <div class="overview-note">up to ~16%+ p.a.</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="trending-up"></i>Loan Coverage</div>
+          <div class="overview-val">50%</div>
+          <div class="overview-note">of assessed value (LTV)</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="wallet"></i>Down Payment</div>
+          <div class="overview-val">50%</div>
+          <div class="overview-note">minimum required</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label"><i data-lucide="calendar"></i>Max Tenure</div>
+          <div class="overview-val">5 yr</div>
+          <div class="overview-note">for ICE/HEV &amp; EV</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--gold-l);border:1.5px solid rgba(184,144,14,.2);border-radius:var(--r12);margin-bottom:20px;font-size:13.5px;color:var(--gold);font-weight:600">
+        <i data-lucide="alert-triangle" style="width:16px;height:16px;flex-shrink:0"></i>
+        Higher rates apply to used vehicles due to increased risk. Only Class A banks and Hire Purchase companies currently offer used vehicle loans.
+      </div>
+      <div class="lenders-grid">
+        <div class="lender-card best">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--green-l);color:var(--green)">Class A</div>
+            <div class="lender-name">Commercial Bank</div>
+            <div class="lender-subtitle">Personal &amp; Firm loans</div>
+            <div class="lender-rate">8 – 13%</div>
+            <div class="lender-rate-note">per annum (approx)</div>
+            <div class="best-badge"><i data-lucide="award"></i>Best Used Rates</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-row"><span class="lender-row-label">LTV Coverage</span><span class="lender-row-val">Up to 50%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Down Payment</span><span class="lender-row-val">Min 50%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Max Tenure</span><span class="lender-row-val">5 years</span></div>
+            <div class="lender-row"><span class="lender-row-label">Vehicle Age</span><span class="lender-row-val">Up to 7 years</span></div>
+          </div>
+        </div>
+        <div class="lender-card" style="opacity:.55;pointer-events:none">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--bg2);color:var(--ink5)">Class B</div>
+            <div class="lender-name">Development Bank</div>
+            <div class="lender-subtitle">Not currently available</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-na">Not offering used vehicle loans at this time.</div>
+          </div>
+        </div>
+        <div class="lender-card" style="opacity:.55;pointer-events:none">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--bg2);color:var(--ink5)">Class C</div>
+            <div class="lender-name">Finance Company</div>
+            <div class="lender-subtitle">Not currently available</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-na">Not offering used vehicle loans at this time.</div>
+          </div>
+        </div>
+        <div class="lender-card">
+          <div class="lender-head">
+            <div class="lender-class-badge" style="background:var(--purple-l);color:var(--purple)">NRB-Licensed</div>
+            <div class="lender-name">Hire Purchase</div>
+            <div class="lender-subtitle">Personal &amp; Firm loans</div>
+            <div class="lender-rate">10 – 16%+</div>
+            <div class="lender-rate-note">per annum (approx)</div>
+          </div>
+          <div class="lender-body">
+            <div class="lender-row"><span class="lender-row-label">LTV Coverage</span><span class="lender-row-val">40 – 50%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Down Payment</span><span class="lender-row-val">Min 50 – 60%</span></div>
+            <div class="lender-row"><span class="lender-row-label">Max Tenure</span><span class="lender-row-val">5 years</span></div>
+            <div class="lender-row"><span class="lender-row-label">Vehicle Age</span><span class="lender-row-val">Up to 7 – 8 years*</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="requirements-box">
+        <h4><i data-lucide="file-text"></i>Additional Requirements — Used Vehicles</h4>
+        <div class="req-grid">
+          <div class="req-item"><i data-lucide="check"></i>Citizenship certificate &amp; income proof</div>
+          <div class="req-item"><i data-lucide="check"></i>Mandatory vehicle valuation report</div>
+          <div class="req-item"><i data-lucide="check"></i>Bluebook transfer mandatory before disbursement</div>
+          <div class="req-item"><i data-lucide="check"></i>Executed buyer-seller agreement required</div>
+          <div class="req-item"><i data-lucide="check"></i>Battery State of Health (SoH) assessment for used EVs</div>
+          <div class="req-item"><i data-lucide="check"></i>Comprehensive insurance mandatory</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="disclaimer-section">
+  <div class="wrap">
+    <div class="disclaimer-box">
+      <i data-lucide="info"></i>
+      <div>
+        <div class="disclaimer-title">Information Accuracy Notice</div>
+        <div class="disclaimer-text">We have done our best to keep this information accurate and up to date for FY 2082/83. However, loan rates, terms, and eligibility criteria are governed by Nepal Rastra Bank (NRB) regulations and may change periodically. We always recommend verifying the latest terms directly with your preferred financial institution before making any decisions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Init Lucide icons
+  lucide.createIcons();
+
+  // Tab switching
+  function switchTab(name, btn) {
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('pane-' + name).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // EMI Calculator
+  const fmt = n => 'Rs. ' + Math.round(n).toLocaleString('en-IN');
+  const fmtK = n => {
+    if (n >= 10000000) return 'Rs. ' + (n/10000000).toFixed(1) + 'Cr';
+    if (n >= 100000)   return 'Rs. ' + (n/100000).toFixed(1) + 'L';
+    return fmt(n);
+  };
+
+  function calc() {
+    const price   = +document.getElementById('r-price').value;
+    const dp      = +document.getElementById('r-dp').value;
+    const rate    = +document.getElementById('r-rate').value;
+    const tenure  = +document.getElementById('r-tenure').value;
+
+    document.getElementById('lbl-price').textContent   = fmtK(price);
+    document.getElementById('lbl-dp').textContent      = dp + '%';
+    document.getElementById('lbl-rate').textContent    = rate + '%';
+    document.getElementById('lbl-tenure').textContent  = tenure + (tenure === 1 ? ' year' : ' years');
+
+    const loan   = price * (1 - dp/100);
+    const r      = rate / 100 / 12;
+    const n      = tenure * 12;
+    const emi    = loan * r * Math.pow(1+r,n) / (Math.pow(1+r,n) - 1);
+    const total  = emi * n;
+    const interest = total - loan;
+
+    document.getElementById('res-emi').textContent      = fmt(emi);
+    document.getElementById('res-loan').textContent     = fmtK(loan);
+    document.getElementById('res-interest').textContent = fmtK(interest);
+    document.getElementById('res-total').textContent    = fmtK(total);
+  }
+
+  ['r-price','r-dp','r-rate','r-tenure'].forEach(id =>
+    document.getElementById(id).addEventListener('input', calc)
+  );
+  calc();
+</script>
+</body>
+</html>

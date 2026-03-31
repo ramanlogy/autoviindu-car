@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Vehicle Parts & Accessories – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    :root {
+      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
+      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
+      --border:#E4E8ED; --bg:#F5F7F9; --white:#ffffff; --red:#C8271E;
+      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
+      --sh1:0 1px 4px rgba(0,0,0,.06); --sh2:0 4px 14px rgba(0,0,0,.08);
+      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
+      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
+    ::selection { background:rgba(26,107,42,.12); }
+    :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+    @media(min-width:640px){ .wrap{ padding:0 32px; } }
+    @media(min-width:1024px){ .wrap{ padding:0 48px; } }
+
+    /* BREADCRUMB */
+    .bc { background:var(--bg); border-bottom:1px solid var(--border); padding:11px 0; }
+    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
+    .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
+    .bc-inner a:hover { text-decoration:underline; }
+    .bc-inner i { width:12px; height:12px; }
+
+    /* HERO */
+    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:56px 0 0; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; padding-bottom:56px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .hero-badge i { width:13px; height:13px; color:var(--green-m); }
+    .hero h1 { font-family:var(--font-d); font-size:clamp(30px,5vw,52px); font-weight:800; color:#fff; line-height:1.08; margin-bottom:14px; }
+    .hero h1 em { font-style:italic; color:var(--green-m); }
+    .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:500px; line-height:1.75; margin-bottom:32px; }
+    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; }
+    .hero-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:var(--pill); padding:7px 14px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.8); }
+    .hero-pill i { width:13px; height:13px; color:var(--green-m); }
+
+    /* NAV STRIP */
+    .nav-strip { background:var(--white); border-bottom:1px solid var(--border); }
+    .nav-strip-inner { display:grid; grid-template-columns:repeat(2,1fr); }
+    @media(min-width:640px){ .nav-strip-inner{ grid-template-columns:repeat(4,1fr); } }
+    .nav-item { display:flex; flex-direction:column; gap:4px; padding:18px 16px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); }
+    .nav-item:last-child { border-right:none; }
+    @media(max-width:639px){ .nav-item:nth-child(2){ border-right:none; } .nav-item:nth-child(3){ border-right:1px solid var(--border); } }
+    .nav-item:hover { background:var(--green-l); }
+    .nav-item i { width:18px; height:18px; color:var(--ink5); margin-bottom:4px; }
+    .nav-item-name { font-size:12.5px; font-weight:800; color:var(--ink2); }
+    .nav-item-sub { font-size:11px; color:var(--ink5); }
+
+    /* SECTIONS */
+    .section { padding:72px 0; }
+    .section.alt { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
+    .eyebrow i { width:13px; height:13px; }
+    .sec-title { font-family:var(--font-d); font-size:clamp(22px,3.5vw,36px); font-weight:800; color:var(--ink); line-height:1.12; margin-bottom:8px; }
+    .sec-title em { font-style:italic; color:var(--green); }
+    .sec-sub { font-size:14.5px; color:var(--ink4); max-width:520px; line-height:1.75; margin-bottom:44px; }
+
+    /* PART TYPE PILLS */
+    .type-pills { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:32px; }
+    .type-pill { padding:7px 16px; border:1.5px solid var(--border); border-radius:var(--pill); font-size:12.5px; font-weight:700; color:var(--ink4); cursor:pointer; background:var(--white); transition:all var(--ease); }
+    .type-pill.active, .type-pill:hover { border-color:var(--green); color:var(--green); background:var(--green-l); }
+
+    /* CATEGORY TABS */
+    .vtabs { display:flex; gap:0; border:1.5px solid var(--border); border-radius:var(--r10); overflow:hidden; width:fit-content; margin-bottom:28px; flex-wrap:wrap; }
+    .vtab { padding:9px 18px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; background:var(--white); border-right:1.5px solid var(--border); transition:all var(--ease); white-space:nowrap; }
+    .vtab:last-child { border-right:none; }
+    .vtab.active { background:var(--green); color:#fff; }
+    .vtab-content { display:none; }
+    .vtab-content.active { display:block; }
+
+    /* PARTS CATEGORY SECTION */
+    .cat-section { margin-bottom:44px; }
+    .cat-section:last-child { margin-bottom:0; }
+    .cat-header { display:flex; align-items:center; gap:10px; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+    .cat-header i { width:18px; height:18px; color:var(--ink5); flex-shrink:0; }
+    .cat-header-title { font-size:15px; font-weight:800; color:var(--ink2); }
+
+    .parts-list { display:grid; grid-template-columns:1fr; gap:5px; }
+    @media(min-width:480px){ .parts-list{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .parts-list{ grid-template-columns:repeat(3,1fr); } }
+    .part-row { display:flex; align-items:center; gap:9px; padding:10px 12px; border:1.5px solid var(--border); border-radius:var(--r8); background:var(--white); transition:border-color var(--ease); font-size:13px; font-weight:500; color:var(--ink2); }
+    .part-row:hover { border-color:var(--green); }
+    .part-row i { width:14px; height:14px; color:var(--ink5); flex-shrink:0; }
+
+    /* ACCESSORIES GRID */
+    .acc-group { margin-bottom:40px; }
+    .acc-group:last-child { margin-bottom:0; }
+    .acc-group-header { display:flex; align-items:center; gap:10px; margin-bottom:14px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+    .acc-group-header i { width:18px; height:18px; color:var(--ink5); }
+    .acc-group-title { font-size:15px; font-weight:800; color:var(--ink2); }
+    .acc-list { display:grid; grid-template-columns:1fr; gap:5px; }
+    @media(min-width:480px){ .acc-list{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .acc-list{ grid-template-columns:repeat(3,1fr); } }
+    .acc-row { display:flex; align-items:center; gap:9px; padding:10px 12px; border:1.5px solid var(--border); border-radius:var(--r8); font-size:13px; font-weight:500; color:var(--ink2); transition:border-color var(--ease); }
+    .acc-row:hover { border-color:var(--green); }
+    .acc-row i { width:14px; height:14px; color:var(--ink5); flex-shrink:0; }
+
+    /* CONDITION CARDS */
+    .cond-grid { display:grid; grid-template-columns:1fr; gap:12px; margin-bottom:40px; }
+    @media(min-width:640px){ .cond-grid{ grid-template-columns:repeat(3,1fr); } }
+    .cond-card { border:1.5px solid var(--border); border-radius:var(--r12); padding:20px; transition:all var(--ease); }
+    .cond-card:hover { border-color:var(--green); box-shadow:var(--sh1); }
+    .cond-card i { width:20px; height:20px; color:var(--ink5); margin-bottom:10px; display:block; }
+    .cond-title { font-size:15px; font-weight:800; color:var(--ink2); margin-bottom:5px; }
+    .cond-desc { font-size:13px; color:var(--ink4); line-height:1.6; }
+
+    /* NOTICE */
+    .notice { display:flex; align-items:flex-start; gap:12px; padding:16px 18px; border-radius:var(--r12); background:var(--green-l); border:1.5px solid rgba(26,107,42,.15); }
+    .notice i { width:16px; height:16px; color:var(--green); flex-shrink:0; margin-top:2px; }
+    .notice-title { font-size:13px; font-weight:800; color:var(--ink2); margin-bottom:2px; }
+    .notice-text { font-size:12.5px; color:var(--ink4); line-height:1.6; }
+
+    /* FORM */
+    .form-section { padding:72px 0 88px; background:var(--bg); border-top:1px solid var(--border); }
+    .form-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); overflow:hidden; max-width:820px; margin:0 auto; }
+    .form-header { background:linear-gradient(135deg,var(--green),var(--green-d)); padding:28px 32px 24px; }
+    .form-header h3 { font-family:var(--font-d); font-size:24px; font-weight:800; color:#fff; margin-bottom:5px; }
+    .form-header p { font-size:13.5px; color:rgba(255,255,255,.6); }
+    .form-body { padding:28px 32px; }
+    .form-grid { display:grid; grid-template-columns:1fr; gap:14px; }
+    @media(min-width:640px){ .form-grid{ grid-template-columns:1fr 1fr; } }
+    .form-group { display:flex; flex-direction:column; gap:5px; }
+    .form-group.full { grid-column:1/-1; }
+    .form-label { font-size:11.5px; font-weight:700; color:var(--ink3); text-transform:uppercase; letter-spacing:.45px; }
+    .form-label span { color:var(--red); }
+    .form-input, .form-select, .form-textarea {
+      width:100%; padding:10px 12px; border:1.5px solid var(--border); border-radius:var(--r8);
+      font-family:var(--font-b); font-size:14px; color:var(--ink); background:var(--white);
+      transition:border-color var(--ease); outline:none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green); }
+    .form-textarea { resize:vertical; min-height:80px; }
+    .form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
+    .radio-group { display:flex; flex-wrap:wrap; gap:7px; }
+    .radio-option { display:flex; align-items:center; gap:7px; background:var(--bg); border:1.5px solid var(--border); border-radius:var(--r8); padding:8px 13px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:all var(--ease); }
+    .radio-option input { display:none; }
+    .radio-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); }
+    .form-sec-title { font-size:13px; font-weight:800; color:var(--ink2); padding:18px 0 4px; border-top:1px solid var(--border); margin-top:6px; display:flex; align-items:center; gap:8px; }
+    .form-sec-title i { width:14px; height:14px; color:var(--green); }
+    .form-submit { width:100%; padding:14px; background:var(--green); color:#fff; border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:background var(--ease); margin-top:10px; }
+    .form-submit:hover { background:var(--green-d); }
+    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:10px; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { opacity:0; animation:fadeUp .45s ease forwards; }
+  </style>
+</head>
+<body>
+
+<!-- BREADCRUMB -->
+<nav class="bc">
+  <div class="wrap bc-inner">
+    <a href="/">Home</a>
+    <i data-lucide="chevron-right"></i>
+    <a href="services.html">Services</a>
+    <i data-lucide="chevron-right"></i>
+    <span>Parts &amp; Accessories</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner fade-up">
+      <div class="hero-badge"><i data-lucide="package"></i>ICE · EV · Hybrid</div>
+      <h1>Vehicle Parts<br>&amp; <em>Accessories</em></h1>
+      <p class="hero-desc">Genuine OEM, aftermarket, and refurbished parts sourced for your vehicle. Tell us what you need — we find it, verify fitment, and deliver to your door.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Genuine OEM available</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>ICE, EV &amp; Hybrid parts</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Fitment verified by vehicle</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Installation available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAV STRIP -->
+<div class="nav-strip">
+  <div class="wrap" style="padding:0">
+    <div class="nav-strip-inner">
+      <div class="nav-item" onclick="document.getElementById('parts').scrollIntoView({behavior:'smooth'})">
+        <i data-lucide="settings-2"></i>
+        <div class="nav-item-name">Vehicle Parts</div>
+        <div class="nav-item-sub">OEM, aftermarket, refurbished</div>
+      </div>
+      <div class="nav-item" onclick="document.getElementById('accessories').scrollIntoView({behavior:'smooth'})">
+        <i data-lucide="sparkles"></i>
+        <div class="nav-item-name">Accessories</div>
+        <div class="nav-item-sub">Universal &amp; EV-specific</div>
+      </div>
+      <div class="nav-item" onclick="document.getElementById('ev-parts').scrollIntoView({behavior:'smooth'})">
+        <i data-lucide="zap"></i>
+        <div class="nav-item-name">EV &amp; Hybrid Parts</div>
+        <div class="nav-item-sub">Battery, motor, charging</div>
+      </div>
+      <div class="nav-item" onclick="document.getElementById('request').scrollIntoView({behavior:'smooth'})">
+        <i data-lucide="send"></i>
+        <div class="nav-item-name">Request a Part</div>
+        <div class="nav-item-sub">Submit your requirement</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PART CONDITIONS -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="layers"></i>What We Source</div>
+    <h2 class="sec-title">Three types of <em>parts</em></h2>
+    <p class="sec-sub">Choose the right type based on your budget, vehicle age, and whether the car is under warranty.</p>
+    <div class="cond-grid">
+      <div class="cond-card">
+        <i data-lucide="badge-check"></i>
+        <div class="cond-title">Genuine OEM</div>
+        <div class="cond-desc">Original parts made by or for the vehicle manufacturer. Exact fit guaranteed. Required for vehicles under warranty.</div>
+      </div>
+      <div class="cond-card">
+        <i data-lucide="package-2"></i>
+        <div class="cond-title">Aftermarket</div>
+        <div class="cond-desc">Third-party parts made to match or exceed OEM specification. More affordable, widely available, suitable for out-of-warranty vehicles.</div>
+      </div>
+      <div class="cond-card">
+        <i data-lucide="recycle"></i>
+        <div class="cond-title">Refurbished</div>
+        <div class="cond-desc">Used parts that have been professionally cleaned, tested, and restored. Good value for older vehicles where new parts are expensive or unavailable.</div>
+      </div>
+    </div>
+    <div class="notice">
+      <i data-lucide="info"></i>
+      <div>
+        <div class="notice-title">Not sure which type is right for you?</div>
+        <div class="notice-text">Mention your vehicle and the part needed in the request form. We will advise on the best option based on your car's age, warranty status, and budget.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ICE / HEV PARTS -->
+<section class="section alt" id="parts">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="settings-2"></i>Vehicle Parts</div>
+    <h2 class="sec-title">Parts for Petrol, Diesel<br>&amp; <em>Hybrid vehicles</em></h2>
+    <p class="sec-sub">All major component categories — engine to body, electrical to fluids.</p>
+
+    <!-- Engine & Powertrain -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="cog"></i><div class="cat-header-title">Engine &amp; Powertrain</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Engine block / assembly</div>
+        <div class="part-row"><i data-lucide="circle"></i>Cylinder head</div>
+        <div class="part-row"><i data-lucide="circle"></i>Pistons, piston rings, connecting rods</div>
+        <div class="part-row"><i data-lucide="circle"></i>Crankshaft, camshaft, timing belt/chain</div>
+        <div class="part-row"><i data-lucide="circle"></i>Valve train (valves, springs, rocker arms)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Engine mounts</div>
+        <div class="part-row"><i data-lucide="circle"></i>Oil pump &amp; oil pan</div>
+        <div class="part-row"><i data-lucide="circle"></i>Engine sensors (O2, temp, MAP, etc.)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Engine Control Unit (ECU)</div>
+      </div>
+    </div>
+
+    <!-- Transmission & Clutch -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="git-branch"></i><div class="cat-header-title">Transmission &amp; Clutch</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Manual gearbox / transmission</div>
+        <div class="part-row"><i data-lucide="circle"></i>Automatic transmission (CVT, torque converter, AMT)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Clutch kit (plate, pressure plate, release bearing)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Flywheel / dual-mass flywheel</div>
+        <div class="part-row"><i data-lucide="circle"></i>Gear shift lever &amp; linkages</div>
+        <div class="part-row"><i data-lucide="circle"></i>Transmission mounts</div>
+        <div class="part-row"><i data-lucide="circle"></i>Torque converter</div>
+        <div class="part-row"><i data-lucide="circle"></i>Transmission oil</div>
+      </div>
+    </div>
+
+    <!-- Braking System -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="circle-dot"></i><div class="cat-header-title">Braking System</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Brake pads &amp; brake shoes</div>
+        <div class="part-row"><i data-lucide="circle"></i>Brake rotors &amp; brake drums</div>
+        <div class="part-row"><i data-lucide="circle"></i>Calipers, brake lines &amp; hoses</div>
+        <div class="part-row"><i data-lucide="circle"></i>Master cylinder</div>
+        <div class="part-row"><i data-lucide="circle"></i>Brake booster / servo</div>
+        <div class="part-row"><i data-lucide="circle"></i>ABS module &amp; wheel sensors</div>
+        <div class="part-row"><i data-lucide="circle"></i>Brake fluid reservoir</div>
+      </div>
+    </div>
+
+    <!-- Suspension & Steering -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="move-horizontal"></i><div class="cat-header-title">Suspension &amp; Steering</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Shock absorbers / struts</div>
+        <div class="part-row"><i data-lucide="circle"></i>Coil springs / leaf springs</div>
+        <div class="part-row"><i data-lucide="circle"></i>Control arms &amp; ball joints</div>
+        <div class="part-row"><i data-lucide="circle"></i>Strut mounts &amp; stabilizer links</div>
+        <div class="part-row"><i data-lucide="circle"></i>Steering rack &amp; pinion</div>
+        <div class="part-row"><i data-lucide="circle"></i>Power steering pump / motor</div>
+        <div class="part-row"><i data-lucide="circle"></i>Steering column</div>
+        <div class="part-row"><i data-lucide="circle"></i>Tie rods, idler arm, pitman arm</div>
+      </div>
+    </div>
+
+    <!-- Cooling System -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="thermometer"></i><div class="cat-header-title">Cooling System</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Radiator &amp; radiator fan</div>
+        <div class="part-row"><i data-lucide="circle"></i>Thermostat</div>
+        <div class="part-row"><i data-lucide="circle"></i>Water pump</div>
+        <div class="part-row"><i data-lucide="circle"></i>Radiator hoses &amp; clamps</div>
+        <div class="part-row"><i data-lucide="circle"></i>Coolant expansion tank</div>
+        <div class="part-row"><i data-lucide="circle"></i>Fan switch / relay / control module</div>
+        <div class="part-row"><i data-lucide="circle"></i>Heater core</div>
+      </div>
+    </div>
+
+    <!-- Electrical & Electronics -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="zap"></i><div class="cat-header-title">Electrical &amp; Electronics</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Alternator</div>
+        <div class="part-row"><i data-lucide="circle"></i>Starter motor</div>
+        <div class="part-row"><i data-lucide="circle"></i>Ignition coil / distributor</div>
+        <div class="part-row"><i data-lucide="circle"></i>Battery (12V)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Wiring harness</div>
+        <div class="part-row"><i data-lucide="circle"></i>Fuses, relays, control units</div>
+        <div class="part-row"><i data-lucide="circle"></i>Central locking system</div>
+        <div class="part-row"><i data-lucide="circle"></i>Immobilizer / anti-theft module</div>
+      </div>
+    </div>
+
+    <!-- Fuel System -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="fuel"></i><div class="cat-header-title">Fuel System</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Fuel tank</div>
+        <div class="part-row"><i data-lucide="circle"></i>Fuel pump (mechanical / electric)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Fuel injectors</div>
+        <div class="part-row"><i data-lucide="circle"></i>Fuel rail</div>
+        <div class="part-row"><i data-lucide="circle"></i>Fuel filter</div>
+        <div class="part-row"><i data-lucide="circle"></i>Fuel pressure regulator</div>
+        <div class="part-row"><i data-lucide="circle"></i>Carburetor (older models)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Fuel lines</div>
+      </div>
+    </div>
+
+    <!-- Exhaust -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="wind"></i><div class="cat-header-title">Exhaust System</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Exhaust manifold</div>
+        <div class="part-row"><i data-lucide="circle"></i>Catalytic converter</div>
+        <div class="part-row"><i data-lucide="circle"></i>Muffler / silencer</div>
+        <div class="part-row"><i data-lucide="circle"></i>Resonator</div>
+        <div class="part-row"><i data-lucide="circle"></i>Exhaust pipes</div>
+        <div class="part-row"><i data-lucide="circle"></i>Oxygen sensors (O2 / Lambda)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Exhaust hangers &amp; gaskets</div>
+      </div>
+    </div>
+
+    <!-- Body & Glass -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="car"></i><div class="cat-header-title">Body, Structural &amp; Glass</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Chassis frame / subframe</div>
+        <div class="part-row"><i data-lucide="circle"></i>Hood, trunk, doors, fenders</div>
+        <div class="part-row"><i data-lucide="circle"></i>Bumper reinforcement bars</div>
+        <div class="part-row"><i data-lucide="circle"></i>Roof panels &amp; side panels</div>
+        <div class="part-row"><i data-lucide="circle"></i>Door hinges &amp; latches</div>
+        <div class="part-row"><i data-lucide="circle"></i>Windshield</div>
+        <div class="part-row"><i data-lucide="circle"></i>Rear window / tailgate glass</div>
+        <div class="part-row"><i data-lucide="circle"></i>Side windows</div>
+        <div class="part-row"><i data-lucide="circle"></i>Outside rear view mirrors (ORVMs)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Inside rear view mirror (IRVM)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Window regulators</div>
+        <div class="part-row"><i data-lucide="circle"></i>Wiper motor, wiper arms, blades</div>
+      </div>
+    </div>
+
+    <!-- Filters & Fluids -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="droplets"></i><div class="cat-header-title">Filters &amp; Fluids</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Engine air filter</div>
+        <div class="part-row"><i data-lucide="circle"></i>Cabin air filter (pollen filter)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Oil filter</div>
+        <div class="part-row"><i data-lucide="circle"></i>Transmission filter (auto gearboxes)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Engine oil</div>
+        <div class="part-row"><i data-lucide="circle"></i>Gear oil / transmission fluid</div>
+        <div class="part-row"><i data-lucide="circle"></i>Coolant / antifreeze</div>
+        <div class="part-row"><i data-lucide="circle"></i>Brake fluid (DOT 3 / DOT 4)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Power steering fluid</div>
+        <div class="part-row"><i data-lucide="circle"></i>Greases (chassis, bearing, electrical)</div>
+      </div>
+    </div>
+
+    <!-- Wheels & Tyres -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="circle"></i><div class="cat-header-title">Wheels &amp; Tyres</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Steel / alloy rims</div>
+        <div class="part-row"><i data-lucide="circle"></i>Tyres (tubeless / radial)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Wheel hub</div>
+        <div class="part-row"><i data-lucide="circle"></i>Wheel bearings</div>
+        <div class="part-row"><i data-lucide="circle"></i>Lug nuts</div>
+        <div class="part-row"><i data-lucide="circle"></i>TPMS sensors</div>
+        <div class="part-row"><i data-lucide="circle"></i>Wheel covers / center caps</div>
+      </div>
+    </div>
+
+    <!-- Interior & Sensors -->
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="layout-dashboard"></i><div class="cat-header-title">Interior, HVAC &amp; Sensors</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Dashboard</div>
+        <div class="part-row"><i data-lucide="circle"></i>Center console</div>
+        <div class="part-row"><i data-lucide="circle"></i>Seats, seat belts, adjusters</div>
+        <div class="part-row"><i data-lucide="circle"></i>Floor carpet &amp; mats</div>
+        <div class="part-row"><i data-lucide="circle"></i>Interior door panels</div>
+        <div class="part-row"><i data-lucide="circle"></i>Gear knob, handbrake lever</div>
+        <div class="part-row"><i data-lucide="circle"></i>A/C compressor</div>
+        <div class="part-row"><i data-lucide="circle"></i>A/C condenser &amp; evaporator</div>
+        <div class="part-row"><i data-lucide="circle"></i>Heater core &amp; blower motor</div>
+        <div class="part-row"><i data-lucide="circle"></i>A/C control panel &amp; temp sensors</div>
+        <div class="part-row"><i data-lucide="circle"></i>Engine sensors (O2, MAP, knock, etc.)</div>
+        <div class="part-row"><i data-lucide="circle"></i>ABS, parking, airbag sensors</div>
+        <div class="part-row"><i data-lucide="circle"></i>ECU, TCU, BCM control units</div>
+        <div class="part-row"><i data-lucide="circle"></i>Reverse camera &amp; radar sensors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EV / HYBRID PARTS -->
+<section class="section" id="ev-parts">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="zap"></i>EV &amp; Hybrid Parts</div>
+    <h2 class="sec-title">Parts specific to<br><em>electric &amp; hybrid vehicles</em></h2>
+    <p class="sec-sub">EV and hybrid components require specialist sourcing. We work with suppliers experienced in high-voltage systems and battery technology.</p>
+
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="zap"></i><div class="cat-header-title">Electric Powertrain</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Electric motor</div>
+        <div class="part-row"><i data-lucide="circle"></i>Motor controller</div>
+        <div class="part-row"><i data-lucide="circle"></i>Inverter</div>
+        <div class="part-row"><i data-lucide="circle"></i>Power electronics module</div>
+        <div class="part-row"><i data-lucide="circle"></i>Motor mounts</div>
+        <div class="part-row"><i data-lucide="circle"></i>Reduction gearbox</div>
+        <div class="part-row"><i data-lucide="circle"></i>Driveshafts &amp; half shafts</div>
+        <div class="part-row"><i data-lucide="circle"></i>Regenerative braking module</div>
+        <div class="part-row"><i data-lucide="circle"></i>Motor temperature sensor &amp; encoder</div>
+      </div>
+    </div>
+
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="battery-charging"></i><div class="cat-header-title">Battery &amp; Charging System</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>High-voltage battery pack</div>
+        <div class="part-row"><i data-lucide="circle"></i>Battery Management System (BMS)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Battery cooling plate</div>
+        <div class="part-row"><i data-lucide="circle"></i>Battery contactor &amp; HV fuse</div>
+        <div class="part-row"><i data-lucide="circle"></i>Onboard charger (AC)</div>
+        <div class="part-row"><i data-lucide="circle"></i>DC fast charging module</div>
+        <div class="part-row"><i data-lucide="circle"></i>Charging port</div>
+        <div class="part-row"><i data-lucide="circle"></i>Charging cable</div>
+        <div class="part-row"><i data-lucide="circle"></i>State of Charge (SOC) sensor</div>
+        <div class="part-row"><i data-lucide="circle"></i>Charging control unit</div>
+      </div>
+    </div>
+
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="cpu"></i><div class="cat-header-title">Electrical &amp; Control Modules</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Vehicle Control Unit (VCU)</div>
+        <div class="part-row"><i data-lucide="circle"></i>Power Distribution Unit (PDU)</div>
+        <div class="part-row"><i data-lucide="circle"></i>DC-DC converter</div>
+        <div class="part-row"><i data-lucide="circle"></i>Low-voltage battery (12V)</div>
+        <div class="part-row"><i data-lucide="circle"></i>High-voltage wiring harness</div>
+        <div class="part-row"><i data-lucide="circle"></i>High-voltage connectors</div>
+        <div class="part-row"><i data-lucide="circle"></i>Isolation monitor</div>
+        <div class="part-row"><i data-lucide="circle"></i>Safety interlock loop</div>
+        <div class="part-row"><i data-lucide="circle"></i>CAN Bus module</div>
+        <div class="part-row"><i data-lucide="circle"></i>High-voltage fuse box</div>
+      </div>
+    </div>
+
+    <div class="cat-section">
+      <div class="cat-header"><i data-lucide="thermometer"></i><div class="cat-header-title">Cooling &amp; Thermal Management</div></div>
+      <div class="parts-list">
+        <div class="part-row"><i data-lucide="circle"></i>Liquid-cooled radiator</div>
+        <div class="part-row"><i data-lucide="circle"></i>Electric coolant pump</div>
+        <div class="part-row"><i data-lucide="circle"></i>Inverter &amp; motor coolant lines</div>
+        <div class="part-row"><i data-lucide="circle"></i>Coolant expansion reservoir</div>
+        <div class="part-row"><i data-lucide="circle"></i>Thermal sensors &amp; control ECU</div>
+        <div class="part-row"><i data-lucide="circle"></i>Heat pump system</div>
+        <div class="part-row"><i data-lucide="circle"></i>High-voltage A/C compressor</div>
+        <div class="part-row"><i data-lucide="circle"></i>PTC heater &amp; electric heater</div>
+        <div class="part-row"><i data-lucide="circle"></i>EV coolant &amp; thermal fluids</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESSORIES -->
+<section class="section alt" id="accessories">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="sparkles"></i>Accessories</div>
+    <h2 class="sec-title">Universal &amp; <em>EV-specific</em></h2>
+    <p class="sec-sub">Accessories that work across all vehicle types, plus specialist items for EV and hybrid owners.</p>
+
+    <div style="font-size:13px;font-weight:800;color:var(--ink2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:20px">Universal — all vehicle types</div>
+
+    <div class="acc-group">
+      <div class="acc-group-header"><i data-lucide="car"></i><div class="acc-group-title">Exterior</div></div>
+      <div class="acc-list">
+        <div class="acc-row"><i data-lucide="minus"></i>Car covers</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Sun shades &amp; window visors</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Mud flaps &amp; splash guards</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Spoilers &amp; body kits</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Roof racks &amp; carriers</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Tow hooks &amp; towing accessories</div>
+        <div class="acc-row"><i data-lucide="minus"></i>License plate frames</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Antennas</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Exterior trim &amp; molding</div>
+      </div>
+    </div>
+
+    <div class="acc-group">
+      <div class="acc-group-header"><i data-lucide="sofa"></i><div class="acc-group-title">Interior</div></div>
+      <div class="acc-list">
+        <div class="acc-row"><i data-lucide="minus"></i>Seat covers</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Floor mats / carpets</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Steering wheel covers</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Dashboard covers &amp; mats</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Sunshades &amp; curtains</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Organizer &amp; storage solutions</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Air fresheners</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Armrests &amp; console accessories</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Pillows &amp; cushions</div>
+      </div>
+    </div>
+
+    <div class="acc-group">
+      <div class="acc-group-header"><i data-lucide="smartphone"></i><div class="acc-group-title">Comfort &amp; Convenience</div></div>
+      <div class="acc-list">
+        <div class="acc-row"><i data-lucide="minus"></i>Mobile phone holders &amp; mounts</div>
+        <div class="acc-row"><i data-lucide="minus"></i>USB chargers &amp; power adapters</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Car vacuum cleaners</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Portable refrigerators / coolers</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Travel pillows &amp; blankets</div>
+        <div class="acc-row"><i data-lucide="minus"></i>LED interior lighting kits</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Seat heaters &amp; massagers</div>
+      </div>
+    </div>
+
+    <div class="acc-group">
+      <div class="acc-group-header"><i data-lucide="shield-check"></i><div class="acc-group-title">Safety &amp; Security</div></div>
+      <div class="acc-list">
+        <div class="acc-row"><i data-lucide="minus"></i>Car alarms &amp; immobilizers</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Parking sensors &amp; cameras</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Dash cameras</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Fire extinguishers</div>
+        <div class="acc-row"><i data-lucide="minus"></i>First aid kits</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Emergency roadside kits</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Seat belt pads &amp; covers</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Child safety seats &amp; boosters</div>
+      </div>
+    </div>
+
+    <div class="acc-group">
+      <div class="acc-group-header"><i data-lucide="lightbulb"></i><div class="acc-group-title">Lighting</div></div>
+      <div class="acc-list">
+        <div class="acc-row"><i data-lucide="minus"></i>Headlight bulbs (halogen, LED, HID)</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Fog lights &amp; DRL</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Interior LED lighting strips</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Underbody neon lights</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Tail light covers &amp; guards</div>
+      </div>
+    </div>
+
+    <div class="acc-group">
+      <div class="acc-group-header"><i data-lucide="music"></i><div class="acc-group-title">Entertainment</div></div>
+      <div class="acc-list">
+        <div class="acc-row"><i data-lucide="minus"></i>Car audio systems (speakers, subwoofers, amplifiers)</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Multimedia players &amp; screens</div>
+        <div class="acc-row"><i data-lucide="minus"></i>USB &amp; AUX cables</div>
+        <div class="acc-row"><i data-lucide="minus"></i>FM transmitters</div>
+        <div class="acc-row"><i data-lucide="minus"></i>TV tuners &amp; rear screens</div>
+      </div>
+    </div>
+
+    <div class="acc-group">
+      <div class="acc-group-header"><i data-lucide="spray-can"></i><div class="acc-group-title">Cleaning &amp; Maintenance</div></div>
+      <div class="acc-list">
+        <div class="acc-row"><i data-lucide="minus"></i>Wax &amp; polishes</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Tyre cleaners &amp; dressings</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Upholstery cleaners</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Detailing brushes &amp; tools</div>
+      </div>
+    </div>
+
+    <div style="font-size:13px;font-weight:800;color:var(--ink2);text-transform:uppercase;letter-spacing:.5px;margin:36px 0 20px;padding-top:32px;border-top:1px solid var(--border)">EV &amp; Hybrid specific accessories</div>
+
+    <div class="acc-group">
+      <div class="acc-group-header"><i data-lucide="plug-zap"></i><div class="acc-group-title">Electrical &amp; Charging</div></div>
+      <div class="acc-list">
+        <div class="acc-row"><i data-lucide="minus"></i>EV charging cables &amp; adapters</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Portable EV battery chargers</div>
+        <div class="acc-row"><i data-lucide="minus"></i>EV / PHEV onboard charger accessories</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Battery coolants &amp; thermal fluids</div>
+        <div class="acc-row"><i data-lucide="minus"></i>DC fast charger connectors &amp; adaptors</div>
+      </div>
+    </div>
+
+    <div class="acc-group">
+      <div class="acc-group-header"><i data-lucide="battery"></i><div class="acc-group-title">Battery &amp; Powertrain</div></div>
+      <div class="acc-list">
+        <div class="acc-row"><i data-lucide="minus"></i>High-voltage battery covers &amp; guards</div>
+        <div class="acc-row"><i data-lucide="minus"></i>EV motor cooling system parts</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Regenerative braking system accessories</div>
+      </div>
+    </div>
+
+    <div class="acc-group">
+      <div class="acc-group-header"><i data-lucide="cpu"></i><div class="acc-group-title">Software &amp; Connectivity</div></div>
+      <div class="acc-list">
+        <div class="acc-row"><i data-lucide="minus"></i>EV / HEV-specific diagnostic tools &amp; OBD adapters</div>
+        <div class="acc-row"><i data-lucide="minus"></i>Mobile app interface dongles for battery management</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUEST FORM -->
+<section class="form-section" id="request">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="eyebrow" style="justify-content:center"><i data-lucide="send"></i>Request a Part</div>
+      <h2 class="sec-title" style="text-align:center">Tell us what you <em>need</em></h2>
+      <p style="font-size:14.5px;color:var(--ink4);max-width:460px;margin:0 auto;line-height:1.7">Fill in the details below. We check availability, confirm fitment, and get back to you with pricing and delivery options.</p>
+    </div>
+    <div class="form-wrap">
+      <div class="form-header">
+        <h3>Parts &amp; Accessories Request</h3>
+        <p>Fields marked * are required. We confirm availability within one business day.</p>
+      </div>
+      <div class="form-body">
+        <form onsubmit="handleSubmit(event)">
+
+          <!-- What are you looking for -->
+          <div class="form-sec-title" style="border-top:none;padding-top:0;margin-top:0"><i data-lucide="package"></i>What are you looking for?</div>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
+            <div>
+              <div class="form-label" style="margin-bottom:6px">Request Type <span>*</span></div>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="req_type" value="parts" checked>Parts</label>
+                <label class="radio-option"><input type="radio" name="req_type" value="accessories">Accessories</label>
+                <label class="radio-option"><input type="radio" name="req_type" value="both">Both</label>
+              </div>
+            </div>
+            <div>
+              <div class="form-label" style="margin-bottom:6px">Type of Item <span>*</span></div>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="item_type" value="oem" checked>Genuine OEM</label>
+                <label class="radio-option"><input type="radio" name="item_type" value="aftermarket">Aftermarket</label>
+                <label class="radio-option"><input type="radio" name="item_type" value="refurbished">Refurbished</label>
+                <label class="radio-option"><input type="radio" name="item_type" value="unsure">Not Sure</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid" style="margin-top:14px">
+            <div class="form-group full">
+              <label class="form-label">Item Name or Description <span>*</span></label>
+              <textarea class="form-textarea" placeholder="e.g. Brake pad set for rear axle, alloy wheel 16 inch, EV charging cable Type-2…" required style="min-height:72px"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Part Code (if known)</label>
+              <input class="form-input" type="text" placeholder="OEM or aftermarket part number">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Quantity <span>*</span></label>
+              <input class="form-input" type="number" min="1" value="1" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Is installation needed?</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="install" value="yes">Yes</label>
+                <label class="radio-option"><input type="radio" name="install" value="no" checked>No</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vehicle Details -->
+          <div class="form-sec-title"><i data-lucide="car"></i>Vehicle Details</div>
+          <div class="form-grid" style="margin-top:10px">
+            <div class="form-group">
+              <label class="form-label">Vehicle Brand <span>*</span></label>
+              <input class="form-input" type="text" placeholder="e.g. Hyundai, Toyota, MG" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Model Name <span>*</span></label>
+              <input class="form-input" type="text" placeholder="e.g. Creta, Prius, ZS EV" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Variant / Trim</label>
+              <input class="form-input" type="text" placeholder="e.g. SX Diesel MT">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Year of Manufacture <span>*</span></label>
+              <select class="form-select" required>
+                <option value="">Select Year</option>
+                <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+                <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
+                <option>2017</option><option>2016</option><option>2015</option><option>2014</option>
+                <option>2013</option><option>2012</option><option>2011</option><option>2010</option>
+                <option>2009 or older</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Fuel Type <span>*</span></label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="fuel" value="petrol" checked>Petrol</label>
+                <label class="radio-option"><input type="radio" name="fuel" value="diesel">Diesel</label>
+                <label class="radio-option"><input type="radio" name="fuel" value="ev">EV</label>
+                <label class="radio-option"><input type="radio" name="fuel" value="hybrid">Hybrid</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Vehicle Photo (optional)</label>
+              <input class="form-input" type="file" accept="image/*" style="padding:8px 12px;font-size:13px">
+            </div>
+          </div>
+
+          <!-- Contact & Delivery -->
+          <div class="form-sec-title"><i data-lucide="user"></i>Contact &amp; Delivery</div>
+          <div class="form-grid" style="margin-top:10px">
+            <div class="form-group">
+              <label class="form-label">Full Name <span>*</span></label>
+              <input class="form-input" type="text" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mobile Number <span>*</span></label>
+              <input class="form-input" type="tel" placeholder="+977 98XXXXXXXX" required>
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Delivery Address <span>*</span></label>
+              <input class="form-input" type="text" placeholder="Full address for delivery" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email (optional)</label>
+              <input class="form-input" type="email" placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Delivery Method</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="delivery" value="home" checked>Home Delivery</label>
+                <label class="radio-option"><input type="radio" name="delivery" value="pickup">I will pick up</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Confirm -->
+          <div style="margin-top:22px;display:flex;flex-direction:column;gap:10px">
+            <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer">
+              <input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">
+              I confirm the vehicle details provided are accurate.
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer">
+              <input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">
+              I agree to AutoViindu's terms for parts sales.
+            </label>
+          </div>
+
+          <button class="form-submit" type="submit">Submit Request</button>
+          <div class="form-note">We confirm availability within one business day. Mon–Sat · 9am–6pm NST</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  lucide.createIcons();
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Request submitted. We will confirm availability shortly.';
+    btn.style.background = 'var(--green-d)';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
