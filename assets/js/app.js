@@ -287,67 +287,58 @@ const BUDGETS = [
   },
 ];
 
-const OFFERS=[
+const OFFERS = [
   {
-    icon:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M20 12v10H4V12"/>
-      <path d="M22 7H2v5h20V7z"/>
-      <path d="M12 22V7"/>
-      <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
-      <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-    </svg>`,
-    color:'#1a6b2a',bg:'rgba(26,107,42,.2)',iconBg:'rgba(26,107,42,.3)',
-    title:'Rs. 2.5L Cashback',desc:'On select Hyundai & Kia models this festival season',
-    tag:'Limited Time',tagBg:'rgba(26,107,42,.4)',tagColor:'#4dd870'
+    title: 'Extended Warranty',
+    color: '#4CAF72', iconBg: 'rgba(76,175,114,.18)',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
   },
   {
-    icon:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-      <path d="M14.615 1.595a.75.75 0 0 1 .36.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143z"/>
-    </svg>`,
-    color:'#0e8577',bg:'rgba(14,133,119,.15)',iconBg:'rgba(14,133,119,.25)',
-    title:'Free Home EV Charger',desc:'Buy any electric car and get a 7kW home charger installed free',
-    tag:'EV Special',tagBg:'rgba(14,133,119,.3)',tagColor:'#3dcba5'
+    title: 'Free Pickup / Drop',
+    color: '#6aadff', iconBg: 'rgba(100,160,255,.15)',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`
   },
   {
-    icon:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-      <polyline points="9 12 11 14 15 10"/>
-    </svg>`,
-    color:'#1a4db8',bg:'rgba(26,77,184,.15)',iconBg:'rgba(26,77,184,.25)',
-    title:'5-Year Warranty',desc:'Extended Toyota warranty packages available this quarter',
-    tag:'Toyota Only',tagBg:'rgba(26,77,184,.3)',tagColor:'#6b9eff'
+    title: 'Ceramic / Underbody',
+    color: '#FFBE50', iconBg: 'rgba(255,190,80,.15)',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`
   },
   {
-    icon:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2" y="5" width="20" height="14" rx="2"/>
-      <line x1="2" y1="10" x2="22" y2="10"/>
-      <line x1="7" y1="15" x2="10" y2="15"/>
-      <line x1="14" y1="15" x2="17" y2="15"/>
-    </svg>`,
-    color:'#c49a1e',bg:'rgba(196,154,30,.15)',iconBg:'rgba(196,154,30,.25)',
-    title:'0% EMI for 12 Months',desc:'Zero interest financing on top models with select bank partners',
-    tag:'Finance Deal',tagBg:'rgba(196,154,30,.3)',tagColor:'#ffd166'
+    title: 'Dashcam Install',
+    color: '#c882ff', iconBg: 'rgba(200,130,255,.15)',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`
   },
   {
-    icon:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M7 16V4m0 0L3 8m4-4 4 4"/>
-      <path d="M17 8v12m0 0 4-4m-4 4-4-4"/>
-      <line x1="3" y1="12" x2="21" y2="12" stroke-dasharray="3 3"/>
-    </svg>`,
-    color:'#d63031',bg:'rgba(214,48,49,.15)',iconBg:'rgba(214,48,49,.25)',
-    title:'Trade-in Bonus Rs. 1L',desc:'Exchange your old car and get Rs. 1L bonus value on your next purchase',
-    tag:'Exchange Offer',tagBg:'rgba(214,48,49,.3)',tagColor:'#ff8a80'
+    title: 'Paint Film (PPF)',
+    color: '#50d2b4', iconBg: 'rgba(80,210,180,.15)',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`
   },
   {
-    icon:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l2.9-2.9a5.002 5.002 0 0 1-5.9 7.4L7.4 20.3a2.12 2.12 0 0 1-3-3l6.2-6.2a5.002 5.002 0 0 1 7.4-5.9l-2.9 2.9z"/>
-    </svg>`,
-    color:'#6b35c7',bg:'rgba(107,53,199,.15)',iconBg:'rgba(107,53,199,.25)',
-    title:'Free 3-Year Service',desc:'Complimentary scheduled maintenance included with MG purchases',
-    tag:'MG Offer',tagBg:'rgba(107,53,199,.3)',tagColor:'#c0a0ff'
+    title: 'Loan Fee Waiver',
+    color: '#ff6464', iconBg: 'rgba(255,100,100,.15)',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`
   },
+  {
+    title: 'Festival Bonus',
+    color: '#FFC83C', iconBg: 'rgba(255,200,60,.15)',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`
+  },
+  {
+    title: 'Fuel Voucher',
+    color: '#4CAF72', iconBg: 'rgba(76,175,114,.18)',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14"/><path d="M2 22h14M13 6V2h2l4 4v10a2 2 0 0 1-2 2v0"/><path d="M13 10h4"/></svg>`
+  },
+  {
+    title: 'Free Accessories',
+    color: '#6aadff', iconBg: 'rgba(100,160,255,.15)',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>`
+  },
+  {
+    title: 'Referral Bonus',
+    color: '#FFBE50', iconBg: 'rgba(255,190,80,.15)',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`
+  }
 ];
-
 let heroIdx=0;
 
 function renderHome(){
@@ -441,6 +432,7 @@ function renderHome(){
     </div>
   </div>
 </div>
+
 
   <!-- SEARCH WIDGET -->
   <div class="section" style="padding:32px 0">
@@ -639,37 +631,27 @@ ${BRANDS.map(b=>`<div class="brand-card" onclick="AV.goTo('cars',{brand:'${b.nam
   </div>
 </div>
 
- <!-- OFFERS & DEALS -->
-  <section class="section offers-section">
-    <div class="wrap">
-      <div class="sec-hd" style="text-align:center;flex-direction:column;align-items:center">
-        <div class="sec-hd-left" style="align-items:center">
-          <div class="eyebrow" style="justify-content:center">Current Promotions</div>
-          <h2 class="sec-title">Exclusive Offers & Deals</h2>
-          <div class="sec-sub">Get up to 15% OFF with AutoViindu on New Cars</div>
-        </div>
-      </div>
-      <div class="offers-grid">
-        ${OFFERS.map(o=>`<div class="offer-card" onclick="AV.goTo('cars')">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px">
-            <div class="offer-icon-wrap" style="background:${o.iconBg};color:${o.color};width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0">${o.icon}</div>
-            <span class="offer-tag" style="background:${o.tagBg};color:${o.tagColor}">${o.tag}</span>
-          </div>
-          <div class="offer-title">${o.title}</div>
-          <div class="offer-desc">${o.desc}</div>
-          <div style="margin-top:auto;padding-top:14px;display:flex;justify-content:flex-end">
-            <div style="width:30px;height:30px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all var(--ease)">
-              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.5" width="12" height="12"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-            </div>
-          </div>
-        </div>`).join('')}
-      </div>
-      <div style="text-align:center;margin-top:36px">
-        <p style="font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;max-width:460px;margin:0 auto 20px">Discover our range of offers designed to meet all your car-buying needs. From cashbacks to flexible EMI plans.</p>
-        <button onclick="AV.goTo('cars')" class="btn btn-primary" style="border-radius:99px;padding:12px 28px;font-size:14px">View All Offers &nbsp;→</button>
+ <section class="section offers-section">
+  <div class="wrap">
+    <div class="sec-hd" style="text-align:center;flex-direction:column;align-items:center">
+      <div class="sec-hd-left" style="align-items:center">
+        <div class="eyebrow" style="justify-content:center">Current Promotions</div>
+        <h2 class="sec-title">Exclusive Offers & Deals</h2>
+        <div class="sec-sub">Benefits you get when you buy through AutoViindu</div>
       </div>
     </div>
-  </section>
+    <div class="offers-scroll-wrap">
+      <div class="offers-chip-rail">
+        ${OFFERS.map(o => `
+          <div class="offer-chip" onclick="AV.goTo('cars')">
+            <div class="offer-chip-icon" style="background:${o.iconBg};color:${o.color}">${o.icon}</div>
+            <span class="offer-chip-lbl">${o.title}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- EV SPOTLIGHT -->
   <section class="section ev-section">
@@ -736,151 +718,78 @@ ${BRANDS.map(b=>`<div class="brand-card" onclick="AV.goTo('cars',{brand:'${b.nam
     </div>
   </section>
 
- <!-- SERVICES REDESIGN -->
-<section class="svc-section">
-  <div class="wrap">
+
+
+    <!-- Header -->
     <div class="svc-hd">
-      <div>
-        <div class="eyebrow">After-Sales Care</div>
-        <div class="svc-title">Services we offer</div>
-        <div class="svc-sub">Full-circle automotive care from our Kathmandu centre</div>
-      </div>
-     <button class="svc-all-btn" onclick="window.location.href='services.html'">All services &nbsp;→</button>
+      <div class="svc-eyebrow">After-Sales Care</div>
+      <div class="svc-title">Services We offer</div>
+      <div class="svc-sub">From buying your first car to maintaining its peak performance, we are with you at every step of the journey.</div>
     </div>
 
+    <!-- 4-card grid -->
     <div class="svc-grid">
 
       <!-- 1: DOTM -->
       <div class="svc-card" onclick="window.location.href='dotm-services.html'">
-        <div class="svc-arr">↗</div>
-        <div>
-          <div class="svc-icon" style="background:rgba(255,255,255,.05)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.5" width="16" height="16"><rect x="4" y="3" width="16" height="18" rx="2"/><polyline points="8 9 16 9"/><polyline points="8 13 16 13"/><polyline points="8 17 12 17"/></svg>
-          </div>
-          <div class="svc-name">DOTM Services</div>
-          <div class="svc-desc">Bluebook renewal, ownership transfer, fitness certificate & number plate — we handle all transport office paperwork.</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--g3)" stroke-width="1.8" width="22" height="22"><rect x="4" y="3" width="16" height="18" rx="2"/><polyline points="8 9 16 9"/><polyline points="8 13 16 13"/><polyline points="8 17 12 17"/></svg>
         </div>
-        <div class="svc-tags">
-          <span class="svc-tag svc-tag-d">Bluebook</span>
-          <span class="svc-tag svc-tag-d">Transfer</span>
-          <span class="svc-tag svc-tag-d">Fitness cert</span>
-        </div>
+        <div class="svc-name">DOTM Services</div>
+        <div class="svc-desc">Bluebook renewal, ownership transfer, and fitness test.</div>
+        <a class="svc-learn" href="dotm-services.html">Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
-      <!-- 2: Maintenance FEATURED -->
-      <div class="svc-card featured" onclick="window.location.href='maintenance-repairs.html'">
-        <div class="svc-arr">↗</div>
-        <div>
-          <div class="svc-icon" style="background:rgba(46,168,74,.15)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--g5)" stroke-width="1.5" width="16" height="16"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l2.9-2.9a5 5 0 0 1-5.9 7.4L7.4 20.3a2.12 2.12 0 0 1-3-3l6.2-6.2a5 5 0 0 1 7.4-5.9l-2.9 2.9z"/></svg>
-          </div>
-          <div class="svc-name">Maintenance & Repairs</div>
-          <div class="svc-desc">Scheduled servicing, engine tune-up, AC overhaul, EV battery diagnostics, wheel alignment & full suspension work.</div>
+      <!-- 2: Maintenance -->
+      <div class="svc-card" onclick="window.location.href='maintenance-repairs.html'">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--g3)" stroke-width="1.8" width="22" height="22"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l2.9-2.9a5 5 0 0 1-5.9 7.4L7.4 20.3a2.12 2.12 0 0 1-3-3l6.2-6.2a5 5 0 0 1 7.4-5.9l-2.9 2.9z"/></svg>
         </div>
-        <div class="svc-tags">
-          <span class="svc-tag svc-tag-g">Oil change</span>
-          <span class="svc-tag svc-tag-g">AC service</span>
-          <span class="svc-tag svc-tag-g">EV diagnostics</span>
-        </div>
+        <div class="svc-name">Maintenance & Repairs</div>
+        <div class="svc-desc">Expert servicing, engine diagnostics, and AC repair.</div>
+        <a class="svc-learn" href="maintenance-repairs.html">Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
-      <!-- 3: Book CTA — spans 2 rows -->
-      <div class="svc-card cta-card span-rows">
-        <div>
-          <div style="font-size:9.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px">Quick booking</div>
-          <div class="svc-cta-h">Drive in.<br><em>We handle</em> the rest.</div>
-          <div style="font-size:11.5px;color:rgba(255,255,255,.4);margin-top:8px;line-height:1.7">Walk-ins welcome Mon–Sat.<br>Nayabazar, Kathmandu.</div>
-          <div class="svc-cta-checks">
-            ${['140-point inspection','All brands covered','EV & hybrid trained'].map(t=>`
-            <div class="svc-cta-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--g5)" stroke-width="2.5" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg>
-              ${t}
-            </div>`).join('')}
-          </div>
-        </div>
-        <div>
-          <button class="svc-btn-primary" onclick="window.location.href='book-service.html'">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Book Appointment
-          </button>
-          <button class="svc-btn-ghost" onclick="alert('+977-9701076240')">+977-9701076240</button>
-          <div class="svc-hours">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Mon–Sat · 9 am – 6 pm
-          </div>
-        </div>
-      </div>
-
-      <!-- 4: Parts -->
+      <!-- 3: Genuine Parts -->
       <div class="svc-card" onclick="window.location.href='parts-accessories.html'">
-        <div class="svc-arr">↗</div>
-        <div>
-          <div class="svc-icon" style="background:rgba(196,154,30,.08)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" width="16" height="16"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          </div>
-          <div class="svc-name">Parts & Accessories</div>
-          <div class="svc-desc">Genuine OEM parts, alloy wheels, seat covers, dash cams, roof racks & body kits for every major brand in Nepal.</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--g3)" stroke-width="1.8" width="22" height="22"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
-        <div class="svc-tags">
-          <span class="svc-tag svc-tag-gold">Genuine OEM</span>
-          <span class="svc-tag svc-tag-d">Alloy wheels</span>
-          <span class="svc-tag svc-tag-d">Accessories</span>
-        </div>
+        <div class="svc-name">Genuine Parts & Accessories</div>
+        <div class="svc-desc">OEM parts and high-quality accessories for all brands.</div>
+        <a class="svc-learn" href="parts-accessories.html">Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
-      <!-- 5: Insurance & Financing -->
+      <!-- 4: Insurance -->
       <div class="svc-card" onclick="window.location.href='insurance-services.html'">
-        <div class="svc-arr">↗</div>
-        <div>
-          <div class="svc-icon" style="background:rgba(26,77,184,.12)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#6b9eff" stroke-width="1.5" width="16" height="16"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="7" y1="15" x2="10" y2="15"/><line x1="14" y1="15" x2="17" y2="15"/></svg>
-          </div>
-          <div class="svc-name">Insurance & Financing</div>
-          <div class="svc-desc">EMI plans, trade-in valuation & insurance — get the best deal before you drive away.</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--g3)" stroke-width="1.8" width="22" height="22"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="7" y1="15" x2="10" y2="15"/><line x1="14" y1="15" x2="17" y2="15"/></svg>
         </div>
-        <div class="svc-tags">
-          <span class="svc-tag svc-tag-d">EMI plans</span>
-          <span class="svc-tag svc-tag-d">Trade-in</span>
-          <span class="svc-tag svc-tag-d">Insurance</span>
-        </div>
+        <div class="svc-name">Insurance & Financing</div>
+        <div class="svc-desc">Best insurance plans and easy EMI financing options.</div>
+        <a class="svc-learn" href="insurance-services.html">Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
-
+      
+       <!-- 5: Other Services -->
+      <div class="svc-card" onclick="window.location.href='other-services.html'">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--g3)" stroke-width="1.8" width="22" height="22"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <div class="svc-name">Other Services</div>
+        <div class="svc-desc">Additional services to keep your vehicle in top condition.</div>
+        <a class="svc-learn" href="other-services.html">Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div><!-- /svc-grid -->
-
-    <!-- Footer row: Other Services -->
-    <div class="svc-footer-row" onclick="window.location.href='other-services.html'" style="cursor:pointer">
-      <div style="display:flex;align-items:center;gap:10px">
-        <div class="svc-footer-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--g5)" stroke-width="1.8" width="13" height="13"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14"/></svg>
-        </div>
-        <div>
-          <div class="svc-footer-name">Other Services</div>
-          <div class="svc-footer-sub">GPS tracking · Ceramic coat · Roadside assistance</div>
-        </div>
-      </div>
-      <div class="svc-tags">
-        <span class="svc-tag svc-tag-d">GPS</span>
-        <span class="svc-tag svc-tag-d">Ceramic coat</span>
-        <span class="svc-tag svc-tag-d">Roadside</span>
-        <span class="svc-tag svc-tag-g" style="cursor:pointer">View all →</span>
-      </div>
-    </div>
-
-    <!-- Stats strip -->
-    <div class="svc-stats" style="margin-top:12px">
-      <div class="svc-stat">
-        <div class="svc-stat-n">12<em>+</em></div>
-        <div class="svc-stat-l">Service types</div>
-      </div>
-      <div class="svc-stat">
-        <div class="svc-stat-n">2<em>hr</em></div>
-        <div class="svc-stat-l">Avg turnaround</div>
-      </div>
-      <div class="svc-stat">
-        <div class="svc-stat-n"><em>All</em> brands</div>
-        <div class="svc-stat-l">Petrol · Diesel · EV</div>
-      </div>
-    </div>
 
   </div>
 </section>
@@ -892,32 +801,40 @@ ${BRANDS.map(b=>`<div class="brand-card" onclick="AV.goTo('cars',{brand:'${b.nam
       <h2 class="sec-title">Nepal's most trusted car platform</h2>
     </div>
     <div class="why-rows">
-      ${[
-        {
-          img:`<svg viewBox="0 0 120 80" width="120" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" rx="10" fill="#e8f5ec"/><rect x="10" y="14" width="100" height="52" rx="6" fill="#fff" stroke="#c4daca" stroke-width="1"/><rect x="18" y="22" width="60" height="6" rx="3" fill="#2ea84a"/><rect x="18" y="32" width="45" height="4" rx="2" fill="#b8cdbf"/><rect x="18" y="40" width="50" height="4" rx="2" fill="#b8cdbf"/><circle cx="94" cy="42" r="14" fill="#e8f5ec" stroke="#2ea84a" stroke-width="1.5"/><path d="M88 42l4 4 8-8" stroke="#2ea84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="18" y="50" width="30" height="10" rx="3" fill="#1a6b2a"/><rect x="52" y="50" width="30" height="10" rx="3" fill="#e8f5ec" stroke="#2ea84a" stroke-width="1"/></svg>`,
-          title:'New Cars',
-          desc:'Get exclusive pricing and full specs across all brands in Nepal. Explore EMI plans tailored to your budget.',
-          link:'New Cars'
-        },
-        {
-          img:`<svg viewBox="0 0 120 80" width="120" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" rx="10" fill="#e8f5ec"/><rect x="10" y="10" width="45" height="60" rx="6" fill="#fff" stroke="#c4daca" stroke-width="1"/><rect x="65" y="10" width="45" height="60" rx="6" fill="#fff" stroke="#2ea84a" stroke-width="1.5"/><rect x="16" y="18" width="33" height="5" rx="2.5" fill="#b8cdbf"/><rect x="16" y="27" width="25" height="3" rx="1.5" fill="#dde8e2"/><rect x="16" y="33" width="28" height="3" rx="1.5" fill="#dde8e2"/><rect x="16" y="39" width="22" height="3" rx="1.5" fill="#dde8e2"/><rect x="71" y="18" width="33" height="5" rx="2.5" fill="#2ea84a"/><rect x="71" y="27" width="25" height="3" rx="1.5" fill="#b8cdbf"/><rect x="71" y="33" width="28" height="3" rx="1.5" fill="#b8cdbf"/><rect x="71" y="39" width="22" height="3" rx="1.5" fill="#b8cdbf"/><path d="M55 40h10" stroke="#c4daca" stroke-width="1.5" stroke-dasharray="2 2"/><circle cx="60" cy="40" r="4" fill="#e8f5ec" stroke="#2ea84a" stroke-width="1"/><path d="M57.5 40l2 2 3-4" stroke="#2ea84a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-          title:'Used Cars',
-          desc:'Browse verified pre-owned listings and instantly connect with trusted sellers — all with one click.',
-          link:'Used Cars'
-        },
-        {
-          img:`<svg viewBox="0 0 120 80" width="120" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" rx="10" fill="#e8f5ec"/><rect x="20" y="12" width="80" height="56" rx="6" fill="#fff" stroke="#c4daca" stroke-width="1"/><rect x="28" y="20" width="64" height="8" rx="3" fill="#e8f5ec"/><text x="60" y="27" text-anchor="middle" font-size="7" fill="#1a6b2a" font-weight="700" font-family="sans-serif">EMI CALCULATOR</text><rect x="28" y="32" width="40" height="4" rx="2" fill="#dde8e2"/><rect x="28" y="32" width="26" height="4" rx="2" fill="#2ea84a"/><rect x="28" y="40" width="40" height="4" rx="2" fill="#dde8e2"/><rect x="28" y="40" width="34" height="4" rx="2" fill="#2ea84a"/><rect x="72" y="32" width="20" height="4" rx="2" fill="#f4fbf6" stroke="#2ea84a" stroke-width="1"/><rect x="72" y="40" width="20" height="4" rx="2" fill="#f4fbf6" stroke="#2ea84a" stroke-width="1"/><rect x="34" y="50" width="52" height="10" rx="4" fill="#1a6b2a"/><text x="60" y="57.5" text-anchor="middle" font-size="7" fill="#fff" font-family="sans-serif">Rs. 42,000 / month</text></svg>`,
-          title:'Auto Loans & EMI',
-          desc:'Calculate your EMI instantly. Connect with partner banks for financing on almost any credit situation.',
-          link:'EMI Calculator'
-        },
-      ].map(w=>`<div class="why-row-item">
-        <div class="why-row-img">${w.img}</div>
-        <div class="why-row-body">
-          <div class="why-row-title">${w.title} <span class="why-arr">›</span></div>
-          <div class="why-row-desc">${w.desc}</div>
+
+      <!-- New Cars → #newcars anchor -->
+      <div class="why-row-item" onclick="window.location.href='#cars'" style="cursor:pointer">
+        <div class="why-row-img">
+          <svg viewBox="0 0 120 80" width="120" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" rx="10" fill="#e8f5ec"/><rect x="10" y="14" width="100" height="52" rx="6" fill="#fff" stroke="#c4daca" stroke-width="1"/><rect x="18" y="22" width="60" height="6" rx="3" fill="#2ea84a"/><rect x="18" y="32" width="45" height="4" rx="2" fill="#b8cdbf"/><rect x="18" y="40" width="50" height="4" rx="2" fill="#b8cdbf"/><circle cx="94" cy="42" r="14" fill="#e8f5ec" stroke="#2ea84a" stroke-width="1.5"/><path d="M88 42l4 4 8-8" stroke="#2ea84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="18" y="50" width="30" height="10" rx="3" fill="#1a6b2a"/><rect x="52" y="50" width="30" height="10" rx="3" fill="#e8f5ec" stroke="#2ea84a" stroke-width="1"/></svg>
         </div>
-      </div>`).join('')}
+        <div class="why-row-body">
+          <div class="why-row-title">New Cars <span class="why-arr">›</span></div>
+          <div class="why-row-desc">Get exclusive pricing and full specs across all brands in Nepal. Explore EMI plans tailored to your budget.</div>
+        </div>
+      </div>
+
+      <!-- Used Cars → #usedcars anchor -->
+      <div class="why-row-item" onclick="window.location.href='#used'" style="cursor:pointer">
+        <div class="why-row-img">
+          <svg viewBox="0 0 120 80" width="120" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" rx="10" fill="#e8f5ec"/><rect x="10" y="10" width="45" height="60" rx="6" fill="#fff" stroke="#c4daca" stroke-width="1"/><rect x="65" y="10" width="45" height="60" rx="6" fill="#fff" stroke="#2ea84a" stroke-width="1.5"/><rect x="16" y="18" width="33" height="5" rx="2.5" fill="#b8cdbf"/><rect x="16" y="27" width="25" height="3" rx="1.5" fill="#dde8e2"/><rect x="16" y="33" width="28" height="3" rx="1.5" fill="#dde8e2"/><rect x="16" y="39" width="22" height="3" rx="1.5" fill="#dde8e2"/><rect x="71" y="18" width="33" height="5" rx="2.5" fill="#2ea84a"/><rect x="71" y="27" width="25" height="3" rx="1.5" fill="#b8cdbf"/><rect x="71" y="33" width="28" height="3" rx="1.5" fill="#b8cdbf"/><rect x="71" y="39" width="22" height="3" rx="1.5" fill="#b8cdbf"/><path d="M55 40h10" stroke="#c4daca" stroke-width="1.5" stroke-dasharray="2 2"/><circle cx="60" cy="40" r="4" fill="#e8f5ec" stroke="#2ea84a" stroke-width="1"/><path d="M57.5 40l2 2 3-4" stroke="#2ea84a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="why-row-body">
+          <div class="why-row-title">Used Cars <span class="why-arr">›</span></div>
+          <div class="why-row-desc">Browse verified pre-owned listings and instantly connect with trusted sellers — all with one click.</div>
+        </div>
+      </div>
+
+      <!-- EMI → insurance-finance.html -->
+      <div class="why-row-item" onclick="window.location.href='insurance-finance.html'" style="cursor:pointer">
+        <div class="why-row-img">
+          <svg viewBox="0 0 120 80" width="120" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" rx="10" fill="#e8f5ec"/><rect x="20" y="12" width="80" height="56" rx="6" fill="#fff" stroke="#c4daca" stroke-width="1"/><rect x="28" y="20" width="64" height="8" rx="3" fill="#e8f5ec"/><text x="60" y="27" text-anchor="middle" font-size="7" fill="#1a6b2a" font-weight="700" font-family="sans-serif">EMI CALCULATOR</text><rect x="28" y="32" width="40" height="4" rx="2" fill="#dde8e2"/><rect x="28" y="32" width="26" height="4" rx="2" fill="#2ea84a"/><rect x="28" y="40" width="40" height="4" rx="2" fill="#dde8e2"/><rect x="28" y="40" width="34" height="4" rx="2" fill="#2ea84a"/><rect x="72" y="32" width="20" height="4" rx="2" fill="#f4fbf6" stroke="#2ea84a" stroke-width="1"/><rect x="72" y="40" width="20" height="4" rx="2" fill="#f4fbf6" stroke="#2ea84a" stroke-width="1"/><rect x="34" y="50" width="52" height="10" rx="4" fill="#1a6b2a"/><text x="60" y="57.5" text-anchor="middle" font-size="7" fill="#fff" font-family="sans-serif">Rs. 42,000 / month</text></svg>
+        </div>
+        <div class="why-row-body">
+          <div class="why-row-title">Auto Loans & EMI <span class="why-arr">›</span></div>
+          <div class="why-row-desc">Calculate your EMI instantly. Connect with partner banks for financing on almost any credit situation.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -932,7 +849,7 @@ ${BRANDS.map(b=>`<div class="brand-card" onclick="AV.goTo('cars',{brand:'${b.nam
           <h2 class="cta-title">Find Your Perfect Car Today</h2>
           <p class="cta-sub">Complete specs, EMI calculator, expert reviews and side-by-side comparisons for Nepal's market.</p>
           <div class="cta-btns">
-            <button onclick="AV.goTo('cars')" class="btn btn-primary" style="font-size:14px;padding:13px 28px">Browse All Cars</button>
+            <button onclick="AV.goTo('cars')" class="btn btn-primary text-white" style="font-size:14px;padding:13px 28px;color:#fff">Browse All Cars</button>
             <button onclick="window.location.href='services.html'" class="btn" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.12);font-size:14px;padding:13px 28px">Book a Service</button>
           </div>
         </div>
