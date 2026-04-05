@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoViindu — Car Listing Form</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --g0:#f5faf6;--g1:#e8f5eb;--g2:#c3e6cb;--g3:#1A6B2A;--g4:#155422;--g5:#0e3b18;
+  --gold:#c8a84b;--red:#e53e3e;--blue:#2b6cb0;--purple:#6b46c1;
+  --font-b:'Fraunces',Georgia,serif;--font-d:'DM Sans',system-ui,sans-serif;
+  --text:#1a1a1a;--text-2:#4a5568;--text-3:#718096;
+  --border:#e2e8f0;--border-2:#cbd5e0;
+  --surface:#ffffff;--surface-2:#f8fafc;--surface-3:#f1f5f9;
+  --radius:10px;--radius-sm:6px;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:0 4px 12px rgba(0,0,0,.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-d);background:var(--surface-3);color:var(--text);min-height:100vh;line-height:1.6}
+
+/* NAV */
+.nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-mark{width:36px;height:36px;background:var(--g3);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.nav-logo-mark svg{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
+.nav-logo-name{font-family:var(--font-b);font-size:1.2rem;color:var(--g3);font-weight:600}
+.nav-logo-badge{font-size:10px;background:var(--g1);color:var(--g3);padding:2px 8px;border-radius:20px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.nav-right{display:flex;align-items:center;gap:12px}
+.draft-badge{font-size:11px;color:var(--text-3);display:flex;align-items:center;gap:5px}
+.draft-dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.btn-clear{font-size:12px;color:var(--text-3);background:none;border:1px solid var(--border);border-radius:var(--radius-sm);padding:5px 12px;cursor:pointer;font-family:var(--font-d)}
+.btn-clear:hover{border-color:var(--border-2);color:var(--text-2)}
+
+/* GATE */
+#gate{position:fixed;inset:0;background:var(--surface-3);display:flex;align-items:center;justify-content:center;z-index:999}
+.gate-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2.5rem;width:340px;text-align:center;box-shadow:var(--shadow-md)}
+.gate-logo{width:52px;height:52px;background:var(--g3);border-radius:12px;margin:0 auto 1.25rem;display:flex;align-items:center;justify-content:center}
+.gate-logo svg{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
+.gate-card h2{font-family:var(--font-b);font-size:1.4rem;color:var(--g3);margin-bottom:.25rem}
+.gate-card p{font-size:13px;color:var(--text-3);margin-bottom:1.5rem}
+.gate-card input{width:100%;padding:10px 14px;border:1px solid var(--border-2);border-radius:var(--radius-sm);font-family:var(--font-d);font-size:14px;margin-bottom:10px;outline:none;text-align:center;letter-spacing:.1em;color:var(--text)}
+.gate-card input:focus{border-color:var(--g3);box-shadow:0 0 0 3px rgba(26,107,42,.1)}
+.gate-err{font-size:12px;color:var(--red);margin-bottom:8px;height:16px}
+.btn-enter{width:100%;padding:11px;background:var(--g3);color:#fff;border:none;border-radius:var(--radius-sm);font-family:var(--font-d);font-size:14px;font-weight:600;cursor:pointer}
+.btn-enter:hover{background:var(--g4)}
+
+/* LAYOUT */
+.main{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.page-hdr{margin-bottom:1.75rem}
+.page-hdr h1{font-family:var(--font-b);font-size:1.75rem;color:var(--text);font-weight:600;line-height:1.2;margin-bottom:.3rem}
+.page-hdr h1 span{color:var(--g3)}
+.page-hdr p{font-size:14px;color:var(--text-3)}
+
+/* TABS */
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:1.5rem}
+.tab{padding:10px 22px;font-size:13.5px;font-weight:500;font-family:var(--font-d);background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;cursor:pointer;color:var(--text-3);transition:color .15s;display:flex;align-items:center;gap:7px}
+.tab .tab-icon{width:18px;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+.tab.on{color:var(--g3);border-bottom-color:var(--g3)}
+.tab.on .tab-icon{background:var(--g1);color:var(--g3)}
+.panel{display:none}
+.panel.on{display:block}
+
+/* NOTICE */
+.notice{background:var(--g0);border:1px solid var(--g2);border-left:4px solid var(--g3);border-radius:var(--radius-sm);padding:10px 14px;font-size:12.5px;color:var(--text-2);margin-bottom:1.25rem;line-height:1.6}
+.notice strong{color:var(--g3)}
+
+/* CONFIG BOX */
+.config-box{background:var(--surface-2);border:1px dashed var(--border-2);border-radius:var(--radius);padding:18px;margin-bottom:1.5rem}
+.config-box h3{font-size:13px;font-weight:600;color:var(--text-2);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.config-box h3 svg{width:16px;height:16px;flex-shrink:0;color:var(--gold)}
+.config-row{display:flex;gap:8px;align-items:flex-start}
+.config-row input{flex:1;padding:8px 11px;border:1px solid var(--border-2);border-radius:var(--radius-sm);font-family:var(--font-d);font-size:13px;outline:none;color:var(--text);background:var(--surface)}
+.config-row input:focus{border-color:var(--g3)}
+.btn-save-url{padding:8px 14px;background:var(--g3);color:#fff;border:none;border-radius:var(--radius-sm);font-family:var(--font-d);font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+.btn-save-url:hover{background:var(--g4)}
+.config-hint{font-size:11.5px;color:var(--text-3);margin-top:8px;line-height:1.6}
+.url-status{font-size:11px;margin-top:5px;font-weight:500}
+.url-status.ok{color:var(--g3)}
+.url-status.missing{color:var(--red)}
+
+/* SECTIONS */
+.sec{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden;box-shadow:var(--shadow)}
+.sec-hd{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;user-select:none;background:var(--surface);transition:background .12s}
+.sec-hd:hover{background:var(--surface-2)}
+.sec-hd-left{display:flex;align-items:center;gap:10px}
+.sec-num{width:24px;height:24px;border-radius:50%;background:var(--g1);color:var(--g3);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-title{font-size:13px;font-weight:600;color:var(--text);letter-spacing:.01em}
+.sec-subtitle{font-size:11px;color:var(--text-3);margin-left:4px;font-weight:400}
+.sec-arrow{font-size:11px;color:var(--text-3);transition:transform .2s}
+.sec-arrow.open{transform:rotate(180deg)}
+.sec-bd{padding:18px;border-top:1px solid var(--border)}
+.sec-bd.hide{display:none}
+
+/* GRID */
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.full{grid-column:1/-1}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}.full{grid-column:1}}
+@media(max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}}
+
+/* FIELDS */
+.f{display:flex;flex-direction:column;gap:4px}
+.f>label{font-size:11px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em}
+.f .req{color:var(--red);margin-left:2px}
+.f input,.f select,.f textarea{font-size:13.5px;padding:8px 11px;border:1px solid var(--border-2);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font-family:var(--font-d);width:100%;transition:border-color .15s,box-shadow .15s;outline:none}
+.f textarea{min-height:80px;resize:vertical;line-height:1.6}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--g3);box-shadow:0 0 0 3px rgba(26,107,42,.1)}
+.f input::placeholder,.f textarea::placeholder{color:#b0bec5;font-size:13px}
+.f-hint{font-size:11px;color:var(--text-3);margin-top:2px}
+
+/* DIVIDER */
+.dv{height:1px;background:var(--border);margin:14px 0}
+
+/* SECTION LABEL */
+.sec-label{font-size:10.5px;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.1em;padding:10px 0 6px;border-bottom:1px solid var(--border);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sec-label::before{content:'';width:3px;height:14px;background:var(--g3);border-radius:2px;display:inline-block}
+
+/* RADIO */
+.rads{display:flex;gap:20px;flex-wrap:wrap;padding-top:2px}
+.rad{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--text);cursor:pointer}
+.rad input[type=radio]{accent-color:var(--g3);cursor:pointer}
+
+/* CHECKBOXES */
+.cks{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.ck{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-2);cursor:pointer;line-height:1.4;padding:6px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);transition:border-color .12s,background .12s}
+.ck:hover{border-color:var(--g2);background:var(--g0)}
+.ck input[type=checkbox]{accent-color:var(--g3);cursor:pointer;flex-shrink:0;margin-top:2px;width:14px;height:14px}
+.ck input[type=checkbox]:checked+span{color:var(--g3);font-weight:500}
+
+/* SCORE GRID */
+.score-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.score-item{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px}
+.score-item label{font-size:11px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:8px}
+.score-stars{display:flex;gap:4px}
+.star-btn{background:none;border:none;font-size:20px;cursor:pointer;color:#d1d5db;transition:color .12s;padding:0;line-height:1}
+.star-btn.lit{color:#f59e0b}
+.star-btn:hover{color:#f59e0b}
+.score-val{font-size:11px;color:var(--text-3);margin-top:4px;height:14px}
+
+/* ACS BADGE */
+.acs-display{background:linear-gradient(135deg,var(--g3),var(--g4));border-radius:var(--radius);padding:20px;color:#fff;text-align:center;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.acs-score-big{font-family:var(--font-b);font-size:52px;font-weight:600;line-height:1;color:#fff}
+.acs-grade{font-size:32px;font-weight:700;background:rgba(255,255,255,.15);border-radius:8px;width:52px;height:52px;display:flex;align-items:center;justify-content:center}
+.acs-info{flex:1;text-align:left;min-width:160px}
+.acs-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.65;margin-bottom:4px}
+.acs-badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.acs-badge{font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.15);color:#fff;cursor:pointer;transition:background .15s}
+.acs-badge.active{background:#fff;color:var(--g3)}
+.acs-note{font-size:11px;opacity:.55;margin-top:8px}
+
+/* EMI RESULT */
+.emi-preview{background:var(--g0);border:1px solid var(--g2);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.emi-amount{font-family:var(--font-b);font-size:28px;color:var(--g3);font-weight:600;line-height:1}
+.emi-meta{font-size:12px;color:var(--text-3);margin-top:2px}
+.emi-breakdown{display:flex;gap:16px;flex-wrap:wrap}
+.emi-bd-item{text-align:center}
+.emi-bd-val{font-size:13px;font-weight:600;color:var(--text)}
+.emi-bd-lbl{font-size:10px;color:var(--text-3)}
+
+/* MARKET PRICE INDICATOR */
+.mpi-row{display:flex;gap:8px;flex-wrap:wrap}
+.mpi-btn{padding:7px 14px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface);font-size:12.5px;font-weight:600;cursor:pointer;font-family:var(--font-d);transition:all .15s;color:var(--text-2)}
+.mpi-btn[data-val="fair"].active{background:#dcfce7;border-color:#16a34a;color:#15803d}
+.mpi-btn[data-val="good"].active{background:#dbeafe;border-color:#2563eb;color:#1d4ed8}
+.mpi-btn[data-val="high"].active{background:#fef9c3;border-color:#ca8a04;color:#92400e}
+
+/* ACTION BAR */
+.action-bar{position:sticky;bottom:0;background:var(--surface);border-top:1px solid var(--border);padding:14px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.06);margin-top:1.5rem;border-radius:0 0 var(--radius) var(--radius)}
+.action-bar-label{font-size:12px;color:var(--text-3);margin-right:auto}
+.btn{display:flex;align-items:center;gap:7px;padding:9px 18px;border-radius:var(--radius-sm);font-family:var(--font-d);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;border:1.5px solid transparent;white-space:nowrap}
+.btn svg{width:15px;height:15px;flex-shrink:0}
+.btn-primary{background:var(--g3);color:#fff;border-color:var(--g3)}
+.btn-primary:hover{background:var(--g4);border-color:var(--g4)}
+.btn-secondary{background:var(--surface);color:var(--text-2);border-color:var(--border-2)}
+.btn-secondary:hover{border-color:var(--g3);color:var(--g3)}
+.btn-outline{background:var(--g0);color:var(--g3);border-color:var(--g2)}
+.btn-outline:hover{background:var(--g1)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:200;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal{background:var(--surface);border-radius:14px;width:100%;max-width:700px;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.modal-hd{padding:18px 20px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.modal-hd h3{font-size:15px;font-weight:600;color:var(--text)}
+.modal-close{width:30px;height:30px;border-radius:50%;border:none;background:var(--surface-3);cursor:pointer;font-size:16px;color:var(--text-3);display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:var(--border);color:var(--text)}
+.modal-body{padding:16px 20px;flex:1;overflow-y:auto}
+.modal-body textarea{width:100%;min-height:340px;font-family:'Courier New',monospace;font-size:12px;line-height:1.7;padding:14px;border:1px solid var(--border-2);border-radius:var(--radius-sm);background:var(--surface-2);color:var(--text);resize:vertical;outline:none}
+.modal-ft{padding:14px 20px;border-top:1px solid var(--border);display:flex;gap:10px;flex-shrink:0}
+
+/* TOAST */
+#toast-wrap{position:fixed;top:72px;right:20px;z-index:500;display:flex;flex-direction:column;gap:8px}
+.toast{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--g3);border-radius:var(--radius-sm);padding:10px 16px;font-size:13px;color:var(--text);box-shadow:var(--shadow-md);display:flex;align-items:center;gap:8px;min-width:240px;animation:slideIn .2s ease}
+.toast.error{border-left-color:var(--red)}
+.toast.warning{border-left-color:var(--gold)}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}}
+
+/* PROGRESS BAR */
+.progress-bar-wrap{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:1rem}
+.progress-label{font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:8px;display:flex;justify-content:space-between}
+.progress-track{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--g3),var(--g5));border-radius:3px;transition:width .4s ease}
+.progress-sections{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.ps-dot{font-size:10px;padding:2px 8px;border-radius:10px;background:var(--surface-3);color:var(--text-3);border:1px solid var(--border)}
+.ps-dot.done{background:var(--g1);color:var(--g3);border-color:var(--g2)}
+</style>
+</head>
+<body>
+
+<!-- GATE -->
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-logo">
+      <svg width="26" height="26" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <h2>AutoViindu</h2>
+    <p>Car Listing Management — Staff Only</p>
+    <input type="password" id="gate-pw" placeholder="Enter access password" onkeyup="if(event.key==='Enter')checkGate()">
+    <div class="gate-err" id="gate-err"></div>
+    <button class="btn-enter" onclick="checkGate()">Access Form</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <span class="nav-logo-name">AutoViindu</span>
+    <span class="nav-logo-badge">Admin</span>
+  </a>
+  <div class="nav-right">
+    <span class="draft-badge" id="draft-status" style="display:none">
+      <span class="draft-dot"></span> Draft saved
+    </span>
+    <button class="btn-clear" onclick="clearDraft()">Clear Form</button>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+  <div class="page-hdr">
+    <h1>Add <span>New Listing</span></h1>
+    <p>Fill in all relevant details. Responses are saved to Google Sheets and available as a copyable JS object for cars-db.js.</p>
+  </div>
+
+  <!-- Sheets Config -->
+  <div class="config-box">
+    <h3>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+      Google Sheets Connection
+    </h3>
+    <div class="config-row">
+      <input type="url" id="sheets-url" placeholder="Paste your Google Apps Script Web App URL here..." oninput="saveUrl()">
+      <button class="btn-save-url" onclick="saveUrl(true)">Save URL</button>
+    </div>
+    <div id="url-status" class="url-status missing">No URL set — submissions will only be available as download / copy</div>
+    <p class="config-hint">Deploy a Google Apps Script as a Web App and paste the URL above to enable direct Sheet submission.</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab on" onclick="switchTab('new',this)" id="tab-new">
+      <span class="tab-icon">N</span> New Car
+    </button>
+    <button class="tab" onclick="switchTab('used',this)" id="tab-used">
+      <span class="tab-icon">U</span> Used Car
+    </button>
+  </div>
+
+  <!-- ════════════ NEW CAR PANEL ════════════ -->
+  <div class="panel on" id="p-new">
+    <div class="notice">Fill all required fields (<strong style="color:var(--red)">*</strong>) then use the action buttons below to submit to Google Sheets, download as JSON, or copy the JS object for <code>cars-db.js</code>.</div>
+
+    <!-- 1. Basic Info -->
+    <div class="sec">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">1</div><span class="sec-title">Basic Info</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="g3">
+          <div class="f"><label>Brand <span class="req">*</span></label><input id="n-brand" placeholder="e.g. BYD, Suzuki, Toyota"></div>
+          <div class="f"><label>Model <span class="req">*</span></label><input id="n-model" placeholder="e.g. Atto 3, Swift, Hilux"></div>
+          <div class="f"><label>Variant / Trim</label><input id="n-variant" placeholder="e.g. Superior, LR Fearless+"></div>
+        </div>
+        <div class="dv"></div>
+        <div class="g3">
+          <div class="f"><label>Body Type <span class="req">*</span></label><select id="n-bodyType"><option value="">Select...</option><option>Hatchback</option><option>Sedan</option><option>SUV</option><option>Crossover</option><option>MPV</option><option>Pickup</option><option>Van</option><option>Coupe</option></select></div>
+          <div class="f"><label>Manufacture Year <span class="req">*</span></label><input id="n-year" type="number" placeholder="2024" min="2000" max="2030"></div>
+          <div class="f"><label>Manufactured / Assembled By</label><input id="n-company" placeholder="e.g. BYD Auto Co., Ltd."></div>
+        </div>
+        <div class="dv"></div>
+        <div class="g3">
+          <div class="f"><label>Powertrain <span class="req">*</span></label><select id="n-powertrain"><option value="">Select...</option><option>ICE</option><option>EV</option><option>HEV</option><option>PHEV</option><option>MHEV</option></select></div>
+          <div class="f"><label>Drivetrain</label><select id="n-drivetrain"><option value="">Select...</option><option>FWD</option><option>RWD</option><option>AWD</option><option>4WD</option></select></div>
+          <div class="f"><label>Transmission</label><select id="n-transmission"><option value="">Select...</option><option>Manual</option><option>Automatic (AT)</option><option>CVT</option><option>DCT</option><option>Single Speed (EV)</option></select></div>
+        </div>
+        <div class="dv"></div>
+        <div class="g3">
+          <div class="f"><label>Fuel Type <span class="req">*</span></label><select id="n-fuel"><option value="">Select...</option><option>Petrol</option><option>Diesel</option><option>Electric</option><option>Petrol + Electric</option><option>Diesel + Electric</option></select></div>
+          <div class="f"><label>Range (EV) or Mileage (ICE)</label><input id="n-range" placeholder="e.g. 420 km NEDC / 18 km/l"></div>
+          <div class="f"><label>Emission Norm</label><select id="n-emission"><option value="">Select...</option><option>BS6</option><option>Euro 6</option><option>Euro 6d</option><option>N/A (EV)</option></select></div>
+        </div>
+        <div class="dv"></div>
+        <div class="g3">
+          <div class="f"><label>Safety Rating (NCAP)</label><input id="n-safety" placeholder="e.g. 5-Star Euro NCAP / Not Rated"></div>
+          <div class="f"><label>Badge</label><select id="n-badge"><option value="">None</option><option value="new">New</option><option value="bestseller">Bestseller</option><option value="featured">Featured</option><option value="ev">EV</option><option value="limited">Limited</option></select></div>
+          <div class="f"><label>Budget Tier</label><select id="n-budget"><option value="">Select...</option><option>Under 20L</option><option>20L – 30L</option><option>30L – 50L</option><option>Above 50L</option></select></div>
+        </div>
+        <div class="dv"></div>
+        <div class="g2">
+          <div class="f full"><label>Tagline</label><input id="n-tagline" placeholder="One-liner marketing tagline for the listing card"></div>
+          <div class="f full"><label>Overview / Description <span class="req">*</span></label><textarea id="n-overview" placeholder="Full description shown on the car detail page..."></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Pricing -->
+    <div class="sec">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">2</div><span class="sec-title">Pricing & Purchase</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="g3">
+          <div class="f"><label>Ex-Showroom Price (NPR) <span class="req">*</span></label><input id="n-price" type="number" placeholder="e.g. 8500000" oninput="fmtHint('n-price','n-price-fmt')"><div class="f-hint" id="n-price-fmt"></div></div>
+          <div class="f"><label>On-Road Price (NPR)</label><input id="n-priceOr" type="number" placeholder="optional" oninput="fmtHint('n-priceOr','n-priceOr-fmt')"><div class="f-hint" id="n-priceOr-fmt"></div></div>
+          <div class="f"><label>Booking Amount (NPR)</label><input id="n-booking" type="number" placeholder="e.g. 100000" oninput="fmtHint('n-booking','n-booking-fmt')"><div class="f-hint" id="n-booking-fmt"></div></div>
+        </div>
+        <div class="dv"></div>
+        <div class="g3">
+          <div class="f"><label>Mode of Payment</label><select id="n-payment"><option value="">Select...</option><option>Cash</option><option>Finance</option><option>Cash / Finance</option></select></div>
+          <div class="f"><label>Availability Status</label><select id="n-avail"><option value="">Select...</option><option>In Stock</option><option>Pre-Order</option><option>Waiting List</option></select></div>
+          <div class="f"><label>Exchange Offer Available</label><select id="n-exchange"><option value="">Select...</option><option>Yes</option><option>No</option></select></div>
+        </div>
+        <div class="dv"></div>
+        <div class="f"><label>EMI Info</label><input id="n-emi" placeholder="e.g. From NPR 42,000/mo at 20% down, 60 months, 11% p.a."></div>
+      </div>
+    </div>
+
+    <!-- 3. Media -->
+    <div class="sec">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">3</div><span class="sec-title">Media & Documentation</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="g2">
+          <div class="f full"><label>Image URLs <span class="req">*</span> — one per line</label><textarea id="n-images" placeholder="assets/images/cars/brand-model-01.jpg&#10;assets/images/cars/brand-model-02.jpg"></textarea></div>
+          <div class="f"><label>Cover / Hero Image URL</label><input id="n-cover" placeholder="assets/images/cars/brand-model-cover.jpg"></div>
+          <div class="f"><label>YouTube Video URL</label><input id="n-video" placeholder="https://youtube.com/watch?v=..."></div>
+          <div class="f"><label>Brochure PDF URL</label><input id="n-brochure" placeholder="assets/brochures/brand-model-2024.pdf"></div>
+          <div class="f"><label>360° Viewer URL (optional)</label><input id="n-360" placeholder="https://..."></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Dealer -->
+    <div class="sec">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">4</div><span class="sec-title">Dealer & Location</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="g2">
+          <div class="f"><label>Dealer / Distributor Name</label><input id="n-dealer" placeholder="e.g. CG Motors Nepal"></div>
+          <div class="f"><label>Showroom Name</label><input id="n-showroom" placeholder="e.g. CG Automobiles Showroom, Pulchowk"></div>
+          <div class="f"><label>Location (City / District)</label><input id="n-location" placeholder="e.g. Kathmandu, Pokhara"></div>
+          <div class="f"><label>Service Center Available</label><select id="n-service"><option value="">Select...</option><option>Yes</option><option>No</option></select></div>
+        </div>
+        <div class="dv"></div>
+        <div class="f"><label>Test Drive Available</label>
+          <div class="rads">
+            <label class="rad"><input type="radio" name="n-td" value="Yes"> Yes</label>
+            <label class="rad"><input type="radio" name="n-td" value="No"> No</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Warranty -->
+    <div class="sec">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">5</div><span class="sec-title">Warranty & Services</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="g3">
+          <div class="f"><label>Standard Warranty</label><input id="n-warranty" placeholder="e.g. 3 years / 100,000 km"></div>
+          <div class="f"><label>Battery Warranty (EV)</label><input id="n-bwrn" placeholder="e.g. 8 years / 160,000 km"></div>
+          <div class="f"><label>Extended Warranty</label><select id="n-ewrn"><option value="">Select...</option><option>Available (paid add-on)</option><option>Not Available</option></select></div>
+          <div class="f"><label>Free Services</label><input id="n-freesvc" placeholder="e.g. 3 free services"></div>
+          <div class="f"><label>Roadside Assistance</label><input id="n-roadside" placeholder="e.g. 1 year"></div>
+          <div class="f"><label>Total Services Info</label><input id="n-totalsvc" placeholder="e.g. First 5 services covered"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Accessories -->
+    <div class="sec">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">6</div><span class="sec-title">Accessories Included</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="cks">
+          <label class="ck"><input type="checkbox" class="n-acc" value="Floor Mats"><span>Floor Mats</span></label>
+          <label class="ck"><input type="checkbox" class="n-acc" value="Seat Covers"><span>Seat Covers</span></label>
+          <label class="ck"><input type="checkbox" class="n-acc" value="Mud Flaps"><span>Mud Flaps</span></label>
+          <label class="ck"><input type="checkbox" class="n-acc" value="Steering Cover"><span>Steering Cover</span></label>
+          <label class="ck"><input type="checkbox" class="n-acc" value="Door Visors"><span>Door Visors</span></label>
+          <label class="ck"><input type="checkbox" class="n-acc" value="Number Plate Frame"><span>Number Plate Frame</span></label>
+          <label class="ck"><input type="checkbox" class="n-acc" value="Wheel Covers"><span>Wheel Covers</span></label>
+          <label class="ck"><input type="checkbox" class="n-acc" value="Car Perfume"><span>Car Perfume</span></label>
+          <label class="ck"><input type="checkbox" class="n-acc" value="Tool Kit & Jack"><span>Tool Kit &amp; Jack</span></label>
+          <label class="ck"><input type="checkbox" class="n-acc" value="First Aid Kit"><span>First Aid Kit</span></label>
+          <label class="ck"><input type="checkbox" class="n-acc" value="Warning Triangle"><span>Warning Triangle</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Benefits -->
+    <div class="sec">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">7</div><span class="sec-title">Ownership Benefits with Purchase</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="cks">
+          <label class="ck"><input type="checkbox" class="n-ben" value="Free Insurance (1 Year)"><span>Free Insurance (1 Year)</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Vehicle Tax Paid (1 Year)"><span>Vehicle Tax Paid (1 Year)</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Free Vehicle Pickup/Drop"><span>Free Vehicle Pickup/Drop</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Registration Support"><span>Registration Support</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Free Servicing"><span>Free Servicing</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Dashcam Installation"><span>Dashcam Installation</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Free Ceramic Coating"><span>Free Ceramic Coating</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Underbody Coating"><span>Underbody Coating</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Paint Protection Film (PPF)"><span>Paint Protection Film (PPF)</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Loan Processing Fee Waiver"><span>Loan Processing Fee Waiver</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="DOTM Processing Support"><span>DOTM Processing Support</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Welcome Kit"><span>Welcome Kit</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Festival Bonus / Cash Discount"><span>Festival Bonus / Cash Discount</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Fuel Voucher"><span>Fuel Voucher</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Free Accessories Upgrade"><span>Free Accessories Upgrade</span></label>
+          <label class="ck"><input type="checkbox" class="n-ben" value="Referral Bonus"><span>Referral Bonus</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <span class="action-bar-label">New Car Listing</span>
+      <button class="btn btn-secondary" onclick="openOutput('new')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg> View JS Object
+      </button>
+      <button class="btn btn-outline" onclick="downloadJSON('new')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Download JSON
+      </button>
+      <button class="btn btn-primary" id="btn-submit-new" onclick="submitToSheets('new')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg> Save to Sheets
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ════════════ USED CAR PANEL ════════════ -->
+  <div class="panel" id="p-used">
+    <div class="notice">
+      Fill all required fields (<strong style="color:var(--red)">*</strong>). The <strong>AutoViindu Condition Score (ACS)</strong> is calculated from inspection ratings. All data saves to the "Used Cars" sheet tab.
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-bar-wrap" id="used-progress-wrap">
+      <div class="progress-label">
+        <span>Completion</span>
+        <span id="progress-pct">0%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <div class="progress-sections" id="progress-dots"></div>
+    </div>
+
+    <!-- ── SECTION 1: Overview ── -->
+    <div class="sec" data-sec="overview">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">1</div><span class="sec-title">Overview</span><span class="sec-subtitle">— Brand, model, body, drivetrain</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="sec-label">Identity</div>
+        <div class="g3">
+          <div class="f"><label>Brand <span class="req">*</span></label><input id="u-brand" placeholder="e.g. Toyota, Hyundai, Honda" oninput="updateProgress()"></div>
+          <div class="f"><label>Model <span class="req">*</span></label><input id="u-model" placeholder="e.g. Fortuner, Grand i10" oninput="updateProgress()"></div>
+          <div class="f"><label>Model Generation</label><input id="u-gen" placeholder="e.g. 3rd Gen, 11th Gen"></div>
+        </div>
+        <div class="g3" style="margin-top:12px">
+          <div class="f"><label>Variant <span class="req">*</span></label><input id="u-variant" placeholder="e.g. VX CVT, SX, ZX" oninput="updateProgress()"></div>
+          <div class="f"><label>Trim Detail</label><input id="u-trim" placeholder="e.g. VX Diesel AT, ZX Petrol Manual"></div>
+          <div class="f"><label>Color <span class="req">*</span></label><input id="u-color" placeholder="e.g. Pearl White, Midnight Black" oninput="updateProgress()"></div>
+        </div>
+
+        <div class="dv"></div>
+        <div class="sec-label">Body & Drivetrain</div>
+        <div class="g3">
+          <div class="f"><label>Body Type <span class="req">*</span></label><select id="u-bodyType" onchange="updateProgress()"><option value="">Select...</option><option>Hatchback</option><option>Sedan</option><option>SUV</option><option>Crossover</option><option>MPV</option><option>Pickup</option><option>Van</option></select></div>
+          <div class="f"><label>Powertrain <span class="req">*</span></label><select id="u-powertrain" onchange="updateProgress()"><option value="">Select...</option><option>ICE (Petrol)</option><option>ICE (Diesel)</option><option>EV</option><option>HEV</option><option>PHEV</option></select></div>
+          <div class="f"><label>Fuel Type <span class="req">*</span></label><select id="u-fuel" onchange="updateProgress()"><option value="">Select...</option><option>Petrol</option><option>Diesel</option><option>Electric</option><option>Petrol + Electric</option><option>CNG</option></select></div>
+        </div>
+        <div class="g3" style="margin-top:12px">
+          <div class="f"><label>Transmission <span class="req">*</span></label><select id="u-trans" onchange="updateProgress()"><option value="">Select...</option><option>Manual</option><option>Automatic (AT)</option><option>CVT</option><option>DCT</option></select></div>
+          <div class="f"><label>Mileage / Range (Real-World)</label><input id="u-mileage" placeholder="e.g. 15 km/l or 320 km/charge"></div>
+          <div class="f"><label>Seating Capacity</label><select id="u-seats"><option value="">Select...</option><option>2</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8+</option></select></div>
+        </div>
+
+        <div class="dv"></div>
+        <div class="sec-label">Registration</div>
+        <div class="g3">
+          <div class="f"><label>Manufacturing Year <span class="req">*</span></label><input id="u-mfgY" type="number" placeholder="e.g. 2021" oninput="updateProgress()"></div>
+          <div class="f"><label>Registration Year</label><input id="u-regY" type="number" placeholder="e.g. 2022"></div>
+          <div class="f"><label>Registration Number <span class="req">*</span></label><input id="u-regNo" placeholder="e.g. Bagmati 01-XXXX" oninput="updateProgress()"></div>
+        </div>
+        <div class="g2" style="margin-top:12px">
+          <div class="f"><label>Seller Type</label><select id="u-sellerType"><option value="">Select...</option><option>Individual</option><option>Dealer</option></select></div>
+          <div class="f"><label>Ownership Type</label><select id="u-ownershipType"><option value="">Select...</option><option>Individual</option><option>Company</option></select></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 2: Core Condition Data ── -->
+    <div class="sec" data-sec="condition">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">2</div><span class="sec-title">Core Condition Data</span><span class="sec-subtitle">— Odometer, owners, history</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="sec-label">Usage</div>
+        <div class="g3">
+          <div class="f"><label>Odometer Reading (km) <span class="req">*</span></label><input id="u-odo" type="number" placeholder="e.g. 45000" oninput="fmtOdo();updateProgress()"><div class="f-hint" id="u-odo-fmt"></div></div>
+          <div class="f"><label>No. of Owners <span class="req">*</span></label><select id="u-owners" onchange="updateProgress()"><option value="">Select...</option><option>1st Owner</option><option>2nd Owner</option><option>3rd Owner</option><option>4th+ Owner</option></select></div>
+          <div class="f"><label>Service History <span class="req">*</span></label><select id="u-svc" onchange="updateProgress()"><option value="">Select...</option><option>Full (Dealer)</option><option>Partial</option><option>Unknown</option></select></div>
+        </div>
+        <div class="g2" style="margin-top:12px">
+          <div class="f"><label>Last Service Date</label><input id="u-lastSvc" type="date"></div>
+          <div class="f"><label>Sunroof</label><select id="u-sunroof"><option value="">Select...</option><option>Yes — Panoramic</option><option>Yes — Regular</option><option>No</option></select></div>
+        </div>
+
+        <div class="dv"></div>
+        <div class="sec-label">Accident & Legal</div>
+        <div class="g3">
+          <div class="f"><label>Accident History <span class="req">*</span></label><select id="u-acc" onchange="updateProgress()"><option value="">Select...</option><option>No Accident</option><option>Minor (Repaired)</option><option>Moderate</option><option>Major Accident</option></select></div>
+          <div class="f"><label>Accident Severity</label><select id="u-accSev"><option value="">N/A</option><option>Minor</option><option>Moderate</option><option>Major</option></select></div>
+          <div class="f"><label>Loan Status</label><select id="u-loan-status"><option value="">Select...</option><option>Clear / No Loan</option><option>Under Finance</option></select></div>
+        </div>
+        <div class="g3" style="margin-top:12px">
+          <div class="f"><label>Insurance Status <span class="req">*</span></label><select id="u-ins-status" onchange="updateProgress()"><option value="">Select...</option><option>Valid — Comprehensive</option><option>Valid — Third-Party</option><option>Expired</option></select></div>
+          <div class="f"><label>Insurance Type</label><select id="u-ins-type"><option value="">Select...</option><option>Comprehensive</option><option>Third-Party</option></select></div>
+          <div class="f"><label>Insurance Validity</label><input id="u-ins" placeholder="e.g. Until 2025 Shrawan"></div>
+        </div>
+        <div class="g3" style="margin-top:12px">
+          <div class="f"><label>Road Tax Validity <span class="req">*</span></label><input id="u-tax" placeholder="e.g. Until 2081/82 FY" oninput="updateProgress()"></div>
+          <div class="f"><label>Billbook Availability</label><select id="u-bill"><option value="">Select...</option><option>Original RC</option><option>Duplicate</option><option>Not Available</option></select></div>
+          <div class="f"><label>NOC (No Objection Certificate)</label><select id="u-noc"><option value="">Select...</option><option>Available</option><option>No</option><option>Will be provided</option></select></div>
+        </div>
+        <div class="g2" style="margin-top:12px">
+          <div class="f"><label>Documentation Status</label><select id="u-docStatus"><option value="">Select...</option><option>Complete</option><option>Partial</option><option>Incomplete</option></select></div>
+          <div class="f"><label>History Check Status</label><select id="u-hist"><option value="">Select...</option><option>All Passed</option><option>Issues Found</option><option>Not Checked</option></select></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 3: Pricing & Purchase Info ── -->
+    <div class="sec" data-sec="pricing">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">3</div><span class="sec-title">Pricing & Purchase Info</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="sec-label">Price</div>
+        <div class="g3">
+          <div class="f"><label>Asking Price (NPR) <span class="req">*</span></label><input id="u-price" type="number" placeholder="e.g. 4500000" oninput="fmtHint('u-price','u-price-fmt');calcUsedEmi();updateProgress()"><div class="f-hint" id="u-price-fmt"></div></div>
+          <div class="f"><label>Price Type <span class="req">*</span></label><select id="u-neg" onchange="updateProgress()"><option value="">Select...</option><option value="Fixed">Fixed</option><option value="Negotiable">Negotiable</option></select></div>
+          <div class="f"><label>Booking Amount (NPR)</label><input id="u-book" type="number" placeholder="e.g. 50000" oninput="fmtHint('u-book','u-book-fmt')"><div class="f-hint" id="u-book-fmt"></div></div>
+        </div>
+
+        <div class="dv"></div>
+        <div class="sec-label">Market Price Indicator</div>
+        <div style="margin-bottom:12px">
+          <div class="mpi-row" id="mpi-row">
+            <button class="mpi-btn" data-val="fair" onclick="setMPI('fair')">✓ Fair Price</button>
+            <button class="mpi-btn" data-val="good" onclick="setMPI('good')">⬇ Good Deal</button>
+            <button class="mpi-btn" data-val="high" onclick="setMPI('high')">⬆ High Price</button>
+          </div>
+          <input type="hidden" id="u-mpi" value="">
+          <div class="f-hint" style="margin-top:6px">Select the market position of this listing compared to similar vehicles</div>
+        </div>
+
+        <div class="dv"></div>
+        <div class="sec-label">Payment & Finance</div>
+        <div class="g3">
+          <div class="f"><label>Mode of Payment <span class="req">*</span></label><select id="u-pay" onchange="updateProgress()"><option value="">Select...</option><option>Cash</option><option>Finance</option><option>Cash / Finance</option></select></div>
+          <div class="f"><label>Finance / Loan Available</label><select id="u-loan"><option value="">Select...</option><option>Yes — Commercial Banks (Class A)</option><option>Yes — Hire Purchase Companies</option><option>No</option></select></div>
+          <div class="f"><label>Finance Partner</label><input id="u-finance-partner" placeholder="e.g. NIC Asia, Everest Bank"></div>
+        </div>
+        <div class="g2" style="margin-top:12px">
+          <div class="f"><label>Exchange Option</label><select id="u-exch"><option value="">Select...</option><option>Yes</option><option>No</option></select></div>
+          <div class="f"><label>Exchange Details</label><input id="u-exchDetails" placeholder="e.g. Conditions if exchange is accepted"></div>
+        </div>
+
+        <div class="dv"></div>
+        <div class="sec-label">EMI Estimate (Finance)</div>
+        <div class="g3">
+          <div class="f"><label>Down Payment %</label><select id="u-emi-down" onchange="calcUsedEmi()"><option value="20">20%</option><option value="25">25%</option><option value="30">30%</option><option value="35">35%</option><option value="40">40%</option></select></div>
+          <div class="f"><label>Tenure (Months)</label><select id="u-emi-tenure" onchange="calcUsedEmi()"><option value="36">36 months</option><option value="48">48 months</option><option value="60">60 months</option><option value="72">72 months</option><option value="84">84 months</option></select></div>
+          <div class="f"><label>Interest Rate (% p.a.)</label><input id="u-emi-rate" type="number" value="11" min="7" max="20" step="0.5" oninput="calcUsedEmi()"></div>
+        </div>
+        <div id="emi-preview" style="display:none;margin-top:12px">
+          <div class="emi-preview">
+            <div>
+              <div class="emi-amount" id="u-emi-result">Rs. 0</div>
+              <div class="emi-meta" id="u-emi-meta">per month</div>
+            </div>
+            <div class="emi-breakdown" id="u-emi-breakdown"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 4: Features & Specifications ── -->
+    <div class="sec" data-sec="features">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">4</div><span class="sec-title">Features & Specifications</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="sec-label">Comfort & Infotainment</div>
+        <div class="g3">
+          <div class="f"><label>AC Type</label><select id="u-ac"><option value="">Select...</option><option>Manual AC</option><option>Auto Climate Control</option><option>Dual Zone Auto AC</option></select></div>
+          <div class="f"><label>Infotainment System</label><input id="u-info" placeholder="e.g. 9-inch, Apple CarPlay, Android Auto"></div>
+          <div class="f"><label>Steering Type</label><select id="u-steer"><option value="">Select...</option><option>Power Steering</option><option>Power + Tilt</option><option>Power + Tilt + Telescopic</option></select></div>
+        </div>
+        <div class="g3" style="margin-top:12px">
+          <div class="f"><label>Seat Material</label><select id="u-seatMat"><option value="">Select...</option><option>Fabric</option><option>Leather</option><option>Leatherette</option><option>Half-Leather</option></select></div>
+          <div class="f"><label>Boot Space (Liters)</label><input id="u-boot" placeholder="e.g. 373L / 591L (seats folded)"></div>
+          <div class="f"><label>Ground Clearance (mm)</label><input id="u-gc" placeholder="e.g. 200 mm"></div>
+        </div>
+
+        <div class="dv"></div>
+        <div class="sec-label">Safety</div>
+        <div class="g3">
+          <div class="f"><label>Airbags</label><input id="u-air" placeholder="e.g. 2 (Driver + Co-driver) / 6"></div>
+          <div class="f"><label>Safety Rating</label><input id="u-safety-rating" placeholder="e.g. 4-Star Global NCAP / Not Rated"></div>
+          <div class="f"><label>Parking Assist</label><select id="u-parking"><option value="">Select...</option><option>Rear Sensors</option><option>Rear Camera</option><option>360° Camera</option><option>Sensors + Camera</option><option>None</option></select></div>
+        </div>
+        <div style="margin-top:12px">
+          <div class="f"><label>Safety Features (select all that apply)</label></div>
+          <div class="cks" style="margin-top:6px">
+            <label class="ck"><input type="checkbox" class="u-safety" value="ABS"><span>ABS</span></label>
+            <label class="ck"><input type="checkbox" class="u-safety" value="EBD"><span>EBD</span></label>
+            <label class="ck"><input type="checkbox" class="u-safety" value="ESC"><span>ESC</span></label>
+            <label class="ck"><input type="checkbox" class="u-safety" value="Traction Control"><span>Traction Control</span></label>
+            <label class="ck"><input type="checkbox" class="u-safety" value="Hill Assist"><span>Hill Assist</span></label>
+            <label class="ck"><input type="checkbox" class="u-safety" value="Lane Departure Warning"><span>Lane Departure Warning</span></label>
+            <label class="ck"><input type="checkbox" class="u-safety" value="Forward Collision Warning"><span>Forward Collision Warning</span></label>
+            <label class="ck"><input type="checkbox" class="u-safety" value="Blind Spot Monitor"><span>Blind Spot Monitor</span></label>
+          </div>
+        </div>
+
+        <div class="dv"></div>
+        <div class="sec-label">Lighting & Wheels</div>
+        <div class="g3">
+          <div class="f"><label>Headlights</label><select id="u-lights"><option value="">Select...</option><option>Halogen</option><option>Projector</option><option>LED</option><option>LED + DRL</option><option>Laser + DRL</option></select></div>
+          <div class="f"><label>Wheels / Tyres</label><select id="u-wheels"><option value="">Select...</option><option>Steel Wheels</option><option>Alloy Wheels</option><option>Diamond Cut Alloy</option></select></div>
+          <div class="f"><label>Tyre Size</label><input id="u-tyre" placeholder="e.g. 215/60 R16"></div>
+        </div>
+
+        <div class="dv"></div>
+        <div class="sec-label">Key Features (comma-separated)</div>
+        <div class="f">
+          <textarea id="u-feat" placeholder="Sunroof, Cruise Control, Push Start, Reverse Camera, Keyless Entry, Wireless Charging, Heated Seats, BSD, ADAS..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 5: Inspection & Scores ── -->
+    <div class="sec" data-sec="inspection">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">5</div><span class="sec-title">Inspection Details & Scores</span><span class="sec-subtitle">— AutoViindu inspection report</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="sec-label">Component Scores (1–5 stars)</div>
+        <div class="score-grid" id="score-grid">
+          <!-- Injected by JS -->
+        </div>
+
+        <div class="dv"></div>
+        <div class="sec-label">Test Drive Summary</div>
+        <div class="g3">
+          <div class="f"><label>Test Drive Available</label><select id="u-td-insp"><option value="">Select...</option><option>Yes</option><option>No</option><option>Home Test Drive Available</option></select></div>
+          <div class="f"><label>Test Drive Summary</label><input id="u-td-summary" placeholder="e.g. Smooth, no vibration, responsive brakes"></div>
+          <div class="f"><label>Showroom / In-person Visit</label><select id="u-visit"><option value="">Select...</option><option>Yes</option><option>No</option></select></div>
+        </div>
+        <div class="score-grid" style="margin-top:12px" id="td-score-grid">
+          <!-- Test drive scores injected by JS -->
+        </div>
+
+        <div class="dv"></div>
+        <div class="sec-label">AutoViindu Condition Score (ACS)</div>
+        <div class="acs-display" id="acs-display">
+          <div>
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.65;margin-bottom:4px">ACS Score</div>
+            <div class="acs-score-big" id="acs-score-val">—</div>
+            <div style="font-size:12px;opacity:.55;margin-top:4px" id="acs-score-sub">Complete inspection scores above</div>
+          </div>
+          <div>
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.65;margin-bottom:4px">Grade</div>
+            <div class="acs-grade" id="acs-grade-val">—</div>
+          </div>
+          <div class="acs-info">
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.65;margin-bottom:6px">Inspection Badge</div>
+            <div class="acs-badge-row">
+              <button class="acs-badge" data-badge="Verified" onclick="setACSBadge(this)">✓ Verified</button>
+              <button class="acs-badge" data-badge="Premium Verified" onclick="setACSBadge(this)">★ Premium Verified</button>
+              <button class="acs-badge" data-badge="Standard" onclick="setACSBadge(this)">◎ Standard</button>
+            </div>
+            <input type="hidden" id="u-acs-badge" value="">
+            <div class="acs-note" id="acs-note">Grade A = 4.5–5.0 · B = 3.5–4.4 · C = 2.5–3.4 · D = below 2.5</div>
+          </div>
+        </div>
+        <div style="margin-top:12px">
+          <div class="f"><label>Inspection Notes (optional)</label><textarea id="u-insp-notes" placeholder="Any additional notes from the inspection..."></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 6: Media & Documentation ── -->
+    <div class="sec" data-sec="media">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">6</div><span class="sec-title">Media & Documentation</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="g2">
+          <div class="f full"><label>Photo URLs — one per line <span class="req">*</span></label><textarea id="u-photos" placeholder="assets/images/used/listing-front.jpg&#10;assets/images/used/listing-back.jpg&#10;assets/images/used/listing-interior.jpg&#10;assets/images/used/listing-odometer.jpg&#10;assets/images/used/listing-engine.jpg" oninput="updateProgress()"></textarea><div class="f-hint">Include: Front, Back, Interior, Odometer, Engine Bay, Chassis/VIN</div></div>
+          <div class="f"><label>Video / Walkaround URL</label><input id="u-vid" placeholder="https://youtube.com/watch?v=..."></div>
+          <div class="f"><label>Original Brochure (optional)</label><input id="u-bro" placeholder="assets/brochures/...pdf"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 7: Location & Contact ── -->
+    <div class="sec" data-sec="contact">
+      <div class="sec-hd" onclick="tog(this)">
+        <div class="sec-hd-left"><div class="sec-num">7</div><span class="sec-title">Location & Contact</span></div>
+        <span class="sec-arrow open">▼</span>
+      </div>
+      <div class="sec-bd">
+        <div class="g2">
+          <div class="f"><label>Location (City / District) <span class="req">*</span></label><input id="u-loc" placeholder="e.g. Kathmandu, Pokhara" oninput="updateProgress()"></div>
+          <div class="f"><label>Seller Name</label><input id="u-sname" placeholder="Owner name or dealership"></div>
+          <div class="f"><label>Phone / WhatsApp <span class="req">*</span></label><input id="u-phone" type="tel" placeholder="e.g. 9841XXXXXX" oninput="updateProgress()"></div>
+          <div class="f"><label>Email (optional)</label><input id="u-email" type="email" placeholder="seller@email.com"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <span class="action-bar-label">Used Car Listing</span>
+      <button class="btn btn-secondary" onclick="openOutput('used')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg> View JS Object
+      </button>
+      <button class="btn btn-outline" onclick="downloadJSON('used')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Download JSON
+      </button>
+      <button class="btn btn-primary" id="btn-submit-used" onclick="submitToSheets('used')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg> Save to Sheets
+      </button>
+    </div>
+  </div>
+</main>
+
+<!-- OUTPUT MODAL -->
+<div class="modal-overlay" id="output-modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-hd">
+      <h3 id="modal-title">JS Object</h3>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body"><textarea id="modal-output" readonly></textarea></div>
+    <div class="modal-ft">
+      <button class="btn btn-primary" onclick="copyOutput()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        <span id="copy-label">Copy to Clipboard</span>
+      </button>
+      <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast-wrap"></div>
+
+<script>
+/* ── CONFIG ── */
+const CONFIG = { password:'autoviindu2024', sheetsUrl:localStorage.getItem('av_sheets_url')||'' };
+
+/* ── INSPECTION SCORES DEF ── */
+const INSP_SCORES = [
+  {id:'exterior', label:'Exterior Score'},
+  {id:'interior', label:'Interior Score'},
+  {id:'engine',   label:'Engine Health'},
+  {id:'suspension',label:'Suspension Score'},
+  {id:'braking',  label:'Braking Score'},
+  {id:'electrical',label:'Electrical Score'},
+];
+const TD_SCORES = [
+  {id:'driving',  label:'Driving Experience'},
+  {id:'noise',    label:'Noise Level'},
+  {id:'comfort',  label:'Comfort Score'},
+];
+const scoreVals = {};
+
+function buildScoreGrids(){
+  renderScores(INSP_SCORES,'score-grid');
+  renderScores(TD_SCORES,'td-score-grid');
+}
+
+function renderScores(items,containerId){
+  const c=document.getElementById(containerId);
+  c.innerHTML=items.map(s=>`
+    <div class="score-item">
+      <label>${s.label}</label>
+      <div class="score-stars" id="stars-${s.id}">
+        ${[1,2,3,4,5].map(i=>`<button class="star-btn" onclick="setScore('${s.id}',${i})" title="${i} star">★</button>`).join('')}
+      </div>
+      <div class="score-val" id="sval-${s.id}">Not rated</div>
+    </div>`).join('');
+}
+
+function setScore(id,val){
+  scoreVals[id]=val;
+  const stars=document.querySelectorAll(`#stars-${id} .star-btn`);
+  stars.forEach((s,i)=>s.classList.toggle('lit',i<val));
+  document.getElementById(`sval-${id}`).textContent=val+'/5 stars';
+  calcACS();
+}
+
+function calcACS(){
+  const allScores=[...INSP_SCORES,...TD_SCORES].map(s=>scoreVals[s.id]).filter(v=>v);
+  if(!allScores.length){ return; }
+  const avg=(allScores.reduce((a,b)=>a+b,0)/allScores.length).toFixed(2);
+  const grade=avg>=4.5?'A':avg>=3.5?'B':avg>=2.5?'C':'D';
+  document.getElementById('acs-score-val').textContent=avg;
+  document.getElementById('acs-grade-val').textContent=grade;
+  document.getElementById('acs-score-sub').textContent=`Based on ${allScores.length} of ${INSP_SCORES.length+TD_SCORES.length} scores`;
+}
+
+function setACSBadge(el){
+  document.querySelectorAll('.acs-badge').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('u-acs-badge').value=el.dataset.badge;
+}
+
+/* ── GATE ── */
+function checkGate(){
+  const pw=document.getElementById('gate-pw').value;
+  const err=document.getElementById('gate-err');
+  if(pw===CONFIG.password){
+    document.getElementById('gate').style.display='none';
+    buildScoreGrids();
+    initUrl();
+    updateProgress();
+  } else {
+    err.textContent='Incorrect password.';
+    document.getElementById('gate-pw').value='';
+    document.getElementById('gate-pw').focus();
+  }
+}
+document.getElementById('gate-pw').addEventListener('keyup',e=>{if(e.key==='Enter')checkGate()});
+
+/* ── URL ── */
+function initUrl(){
+  const stored=localStorage.getItem('av_sheets_url');
+  if(stored){document.getElementById('sheets-url').value=stored;updateUrlStatus(stored);}
+}
+function saveUrl(show){
+  const url=document.getElementById('sheets-url').value.trim();
+  localStorage.setItem('av_sheets_url',url);
+  CONFIG.sheetsUrl=url;
+  updateUrlStatus(url);
+  if(show) toast('Sheets URL saved','ok');
+}
+function updateUrlStatus(url){
+  const el=document.getElementById('url-status');
+  if(url&&url.startsWith('https://script.google.com')){
+    el.textContent='Connected — submissions will save to Google Sheets';el.className='url-status ok';
+  } else if(url){
+    el.textContent='URL looks incorrect — must start with https://script.google.com';el.className='url-status missing';
+  } else {
+    el.textContent='No URL set — submissions only available as download / copy';el.className='url-status missing';
+  }
+}
+
+/* ── HELPERS ── */
+function g(id){const el=document.getElementById(id);return el?el.value.trim():''}
+function gr(name){const el=document.querySelector(`input[name="${name}"]:checked`);return el?el.value:''}
+function gc(cls){return[...document.querySelectorAll(`.${cls}:checked`)].map(x=>x.value)}
+function mkSlug(...parts){return parts.filter(Boolean).join(' ').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/,'')}
+function fmtNPR(v){if(!v)return '';return 'NPR '+parseInt(v).toLocaleString('en-IN')}
+function fmtHint(inputId,hintId){const el=document.getElementById(inputId);const h=document.getElementById(hintId);if(h)h.textContent=fmtNPR(el.value);}
+function fmtOdo(){const el=document.getElementById('u-odo');const h=document.getElementById('u-odo-fmt');if(h&&el.value)h.textContent=parseInt(el.value).toLocaleString('en-IN')+' km';}
+
+/* ── MPI ── */
+function setMPI(val){
+  document.querySelectorAll('.mpi-btn').forEach(b=>b.classList.remove('active'));
+  const btn=document.querySelector(`.mpi-btn[data-val="${val}"]`);
+  if(btn)btn.classList.add('active');
+  document.getElementById('u-mpi').value=val;
+}
+
+/* ── EMI CALC (USED) ── */
+function calcUsedEmi(){
+  const price=parseInt(g('u-price'))||0;
+  if(!price){document.getElementById('emi-preview').style.display='none';return;}
+  const downPct=parseInt(g('u-emi-down'))||20;
+  const tenure=parseInt(g('u-emi-tenure'))||60;
+  const rate=parseFloat(g('u-emi-rate'))||11;
+  const principal=price*(1-downPct/100);
+  const r=rate/12/100;
+  const emi=r?Math.round(principal*r*Math.pow(1+r,tenure)/(Math.pow(1+r,tenure)-1)):Math.round(principal/tenure);
+  const total=emi*tenure;
+  const interest=total-principal;
+  const downAmt=price*(downPct/100);
+  document.getElementById('emi-preview').style.display='block';
+  document.getElementById('u-emi-result').textContent='Rs. '+emi.toLocaleString('en-IN');
+  document.getElementById('u-emi-meta').textContent=`per month · ${tenure} months · ${rate}% p.a.`;
+  document.getElementById('u-emi-breakdown').innerHTML=`
+    <div class="emi-bd-item"><div class="emi-bd-val">Rs. ${Math.round(downAmt).toLocaleString('en-IN')}</div><div class="emi-bd-lbl">Down (${downPct}%)</div></div>
+    <div class="emi-bd-item"><div class="emi-bd-val">Rs. ${Math.round(interest).toLocaleString('en-IN')}</div><div class="emi-bd-lbl">Total Interest</div></div>
+    <div class="emi-bd-item"><div class="emi-bd-val">Rs. ${Math.round(total).toLocaleString('en-IN')}</div><div class="emi-bd-lbl">Total Payment</div></div>`;
+}
+
+/* ── PROGRESS ── */
+const USED_REQUIRED=['u-brand','u-model','u-variant','u-color','u-bodyType','u-powertrain','u-fuel','u-trans','u-mfgY','u-regNo','u-odo','u-owners','u-svc','u-acc','u-ins-status','u-tax','u-price','u-neg','u-pay','u-loc','u-phone'];
+const SECTION_MAP={overview:['u-brand','u-model','u-bodyType','u-powertrain','u-fuel','u-mfgY','u-regNo'],condition:['u-odo','u-owners','u-svc','u-acc','u-ins-status','u-tax'],pricing:['u-price','u-neg','u-pay'],features:[],inspection:[],media:['u-photos'],contact:['u-loc','u-phone']};
+
+function updateProgress(){
+  const filled=USED_REQUIRED.filter(id=>{const el=document.getElementById(id);return el&&el.value.trim()!==''});
+  const pct=Math.round(filled.length/USED_REQUIRED.length*100);
+  document.getElementById('progress-fill').style.width=pct+'%';
+  document.getElementById('progress-pct').textContent=pct+'%';
+  const dots=document.getElementById('progress-dots');
+  const secs=[{key:'overview',label:'Overview'},{key:'condition',label:'Condition'},{key:'pricing',label:'Pricing'},{key:'features',label:'Features'},{key:'inspection',label:'Inspection'},{key:'media',label:'Media'},{key:'contact',label:'Contact'}];
+  dots.innerHTML=secs.map(s=>{
+    const reqForSec=SECTION_MAP[s.key]||[];
+    const allFilled=reqForSec.every(id=>{const el=document.getElementById(id);return el&&el.value.trim()!==''});
+    return `<span class="ps-dot ${allFilled&&reqForSec.length?'done':''}">${allFilled&&reqForSec.length?'✓ ':''} ${s.label}</span>`;
+  }).join('');
+}
+
+/* ── TABS & ACCORDION ── */
+function switchTab(tab,btn){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById('p-'+tab).classList.add('on');
+}
+function tog(hd){
+  const bd=hd.nextElementSibling;
+  const arrow=hd.querySelector('.sec-arrow');
+  bd.classList.toggle('hide');
+  arrow.classList.toggle('open',!bd.classList.contains('hide'));
+}
+
+/* ── DATA COLLECT ── */
+function collectNew(){
+  const brand=g('n-brand'),model=g('n-model'),variant=g('n-variant'),year=g('n-year');
+  const images=g('n-images').split('\n').map(s=>s.trim()).filter(Boolean);
+  const pwr=g('n-powertrain');
+  return {
+    _type:'new_car',_submittedAt:new Date().toISOString(),id:'AUTO_INCREMENT',
+    slug:mkSlug(brand,model,variant,year),brand,model,variant,year:parseInt(year)||year,
+    manufactureCompany:g('n-company'),bodyType:g('n-bodyType').toLowerCase(),body:g('n-bodyType'),
+    powertrain:pwr,drivetrain:g('n-drivetrain'),transmission:g('n-transmission'),fuelType:g('n-fuel'),
+    isEV:pwr==='EV',badge:g('n-badge')||null,budgetTier:g('n-budget'),safetyRating:g('n-safety'),
+    emissionNorm:g('n-emission'),rangeOrMileage:g('n-range'),tagline:g('n-tagline'),overview:g('n-overview'),
+    pricing:{exShowroom:parseInt(g('n-price'))||0,onRoad:g('n-priceOr')?parseInt(g('n-priceOr')):null,
+      bookingAmount:g('n-booking')?parseInt(g('n-booking')):null,modeOfPayment:g('n-payment'),
+      availability:g('n-avail'),exchangeOffer:g('n-exchange')==='Yes',emiInfo:g('n-emi')},
+    media:{images,coverImage:g('n-cover')||images[0]||'',video:g('n-video'),brochure:g('n-brochure'),viewer360:g('n-360')},
+    dealer:{name:g('n-dealer'),showroom:g('n-showroom'),location:g('n-location'),testDrive:gr('n-td')==='Yes',serviceCenter:g('n-service')==='Yes'},
+    warranty:{standard:g('n-warranty'),battery:g('n-bwrn')||null,extended:g('n-ewrn'),freeServices:g('n-freesvc'),roadsideAssistance:g('n-roadside'),totalServices:g('n-totalsvc')},
+    accessories:gc('n-acc'),ownershipBenefits:gc('n-ben'),
+  };
+}
+
+function collectUsed(){
+  const brand=g('u-brand'),model=g('u-model'),variant=g('u-variant'),mfgY=g('u-mfgY');
+  const photos=g('u-photos').split('\n').map(s=>s.trim()).filter(Boolean);
+  const feats=g('u-feat').split(',').map(s=>s.trim()).filter(Boolean);
+  const allScoresObj={};
+  [...INSP_SCORES,...TD_SCORES].forEach(s=>{if(scoreVals[s.id])allScoresObj[s.id]=scoreVals[s.id];});
+  const acsScoreEl=document.getElementById('acs-score-val');
+  const acsGradeEl=document.getElementById('acs-grade-val');
+  const acsScore=acsScoreEl.textContent!=='—'?parseFloat(acsScoreEl.textContent):null;
+  const acsGrade=acsGradeEl.textContent!=='—'?acsGradeEl.textContent:null;
+
+  return {
+    _type:'used_car',_submittedAt:new Date().toISOString(),id:'AUTO_INCREMENT',
+    slug:mkSlug(brand,model,variant,mfgY)+'-used',condition:'used',
+    brand,model,modelGeneration:g('u-gen'),variant,trimDetail:g('u-trim'),
+    bodyType:g('u-bodyType').toLowerCase(),body:g('u-bodyType'),
+    powertrain:g('u-powertrain'),transmission:g('u-trans'),fuelType:g('u-fuel'),
+    realWorldMileage:g('u-mileage'),seatingCapacity:g('u-seats'),
+    color:g('u-color'),sellerType:g('u-sellerType'),ownershipType:g('u-ownershipType'),
+    manufactureYear:parseInt(mfgY)||mfgY,registrationYear:parseInt(g('u-regY'))||g('u-regY'),registrationNo:g('u-regNo'),
+    conditionData:{
+      odometer:g('u-odo')?parseInt(g('u-odo')):null,noOfOwners:g('u-owners'),serviceHistory:g('u-svc'),
+      lastServiceDate:g('u-lastSvc'),sunroof:g('u-sunroof'),
+      accidentHistory:g('u-acc'),accidentSeverity:g('u-accSev'),
+      loanStatus:g('u-loan-status'),insuranceStatus:g('u-ins-status'),insuranceType:g('u-ins-type'),
+      insuranceValidity:g('u-ins'),roadTaxValidity:g('u-tax'),
+      billbookAvailability:g('u-bill'),noc:g('u-noc'),documentationStatus:g('u-docStatus'),
+      historyChecked:g('u-hist'),
+    },
+    pricing:{
+      askingPrice:parseInt(g('u-price'))||0,priceType:g('u-neg'),
+      bookingAmount:g('u-book')?parseInt(g('u-book')):null,
+      marketPriceIndicator:g('u-mpi'),modeOfPayment:g('u-pay'),
+      loanAvailable:g('u-loan'),financePartner:g('u-finance-partner'),
+      exchangeOffer:g('u-exch')==='Yes',exchangeDetails:g('u-exchDetails'),
+      emiEstimate:{downPaymentPct:g('u-emi-down'),tenureMonths:g('u-emi-tenure'),interestRate:g('u-emi-rate'),
+        monthlyEMI:document.getElementById('u-emi-result').textContent},
+    },
+    features:{
+      keyFeatures:feats,acType:g('u-ac'),infotainment:g('u-info'),steeringType:g('u-steer'),
+      seatMaterial:g('u-seatMat'),bootSpace:g('u-boot'),groundClearance:g('u-gc'),
+      airbags:g('u-air'),safetyRating:g('u-safety-rating'),parkingAssist:g('u-parking'),
+      safetyFeatures:gc('u-safety'),headlights:g('u-lights'),wheels:g('u-wheels'),tyreSize:g('u-tyre'),
+    },
+    inspection:{
+      scores:allScoresObj,testDriveAvailable:g('u-td-insp'),testDriveSummary:g('u-td-summary'),
+      showroomVisit:g('u-visit'),inspectionNotes:g('u-insp-notes'),
+      acs:{score:acsScore,grade:acsGrade,badge:g('u-acs-badge')},
+    },
+    media:{photos,video:g('u-vid'),brochure:g('u-bro')},
+    contact:{location:g('u-loc'),sellerName:g('u-sname'),phone:g('u-phone'),email:g('u-email')},
+  };
+}
+
+/* ── VALIDATION ── */
+function validateNew(){
+  const errs=[];
+  if(!g('n-brand'))errs.push('Brand is required');
+  if(!g('n-model'))errs.push('Model is required');
+  if(!g('n-year'))errs.push('Manufacture Year is required');
+  if(!g('n-bodyType'))errs.push('Body Type is required');
+  if(!g('n-powertrain'))errs.push('Powertrain is required');
+  if(!g('n-fuel'))errs.push('Fuel Type is required');
+  if(!g('n-price'))errs.push('Ex-Showroom Price is required');
+  if(!g('n-overview'))errs.push('Overview is required');
+  return errs;
+}
+function validateUsed(){
+  const errs=[];
+  if(!g('u-brand'))errs.push('Brand is required');
+  if(!g('u-model'))errs.push('Model is required');
+  if(!g('u-mfgY'))errs.push('Manufacturing Year is required');
+  if(!g('u-bodyType'))errs.push('Body Type is required');
+  if(!g('u-powertrain'))errs.push('Powertrain is required');
+  if(!g('u-fuel'))errs.push('Fuel Type is required');
+  if(!g('u-trans'))errs.push('Transmission is required');
+  if(!g('u-regNo'))errs.push('Registration Number is required');
+  if(!g('u-odo'))errs.push('Odometer Reading is required');
+  if(!g('u-owners'))errs.push('No. of Owners is required');
+  if(!g('u-svc'))errs.push('Service History is required');
+  if(!g('u-acc'))errs.push('Accident History is required');
+  if(!g('u-ins-status'))errs.push('Insurance Status is required');
+  if(!g('u-tax'))errs.push('Road Tax Validity is required');
+  if(!g('u-price'))errs.push('Asking Price is required');
+  if(!g('u-neg'))errs.push('Price Type (Fixed/Negotiable) is required');
+  if(!g('u-pay'))errs.push('Mode of Payment is required');
+  if(!g('u-loc'))errs.push('Location is required');
+  if(!g('u-phone'))errs.push('Phone / WhatsApp is required');
+  return errs;
+}
+
+/* ── OUTPUT / DOWNLOAD ── */
+function openOutput(type){
+  const data=type==='new'?collectNew():collectUsed();
+  document.getElementById('modal-output').value=JSON.stringify(data,null,2);
+  document.getElementById('modal-title').textContent=type==='new'?'JS Object — paste into cars-db.js':'JS Object — paste into used-cars-db.js';
+  document.getElementById('output-modal').classList.add('open');
+}
+function closeModal(){document.getElementById('output-modal').classList.remove('open')}
+function copyOutput(){
+  const ta=document.getElementById('modal-output');ta.select();document.execCommand('copy');
+  const lbl=document.getElementById('copy-label');lbl.textContent='Copied!';
+  setTimeout(()=>{lbl.textContent='Copy to Clipboard'},2000);
+}
+function downloadJSON(type){
+  const errs=type==='new'?validateNew():validateUsed();
+  if(errs.length){toast(errs[0],'error');return;}
+  const data=type==='new'?collectNew():collectUsed();
+  const fn=`av-${(data.brand||'listing').toLowerCase().replace(/\s+/g,'-')}-${(data.model||'car').toLowerCase().replace(/\s+/g,'-')}-${type}-${Date.now()}.json`;
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fn;a.click();
+  toast('Downloaded '+fn,'ok');
+}
+
+/* ── SHEETS SUBMIT ── */
+async function submitToSheets(type){
+  const errs=type==='new'?validateNew():validateUsed();
+  if(errs.length){errs.forEach((e,i)=>setTimeout(()=>toast(e,'error'),i*150));return;}
+  const url=CONFIG.sheetsUrl||localStorage.getItem('av_sheets_url')||'';
+  if(!url){toast('No Google Sheets URL set. Use Download JSON instead.','warning');return;}
+  const data=type==='new'?collectNew():collectUsed();
+  const btn=document.getElementById(`btn-submit-${type}`);
+  btn.disabled=true;btn.innerHTML='<span>Saving...</span>';
+  try{
+    await fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    toast(`Saved! "${data.brand} ${data.model}" → Google Sheets`,'ok');
+  }catch(err){toast('Network error — check your Apps Script URL','error')}
+  finally{
+    btn.disabled=false;
+    btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg> Save to Sheets';
+  }
+}
+
+/* ── DRAFT ── */
+let draftTimer=null;
+document.querySelectorAll('input,select,textarea').forEach(el=>{
+  el.addEventListener('input',()=>scheduleDraft());
+  el.addEventListener('change',()=>scheduleDraft());
+});
+function scheduleDraft(){
+  clearTimeout(draftTimer);
+  draftTimer=setTimeout(()=>{document.getElementById('draft-status').style.display='flex';},1500);
+}
+function clearDraft(){
+  if(!confirm('Clear all form data?'))return;
+  document.querySelectorAll('input:not(#sheets-url):not(#gate-pw),textarea').forEach(el=>el.value='');
+  document.querySelectorAll('select').forEach(el=>el.selectedIndex=0);
+  document.querySelectorAll('input[type=checkbox],input[type=radio]').forEach(el=>el.checked=false);
+  Object.keys(scoreVals).forEach(k=>{
+    delete scoreVals[k];
+    document.querySelectorAll(`#stars-${k} .star-btn`).forEach(b=>b.classList.remove('lit'));
+    const sv=document.getElementById(`sval-${k}`);if(sv)sv.textContent='Not rated';
+  });
+  document.querySelectorAll('.mpi-btn,.acs-badge').forEach(b=>b.classList.remove('active'));
+  document.getElementById('acs-score-val').textContent='—';
+  document.getElementById('acs-grade-val').textContent='—';
+  document.getElementById('emi-preview').style.display='none';
+  document.getElementById('draft-status').style.display='none';
+  updateProgress();
+  toast('Form cleared','ok');
+}
+
+/* ── TOAST ── */
+function toast(msg,type='ok'){
+  const icons={ok:'✓',error:'✗',warning:'!'};
+  const wrap=document.getElementById('toast-wrap');
+  const t=document.createElement('div');
+  t.className='toast'+(type!=='ok'?' '+type:'');
+  t.innerHTML=`<span style="font-weight:700;color:${type==='error'?'var(--red)':type==='warning'?'var(--gold)':'var(--g3)'}">${icons[type]}</span> ${msg}`;
+  wrap.appendChild(t);
+  setTimeout(()=>{t.style.opacity='0';t.style.transition='opacity .3s';setTimeout(()=>t.remove(),300)},3500);
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>

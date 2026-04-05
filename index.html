@@ -1274,21 +1274,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   margin-left: -30; /* Remove the negative margin completely */
 }
 
-/* Logo image sizing */
-.logo-img {
-  height: 156px;  /* Reasonable nav height */
-  width: auto;
-  display: block;
-  object-fit: contain;
-  background: transparent;
-  animation: slideInLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
 
-@media (max-width: 768px) {
-  .logo-img {
-    height: 130px;  /* Smaller on mobile */
-  }
-}
 .footer-logo-img {
   height: 120px;
   width: auto;
@@ -1319,6 +1305,46 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 .mm-btn.open svg.mm-chevron {
   transform: rotate(90deg);
 }
+/* FORM VISIBLE */
+    #form-area { animation:fadeUp .35s ease both; }
+    .logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: -12px;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.logo-img {
+  height: 180px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  animation: slideInLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 130px;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+}
+
+
 </style>
 
 <script src="assets/js/data/cars-db.js" defer></script>
@@ -1486,7 +1512,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
       </div>
     </a>
 
-    <a class="nav-dd-item" href="insurance-services.html">
+    <a class="nav-dd-item" href="insurance-finance.html">
       <div>
         <div>Insurance &amp; Financing</div>
         <div class="nav-dd-sub">EMI plans, insurance, trade-in</div>
@@ -1572,22 +1598,29 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
       </button>
     </div>
  
-    <!-- New Cars -->
-    <div class="mm-item">
-      <button class="mm-btn" id="mm-cars-btn">
-        <span>New Cars</span>
-        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-      <div class="mm-sub" id="mm-cars-sub">
-        <div class="mm-sub-link" onclick="AV.goTo('cars');closeMM()">All New Cars</div>
-        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'electric'});closeMM()">Electric Cars</div>
-        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hybrid'});closeMM()">Hybrid Cars</div>
-        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'suv'});closeMM()">SUVs</div>
-        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'sedan'});closeMM()">Sedans</div>
-        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hatchback'});closeMM()">Hatchbacks</div>
-      </div>
-    </div>
- 
+  <!-- New Cars -->
+<div class="mm-item">
+  <button class="mm-btn" id="mm-cars-btn" onclick="
+    const sub = document.getElementById('mm-cars-sub');
+    const isOpen = sub.classList.contains('open');
+    document.querySelectorAll('.mm-sub').forEach(s => s.classList.remove('open'));
+    document.querySelectorAll('.mm-btn').forEach(b => b.classList.remove('open'));
+    if (!isOpen) { sub.classList.add('open'); this.classList.add('open'); }
+  ">
+    <span>New Cars</span>
+    <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </button>
+  <div class="mm-sub" id="mm-cars-sub">
+    <div class="mm-sub-link" onclick="AV.goTo('cars');closeMM()">All New Cars</div>
+    <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'electric'});closeMM()">Electric Cars</div>
+    <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hybrid'});closeMM()">Hybrid Cars</div>
+    <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'suv'});closeMM()">SUVs</div>
+    <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'sedan'});closeMM()">Sedans</div>
+    <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hatchback'});closeMM()">Hatchbacks</div>
+  </div>
+</div>
     <!-- Used Cars -->
     <div class="mm-item">
       <button class="mm-btn" id="mm-used-btn">
@@ -1618,14 +1651,14 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <!-- Services -->
     <div class="mm-item">
       <button class="mm-btn" id="mm-services-btn">
-        <span>Services</span>
+        <span>Our Services</span>
         <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
       <div class="mm-sub" id="mm-services-sub">
         <div class="mm-sub-link" onclick="window.location.href='dotm-services.html';closeMM()">DOTM Services</div>
         <div class="mm-sub-link" onclick="window.location.href='parts-accessories.html';closeMM()">Parts &amp; Accessories</div>
         <div class="mm-sub-link" onclick="window.location.href='maintenance-repairs.html';closeMM()">Maintenance &amp; Repairs</div>
-        <div class="mm-sub-link" onclick="window.location.href='insurance-services.html';closeMM()">Insurance &amp; Financing</div>
+        <div class="mm-sub-link" onclick="window.location.href='insurance-finance.html';closeMM()">Insurance &amp; Financing</div>
         <div class="mm-sub-link" onclick="window.location.href='other-services.html';closeMM()">Other Services</div>
       </div>
     </div>
