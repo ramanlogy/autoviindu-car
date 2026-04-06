@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@13/font/simple-icons.min.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -458,9 +459,12 @@
       padding: 0 16px 36px; line-height: 1.65;
     }
     .footer-note a { color: var(--green); font-weight: 700; text-decoration: none; }
+  .brand-icon{font-size:22px;color:#000000;display:block;margin-bottom:4px}
+.brand-btn.active .brand-icon{color:#fa0000}
   </style>
 </head>
 <body>
+  <script src="assets/js/components/av-nav.js"></script> 
 
 <div class="hero">
   <div class="hero-badge">
@@ -637,17 +641,40 @@
         <div class="step-subtitle">Pick one — just for fun</div>
       </div>
     </div>
-
-    <div class="brand-grid">
-      <button class="brand-btn active" onclick="setBrand(this)"><div class="brand-initial">T</div><div class="brand-name">Toyota</div></button>
-      <button class="brand-btn" onclick="setBrand(this)"><div class="brand-initial">Hy</div><div class="brand-name">Hyundai</div></button>
-      <button class="brand-btn" onclick="setBrand(this)"><div class="brand-initial">Ho</div><div class="brand-name">Honda</div></button>
-      <button class="brand-btn" onclick="setBrand(this)"><div class="brand-initial">Su</div><div class="brand-name">Suzuki</div></button>
-      <button class="brand-btn" onclick="setBrand(this)"><div class="brand-initial">Ki</div><div class="brand-name">KIA</div></button>
-      <button class="brand-btn" onclick="setBrand(this)"><div class="brand-initial">MG</div><div class="brand-name">MG</div></button>
-      <button class="brand-btn" onclick="setBrand(this)"><div class="brand-initial">Ta</div><div class="brand-name">Tata</div></button>
-      <button class="brand-btn" onclick="setBrand(this)"><div class="brand-initial">By</div><div class="brand-name">BYD</div></button>
-    </div>
+<div class="brand-grid">
+  <button class="brand-btn active" onclick="setBrand(this)">
+    <i class="si si-toyota brand-icon"></i>
+    <div class="brand-name">Toyota</div>
+  </button>
+  <button class="brand-btn" onclick="setBrand(this)">
+    <i class="si si-hyundai brand-icon"></i>
+    <div class="brand-name">Hyundai</div>
+  </button>
+  <button class="brand-btn" onclick="setBrand(this)">
+    <i class="si si-honda brand-icon"></i>
+    <div class="brand-name">Honda</div>
+  </button>
+  <button class="brand-btn" onclick="setBrand(this)">
+    <i class="si si-suzuki brand-icon"></i>
+    <div class="brand-name">Suzuki</div>
+  </button>
+  <button class="brand-btn" onclick="setBrand(this)">
+    <i class="si si-kia brand-icon"></i>
+    <div class="brand-name">KIA</div>
+  </button>
+  <button class="brand-btn" onclick="setBrand(this)">
+    <i class="si si-mg brand-icon"></i>
+    <div class="brand-name">MG</div>
+  </button>
+  <button class="brand-btn" onclick="setBrand(this)">
+    <i class="si si-tata brand-icon"></i>
+    <div class="brand-name">Tata</div>
+  </button>
+  <button class="brand-btn" onclick="setBrand(this)">
+    <i class="si si-byd brand-icon"></i>
+    <div class="brand-name">BYD</div>
+  </button>
+</div>
 
     <button class="cta-btn" onclick="calculate()">
       <i data-lucide="calculator"></i>
@@ -931,5 +958,6 @@
     lucide.createIcons();
   }
 </script>
+  <script src="assets/js/components/av-footer.js"></script> 
 </body>
 </html>

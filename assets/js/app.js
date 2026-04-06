@@ -837,6 +837,129 @@ ${BRANDS.map(b=>`<div class="brand-card" onclick="AV.goTo('cars',{brand:'${b.nam
 
     </div>
   </div>
+  <!-- ══ EVENTS SECTION ══ -->
+<section class="events-section">
+  <div class="wrap">
+
+    <div class="sec-hd">
+      <div class="sec-hd-left">
+        <div class="eyebrow">Upcoming Events</div>
+        <h2 class="sec-title">Auto Events in Nepal</h2>
+        <p class="sec-sub">Car shows, test drive days, and launch events near you</p>
+      </div>
+      <a href="#" class="view-all">View All →</a>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="ev-tabs">
+      <button class="ev-tab-btn active">All</button>
+      <button class="ev-tab-btn">Car Shows</button>
+      <button class="ev-tab-btn">Test Drives</button>
+      <button class="ev-tab-btn">Launches</button>
+      <button class="ev-tab-btn">Exhibitions</button>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="events-grid">
+
+      <!-- Featured card (spans 2 cols on desktop) -->
+      <div class="event-card featured-event">
+        <div class="event-card-date-bar">
+          <div class="ecd-day">18</div>
+          <div class="ecd-month-year">APR 2025</div>
+          <div class="ecd-type">Featured</div>
+        </div>
+        <div class="event-card-img">
+          <img src="your-image.jpg" alt="Nepal Auto Expo">
+          <span class="event-fee-badge free">Free Entry</span>
+        </div>
+        <div class="event-card-body">
+          <div class="event-card-title">Nepal Auto Expo 2025</div>
+          <div class="event-card-meta">
+            <div class="event-meta-row">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Bhrikutimandap, Kathmandu
+            </div>
+            <div class="event-meta-row">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              10:00 AM – 6:00 PM
+            </div>
+          </div>
+          <p class="event-card-desc">Nepal's biggest annual automobile showcase featuring 50+ brands, live test drives, and exclusive launch reveals. Don't miss it.</p>
+        </div>
+        <div class="event-card-footer">
+          <div class="event-seats"><span class="event-seats-dot low"></span> 120 seats left</div>
+          <button class="event-rsvp-btn">RSVP Now →</button>
+        </div>
+      </div>
+
+      <!-- Regular card -->
+      <div class="event-card">
+        <div class="event-card-date-bar">
+          <div class="ecd-day">22</div>
+          <div class="ecd-month-year">APR 2025</div>
+          <div class="ecd-type">Test Drive</div>
+        </div>
+        <div class="event-card-img">
+          <img src="your-image.jpg" alt="Suzuki Test Drive">
+          <span class="event-fee-badge free">Free</span>
+        </div>
+        <div class="event-card-body">
+          <div class="event-card-title">Suzuki Swift Test Drive Day</div>
+          <div class="event-card-meta">
+            <div class="event-meta-row">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              CG Autocorp, New Road
+            </div>
+            <div class="event-meta-row">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              9:00 AM – 4:00 PM
+            </div>
+          </div>
+          <p class="event-card-desc">Book a slot and experience the all-new Swift firsthand with a certified Suzuki instructor.</p>
+        </div>
+        <div class="event-card-footer">
+          <div class="event-seats"><span class="event-seats-dot"></span> 40 seats left</div>
+          <button class="event-rsvp-btn">RSVP Now →</button>
+        </div>
+      </div>
+
+      <!-- Regular card — Full -->
+      <div class="event-card">
+        <div class="event-card-date-bar" style="background:var(--gold);">
+          <div class="ecd-day">05</div>
+          <div class="ecd-month-year">MAY 2025</div>
+          <div class="ecd-type">Launch</div>
+        </div>
+        <div class="event-card-img">
+          <img src="your-image.jpg" alt="EV Launch">
+          <span class="event-fee-badge invite">Invite Only</span>
+        </div>
+        <div class="event-card-body">
+          <div class="event-card-title">Riddara RD6 Official Nepal Launch</div>
+          <div class="event-card-meta">
+            <div class="event-meta-row">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Hotel Yak & Yeti, KTM
+            </div>
+            <div class="event-meta-row">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              6:00 PM – 9:00 PM
+            </div>
+          </div>
+          <p class="event-card-desc">Be the first to see Nepal's most anticipated EV launch with live unveil and pricing announcement.</p>
+        </div>
+        <div class="event-card-footer">
+          <div class="event-seats"><span class="event-seats-dot full"></span> Fully Booked</div>
+          <button class="event-rsvp-btn full" disabled>Waitlist</button>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.events-grid -->
+
+  </div>
+</section>
 </section>
 
 
