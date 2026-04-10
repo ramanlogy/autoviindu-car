@@ -1,0 +1,24 @@
+{
+  "name": "atb",
+  "version": "1.0.0",
+  "description": "assets/images/ ├── cars/               ← Car photos (main shots, gallery, interior) ├── brands/             ← Brand logos (PNG, transparent background) ├── services/           ← Service photos (detailing, workshop, etc.) ├── banners/            ← Homepage & section hero banners ├── og/                 ← Open Graph / social sharing images ├── icons/              ← App icons (PWA, favicon variants) └── team/               ← Team member photos (optional)",
+  "main": "seo-schema.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramanlogy/autoviindu-car.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramanlogy/autoviindu-car/issues"
+  },
+  "homepage": "https://github.com/ramanlogy/autoviindu-car#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.1.1"
+  }
+}
