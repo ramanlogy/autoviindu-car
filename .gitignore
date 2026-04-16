@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+
+# Junk / temp files — DO NOT commit these
+frontend/assets/images/cars/127.0.0.1_5500_index.html.png
+frontend/assets/images/cars/autoviindu.vercel.app_*.png
+frontend/assets/images/cars/create a woocommerce*
+frontend/assets/images/cars/WhatsApp Image*

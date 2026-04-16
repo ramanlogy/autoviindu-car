@@ -1,0 +1,651 @@
+[
+  {
+    "id": 401,
+    "slug": "kia-sonet-2025",
+    "brand": "Kia",
+    "model": "Sonet",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "popular",
+    "tagline": "Feature-loaded compact SUV with ADAS and panoramic sunroof",
+    "rating": 4.4,
+    "reviews": 2103,
+    "expertScore": 8.1,
+    "baseEMI": 42000,
+    "overview": "The Kia Sonet is Nepal's best-selling compact SUV, offering ADAS Level 1 safety, a 10.25\" touchscreen, ventilated seats, and a 1.5L petrol engine. Available in MT and IVT, it punches well above its price in features and build quality.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Glacier White Pearl",
+        "hex": "#F0F0F0"
+      },
+      {
+        "name": "Aurora Black Pearl",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Intense Red",
+        "hex": "#B22222"
+      },
+      {
+        "name": "Steel Silver",
+        "hex": "#8C9098"
+      },
+      {
+        "name": "Intelligency Blue",
+        "hex": "#1B3A6B"
+      },
+      {
+        "name": "Gravity Grey",
+        "hex": "#4A4A4A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "HTE",
+        "price": 4890000,
+        "label": "Rs. 48.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "8\" Touchscreen + CarPlay/Android Auto",
+          "Rear Camera",
+          "Electric Adjust ORVMs",
+          "Keyless Entry",
+          "ISOFIX",
+          "15\" Steel Wheels"
+        ],
+        "specs": {
+          "power": "113 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "HTK",
+        "price": 5190000,
+        "label": "Rs. 51.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "10.25\" HD Touchscreen",
+          "Bose 7-Speaker System",
+          "Electric Sunroof",
+          "Rear AC Vents",
+          "Auto Climate Control",
+          "HTE features+"
+        ],
+        "specs": {
+          "power": "113 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "HTK+",
+        "price": 5490000,
+        "label": "Rs. 54.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "16\" Alloy Wheels",
+          "Ventilated Front Seats",
+          "Wireless Charging",
+          "TPMS",
+          "Auto Headlamps + Wipers",
+          "HTK features+"
+        ],
+        "specs": {
+          "power": "113 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "HTX",
+        "price": 5890000,
+        "label": "Rs. 58.90L",
+        "popular": true,
+        "transmission": "IVT",
+        "fuel": "Petrol",
+        "features": [
+          "ADAS Level 1 (Lane Keep, Collision Warning)",
+          "10.25\" Digital Cluster",
+          "Panoramic Sunroof",
+          "IVT Automatic",
+          "Drive Modes",
+          "HTK+ features+"
+        ],
+        "specs": {
+          "power": "113 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.1 km/l",
+          "transmission": "IVT"
+        }
+      },
+      {
+        "name": "HTX+",
+        "price": 6390000,
+        "label": "Rs. 63.90L",
+        "popular": false,
+        "transmission": "IVT",
+        "fuel": "Petrol",
+        "features": [
+          "360° Camera",
+          "Blind Spot Monitor",
+          "Rear Cross Traffic Alert",
+          "Ambient Lighting",
+          "Powered Driver Seat",
+          "HTX features+"
+        ],
+        "specs": {
+          "power": "113 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.1 km/l",
+          "transmission": "IVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L MPi Petrol",
+      "Displacement": "1,497 cc",
+      "Power": "113 hp @ 6,300 rpm",
+      "Torque": "144 Nm",
+      "Efficiency": "16.8 km/l",
+      "Fuel Tank": "45 L",
+      "Transmission": "6-Speed MT / IVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "392 L",
+      "Length": "4,120 mm",
+      "Width": "1,790 mm",
+      "Height": "1,642 mm",
+      "Wheelbase": "2,500 mm",
+      "Ground Clearance": "211 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "211mm ground clearance — best in class",
+      "ADAS on top variants",
+      "Bose sound system",
+      "10.25\" cluster + screen combo",
+      "Strong resale value in Nepal"
+    ],
+    "cons": [
+      "No diesel in Nepal spec",
+      "IVT only on top 2 variants",
+      "Pricier than Creta for same power",
+      "No AWD option"
+    ],
+    "highlights": [
+      "211mm Ground Clearance",
+      "ADAS Level 1",
+      "Panoramic Sunroof",
+      "Bose 7-Speaker"
+    ]
+  },
+  {
+    "id": 402,
+    "slug": "kia-seltos-2025",
+    "brand": "Kia",
+    "model": "Seltos",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "popular",
+    "tagline": "Bold design meets premium tech in Nepal's mid-size SUV leader",
+    "rating": 4.5,
+    "reviews": 3241,
+    "expertScore": 8.4,
+    "baseEMI": 58000,
+    "overview": "The Kia Seltos remains Nepal's premium compact SUV benchmark with a 10.25\" dual screen setup, ADAS, Bose sound, and a powerful 1.5L turbo petrol. Available in multiple powertrain options with class-leading feature density.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pewter Olive",
+        "hex": "#6B6B47"
+      },
+      {
+        "name": "Glacier White Pearl",
+        "hex": "#F0F0F0"
+      },
+      {
+        "name": "Aurora Black Pearl",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Imperial Blue",
+        "hex": "#1B3A6B"
+      },
+      {
+        "name": "Gravity Grey",
+        "hex": "#4A4A4A"
+      },
+      {
+        "name": "Intense Red",
+        "hex": "#B22222"
+      }
+    ],
+    "variants": [
+      {
+        "name": "HTE",
+        "price": 6290000,
+        "label": "Rs. 62.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera + Sensors",
+          "Electric Sunroof",
+          "Auto Climate Control",
+          "16\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "113 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.5 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "HTK+",
+        "price": 6890000,
+        "label": "Rs. 68.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "10.25\" Digital Cluster",
+          "Bose 8-Speaker",
+          "Ventilated Seats",
+          "Wireless Charging",
+          "Ambient Lighting (64 color)",
+          "HTE features+"
+        ],
+        "specs": {
+          "power": "113 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.5 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "HTX",
+        "price": 7490000,
+        "label": "Rs. 74.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "1.5L Turbo GDi",
+          "7-Speed DCT",
+          "ADAS Level 1",
+          "360° Camera",
+          "Panoramic Sunroof",
+          "HTK+ features+"
+        ],
+        "specs": {
+          "power": "158 hp @ 5,500 rpm",
+          "torque": "253 Nm",
+          "efficiency": "15.3 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "HTX+",
+        "price": 8190000,
+        "label": "Rs. 81.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "Blind Spot Collision Warning",
+          "Rear Cross Traffic Avoidance",
+          "Smart Power Tailgate",
+          "Head-Up Display",
+          "HTX features+"
+        ],
+        "specs": {
+          "power": "158 hp @ 5,500 rpm",
+          "torque": "253 Nm",
+          "efficiency": "15.3 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L MPi / 1.5L Turbo GDi",
+      "Displacement": "1,497 cc",
+      "Power": "113–158 hp",
+      "Torque": "144–253 Nm",
+      "Efficiency": "15.3–16.5 km/l",
+      "Fuel Tank": "50 L",
+      "Transmission": "6MT / 7DCT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "433 L",
+      "Length": "4,370 mm",
+      "Width": "1,825 mm",
+      "Height": "1,650 mm",
+      "Wheelbase": "2,610 mm",
+      "Ground Clearance": "190 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "158hp turbo on top variants",
+      "Head-Up Display on HTX+",
+      "433L boot space",
+      "Bose 8-speaker system",
+      "Strong brand value in Nepal"
+    ],
+    "cons": [
+      "No diesel variant in Nepal",
+      "DCT only on turbo variants",
+      "Pricier segment",
+      "No AWD in Nepal spec"
+    ],
+    "highlights": [
+      "158hp Turbo",
+      "Head-Up Display",
+      "433L Boot",
+      "ADAS Level 1"
+    ]
+  },
+  {
+    "id": 403,
+    "slug": "kia-carens-2025",
+    "brand": "Kia",
+    "model": "Carens",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "MPV",
+    "badge": "new",
+    "tagline": "6/7-seat family MPV with SUV looks and premium features",
+    "rating": 4.2,
+    "reviews": 876,
+    "expertScore": 7.8,
+    "baseEMI": 52000,
+    "overview": "The Kia Carens redefines the MPV segment in Nepal with SUV-inspired styling, a 10.25\" touchscreen, 6 airbags standard, and flexible 6 or 7-seat configurations. Ideal for Nepali families needing space and safety without compromise.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Aurora Black Pearl",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Glacier White Pearl",
+        "hex": "#F0F0F0"
+      },
+      {
+        "name": "Imperial Blue",
+        "hex": "#1B3A6B"
+      },
+      {
+        "name": "Gravity Grey",
+        "hex": "#4A4A4A"
+      },
+      {
+        "name": "Sparkling Silver",
+        "hex": "#C0C0C0"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Premium",
+        "price": 5690000,
+        "label": "Rs. 56.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "Auto Climate Control",
+          "Electric Sunroof",
+          "16\" Alloy Wheels",
+          "7-Seat Config"
+        ],
+        "specs": {
+          "power": "113 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.5 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "Prestige",
+        "price": 6190000,
+        "label": "Rs. 61.90L",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "10.25\" Digital Cluster",
+          "Bose 8-Speaker",
+          "Ventilated Seats",
+          "6-Seat with Captain Chairs",
+          "Wireless Charging",
+          "Premium features+"
+        ],
+        "specs": {
+          "power": "113 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.5 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "Prestige Plus",
+        "price": 6790000,
+        "label": "Rs. 67.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "1.5 Turbo + 7DCT",
+          "ADAS Level 1",
+          "360° Camera",
+          "Ambient Lighting",
+          "Prestige features+"
+        ],
+        "specs": {
+          "power": "158 hp @ 5,500 rpm",
+          "torque": "253 Nm",
+          "efficiency": "15.2 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L MPi / 1.5L Turbo GDi",
+      "Displacement": "1,497 cc",
+      "Power": "113–158 hp",
+      "Torque": "144–253 Nm",
+      "Efficiency": "15.2–16.5 km/l",
+      "Fuel Tank": "45 L",
+      "Transmission": "6MT / 7DCT",
+      "Drive": "FWD",
+      "Seating": "6 or 7",
+      "Boot Space": "216 L (7-seat) / 549 L (6-seat)",
+      "Length": "4,540 mm",
+      "Width": "1,800 mm",
+      "Height": "1,708 mm",
+      "Wheelbase": "2,780 mm",
+      "Ground Clearance": "195 mm",
+      "Airbags": "6 (Standard)"
+    },
+    "pros": [
+      "6/7-seat flexibility",
+      "Captain chairs in Prestige",
+      "6 airbags standard",
+      "Best MPV interior quality",
+      "Turbo option available"
+    ],
+    "cons": [
+      "Boot small in 7-seat mode",
+      "No diesel in Nepal",
+      "Heavier than rivals",
+      "Fewer service centers than Hyundai"
+    ],
+    "highlights": [
+      "6 or 7 Seats",
+      "Captain Chairs",
+      "Turbo Option",
+      "6 Airbags Standard"
+    ]
+  },
+  {
+    "id": 404,
+    "slug": "kia-ev6-2025",
+    "brand": "Kia",
+    "model": "EV6",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Electric Crossover",
+    "badge": "premium",
+    "tagline": "800V ultra-fast charging electric crossover for Nepal's EV pioneers",
+    "rating": 4.6,
+    "reviews": 312,
+    "expertScore": 9,
+    "baseEMI": 128000,
+    "overview": "The Kia EV6 is Nepal's most technologically advanced EV, featuring 800V ultra-fast charging, a 77.4 kWh battery, 510km WLTP range, and a stunning interior with dual 12\" curved screens. Available in RWD and AWD GT-Line.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Snow White Pearl",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Aurora Black Pearl",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Runway Red",
+        "hex": "#9B1B30"
+      },
+      {
+        "name": "Yacht Blue",
+        "hex": "#1B4F72"
+      },
+      {
+        "name": "Moonscape",
+        "hex": "#5A5E63"
+      }
+    ],
+    "variants": [
+      {
+        "name": "GT-Line RWD",
+        "price": 13990000,
+        "label": "Rs. 1.39 Cr",
+        "popular": true,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "77.4 kWh Battery",
+          "510km WLTP Range",
+          "800V Ultra-Fast Charging (18 min 10→80%)",
+          "Dual 12\" Curved Screen",
+          "6 Airbags",
+          "360° Camera",
+          "ADAS Level 2",
+          "V2L (Vehicle to Load)"
+        ],
+        "specs": {
+          "power": "226 hp",
+          "torque": "350 Nm",
+          "efficiency": "5.9 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "GT-Line AWD",
+        "price": 16490000,
+        "label": "Rs. 1.64 Cr",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "Dual Motor AWD",
+          "320 hp Combined",
+          "0-100 in 5.1s",
+          "Electronic LSD",
+          "GT-Line RWD features+"
+        ],
+        "specs": {
+          "power": "320 hp",
+          "torque": "605 Nm",
+          "efficiency": "5.1 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      }
+    ],
+    "specs": {
+      "Battery": "77.4 kWh",
+      "Range": "510 km (WLTP)",
+      "Power": "226–320 hp",
+      "Torque": "350–605 Nm",
+      "Charging": "800V / 233 kW DC Fast Charge",
+      "Charge Time": "18 min (10–80%)",
+      "Transmission": "Single Speed",
+      "Drive": "RWD / AWD",
+      "Seating": "5",
+      "Boot Space": "490 L + 52 L frunk",
+      "Length": "4,680 mm",
+      "Width": "1,880 mm",
+      "Height": "1,550 mm",
+      "Wheelbase": "2,900 mm",
+      "Ground Clearance": "160 mm",
+      "Airbags": "7"
+    },
+    "pros": [
+      "800V charging — fastest in Nepal",
+      "510km real-world range",
+      "V2L powers appliances",
+      "ADAS Level 2",
+      "Stunning interior quality"
+    ],
+    "cons": [
+      "Very high price",
+      "Charging infra limited in Nepal",
+      "Low ground clearance for rough roads",
+      "No spare tyre"
+    ],
+    "highlights": [
+      "510km Range",
+      "800V Fast Charge",
+      "V2L Technology",
+      "ADAS Level 2"
+    ]
+  }
+]

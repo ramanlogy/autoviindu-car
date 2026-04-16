@@ -1875,6 +1875,7 @@ function renderCompare(){
     </div>
   </div>`;
   updateCompareTray();
+  setTimeout(() => window._initCompareAnimation?.(), 50);
 }
 function renderCmpTable(cols){
   const cars=cols.map(s=>carBySlug(s)).filter(Boolean);
@@ -2534,87 +2535,65 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 else init();
 
 
-const track = document.getElementById('track');
-const car = document.getElementById('car');
-const shadow = document.getElementById('shadow');
-const speedLines = document.getElementById('speedLines');
 
-const CAR_WIDTH = 100;
-let pos = 0;
-let direction = 1;
-let turning = false;
-let scaleX = -1;
-let scaleY = 1;
-let bouncePhase = 0;
-let speed = 1.6;
-let turnProgress = 0;
+// AFTER — wrap everything in a function, call it from renderCompare()
+window._initCompareAnimation = function() {
+  const track = document.getElementById('track');
+  const car = document.getElementById('car');
+  const shadow = document.getElementById('shadow');
+  const speedLines = document.getElementById('speedLines');
+  if (!track || !car) return; // ← guard: stop if elements don't exist
 
-function getTrackWidth() {
-  return track.offsetWidth;
-}
+  const CAR_WIDTH = 100;
+  let pos = 0, direction = 1, turning = false;
+  let scaleX = -1, scaleY = 1, bouncePhase = 0;
+  let speed = 1.6, turnProgress = 0;
 
-function setCarTransform(x, scX, scY, bounce) {
-  car.style.left = x + 'px';
-  car.style.transform = `scaleX(${scX}) scaleY(${scY}) translateY(${bounce}px)`;
-  car.style.transformOrigin = 'center bottom';
-  shadow.style.left = (x + CAR_WIDTH / 2 - 30) + 'px';
-  shadow.style.transform = `scaleX(${Math.abs(scX) * (1 + Math.abs(bounce) * 0.04)})`;
-  speedLines.style.left = direction === 1
-    ? (x - 28) + 'px'
-    : (x + CAR_WIDTH + 4) + 'px';
-}
+  function getTrackWidth() { return track.offsetWidth; }
 
-function easeInOut(t) {
-  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-}
-
-function animate() {
-  const trackW = getTrackWidth();
-  const maxX = trackW - CAR_WIDTH - 8;
-  bouncePhase += 0.08;
-  const bounce = -Math.abs(Math.sin(bouncePhase)) * 2.5;
-
-  if (turning) {
-    turnProgress += 0.045;
-    const t = easeInOut(Math.min(turnProgress, 1));
-    const midScale = Math.cos(t * Math.PI);
-    const currentScaleX = direction === 1 ? -midScale : midScale;
-    const squish = 1 + Math.abs(midScale < 0 ? midScale * 0.08 : 0);
-    setCarTransform(pos, currentScaleX, squish, bounce * 0.3);
-    shadow.style.opacity = 0.5 + Math.abs(midScale) * 0.5;
-    if (turnProgress >= 1) {
-      turning = false;
-      turnProgress = 0;
-      scaleX = direction === 1 ? 1 : -1;
-    }
-    speedLines.style.opacity = 0;
-  } else {
-    pos += direction * speed;
-    setCarTransform(pos, scaleX, scaleY, bounce);
-    shadow.style.opacity = '0.7';
-    speedLines.style.opacity = speed > 1 ? '0.7' : '0';
-
-    if (pos >= maxX) {
-      pos = maxX;
-      direction = -1;
-      turning = true;
-      turnProgress = 0;
-      speed = 1.6 + Math.random() * 0.4;
-    } else if (pos <= 4) {
-      pos = 4;
-      direction = 1;
-      turning = true;
-      turnProgress = 0;
-      speed = 1.6 + Math.random() * 0.4;
-    }
+  function setCarTransform(x, scX, scY, bounce) {
+    car.style.left = x + 'px';
+    car.style.transform = `scaleX(${scX}) scaleY(${scY}) translateY(${bounce}px)`;
+    car.style.transformOrigin = 'center bottom';
+    shadow.style.left = (x + CAR_WIDTH / 2 - 30) + 'px';
+    shadow.style.transform = `scaleX(${Math.abs(scX) * (1 + Math.abs(bounce) * 0.04)})`;
+    speedLines.style.left = direction === 1
+      ? (x - 28) + 'px'
+      : (x + CAR_WIDTH + 4) + 'px';
   }
 
-  requestAnimationFrame(animate);
-}
+  function easeInOut(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
 
-pos = 4;
-scaleX = 1; 
-animate();
+  function animate() {
+    const trackW = getTrackWidth();
+    const maxX = trackW - CAR_WIDTH - 8;
+    bouncePhase += 0.08;
+    const bounce = -Math.abs(Math.sin(bouncePhase)) * 2.5;
+
+    if (turning) {
+      turnProgress += 0.045;
+      const t = easeInOut(Math.min(turnProgress, 1));
+      const midScale = Math.cos(t * Math.PI);
+      const currentScaleX = direction === 1 ? -midScale : midScale;
+      const squish = 1 + Math.abs(midScale < 0 ? midScale * 0.08 : 0);
+      setCarTransform(pos, currentScaleX, squish, bounce * 0.3);
+      shadow.style.opacity = 0.5 + Math.abs(midScale) * 0.5;
+      if (turnProgress >= 1) { turning = false; turnProgress = 0; scaleX = direction === 1 ? 1 : -1; }
+      speedLines.style.opacity = 0;
+    } else {
+      pos += direction * speed;
+      setCarTransform(pos, scaleX, scaleY, bounce);
+      shadow.style.opacity = '0.7';
+      speedLines.style.opacity = speed > 1 ? '0.7' : '0';
+      if (pos >= maxX) { pos = maxX; direction = -1; turning = true; turnProgress = 0; speed = 1.6 + Math.random() * 0.4; }
+      else if (pos <= 4) { pos = 4; direction = 1; turning = true; turnProgress = 0; speed = 1.6 + Math.random() * 0.4; }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  pos = 4; scaleX = 1;
+  animate();
+};
 
 
 })();

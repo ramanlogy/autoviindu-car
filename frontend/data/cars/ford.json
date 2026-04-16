@@ -1,0 +1,381 @@
+[
+  {
+    "id": 1300,
+    "slug": "ford-ranger-next-gen-2025",
+    "brand": "Ford",
+    "model": "Next-Gen Ranger",
+    "year": 2025,
+    "type": "Diesel",
+    "body": "Mid-size Pickup Truck",
+    "badge": "popular",
+    "tagline": "Nepal's toughest lifestyle pickup — rugged 4WD diesel workhorse from Thailand",
+    "rating": 4.3,
+    "reviews": 512,
+    "expertScore": 8.2,
+    "baseEMI": 105000,
+    "overview": "The Next-Generation Ford Ranger is Nepal's best-selling premium pickup, imported from Thailand by GO Automobiles. Built to Euro 6 standards, it offers two 2.0L diesel options (Single-Turbo & Bi-Turbo), 800 mm water wading depth, six selectable terrain modes, and a dramatically updated interior with 12-inch SYNC4 infotainment. It competes directly with the Toyota Hilux and Isuzu D-Max in Nepal's growing lifestyle pickup segment.",
+    "images": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1571987502227-9231b837d92a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1593055357429-62b4c8c8a0af?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Arctic White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Meteor Grey",
+        "hex": "#6A6D72"
+      },
+      {
+        "name": "Absolute Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Blue Lightning",
+        "hex": "#1A3A6E"
+      },
+      {
+        "name": "Aluminum Silver",
+        "hex": "#C0C0C0"
+      }
+    ],
+    "variants": [
+      {
+        "name": "XL 2.0 ST (Single-Turbo)",
+        "price": 10590000,
+        "label": "Rs. 1.05 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "9 Airbags",
+          "12\" SYNC4 Touchscreen",
+          "4WD + 2WD",
+          "6 Drive Modes",
+          "800mm Wading",
+          "Hill Start Assist"
+        ],
+        "specs": {
+          "power": "170 PS @ 3,500 rpm",
+          "torque": "405 Nm",
+          "efficiency": "12.5 km/l",
+          "transmission": "6-Speed SelectShift AT"
+        }
+      },
+      {
+        "name": "XLT 2.0 BT (Bi-Turbo)",
+        "price": 12500000,
+        "label": "Rs. 1.25 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "Bi-Turbo 210 PS",
+          "10-Speed AT",
+          "18\" Alloy Wheels",
+          "Wireless CarPlay/Android",
+          "XL features+"
+        ],
+        "specs": {
+          "power": "210 PS @ 3,750 rpm",
+          "torque": "500 Nm",
+          "efficiency": "11.5 km/l",
+          "transmission": "10-Speed SelectShift AT"
+        }
+      },
+      {
+        "name": "Wildtrak 2.0 BT",
+        "price": 14500000,
+        "label": "Rs. 1.45 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "Sports Roll Bar",
+          "Sportback Bed Liner",
+          "360° Camera",
+          "9 Airbags",
+          "Adaptive Cruise",
+          "XLT features+"
+        ],
+        "specs": {
+          "power": "210 PS @ 3,750 rpm",
+          "torque": "500 Nm",
+          "efficiency": "11.5 km/l",
+          "transmission": "10-Speed SelectShift AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L EcoBlue CRTC Single/Bi-Turbo Diesel",
+      "Displacement": "1,996 cc",
+      "Power": "170–210 PS",
+      "Torque": "405–500 Nm",
+      "Efficiency": "11.5–12.5 km/l",
+      "Fuel Tank": "80 L",
+      "Transmission": "6-Speed / 10-Speed SelectShift AT",
+      "Drive": "4WD",
+      "Seating": "5",
+      "Payload": "1,005 kg",
+      "Length": "5,360 mm",
+      "Width": "1,910 mm",
+      "Height": "1,886 mm",
+      "Wheelbase": "3,270 mm",
+      "Ground Clearance": "235 mm",
+      "Wading Depth": "800 mm",
+      "Airbags": "9"
+    },
+    "pros": [
+      "235 mm ground clearance for Nepal's terrain",
+      "800 mm wading depth for river crossings",
+      "12-inch SYNC4 is class-leading infotainment",
+      "9 airbags — best-in-class safety"
+    ],
+    "cons": [
+      "Very high price after Nepal import duties",
+      "Discontinued Indian-market small cars mean no budget Ford alternative",
+      "Large size in Kathmandu city traffic",
+      "Fuel economy modest for long hauls"
+    ],
+    "highlights": [
+      "235 mm Clearance",
+      "800 mm Wading",
+      "9 Airbags",
+      "Euro 6 Diesel"
+    ]
+  },
+  {
+    "id": 1301,
+    "slug": "ford-everest-next-gen-2025",
+    "brand": "Ford",
+    "model": "Next-Gen Everest",
+    "year": 2025,
+    "type": "Diesel",
+    "body": "Full-size 7-Seat SUV",
+    "badge": "flagship",
+    "tagline": "Nepal's ultimate adventure SUV — 7 seats, 4WD, and 800mm wading depth",
+    "rating": 4.5,
+    "reviews": 287,
+    "expertScore": 8.7,
+    "baseEMI": 248000,
+    "overview": "The Next-Generation Ford Everest replaces the Endeavour as GO Ford's flagship 7-seat SUV in Nepal. Imported from Thailand, the Titanium variant — the only spec sold in Nepal — combines a 210 PS bi-turbo diesel with a 10-speed SelectShift AT, intelligent 4WD, 800 mm wading depth, 12-inch SYNC4A touchscreen, panoramic moonroof, and a 5-star ANCAP safety rating. It competes directly with the Toyota Fortuner and Jeep Meridian at the top of Nepal's off-road luxury segment.",
+    "images": [
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1571987502227-9231b837d92a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Absolute Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Aluminium",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Meteor Grey",
+        "hex": "#6A6D72"
+      },
+      {
+        "name": "Bronze",
+        "hex": "#8B5E3C"
+      },
+      {
+        "name": "Pristine White",
+        "hex": "#F5F5F5"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Titanium 2.0 Bi-Turbo 4WD",
+        "price": 24000000,
+        "label": "Rs. 2.40 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "7 Seats",
+          "210 PS Bi-Turbo Diesel",
+          "10-Speed SelectShift AT",
+          "12\" SYNC4A Portrait Touchscreen",
+          "12.4\" Digital Instrument Cluster",
+          "Matrix LED Headlights",
+          "Panoramic Moonroof",
+          "7 Airbags",
+          "360° Camera",
+          "Adaptive Cruise + Stop & Go",
+          "Lane Keep Assist",
+          "Blind Spot Monitor",
+          "Driver Monitoring System",
+          "Active Park Assist 2.0",
+          "Quilted Leather Seats",
+          "Dual-Zone Auto Climate",
+          "800mm Wading Depth"
+        ],
+        "specs": {
+          "power": "210 PS @ 3,750 rpm",
+          "torque": "500 Nm",
+          "efficiency": "10 km/l",
+          "transmission": "10-Speed SelectShift AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L 4-Cyl Bi-Turbo Intercooler Diesel",
+      "Displacement": "1,996 cc",
+      "Power": "210 PS @ 3,750 rpm",
+      "Torque": "500 Nm @ 1,750 rpm",
+      "Efficiency": "~10 km/l",
+      "Fuel Tank": "80 L",
+      "Transmission": "10-Speed SelectShift AT",
+      "Drive": "4WD (ESOF)",
+      "Seating": "7",
+      "Boot Space": "194 L (3 rows) / 810 L (2 rows)",
+      "Length": "4,914 mm",
+      "Width": "1,923 mm",
+      "Height": "1,842 mm",
+      "Wheelbase": "2,900 mm",
+      "Ground Clearance": "225–227 mm",
+      "Wading Depth": "800 mm",
+      "Airbags": "7",
+      "Safety Rating": "5-Star ANCAP",
+      "Warranty": "3 Years / 60,000 km"
+    },
+    "pros": [
+      "225 mm ground clearance + 800 mm wading — true off-road capable",
+      "5-star ANCAP safety rating",
+      "7-seat flexible family layout",
+      "12-inch SYNC4A portrait screen is class-leading"
+    ],
+    "cons": [
+      "Single Titanium variant only in Nepal — no lower-priced option",
+      "10 km/l real-world fuel economy is expensive to run",
+      "Very large size (4,914 mm) in tight Nepali roads",
+      "Expensive parts if Ford's India exit affects Nepal support"
+    ],
+    "highlights": [
+      "5-Star ANCAP",
+      "800 mm Wading",
+      "7 Seats",
+      "225 mm Clearance"
+    ]
+  },
+  {
+    "id": 1302,
+    "slug": "ford-ranger-raptor-next-gen-2025",
+    "brand": "Ford",
+    "model": "Next-Gen Ranger Raptor",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "High-Performance Pickup",
+    "badge": "performance",
+    "tagline": "Nepal's most extreme performance pickup — 392 hp V6 Baja-ready beast",
+    "rating": 4.6,
+    "reviews": 198,
+    "expertScore": 9.1,
+    "baseEMI": 235000,
+    "overview": "The Next-Generation Ford Ranger Raptor is the most extreme performance vehicle currently sold by an authorized dealer in Nepal. Powered by a 3.0L V6 Twin-Turbo EcoBoost petrol engine tuned by Ford Performance, it delivers 392 hp and 583 Nm with FOX Live Valve shocks, 272 mm ground clearance, and seven selectable drive modes including Baja and Rock Crawl. GO Ford sells it at Rs. 2.29 Crore, making it the ultimate Nepal mountain conquest machine.",
+    "images": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1593055357429-62b4c8c8a0af?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1571987502227-9231b837d92a?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Arctic White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Absolute Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Sedona Orange",
+        "hex": "#CC5500"
+      },
+      {
+        "name": "Code Orange",
+        "hex": "#FF6600"
+      },
+      {
+        "name": "Conquer Grey",
+        "hex": "#555555"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Raptor 3.0L V6 Bi-Turbo EcoBoost",
+        "price": 22900000,
+        "label": "Rs. 2.29 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "3.0L V6 EcoBoost 392 hp",
+          "FOX 2.5\" Live Valve Internal Bypass Shocks",
+          "7 Drive Modes (incl. Baja & Rock Crawl)",
+          "Front Locking Differential",
+          "Trail Control System",
+          "Electronic Active Exhaust (4 modes)",
+          "12.4\" Digital Cluster",
+          "12\" SYNC4 Touchscreen",
+          "Wireless CarPlay/Android",
+          "9 Airbags",
+          "360° Camera",
+          "Adaptive Cruise Control",
+          "Blind Spot Monitoring",
+          "Rear Cross Traffic Alert",
+          "850mm Wading Depth",
+          "Autonomous Emergency Braking"
+        ],
+        "specs": {
+          "power": "392 hp @ 5,650 rpm",
+          "torque": "583 Nm @ 3,500 rpm",
+          "efficiency": "9.5 km/l",
+          "transmission": "10-Speed SelectShift AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "3.0L V6 Twin-Turbo EcoBoost Petrol",
+      "Displacement": "2,994 cc",
+      "Power": "392 hp (397 PS) @ 5,650 rpm",
+      "Torque": "583 Nm @ 3,500 rpm",
+      "0–100 km/h": "~5.4 sec",
+      "Efficiency": "~9.5 km/l",
+      "Fuel Tank": "80 L",
+      "Transmission": "10-Speed SelectShift AT",
+      "Drive": "4WD (EM transfer case)",
+      "Seating": "5",
+      "Payload": "900 kg",
+      "Length": "5,360 mm",
+      "Width": "1,910 mm",
+      "Height": "1,960 mm",
+      "Wheelbase": "3,270 mm",
+      "Ground Clearance": "272 mm",
+      "Wading Depth": "850 mm",
+      "Airbags": "9"
+    },
+    "pros": [
+      "272 mm ground clearance — highest of any production vehicle in Nepal",
+      "392 hp V6 for blistering performance",
+      "FOX shocks handle Nepal's worst roads with ease",
+      "7 drive modes including dedicated Baja mode"
+    ],
+    "cons": [
+      "Most expensive pickup in Nepal at Rs. 2.29 Crore",
+      "Petrol V6 fuel economy is poor (~9.5 km/l) at Nepal fuel prices",
+      "Very wide body (1,910 mm) in mountain passes",
+      "Overkill for city use"
+    ],
+    "highlights": [
+      "392 hp V6",
+      "272 mm Clearance",
+      "850 mm Wading",
+      "FOX Live Valve Shocks"
+    ]
+  }
+]

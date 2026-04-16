@@ -94,7 +94,7 @@
         <!-- Brand column -->
         <div>
           <a href="index.html">
-            <img src="assets/images/cars/logo.PNG" alt="AutoViindu" class="av-footer-logo-img">
+            <img src="/frontend/assets/images/cars/brands/logo.png" alt="AutoViindu" class="av-footer-logo-img">
           </a>
           <p class="av-footer-desc">Nepal's most trusted automotive platform. Real prices, real specs, expert reviews.</p>
           <div class="av-footer-social">

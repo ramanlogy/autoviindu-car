@@ -1,0 +1,430 @@
+[
+  {
+    "id": 1201,
+    "slug": "maxus-t60-2025",
+    "brand": "Maxus",
+    "model": "T60",
+    "year": 2025,
+    "type": "Diesel",
+    "body": "Pickup Truck",
+    "badge": "popular",
+    "tagline": "SAIC's double-cab pickup with 1T payload and 4WD for Nepal's workhorse buyers",
+    "rating": 4,
+    "reviews": 534,
+    "expertScore": 7.5,
+    "baseEMI": 48000,
+    "overview": "The Maxus T60 is SAIC Motor's popular double-cab pickup truck in Nepal, offering a 2.0T diesel engine, 4WD with low range, 1,000kg payload, and a 7\" touchscreen with CarPlay. Built for both commercial use and leisure, it competes with the Toyota Hilux at a considerably lower price.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Glacier White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Obsidian Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Steel Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Canyon Red",
+        "hex": "#B22222"
+      },
+      {
+        "name": "Army Green",
+        "hex": "#4A5E3A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "2WD MT",
+        "price": 4690000,
+        "label": "Rs. 46.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "2 Airbags",
+          "7\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "Manual AC",
+          "16\" Steel Wheels",
+          "1T Payload",
+          "Tow Rating: 2.5T"
+        ],
+        "specs": {
+          "power": "150 hp @ 3,600 rpm",
+          "torque": "360 Nm",
+          "efficiency": "14.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "4WD MT",
+        "price": 5290000,
+        "label": "Rs. 52.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "4WD with Low Range",
+          "4 Airbags",
+          "Auto Climate Control",
+          "17\" Alloy Wheels",
+          "Rear Diff Lock",
+          "2WD features+"
+        ],
+        "specs": {
+          "power": "150 hp @ 3,600 rpm",
+          "torque": "360 Nm",
+          "efficiency": "14.2 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "4WD AT Premium",
+        "price": 5890000,
+        "label": "Rs. 58.90L",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "6-Speed AT",
+          "6 Airbags",
+          "10.25\" Touchscreen",
+          "Wireless CarPlay",
+          "LED Headlamps",
+          "Sports Bar",
+          "4WD features+"
+        ],
+        "specs": {
+          "power": "150 hp @ 3,600 rpm",
+          "torque": "360 Nm",
+          "efficiency": "13.8 km/l",
+          "transmission": "6-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L Diesel Turbo",
+      "Displacement": "1,997 cc",
+      "Power": "150 hp @ 3,600 rpm",
+      "Torque": "360 Nm",
+      "Efficiency": "13.8–14.8 km/l",
+      "Fuel Tank": "76 L",
+      "Transmission": "6MT / 6AT",
+      "Drive": "2WD / 4WD",
+      "Seating": "5",
+      "Payload": "1,000 kg",
+      "Tow Rating": "2,500 kg",
+      "Bed Length": "1,520 mm",
+      "Length": "5,330 mm",
+      "Width": "1,900 mm",
+      "Height": "1,810 mm",
+      "Wheelbase": "3,150 mm",
+      "Ground Clearance": "218 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "1T payload for commercial use",
+      "218mm ground clearance",
+      "76L large fuel tank",
+      "Rear diff lock on 4WD",
+      "Much cheaper than Hilux"
+    ],
+    "cons": [
+      "Only 2 airbags on base",
+      "Pickup not for city use",
+      "Maxus service centres growing",
+      "Resale below Hilux/Ranger"
+    ],
+    "highlights": [
+      "4WD + Low Range",
+      "1T Payload",
+      "218mm Clearance",
+      "Hilux Alternative"
+    ]
+  },
+  {
+    "id": 1202,
+    "slug": "maxus-d60-2025",
+    "brand": "Maxus",
+    "model": "D60",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Mid-size SUV",
+    "badge": "value",
+    "tagline": "SAIC's mid-size SUV with 190hp turbo and panoramic sunroof under Rs. 65L",
+    "rating": 3.9,
+    "reviews": 214,
+    "expertScore": 7.3,
+    "baseEMI": 50000,
+    "overview": "The Maxus D60 is SAIC's mid-size SUV offering in Nepal, featuring a 1.5T or 2.0T petrol engine, panoramic sunroof, 10.25\" touchscreen, 6 airbags, and a spacious 5-seat interior — all at a price significantly below comparable Korean and Japanese rivals.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Midnight Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Steel Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Ocean Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Crimson Red",
+        "hex": "#B22222"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Comfort 1.5T",
+        "price": 4990000,
+        "label": "Rs. 49.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera + Sensors",
+          "Panoramic Sunroof",
+          "Auto Climate Control",
+          "18\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "143 hp @ 5,500 rpm",
+          "torque": "220 Nm",
+          "efficiency": "15.6 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Luxury 2.0T",
+        "price": 5790000,
+        "label": "Rs. 57.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "2.0T Engine",
+          "190hp",
+          "360° Camera",
+          "Wireless Charging",
+          "Ventilated Seats",
+          "ADAS Level 1",
+          "Comfort features+"
+        ],
+        "specs": {
+          "power": "190 hp @ 5,500 rpm",
+          "torque": "300 Nm",
+          "efficiency": "14.8 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Premium 2.0T AWD",
+        "price": 6590000,
+        "label": "Rs. 65.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "AWD System",
+          "ADAS Level 2",
+          "Head-Up Display",
+          "Nappa Leather",
+          "Luxury features+"
+        ],
+        "specs": {
+          "power": "190 hp @ 5,500 rpm",
+          "torque": "300 Nm",
+          "efficiency": "14.1 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5T / 2.0T Petrol Turbo",
+      "Displacement": "1,497–1,997 cc",
+      "Power": "143–190 hp",
+      "Torque": "220–300 Nm",
+      "Efficiency": "14.1–15.6 km/l",
+      "Fuel Tank": "55 L",
+      "Transmission": "7-Speed DCT",
+      "Drive": "FWD / AWD",
+      "Seating": "5",
+      "Boot Space": "510 L",
+      "Length": "4,710 mm",
+      "Width": "1,876 mm",
+      "Height": "1,690 mm",
+      "Wheelbase": "2,800 mm",
+      "Ground Clearance": "195 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "AWD available on premium",
+      "510L boot space",
+      "190hp 2.0T on Luxury+",
+      "Panoramic sunroof standard",
+      "ADAS Level 2 on AWD"
+    ],
+    "cons": [
+      "Maxus brand very new in Nepal",
+      "Service centres limited",
+      "Resale uncertain",
+      "7DCT may hesitate in city"
+    ],
+    "highlights": [
+      "510L Boot",
+      "AWD Available",
+      "190hp 2.0T",
+      "Panoramic Sunroof"
+    ]
+  },
+  {
+    "id": 1203,
+    "slug": "maxus-euniq-6-2025",
+    "brand": "Maxus",
+    "model": "Euniq 6",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Electric MPV",
+    "badge": "new",
+    "tagline": "Nepal's only electric MPV with 520km range for eco-conscious families",
+    "rating": 4,
+    "reviews": 67,
+    "expertScore": 7.6,
+    "baseEMI": 72000,
+    "overview": "The Maxus Euniq 6 is Nepal's sole electric MPV, offering a 90kWh battery with 520km CLTC range, 6-seat captain chair layout, and a premium interior with 12.3\" touchscreen, ADAS, and wireless charging. A unique green-mobility solution for Nepal's family MPV market.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Ocean Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Ink Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Silver Grey",
+        "hex": "#8C9098"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard 6-Seat",
+        "price": 6990000,
+        "label": "Rs. 69.90L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "70kWh Battery",
+          "420km CLTC Range",
+          "6 Airbags",
+          "12.3\" Touchscreen + CarPlay",
+          "Captain Chairs (Row 2)",
+          "Rear Camera + Sensors",
+          "ADAS Level 1"
+        ],
+        "specs": {
+          "power": "177 hp",
+          "torque": "310 Nm",
+          "efficiency": "6.0 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "Premium 6-Seat",
+        "price": 8190000,
+        "label": "Rs. 81.90L",
+        "popular": true,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "90kWh Battery",
+          "520km CLTC Range",
+          "ADAS Level 2",
+          "360° Camera",
+          "Ventilated Seats",
+          "Wireless Charging",
+          "Ambient Lighting",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "201 hp",
+          "torque": "350 Nm",
+          "efficiency": "5.8 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      }
+    ],
+    "specs": {
+      "Battery": "70–90 kWh",
+      "Range": "420–520 km (CLTC)",
+      "Power": "177–201 hp",
+      "Torque": "310–350 Nm",
+      "Charging": "90 kW DC Fast Charge",
+      "Charge Time": "45 min (10–80%)",
+      "Transmission": "Single Speed",
+      "Drive": "FWD",
+      "Seating": "6",
+      "Boot Space": "480 L (with 3rd row folded)",
+      "Length": "4,890 mm",
+      "Width": "1,880 mm",
+      "Height": "1,740 mm",
+      "Wheelbase": "3,000 mm",
+      "Ground Clearance": "175 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Nepal's only electric MPV",
+      "520km range on premium",
+      "Captain chairs in row 2",
+      "3,000mm wheelbase — very spacious",
+      "ADAS Level 2"
+    ],
+    "cons": [
+      "Low ground clearance for Nepal roads",
+      "FWD only",
+      "Charging infra outside KTM limited",
+      "SAIC/Maxus EV service unproven"
+    ],
+    "highlights": [
+      "Nepal's Only EV MPV",
+      "520km Range",
+      "6-Seat Captain Chairs",
+      "ADAS Level 2"
+    ]
+  }
+]

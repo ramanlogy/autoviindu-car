@@ -1,0 +1,1265 @@
+[
+  {
+    "id": 200,
+    "slug": "toyota-raize-2024",
+    "brand": "Toyota",
+    "model": "Raize",
+    "year": 2024,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "value",
+    "tagline": "Nepal's most affordable Toyota SUV — bold stance, nimble city soul",
+    "rating": 4.1,
+    "reviews": 1842,
+    "expertScore": 7.4,
+    "baseEMI": 58000,
+    "overview": "The Toyota Raize is Nepal's entry-point Toyota SUV, built on the DNGA platform developed with Daihatsu. It offers a choice of a 1.2L naturally aspirated or a 1.0L turbo petrol engine, 369L boot space, 200mm ground clearance, and smart Toyota packaging. Distributed by United Traders Syndicate (UTS).",
+    "images": [
+      "https://images.unsplash.com/photo-1633270540428-d63b9e97a11b?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Pearl White",
+        "hex": "#FAFAFA"
+      },
+      {
+        "name": "Grey",
+        "hex": "#8A8E94"
+      },
+      {
+        "name": "Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Turquoise Mica",
+        "hex": "#1A8A8E"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#F4C430"
+      },
+      {
+        "name": "Silver",
+        "hex": "#C0C4CB"
+      },
+      {
+        "name": "Black",
+        "hex": "#1C1C1C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "1.2G MT",
+        "price": 6600000,
+        "label": "Rs. 66L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "1.2L 3-Cyl Petrol (88 hp)",
+          "5-Speed MT",
+          "Dual Airbags",
+          "ABS + EBD",
+          "Rear Camera",
+          "8\" Touchscreen + CarPlay/Android Auto",
+          "LED DRLs",
+          "16\" Alloys"
+        ],
+        "specs": {
+          "power": "88 hp @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "16 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "1.2G CVT",
+        "price": 7200000,
+        "label": "Rs. 72L",
+        "popular": false,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "1.2L 3-Cyl Petrol (88 hp)",
+          "CVT Automatic",
+          "All 1.2G MT features",
+          "Paddle Shifters",
+          "Auto AC"
+        ],
+        "specs": {
+          "power": "88 hp @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "15.5 km/l",
+          "transmission": "CVT"
+        }
+      },
+      {
+        "name": "1.0 Turbo CVT",
+        "price": 8600000,
+        "label": "Rs. 86L",
+        "popular": true,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "1.0L Turbo 3-Cyl (98 hp)",
+          "CVT Automatic",
+          "6 Airbags",
+          "VSC + Hill Hold",
+          "Smart Entry + Push Start",
+          "9\" Touchscreen",
+          "LED Headlamps",
+          "17\" Diamond-Cut Alloys",
+          "Blind Spot Monitor"
+        ],
+        "specs": {
+          "power": "98 hp @ 6,000 rpm",
+          "torque": "140 Nm @ 2,400 rpm",
+          "efficiency": "14.5 km/l",
+          "transmission": "CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L 3-cyl NA / 1.0L 3-cyl Turbo Petrol",
+      "Displacement": "1,198 cc / 996 cc",
+      "Power": "88 hp / 98 hp",
+      "Torque": "113 Nm / 140 Nm",
+      "Efficiency": "16 km/l (1.2 MT) / 14.5 km/l (Turbo CVT)",
+      "Fuel Tank": "36 L",
+      "Transmission": "5-Speed MT / CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "369 L",
+      "Length": "3,995 mm",
+      "Width": "1,695 mm",
+      "Wheelbase": "2,525 mm",
+      "Ground Clearance": "200 mm",
+      "Airbags": "2 (1.2G) / 6 (Turbo)"
+    },
+    "pros": [
+      "Most affordable Toyota SUV in Nepal",
+      "200mm ground clearance — great for Nepali roads",
+      "369L boot — class-leading",
+      "Peppy 1.0L turbo option",
+      "DNGA platform — excellent ride quality"
+    ],
+    "cons": [
+      "1.2L base is underpowered for mountain passes",
+      "No 4WD option",
+      "Turbo variant is expensive for its size",
+      "Small fuel tank (36L)"
+    ],
+    "highlights": [
+      "Rs. 66L Start",
+      "200mm Clearance",
+      "369L Boot",
+      "Turbo Option"
+    ]
+  },
+  {
+    "id": 201,
+    "slug": "toyota-rush-2024",
+    "brand": "Toyota",
+    "model": "Rush",
+    "year": 2024,
+    "type": "Petrol",
+    "body": "7-Seat SUV",
+    "badge": "popular",
+    "tagline": "7-seat family adventure — high clearance, Toyota reliability",
+    "rating": 4.2,
+    "reviews": 2415,
+    "expertScore": 7.6,
+    "baseEMI": 76000,
+    "overview": "The Toyota Rush is a purpose-built 7-seat family SUV with a 1.5L petrol engine, 220mm ground clearance and ladder-frame-inspired body-on-frame rigidity. With both MT and AT options, LED headlamps, touchscreen infotainment and rear parking camera as standard, it punches well above its price in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1580414057403-c5f451f30e1c?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Silver",
+        "hex": "#B8BCC4"
+      },
+      {
+        "name": "Grey",
+        "hex": "#717880"
+      },
+      {
+        "name": "Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Red",
+        "hex": "#B22222"
+      },
+      {
+        "name": "Two-tone White/Black",
+        "hex": "#F5F5F5",
+        "dual": true,
+        "accent": "#1C1C1C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Mid MT",
+        "price": 8650000,
+        "label": "Rs. 86.5L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "1.5L 2NR-VE Petrol (104 hp)",
+          "5-Speed MT",
+          "7 Seats",
+          "220mm Ground Clearance",
+          "LED Headlamps + LED Taillamps",
+          "8\" Touchscreen + CarPlay/Android Auto",
+          "Rear Camera",
+          "Smart Key + Push Start",
+          "Auto AC",
+          "Dual Airbags",
+          "ABS + EBD"
+        ],
+        "specs": {
+          "power": "104 hp @ 6,000 rpm",
+          "torque": "136 Nm",
+          "efficiency": "14 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "High AT",
+        "price": 8875000,
+        "label": "Rs. 88.75L",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "4-Speed Automatic",
+          "Paddle Shifters",
+          "VSC + Traction Control",
+          "Hill Start Assist",
+          "TPMS",
+          "All Mid features"
+        ],
+        "specs": {
+          "power": "104 hp @ 6,000 rpm",
+          "torque": "136 Nm",
+          "efficiency": "13 km/l",
+          "transmission": "4-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L 2NR-VE Inline-4 Petrol",
+      "Displacement": "1,496 cc",
+      "Power": "104 hp @ 6,000 rpm",
+      "Torque": "136 Nm @ 4,200 rpm",
+      "Efficiency": "14 km/l (MT) / 13 km/l (AT)",
+      "Fuel Tank": "45 L",
+      "Transmission": "5-Speed MT / 4-Speed AT",
+      "Drive": "RWD",
+      "Seating": "7",
+      "Boot Space": "390 L (3rd row folded)",
+      "Length": "4,435 mm",
+      "Width": "1,695 mm",
+      "Wheelbase": "2,685 mm",
+      "Ground Clearance": "220 mm",
+      "Airbags": "2"
+    },
+    "pros": [
+      "Genuine 7-seat capacity",
+      "220mm ground clearance — impressive for Nepal",
+      "RWD — great off-road capability",
+      "LED headlamps standard on all variants",
+      "Practical cargo space"
+    ],
+    "cons": [
+      "Only 2 airbags across all variants",
+      "4-speed AT feels dated",
+      "1.5L engine feels strained with 7 passengers",
+      "Interior quality below segment leaders"
+    ],
+    "highlights": [
+      "7 Seats",
+      "220mm Clearance",
+      "RWD",
+      "Rs. 86.5L Start"
+    ]
+  },
+  {
+    "id": 202,
+    "slug": "toyota-corolla-cross-2024",
+    "brand": "Toyota",
+    "model": "Corolla Cross",
+    "year": 2024,
+    "type": "Petrol",
+    "body": "Crossover SUV",
+    "badge": "recommended",
+    "tagline": "Premium crossover pedigree — Corolla DNA in a bold SUV shell",
+    "rating": 4.4,
+    "reviews": 1654,
+    "expertScore": 8.1,
+    "baseEMI": 102000,
+    "overview": "The Toyota Corolla Cross sits on Toyota's TNGA (GA-C) platform — the same underpinning as the Corolla sedan. It combines a spacious 5-seat cabin, class-leading safety tech including Toyota Safety Sense, a 360-degree camera on the top variant, and dual-zone climate control, all wrapped in a sharp coupe-SUV silhouette.",
+    "images": [
+      "https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Platinum White Pearl",
+        "hex": "#FAFAFA"
+      },
+      {
+        "name": "Silver Metallic",
+        "hex": "#B8BCC8"
+      },
+      {
+        "name": "Grey Metallic",
+        "hex": "#6E737B"
+      },
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Red Mica",
+        "hex": "#8B1A1A"
+      },
+      {
+        "name": "Blue Metallic",
+        "hex": "#1A3A6A"
+      },
+      {
+        "name": "White / Black Two-Tone",
+        "hex": "#FAFAFA",
+        "dual": true,
+        "accent": "#1A1A1A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Entry",
+        "price": 11650000,
+        "label": "Rs. 1.165 Cr",
+        "popular": false,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "1.8L 2ZR-FBE DOHC Petrol (140 hp)",
+          "CVT",
+          "7 Airbags",
+          "ABS + EBD + VSC",
+          "8\" Touchscreen + CarPlay/Android Auto",
+          "Dual-Zone Auto AC",
+          "Power Driver Seat",
+          "LED Headlamps",
+          "18\" Alloys",
+          "Rear Camera",
+          "Blind Spot Monitor"
+        ],
+        "specs": {
+          "power": "140 hp @ 6,400 rpm",
+          "torque": "172 Nm @ 4,000 rpm",
+          "efficiency": "15 km/l",
+          "transmission": "CVT"
+        }
+      },
+      {
+        "name": "High",
+        "price": 13800000,
+        "label": "Rs. 1.38 Cr",
+        "popular": true,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "360-Degree Surround Camera",
+          "Toyota Safety Sense (Pre-Collision, Lane Departure, Radar Cruise)",
+          "9\" Touchscreen",
+          "JBL Premium Audio (9 speakers)",
+          "Panoramic Sunroof",
+          "Wireless Charging",
+          "Head-Up Display",
+          "All Entry features"
+        ],
+        "specs": {
+          "power": "140 hp @ 6,400 rpm",
+          "torque": "172 Nm @ 4,000 rpm",
+          "efficiency": "14.5 km/l",
+          "transmission": "CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.8L 2ZR-FBE DOHC VVT-i Petrol",
+      "Displacement": "1,798 cc",
+      "Power": "140 hp @ 6,400 rpm",
+      "Torque": "172 Nm @ 4,000 rpm",
+      "Efficiency": "15 km/l (approx.)",
+      "Fuel Tank": "50 L",
+      "Transmission": "CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "440 L",
+      "Length": "4,460 mm",
+      "Width": "1,825 mm",
+      "Wheelbase": "2,640 mm",
+      "Ground Clearance": "160 mm",
+      "Airbags": "7"
+    },
+    "pros": [
+      "7 airbags as standard",
+      "TNGA platform — excellent ride & handling",
+      "Toyota Safety Sense on top trim",
+      "Panoramic sunroof (High)",
+      "Premium JBL audio system"
+    ],
+    "cons": [
+      "No hybrid variant in Nepal market",
+      "160mm ground clearance — lower than rivals",
+      "Expensive vs. segment",
+      "Only 2 variants — no mid-spec option"
+    ],
+    "highlights": [
+      "7 Airbags Standard",
+      "Rs. 1.165 Cr Start",
+      "TNGA Platform",
+      "360° Camera (High)"
+    ]
+  },
+  {
+    "id": 203,
+    "slug": "toyota-hilux-2024",
+    "brand": "Toyota",
+    "model": "Hilux",
+    "year": 2024,
+    "type": "Diesel",
+    "body": "Pickup Truck",
+    "badge": "popular",
+    "tagline": "Nepal's most trusted workhorse — indestructible, go-anywhere pickup",
+    "rating": 4.6,
+    "reviews": 4203,
+    "expertScore": 8.8,
+    "baseEMI": 85000,
+    "overview": "The Toyota Hilux is Nepal's best-selling pickup and a segment legend. Available in 2.4L and 2.8L diesel double-cab configurations with permanent 4WD, it conquers Nepal's toughest terrains. Standard equipment includes diff lock, LED headlamps, leather seats, and a touchscreen infotainment system. Built in Thailand to global export standards.",
+    "images": [
+      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1569171767200-cee31ff71f78?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Silver",
+        "hex": "#BABFC7"
+      },
+      {
+        "name": "Grey",
+        "hex": "#646B73"
+      },
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Bronze",
+        "hex": "#8B6914"
+      },
+      {
+        "name": "Dark Blue",
+        "hex": "#1A2A4A"
+      },
+      {
+        "name": "Red",
+        "hex": "#A02020"
+      }
+    ],
+    "variants": [
+      {
+        "name": "2.4L Standard",
+        "price": 9600000,
+        "label": "Rs. 96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "2.4L 2GD-FTV Turbodiesel (149 hp)",
+          "6-Speed MT",
+          "4WD with Low Range",
+          "Dual Airbags",
+          "ABS + EBD",
+          "8\" Touchscreen + CarPlay/Android Auto",
+          "LED Headlamps",
+          "Leather Seats",
+          "Rear Camera",
+          "Tow Hook"
+        ],
+        "specs": {
+          "power": "149 hp @ 3,400 rpm",
+          "torque": "400 Nm @ 1,600 rpm",
+          "efficiency": "11 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "2.8L High",
+        "price": 11000000,
+        "label": "Rs. 1.10 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.8L 1GD-FTV Turbodiesel (204 hp)",
+          "6-Speed Automatic",
+          "Permanent 4WD + Rear Diff Lock",
+          "VSC + DAC + HAC",
+          "6 Airbags",
+          "360° Camera",
+          "TSS (Pre-Collision)",
+          "18\" Alloys",
+          "All Standard features"
+        ],
+        "specs": {
+          "power": "204 hp @ 3,400 rpm",
+          "torque": "500 Nm @ 1,600 rpm",
+          "efficiency": "10 km/l",
+          "transmission": "6-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.4L 2GD-FTV / 2.8L 1GD-FTV Turbodiesel",
+      "Displacement": "2,393 cc / 2,755 cc",
+      "Power": "149 hp / 204 hp",
+      "Torque": "400 Nm / 500 Nm",
+      "Efficiency": "11 km/l / 10 km/l (approx.)",
+      "Fuel Tank": "80 L",
+      "Transmission": "6-Speed MT / 6-Speed AT",
+      "Drive": "4WD (Permanent)",
+      "Seating": "5 (Double Cab)",
+      "Payload": "970 kg",
+      "Length": "5,325 mm",
+      "Width": "1,855 mm",
+      "Wheelbase": "3,085 mm",
+      "Ground Clearance": "279 mm",
+      "Airbags": "2 (2.4L) / 6 (2.8L)"
+    },
+    "pros": [
+      "Legendary reliability — near-indestructible",
+      "279mm ground clearance — Nepal's best",
+      "500Nm torque on 2.8L — effortless towing",
+      "80L tank — long range between fill-ups",
+      "Massive resale value retention"
+    ],
+    "cons": [
+      "Thirsty in city — 8-10 km/l urban",
+      "No petrol option",
+      "Large turning radius — tricky in Kathmandu lanes",
+      "High price for a pickup"
+    ],
+    "highlights": [
+      "279mm Clearance",
+      "500 Nm Torque",
+      "4WD Standard",
+      "Rs. 96L Start"
+    ]
+  },
+  {
+    "id": 204,
+    "slug": "toyota-fortuner-2024",
+    "brand": "Toyota",
+    "model": "Fortuner",
+    "year": 2024,
+    "type": "Diesel",
+    "body": "7-Seat SUV",
+    "badge": "premium",
+    "tagline": "Nepal's premier status SUV — dominate every terrain in 7-seat comfort",
+    "rating": 4.7,
+    "reviews": 3180,
+    "expertScore": 9,
+    "baseEMI": 185000,
+    "overview": "The Toyota Fortuner is the aspirational SUV benchmark in Nepal. Body-on-frame construction, powerful diesel engines (2.7L petrol or 2.8L diesel), full-time or part-time 4WD, 7 seats with leather, and a commanding road presence make it the definitive choice for Nepal's diverse terrain — from Kathmandu ring road to mountain highways.",
+    "images": [
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Platinum White Pearl",
+        "hex": "#FAFAFA"
+      },
+      {
+        "name": "Silver Metallic",
+        "hex": "#B4B8C0"
+      },
+      {
+        "name": "Attitude Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Bronze",
+        "hex": "#7A5C28"
+      },
+      {
+        "name": "Dark Blue Mica",
+        "hex": "#1A2540"
+      },
+      {
+        "name": "Red Mica",
+        "hex": "#8B1C1C"
+      },
+      {
+        "name": "Grey Metallic",
+        "hex": "#5A5E63"
+      }
+    ],
+    "variants": [
+      {
+        "name": "2.7 Petrol MT",
+        "price": 21000000,
+        "label": "Rs. 2.10 Cr",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2.7L 2TR-FE Petrol (163 hp)",
+          "5-Speed MT",
+          "4WD Part-Time",
+          "7 Seats",
+          "Leather Upholstery",
+          "7 Airbags",
+          "VSC + DAC + HAC",
+          "9\" Touchscreen + JBL Audio",
+          "LED Headlamps",
+          "18\" Alloys"
+        ],
+        "specs": {
+          "power": "163 hp @ 5,200 rpm",
+          "torque": "246 Nm @ 3,800 rpm",
+          "efficiency": "10 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "2.8 Diesel AT",
+        "price": 22200000,
+        "label": "Rs. 2.22 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.8L 1GD-FTV Diesel (204 hp)",
+          "6-Speed AT",
+          "4WD Full-Time",
+          "Rear Diff Lock",
+          "TSS — Pre-Collision + Lane Departure + Radar Cruise",
+          "360° Camera",
+          "Power Tailgate",
+          "Ventilated Front Seats",
+          "All Petrol features"
+        ],
+        "specs": {
+          "power": "204 hp @ 3,400 rpm",
+          "torque": "500 Nm @ 1,600 rpm",
+          "efficiency": "9 km/l",
+          "transmission": "6-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.7L Petrol / 2.8L Turbodiesel",
+      "Displacement": "2,694 cc / 2,755 cc",
+      "Power": "163 hp / 204 hp",
+      "Torque": "246 Nm / 500 Nm",
+      "Efficiency": "10 km/l / 9 km/l (approx.)",
+      "Fuel Tank": "80 L",
+      "Transmission": "5-Speed MT / 6-Speed AT",
+      "Drive": "4WD",
+      "Seating": "7",
+      "Boot Space": "620 L (3rd row folded)",
+      "Length": "4,795 mm",
+      "Width": "1,855 mm",
+      "Wheelbase": "2,745 mm",
+      "Ground Clearance": "279 mm",
+      "Airbags": "7"
+    },
+    "pros": [
+      "Unrivalled resale value in Nepal",
+      "Commanding road presence",
+      "500Nm diesel torque — effortless everywhere",
+      "620L boot with row 3 folded",
+      "Benchmark after-sales support from UTS"
+    ],
+    "cons": [
+      "Thirsty — 8-10 km/l in Kathmandu",
+      "Dated AT gearbox (6-speed vs 8-speed rivals)",
+      "Large body — challenging in tight Kathmandu lanes",
+      "High asking price"
+    ],
+    "highlights": [
+      "7 Seats",
+      "279mm Clearance",
+      "500 Nm Diesel",
+      "Rs. 2.10 Cr Start"
+    ]
+  },
+  {
+    "id": 205,
+    "slug": "toyota-rav4-2024",
+    "brand": "Toyota",
+    "model": "RAV4",
+    "year": 2024,
+    "type": "Petrol",
+    "body": "Crossover SUV",
+    "badge": "premium",
+    "tagline": "Global crossover icon — TNGA-built with AWD and a sophisticated interior",
+    "rating": 4.5,
+    "reviews": 782,
+    "expertScore": 8.4,
+    "baseEMI": 138000,
+    "overview": "The Toyota RAV4 is Nepal's global-spec crossover choice, built on the TNGA-K platform with FWD and AWD options. It offers a 2.5L naturally aspirated petrol, a panoramic moonroof, Toyota Safety Sense, and an upmarket cabin experience that blends everyday practicality with highway excellence.",
+    "images": [
+      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1581540222194-0def2dda95b8?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Blizzard Pearl White",
+        "hex": "#F5F8FA"
+      },
+      {
+        "name": "Silver Metallic",
+        "hex": "#B0B5BD"
+      },
+      {
+        "name": "Magnetic Grey",
+        "hex": "#5A5E62"
+      },
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Blueprint Blue",
+        "hex": "#1A3A6A"
+      },
+      {
+        "name": "Supersonic Red",
+        "hex": "#A01C1C"
+      },
+      {
+        "name": "Cavalry Blue",
+        "hex": "#1C2B4A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "MT Petrol",
+        "price": 15600000,
+        "label": "Rs. 1.56 Cr",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2.5L A25A-FKS DOHC Petrol (203 hp)",
+          "Manual Transmission",
+          "FWD",
+          "7 Airbags",
+          "Toyota Safety Sense",
+          "8\" Touchscreen",
+          "Dual-Zone Auto AC",
+          "LED Headlamps",
+          "18\" Alloys",
+          "Rear Camera"
+        ],
+        "specs": {
+          "power": "203 hp @ 6,600 rpm",
+          "torque": "243 Nm @ 4,400 rpm",
+          "efficiency": "14 km/l",
+          "transmission": "MT"
+        }
+      },
+      {
+        "name": "AT Petrol",
+        "price": 17000000,
+        "label": "Rs. 1.70 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "8-Speed Direct Shift AT",
+          "Power Liftgate",
+          "Panoramic Moonroof",
+          "JBL Premium Audio",
+          "Wireless Charging",
+          "All MT features"
+        ],
+        "specs": {
+          "power": "203 hp @ 6,600 rpm",
+          "torque": "243 Nm @ 4,400 rpm",
+          "efficiency": "13.5 km/l",
+          "transmission": "8-Speed AT"
+        }
+      },
+      {
+        "name": "AWD Petrol",
+        "price": 19000000,
+        "label": "Rs. 1.90 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "AWD — Dynamic Torque Vectoring",
+          "Terrain Select (Normal/Sport/Rock & Dirt/Snow/Mud)",
+          "360° Camera",
+          "Head-Up Display",
+          "Ventilated Seats",
+          "All AT features"
+        ],
+        "specs": {
+          "power": "203 hp @ 6,600 rpm",
+          "torque": "243 Nm @ 4,400 rpm",
+          "efficiency": "12 km/l",
+          "transmission": "8-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.5L A25A-FKS DOHC VVT-iE/VVT-i Petrol",
+      "Displacement": "2,487 cc",
+      "Power": "203 hp @ 6,600 rpm",
+      "Torque": "243 Nm @ 4,400 rpm",
+      "Efficiency": "14 km/l (MT) / 12 km/l (AWD)",
+      "Fuel Tank": "55 L",
+      "Transmission": "MT / 8-Speed AT",
+      "Drive": "FWD / AWD",
+      "Seating": "5",
+      "Boot Space": "580 L",
+      "Length": "4,600 mm",
+      "Width": "1,855 mm",
+      "Wheelbase": "2,690 mm",
+      "Ground Clearance": "203 mm",
+      "Airbags": "7"
+    },
+    "pros": [
+      "203hp — one of the most powerful in class",
+      "AWD with terrain modes",
+      "Panoramic moonroof",
+      "580L boot space",
+      "8-speed AT — smooth and refined"
+    ],
+    "cons": [
+      "No hybrid variant in Nepal",
+      "Pricey for a petrol-only line-up",
+      "Heavy at 1,580 kg",
+      "160mm less ground clearance than Fortuner"
+    ],
+    "highlights": [
+      "AWD Option",
+      "203 hp",
+      "Rs. 1.56 Cr Start",
+      "580L Boot"
+    ]
+  },
+  {
+    "id": 206,
+    "slug": "toyota-camry-hybrid-2024",
+    "brand": "Toyota",
+    "model": "Camry Hybrid",
+    "year": 2024,
+    "type": "Hybrid",
+    "body": "Sedan",
+    "badge": "premium",
+    "tagline": "Nepal's benchmark executive hybrid — refined, efficient, and prestigious",
+    "rating": 4.6,
+    "reviews": 542,
+    "expertScore": 8.7,
+    "baseEMI": 163000,
+    "overview": "The Toyota Camry Hybrid brings Japan's most celebrated executive sedan to Nepali roads. Powered by a 2.5L hybrid system producing 218hp combined with legendary Toyota hybrid reliability, it offers a head-up display, 9-speaker JBL audio, 9 airbags, Toyota Safety Sense, and class-leading fuel efficiency of ~23 km/l.",
+    "images": [
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1493238792000-8113da705763?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Platinum White Pearl",
+        "hex": "#FAFAFA"
+      },
+      {
+        "name": "Silver Metallic",
+        "hex": "#ABABB5"
+      },
+      {
+        "name": "Graphite",
+        "hex": "#3A3D42"
+      },
+      {
+        "name": "Midnight Black",
+        "hex": "#18181A"
+      },
+      {
+        "name": "Blueprint Blue",
+        "hex": "#1A3058"
+      },
+      {
+        "name": "Ruby Flare Pearl",
+        "hex": "#8C1A22"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Camry Hybrid",
+        "price": 18500000,
+        "label": "Rs. 1.85 Cr",
+        "popular": true,
+        "transmission": "CVT (e-CVT)",
+        "fuel": "Hybrid",
+        "features": [
+          "2.5L A25A-FXS Hybrid (218 hp system)",
+          "e-CVT",
+          "FWD",
+          "9 Airbags",
+          "Toyota Safety Sense (TSS 2.5+)",
+          "9\" Touchscreen",
+          "Head-Up Display",
+          "JBL 9-Speaker Audio",
+          "Wireless CarPlay + Android Auto",
+          "Dual-Zone Auto AC",
+          "Ventilated + Heated Front Seats",
+          "Power Moonroof",
+          "LED Headlamps + AHS Auto High-Beam",
+          "18\" Alloys",
+          "360° Camera",
+          "Wireless Charging",
+          "EV Mode"
+        ],
+        "specs": {
+          "power": "218 hp (combined)",
+          "torque": "221 Nm (petrol) + 202 Nm (motor)",
+          "efficiency": "23 km/l",
+          "transmission": "e-CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.5L A25A-FXS + Electric Motor (Hybrid)",
+      "Displacement": "2,487 cc",
+      "System Power": "218 hp (combined)",
+      "Petrol Torque": "221 Nm",
+      "Motor Torque": "202 Nm",
+      "Efficiency": "~23 km/l",
+      "Fuel Tank": "50 L",
+      "Transmission": "e-CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "524 L",
+      "Length": "4,885 mm",
+      "Width": "1,840 mm",
+      "Wheelbase": "2,825 mm",
+      "Ground Clearance": "155 mm",
+      "Airbags": "9"
+    },
+    "pros": [
+      "23 km/l — exceptional efficiency for Nepal's fuel prices",
+      "9 airbags — class leader in safety",
+      "HUD, JBL, ventilated seats — full luxury spec",
+      "Whisper-quiet EV mode in city",
+      "Strongest resale value among sedans in Nepal"
+    ],
+    "cons": [
+      "Only one variant — no choice",
+      "155mm clearance — low for Nepali roads",
+      "High price",
+      "Battery replacement cost is a future concern"
+    ],
+    "highlights": [
+      "23 km/l Hybrid",
+      "9 Airbags",
+      "218 hp System",
+      "Rs. 1.85 Cr"
+    ]
+  },
+  {
+    "id": 207,
+    "slug": "toyota-land-cruiser-70-2024",
+    "brand": "Toyota",
+    "model": "Land Cruiser 70",
+    "year": 2024,
+    "type": "Diesel",
+    "body": "Off-Road SUV",
+    "badge": "iconic",
+    "tagline": "The original legend — battle-tested for Nepal's most unforgiving roads",
+    "rating": 4.8,
+    "reviews": 1980,
+    "expertScore": 9.2,
+    "baseEMI": 220000,
+    "overview": "The Toyota Land Cruiser 70 Series is a living legend in Nepal — the go-to vehicle for government agencies, NGOs, trekking operators, and hill district duty. Powered by a 4.0L V6 petrol or 2.8L diesel with a ladder frame, solid axles, and a locking centre diff, it remains the most capable production vehicle available through UTS Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Silver",
+        "hex": "#ADADB5"
+      },
+      {
+        "name": "Grey",
+        "hex": "#5E6166"
+      },
+      {
+        "name": "Dark Blue",
+        "hex": "#1A2540"
+      },
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "LC70 Standard",
+        "price": 25000000,
+        "label": "Rs. 2.50 Cr",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Petrol/Diesel",
+        "features": [
+          "4.0L 1GR-FE V6 Petrol (228 hp) or 2.8L Diesel",
+          "5-Speed MT",
+          "Part-Time 4WD + Locking Center Diff",
+          "Solid Front & Rear Axles",
+          "7 Seats",
+          "Dual Airbags",
+          "ABS",
+          "Air Con",
+          "Power Windows",
+          "8\" Touchscreen"
+        ],
+        "specs": {
+          "power": "228 hp (V6) / 163 hp (2.8 Diesel)",
+          "torque": "381 Nm / 420 Nm",
+          "efficiency": "8 km/l",
+          "transmission": "5-Speed MT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "4.0L 1GR-FE V6 Petrol / 2.8L Diesel",
+      "Displacement": "3,956 cc / 2,755 cc",
+      "Power": "228 hp (V6) / 163 hp (Diesel)",
+      "Torque": "381 Nm / 420 Nm",
+      "Efficiency": "8 km/l (approx.)",
+      "Fuel Tank": "87 L",
+      "Transmission": "5-Speed MT",
+      "Drive": "4WD (Part-Time)",
+      "Seating": "7–9",
+      "Body": "Wagon / Pickup",
+      "Length": "4,890 mm",
+      "Width": "1,870 mm",
+      "Wheelbase": "2,730 mm",
+      "Ground Clearance": "285 mm",
+      "Airbags": "2"
+    },
+    "pros": [
+      "285mm ground clearance — highest in Nepal market",
+      "Bulletproof solid-axle reliability",
+      "87L tank — exceptional range on mountain roads",
+      "Universally serviced across Nepal",
+      "Legendary resale value"
+    ],
+    "cons": [
+      "Very thirsty — 7-8 km/l",
+      "Utilitarian interior — no luxury",
+      "Only 2 airbags",
+      "No modern safety tech (TSS)",
+      "High price for basic spec"
+    ],
+    "highlights": [
+      "285mm Clearance",
+      "Solid Axles",
+      "Rs. 2.50 Cr",
+      "87L Tank"
+    ]
+  },
+  {
+    "id": 208,
+    "slug": "toyota-land-cruiser-prado-250-2024",
+    "brand": "Toyota",
+    "model": "Land Cruiser Prado",
+    "year": 2024,
+    "type": "Diesel",
+    "body": "Luxury SUV",
+    "badge": "luxury",
+    "tagline": "Command every terrain in refined luxury — the Prado defines prestige in Nepal",
+    "rating": 4.8,
+    "reviews": 820,
+    "expertScore": 9.3,
+    "baseEMI": 249000,
+    "overview": "The new-generation Toyota Land Cruiser Prado (250 Series) arrives in Nepal as the ultimate combination of off-road dominance and executive luxury. Built on an all-new ladder frame with multi-link rear suspension, the Prado brings a 2.8L turbodiesel, multi-terrain select, e-KDSS electronic suspension, 8 airbags, Toyota Safety Sense, and a premium 12.3\" infotainment screen.",
+    "images": [
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1581540222194-0def2dda95b8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Platinum White Pearl",
+        "hex": "#FAFAFA"
+      },
+      {
+        "name": "Silver Metallic",
+        "hex": "#ABABB5"
+      },
+      {
+        "name": "Magnetic Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Midnight Black",
+        "hex": "#18181A"
+      },
+      {
+        "name": "Bronze",
+        "hex": "#7A5C28"
+      },
+      {
+        "name": "Dark Blue Mica",
+        "hex": "#192038"
+      },
+      {
+        "name": "Earth Brown",
+        "hex": "#5C4020"
+      },
+      {
+        "name": "Dark Red Mica",
+        "hex": "#6E1414"
+      }
+    ],
+    "variants": [
+      {
+        "name": "VX",
+        "price": 28300000,
+        "label": "Rs. 2.83 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.8L 1GD-FTV Turbodiesel (204 hp)",
+          "8-Speed AT",
+          "4WD + Multi-Terrain Select",
+          "7 Seats — Leather",
+          "8 Airbags",
+          "Toyota Safety Sense",
+          "12.3\" Touchscreen + JBL Audio",
+          "Wireless CarPlay/Android Auto",
+          "360° Camera",
+          "Power Moonroof",
+          "Ventilated + Heated Front Seats",
+          "Head-Up Display",
+          "LED Headlamps",
+          "Wireless Charging",
+          "20\" Alloys"
+        ],
+        "specs": {
+          "power": "204 hp @ 3,400 rpm",
+          "torque": "500 Nm @ 1,600 rpm",
+          "efficiency": "10 km/l",
+          "transmission": "8-Speed AT"
+        }
+      },
+      {
+        "name": "VXR",
+        "price": 33000000,
+        "label": "Rs. 3.30 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "e-KDSS Electronic Kinetic Dynamic Suspension",
+          "Rear Differential Lock",
+          "Multi-Terrain Monitor (front camera underside view)",
+          "Mark Levinson Audio (14 speakers)",
+          "4-Zone Climate Control",
+          "Power Running Boards",
+          "All VX features"
+        ],
+        "specs": {
+          "power": "204 hp @ 3,400 rpm",
+          "torque": "500 Nm @ 1,600 rpm",
+          "efficiency": "9.5 km/l",
+          "transmission": "8-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.8L 1GD-FTV DOHC Turbodiesel",
+      "Displacement": "2,755 cc",
+      "Power": "204 hp @ 3,400 rpm",
+      "Torque": "500 Nm @ 1,600–2,800 rpm",
+      "Efficiency": "10 km/l (approx.)",
+      "Fuel Tank": "87 L",
+      "Transmission": "8-Speed Automatic",
+      "Drive": "4WD (Permanent)",
+      "Seating": "7",
+      "Boot Space": "570 L (3rd row folded)",
+      "Length": "4,920 mm",
+      "Width": "1,980 mm",
+      "Wheelbase": "2,850 mm",
+      "Ground Clearance": "222 mm",
+      "Airbags": "8"
+    },
+    "pros": [
+      "New-gen 250 Series — massively upgraded vs old Prado",
+      "8 airbags + full TSS",
+      "e-KDSS on VXR — best off-road suspension",
+      "12.3\" screen + HUD",
+      "500Nm torque — effortless at altitude"
+    ],
+    "cons": [
+      "Very expensive — Rs. 2.83–3.30 Cr",
+      "Fuel thirsty at city speeds",
+      "Huge dimensions challenging in Kathmandu",
+      "No petrol/hybrid option in Nepal"
+    ],
+    "highlights": [
+      "8 Airbags",
+      "500 Nm Diesel",
+      "e-KDSS (VXR)",
+      "Rs. 2.83 Cr Start"
+    ]
+  }
+]

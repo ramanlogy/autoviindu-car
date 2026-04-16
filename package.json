@@ -1,24 +1,25 @@
 {
-  "name": "atb",
+  "name": "autoviindu",
   "version": "1.0.0",
-  "description": "assets/images/ ├── cars/               ← Car photos (main shots, gallery, interior) ├── brands/             ← Brand logos (PNG, transparent background) ├── services/           ← Service photos (detailing, workshop, etc.) ├── banners/            ← Homepage & section hero banners ├── og/                 ← Open Graph / social sharing images ├── icons/              ← App icons (PWA, favicon variants) └── team/               ← Team member photos (optional)",
-  "main": "seo-schema.js",
+  "description": "Nepal's car marketplace — AutoViindu",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ramanlogy/autoviindu-car.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cars",
+    "nepal",
+    "marketplace"
+  ],
+  "author": "AutoViindu",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ramanlogy/autoviindu-car/issues"
-  },
-  "homepage": "https://github.com/ramanlogy/autoviindu-car#readme",
   "dependencies": {
-    "express": "^5.2.1",
-    "multer": "^2.1.1"
+    "express": "^4.18.2",
+    "express4": "^0.0.1"
   }
 }

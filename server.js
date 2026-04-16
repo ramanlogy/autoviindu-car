@@ -1,30 +1,26 @@
-const express = require('express');
+const express = require("express");
+const path = require("path");
 const app = express();
-const PORT = 3000;
 
-// Serve everything in /public as static files
-app.use(express.static('public'));
+const PORT = process.env.PORT || 3000;
 
-// API endpoint — returns list of cars with image URLs
-app.get('/api/cars', (req, res) => {
-  const cars = [
-    {
-      id: 1,
-      name: 'Suzuki Swift',
-      price: 2800000,
-      image: '/images/suzuki-swift.jpg'
-    },
-    {
-      id: 2,
-      name: 'Riddara EV',
-      price: 4500000,
-      image: '/images/riddara-ev.jpg'
-    },
-    // add more cars here
-  ];
-  res.json(cars);
+// ── Serve all frontend static files ──────────────────────────────────────────
+app.use(express.static(path.join(__dirname, "frontend")));
+app.use('/images', express.static(path.join(__dirname, 'backend/uploads')));
+
+// ── API: Get all new cars ─────────────────────────────────────────────────────
+// The cars data lives in cars-db.js on the frontend.
+// This endpoint is a lightweight health-check / meta endpoint.
+// Your actual car data is loaded from cars-db.js on the client side.
+app.get("/api/status", (req, res) => {
+  res.json({ status: "ok", site: "AutoViindu" });
+});
+
+// ── Catch-all: SPA fallback (serves index.html for any unknown route) ─────────
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "index.html"));
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`✅ AutoViindu server running → http://localhost:${PORT}`);
 });

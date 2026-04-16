@@ -1,0 +1,684 @@
+[
+  {
+    "id": 1001,
+    "slug": "haval-jolion-2025",
+    "brand": "Haval",
+    "model": "Jolion",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "popular",
+    "tagline": "GWM's sharp compact SUV with DHT hybrid and ADAS under Rs. 55L",
+    "rating": 4.1,
+    "reviews": 487,
+    "expertScore": 7.8,
+    "baseEMI": 40000,
+    "overview": "The Haval Jolion is Great Wall Motor's compact SUV flagship in Nepal, available in standard 1.5T petrol and DHT (Dedicated Hybrid Transmission) hybrid variants. It stands out with its coupe-inspired styling, 10.25\" floating touchscreen, 6 airbags standard, and ADAS on top trims.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Obsidian Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Misty Grey",
+        "hex": "#8C9098"
+      },
+      {
+        "name": "Cool Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Crimson Red",
+        "hex": "#B22222"
+      },
+      {
+        "name": "Olive Green",
+        "hex": "#4A5E3A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Comfort",
+        "price": 3990000,
+        "label": "Rs. 39.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera + Sensors",
+          "Electric Sunroof",
+          "Auto Climate Control",
+          "17\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "147 hp @ 5,500 rpm",
+          "torque": "220 Nm",
+          "efficiency": "15.9 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Luxury",
+        "price": 4490000,
+        "label": "Rs. 44.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "360° Camera",
+          "Wireless Charging",
+          "ADAS Level 1",
+          "Panoramic Sunroof",
+          "Rear AC Vents",
+          "Comfort features+"
+        ],
+        "specs": {
+          "power": "147 hp @ 5,500 rpm",
+          "torque": "220 Nm",
+          "efficiency": "15.9 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Hybrid DHT",
+        "price": 5190000,
+        "label": "Rs. 51.90L",
+        "popular": true,
+        "transmission": "DHT",
+        "fuel": "Petrol Hybrid",
+        "features": [
+          "1.5L + DHT Hybrid System",
+          "43km/l NEDC efficiency",
+          "ADAS Level 2",
+          "Ventilated Seats",
+          "Ambient Lighting",
+          "Luxury features+"
+        ],
+        "specs": {
+          "power": "190 hp (system)",
+          "torque": "375 Nm (system)",
+          "efficiency": "22.1 km/l",
+          "transmission": "DHT Hybrid"
+        }
+      },
+      {
+        "name": "Hybrid Premium",
+        "price": 5890000,
+        "label": "Rs. 58.90L",
+        "popular": false,
+        "transmission": "DHT",
+        "fuel": "Petrol Hybrid",
+        "features": [
+          "Nappa Leather",
+          "Head-Up Display",
+          "10-Speaker Audio",
+          "Drive Modes (4)",
+          "Hybrid DHT features+"
+        ],
+        "specs": {
+          "power": "190 hp (system)",
+          "torque": "375 Nm",
+          "efficiency": "22.1 km/l",
+          "transmission": "DHT Hybrid"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L GDIT Turbo / 1.5T + DHT Hybrid",
+      "Displacement": "1,497 cc",
+      "Power": "147–190 hp",
+      "Torque": "220–375 Nm",
+      "Efficiency": "15.9–22.1 km/l",
+      "Fuel Tank": "50 L",
+      "Transmission": "7DCT / DHT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "390 L",
+      "Length": "4,472 mm",
+      "Width": "1,841 mm",
+      "Height": "1,628 mm",
+      "Wheelbase": "2,700 mm",
+      "Ground Clearance": "190 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "DHT hybrid at competitive price",
+      "22.1 km/l hybrid efficiency",
+      "190hp system output",
+      "ADAS Level 2 on hybrid",
+      "Sporty coupe styling"
+    ],
+    "cons": [
+      "FWD only",
+      "Hybrid parts servicing uncertain in Nepal",
+      "DCT clunky in city (petrol)",
+      "Brand trust building stage in Nepal"
+    ],
+    "highlights": [
+      "DHT Hybrid Available",
+      "22.1 km/l",
+      "190hp System",
+      "ADAS Level 2"
+    ]
+  },
+  {
+    "id": 1002,
+    "slug": "haval-h6-2025",
+    "brand": "Haval",
+    "model": "H6",
+    "year": 2025,
+    "type": "Petrol Hybrid",
+    "body": "Mid-size SUV",
+    "badge": "new",
+    "tagline": "GWM's flagship mid-size hybrid SUV with AWD and 240hp system",
+    "rating": 4.2,
+    "reviews": 213,
+    "expertScore": 8,
+    "baseEMI": 65000,
+    "overview": "The Haval H6 is Great Wall Motor's best-selling global SUV, arriving in Nepal with a DHT plug-in hybrid system, 240hp combined output, AWD option, and a premium interior with 12.3\" dual screens, Harman audio, and Level 2 ADAS. It challenges the Kia Seltos and Hyundai Tucson at a lower price.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Obsidian Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Misty Grey",
+        "hex": "#8C9098"
+      },
+      {
+        "name": "Cool Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Olive Green",
+        "hex": "#4A5E3A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Luxury FWD",
+        "price": 6390000,
+        "label": "Rs. 63.90L",
+        "popular": false,
+        "transmission": "DHT",
+        "fuel": "Petrol Hybrid",
+        "features": [
+          "6 Airbags",
+          "12.3\" Dual Screen",
+          "DHT Hybrid",
+          "Electric Sunroof",
+          "ADAS Level 1",
+          "19\" Alloy Wheels",
+          "360° Camera"
+        ],
+        "specs": {
+          "power": "210 hp (system)",
+          "torque": "530 Nm (system)",
+          "efficiency": "19.7 km/l",
+          "transmission": "DHT"
+        }
+      },
+      {
+        "name": "Premium AWD",
+        "price": 7490000,
+        "label": "Rs. 74.90L",
+        "popular": true,
+        "transmission": "DHT",
+        "fuel": "Petrol Hybrid",
+        "features": [
+          "AWD + Rear Motor",
+          "240hp Combined",
+          "ADAS Level 2",
+          "Harman 12-Speaker",
+          "Ventilated Seats",
+          "Head-Up Display",
+          "Luxury features+"
+        ],
+        "specs": {
+          "power": "240 hp (system)",
+          "torque": "620 Nm (system)",
+          "efficiency": "17.9 km/l",
+          "transmission": "DHT AWD"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L GDIT + DHT Hybrid",
+      "Displacement": "1,997 cc",
+      "Power": "210–240 hp (system)",
+      "Torque": "530–620 Nm (system)",
+      "Efficiency": "17.9–19.7 km/l",
+      "Fuel Tank": "55 L",
+      "Transmission": "DHT / DHT AWD",
+      "Drive": "FWD / AWD",
+      "Seating": "5",
+      "Boot Space": "530 L",
+      "Length": "4,653 mm",
+      "Width": "1,886 mm",
+      "Height": "1,730 mm",
+      "Wheelbase": "2,738 mm",
+      "Ground Clearance": "200 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "240hp hybrid AWD system",
+      "530L boot space",
+      "Harman audio on AWD",
+      "620Nm system torque",
+      "ADAS Level 2"
+    ],
+    "cons": [
+      "PHEV parts servicing in Nepal",
+      "Brand premium perception vs Korean",
+      "Large size for KTM parking",
+      "Hybrid complexity in hill roads"
+    ],
+    "highlights": [
+      "240hp AWD Hybrid",
+      "620Nm Torque",
+      "530L Boot",
+      "Harman Audio"
+    ]
+  },
+  {
+    "id": 1003,
+    "slug": "haval-dargo-2025",
+    "brand": "Haval",
+    "model": "Dargo",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Off-Road SUV",
+    "badge": "new",
+    "tagline": "Tank-inspired off-roader with 2.0T and Terrain Control for Nepal trails",
+    "rating": 4,
+    "reviews": 134,
+    "expertScore": 7.7,
+    "baseEMI": 70000,
+    "overview": "The Haval Dargo is GWM's off-road-focused SUV inspired by military aesthetics, featuring a 2.0L turbo engine, body-on-frame-style rigidity, terrain control modes, 224mm ground clearance, and a bold boxy exterior. Ideal for Nepal buyers who want Thar Roxx character at a slightly lower price.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Desert Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Stealth Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Snow White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Army Green",
+        "hex": "#4A5E3A"
+      },
+      {
+        "name": "Steel Grey",
+        "hex": "#5A5E63"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Luxury",
+        "price": 6890000,
+        "label": "Rs. 68.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "6 Airbags",
+          "12.3\" Touchscreen + CarPlay",
+          "Terrain Control Modes",
+          "224mm Ground Clearance",
+          "18\" Off-Road Alloy Wheels",
+          "Rear Diff Lock",
+          "360° Camera"
+        ],
+        "specs": {
+          "power": "190 hp @ 5,500 rpm",
+          "torque": "340 Nm",
+          "efficiency": "14.2 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Premium AWD",
+        "price": 7990000,
+        "label": "Rs. 79.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "AWD + Terrain Modes (Sand/Snow/Rock/Mud)",
+          "ADAS Level 2",
+          "Ventilated Seats",
+          "Head-Up Display",
+          "Luxury features+"
+        ],
+        "specs": {
+          "power": "190 hp @ 5,500 rpm",
+          "torque": "340 Nm",
+          "efficiency": "13.6 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L GDIT Turbo Petrol",
+      "Displacement": "1,997 cc",
+      "Power": "190 hp @ 5,500 rpm",
+      "Torque": "340 Nm",
+      "Efficiency": "13.6–14.2 km/l",
+      "Fuel Tank": "58 L",
+      "Transmission": "7-Speed DCT",
+      "Drive": "FWD / AWD",
+      "Seating": "5",
+      "Boot Space": "450 L",
+      "Length": "4,725 mm",
+      "Width": "1,926 mm",
+      "Height": "1,780 mm",
+      "Wheelbase": "2,738 mm",
+      "Ground Clearance": "224 mm",
+      "Airbags": "6",
+      "Wading Depth": "600 mm"
+    },
+    "pros": [
+      "224mm ground clearance",
+      "AWD with terrain modes",
+      "Military-inspired design",
+      "Rear diff lock on base",
+      "600mm wading depth"
+    ],
+    "cons": [
+      "2.0T thirstier in hills",
+      "DCT not ideal for technical off-road",
+      "No diesel option",
+      "GWM service centres limited"
+    ],
+    "highlights": [
+      "224mm Clearance",
+      "AWD + Terrain Modes",
+      "600mm Wading",
+      "Rear Diff Lock"
+    ]
+  },
+  {
+    "id": 1004,
+    "slug": "haval-h9-2025",
+    "brand": "Haval",
+    "model": "H9",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Full-Size Body-on-Frame SUV",
+    "badge": "premium",
+    "tagline": "Haval's premium body-on-frame 7-seater to rival Fortuner",
+    "rating": 4.1,
+    "reviews": 76,
+    "expertScore": 7.9,
+    "baseEMI": 95000,
+    "overview": "The Haval H9 is GWM's most premium body-on-frame SUV — a direct Fortuner rival with a 2.0T petrol engine, 4WD with low range, 7-seat layout, and a luxurious interior with 12.3\" screens, Harman/Kardon audio, and full ADAS Level 2. Positions as Nepal's affordable luxury off-roader.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Obsidian Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Steel Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Champagne Gold",
+        "hex": "#C9A84C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Premium 4WD",
+        "price": 9490000,
+        "label": "Rs. 94.90L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "7 Seats",
+          "6 Airbags",
+          "12.3\" Dual Screen",
+          "4WD with Low Range",
+          "ADAS Level 1",
+          "Running Boards",
+          "19\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "224 hp @ 5,500 rpm",
+          "torque": "340 Nm",
+          "efficiency": "13.2 km/l",
+          "transmission": "8-Speed AT"
+        }
+      },
+      {
+        "name": "Elite 4WD",
+        "price": 10990000,
+        "label": "Rs. 1.09 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "ADAS Level 2",
+          "Harman/Kardon 12-Speaker",
+          "Nappa Leather",
+          "Ventilated + Massage Seats",
+          "Head-Up Display",
+          "360° Camera",
+          "Premium features+"
+        ],
+        "specs": {
+          "power": "224 hp @ 5,500 rpm",
+          "torque": "340 Nm",
+          "efficiency": "13.2 km/l",
+          "transmission": "8-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L GDIT Turbo Petrol",
+      "Displacement": "1,997 cc",
+      "Power": "224 hp @ 5,500 rpm",
+      "Torque": "340 Nm",
+      "Efficiency": "13.2 km/l",
+      "Fuel Tank": "70 L",
+      "Transmission": "8-Speed AT",
+      "Drive": "4WD + Low Range",
+      "Seating": "7",
+      "Boot Space": "340 L (7-seat) / 810 L (5-seat)",
+      "Length": "4,920 mm",
+      "Width": "1,926 mm",
+      "Height": "1,875 mm",
+      "Wheelbase": "2,850 mm",
+      "Ground Clearance": "224 mm",
+      "Airbags": "6",
+      "Wading Depth": "700 mm"
+    },
+    "pros": [
+      "224hp + 8AT — strongest petrol SUV in class",
+      "4WD with low range",
+      "Harman/Kardon + Nappa leather",
+      "810L boot in 5-seat",
+      "700mm wading depth"
+    ],
+    "cons": [
+      "Very high fuel consumption",
+      "Huge size for Nepal cities",
+      "Petrol only (no diesel)",
+      "Expensive for GWM brand"
+    ],
+    "highlights": [
+      "224hp + 8AT",
+      "4WD Low Range",
+      "700mm Wading",
+      "Harman/Kardon"
+    ]
+  },
+  {
+    "id": 1005,
+    "slug": "haval-jolion-ev-2025",
+    "brand": "Haval",
+    "model": "Jolion EV",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Compact Electric SUV",
+    "badge": "new",
+    "tagline": "Pure electric Jolion with 420km range for Nepal's urban EV buyers",
+    "rating": 4,
+    "reviews": 58,
+    "expertScore": 7.5,
+    "baseEMI": 50000,
+    "overview": "The Haval Jolion EV brings the popular Jolion nameplate into the electric age with a 60kWh battery, 420km CLTC range, and all the premium features of the petrol version — ADAS, 360° camera, and ventilated seats — in a zero-emission package.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Obsidian Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Misty Grey",
+        "hex": "#8C9098"
+      },
+      {
+        "name": "Cool Blue",
+        "hex": "#1B4F8A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard",
+        "price": 4990000,
+        "label": "Rs. 49.90L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "50kWh Battery",
+          "350km CLTC Range",
+          "6 Airbags",
+          "10.25\" Touchscreen",
+          "Rear Camera",
+          "ADAS Level 1",
+          "17\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "201 hp",
+          "torque": "310 Nm",
+          "efficiency": "6.8 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "Premium",
+        "price": 5790000,
+        "label": "Rs. 57.90L",
+        "popular": true,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "60kWh Battery",
+          "420km CLTC Range",
+          "ADAS Level 2",
+          "360° Camera",
+          "Ventilated Seats",
+          "Wireless Charging",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "218 hp",
+          "torque": "340 Nm",
+          "efficiency": "6.8 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      }
+    ],
+    "specs": {
+      "Battery": "50–60 kWh",
+      "Range": "350–420 km (CLTC)",
+      "Power": "201–218 hp",
+      "Torque": "310–340 Nm",
+      "Charging": "80 kW DC Fast Charge",
+      "Charge Time": "40 min (10–80%)",
+      "Transmission": "Single Speed",
+      "Drive": "RWD",
+      "Seating": "5",
+      "Boot Space": "380 L",
+      "Length": "4,472 mm",
+      "Width": "1,841 mm",
+      "Height": "1,628 mm",
+      "Wheelbase": "2,700 mm",
+      "Ground Clearance": "180 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "420km range on premium",
+      "ADAS Level 2 available",
+      "Same quality as petrol Jolion",
+      "Stylish coupe profile",
+      "Competitive Nepal price"
+    ],
+    "cons": [
+      "RWD only",
+      "80kW charging slower than rivals",
+      "CLTC range optimistic",
+      "Service for EV components uncertain"
+    ],
+    "highlights": [
+      "420km Range",
+      "218hp Motor",
+      "ADAS Level 2",
+      "80kW Fast Charge"
+    ]
+  }
+]

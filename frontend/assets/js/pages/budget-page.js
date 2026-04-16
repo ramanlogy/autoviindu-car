@@ -21,7 +21,7 @@ window.renderBudgetPage = function (tierSlug) {
         var cnt = window.getCarsByBudget ? window.getCarsByBudget(t.slug).length : 0;
         return '<div onclick="AV.goTo(\'budget\',{tier:\'' + t.slug + '\'})" style="display:flex;align-items:center;gap:16px;padding:18px 20px;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r14);cursor:pointer;transition:all var(--ease)" onmouseenter="this.style.borderColor=\'' + t.color + '\';this.style.background=\'' + t.bgColor + '\'" onmouseleave="this.style.borderColor=\'var(--border)\';this.style.background=\'var(--white)\'">' +
           '<div style="font-size:28px;flex-shrink:0">' + t.emoji + '</div>' +
-          '<div style="flex:1">' +
+          '<div styl/home/raman/Downloads/car_image_downloader/car_imagese="flex:1">' +
           '<div style="font-size:16px;font-weight:800;color:var(--ink)">' + t.label + '</div>' +
           '<div style="font-size:12.5px;color:var(--ink-4);margin-top:3px">' + t.heroText + ' · ' + cnt + ' cars</div>' +
           '</div>' +

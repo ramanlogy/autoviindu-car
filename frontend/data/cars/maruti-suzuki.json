@@ -1,0 +1,1855 @@
+[
+  {
+    "id": 1306,
+    "slug": "suzuki-alto-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Alto",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Micro Hatchback",
+    "badge": "value",
+    "tagline": "Nepal's iconic entry-level city car — affordable, reliable, everywhere",
+    "rating": 3.7,
+    "reviews": 3842,
+    "expertScore": 6.5,
+    "baseEMI": 25000,
+    "overview": "The Maruti Suzuki Alto is Nepal's most iconic entry-level car, historically the best-selling Suzuki model in the country and widely used as a taxi. With a tiny 796 cc engine, 22+ km/l fuel efficiency, and ultra-low maintenance costs via CG Motocorp's extensive service network, it remains the first-choice car for budget buyers and commercial users across Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Silky Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Speedy Blue",
+        "hex": "#1A5299"
+      },
+      {
+        "name": "Sizzling Red",
+        "hex": "#CC2222"
+      },
+      {
+        "name": "Solid White",
+        "hex": "#F8F8F8"
+      }
+    ],
+    "variants": [
+      {
+        "name": "STD",
+        "price": 2449000,
+        "label": "Rs. 24.49L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "ABS",
+          "AC",
+          "Power Steering",
+          "5 Seats"
+        ],
+        "specs": {
+          "power": "47.5 PS @ 6,000 rpm",
+          "torque": "69 Nm",
+          "efficiency": "22.05 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "LXI",
+        "price": 2649000,
+        "label": "Rs. 26.49L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Remote Lock",
+          "Rear Defogger",
+          "Digital Cluster",
+          "STD features+"
+        ],
+        "specs": {
+          "power": "47.5 PS @ 6,000 rpm",
+          "torque": "69 Nm",
+          "efficiency": "22.05 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "VXI",
+        "price": 2849000,
+        "label": "Rs. 28.49L",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "7\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "Push Button Start",
+          "LXI features+"
+        ],
+        "specs": {
+          "power": "47.5 PS @ 6,000 rpm",
+          "torque": "69 Nm",
+          "efficiency": "22.05 km/l",
+          "transmission": "5-Speed MT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "796 cc F8D Petrol",
+      "Displacement": "796 cc",
+      "Power": "47.5 PS @ 6,000 rpm",
+      "Torque": "69 Nm @ 3,500 rpm",
+      "Efficiency": "22.05 km/l",
+      "Fuel Tank": "27 L",
+      "Transmission": "5-Speed MT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "177 L",
+      "Length": "3,445 mm",
+      "Width": "1,515 mm",
+      "Height": "1,475 mm",
+      "Wheelbase": "2,360 mm",
+      "Ground Clearance": "160 mm",
+      "Airbags": "2"
+    },
+    "pros": [
+      "Nepal's most affordable new car",
+      "22 km/l — best efficiency in its class",
+      "Widest CG Motocorp service network in Nepal",
+      "Very low spare parts cost"
+    ],
+    "cons": [
+      "Only 2 airbags",
+      "Tiny 177 L boot",
+      "796 cc struggles on Nepali hills",
+      "No AMT option"
+    ],
+    "highlights": [
+      "22.05 km/l",
+      "Most Affordable",
+      "Taxi Proven",
+      "Widest Service Network"
+    ]
+  },
+  {
+    "id": 1307,
+    "slug": "suzuki-wagon-r-2025",
+    "brand": "Maruti Suzuki",
+    "model": "WagonR",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Tall Hatchback",
+    "badge": "popular",
+    "tagline": "Nepal's most space-efficient hatchback — tall, roomy, fuel-efficient",
+    "rating": 4,
+    "reviews": 2103,
+    "expertScore": 7.2,
+    "baseEMI": 30000,
+    "overview": "The Maruti Suzuki WagonR is one of Nepal's most popular family hatchbacks, offering a tall-boy design that maximizes interior space for 5 passengers. Available in 1.0L and 1.2L engines with AMT option, it is popular with families and taxi operators needing maximum capacity in a small footprint. CG Motocorp offers it across all Suzuki showrooms in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Solid White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Silky Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Midnight Blue",
+        "hex": "#1A3A6E"
+      },
+      {
+        "name": "Magma Grey",
+        "hex": "#5A5A5A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "LXI 1.0L MT",
+        "price": 3149000,
+        "label": "Rs. 31.49L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "ABS",
+          "Rear Camera",
+          "AC",
+          "5 Seats"
+        ],
+        "specs": {
+          "power": "68 PS @ 6,000 rpm",
+          "torque": "90 Nm",
+          "efficiency": "21.79 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "VXI 1.0L MT",
+        "price": 3449000,
+        "label": "Rs. 34.49L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "7\" Touchscreen + CarPlay",
+          "Push Button Start",
+          "Keyless Entry",
+          "LXI features+"
+        ],
+        "specs": {
+          "power": "68 PS @ 6,000 rpm",
+          "torque": "90 Nm",
+          "efficiency": "21.79 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "VXI 1.2L MT",
+        "price": 3749000,
+        "label": "Rs. 37.49L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "1.2L Engine",
+          "83 PS",
+          "VXI 1.0 features+"
+        ],
+        "specs": {
+          "power": "83 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "20.52 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "ZXI+ 1.2L AMT",
+        "price": 4099000,
+        "label": "Rs. 40.99L",
+        "popular": true,
+        "transmission": "AMT",
+        "fuel": "Petrol",
+        "features": [
+          "Auto Gear Shift (AMT)",
+          "Alloy Wheels",
+          "Dual Airbags",
+          "VXI 1.2L features+"
+        ],
+        "specs": {
+          "power": "83 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "20.27 km/l",
+          "transmission": "5-Speed AMT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.0L / 1.2L VVT K-Series Petrol",
+      "Displacement": "998 / 1,197 cc",
+      "Power": "68–83 PS",
+      "Torque": "90–113 Nm",
+      "Efficiency": "20.27–21.79 km/l",
+      "Fuel Tank": "32 L",
+      "Transmission": "5-Speed MT / AMT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "341 L",
+      "Length": "3,655 mm",
+      "Width": "1,620 mm",
+      "Height": "1,675 mm",
+      "Wheelbase": "2,435 mm",
+      "Ground Clearance": "170 mm",
+      "Airbags": "2"
+    },
+    "pros": [
+      "Excellent headroom and interior space for size",
+      "AMT available for city ease",
+      "21+ km/l very fuel efficient",
+      "Huge CG Motocorp network"
+    ],
+    "cons": [
+      "Tall-boy design catches crosswind on mountain passes",
+      "Only 2 airbags",
+      "170 mm clearance average for Nepal",
+      "Basic interior"
+    ],
+    "highlights": [
+      "21.79 km/l",
+      "Tall-Boy Space",
+      "AMT Available",
+      "Family Favourite"
+    ]
+  },
+  {
+    "id": 1308,
+    "slug": "suzuki-celerio-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Celerio",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "City Hatchback",
+    "badge": "value",
+    "tagline": "Lightweight, fuel-efficient city hatchback with AMT convenience",
+    "rating": 3.9,
+    "reviews": 867,
+    "expertScore": 7,
+    "baseEMI": 28000,
+    "overview": "The Suzuki Celerio is Nepal's most fuel-efficient petrol hatchback, claiming 26.68 km/l on the 1.0L engine — the highest of any petrol car in Nepal. With its lightweight HEARTECT platform, smart AMT transmission option, and attractive price under Rs. 30 Lakhs, it is an ideal city runabout for Kathmandu's congested streets.",
+    "images": [
+      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Solid White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Silky Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Speedy Blue",
+        "hex": "#1A4E8A"
+      },
+      {
+        "name": "Caffeine Brown",
+        "hex": "#6B4226"
+      }
+    ],
+    "variants": [
+      {
+        "name": "LXI MT",
+        "price": 2799000,
+        "label": "Rs. 27.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "ABS",
+          "AC",
+          "Power Steering",
+          "5 Seats"
+        ],
+        "specs": {
+          "power": "67 PS @ 6,000 rpm",
+          "torque": "89 Nm",
+          "efficiency": "26.68 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "VXI MT",
+        "price": 3099000,
+        "label": "Rs. 30.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "7\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "Keyless Entry",
+          "LXI features+"
+        ],
+        "specs": {
+          "power": "67 PS @ 6,000 rpm",
+          "torque": "89 Nm",
+          "efficiency": "26.68 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "ZXI AMT",
+        "price": 3449000,
+        "label": "Rs. 34.49L",
+        "popular": true,
+        "transmission": "AMT",
+        "fuel": "Petrol",
+        "features": [
+          "Auto Gear Shift AMT",
+          "Alloy Wheels",
+          "VXI features+"
+        ],
+        "specs": {
+          "power": "67 PS @ 6,000 rpm",
+          "torque": "89 Nm",
+          "efficiency": "26.68 km/l",
+          "transmission": "5-Speed AMT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.0L K10C DualJet Petrol",
+      "Displacement": "998 cc",
+      "Power": "67 PS @ 6,000 rpm",
+      "Torque": "89 Nm @ 3,500 rpm",
+      "Efficiency": "26.68 km/l (ARAI)",
+      "Fuel Tank": "32 L",
+      "Transmission": "5-Speed MT / AMT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "313 L",
+      "Length": "3,695 mm",
+      "Width": "1,655 mm",
+      "Height": "1,555 mm",
+      "Wheelbase": "2,425 mm",
+      "Ground Clearance": "165 mm",
+      "Airbags": "2"
+    },
+    "pros": [
+      "26.68 km/l — Nepal's most fuel-efficient petrol car",
+      "Lightweight HEARTECT platform",
+      "AMT option for city ease",
+      "Very affordable under Rs. 35L"
+    ],
+    "cons": [
+      "Only 2 airbags",
+      "165 mm clearance is low for rural Nepal",
+      "No Android Auto on base",
+      "Small 313 L boot"
+    ],
+    "highlights": [
+      "26.68 km/l",
+      "Lightest Platform",
+      "AMT Option",
+      "Best City Mileage"
+    ]
+  },
+  {
+    "id": 1309,
+    "slug": "suzuki-swift-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Swift",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Premium Hatchback",
+    "badge": "popular",
+    "tagline": "Nepal's favourite sporty hatchback — the perennial bestseller reborn",
+    "rating": 4.3,
+    "reviews": 2876,
+    "expertScore": 8,
+    "baseEMI": 38000,
+    "overview": "The Maruti Suzuki Swift is Nepal's most beloved premium hatchback and one of the best-selling cars in the country. The new-generation Swift runs on the HEARTECT platform with a new 1.2L Z12E 3-cylinder engine offering improved performance and efficiency. Sporty design, class-leading safety (6 airbags on top trim), and a willing AMT option make it the go-to hatchback for Nepal's urban buyers.",
+    "images": [
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Solid White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Excellent White",
+        "hex": "#EFEFEF"
+      },
+      {
+        "name": "Speedy Blue",
+        "hex": "#1A4E8A"
+      },
+      {
+        "name": "Magma Grey",
+        "hex": "#5A5A5A"
+      },
+      {
+        "name": "Sizzling Red",
+        "hex": "#CC2222"
+      }
+    ],
+    "variants": [
+      {
+        "name": "VXI MT",
+        "price": 3999000,
+        "label": "Rs. 39.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "ABS + EBD + ESC",
+          "7\" SmartPlay Pro+",
+          "Rear Camera",
+          "4 Seat Belts Reminder",
+          "LED DRL"
+        ],
+        "specs": {
+          "power": "82 PS @ 5,700 rpm",
+          "torque": "112 Nm",
+          "efficiency": "23.76 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "ZXI MT",
+        "price": 4399000,
+        "label": "Rs. 43.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "4 Airbags",
+          "Alloy Wheels",
+          "Push Button Start",
+          "Auto Climate",
+          "VXI features+"
+        ],
+        "specs": {
+          "power": "82 PS @ 5,700 rpm",
+          "torque": "112 Nm",
+          "efficiency": "23.76 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "ZXI+ AMT",
+        "price": 4899000,
+        "label": "Rs. 48.99L",
+        "popular": true,
+        "transmission": "AMT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "360° Parking Camera",
+          "Head-Up Display",
+          "Auto Gear Shift",
+          "ZXI features+"
+        ],
+        "specs": {
+          "power": "82 PS @ 5,700 rpm",
+          "torque": "112 Nm",
+          "efficiency": "23.76 km/l",
+          "transmission": "5-Speed AMT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L Z12E 3-Cyl DualJet Petrol",
+      "Displacement": "1,197 cc",
+      "Power": "82 PS @ 5,700 rpm",
+      "Torque": "112 Nm @ 4,300 rpm",
+      "Efficiency": "23.76 km/l",
+      "Fuel Tank": "37 L",
+      "Transmission": "5-Speed MT / AMT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "265 L",
+      "Length": "3,860 mm",
+      "Width": "1,735 mm",
+      "Height": "1,520 mm",
+      "Wheelbase": "2,450 mm",
+      "Ground Clearance": "163 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "23.76 km/l ARAI — outstanding efficiency",
+      "6 airbags on top trim",
+      "Head-Up Display available in Nepal",
+      "Sporty design with wide colour choices"
+    ],
+    "cons": [
+      "163 mm clearance lowest in its segment",
+      "Boot is a small 265 L",
+      "3-cylinder can feel buzzy at high revs",
+      "No AWD option"
+    ],
+    "highlights": [
+      "23.76 km/l",
+      "6 Airbags",
+      "Head-Up Display",
+      "Nepal's Best-Seller"
+    ]
+  },
+  {
+    "id": 1310,
+    "slug": "suzuki-dzire-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Dzire",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact Sedan",
+    "badge": "popular",
+    "tagline": "Nepal's most fuel-efficient compact sedan — practical, refined, value",
+    "rating": 4.1,
+    "reviews": 1453,
+    "expertScore": 7.6,
+    "baseEMI": 40000,
+    "overview": "The Maruti Suzuki Dzire is Nepal's most popular compact sedan, combining the Swift's proven 1.2L engine with a 378 L boot in a 3-box sedan body. With CNG-ready variants in India (not yet in Nepal) and the HEARTECT platform, the Dzire offers one of the best overall value propositions in Nepal's sedan segment, priced between the WagonR and Baleno.",
+    "images": [
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Solid White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Silky Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Magma Grey",
+        "hex": "#5A5A5A"
+      },
+      {
+        "name": "Splendid Silver",
+        "hex": "#B0B0B0"
+      }
+    ],
+    "variants": [
+      {
+        "name": "VXI MT",
+        "price": 3999000,
+        "label": "Rs. 39.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "7\" SmartPlay Pro+",
+          "Rear Camera",
+          "ABS + ESC",
+          "378 L Boot"
+        ],
+        "specs": {
+          "power": "90 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "24.12 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "ZXI MT",
+        "price": 4399000,
+        "label": "Rs. 43.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "4 Airbags",
+          "Push Button Start",
+          "Alloy Wheels",
+          "VXI features+"
+        ],
+        "specs": {
+          "power": "90 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "24.12 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "ZXI+ AMT",
+        "price": 4799000,
+        "label": "Rs. 47.99L",
+        "popular": true,
+        "transmission": "AMT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "360° Camera",
+          "Auto Climate",
+          "Auto Gear Shift",
+          "ZXI features+"
+        ],
+        "specs": {
+          "power": "90 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "24.12 km/l",
+          "transmission": "5-Speed AMT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L Z12E DualJet Petrol",
+      "Displacement": "1,197 cc",
+      "Power": "90 PS @ 6,000 rpm",
+      "Torque": "113 Nm @ 4,400 rpm",
+      "Efficiency": "24.12 km/l",
+      "Fuel Tank": "37 L",
+      "Transmission": "5-Speed MT / AMT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "378 L",
+      "Length": "3,995 mm",
+      "Width": "1,735 mm",
+      "Height": "1,515 mm",
+      "Wheelbase": "2,450 mm",
+      "Ground Clearance": "163 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "24.12 km/l — most fuel-efficient sedan in Nepal",
+      "Practical 378 L sedan boot",
+      "6 airbags on ZXI+",
+      "Best residual value in its segment"
+    ],
+    "cons": [
+      "163 mm clearance — low for Nepal's roads",
+      "No turbo or performance variant",
+      "Sedan body less popular than SUV",
+      "No AWD"
+    ],
+    "highlights": [
+      "24.12 km/l",
+      "378 L Boot",
+      "6 Airbags",
+      "Best-Value Sedan"
+    ]
+  },
+  {
+    "id": 1311,
+    "slug": "suzuki-baleno-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Baleno",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Premium Hatchback",
+    "badge": "popular",
+    "tagline": "Smart, spacious premium hatchback — Nepal's feature-packed NEXA offering",
+    "rating": 4.2,
+    "reviews": 1678,
+    "expertScore": 7.8,
+    "baseEMI": 42000,
+    "overview": "The Suzuki Baleno is a premium hatchback in Nepal, sitting a step above the Swift in the CG Motocorp lineup. Built on the HEARTECT platform with a 1.2L DualJet engine, it delivers 22.35 km/l and a surprisingly roomy interior with 318 L boot. Available in both MT and CVT, the top ZXI+ trim packs 6 airbags, a HUD, and Head-Up Display into an accessible price point.",
+    "images": [
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Splendid Silver",
+        "hex": "#B0B0B0"
+      },
+      {
+        "name": "Solid White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Oxford Blue",
+        "hex": "#1A3A6E"
+      },
+      {
+        "name": "Earthy Brown",
+        "hex": "#7A5C3A"
+      },
+      {
+        "name": "Neo Black Pearl",
+        "hex": "#111111"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Delta MT",
+        "price": 4099000,
+        "label": "Rs. 40.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "ABS + ESC",
+          "7\" SmartPlay Pro+",
+          "Rear Camera",
+          "5 Seats"
+        ],
+        "specs": {
+          "power": "90 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "22.35 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Zeta MT",
+        "price": 4299000,
+        "label": "Rs. 42.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "4 Airbags",
+          "Alloy Wheels",
+          "Push Button Start",
+          "Delta features+"
+        ],
+        "specs": {
+          "power": "90 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "22.35 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Alpha CVT",
+        "price": 4449000,
+        "label": "Rs. 44.49L",
+        "popular": true,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "Head-Up Display",
+          "360° Camera",
+          "CVT Auto",
+          "Zeta features+"
+        ],
+        "specs": {
+          "power": "90 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "22.94 km/l (CVT)",
+          "transmission": "CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L DualJet K12N Petrol",
+      "Displacement": "1,197 cc",
+      "Power": "90 PS @ 6,000 rpm",
+      "Torque": "113 Nm @ 4,200 rpm",
+      "Efficiency": "22.35–22.94 km/l",
+      "Fuel Tank": "37 L",
+      "Transmission": "5-Speed MT / CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "318 L",
+      "Length": "3,990 mm",
+      "Width": "1,745 mm",
+      "Height": "1,500 mm",
+      "Wheelbase": "2,520 mm",
+      "Ground Clearance": "170 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "CVT auto option for urban ease",
+      "6 airbags and HUD on top trim",
+      "22+ km/l impressive efficiency",
+      "Spacious premium cabin"
+    ],
+    "cons": [
+      "170 mm clearance is modest",
+      "265 L boot smaller than rivals",
+      "No turbo variant in Nepal",
+      "Hatchback may be less desirable than SUV body"
+    ],
+    "highlights": [
+      "22.94 km/l CVT",
+      "6 Airbags",
+      "Head-Up Display",
+      "Premium Hatchback"
+    ]
+  },
+  {
+    "id": 1312,
+    "slug": "suzuki-ignis-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Ignis",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Micro Urban SUV",
+    "badge": "niche",
+    "tagline": "Funky micro-SUV for Nepal's urban millennials — quirky, compact, capable",
+    "rating": 3.9,
+    "reviews": 432,
+    "expertScore": 7,
+    "baseEMI": 38000,
+    "overview": "The Suzuki Ignis is the quirkiest car in Nepal's Suzuki lineup — a true micro-SUV with an elevated stance (163 mm clearance), boxy crossover styling, and a willing 1.2L petrol engine. It targets Nepal's younger urban buyers who want SUV styling in a compact, affordable package. Available in MT and AMT.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Turquoise Blue",
+        "hex": "#0E7F8B"
+      },
+      {
+        "name": "Gleam Red",
+        "hex": "#CC2222"
+      },
+      {
+        "name": "Premium Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Midnight Black",
+        "hex": "#111111"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Delta MT",
+        "price": 3699000,
+        "label": "Rs. 36.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "7\" Touchscreen + CarPlay",
+          "ABS + ESC",
+          "Rear Camera",
+          "175 mm Clearance"
+        ],
+        "specs": {
+          "power": "83 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "20.89 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Alpha MT",
+        "price": 3999000,
+        "label": "Rs. 39.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "4 Airbags",
+          "Alloy Wheels",
+          "Rear Spoiler",
+          "Push Button Start",
+          "Delta features+"
+        ],
+        "specs": {
+          "power": "83 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "20.89 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Alpha AMT",
+        "price": 4199000,
+        "label": "Rs. 41.99L",
+        "popular": true,
+        "transmission": "AMT",
+        "fuel": "Petrol",
+        "features": [
+          "Auto Gear Shift AMT",
+          "Alpha MT features+"
+        ],
+        "specs": {
+          "power": "83 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "20.89 km/l",
+          "transmission": "5-Speed AMT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L K12B VVT Petrol",
+      "Displacement": "1,197 cc",
+      "Power": "83 PS @ 6,000 rpm",
+      "Torque": "113 Nm @ 4,200 rpm",
+      "Efficiency": "20.89 km/l",
+      "Fuel Tank": "32 L",
+      "Transmission": "5-Speed MT / AMT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "260 L",
+      "Length": "3,700 mm",
+      "Width": "1,690 mm",
+      "Height": "1,595 mm",
+      "Wheelbase": "2,435 mm",
+      "Ground Clearance": "175 mm",
+      "Airbags": "2–4"
+    },
+    "pros": [
+      "Unique micro-SUV design stands out in Nepal",
+      "AMT option for city ease",
+      "20.89 km/l very efficient",
+      "Compact size ideal for Kathmandu"
+    ],
+    "cons": [
+      "175 mm clearance modest for micro-SUV claim",
+      "Only 260 L boot",
+      "No turbo variant",
+      "Niche appeal limits resale"
+    ],
+    "highlights": [
+      "Micro-SUV Design",
+      "20.89 km/l",
+      "AMT Option",
+      "Unique Styling"
+    ]
+  },
+  {
+    "id": 1313,
+    "slug": "suzuki-vitara-brezza-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Vitara Brezza",
+    "year": 2025,
+    "type": "Petrol / Smart Hybrid",
+    "body": "Compact SUV",
+    "badge": "bestseller",
+    "tagline": "Nepal's #1 compact SUV — Suzuki's flagship sub-4m SUV with smart hybrid",
+    "rating": 4.4,
+    "reviews": 2341,
+    "expertScore": 8.3,
+    "baseEMI": 48000,
+    "overview": "The Suzuki Vitara Brezza is Nepal's best-selling compact SUV and the flagship of CG Motocorp's passenger car lineup. Now equipped with a Smart Hybrid system on top variants, it combines a 1.5L K15B engine with a lithium-ion battery to improve city efficiency. With 210 mm ground clearance, a panoramic sunroof, and up to 6 airbags, it competes directly with the Hyundai Venue and Kia Sonet in Nepal's hottest car segment.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Brave Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Sizzling Red",
+        "hex": "#CC2222"
+      },
+      {
+        "name": "Nexa Blue",
+        "hex": "#1A3A6E"
+      },
+      {
+        "name": "Splendid Silver",
+        "hex": "#B0B0B0"
+      },
+      {
+        "name": "Polar White",
+        "hex": "#F5F5F5"
+      }
+    ],
+    "variants": [
+      {
+        "name": "LXI MT",
+        "price": 4649000,
+        "label": "Rs. 46.49L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "7\" SmartPlay Pro+",
+          "210 mm Clearance",
+          "ABS + ESC",
+          "LED DRL"
+        ],
+        "specs": {
+          "power": "103 PS @ 6,000 rpm",
+          "torque": "138 Nm",
+          "efficiency": "17.03 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "VXI MT",
+        "price": 5199000,
+        "label": "Rs. 51.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "4 Airbags",
+          "Rear Camera",
+          "Alloy Wheels",
+          "Push Button Start",
+          "LXI features+"
+        ],
+        "specs": {
+          "power": "103 PS @ 6,000 rpm",
+          "torque": "138 Nm",
+          "efficiency": "17.03 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "ZXI+ AT (Smart Hybrid)",
+        "price": 5999000,
+        "label": "Rs. 59.99L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Smart Hybrid",
+        "features": [
+          "Smart Hybrid 48V",
+          "6 Airbags",
+          "Panoramic Sunroof",
+          "Head-Up Display",
+          "VXI features+"
+        ],
+        "specs": {
+          "power": "103 PS + 13.6 PS (hybrid)",
+          "torque": "138 Nm",
+          "efficiency": "19.80 km/l",
+          "transmission": "6-Speed AT"
+        }
+      },
+      {
+        "name": "ZXI+ 6AT (Smart Hybrid) Dual Tone",
+        "price": 6529000,
+        "label": "Rs. 65.29L",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Smart Hybrid",
+        "features": [
+          "Dual Tone Roof",
+          "360° Camera",
+          "ZXI+ features+"
+        ],
+        "specs": {
+          "power": "103 PS + 13.6 PS (hybrid)",
+          "torque": "138 Nm",
+          "efficiency": "19.80 km/l",
+          "transmission": "6-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L K15B Smart Hybrid Petrol",
+      "Displacement": "1,462 cc",
+      "Power": "103 PS + 13.6 PS (Smart Hybrid)",
+      "Torque": "138 Nm",
+      "Efficiency": "17.03–19.80 km/l",
+      "Fuel Tank": "40 L",
+      "Transmission": "5-Speed MT / 6-Speed AT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "328 L",
+      "Length": "3,995 mm",
+      "Width": "1,790 mm",
+      "Height": "1,640 mm",
+      "Wheelbase": "2,500 mm",
+      "Ground Clearance": "210 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "Nepal's #1 compact SUV by sales",
+      "210 mm ground clearance for Nepali terrain",
+      "Smart Hybrid boosts city efficiency to ~20 km/l",
+      "Panoramic sunroof on top trim"
+    ],
+    "cons": [
+      "FWD only — no AWD on Smart Hybrid",
+      "328 L boot smaller than rivals",
+      "Smart Hybrid AT is significantly more expensive",
+      "No diesel option"
+    ],
+    "highlights": [
+      "210 mm Clearance",
+      "Smart Hybrid",
+      "Panoramic Sunroof",
+      "Nepal's #1 SUV"
+    ]
+  },
+  {
+    "id": 1314,
+    "slug": "suzuki-ertiga-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Ertiga",
+    "year": 2025,
+    "type": "Petrol / Smart Hybrid",
+    "body": "Compact MPV",
+    "badge": "family",
+    "tagline": "Nepal's best-value 7-seat family MPV — practical, efficient, spacious",
+    "rating": 4.2,
+    "reviews": 1987,
+    "expertScore": 7.9,
+    "baseEMI": 52000,
+    "overview": "The Suzuki Ertiga is Nepal's most popular 7-seat MPV for family use, combining a spacious 3-row cabin, 1.5L Smart Hybrid engine, and CG Motocorp's unbeatable after-sales support. With 19.01 km/l ARAI efficiency, dual sliding doors, and class-leading 803 L boot (all seats folded), the Ertiga is the top family MPV choice for tour operators and large families across Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Auburn Red",
+        "hex": "#8B3A3A"
+      },
+      {
+        "name": "Silky Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Midnight Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Oyster White",
+        "hex": "#F0EDE8"
+      }
+    ],
+    "variants": [
+      {
+        "name": "VXI MT",
+        "price": 4999000,
+        "label": "Rs. 49.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "7 Seats",
+          "7\" SmartPlay Pro+",
+          "ABS + ESC",
+          "Dual Sliding Doors",
+          "185 mm Clearance"
+        ],
+        "specs": {
+          "power": "103 PS @ 6,000 rpm",
+          "torque": "138 Nm",
+          "efficiency": "19.01 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "ZXI MT",
+        "price": 5499000,
+        "label": "Rs. 54.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "4 Airbags",
+          "Push Button Start",
+          "Alloy Wheels",
+          "Rear Camera",
+          "VXI features+"
+        ],
+        "specs": {
+          "power": "103 PS @ 6,000 rpm",
+          "torque": "138 Nm",
+          "efficiency": "19.01 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "ZXI+ AT (Smart Hybrid)",
+        "price": 5999000,
+        "label": "Rs. 59.99L",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Smart Hybrid",
+        "features": [
+          "Smart Hybrid 48V",
+          "6 Airbags",
+          "6-Speed AT",
+          "Auto Climate",
+          "ZXI MT features+"
+        ],
+        "specs": {
+          "power": "103 PS + Smart Hybrid",
+          "torque": "138 Nm",
+          "efficiency": "19.38 km/l",
+          "transmission": "6-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L K15B Smart Hybrid Petrol",
+      "Displacement": "1,462 cc",
+      "Power": "103 PS @ 6,000 rpm",
+      "Torque": "138 Nm",
+      "Efficiency": "19.01–19.38 km/l",
+      "Fuel Tank": "45 L",
+      "Transmission": "5-Speed MT / 6-Speed AT",
+      "Drive": "FWD",
+      "Seating": "7",
+      "Boot Space": "209 L (7up) / 803 L (all folded)",
+      "Length": "4,395 mm",
+      "Width": "1,735 mm",
+      "Height": "1,690 mm",
+      "Wheelbase": "2,740 mm",
+      "Ground Clearance": "185 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "Nepal's best-selling 7-seater MPV for good reason",
+      "19.38 km/l on Smart Hybrid",
+      "803 L boot capacity with seats folded",
+      "Dual sliding rear doors for easy entry"
+    ],
+    "cons": [
+      "FWD only",
+      "2 airbags on base variant",
+      "185 mm clearance modest for 7-seat use",
+      "Third row best for children"
+    ],
+    "highlights": [
+      "7 Seats",
+      "19.38 km/l Hybrid",
+      "803 L Boot Capacity",
+      "Dual Sliding Doors"
+    ]
+  },
+  {
+    "id": 1315,
+    "slug": "suzuki-grand-vitara-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Grand Vitara",
+    "year": 2025,
+    "type": "Strong Hybrid / Petrol",
+    "body": "Mid-size SUV",
+    "badge": "premium",
+    "tagline": "Suzuki's premium mid-size SUV — strong hybrid and All-Grip AWD for Nepal",
+    "rating": 4.4,
+    "reviews": 876,
+    "expertScore": 8.5,
+    "baseEMI": 75000,
+    "overview": "The Suzuki Grand Vitara is the most premium and technically advanced Maruti Suzuki in Nepal, jointly developed with Toyota (sharing platform with the Toyota Urban Cruiser Hyryder). The Strong Hybrid variant uses a 1.5L 3-cylinder petrol engine with Toyota's proven strong hybrid system for 27.97 km/l, while a mild-hybrid 1.5L variant with AllGrip AWD caters to those who want off-road capability.",
+    "images": [
+      "https://images.unsplash.com/photo-1518987048-93e29699e79a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Celestial Blue",
+        "hex": "#1A4A6E"
+      },
+      {
+        "name": "Grandeur Grey",
+        "hex": "#5A5A5A"
+      },
+      {
+        "name": "Splendid Silver",
+        "hex": "#B0B0B0"
+      },
+      {
+        "name": "Pearl Mystic White",
+        "hex": "#F5F5F5"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Delta 1.5L MT (Mild Hybrid)",
+        "price": 5799000,
+        "label": "Rs. 57.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Mild Hybrid",
+        "features": [
+          "2 Airbags",
+          "9\" Touchscreen + CarPlay",
+          "195 mm Clearance",
+          "ABS + ESC",
+          "LED Headlights"
+        ],
+        "specs": {
+          "power": "103 PS",
+          "torque": "137 Nm",
+          "efficiency": "20.58 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Zeta+ 1.5L AT AllGrip AWD",
+        "price": 7299000,
+        "label": "Rs. 72.99L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Mild Hybrid",
+        "features": [
+          "AllGrip AWD",
+          "6-Speed AT",
+          "6 Airbags",
+          "360° Camera",
+          "Panoramic Sunroof",
+          "Delta features+"
+        ],
+        "specs": {
+          "power": "103 PS",
+          "torque": "137 Nm",
+          "efficiency": "19.38 km/l",
+          "transmission": "6-Speed AT"
+        }
+      },
+      {
+        "name": "Alpha Strong Hybrid AT",
+        "price": 8299000,
+        "label": "Rs. 82.99L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Strong Hybrid"
+      },
+      {
+        "name": "Alpha Strong Hybrid AT Dual Tone",
+        "price": 9729000,
+        "label": "Rs. 97.29L",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Strong Hybrid",
+        "features": [
+          "1.5L Toyota Strong Hybrid",
+          "27.97 km/l ARAI",
+          "EV-only drive mode",
+          "6 Airbags",
+          "360° Camera",
+          "HUD",
+          "Panoramic Sunroof",
+          "Ventilated Seats",
+          "Dual Tone Roof"
+        ],
+        "specs": {
+          "power": "116 PS combined",
+          "torque": "122 Nm + Motor assist",
+          "efficiency": "27.97 km/l",
+          "transmission": "e-CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L K15C Mild Hybrid / 1.5L Strong Hybrid",
+      "Displacement": "1,490 cc",
+      "Power": "103 PS (mild) / 116 PS combined (strong hybrid)",
+      "Torque": "122–137 Nm",
+      "Efficiency": "19.38–27.97 km/l",
+      "Fuel Tank": "45 L",
+      "Transmission": "5-Speed MT / 6-Speed AT / e-CVT",
+      "Drive": "FWD / AllGrip AWD",
+      "Seating": "5",
+      "Boot Space": "373 L",
+      "Length": "4,345 mm",
+      "Width": "1,795 mm",
+      "Height": "1,645 mm",
+      "Wheelbase": "2,600 mm",
+      "Ground Clearance": "210 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "27.97 km/l on Strong Hybrid — best efficiency of any SUV in Nepal",
+      "AllGrip AWD for mountain and off-road use",
+      "Toyota-sourced hybrid system for proven reliability",
+      "210 mm ground clearance"
+    ],
+    "cons": [
+      "Most expensive Suzuki in Nepal at Rs. 97.29L",
+      "AllGrip AWD not available on Strong Hybrid variant",
+      "e-CVT can feel uninspiring for spirited driving",
+      "Relatively small 373 L boot for mid-size class"
+    ],
+    "highlights": [
+      "27.97 km/l Strong Hybrid",
+      "AllGrip AWD",
+      "Toyota-Sourced Hybrid",
+      "210 mm Clearance"
+    ]
+  },
+  {
+    "id": 1316,
+    "slug": "suzuki-fronx-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Fronx",
+    "year": 2025,
+    "type": "Petrol / Smart Hybrid",
+    "body": "Urban Crossover SUV",
+    "badge": "new",
+    "tagline": "Nepal's newest Suzuki — sporty Baleno-based crossover SUV",
+    "rating": 4.2,
+    "reviews": 423,
+    "expertScore": 7.8,
+    "baseEMI": 50000,
+    "overview": "The Suzuki Fronx is the newest addition to CG Motocorp's Nepal lineup, a Baleno-based coupe-style crossover SUV offering the best of both worlds: the hatchback's efficiency with an elevated crossover stance. Available with a 1.0L turbo engine for those who want spirited performance, or a 1.2L mild hybrid for efficiency, the Fronx targets Nepal's style-conscious younger buyers.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Opulent Red",
+        "hex": "#CC2222"
+      },
+      {
+        "name": "Splendid Silver",
+        "hex": "#B0B0B0"
+      },
+      {
+        "name": "Midnight Blue",
+        "hex": "#1A3A6E"
+      },
+      {
+        "name": "Earthen Brown",
+        "hex": "#7A5C3A"
+      },
+      {
+        "name": "Arctic White",
+        "hex": "#F5F5F5"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Sigma 1.2L MT",
+        "price": 4399000,
+        "label": "Rs. 43.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "7\" SmartPlay",
+          "ABS + ESC",
+          "175 mm Clearance",
+          "LED DRL"
+        ],
+        "specs": {
+          "power": "90 PS @ 6,000 rpm",
+          "torque": "113 Nm",
+          "efficiency": "21.79 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Delta 1.0L Turbo MT",
+        "price": 5099000,
+        "label": "Rs. 50.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Turbo 100 PS",
+          "4 Airbags",
+          "9\" Touchscreen",
+          "Sigma features+"
+        ],
+        "specs": {
+          "power": "100 PS @ 5,500 rpm",
+          "torque": "148 Nm",
+          "efficiency": "20.01 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Alpha+ 1.0L Turbo AMT",
+        "price": 5999000,
+        "label": "Rs. 59.99L",
+        "popular": true,
+        "transmission": "AMT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "HUD",
+          "360° Camera",
+          "Dual Tone Roof",
+          "Wireless CarPlay",
+          "Delta features+"
+        ],
+        "specs": {
+          "power": "100 PS @ 5,500 rpm",
+          "torque": "148 Nm",
+          "efficiency": "20.01 km/l",
+          "transmission": "AMT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L / 1.0L Turbo Boosterjet Petrol",
+      "Displacement": "1,197 / 998 cc",
+      "Power": "90–100 PS",
+      "Torque": "113–148 Nm",
+      "Efficiency": "20.01–21.79 km/l",
+      "Fuel Tank": "37 L",
+      "Transmission": "5-Speed MT / AMT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "308 L",
+      "Length": "3,990 mm",
+      "Width": "1,765 mm",
+      "Height": "1,550 mm",
+      "Wheelbase": "2,520 mm",
+      "Ground Clearance": "175 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "Turbo engine adds fun performance not found in most Suzukis",
+      "Coupe-SUV styling is unique in Nepal",
+      "6 airbags and HUD on top trim",
+      "Newer than Baleno in Nepal's lineup"
+    ],
+    "cons": [
+      "175 mm clearance modest for a crossover",
+      "No AWD available",
+      "Small 308 L boot",
+      "AMT is only automatic option (no CVT/AT)"
+    ],
+    "highlights": [
+      "100 PS Turbo",
+      "Coupe-SUV Style",
+      "6 Airbags + HUD",
+      "Newest Suzuki in Nepal"
+    ]
+  },
+  {
+    "id": 1317,
+    "slug": "suzuki-jimny-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Jimny",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact Off-Road SUV",
+    "badge": "iconic",
+    "tagline": "The legend returns — Nepal's most capable compact off-roader from Suzuki",
+    "rating": 4.5,
+    "reviews": 543,
+    "expertScore": 8.8,
+    "baseEMI": 63000,
+    "overview": "The Suzuki Jimny is the most iconic off-road vehicle in Nepal's compact SUV segment, relaunched by CG Motocorp as Nepal's most expensive Suzuki at Rs. 62.99 Lakhs. With a genuine ladder-frame chassis, 4WD with low-range gearbox, 210 mm ground clearance, and approach/departure angles that rival much larger 4x4s, the Jimny is Nepal's purest off-road compact. It is available in the 5-door body style in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Kinetic Yellow",
+        "hex": "#D4A800"
+      },
+      {
+        "name": "Sizzling Red",
+        "hex": "#CC2222"
+      },
+      {
+        "name": "Bluish Black",
+        "hex": "#1A1A2E"
+      },
+      {
+        "name": "Granite Grey",
+        "hex": "#5A5A5A"
+      },
+      {
+        "name": "Pearl Arctic White",
+        "hex": "#F8F8F8"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Zeta MT",
+        "price": 5799000,
+        "label": "Rs. 57.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Ladder Frame 4WD",
+          "Low Range Gearbox",
+          "7\" Touchscreen",
+          "4 Airbags",
+          "210 mm Clearance"
+        ],
+        "specs": {
+          "power": "103 PS @ 6,000 rpm",
+          "torque": "134 Nm",
+          "efficiency": "16.39 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Alpha MT",
+        "price": 6099000,
+        "label": "Rs. 60.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "9\" SmartPlay Pro+",
+          "360° Camera",
+          "LED Projector Headlights",
+          "Zeta features+"
+        ],
+        "specs": {
+          "power": "103 PS @ 6,000 rpm",
+          "torque": "134 Nm",
+          "efficiency": "16.39 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Alpha AT",
+        "price": 6299000,
+        "label": "Rs. 62.99L",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "4-Speed Auto AT",
+          "Alpha MT features+"
+        ],
+        "specs": {
+          "power": "103 PS @ 6,000 rpm",
+          "torque": "134 Nm",
+          "efficiency": "16.39 km/l",
+          "transmission": "4-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L K15B VVT Petrol",
+      "Displacement": "1,462 cc",
+      "Power": "103 PS @ 6,000 rpm",
+      "Torque": "134 Nm @ 4,000 rpm",
+      "Efficiency": "16.39 km/l",
+      "Fuel Tank": "40 L",
+      "Transmission": "5-Speed MT / 4-Speed AT",
+      "Drive": "4WD (Part-Time with Low Range)",
+      "Seating": "5 (5-door)",
+      "Boot Space": "208 L",
+      "Length": "3,985 mm",
+      "Width": "1,645 mm",
+      "Height": "1,720 mm",
+      "Wheelbase": "2,590 mm",
+      "Ground Clearance": "210 mm",
+      "Approach Angle": "37°",
+      "Departure Angle": "49°",
+      "Airbags": "4–6"
+    },
+    "pros": [
+      "Genuine ladder-frame with low-range 4WD for serious off-roading",
+      "210 mm clearance + best approach/departure angles in Nepal's compact class",
+      "Most capable Suzuki ever brought to Nepal",
+      "Iconic design with devoted fan following"
+    ],
+    "cons": [
+      "Most expensive Suzuki in Nepal at Rs. 62.99L",
+      "Only 208 L boot — very small for a 5-door",
+      "4-speed AT is outdated for the price",
+      "Smaller on-road refinement vs car-based SUVs"
+    ],
+    "highlights": [
+      "Ladder Frame 4WD",
+      "Low Range Gearbox",
+      "210 mm Clearance",
+      "Nepal's Iconic Off-Roader"
+    ]
+  },
+  {
+    "id": 1318,
+    "slug": "suzuki-eeco-2025",
+    "brand": "Maruti Suzuki",
+    "model": "Eeco",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact Van / MPV",
+    "badge": "commercial",
+    "tagline": "Nepal's most affordable family van — spacious, economical, versatile",
+    "rating": 3.7,
+    "reviews": 1102,
+    "expertScore": 6.3,
+    "baseEMI": 19000,
+    "overview": "The Suzuki Eeco is Nepal's most affordable and popular compact van, widely used as a family MPV, small business vehicle, and taxi/shared transport. With a 1.2L petrol engine, the Eeco can seat up to 7 passengers in its standard form and offers a large flat-floor loading area. CG Motocorp prices it from Rs. 18.99 Lakhs, making it Nepal's cheapest 7-seat vehicle.",
+    "images": [
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Silky Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Solid White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Glistening Grey",
+        "hex": "#7A7E83"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard AC 5-Seat",
+        "price": 1899000,
+        "label": "Rs. 18.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "5 Seats",
+          "AC",
+          "Power Steering",
+          "ABS",
+          "Rear Parking Sensor"
+        ],
+        "specs": {
+          "power": "73 PS @ 6,000 rpm",
+          "torque": "104 Nm",
+          "efficiency": "16.11 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Standard AC 7-Seat",
+        "price": 2099000,
+        "label": "Rs. 20.99L",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "7 Seats",
+          "Rear AC Vents",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "73 PS @ 6,000 rpm",
+          "torque": "104 Nm",
+          "efficiency": "16.11 km/l",
+          "transmission": "5-Speed MT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L G12B Petrol",
+      "Displacement": "1,196 cc",
+      "Power": "73 PS @ 6,000 rpm",
+      "Torque": "104 Nm @ 3,000 rpm",
+      "Efficiency": "16.11 km/l",
+      "Fuel Tank": "35 L",
+      "Transmission": "5-Speed MT",
+      "Drive": "RWD",
+      "Seating": "5 or 7",
+      "Boot Space": "Long load floor",
+      "Length": "3,675 mm",
+      "Width": "1,475 mm",
+      "Height": "1,825 mm",
+      "Wheelbase": "2,350 mm",
+      "Ground Clearance": "170 mm",
+      "Airbags": "0"
+    },
+    "pros": [
+      "Nepal's cheapest 7-seat vehicle at Rs. 18.99L",
+      "Practical flat-floor commercial space",
+      "Proven reliability and low maintenance cost",
+      "Widest CG service network"
+    ],
+    "cons": [
+      "No airbags on standard variant",
+      "RWD only",
+      "Basic interior",
+      "High roof tall profile"
+    ],
+    "highlights": [
+      "7 Seats from Rs. 18.99L",
+      "Commercial Versatility",
+      "Budget Family Van",
+      "Nepal's Most Affordable 7-Seater"
+    ]
+  }
+]

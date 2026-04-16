@@ -1,0 +1,808 @@
+[
+  {
+    "id": 901,
+    "slug": "volkswagen-polo-2025",
+    "brand": "Volkswagen",
+    "model": "Polo",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Premium Hatchback",
+    "badge": "value",
+    "tagline": "German-engineered city hatchback — the most affordable VW in Nepal",
+    "rating": 3.9,
+    "reviews": 876,
+    "expertScore": 7.2,
+    "baseEMI": 28000,
+    "overview": "The Volkswagen Polo is the most affordable and accessible Volkswagen in Nepal, distributed by Pooja International. Built on a proven MQB platform with a quiet 1.0L MPI engine, it offers genuine German build quality, safety features, and refinement in a compact hatchback body at a competitive price for its segment.",
+    "images": [
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Reflex Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Deep Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Tornado Red",
+        "hex": "#CC0000"
+      },
+      {
+        "name": "Candy White",
+        "hex": "#F8F8F8"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Trendline Plus",
+        "price": 3340000,
+        "label": "Rs. 33.40L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "ABS + EBD",
+          "AC",
+          "Rear Parking Sensors",
+          "5 Seats",
+          "14\" Steel Wheels"
+        ],
+        "specs": {
+          "power": "76 PS @ 6,200 rpm",
+          "torque": "95 Nm",
+          "efficiency": "18.78 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Comfortline",
+        "price": 3840000,
+        "label": "Rs. 38.40L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Rear Camera",
+          "Automatic AC",
+          "Touchscreen Infotainment",
+          "Trendline features+"
+        ],
+        "specs": {
+          "power": "76 PS @ 6,200 rpm",
+          "torque": "95 Nm",
+          "efficiency": "18.78 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Highline 1.0L",
+        "price": 4290000,
+        "label": "Rs. 42.90L",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Sunroof",
+          "LED DRL",
+          "16\" Alloy Wheels",
+          "Comfortline features+"
+        ],
+        "specs": {
+          "power": "76 PS @ 6,200 rpm",
+          "torque": "95 Nm",
+          "efficiency": "18.78 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Highline 1.6L",
+        "price": 4790000,
+        "label": "Rs. 47.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "1.6L MPI Engine",
+          "105 PS Power",
+          "Highline 1.0L features+"
+        ],
+        "specs": {
+          "power": "105 PS @ 5,250 rpm",
+          "torque": "153 Nm",
+          "efficiency": "15.96 km/l",
+          "transmission": "5-Speed MT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.0L MPI / 1.6L MPI Petrol",
+      "Displacement": "999 / 1,598 cc",
+      "Power": "76–105 PS",
+      "Torque": "95–153 Nm",
+      "Efficiency": "15.96–18.78 km/l",
+      "Fuel Tank": "45 L",
+      "Transmission": "5-Speed MT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "294 L",
+      "Length": "4,053 mm",
+      "Width": "1,751 mm",
+      "Height": "1,461 mm",
+      "Wheelbase": "2,564 mm",
+      "Ground Clearance": "172 mm",
+      "Airbags": "2"
+    },
+    "pros": [
+      "Most affordable Volkswagen in Nepal",
+      "Excellent German build quality for price",
+      "18.78 km/l fuel efficiency on 1.0L",
+      "Small size ideal for Kathmandu city driving"
+    ],
+    "cons": [
+      "Only 2 airbags on all variants",
+      "No automatic option in Nepal",
+      "Small 294 L boot",
+      "No TSI engine option currently"
+    ],
+    "highlights": [
+      "18.78 km/l",
+      "German Build Quality",
+      "Compact City Car",
+      "5 Seats"
+    ]
+  },
+  {
+    "id": 902,
+    "slug": "volkswagen-taigun-2025",
+    "brand": "Volkswagen",
+    "model": "Taigun",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "popular",
+    "tagline": "Nepal's safest compact SUV — 5-star NCAP with German TSI precision",
+    "rating": 4.2,
+    "reviews": 634,
+    "expertScore": 8,
+    "baseEMI": 55000,
+    "overview": "The Volkswagen Taigun is Nepal's best-known compact SUV in the premium mid-segment, built on the MQB A0 IN platform shared with the Skoda Kushaq. It earned a 5-star Global NCAP safety rating for both adult and child occupants — the safest in its class. Available with 1.0L TSI and the new 1.5L TSI GT Plus engine at the NAIMA 2025 Expo, it offers solid German engineering at an accessible price.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Wild Cherry Red",
+        "hex": "#CC2222"
+      },
+      {
+        "name": "Candy White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Carbon Steel Grey",
+        "hex": "#6A6D72"
+      },
+      {
+        "name": "Reflex Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Curcuma Yellow",
+        "hex": "#D4A800"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Comfortline 1.0 TSI MT",
+        "price": 5490000,
+        "label": "Rs. 54.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "10\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "Hill Hold",
+          "188 mm Clearance",
+          "16\" Steel Wheels"
+        ],
+        "specs": {
+          "power": "115 PS @ 5,000 rpm",
+          "torque": "178 Nm",
+          "efficiency": "18.1 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "Highline 1.0 TSI AT",
+        "price": 6790000,
+        "label": "Rs. 67.90L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "Sunroof",
+          "Ventilated Seats",
+          "ESC + TPMS",
+          "Comfortline features+"
+        ],
+        "specs": {
+          "power": "115 PS @ 5,000 rpm",
+          "torque": "178 Nm",
+          "efficiency": "16.44 km/l",
+          "transmission": "6-Speed AT"
+        }
+      },
+      {
+        "name": "Topline 1.0 TSI AT",
+        "price": 7950000,
+        "label": "Rs. 79.50L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "Digital Cockpit",
+          "17\" Alloy Wheels",
+          "Wireless CarPlay/Android",
+          "Highline features+"
+        ],
+        "specs": {
+          "power": "115 PS @ 5,000 rpm",
+          "torque": "178 Nm",
+          "efficiency": "16.44 km/l",
+          "transmission": "6-Speed AT"
+        }
+      },
+      {
+        "name": "GT Plus 1.5 TSI DSG",
+        "price": 9400000,
+        "label": "Rs. 94.00L",
+        "popular": true,
+        "transmission": "DSG",
+        "fuel": "Petrol",
+        "features": [
+          "1.5 TSI EVO 150 PS",
+          "7-Speed DSG",
+          "Active Cylinder Deactivation",
+          "GT Sport Pack",
+          "Topline features+"
+        ],
+        "specs": {
+          "power": "150 PS @ 5,000 rpm",
+          "torque": "250 Nm",
+          "efficiency": "17.5 km/l",
+          "transmission": "7-Speed DSG"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.0L TSI / 1.5L TSI EVO Petrol",
+      "Displacement": "999 / 1,498 cc",
+      "Power": "115–150 PS",
+      "Torque": "178–250 Nm",
+      "Efficiency": "16.44–18.1 km/l",
+      "Fuel Tank": "50 L",
+      "Transmission": "6-Speed MT / AT / 7-Speed DSG",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "385 L",
+      "Length": "4,221 mm",
+      "Width": "1,760 mm",
+      "Height": "1,612 mm",
+      "Wheelbase": "2,651 mm",
+      "Ground Clearance": "188 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "5-star Global NCAP — safest in segment",
+      "Available with powerful 1.5L DSG",
+      "Solid German MQB platform",
+      "Wide variant range from budget to performance"
+    ],
+    "cons": [
+      "FWD only — no AWD option",
+      "Base variant has only 2 airbags",
+      "Smaller boot vs rivals",
+      "Relatively expensive vs Korean/Japanese rivals"
+    ],
+    "highlights": [
+      "5-Star Global NCAP",
+      "1.5L TSI 150 PS GT Plus",
+      "7-Speed DSG",
+      "German MQB Platform"
+    ]
+  },
+  {
+    "id": 903,
+    "slug": "volkswagen-virtus-2025",
+    "brand": "Volkswagen",
+    "model": "Virtus",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact Sedan",
+    "badge": "new",
+    "tagline": "Newly launched VW sedan in Nepal — 5-star safety meets German style",
+    "rating": 4.1,
+    "reviews": 112,
+    "expertScore": 7.8,
+    "baseEMI": 58000,
+    "overview": "The Volkswagen Virtus is the newest sedan addition to VW Nepal's lineup, officially launched at the NAIMA Nepal Mobility Expo 2025. Built on the same MQB A0 IN platform as the Taigun, it carries a 5-star Global NCAP safety rating and offers a choice of 1.0L TSI and 1.5L TSI EVO engines with both manual and automatic options.",
+    "images": [
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Candy White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Curcuma Yellow",
+        "hex": "#D4A800"
+      },
+      {
+        "name": "Carbon Steel Grey",
+        "hex": "#6A6D72"
+      },
+      {
+        "name": "Deep Black Pearl",
+        "hex": "#111111"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Comfortline 1.0 TSI MT",
+        "price": 5600000,
+        "label": "Rs. 56.00L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "8\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "5 Seats",
+          "Hill Hold",
+          "179 mm Clearance"
+        ],
+        "specs": {
+          "power": "115 PS @ 5,000 rpm",
+          "torque": "178 Nm",
+          "efficiency": "18.7 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "Highline 1.0 TSI AT",
+        "price": 7000000,
+        "label": "Rs. 70.00L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "Sunroof",
+          "ESC + TPMS",
+          "Multi-Collision Braking",
+          "Comfortline features+"
+        ],
+        "specs": {
+          "power": "115 PS @ 5,000 rpm",
+          "torque": "178 Nm",
+          "efficiency": "17.0 km/l",
+          "transmission": "6-Speed AT"
+        }
+      },
+      {
+        "name": "Topline 1.0 TSI AT",
+        "price": 7800000,
+        "label": "Rs. 78.00L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "Digital Cockpit",
+          "Wireless CarPlay",
+          "LED Headlights",
+          "Highline features+"
+        ],
+        "specs": {
+          "power": "115 PS @ 5,000 rpm",
+          "torque": "178 Nm",
+          "efficiency": "17.0 km/l",
+          "transmission": "6-Speed AT"
+        }
+      },
+      {
+        "name": "GT Plus 1.5 TSI DSG",
+        "price": 9100000,
+        "label": "Rs. 91.00L",
+        "popular": true,
+        "transmission": "DSG",
+        "fuel": "Petrol",
+        "features": [
+          "1.5L TSI EVO 150 PS",
+          "7-Speed DSG",
+          "Active Cylinder Deactivation",
+          "GT Sport Pack",
+          "Topline features+"
+        ],
+        "specs": {
+          "power": "150 PS @ 5,000 rpm",
+          "torque": "250 Nm",
+          "efficiency": "18.0 km/l",
+          "transmission": "7-Speed DSG"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.0L TSI / 1.5L TSI EVO Petrol",
+      "Displacement": "999 / 1,498 cc",
+      "Power": "115–150 PS",
+      "Torque": "178–250 Nm",
+      "Efficiency": "17.0–18.7 km/l",
+      "Fuel Tank": "47 L",
+      "Transmission": "6-Speed MT / AT / 7-Speed DSG",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "521 L",
+      "Length": "4,561 mm",
+      "Width": "1,752 mm",
+      "Height": "1,507 mm",
+      "Wheelbase": "2,651 mm",
+      "Ground Clearance": "179 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "5-star Global NCAP safety rating",
+      "Large 521 L boot for a compact sedan",
+      "1.5L DSG GT Plus offers thrilling performance",
+      "Newest model in VW Nepal's lineup"
+    ],
+    "cons": [
+      "Sedan body less popular than SUV in Nepal",
+      "Base only has 2 airbags",
+      "FWD only",
+      "No diesel option"
+    ],
+    "highlights": [
+      "5-Star NCAP",
+      "521 L Boot",
+      "1.5L DSG 150 PS",
+      "New 2025 Launch"
+    ]
+  },
+  {
+    "id": 904,
+    "slug": "volkswagen-tayron-2025",
+    "brand": "Volkswagen",
+    "model": "Tayron",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Mid-size 7-Seat SUV",
+    "badge": "new",
+    "tagline": "VW Nepal's newest 3-row flagship SUV — Tiguan Allspace successor",
+    "rating": 4.3,
+    "reviews": 48,
+    "expertScore": 8.1,
+    "baseEMI": 125000,
+    "overview": "The Volkswagen Tayron is the newest addition to VW Nepal's SUV lineup, officially listed on the Volkswagen Nepal website (volkswagen.com.np) alongside the Taigun and Virtus. Replacing the Tiguan Allspace as the brand's 7-seat mid-size SUV, the Tayron is built on the MQB EVO platform and powered by a 2.0L TSI EVO with 4MOTION AWD. It competes with the Skoda Kodiaq and Jeep Meridian in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Candy White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Deep Black Pearl",
+        "hex": "#111111"
+      },
+      {
+        "name": "Moonstone Grey",
+        "hex": "#AFAFAF"
+      },
+      {
+        "name": "Kings Red",
+        "hex": "#991111"
+      }
+    ],
+    "variants": [
+      {
+        "name": "R-Line 2.0 TSI 4MOTION",
+        "price": 14000000,
+        "label": "Rs. 1.40 Cr",
+        "popular": true,
+        "transmission": "DSG",
+        "fuel": "Petrol",
+        "features": [
+          "7 Seats",
+          "4MOTION AWD",
+          "2.0L TSI 204 PS",
+          "9 Airbags",
+          "360° Camera",
+          "10.25\" Touchscreen",
+          "Matrix LED Headlights",
+          "Panoramic Roof",
+          "Ventilated Massage Seats"
+        ],
+        "specs": {
+          "power": "204 PS @ 4,500 rpm",
+          "torque": "320 Nm",
+          "efficiency": "14.5 km/l",
+          "transmission": "7-Speed DSG"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L TSI EVO Petrol",
+      "Displacement": "1,984 cc",
+      "Power": "204 PS",
+      "Torque": "320 Nm",
+      "Efficiency": "~14.5 km/l",
+      "Fuel Tank": "60 L",
+      "Transmission": "7-Speed DSG",
+      "Drive": "4MOTION AWD",
+      "Seating": "7",
+      "Boot Space": "345 L (all seats up) / 1,905 L folded",
+      "Length": "4,792 mm",
+      "Width": "1,866 mm",
+      "Height": "1,661 mm",
+      "Wheelbase": "2,894 mm",
+      "Ground Clearance": "180 mm",
+      "Airbags": "9"
+    },
+    "pros": [
+      "7-seat flexibility for Nepali families",
+      "4MOTION AWD for mountain roads",
+      "9 airbags — safest in class",
+      "Replaces Tiguan Allspace at similar or better value"
+    ],
+    "cons": [
+      "Single R-Line variant only in Nepal",
+      "Relatively lower ground clearance for AWD SUV (180 mm)",
+      "Price approaching Rs. 1.5 Crore",
+      "New model — limited service data in Nepal"
+    ],
+    "highlights": [
+      "7 Seats",
+      "4MOTION AWD",
+      "9 Airbags",
+      "2.0L TSI 204 PS"
+    ]
+  },
+  {
+    "id": 905,
+    "slug": "volkswagen-tiguan-allspace-2025",
+    "brand": "Volkswagen",
+    "model": "Tiguan Allspace",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Mid-size 7-Seat SUV",
+    "badge": "established",
+    "tagline": "VW's proven 7-seat mid-size SUV — spacious, safe, and AWD-capable",
+    "rating": 4.1,
+    "reviews": 287,
+    "expertScore": 7.8,
+    "baseEMI": 120000,
+    "overview": "The Volkswagen Tiguan Allspace is the established 7-seater SUV in the VW Nepal lineup, now being gradually supplemented by the Tayron. It is powered by a 2.0L TSI petrol engine with 7-speed automatic and 4MOTION AWD. With 177 PS and a 2,787 mm wheelbase, it provides a comfortable ride for families in Nepal, competing with the Skoda Kodiaq and Toyota RAV4 in the mid-premium SUV segment.",
+    "images": [
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pure White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Deep Black Pearl",
+        "hex": "#111111"
+      },
+      {
+        "name": "Reflex Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Burgundy Red",
+        "hex": "#7A1B1B"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Comfortline 2.0 TSI",
+        "price": 11500000,
+        "label": "Rs. 1.15 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "7 Seats",
+          "4MOTION AWD",
+          "6 Airbags",
+          "8\" Touchscreen + CarPlay",
+          "LED Headlights",
+          "18\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "177 PS @ 3,940 rpm",
+          "torque": "320 Nm",
+          "efficiency": "14.5 km/l",
+          "transmission": "7-Speed DSG"
+        }
+      },
+      {
+        "name": "Highline 2.0 TSI 4Motion",
+        "price": 14800000,
+        "label": "Rs. 1.48 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "Panoramic Roof",
+          "Adaptive Cruise Control",
+          "360° Camera",
+          "Heated Seats",
+          "Comfortline features+"
+        ],
+        "specs": {
+          "power": "177 PS @ 3,940 rpm",
+          "torque": "320 Nm",
+          "efficiency": "14.0 km/l",
+          "transmission": "7-Speed DSG"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L TSI Turbo Petrol",
+      "Displacement": "1,984 cc",
+      "Power": "177 PS @ 3,940 rpm",
+      "Torque": "320 Nm",
+      "Efficiency": "14.0–14.5 km/l",
+      "Fuel Tank": "60 L",
+      "Transmission": "7-Speed DSG",
+      "Drive": "4MOTION AWD",
+      "Seating": "7",
+      "Boot Space": "230 L (3 rows) / 700 L (2 rows)",
+      "Length": "4,701 mm",
+      "Width": "1,839 mm",
+      "Height": "1,674 mm",
+      "Wheelbase": "2,787 mm",
+      "Ground Clearance": "177 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Proven reliability in Nepal",
+      "7-seat 4MOTION AWD versatility",
+      "Solid VW build quality",
+      "Good parts availability vs Tayron"
+    ],
+    "cons": [
+      "Being gradually replaced by the Tayron",
+      "Lower spec than Tayron at similar price",
+      "177 mm clearance adequate but not class-leading",
+      "Petrol-only in Nepal"
+    ],
+    "highlights": [
+      "7 Seats",
+      "4MOTION AWD",
+      "177 PS TSI",
+      "German Engineering"
+    ]
+  },
+  {
+    "id": 906,
+    "slug": "volkswagen-touareg-2025",
+    "brand": "Volkswagen",
+    "model": "Touareg",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Full-size Luxury SUV",
+    "badge": "flagship",
+    "tagline": "VW Nepal's flagship — full-size V6 luxury SUV at the top of the range",
+    "rating": 4.4,
+    "reviews": 72,
+    "expertScore": 8.4,
+    "baseEMI": 295000,
+    "overview": "The Volkswagen Touareg is the brand's most premium and expensive offering in Nepal, distributed by Pooja International. Powered by a mighty 3.0L V6 TSI engine producing 340 PS and 450 Nm, mated to an 8-speed sequential AT with 4MOTION AWD, it rivals the BMW X5 and Audi Q7 in Nepal's ultra-premium SUV segment while offering Volkswagen's practical luxury at a slightly lower price than its German rivals.",
+    "images": [
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1518987048-93e29699e79a?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Tungsten Silver",
+        "hex": "#8F8F8F"
+      },
+      {
+        "name": "Deep Black Pearl",
+        "hex": "#111111"
+      },
+      {
+        "name": "Moonlight Blue",
+        "hex": "#1A3255"
+      },
+      {
+        "name": "Pure White",
+        "hex": "#F8F8F8"
+      }
+    ],
+    "variants": [
+      {
+        "name": "V6 TSI 4Motion",
+        "price": 32500000,
+        "label": "Rs. 3.25 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "7 Airbags",
+          "15\" Innovision Cockpit",
+          "Air Suspension",
+          "4MOTION AWD",
+          "Matrix LED Headlights",
+          "Panoramic Roof",
+          "Massage Seats"
+        ],
+        "specs": {
+          "power": "340 PS @ 6,500 rpm",
+          "torque": "450 Nm",
+          "efficiency": "11.0 km/l",
+          "transmission": "8-Speed Tiptronic AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "3.0L V6 TSI Turbo Petrol",
+      "Displacement": "2,995 cc",
+      "Power": "340 PS @ 6,500 rpm",
+      "Torque": "450 Nm",
+      "Efficiency": "11.0 km/l",
+      "Fuel Tank": "85 L",
+      "Transmission": "8-Speed Tiptronic",
+      "Drive": "4MOTION AWD",
+      "Seating": "5",
+      "Boot Space": "810 L",
+      "Length": "4,878 mm",
+      "Width": "1,984 mm",
+      "Height": "1,717 mm",
+      "Wheelbase": "2,904 mm",
+      "Ground Clearance": "210 mm (air suspension)",
+      "Airbags": "7"
+    },
+    "pros": [
+      "810 L boot — largest in class",
+      "Air suspension adjusts for Nepal's diverse terrain",
+      "340 PS V6 — most powerful VW in Nepal",
+      "15-inch Innovision Cockpit flagship technology"
+    ],
+    "cons": [
+      "Most expensive VW in Nepal at Rs. 3.25 Crore",
+      "11 km/l fuel efficiency on V6 petrol",
+      "Only single variant available",
+      "Very large — difficult in narrow Nepali streets"
+    ],
+    "highlights": [
+      "340 PS V6",
+      "810 L Boot",
+      "Air Suspension",
+      "4MOTION AWD"
+    ]
+  }
+]

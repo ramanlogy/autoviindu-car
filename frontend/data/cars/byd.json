@@ -1,0 +1,934 @@
+[
+  {
+    "id": 300,
+    "slug": "byd-atto-1-2025",
+    "brand": "BYD",
+    "model": "Atto 1",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Hatchback",
+    "badge": "value",
+    "tagline": "Nepal's most affordable BYD — city-smart, surprisingly premium",
+    "rating": 4,
+    "reviews": 610,
+    "expertScore": 7.2,
+    "baseEMI": 56000,
+    "overview": "The BYD Atto 1 (known as Seagull in China) is BYD's entry-level electric hatchback in Nepal. Built on e-Platform 3.0 with Blade Battery technology and V2L capability, it offers a surprising amount of kit for its price. The Premium variant adds range, extra airbags, and faster DC charging — making it the smarter buy between the two.",
+    "images": [
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Grey",
+        "hex": "#8A8E94"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Dynamic",
+        "price": 2895000,
+        "label": "Rs. 28.95L",
+        "popular": false,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "45 kW PMSM Motor (61 PS / 135 Nm)",
+          "30.08 kWh LFP Blade Battery",
+          "230 km WLTP Range",
+          "30 kW DC Fast Charging",
+          "6.6 kW AC Charging (0–100% ~5 hrs)",
+          "2 Airbags",
+          "10.1\" Touchscreen",
+          "Rear Camera",
+          "ABS + EBD + EPB",
+          "TPMS",
+          "V2L (Vehicle-to-Load)",
+          "Auto AC",
+          "16\" Alloys"
+        ],
+        "specs": {
+          "power": "61 PS",
+          "torque": "135 Nm",
+          "range": "230 km WLTP",
+          "battery": "30.08 kWh",
+          "charging": "30 kW DC / 6.6 kW AC"
+        }
+      },
+      {
+        "name": "Premium",
+        "price": 3299000,
+        "label": "Rs. 32.99L",
+        "popular": true,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "38.88 kWh LFP Blade Battery",
+          "300 km WLTP Range",
+          "40 kW DC Fast Charging (0–100% ~6.5 hrs)",
+          "6 Airbags",
+          "Power-Adjustable Driver Seat",
+          "Wireless Charging",
+          "All Dynamic features"
+        ],
+        "specs": {
+          "power": "61 PS",
+          "torque": "135 Nm",
+          "range": "300 km WLTP",
+          "battery": "38.88 kWh",
+          "charging": "40 kW DC / 6.6 kW AC"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "45 kW Permanent Magnet Synchronous Motor",
+      "Power": "61 PS",
+      "Torque": "135 Nm",
+      "Battery": "30.08 kWh (Dynamic) / 38.88 kWh (Premium) LFP Blade",
+      "Range": "230 km (Dynamic) / 300 km (Premium) WLTP",
+      "DC Fast Charge": "30 kW (Dynamic) / 40 kW (Premium)",
+      "AC Charge": "6.6 kW — ~5 hrs (D) / ~6.5 hrs (P) 0–100%",
+      "Drive": "FWD",
+      "Transmission": "Single-Speed Automatic",
+      "Seating": "5",
+      "Boot Space": "Not specified",
+      "Length": "3,925 mm",
+      "Width": "1,720 mm",
+      "Height": "1,590 mm",
+      "Wheelbase": "2,500 mm",
+      "Ground Clearance": "175 mm",
+      "Airbags": "2 (Dynamic) / 6 (Premium)",
+      "Platform": "BYD e-Platform 3.0",
+      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+    },
+    "pros": [
+      "Cheapest BYD in Nepal — Rs. 28.95L start",
+      "Premium interior feel for the class",
+      "V2L (Vehicle-to-Load) — powers appliances",
+      "Proven Blade Battery safety",
+      "300 km WLTP range on Premium — solid for Nepal"
+    ],
+    "cons": [
+      "Only 175mm ground clearance — low for Nepali roads",
+      "Dynamic has just 2 airbags — upgrade to Premium",
+      "Compact body size — limited rear space",
+      "No spare wheel",
+      "Premium variant pricing creeps close to Dolphin"
+    ],
+    "highlights": [
+      "Rs. 28.95L Start",
+      "300 km Range (P)",
+      "V2L Capable",
+      "Blade Battery"
+    ]
+  },
+  {
+    "id": 301,
+    "slug": "byd-dolphin-2025",
+    "brand": "BYD",
+    "model": "Dolphin",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Hatchback",
+    "badge": "popular",
+    "tagline": "Nepal's favourite family EV — 2500+ homes, 340 km, 5-star safe",
+    "rating": 4.4,
+    "reviews": 2780,
+    "expertScore": 8,
+    "baseEMI": 79500,
+    "overview": "The BYD Dolphin is Nepal's best-selling hatchback EV with over 2,500 units on the road. Powered by a 70 kW motor, 44.9 kWh Blade Battery, and rated 5-star by Euro NCAP, it delivers 340 km WLTP range, 6 airbags, 360° camera, and full ADAS. The 2025 update adds NFC, a Bluetooth key, stiffer suspension, and a new Atlantis Grey color.",
+    "images": [
+      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Ski White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Urban Grey",
+        "hex": "#7A7E84"
+      },
+      {
+        "name": "Atlantis Grey",
+        "hex": "#5E6B72"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard",
+        "price": 4115000,
+        "label": "Rs. 41.15L",
+        "popular": true,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "70 kW PMSM Motor (95 PS / 180 Nm)",
+          "44.9 kWh LFP Blade Battery",
+          "340 km WLTP Range",
+          "60 kW DC Fast Charging (30–80% ~30 min)",
+          "7 kW AC Charging (0–100% ~7.15 hrs)",
+          "6 Airbags — 5-Star Euro NCAP",
+          "ADAS (AEB, ACC, LDW, LKA)",
+          "360° Camera",
+          "12.8\" Rotating Touchscreen",
+          "Wireless Apple CarPlay + Android Auto",
+          "Wireless Phone Charging",
+          "NFC Keyless Entry + Bluetooth Key",
+          "Panoramic Sunroof",
+          "HAC (Hill-Start Assist)",
+          "V2L (Vehicle-to-Load)",
+          "31-Colour Ambient Lighting",
+          "PM 2.5 Air Filter",
+          "17\" Alloys"
+        ],
+        "specs": {
+          "power": "95 PS",
+          "torque": "180 Nm",
+          "range": "340 km WLTP",
+          "battery": "44.9 kWh",
+          "charging": "60 kW DC / 7 kW AC"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "70 kW Permanent Magnet Synchronous Motor",
+      "Power": "95 PS",
+      "Torque": "180 Nm",
+      "Battery": "44.9 kWh LFP Blade Battery",
+      "Range": "340 km WLTP",
+      "DC Fast Charge": "60 kW — 30–80% in ~30 min",
+      "AC Charge": "7 kW — 0–100% in ~7.15 hrs",
+      "Drive": "FWD",
+      "Transmission": "Single-Speed Automatic",
+      "Seating": "5",
+      "Boot Space": "345 L (up to 1,310 L folded)",
+      "Length": "4,290 mm",
+      "Width": "1,770 mm",
+      "Height": "1,570 mm",
+      "Wheelbase": "2,700 mm",
+      "Ground Clearance": "175 mm",
+      "Airbags": "6",
+      "Safety Rating": "5-Star Euro NCAP",
+      "Platform": "BYD e-Platform 3.0",
+      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+    },
+    "pros": [
+      "5-Star Euro NCAP — best-in-class safety",
+      "340 km real-world range — proven in Nepal",
+      "Full ADAS suite as standard",
+      "Panoramic sunroof + ambient lighting at this price",
+      "2500+ units in Nepal — excellent parts & service support"
+    ],
+    "cons": [
+      "175mm ground clearance — can bottom out when loaded",
+      "No spare wheel",
+      "No rear AC vents",
+      "Single variant — no choice",
+      "Atto 2 is a better SUV for ~Rs. 3L more"
+    ],
+    "highlights": [
+      "340 km WLTP",
+      "5-Star Euro NCAP",
+      "6 Airbags",
+      "Rs. 41.15L"
+    ]
+  },
+  {
+    "id": 302,
+    "slug": "byd-atto-2-2025",
+    "brand": "BYD",
+    "model": "Atto 2",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Compact SUV",
+    "badge": "recommended",
+    "tagline": "B-segment game-changer — SUV body, 345 km, Cell-to-Body tech",
+    "rating": 4.3,
+    "reviews": 1280,
+    "expertScore": 8.1,
+    "baseEMI": 86000,
+    "overview": "The BYD Atto 2 is the newest compact SUV in Nepal's BYD lineup, built on e-Platform 3.0 with the world-first Cell-to-Body (CTB) battery integration. It slots between the Dolphin and Atto 3 with a 100 kW motor, 51 kWh Blade Battery, 345 km range, 200mm ground clearance, panoramic sunroof, vegan leather, 12.8\" rotating screen, and full ADAS — all for Rs. 44.99L.",
+    "images": [
+      "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1580414057403-c5f451f30e1c?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Hiking Green",
+        "hex": "#4E7B5E"
+      },
+      {
+        "name": "Climbing Grey",
+        "hex": "#6E7478"
+      },
+      {
+        "name": "Skiing White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Cosmos Black",
+        "hex": "#1A1A1C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard",
+        "price": 4499000,
+        "label": "Rs. 44.99L",
+        "popular": true,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "100 kW PMSM Motor (136 PS / 290 Nm)",
+          "51.13 kWh LFP Blade Battery",
+          "345 km WLTP Range",
+          "65 kW DC Fast Charging (30–80% in 28 min)",
+          "7 kW AC Charging",
+          "Cell-to-Body (CTB) Battery Integration",
+          "6 Airbags",
+          "Full ADAS (AEB, ACC, LKA, BSD)",
+          "360° Camera",
+          "12.8\" Rotating Touchscreen",
+          "8.8\" Digital Instrument Cluster",
+          "Wireless CarPlay + Android Auto",
+          "NFC Keyless Entry + Bluetooth Key",
+          "Panoramic Sunroof",
+          "Vegan Leather Seats",
+          "Power Front Seats (Ventilated + Heated)",
+          "Wireless Charging",
+          "V2L (Vehicle-to-Load)",
+          "31-Colour Ambient Lighting",
+          "200mm Ground Clearance",
+          "17\" Alloys"
+        ],
+        "specs": {
+          "power": "136 PS",
+          "torque": "290 Nm",
+          "range": "345 km WLTP",
+          "battery": "51.13 kWh",
+          "charging": "65 kW DC / 7 kW AC"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "100 kW Permanent Magnet Synchronous Motor",
+      "Power": "136 PS",
+      "Torque": "290 Nm",
+      "Battery": "51.13 kWh LFP Blade Battery (CTB)",
+      "Range": "345 km WLTP",
+      "DC Fast Charge": "65 kW — 30–80% in 28 min",
+      "AC Charge": "7 kW — 0–100% in ~8 hrs",
+      "Drive": "FWD",
+      "Transmission": "Single-Speed Automatic",
+      "Top Speed": "160 km/h",
+      "0–100 km/h": "7.9 sec",
+      "Seating": "5",
+      "Boot Space": "400 L (up to 1,430 L folded)",
+      "Length": "4,310 mm",
+      "Width": "1,830 mm",
+      "Height": "1,675 mm",
+      "Wheelbase": "2,620 mm",
+      "Ground Clearance": "200 mm",
+      "Airbags": "6",
+      "Platform": "BYD e-Platform 3.0 + CTB",
+      "Warranty": "Battery: 10yr/200,000km | Vehicle: 5yr/125,000km"
+    },
+    "pros": [
+      "200mm ground clearance — best in BYD Nepal lineup",
+      "CTB structure — 32% stiffer than conventional EVs",
+      "Full feature spec at this price (sunroof, ventilated seats, ADAS)",
+      "1,430L boot when folded — huge for a compact SUV",
+      "65 kW DC fast charge — 30-80% in 28 min"
+    ],
+    "cons": [
+      "Single variant — no long-range option",
+      "100 kW motor feels adequate but not exciting",
+      "Dolphin hatchback offers similar spec at Rs. 3L less",
+      "No rear seat ventilation"
+    ],
+    "highlights": [
+      "200mm Clearance",
+      "CTB Battery",
+      "345 km WLTP",
+      "Rs. 44.99L"
+    ]
+  },
+  {
+    "id": 303,
+    "slug": "byd-atto-3-2025",
+    "brand": "BYD",
+    "model": "Atto 3",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Compact SUV",
+    "badge": "bestseller",
+    "tagline": "Nepal's #1 selling EV — Dragon Face 3.0, 420 km, 7 airbags",
+    "rating": 4.5,
+    "reviews": 4820,
+    "expertScore": 8.5,
+    "baseEMI": 131000,
+    "overview": "The BYD Atto 3 is Nepal's best-selling electric car, and the model that kickstarted the EV revolution here. The 2025 facelift brings Dragon Face 3.0 styling, a larger 15.6\" rotating touchscreen, refreshed interior, and new Cosmos Black color. Two Blade Battery variants offer 345 km and 420 km WLTP range, both powered by a 100 kW PMSM. 5-Star Euro NCAP rated.",
+    "images": [
+      "https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Boulder Grey",
+        "hex": "#7A7E82"
+      },
+      {
+        "name": "Ski White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Surf Blue",
+        "hex": "#2A6EA6"
+      },
+      {
+        "name": "Cosmos Black",
+        "hex": "#1A1A1C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Advanced",
+        "price": 5690000,
+        "label": "Rs. 56.90L",
+        "popular": false,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "100 kW PMSM Motor (135 PS / 310 Nm)",
+          "49.92 kWh LFP Blade Battery",
+          "345 km WLTP Range",
+          "80 kW DC Fast Charging (0–80% in 50 min)",
+          "7.2 kW AC Charging (0–100% in ~7.5 hrs)",
+          "7 Airbags — 5-Star Euro NCAP",
+          "L2+ ADAS (AEB, ACC-S&G, LKA, BSD, RCTA)",
+          "360° Camera",
+          "15.6\" Rotating Touchscreen (DiLink)",
+          "Wireless CarPlay + Android Auto",
+          "Panoramic Sunroof",
+          "Wireless Phone Charging",
+          "Keyless Entry + Push-Start",
+          "Ventilated + Heated Front Seats",
+          "31-Colour Ambient Lighting",
+          "8-Speaker Dirac Audio",
+          "PM 2.5 Air Filter",
+          "V2L (Vehicle-to-Load)",
+          "18\" Diamond-Cut Alloys"
+        ],
+        "specs": {
+          "power": "135 PS",
+          "torque": "310 Nm",
+          "range": "345 km WLTP",
+          "battery": "49.92 kWh",
+          "charging": "80 kW DC / 7.2 kW AC"
+        }
+      },
+      {
+        "name": "Superior",
+        "price": 6780000,
+        "label": "Rs. 67.80L",
+        "popular": true,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "60.48 kWh LFP Blade Battery",
+          "420 km WLTP Range",
+          "0–80% in 50 min (DC Fast Charge)",
+          "0–100% in 9.1 hrs (7.2 kW AC)",
+          "All Advanced features"
+        ],
+        "specs": {
+          "power": "135 PS",
+          "torque": "310 Nm",
+          "range": "420 km WLTP",
+          "battery": "60.48 kWh",
+          "charging": "80 kW DC / 7.2 kW AC"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "100 kW Permanent Magnet Synchronous Motor",
+      "Power": "135 PS",
+      "Torque": "310 Nm",
+      "Battery": "49.92 kWh (Advanced) / 60.48 kWh (Superior) LFP Blade",
+      "Range": "345 km (Advanced) / 420 km (Superior) WLTP",
+      "DC Fast Charge": "80 kW — 0–80% in 50 min",
+      "AC Charge": "7.2 kW — 7.5 hrs (Adv) / 9.1 hrs (Sup)",
+      "Drive": "FWD",
+      "Transmission": "Single-Speed Automatic",
+      "Top Speed": "160 km/h",
+      "0–100 km/h": "7.3 sec",
+      "Seating": "5",
+      "Boot Space": "440 L (up to 1,340 L folded)",
+      "Length": "4,455 mm",
+      "Width": "1,875 mm",
+      "Height": "1,615 mm",
+      "Wheelbase": "2,720 mm",
+      "Ground Clearance": "175 mm",
+      "Airbags": "7",
+      "Safety Rating": "5-Star Euro NCAP",
+      "Platform": "BYD e-Platform 3.0",
+      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+    },
+    "pros": [
+      "Nepal's proven #1 EV — massive owner community & service support",
+      "420 km WLTP Superior — best range in the class",
+      "7 airbags + 5-Star Euro NCAP — excellent safety",
+      "15.6\" rotating touchscreen + Dirac audio",
+      "440L boot — excellent for an SUV of this size"
+    ],
+    "cons": [
+      "175mm ground clearance — same as Dolphin, lower than Atto 2",
+      "80 kW DC charge is slower than competitors",
+      "No AWD option",
+      "0–100 in 7.3 sec — not sporty",
+      "Superior at Rs. 67.80L is pricey vs newer competition"
+    ],
+    "highlights": [
+      "420 km WLTP (Sup)",
+      "7 Airbags",
+      "Nepal's #1 EV",
+      "Rs. 56.90L Start"
+    ]
+  },
+  {
+    "id": 304,
+    "slug": "byd-m6-2025",
+    "brand": "BYD",
+    "model": "M6",
+    "year": 2025,
+    "type": "Electric",
+    "body": "MPV",
+    "badge": "value",
+    "tagline": "Nepal's only electric 7-seater MPV — 440 km, family-first",
+    "rating": 4.2,
+    "reviews": 720,
+    "expertScore": 7.8,
+    "baseEMI": 113000,
+    "overview": "The BYD M6 is Nepal's first and only premium 7-seat electric MPV, launched at the International Balloon Festival in Pokhara. Successor to the BYD E6, it packs a 71.8 kWh Blade Battery with 440 km WLTP range, 115 kW DC fast charging, Dragon Face 3.0 design, 12.8\" rotating screen, panoramic sunroof, and ventilated seats — all for under Rs. 59L.",
+    "images": [
+      "https://images.unsplash.com/photo-1569171767200-cee31ff71f78?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Demon Domain Black",
+        "hex": "#1A1A1C"
+      },
+      {
+        "name": "Ink Stone Blue",
+        "hex": "#2A3A5A"
+      },
+      {
+        "name": "Crystal White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Harbour Grey",
+        "hex": "#7A8088"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard",
+        "price": 5890000,
+        "label": "Rs. 58.90L",
+        "popular": true,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "100 kW PMSM Motor (136 PS / 250 Nm)",
+          "71.8 kWh LFP Blade Battery",
+          "440 km WLTP Range",
+          "115 kW DC Fast Charging (20–80% in ~40 min)",
+          "7.2 kW AC Charging (0–100% in ~11 hrs)",
+          "7 Seats (6/7 config)",
+          "6 Airbags",
+          "ADAS (AEB, ACC, LKA, BSD)",
+          "360° Camera",
+          "12.8\" Rotating Touchscreen",
+          "Wireless CarPlay + Android Auto",
+          "Panoramic Glass Roof",
+          "Ventilated Front Seats",
+          "Power-Adjustable Front Seats",
+          "Wireless Charging (15W)",
+          "NFC Keyless Entry",
+          "Dragon Crystal LED Headlamps",
+          "Full-Width LED Taillights",
+          "17\" Multi-Spoke Alloys",
+          "MacPherson Strut + Multi-Link Suspension",
+          "PM 2.5 Air Filter",
+          "V2L (Vehicle-to-Load)"
+        ],
+        "specs": {
+          "power": "136 PS",
+          "torque": "250 Nm",
+          "range": "440 km WLTP",
+          "battery": "71.8 kWh",
+          "charging": "115 kW DC / 7.2 kW AC"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "100 kW Permanent Magnet Synchronous Motor",
+      "Power": "136 PS",
+      "Torque": "250 Nm",
+      "Battery": "71.8 kWh LFP Blade Battery",
+      "Range": "440 km WLTP",
+      "DC Fast Charge": "115 kW — 20–80% in ~40 min",
+      "AC Charge": "7.2 kW — 0–100% in ~11 hrs",
+      "Drive": "FWD",
+      "Transmission": "Single-Speed Automatic",
+      "Top Speed": "160 km/h",
+      "0–100 km/h": "~9 sec",
+      "Seating": "7",
+      "Boot Space": "180 L (up to 580 L with rows folded)",
+      "Length": "4,710 mm",
+      "Width": "1,810 mm",
+      "Height": "1,690 mm",
+      "Wheelbase": "2,800 mm",
+      "Ground Clearance": "175 mm",
+      "Airbags": "6",
+      "Platform": "BYD e-Platform 3.0",
+      "Warranty": "Battery: 10yr/200,000km | Vehicle: 5yr/125,000km"
+    },
+    "pros": [
+      "Nepal's only 7-seat electric MPV — no direct rival",
+      "440 km WLTP range — huge battery for long family trips",
+      "115 kW DC fast charge — 20-80% in 40 min",
+      "Panoramic roof + ventilated seats + full ADAS",
+      "2,800mm wheelbase — genuinely roomy for all 7"
+    ],
+    "cons": [
+      "Ground clearance listed variably — 140–175mm; confirm with Cimex",
+      "Only 180L boot with all 7 seats up",
+      "No AWD",
+      "0–100 in 9s — not quick for its motor size",
+      "Expensive at Rs. 58.90L for a single-motor FWD MPV"
+    ],
+    "highlights": [
+      "7 Seats",
+      "440 km WLTP",
+      "115 kW DC Charge",
+      "Rs. 58.90L"
+    ]
+  },
+  {
+    "id": 305,
+    "slug": "byd-sealion-7-2025",
+    "brand": "BYD",
+    "model": "Sealion 7",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Mid-Size SUV",
+    "badge": "premium",
+    "tagline": "BYD's flagship SUV for Nepal — Ocean aesthetics, 440 km, 11 airbags",
+    "rating": 4.4,
+    "reviews": 490,
+    "expertScore": 8.3,
+    "baseEMI": 154000,
+    "overview": "The BYD Sealion 7 is BYD Nepal's premium mid-size SUV from the Ocean Series, positioned above the Atto 3. Built on e-Platform 3.0 with a 230 kW rear-wheel-drive motor, 71.8 kWh Blade Battery, 440 km WLTP range, 11 airbags, 15.6\" rotating screen, Dynaudio 12-speaker system, HUD, and panoramic sunroof — it's the most feature-complete BYD SUV you can buy in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1581540222194-0def2dda95b8?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Shark Grey",
+        "hex": "#5E6266"
+      },
+      {
+        "name": "Aurora White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Atlantis Grey",
+        "hex": "#6A7278"
+      },
+      {
+        "name": "Cosmos Black",
+        "hex": "#1A1A1C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Premium RWD",
+        "price": 7999000,
+        "label": "Rs. 79.99L",
+        "popular": true,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "230 kW RWD PMSM Motor (312 PS / 380 Nm)",
+          "71.8 kWh LFP Blade Battery",
+          "440 km WLTP Range",
+          "150 kW DC Fast Charging (30–80% in 24 min)",
+          "7 kW AC Charging (0–100% in ~7 hrs)",
+          "11 Airbags",
+          "iTAC (Intelligent Torque Adaptation Control)",
+          "L2+ ADAS (AEB, ACC, LKA, LCA, BSD, RCTA, TSR)",
+          "360° Camera + Front/Rear Parking Sensors",
+          "Head-Up Display (HUD)",
+          "15.6\" Rotating Touchscreen",
+          "10.25\" Digital Instrument Cluster",
+          "Dynaudio 12-Speaker Audio",
+          "Wireless CarPlay + Android Auto",
+          "Wireless Phone Charging (50W)",
+          "Panoramic Sunroof",
+          "Nappa Leather Seats",
+          "Ventilated + Heated Front Seats",
+          "Heated Rear Seats",
+          "Dual-Zone Climate Control",
+          "Heat Pump (efficient in cold weather)",
+          "128-Colour Ambient Lighting",
+          "Electric Tailgate (Foot-Gesture)",
+          "Rain-Sensing Wipers",
+          "V2L (Vehicle-to-Load)",
+          "58L Frunk",
+          "19\" Alloys"
+        ],
+        "specs": {
+          "power": "312 PS",
+          "torque": "380 Nm",
+          "range": "440 km WLTP",
+          "battery": "71.8 kWh",
+          "charging": "150 kW DC / 7 kW AC"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "230 kW Permanent Magnet Synchronous Motor (RWD)",
+      "Power": "312.7 PS",
+      "Torque": "380 Nm",
+      "Battery": "71.8 kWh LFP Blade Battery",
+      "Range": "440 km WLTP",
+      "DC Fast Charge": "150 kW — 30–80% in 24 min",
+      "AC Charge": "7 kW — 0–100% in ~7 hrs",
+      "Drive": "RWD",
+      "Transmission": "Single-Speed Automatic",
+      "Top Speed": "215 km/h",
+      "0–100 km/h": "~5.4 sec",
+      "Seating": "5",
+      "Boot Space": "500 L + 58 L Frunk",
+      "Length": "4,830 mm",
+      "Width": "1,925 mm",
+      "Height": "1,620 mm",
+      "Wheelbase": "2,800 mm",
+      "Ground Clearance": "170 mm",
+      "Airbags": "11",
+      "Platform": "BYD e-Platform 3.0",
+      "Warranty": "Battery: 10yr/200,000km | Vehicle: 5yr/125,000km"
+    },
+    "pros": [
+      "11 airbags — most in any Nepal-market EV",
+      "230 kW RWD — sporty and rear-wheel-drive dynamics",
+      "150 kW DC fast charge — 30-80% in just 24 min",
+      "Dynaudio 12-speaker + HUD — flagship interior",
+      "58L frunk + 500L boot — superb practicality"
+    ],
+    "cons": [
+      "Nepal-spec detuned vs global Sealion 7 (which has 82 kWh battery, 482 km range)",
+      "No AWD in Nepal",
+      "170mm ground clearance — lower than competitors at this price",
+      "Rs. 79.99L is steep for FWD-only competition",
+      "International spec 5-Star NCAP not confirmed for Nepal variant"
+    ],
+    "highlights": [
+      "11 Airbags",
+      "312 PS RWD",
+      "440 km WLTP",
+      "Rs. 79.99L"
+    ]
+  },
+  {
+    "id": 306,
+    "slug": "byd-seal-2024",
+    "brand": "BYD",
+    "model": "Seal",
+    "year": 2024,
+    "type": "Electric",
+    "body": "Sedan",
+    "badge": "flagship",
+    "tagline": "Nepal's performance EV king — 390 kW, 5-Star NCAP, supercar torque",
+    "rating": 4.7,
+    "reviews": 390,
+    "expertScore": 9,
+    "baseEMI": 212000,
+    "overview": "The BYD Seal is BYD Nepal's flagship — a sleek performance sedan that stands alone in the Nepali market with no direct rival. Available in three variants spanning Rs. 1.10 Cr to Rs. 1.95 Cr, from a 150 kW RWD daily driver to a 390 kW AWD performance machine with 670 Nm system torque. All variants get 9 airbags, 5-Star Euro NCAP, 15.6\" rotating screen, HUD, and ocean-inspired design.",
+    "images": [
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1493238792000-8113da705763?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Arctic Blue",
+        "hex": "#1A3A6A"
+      },
+      {
+        "name": "Atlantis Grey",
+        "hex": "#5E6870"
+      },
+      {
+        "name": "Cosmos Black",
+        "hex": "#1A1A1C"
+      },
+      {
+        "name": "Aurora White",
+        "hex": "#F5F5F5"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Dynamic",
+        "price": 11000000,
+        "label": "Rs. 1.10 Cr",
+        "popular": false,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "150 kW RWD PMSM Motor (204 PS / 310 Nm)",
+          "61.44 kWh LFP Blade Battery",
+          "460 km WLTP Range",
+          "150 kW DC Fast Charging",
+          "7 kW AC Charging",
+          "9 Airbags — 5-Star Euro NCAP",
+          "CTB (Cell-to-Body) Structure",
+          "L2+ ADAS (Full Suite)",
+          "360° Camera",
+          "HUD (Head-Up Display)",
+          "15.6\" Rotating Touchscreen",
+          "10.25\" LCD Instrument Cluster",
+          "12-Speaker Audio System",
+          "Wireless CarPlay + Android Auto",
+          "Electronic Hidden Door Handles",
+          "Panoramic Glass Roof",
+          "8-Way Power Driver Seat + 6-Way Passenger",
+          "Ventilated + Heated Front Seats",
+          "Wireless Charging"
+        ],
+        "specs": {
+          "power": "204 PS",
+          "torque": "310 Nm",
+          "range": "460 km WLTP",
+          "battery": "61.44 kWh",
+          "charging": "150 kW DC / 7 kW AC"
+        }
+      },
+      {
+        "name": "Premium",
+        "price": 14550000,
+        "label": "Rs. 1.455 Cr",
+        "popular": true,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "230 kW RWD PMSM Motor (313 PS / 360 Nm)",
+          "82.56 kWh LFP Blade Battery",
+          "570 km WLTP Range",
+          "All Dynamic features"
+        ],
+        "specs": {
+          "power": "313 PS",
+          "torque": "360 Nm",
+          "range": "570 km WLTP",
+          "battery": "82.56 kWh",
+          "charging": "150 kW DC / 7 kW AC"
+        }
+      },
+      {
+        "name": "Performance",
+        "price": 19500000,
+        "label": "Rs. 1.95 Cr",
+        "popular": false,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "390 kW Dual-Motor AWD (530 PS / 670 Nm System)",
+          "82.56 kWh LFP Blade Battery",
+          "520 km WLTP Range",
+          "0–100 km/h in 3.8 sec",
+          "iTAC Intelligent Torque Adaptation",
+          "All Premium features"
+        ],
+        "specs": {
+          "power": "530 PS (system)",
+          "torque": "670 Nm (system)",
+          "range": "520 km WLTP",
+          "battery": "82.56 kWh",
+          "charging": "150 kW DC / 7 kW AC"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "150 kW RWD / 230 kW RWD / 390 kW AWD PMSM",
+      "Power": "204 PS / 313 PS / 530 PS (system)",
+      "Torque": "310 Nm / 360 Nm / 670 Nm (system)",
+      "Battery": "61.44 kWh (Dynamic) / 82.56 kWh (Premium & Performance) LFP Blade",
+      "Range": "460 km (Dynamic) / 570 km (Premium) / 520 km (Performance) WLTP",
+      "DC Fast Charge": "150 kW",
+      "AC Charge": "7 kW",
+      "Drive": "RWD (Dynamic/Premium) / AWD (Performance)",
+      "Transmission": "Single-Speed Automatic",
+      "0–100 km/h": "5.9 sec (D) / 3.8 sec (Performance)",
+      "Top Speed": "180 km/h (D) / 200 km/h (P) / 215 km/h (Perf)",
+      "Seating": "5",
+      "Boot Space": "524 L",
+      "Length": "4,800 mm",
+      "Width": "1,875 mm",
+      "Height": "1,460 mm",
+      "Wheelbase": "2,920 mm",
+      "Ground Clearance": "145 mm",
+      "Airbags": "9",
+      "Safety Rating": "5-Star Euro NCAP",
+      "Platform": "BYD e-Platform 3.0 + CTB",
+      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+    },
+    "pros": [
+      "Only performance EV sedan available in Nepal — no rival",
+      "Performance: 390 kW / 670 Nm — supercar numbers",
+      "570 km WLTP range on Premium — class-leading",
+      "9 airbags + 5-Star Euro NCAP across all variants",
+      "CTB structure + electronic door handles — head-turning design"
+    ],
+    "cons": [
+      "145mm ground clearance — lowest in BYD Nepal lineup, not ideal for Nepal",
+      "Rs. 1.10–1.95 Cr — very expensive",
+      "Performance variant is overkill for Nepal's roads",
+      "Only sedan body — no SUV option at this price"
+    ],
+    "highlights": [
+      "570 km (Premium)",
+      "9 Airbags",
+      "390 kW AWD Available",
+      "Rs. 1.10 Cr Start"
+    ]
+  }
+]

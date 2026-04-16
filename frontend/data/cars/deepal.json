@@ -1,0 +1,405 @@
+[
+  {
+    "id": 701,
+    "slug": "deepal-s07-2025",
+    "brand": "Deepal",
+    "model": "S07",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Mid-size Electric SUV",
+    "badge": "new",
+    "tagline": "Changan's flagship EV with 520km range and Level 2 ADAS for Nepal",
+    "rating": 4.3,
+    "reviews": 187,
+    "expertScore": 8.2,
+    "baseEMI": 88000,
+    "overview": "The Deepal S07 is Changan's premium EV brand entry into Nepal, offering a 77kWh battery, 520km CLTC range, ADAS Level 2, a massive 15.6\" rotating touchscreen, and dual-motor AWD option. Built on Changan's EPA platform, it rivals the BYD Atto 3 with superior range and tech.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Crystal White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Cosmos Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Sky Blue",
+        "hex": "#4A90D9"
+      },
+      {
+        "name": "Titanium Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Aurora Green",
+        "hex": "#2D5A3D"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard Range RWD",
+        "price": 7990000,
+        "label": "Rs. 79.90L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "61kWh Battery",
+          "420km CLTC Range",
+          "6 Airbags",
+          "15.6\" Rotating Touchscreen",
+          "ADAS Level 1",
+          "Rear Camera + Sensors",
+          "18\" Alloy Wheels",
+          "Wireless CarPlay"
+        ],
+        "specs": {
+          "power": "218 hp",
+          "torque": "320 Nm",
+          "efficiency": "6.8 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "Long Range RWD",
+        "price": 9290000,
+        "label": "Rs. 92.90L",
+        "popular": true,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "77kWh Battery",
+          "520km CLTC Range",
+          "ADAS Level 2 (8 features)",
+          "360° Camera",
+          "Ventilated Seats",
+          "Wireless Charging",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "218 hp",
+          "torque": "320 Nm",
+          "efficiency": "6.5 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "Long Range AWD",
+        "price": 10990000,
+        "label": "Rs. 1.09 Cr",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "Dual Motor AWD",
+          "0-100 in 4.9s",
+          "Air Suspension",
+          "Head-Up Display",
+          "Nappa Leather",
+          "Long Range RWD features+"
+        ],
+        "specs": {
+          "power": "402 hp",
+          "torque": "620 Nm",
+          "efficiency": "5.9 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      }
+    ],
+    "specs": {
+      "Battery": "61 kWh / 77 kWh",
+      "Range": "420–520 km (CLTC)",
+      "Power": "218–402 hp",
+      "Torque": "320–620 Nm",
+      "Charging": "150 kW DC Fast Charge",
+      "Charge Time": "30 min (10–80%)",
+      "Transmission": "Single Speed",
+      "Drive": "RWD / AWD",
+      "Seating": "5",
+      "Boot Space": "520 L + 72 L frunk",
+      "Length": "4,747 mm",
+      "Width": "1,930 mm",
+      "Height": "1,625 mm",
+      "Wheelbase": "2,900 mm",
+      "Ground Clearance": "175 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "520km range on long range",
+      "15.6\" rotating screen",
+      "AWD with 402hp available",
+      "Air suspension on top trim",
+      "Strong Changan build quality"
+    ],
+    "cons": [
+      "CLTC range overstates real-world by ~20%",
+      "Brand new to Nepal — service unproven",
+      "Ground clearance lower than petrol rivals",
+      "No spare tyre"
+    ],
+    "highlights": [
+      "520km Range",
+      "15.6\" Rotating Screen",
+      "ADAS Level 2",
+      "AWD Option"
+    ]
+  },
+  {
+    "id": 702,
+    "slug": "deepal-l07-2025",
+    "brand": "Deepal",
+    "model": "L07",
+    "year": 2025,
+    "type": "Hybrid",
+    "body": "Sedan",
+    "badge": "new",
+    "tagline": "Changan's REEV plug-in hybrid sedan with 1,000km+ combined range",
+    "rating": 4.2,
+    "reviews": 94,
+    "expertScore": 7.9,
+    "baseEMI": 72000,
+    "overview": "The Deepal L07 is a Range-Extended EV (REEV) sedan — it runs on electric motors with a small petrol engine acting solely as a generator, never driving the wheels directly. This delivers EV smoothness with 1,000km+ combined range, eliminating range anxiety for Nepal's long-distance drivers.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Cosmos Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Titanium Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Phantom Blue",
+        "hex": "#1B3A6B"
+      }
+    ],
+    "variants": [
+      {
+        "name": "REEV Standard",
+        "price": 6990000,
+        "label": "Rs. 69.90L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "REEV Hybrid",
+        "features": [
+          "40kWh Battery",
+          "130km EV Range",
+          "1.5L Range Extender",
+          "1,000km+ Combined",
+          "6 Airbags",
+          "12.8\" Touchscreen",
+          "ADAS Level 1",
+          "Wireless CarPlay"
+        ],
+        "specs": {
+          "power": "218 hp (motor)",
+          "torque": "320 Nm",
+          "efficiency": "4.8L/100km (extended)",
+          "transmission": "Single Speed"
+        }
+      },
+      {
+        "name": "REEV Premium",
+        "price": 8190000,
+        "label": "Rs. 81.90L",
+        "popular": true,
+        "transmission": "Single Speed",
+        "fuel": "REEV Hybrid",
+        "features": [
+          "ADAS Level 2",
+          "Ventilated Seats",
+          "Nappa Leather",
+          "360° Camera",
+          "Head-Up Display",
+          "REEV Standard features+"
+        ],
+        "specs": {
+          "power": "218 hp (motor)",
+          "torque": "320 Nm",
+          "efficiency": "4.8L/100km (extended)",
+          "transmission": "Single Speed"
+        }
+      }
+    ],
+    "specs": {
+      "Battery": "40 kWh",
+      "EV Range": "130 km",
+      "Combined Range": "1,000+ km",
+      "Extender Engine": "1.5L Petrol Generator",
+      "Power": "218 hp",
+      "Torque": "320 Nm",
+      "Fuel Tank": "45 L",
+      "Transmission": "Single Speed",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "480 L",
+      "Length": "4,920 mm",
+      "Width": "1,890 mm",
+      "Height": "1,495 mm",
+      "Wheelbase": "2,950 mm",
+      "Ground Clearance": "155 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "1,000km+ combined range",
+      "EV smoothness always",
+      "No range anxiety",
+      "Nappa leather on premium",
+      "Large wheelbase for comfort"
+    ],
+    "cons": [
+      "Sedan low clearance on Nepal roads",
+      "Plug-in charging infra limited",
+      "Brand very new in Nepal",
+      "Boot access low sedan style"
+    ],
+    "highlights": [
+      "1,000km+ Range",
+      "REEV Technology",
+      "130km Pure EV",
+      "ADAS Level 2"
+    ]
+  },
+  {
+    "id": 703,
+    "slug": "deepal-s05-2025",
+    "brand": "Deepal",
+    "model": "S05",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Compact Electric SUV",
+    "badge": "new",
+    "tagline": "Affordable Changan EV SUV with 400km range for Nepal's city drivers",
+    "rating": 4.1,
+    "reviews": 63,
+    "expertScore": 7.6,
+    "baseEMI": 58000,
+    "overview": "The Deepal S05 is Changan's entry-level EV SUV, positioned below the S07 with a 60kWh battery, 400km CLTC range, and a 12.8\" touchscreen. It offers excellent value in Nepal's growing EV market with solid build quality and Changan's proven EPA2.0 platform.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Crystal White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Cosmos Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Sky Blue",
+        "hex": "#4A90D9"
+      },
+      {
+        "name": "Titanium Grey",
+        "hex": "#5A5E63"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard",
+        "price": 5490000,
+        "label": "Rs. 54.90L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "50kWh Battery",
+          "330km CLTC Range",
+          "6 Airbags",
+          "12.8\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "ADAS Level 1",
+          "17\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "170 hp",
+          "torque": "260 Nm",
+          "efficiency": "6.5 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "Premium",
+        "price": 6490000,
+        "label": "Rs. 64.90L",
+        "popular": true,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "60kWh Battery",
+          "400km CLTC Range",
+          "ADAS Level 2",
+          "360° Camera",
+          "Ventilated Seats",
+          "Wireless Charging",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "201 hp",
+          "torque": "300 Nm",
+          "efficiency": "6.6 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      }
+    ],
+    "specs": {
+      "Battery": "50 kWh / 60 kWh",
+      "Range": "330–400 km (CLTC)",
+      "Power": "170–201 hp",
+      "Torque": "260–300 Nm",
+      "Charging": "90 kW DC Fast Charge",
+      "Charge Time": "35 min (10–80%)",
+      "Transmission": "Single Speed",
+      "Drive": "RWD",
+      "Seating": "5",
+      "Boot Space": "460 L",
+      "Length": "4,580 mm",
+      "Width": "1,870 mm",
+      "Height": "1,625 mm",
+      "Wheelbase": "2,750 mm",
+      "Ground Clearance": "170 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Most affordable Deepal in Nepal",
+      "400km range on premium",
+      "Good interior quality for price",
+      "ADAS Level 2 on premium",
+      "Compact enough for Kathmandu"
+    ],
+    "cons": [
+      "RWD only",
+      "No AWD option",
+      "Brand service network thin",
+      "CLTC range inflated vs real-world"
+    ],
+    "highlights": [
+      "400km Range",
+      "ADAS Level 2",
+      "90kW Fast Charge",
+      "Compact SUV"
+    ]
+  }
+]

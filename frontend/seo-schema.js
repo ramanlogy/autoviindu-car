@@ -10,7 +10,7 @@ window.SEO = (function () {
   const SITE = {
     name: "AutoViindu",
     url: "https://www.autoviindu.com",
-    logo: "https://www.autoviindu.com/assets/images/og/logo.png",
+    logo: "https://www.autoviindu.com/frontend/assets/images/cars/brands/logo.png",
     phone: "+977-9701076240",
     email: "info@autoviindu.com",
     address: {

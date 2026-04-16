@@ -1,0 +1,839 @@
+[
+  {
+    "id": 601,
+    "slug": "mahindra-thar-roxx-2025",
+    "brand": "Mahindra",
+    "model": "Thar Roxx",
+    "year": 2025,
+    "type": "Diesel",
+    "body": "Off-Road SUV",
+    "badge": "new",
+    "tagline": "4-door Thar with off-road DNA meets premium SUV comfort for Nepal",
+    "rating": 4.6,
+    "reviews": 987,
+    "expertScore": 8.7,
+    "baseEMI": 68000,
+    "overview": "The Mahindra Thar Roxx is the most anticipated SUV launch in Nepal — a 4-door Thar with 4XPLOR AWD, 226mm ground clearance, roof-mounted 12-speaker Sony audio, and proper off-road credentials including terrain modes, locking differential, and an Adventure Statistics display.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Everest White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Nebula Blue",
+        "hex": "#1B3A6B"
+      },
+      {
+        "name": "Burnt Sienna",
+        "hex": "#8B4513"
+      },
+      {
+        "name": "Stealth Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Olive Drab",
+        "hex": "#6B6B47"
+      },
+      {
+        "name": "Crimson Red",
+        "hex": "#B22222"
+      }
+    ],
+    "variants": [
+      {
+        "name": "MX1",
+        "price": 6490000,
+        "label": "Rs. 64.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "4XPLOR AWD",
+          "226mm Ground Clearance",
+          "18\" Alloy Wheels",
+          "Keyless Entry"
+        ],
+        "specs": {
+          "power": "152 hp @ 3,500 rpm",
+          "torque": "330 Nm",
+          "efficiency": "15.2 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "MX3",
+        "price": 7190000,
+        "label": "Rs. 71.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "Roof-Mounted 12-Speaker Sony Audio",
+          "Electric Sunroof",
+          "Auto Climate Control",
+          "Wireless Charging",
+          "Adventure Statistics Display",
+          "MX1 features+"
+        ],
+        "specs": {
+          "power": "152 hp @ 3,500 rpm",
+          "torque": "330 Nm",
+          "efficiency": "15.2 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "MX5",
+        "price": 7990000,
+        "label": "Rs. 79.90L",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "6-Speed Torque Converter AT",
+          "Terrain Modes (Snow/Sand/Rock/Mud)",
+          "Rear Locking Differential",
+          "ADAS (Forward Collision, Lane Assist)",
+          "360° Camera",
+          "MX3 features+"
+        ],
+        "specs": {
+          "power": "152 hp @ 3,500 rpm",
+          "torque": "330 Nm",
+          "efficiency": "14.8 km/l",
+          "transmission": "6-Speed AT"
+        }
+      },
+      {
+        "name": "AX7L",
+        "price": 8990000,
+        "label": "Rs. 89.90L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "Leatherette Seats",
+          "Panoramic Sunroof",
+          "Heads-Up Display",
+          "ADAS Level 2",
+          "MX5 features+"
+        ],
+        "specs": {
+          "power": "152 hp @ 3,500 rpm",
+          "torque": "330 Nm",
+          "efficiency": "14.8 km/l",
+          "transmission": "6-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.2L mHawk Diesel",
+      "Displacement": "2,184 cc",
+      "Power": "152 hp @ 3,500 rpm",
+      "Torque": "330 Nm",
+      "Efficiency": "14.8–15.2 km/l",
+      "Fuel Tank": "57 L",
+      "Transmission": "6MT / 6AT",
+      "Drive": "4XPLOR AWD",
+      "Seating": "5",
+      "Boot Space": "428 L",
+      "Length": "4,428 mm",
+      "Width": "1,870 mm",
+      "Height": "1,935 mm",
+      "Wheelbase": "2,850 mm",
+      "Ground Clearance": "226 mm",
+      "Airbags": "6",
+      "Wading Depth": "650 mm"
+    },
+    "pros": [
+      "226mm ground clearance — best in class",
+      "Rear locking differential",
+      "Sony 12-speaker roof audio",
+      "Genuine off-road 4WD",
+      "Massive 57L fuel tank"
+    ],
+    "cons": [
+      "Diesel only in Nepal",
+      "Tall height in city parking",
+      "AT only on top 2 variants",
+      "Premium pricing vs rivals"
+    ],
+    "highlights": [
+      "226mm Clearance",
+      "4XPLOR AWD + Lock Diff",
+      "Sony 12-Speaker",
+      "Terrain Modes"
+    ]
+  },
+  {
+    "id": 602,
+    "slug": "mahindra-xuv-3xo-2025",
+    "brand": "Mahindra",
+    "model": "XUV 3XO",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "new",
+    "tagline": "Panoramic sunroof and Level 2 ADAS in Nepal's most feature-rich compact SUV",
+    "rating": 4.3,
+    "reviews": 743,
+    "expertScore": 8,
+    "baseEMI": 44000,
+    "overview": "The Mahindra XUV 3XO (formerly XUV300) arrives with a complete overhaul — stunning new design, Level 2 ADAS, a massive panoramic sunroof, and a 10.25\" dual-screen setup. It packs class-leading 6 airbags and the most features per rupee in Nepal's compact SUV segment.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Everest White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Deep Forest",
+        "hex": "#2D4A2D"
+      },
+      {
+        "name": "Blazing Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Stealth Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Crimson Red",
+        "hex": "#B22222"
+      },
+      {
+        "name": "Napoli Black",
+        "hex": "#2C2C2C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "MX1",
+        "price": 4290000,
+        "label": "Rs. 42.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "Auto Climate Control",
+          "16\" Alloy Wheels",
+          "Keyless Entry"
+        ],
+        "specs": {
+          "power": "108 hp @ 5,000 rpm",
+          "torque": "200 Nm",
+          "efficiency": "17.2 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "MX2",
+        "price": 4690000,
+        "label": "Rs. 46.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Electric Sunroof",
+          "Wireless Charging",
+          "8-Speaker Sony Audio",
+          "Rear AC Vents",
+          "TPMS",
+          "MX1 features+"
+        ],
+        "specs": {
+          "power": "108 hp @ 5,000 rpm",
+          "torque": "200 Nm",
+          "efficiency": "17.2 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "MX3 Pro",
+        "price": 5190000,
+        "label": "Rs. 51.90L",
+        "popular": true,
+        "transmission": "AMT",
+        "fuel": "Petrol",
+        "features": [
+          "Panoramic Sunroof (Class First)",
+          "10.25\" Digital Cluster",
+          "ADAS Level 2 (7 features)",
+          "360° Camera",
+          "Drive Modes",
+          "MX2 features+"
+        ],
+        "specs": {
+          "power": "108 hp @ 5,000 rpm",
+          "torque": "200 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "6-Speed AMT"
+        }
+      },
+      {
+        "name": "AX7L Turbo",
+        "price": 5890000,
+        "label": "Rs. 58.90L",
+        "popular": false,
+        "transmission": "AMT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "1.2L Turbo Engine",
+          "130 hp",
+          "Leatherette Seats",
+          "Ventilated Front Seats",
+          "Ambient Lighting",
+          "MX3 Pro features+"
+        ],
+        "specs": {
+          "power": "130 hp @ 5,000 rpm",
+          "torque": "230 Nm",
+          "efficiency": "16.1 km/l",
+          "transmission": "6-Speed AMT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L mStallion Turbo / NA",
+      "Displacement": "1,197 cc",
+      "Power": "108–130 hp",
+      "Torque": "200–230 Nm",
+      "Efficiency": "16.1–17.2 km/l",
+      "Fuel Tank": "40 L",
+      "Transmission": "6MT / 6AMT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "364 L",
+      "Length": "3,990 mm",
+      "Width": "1,821 mm",
+      "Height": "1,647 mm",
+      "Wheelbase": "2,600 mm",
+      "Ground Clearance": "201 mm",
+      "Airbags": "6 (Standard — all variants)"
+    },
+    "pros": [
+      "ADAS Level 2 available",
+      "Panoramic sunroof in class",
+      "6 airbags standard across all",
+      "Best-in-class safety score",
+      "Turbo option on top variant"
+    ],
+    "cons": [
+      "AMT not as smooth as DCT",
+      "Boot smaller than rivals",
+      "Turbo only on top trim",
+      "Less brand trust vs Hyundai/Kia in Nepal"
+    ],
+    "highlights": [
+      "ADAS Level 2",
+      "Panoramic Sunroof",
+      "6 Airbags Standard",
+      "201mm Clearance"
+    ]
+  },
+  {
+    "id": 603,
+    "slug": "mahindra-xuv700-2025",
+    "brand": "Mahindra",
+    "model": "XUV700",
+    "year": 2025,
+    "type": "Diesel",
+    "body": "Mid-size SUV",
+    "badge": "popular",
+    "tagline": "ADAS Level 2 + 7 seats + 200hp diesel — Nepal's full-size family SUV",
+    "rating": 4.5,
+    "reviews": 1876,
+    "expertScore": 8.8,
+    "baseEMI": 82000,
+    "overview": "The Mahindra XUV700 is Nepal's most feature-rich 7-seater, with AdrenoX ADAS (Level 2), a stunning 10.25\" dual-screen cockpit, Harman Kardon audio, Sony 360° sound, and a 200hp diesel engine. AWD available on top variants for Nepal's demanding terrain.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Midnight Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Dazzling Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Red Rage",
+        "hex": "#B22222"
+      },
+      {
+        "name": "Everest White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Electric Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Napoli Black",
+        "hex": "#2C2C2C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "MX",
+        "price": 7990000,
+        "label": "Rs. 79.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "7 Seats",
+          "Auto Climate Control",
+          "18\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "155 hp @ 3,500 rpm",
+          "torque": "360 Nm",
+          "efficiency": "15.1 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "AX3",
+        "price": 8790000,
+        "label": "Rs. 87.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "10.25\" Digital Cluster",
+          "Harman Kardon 12-Speaker",
+          "Electric Sunroof",
+          "Wireless Charging",
+          "TPMS",
+          "MX features+"
+        ],
+        "specs": {
+          "power": "155 hp @ 3,500 rpm",
+          "torque": "360 Nm",
+          "efficiency": "15.1 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "AX5",
+        "price": 9690000,
+        "label": "Rs. 96.90L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "200hp Engine",
+          "6-Speed AT",
+          "AdrenoX ADAS Level 2",
+          "360° Camera",
+          "Ambient Lighting (64 color)",
+          "AX3 features+"
+        ],
+        "specs": {
+          "power": "200 hp @ 3,500 rpm",
+          "torque": "450 Nm",
+          "efficiency": "14.6 km/l",
+          "transmission": "6-Speed AT"
+        }
+      },
+      {
+        "name": "AX7 AWD",
+        "price": 11490000,
+        "label": "Rs. 1.14 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "AWD with Terrain Modes",
+          "Sony 360° Sound (7 speakers)",
+          "Panoramic Sunroof",
+          "Ventilated Seats",
+          "Head-Up Display",
+          "AX5 features+"
+        ],
+        "specs": {
+          "power": "200 hp @ 3,500 rpm",
+          "torque": "450 Nm",
+          "efficiency": "14.2 km/l",
+          "transmission": "6-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.2L mHawk Diesel",
+      "Displacement": "2,184 cc",
+      "Power": "155–200 hp",
+      "Torque": "360–450 Nm",
+      "Efficiency": "14.2–15.1 km/l",
+      "Fuel Tank": "60 L",
+      "Transmission": "6MT / 6AT",
+      "Drive": "FWD / AWD",
+      "Seating": "7",
+      "Boot Space": "620 L (5-seat) / 209 L (7-seat)",
+      "Length": "4,695 mm",
+      "Width": "1,890 mm",
+      "Height": "1,755 mm",
+      "Wheelbase": "2,750 mm",
+      "Ground Clearance": "200 mm",
+      "Airbags": "7"
+    },
+    "pros": [
+      "200hp diesel is class-leading",
+      "AdrenoX ADAS Level 2",
+      "AWD available",
+      "620L boot in 5-seat mode",
+      "Head-Up Display on AX7"
+    ],
+    "cons": [
+      "AT only from AX5 onwards",
+      "Fuel economy drops with 200hp",
+      "Large size for Kathmandu streets",
+      "Higher maintenance cost"
+    ],
+    "highlights": [
+      "200hp Diesel",
+      "AWD Available",
+      "ADAS Level 2",
+      "620L Boot"
+    ]
+  },
+  {
+    "id": 604,
+    "slug": "mahindra-scorpio-n-2025",
+    "brand": "Mahindra",
+    "model": "Scorpio N",
+    "year": 2025,
+    "type": "Diesel",
+    "body": "Body-on-Frame SUV",
+    "badge": "popular",
+    "tagline": "True body-on-frame SUV with 4WD for Nepal's toughest mountain roads",
+    "rating": 4.4,
+    "reviews": 2341,
+    "expertScore": 8.2,
+    "baseEMI": 72000,
+    "overview": "The Mahindra Scorpio N is Nepal's most capable body-on-frame SUV, combining authentic 4WD with a 200hp diesel, 12-speaker Sony audio, and a premium interior. Ideal for both Kathmandu commuting and Himalayan trail driving.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Everest White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Burnt Sienna",
+        "hex": "#8B4513"
+      },
+      {
+        "name": "Stealth Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Grand Canyon Red",
+        "hex": "#B22222"
+      },
+      {
+        "name": "Dazzling Silver",
+        "hex": "#C0C0C0"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Z2",
+        "price": 6990000,
+        "label": "Rs. 69.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "6 Airbags",
+          "8\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "6-Seat Layout",
+          "Push Button Start",
+          "17\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "132 hp @ 3,750 rpm",
+          "torque": "300 Nm",
+          "efficiency": "14.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "Z4",
+        "price": 7790000,
+        "label": "Rs. 77.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "10.25\" Touchscreen",
+          "Sony 12-Speaker Audio",
+          "Electric Sunroof",
+          "Auto Climate Control",
+          "Z2 features+"
+        ],
+        "specs": {
+          "power": "132 hp @ 3,750 rpm",
+          "torque": "300 Nm",
+          "efficiency": "14.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "Z6",
+        "price": 8590000,
+        "label": "Rs. 85.90L",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "200hp Engine",
+          "6-Speed AT",
+          "7 Seats",
+          "Leatherette Seats",
+          "ADAS (Forward Collision)",
+          "Z4 features+"
+        ],
+        "specs": {
+          "power": "200 hp @ 3,500 rpm",
+          "torque": "450 Nm",
+          "efficiency": "14.2 km/l",
+          "transmission": "6-Speed AT"
+        }
+      },
+      {
+        "name": "Z8 4WD",
+        "price": 9990000,
+        "label": "Rs. 99.90L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "4WD with Low Range",
+          "Terrain Modes",
+          "Locking Differential",
+          "360° Camera",
+          "Head-Up Display",
+          "Z6 features+"
+        ],
+        "specs": {
+          "power": "200 hp @ 3,500 rpm",
+          "torque": "450 Nm",
+          "efficiency": "13.8 km/l",
+          "transmission": "6-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.2L mHawk Diesel",
+      "Displacement": "2,184 cc",
+      "Power": "132–200 hp",
+      "Torque": "300–450 Nm",
+      "Efficiency": "13.8–14.8 km/l",
+      "Fuel Tank": "57.5 L",
+      "Transmission": "6MT / 6AT",
+      "Drive": "RWD / 4WD",
+      "Seating": "6 or 7",
+      "Boot Space": "428 L",
+      "Length": "4,662 mm",
+      "Width": "1,917 mm",
+      "Height": "1,857 mm",
+      "Wheelbase": "2,750 mm",
+      "Ground Clearance": "200 mm",
+      "Airbags": "6",
+      "Wading Depth": "550 mm"
+    },
+    "pros": [
+      "Real 4WD with low range",
+      "200hp diesel",
+      "Body-on-frame — most durable",
+      "Sony 12-speaker audio",
+      "Locking differential"
+    ],
+    "cons": [
+      "Fuel economy lower than monocoques",
+      "Ride quality stiffer",
+      "Wide body in Kathmandu",
+      "AT only from Z6 upward"
+    ],
+    "highlights": [
+      "200hp Diesel",
+      "Real 4WD + Low Range",
+      "Lock Diff",
+      "Sony 12-Speaker"
+    ]
+  },
+  {
+    "id": 605,
+    "slug": "mahindra-bolero-neo-2025",
+    "brand": "Mahindra",
+    "model": "Bolero Neo",
+    "year": 2025,
+    "type": "Diesel",
+    "body": "Compact SUV",
+    "badge": "value",
+    "tagline": "Rugged 7-seater diesel workhorse built for Nepal's rural terrain",
+    "rating": 3.9,
+    "reviews": 1123,
+    "expertScore": 7,
+    "baseEMI": 38000,
+    "overview": "The Mahindra Bolero Neo is Nepal's most trusted rural-duty SUV, combining a proven mHawk diesel engine, 7-seat layout, and genuine off-road ability at an affordable price. Preferred by businesses, government fleets, and families in hilly regions.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Diamond White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Lakeside Brown",
+        "hex": "#8B6914"
+      },
+      {
+        "name": "Napoli Black",
+        "hex": "#1A1A1A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "N4",
+        "price": 3790000,
+        "label": "Rs. 37.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "2 Airbags",
+          "7\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "7 Seats",
+          "Manual AC",
+          "16\" Steel Wheels"
+        ],
+        "specs": {
+          "power": "100 hp @ 3,750 rpm",
+          "torque": "260 Nm",
+          "efficiency": "16.4 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "N8",
+        "price": 4190000,
+        "label": "Rs. 41.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "4 Airbags",
+          "Rear AC Vents",
+          "Auto Climate Control",
+          "Alloy Wheels",
+          "Push Button Start",
+          "N4 features+"
+        ],
+        "specs": {
+          "power": "100 hp @ 3,750 rpm",
+          "torque": "260 Nm",
+          "efficiency": "16.4 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "N10",
+        "price": 4490000,
+        "label": "Rs. 44.90L",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "Cruise Control",
+          "Rear Wiper",
+          "TPMS",
+          "Fog Lamps",
+          "N8 features+"
+        ],
+        "specs": {
+          "power": "100 hp @ 3,750 rpm",
+          "torque": "260 Nm",
+          "efficiency": "16.4 km/l",
+          "transmission": "5-Speed MT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L mHawk100 Diesel",
+      "Displacement": "1,497 cc",
+      "Power": "100 hp @ 3,750 rpm",
+      "Torque": "260 Nm",
+      "Efficiency": "16.4 km/l",
+      "Fuel Tank": "40 L",
+      "Transmission": "5-Speed MT",
+      "Drive": "RWD",
+      "Seating": "7",
+      "Boot Space": "280 L",
+      "Length": "4,038 mm",
+      "Width": "1,795 mm",
+      "Height": "1,877 mm",
+      "Wheelbase": "2,680 mm",
+      "Ground Clearance": "180 mm",
+      "Airbags": "2–4"
+    },
+    "pros": [
+      "Most affordable 7-seater diesel",
+      "Proven reliability in Nepal",
+      "High ground clearance for body-on-frame",
+      "Government fleet trusted",
+      "Easy rural serviceability"
+    ],
+    "cons": [
+      "Only 2 airbags on base",
+      "Basic interior",
+      "No AMT or AT",
+      "Dated platform vs rivals"
+    ],
+    "highlights": [
+      "7 Seats",
+      "Diesel Only",
+      "16.4 km/l",
+      "Proven Rural Reliability"
+    ]
+  }
+]

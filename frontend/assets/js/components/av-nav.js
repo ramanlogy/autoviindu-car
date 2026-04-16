@@ -225,7 +225,7 @@
     <div class="av-header-in">
 
       <a class="av-logo" href="index.html">
-        <img src="assets/images/cars/logo.PNG" alt="AutoViindu" class="av-logo-img">
+        <img src="/frontend/assets/images/cars/brands/logo.png" alt="AutoViindu" class="av-logo-img">
       </a>
 
       <nav class="av-header-nav">
