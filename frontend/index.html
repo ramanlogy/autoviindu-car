@@ -232,55 +232,61 @@ input,select{font-family:var(--font-b)}
 @media(min-width:640px){.cars-grid{gap:14px}}
 @media(min-width:900px){.cars-grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:1100px){.cars-grid{grid-template-columns:repeat(4,1fr)}}
-.car-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r16);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:all .25s cubic-bezier(.4,0,.2,1)}
-.car-card:hover{box-shadow:var(--sh3);transform:translateY(-4px);border-color:rgba(26,107,42,.2)}
-.car-card:hover .cc-img img{transform:scale(1.07)}
-.cc-img{position:relative;height:160px;overflow:hidden;background:linear-gradient(135deg,var(--bg2),var(--bg3));flex-shrink:0}
-@media(min-width:480px){.cc-img{height:178px}}
-@media(min-width:768px){.cc-img{height:200px}}
-.cc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.4,0,.2,1)}
-.cc-badges{position:absolute;top:8px;left:8px;display:flex;gap:4px;flex-wrap:wrap}
-.cc-badge{font-size:9.5px;font-weight:800;padding:3px 8px;border-radius:var(--pill);text-transform:uppercase;letter-spacing:.3px}
+
+.car-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r16);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:box-shadow .25s cubic-bezier(.4,0,.2,1),transform .25s cubic-bezier(.4,0,.2,1),border-color .25s}
+.car-card:hover{box-shadow:var(--sh3);transform:translateY(-3px);border-color:rgba(26,107,42,.18)}
+.car-card:hover .cc-img img{transform:scale(1.05)}
+
+/* ── Image zone ── */
+.cc-img{position:relative;display:flex;flex-direction:column;background:var(--bg2);flex-shrink:0}
+.cc-img img{width:100%;height:150px;object-fit:contain;transition:transform .45s cubic-bezier(.4,0,.2,1);padding:8px 0;background:var(--bg2)}
+@media(min-width:480px){.cc-img img{height:165px}}
+@media(min-width:768px){.cc-img img{height:185px}}
+
+/* Top bar: badge + name + heart */
+.cc-top-bar{display:flex;align-items:center;gap:6px;padding:9px 10px 7px;background:var(--white);border-bottom:1px solid var(--border)}
+.cc-top-left{display:flex;align-items:center;gap:6px;flex:1;min-width:0}
+.cc-top-name{font-size:12px;font-weight:700;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(min-width:480px){.cc-top-name{font-size:13px}}
+
+/* Badges */
+.cc-badge{flex-shrink:0;font-size:9px;font-weight:800;padding:2px 7px;border-radius:var(--pill);text-transform:uppercase;letter-spacing:.4px}
 .badge-ev{background:#0d8566;color:#fff}
 .badge-hybrid{background:#6b35c7;color:#fff}
 .badge-popular{background:var(--g3);color:#fff}
-.badge-new{background:#d63031;color:#fff}
+.badge-new{background:#e53935;color:#fff}
 .badge-trending{background:var(--gold);color:#fff}
-.cc-wish{position:absolute;top:8px;right:8px;width:30px;height:30px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--ease)}
-.cc-wish:hover{transform:scale(1.1)}
+
+/* Wishlist */
+.cc-wish{flex-shrink:0;width:28px;height:28px;background:var(--bg2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background var(--ease),transform var(--ease)}
+.cc-wish:hover{background:var(--bg3);transform:scale(1.12)}
 .cc-wish.active svg{stroke:#ef4444;fill:#ef4444}
-.cc-score{position:absolute;bottom:8px;right:8px;background:rgba(7,16,10,.72);backdrop-filter:blur(6px);color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:var(--pill);display:flex;align-items:center;gap:3px}
-.cc-cmp{position:absolute;bottom:8px;left:8px;font-size:9.5px;font-weight:800;padding:3px 9px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:var(--ink2);border-radius:var(--pill);cursor:pointer;transition:all var(--ease)}
-.cc-cmp:hover,.cc-cmp.added{background:var(--g3);color:#fff}
-.cc-body{padding:12px;flex:1;display:flex;flex-direction:column}
-@media(min-width:480px){.cc-body{padding:14px}}
-.cc-meta{display:flex;align-items:center;gap:7px;margin-bottom:5px}
-.cc-rating{display:inline-flex;align-items:center;gap:3px;background:var(--g3);color:#fff;padding:2px 7px;border-radius:var(--pill);font-size:10.5px;font-weight:800}
-.cc-reviews{font-size:11px;color:var(--ink4)}
-.cc-name{font-family:var(--font-d);font-size:15px;font-weight:600;color:var(--ink);line-height:1.25}
-@media(min-width:768px){.cc-name{font-size:16.5px}}
-.cc-variant{font-size:11.5px;color:var(--ink4);margin-top:2px;margin-bottom:8px}
-.cc-specs{display:none;flex-wrap:wrap;gap:5px;margin-bottom:9px}
-@media(max-width:480px){ 
-  .cc-specs { gap: 3px; }
-  .spec-pill { font-size: 10px; padding: 2px 6px; }
-}
-.spec-pill{display:inline-flex;align-items:center;gap:4px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--pill);padding:3px 9px;font-size:10.5px;font-weight:600;color:var(--ink3)}
-.cc-colors{display:flex;gap:5px;align-items:center;margin-bottom:10px}
-.color-dot{width:8px;height:8px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);cursor:pointer;transition:transform var(--ease)}
-.color-dot:hover{transform:scale(1.35)}
-.colors-more{font-size:10.5px;color:var(--ink4);margin-left:2px}
-.cc-price-row{margin-top:auto;padding-top:10px;border-top:1px solid var(--bg2)}
-.cc-from{font-size:9.5px;font-weight:700;color:var(--ink4);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
-.cc-price{font-family:var(--font-d);font-size:17px;font-weight:700;color:var(--ink);line-height:1}
-@media(min-width:768px){.cc-price{font-size:19px}}
-.cc-emi{font-size:10.5px;color:var(--ink4);margin-top:3px}
+
+/* ── Body ── */
+.cc-body{padding:11px 12px 13px;flex:1;display:flex;flex-direction:column}
+@media(min-width:480px){.cc-body{padding:12px 14px 14px}}
+
+.cc-name{font-family:var(--font-d);font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:3px}
+@media(min-width:768px){.cc-name{font-size:16px}}
+
+.cc-variant{font-size:11px;color:var(--ink4);margin-bottom:10px}
+@media(min-width:480px){.cc-variant{font-size:11.5px}}
+
+/* Price block */
+.cc-price-block{margin-top:auto;padding-top:9px;border-top:1px solid var(--bg2)}
+.cc-price-line{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.cc-price-line strong{font-family:var(--font-d);font-size:16px;font-weight:700;color:var(--ink)}
+@media(min-width:480px){.cc-price-line strong{font-size:17.5px}}
+.cc-emi{font-size:11px;color:var(--ink4);margin-bottom:10px}
 .cc-emi strong{color:#059669;font-weight:700}
-.cc-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
-.cc-btn-o{padding:8px 4px;border:1.5px solid var(--g3);color:var(--g3);background:var(--white);border-radius:var(--r8);font-size:12px;font-weight:700;cursor:pointer;transition:all var(--ease);text-align:center;font-family:var(--font-b)}
-.cc-btn-o:hover{background:var(--g3);color:#fff}
-.cc-btn-f{padding:8px 4px;background:var(--g3);color:#fff;border-radius:var(--r8);font-size:12px;font-weight:700;cursor:pointer;transition:background var(--ease);text-align:center;font-family:var(--font-b)}
+
+/* Action buttons */
+.cc-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.cc-btn-f{padding:8px 4px;background:var(--g3);color:#fff;border-radius:var(--r8);font-size:12px;font-weight:700;cursor:pointer;transition:background var(--ease);text-align:center;font-family:var(--font-b);border:none}
 .cc-btn-f:hover{background:var(--g4)}
+.cc-btn-o{padding:8px 4px;border:1.5px solid var(--border);color:var(--ink3);background:var(--white);border-radius:var(--r8);font-size:12px;font-weight:600;cursor:pointer;transition:all var(--ease);text-align:center;font-family:var(--font-b);display:flex;align-items:center;justify-content:center;gap:5px}
+.cc-btn-o:hover{border-color:var(--g3);color:var(--g3)}
+.cc-btn-o svg{width:13px;height:13px;flex-shrink:0}
 
 /* ══ BUDGET SECTION ══ */
 .budget-section{background:var(--white)}
@@ -538,99 +544,149 @@ input,select{font-family:var(--font-b)}
     display: block;
   }
 
-/* ══ DETAIL PAGE ══ */
-.page-hero{background:linear-gradient(160deg,var(--g0),var(--g1));padding:20px 0 28px;color:#fff;position:relative;overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.02) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
-.breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.4);margin-bottom:10px;flex-wrap:wrap}
-.breadcrumb a{color:rgba(255,255,255,.5);cursor:pointer}
+/* ══ DETAIL PAGE v2 ══ */
+.detail-page-body{padding-bottom:76px}
+@media(min-width:900px){.detail-page-body{padding-bottom:0}}
+.dp-layout{display:grid;grid-template-columns:1fr;align-items:start}
+@media(min-width:900px){.dp-layout{grid-template-columns:1fr 360px;gap:28px;padding-top:24px;padding-bottom:64px}}
+
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.45);flex-wrap:wrap;margin-bottom:10px}
+.breadcrumb a{color:rgba(255,255,255,.55);cursor:pointer;transition:color .2s}
 .breadcrumb a:hover{color:#fff}
-.bc-sep{color:rgba(255,255,255,.15)}
-.detail-layout{display:grid;grid-template-columns:1fr;gap:0;padding-bottom:60px}
-@media(min-width:900px){.detail-layout{grid-template-columns:1fr 360px;gap:0;align-items:start}}
-.detail-sidebar{background:var(--white);border-bottom:1px solid var(--border)}
-@media(min-width:900px){.detail-sidebar{border-bottom:none;border-left:1px solid var(--border);position:sticky;top:var(--nav);max-height:calc(100vh - var(--nav));overflow-y:auto}}
-.gallery-main{position:relative;width:100%;height:220px;background:var(--bg2);overflow:hidden}
-@media(min-width:480px){.gallery-main{height:270px}}
-@media(min-width:900px){.gallery-main{height:340px}}
-.gallery-main img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
-.gal-prev,.gal-next{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;box-shadow:var(--sh1)}
-.gal-prev{left:10px}.gal-next{right:10px}
-.gal-count{position:absolute;bottom:8px;right:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:var(--pill)}
-.gallery-thumbs{display:flex;gap:6px;padding:10px 14px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--border);background:var(--white)}
+.bc-sep{color:rgba(255,255,255,.18)}
+
+/* ── Gallery ── */
+.dp-gallery-card{overflow:hidden;background:var(--white);border-bottom:1px solid var(--border)}
+@media(min-width:900px){.dp-gallery-card{border:1px solid var(--border);border-radius:var(--r16);margin-bottom:12px}}
+.gallery-main{position:relative;height:240px;overflow:hidden;background:var(--bg2)}
+@media(min-width:480px){.gallery-main{height:290px}}
+@media(min-width:900px){.gallery-main{height:360px}}
+.gallery-main img{width:100%;height:100%;object-fit:contain;background:var(--bg2);transition:opacity .2s}
+.gal-prev,.gal-next{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:all .2s;z-index:2}
+.gal-prev:hover,.gal-next:hover{transform:translateY(-50%) scale(1.1);background:#fff}
+.gal-prev{left:12px}.gal-next{right:12px}
+.gal-count{position:absolute;bottom:10px;right:12px;background:rgba(0,0,0,.62);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:var(--pill)}
+.gallery-thumbs{display:flex;gap:6px;padding:10px 12px;overflow-x:auto;scrollbar-width:none;background:var(--white);border-top:1px solid var(--border)}
 .gallery-thumbs::-webkit-scrollbar{display:none}
-.g-thumb{width:58px;height:40px;border-radius:6px;overflow:hidden;border:2px solid transparent;cursor:pointer;flex-shrink:0;background:var(--bg2);transition:border-color var(--ease)}
+.g-thumb{width:68px;height:48px;border-radius:8px;overflow:hidden;border:2px solid transparent;cursor:pointer;flex-shrink:0;background:var(--bg2);transition:border-color .2s}
 .g-thumb.active{border-color:var(--g3)}
-.g-thumb img{width:100%;height:100%;object-fit:cover}
-.dp-sidebar-inner{padding:20px}
-.vdrop-wrap{position:relative;margin-bottom:14px}
-.vdrop-select{width:100%;padding:11px 36px 11px 12px;border:1.5px solid var(--border);border-radius:var(--r10);font-family:var(--font-b);font-size:14px;font-weight:700;color:var(--ink);background:var(--white);appearance:none;cursor:pointer;outline:none;transition:border-color var(--ease)}
-.vdrop-select:focus{border-color:var(--g3)}
-.vdrop-arrow{position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--ink4)}
-.vspec-panel{background:var(--bg);border:1px solid var(--border);border-radius:var(--r10);padding:14px;margin-bottom:14px}
-.vspec-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
-.vspec-cell{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:9px 10px;text-align:center}
-.vspec-val{font-family:var(--font-d);font-size:13.5px;font-weight:700;color:var(--g3)}
-.vspec-lbl{font-size:10px;color:var(--ink4);margin-top:1px}
-.vspec-features{display:flex;flex-direction:column;gap:4px}
-.vspec-feat{display:flex;align-items:flex-start;gap:7px;font-size:12.5px;color:var(--ink2);line-height:1.45}
-.vspec-feat-dot{width:5px;height:5px;border-radius:50%;background:var(--g3);flex-shrink:0;margin-top:5px}
-.dp-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
-.dp-price{font-family:var(--font-d);font-size:28px;font-weight:700;color:var(--ink);line-height:1}
-.dp-price-note{font-size:11px;color:var(--ink5);margin-bottom:14px}
-.dp-cta-stack{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
-.dp-cta-primary{width:100%;padding:13px;background:var(--g3);color:#fff;border:none;border-radius:var(--r10);font-family:var(--font-b);font-size:14px;font-weight:800;cursor:pointer;transition:background var(--ease)}
-.dp-cta-primary:hover{background:var(--g4)}
-.dp-cta-gold{width:100%;padding:13px;background:var(--gold);color:#fff;border:none;border-radius:var(--r10);font-family:var(--font-b);font-size:14px;font-weight:800;cursor:pointer;transition:opacity var(--ease)}
-.dp-cta-gold:hover{opacity:.88}
-.dp-cta-ghost{width:100%;padding:11px;background:var(--white);color:var(--ink3);border:1.5px solid var(--border);border-radius:var(--r10);font-family:var(--font-b);font-size:13px;font-weight:700;cursor:pointer;transition:border-color var(--ease)}
-.dp-cta-ghost:hover{border-color:var(--g3);color:var(--g3)}
-.dp-contact{font-size:12px;color:var(--ink4);padding-top:12px;border-top:1px solid var(--border)}
-.dp-contact a{color:var(--g3);font-weight:700}
-.dp-main{padding:0}
-.dp-tabs-wrap{position:sticky;top:var(--nav);z-index:30;background:var(--white);border-bottom:1px solid var(--border)}
-.dp-tabs{display:flex;overflow-x:auto;scrollbar-width:none}
-.dp-tabs::-webkit-scrollbar{display:none}
-.dp-tab{padding:13px 18px;border:none;border-bottom:2.5px solid transparent;background:none;font-family:var(--font-b);font-size:13px;font-weight:700;color:var(--ink4);cursor:pointer;white-space:nowrap;margin-bottom:-1px;transition:all var(--ease)}
-.dp-tab:hover{color:var(--g3)}
-.dp-tab.active{color:var(--g3);border-bottom-color:var(--g3)}
-.dp-pane{display:none;padding:20px}
-.dp-pane.active{display:block}
-.dp-tagline{font-size:15px;color:var(--ink3);line-height:1.7;font-style:italic;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
-.dp-overview{font-size:13.5px;color:var(--ink3);line-height:1.85;margin-bottom:18px}
-.dp-qs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:18px}
-@media(min-width:480px){.dp-qs-grid{grid-template-columns:repeat(3,1fr)}}
-.dp-qs-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center}
+.g-thumb img{width:100%;height:100%;object-fit:contain}
+
+/* ── Quick stats strip ── */
+.dp-qs-strip{display:flex;overflow-x:auto;scrollbar-width:none;background:var(--bg);border-bottom:1px solid var(--border)}
+.dp-qs-strip::-webkit-scrollbar{display:none}
+@media(min-width:900px){.dp-qs-strip{border:1px solid var(--border);border-radius:var(--r12);margin-bottom:12px;background:var(--white)}}
+.dp-qs-cell{flex:0 0 auto;padding:11px 16px;text-align:center;border-right:1px solid var(--border)}
 .dp-qs-val{font-family:var(--font-d);font-size:13px;font-weight:700;color:var(--g3)}
-.dp-qs-lbl{font-size:10px;color:var(--ink4);margin-top:1px}
-.dp-highlights{display:flex;flex-wrap:wrap;gap:6px}
-.dp-hl-tag{display:inline-flex;align-items:center;gap:5px;background:var(--g-ll);border:1px solid rgba(26,107,42,.18);color:var(--g3);font-size:12px;font-weight:700;padding:5px 11px;border-radius:var(--pill)}
+.dp-qs-lbl{font-size:10px;color:var(--ink4);font-weight:600;text-transform:uppercase;letter-spacing:.2px;margin-top:1px}
+
+/* ── Mobile car title ── */
+.dp-mob-title{padding:14px 16px;background:var(--white);border-bottom:1px solid var(--border)}
+@media(min-width:900px){.dp-mob-title{display:none}}
+.dp-mob-title h1{font-family:var(--font-d);font-size:21px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:4px}
+.dp-mob-title-sub{font-size:12px;color:var(--ink4);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+/* ── Variant tabs ── */
+.dp-var-wrap{padding:14px 16px;background:var(--white);border-bottom:1px solid var(--border)}
+@media(min-width:900px){.dp-var-wrap{border:1px solid var(--border);border-radius:var(--r12);margin-bottom:12px}}
+.dp-var-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink4);margin-bottom:9px}
+.dp-var-tabs{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.dp-var-tabs::-webkit-scrollbar{display:none}
+.dp-var-tab{flex-shrink:0;padding:10px 14px;border:1.5px solid var(--border);border-radius:var(--r10);background:var(--white);cursor:pointer;text-align:left;transition:all .2s;min-width:110px}
+.dp-var-tab:hover:not(.active){border-color:rgba(26,107,42,.4)}
+.dp-var-tab.active{border-color:var(--g3);background:var(--g-ll)}
+.dp-var-tab-name{font-size:11.5px;font-weight:700;color:var(--ink2);margin-bottom:2px}
+.dp-var-tab.active .dp-var-tab-name{color:var(--g3)}
+.dp-var-tab-price{font-family:var(--font-d);font-size:13px;font-weight:700;color:var(--ink)}
+.dp-var-tab.active .dp-var-tab-price{color:var(--g3)}
+.dp-var-tab-best{display:inline-block;margin-top:3px;font-size:9px;font-weight:800;background:var(--g3);color:#fff;border-radius:var(--pill);padding:1px 6px}
+
+/* ── Key info grid ── */
+.dp-ki-wrap{background:var(--white);border-bottom:1px solid var(--border)}
+@media(min-width:900px){.dp-ki-wrap{border:1px solid var(--border);border-radius:var(--r12);overflow:hidden;margin-bottom:12px}}
+.dp-ki-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+@media(min-width:500px){.dp-ki-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:720px){.dp-ki-grid{grid-template-columns:repeat(6,1fr)}}
+.dp-ki-cell{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 8px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.dp-ki-cell:nth-child(3n){border-right:none}
+@media(min-width:500px){.dp-ki-cell:nth-child(3n){border-right:1px solid var(--border)}.dp-ki-cell:nth-child(4n){border-right:none}}
+@media(min-width:720px){.dp-ki-cell{border-bottom:none}.dp-ki-cell:nth-child(4n){border-right:1px solid var(--border)}.dp-ki-cell:nth-child(3n){border-right:1px solid var(--border)}.dp-ki-cell:nth-child(6n),.dp-ki-cell:last-child{border-right:none}}
+.dp-ki-icon{width:30px;height:30px;border-radius:8px;background:var(--g-ll);display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+.dp-ki-icon svg{width:15px;height:15px;stroke:var(--g3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dp-ki-val{font-family:var(--font-d);font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:2px}
+.dp-ki-lbl{font-size:9.5px;color:var(--ink4);font-weight:600;text-transform:uppercase;letter-spacing:.2px}
+
+/* ── Accordion ── */
+.dp-accord-wrap{background:var(--white);border-top:1px solid var(--border)}
+@media(min-width:900px){.dp-accord-wrap{border:1px solid var(--border);border-radius:var(--r12);overflow:hidden;margin-bottom:10px}}
+.dp-accord-hd{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;user-select:none;transition:background .15s;gap:8px}
+.dp-accord-hd:hover{background:var(--bg)}
+.dp-accord-title{font-size:13.5px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;flex:1}
+.dp-accord-title svg{width:15px;height:15px;stroke:var(--g3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.dp-accord-arr{transition:transform .2s;color:var(--ink4)}
+.dp-accord-arr svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;display:block}
+.dp-accord-wrap.open .dp-accord-arr{transform:rotate(180deg)}
+.dp-accord-body{display:none;padding:0 16px 16px;border-top:1px solid var(--border)}
+.dp-accord-wrap.open .dp-accord-body{display:block;padding-top:14px}
+
+/* ── Spec table ── */
 .dp-spec-table{width:100%;border-collapse:collapse}
 .dp-spec-table tr:nth-child(even) td{background:var(--bg)}
-.dp-spec-table td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:top}
+.dp-spec-table td{padding:9px 10px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:top;line-height:1.4}
 .dp-spec-table td:first-child{font-weight:700;color:var(--ink2);width:45%}
 .dp-spec-table td:last-child{color:var(--ink3)}
-.dp-colors{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
-.dp-color-swatch{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:6px 8px;border-radius:8px;border:2px solid transparent;transition:border-color var(--ease)}
+
+/* ── Features grid ── */
+.dp-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+@media(min-width:480px){.dp-feat-grid{grid-template-columns:repeat(3,1fr)}}
+.dp-feat-item{display:flex;align-items:center;gap:7px;padding:9px 11px;background:var(--bg);border:1px solid var(--border);border-radius:9px;font-size:12px;font-weight:600;color:var(--ink2);line-height:1.3}
+.dp-feat-chk{width:16px;height:16px;border-radius:50%;background:var(--g-ll);border:1px solid rgba(26,107,42,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dp-feat-chk svg{width:9px;height:9px;stroke:var(--g3);stroke-width:2.5;fill:none;stroke-linecap:round}
+
+/* ── Colors ── */
+.dp-colors{display:flex;flex-wrap:wrap;gap:8px}
+.dp-color-swatch{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:7px 10px;border-radius:10px;border:2px solid transparent;transition:all .2s}
 .dp-color-swatch.active{border-color:var(--g3);background:var(--g-ll)}
 .dp-color-dot{width:28px;height:28px;border-radius:50%;box-shadow:0 0 0 1.5px rgba(0,0,0,.1)}
-.dp-color-name{font-size:10px;font-weight:600;color:var(--ink3);text-align:center;max-width:56px;line-height:1.3}
+.dp-color-name{font-size:10px;font-weight:600;color:var(--ink3);text-align:center;max-width:52px;line-height:1.3}
+
+/* ── Pros / Cons ── */
 .dp-pc-grid{display:grid;gap:10px}
 @media(min-width:480px){.dp-pc-grid{grid-template-columns:1fr 1fr}}
 .dp-pros{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:var(--r12);padding:14px}
 .dp-cons{background:#fff5f5;border:1.5px solid #fecaca;border-radius:var(--r12);padding:14px}
 .dp-pc-title{font-size:12.5px;font-weight:800;margin-bottom:9px}
 .dp-pc-item{display:flex;align-items:flex-start;gap:6px;padding:3px 0;font-size:12.5px;color:var(--ink2);line-height:1.5}
-.dp-score-bar{background:var(--g-ll);border:1px solid rgba(26,107,42,.14);border-radius:var(--r12);padding:16px;display:flex;align-items:center;gap:16px;margin-top:14px}
+.dp-score-bar{background:var(--g-ll);border:1px solid rgba(26,107,42,.14);border-radius:var(--r12);padding:16px;display:flex;align-items:center;gap:16px;margin-top:12px}
 .dp-score-num{font-family:var(--font-d);font-size:44px;font-weight:700;color:var(--g3);line-height:1;flex-shrink:0}
-.dp-score-track{flex:1}
-.dp-score-fill{height:6px;border-radius:var(--pill);background:var(--g3)}
-.dp-emi{padding:20px;border-top:1px solid var(--border)}
-.dp-emi-title{font-size:13px;font-weight:800;color:var(--ink);margin-bottom:14px}
+
+/* ── Sidebar (desktop only) ── */
+.dp-sidebar{display:none;flex-direction:column;gap:12px}
+@media(min-width:900px){.dp-sidebar{display:flex;position:sticky;top:calc(var(--nav,60px) + 16px)}}
+.dp-scard{background:var(--white);border:1px solid var(--border);border-radius:var(--r16);overflow:hidden}
+.dp-price-box{padding:18px}
+.dp-price-main{font-family:var(--font-d);font-size:30px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:3px}
+.dp-price-note{font-size:11px;color:var(--ink5);margin-bottom:14px}
+.dp-cta-stack{display:flex;flex-direction:column;gap:8px}
+.dp-cta-primary{width:100%;padding:13px;background:var(--g3);color:#fff;border:none;border-radius:var(--r10);font-family:var(--font-b);font-size:14px;font-weight:800;cursor:pointer;transition:background .2s}
+.dp-cta-primary:hover{background:var(--g4)}
+.dp-cta-gold{width:100%;padding:13px;background:var(--gold);color:#fff;border:none;border-radius:var(--r10);font-family:var(--font-b);font-size:14px;font-weight:800;cursor:pointer;transition:opacity .2s}
+.dp-cta-gold:hover{opacity:.88}
+.dp-cta-ghost{width:100%;padding:11px;background:var(--white);color:var(--ink3);border:1.5px solid var(--border);border-radius:var(--r10);font-family:var(--font-b);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s}
+.dp-cta-ghost:hover{border-color:var(--g3);color:var(--g3)}
+.dp-contact-row{padding:12px 18px;border-top:1px solid var(--border);font-size:11.5px;color:var(--ink4);display:flex;align-items:center;gap:6px}
+.dp-contact-row a{color:var(--g3);font-weight:700}
+.dp-contact-row svg{width:13px;height:13px;stroke:var(--g3);fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0}
+
+/* ── EMI box ── */
+.dp-emi-box{padding:16px 18px;border-top:1px solid var(--border)}
+.dp-emi-hd{font-size:13px;font-weight:800;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.dp-emi-hd svg{width:14px;height:14px;stroke:var(--g3);fill:none;stroke-linecap:round;stroke-width:2}
 .dp-emi-field{margin-bottom:12px}
 .dp-emi-label{display:flex;justify-content:space-between;font-size:10px;font-weight:700;color:var(--ink4);text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px}
 .dp-emi-label .val{font-size:12.5px;font-weight:800;color:var(--ink);text-transform:none;letter-spacing:0}
 .tenure-btns{display:flex;flex-wrap:wrap;gap:4px}
-.ten-btn{padding:5px 9px;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--r6);font-size:11.5px;font-weight:700;color:var(--ink3);cursor:pointer;font-family:var(--font-b);transition:all var(--ease)}
+.ten-btn{padding:5px 8px;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--r6);font-size:11px;font-weight:700;color:var(--ink3);cursor:pointer;font-family:var(--font-b);transition:all .2s}
 .ten-btn.active{background:var(--g3);color:#fff;border-color:var(--g3)}
 .dp-emi-result{background:var(--g-ll);border:1px solid rgba(26,107,42,.15);border-radius:var(--r10);padding:12px;margin-top:8px}
 .dp-emi-amount{font-family:var(--font-d);font-size:26px;font-weight:700;color:var(--g3);line-height:1}
@@ -641,6 +697,26 @@ input,select{font-family:var(--font-b)}
 input[type=range]{width:100%;height:3px;border-radius:var(--pill);background:var(--bg3);-webkit-appearance:none;outline:none;cursor:pointer}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--g3);border:3px solid #fff;box-shadow:0 1px 4px rgba(26,107,42,.3);cursor:pointer}
 
+/* ── Mobile bottom sticky bar ── */
+.dp-mob-bar{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--border);padding:10px 14px;gap:8px;z-index:100;align-items:center}
+@media(min-width:900px){.dp-mob-bar{display:none}}
+.dp-mob-price{flex:1}
+.dp-mob-price-lbl{font-size:10px;color:var(--ink4);font-weight:600}
+.dp-mob-price-val{font-family:var(--font-d);font-size:17px;font-weight:700;color:var(--ink);line-height:1.2}
+.dp-mob-btns{display:flex;gap:7px}
+.dp-mob-btn-p{padding:10px 16px;background:var(--g3);color:#fff;border:none;border-radius:var(--r8);font-family:var(--font-b);font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap}
+.dp-mob-btn-g{padding:10px 16px;background:var(--gold);color:#fff;border:none;border-radius:var(--r8);font-family:var(--font-b);font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap}
+
+/* ── Mobile-only EMI accordion ── */
+.dp-mob-emi-acc{display:block}
+@media(min-width:900px){.dp-mob-emi-acc{display:none}}
+
+/* ── Similar / highlights ── */
+.dp-similar{padding:20px 16px;background:var(--white);border-top:1px solid var(--border)}
+@media(min-width:900px){.dp-similar{border:1px solid var(--border);border-radius:var(--r16);overflow:hidden}}
+.section-hd{font-family:var(--font-d);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:14px}
+.dp-hl-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.dp-hl-tag{display:inline-flex;align-items:center;gap:5px;background:var(--g-ll);border:1px solid rgba(26,107,42,.18);color:var(--g3);font-size:12px;font-weight:700;padding:5px 11px;border-radius:var(--pill)}
 /* ══ MOBILE MENU ══ */
 .mobile-menu{position:fixed;inset:0;top:var(--nav);z-index:850;display:none}
 .mobile-menu.open{display:block}
@@ -1222,6 +1298,155 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 .strip-item.active .strip-icon-wrapper {
   color: #15803d; /* Professional Green from your image */
 }
+/* ═══ FOOTER ═══ */
+
+.site-footer {
+  background: #0f0f0f;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 60px 0 0;
+  font-size: 14px;
+}
+
+.site-footer .wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Grid ── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(6, 1fr);
+  gap: 32px 24px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+@media (max-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Brand col ── */
+.footer-logo-img {
+  height: 36px;
+  width: auto;
+  margin-bottom: 14px;
+}
+
+.footer-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0 18px;
+}
+
+/* ── Social icons ── */
+.footer-social {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.fsoc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.2s, border-color 0.2s;
+  text-decoration: none;
+}
+
+.fsoc:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.fsoc:hover svg {
+  fill: rgba(255, 255, 255, 0.8);
+  stroke: rgba(255, 255, 255, 0.8);
+}
+
+/* ── Column titles ── */
+.footer-col-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 14px;
+}
+
+/* ── Footer links ── */
+.footer-link {
+  display: block;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  padding: 4px 0;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: color 0.18s;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ── Bottom bar ── */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 0;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.footer-bottom-txt {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.fbot-links {
+  display: flex;
+  gap: 16px;
+}
+
+.fbot-links a {
+  color: rgba(255, 255, 255, 0.28);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.18s;
+}
+
+.fbot-links a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── CSS variable for border-radius used inline ── */
+:root {
+  --r10: 10px;
+}
 </style>
 
 <script src="assets/js/data/cars-db.js" defer></script>
@@ -1232,7 +1457,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 
 <div class="toast-wrap" id="toast-wrap"></div>
-
 <!-- ═══ TOPBAR ═══ -->
 <div class="topbar">
   <div class="wrap topbar-in">
@@ -1242,23 +1466,16 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
       <span class="topbar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon–Sat · 9am–6pm</span>
       <span class="topbar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nayabazar, Kathmandu</span>
     </div>
-    <div class="topbar-right">
-    
-    </div>
+    <div class="topbar-right"></div>
   </div>
 </div>
+
 <header class="site-header" id="site-header">
   <div class="wrap header-in">
 
-    <!-- Honk wrapper — sits outside the logo div, never interferes -->
     <div id="honk-wrapper" style="display:contents">
       <div class="logo" onclick="AV.goTo('home')">
-        <img
-          src="/frontend/assets/images/cars/brands/logo.png"
-          alt="AutoViindu Logo"
-          class="logo-img"
-          id="logo-img"
-        >
+        <img src="/frontend/assets/images/cars/brands/logo.png" alt="AutoViindu Logo" class="logo-img" id="logo-img">
       </div>
     </div>
 
@@ -1268,176 +1485,395 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
       <span class="hs-kbd">/</span>
       <div class="search-dd" id="search-dd"></div>
     </div>
+
     <nav class="header-nav">
+
       <!-- Home -->
       <span class="hn-link" id="nav-home" onclick="AV.goTo('home')">Home</span>
 
-     <!-- New Cars ▾ -->
-<div class="nav-dropdown">
-  <span class="hn-link" id="nav-cars" onclick="AV.goTo('cars')">New Cars <span class="hn-arrow">⌄</span></span>
-  <div class="nav-dd">
-    <div class="nav-dd-hd">Browse by Type</div>
+      <!-- New Cars ▾ -->
+      <div class="nav-dropdown">
+        <span class="hn-link" id="nav-cars" onclick="AV.goTo('cars')">New Cars <span class="hn-arrow">⌄</span></span>
+        <div class="nav-dd" style="min-width:240px">
 
-    <div class="nav-dd-item" onclick="AV.goTo('cars')">
-      <div class="nav-dd-item-title">All New Cars</div>
-      <div class="nav-dd-sub">Full catalogue · all brands</div>
-    </div>
-    <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'electric'})">
-      <div class="nav-dd-item-title">Electric Cars</div>
-      <div class="nav-dd-sub">Zero emissions · V2L ready</div>
-    </div>
-    <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'hybrid'})">
-      <div class="nav-dd-item-title">Hybrid Cars</div>
-      <div class="nav-dd-sub">Best of both worlds</div>
-    </div>
+          <div class="nav-dd-hd">By Body Type</div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'suv'})">
+            <div class="nav-dd-item-title">SUV / Crossover</div>
+            <div class="nav-dd-sub">Nepal's #1 category</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'sedan'})">
+            <div class="nav-dd-item-title">Sedan</div>
+            <div class="nav-dd-sub">Family &amp; city comfort</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'hatchback'})">
+            <div class="nav-dd-item-title">Hatchback</div>
+            <div class="nav-dd-sub">Compact city cars</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'pickup'})">
+            <div class="nav-dd-item-title">Pickup / Truck</div>
+            <div class="nav-dd-sub">Off-road &amp; commercial</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'van'})">
+            <div class="nav-dd-item-title">Van / MPV / Microbus</div>
+            <div class="nav-dd-sub">Passenger &amp; cargo</div>
+          </div>
 
-    <div class="nav-dd-divider"></div>
+          <div class="nav-dd-divider"></div>
 
-    <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'suv'})">
-      <div class="nav-dd-item-title">SUVs</div>
-      <div class="nav-dd-sub">Capable · spacious · tough</div>
-    </div>
-    <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'sedan'})">
-      <div class="nav-dd-item-title">Sedans</div>
-      <div class="nav-dd-sub">Comfort &amp; style</div>
-    </div>
-    <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'hatchback'})">
-      <div class="nav-dd-item-title">Hatchbacks</div>
-      <div class="nav-dd-sub">City-perfect · fuel-efficient</div>
-    </div>
-  </div>
-</div>
+          <div class="nav-dd-hd">By Fuel Type</div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'electric'})">
+            <div class="nav-dd-item-title">Electric (EV) <span class="nav-badge nav-badge--green">Trending</span></div>
+            <div class="nav-dd-sub">Fastest growing in Nepal</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'hybrid'})">
+            <div class="nav-dd-item-title">Hybrid</div>
+            <div class="nav-dd-sub">Best of both worlds</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'petrol'})">
+            <div class="nav-dd-item-title">Petrol</div>
+            <div class="nav-dd-sub">Widest availability</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'diesel'})">
+            <div class="nav-dd-item-title">Diesel</div>
+            <div class="nav-dd-sub">Torque &amp; economy</div>
+          </div>
 
-<!-- Used Cars ▾ -->
-<div class="nav-dropdown">
-  <span class="hn-link" id="nav-used" onclick="AV.goTo('used')">Used Cars <span class="hn-arrow">⌄</span></span>
-  <div class="nav-dd">
-    <div class="nav-dd-hd">Pre-Owned</div>
+          <div class="nav-dd-divider"></div>
 
-    <div class="nav-dd-item" onclick="AV.goTo('used')">
-      <div class="nav-dd-item-title">Browse Used Cars</div>
-      <div class="nav-dd-sub">Verified · certified pre-owned</div>
-    </div>
-    <div class="nav-dd-item" onclick="alert('Sell enquiry: +977-9701076240')">
-      <div class="nav-dd-item-title">Sell Your Car</div>
-      <div class="nav-dd-sub">Get instant valuation</div>
-    </div>
-    <div class="nav-dd-item" onclick="AV.goTo('used')">
-      <div class="nav-dd-item-title">Certified Cars</div>
-      <div class="nav-dd-sub">140-point inspected</div>
-    </div>
-  </div>
-</div>
+          <div class="nav-dd-hd">By Terrain <span class="nav-badge nav-badge--orange">New</span></div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'mountain'})">
+            <div class="nav-dd-item-title">Mountain &amp; Hilly Roads</div>
+            <div class="nav-dd-sub">High ground clearance picks</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'city'})">
+            <div class="nav-dd-item-title">City Commute</div>
+            <div class="nav-dd-sub">Compact &amp; fuel-efficient</div>
+          </div>
 
-     
-<!-- Compare ▾ -->
-<div class="nav-dropdown">
-  <span class="hn-link" id="nav-compare" onclick="AV.goTo('compare')">
-    Compare <span class="hn-arrow">⌄</span>
-  </span>
+          <div class="nav-dd-divider"></div>
 
-  <div class="nav-dd">
-    <div class="nav-dd-hd">Compare Cars</div>
+          <div class="nav-dd-hd">By Budget <span class="nav-badge nav-badge--orange">New</span></div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{budget:'under20'})">
+            <div class="nav-dd-item-title">Under ₹20L</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{budget:'20to40'})">
+            <div class="nav-dd-item-title">₹20L – ₹40L</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{budget:'40to70'})">
+            <div class="nav-dd-item-title">₹40L – ₹70L</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{budget:'70to1cr'})">
+            <div class="nav-dd-item-title">₹70L – ₹1Cr</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{budget:'above1cr'})">
+            <div class="nav-dd-item-title">₹1Cr+</div>
+          </div>
 
-    <div class="nav-dd-item" onclick="AV.goTo('compare')">
-      <div class="nav-dd-item-title">Start Comparison</div>
-      <div class="nav-dd-sub">Pick and compare cars side-by-side</div>
-    </div>
+          <div class="nav-dd-divider"></div>
 
-    <div class="nav-dd-item" onclick="AV.goTo('compare', { preset:'mg_zs_vs_byd_atto3' })">
-      <div class="nav-dd-item-title">MG ZS EV vs BYD Atto 3</div>
-      <div class="nav-dd-sub">Popular EV comparison in Nepal</div>
-    </div>
+          <div class="nav-dd-hd">Quick Finds</div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{sort:'latest'})">
+            <div class="nav-dd-item-title">Latest Arrivals</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{sort:'upcoming'})">
+            <div class="nav-dd-item-title">Upcoming Launches</div>
+            <div class="nav-dd-sub">Expected price &amp; date</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{sort:'bestseller'})">
+            <div class="nav-dd-item-title">Best Sellers in Nepal</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('cars',{view:'brands'})">
+            <div class="nav-dd-item-title">Browse by Brand</div>
+          </div>
 
-    <div class="nav-dd-item" onclick="AV.goTo('compare', { preset:'tata_nexon_vs_punch' })">
-      <div class="nav-dd-item-title">Tata Nexon vs Punch</div>
-      <div class="nav-dd-sub">Budget SUV battle</div>
-    </div>
-
-    <div class="nav-dd-item" onclick="AV.goTo('compare', { preset:'hyundai_venue_vs_sonet' })">
-      <div class="nav-dd-item-title">Venue vs Sonet</div>
-      <div class="nav-dd-sub">Compact SUV rivals</div>
-    </div>
-  </div>
-</div>
-     <div class="nav-dropdown">
-  <span class="hn-link" id="nav-services">
-    <a href="services.html" style="display:block;padding:inherit;color:inherit;text-decoration:none;">Our Services</a>
-    <span class="hn-arrow">⌄</span>
-  </span>
-  <div class="nav-dd" style="min-width:246px;">
-    <div class="nav-dd-hd">All Services</div>
-
-    <a class="nav-dd-item" href="dotm-services.html">
-      <div>
-        <div>DOTM Services </div>
-        <div class="nav-dd-sub">Bluebook, fitness, transfers</div>
+        </div>
       </div>
-    </a>
 
-    <a class="nav-dd-item" href="parts-accessories.html">
-      <div>
-        <div>Parts &amp; Accessories</div>
-        <div class="nav-dd-sub">Genuine OEM &amp; accessories</div>
+      <!-- Used Cars ▾ -->
+      <div class="nav-dropdown">
+        <span class="hn-link" id="nav-used" onclick="AV.goTo('used')">Used Cars <span class="hn-arrow">⌄</span></span>
+        <div class="nav-dd" style="min-width:240px">
+
+          <div class="nav-dd-hd">Pre-Owned</div>
+          <div class="nav-dd-item" onclick="AV.goTo('used')">
+            <div class="nav-dd-item-title">Browse Used Cars</div>
+            <div class="nav-dd-sub">Verified · certified pre-owned</div>
+          </div>
+          <div class="nav-dd-item" onclick="alert('Sell enquiry: +977-9701076240')">
+            <div class="nav-dd-item-title">Sell Your Car</div>
+            <div class="nav-dd-sub">Get instant valuation</div>
+          </div>
+
+          <div class="nav-dd-divider"></div>
+
+          <div class="nav-dd-hd">Trust &amp; Verification</div>
+          <div class="nav-dd-item" onclick="AV.goTo('used',{filter:'certified'})">
+            <div class="nav-dd-item-title">Certified Used Cars <span class="nav-badge nav-badge--blue">Verified</span></div>
+            <div class="nav-dd-sub">140-point inspected</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('used',{view:'history'})">
+            <div class="nav-dd-item-title">Vehicle History Report</div>
+            <div class="nav-dd-sub">Accident &amp; ownership check</div>
+          </div>
+
+          <div class="nav-dd-divider"></div>
+
+          <div class="nav-dd-hd">Filter By</div>
+          <div class="nav-dd-item" onclick="AV.goTo('used',{filter:'year'})">
+            <div class="nav-dd-item-title">By Year</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('used',{filter:'price'})">
+            <div class="nav-dd-item-title">By Price Range</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('used',{filter:'mileage'})">
+            <div class="nav-dd-item-title">By Mileage</div>
+            <div class="nav-dd-sub">Low km preferred</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('used',{filter:'brand'})">
+            <div class="nav-dd-item-title">By Brand</div>
+          </div>
+
+          <div class="nav-dd-divider"></div>
+
+          <div class="nav-dd-hd">Finance Help</div>
+          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'emi'})">
+            <div class="nav-dd-item-title">EMI Calculator</div>
+            <div class="nav-dd-sub">Check monthly payments</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'loan'})">
+            <div class="nav-dd-item-title">Loan Eligibility Check</div>
+          </div>
+          <div class="nav-dd-item" onclick="window.location.href='insurance-finance.html'">
+            <div class="nav-dd-item-title">Banks &amp; Finance Options</div>
+          </div>
+
+        </div>
       </div>
-    </a>
 
-    <a class="nav-dd-item" href="maintenance-repairs.html">
-      <div>
-        <div>Maintenance &amp; Repairs</div>
-        <div class="nav-dd-sub">Servicing, AC, EV diagnostics</div>
+      <!-- Compare ▾ -->
+      <div class="nav-dropdown">
+        <span class="hn-link" id="nav-compare" onclick="AV.goTo('compare')">Compare <span class="hn-arrow">⌄</span></span>
+        <div class="nav-dd" style="min-width:250px">
+
+          <div class="nav-dd-hd">Compare Tools</div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare')">
+            <div class="nav-dd-item-title">New Car Comparison</div>
+            <div class="nav-dd-sub">Side-by-side specs &amp; price</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{type:'used'})">
+            <div class="nav-dd-item-title">Used Car Comparison</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'ev_vs_petrol'})">
+            <div class="nav-dd-item-title">EV vs Petrol <span class="nav-badge nav-badge--green">Popular</span></div>
+            <div class="nav-dd-sub">Real cost over 5 years</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'hybrid_vs_ev'})">
+            <div class="nav-dd-item-title">Hybrid vs EV</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{mode:'multi'})">
+            <div class="nav-dd-item-title">Compare Up to 5 Cars <span class="nav-badge nav-badge--orange">New</span></div>
+          </div>
+
+          <div class="nav-dd-divider"></div>
+
+          <div class="nav-dd-hd">Popular Comparisons</div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'nexon_ev_vs_byd_atto3'})">
+            <div class="nav-dd-item-title">Nexon EV vs BYD Atto 3</div>
+            <div class="nav-dd-sub">Top EV battle</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'mg_zs_vs_byd_atto3'})">
+            <div class="nav-dd-item-title">MG ZS EV vs BYD Atto 3</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'creta_vs_seltos'})">
+            <div class="nav-dd-item-title">Hyundai Creta vs Kia Seltos</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'tata_nexon_vs_punch'})">
+            <div class="nav-dd-item-title">Tata Nexon vs Punch</div>
+            <div class="nav-dd-sub">Budget SUV battle</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'hyundai_venue_vs_sonet'})">
+            <div class="nav-dd-item-title">Venue vs Sonet</div>
+            <div class="nav-dd-sub">Compact SUV rivals</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'swift_vs_i20'})">
+            <div class="nav-dd-item-title">Maruti Swift vs Hyundai i20</div>
+            <div class="nav-dd-sub">Hatchback showdown</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'fortuner_vs_endeavour'})">
+            <div class="nav-dd-item-title">Toyota Fortuner vs Ford Endeavour</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'best_suvs'})">
+            <div class="nav-dd-item-title">Best-selling SUVs</div>
+          </div>
+
+          <div class="nav-dd-divider"></div>
+
+          <div class="nav-dd-hd">Smart Compare <span class="nav-badge nav-badge--orange">New</span></div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'custom'})">
+            <div class="nav-dd-item-title">Build Your Own Comparison</div>
+            <div class="nav-dd-sub">Pick any 2–5 cars to compare</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'truecost'})">
+            <div class="nav-dd-item-title">True Cost Calculator</div>
+            <div class="nav-dd-sub">Price + tax + fuel + maintenance</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'specs'})">
+            <div class="nav-dd-item-title">200+ Spec Comparison</div>
+            <div class="nav-dd-sub">Deep-dive every parameter</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'roadscore'})">
+            <div class="nav-dd-item-title">Nepal Road Suitability Score</div>
+            <div class="nav-dd-sub">How well does it handle Nepal roads?</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'ownerscore'})">
+            <div class="nav-dd-item-title">Owner Satisfaction Score</div>
+            <div class="nav-dd-sub">Real ratings from Nepal owners</div>
+          </div>
+
+        </div>
       </div>
-    </a>
 
-    <a class="nav-dd-item" href="insurance-finance.html">
-      <div>
-        <div>Insurance &amp; Financing</div>
-        <div class="nav-dd-sub">EMI plans, insurance, trade-in</div>
+      <!-- Our Services ▾ -->
+      <div class="nav-dropdown">
+        <span class="hn-link" id="nav-services">
+          <a href="services.html" style="display:block;padding:inherit;color:inherit;text-decoration:none;">Our Services</a>
+          <span class="hn-arrow">⌄</span>
+        </span>
+        <div class="nav-dd" style="min-width:246px">
+          <div class="nav-dd-hd">All Services</div>
+
+          <a class="nav-dd-item" href="dotm-services.html">
+            <div>
+              <div class="nav-dd-item-title">DOTM Services</div>
+              <div class="nav-dd-sub">Bluebook, fitness, transfers</div>
+            </div>
+          </a>
+          <a class="nav-dd-item" href="parts-accessories.html">
+            <div>
+              <div class="nav-dd-item-title">Parts &amp; Accessories</div>
+              <div class="nav-dd-sub">Genuine OEM &amp; accessories</div>
+            </div>
+          </a>
+          <a class="nav-dd-item" href="maintenance-repairs.html">
+            <div>
+              <div class="nav-dd-item-title">Maintenance &amp; Repairs</div>
+              <div class="nav-dd-sub">Servicing, AC, EV diagnostics</div>
+            </div>
+          </a>
+          <a class="nav-dd-item" href="insurance-finance.html">
+            <div>
+              <div class="nav-dd-item-title">Insurance &amp; Financing</div>
+              <div class="nav-dd-sub">EMI plans, insurance, trade-in</div>
+            </div>
+          </a>
+          <a class="nav-dd-item" href="other-services.html">
+            <div>
+              <div class="nav-dd-item-title">Other Services</div>
+              <div class="nav-dd-sub">GPS, ceramic coat, roadside</div>
+            </div>
+          </a>
+        </div>
       </div>
-    </a>
 
-    <a class="nav-dd-item" href="other-services.html">
-      <div>
-        <div>Other Services</div>
-        <div class="nav-dd-sub">GPS, ceramic coat, roadside</div>
+      <!-- News & Reviews ▾ -->
+      <div class="nav-dropdown">
+        <span class="hn-link" id="nav-news" onclick="window.location.href='videos.html'">News &amp; Reviews <span class="hn-arrow">⌄</span></span>
+        <div class="nav-dd" style="min-width:240px">
+
+          <div class="nav-dd-hd">Watch &amp; Explore</div>
+          <div class="nav-dd-item" onclick="window.location.href='videos.html'">
+            <div class="nav-dd-item-title">Videos</div>
+            <div class="nav-dd-sub">New uploads &amp; trending reels</div>
+          </div>
+          <div class="nav-dd-item" onclick="window.location.href='videos.html?type=reviews'">
+            <div class="nav-dd-item-title">News &amp; Reviews</div>
+            <div class="nav-dd-sub">Latest news and reviews</div>
+          </div>
+          <div class="nav-dd-item" onclick="window.location.href='videos.html?type=shorts'">
+            <div class="nav-dd-item-title">Short Reels</div>
+            <div class="nav-dd-sub">Quick highlights &amp; clips</div>
+          </div>
+          <div class="nav-dd-item" onclick="window.location.href='videos.html?type=ev'">
+            <div class="nav-dd-item-title">EV Videos</div>
+            <div class="nav-dd-sub">Nepal EV revolution</div>
+          </div>
+
+          <div class="nav-dd-divider"></div>
+
+          <div class="nav-dd-hd">Latest News</div>
+          <div class="nav-dd-item" onclick="window.location.href='videos.html?type=ev'">
+            <div class="nav-dd-item-title">EV News</div>
+            <div class="nav-dd-sub">Nepal EV revolution</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('news',{tag:'upcoming'})">
+            <div class="nav-dd-item-title">Upcoming Launches</div>
+            <div class="nav-dd-sub">Price &amp; tax updates</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('news',{tag:'budget'})">
+            <div class="nav-dd-item-title">Budget, Excise &amp; Customs</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('news',{tag:'market'})">
+            <div class="nav-dd-item-title">Market Trends</div>
+          </div>
+
+          <div class="nav-dd-divider"></div>
+
+          <div class="nav-dd-hd">Guides &amp; Info</div>
+          <div class="nav-dd-item" onclick="AV.goTo('guide',{topic:'buying'})">
+            <div class="nav-dd-item-title">Buying Guide</div>
+            <div class="nav-dd-sub">Tips for Nepal buyers</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('guide',{topic:'maintenance'})">
+            <div class="nav-dd-item-title">Maintenance Tips</div>
+            <div class="nav-dd-sub">Nepal roads &amp; monsoon care</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('guide',{topic:'women'})">
+            <div class="nav-dd-item-title">Women &amp; Cars</div>
+            <div class="nav-dd-sub">Growing segment in Nepal</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('awards')">
+            <div class="nav-dd-item-title">Annual Nepal Car Awards</div>
+            <div class="nav-dd-sub">Best cars of the year</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'tmv'})">
+            <div class="nav-dd-item-title">True Market Value</div>
+            <div class="nav-dd-sub">What others paid in Nepal</div>
+          </div>
+
+        </div>
       </div>
-    </a>
-  </div>
-</div>
 
-<!-- Videos ▾ -->
-<div class="nav-dropdown">
- <span class="hn-link" id="nav-videos" onclick="window.location.href='videos.html'">
-  News & Reviews <span class="hn-arrow">⌄</span>
-</span>
-  <div class="nav-dd">
-    <div class="nav-dd-hd">Watch & Explore</div>
+      <!-- Smart Tools ▾ -->
+      <div class="nav-dropdown">
+        <span class="hn-link" id="nav-tools">Tools <span class="nav-badge nav-badge--orange" style="margin-left:2px">New</span> <span class="hn-arrow">⌄</span></span>
+        <div class="nav-dd" style="min-width:220px">
+          <div class="nav-dd-hd">Smart Tools</div>
+          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'matchmaker'})">
+            <div class="nav-dd-item-title">Find My Perfect Car</div>
+            <div class="nav-dd-sub">Answer questions, get matched</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'emi'})">
+            <div class="nav-dd-item-title">EMI Calculator</div>
+            <div class="nav-dd-sub">Estimate monthly payments</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'charging'})">
+            <div class="nav-dd-item-title">EV Charging Map</div>
+            <div class="nav-dd-sub">Find chargers near you</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'testdrive'})">
+            <div class="nav-dd-item-title">Test Drive at Home</div>
+          </div>
+          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'tmv'})">
+            <div class="nav-dd-item-title">True Market Value</div>
+            <div class="nav-dd-sub">What others paid in Nepal</div>
+          </div>
+        </div>
+      </div>
 
-    <div class="nav-dd-item" onclick="window.location.href='videos.html'">
-      <div class="nav-dd-item-title"> Videos</div>
-      <div class="nav-dd-sub">New uploads & trending reels</div>
-    </div>
+    </nav>
 
-    <div class="nav-dd-item" onclick="window.location.href='videos.html?type=reviews'">
-      <div class="nav-dd-item-title">News & Reviews</div>
-      <div class="nav-dd-sub">Latest news and reviews</div>
-    </div>
-
-    <div class="nav-dd-item" onclick="window.location.href='videos.html?type=shorts'">
-      <div class="nav-dd-item-title">Short Reels</div>
-      <div class="nav-dd-sub">Quick highlights & clips</div>
-    </div>
-
-    <div class="nav-dd-item" onclick="window.location.href='videos.html?type=ev'">
-      <div class="nav-dd-item-title">EV Videos</div>
-      <div class="nav-dd-sub">Electric cars in Nepal</div>
-    </div>
-  </div>
-</div>
-</nav>
     <div class="header-ctas">
-      
-<a href="book-service.html" class="btn-book">Book Service</a>
+      <a href="book-service.html" class="btn-book">Book Service</a>
     </div>
 
     <div class="mob-icons">
@@ -1458,7 +1894,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <div class="mobile-menu" id="mm">
   <div class="mm-backdrop" onclick="closeMM()"></div>
   <div class="mm-panel">
- 
+
     <!-- Search -->
     <div class="mm-search">
       <div class="mm-search-box">
@@ -1467,67 +1903,94 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
         <button onclick="AV.goTo('cars');closeMM()">Search</button>
       </div>
     </div>
- 
+
     <!-- Home -->
     <div class="mm-item">
-      <button class="mm-btn" onclick="AV.goTo('home');closeMM()">
-        <span>Home</span>
-      </button>
+      <button class="mm-btn" onclick="AV.goTo('home');closeMM()"><span>Home</span></button>
     </div>
- 
-  <!-- New Cars -->
-<div class="mm-item">
-  <button class="mm-btn" id="mm-cars-btn" onclick="
-    const sub = document.getElementById('mm-cars-sub');
-    const isOpen = sub.classList.contains('open');
-    document.querySelectorAll('.mm-sub').forEach(s => s.classList.remove('open'));
-    document.querySelectorAll('.mm-btn').forEach(b => b.classList.remove('open'));
-    if (!isOpen) { sub.classList.add('open'); this.classList.add('open'); }
-  ">
-    <span>New Cars</span>
-    <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13">
-      <polyline points="9 18 15 12 9 6"/>
-    </svg>
-  </button>
-  <div class="mm-sub" id="mm-cars-sub">
-    <div class="mm-sub-link" onclick="AV.goTo('cars');closeMM()">All New Cars</div>
-    <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'electric'});closeMM()">Electric Cars</div>
-    <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hybrid'});closeMM()">Hybrid Cars</div>
-    <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'suv'});closeMM()">SUVs</div>
-    <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'sedan'});closeMM()">Sedans</div>
-    <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hatchback'});closeMM()">Hatchbacks</div>
-  </div>
-</div>
+
+    <!-- New Cars -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-cars-btn" onclick="mmToggle('mm-cars-sub',this)">
+        <span>New Cars</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="mm-sub" id="mm-cars-sub">
+        <div class="mm-sub-label">By Body Type</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'suv'});closeMM()">SUV / Crossover</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'sedan'});closeMM()">Sedan</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hatchback'});closeMM()">Hatchback</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'pickup'});closeMM()">Pickup / Truck</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'van'});closeMM()">Van / MPV / Microbus</div>
+        <div class="mm-sub-label">By Fuel Type</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'electric'});closeMM()">Electric (EV)</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hybrid'});closeMM()">Hybrid</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'petrol'});closeMM()">Petrol</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'diesel'});closeMM()">Diesel</div>
+        <div class="mm-sub-label">By Terrain</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'mountain'});closeMM()">Mountain &amp; Hilly Roads</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'city'});closeMM()">City Commute</div>
+        <div class="mm-sub-label">By Budget</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'under20'});closeMM()">Under ₹20L</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'20to40'});closeMM()">₹20L – ₹40L</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'40to70'});closeMM()">₹40L – ₹70L</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'70to1cr'});closeMM()">₹70L – ₹1Cr</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'above1cr'});closeMM()">₹1Cr+</div>
+        <div class="mm-sub-label">Quick Finds</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{sort:'latest'});closeMM()">Latest Arrivals</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{sort:'upcoming'});closeMM()">Upcoming Launches</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{sort:'bestseller'});closeMM()">Best Sellers in Nepal</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{view:'brands'});closeMM()">Browse by Brand</div>
+      </div>
+    </div>
+
     <!-- Used Cars -->
     <div class="mm-item">
-      <button class="mm-btn" id="mm-used-btn">
+      <button class="mm-btn" id="mm-used-btn" onclick="mmToggle('mm-used-sub',this)">
         <span>Used Cars</span>
         <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
       <div class="mm-sub" id="mm-used-sub">
         <div class="mm-sub-link" onclick="AV.goTo('used');closeMM()">Browse Used Cars</div>
         <div class="mm-sub-link" onclick="alert('Sell enquiry: +977-9701076240');closeMM()">Sell Your Car</div>
-        <div class="mm-sub-link" onclick="AV.goTo('used');closeMM()">Certified Cars</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'certified'});closeMM()">Certified Cars</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{view:'history'});closeMM()">Vehicle History Report</div>
+        <div class="mm-sub-label">Filter By</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'year'});closeMM()">By Year</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'price'});closeMM()">By Price Range</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'mileage'});closeMM()">By Mileage</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'brand'});closeMM()">By Brand</div>
+        <div class="mm-sub-label">Finance</div>
+        <div class="mm-sub-link" onclick="AV.goTo('tools',{tool:'emi'});closeMM()">EMI Calculator</div>
+        <div class="mm-sub-link" onclick="AV.goTo('tools',{tool:'loan'});closeMM()">Loan Eligibility Check</div>
+        <div class="mm-sub-link" onclick="window.location.href='insurance-finance.html';closeMM()">Banks &amp; Finance Options</div>
       </div>
     </div>
- 
-    <!-- Compare Cars -->
+
+    <!-- Compare -->
     <div class="mm-item">
-      <button class="mm-btn" id="mm-compare-btn">
+      <button class="mm-btn" id="mm-compare-btn" onclick="mmToggle('mm-compare-sub',this)">
         <span>Compare Cars</span>
         <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
       <div class="mm-sub" id="mm-compare-sub">
         <div class="mm-sub-link" onclick="AV.goTo('compare');closeMM()">Start Comparison</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'nexon_ev_vs_byd_atto3'});closeMM()">Nexon EV vs BYD Atto 3</div>
         <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'mg_zs_vs_byd_atto3'});closeMM()">MG ZS EV vs BYD Atto 3</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'creta_vs_seltos'});closeMM()">Hyundai Creta vs Kia Seltos</div>
         <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'tata_nexon_vs_punch'});closeMM()">Tata Nexon vs Punch</div>
         <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'hyundai_venue_vs_sonet'});closeMM()">Venue vs Sonet</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'swift_vs_i20'});closeMM()">Maruti Swift vs Hyundai i20</div>
+        <div class="mm-sub-label">Smart Tools</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'truecost'});closeMM()">True Cost Calculator</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'roadscore'});closeMM()">Nepal Road Suitability Score</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'ownerscore'});closeMM()">Owner Satisfaction Score</div>
       </div>
     </div>
- 
+
     <!-- Services -->
     <div class="mm-item">
-      <button class="mm-btn" id="mm-services-btn">
+      <button class="mm-btn" id="mm-services-btn" onclick="mmToggle('mm-services-sub',this)">
         <span>Our Services</span>
         <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
@@ -1539,27 +2002,52 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
         <div class="mm-sub-link" onclick="window.location.href='other-services.html';closeMM()">Other Services</div>
       </div>
     </div>
- 
-    <!-- Videos -->
+
+    <!-- News & Reviews -->
     <div class="mm-item">
-      <button class="mm-btn" id="mm-videos-btn">
-        <span>Videos</span>
+      <button class="mm-btn" id="mm-news-btn" onclick="mmToggle('mm-news-sub',this)">
+        <span>News &amp; Reviews</span>
         <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
-      <div class="mm-sub" id="mm-videos-sub">
+      <div class="mm-sub" id="mm-news-sub">
         <div class="mm-sub-link" onclick="window.location.href='videos.html';closeMM()">Latest Videos</div>
         <div class="mm-sub-link" onclick="window.location.href='videos.html?type=reviews';closeMM()">Car Reviews</div>
         <div class="mm-sub-link" onclick="window.location.href='videos.html?type=shorts';closeMM()">Short Reels</div>
         <div class="mm-sub-link" onclick="window.location.href='videos.html?type=ev';closeMM()">EV Videos</div>
+        <div class="mm-sub-label">Latest News</div>
+        <div class="mm-sub-link" onclick="AV.goTo('news',{tag:'upcoming'});closeMM()">Upcoming Launches</div>
+        <div class="mm-sub-link" onclick="AV.goTo('news',{tag:'budget'});closeMM()">Budget &amp; Customs News</div>
+        <div class="mm-sub-link" onclick="AV.goTo('news',{tag:'market'});closeMM()">Market Trends</div>
+        <div class="mm-sub-label">Guides</div>
+        <div class="mm-sub-link" onclick="AV.goTo('guide',{topic:'buying'});closeMM()">Buying Guide</div>
+        <div class="mm-sub-link" onclick="AV.goTo('guide',{topic:'maintenance'});closeMM()">Maintenance Tips</div>
+        <div class="mm-sub-link" onclick="AV.goTo('guide',{topic:'women'});closeMM()">Women &amp; Cars</div>
+        <div class="mm-sub-link" onclick="AV.goTo('awards');closeMM()">Annual Nepal Car Awards</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'tmv'});closeMM()">True Market Value</div>
       </div>
     </div>
- 
+
+    <!-- Smart Tools -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-tools-btn" onclick="mmToggle('mm-tools-sub',this)">
+        <span>Smart Tools</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="mm-sub" id="mm-tools-sub">
+        <div class="mm-sub-link" onclick="AV.goTo('tools',{tool:'matchmaker'});closeMM()">Find My Perfect Car</div>
+        <div class="mm-sub-link" onclick="AV.goTo('tools',{tool:'emi'});closeMM()">EMI Calculator</div>
+        <div class="mm-sub-link" onclick="AV.goTo('tools',{tool:'charging'});closeMM()">EV Charging Map</div>
+        <div class="mm-sub-link" onclick="AV.goTo('tools',{tool:'testdrive'});closeMM()">Test Drive at Home</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'tmv'});closeMM()">True Market Value</div>
+      </div>
+    </div>
+
     <!-- CTA Buttons -->
     <div class="mm-cta">
       <button class="btn btn-ghost" onclick="alert('+977-9701076240');closeMM()">Sell My Car</button>
-      <button class="btn btn-primary" onclick="window.location.href='services.html'">Book Service</button>
+      <button class="btn btn-primary" onclick="window.location.href='book-service.html'">Book Service</button>
     </div>
- 
+
     <!-- Phone -->
     <div style="padding:14px 16px 20px;border-top:1px solid var(--bg2)">
       <a href="tel:+9779701076240" style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--g3)">
@@ -1568,9 +2056,10 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
       </a>
       <div style="font-size:12px;color:var(--ink4);margin-top:3px;margin-left:24px">Mon–Sat · 9am–6pm</div>
     </div>
- 
+
   </div>
 </div>
+
 <!-- ═══ COMPARE TRAY ═══ -->
 <div class="cmp-tray" id="cmp-tray">
   <span class="cmp-label">Compare</span>
@@ -1581,7 +2070,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </div>
 </div>
 
-
 <main id="app-root">
   <div style="display:flex;align-items:center;justify-content:center;height:60vh">
     <div style="text-align:center">
@@ -1590,69 +2078,95 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     </div>
   </div>
 </main>
-
 <!-- ═══ FOOTER ═══ -->
 <footer class="site-footer" id="site-footer">
   <div class="wrap">
     <div class="footer-grid">
+
+      <!-- Brand col -->
       <div>
         <div style="display:flex;align-items:center;">
-          <img 
-            src="assets/images/cars/logo.PNG" 
-            alt="AutoViindu Logo"
-            class="footer-logo-img"
-          >
+          <img src="assets/images/cars/logo.PNG" alt="AutoViindu Logo" class="footer-logo-img">
         </div>
         <p class="footer-desc">Nepal's most trusted automotive platform. Real prices, real specs, expert reviews.</p>
         <div class="footer-social">
-  <a class="fsoc" href="https://www.facebook.com/profile.php?id=61576845804927" title="Facebook" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.4)" width="14" height="14">
-      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-    </svg>
-  </a>
-  <a class="fsoc" href="https://www.instagram.com/autoviindu/" title="Instagram" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14" height="14">
-      <rect x="2" y="2" width="20" height="20" rx="5"/>
-      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-    </svg>
-  </a>
-  <a class="fsoc" href="https://www.youtube.com/@autoviindu" title="YouTube" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14" height="14">
-      <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
-      <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="rgba(255,255,255,.4)" stroke="none"/>
-    </svg>
-  </a>
-</div>
+          <a class="fsoc" href="https://www.facebook.com/profile.php?id=61576845804927" title="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.4)" width="14" height="14"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a class="fsoc" href="https://www.instagram.com/autoviindu/" title="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a class="fsoc" href="https://www.youtube.com/@autoviindu" title="YouTube" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14" height="14"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="rgba(255,255,255,.4)" stroke="none"/></svg>
+          </a>
+        </div>
       </div>
-     <div class="fcol">
-  <h4 class="fcol-title">Navigate</h4>
-  <ul>
-    <li><a onclick="AV.goTo('home')">Home</a></li>
-    <li><a onclick="AV.goTo('cars')">New Cars</a></li>
-    <li><a onclick="AV.goTo('used')">Used Cars</a></li>
-    <li><a onclick="AV.goTo('compare')">Compare Cars</a></li>
-    <li><a href="videos.html">Videos</a></li>
-  </ul>
-</div>
-<div class="fcol">
-  <h4 class="fcol-title">Services</h4>
-  <ul>
-   <li><a href="dotm-services.html" target="_blank" rel="noopener">DOTM Services</a></li>
-<li><a href="parts-accessories.html" target="_blank" rel="noopener">Parts & Accessories</a></li>
-<li><a href="maintenance-repairs.html" target="_blank" rel="noopener">Maintenance & Repairs</a></li>
-<li><a href="insurance-services.html" target="_blank" rel="noopener">Insurance & Financing</a></li>
-<li><a href="other-services.html" target="_blank" rel="noopener">Other Services</a></li>
-  </ul>
-</div>
-      <div class="fcol">
-        <h4 class="fcol-title">Contact</h4>
-        <ul>
-          <li><a href="tel:+9779701076240">+977-9701076240</a></li>
-          <li><a href="mailto:info@autoviindu.com">info@autoviindu.com</a></li>
-          <li><a>Nayabazar, Kathmandu</a></li>
-          <li><a>Mon–Sat · 9am–6pm</a></li>
-        </ul>
+
+      <!-- New Cars col -->
+      <div>
+        <div class="footer-col-title">New Cars</div>
+        <a class="footer-link" onclick="AV.goTo('cars',{filter:'suv'})">SUV / Crossover</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{filter:'sedan'})">Sedan</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{filter:'hatchback'})">Hatchback</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{filter:'electric'})">Electric (EV)</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{filter:'hybrid'})">Hybrid</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{sort:'upcoming'})">Upcoming Launches</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{view:'brands'})">Browse by Brand</a>
+      </div>
+
+      <!-- Used Cars col -->
+      <div>
+        <div class="footer-col-title">Used Cars</div>
+        <a class="footer-link" onclick="AV.goTo('used')">Browse Used Cars</a>
+        <a class="footer-link" onclick="alert('Sell enquiry: +977-9701076240')">Sell Your Car</a>
+        <a class="footer-link" onclick="AV.goTo('used',{filter:'certified'})">Certified Cars</a>
+        <a class="footer-link" onclick="AV.goTo('used',{view:'history'})">Vehicle History Report</a>
+        <a class="footer-link" onclick="AV.goTo('tools',{tool:'emi'})">EMI Calculator</a>
+        <a class="footer-link" href="insurance-finance.html">Finance Options</a>
+      </div>
+
+      <!-- Compare col -->
+      <div>
+        <div class="footer-col-title">Compare</div>
+        <a class="footer-link" onclick="AV.goTo('compare')">New Car Comparison</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{preset:'ev_vs_petrol'})">EV vs Petrol</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{preset:'hybrid_vs_ev'})">Hybrid vs EV</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{tool:'truecost'})">True Cost Calculator</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{tool:'specs'})">200+ Spec Comparison</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{tool:'roadscore'})">Nepal Road Score</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{tool:'ownerscore'})">Owner Satisfaction Score</a>
+      </div>
+
+      <!-- Services col -->
+      <div>
+        <div class="footer-col-title">Our Services</div>
+        <a class="footer-link" href="dotm-services.html">DOTM Services</a>
+        <a class="footer-link" href="parts-accessories.html">Parts &amp; Accessories</a>
+        <a class="footer-link" href="maintenance-repairs.html">Maintenance &amp; Repairs</a>
+        <a class="footer-link" href="insurance-finance.html">Insurance &amp; Financing</a>
+        <a class="footer-link" href="other-services.html">Other Services</a>
+        <a class="footer-link" href="book-service.html">Book Service</a>
+      </div>
+
+      <!-- News & Tools col -->
+      <div>
+        <div class="footer-col-title">News &amp; Tools</div>
+        <a class="footer-link" onclick="AV.goTo('guide',{topic:'buying'})">Buying Guide</a>
+        <a class="footer-link" onclick="AV.goTo('guide',{topic:'maintenance'})">Maintenance Tips</a>
+        <a class="footer-link" onclick="window.location.href='videos.html?type=ev'">EV News</a>
+        <a class="footer-link" onclick="AV.goTo('awards')">Annual Car Awards</a>
+        <a class="footer-link" onclick="AV.goTo('tools',{tool:'matchmaker'})">Find My Perfect Car</a>
+        <a class="footer-link" onclick="AV.goTo('tools',{tool:'charging'})">EV Charging Map</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{tool:'tmv'})">True Market Value</a>
+      </div>
+
+      <!-- Contact col -->
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <a class="footer-link" href="tel:+9779701076240">+977-9701076240</a>
+        <a class="footer-link" href="mailto:info@autoviindu.com">info@autoviindu.com</a>
+        <a class="footer-link">Nayabazar, Kathmandu</a>
+        <a class="footer-link">Mon–Sat · 9am–6pm</a>
         <div style="margin-top:14px;padding:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:var(--r10)">
           <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Quick Contact</div>
           <a href="tel:+9779701076240" style="display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:#4dd870">
@@ -1661,14 +2175,21 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
           </a>
         </div>
       </div>
-    </div>
+
+    </div><!-- /.footer-grid -->
+
     <div class="footer-bottom">
-      <span>© 2025 AutoViindu Pvt. Ltd. All rights reserved.</span>
-      <div class="fbot-links"><a>Privacy</a><a>Terms</a><a>Sitemap</a></div>
+      <span class="footer-bottom-txt">© 2025 AutoViindu Pvt. Ltd. All rights reserved. Nayabazar, Kathmandu.</span>
+      <span class="footer-bottom-txt">+977-9701076240 · Mon–Sat 9am–6pm</span>
+      <div class="fbot-links">
+        <a>Privacy</a>
+        <a>Terms</a>
+        <a>Sitemap</a>
+      </div>
     </div>
+
   </div>
 </footer>
-
 
 
   

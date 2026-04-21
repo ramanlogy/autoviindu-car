@@ -111,41 +111,45 @@ function toggleWish(slug,btn){
 }
 
 /* ─ CAR CARD ─ */
-const badgeCls={ev:'badge-ev',hybrid:'badge-hybrid',popular:'badge-popular',new:'badge-new',trending:'badge-trending'};
-const badgeLbl={ev:'Electric',hybrid:'Hybrid',popular:'Popular',new:'New',trending:'Trending'};
-function carCard(car){
-  const inCmp=compareList.includes(car.slug);
-  return`<div class="car-card" onclick="AV.openDetail('${car.slug}')">
+const badgeCls = {ev:'badge-ev',hybrid:'badge-hybrid',popular:'badge-popular',new:'badge-new',trending:'badge-trending'};
+const badgeLbl = {ev:'Electric',hybrid:'Hybrid',popular:'Popular',new:'New',trending:'Trending'};
+
+const carIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3v-5l2-5h14l2 5v5h-2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/><path d="M5 12h14"/></svg>`;
+
+function carCard(car) {
+  const inCmp = compareList.includes(car.slug);
+  const badge = car.badge ? `<span class="cc-badge ${badgeCls[car.badge]||'badge-popular'}">${badgeLbl[car.badge]||''}</span>` : '';
+  const isWished = wishlist.includes(car.slug);
+
+  return `<div class="car-card" onclick="AV.openDetail('${car.slug}')">
+
     <div class="cc-img">
+      <div class="cc-top-bar">
+        <div class="cc-top-left">
+          ${badge}
+          <span class="cc-top-name">${car.brand} ${car.model}</span>
+        </div>
+        <button class="cc-wish ${isWished?'active':''}" onclick="event.stopPropagation();AV.toggleWish('${car.slug}',this)">${IC.heart}</button>
+      </div>
       <img src="${car.images[0]}" alt="${car.brand} ${car.model}" loading="lazy">
-      <div class="cc-badges"><span class="cc-badge ${badgeCls[car.badge]||'badge-popular'}">${badgeLbl[car.badge]||''}</span></div>
-      <button class="cc-wish ${wishlist.includes(car.slug)?'active':''}" onclick="event.stopPropagation();AV.toggleWish('${car.slug}',this)">${IC.heart}</button>
-      <div class="cc-score">${IC.star} ${car.expertScore}/10</div>
-      <button class="cc-cmp ${inCmp?'added':''}" data-cmp="${car.slug}" onclick="event.stopPropagation();AV.toggleCompare('${car.slug}')">${inCmp?'✓ Added':'+ Compare'}</button>
     </div>
+
     <div class="cc-body">
-      <div class="cc-meta"><span class="cc-rating">${IC.star} ${fmtR(car.rating)}</span><span class="cc-reviews">${car.reviews} reviews</span></div>
       <div class="cc-name">${car.brand} ${car.model}</div>
-      <div class="cc-variant">${car.year} · ${car.body} · ${car.variants.length} variants</div>
-      <div class="cc-specs">
-        <span class="spec-pill">${car.type}</span>
-        <span class="spec-pill">${car.specs['Fuel Efficiency']||car.specs['Range (WLTP)']||''}</span>
-      </div>
-      <div class="cc-colors">
-        ${car.colors.slice(0,4).map(c=>`<span class="color-dot" style="background:${c.hex}" title="${c.name}"></span>`).join('')}
-        <span class="colors-more">${car.colors.length} colors · ${car.variants.length} vars</span>
-      </div>
-      <div class="cc-price-row">
-        <div class="cc-from">Starting from</div>
-        <div class="cc-price">${car.variants[0].label}</div>
-        <div class="cc-emi">EMI from <strong>Rs. ${car.baseEMI.toLocaleString()}/mo</strong></div>
+      <div class="cc-variant">${car.year} · ${car.body}</div>
+
+      <div class="cc-price-block">
+        <div class="cc-price-line">Price <strong>Rs. ${car.variants[0].label}</strong></div>
+        <div class="cc-emi">EMI From <strong>Rs. ${car.baseEMI.toLocaleString()}/mo</strong></div>
         <div class="cc-actions">
-          <button class="cc-btn-o" onclick="event.stopPropagation();alert('Call: +977-9701076240')">Get Price</button>
-          <button class="cc-btn-f" onclick="event.stopPropagation();AV.openDetail('${car.slug}')">Details</button>
+          <button class="cc-btn-f" onclick="event.stopPropagation();alert('Call: +977-9701076240')">Get Price</button>
+          <button class="cc-btn-o ${inCmp?'added':''}" onclick="event.stopPropagation();AV.toggleCompare('${car.slug}')">
+            ${carIcon} ${inCmp ? 'Added' : 'Compare'}
+          </button>
         </div>
       </div>
     </div>
-    
+
   </div>`;
 }
 
@@ -1432,293 +1436,414 @@ function setTenure2(m, slug, vi){
   document.querySelectorAll('.ten-btn').forEach(b=>b.classList.toggle('active', parseInt(b.textContent)===m));
   recalcEmi(slug, vi);
 }
-function renderDetail(slug){
+/* ─ ACCORDION TOGGLE (global — called from onclick) ─ */
+function dpAccord(hd) {
+  hd.closest('.dp-accord-wrap').classList.toggle('open');
+}
+
+/* ─ DETAIL PAGE v2 ─ */
+function renderDetail(slug) {
   const car = carBySlug(slug);
-  if(!car){ goTo('cars'); return; }
+  if (!car) { goTo('cars'); return; }
+
   clearInterval(heroTimer);
-  if(activeVariant[slug] == null) activeVariant[slug] = 0;
+  if (activeVariant[slug] == null) activeVariant[slug] = 0;
   document.title = `${car.brand} ${car.model} ${car.year} — AutoViindu`;
-  window.scrollTo({top:0,behavior:'smooth'});
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   setNav('');
 
   const vi = () => activeVariant[slug];
   const vr = () => car.variants[vi()];
 
-  /* build the variant spec panel (shows under dropdown) */
-  function specPanel(v){
-    const sp = v.specs ? `
-      <div class="vspec-grid">
-        ${Object.entries(v.specs).map(([k,val])=>`
-          <div class="vspec-cell">
-            <div class="vspec-val">${val}</div>
-            <div class="vspec-lbl">${k}</div>
-          </div>`).join('')}
-      </div>` : '';
-    const feats = (v.features||[]).map(f=>`
-      <div class="vspec-feat"><div class="vspec-feat-dot"></div>${f}</div>`).join('');
-    return `<div class="vspec-panel">
-      ${sp}
-      <div class="vspec-features">${feats}</div>
+  /* ── SVG icon paths (inner content only, wrapped by svgI()) ── */
+  const _P = {
+    cal:  `<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>`,
+    fuel: `<path d="M3 22V6l4-4h6l4 4v16"/><path d="M9 22V12h6v10"/><rect x="17" y="10" width="4" height="4"/>`,
+    pow:  `<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>`,
+    body: `<path d="M5 17H3v-5l2-5h14l2 5v5h-2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/><line x1="5" y1="12" x2="19" y2="12"/>`,
+    sts:  `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+    box:  `<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>`,
+    list: `<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>`,
+    feat: `<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>`,
+    col:  `<circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>`,
+    pros: `<path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>`,
+    calc: `<rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/>`,
+    chk:  `<polyline points="20 6 9 17 4 12"/>`,
+    chev: `<polyline points="6 9 12 15 18 9"/>`,
+    ph:   `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l1.84-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`,
+  };
+  const svgI = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${_P[k]}</svg>`;
+
+  /* ── Key info grid ── */
+  function kiGrid(v) {
+    const sp = k => v.specs?.[k] || car.specs?.[k];
+    return [
+      { k:'cal',  val: car.year,                                    lbl:'Year'      },
+      { k:'fuel', val: car.type || sp('Fuel Type') || 'Petrol',    lbl:'Fuel'      },
+      { k:'pow',  val: sp('Power') || sp('Motor Power') || '—',    lbl:'Power'     },
+      { k:'body', val: car.body,                                    lbl:'Body'      },
+      { k:'sts',  val: sp('Seating') || '5',                        lbl:'Seats'     },
+      { k:'box',  val: sp('Boot Space') || '—',                     lbl:'Boot'      },
+    ].map(it => `
+      <div class="dp-ki-cell">
+        <div class="dp-ki-icon">${svgI(it.k)}</div>
+        <div class="dp-ki-val">${it.val}</div>
+        <div class="dp-ki-lbl">${it.lbl}</div>
+      </div>`).join('');
+  }
+
+  /* ── Quick stats strip ── */
+  function qsStrip(v) {
+    const sp = k => v.specs?.[k] || car.specs?.[k];
+    return [
+      ['Power',       sp('Power') || sp('Motor Power')],
+      ['Torque',      sp('Torque')],
+      ['Efficiency',  sp('Fuel Efficiency') || sp('Range (WLTP)')],
+      ['0–100 km/h',  sp('0–100 km/h')],
+      ['Top Speed',   sp('Top Speed')],
+      ['Seating',     sp('Seating')],
+    ].filter(([,val]) => val).map(([l,val]) => `
+      <div class="dp-qs-cell">
+        <div class="dp-qs-val">${val}</div>
+        <div class="dp-qs-lbl">${l}</div>
+      </div>`).join('');
+  }
+
+  /* ── Variant tabs ── */
+  function varTabs() {
+    return car.variants.map((v, i) => `
+      <div class="dp-var-tab${i===vi()?' active':''}" onclick="AV.switchVariant('${slug}',${i})">
+        <div class="dp-var-tab-name">${v.name}</div>
+        <div class="dp-var-tab-price">${v.label}</div>
+        ${v.popular ? '<div class="dp-var-tab-best">★ Best Value</div>' : ''}
+      </div>`).join('');
+  }
+
+  /* ── Spec table (merges car + variant specs) ── */
+  function specTable(v) {
+    const merged = Object.assign({}, car.specs, v.specs || {});
+    return `<table class="dp-spec-table">
+      ${Object.entries(merged).map(([k,val]) => `<tr><td>${k}</td><td>${val}</td></tr>`).join('')}
+    </table>`;
+  }
+
+  /* ── Features / highlights grid ── */
+  function featGrid(v) {
+    const all = [...new Set([...(v.features||[]), ...(car.highlights||[])])];
+    if (!all.length) return `<p style="font-size:13px;color:var(--ink4)">No feature data for this variant.</p>`;
+    return `<div class="dp-feat-grid">
+      ${all.map(f => `<div class="dp-feat-item"><div class="dp-feat-chk">${svgI('chk')}</div><span>${f}</span></div>`).join('')}
     </div>`;
   }
 
-  /* base spec table */
-  function baseSpecTable(){
-    return Object.entries(car.specs).map(([k,v])=>`
-      <tr><td>${k}</td><td>${v}</td></tr>`).join('');
+  /* ── Colour swatches ── */
+  function colSection() {
+    return `<div class="dp-colors" id="dp-cols">
+      ${car.colors.map((c,i) => `
+        <div class="dp-color-swatch${i===0?' active':''}" onclick="AV.pickColor(this,'${c.name}')">
+          <div class="dp-color-dot" style="background:${c.hex}"></div>
+          <div class="dp-color-name">${c.name}</div>
+        </div>`).join('')}
+    </div>
+    <div style="font-size:13px;color:var(--ink3);margin-top:10px">
+      Selected: <strong id="dp-color-name">${car.colors[0].name}</strong>
+    </div>`;
   }
 
-  /* full sidebar HTML */
-  function sidebarHTML(){
-    const v = vr();
+  /* ── EMI calculator HTML (prefix keeps desktop & mobile IDs unique) ── */
+  function emiHTML(v, pfx) {
+    const dp=20, dt=60, dr=10.5;
+    const loan = v.price*(1-dp/100);
+    const emi  = calcEMI(loan,dr,dt);
+    const tot  = emi*dt, intr = tot-loan;
     return `
-      <div class="dp-sidebar-inner">
-
-        <!-- variant dropdown -->
-        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink4);margin-bottom:6px">
-          Choose variant
+      <div class="dp-emi-field">
+        <div class="dp-emi-label">Down payment <span class="val" id="${pfx}-dpv">${dp}%</span></div>
+        <input type="range" min="10" max="60" step="5" value="${dp}" id="${pfx}-dp"
+          oninput="document.getElementById('${pfx}-dpv').textContent=this.value+'%';AV.emiCalc('${slug}','${pfx}')">
+      </div>
+      <div class="dp-emi-field">
+        <div class="dp-emi-label">Tenure <span class="val"><span id="${pfx}-ten">${dt}</span> months</span></div>
+        <div class="tenure-btns">
+          ${[12,24,36,48,60,72,84].map(m=>`<button class="ten-btn${m===dt?' active':''}"
+            onclick="this.closest('.tenure-btns').querySelectorAll('.ten-btn').forEach(b=>b.classList.remove('active'));
+                     this.classList.add('active');
+                     document.getElementById('${pfx}-ten').textContent=${m};
+                     AV.emiCalc('${slug}','${pfx}')">${m}m</button>`).join('')}
         </div>
-        <div class="vdrop-wrap">
-          <select class="vdrop-select" id="vdrop" onchange="AV.switchVariant('${slug}',this.value)">
-            ${car.variants.map((v,i)=>`
-              <option value="${i}" ${i===vi()?'selected':''}>${v.name} — ${v.label}${v.popular?' ★ Best value':''}</option>`
-            ).join('')}
-          </select>
-          <div class="vdrop-arrow">
-            <svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="2 4 6 8 10 4"/>
-            </svg>
-          </div>
-        </div>
+      </div>
+      <div class="dp-emi-field">
+        <div class="dp-emi-label">Interest rate <span class="val" id="${pfx}-ratev">${dr}%</span></div>
+        <input type="range" min="7" max="18" step="0.5" value="${dr}" id="${pfx}-rate"
+          oninput="document.getElementById('${pfx}-ratev').textContent=this.value+'%';AV.emiCalc('${slug}','${pfx}')">
+      </div>
+      <div class="dp-emi-result">
+        <div style="font-size:10px;color:var(--ink4);margin-bottom:2px">Monthly EMI</div>
+        <div class="dp-emi-amount" id="${pfx}-amt">Rs. ${Math.round(emi).toLocaleString()}</div>
+        <div style="font-size:11px;color:var(--ink4)">/month</div>
+      </div>
+      <div class="dp-emi-break">
+        <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-loan">${Rs(Math.round(loan))}</div><div class="dp-emi-bd-lbl">Loan amount</div></div>
+        <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-int">${Rs(Math.round(intr))}</div><div class="dp-emi-bd-lbl">Interest</div></div>
+        <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-tot">${Rs(Math.round(tot))}</div><div class="dp-emi-bd-lbl">Total payable</div></div>
+        <div class="dp-emi-bd"><div class="dp-emi-bd-val">${v.label}</div><div class="dp-emi-bd-lbl">Vehicle price</div></div>
+      </div>
+      <button onclick="alert('Finance: +977-9701076240')" class="dp-cta-ghost" style="margin-top:10px;width:100%">Apply for finance →</button>`;
+  }
 
-        <!-- variant spec panel -->
-        <div id="vspec-panel">${specPanel(v)}</div>
-
-        <!-- price -->
-        <div class="dp-price-row">
-          <div class="dp-price" id="dp-price">${v.label}</div>
-        </div>
-        <div class="dp-price-note" id="dp-variant-name">Ex-showroom · ${v.name} — contact for on-road price</div>
-
-        <!-- CTAs -->
+  /* ── Sidebar card ── */
+  function sidebarHTML() {
+    const v = vr();
+    return `<div class="dp-scard">
+      <div class="dp-price-box">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink4);margin-bottom:4px">Ex-showroom price</div>
+        <div class="dp-price-main" id="dp-price-d">${v.label}</div>
+        <div class="dp-price-note" id="dp-var-note">${v.name} · Contact for on-road price</div>
         <div class="dp-cta-stack">
           <button class="dp-cta-primary" onclick="alert('+977-9701076240')">Get best price</button>
           <button class="dp-cta-gold" onclick="alert('Test drive: +977-9701076240')">Book test drive</button>
-          <button class="dp-cta-ghost" data-cmp="${slug}" onclick="AV.toggleCompare('${slug}')">
-            ${compareList.includes(slug)?'✓ In compare':'Add to compare'}
+          <button class="dp-cta-ghost" id="cmp-sb" onclick="AV.toggleCompare('${slug}')">
+            ${compareList.includes(slug)?'✓ In compare':'+ Add to compare'}
           </button>
         </div>
+      </div>
+      <div class="dp-emi-box">
+        <div class="dp-emi-hd">${svgI('calc')} EMI Calculator</div>
+        <div id="emi-sb-wrap">${emiHTML(v,'sb')}</div>
+      </div>
+      <div class="dp-contact-row">
+        ${svgI('ph')} <a href="tel:+9779701076240">+977-9701076240</a>&nbsp;·&nbsp;Mon–Sat 9am–6pm
+      </div>
+    </div>`;
+  }
 
-        <div class="dp-contact">
-          <a href="tel:+9779701076240">+977-9701076240</a> &nbsp;·&nbsp;
-          Nayabazar, Kathmandu · Mon–Sat 9am–6pm
+  /* ── Accordion builder ── */
+  function accord(id, iconKey, title, body, open=false) {
+    return `<div class="dp-accord-wrap${open?' open':''}" id="${id}">
+      <div class="dp-accord-hd" onclick="dpAccord(this)">
+        <div class="dp-accord-title">${svgI(iconKey)} ${title}</div>
+        <div class="dp-accord-arr">${svgI('chev')}</div>
+      </div>
+      <div class="dp-accord-body">${body}</div>
+    </div>`;
+  }
+
+  /* ── Pros & Cons body ── */
+  function pcBody() {
+    return `<div class="dp-pc-grid">
+      ${car.pros?`<div class="dp-pros"><div class="dp-pc-title" style="color:#16a34a">✓ Best features</div>
+        ${car.pros.map(p=>`<div class="dp-pc-item"><span style="color:#16a34a;flex-shrink:0">${IC.check}</span>${p}</div>`).join('')}
+      </div>`:''}
+      ${car.cons?`<div class="dp-cons"><div class="dp-pc-title" style="color:#dc2626">Considerations</div>
+        ${car.cons.map(p=>`<div class="dp-pc-item"><span style="color:#dc2626;flex-shrink:0">—&nbsp;</span>${p}</div>`).join('')}
+      </div>`:''}
+    </div>
+    <div class="dp-score-bar" style="margin-top:12px">
+      <div class="dp-score-num">${car.expertScore}</div>
+      <div style="flex:1">
+        <div style="font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:6px">AutoViindu expert score</div>
+        <div style="height:6px;background:var(--bg3);border-radius:var(--pill);overflow:hidden">
+          <div style="height:100%;width:${car.expertScore*10}%;background:var(--g3);border-radius:var(--pill)"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--ink5);margin-top:3px">
+          <span>Poor</span><span>Good</span><span>Excellent</span>
         </div>
       </div>
-
-      <!-- EMI calculator -->
-      <div class="dp-emi" id="dp-emi-wrap">
-        ${buildEmiHTML(car, vi())}
-      </div>`;
+    </div>`;
   }
 
-  /* main content left col */
-  function mainHTML(){
-    const v = vr();
-    return `
-      <div class="dp-main">
-        <div id="gal-wrap"></div>
-
-        <div class="dp-tabs-wrap">
-          <div class="dp-tabs">
-            <button class="dp-tab active" onclick="AV.dpTab(this,'pane-ov')">Overview</button>
-            <button class="dp-tab" onclick="AV.dpTab(this,'pane-sp')">Specifications</button>
-            <button class="dp-tab" onclick="AV.dpTab(this,'pane-col')">Colours</button>
-            <button class="dp-tab" onclick="AV.dpTab(this,'pane-pc')">Highlights</button>
-          </div>
-        </div>
-
-        <!-- OVERVIEW -->
-        <div class="dp-pane active" id="pane-ov">
-          <div class="dp-tagline">"${car.tagline}"</div>
-          <div class="dp-overview">${car.overview}</div>
-          <div class="dp-qs-grid">
-            ${[['Power',car.specs['Power']||car.specs['Motor Power']],
-               ['Torque',car.specs['Torque']],
-               ['Efficiency',car.specs['Fuel Efficiency']||car.specs['Range (WLTP)']],
-               ['0–100',car.specs['0–100 km/h']],
-               ['Seating',car.specs['Seating']],
-               ['Boot',car.specs['Boot Space']]]
-              .filter(([,v])=>v)
-              .map(([l,v])=>`
-                <div class="dp-qs-cell">
-                  <div class="dp-qs-val">${v}</div>
-                  <div class="dp-qs-lbl">${l}</div>
-                </div>`).join('')}
-          </div>
-          <div class="dp-highlights">
-            ${(car.highlights||[]).map(h=>`<span class="dp-hl-tag">${h}</span>`).join('')}
-          </div>
-        </div>
-
-        <!-- SPECS -->
-        <div class="dp-pane" id="pane-sp">
-          <table class="dp-spec-table" id="dp-spec-table">
-            ${baseSpecTable()}
-          </table>
-        </div>
-
-        <!-- COLOURS -->
-        <div class="dp-pane" id="pane-col">
-          <div style="font-size:12.5px;color:var(--ink4);margin-bottom:14px">
-            ${car.colors.length} colours available — tap to preview
-          </div>
-          <div class="dp-colors">
-            ${car.colors.map((c,i)=>`
-              <div class="dp-color-swatch ${i===0?'active':''}"
-                onclick="AV.pickColor(this,'${c.name}')">
-                <div class="dp-color-dot" style="background:${c.hex}"></div>
-                <div class="dp-color-name">${c.name}</div>
-              </div>`).join('')}
-          </div>
-          <div style="font-size:13px;color:var(--ink3);margin-top:4px">
-            Selected: <strong id="dp-color-name">${car.colors[0].name}</strong>
-          </div>
-        </div>
-
-        <!-- PROS & CONS -->
-        <div class="dp-pane" id="pane-pc">
-          <div class="dp-pc-grid">
-            <div class="dp-pros">
-              <div class="dp-pc-title" style="color:#16a34a">Best features</div>
-              ${car.pros.map(p=>`
-                <div class="dp-pc-item">
-                  <span style="color:#16a34a;flex-shrink:0">${IC.check}</span>${p}
-                </div>`).join('')}
-            </div>
-           
-          </div>
-          <div class="dp-score-bar">
-            <div class="dp-score-num">${car.expertScore}</div>
-            <div class="dp-score-track">
-              <div style="font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:6px">AutoViindu expert score</div>
-              <div style="height:6px;background:var(--bg3);border-radius:var(--pill);overflow:hidden">
-                <div class="dp-score-fill" style="width:${car.expertScore*10}%"></div>
-              </div>
-              <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--ink5);margin-top:3px">
-                <span>Poor</span><span>Good</span><span>Excellent</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- similar cars -->
-        <div style="padding:20px;border-top:1px solid var(--border)">
-          <div style="font-family:var(--font-d);font-size:19px;font-weight:700;color:var(--ink);margin-bottom:12px">
-            Similar cars
-          </div>
-          <div class="cars-grid" style="grid-template-columns:repeat(2,1fr)">
-            ${CARS_DB.filter(c=>c.slug!==slug&&(c.body===car.body||c.type===car.type)).slice(0,4).map(c=>carCard(c)).join('')}
-          </div>
-        </div>
-      </div>`;
+  /* ── Similar cars ── */
+  function similarCars() {
+    const similar = CARS_DB.filter(c=>c.slug!==slug&&(c.body===car.body||c.type===car.type)).slice(0,4);
+    if (!similar.length) return '';
+    return `<div class="dp-similar">
+      <div class="section-hd">Similar cars</div>
+      <div class="cars-grid" style="grid-template-columns:repeat(2,1fr)">
+        ${similar.map(c=>carCard(c)).join('')}
+      </div>
+    </div>`;
   }
 
-  /* render */
+  /* ── RENDER ── */
+  const v0 = vr();
   document.getElementById('app-root').innerHTML = `
-  <div class="page-hero">
+  <div style="background:linear-gradient(160deg,var(--g0),var(--g1));padding:14px 0 16px;position:relative;overflow:hidden">
     <div class="wrap">
       <div class="breadcrumb">
         <a onclick="AV.goTo('home')">Home</a><span class="bc-sep">/</span>
         <a onclick="AV.goTo('cars')">Cars</a><span class="bc-sep">/</span>
-        <span style="color:rgba(255,255,255,.75)">${car.brand} ${car.model}</span>
+        <span style="color:rgba(255,255,255,.7)">${car.brand} ${car.model}</span>
       </div>
-      <h1 style="font-family:var(--font-d);font-size:clamp(22px,4vw,34px);color:#fff;font-weight:700;line-height:1.1;margin-bottom:6px">
-        ${car.brand} ${car.model} <span style="color:var(--gold-t)">${car.year}</span>
-      </h1>
-      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-        <span style="font-size:12px;color:rgba(255,255,255,.4)">${car.type} · ${car.body} · ${car.variants.length} variants</span>
-        <span class="cc-rating">${IC.star} ${fmtR(car.rating)}</span>
-        <span style="font-size:11.5px;color:rgba(255,255,255,.3)">${car.reviews} reviews</span>
+      <!-- Desktop title only — hidden on mobile via JS -->
+      <div id="dp-desk-hd" style="display:none">
+        <h1 style="font-family:var(--font-d);font-size:clamp(22px,3.5vw,32px);color:#fff;font-weight:700;line-height:1.1;margin-bottom:5px">
+          ${car.brand} ${car.model} <span style="color:var(--gold-t)">${car.year}</span>
+        </h1>
+        <div style="font-size:12px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          ${car.type} · ${car.body} · ${car.variants.length} variants
+          <span class="cc-rating">${IC.star} ${fmtR(car.rating)}</span>
+          <span>${car.reviews} reviews</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="detail-layout">
-    <!-- on mobile: sidebar (price+variant) comes first, gallery below -->
-    <div class="detail-sidebar" style="order:0">
+  <div class="wrap dp-layout detail-page-body">
+
+    <!-- ═══ LEFT: main content ═══ -->
+    <div style="min-width:0">
+
+      <!-- Gallery -->
+      <div class="dp-gallery-card"><div id="gal-wrap"></div></div>
+
+      <!-- Quick stats horizontal strip -->
+      <div class="dp-qs-strip" id="dp-qs">${qsStrip(v0)}</div>
+
+      <!-- Mobile title (hidden on desktop) -->
+      <div class="dp-mob-title">
+        <h1>${car.brand} ${car.model} <span style="color:var(--gold-t)">${car.year}</span></h1>
+        <div class="dp-mob-title-sub">
+          ${car.type} · ${car.body} · ${car.variants.length} variants
+          <span class="cc-rating">${IC.star} ${fmtR(car.rating)}</span>
+        </div>
+      </div>
+
+      <!-- Variant tabs -->
+      <div class="dp-var-wrap">
+        <div class="dp-var-lbl">Choose variant</div>
+        <div class="dp-var-tabs" id="dp-vtabs">${varTabs()}</div>
+      </div>
+
+      <!-- Key info grid with icons -->
+      <div class="dp-ki-wrap"><div class="dp-ki-grid" id="dp-ki">${kiGrid(v0)}</div></div>
+
+      ${car.tagline||car.overview?`
+      <div style="padding:14px 16px;background:var(--white);border-bottom:1px solid var(--border)">
+        ${car.tagline?`<p style="font-size:14px;color:var(--ink3);line-height:1.75;font-style:italic;margin-bottom:${car.overview?'10px':'0'}">"${car.tagline}"</p>`:''}
+        ${car.overview?`<p style="font-size:13.5px;color:var(--ink3);line-height:1.85;margin:0">${car.overview}</p>`:''}
+      </div>`:''}
+
+      <!-- Specifications (open by default) -->
+      ${accord('acc-spec','list','Specifications',`<div id="spec-body">${specTable(v0)}</div>`,true)}
+
+      <!-- Features & Highlights -->
+      ${(v0.features||car.highlights||[]).length ? accord('acc-feat','feat','Features & Highlights',`<div id="feat-body">${featGrid(v0)}</div>`) : ''}
+
+      <!-- Available Colours -->
+      ${accord('acc-col','col',`Available Colours <span style="font-size:11px;color:var(--ink4);font-weight:600">(${car.colors.length})</span>`,colSection())}
+
+      <!-- EMI Calculator — mobile accordion, hidden on desktop -->
+      <div class="dp-mob-emi-acc">
+        ${accord('acc-emi','calc','EMI Calculator',`<div id="emi-mob-wrap">${emiHTML(v0,'mob')}</div>`)}
+      </div>
+
+      <!-- Pros & Cons / Expert score -->
+      ${(car.pros||car.cons)?accord('acc-pc','pros','Pros & Highlights',pcBody()):''}
+
+      <!-- Similar cars -->
+      ${similarCars()}
+    </div>
+
+    <!-- ═══ RIGHT: sticky sidebar (desktop only) ═══ -->
+    <div class="dp-sidebar" id="dp-sidebar">
       ${sidebarHTML()}
     </div>
-    <div style="order:1;min-width:0">
-      ${mainHTML()}
+  </div>
+
+  <!-- Mobile sticky bottom bar -->
+  <div class="dp-mob-bar">
+    <div class="dp-mob-price">
+      <div class="dp-mob-price-lbl">Ex-showroom from</div>
+      <div class="dp-mob-price-val" id="dp-mob-price">${v0.label}</div>
+    </div>
+    <div class="dp-mob-btns">
+      <button class="dp-mob-btn-g" onclick="alert('Test drive: +977-9701076240')">Test Drive</button>
+      <button class="dp-mob-btn-p" onclick="alert('+977-9701076240')">Get Price</button>
     </div>
   </div>`;
 
-  /* on desktop flip order: gallery left, sidebar right */
+  /* desktop: show hero title + sidebar */
   const mq = window.matchMedia('(min-width:900px)');
-  function applyOrder(e){
-    const sidebar = document.querySelector('.detail-sidebar');
-    const main    = document.querySelector('.detail-layout > div:last-child');
-    if(sidebar && main){
-      sidebar.style.order = e.matches ? '2' : '0';
-      main.style.order    = e.matches ? '1' : '1';
-    }
+  function applyMQ(e) {
+    const dh = document.getElementById('dp-desk-hd');
+    const sb = document.getElementById('dp-sidebar');
+    if (dh) dh.style.display = e.matches ? 'block' : 'none';
+    if (sb) sb.style.display = e.matches ? 'flex'  : 'none';
   }
-  applyOrder(mq);
-  mq.addEventListener('change', applyOrder);
+  applyMQ(mq);
+  mq.addEventListener('change', applyMQ);
 
   buildGallery(car, 'gal-wrap');
   updateCompareTray();
   updateCmpBtns();
 
-  /* ── variant switch ── */
-  AV.switchVariant = function(s, idx){
-    if(s !== slug) return;
+  /* ── EMI recalc ── */
+  AV.emiCalc = function(s, pfx) {
+    const v    = car.variants[activeVariant[s]||0];
+    const dpPct= +(document.getElementById(`${pfx}-dp`)?.value    || 20);
+    const ten  = +(document.getElementById(`${pfx}-ten`)?.textContent || 60);
+    const rate = +(document.getElementById(`${pfx}-rate`)?.value   || 10.5);
+    const loan = v.price*(1-dpPct/100);
+    const emi  = calcEMI(loan,rate,ten);
+    const tot  = emi*ten;
+    const set  = (id,val) => { const el=document.getElementById(id); if(el) el.textContent=val; };
+    set(`${pfx}-amt`,  `Rs. ${Math.round(emi).toLocaleString()}`);
+    set(`${pfx}-loan`, Rs(Math.round(loan)));
+    set(`${pfx}-int`,  Rs(Math.round(tot-loan)));
+    set(`${pfx}-tot`,  Rs(Math.round(tot)));
+  };
+
+  /* ── Variant switch — updates EVERYTHING instantly ── */
+  AV.switchVariant = function(s, idx) {
+    if (s !== slug) return;
     const i = parseInt(idx);
     activeVariant[slug] = i;
     const v = car.variants[i];
 
-    /* dropdown stays in sync if called programmatically */
-    const dd = document.getElementById('vdrop');
-    if(dd) dd.value = i;
+    /* variant tab highlight */
+    document.querySelectorAll('.dp-var-tab').forEach((t,ti) => t.classList.toggle('active', ti===i));
 
-    /* price label */
-    const dp = document.getElementById('dp-price');
-    const dn = document.getElementById('dp-variant-name');
-    if(dp) dp.textContent = v.label;
-    if(dn) dn.textContent = `Ex-showroom · ${v.name} — contact for on-road price`;
+    /* price displays */
+    const setText = (id,val) => { const el=document.getElementById(id); if(el) el.textContent=val; };
+    setText('dp-price-d',  v.label);
+    setText('dp-var-note', `${v.name} · Contact for on-road price`);
+    setText('dp-mob-price', v.label);
 
-    /* spec panel */
-    const sp = document.getElementById('vspec-panel');
-    if(sp) sp.innerHTML = specPanel(v);
+    /* key info grid */
+    const ki = document.getElementById('dp-ki');
+    if (ki) ki.innerHTML = kiGrid(v);
 
-    /* compare button label */
-    updateCmpBtns();
+    /* quick stats strip */
+    const qs = document.getElementById('dp-qs');
+    if (qs) qs.innerHTML = qsStrip(v);
+
+    /* spec table */
+    const sp = document.getElementById('spec-body');
+    if (sp) sp.innerHTML = specTable(v);
+
+    /* features */
+    const ft = document.getElementById('feat-body');
+    if (ft) ft.innerHTML = featGrid(v);
+
+    /* both EMI calculators */
+    const emiSb  = document.getElementById('emi-sb-wrap');
+    if (emiSb)  emiSb.innerHTML  = emiHTML(v,'sb');
+    const emiMob = document.getElementById('emi-mob-wrap');
+    if (emiMob) emiMob.innerHTML = emiHTML(v,'mob');
 
     /* gallery — swap if variant has own images */
     buildGallery(v.images ? {...car, images:v.images} : car, 'gal-wrap');
-
-    /* emi */
-    const ew = document.getElementById('dp-emi-wrap');
-    if(ew) ew.innerHTML = buildEmiHTML(car, i);
+    updateCmpBtns();
   };
 
-  /* colour picker */
-  AV.pickColor = function(el, name){
-    document.querySelectorAll('.dp-color-swatch').forEach(s=>s.classList.remove('active'));
+  /* ── Colour picker ── */
+  AV.pickColor = function(el, name) {
+    document.querySelectorAll('.dp-color-swatch').forEach(s => s.classList.remove('active'));
     el.classList.add('active');
     const cn = document.getElementById('dp-color-name');
-    if(cn) cn.textContent = name;
+    if (cn) cn.textContent = name;
   };
 }
-
-/* ── tab switcher ── */
-function dpTab(btn, paneId){
-  document.querySelectorAll('.dp-tab').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.dp-pane').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(paneId)?.classList.add('active');
-}
-
 /* keep old dtab working for anything still calling it */
 function dtab(btn, paneId){ dpTab(btn, paneId); }
 
@@ -2514,8 +2639,8 @@ window.AV={
   updateEMI,setTenure,getVI,
   homeFilter,filterList,sortList,
   swSearch,submitForm,
-  heroNav,heroGo,updateCompareTray,dpTab, recalcEmi, setTenure2,
-   openUsedDetail, filterUsed, sortUsed, chipFilterUsed, renderUsed,
+  heroNav,heroGo,updateCompareTray, recalcEmi, setTenure2,
+   openUsedDetail, filterUsed, sortUsed, chipFilterUsed, renderUsed,dpAccord,
 };
 
 
