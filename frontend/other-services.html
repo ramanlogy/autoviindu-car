@@ -52,12 +52,16 @@
     .nav-strip { background:var(--white); border-bottom:1px solid var(--border); }
     .nav-strip-inner { display:grid; grid-template-columns:repeat(2,1fr); }
     @media(min-width:640px){ .nav-strip-inner{ grid-template-columns:repeat(4,1fr); } }
-    .nav-item { display:flex; flex-direction:column; gap:4px; padding:18px 16px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); }
+    .nav-item { display:flex; flex-direction:column; gap:4px; padding:18px 16px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); text-decoration:none; color:inherit; }
     .nav-item:last-child { border-right:none; }
     @media(max-width:639px){ .nav-item:nth-child(2){ border-right:none; } .nav-item:nth-child(3){ border-right:1px solid var(--border); } }
     .nav-item:hover { background:var(--green-l); }
+    .nav-item.request-link { background:var(--green-l); }
+    .nav-item.request-link:hover { background:#dff0e3; }
     .nav-item i { width:18px; height:18px; color:var(--ink5); margin-bottom:4px; }
+    .nav-item.request-link i { color:var(--green); }
     .nav-item-name { font-size:12.5px; font-weight:800; color:var(--ink2); line-height:1.3; }
+    .nav-item.request-link .nav-item-name { color:var(--green); }
     .nav-item-sub { font-size:11px; color:var(--ink5); }
 
     /* SECTION */
@@ -98,37 +102,53 @@
     .faq-cols { display:grid; grid-template-columns:1fr; gap:6px; }
     @media(min-width:768px){ .faq-cols{ grid-template-columns:1fr 1fr; } }
 
-    /* FORM */
-    .form-section { padding:72px 0 88px; background:var(--bg); border-top:1px solid var(--border); }
-    .form-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); overflow:hidden; max-width:860px; margin:0 auto; }
-    .form-header { background:linear-gradient(135deg,var(--green),var(--green-d)); padding:28px 32px 24px; }
-    .form-header h3 { font-family:var(--font-d); font-size:24px; font-weight:800; color:#fff; margin-bottom:5px; }
-    .form-header p { font-size:13.5px; color:rgba(255,255,255,.6); }
-    .form-body { padding:28px 32px; }
-    .form-grid { display:grid; grid-template-columns:1fr; gap:14px; }
-    @media(min-width:640px){ .form-grid{ grid-template-columns:1fr 1fr; } }
-    .form-group { display:flex; flex-direction:column; gap:5px; }
-    .form-group.full { grid-column:1/-1; }
-    .form-label { font-size:11.5px; font-weight:700; color:var(--ink3); text-transform:uppercase; letter-spacing:.45px; }
-    .form-label span { color:var(--red); }
-    .form-input, .form-select, .form-textarea {
-      width:100%; padding:10px 12px; border:1.5px solid var(--border); border-radius:var(--r8);
-      font-family:var(--font-b); font-size:14px; color:var(--ink); background:var(--white);
-      transition:border-color var(--ease); outline:none;
+    /* CTA SECTION */
+    .cta-section { padding:72px 0 88px; background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); position:relative; overflow:hidden; }
+    .cta-section::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .cta-inner { position:relative; z-index:1; text-align:center; }
+    .cta-eyebrow { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.7); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .cta-eyebrow i { width:13px; height:13px; color:var(--green-m); }
+    .cta-inner h2 { font-family:var(--font-d); font-size:clamp(26px,4.5vw,44px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:12px; }
+    .cta-inner h2 em { font-style:italic; color:var(--green-m); }
+    .cta-inner p { font-size:15px; color:rgba(255,255,255,.6); max-width:460px; margin:0 auto 36px; line-height:1.75; }
+    .cta-buttons { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+    .btn-primary {
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      background:#fff;
+      color:var(--green);
+      padding:14px 28px;
+      border-radius:var(--r10);
+      font-family:var(--font-b);
+      font-size:15px;
+      font-weight:800;
+      text-decoration:none;
+      transition:all var(--ease);
+      box-shadow:0 4px 20px rgba(0,0,0,.2);
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green); }
-    .form-textarea { resize:vertical; min-height:80px; }
-    .form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
-    .radio-group { display:flex; flex-wrap:wrap; gap:7px; }
-    .radio-option { display:flex; align-items:center; gap:7px; background:var(--bg); border:1.5px solid var(--border); border-radius:var(--r8); padding:8px 13px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:all var(--ease); }
-    .radio-option input { display:none; }
-    .radio-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); }
-    .form-sec-title { font-size:13px; font-weight:800; color:var(--ink2); padding:18px 0 4px; border-top:1px solid var(--border); margin-top:6px; display:flex; align-items:center; gap:8px; }
-    .form-sec-title:first-of-type { border-top:none; padding-top:0; margin-top:0; }
-    .form-sec-title i { width:14px; height:14px; color:var(--green); }
-    .form-submit { width:100%; padding:14px; background:var(--green); color:#fff; border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:background var(--ease); margin-top:10px; }
-    .form-submit:hover { background:var(--green-d); }
-    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:10px; }
+    .btn-primary:hover { background:var(--green-l); transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,0,0,.25); }
+    .btn-primary i { width:16px; height:16px; }
+    .btn-secondary {
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      background:rgba(255,255,255,.1);
+      color:#fff;
+      padding:14px 28px;
+      border-radius:var(--r10);
+      border:1.5px solid rgba(255,255,255,.2);
+      font-family:var(--font-b);
+      font-size:15px;
+      font-weight:700;
+      text-decoration:none;
+      transition:all var(--ease);
+    }
+    .btn-secondary:hover { background:rgba(255,255,255,.15); transform:translateY(-2px); }
+    .btn-secondary i { width:16px; height:16px; }
+    .cta-trust { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:32px; }
+    .cta-trust-item { display:flex; align-items:center; gap:7px; font-size:12.5px; color:rgba(255,255,255,.6); font-weight:600; }
+    .cta-trust-item i { width:13px; height:13px; color:var(--green-m); }
 
     @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
     .fade-up { opacity:0; animation:fadeUp .45s ease forwards; }
@@ -136,12 +156,13 @@
 </head>
 <body>
   <script src="assets/js/components/av-nav.js"></script>
+
 <!-- BREADCRUMB -->
 <nav class="bc">
   <div class="wrap bc-inner">
-    <a href="/">Home</a>
+    <a href="/frontend/index.html">Home</a>
     <i data-lucide="chevron-right"></i>
-    <a href="/services.html">Services</a>
+    <a href="/frontend/services.html">Services</a>
     <i data-lucide="chevron-right"></i>
     <span>Other Services</span>
   </div>
@@ -183,11 +204,12 @@
         <div class="nav-item-name">Roadside Assistance</div>
         <div class="nav-item-sub">Towing, jumpstart, fuel</div>
       </div>
-      <div class="nav-item" onclick="document.getElementById('request').scrollIntoView({behavior:'smooth'})">
+      <!-- Link instead of same-page scroll -->
+      <a class="nav-item request-link" href="/frontend/form/otherserviceform.html">
         <i data-lucide="send"></i>
         <div class="nav-item-name">Request a Service</div>
-        <div class="nav-item-sub">Submit your details</div>
-      </div>
+        <div class="nav-item-sub">Submit your details →</div>
+      </a>
     </div>
   </div>
 </div>
@@ -325,7 +347,7 @@
       <div class="faq-list">
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">How do I book a service?<i data-lucide="chevron-down"></i></div>
-          <div class="faq-a">Fill out the service request form below with your vehicle details and preferred service. You can opt for pickup and drop-off from your home or office. We confirm next steps within one business day.</div>
+          <div class="faq-a">Click the "Request a Service" button to go to our dedicated form. Fill out your vehicle details and preferred service. You can opt for pickup and drop-off from your home or office. We confirm next steps within one business day.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">Are your service providers verified?<i data-lucide="chevron-down"></i></div>
@@ -344,161 +366,27 @@
   </div>
 </section>
 
-<!-- REQUEST FORM -->
-<section class="form-section" id="request">
+<!-- CTA SECTION (replaces inline form) -->
+<section class="cta-section">
   <div class="wrap">
-    <div style="text-align:center;margin-bottom:36px">
-      <div class="eyebrow" style="justify-content:center"><i data-lucide="send"></i>Request a Service</div>
-      <h2 class="sec-title" style="text-align:center">Tell us what <em>you need</em></h2>
-      <p style="font-size:14.5px;color:var(--ink4);max-width:460px;margin:0 auto;line-height:1.7">Fill in your details below. We will review and confirm next steps within one business day.</p>
-    </div>
-
-    <div class="form-wrap">
-      <div class="form-header">
-        <h3>Service Request</h3>
-        <p>Fields marked * are required. Your details are never shared with third parties.</p>
+    <div class="cta-inner fade-up">
+      <div class="cta-eyebrow"><i data-lucide="send"></i>Ready to book?</div>
+      <h2>Request a Service,<br><em>it only takes 2 minutes</em></h2>
+      <p>Tell us your vehicle, what you need, and where you are. We handle the rest — confirmed within one business day.</p>
+      <div class="cta-buttons">
+        <a href="/frontend/form/otherserviceform.html" class="btn-primary">
+          <i data-lucide="send"></i>
+          Fill in Service Request Form
+        </a>
+        <a href="tel:+97701XXXXXXX" class="btn-secondary">
+          <i data-lucide="phone-call"></i>
+          Call Us Instead
+        </a>
       </div>
-      <div class="form-body">
-        <form onsubmit="handleSubmit(event)">
-
-          <!-- Service Category -->
-          <div class="form-sec-title"><i data-lucide="list"></i>Service Category</div>
-          <div class="form-grid" style="margin-top:10px">
-            <div class="form-group full">
-              <div class="form-label">Select Service Category <span>*</span></div>
-              <div class="radio-group" style="margin-top:6px">
-                <label class="radio-option"><input type="radio" name="category" value="cosmetic" checked>Cosmetic Car Care</label>
-                <label class="radio-option"><input type="radio" name="category" value="workshop">Specialized Workshop</label>
-                <label class="radio-option"><input type="radio" name="category" value="roadside">Roadside Assistance</label>
-                <label class="radio-option"><input type="radio" name="category" value="telematics">Telematics &amp; Smart Fitments</label>
-                <label class="radio-option"><input type="radio" name="category" value="other">Other</label>
-              </div>
-            </div>
-            <div class="form-group full">
-              <label class="form-label">Describe the specific service needed <span>*</span></label>
-              <textarea class="form-textarea" placeholder="e.g. Ceramic coating for a 2023 Tata Nexon EV, GPS tracker installation, emergency tow from Koteshwor…" required></textarea>
-            </div>
-            <div class="form-group full">
-              <div class="form-label" style="margin-bottom:6px">Urgency Level <span>*</span></div>
-              <div class="radio-group">
-                <label class="radio-option"><input type="radio" name="urgency" value="emergency">Emergency</label>
-                <label class="radio-option"><input type="radio" name="urgency" value="normal" checked>Normal</label>
-                <label class="radio-option"><input type="radio" name="urgency" value="inquiry">Planning / Inquiry</label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Vehicle Information -->
-          <div class="form-sec-title"><i data-lucide="car"></i>Vehicle Details <span style="font-size:11px;font-weight:500;color:var(--ink5)">(if applicable)</span></div>
-          <div class="form-grid" style="margin-top:10px">
-            <div class="form-group">
-              <label class="form-label">Vehicle Type</label>
-              <div class="radio-group">
-                <label class="radio-option"><input type="radio" name="vtype" value="ice" checked>ICE</label>
-                <label class="radio-option"><input type="radio" name="vtype" value="ev">EV</label>
-                <label class="radio-option"><input type="radio" name="vtype" value="hybrid">Hybrid</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Fuel Type</label>
-              <div class="radio-group">
-                <label class="radio-option"><input type="radio" name="fuel" value="petrol" checked>Petrol</label>
-                <label class="radio-option"><input type="radio" name="fuel" value="diesel">Diesel</label>
-                <label class="radio-option"><input type="radio" name="fuel" value="ev">EV</label>
-                <label class="radio-option"><input type="radio" name="fuel" value="hybrid">Hybrid</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Brand</label>
-              <input class="form-input" type="text" placeholder="e.g. Toyota, Tata, BYD">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Model</label>
-              <input class="form-input" type="text" placeholder="e.g. Nexon, Atto 3">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Variant</label>
-              <input class="form-input" type="text" placeholder="e.g. XZ+, Long Range">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Manufacture Year</label>
-              <select class="form-select">
-                <option value="">Select Year</option>
-                <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
-                <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
-                <option>2017</option><option>2016</option><option>2015</option>
-                <option>2014 or older</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Vehicle Registration Number</label>
-              <input class="form-input" type="text" placeholder="e.g. BA 1 PA 1234">
-            </div>
-          </div>
-
-          <!-- Personal Details -->
-          <div class="form-sec-title"><i data-lucide="user"></i>Personal Details</div>
-          <div class="form-grid" style="margin-top:10px">
-            <div class="form-group">
-              <label class="form-label">Full Name <span>*</span></label>
-              <input class="form-input" type="text" placeholder="Your full name" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Mobile Number <span>*</span></label>
-              <input class="form-input" type="tel" placeholder="+977 98XXXXXXXX" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Alternative Number</label>
-              <input class="form-input" type="tel" placeholder="Optional">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Email Address</label>
-              <input class="form-input" type="email" placeholder="you@example.com">
-            </div>
-            <div class="form-group full">
-              <label class="form-label">Full Address <span>*</span></label>
-              <input class="form-input" type="text" placeholder="Full address for pickup or service location" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Province / Municipality</label>
-              <input class="form-input" type="text" placeholder="e.g. Bagmati / Kathmandu Metropolitan">
-            </div>
-          </div>
-
-          <!-- Preferences -->
-          <div class="form-sec-title"><i data-lucide="settings-2"></i>Preferences</div>
-          <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
-            <div>
-              <div class="form-label" style="margin-bottom:6px">Do you need pick-up and drop-off facility? <span>*</span></div>
-              <div class="radio-group">
-                <label class="radio-option"><input type="radio" name="pickup" value="yes" checked>Yes</label>
-                <label class="radio-option"><input type="radio" name="pickup" value="no">No — I will bring the vehicle myself</label>
-              </div>
-            </div>
-            <div>
-              <div class="form-label" style="margin-bottom:6px">Do you want appointment / slot assistance?</div>
-              <div class="radio-group">
-                <label class="radio-option"><input type="radio" name="appt" value="yes" checked>Yes</label>
-                <label class="radio-option"><input type="radio" name="appt" value="no">No</label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Confirm -->
-          <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
-            <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer">
-              <input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">
-              I confirm the information provided is true and correct.
-            </label>
-            <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer">
-              <input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">
-              I agree to AutoViindu's service terms and conditions.
-            </label>
-          </div>
-
-          <button class="form-submit" type="submit">Submit Request</button>
-          <div class="form-note">We will respond within one business day. Mon–Sat · 9am–6pm NST</div>
-        </form>
+      <div class="cta-trust">
+        <div class="cta-trust-item"><i data-lucide="clock"></i>Response within 1 business day</div>
+        <div class="cta-trust-item"><i data-lucide="shield-check"></i>Verified service providers</div>
+        <div class="cta-trust-item"><i data-lucide="lock"></i>Your data is never shared</div>
       </div>
     </div>
   </div>
@@ -513,17 +401,9 @@
     document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Request submitted. We will be in touch shortly.';
-    btn.style.background = 'var(--green-d)';
-    btn.disabled = true;
-  }
 </script>
   <div id="av-toast-wrap"></div>
-  <script src="assets/js/components/av-footer.js"></script>  <!-- ← before </body> -->
+  <script src="assets/js/components/av-footer.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

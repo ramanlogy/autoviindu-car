@@ -44,21 +44,40 @@
     .hero h1 { font-family:var(--font-d); font-size:clamp(30px,5vw,52px); font-weight:800; color:#fff; line-height:1.08; margin-bottom:14px; }
     .hero h1 em { font-style:italic; color:var(--green-m); }
     .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:500px; line-height:1.75; margin-bottom:32px; }
-    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; }
+    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px; }
     .hero-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:var(--pill); padding:7px 14px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.8); }
     .hero-pill i { width:13px; height:13px; color:var(--green-m); }
+
+    /* HERO CTA */
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: #fff; color: var(--green); text-decoration: none;
+      padding: 13px 24px; border-radius: var(--r10);
+      font-size: 14.5px; font-weight: 800; transition: all var(--ease);
+      box-shadow: 0 4px 20px rgba(0,0,0,.2);
+    }
+    .hero-cta:hover { background: var(--green-l); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+    .hero-cta i { width: 16px; height: 16px; }
 
     /* NAV STRIP */
     .nav-strip { background:var(--white); border-bottom:1px solid var(--border); }
     .nav-strip-inner { display:grid; grid-template-columns:repeat(2,1fr); }
     @media(min-width:640px){ .nav-strip-inner{ grid-template-columns:repeat(4,1fr); } }
-    .nav-item { display:flex; flex-direction:column; gap:4px; padding:18px 16px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); }
+    .nav-item { display:flex; flex-direction:column; gap:4px; padding:18px 16px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); text-decoration:none; }
     .nav-item:last-child { border-right:none; }
     @media(max-width:639px){ .nav-item:nth-child(2){ border-right:none; } .nav-item:nth-child(3){ border-right:1px solid var(--border); } }
     .nav-item:hover { background:var(--green-l); }
     .nav-item i { width:18px; height:18px; color:var(--ink5); margin-bottom:4px; }
     .nav-item-name { font-size:12.5px; font-weight:800; color:var(--ink2); line-height:1.3; }
     .nav-item-sub { font-size:11px; color:var(--ink5); }
+    /* Highlight the request link */
+    .nav-item.cta { background: var(--green-l); }
+    .nav-item.cta .nav-item-name { color: var(--green); }
+    .nav-item.cta i { color: var(--green); }
+    .nav-item.cta:hover { background: var(--green); }
+    .nav-item.cta:hover .nav-item-name,
+    .nav-item.cta:hover .nav-item-sub { color: #fff; }
+    .nav-item.cta:hover i { color: #fff; }
 
     /* SECTION */
     .section { padding:72px 0; }
@@ -70,18 +89,9 @@
     .sec-sub { font-size:14.5px; color:var(--ink4); max-width:520px; line-height:1.75; margin-bottom:44px; }
 
     /* SERVICE GRID */
-    .svc-group { margin-bottom:52px; }
-    .svc-group:last-child { margin-bottom:0; }
-    .svc-group-header { display:flex; align-items:center; gap:10px; margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid var(--border); }
-    .svc-group-icon { width:36px; height:36px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .svc-group-icon i { width:20px; height:20px; color:var(--ink4); }
-    .svc-group-title { font-family:var(--font-d); font-size:18px; font-weight:800; color:var(--ink2); }
-    .svc-group-count { font-size:12px; font-weight:700; color:var(--ink5); margin-left:auto; }
-
     .svc-list { display:grid; grid-template-columns:1fr; gap:6px; }
     @media(min-width:480px){ .svc-list{ grid-template-columns:repeat(2,1fr); } }
     @media(min-width:900px){ .svc-list{ grid-template-columns:repeat(3,1fr); } }
-
     .svc-item-row { display:flex; align-items:flex-start; gap:10px; padding:12px 14px; border:1.5px solid var(--border); border-radius:var(--r10); background:var(--white); transition:border-color var(--ease); }
     .svc-item-row:hover { border-color:var(--green); }
     .svc-item-row i { width:15px; height:15px; color:var(--ink5); flex-shrink:0; margin-top:2px; }
@@ -128,48 +138,32 @@
     .faq-cols { display:grid; grid-template-columns:1fr; gap:6px; }
     @media(min-width:768px){ .faq-cols{ grid-template-columns:1fr 1fr; } }
 
-    /* FORM */
-    .form-section { padding:72px 0 88px; background:var(--bg); border-top:1px solid var(--border); }
-    .form-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); overflow:hidden; max-width:860px; margin:0 auto; }
-    .form-header { background:linear-gradient(135deg,var(--green),var(--green-d)); padding:28px 32px 24px; }
-    .form-header h3 { font-family:var(--font-d); font-size:24px; font-weight:800; color:#fff; margin-bottom:5px; }
-    .form-header p { font-size:13.5px; color:rgba(255,255,255,.6); }
-    .form-body { padding:28px 32px; }
-    .form-grid { display:grid; grid-template-columns:1fr; gap:14px; }
-    @media(min-width:640px){ .form-grid{ grid-template-columns:1fr 1fr; } }
-    .form-group { display:flex; flex-direction:column; gap:5px; }
-    .form-group.full { grid-column:1/-1; }
-    .form-label { font-size:11.5px; font-weight:700; color:var(--ink3); text-transform:uppercase; letter-spacing:.45px; }
-    .form-label span { color:var(--red); }
-    .form-input, .form-select, .form-textarea {
-      width:100%; padding:10px 12px; border:1.5px solid var(--border); border-radius:var(--r8);
-      font-family:var(--font-b); font-size:14px; color:var(--ink); background:var(--white);
-      transition:border-color var(--ease); outline:none;
+    /* CTA SECTION */
+    .cta-section {
+      padding: 72px 0 88px;
+      background: linear-gradient(145deg,#0B2A12 0%,#1A6B2A 100%);
+      position: relative; overflow: hidden;
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green); }
-    .form-textarea { resize:vertical; min-height:80px; }
-    .form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
-    .radio-group { display:flex; flex-wrap:wrap; gap:7px; }
-    .radio-option { display:flex; align-items:center; gap:7px; background:var(--bg); border:1.5px solid var(--border); border-radius:var(--r8); padding:8px 13px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:all var(--ease); }
-    .radio-option input { display:none; }
-    .radio-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); }
-    .check-option { display:flex; align-items:center; gap:7px; background:var(--bg); border:1.5px solid var(--border); border-radius:var(--r8); padding:8px 13px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:all var(--ease); }
-    .check-option input { display:none; }
-    .check-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); }
-    .form-sec-title { font-size:13px; font-weight:800; color:var(--ink2); padding:18px 0 4px; border-top:1px solid var(--border); margin-top:6px; display:flex; align-items:center; gap:8px; }
-    .form-sec-title:first-of-type { border-top:none; padding-top:0; margin-top:0; }
-    .form-sec-title i { width:14px; height:14px; color:var(--green); }
-    .form-submit { width:100%; padding:14px; background:var(--green); color:#fff; border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:background var(--ease); margin-top:10px; }
-    .form-submit:hover { background:var(--green-d); }
-    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:10px; }
-
-    /* TABS — corporate/individual */
-    .type-toggle { display:flex; gap:0; border:1.5px solid var(--border); border-radius:var(--r10); overflow:hidden; width:fit-content; margin-bottom:24px; }
-    .type-btn { padding:10px 22px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; background:var(--white); border-right:1.5px solid var(--border); transition:all var(--ease); }
-    .type-btn:last-child { border-right:none; }
-    .type-btn.active { background:var(--green); color:#fff; border-color:var(--green); }
-    .pane { display:none; }
-    .pane.active { display:contents; }
+    .cta-section::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .cta-inner { position:relative; z-index:1; text-align:center; }
+    .cta-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .cta-badge i { width:13px; height:13px; color:var(--green-m); }
+    .cta-title { font-family:var(--font-d); font-size:clamp(26px,4vw,44px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:12px; }
+    .cta-title em { font-style:italic; color:var(--green-m); }
+    .cta-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:440px; margin:0 auto 36px; line-height:1.75; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; color: var(--green);
+      padding: 15px 32px; border-radius: var(--r10);
+      font-size: 15px; font-weight: 800; text-decoration: none;
+      transition: all var(--ease); box-shadow: 0 4px 24px rgba(0,0,0,.25);
+    }
+    .cta-btn:hover { background: var(--green-l); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.3); }
+    .cta-btn i { width: 17px; height: 17px; }
+    .cta-meta { margin-top: 16px; font-size: 12.5px; color: rgba(255,255,255,.4); }
+    .cta-guarantees { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:28px; }
+    .cta-g { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:var(--pill); padding:6px 14px; font-size:12px; font-weight:600; color:rgba(255,255,255,.7); }
+    .cta-g i { width:12px; height:12px; color:var(--green-m); }
 
     @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
     .fade-up { opacity:0; animation:fadeUp .45s ease forwards; }
@@ -181,9 +175,9 @@
 <!-- BREADCRUMB -->
 <nav class="bc">
   <div class="wrap bc-inner">
-    <a href="/">Home</a>
+    <a href="/frontend/index.html">Home</a>
     <i data-lucide="chevron-right"></i>
-    <a href="/services.html">Services</a>
+    <a href="/frontend/services.html">Services</a>
     <i data-lucide="chevron-right"></i>
     <span>DOTM Services</span>
   </div>
@@ -202,6 +196,11 @@
         <span class="hero-pill"><i data-lucide="check-circle-2"></i>Appointment management</span>
         <span class="hero-pill"><i data-lucide="check-circle-2"></i>SMS &amp; email status updates</span>
       </div>
+      <!-- ★ HERO CTA BUTTON -->
+      <a href="/frontend/form/dotmform.html" class="hero-cta">
+        <i data-dotm-lucide="send"></i>
+        Request a Service
+      </a>
     </div>
   </div>
 </section>
@@ -225,11 +224,12 @@
         <div class="nav-item-name">Documentation</div>
         <div class="nav-item-sub">Certificates &amp; clearances</div>
       </div>
-      <div class="nav-item" onclick="document.getElementById('request').scrollIntoView({behavior:'smooth'})">
+      <!-- ★ NOW LINKS TO SEPARATE PAGE -->
+      <a class="nav-item cta" href="/frontend/form/dotmform.html">
         <i data-lucide="send"></i>
         <div class="nav-item-name">Request a Service</div>
-        <div class="nav-item-sub">Submit your details</div>
-      </div>
+        <div class="nav-item-sub">Submit your details →</div>
+      </a>
     </div>
   </div>
 </div>
@@ -245,7 +245,7 @@
         <div class="steps">
           <div class="step">
             <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
-            <div class="step-content"><div class="step-title">Submit your request</div><div class="step-desc">Tell us what you need — registration, license, documentation. Fill the form below with your vehicle and personal details.</div></div>
+            <div class="step-content"><div class="step-title">Submit your request</div><div class="step-desc">Tell us what you need — registration, license, documentation. Fill the form on our <a href="/frontend/form/dotmform.html" style="color:var(--green);font-weight:600">request page</a> with your vehicle and personal details.</div></div>
           </div>
           <div class="step">
             <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
@@ -469,233 +469,22 @@
   </div>
 </section>
 
-<!-- REQUEST FORM -->
-<section class="form-section" id="request">
+<!-- ★ CTA SECTION — replaces the inline form -->
+<section class="cta-section" id="request">
   <div class="wrap">
-    <div style="text-align:center;margin-bottom:36px">
-      <div class="eyebrow" style="justify-content:center"><i data-lucide="send"></i>Request a Service</div>
-      <h2 class="sec-title" style="text-align:center">Tell us what <em>you need</em></h2>
-      <p style="font-size:14.5px;color:var(--ink4);max-width:460px;margin:0 auto;line-height:1.7">Fill in your details below. We will review your request and confirm next steps within one business day.</p>
-    </div>
-
-    <div class="form-wrap">
-      <div class="form-header">
-        <h3>DOTM Service Request</h3>
-        <p>Fields marked * are required. Your details are never shared with third parties.</p>
-      </div>
-      <div class="form-body">
-        <form onsubmit="handleSubmit(event)">
-
-          <!-- Type -->
-          <div class="form-sec-title"><i data-lucide="users"></i>Who is this for?</div>
-          <div style="margin-top:10px">
-            <div class="form-label">Request Type <span>*</span></div>
-            <div class="type-toggle" style="margin-top:8px">
-              <div class="type-btn active" onclick="switchType('individual',this)">Individual</div>
-              <div class="type-btn" onclick="switchType('corporate',this)">Corporate</div>
-            </div>
-          </div>
-
-          <!-- Service Category -->
-          <div class="form-sec-title"><i data-lucide="list"></i>Service Required</div>
-          <div class="form-grid" style="margin-top:10px">
-            <div class="form-group full">
-              <div class="form-label">Select Service Category <span>*</span></div>
-              <div class="radio-group" style="margin-top:6px">
-                <label class="radio-option"><input type="radio" name="category" value="registration" checked>Vehicle Registration</label>
-                <label class="radio-option"><input type="radio" name="category" value="licensing">Licensing</label>
-                <label class="radio-option"><input type="radio" name="category" value="compliance">Documentation &amp; Compliance</label>
-                <label class="radio-option"><input type="radio" name="category" value="value-add">Value-Added Services</label>
-                <label class="radio-option"><input type="radio" name="category" value="other">Other</label>
-              </div>
-            </div>
-            <div class="form-group full">
-              <label class="form-label">Describe the specific service needed <span>*</span></label>
-              <textarea class="form-textarea" placeholder="e.g. Bluebook renewal for my private vehicle, driving license upgrade from two-wheeler to four-wheeler, duplicate bluebook for lost certificate…" required></textarea>
-            </div>
-          </div>
-
-          <!-- Vehicle Information -->
-          <div class="form-sec-title"><i data-lucide="car"></i>Vehicle Details <span style="font-size:11px;font-weight:500;color:var(--ink5)">(if applicable)</span></div>
-          <div class="form-grid" style="margin-top:10px">
-            <div class="form-group">
-              <label class="form-label">Vehicle Type</label>
-              <div class="radio-group">
-                <label class="radio-option"><input type="radio" name="vtype" value="private" checked>Private</label>
-                <label class="radio-option"><input type="radio" name="vtype" value="commercial">Commercial</label>
-                <label class="radio-option"><input type="radio" name="vtype" value="government">Government</label>
-                <label class="radio-option"><input type="radio" name="vtype" value="rental">Rental</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Fuel Type</label>
-              <div class="radio-group">
-                <label class="radio-option"><input type="radio" name="fuel" value="petrol" checked>Petrol</label>
-                <label class="radio-option"><input type="radio" name="fuel" value="diesel">Diesel</label>
-                <label class="radio-option"><input type="radio" name="fuel" value="ev">EV</label>
-                <label class="radio-option"><input type="radio" name="fuel" value="hybrid">Hybrid</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Brand</label>
-              <input class="form-input" type="text" placeholder="e.g. Toyota, Honda">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Model</label>
-              <input class="form-input" type="text" placeholder="e.g. Prius, City">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Manufacture Year</label>
-              <select class="form-select">
-                <option value="">Select Year</option>
-                <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
-                <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
-                <option>2017</option><option>2016</option><option>2015</option><option>2014</option>
-                <option>2013 or older</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Displacement (cc / kW)</label>
-              <input class="form-input" type="text" placeholder="e.g. 1500cc or 150kW">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Variant</label>
-              <input class="form-input" type="text" placeholder="e.g. VX, ZX, G">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Vehicle Registration Number</label>
-              <input class="form-input" type="text" placeholder="e.g. BA 1 PA 1234">
-            </div>
-          </div>
-
-          <!-- Individual Details -->
-          <div id="individual-pane">
-            <div class="form-sec-title"><i data-lucide="user"></i>Personal Details</div>
-            <div class="form-grid" style="margin-top:10px">
-              <div class="form-group">
-                <label class="form-label">Full Name <span>*</span></label>
-                <input class="form-input" type="text" placeholder="Your full name" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Mobile Number <span>*</span></label>
-                <input class="form-input" type="tel" placeholder="+977 98XXXXXXXX" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Alternative Number</label>
-                <input class="form-input" type="tel" placeholder="Optional">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Email Address</label>
-                <input class="form-input" type="email" placeholder="you@example.com">
-              </div>
-              <div class="form-group full">
-                <label class="form-label">Full Address <span>*</span></label>
-                <input class="form-input" type="text" placeholder="Full address" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Province / Municipality</label>
-                <input class="form-input" type="text" placeholder="e.g. Bagmati / Kathmandu Metropolitan">
-              </div>
-            </div>
-          </div>
-
-          <!-- Corporate Details -->
-          <div id="corporate-pane" style="display:none">
-            <div class="form-sec-title"><i data-lucide="building-2"></i>Corporate Details</div>
-            <div class="form-grid" style="margin-top:10px">
-              <div class="form-group">
-                <label class="form-label">Registered Company Name <span>*</span></label>
-                <input class="form-input" type="text" placeholder="Legal registered name">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Trading Name (if different)</label>
-                <input class="form-input" type="text" placeholder="Trading name">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Business Registration Number</label>
-                <input class="form-input" type="text" placeholder="Registration no.">
-              </div>
-              <div class="form-group">
-                <label class="form-label">PAN / VAT Number <span>*</span></label>
-                <input class="form-input" type="text" placeholder="PAN or VAT number">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Date of Incorporation</label>
-                <input class="form-input" type="date">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Primary Contact Person <span>*</span></label>
-                <input class="form-input" type="text" placeholder="Full name">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Designation</label>
-                <input class="form-input" type="text" placeholder="e.g. Fleet Manager, Director">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Official Number <span>*</span></label>
-                <input class="form-input" type="tel" placeholder="+977 98XXXXXXXX">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Alternative Contact Number</label>
-                <input class="form-input" type="tel" placeholder="Optional">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Official Email Address</label>
-                <input class="form-input" type="email" placeholder="office@company.com">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Company Website</label>
-                <input class="form-input" type="url" placeholder="https://company.com">
-              </div>
-              <div class="form-group full">
-                <label class="form-label">Registered Office Address <span>*</span></label>
-                <input class="form-input" type="text" placeholder="Full registered address">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Province / Municipality</label>
-                <input class="form-input" type="text" placeholder="e.g. Bagmati / Kathmandu">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Postal Code</label>
-                <input class="form-input" type="text" placeholder="e.g. 44600">
-              </div>
-            </div>
-          </div>
-
-          <!-- Preferences -->
-          <div class="form-sec-title"><i data-lucide="settings-2"></i>Preferences</div>
-          <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
-            <div>
-              <div class="form-label" style="margin-bottom:6px">Do you need document pickup and delivery? <span>*</span></div>
-              <div class="radio-group">
-                <label class="radio-option"><input type="radio" name="pickup" value="yes" checked>Yes</label>
-                <label class="radio-option"><input type="radio" name="pickup" value="no">No — I will deliver documents myself</label>
-              </div>
-            </div>
-            <div>
-              <div class="form-label" style="margin-bottom:6px">Do you want appointment and slot assistance?</div>
-              <div class="radio-group">
-                <label class="radio-option"><input type="radio" name="appt" value="yes" checked>Yes</label>
-                <label class="radio-option"><input type="radio" name="appt" value="no">No</label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Confirm -->
-          <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
-            <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer">
-              <input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">
-              I confirm the information provided is true and correct.
-            </label>
-            <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer">
-              <input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">
-              I agree to AutoViindu's service terms and conditions.
-            </label>
-          </div>
-
-          <button class="form-submit" type="submit">Submit Request</button>
-          <div class="form-note">We will respond within one business day. Mon–Sat · 9am–6pm NST</div>
-        </form>
+    <div class="cta-inner">
+      <div class="cta-badge"><i data-lucide="send"></i>Request a Service</div>
+      <h2 class="cta-title">Ready to get<br><em>started?</em></h2>
+      <p class="cta-desc">Fill in your details on our dedicated request page. We will review and confirm next steps within one business day.</p>
+      <a href="/frontend/form/dotmform.html" class="cta-btn">
+        <i data-lucide="send"></i>
+        Submit a Service Request
+      </a>
+      <div class="cta-meta">Mon–Sat · 9am–6pm NST · Responds within 1 business day</div>
+      <div class="cta-guarantees">
+        <span class="cta-g"><i data-lucide="shield-check"></i>Individual &amp; corporate</span>
+        <span class="cta-g"><i data-lucide="truck"></i>Document pickup &amp; delivery</span>
+        <span class="cta-g"><i data-lucide="lock"></i>Details never shared</span>
       </div>
     </div>
   </div>
@@ -711,21 +500,6 @@
     if (!isOpen) item.classList.add('open');
   }
 
-  function switchType(type, btn) {
-    document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('individual-pane').style.display = type === 'individual' ? '' : 'none';
-    document.getElementById('corporate-pane').style.display = type === 'corporate' ? '' : 'none';
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Request submitted. We will be in touch shortly.';
-    btn.style.background = 'var(--green-d)';
-    btn.disabled = true;
-  }
-
   // responsive 2-col how grid
   function setHowGrid() {
     const g = document.getElementById('how-grid');
@@ -736,7 +510,7 @@
   window.addEventListener('resize', setHowGrid);
 </script>
  <div id="av-toast-wrap"></div>
-  <script src="assets/js/components/av-footer.js"></script>  <!-- ← before </body> -->
+  <script src="assets/js/components/av-footer.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

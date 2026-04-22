@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Get a Quote / Apply – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
+      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
+      --border:#E4E8ED; --bg:#F5F7F9; --bg2:#ECEEF2; --white:#ffffff;
+      --blue:#1A4DB8; --blue-l:#EEF3FC;
+      --gold:#B8900E; --gold-l:#FDF6E0;
+      --red:#C8271E; --red-l:#FFF0EF;
+      --teal:#0E7F73; --teal-l:#E6F5F4;
+      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
+      --sh1:0 1px 4px rgba(0,0,0,.07); --sh2:0 4px 14px rgba(0,0,0,.09); --sh3:0 8px 28px rgba(0,0,0,.13);
+      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
+      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    ::selection { background: rgba(26,107,42,.15); }
+    :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 4px; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 18px; }
+    @media(min-width:640px){ .wrap { padding: 0 32px; } }
+    @media(min-width:1024px){ .wrap { padding: 0 40px; } }
+
+    /* ── BREADCRUMB ── */
+    .bc { background: var(--white); border-bottom: 1px solid var(--border); padding: 11px 0; }
+    .bc-inner { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink4); }
+    .bc-inner a { color: var(--green); text-decoration: none; font-weight: 600; }
+    .bc-inner a:hover { text-decoration: underline; }
+    .bc-inner i { width: 12px; height: 12px; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: linear-gradient(145deg, #0B2A12 0%, #1A6B2A 55%, #1340a0 100%);
+      padding: 44px 0 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .page-header-inner { position: relative; z-index: 1; text-align: center; }
+    .page-header h1 { font-family: var(--font-d); font-size: clamp(26px, 4.5vw, 44px); font-weight: 800; color: #fff; line-height: 1.12; margin-bottom: 10px; }
+    .page-header h1 em { font-style: italic; color: var(--green-m); }
+    .page-header p { font-size: 15px; color: rgba(255,255,255,.6); max-width: 520px; margin: 0 auto 28px; line-height: 1.7; }
+    .header-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .header-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); border-radius: var(--pill); padding: 6px 13px; font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,.8); }
+    .header-pill i { width: 12px; height: 12px; color: var(--green-m); }
+
+    /* ── FORM SWITCHER TABS ── */
+    .form-tabs-bar {
+      background: var(--white);
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--sh1);
+    }
+    .form-tabs-inner { display: flex; justify-content: center; gap: 0; }
+    .form-tab-btn {
+      display: flex; align-items: center; gap: 9px;
+      padding: 16px 28px;
+      font-size: 14px; font-weight: 700;
+      color: var(--ink4);
+      border: none; background: none; cursor: pointer;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all var(--ease);
+    }
+    .form-tab-btn i { width: 16px; height: 16px; }
+    .form-tab-btn:hover { color: var(--ink2); }
+    .form-tab-btn.active-ins { color: var(--green); border-bottom-color: var(--green); }
+    .form-tab-btn.active-fin { color: var(--blue); border-bottom-color: var(--blue); }
+
+    /* ── FORM PANELS ── */
+    .form-panel { display: none; padding: 56px 0 72px; }
+    .form-panel.active { display: block; }
+    .form-panel.ins-bg { background: var(--bg); }
+    .form-panel.fin-bg { background: #f0f4fc; }
+
+    /* ── FORM CONTAINER ── */
+    .form-wrap { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r20); overflow: hidden; box-shadow: var(--sh2); }
+    .form-header { padding: 30px 30px 26px; }
+    .form-header.green-hdr { background: linear-gradient(135deg, var(--green), #145520); }
+    .form-header.blue-hdr { background: linear-gradient(135deg, #1A4DB8, #0f2f7a); }
+    .form-header-top { display: flex; align-items: flex-start; gap: 14px; }
+    .form-header-icon { width: 46px; height: 46px; border-radius: var(--r10); background: rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .form-header-icon i { width: 22px; height: 22px; color: #fff; }
+    .form-header h3 { font-family: var(--font-d); font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 5px; }
+    .form-header p { font-size: 13.5px; color: rgba(255,255,255,.6); line-height: 1.6; }
+    .form-body { padding: 30px; }
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media(min-width:640px){ .form-grid { grid-template-columns: 1fr 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label { font-size: 12px; font-weight: 700; color: var(--ink3); text-transform: uppercase; letter-spacing: .4px; }
+    .form-label span { color: var(--red); }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 11px 13px;
+      border: 1.5px solid var(--border); border-radius: var(--r8);
+      font-family: var(--font-b); font-size: 14px; color: var(--ink);
+      background: var(--white); transition: border-color var(--ease); outline: none;
+    }
+    .form-input:focus, .form-textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(26,107,42,.07); }
+    .form-select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26,77,184,.07); }
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 13px center;
+    }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .radio-group { display: flex; flex-wrap: wrap; gap: 8px; }
+    .radio-option {
+      display: flex; align-items: center; gap: 7px;
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: var(--r8); padding: 9px 13px;
+      cursor: pointer; font-size: 13px; font-weight: 600;
+      color: var(--ink3); transition: all var(--ease);
+    }
+    .radio-option input { display: none; }
+    .radio-option.green-opt:has(input:checked) { background: var(--green-l); border-color: var(--green); color: var(--green); }
+    .radio-option.blue-opt:has(input:checked) { background: var(--blue-l); border-color: var(--blue); color: var(--blue); }
+    .section-label {
+      font-size: 13px; font-weight: 800; color: var(--ink2);
+      padding: 18px 0 6px; border-top: 1px solid var(--border);
+      margin-top: 6px; display: flex; align-items: center; gap: 8px;
+    }
+    .section-label:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+    .section-label i { width: 15px; height: 15px; }
+    .section-label.green-lbl i { color: var(--green); }
+    .section-label.blue-lbl i { color: var(--blue); }
+    .btn-submit {
+      width: 100%; padding: 15px; border: none; border-radius: var(--r10);
+      font-family: var(--font-b); font-size: 15px; font-weight: 800;
+      cursor: pointer; transition: all var(--ease); margin-top: 10px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-submit i { width: 17px; height: 17px; }
+    .btn-green { background: var(--green); color: #fff; }
+    .btn-green:hover:not(:disabled) { background: var(--green-d); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,107,42,.25); }
+    .btn-blue { background: var(--blue); color: #fff; }
+    .btn-blue:hover:not(:disabled) { background: #1340a0; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,77,184,.25); }
+    .btn-submit:disabled { opacity: .75; cursor: default; transform: none; box-shadow: none; }
+    .form-note { font-size: 11.5px; color: var(--ink5); text-align: center; margin-top: 10px; }
+
+    /* ── SUCCESS STATE ── */
+    .success-banner {
+      display: none;
+      flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 56px 28px;
+      gap: 16px;
+    }
+    .success-banner.show { display: flex; }
+    .success-icon { width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+    .success-icon i { width: 34px; height: 34px; color: #fff; }
+    .success-banner h4 { font-family: var(--font-d); font-size: 26px; font-weight: 800; color: var(--ink2); }
+    .success-banner p { font-size: 14.5px; color: var(--ink4); max-width: 400px; line-height: 1.7; }
+    .back-link { display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 700; text-decoration: none; padding: 10px 20px; border-radius: var(--pill); border: 1.5px solid var(--border); color: var(--ink3); transition: all var(--ease); margin-top: 4px; }
+    .back-link:hover { border-color: var(--green); color: var(--green); }
+    .back-link i { width: 14px; height: 14px; }
+
+    /* ── SIDE INFO PANEL ── */
+    .form-layout { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }
+    @media(min-width:900px){ .form-layout { grid-template-columns: 1fr 320px; } }
+    .info-panel { display: flex; flex-direction: column; gap: 14px; }
+    .info-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r12); padding: 20px 18px; }
+    .info-card-title { font-size: 13px; font-weight: 800; color: var(--ink2); display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .info-card-title i { width: 15px; height: 15px; }
+    .info-card-title i.green { color: var(--green); }
+    .info-card-title i.blue { color: var(--blue); }
+    .info-row { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--ink4); padding: 7px 0; border-bottom: 1px solid var(--border); line-height: 1.5; }
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-row i { width: 14px; height: 14px; flex-shrink: 0; margin-top: 1px; }
+    .info-row strong { color: var(--ink2); font-weight: 700; }
+    .notice { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: var(--r10); }
+    .notice i { width: 15px; height: 15px; flex-shrink: 0; margin-top: 2px; }
+    .notice-title { font-size: 13px; font-weight: 800; margin-bottom: 3px; }
+    .notice-text { font-size: 12px; line-height: 1.55; }
+    .notice.green { background: var(--green-l); border: 1.5px solid rgba(26,107,42,.15); color: var(--green); }
+    .notice.blue { background: var(--blue-l); border: 1.5px solid rgba(26,77,184,.15); color: var(--blue); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp .45s ease both; }
+    .d1 { animation-delay: .05s; } .d2 { animation-delay: .12s; } .d3 { animation-delay: .19s; }
+  </style>
+</head>
+<body>
+  <script src="assets/js/components/av-nav.js"></script>
+
+  <!-- BREADCRUMB -->
+  <nav class="bc">
+    <div class="wrap bc-inner">
+      <a href="/frontend/index.html">Home</a>
+      <i data-lucide="chevron-right"></i>
+      <a href="/frontend/insurance-services.html">Insurance &amp; Financing</a>
+      <i data-lucide="chevron-right"></i>
+      <span>Get a Quote / Apply</span>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="wrap page-header-inner fade-up">
+      <h1>Get a Quote or <em>Apply for Finance</em></h1>
+      <p>Fill in the relevant form below. Our team will respond within one business day with tailored options for your vehicle and requirements.</p>
+      <div class="header-pills">
+        <span class="header-pill"><i data-lucide="clock"></i>Response within 1 business day</span>
+        <span class="header-pill"><i data-lucide="shield-check"></i>Beema Samiti &amp; NRB regulated</span>
+        <span class="header-pill"><i data-lucide="lock"></i>Details never shared</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- FORM TAB SWITCHER -->
+  <div class="form-tabs-bar">
+    <div class="wrap" style="padding: 0">
+      <div class="form-tabs-inner">
+        <button class="form-tab-btn active-ins" id="tab-ins" onclick="switchTab('ins')">
+          <i data-lucide="shield"></i>Insurance Quote
+        </button>
+        <button class="form-tab-btn" id="tab-fin" onclick="switchTab('fin')">
+          <i data-lucide="banknote"></i>Vehicle Finance
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ -->
+  <!--  INSURANCE FORM PANEL              -->
+  <!-- ═══════════════════════════════════ -->
+  <div class="form-panel ins-bg active" id="panel-ins">
+    <div class="wrap">
+      <div class="form-layout">
+        <!-- Main form -->
+        <div class="form-wrap fade-up" id="ins-form-wrap">
+          <div class="form-header green-hdr">
+            <div class="form-header-top">
+              <div class="form-header-icon"><i data-lucide="shield-check"></i></div>
+              <div>
+                <h3>Insurance Quote Request</h3>
+                <p>Fields marked * are required. Your details are never shared with third parties.</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-body">
+            <form id="ins-form" onsubmit="handleSubmit(event, 'ins')">
+              <div class="section-label green-lbl"><i data-lucide="user"></i>Who is this for?</div>
+              <div style="margin-top:10px">
+                <div class="form-label">Entity Type <span>*</span></div>
+                <div class="radio-group" style="margin-top:6px">
+                  <label class="radio-option green-opt"><input type="radio" name="ins_entity" value="individual" checked><i data-lucide="user" style="width:14px;height:14px"></i>Individual</label>
+                  <label class="radio-option green-opt"><input type="radio" name="ins_entity" value="company"><i data-lucide="building-2" style="width:14px;height:14px"></i>Company / Corporate</label>
+                </div>
+              </div>
+
+              <div class="section-label green-lbl" style="border-top:1px solid var(--border);padding-top:18px;margin-top:18px"><i data-lucide="phone"></i>Contact Details</div>
+              <div class="form-grid" style="margin-top:12px">
+                <div class="form-group"><label class="form-label">Full Name <span>*</span></label><input class="form-input" type="text" placeholder="Your full name" required></div>
+                <div class="form-group"><label class="form-label">Phone Number <span>*</span></label><input class="form-input" type="tel" placeholder="+977 98XXXXXXXX" required></div>
+                <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="you@example.com"></div>
+                <div class="form-group">
+                  <label class="form-label">Preferred Contact <span>*</span></label>
+                  <div class="radio-group">
+                    <label class="radio-option green-opt"><input type="radio" name="ins_contact" value="phone" checked>Phone</label>
+                    <label class="radio-option green-opt"><input type="radio" name="ins_contact" value="whatsapp">WhatsApp</label>
+                    <label class="radio-option green-opt"><input type="radio" name="ins_contact" value="email">Email</label>
+                  </div>
+                </div>
+                <div class="form-group full"><label class="form-label">Address / City <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Kathmandu, Pokhara" required></div>
+              </div>
+
+              <div class="section-label green-lbl" style="border-top:1px solid var(--border);padding-top:18px;margin-top:18px"><i data-lucide="car"></i>Vehicle Details</div>
+              <div class="form-grid" style="margin-top:12px">
+                <div class="form-group">
+                  <label class="form-label">Vehicle Type <span>*</span></label>
+                  <div class="radio-group">
+                    <label class="radio-option green-opt"><input type="radio" name="ins_vtype" value="ice" checked>ICE / Petrol / Diesel</label>
+                    <label class="radio-option green-opt"><input type="radio" name="ins_vtype" value="ev">Electric (EV)</label>
+                    <label class="radio-option green-opt"><input type="radio" name="ins_vtype" value="hybrid">Hybrid</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Vehicle Condition <span>*</span></label>
+                  <div class="radio-group">
+                    <label class="radio-option green-opt"><input type="radio" name="ins_cond" value="new" checked>New</label>
+                    <label class="radio-option green-opt"><input type="radio" name="ins_cond" value="used">Used / Pre-owned</label>
+                  </div>
+                </div>
+                <div class="form-group"><label class="form-label">Brand &amp; Model <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Toyota Prius, MG ZS EV" required></div>
+                <div class="form-group"><label class="form-label">Model Year</label><input class="form-input" type="text" placeholder="e.g. 2023"></div>
+                <div class="form-group"><label class="form-label">Registration Number</label><input class="form-input" type="text" placeholder="e.g. BA 1 PA 1234"></div>
+              </div>
+
+              <div class="section-label green-lbl" style="border-top:1px solid var(--border);padding-top:18px;margin-top:18px"><i data-lucide="shield"></i>What do you need?</div>
+              <div style="margin-top:10px">
+                <div class="form-label">Type of Service <span>*</span></div>
+                <div class="radio-group" style="margin-top:6px">
+                  <label class="radio-option green-opt"><input type="radio" name="ins_service" value="third" checked>Third-Party</label>
+                  <label class="radio-option green-opt"><input type="radio" name="ins_service" value="comp">Comprehensive</label>
+                  <label class="radio-option green-opt"><input type="radio" name="ins_service" value="renewal">Renewal</label>
+                  <label class="radio-option green-opt"><input type="radio" name="ins_service" value="claim">Claim Assistance</label>
+                </div>
+              </div>
+              <div class="form-grid" style="margin-top:16px">
+                <div class="form-group"><label class="form-label">Current Insurer</label><input class="form-input" type="text" placeholder="Your existing insurer (if any)"></div>
+                <div class="form-group"><label class="form-label">Policy Expiry Date</label><input class="form-input" type="date"></div>
+                <div class="form-group full"><label class="form-label">Additional Notes</label><textarea class="form-textarea" placeholder="Specific requirements, add-ons you are interested in, or questions..."></textarea></div>
+              </div>
+
+              <div style="margin-top:22px"><label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer"><input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">I agree to AutoViindu's Terms and Privacy Policy and consent to being contacted regarding this enquiry.</label></div>
+              <button class="btn-submit btn-green" type="submit" id="ins-btn">
+                <i data-lucide="send"></i>Submit Insurance Quote Request
+              </button>
+              <div class="form-note">We respond within one business day. Mon–Sat · 9am–6pm.</div>
+            </form>
+          </div>
+          <!-- Success state (hidden initially) -->
+          <div class="success-banner" id="ins-success">
+            <div class="success-icon" style="background:var(--green)"><i data-lucide="check"></i></div>
+            <h4>Quote Request Received!</h4>
+            <p>Thank you. Our insurance team will review your details and reach out within one business day with the best options for your vehicle.</p>
+            <a href="/frontend/insurance-financing.html" class="back-link"><i data-lucide="arrow-left"></i>Back to Insurance &amp; Financing</a>
+          </div>
+        </div>
+
+        <!-- Side info -->
+        <div class="info-panel fade-up d2">
+          <div class="notice green">
+            <i data-lucide="shield-check"></i>
+            <div>
+              <div class="notice-title">Same-day activation</div>
+              <div class="notice-text">Digital certificate issued immediately on payment. Physical copy within 3–5 days.</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-title"><i data-lucide="file-text" class="green"></i>Documents you may need</div>
+            <div class="info-row"><i data-lucide="check-circle-2" style="color:var(--green)"></i><span><strong>Bluebook</strong> — vehicle registration certificate</span></div>
+            <div class="info-row"><i data-lucide="check-circle-2" style="color:var(--green)"></i><span><strong>Driving licence</strong> — valid &amp; current</span></div>
+            <div class="info-row"><i data-lucide="check-circle-2" style="color:var(--green)"></i><span><strong>Citizenship / Passport</strong></span></div>
+            <div class="info-row"><i data-lucide="check-circle-2" style="color:var(--green)"></i><span><strong>Previous policy</strong> — for renewal &amp; NCB transfer</span></div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-title"><i data-lucide="trending-down" class="green"></i>NCB reminder</div>
+            <div class="info-row"><i data-lucide="info" style="color:var(--green)"></i><span>Any claim resets your No Claim Bonus to <strong>0%</strong>. For minor repairs consider paying out-of-pocket.</span></div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-title"><i data-lucide="building-2" class="green"></i>Insurers we work with</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
+              <span style="font-size:11.5px;padding:4px 10px;border-radius:var(--pill);background:var(--green-l);color:var(--green);font-weight:600">Nepal Insurance</span>
+              <span style="font-size:11.5px;padding:4px 10px;border-radius:var(--pill);background:var(--green-l);color:var(--green);font-weight:600">Shikhar Insurance</span>
+              <span style="font-size:11.5px;padding:4px 10px;border-radius:var(--pill);background:var(--green-l);color:var(--green);font-weight:600">NLG Insurance</span>
+              <span style="font-size:11.5px;padding:4px 10px;border-radius:var(--pill);background:var(--green-l);color:var(--green);font-weight:600">Everest Insurance</span>
+              <span style="font-size:11.5px;padding:4px 10px;border-radius:var(--pill);background:var(--bg2);color:var(--ink5);font-weight:600;font-style:italic">+ more</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ -->
+  <!--  FINANCE FORM PANEL                -->
+  <!-- ═══════════════════════════════════ -->
+  <div class="form-panel fin-bg" id="panel-fin">
+    <div class="wrap">
+      <div class="form-layout">
+        <!-- Main form -->
+        <div class="form-wrap fade-up" id="fin-form-wrap">
+          <div class="form-header blue-hdr">
+            <div class="form-header-top">
+              <div class="form-header-icon"><i data-lucide="banknote"></i></div>
+              <div>
+                <h3>Vehicle Finance Request</h3>
+                <p>Fields marked * are required. We connect you with NRB-regulated lenders only.</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-body">
+            <form id="fin-form" onsubmit="handleSubmit(event, 'fin')">
+              <div class="section-label blue-lbl"><i data-lucide="user"></i>Customer Information</div>
+              <div class="form-grid" style="margin-top:12px">
+                <div class="form-group"><label class="form-label">Full Name <span>*</span></label><input class="form-input" type="text" placeholder="Your full name" required></div>
+                <div class="form-group"><label class="form-label">Phone Number <span>*</span></label><input class="form-input" type="tel" placeholder="+977 98XXXXXXXX" required></div>
+                <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="you@example.com"></div>
+                <div class="form-group"><label class="form-label">Address / City <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Kathmandu, Pokhara" required></div>
+                <div class="form-group">
+                  <label class="form-label">Occupation <span>*</span></label>
+                  <select class="form-select" required>
+                    <option value="" disabled selected>Select occupation</option>
+                    <option>Salaried Employee</option>
+                    <option>Self-Employed</option>
+                    <option>Business Owner</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Monthly Income Range <span>*</span></label>
+                  <select class="form-select" required>
+                    <option value="" disabled selected>Select income range</option>
+                    <option>Below Rs. 40,000</option>
+                    <option>Rs. 40,000 – 80,000</option>
+                    <option>Rs. 80,000 – 1.5 Lakh</option>
+                    <option>Above Rs. 1.5 Lakh</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="section-label blue-lbl" style="border-top:1px solid var(--border);padding-top:18px;margin-top:18px"><i data-lucide="car"></i>Vehicle Details</div>
+              <div class="form-grid" style="margin-top:12px">
+                <div class="form-group">
+                  <label class="form-label">Vehicle Type <span>*</span></label>
+                  <div class="radio-group">
+                    <label class="radio-option blue-opt"><input type="radio" name="fin_vtype" value="ev" checked>Electric (BEV)</label>
+                    <label class="radio-option blue-opt"><input type="radio" name="fin_vtype" value="ice">ICE / Petrol / Diesel</label>
+                    <label class="radio-option blue-opt"><input type="radio" name="fin_vtype" value="hybrid">Hybrid (HEV)</label>
+                    <label class="radio-option blue-opt"><input type="radio" name="fin_vtype" value="used">Used Vehicle</label>
+                  </div>
+                </div>
+                <div class="form-group"><label class="form-label">Vehicle Brand <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Toyota, MG, Hyundai" required></div>
+                <div class="form-group"><label class="form-label">Vehicle Model <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Prius, ZS EV, Ioniq 5" required></div>
+                <div class="form-group"><label class="form-label">Model Year</label><input class="form-input" type="text" placeholder="e.g. 2024"></div>
+                <div class="form-group"><label class="form-label">On-Road Price (Approx.) <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Rs. 45,00,000" required></div>
+                <div class="form-group"><label class="form-label">Down Payment Planned</label><input class="form-input" type="text" placeholder="e.g. Rs. 18,00,000"></div>
+              </div>
+
+              <div class="section-label blue-lbl" style="border-top:1px solid var(--border);padding-top:18px;margin-top:18px"><i data-lucide="banknote"></i>Finance Requirements</div>
+              <div class="form-grid" style="margin-top:12px">
+                <div class="form-group">
+                  <label class="form-label">Preferred Loan Provider <span>*</span></label>
+                  <select class="form-select" required>
+                    <option value="" disabled selected>Select provider type</option>
+                    <option>Class A — Commercial Bank</option>
+                    <option>Class B — Development Bank</option>
+                    <option>Class C — Finance Company</option>
+                    <option>Hire Purchase (NRB-licensed)</option>
+                    <option>No preference — recommend best</option>
+                  </select>
+                </div>
+                <div class="form-group"><label class="form-label">Desired Loan Amount <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Rs. 27,00,000" required></div>
+                <div class="form-group">
+                  <label class="form-label">Preferred Tenure <span>*</span></label>
+                  <select class="form-select" required>
+                    <option value="" disabled selected>Select tenure</option>
+                    <option>3 Years</option><option>4 Years</option><option>5 Years</option>
+                    <option>6 Years</option><option>7 Years</option><option>8 Years</option>
+                    <option>9 Years</option><option>10 Years</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Interest Rate Type <span>*</span></label>
+                  <div class="radio-group">
+                    <label class="radio-option blue-opt"><input type="radio" name="fin_rate" value="fixed" checked>Fixed</label>
+                    <label class="radio-option blue-opt"><input type="radio" name="fin_rate" value="variable">Variable</label>
+                  </div>
+                </div>
+                <div class="form-group full">
+                  <label class="form-label">Bundle with Insurance?</label>
+                  <div class="radio-group">
+                    <label class="radio-option blue-opt"><input type="radio" name="fin_ins" value="yes" checked>Yes — arrange insurance + finance together</label>
+                    <label class="radio-option blue-opt"><input type="radio" name="fin_ins" value="no">No — finance only</label>
+                  </div>
+                </div>
+                <div class="form-group full"><label class="form-label">Additional Notes or Comments</label><textarea class="form-textarea" placeholder="Any specific requirements, questions, or circumstances you'd like us to know about..."></textarea></div>
+              </div>
+
+              <div style="margin-top:22px"><label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer"><input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--blue)">I agree to AutoViindu's Terms and Privacy Policy and confirm the information provided is accurate to the best of my knowledge.</label></div>
+              <button class="btn-submit btn-blue" type="submit" id="fin-btn">
+                <i data-lucide="send"></i>Submit Finance Request
+              </button>
+              <div class="form-note">We respond within one business day. Mon–Sat · 9am–6pm.</div>
+            </form>
+          </div>
+          <!-- Success state -->
+          <div class="success-banner" id="fin-success">
+            <div class="success-icon" style="background:var(--blue)"><i data-lucide="check"></i></div>
+            <h4>Finance Request Submitted!</h4>
+            <p>Our finance team will review your requirements and connect you with the right NRB-regulated lenders within one business day.</p>
+            <a href="/frontend/insurance-financing.html" class="back-link"><i data-lucide="arrow-left"></i>Back to Insurance &amp; Financing</a>
+          </div>
+        </div>
+
+        <!-- Side info -->
+        <div class="info-panel fade-up d2">
+          <div class="notice blue">
+            <i data-lucide="zap"></i>
+            <div>
+              <div class="notice-title">EV Green Loan available</div>
+              <div class="notice-text">BEVs qualify for lower rates (from 5.51%) and up to 10-year tenures under Nepal's green loan incentive.</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-title"><i data-lucide="percent" class="blue"></i>Current starting rates</div>
+            <div class="info-row"><i data-lucide="car" style="color:var(--blue)"></i><span><strong>New ICE / Hybrid</strong> — from 5.37% p.a.</span></div>
+            <div class="info-row"><i data-lucide="zap" style="color:var(--teal)"></i><span><strong>New Electric (BEV)</strong> — from 5.51% p.a.</span></div>
+            <div class="info-row"><i data-lucide="clock" style="color:var(--gold)"></i><span><strong>Used Vehicle</strong> — from 8.00% p.a.</span></div>
+            <div class="info-row"><i data-lucide="info" style="color:var(--ink5)"></i><span style="font-size:11.5px;color:var(--ink5)">Rates are indicative for FY 2082/83. Confirm with lender before signing.</span></div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-title"><i data-lucide="file-text" class="blue"></i>Documents you may need</div>
+            <div class="info-row"><i data-lucide="check-circle-2" style="color:var(--blue)"></i><span>Citizenship / Passport</span></div>
+            <div class="info-row"><i data-lucide="check-circle-2" style="color:var(--blue)"></i><span>Income proof / salary slip / ITR</span></div>
+            <div class="info-row"><i data-lucide="check-circle-2" style="color:var(--blue)"></i><span>Bluebook (for used vehicles)</span></div>
+            <div class="info-row"><i data-lucide="check-circle-2" style="color:var(--blue)"></i><span>PAN + financial statements (firms)</span></div>
+            <div class="info-row"><i data-lucide="check-circle-2" style="color:var(--blue)"></i><span>Battery SoH report (used EVs)</span></div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-title"><i data-lucide="landmark" class="blue"></i>Lenders we connect with</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
+              <span style="font-size:11.5px;padding:4px 10px;border-radius:var(--pill);background:var(--blue-l);color:var(--blue);font-weight:600">Class A Banks</span>
+              <span style="font-size:11.5px;padding:4px 10px;border-radius:var(--pill);background:var(--blue-l);color:var(--blue);font-weight:600">Class B Banks</span>
+              <span style="font-size:11.5px;padding:4px 10px;border-radius:var(--pill);background:var(--blue-l);color:var(--blue);font-weight:600">Finance Cos.</span>
+              <span style="font-size:11.5px;padding:4px 10px;border-radius:var(--pill);background:var(--blue-l);color:var(--blue);font-weight:600">Hire Purchase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function switchTab(type) {
+      document.getElementById('tab-ins').className = 'form-tab-btn' + (type === 'ins' ? ' active-ins' : '');
+      document.getElementById('tab-fin').className = 'form-tab-btn' + (type === 'fin' ? ' active-fin' : '');
+      document.getElementById('panel-ins').classList.toggle('active', type === 'ins');
+      document.getElementById('panel-fin').classList.toggle('active', type === 'fin');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Open tab based on URL hash
+    if (location.hash === '#finance') switchTab('fin');
+
+    function handleSubmit(e, type) {
+      e.preventDefault();
+      const formEl = document.getElementById(type + '-form');
+      const successEl = document.getElementById(type + '-success');
+      const wrapEl = document.getElementById(type + '-form-wrap');
+      formEl.closest('.form-body').style.display = 'none';
+      formEl.closest('.form-wrap').querySelector('.form-header').style.display = 'none';
+      successEl.classList.add('show');
+      wrapEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+  <script src="assets/js/components/av-footer.js"></script>
+</body>
+</html>

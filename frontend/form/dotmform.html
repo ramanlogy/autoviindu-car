@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Request a DOTM Service – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
+      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
+      --border:#E4E8ED; --bg:#F5F7F9; --white:#ffffff;
+      --red:#C8271E;
+      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
+      --sh1:0 1px 4px rgba(0,0,0,.06); --sh2:0 4px 14px rgba(0,0,0,.08);
+      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
+      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-b); background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; min-height:100vh; }
+    ::selection { background:rgba(26,107,42,.12); }
+    :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+    @media(min-width:640px){ .wrap{ padding:0 32px; } }
+    @media(min-width:1024px){ .wrap{ padding:0 48px; } }
+
+    /* TOP BAR */
+    .topbar {
+      background: linear-gradient(145deg,#0B2A12 0%,#1A6B2A 100%);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .topbar-brand {
+      font-family: var(--font-d); font-size: 20px; font-weight: 800; color: #fff;
+      text-decoration: none; letter-spacing: -0.3px;
+    }
+    .topbar-brand em { font-style: italic; color: var(--green-m); }
+    .topbar-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: rgba(255,255,255,.75);
+      text-decoration: none; transition: color var(--ease);
+    }
+    .topbar-back:hover { color: #fff; }
+    .topbar-back i { width: 14px; height: 14px; }
+
+    /* BREADCRUMB */
+    .bc { background:var(--white); border-bottom:1px solid var(--border); padding:11px 0; }
+    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
+    .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
+    .bc-inner a:hover { text-decoration:underline; }
+    .bc-inner i { width:12px; height:12px; }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 40px 0 36px;
+    }
+    .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
+    .eyebrow i { width:13px; height:13px; }
+    .page-header h1 { font-family:var(--font-d); font-size:clamp(26px,4vw,42px); font-weight:800; color:var(--ink); line-height:1.1; margin-bottom:10px; }
+    .page-header h1 em { font-style:italic; color:var(--green); }
+    .page-header p { font-size:14.5px; color:var(--ink4); max-width:520px; line-height:1.75; }
+
+    /* LAYOUT */
+    .page-body { padding: 40px 0 80px; }
+    .layout { display: grid; grid-template-columns: 1fr; gap: 28px; }
+    @media(min-width:900px) { .layout { grid-template-columns: 300px 1fr; align-items: start; } }
+
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 14px; }
+    .sidebar-card {
+      background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r16);
+      padding: 20px; transition: border-color var(--ease);
+    }
+    .sidebar-card-title { font-size: 13px; font-weight: 800; color: var(--ink2); margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
+    .sidebar-card-title i { width: 14px; height: 14px; color: var(--green); }
+    .step-mini { display: flex; gap: 11px; margin-bottom: 10px; }
+    .step-mini:last-child { margin-bottom: 0; }
+    .step-mini-num { width: 22px; height: 22px; border-radius: 50%; background: var(--green-l); border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--green); flex-shrink: 0; }
+    .step-mini-text { font-size: 12.5px; color: var(--ink4); line-height: 1.5; padding-top: 2px; }
+    .step-mini-text strong { color: var(--ink2); display: block; font-size: 12px; font-weight: 700; }
+    .contact-item { display: flex; align-items: center; gap: 9px; font-size: 13px; color: var(--ink4); margin-bottom: 8px; }
+    .contact-item:last-child { margin-bottom: 0; }
+    .contact-item i { width: 14px; height: 14px; color: var(--green); flex-shrink: 0; }
+    .contact-item a { color: var(--green); text-decoration: none; font-weight: 600; }
+    .contact-item a:hover { text-decoration: underline; }
+    .notice-mini { display:flex; align-items:flex-start; gap:9px; padding:12px 14px; border-radius:var(--r10); background:var(--green-l); border:1.5px solid rgba(26,107,42,.15); }
+    .notice-mini i { width:14px; height:14px; color:var(--green); flex-shrink:0; margin-top:2px; }
+    .notice-mini p { font-size:12px; color:var(--ink3); line-height:1.55; }
+
+    /* FORM CARD */
+    .form-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); overflow:hidden; }
+    .form-header { background:linear-gradient(135deg,var(--green),var(--green-d)); padding:24px 28px 20px; }
+    .form-header h3 { font-family:var(--font-d); font-size:22px; font-weight:800; color:#fff; margin-bottom:4px; }
+    .form-header p { font-size:13px; color:rgba(255,255,255,.6); }
+    .form-body { padding:24px 28px 28px; }
+    .form-grid { display:grid; grid-template-columns:1fr; gap:14px; }
+    @media(min-width:560px){ .form-grid{ grid-template-columns:1fr 1fr; } }
+    .form-group { display:flex; flex-direction:column; gap:5px; }
+    .form-group.full { grid-column:1/-1; }
+    .form-label { font-size:11.5px; font-weight:700; color:var(--ink3); text-transform:uppercase; letter-spacing:.45px; }
+    .form-label span { color:var(--red); }
+    .form-input, .form-select, .form-textarea {
+      width:100%; padding:10px 12px; border:1.5px solid var(--border); border-radius:var(--r8);
+      font-family:var(--font-b); font-size:14px; color:var(--ink); background:var(--white);
+      transition:border-color var(--ease); outline:none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green); box-shadow: 0 0 0 3px rgba(26,107,42,.06); }
+    .form-textarea { resize:vertical; min-height:80px; }
+    .form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
+    .radio-group { display:flex; flex-wrap:wrap; gap:7px; }
+    .radio-option { display:flex; align-items:center; gap:7px; background:var(--bg); border:1.5px solid var(--border); border-radius:var(--r8); padding:8px 13px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:all var(--ease); }
+    .radio-option input { display:none; }
+    .radio-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); }
+    .form-sec-title { font-size:13px; font-weight:800; color:var(--ink2); padding:18px 0 4px; border-top:1px solid var(--border); margin-top:6px; display:flex; align-items:center; gap:8px; }
+    .form-sec-title:first-of-type { border-top:none; padding-top:0; margin-top:0; }
+    .form-sec-title i { width:14px; height:14px; color:var(--green); }
+    .form-submit { width:100%; padding:14px; background:var(--green); color:#fff; border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:background var(--ease); margin-top:10px; display:flex; align-items:center; justify-content:center; gap:8px; }
+    .form-submit:hover { background:var(--green-d); }
+    .form-submit i { width:16px; height:16px; }
+    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:10px; }
+
+    /* TABS */
+    .type-toggle { display:flex; gap:0; border:1.5px solid var(--border); border-radius:var(--r10); overflow:hidden; width:fit-content; margin-bottom:0; }
+    .type-btn { padding:10px 22px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; background:var(--white); border-right:1.5px solid var(--border); transition:all var(--ease); }
+    .type-btn:last-child { border-right:none; }
+    .type-btn.active { background:var(--green); color:#fff; border-color:var(--green); }
+
+    /* SUCCESS */
+    .success-screen { display:none; flex-direction:column; align-items:center; text-align:center; padding:56px 28px; }
+    .success-icon { width:64px; height:64px; background:var(--green-l); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+    .success-icon i { width:28px; height:28px; color:var(--green); }
+    .success-screen h3 { font-family:var(--font-d); font-size:24px; font-weight:800; color:var(--ink2); margin-bottom:8px; }
+    .success-screen p { font-size:14px; color:var(--ink4); line-height:1.7; max-width:340px; margin:0 auto 24px; }
+    .back-btn { display:inline-flex; align-items:center; gap:7px; padding:11px 22px; background:var(--green-l); border:1.5px solid var(--green); border-radius:var(--r10); font-size:13.5px; font-weight:700; color:var(--green); text-decoration:none; transition:all var(--ease); }
+    .back-btn:hover { background:var(--green); color:#fff; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { opacity:0; animation:fadeUp .45s ease forwards; }
+    .fade-up-delay { opacity:0; animation:fadeUp .45s ease 0.1s forwards; }
+    .fade-up-delay2 { opacity:0; animation:fadeUp .45s ease 0.2s forwards; }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="/frontend/index.html" class="topbar-brand">Auto<em>Viindu</em></a>
+      <a href="/frontend/dotm-services.html" class="topbar-back">
+        <i data-lucide="arrow-left"></i>
+        Back to DOTM Services
+      </a>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <nav class="bc">
+    <div class="wrap bc-inner">
+      <a href="/frontend/index.html">Home</a>
+      <i data-lucide="chevron-right"></i>
+      <a href="/frontend/services.html">Services</a>
+      <i data-lucide="chevron-right"></i>
+      <a href="/frontend/dotm-services.html">DOTM Services</a>
+      <i data-lucide="chevron-right"></i>
+      <span>Request a Service</span>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="wrap fade-up">
+      <div class="eyebrow"><i data-lucide="send"></i>Service Request</div>
+      <h1>Tell us what <em>you need</em></h1>
+      <p>Fill in your details below. We'll review your request and confirm next steps within one business day. No queues, no confusion.</p>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="page-body">
+    <div class="wrap">
+      <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar fade-up-delay">
+          <div class="sidebar-card">
+            <div class="sidebar-card-title"><i data-lucide="repeat-2"></i>How It Works</div>
+            <div class="step-mini">
+              <div class="step-mini-num">1</div>
+              <div class="step-mini-text"><strong>Submit this form</strong>Tell us what you need and your details.</div>
+            </div>
+            <div class="step-mini">
+              <div class="step-mini-num">2</div>
+              <div class="step-mini-text"><strong>We collect documents</strong>Our agent picks up paperwork from you.</div>
+            </div>
+            <div class="step-mini">
+              <div class="step-mini-num">3</div>
+              <div class="step-mini-text"><strong>We book your slot</strong>We secure DOTM appointments proactively.</div>
+            </div>
+            <div class="step-mini">
+              <div class="step-mini-num">4</div>
+              <div class="step-mini-text"><strong>Processing & updates</strong>SMS & email at every stage.</div>
+            </div>
+            <div class="step-mini">
+              <div class="step-mini-num">5</div>
+              <div class="step-mini-text"><strong>Documents returned</strong>We deliver completed docs back to you.</div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card-title"><i data-lucide="phone"></i>Need help?</div>
+            <div class="contact-item"><i data-lucide="phone-call"></i><span>Call us: <a href="tel:+977980000000">+977 98 0000000</a></span></div>
+            <div class="contact-item"><i data-lucide="mail"></i><span><a href="mailto:dotm@autoviindu.com">dotm@autoviindu.com</a></span></div>
+            <div class="contact-item"><i data-lucide="clock"></i><span>Mon–Sat · 9am–6pm NST</span></div>
+          </div>
+
+          <div class="notice-mini">
+            <i data-lucide="shield-check"></i>
+            <p>Your details are never shared with third parties. We only use your information to process your DOTM request.</p>
+          </div>
+        </aside>
+
+        <!-- FORM -->
+        <div class="form-wrap fade-up-delay2">
+          <div class="form-header">
+            <h3>DOTM Service Request</h3>
+            <p>Fields marked * are required. We respond within one business day.</p>
+          </div>
+          <div class="form-body">
+            <div id="form-area">
+              <form onsubmit="handleSubmit(event)" novalidate>
+
+                <!-- Type -->
+                <div class="form-sec-title"><i data-lucide="users"></i>Who is this for?</div>
+                <div style="margin-top:10px">
+                  <div class="form-label" style="margin-bottom:8px">Request Type <span>*</span></div>
+                  <div class="type-toggle">
+                    <div class="type-btn active" onclick="switchType('individual',this)">Individual</div>
+                    <div class="type-btn" onclick="switchType('corporate',this)">Corporate</div>
+                  </div>
+                </div>
+
+                <!-- Service Category -->
+                <div class="form-sec-title"><i data-lucide="list"></i>Service Required</div>
+                <div class="form-grid" style="margin-top:10px">
+                  <div class="form-group full">
+                    <div class="form-label">Select Service Category <span>*</span></div>
+                    <div class="radio-group" style="margin-top:6px">
+                      <label class="radio-option"><input type="radio" name="category" value="registration" checked>Vehicle Registration</label>
+                      <label class="radio-option"><input type="radio" name="category" value="licensing">Licensing</label>
+                      <label class="radio-option"><input type="radio" name="category" value="compliance">Documentation &amp; Compliance</label>
+                      <label class="radio-option"><input type="radio" name="category" value="value-add">Value-Added Services</label>
+                      <label class="radio-option"><input type="radio" name="category" value="other">Other</label>
+                    </div>
+                  </div>
+                  <div class="form-group full">
+                    <label class="form-label">Describe the specific service needed <span>*</span></label>
+                    <textarea class="form-textarea" placeholder="e.g. Bluebook renewal for my private vehicle, driving license upgrade from two-wheeler to four-wheeler, duplicate bluebook for lost certificate…" required></textarea>
+                  </div>
+                </div>
+
+                <!-- Vehicle Information -->
+                <div class="form-sec-title"><i data-lucide="car"></i>Vehicle Details <span style="font-size:11px;font-weight:500;color:var(--ink5)">(if applicable)</span></div>
+                <div class="form-grid" style="margin-top:10px">
+                  <div class="form-group">
+                    <label class="form-label">Vehicle Type</label>
+                    <div class="radio-group">
+                      <label class="radio-option"><input type="radio" name="vtype" value="private" checked>Private</label>
+                      <label class="radio-option"><input type="radio" name="vtype" value="commercial">Commercial</label>
+                      <label class="radio-option"><input type="radio" name="vtype" value="government">Government</label>
+                      <label class="radio-option"><input type="radio" name="vtype" value="rental">Rental</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Fuel Type</label>
+                    <div class="radio-group">
+                      <label class="radio-option"><input type="radio" name="fuel" value="petrol" checked>Petrol</label>
+                      <label class="radio-option"><input type="radio" name="fuel" value="diesel">Diesel</label>
+                      <label class="radio-option"><input type="radio" name="fuel" value="ev">EV</label>
+                      <label class="radio-option"><input type="radio" name="fuel" value="hybrid">Hybrid</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Brand</label>
+                    <input class="form-input" type="text" placeholder="e.g. Toyota, Honda">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Model</label>
+                    <input class="form-input" type="text" placeholder="e.g. Prius, City">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Manufacture Year</label>
+                    <select class="form-select">
+                      <option value="">Select Year</option>
+                      <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+                      <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
+                      <option>2017</option><option>2016</option><option>2015</option><option>2014</option>
+                      <option>2013 or older</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Displacement (cc / kW)</label>
+                    <input class="form-input" type="text" placeholder="e.g. 1500cc or 150kW">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Variant</label>
+                    <input class="form-input" type="text" placeholder="e.g. VX, ZX, G">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Vehicle Registration Number</label>
+                    <input class="form-input" type="text" placeholder="e.g. BA 1 PA 1234">
+                  </div>
+                </div>
+
+                <!-- Individual Details -->
+                <div id="individual-pane">
+                  <div class="form-sec-title"><i data-lucide="user"></i>Personal Details</div>
+                  <div class="form-grid" style="margin-top:10px">
+                    <div class="form-group">
+                      <label class="form-label">Full Name <span>*</span></label>
+                      <input class="form-input" type="text" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Mobile Number <span>*</span></label>
+                      <input class="form-input" type="tel" placeholder="+977 98XXXXXXXX" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Alternative Number</label>
+                      <input class="form-input" type="tel" placeholder="Optional">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Email Address</label>
+                      <input class="form-input" type="email" placeholder="you@example.com">
+                    </div>
+                    <div class="form-group full">
+                      <label class="form-label">Full Address <span>*</span></label>
+                      <input class="form-input" type="text" placeholder="Full address" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Province / Municipality</label>
+                      <input class="form-input" type="text" placeholder="e.g. Bagmati / Kathmandu Metropolitan">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Corporate Details -->
+                <div id="corporate-pane" style="display:none">
+                  <div class="form-sec-title"><i data-lucide="building-2"></i>Corporate Details</div>
+                  <div class="form-grid" style="margin-top:10px">
+                    <div class="form-group">
+                      <label class="form-label">Registered Company Name <span>*</span></label>
+                      <input class="form-input" type="text" placeholder="Legal registered name">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Trading Name (if different)</label>
+                      <input class="form-input" type="text" placeholder="Trading name">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Business Registration Number</label>
+                      <input class="form-input" type="text" placeholder="Registration no.">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">PAN / VAT Number <span>*</span></label>
+                      <input class="form-input" type="text" placeholder="PAN or VAT number">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Date of Incorporation</label>
+                      <input class="form-input" type="date">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Primary Contact Person <span>*</span></label>
+                      <input class="form-input" type="text" placeholder="Full name">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Designation</label>
+                      <input class="form-input" type="text" placeholder="e.g. Fleet Manager, Director">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Official Number <span>*</span></label>
+                      <input class="form-input" type="tel" placeholder="+977 98XXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Alternative Contact Number</label>
+                      <input class="form-input" type="tel" placeholder="Optional">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Official Email Address</label>
+                      <input class="form-input" type="email" placeholder="office@company.com">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Company Website</label>
+                      <input class="form-input" type="url" placeholder="https://company.com">
+                    </div>
+                    <div class="form-group full">
+                      <label class="form-label">Registered Office Address <span>*</span></label>
+                      <input class="form-input" type="text" placeholder="Full registered address">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Province / Municipality</label>
+                      <input class="form-input" type="text" placeholder="e.g. Bagmati / Kathmandu">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Postal Code</label>
+                      <input class="form-input" type="text" placeholder="e.g. 44600">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="form-sec-title"><i data-lucide="settings-2"></i>Preferences</div>
+                <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
+                  <div>
+                    <div class="form-label" style="margin-bottom:6px">Do you need document pickup and delivery? <span>*</span></div>
+                    <div class="radio-group">
+                      <label class="radio-option"><input type="radio" name="pickup" value="yes" checked>Yes</label>
+                      <label class="radio-option"><input type="radio" name="pickup" value="no">No — I will deliver documents myself</label>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="form-label" style="margin-bottom:6px">Do you want appointment and slot assistance?</div>
+                    <div class="radio-group">
+                      <label class="radio-option"><input type="radio" name="appt" value="yes" checked>Yes</label>
+                      <label class="radio-option"><input type="radio" name="appt" value="no">No</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Confirm -->
+                <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
+                  <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer">
+                    <input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">
+                    I confirm the information provided is true and correct.
+                  </label>
+                  <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer">
+                    <input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">
+                    I agree to AutoViindu's service terms and conditions.
+                  </label>
+                </div>
+
+                <button class="form-submit" type="submit">
+                  <i data-lucide="send"></i>
+                  Submit Request
+                </button>
+                <div class="form-note">We will respond within one business day · Mon–Sat · 9am–6pm NST</div>
+              </form>
+            </div>
+
+            <!-- SUCCESS STATE -->
+            <div class="success-screen" id="success-screen">
+              <div class="success-icon"><i data-lucide="check-circle-2"></i></div>
+              <h3>Request Submitted!</h3>
+              <p>Thank you. We have received your DOTM service request and will get back to you within one business day.</p>
+              <a href="/frontend/dotm-services.html" class="back-btn">
+                <i data-lucide="arrow-left" style="width:14px;height:14px"></i>
+                Back to DOTM Services
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function switchType(type, btn) {
+      document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('individual-pane').style.display = type === 'individual' ? '' : 'none';
+      document.getElementById('corporate-pane').style.display = type === 'corporate' ? '' : 'none';
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-area').style.display = 'none';
+      const s = document.getElementById('success-screen');
+      s.style.display = 'flex';
+      lucide.createIcons();
+      s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+  <script src="assets/js/components/av-footer.js"></script>
+</body>
+</html>

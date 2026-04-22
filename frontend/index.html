@@ -67,7 +67,7 @@ input,select{font-family:var(--font-b)}
 .site-header{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--sh1);transition:box-shadow var(--ease)}
 .site-header.scrolled{box-shadow:var(--sh2)}
 .header-in{display:flex;align-items:center;height:var(--nav);gap:10px}
-.logo{display:flex;align-items:center;gap:8px;cursor:pointer;flex-shrink:0}
+.logo{display:flex;align-items:center;gap:2px;cursor:pointer;flex-shrink:0}
 .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--g3),var(--g4));border-radius:var(--r10);display:flex;align-items:center;justify-content:center}
 .logo-mark svg{color:#fff}
 .logo-text{font-family:var(--font-d);font-size:20px;font-weight:700;color:var(--ink)}
@@ -840,19 +840,156 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 .cta-sub{font-size:14px;color:rgba(255,255,255,.38);margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.7}
 .cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 
-/* ══ NAV DROPDOWN ══ */
-:root{--text-primary:#111;--text-secondary:#6e6e73;--bg-hover:#f5f5f7}
-.nav-dropdown{position:relative}
-.nav-dropdown::after{content:"";position:absolute;top:100%;left:0;width:100%;height:10px}
-.nav-dd{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);min-width:240px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.06);padding:6px 0;z-index:999;opacity:0;visibility:hidden;pointer-events:none;transition:all .18s ease}
-.nav-dropdown:hover .nav-dd{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.nav-dd-hd{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);padding:8px 14px 6px}
-.nav-dd-item{display:flex;flex-direction:column;padding:10px 14px;cursor:pointer;text-decoration:none;color:inherit;transition:background .15s ease}
-.nav-dd-item:hover{background:var(--bg-hover)}
-.nav-dd-item-title{font-size:14px;font-weight:500;color:var(--text-primary)}
-.nav-dd-sub{font-size:12px;color:var(--text-secondary);margin-top:2px}
-.nav-dd-divider{height:1px;background:var(--border);margin:6px 14px}
+/* ── reset scoped to nav ── */
+.av-nav *, .av-nav *::before, .av-nav *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+/* ── variables ── */
+.av-nav {
+  --brand:    #e05a2b;
+  --brand-dk: #c44d22;
+  --t1:       #111111;
+  --t2:       #555555;
+  --t3:       #999999;
+  --bg:       #ffffff;
+  --bg2:      #f5f5f7;
+  --bd:       rgba(0,0,0,.10);
+  --bd2:      rgba(0,0,0,.14);
+  --sh:       0 8px 32px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06);
+  --r:        10px;
+  --h:        54px;
+  --ease:     .17s cubic-bezier(.25,.46,.45,.94);
+}
+ 
+/* ── shell ── */
+.av-nav {
+  position: sticky; top: 0; z-index: 900;
+  display: flex; align-items: center;
+  height: var(--h); padding: 0 20px;
+  background: var(--bg);
+  border-bottom: 0.5px solid var(--bd);
+  font-family: -apple-system,'Helvetica Neue',Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+/* ── logo ── */
+.av-logo {
+  font-size: 16px; font-weight: 600;
+  color: var(--t1); letter-spacing: -.3px;
+  margin-right: 20px; flex-shrink: 0;
+  text-decoration: none;
+}
+.av-logo em { color: var(--brand); font-style: normal; }
+ 
+/* ── items row ── */
+.av-items { display: flex; flex: 1; min-width: 0;}
 
+ 
+/* ── each top item ── */
+.av-item { position: relative; }
+/* bridge gap so mouse crossing doesn't close menu */
+.av-item::after {
+  content: ""; position: absolute;
+  top: 100%; left: 0; right: 0; height: 8px;
+}
+ 
+/* ── top link button ── */
+.av-link {
+  display: flex; align-items: center; gap: 4px;
+  height: var(--h); padding: 0 13px;
+  font-size: 13.5px; color: var(--t2);
+  cursor: pointer; white-space: nowrap;
+  border: none; background: none;
+  border-bottom: 2px solid transparent;
+  transition: color .15s, border-color .15s;
+  user-select: none;
+}
+.av-link:hover,
+.av-item.open > .av-link {
+  color: var(--t1);
+  border-bottom-color: var(--brand);
+}
+ 
+/* chevron */
+.av-chev {
+  width: 10px; height: 6px; opacity: .5;
+  transition: transform var(--ease); flex-shrink: 0;
+}
+.av-item.open > .av-link .av-chev { transform: rotate(180deg); }
+ 
+/* ── dropdown panel ── */
+.av-dd {
+  position: absolute; top: calc(100% + 2px); left: 0;
+  display: flex;
+  background: var(--bg);
+  border: 0.5px solid var(--bd2);
+  border-radius: var(--r);
+  box-shadow: var(--sh);
+  z-index: 999;
+  /* hidden */
+  opacity: 0; visibility: hidden;
+  transform: translateY(6px); pointer-events: none;
+  transition: opacity var(--ease), transform var(--ease), visibility var(--ease);
+  overflow: hidden;
+}
+.av-dd.av-dd--r { left: auto; right: 0; }
+.av-item.open > .av-dd {
+  opacity: 1; visibility: visible;
+  transform: translateY(0); pointer-events: auto;
+}
+ 
+/* ── column ── */
+.av-col { min-width: 185px; padding: 8px 0; }
+.av-col + .av-col { border-left: 0.5px solid var(--bd); }
+ 
+/* ── section label ── */
+.av-lbl {
+  display: block;
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: .07em; text-transform: uppercase;
+  color: var(--t3); padding: 12px 14px 5px;
+}
+ 
+/* ── row ── */
+.av-row {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 8px;
+  padding: 7px 14px;
+  cursor: pointer; text-decoration: none;
+  color: var(--t1); font-size: 13.5px;
+  transition: background .12s;
+}
+.av-row:hover { background: var(--bg2); }
+.av-ri { display: flex; flex-direction: column; }
+.av-rt { font-size: 13.5px; color: var(--t1); line-height: 1.3; }
+.av-rs { font-size: 11.5px; color: var(--t3); margin-top: 1px; }
+ 
+/* ── separator ── */
+.av-sep { height: 0.5px; background: var(--bd); margin: 5px 14px; }
+ 
+/* ── badges ── */
+.av-b {
+  font-size: 10px; font-weight: 600;
+  padding: 2px 7px; border-radius: 4px;
+  flex-shrink: 0; letter-spacing: .02em;
+}
+.av-b--g { background: #d6f2e7; color: #0d6b4f; }
+.av-b--o { background: #fde8d0; color: #7d4310; }
+.av-b--b { background: #daeaf9; color: #1458a0; }
+ 
+/* ── CTA ── */
+.av-cta {
+  margin-left: auto; flex-shrink: 0;
+  background: var(--brand); color: #fff;
+  font-size: 13px; font-weight: 500;
+  padding: 7px 15px; border-radius: 7px;
+  border: none; cursor: pointer;
+  transition: background .15s, transform .1s;
+}
+.av-cta:hover  { background: var(--brand-dk); }
+.av-cta:active { transform: scale(.97); }
+ 
+/* ── hide on mobile ── */
+@media (max-width: 768px) { .av-items { display: none; } }
 /* ══ SERVICES SECTION ══ */
 .svc-section{background:#f5f7f5;padding:72px 0}
 .svc-hd{text-align:center;margin-bottom:48px}
@@ -1488,389 +1625,287 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 
     <nav class="header-nav">
 
-      <!-- Home -->
-      <span class="hn-link" id="nav-home" onclick="AV.goTo('home')">Home</span>
-
-      <!-- New Cars ▾ -->
-      <div class="nav-dropdown">
-        <span class="hn-link" id="nav-cars" onclick="AV.goTo('cars')">New Cars <span class="hn-arrow">⌄</span></span>
-        <div class="nav-dd" style="min-width:240px">
-
-          <div class="nav-dd-hd">By Body Type</div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'suv'})">
-            <div class="nav-dd-item-title">SUV / Crossover</div>
-            <div class="nav-dd-sub">Nepal's #1 category</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'sedan'})">
-            <div class="nav-dd-item-title">Sedan</div>
-            <div class="nav-dd-sub">Family &amp; city comfort</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'hatchback'})">
-            <div class="nav-dd-item-title">Hatchback</div>
-            <div class="nav-dd-sub">Compact city cars</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'pickup'})">
-            <div class="nav-dd-item-title">Pickup / Truck</div>
-            <div class="nav-dd-sub">Off-road &amp; commercial</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'van'})">
-            <div class="nav-dd-item-title">Van / MPV / Microbus</div>
-            <div class="nav-dd-sub">Passenger &amp; cargo</div>
-          </div>
-
-          <div class="nav-dd-divider"></div>
-
-          <div class="nav-dd-hd">By Fuel Type</div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'electric'})">
-            <div class="nav-dd-item-title">Electric (EV) <span class="nav-badge nav-badge--green">Trending</span></div>
-            <div class="nav-dd-sub">Fastest growing in Nepal</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'hybrid'})">
-            <div class="nav-dd-item-title">Hybrid</div>
-            <div class="nav-dd-sub">Best of both worlds</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'petrol'})">
-            <div class="nav-dd-item-title">Petrol</div>
-            <div class="nav-dd-sub">Widest availability</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'diesel'})">
-            <div class="nav-dd-item-title">Diesel</div>
-            <div class="nav-dd-sub">Torque &amp; economy</div>
-          </div>
-
-          <div class="nav-dd-divider"></div>
-
-          <div class="nav-dd-hd">By Terrain <span class="nav-badge nav-badge--orange">New</span></div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'mountain'})">
-            <div class="nav-dd-item-title">Mountain &amp; Hilly Roads</div>
-            <div class="nav-dd-sub">High ground clearance picks</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{filter:'city'})">
-            <div class="nav-dd-item-title">City Commute</div>
-            <div class="nav-dd-sub">Compact &amp; fuel-efficient</div>
-          </div>
-
-          <div class="nav-dd-divider"></div>
-
-          <div class="nav-dd-hd">By Budget <span class="nav-badge nav-badge--orange">New</span></div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{budget:'under20'})">
-            <div class="nav-dd-item-title">Under ₹20L</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{budget:'20to40'})">
-            <div class="nav-dd-item-title">₹20L – ₹40L</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{budget:'40to70'})">
-            <div class="nav-dd-item-title">₹40L – ₹70L</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{budget:'70to1cr'})">
-            <div class="nav-dd-item-title">₹70L – ₹1Cr</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{budget:'above1cr'})">
-            <div class="nav-dd-item-title">₹1Cr+</div>
-          </div>
-
-          <div class="nav-dd-divider"></div>
-
-          <div class="nav-dd-hd">Quick Finds</div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{sort:'latest'})">
-            <div class="nav-dd-item-title">Latest Arrivals</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{sort:'upcoming'})">
-            <div class="nav-dd-item-title">Upcoming Launches</div>
-            <div class="nav-dd-sub">Expected price &amp; date</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{sort:'bestseller'})">
-            <div class="nav-dd-item-title">Best Sellers in Nepal</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('cars',{view:'brands'})">
-            <div class="nav-dd-item-title">Browse by Brand</div>
-          </div>
-
+       <!-- HOME (no dropdown) -->
+    <div class="av-item">
+      <button class="av-link" onclick="AV.goTo('home')">Home</button>
+    </div>
+ 
+    <!-- NEW CARS -->
+    <div class="av-item">
+      <button class="av-link">New Cars
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd">
+ 
+        <div class="av-col">
+          <span class="av-lbl">Body type</span>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'suv'});return false">
+            <div class="av-ri"><span class="av-rt">SUV / Crossover</span><span class="av-rs">Nepal's #1 category</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'sedan'});return false">
+            <div class="av-ri"><span class="av-rt">Sedan</span><span class="av-rs">Family &amp; city comfort</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'hatchback'});return false">
+            <div class="av-ri"><span class="av-rt">Hatchback</span><span class="av-rs">Compact city cars</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'pickup'});return false">
+            <div class="av-ri"><span class="av-rt">Pickup / Truck</span><span class="av-rs">Off-road &amp; commercial</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'van'});return false">
+            <div class="av-ri"><span class="av-rt">Van / MPV</span><span class="av-rs">Passenger &amp; cargo</span></div>
+          </a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Terrain</span>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'mountain'});return false">
+            <div class="av-ri"><span class="av-rt">Mountain &amp; Hilly Roads</span><span class="av-rs">High ground clearance</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'city'});return false">
+            <div class="av-ri"><span class="av-rt">City Commute</span><span class="av-rs">Compact &amp; fuel-efficient</span></div>
+          </a>
+        </div>
+ 
+        <div class="av-col">
+          <span class="av-lbl">Fuel type</span>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'electric'});return false">
+            <div class="av-ri"><span class="av-rt">Electric (EV)</span><span class="av-rs">Fastest growing in Nepal</span></div>
+            <span class="av-b av-b--g">Trending</span>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'hybrid'});return false">
+            <div class="av-ri"><span class="av-rt">Hybrid</span><span class="av-rs">Best of both worlds</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'petrol'});return false">
+            <div class="av-ri"><span class="av-rt">Petrol</span><span class="av-rs">Widest availability</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'diesel'});return false">
+            <div class="av-ri"><span class="av-rt">Diesel</span><span class="av-rs">Torque &amp; economy</span></div>
+          </a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Budget</span>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{budget:'under20'});return false"><div class="av-ri"><span class="av-rt">Under ₹20L</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{budget:'20to40'});return false"><div class="av-ri"><span class="av-rt">₹20L – ₹40L</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{budget:'40to70'});return false"><div class="av-ri"><span class="av-rt">₹40L – ₹70L</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{budget:'70to1cr'});return false"><div class="av-ri"><span class="av-rt">₹70L – ₹1Cr</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{budget:'above1cr'});return false"><div class="av-ri"><span class="av-rt">₹1Cr+</span></div></a>
+        </div>
+ 
+        <div class="av-col">
+          <span class="av-lbl">Quick finds</span>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{sort:'latest'});return false"><div class="av-ri"><span class="av-rt">Latest arrivals</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{sort:'upcoming'});return false">
+            <div class="av-ri"><span class="av-rt">Upcoming launches</span><span class="av-rs">Expected price &amp; date</span></div>
+            <span class="av-b av-b--o">New</span>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{sort:'bestseller'});return false"><div class="av-ri"><span class="av-rt">Best sellers in Nepal</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{view:'brands'});return false"><div class="av-ri"><span class="av-rt">Browse by brand</span></div></a>
+        </div>
+ 
+      </div>
+    </div>
+ 
+    <!-- USED CARS -->
+    <div class="av-item">
+      <button class="av-link">Used Cars
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd">
+        <div class="av-col" style="min-width:225px">
+          <span class="av-lbl">Pre-owned</span>
+          <a class="av-row" href="#" onclick="AV.goTo('used');return false">
+            <div class="av-ri"><span class="av-rt">Browse used cars</span><span class="av-rs">Verified · certified pre-owned</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{filter:'certified'});return false">
+            <div class="av-ri"><span class="av-rt">Certified used cars</span><span class="av-rs">140-point inspected</span></div>
+            <span class="av-b av-b--b">Verified</span>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{view:'history'});return false">
+            <div class="av-ri"><span class="av-rt">Vehicle history report</span><span class="av-rs">Accident &amp; ownership check</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="alert('Sell enquiry: +977-9701076240')">
+            <div class="av-ri"><span class="av-rt">Sell your car</span><span class="av-rs">Get instant valuation</span></div>
+          </a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Filter by</span>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{filter:'year'});return false"><div class="av-ri"><span class="av-rt">Year</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{filter:'price'});return false"><div class="av-ri"><span class="av-rt">Price range</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{filter:'mileage'});return false">
+            <div class="av-ri"><span class="av-rt">Mileage</span><span class="av-rs">Low km preferred</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{filter:'brand'});return false"><div class="av-ri"><span class="av-rt">Brand</span></div></a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Finance</span>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'emi'});return false">
+            <div class="av-ri"><span class="av-rt">EMI calculator</span><span class="av-rs">Check monthly payments</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'loan'});return false"><div class="av-ri"><span class="av-rt">Loan eligibility check</span></div></a>
+          <a class="av-row" href="insurance-finance.html"><div class="av-ri"><span class="av-rt">Banks &amp; finance options</span></div></a>
         </div>
       </div>
-
-      <!-- Used Cars ▾ -->
-      <div class="nav-dropdown">
-        <span class="hn-link" id="nav-used" onclick="AV.goTo('used')">Used Cars <span class="hn-arrow">⌄</span></span>
-        <div class="nav-dd" style="min-width:240px">
-
-          <div class="nav-dd-hd">Pre-Owned</div>
-          <div class="nav-dd-item" onclick="AV.goTo('used')">
-            <div class="nav-dd-item-title">Browse Used Cars</div>
-            <div class="nav-dd-sub">Verified · certified pre-owned</div>
-          </div>
-          <div class="nav-dd-item" onclick="alert('Sell enquiry: +977-9701076240')">
-            <div class="nav-dd-item-title">Sell Your Car</div>
-            <div class="nav-dd-sub">Get instant valuation</div>
-          </div>
-
-          <div class="nav-dd-divider"></div>
-
-          <div class="nav-dd-hd">Trust &amp; Verification</div>
-          <div class="nav-dd-item" onclick="AV.goTo('used',{filter:'certified'})">
-            <div class="nav-dd-item-title">Certified Used Cars <span class="nav-badge nav-badge--blue">Verified</span></div>
-            <div class="nav-dd-sub">140-point inspected</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('used',{view:'history'})">
-            <div class="nav-dd-item-title">Vehicle History Report</div>
-            <div class="nav-dd-sub">Accident &amp; ownership check</div>
-          </div>
-
-          <div class="nav-dd-divider"></div>
-
-          <div class="nav-dd-hd">Filter By</div>
-          <div class="nav-dd-item" onclick="AV.goTo('used',{filter:'year'})">
-            <div class="nav-dd-item-title">By Year</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('used',{filter:'price'})">
-            <div class="nav-dd-item-title">By Price Range</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('used',{filter:'mileage'})">
-            <div class="nav-dd-item-title">By Mileage</div>
-            <div class="nav-dd-sub">Low km preferred</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('used',{filter:'brand'})">
-            <div class="nav-dd-item-title">By Brand</div>
-          </div>
-
-          <div class="nav-dd-divider"></div>
-
-          <div class="nav-dd-hd">Finance Help</div>
-          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'emi'})">
-            <div class="nav-dd-item-title">EMI Calculator</div>
-            <div class="nav-dd-sub">Check monthly payments</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'loan'})">
-            <div class="nav-dd-item-title">Loan Eligibility Check</div>
-          </div>
-          <div class="nav-dd-item" onclick="window.location.href='insurance-finance.html'">
-            <div class="nav-dd-item-title">Banks &amp; Finance Options</div>
-          </div>
-
+    </div>
+ 
+    <!-- COMPARE -->
+    <div class="av-item">
+      <button class="av-link">Compare
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd">
+ 
+        <div class="av-col" style="min-width:205px">
+          <span class="av-lbl">Tools</span>
+          <a class="av-row" href="#" onclick="AV.goTo('compare');return false">
+            <div class="av-ri"><span class="av-rt">New car comparison</span><span class="av-rs">Side-by-side specs &amp; price</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{type:'used'});return false"><div class="av-ri"><span class="av-rt">Used car comparison</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'ev_vs_petrol'});return false">
+            <div class="av-ri"><span class="av-rt">EV vs Petrol</span><span class="av-rs">Real cost over 5 years</span></div>
+            <span class="av-b av-b--g">Popular</span>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'hybrid_vs_ev'});return false"><div class="av-ri"><span class="av-rt">Hybrid vs EV</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{mode:'multi'});return false">
+            <div class="av-ri"><span class="av-rt">Compare up to 5 cars</span></div>
+            <span class="av-b av-b--o">New</span>
+          </a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Smart compare</span>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'custom'});return false">
+            <div class="av-ri"><span class="av-rt">Build your own</span><span class="av-rs">Pick any 2–5 cars</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'truecost'});return false">
+            <div class="av-ri"><span class="av-rt">True cost calculator</span><span class="av-rs">Price + tax + fuel + maintenance</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'roadscore'});return false">
+            <div class="av-ri"><span class="av-rt">Nepal road suitability</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'ownerscore'});return false">
+            <div class="av-ri"><span class="av-rt">Owner satisfaction score</span></div>
+          </a>
         </div>
-      </div>
-
-      <!-- Compare ▾ -->
-      <div class="nav-dropdown">
-        <span class="hn-link" id="nav-compare" onclick="AV.goTo('compare')">Compare <span class="hn-arrow">⌄</span></span>
-        <div class="nav-dd" style="min-width:250px">
-
-          <div class="nav-dd-hd">Compare Tools</div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare')">
-            <div class="nav-dd-item-title">New Car Comparison</div>
-            <div class="nav-dd-sub">Side-by-side specs &amp; price</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{type:'used'})">
-            <div class="nav-dd-item-title">Used Car Comparison</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'ev_vs_petrol'})">
-            <div class="nav-dd-item-title">EV vs Petrol <span class="nav-badge nav-badge--green">Popular</span></div>
-            <div class="nav-dd-sub">Real cost over 5 years</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'hybrid_vs_ev'})">
-            <div class="nav-dd-item-title">Hybrid vs EV</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{mode:'multi'})">
-            <div class="nav-dd-item-title">Compare Up to 5 Cars <span class="nav-badge nav-badge--orange">New</span></div>
-          </div>
-
-          <div class="nav-dd-divider"></div>
-
-          <div class="nav-dd-hd">Popular Comparisons</div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'nexon_ev_vs_byd_atto3'})">
-            <div class="nav-dd-item-title">Nexon EV vs BYD Atto 3</div>
-            <div class="nav-dd-sub">Top EV battle</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'mg_zs_vs_byd_atto3'})">
-            <div class="nav-dd-item-title">MG ZS EV vs BYD Atto 3</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'creta_vs_seltos'})">
-            <div class="nav-dd-item-title">Hyundai Creta vs Kia Seltos</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'tata_nexon_vs_punch'})">
-            <div class="nav-dd-item-title">Tata Nexon vs Punch</div>
-            <div class="nav-dd-sub">Budget SUV battle</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'hyundai_venue_vs_sonet'})">
-            <div class="nav-dd-item-title">Venue vs Sonet</div>
-            <div class="nav-dd-sub">Compact SUV rivals</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'swift_vs_i20'})">
-            <div class="nav-dd-item-title">Maruti Swift vs Hyundai i20</div>
-            <div class="nav-dd-sub">Hatchback showdown</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'fortuner_vs_endeavour'})">
-            <div class="nav-dd-item-title">Toyota Fortuner vs Ford Endeavour</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{preset:'best_suvs'})">
-            <div class="nav-dd-item-title">Best-selling SUVs</div>
-          </div>
-
-          <div class="nav-dd-divider"></div>
-
-          <div class="nav-dd-hd">Smart Compare <span class="nav-badge nav-badge--orange">New</span></div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'custom'})">
-            <div class="nav-dd-item-title">Build Your Own Comparison</div>
-            <div class="nav-dd-sub">Pick any 2–5 cars to compare</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'truecost'})">
-            <div class="nav-dd-item-title">True Cost Calculator</div>
-            <div class="nav-dd-sub">Price + tax + fuel + maintenance</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'specs'})">
-            <div class="nav-dd-item-title">200+ Spec Comparison</div>
-            <div class="nav-dd-sub">Deep-dive every parameter</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'roadscore'})">
-            <div class="nav-dd-item-title">Nepal Road Suitability Score</div>
-            <div class="nav-dd-sub">How well does it handle Nepal roads?</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'ownerscore'})">
-            <div class="nav-dd-item-title">Owner Satisfaction Score</div>
-            <div class="nav-dd-sub">Real ratings from Nepal owners</div>
-          </div>
-
+ 
+        <div class="av-col" style="min-width:215px">
+          <span class="av-lbl">Popular comparisons</span>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'nexon_ev_vs_byd_atto3'});return false">
+            <div class="av-ri"><span class="av-rt">Nexon EV vs BYD Atto 3</span><span class="av-rs">Top EV battle</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'mg_zs_vs_byd_atto3'});return false"><div class="av-ri"><span class="av-rt">MG ZS EV vs BYD Atto 3</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'creta_vs_seltos'});return false"><div class="av-ri"><span class="av-rt">Hyundai Creta vs Kia Seltos</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'tata_nexon_vs_punch'});return false">
+            <div class="av-ri"><span class="av-rt">Tata Nexon vs Punch</span><span class="av-rs">Budget SUV battle</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'hyundai_venue_vs_sonet'});return false">
+            <div class="av-ri"><span class="av-rt">Venue vs Sonet</span><span class="av-rs">Compact SUV rivals</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'swift_vs_i20'});return false">
+            <div class="av-ri"><span class="av-rt">Maruti Swift vs Hyundai i20</span><span class="av-rs">Hatchback showdown</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'fortuner_vs_endeavour'});return false"><div class="av-ri"><span class="av-rt">Fortuner vs Endeavour</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'best_suvs'});return false"><div class="av-ri"><span class="av-rt">Best-selling SUVs</span></div></a>
         </div>
+ 
       </div>
-
-      <!-- Our Services ▾ -->
-      <div class="nav-dropdown">
-        <span class="hn-link" id="nav-services">
-          <a href="services.html" style="display:block;padding:inherit;color:inherit;text-decoration:none;">Our Services</a>
-          <span class="hn-arrow">⌄</span>
-        </span>
-        <div class="nav-dd" style="min-width:246px">
-          <div class="nav-dd-hd">All Services</div>
-
-          <a class="nav-dd-item" href="dotm-services.html">
-            <div>
-              <div class="nav-dd-item-title">DOTM Services</div>
-              <div class="nav-dd-sub">Bluebook, fitness, transfers</div>
-            </div>
+    </div>
+ 
+    <!-- SERVICES -->
+    <div class="av-item">
+      <button class="av-link" onclick="window.location.href='services.html'">Services
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd">
+        <div class="av-col" style="min-width:230px">
+          <span class="av-lbl">All services</span>
+          <a class="av-row" href="dotm-services.html">
+            <div class="av-ri"><span class="av-rt">DOTM services</span><span class="av-rs">Bluebook, fitness, transfers</span></div>
           </a>
-          <a class="nav-dd-item" href="parts-accessories.html">
-            <div>
-              <div class="nav-dd-item-title">Parts &amp; Accessories</div>
-              <div class="nav-dd-sub">Genuine OEM &amp; accessories</div>
-            </div>
+          <a class="av-row" href="parts-accessories.html">
+            <div class="av-ri"><span class="av-rt">Parts &amp; accessories</span><span class="av-rs">Genuine OEM &amp; accessories</span></div>
           </a>
-          <a class="nav-dd-item" href="maintenance-repairs.html">
-            <div>
-              <div class="nav-dd-item-title">Maintenance &amp; Repairs</div>
-              <div class="nav-dd-sub">Servicing, AC, EV diagnostics</div>
-            </div>
+          <a class="av-row" href="maintenance-repairs.html">
+            <div class="av-ri"><span class="av-rt">Maintenance &amp; repairs</span><span class="av-rs">Servicing, AC, EV diagnostics</span></div>
           </a>
-          <a class="nav-dd-item" href="insurance-finance.html">
-            <div>
-              <div class="nav-dd-item-title">Insurance &amp; Financing</div>
-              <div class="nav-dd-sub">EMI plans, insurance, trade-in</div>
-            </div>
+          <a class="av-row" href="insurance-finance.html">
+            <div class="av-ri"><span class="av-rt">Insurance &amp; financing</span><span class="av-rs">EMI plans, insurance, trade-in</span></div>
           </a>
-          <a class="nav-dd-item" href="other-services.html">
-            <div>
-              <div class="nav-dd-item-title">Other Services</div>
-              <div class="nav-dd-sub">GPS, ceramic coat, roadside</div>
-            </div>
+          <a class="av-row" href="other-services.html">
+            <div class="av-ri"><span class="av-rt">Other services</span><span class="av-rs">GPS, ceramic coat, roadside</span></div>
           </a>
         </div>
       </div>
-
-      <!-- News & Reviews ▾ -->
-      <div class="nav-dropdown">
-        <span class="hn-link" id="nav-news" onclick="window.location.href='videos.html'">News &amp; Reviews <span class="hn-arrow">⌄</span></span>
-        <div class="nav-dd" style="min-width:240px">
-
-          <div class="nav-dd-hd">Watch &amp; Explore</div>
-          <div class="nav-dd-item" onclick="window.location.href='videos.html'">
-            <div class="nav-dd-item-title">Videos</div>
-            <div class="nav-dd-sub">New uploads &amp; trending reels</div>
-          </div>
-          <div class="nav-dd-item" onclick="window.location.href='videos.html?type=reviews'">
-            <div class="nav-dd-item-title">News &amp; Reviews</div>
-            <div class="nav-dd-sub">Latest news and reviews</div>
-          </div>
-          <div class="nav-dd-item" onclick="window.location.href='videos.html?type=shorts'">
-            <div class="nav-dd-item-title">Short Reels</div>
-            <div class="nav-dd-sub">Quick highlights &amp; clips</div>
-          </div>
-          <div class="nav-dd-item" onclick="window.location.href='videos.html?type=ev'">
-            <div class="nav-dd-item-title">EV Videos</div>
-            <div class="nav-dd-sub">Nepal EV revolution</div>
-          </div>
-
-          <div class="nav-dd-divider"></div>
-
-          <div class="nav-dd-hd">Latest News</div>
-          <div class="nav-dd-item" onclick="window.location.href='videos.html?type=ev'">
-            <div class="nav-dd-item-title">EV News</div>
-            <div class="nav-dd-sub">Nepal EV revolution</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('news',{tag:'upcoming'})">
-            <div class="nav-dd-item-title">Upcoming Launches</div>
-            <div class="nav-dd-sub">Price &amp; tax updates</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('news',{tag:'budget'})">
-            <div class="nav-dd-item-title">Budget, Excise &amp; Customs</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('news',{tag:'market'})">
-            <div class="nav-dd-item-title">Market Trends</div>
-          </div>
-
-          <div class="nav-dd-divider"></div>
-
-          <div class="nav-dd-hd">Guides &amp; Info</div>
-          <div class="nav-dd-item" onclick="AV.goTo('guide',{topic:'buying'})">
-            <div class="nav-dd-item-title">Buying Guide</div>
-            <div class="nav-dd-sub">Tips for Nepal buyers</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('guide',{topic:'maintenance'})">
-            <div class="nav-dd-item-title">Maintenance Tips</div>
-            <div class="nav-dd-sub">Nepal roads &amp; monsoon care</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('guide',{topic:'women'})">
-            <div class="nav-dd-item-title">Women &amp; Cars</div>
-            <div class="nav-dd-sub">Growing segment in Nepal</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('awards')">
-            <div class="nav-dd-item-title">Annual Nepal Car Awards</div>
-            <div class="nav-dd-sub">Best cars of the year</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'tmv'})">
-            <div class="nav-dd-item-title">True Market Value</div>
-            <div class="nav-dd-sub">What others paid in Nepal</div>
-          </div>
-
+    </div>
+ 
+    <!-- NEWS & REVIEWS -->
+    <div class="av-item">
+      <button class="av-link" onclick="window.location.href='videos.html'">News &amp; Reviews
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd">
+ 
+        <div class="av-col">
+          <span class="av-lbl">Watch</span>
+          <a class="av-row" href="videos.html"><div class="av-ri"><span class="av-rt">Videos</span><span class="av-rs">New uploads &amp; trending reels</span></div></a>
+          <a class="av-row" href="videos.html?type=reviews"><div class="av-ri"><span class="av-rt">News &amp; reviews</span><span class="av-rs">Latest news and reviews</span></div></a>
+          <a class="av-row" href="videos.html?type=shorts"><div class="av-ri"><span class="av-rt">Short reels</span><span class="av-rs">Quick highlights &amp; clips</span></div></a>
+          <a class="av-row" href="videos.html?type=ev"><div class="av-ri"><span class="av-rt">EV videos</span><span class="av-rs">Nepal EV revolution</span></div></a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Latest news</span>
+          <a class="av-row" href="videos.html?type=ev"><div class="av-ri"><span class="av-rt">EV news</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('news',{tag:'upcoming'});return false"><div class="av-ri"><span class="av-rt">Upcoming launches</span><span class="av-rs">Price &amp; tax updates</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('news',{tag:'budget'});return false"><div class="av-ri"><span class="av-rt">Budget, excise &amp; customs</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('news',{tag:'market'});return false"><div class="av-ri"><span class="av-rt">Market trends</span></div></a>
+        </div>
+ 
+        <div class="av-col">
+          <span class="av-lbl">Guides &amp; info</span>
+          <a class="av-row" href="#" onclick="AV.goTo('guide',{topic:'buying'});return false">
+            <div class="av-ri"><span class="av-rt">Buying guide</span><span class="av-rs">Tips for Nepal buyers</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('guide',{topic:'maintenance'});return false">
+            <div class="av-ri"><span class="av-rt">Maintenance tips</span><span class="av-rs">Nepal roads &amp; monsoon care</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('guide',{topic:'women'});return false">
+            <div class="av-ri"><span class="av-rt">Women &amp; cars</span><span class="av-rs">Growing segment in Nepal</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('awards');return false">
+            <div class="av-ri"><span class="av-rt">Nepal car awards</span><span class="av-rs">Best cars of the year</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'tmv'});return false">
+            <div class="av-ri"><span class="av-rt">True market value</span><span class="av-rs">What others paid in Nepal</span></div>
+          </a>
+        </div>
+ 
+      </div>
+    </div>
+ 
+    <!-- TOOLS -->
+    <div class="av-item">
+      <button class="av-link">
+        Tools <span class="av-b av-b--o" style="font-size:10px;padding:2px 6px;border-radius:4px">New</span>
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd av-dd--r">
+        <div class="av-col" style="min-width:215px">
+          <span class="av-lbl">Smart tools</span>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'matchmaker'});return false">
+            <div class="av-ri"><span class="av-rt">Find my perfect car</span><span class="av-rs">Answer questions, get matched</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'emi'});return false">
+            <div class="av-ri"><span class="av-rt">EMI calculator</span><span class="av-rs">Estimate monthly payments</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'charging'});return false">
+            <div class="av-ri"><span class="av-rt">EV charging map</span><span class="av-rs">Find chargers near you</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'testdrive'});return false">
+            <div class="av-ri"><span class="av-rt">Test drive at home</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'tmv'});return false">
+            <div class="av-ri"><span class="av-rt">True market value</span><span class="av-rs">What others paid in Nepal</span></div>
+          </a>
         </div>
       </div>
-
-      <!-- Smart Tools ▾ -->
-      <div class="nav-dropdown">
-        <span class="hn-link" id="nav-tools">Tools <span class="nav-badge nav-badge--orange" style="margin-left:2px">New</span> <span class="hn-arrow">⌄</span></span>
-        <div class="nav-dd" style="min-width:220px">
-          <div class="nav-dd-hd">Smart Tools</div>
-          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'matchmaker'})">
-            <div class="nav-dd-item-title">Find My Perfect Car</div>
-            <div class="nav-dd-sub">Answer questions, get matched</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'emi'})">
-            <div class="nav-dd-item-title">EMI Calculator</div>
-            <div class="nav-dd-sub">Estimate monthly payments</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'charging'})">
-            <div class="nav-dd-item-title">EV Charging Map</div>
-            <div class="nav-dd-sub">Find chargers near you</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('tools',{tool:'testdrive'})">
-            <div class="nav-dd-item-title">Test Drive at Home</div>
-          </div>
-          <div class="nav-dd-item" onclick="AV.goTo('compare',{tool:'tmv'})">
-            <div class="nav-dd-item-title">True Market Value</div>
-            <div class="nav-dd-sub">What others paid in Nepal</div>
-          </div>
-        </div>
-      </div>
-
-    </nav>
+    </div>
+ 
+  </div><!-- /.av-items -->
+ 
+  <button class="av-cta" onclick="AV.goTo('quote')">Get a quote</button>
+ 
+</nav>
 
     <div class="header-ctas">
       <a href="book-service.html" class="btn-book">Book Service</a>
@@ -2191,10 +2226,45 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </div>
 </footer>
 
+<script>
+(function(){
+  'use strict';
+  var current = null, timer = null;
 
-  
+  function open(item){
+    if(current && current !== item) close(current, true);
+    clearTimeout(timer);
+    item.classList.add('open');
+    current = item;
+  }
 
+  function close(item, now){
+    if(!item) return;
+    if(now){ item.classList.remove('open'); if(current===item) current=null; }
+    else { timer = setTimeout(function(){ item.classList.remove('open'); if(current===item) current=null; }, 120); }
+  }
 
+  document.querySelectorAll('.av-item').forEach(function(item){
+    item.addEventListener('mouseenter', function(){ open(item); });
+    item.addEventListener('mouseleave', function(){ close(item); });
+    var btn = item.querySelector('.av-link');
+    if(btn){
+      btn.addEventListener('keydown', function(e){
+        if(e.key==='Enter'||e.key===' '){ e.preventDefault(); item.classList.contains('open') ? close(item,true) : open(item); }
+        if(e.key==='Escape') close(item,true);
+      });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(current && !current.contains(e.target)) close(current,true);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && current) close(current,true);
+  });
+})();
+</script>
 <script>lucide.createIcons();</script>
 
 </body>

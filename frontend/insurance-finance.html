@@ -48,19 +48,35 @@
     .hero h1 { font-family:var(--font-d); font-size:clamp(28px,5vw,50px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:14px; }
     .hero h1 em { font-style:italic; color:var(--green-m); }
     .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:560px; line-height:1.7; margin-bottom:30px; }
-    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; }
+    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
     .hero-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:var(--pill); padding:7px 14px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.8); }
     .hero-pill i { width:13px; height:13px; color:var(--green-m); }
+    /* Hero CTA buttons */
+    .hero-ctas { display:flex; flex-wrap:wrap; gap:10px; }
+    .btn-hero-primary { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; background:var(--white); color:var(--green); border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:14px; font-weight:800; cursor:pointer; text-decoration:none; transition:all var(--ease); }
+    .btn-hero-primary:hover { background:#f0faf2; box-shadow:0 6px 20px rgba(0,0,0,.18); transform:translateY(-1px); }
+    .btn-hero-primary i { width:16px; height:16px; }
+    .btn-hero-secondary { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; background:rgba(255,255,255,.1); color:#fff; border:1.5px solid rgba(255,255,255,.2); border-radius:var(--r10); font-family:var(--font-b); font-size:14px; font-weight:800; cursor:pointer; text-decoration:none; transition:all var(--ease); }
+    .btn-hero-secondary:hover { background:rgba(255,255,255,.18); transform:translateY(-1px); }
+    .btn-hero-secondary i { width:16px; height:16px; }
 
     /* ── TAB NAV ── */
     .tab-nav { background:var(--white); border-bottom:2px solid var(--border); position:sticky; top:0; z-index:100; }
     .tab-nav-inner { display:flex; overflow-x:auto; scrollbar-width:none; }
     .tab-nav-inner::-webkit-scrollbar { display:none; }
-    .tab-btn { display:flex; align-items:center; gap:8px; padding:16px 22px; font-size:13.5px; font-weight:700; color:var(--ink4); border:none; background:none; cursor:pointer; white-space:nowrap; border-bottom:2px solid transparent; margin-bottom:-2px; transition:all var(--ease); }
+    .tab-btn { display:flex; align-items:center; gap:8px; padding:16px 22px; font-size:13.5px; font-weight:700; color:var(--ink4); border:none; background:none; cursor:pointer; white-space:nowrap; border-bottom:2px solid transparent; margin-bottom:-2px; transition:all var(--ease); text-decoration:none; }
     .tab-btn i { width:15px; height:15px; }
     .tab-btn:hover { color:var(--ink2); }
     .tab-btn.active { color:var(--green); border-bottom-color:var(--green); }
     .tab-btn.active-finance { color:var(--blue); border-bottom-color:var(--blue); }
+    /* Separator between nav items and CTA links */
+    .tab-nav-sep { flex:1; }
+    .tab-cta-link { display:flex; align-items:center; gap:7px; padding:10px 16px; margin:8px 6px; font-size:13px; font-weight:700; border-radius:var(--r8); text-decoration:none; white-space:nowrap; transition:all var(--ease); }
+    .tab-cta-link i { width:14px; height:14px; }
+    .tab-cta-link.green { background:var(--green); color:#fff; }
+    .tab-cta-link.green:hover { background:var(--green-d); }
+    .tab-cta-link.blue { background:var(--blue); color:#fff; }
+    .tab-cta-link.blue:hover { background:#1340a0; }
 
     /* ── SECTION SHARED ── */
     .section { padding:64px 0; }
@@ -75,7 +91,7 @@
 
     /* ── SEGMENT DIVIDER ── */
     .segment-divider { background:linear-gradient(135deg,#0F2F7A 0%,#1A4DB8 60%,#2563c9 100%); padding:52px 0; position:relative; overflow:hidden; }
-    .segment-divider::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .segment-divider::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
     .segment-divider-inner { position:relative; z-index:1; display:flex; flex-direction:column; gap:16px; }
     @media(min-width:640px){ .segment-divider-inner{ flex-direction:row; align-items:center; justify-content:space-between; } }
     .segment-divider h2 { font-family:var(--font-d); font-size:clamp(22px,3.5vw,32px); font-weight:800; color:#fff; line-height:1.2; }
@@ -187,9 +203,7 @@
     .loan-table tr:hover td { background:var(--bg); }
     .loan-table .param { font-weight:700; color:var(--ink2); }
     .loan-table .highlight { font-weight:700; color:var(--blue); }
-    .loan-table .note { font-size:11px; color:var(--ink5); margin-top:2px; }
     .table-wrap { border:1.5px solid var(--border); border-radius:var(--r12); overflow:hidden; overflow-x:auto; }
-    .rate-badge { display:inline-flex; align-items:center; gap:4px; padding:3px 8px; border-radius:var(--pill); font-size:11px; font-weight:700; }
 
     /* ── LOAN PROVIDER CARDS ── */
     .provider-grid { display:grid; grid-template-columns:1fr; gap:10px; }
@@ -229,46 +243,26 @@
     .notice.teal { background:var(--teal-l); border:1.5px solid rgba(14,127,115,.15); color:var(--teal); }
     .notice.blue { background:var(--blue-l); border:1.5px solid rgba(26,77,184,.15); color:var(--blue); }
 
-    /* ── FORM ── */
-    .form-section { padding:72px 0 80px; }
-    .form-section.ins-bg { background:var(--bg); border-top:1px solid var(--border); }
-    .form-section.fin-bg { background:#f0f4fc; border-top:1px solid #d4dff7; }
-    .form-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); overflow:hidden; }
-    .form-header { padding:28px 28px 24px; }
-    .form-header.green-hdr { background:linear-gradient(135deg,var(--green),#145520); }
-    .form-header.blue-hdr { background:linear-gradient(135deg,#1A4DB8,#0f2f7a); }
-    .form-header h3 { font-family:var(--font-d); font-size:24px; font-weight:800; color:#fff; margin-bottom:6px; }
-    .form-header p { font-size:13.5px; color:rgba(255,255,255,.65); }
-    .form-body { padding:28px; }
-    .form-grid { display:grid; grid-template-columns:1fr; gap:16px; }
-    @media(min-width:640px){ .form-grid{ grid-template-columns:1fr 1fr; } }
-    .form-group { display:flex; flex-direction:column; gap:6px; }
-    .form-group.full { grid-column:1/-1; }
-    .form-label { font-size:12px; font-weight:700; color:var(--ink3); text-transform:uppercase; letter-spacing:.4px; }
-    .form-label span { color:var(--red); }
-    .form-input, .form-select, .form-textarea {
-      width:100%; padding:11px 13px; border:1.5px solid var(--border); border-radius:var(--r8);
-      font-family:var(--font-b); font-size:14px; color:var(--ink); background:var(--white);
-      transition:border-color var(--ease); outline:none;
-    }
-    .form-input:focus, .form-textarea:focus { border-color:var(--green); }
-    .form-select:focus { border-color:var(--blue); }
-    .form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
-    .form-textarea { resize:vertical; min-height:90px; }
-    .radio-group { display:flex; flex-wrap:wrap; gap:8px; }
-    .radio-option { display:flex; align-items:center; gap:7px; background:var(--bg); border:1.5px solid var(--border); border-radius:var(--r8); padding:9px 13px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:all var(--ease); }
-    .radio-option input { display:none; }
-    .radio-option.green-opt:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); }
-    .radio-option.blue-opt:has(input:checked) { background:var(--blue-l); border-color:var(--blue); color:var(--blue); }
-    .form-section-label { font-size:13px; font-weight:800; color:var(--ink2); padding:16px 0 4px; border-top:1px solid var(--border); margin-top:4px; display:flex; align-items:center; gap:8px; }
-    .form-section-label i { width:15px; height:15px; }
-    .form-section-label.green-lbl i { color:var(--green); }
-    .form-section-label.blue-lbl i { color:var(--blue); }
-    .btn-green { width:100%; padding:14px; background:var(--green); color:#fff; border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:background var(--ease); margin-top:8px; }
-    .btn-green:hover { background:var(--green-d); }
-    .btn-blue { width:100%; padding:14px; background:var(--blue); color:#fff; border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:background var(--ease); margin-top:8px; }
-    .btn-blue:hover { background:#1340a0; }
-    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:10px; }
+    /* ── CTA SECTION ── */
+    .cta-section { padding:64px 0; }
+    .cta-section.green-bg { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 100%); }
+    .cta-section.blue-bg { background:linear-gradient(145deg,#0F2F7A 0%,#1A4DB8 100%); }
+    .cta-inner { position:relative; z-index:1; display:flex; flex-direction:column; gap:20px; }
+    @media(min-width:640px){ .cta-inner{ flex-direction:row; align-items:center; justify-content:space-between; } }
+    .cta-text h2 { font-family:var(--font-d); font-size:clamp(22px,3.5vw,32px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:8px; }
+    .cta-text h2 em { font-style:italic; color:var(--green-m); }
+    .cta-text h2 em.blue { color:#93b8f5; }
+    .cta-text p { font-size:14px; color:rgba(255,255,255,.6); max-width:460px; line-height:1.65; }
+    .cta-btns { display:flex; flex-direction:column; gap:10px; flex-shrink:0; }
+    @media(min-width:480px){ .cta-btns{ flex-direction:row; } }
+    .btn-cta-white { display:inline-flex; align-items:center; gap:8px; padding:14px 24px; background:var(--white); border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:14px; font-weight:800; cursor:pointer; text-decoration:none; transition:all var(--ease); white-space:nowrap; }
+    .btn-cta-white.green-txt { color:var(--green); }
+    .btn-cta-white.blue-txt { color:var(--blue); }
+    .btn-cta-white:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.22); }
+    .btn-cta-white i { width:16px; height:16px; }
+    .btn-cta-ghost { display:inline-flex; align-items:center; gap:8px; padding:14px 24px; background:rgba(255,255,255,.1); border:1.5px solid rgba(255,255,255,.2); border-radius:var(--r10); font-family:var(--font-b); font-size:14px; font-weight:800; color:#fff; cursor:pointer; text-decoration:none; transition:all var(--ease); white-space:nowrap; }
+    .btn-cta-ghost:hover { background:rgba(255,255,255,.18); transform:translateY(-1px); }
+    .btn-cta-ghost i { width:16px; height:16px; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
@@ -289,7 +283,8 @@
   </style>
 </head>
 <body>
- <script src="assets/js/components/av-nav.js"></script> 
+ <script src="assets/js/components/av-nav.js"></script>
+
 <!-- BREADCRUMB -->
 <nav class="bc">
   <div class="wrap bc-inner">
@@ -312,6 +307,10 @@
         <span class="hero-pill"><i data-lucide="banknote"></i>Loans from 5.37% p.a.</span>
         <span class="hero-pill"><i data-lucide="check-circle-2"></i>eSewa &amp; Khalti accepted</span>
       </div>
+      <div class="hero-ctas">
+        <a href="forms.html" class="btn-hero-primary"><i data-lucide="shield"></i>Get Insurance Quote</a>
+        <a href="forms.html#finance" class="btn-hero-secondary"><i data-lucide="banknote"></i>Apply for Finance</a>
+      </div>
     </div>
   </div>
 </section>
@@ -325,8 +324,9 @@
       <button class="tab-btn" onclick="scrollTo('#ev')"><i data-lucide="zap"></i>EV Cover</button>
       <button class="tab-btn active-finance" onclick="scrollTo('#finance-section')"><i data-lucide="banknote"></i>Financing</button>
       <button class="tab-btn" onclick="scrollTo('#loan-rates')"><i data-lucide="percent"></i>Loan Rates</button>
-      <button class="tab-btn" onclick="scrollTo('#insurance-form')"><i data-lucide="send"></i>Get Insurance Quote</button>
-      <button class="tab-btn" onclick="scrollTo('#finance-form')"><i data-lucide="calculator"></i>Apply for Loan</button>
+      <div class="tab-nav-sep"></div>
+      <a href="forms.html" class="tab-cta-link green"><i data-lucide="send"></i>Get Insurance Quote</a>
+      <a href="forms.html#finance" class="tab-cta-link blue"><i data-lucide="calculator"></i>Apply for Loan</a>
     </div>
   </div>
 </div>
@@ -374,7 +374,6 @@
       <h2 class="sec-title">Third-Party vs <em>Comprehensive</em></h2>
       <p class="sec-sub">Nepal law requires at minimum third-party insurance. Here is what each policy covers — and what it does not.</p>
       <div class="coverage-grid">
-        <!-- THIRD PARTY -->
         <div class="cov-card">
           <div class="cov-head">
             <div class="cov-badge" style="background:var(--blue-l);color:var(--blue)"><i data-lucide="users" style="width:11px;height:11px"></i>Third-Party</div>
@@ -399,7 +398,6 @@
             </div>
           </div>
         </div>
-        <!-- COMPREHENSIVE -->
         <div class="cov-card recommended">
           <div class="cov-head">
             <div class="cov-badge" style="background:var(--green-l);color:var(--green)"><i data-lucide="shield-check" style="width:11px;height:11px"></i>Comprehensive</div>
@@ -437,54 +435,12 @@
       <h2 class="sec-title">Enhance Your <em>Policy</em></h2>
       <p class="sec-sub">Bolt these on to a comprehensive policy to fill the gaps standard cover misses.</p>
       <div class="addons-grid">
-        <div class="addon-card">
-          <div class="addon-icon" style="background:var(--green-l)"><i data-lucide="star" style="color:var(--green)"></i></div>
-          <div>
-            <div class="addon-name">Zero Depreciation</div>
-            <div class="addon-desc">Claims settled at full part cost — no depreciation deducted. New parts at current market value.</div>
-            <span class="addon-tag" style="background:var(--green-l);color:var(--green)">New vehicles, first 3–5 yrs</span>
-          </div>
-        </div>
-        <div class="addon-card">
-          <div class="addon-icon" style="background:var(--blue-l)"><i data-lucide="settings-2" style="color:var(--blue)"></i></div>
-          <div>
-            <div class="addon-name">Engine Protection</div>
-            <div class="addon-desc">Covers water ingress, oil leakage, hydrostatic lock &amp; gearbox damage — critical during Nepal's monsoon.</div>
-            <span class="addon-tag" style="background:var(--blue-l);color:var(--blue)">Essential in Nepal</span>
-          </div>
-        </div>
-        <div class="addon-card">
-          <div class="addon-icon" style="background:var(--gold-l)"><i data-lucide="receipt" style="color:var(--gold)"></i></div>
-          <div>
-            <div class="addon-name">Return to Invoice (RTI)</div>
-            <div class="addon-desc">Total loss or theft in year one? Receive the full invoice value — zero depreciation deducted.</div>
-            <span class="addon-tag" style="background:var(--gold-l);color:var(--gold)">First year only</span>
-          </div>
-        </div>
-        <div class="addon-card">
-          <div class="addon-icon" style="background:var(--red-l)"><i data-lucide="phone-call" style="color:var(--red)"></i></div>
-          <div>
-            <div class="addon-name">Roadside Assistance</div>
-            <div class="addon-desc">24/7 towing, jumpstart &amp; emergency help across Nepal — including remote hilly roads.</div>
-            <span class="addon-tag" style="background:var(--red-l);color:var(--red)">24/7 Nepal-wide</span>
-          </div>
-        </div>
-        <div class="addon-card">
-          <div class="addon-icon" style="background:var(--purple-l)"><i data-lucide="user-round" style="color:var(--purple)"></i></div>
-          <div>
-            <div class="addon-name">Personal Accident Cover</div>
-            <div class="addon-desc">Financial protection for the owner in case of death or permanent disability from a vehicle accident.</div>
-            <span class="addon-tag" style="background:var(--purple-l);color:var(--purple)">Mandatory for some types</span>
-          </div>
-        </div>
-        <div class="addon-card">
-          <div class="addon-icon" style="background:var(--teal-l)"><i data-lucide="battery-charging" style="color:var(--teal)"></i></div>
-          <div>
-            <div class="addon-name">Extended Battery Protection</div>
-            <div class="addon-desc">EV-specific. Covers battery damage from fire, water ingress &amp; electrical faults beyond manufacturer warranty.</div>
-            <span class="addon-tag" style="background:var(--teal-l);color:var(--teal)">EV owners only</span>
-          </div>
-        </div>
+        <div class="addon-card"><div class="addon-icon" style="background:var(--green-l)"><i data-lucide="star" style="color:var(--green)"></i></div><div><div class="addon-name">Zero Depreciation</div><div class="addon-desc">Claims settled at full part cost — no depreciation deducted. New parts at current market value.</div><span class="addon-tag" style="background:var(--green-l);color:var(--green)">New vehicles, first 3–5 yrs</span></div></div>
+        <div class="addon-card"><div class="addon-icon" style="background:var(--blue-l)"><i data-lucide="settings-2" style="color:var(--blue)"></i></div><div><div class="addon-name">Engine Protection</div><div class="addon-desc">Covers water ingress, oil leakage, hydrostatic lock &amp; gearbox damage — critical during Nepal's monsoon.</div><span class="addon-tag" style="background:var(--blue-l);color:var(--blue)">Essential in Nepal</span></div></div>
+        <div class="addon-card"><div class="addon-icon" style="background:var(--gold-l)"><i data-lucide="receipt" style="color:var(--gold)"></i></div><div><div class="addon-name">Return to Invoice (RTI)</div><div class="addon-desc">Total loss or theft in year one? Receive the full invoice value — zero depreciation deducted.</div><span class="addon-tag" style="background:var(--gold-l);color:var(--gold)">First year only</span></div></div>
+        <div class="addon-card"><div class="addon-icon" style="background:var(--red-l)"><i data-lucide="phone-call" style="color:var(--red)"></i></div><div><div class="addon-name">Roadside Assistance</div><div class="addon-desc">24/7 towing, jumpstart &amp; emergency help across Nepal — including remote hilly roads.</div><span class="addon-tag" style="background:var(--red-l);color:var(--red)">24/7 Nepal-wide</span></div></div>
+        <div class="addon-card"><div class="addon-icon" style="background:var(--purple-l)"><i data-lucide="user-round" style="color:var(--purple)"></i></div><div><div class="addon-name">Personal Accident Cover</div><div class="addon-desc">Financial protection for the owner in case of death or permanent disability from a vehicle accident.</div><span class="addon-tag" style="background:var(--purple-l);color:var(--purple)">Mandatory for some types</span></div></div>
+        <div class="addon-card"><div class="addon-icon" style="background:var(--teal-l)"><i data-lucide="battery-charging" style="color:var(--teal)"></i></div><div><div class="addon-name">Extended Battery Protection</div><div class="addon-desc">EV-specific. Covers battery damage from fire, water ingress &amp; electrical faults beyond manufacturer warranty.</div><span class="addon-tag" style="background:var(--teal-l);color:var(--teal)">EV owners only</span></div></div>
       </div>
     </div>
   </section>
@@ -503,34 +459,10 @@
           </div>
         </div>
         <div class="ncb-rules">
-          <div class="ncb-rule">
-            <div class="ncb-rule-icon" style="background:rgba(76,175,106,.2)"><i data-lucide="trending-up" style="color:var(--green-m)"></i></div>
-            <div>
-              <div class="ncb-rule-title">Accumulates year after year</div>
-              <div class="ncb-rule-desc">The longer you stay claim-free, the higher your discount becomes at each renewal.</div>
-            </div>
-          </div>
-          <div class="ncb-rule">
-            <div class="ncb-rule-icon" style="background:rgba(255,255,255,.1)"><i data-lucide="arrow-right-left" style="color:rgba(255,255,255,.7)"></i></div>
-            <div>
-              <div class="ncb-rule-title">Fully transferable to a new car</div>
-              <div class="ncb-rule-desc">NCB belongs to you, not the vehicle. Change your car and your NCB moves with you.</div>
-            </div>
-          </div>
-          <div class="ncb-rule">
-            <div class="ncb-rule-icon" style="background:rgba(200,39,30,.2)"><i data-lucide="rotate-ccw" style="color:#ff6b6b"></i></div>
-            <div>
-              <div class="ncb-rule-title">One claim resets to zero</div>
-              <div class="ncb-rule-desc">Any claim — however small — wipes your NCB completely. You restart from 0%.</div>
-            </div>
-          </div>
-          <div class="ncb-rule">
-            <div class="ncb-rule-icon" style="background:rgba(255,255,255,.1)"><i data-lucide="alert-circle" style="color:rgba(255,255,255,.7)"></i></div>
-            <div>
-              <div class="ncb-rule-title">Own damage premium only</div>
-              <div class="ncb-rule-desc">NCB does not apply to the third-party portion — only on the own-damage component.</div>
-            </div>
-          </div>
+          <div class="ncb-rule"><div class="ncb-rule-icon" style="background:rgba(76,175,106,.2)"><i data-lucide="trending-up" style="color:var(--green-m)"></i></div><div><div class="ncb-rule-title">Accumulates year after year</div><div class="ncb-rule-desc">The longer you stay claim-free, the higher your discount becomes at each renewal.</div></div></div>
+          <div class="ncb-rule"><div class="ncb-rule-icon" style="background:rgba(255,255,255,.1)"><i data-lucide="arrow-right-left" style="color:rgba(255,255,255,.7)"></i></div><div><div class="ncb-rule-title">Fully transferable to a new car</div><div class="ncb-rule-desc">NCB belongs to you, not the vehicle. Change your car and your NCB moves with you.</div></div></div>
+          <div class="ncb-rule"><div class="ncb-rule-icon" style="background:rgba(200,39,30,.2)"><i data-lucide="rotate-ccw" style="color:#ff6b6b"></i></div><div><div class="ncb-rule-title">One claim resets to zero</div><div class="ncb-rule-desc">Any claim — however small — wipes your NCB completely. You restart from 0%.</div></div></div>
+          <div class="ncb-rule"><div class="ncb-rule-icon" style="background:rgba(255,255,255,.1)"><i data-lucide="alert-circle" style="color:rgba(255,255,255,.7)"></i></div><div><div class="ncb-rule-title">Own damage premium only</div><div class="ncb-rule-desc">NCB does not apply to the third-party portion — only on the own-damage component.</div></div></div>
         </div>
       </div>
     </div>
@@ -564,61 +496,17 @@
       <p class="sec-sub">Standard policies may not cover EV-specific risks. Here is what you need before insuring an electric car in Nepal.</p>
       <div class="notice teal" style="margin-bottom:28px">
         <i data-lucide="info"></i>
-        <div>
-          <div class="notice-title">EV components need specialist cover</div>
-          <div class="notice-text">Battery, charging equipment &amp; electrical systems require dedicated coverage. Battery depreciation is also calculated differently from regular vehicles.</div>
-        </div>
+        <div><div class="notice-title">EV components need specialist cover</div><div class="notice-text">Battery, charging equipment &amp; electrical systems require dedicated coverage. Battery depreciation is also calculated differently from regular vehicles.</div></div>
       </div>
       <div class="ev-grid">
-        <div class="ev-card">
-          <div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="battery-charging"></i></div><div class="ev-card-title">Battery Coverage — the critical difference</div></div>
-          <div class="ev-card-body">EV batteries are expensive and depreciate differently. Covered perils include:</div>
-          <div class="ev-card-list">
-            <div class="ev-card-row"><i data-lucide="check"></i>Fire and explosion</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Accident damage</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Theft of battery</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Short circuit damage</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Water ingress — manufacturing defect</div>
-            <div class="ev-card-row"><i data-lucide="x" style="color:var(--red)"></i>Normal aging or capacity loss — not covered</div>
-          </div>
-        </div>
-        <div class="ev-card">
-          <div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="plug-zap"></i></div><div class="ev-card-title">Charging Equipment Cover</div></div>
-          <div class="ev-card-body">Your home charger (wallbox) and cables also need protection:</div>
-          <div class="ev-card-list">
-            <div class="ev-card-row"><i data-lucide="check"></i>Electrical surge damage to wallbox</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Fire during charging session</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Theft and vandalism</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Charging cable theft — Type-2, CCS2</div>
-          </div>
-        </div>
-        <div class="ev-card">
-          <div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="truck"></i></div><div class="ev-card-title">EV Roadside Assistance</div></div>
-          <div class="ev-card-body">Standard towing can damage EVs. Our EV-specific assistance:</div>
-          <div class="ev-card-list">
-            <div class="ev-card-row"><i data-lucide="check"></i>Battery depletion — mobile charging on site</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Towing to nearest EV charging station</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Flatbed tow only — EVs must NOT be towed on wheels</div>
-          </div>
-        </div>
-        <div class="ev-card">
-          <div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="star"></i></div><div class="ev-card-title">Recommended Cover for EV Owners</div></div>
-          <div class="ev-card-body">Must-have combination for complete EV protection:</div>
-          <div class="ev-card-list">
-            <div class="ev-card-row"><i data-lucide="check"></i>Comprehensive insurance — third-party alone is insufficient</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Battery protection add-on</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Zero depreciation (vehicles under 5 years)</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>EV roadside assistance</div>
-            <div class="ev-card-row"><i data-lucide="check"></i>Return to Invoice for first year</div>
-          </div>
-        </div>
+        <div class="ev-card"><div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="battery-charging"></i></div><div class="ev-card-title">Battery Coverage — the critical difference</div></div><div class="ev-card-body">EV batteries are expensive and depreciate differently. Covered perils include:</div><div class="ev-card-list"><div class="ev-card-row"><i data-lucide="check"></i>Fire and explosion</div><div class="ev-card-row"><i data-lucide="check"></i>Accident damage</div><div class="ev-card-row"><i data-lucide="check"></i>Theft of battery</div><div class="ev-card-row"><i data-lucide="check"></i>Short circuit damage</div><div class="ev-card-row"><i data-lucide="check"></i>Water ingress — manufacturing defect</div><div class="ev-card-row"><i data-lucide="x" style="color:var(--red)"></i>Normal aging or capacity loss — not covered</div></div></div>
+        <div class="ev-card"><div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="plug-zap"></i></div><div class="ev-card-title">Charging Equipment Cover</div></div><div class="ev-card-body">Your home charger (wallbox) and cables also need protection:</div><div class="ev-card-list"><div class="ev-card-row"><i data-lucide="check"></i>Electrical surge damage to wallbox</div><div class="ev-card-row"><i data-lucide="check"></i>Fire during charging session</div><div class="ev-card-row"><i data-lucide="check"></i>Theft and vandalism</div><div class="ev-card-row"><i data-lucide="check"></i>Charging cable theft — Type-2, CCS2</div></div></div>
+        <div class="ev-card"><div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="truck"></i></div><div class="ev-card-title">EV Roadside Assistance</div></div><div class="ev-card-body">Standard towing can damage EVs. Our EV-specific assistance:</div><div class="ev-card-list"><div class="ev-card-row"><i data-lucide="check"></i>Battery depletion — mobile charging on site</div><div class="ev-card-row"><i data-lucide="check"></i>Towing to nearest EV charging station</div><div class="ev-card-row"><i data-lucide="check"></i>Flatbed tow only — EVs must NOT be towed on wheels</div></div></div>
+        <div class="ev-card"><div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="star"></i></div><div class="ev-card-title">Recommended Cover for EV Owners</div></div><div class="ev-card-body">Must-have combination for complete EV protection:</div><div class="ev-card-list"><div class="ev-card-row"><i data-lucide="check"></i>Comprehensive insurance — third-party alone is insufficient</div><div class="ev-card-row"><i data-lucide="check"></i>Battery protection add-on</div><div class="ev-card-row"><i data-lucide="check"></i>Zero depreciation (vehicles under 5 years)</div><div class="ev-card-row"><i data-lucide="check"></i>EV roadside assistance</div><div class="ev-card-row"><i data-lucide="check"></i>Return to Invoice for first year</div></div></div>
       </div>
       <div class="notice green" style="margin-top:16px">
         <i data-lucide="trending-down"></i>
-        <div>
-          <div class="notice-title">EV premiums are generally lower than equivalent ICE vehicles</div>
-          <div class="notice-text">Lower fire risk, fewer moving parts, and government EV incentives in Nepal make comprehensive EV insurance more affordable than most expect.</div>
-        </div>
+        <div><div class="notice-title">EV premiums are generally lower than equivalent ICE vehicles</div><div class="notice-text">Lower fire risk, fewer moving parts, and government EV incentives in Nepal make comprehensive EV insurance more affordable than most expect.</div></div>
       </div>
     </div>
   </section>
@@ -712,88 +600,22 @@
     </div>
   </section>
 
-  <!-- INSURANCE FORM -->
-  <section class="form-section ins-bg" id="insurance-form">
+  <!-- INSURANCE CTA (replaced form) -->
+  <section class="cta-section green-bg">
     <div class="wrap">
-      <div style="text-align:center;margin-bottom:36px">
-        <div class="eyebrow" style="justify-content:center"><i data-lucide="shield"></i>Get a Quote</div>
-        <h2 class="sec-title" style="text-align:center">Tell us about your <em>vehicle</em></h2>
-        <p style="font-size:14.5px;color:var(--ink4);max-width:480px;margin:0 auto">Fill in the details below and we will get back to you with the best insurance options within one business day.</p>
-      </div>
-      <div class="form-wrap" style="max-width:820px;margin:0 auto">
-        <div class="form-header green-hdr">
-          <h3>Insurance Quote Request</h3>
-          <p>All fields marked * are required. Your details are never shared.</p>
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h2>Ready to protect<br>your <em>vehicle?</em></h2>
+          <p>Tell us about your vehicle and we'll get back to you with the best insurance options within one business day — third-party, comprehensive, EV cover, and add-ons.</p>
         </div>
-        <div class="form-body">
-          <form onsubmit="handleInsSubmit(event)">
-            <div class="form-section-label green-lbl" style="border-top:none;padding-top:0;margin-top:0"><i data-lucide="user"></i>Who is this for?</div>
-            <div style="margin-top:10px">
-              <div class="form-label">Entity Type <span>*</span></div>
-              <div class="radio-group" style="margin-top:6px">
-                <label class="radio-option green-opt"><input type="radio" name="ins_entity" value="individual" checked><i data-lucide="user" style="width:14px;height:14px"></i>Individual</label>
-                <label class="radio-option green-opt"><input type="radio" name="ins_entity" value="company"><i data-lucide="building-2" style="width:14px;height:14px"></i>Company / Corporate</label>
-              </div>
-            </div>
-            <div class="form-section-label green-lbl"><i data-lucide="phone"></i>Contact Details</div>
-            <div class="form-grid" style="margin-top:12px">
-              <div class="form-group"><label class="form-label">Full Name <span>*</span></label><input class="form-input" type="text" placeholder="Your full name" required></div>
-              <div class="form-group"><label class="form-label">Phone Number <span>*</span></label><input class="form-input" type="tel" placeholder="+977 98XXXXXXXX" required></div>
-              <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="you@example.com"></div>
-              <div class="form-group">
-                <label class="form-label">Preferred Contact <span>*</span></label>
-                <div class="radio-group">
-                  <label class="radio-option green-opt"><input type="radio" name="ins_contact" value="phone" checked>Phone</label>
-                  <label class="radio-option green-opt"><input type="radio" name="ins_contact" value="whatsapp">WhatsApp</label>
-                  <label class="radio-option green-opt"><input type="radio" name="ins_contact" value="email">Email</label>
-                </div>
-              </div>
-              <div class="form-group full"><label class="form-label">Address / City <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Kathmandu, Pokhara" required></div>
-            </div>
-            <div class="form-section-label green-lbl"><i data-lucide="car"></i>Vehicle Details</div>
-            <div class="form-grid" style="margin-top:12px">
-              <div class="form-group">
-                <label class="form-label">Vehicle Type <span>*</span></label>
-                <div class="radio-group">
-                  <label class="radio-option green-opt"><input type="radio" name="ins_vtype" value="ice" checked>ICE / Petrol / Diesel</label>
-                  <label class="radio-option green-opt"><input type="radio" name="ins_vtype" value="ev">Electric (EV)</label>
-                  <label class="radio-option green-opt"><input type="radio" name="ins_vtype" value="hybrid">Hybrid</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Vehicle Condition <span>*</span></label>
-                <div class="radio-group">
-                  <label class="radio-option green-opt"><input type="radio" name="ins_cond" value="new" checked>New</label>
-                  <label class="radio-option green-opt"><input type="radio" name="ins_cond" value="used">Used / Pre-owned</label>
-                </div>
-              </div>
-              <div class="form-group"><label class="form-label">Brand &amp; Model <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Toyota Prius, MG ZS EV" required></div>
-              <div class="form-group"><label class="form-label">Model Year</label><input class="form-input" type="text" placeholder="e.g. 2023"></div>
-              <div class="form-group"><label class="form-label">Registration Number</label><input class="form-input" type="text" placeholder="e.g. BA 1 PA 1234"></div>
-            </div>
-            <div class="form-section-label green-lbl"><i data-lucide="shield"></i>What do you need?</div>
-            <div style="margin-top:10px">
-              <div class="form-label">Type of Service <span>*</span></div>
-              <div class="radio-group" style="margin-top:6px">
-                <label class="radio-option green-opt"><input type="radio" name="ins_service" value="third" checked>Third-Party</label>
-                <label class="radio-option green-opt"><input type="radio" name="ins_service" value="comp">Comprehensive</label>
-                <label class="radio-option green-opt"><input type="radio" name="ins_service" value="renewal">Renewal</label>
-                <label class="radio-option green-opt"><input type="radio" name="ins_service" value="claim">Claim Assistance</label>
-              </div>
-            </div>
-            <div class="form-grid" style="margin-top:16px">
-              <div class="form-group"><label class="form-label">Current Insurer</label><input class="form-input" type="text" placeholder="Your existing insurer (if any)"></div>
-              <div class="form-group"><label class="form-label">Policy Expiry Date</label><input class="form-input" type="date"></div>
-              <div class="form-group full"><label class="form-label">Additional Notes</label><textarea class="form-textarea" placeholder="Specific requirements, add-ons you are interested in, or questions..."></textarea></div>
-            </div>
-            <div style="margin-top:20px"><label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer"><input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">I agree to AutoViindu's Terms and Privacy Policy and consent to being contacted regarding this enquiry.</label></div>
-            <button class="btn-green" type="submit">Submit Insurance Quote Request</button>
-            <div class="form-note">We will respond within one business day. Mon–Sat · 9am–6pm.</div>
-          </form>
+        <div class="cta-btns">
+          <a href="forms.html" class="btn-cta-white green-txt"><i data-lucide="shield"></i>Get Insurance Quote</a>
+          <a href="forms.html" class="btn-cta-ghost"><i data-lucide="file-text"></i>Request Claim Help</a>
         </div>
       </div>
     </div>
   </section>
+
 </div><!-- /insurance-section -->
 
 <!-- ═══════════════════════════════════════════ -->
@@ -822,17 +644,9 @@
     <div class="eyebrow blue"><i data-lucide="info"></i>How Financing Works</div>
     <h2 class="sec-title">Pay a <em class="blue">little now,</em> drive today</h2>
     <p class="sec-sub">You pay a portion upfront (down payment), and a bank or financial institution covers the rest. You repay in fixed monthly installments — EMI — over an agreed period.</p>
-    <div style="display:grid;grid-template-columns:1fr;gap:10px">
-      <div style="display:grid;grid-template-columns:1fr;gap:10px" class="ev-grid">
-        <div class="ev-card" style="border-color:var(--border)">
-          <div class="ev-card-head"><div class="ev-card-icon" style="background:var(--blue-l)"><i data-lucide="landmark" style="color:var(--blue)"></i></div><div class="ev-card-title">Who Can Apply</div></div>
-          <div class="ev-card-body">Both individuals and registered business firms. You generally need a stable income, valid citizenship, and the ability to make the required down payment.</div>
-        </div>
-        <div class="ev-card" style="border-color:var(--border)">
-          <div class="ev-card-head"><div class="ev-card-icon" style="background:var(--blue-l)"><i data-lucide="building" style="color:var(--blue)"></i></div><div class="ev-card-title">Loan Providers</div></div>
-          <div class="ev-card-body">Class A Commercial Banks, Class B Development Banks, Class C Finance Companies, and NRB-licensed Hire Purchase Companies.</div>
-        </div>
-      </div>
+    <div class="ev-grid">
+      <div class="ev-card" style="border-color:var(--border)"><div class="ev-card-head"><div class="ev-card-icon" style="background:var(--blue-l)"><i data-lucide="landmark" style="color:var(--blue)"></i></div><div class="ev-card-title">Who Can Apply</div></div><div class="ev-card-body">Both individuals and registered business firms. You generally need a stable income, valid citizenship, and the ability to make the required down payment.</div></div>
+      <div class="ev-card" style="border-color:var(--border)"><div class="ev-card-head"><div class="ev-card-icon" style="background:var(--blue-l)"><i data-lucide="building" style="color:var(--blue)"></i></div><div class="ev-card-title">Loan Providers</div></div><div class="ev-card-body">Class A Commercial Banks, Class B Development Banks, Class C Finance Companies, and NRB-licensed Hire Purchase Companies.</div></div>
     </div>
   </div>
 </section>
@@ -843,134 +657,21 @@
     <div class="eyebrow blue"><i data-lucide="percent"></i>FY 2082/83 Rates</div>
     <h2 class="sec-title">Current Loan <em class="blue">Rate Comparison</em></h2>
     <p class="sec-sub" style="margin-bottom:28px">Rates are indicative for FY 2082/83 and subject to NRB directives. Always confirm directly with your chosen lender.</p>
-
-    <!-- Quick comparison by vehicle type -->
     <div class="provider-grid" style="margin-bottom:36px">
-      <div class="provider-card">
-        <div class="p-type">New ICE / Hybrid</div>
-        <div class="p-name">Class A Bank</div>
-        <div class="p-rate">5.37%</div>
-        <div class="p-rate-label">starting rate p.a.</div>
-        <div class="p-perks">
-          <div class="p-perk"><i data-lucide="check"></i>Up to 60% LTV</div>
-          <div class="p-perk"><i data-lucide="check"></i>Up to 7 years</div>
-          <div class="p-perk"><i data-lucide="check"></i>Min 40% down</div>
-        </div>
-      </div>
-      <div class="provider-card" style="border-color:var(--blue)">
-        <div class="p-type">New Electric Vehicle (BEV)</div>
-        <div class="p-name">Class A Bank</div>
-        <div class="p-rate" style="color:var(--teal)">5.51%</div>
-        <div class="p-rate-label">starting rate p.a.</div>
-        <div class="p-perks">
-          <div class="p-perk"><i data-lucide="check"></i>Up to 60% LTV</div>
-          <div class="p-perk"><i data-lucide="check"></i>Up to 10 years</div>
-          <div class="p-perk"><i data-lucide="check"></i>Green loan subsidy</div>
-        </div>
-      </div>
-      <div class="provider-card">
-        <div class="p-type">Used Vehicle (ICE / EV)</div>
-        <div class="p-name">Class A Bank</div>
-        <div class="p-rate" style="color:var(--gold)">8.00%</div>
-        <div class="p-rate-label">starting rate p.a.</div>
-        <div class="p-perks">
-          <div class="p-perk"><i data-lucide="check"></i>Up to 50% LTV</div>
-          <div class="p-perk"><i data-lucide="check"></i>Up to 5 years</div>
-          <div class="p-perk"><i data-lucide="check"></i>Vehicle up to 7 yrs old</div>
-        </div>
-      </div>
-      <div class="provider-card">
-        <div class="p-type">Used Vehicle</div>
-        <div class="p-name">Hire Purchase</div>
-        <div class="p-rate" style="color:var(--red)">10%+</div>
-        <div class="p-rate-label">starting rate p.a.</div>
-        <div class="p-perks">
-          <div class="p-perk"><i data-lucide="check"></i>Up to 40–50% LTV</div>
-          <div class="p-perk"><i data-lucide="check"></i>Up to 5 years</div>
-          <div class="p-perk"><i data-lucide="check"></i>More flexible eligibility</div>
-        </div>
-      </div>
+      <div class="provider-card"><div class="p-type">New ICE / Hybrid</div><div class="p-name">Class A Bank</div><div class="p-rate">5.37%</div><div class="p-rate-label">starting rate p.a.</div><div class="p-perks"><div class="p-perk"><i data-lucide="check"></i>Up to 60% LTV</div><div class="p-perk"><i data-lucide="check"></i>Up to 7 years</div><div class="p-perk"><i data-lucide="check"></i>Min 40% down</div></div></div>
+      <div class="provider-card" style="border-color:var(--blue)"><div class="p-type">New Electric Vehicle (BEV)</div><div class="p-name">Class A Bank</div><div class="p-rate" style="color:var(--teal)">5.51%</div><div class="p-rate-label">starting rate p.a.</div><div class="p-perks"><div class="p-perk"><i data-lucide="check"></i>Up to 60% LTV</div><div class="p-perk"><i data-lucide="check"></i>Up to 10 years</div><div class="p-perk"><i data-lucide="check"></i>Green loan subsidy</div></div></div>
+      <div class="provider-card"><div class="p-type">Used Vehicle (ICE / EV)</div><div class="p-name">Class A Bank</div><div class="p-rate" style="color:var(--gold)">8.00%</div><div class="p-rate-label">starting rate p.a.</div><div class="p-perks"><div class="p-perk"><i data-lucide="check"></i>Up to 50% LTV</div><div class="p-perk"><i data-lucide="check"></i>Up to 5 years</div><div class="p-perk"><i data-lucide="check"></i>Vehicle up to 7 yrs old</div></div></div>
+      <div class="provider-card"><div class="p-type">Used Vehicle</div><div class="p-name">Hire Purchase</div><div class="p-rate" style="color:var(--red)">10%+</div><div class="p-rate-label">starting rate p.a.</div><div class="p-perks"><div class="p-perk"><i data-lucide="check"></i>Up to 40–50% LTV</div><div class="p-perk"><i data-lucide="check"></i>Up to 5 years</div><div class="p-perk"><i data-lucide="check"></i>More flexible eligibility</div></div></div>
     </div>
-
-    <!-- Detailed tabs -->
     <div class="loan-tabs">
       <button class="loan-tab active" onclick="switchLoanTab('ice')">ICE &amp; Hybrid — New</button>
       <button class="loan-tab" onclick="switchLoanTab('ev')">Electric (BEV) — New</button>
       <button class="loan-tab" onclick="switchLoanTab('used')">Used Vehicles</button>
     </div>
-
-    <!-- ICE Panel -->
-    <div class="loan-panel active" id="panel-ice">
-      <div class="table-wrap">
-        <table class="loan-table">
-          <thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B — Development Bank</th><th>Class C — Finance Company</th><th>Hire Purchase</th></tr></thead>
-          <tbody>
-            <tr><td class="param">Interest Rate</td><td class="highlight">~5.37% – 10.57% p.a.</td><td>~5.06% – 12.54% p.a.</td><td>~6.40% – 15.19% p.a.</td><td>~10% – 16%+ p.a.</td></tr>
-            <tr><td class="param">Loan Coverage (LTV)</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 50–60%</td></tr>
-            <tr><td class="param">Down Payment</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40–50%</td></tr>
-            <tr><td class="param">Max Tenure</td><td class="highlight">Up to 7 years</td><td>Up to 7 years</td><td>Up to 5–6 years</td><td>Up to 5 years</td></tr>
-            <tr><td class="param">Vehicle Condition</td><td>Brand New</td><td>Brand New</td><td>Brand New</td><td>Brand New</td></tr>
-            <tr><td class="param">Government Subsidy</td><td colspan="4" style="color:var(--ink5);font-style:italic">Not available for ICE / Hybrid vehicles</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- EV Panel -->
-    <div class="loan-panel" id="panel-ev">
-      <div class="notice teal" style="margin-bottom:16px">
-        <i data-lucide="zap"></i>
-        <div>
-          <div class="notice-title">EV Green Loan &amp; Customs Duty Relief</div>
-          <div class="notice-text">Government of Nepal offers green loan incentives and customs duty relief for new BEVs — making EV financing more attractive than ICE vehicle loans.</div>
-        </div>
-      </div>
-      <div class="table-wrap">
-        <table class="loan-table">
-          <thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B — Development Bank</th><th>Class C — Finance Company</th><th>Hire Purchase</th></tr></thead>
-          <tbody>
-            <tr><td class="param">Interest Rate</td><td class="highlight" style="color:var(--teal)">~5.51% – 9.90% p.a.</td><td>~5.90% – 9.90% p.a.</td><td>~6.40% – 10.40% p.a.</td><td>~10% – 14%+ p.a.</td></tr>
-            <tr><td class="param">Loan Coverage (LTV)</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 50–60%</td></tr>
-            <tr><td class="param">Down Payment</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40–50%</td></tr>
-            <tr><td class="param">Max Tenure</td><td class="highlight" style="color:var(--teal)">Up to 10 years</td><td>Up to 7 years</td><td>Up to 5–6 years</td><td>Up to 5 years</td></tr>
-            <tr><td class="param">Government Subsidy</td><td colspan="4" style="color:var(--teal);font-weight:700">✓ Green Loan &amp; Customs Duty Relief available</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Used Panel -->
-    <div class="loan-panel" id="panel-used">
-      <div class="notice gold" style="margin-bottom:16px">
-        <i data-lucide="alert-triangle"></i>
-        <div>
-          <div class="notice-title">Used vehicle loans — higher rates, more requirements</div>
-          <div class="notice-text">Used vehicles carry higher lender risk due to depreciation and uncertain condition. Class B and C banks do not currently offer used vehicle financing — only Class A and Hire Purchase.</div>
-        </div>
-      </div>
-      <div class="table-wrap">
-        <table class="loan-table">
-          <thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B</th><th>Class C</th><th>Hire Purchase</th></tr></thead>
-          <tbody>
-            <tr><td class="param">Interest Rate</td><td class="highlight" style="color:var(--gold)">~8% – 13% p.a.</td><td style="color:var(--ink5)">— Not available</td><td style="color:var(--ink5)">— Not available</td><td>~10% – 16%+ p.a.</td></tr>
-            <tr><td class="param">Loan Coverage (LTV)</td><td>Up to 50% of assessed value</td><td>—</td><td>—</td><td>Up to 40–50% of assessed value</td></tr>
-            <tr><td class="param">Down Payment</td><td>Minimum 50%</td><td>—</td><td>—</td><td>Minimum 50–60%</td></tr>
-            <tr><td class="param">Max Tenure</td><td>Up to 5 years</td><td>—</td><td>—</td><td>Up to 5 years</td></tr>
-            <tr><td class="param">Max Vehicle Age</td><td>ICE/HEV up to 7 yrs; EV up to 7–8 yrs</td><td>—</td><td>—</td><td>Up to 7–8 yrs (T&amp;C apply)</td></tr>
-            <tr><td class="param">Extra Requirements</td><td>Mandatory valuation report; Battery SoH for used EVs; Comprehensive insurance mandatory</td><td>—</td><td>—</td><td>Same; Battery SoH for used EVs mandatory</td></tr>
-            <tr><td class="param">Documents</td><td colspan="4" style="font-size:12px;color:var(--ink4)">Citizenship, Income Proof, Bluebook, Buyer-Seller Agreement, PAN (firm), Financial Statements (firm)</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="notice blue" style="margin-top:20px;margin-bottom:0">
-      <i data-lucide="info"></i>
-      <div>
-        <div class="notice-title">Rates are indicative</div>
-        <div class="notice-text">Loan rates, terms, and eligibility are governed by Nepal Rastra Bank (NRB) regulations and may change periodically. Always verify the latest terms directly with your preferred financial institution before deciding.</div>
-      </div>
-    </div>
+    <div class="loan-panel active" id="panel-ice"><div class="table-wrap"><table class="loan-table"><thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B — Development Bank</th><th>Class C — Finance Company</th><th>Hire Purchase</th></tr></thead><tbody><tr><td class="param">Interest Rate</td><td class="highlight">~5.37% – 10.57% p.a.</td><td>~5.06% – 12.54% p.a.</td><td>~6.40% – 15.19% p.a.</td><td>~10% – 16%+ p.a.</td></tr><tr><td class="param">Loan Coverage (LTV)</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 50–60%</td></tr><tr><td class="param">Down Payment</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40–50%</td></tr><tr><td class="param">Max Tenure</td><td class="highlight">Up to 7 years</td><td>Up to 7 years</td><td>Up to 5–6 years</td><td>Up to 5 years</td></tr><tr><td class="param">Vehicle Condition</td><td>Brand New</td><td>Brand New</td><td>Brand New</td><td>Brand New</td></tr><tr><td class="param">Government Subsidy</td><td colspan="4" style="color:var(--ink5);font-style:italic">Not available for ICE / Hybrid vehicles</td></tr></tbody></table></div></div>
+    <div class="loan-panel" id="panel-ev"><div class="notice teal" style="margin-bottom:16px"><i data-lucide="zap"></i><div><div class="notice-title">EV Green Loan &amp; Customs Duty Relief</div><div class="notice-text">Government of Nepal offers green loan incentives and customs duty relief for new BEVs — making EV financing more attractive than ICE vehicle loans.</div></div></div><div class="table-wrap"><table class="loan-table"><thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B — Development Bank</th><th>Class C — Finance Company</th><th>Hire Purchase</th></tr></thead><tbody><tr><td class="param">Interest Rate</td><td class="highlight" style="color:var(--teal)">~5.51% – 9.90% p.a.</td><td>~5.90% – 9.90% p.a.</td><td>~6.40% – 10.40% p.a.</td><td>~10% – 14%+ p.a.</td></tr><tr><td class="param">Loan Coverage (LTV)</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 50–60%</td></tr><tr><td class="param">Down Payment</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40–50%</td></tr><tr><td class="param">Max Tenure</td><td class="highlight" style="color:var(--teal)">Up to 10 years</td><td>Up to 7 years</td><td>Up to 5–6 years</td><td>Up to 5 years</td></tr><tr><td class="param">Government Subsidy</td><td colspan="4" style="color:var(--teal);font-weight:700">✓ Green Loan &amp; Customs Duty Relief available</td></tr></tbody></table></div></div>
+    <div class="loan-panel" id="panel-used"><div class="notice gold" style="margin-bottom:16px"><i data-lucide="alert-triangle"></i><div><div class="notice-title">Used vehicle loans — higher rates, more requirements</div><div class="notice-text">Used vehicles carry higher lender risk due to depreciation and uncertain condition. Class B and C banks do not currently offer used vehicle financing — only Class A and Hire Purchase.</div></div></div><div class="table-wrap"><table class="loan-table"><thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B</th><th>Class C</th><th>Hire Purchase</th></tr></thead><tbody><tr><td class="param">Interest Rate</td><td class="highlight" style="color:var(--gold)">~8% – 13% p.a.</td><td style="color:var(--ink5)">— Not available</td><td style="color:var(--ink5)">— Not available</td><td>~10% – 16%+ p.a.</td></tr><tr><td class="param">Loan Coverage (LTV)</td><td>Up to 50% of assessed value</td><td>—</td><td>—</td><td>Up to 40–50% of assessed value</td></tr><tr><td class="param">Down Payment</td><td>Minimum 50%</td><td>—</td><td>—</td><td>Minimum 50–60%</td></tr><tr><td class="param">Max Tenure</td><td>Up to 5 years</td><td>—</td><td>—</td><td>Up to 5 years</td></tr><tr><td class="param">Max Vehicle Age</td><td>ICE/HEV up to 7 yrs; EV up to 7–8 yrs</td><td>—</td><td>—</td><td>Up to 7–8 yrs (T&amp;C apply)</td></tr><tr><td class="param">Extra Requirements</td><td>Mandatory valuation report; Battery SoH for used EVs; Comprehensive insurance mandatory</td><td>—</td><td>—</td><td>Same; Battery SoH for used EVs mandatory</td></tr><tr><td class="param">Documents</td><td colspan="4" style="font-size:12px;color:var(--ink4)">Citizenship, Income Proof, Bluebook, Buyer-Seller Agreement, PAN (firm), Financial Statements (firm)</td></tr></tbody></table></div></div>
+    <div class="notice blue" style="margin-top:20px;margin-bottom:0"><i data-lucide="info"></i><div><div class="notice-title">Rates are indicative</div><div class="notice-text">Loan rates, terms, and eligibility are governed by Nepal Rastra Bank (NRB) regulations and may change periodically. Always verify the latest terms directly with your preferred financial institution before deciding.</div></div></div>
   </div>
 </section>
 
@@ -997,120 +698,23 @@
   </div>
 </section>
 
-<!-- FINANCE FORM -->
-<section class="form-section fin-bg" id="finance-form">
+<!-- FINANCING CTA (replaced form) -->
+<section class="cta-section blue-bg">
   <div class="wrap">
-    <div style="text-align:center;margin-bottom:36px">
-      <div class="eyebrow blue" style="justify-content:center"><i data-lucide="calculator"></i>Apply for Finance</div>
-      <h2 class="sec-title" style="text-align:center">Find Your Vehicle <em class="blue">Finance</em></h2>
-      <p style="font-size:14.5px;color:var(--ink4);max-width:480px;margin:0 auto">Fill in the details below and our team will connect you with the right lenders based on your requirements.</p>
-    </div>
-    <div class="form-wrap" style="max-width:820px;margin:0 auto">
-      <div class="form-header blue-hdr">
-        <h3>Vehicle Finance Request</h3>
-        <p>All fields marked * are required. We connect you with NRB-regulated lenders only.</p>
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Ready to drive<br>on <em class="blue">finance?</em></h2>
+        <p>Tell us your vehicle and requirements and our team will connect you with the right NRB-regulated lender — new, used, ICE, EV, or hybrid.</p>
       </div>
-      <div class="form-body">
-        <form onsubmit="handleFinSubmit(event)">
-          <div class="form-section-label blue-lbl" style="border-top:none;padding-top:0;margin-top:0"><i data-lucide="user"></i>Customer Information</div>
-          <div class="form-grid" style="margin-top:12px">
-            <div class="form-group"><label class="form-label">Full Name <span>*</span></label><input class="form-input" type="text" placeholder="Your full name" required></div>
-            <div class="form-group"><label class="form-label">Phone Number <span>*</span></label><input class="form-input" type="tel" placeholder="+977 98XXXXXXXX" required></div>
-            <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="you@example.com"></div>
-            <div class="form-group"><label class="form-label">Address / City <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Kathmandu, Pokhara" required></div>
-            <div class="form-group">
-              <label class="form-label">Occupation <span>*</span></label>
-              <select class="form-select" required>
-                <option value="" disabled selected>Select occupation</option>
-                <option>Salaried Employee</option>
-                <option>Self-Employed</option>
-                <option>Business Owner</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Monthly Income Range <span>*</span></label>
-              <select class="form-select" required>
-                <option value="" disabled selected>Select income range</option>
-                <option>Below Rs. 40,000</option>
-                <option>Rs. 40,000 – 80,000</option>
-                <option>Rs. 80,000 – 1.5 Lakh</option>
-                <option>Above Rs. 1.5 Lakh</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-section-label blue-lbl"><i data-lucide="car"></i>Vehicle Details</div>
-          <div class="form-grid" style="margin-top:12px">
-            <div class="form-group">
-              <label class="form-label">Vehicle Type <span>*</span></label>
-              <div class="radio-group">
-                <label class="radio-option blue-opt"><input type="radio" name="fin_vtype" value="ev" checked>Electric (BEV)</label>
-                <label class="radio-option blue-opt"><input type="radio" name="fin_vtype" value="ice">ICE / Petrol / Diesel</label>
-                <label class="radio-option blue-opt"><input type="radio" name="fin_vtype" value="hybrid">Hybrid (HEV)</label>
-                <label class="radio-option blue-opt"><input type="radio" name="fin_vtype" value="used">Used Vehicle</label>
-              </div>
-            </div>
-            <div class="form-group"><label class="form-label">Vehicle Brand <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Toyota, MG, Hyundai" required></div>
-            <div class="form-group"><label class="form-label">Vehicle Model <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Prius, ZS EV, Ioniq 5" required></div>
-            <div class="form-group"><label class="form-label">Model Year</label><input class="form-input" type="text" placeholder="e.g. 2024"></div>
-            <div class="form-group"><label class="form-label">On-Road Price (Approx.) <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Rs. 45,00,000" required></div>
-            <div class="form-group"><label class="form-label">Down Payment Planned</label><input class="form-input" type="text" placeholder="e.g. Rs. 18,00,000"></div>
-          </div>
-
-          <div class="form-section-label blue-lbl"><i data-lucide="banknote"></i>Finance Requirements</div>
-          <div class="form-grid" style="margin-top:12px">
-            <div class="form-group">
-              <label class="form-label">Preferred Loan Provider <span>*</span></label>
-              <select class="form-select" required>
-                <option value="" disabled selected>Select provider type</option>
-                <option>Class A — Commercial Bank</option>
-                <option>Class B — Development Bank</option>
-                <option>Class C — Finance Company</option>
-                <option>Hire Purchase (NRB-licensed)</option>
-                <option>No preference — recommend best</option>
-              </select>
-            </div>
-            <div class="form-group"><label class="form-label">Desired Loan Amount <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Rs. 27,00,000" required></div>
-            <div class="form-group">
-              <label class="form-label">Preferred Tenure <span>*</span></label>
-              <select class="form-select" required>
-                <option value="" disabled selected>Select tenure</option>
-                <option>3 Years</option>
-                <option>4 Years</option>
-                <option>5 Years</option>
-                <option>6 Years</option>
-                <option>7 Years</option>
-                <option>8 Years</option>
-                <option>9 Years</option>
-                <option>10 Years</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Interest Rate Type <span>*</span></label>
-              <div class="radio-group">
-                <label class="radio-option blue-opt"><input type="radio" name="fin_rate" value="fixed" checked>Fixed</label>
-                <label class="radio-option blue-opt"><input type="radio" name="fin_rate" value="variable">Variable</label>
-              </div>
-            </div>
-            <div class="form-group full">
-              <label class="form-label">Bundle with Insurance?</label>
-              <div class="radio-group">
-                <label class="radio-option blue-opt"><input type="radio" name="fin_ins" value="yes" checked>Yes — arrange insurance + finance together</label>
-                <label class="radio-option blue-opt"><input type="radio" name="fin_ins" value="no">No — finance only</label>
-              </div>
-            </div>
-            <div class="form-group full"><label class="form-label">Additional Notes or Comments</label><textarea class="form-textarea" placeholder="Any specific requirements, questions, or circumstances you'd like us to know about..."></textarea></div>
-          </div>
-
-          <div style="margin-top:20px"><label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer"><input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--blue)">I agree to AutoViindu's Terms and Privacy Policy and confirm the information provided is accurate to the best of my knowledge.</label></div>
-          <button class="btn-blue" type="submit">Submit Finance Request</button>
-          <div class="form-note">We will respond within one business day. Mon–Sat · 9am–6pm.</div>
-        </form>
+      <div class="cta-btns">
+        <a href="forms.html#finance" class="btn-cta-white blue-txt"><i data-lucide="calculator"></i>Apply for Finance</a>
+        <a href="forms.html#finance" class="btn-cta-ghost"><i data-lucide="percent"></i>Compare Loan Rates</a>
       </div>
     </div>
   </div>
 </section>
+
+<script src="assets/js/components/av-footer.js"></script>
 
 <script>
   lucide.createIcons();
@@ -1136,24 +740,8 @@
     document.getElementById('panel-' + type).classList.add('active');
   }
 
-  function handleInsSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.btn-green');
-    btn.textContent = '✓ Submitted — we will contact you shortly';
-    btn.style.background = 'var(--green-d)';
-    btn.disabled = true;
-  }
-
-  function handleFinSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.btn-blue');
-    btn.textContent = '✓ Submitted — our team will be in touch';
-    btn.style.background = '#1340a0';
-    btn.disabled = true;
-  }
-
   // Sticky tab highlight on scroll
-  const sections = { '#insurance-section': 0, '#coverage': 1, '#ev': 2, '#finance-section': 3, '#loan-rates': 4 };
+  const sections = { '#insurance-section':0, '#coverage':1, '#ev':2, '#finance-section':3, '#loan-rates':4 };
   const tabBtns = document.querySelectorAll('.tab-btn');
   window.addEventListener('scroll', () => {
     let active = 0;
@@ -1173,8 +761,6 @@
   window.addEventListener('resize', () => {
     cl.style.gridTemplateColumns = window.innerWidth >= 768 ? '1fr 1fr' : '1fr';
   });
-  
 </script>
-<script src="assets/js/components/av-footer.js"></script> 
 </body>
 </html>
