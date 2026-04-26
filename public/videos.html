@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Videos &amp; News – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
+      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
+      --border:#E4E8ED; --bg:#F5F7F9; --white:#ffffff;
+      --red:#C8271E;
+      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
+      --sh1:0 1px 4px rgba(0,0,0,.06); --sh2:0 4px 14px rgba(0,0,0,.08);
+      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
+      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
+    ::selection { background:rgba(26,107,42,.12); }
+    :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+    @media(min-width:640px){ .wrap{ padding:0 32px; } }
+    @media(min-width:1024px){ .wrap{ padding:0 48px; } }
+
+    /* BREADCRUMB */
+    .bc { background:var(--bg); border-bottom:1px solid var(--border); padding:11px 0; }
+    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
+    .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
+    .bc-inner a:hover { text-decoration:underline; }
+    .bc-inner i { width:12px; height:12px; }
+
+    /* HERO */
+    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:56px 0 0; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; padding-bottom:56px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .hero-badge i { width:13px; height:13px; color:var(--green-m); }
+    .hero h1 { font-family:var(--font-d); font-size:clamp(30px,5vw,52px); font-weight:800; color:#fff; line-height:1.08; margin-bottom:14px; }
+    .hero h1 em { font-style:italic; color:var(--green-m); }
+    .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:500px; line-height:1.75; margin-bottom:32px; }
+    .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+
+    /* SUBSCRIBE BUTTON */
+    .btn-subscribe {
+      display:inline-flex; align-items:center; gap:8px;
+      background:#FF0000; color:#fff;
+      border:none; border-radius:var(--r8);
+      padding:11px 20px; font-family:var(--font-b); font-size:14px; font-weight:700;
+      cursor:pointer; text-decoration:none;
+      transition:background var(--ease), transform var(--ease), box-shadow var(--ease);
+      box-shadow:0 2px 8px rgba(255,0,0,.35);
+    }
+    .btn-subscribe:hover { background:#cc0000; transform:translateY(-1px); box-shadow:0 4px 16px rgba(255,0,0,.4); }
+    .btn-subscribe i { width:16px; height:16px; }
+    .sub-count { font-size:13px; color:rgba(255,255,255,.5); font-weight:600; }
+
+    /* FILTER TABS */
+    .filter-bar { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+    .filter-inner { display:flex; align-items:center; gap:0; overflow-x:auto; scrollbar-width:none; }
+    .filter-inner::-webkit-scrollbar { display:none; }
+    .filter-tab {
+      flex-shrink:0; padding:14px 18px; font-size:13px; font-weight:700; color:var(--ink4);
+      cursor:pointer; border-bottom:2.5px solid transparent; white-space:nowrap;
+      transition:color var(--ease), border-color var(--ease);
+      background:none; border-top:none; border-left:none; border-right:none;
+      font-family:var(--font-b);
+    }
+    .filter-tab:hover { color:var(--ink2); }
+    .filter-tab.active { color:var(--green); border-bottom-color:var(--green); }
+
+    /* SECTION */
+    .section { padding:56px 0; }
+    .section.alt { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
+    .eyebrow i { width:13px; height:13px; }
+    .sec-title { font-family:var(--font-d); font-size:clamp(22px,3.5vw,34px); font-weight:800; color:var(--ink); line-height:1.12; margin-bottom:8px; }
+    .sec-title em { font-style:italic; color:var(--green); }
+    .sec-sub { font-size:14.5px; color:var(--ink4); max-width:520px; line-height:1.75; margin-bottom:36px; }
+    .sec-header { display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:28px; }
+    .sec-header-text { }
+    .sec-header-text .sec-title { margin-bottom:4px; }
+    .view-all { display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:700; color:var(--green); text-decoration:none; white-space:nowrap; }
+    .view-all:hover { text-decoration:underline; }
+    .view-all i { width:13px; height:13px; }
+
+    /* VIDEO MODAL */
+    .modal-overlay {
+      display:none; position:fixed; inset:0; background:rgba(0,0,0,.85);
+      z-index:1000; align-items:center; justify-content:center; padding:20px;
+    }
+    .modal-overlay.open { display:flex; }
+    .modal-box {
+      background:#000; border-radius:var(--r12); overflow:hidden;
+      width:100%; max-width:900px; position:relative;
+      box-shadow:0 24px 80px rgba(0,0,0,.6);
+    }
+    .modal-close {
+      position:absolute; top:12px; right:12px; z-index:10;
+      background:rgba(0,0,0,.6); border:none; border-radius:50%;
+      width:36px; height:36px; display:flex; align-items:center; justify-content:center;
+      cursor:pointer; color:#fff; transition:background var(--ease);
+    }
+    .modal-close:hover { background:rgba(255,255,255,.2); }
+    .modal-close i { width:16px; height:16px; }
+    .modal-iframe-wrap { position:relative; padding-bottom:56.25%; height:0; }
+    .modal-iframe-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
+    .modal-info { padding:16px 20px; background:#111; }
+    .modal-title { font-size:15px; font-weight:700; color:#fff; margin-bottom:4px; line-height:1.4; }
+    .modal-meta { font-size:12px; color:#888; }
+
+    /* FEATURED VIDEO */
+    .featured-video { border-radius:var(--r16); overflow:hidden; border:1.5px solid var(--border); cursor:pointer; transition:box-shadow var(--ease), transform var(--ease); background:var(--white); }
+    .featured-video:hover { box-shadow:var(--sh2); transform:translateY(-2px); }
+    .featured-thumb { position:relative; aspect-ratio:16/9; overflow:hidden; background:#000; }
+    .featured-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; }
+    .featured-video:hover .featured-thumb img { transform:scale(1.02); }
+    .featured-play-btn {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      width:64px; height:64px; background:rgba(0,0,0,.7); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      transition:background var(--ease), transform var(--ease);
+      backdrop-filter:blur(4px);
+    }
+    .featured-video:hover .featured-play-btn { background:var(--green); transform:translate(-50%,-50%) scale(1.08); }
+    .featured-play-btn i { width:28px; height:28px; color:#fff; margin-left:3px; }
+    .featured-badge { position:absolute; top:12px; left:12px; background:var(--green); color:#fff; font-size:11px; font-weight:800; padding:3px 10px; border-radius:var(--pill); letter-spacing:.3px; text-transform:uppercase; }
+    .featured-duration { position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,.8); color:#fff; font-size:11.5px; font-weight:700; padding:2px 8px; border-radius:4px; }
+    .featured-info { padding:18px 20px 20px; }
+    .featured-channel { display:flex; align-items:center; gap:8px; margin-bottom:10px; }
+    .channel-avatar { width:32px; height:32px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .channel-avatar i { width:16px; height:16px; color:#fff; }
+    .channel-name { font-size:12.5px; font-weight:700; color:var(--ink3); }
+    .featured-title { font-family:var(--font-d); font-size:clamp(18px,2.5vw,24px); font-weight:800; color:var(--ink); line-height:1.25; margin-bottom:8px; }
+    .featured-title em { font-style:italic; color:var(--green); }
+    .featured-desc { font-size:13.5px; color:var(--ink4); line-height:1.7; margin-bottom:14px; }
+    .video-meta-row { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+    .video-meta-tag { display:inline-flex; align-items:center; gap:5px; font-size:12px; color:var(--ink5); font-weight:600; }
+    .video-meta-tag i { width:12px; height:12px; }
+
+    /* VIDEO GRID */
+    .video-grid { display:grid; grid-template-columns:1fr; gap:20px; }
+    @media(min-width:480px){ .video-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .video-grid{ grid-template-columns:repeat(3,1fr); } }
+
+    /* VIDEO CARD */
+    .video-card { border-radius:var(--r12); overflow:hidden; border:1.5px solid var(--border); cursor:pointer; transition:box-shadow var(--ease), transform var(--ease), border-color var(--ease); background:var(--white); display:flex; flex-direction:column; }
+    .video-card:hover { box-shadow:var(--sh2); transform:translateY(-2px); border-color:var(--green); }
+    .card-thumb { position:relative; aspect-ratio:16/9; overflow:hidden; background:#111; }
+    .card-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; }
+    .video-card:hover .card-thumb img { transform:scale(1.04); }
+    .card-play {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      width:44px; height:44px; background:rgba(0,0,0,.65); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      opacity:0; transition:opacity var(--ease), background var(--ease);
+      backdrop-filter:blur(3px);
+    }
+    .video-card:hover .card-play { opacity:1; background:var(--green); }
+    .card-play i { width:18px; height:18px; color:#fff; margin-left:2px; }
+    .card-duration { position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,.8); color:#fff; font-size:11px; font-weight:700; padding:2px 7px; border-radius:4px; }
+    .card-new { position:absolute; top:8px; left:8px; background:var(--red); color:#fff; font-size:10px; font-weight:800; padding:2px 8px; border-radius:var(--pill); text-transform:uppercase; letter-spacing:.3px; }
+    .card-info { padding:14px 15px 16px; flex:1; display:flex; flex-direction:column; gap:6px; }
+    .card-title { font-size:14px; font-weight:700; color:var(--ink2); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .card-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:auto; }
+    .card-meta-item { display:flex; align-items:center; gap:4px; font-size:11.5px; color:var(--ink5); font-weight:600; }
+    .card-meta-item i { width:11px; height:11px; }
+    .card-tag { display:inline-block; font-size:10.5px; font-weight:700; color:var(--green); background:var(--green-l); padding:2px 8px; border-radius:var(--pill); }
+
+    /* HORIZONTAL VIDEO LIST (Latest) */
+    .video-list { display:flex; flex-direction:column; gap:14px; }
+    .video-list-item { display:flex; gap:14px; cursor:pointer; padding:10px; border-radius:var(--r10); border:1.5px solid transparent; transition:border-color var(--ease), background var(--ease); }
+    .video-list-item:hover { border-color:var(--green); background:var(--green-l); }
+    .list-thumb { position:relative; width:140px; flex-shrink:0; aspect-ratio:16/9; border-radius:var(--r8); overflow:hidden; background:#111; }
+    @media(min-width:640px){ .list-thumb{ width:180px; } }
+    .list-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+    .list-duration { position:absolute; bottom:5px; right:5px; background:rgba(0,0,0,.8); color:#fff; font-size:10px; font-weight:700; padding:1px 6px; border-radius:3px; }
+    .list-play {
+      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+      background:rgba(0,0,0,0); transition:background var(--ease);
+    }
+    .list-play i { width:22px; height:22px; color:#fff; opacity:0; transition:opacity var(--ease); margin-left:2px; }
+    .video-list-item:hover .list-play { background:rgba(26,107,42,.4); }
+    .video-list-item:hover .list-play i { opacity:1; }
+    .list-info { flex:1; min-width:0; display:flex; flex-direction:column; gap:4px; justify-content:center; }
+    .list-title { font-size:13.5px; font-weight:700; color:var(--ink2); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .list-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .list-meta-item { display:flex; align-items:center; gap:4px; font-size:11.5px; color:var(--ink5); font-weight:600; }
+    .list-meta-item i { width:11px; height:11px; }
+    .list-tag { font-size:10.5px; font-weight:700; color:var(--green); background:var(--green-l); padding:2px 8px; border-radius:var(--pill); display:inline-block; }
+
+    /* SUBSCRIBE SECTION */
+    .subscribe-section { padding:56px 0; background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); position:relative; overflow:hidden; }
+    .subscribe-section::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .subscribe-inner { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px; }
+    .yt-logo { display:flex; align-items:center; gap:10px; margin-bottom:4px; }
+    .yt-icon { background:#FF0000; border-radius:10px; width:44px; height:30px; display:flex; align-items:center; justify-content:center; }
+    .yt-icon i { width:18px; height:18px; color:#fff; }
+    .yt-label { font-size:18px; font-weight:800; color:#fff; }
+    .subscribe-title { font-family:var(--font-d); font-size:clamp(22px,4vw,40px); font-weight:800; color:#fff; line-height:1.1; }
+    .subscribe-title em { font-style:italic; color:var(--green-m); }
+    .subscribe-desc { font-size:14.5px; color:rgba(255,255,255,.6); max-width:440px; line-height:1.7; }
+    .subscribe-stats { display:flex; align-items:center; gap:28px; flex-wrap:wrap; justify-content:center; }
+    .stat-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .stat-num { font-family:var(--font-d); font-size:24px; font-weight:800; color:#fff; }
+    .stat-label { font-size:11.5px; color:rgba(255,255,255,.5); font-weight:600; text-transform:uppercase; letter-spacing:.4px; }
+    .stat-divider { width:1px; height:36px; background:rgba(255,255,255,.15); }
+
+    /* NEWS GRID */
+    .news-grid { display:grid; grid-template-columns:1fr; gap:20px; }
+    @media(min-width:640px){ .news-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .news-grid{ grid-template-columns:repeat(3,1fr); } }
+    .news-card { border:1.5px solid var(--border); border-radius:var(--r12); background:var(--white); overflow:hidden; transition:box-shadow var(--ease), transform var(--ease), border-color var(--ease); display:flex; flex-direction:column; }
+    .news-card:hover { box-shadow:var(--sh2); transform:translateY(-2px); border-color:var(--green); }
+    .news-img { aspect-ratio:16/9; overflow:hidden; background:var(--bg); }
+    .news-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; }
+    .news-card:hover .news-img img { transform:scale(1.03); }
+    .news-body { padding:16px 18px 18px; flex:1; display:flex; flex-direction:column; gap:8px; }
+    .news-category { font-size:10.5px; font-weight:800; color:var(--green); text-transform:uppercase; letter-spacing:.5px; }
+    .news-title { font-size:15px; font-weight:700; color:var(--ink2); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .news-excerpt { font-size:13px; color:var(--ink4); line-height:1.65; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; flex:1; }
+    .news-footer { display:flex; align-items:center; gap:10px; margin-top:6px; flex-wrap:wrap; }
+    .news-date { font-size:11.5px; color:var(--ink5); font-weight:600; display:flex; align-items:center; gap:4px; }
+    .news-date i { width:11px; height:11px; }
+    .news-read { font-size:11.5px; color:var(--ink5); font-weight:600; display:flex; align-items:center; gap:4px; }
+    .news-read i { width:11px; height:11px; }
+
+    /* PLACEHOLDER THUMB */
+    .thumb-placeholder { width:100%; height:100%; background:linear-gradient(135deg,#1a3a22,#2d6b3e); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
+    .thumb-placeholder i { width:32px; height:32px; color:rgba(255,255,255,.4); }
+    .thumb-placeholder span { font-size:11px; color:rgba(255,255,255,.3); font-weight:600; text-transform:uppercase; letter-spacing:.4px; }
+
+    /* NEWS PLACEHOLDER */
+    .news-placeholder { width:100%; height:100%; background:linear-gradient(135deg,#f0f4f1,#e0ebe2); display:flex; align-items:center; justify-content:center; }
+    .news-placeholder i { width:28px; height:28px; color:rgba(26,107,42,.3); }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { opacity:0; animation:fadeUp .45s ease forwards; }
+
+    /* LOAD MORE */
+    .load-more-wrap { text-align:center; margin-top:36px; }
+    .btn-load-more { display:inline-flex; align-items:center; gap:8px; background:var(--white); border:1.5px solid var(--border); color:var(--ink2); font-family:var(--font-b); font-size:14px; font-weight:700; padding:11px 24px; border-radius:var(--r10); cursor:pointer; transition:all var(--ease); }
+    .btn-load-more:hover { border-color:var(--green); color:var(--green); background:var(--green-l); }
+    .btn-load-more i { width:15px; height:15px; }
+  </style>
+</head>
+<body>
+  <script src="assets/js/components/av-nav.js"></script> 
+<!-- BREADCRUMB -->
+<nav class="bc">
+  <div class="wrap bc-inner">
+    <a href="/">Home</a>
+    <i data-lucide="chevron-right"></i>
+    <span>Videos &amp; News</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner fade-up">
+      <div class="hero-badge"><i data-lucide="youtube"></i>AutoViindu Channel</div>
+      <h1>Videos &amp; <em>Latest News</em></h1>
+      <p class="hero-desc">Watch our latest car reviews, service tips, and automotive news from Nepal — all in one place.</p>
+      <div class="hero-actions">
+        <a class="btn-subscribe" href="https://www.youtube.com/@AutoViindu" target="_blank" rel="noopener">
+          <i data-lucide="youtube"></i>Subscribe on YouTube
+        </a>
+        <span class="sub-count">Stay updated · New videos every week</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER TABS -->
+<div class="filter-bar">
+  <div class="wrap" style="padding:0 20px">
+    <div class="filter-inner">
+      <button class="filter-tab active" onclick="filterTab(this,'all')">All</button>
+      <button class="filter-tab" onclick="filterTab(this,'reviews')">Car Reviews</button>
+      <button class="filter-tab" onclick="filterTab(this,'tips')">Service Tips</button>
+      <button class="filter-tab" onclick="filterTab(this,'news')">News</button>
+      <button class="filter-tab" onclick="filterTab(this,'ev')">EV &amp; Hybrid</button>
+      <button class="filter-tab" onclick="filterTab(this,'guides')">Buying Guides</button>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="featured">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-header-text">
+        <div class="eyebrow"><i data-lucide="star"></i>Featured</div>
+        <h2 class="sec-title">Latest <em>Upload</em></h2>
+      </div>
+    </div>
+    <div class="featured-video" onclick="openModal('r1PfU8DULME','Is BAW Brumpy the Perfect City Car for Nepal? — Full Comparison','Jan 11 2026 · 3:10 min')">
+      <div class="featured-thumb">
+        <img 
+          src="https://img.youtube.com/vi/r1PfU8DULME/maxresdefault.jpg" 
+          alt="Is BAW Brumpy the Perfect City Car for Nepal?"
+          onerror="this.src='https://img.youtube.com/vi/r1PfU8DULME/hqdefault.jpg'"
+        >
+        <div class="featured-badge">Latest</div>
+        <div class="featured-duration">3:10</div>
+        <div class="featured-play-btn"><i data-lucide="play"></i></div>
+      </div>
+      <div class="featured-info">
+        <div class="featured-channel">
+          <div class="channel-avatar"><i data-lucide="car"></i></div>
+          <span class="channel-name">AutoViindu</span>
+        </div>
+        <h2 class="featured-title">Is BAW Brumpy the Perfect City Car for Nepal? — <em>Full Comparison</em></h2>
+        <p class="featured-desc">The BAW Brumby is a compact and practical city-focused vehicle designed for urban Nepal. In this video, we explore the design, features, driving experience, mileage, and overall practicality of the BAW Brumby in real Nepali road conditions.</p>
+        <div class="video-meta-row">
+          <span class="video-meta-tag"><i data-lucide="eye"></i>1.4K views</span>
+          <span class="video-meta-tag"><i data-lucide="calendar"></i>Jan 11 2026</span>
+          <span class="video-meta-tag"><i data-lucide="clock"></i>3:10 min</span>
+          <span class="card-tag">Car Reviews</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENT VIDEOS GRID -->
+<section class="section alt" id="videos">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-header-text">
+        <div class="eyebrow"><i data-lucide="play-circle"></i>Recent Videos</div>
+        <h2 class="sec-title">Watch &amp; <em>Learn</em></h2>
+      </div>
+      <a class="view-all" href="https://www.youtube.com/@AutoViindu" target="_blank" rel="noopener">View all on YouTube <i data-lucide="arrow-right"></i></a>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','How to Check a Used Car Before Buying — Nepal Edition','May 2025 · 12 min')">
+        <div class="card-thumb">
+          <div class="thumb-placeholder"><i data-lucide="search"></i><span>AutoViindu</span></div>
+          <div class="card-new">New</div>
+          <div class="card-duration">12:07</div>
+          <div class="card-play"><i data-lucide="play"></i></div>
+        </div>
+        <div class="card-info">
+          <div class="card-tag">Buying Guide</div>
+          <div class="card-title">How to Check a Used Car Before Buying — Nepal Edition</div>
+          <div class="card-meta">
+            <span class="card-meta-item"><i data-lucide="eye"></i>8.1K</span>
+            <span class="card-meta-item"><i data-lucide="calendar"></i>May 2025</span>
+            <span class="card-meta-item"><i data-lucide="clock"></i>12 min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','Tata Nexon EV — 6-Month Real-World Review from Kathmandu','May 2025 · 22 min')">
+        <div class="card-thumb">
+          <div class="thumb-placeholder"><i data-lucide="zap"></i><span>AutoViindu</span></div>
+          <div class="card-duration">22:15</div>
+          <div class="card-play"><i data-lucide="play"></i></div>
+        </div>
+        <div class="card-info">
+          <div class="card-tag">EV &amp; Hybrid</div>
+          <div class="card-title">Tata Nexon EV — 6-Month Real-World Review from Kathmandu</div>
+          <div class="card-meta">
+            <span class="card-meta-item"><i data-lucide="eye"></i>15.3K</span>
+            <span class="card-meta-item"><i data-lucide="calendar"></i>May 2025</span>
+            <span class="card-meta-item"><i data-lucide="clock"></i>22 min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','5 Things to Do After Every Service — Save Money on Repairs','Apr 2025 · 9 min')">
+        <div class="card-thumb">
+          <div class="thumb-placeholder"><i data-lucide="wrench"></i><span>AutoViindu</span></div>
+          <div class="card-duration">9:34</div>
+          <div class="card-play"><i data-lucide="play"></i></div>
+        </div>
+        <div class="card-info">
+          <div class="card-tag">Service Tips</div>
+          <div class="card-title">5 Things to Do After Every Service — Save Money on Repairs</div>
+          <div class="card-meta">
+            <span class="card-meta-item"><i data-lucide="eye"></i>6.8K</span>
+            <span class="card-meta-item"><i data-lucide="calendar"></i>Apr 2025</span>
+            <span class="card-meta-item"><i data-lucide="clock"></i>9 min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','BYD Atto 3 vs MG ZS EV — Which Should You Buy in Nepal?','Apr 2025 · 19 min')">
+        <div class="card-thumb">
+          <div class="thumb-placeholder"><i data-lucide="car"></i><span>AutoViindu</span></div>
+          <div class="card-duration">19:08</div>
+          <div class="card-play"><i data-lucide="play"></i></div>
+        </div>
+        <div class="card-info">
+          <div class="card-tag">Car Reviews</div>
+          <div class="card-title">BYD Atto 3 vs MG ZS EV — Which Should You Buy in Nepal?</div>
+          <div class="card-meta">
+            <span class="card-meta-item"><i data-lucide="eye"></i>20.1K</span>
+            <span class="card-meta-item"><i data-lucide="calendar"></i>Apr 2025</span>
+            <span class="card-meta-item"><i data-lucide="clock"></i>19 min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','Engine Oil — What Grade Should You Use in Nepal\'s Climate?','Mar 2025 · 8 min')">
+        <div class="card-thumb">
+          <div class="thumb-placeholder"><i data-lucide="droplets"></i><span>AutoViindu</span></div>
+          <div class="card-duration">8:22</div>
+          <div class="card-play"><i data-lucide="play"></i></div>
+        </div>
+        <div class="card-info">
+          <div class="card-tag">Service Tips</div>
+          <div class="card-title">Engine Oil — What Grade Should You Use in Nepal's Climate?</div>
+          <div class="card-meta">
+            <span class="card-meta-item"><i data-lucide="eye"></i>9.4K</span>
+            <span class="card-meta-item"><i data-lucide="calendar"></i>Mar 2025</span>
+            <span class="card-meta-item"><i data-lucide="clock"></i>8 min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','Toyota Fortuner Legender — Honest Review After 10,000 km','Mar 2025 · 25 min')">
+        <div class="card-thumb">
+          <div class="thumb-placeholder"><i data-lucide="shield"></i><span>AutoViindu</span></div>
+          <div class="card-duration">25:01</div>
+          <div class="card-play"><i data-lucide="play"></i></div>
+        </div>
+        <div class="card-info">
+          <div class="card-tag">Car Reviews</div>
+          <div class="card-title">Toyota Fortuner Legender — Honest Review After 10,000 km</div>
+          <div class="card-meta">
+            <span class="card-meta-item"><i data-lucide="eye"></i>31.7K</span>
+            <span class="card-meta-item"><i data-lucide="calendar"></i>Mar 2025</span>
+            <span class="card-meta-item"><i data-lucide="clock"></i>25 min</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="load-more-wrap">
+      <button class="btn-load-more"><i data-lucide="refresh-cw"></i>Load more videos</button>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE CTA -->
+<section class="subscribe-section">
+  <div class="wrap">
+    <div class="subscribe-inner">
+      <div class="yt-logo">
+        <div class="yt-icon"><i data-lucide="youtube"></i></div>
+        <span class="yt-label">AutoViindu on YouTube</span>
+      </div>
+      <h2 class="subscribe-title">Never miss a <em>new video</em></h2>
+      <p class="subscribe-desc">Car reviews, service guides, EV news, and buying tips — delivered straight to your feed every week.</p>
+     
+      </div>
+      <a class="btn-subscribe" href="https://www.youtube.com/@AutoViindu" target="_blank" rel="noopener" style="font-size:15px;padding:13px 28px;">
+        <i data-lucide="youtube"></i>Subscribe — It's Free
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST NEWS -->
+<section class="section" id="news">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-header-text">
+        <div class="eyebrow"><i data-lucide="newspaper"></i>Latest News</div>
+        <h2 class="sec-title">Automotive <em>Updates</em></h2>
+      </div>
+    </div>
+    <div class="news-grid">
+
+      <div class="news-card">
+        <div class="news-img">
+          <div class="news-placeholder"><i data-lucide="zap"></i></div>
+        </div>
+        <div class="news-body">
+          <span class="news-category">EV &amp; Policy</span>
+          <h3 class="news-title">Nepal Government Extends EV Import Duty Waiver Through 2026</h3>
+          <p class="news-excerpt">The Ministry of Finance confirmed a two-year extension of the zero-customs duty on battery electric vehicles, offering continued relief to buyers and dealers.</p>
+          <div class="news-footer">
+            <span class="news-date"><i data-lucide="calendar"></i>Jun 2025</span>
+            <span class="news-read"><i data-lucide="clock"></i>3 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-img">
+          <div class="news-placeholder"><i data-lucide="car"></i></div>
+        </div>
+        <div class="news-body">
+          <span class="news-category">New Launch</span>
+          <h3 class="news-title">BYD Seal Officially Launches in Kathmandu — Pricing and Range Details</h3>
+          <p class="news-excerpt">BYD's newest sedan arrives in Nepal with a claimed 570 km range and a starting price under NPR 70 lakh, targeting the premium sedan segment.</p>
+          <div class="news-footer">
+            <span class="news-date"><i data-lucide="calendar"></i>May 2025</span>
+            <span class="news-read"><i data-lucide="clock"></i>4 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-img">
+          <div class="news-placeholder"><i data-lucide="fuel"></i></div>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Market</span>
+          <h3 class="news-title">Petrol and Diesel Prices Revised — What It Means for Vehicle Running Costs</h3>
+          <p class="news-excerpt">NOC's latest revision pushes petrol to NPR 180 per litre. We break down how this affects monthly running costs for common vehicles in Nepal.</p>
+          <div class="news-footer">
+            <span class="news-date"><i data-lucide="calendar"></i>May 2025</span>
+            <span class="news-read"><i data-lucide="clock"></i>3 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-img">
+          <div class="news-placeholder"><i data-lucide="shield-check"></i></div>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Regulations</span>
+          <h3 class="news-title">DOTM Introduces Stricter Emission Standards for Vehicles Above 5 Years</h3>
+          <p class="news-excerpt">Starting mid-2025, vehicles older than five years must pass updated emission checks during bluebook renewal. Here's what you need to prepare.</p>
+          <div class="news-footer">
+            <span class="news-date"><i data-lucide="calendar"></i>Apr 2025</span>
+            <span class="news-read"><i data-lucide="clock"></i>5 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-img">
+          <div class="news-placeholder"><i data-lucide="map-pin"></i></div>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Infrastructure</span>
+          <h3 class="news-title">10 New EV Charging Stations Open Along Kathmandu–Pokhara Highway</h3>
+          <p class="news-excerpt">NEA and private partners have commissioned a new charging network along the Prithvi Highway, significantly reducing range anxiety for intercity EV travel.</p>
+          <div class="news-footer">
+            <span class="news-date"><i data-lucide="calendar"></i>Apr 2025</span>
+            <span class="news-read"><i data-lucide="clock"></i>3 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-img">
+          <div class="news-placeholder"><i data-lucide="trending-up"></i></div>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Market</span>
+          <h3 class="news-title">Used Car Market Grows 18% in Q1 2025 — SUVs and Hybrids Lead Demand</h3>
+          <p class="news-excerpt">NADA data shows a significant uptick in pre-owned vehicle transactions, with hybrid SUVs accounting for nearly a third of all deals closed this quarter.</p>
+          <div class="news-footer">
+            <span class="news-date"><i data-lucide="calendar"></i>Mar 2025</span>
+            <span class="news-read"><i data-lucide="clock"></i>4 min read</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="load-more-wrap">
+      <button class="btn-load-more"><i data-lucide="refresh-cw"></i>Load more news</button>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST VIDEOS LIST (sidebar-style) -->
+<section class="section alt">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-header-text">
+        <div class="eyebrow"><i data-lucide="clock"></i>Quick Watch</div>
+        <h2 class="sec-title">Short Clips &amp; <em>Tips</em></h2>
+      </div>
+      <a class="view-all" href="https://www.youtube.com/@AutoViindu" target="_blank" rel="noopener">All videos <i data-lucide="arrow-right"></i></a>
+    </div>
+    <div class="video-list">
+
+      <div class="video-list-item" onclick="openModal('dQw4w9WgXcQ','When to Change Your Brake Pads — 3 Easy Signs','Jun 2025 · 5 min')">
+        <div class="list-thumb">
+          <div class="thumb-placeholder"><i data-lucide="disc"></i><span>AutoViindu</span></div>
+          <div class="list-duration">5:12</div>
+          <div class="list-play"><i data-lucide="play"></i></div>
+        </div>
+        <div class="list-info">
+          <span class="list-tag">Service Tips</span>
+          <div class="list-title">When to Change Your Brake Pads — 3 Easy Signs</div>
+          <div class="list-meta">
+            <span class="list-meta-item"><i data-lucide="eye"></i>4.2K views</span>
+            <span class="list-meta-item"><i data-lucide="calendar"></i>Jun 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-list-item" onclick="openModal('dQw4w9WgXcQ','How to Read Your Car\'s Dashboard Warning Lights','May 2025 · 7 min')">
+        <div class="list-thumb">
+          <div class="thumb-placeholder"><i data-lucide="gauge"></i><span>AutoViindu</span></div>
+          <div class="list-duration">7:05</div>
+          <div class="list-play"><i data-lucide="play"></i></div>
+        </div>
+        <div class="list-info">
+          <span class="list-tag">Service Tips</span>
+          <div class="list-title">How to Read Your Car's Dashboard Warning Lights</div>
+          <div class="list-meta">
+            <span class="list-meta-item"><i data-lucide="eye"></i>11.6K views</span>
+            <span class="list-meta-item"><i data-lucide="calendar"></i>May 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-list-item" onclick="openModal('dQw4w9WgXcQ','Is GPS Tracking Worth It? — Real Owner Experience','Apr 2025 · 6 min')">
+        <div class="list-thumb">
+          <div class="thumb-placeholder"><i data-lucide="map-pin"></i><span>AutoViindu</span></div>
+          <div class="list-duration">6:48</div>
+          <div class="list-play"><i data-lucide="play"></i></div>
+        </div>
+        <div class="list-info">
+          <span class="list-tag">Guides</span>
+          <div class="list-title">Is GPS Tracking Worth It? — Real Owner Experience</div>
+          <div class="list-meta">
+            <span class="list-meta-item"><i data-lucide="eye"></i>5.9K views</span>
+            <span class="list-meta-item"><i data-lucide="calendar"></i>Apr 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-list-item" onclick="openModal('dQw4w9WgXcQ','Ceramic Coating vs PPF — Which Protects Better?','Mar 2025 · 10 min')">
+        <div class="list-thumb">
+          <div class="thumb-placeholder"><i data-lucide="shield"></i><span>AutoViindu</span></div>
+          <div class="list-duration">10:20</div>
+          <div class="list-play"><i data-lucide="play"></i></div>
+        </div>
+        <div class="list-info">
+          <span class="list-tag">Car Care</span>
+          <div class="list-title">Ceramic Coating vs PPF — Which Protects Better?</div>
+          <div class="list-meta">
+            <span class="list-meta-item"><i data-lucide="eye"></i>7.3K views</span>
+            <span class="list-meta-item"><i data-lucide="calendar"></i>Mar 2025</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO MODAL -->
+<div class="modal-overlay" id="videoModal" onclick="closeModalOnOverlay(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()"><i data-lucide="x"></i></button>
+    <div class="modal-iframe-wrap">
+      <iframe id="modalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="modal-info">
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-meta" id="modalMeta"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  lucide.createIcons();
+
+  function filterTab(el, filter) {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function openModal(videoId, title, meta) {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('modalIframe');
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalMeta').textContent = meta;
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('modalIframe');
+    iframe.src = '';
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOnOverlay(e) {
+    if (e.target === document.getElementById('videoModal')) closeModal();
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+  <div id="av-toast-wrap"></div>
+  <script src="assets/js/components/av-footer.js"></script>  <!-- ← before </body> -->
+  <script>lucide.createIcons();</script>
+</body>
+</html>

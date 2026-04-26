@@ -1,0 +1,649 @@
+[
+  {
+    "id": 1101,
+    "slug": "geely-coolray-2025",
+    "brand": "Geely",
+    "model": "Coolray",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "popular",
+    "tagline": "European-engineered compact SUV with 1.5T and 7DCT for Nepal",
+    "rating": 4.1,
+    "reviews": 689,
+    "expertScore": 7.9,
+    "baseEMI": 42000,
+    "overview": "The Geely Coolray is built on the same BMA platform as Volvo and uses a 1.5T 3-cylinder engine co-developed with Volvo. With a 7-speed wet DCT, 10.25\" touchscreen, electric sunroof, and 6 airbags standard, it offers genuine European-heritage engineering at a Chinese price.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Moonlight White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Ink Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Sky Blue",
+        "hex": "#4A90D9"
+      },
+      {
+        "name": "Titanium Silver",
+        "hex": "#8C9098"
+      },
+      {
+        "name": "Blazing Red",
+        "hex": "#C0392B"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Comfort",
+        "price": 4190000,
+        "label": "Rs. 41.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera + Sensors",
+          "Electric Sunroof",
+          "Auto Climate Control",
+          "17\" Alloy Wheels",
+          "7-Speed Wet DCT"
+        ],
+        "specs": {
+          "power": "177 hp @ 5,500 rpm",
+          "torque": "255 Nm",
+          "efficiency": "15.9 km/l",
+          "transmission": "7-Speed Wet DCT"
+        }
+      },
+      {
+        "name": "Premium",
+        "price": 4690000,
+        "label": "Rs. 46.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "360° Camera",
+          "Wireless Charging",
+          "ADAS Level 1 (6 features)",
+          "Rear AC Vents",
+          "Drive Modes",
+          "Comfort features+"
+        ],
+        "specs": {
+          "power": "177 hp @ 5,500 rpm",
+          "torque": "255 Nm",
+          "efficiency": "15.9 km/l",
+          "transmission": "7-Speed Wet DCT"
+        }
+      },
+      {
+        "name": "Sport",
+        "price": 5190000,
+        "label": "Rs. 51.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "ADAS Level 2",
+          "Panoramic Sunroof",
+          "Ventilated Seats",
+          "Ambient Lighting (32 color)",
+          "Sport Exhaust Sound",
+          "Premium features+"
+        ],
+        "specs": {
+          "power": "177 hp @ 5,500 rpm",
+          "torque": "255 Nm",
+          "efficiency": "15.9 km/l",
+          "transmission": "7-Speed Wet DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L TD 3-Cylinder Turbo (Volvo co-dev)",
+      "Displacement": "1,497 cc",
+      "Power": "177 hp @ 5,500 rpm",
+      "Torque": "255 Nm",
+      "Efficiency": "15.9 km/l",
+      "Fuel Tank": "48 L",
+      "Transmission": "7-Speed Wet DCT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "395 L",
+      "Length": "4,330 mm",
+      "Width": "1,800 mm",
+      "Height": "1,609 mm",
+      "Wheelbase": "2,600 mm",
+      "Ground Clearance": "192 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Volvo co-developed engine",
+      "177hp — strong for class",
+      "7-speed wet DCT reliable",
+      "Volvo BMA platform safety",
+      "ADAS Level 2 on Sport"
+    ],
+    "cons": [
+      "3-cylinder vibration at idle",
+      "FWD only",
+      "Sport variant pricier than rivals",
+      "Geely service centres growing"
+    ],
+    "highlights": [
+      "Volvo BMA Platform",
+      "177hp Turbo",
+      "ADAS Level 2",
+      "7-Speed Wet DCT"
+    ]
+  },
+  {
+    "id": 1102,
+    "slug": "geely-azkarra-2025",
+    "brand": "Geely",
+    "model": "Azkarra",
+    "year": 2025,
+    "type": "Petrol Hybrid",
+    "body": "Mid-size SUV",
+    "badge": "new",
+    "tagline": "Geely's MHEV mild-hybrid mid-size SUV with AWD and 197hp",
+    "rating": 4.2,
+    "reviews": 187,
+    "expertScore": 8,
+    "baseEMI": 62000,
+    "overview": "The Geely Azkarra is a mid-size SUV with Geely's 48V mild hybrid system, 197hp 2.0T engine, AWD, and a stunning interior featuring a 12.3\" curved screen, Bose audio, and full ADAS Level 2. On the CMA platform shared with Volvo XC40, it brings near-premium quality at a mid-tier price.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Moonlight White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Ink Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Titan Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Neptune Blue",
+        "hex": "#1B3A6B"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Premium FWD",
+        "price": 6190000,
+        "label": "Rs. 61.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Hybrid",
+        "features": [
+          "6 Airbags",
+          "48V Mild Hybrid",
+          "12.3\" Curved Screen",
+          "ADAS Level 1",
+          "Panoramic Sunroof",
+          "360° Camera",
+          "18\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "197 hp @ 5,500 rpm",
+          "torque": "300 Nm",
+          "efficiency": "17.2 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Elite AWD",
+        "price": 7290000,
+        "label": "Rs. 72.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Hybrid",
+        "features": [
+          "AWD System",
+          "ADAS Level 2",
+          "Bose 9-Speaker",
+          "Ventilated + Heated Seats",
+          "Head-Up Display",
+          "Nappa Leather",
+          "Premium features+"
+        ],
+        "specs": {
+          "power": "197 hp @ 5,500 rpm",
+          "torque": "300 Nm",
+          "efficiency": "16.1 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0T + 48V Mild Hybrid (Volvo CMA)",
+      "Displacement": "1,997 cc",
+      "Power": "197 hp @ 5,500 rpm",
+      "Torque": "300 Nm",
+      "Efficiency": "16.1–17.2 km/l",
+      "Fuel Tank": "55 L",
+      "Transmission": "7-Speed DCT",
+      "Drive": "FWD / AWD",
+      "Seating": "5",
+      "Boot Space": "490 L",
+      "Length": "4,554 mm",
+      "Width": "1,878 mm",
+      "Height": "1,650 mm",
+      "Wheelbase": "2,777 mm",
+      "Ground Clearance": "198 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Volvo CMA platform (same as XC40)",
+      "197hp + mild hybrid",
+      "AWD available",
+      "Bose audio on Elite",
+      "ADAS Level 2"
+    ],
+    "cons": [
+      "Mild hybrid — smaller fuel saving vs full hybrid",
+      "Premium pricing",
+      "Limited Nepal service",
+      "DCT hesitation possible"
+    ],
+    "highlights": [
+      "Volvo CMA Platform",
+      "197hp Mild Hybrid",
+      "AWD Available",
+      "Bose 9-Speaker"
+    ]
+  },
+  {
+    "id": 1103,
+    "slug": "geely-emgrand-2025",
+    "brand": "Geely",
+    "model": "Emgrand",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Sedan",
+    "badge": "value",
+    "tagline": "Geely's global best-selling sedan — reliable and spacious for Nepal",
+    "rating": 3.9,
+    "reviews": 412,
+    "expertScore": 7.2,
+    "baseEMI": 24000,
+    "overview": "The Geely Emgrand is one of the world's best-selling sedans with over 3 million units sold. In Nepal it offers a spacious 450L boot, 10.25\" touchscreen, CVT option, and 6 airbags — making it one of the most complete value sedans available against the Toyota Vios and Honda City.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Ink Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Silver Grey",
+        "hex": "#8C9098"
+      },
+      {
+        "name": "Sky Blue",
+        "hex": "#4A90D9"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Comfort MT",
+        "price": 2490000,
+        "label": "Rs. 24.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "Manual AC",
+          "15\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "100 hp @ 6,000 rpm",
+          "torque": "142 Nm",
+          "efficiency": "17.8 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Premium CVT",
+        "price": 2890000,
+        "label": "Rs. 28.90L",
+        "popular": true,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "CVT Automatic",
+          "Auto Climate Control",
+          "Wireless CarPlay",
+          "TPMS",
+          "Rear Spoiler",
+          "Comfort features+"
+        ],
+        "specs": {
+          "power": "100 hp @ 6,000 rpm",
+          "torque": "142 Nm",
+          "efficiency": "17.2 km/l",
+          "transmission": "CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L VVT Petrol",
+      "Displacement": "1,497 cc",
+      "Power": "100 hp @ 6,000 rpm",
+      "Torque": "142 Nm",
+      "Efficiency": "17.2–17.8 km/l",
+      "Fuel Tank": "45 L",
+      "Transmission": "5MT / CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "450 L",
+      "Length": "4,638 mm",
+      "Width": "1,802 mm",
+      "Height": "1,460 mm",
+      "Wheelbase": "2,650 mm",
+      "Ground Clearance": "155 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "6 airbags standard — best in class at price",
+      "450L huge boot",
+      "17.8 km/l excellent economy",
+      "Globally proven reliability",
+      "CVT available"
+    ],
+    "cons": [
+      "Low ground clearance for Nepal roads",
+      "No ADAS",
+      "Sedan not ideal for hilly terrain",
+      "Brand awareness lower than Toyota/Honda"
+    ],
+    "highlights": [
+      "6 Airbags Standard",
+      "450L Boot",
+      "17.8 km/l",
+      "CVT Available"
+    ]
+  },
+  {
+    "id": 1104,
+    "slug": "geely-preface-2025",
+    "brand": "Geely",
+    "model": "Preface",
+    "year": 2025,
+    "type": "Petrol Hybrid",
+    "body": "Mid-size Sedan",
+    "badge": "new",
+    "tagline": "Premium hybrid sedan with Volvo DNA and 197hp on Geely's CMA platform",
+    "rating": 4.2,
+    "reviews": 94,
+    "expertScore": 8.1,
+    "baseEMI": 55000,
+    "overview": "The Geely Preface is a premium mid-size sedan built on the Volvo CMA platform, featuring a 2.0T engine with 48V mild hybrid, a 12.3\" curved screen, ADAS Level 2, Bose audio, and a Volvo-grade interior. It rivals the Toyota Camry Hybrid at a significantly lower Nepal price.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Moonlight White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Ink Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Titan Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Neptune Blue",
+        "hex": "#1B3A6B"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Premium",
+        "price": 5490000,
+        "label": "Rs. 54.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Hybrid",
+        "features": [
+          "6 Airbags",
+          "48V Mild Hybrid",
+          "12.3\" Curved Screen + CarPlay",
+          "ADAS Level 1",
+          "Electric Sunroof",
+          "18\" Alloy Wheels",
+          "360° Camera"
+        ],
+        "specs": {
+          "power": "197 hp @ 5,500 rpm",
+          "torque": "300 Nm",
+          "efficiency": "18.1 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Elite",
+        "price": 6290000,
+        "label": "Rs. 62.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Hybrid",
+        "features": [
+          "ADAS Level 2 (9 features)",
+          "Bose 9-Speaker",
+          "Ventilated + Heated Seats",
+          "Nappa Leather",
+          "Head-Up Display",
+          "Wireless Charging",
+          "Premium features+"
+        ],
+        "specs": {
+          "power": "197 hp @ 5,500 rpm",
+          "torque": "300 Nm",
+          "efficiency": "18.1 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0T + 48V Mild Hybrid (Volvo CMA)",
+      "Displacement": "1,997 cc",
+      "Power": "197 hp @ 5,500 rpm",
+      "Torque": "300 Nm",
+      "Efficiency": "18.1 km/l",
+      "Fuel Tank": "55 L",
+      "Transmission": "7-Speed DCT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "460 L",
+      "Length": "4,752 mm",
+      "Width": "1,869 mm",
+      "Height": "1,447 mm",
+      "Wheelbase": "2,797 mm",
+      "Ground Clearance": "150 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Volvo CMA platform sedan",
+      "18.1 km/l with mild hybrid",
+      "Bose 9-speaker on Elite",
+      "ADAS Level 2",
+      "197hp — most powerful at price"
+    ],
+    "cons": [
+      "Sedan low clearance for Nepal",
+      "FWD only",
+      "Mild hybrid — not full HEV savings",
+      "Niche positioning in Nepal"
+    ],
+    "highlights": [
+      "Volvo CMA Platform",
+      "197hp Mild Hybrid",
+      "18.1 km/l",
+      "Bose Audio"
+    ]
+  },
+  {
+    "id": 1105,
+    "slug": "geely-ex5-2025",
+    "brand": "Geely",
+    "model": "EX5",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Compact Electric SUV",
+    "badge": "new",
+    "tagline": "Geely's newest compact EV SUV with 450km range for Nepal",
+    "rating": 4.1,
+    "reviews": 47,
+    "expertScore": 7.8,
+    "baseEMI": 56000,
+    "overview": "The Geely EX5 is a purpose-built compact electric SUV on Geely's GEA electric platform, with a 65kWh battery delivering 450km CLTC range, 800V fast charging architecture, and ADAS Level 2. One of the most technically advanced compact EVs available in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Crystal White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Ink Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Sky Blue",
+        "hex": "#4A90D9"
+      },
+      {
+        "name": "Titan Grey",
+        "hex": "#5A5E63"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard",
+        "price": 5390000,
+        "label": "Rs. 53.90L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "52kWh Battery",
+          "360km CLTC Range",
+          "6 Airbags",
+          "12.3\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "ADAS Level 1",
+          "18\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "201 hp",
+          "torque": "320 Nm",
+          "efficiency": "6.9 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "Premium",
+        "price": 6290000,
+        "label": "Rs. 62.90L",
+        "popular": true,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "65kWh Battery",
+          "450km CLTC Range",
+          "800V Fast Charging",
+          "ADAS Level 2",
+          "360° Camera",
+          "Ventilated Seats",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "218 hp",
+          "torque": "340 Nm",
+          "efficiency": "6.9 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      }
+    ],
+    "specs": {
+      "Battery": "52–65 kWh",
+      "Range": "360–450 km (CLTC)",
+      "Power": "201–218 hp",
+      "Torque": "320–340 Nm",
+      "Charging": "800V / 100 kW DC Fast Charge",
+      "Charge Time": "25 min (10–80%)",
+      "Transmission": "Single Speed",
+      "Drive": "RWD",
+      "Seating": "5",
+      "Boot Space": "425 L + frunk",
+      "Length": "4,615 mm",
+      "Width": "1,901 mm",
+      "Height": "1,648 mm",
+      "Wheelbase": "2,750 mm",
+      "Ground Clearance": "180 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "800V charging on premium",
+      "450km range",
+      "GEA EV platform purpose-built",
+      "ADAS Level 2",
+      "Strong power output"
+    ],
+    "cons": [
+      "RWD only",
+      "Brand new model — unproven reliability",
+      "CLTC range overstated",
+      "800V charging needs compatible charger"
+    ],
+    "highlights": [
+      "450km Range",
+      "800V Fast Charge",
+      "ADAS Level 2",
+      "GEA EV Platform"
+    ]
+  }
+]

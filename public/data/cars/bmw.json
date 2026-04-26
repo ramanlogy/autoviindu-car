@@ -1,0 +1,868 @@
+[
+  {
+    "id": 801,
+    "slug": "bmw-x1-2025",
+    "brand": "BMW",
+    "model": "X1",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact Luxury SAV",
+    "badge": "entry-luxury",
+    "tagline": "Entry-level BMW SAV — the most accessible way into the BMW SUV family",
+    "rating": 4.1,
+    "reviews": 289,
+    "expertScore": 7.9,
+    "baseEMI": 195000,
+    "overview": "The BMW X1 is the entry point into the BMW X SAV family in Nepal, distributed by Laxmi Premium Motors from their Tinkune showroom. It packs a turbocharged 1.5L or 2.0L petrol engine, optional xDrive all-wheel drive, and BMW's latest iDrive system in a compact, urban-friendly footprint.",
+    "images": [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1516189983068-71b1d30867e8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Alpine White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Jet Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Mineral Silver",
+        "hex": "#A8A9AD"
+      },
+      {
+        "name": "Phytonic Blue",
+        "hex": "#2B4B7E"
+      }
+    ],
+    "variants": [
+      {
+        "name": "sDrive18i",
+        "price": 18996000,
+        "label": "Rs. 1.89 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "8.8\" iDrive Touchscreen",
+          "2 Airbags",
+          "LED Headlights",
+          "Parking Sensors",
+          "Dual-Zone Climate",
+          "17\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "140 hp @ 6,000 rpm",
+          "torque": "220 Nm",
+          "efficiency": "16 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "xDrive20i M Sport",
+        "price": 22996000,
+        "label": "Rs. 2.29 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "xDrive AWD",
+          "M Sport Pack",
+          "Panoramic Roof",
+          "Parking Assist Plus",
+          "8 Airbags",
+          "sDrive18i features+"
+        ],
+        "specs": {
+          "power": "192 hp @ 5,000 rpm",
+          "torque": "280 Nm",
+          "efficiency": "14.5 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L / 2.0L TwinPower Turbo Petrol",
+      "Displacement": "1,499 / 1,998 cc",
+      "Power": "140–192 hp",
+      "Torque": "220–280 Nm",
+      "Efficiency": "14.5–16 km/l",
+      "Fuel Tank": "54 L",
+      "Transmission": "7-Speed DCT",
+      "Drive": "sDrive FWD / xDrive AWD",
+      "Seating": "5",
+      "Boot Space": "505 L",
+      "Length": "4,500 mm",
+      "Width": "1,845 mm",
+      "Height": "1,642 mm",
+      "Wheelbase": "2,692 mm",
+      "Ground Clearance": "183 mm",
+      "Airbags": "2–8"
+    },
+    "pros": [
+      "Most affordable BMW in Nepal",
+      "Compact yet practical for Kathmandu",
+      "Optional xDrive AWD",
+      "Strong brand prestige and resale value"
+    ],
+    "cons": [
+      "Base variant has only 2 airbags",
+      "Very expensive vs rivals at same price",
+      "Low production numbers in Nepal",
+      "Petrol-only in Nepal spec"
+    ],
+    "highlights": [
+      "Entry BMW",
+      "xDrive AWD",
+      "183 mm Clearance",
+      "iDrive System"
+    ]
+  },
+  {
+    "id": 802,
+    "slug": "bmw-x3-2025",
+    "brand": "BMW",
+    "model": "X3",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Mid-size Luxury SAV",
+    "badge": "premium",
+    "tagline": "The sweet spot of the BMW X range — performance, space, and prestige",
+    "rating": 4.3,
+    "reviews": 201,
+    "expertScore": 8.3,
+    "baseEMI": 260000,
+    "overview": "The BMW X3 is the most popular BMW model in Nepal, combining the ideal mix of size, performance, and luxury. With its 2.0L TwinPower diesel or petrol, xDrive AWD, and optional iX3 electric sibling, it is a favourite among Kathmandu's executive class and entrepreneurs.",
+    "images": [
+      "https://images.unsplash.com/photo-1518987048-93e29699e79a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1516189983068-71b1d30867e8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Alpine White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Sophisto Grey",
+        "hex": "#7C7E84"
+      },
+      {
+        "name": "Phytonic Blue",
+        "hex": "#2B4B7E"
+      },
+      {
+        "name": "Jet Black",
+        "hex": "#111111"
+      }
+    ],
+    "variants": [
+      {
+        "name": "xDrive20d xLine",
+        "price": 25996000,
+        "label": "Rs. 2.59 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "6 Airbags",
+          "10.25\" iDrive",
+          "LED Headlights",
+          "xDrive AWD",
+          "Heated Seats",
+          "18\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "190 hp @ 4,000 rpm",
+          "torque": "400 Nm",
+          "efficiency": "18.56 km/l",
+          "transmission": "8-Speed Steptronic"
+        }
+      },
+      {
+        "name": "xDrive30e M Sport (PHEV)",
+        "price": 29996000,
+        "label": "Rs. 2.99 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Plug-in Hybrid",
+        "features": [
+          "Plug-in Hybrid PHEV",
+          "M Sport Pack",
+          "Panoramic Roof",
+          "Harman Kardon Sound",
+          "Adaptive Cruise",
+          "xDrive20d features+"
+        ],
+        "specs": {
+          "power": "252 hp combined",
+          "torque": "420 Nm",
+          "efficiency": "N/A (PHEV)",
+          "transmission": "8-Speed Steptronic"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L TwinPower Turbo Diesel / PHEV",
+      "Displacement": "1,995 cc",
+      "Power": "190–252 hp",
+      "Torque": "400–420 Nm",
+      "Efficiency": "14.0–18.56 km/l",
+      "Fuel Tank": "65 L (diesel) / 46 L (PHEV)",
+      "Transmission": "8-Speed Steptronic",
+      "Drive": "xDrive AWD",
+      "Seating": "5",
+      "Boot Space": "485 L",
+      "Length": "4,734 mm",
+      "Width": "1,891 mm",
+      "Height": "1,676 mm",
+      "Wheelbase": "2,864 mm",
+      "Ground Clearance": "204 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Best-selling BMW model in Nepal",
+      "High 204 mm ground clearance",
+      "Diesel variant excellent fuel efficiency",
+      "PHEV option lowers running costs"
+    ],
+    "cons": [
+      "Very expensive in Nepal",
+      "PHEV charging infrastructure limited",
+      "Large size in Kathmandu traffic",
+      "Spare parts can be costly"
+    ],
+    "highlights": [
+      "xDrive AWD",
+      "204 mm Clearance",
+      "PHEV Option",
+      "Premium Cabin"
+    ]
+  },
+  {
+    "id": 803,
+    "slug": "bmw-x5-2025",
+    "brand": "BMW",
+    "model": "X5",
+    "year": 2025,
+    "type": "Hybrid",
+    "body": "Full-size Luxury SAV",
+    "badge": "flagship",
+    "tagline": "BMW's full-size flagship SAV — executive luxury meets serious performance",
+    "rating": 4.5,
+    "reviews": 134,
+    "expertScore": 8.8,
+    "baseEMI": 350000,
+    "overview": "The BMW X5 is the top-selling flagship of Laxmi Premium Motors' lineup in Nepal. Available in petrol, diesel, and plug-in hybrid variants, the X5 combines 214 mm ground clearance, executive-class interiors, and optional 7-seat configuration. It rivals the Audi Q7 and Mercedes GLE at the very top of Nepal's luxury SUV segment.",
+    "images": [
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1518987048-93e29699e79a?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Alpine White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Jet Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Tanzanite Blue",
+        "hex": "#1A3060"
+      },
+      {
+        "name": "Dravit Grey",
+        "hex": "#585A5E"
+      }
+    ],
+    "variants": [
+      {
+        "name": "xDrive30d Sport",
+        "price": 34996000,
+        "label": "Rs. 3.49 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "6 Airbags",
+          "12.3\" iDrive 7",
+          "Panoramic Roof",
+          "xDrive AWD",
+          "Adaptive Cruise",
+          "19\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "286 hp @ 5,000 rpm",
+          "torque": "450 Nm",
+          "efficiency": "13.5 km/l",
+          "transmission": "8-Speed Steptronic"
+        }
+      },
+      {
+        "name": "xDrive40i M Sport",
+        "price": 39996000,
+        "label": "Rs. 3.99 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "M Sport Pack",
+          "Bowers & Wilkins Audio",
+          "xDrive30d features+"
+        ],
+        "specs": {
+          "power": "340 hp @ 6,500 rpm",
+          "torque": "450 Nm",
+          "efficiency": "11.5 km/l",
+          "transmission": "8-Speed Steptronic"
+        }
+      },
+      {
+        "name": "xDrive45e M Sport (PHEV)",
+        "price": 49696000,
+        "label": "Rs. 4.96 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Plug-in Hybrid",
+        "features": [
+          "PHEV 394 hp Combined",
+          "EV-only 50 km range",
+          "Air Suspension",
+          "Executive Lounge Seats",
+          "xDrive40i features+"
+        ],
+        "specs": {
+          "power": "394 hp combined",
+          "torque": "600 Nm",
+          "efficiency": "N/A (PHEV)",
+          "transmission": "8-Speed Steptronic"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "3.0L TwinPower Turbo Diesel / Petrol / PHEV",
+      "Displacement": "2,998 cc",
+      "Power": "286–394 hp",
+      "Torque": "450–600 Nm",
+      "Efficiency": "11–14 km/l",
+      "Fuel Tank": "83 L",
+      "Transmission": "8-Speed Steptronic",
+      "Drive": "xDrive AWD",
+      "Seating": "5 (optional 7)",
+      "Boot Space": "500 L",
+      "Length": "4,922 mm",
+      "Width": "2,004 mm",
+      "Height": "1,745 mm",
+      "Wheelbase": "2,975 mm",
+      "Ground Clearance": "214 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Highest ground clearance of any BMW in Nepal (214 mm)",
+      "PHEV variant reduces running costs",
+      "Executive-class cabin quality",
+      "Optional 7-seat configuration"
+    ],
+    "cons": [
+      "Among the most expensive cars in Nepal",
+      "Fuel costs for petrol variant very high",
+      "Massive size limits urban maneuverability",
+      "Limited supply from Laxmi Premium Motors"
+    ],
+    "highlights": [
+      "214 mm Ground Clearance",
+      "PHEV Available",
+      "xDrive AWD",
+      "Executive Cabin"
+    ]
+  },
+  {
+    "id": 804,
+    "slug": "bmw-3-series-2025",
+    "brand": "BMW",
+    "model": "3 Series",
+    "year": 2025,
+    "type": "Petrol / Hybrid",
+    "body": "Executive Sedan",
+    "badge": "premium",
+    "tagline": "The Ultimate Driving Machine — BMW's sporty executive sedan in Nepal",
+    "rating": 4.2,
+    "reviews": 176,
+    "expertScore": 8.1,
+    "baseEMI": 205000,
+    "overview": "The BMW 3 Series is one of Nepal's most celebrated luxury sedans, offering the brand's legendary rear-wheel-drive dynamics paired with a turbocharged 2.0L diesel or plug-in hybrid powertrain. It is BMW's most driver-focused model available in Nepal and competes directly with the Audi A4 and Mercedes C-Class.",
+    "images": [
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Alpine White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Jet Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Portimao Blue",
+        "hex": "#1C3D6E"
+      },
+      {
+        "name": "Skyscraper Grey",
+        "hex": "#707070"
+      }
+    ],
+    "variants": [
+      {
+        "name": "320d Sport",
+        "price": 19996000,
+        "label": "Rs. 1.99 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "10.25\" iDrive",
+          "6 Airbags",
+          "LED Headlights",
+          "Parking Assist",
+          "Heated Seats",
+          "Sport Line Trim"
+        ],
+        "specs": {
+          "power": "190 hp @ 4,000 rpm",
+          "torque": "400 Nm",
+          "efficiency": "20 km/l",
+          "transmission": "8-Speed Steptronic"
+        }
+      },
+      {
+        "name": "330e M Sport (PHEV)",
+        "price": 24996000,
+        "label": "Rs. 2.49 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Plug-in Hybrid",
+        "features": [
+          "M Sport Pack",
+          "PHEV 252 hp combined",
+          "Harman Kardon Sound",
+          "Adaptive Suspension",
+          "Head-Up Display",
+          "320d features+"
+        ],
+        "specs": {
+          "power": "252 hp combined",
+          "torque": "420 Nm",
+          "efficiency": "N/A (PHEV)",
+          "transmission": "8-Speed Steptronic"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L TwinPower Diesel / PHEV Petrol",
+      "Displacement": "1,998 cc",
+      "Power": "190–252 hp",
+      "Torque": "400–420 Nm",
+      "Efficiency": "15–20 km/l",
+      "Fuel Tank": "59 L",
+      "Transmission": "8-Speed Steptronic",
+      "Drive": "RWD",
+      "Seating": "5",
+      "Boot Space": "480 L",
+      "Length": "4,709 mm",
+      "Width": "1,827 mm",
+      "Height": "1,435 mm",
+      "Wheelbase": "2,851 mm",
+      "Ground Clearance": "140 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Best driving dynamics of any BMW in Nepal",
+      "PHEV reduces fuel cost",
+      "Diesel 320d is fuel efficient",
+      "Iconic BMW brand prestige"
+    ],
+    "cons": [
+      "Low 140 mm clearance limits use on rural Nepali roads",
+      "RWD limits traction in monsoon",
+      "Very high price for a sedan",
+      "Sedan body less versatile than SUV for Nepal"
+    ],
+    "highlights": [
+      "RWD Dynamics",
+      "PHEV Option",
+      "20 km/l Diesel",
+      "M Sport Pack"
+    ]
+  },
+  {
+    "id": 805,
+    "slug": "bmw-5-series-2025",
+    "brand": "BMW",
+    "model": "5 Series",
+    "year": 2025,
+    "type": "Hybrid",
+    "body": "Business Sedan",
+    "badge": "flagship",
+    "tagline": "BMW's premium business sedan — executive comfort with PHEV efficiency",
+    "rating": 4.4,
+    "reviews": 98,
+    "expertScore": 8.6,
+    "baseEMI": 245000,
+    "overview": "The BMW 5 Series represents BMW's business-class sedan in Nepal, offering the flagship comfort and technology of the brand in a longer wheelbase package. The 530e PHEV combines a 2.0L petrol engine with an electric motor for 252 hp combined output, making it more cost-efficient than ever to run in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Alpine White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Jet Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Carbon Black",
+        "hex": "#2A2A2A"
+      },
+      {
+        "name": "Arctic Race Blue",
+        "hex": "#1A4A6E"
+      }
+    ],
+    "variants": [
+      {
+        "name": "530i M Sport",
+        "price": 23996000,
+        "label": "Rs. 2.39 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "12.3\" iDrive",
+          "Panoramic Roof",
+          "M Sport Pack",
+          "6 Airbags",
+          "Ambient Lighting",
+          "Heated Seats"
+        ],
+        "specs": {
+          "power": "252 hp @ 5,200 rpm",
+          "torque": "350 Nm",
+          "efficiency": "14.0 km/l",
+          "transmission": "8-Speed Steptronic"
+        }
+      },
+      {
+        "name": "530e M Sport (PHEV)",
+        "price": 27996000,
+        "label": "Rs. 2.79 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Plug-in Hybrid",
+        "features": [
+          "PHEV 252 hp Combined",
+          "57 km EV Range",
+          "Bowers & Wilkins Audio",
+          "Adaptive Cruise",
+          "530i features+"
+        ],
+        "specs": {
+          "power": "252 hp combined",
+          "torque": "420 Nm",
+          "efficiency": "N/A (PHEV)",
+          "transmission": "8-Speed Steptronic"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L TwinPower Turbo / PHEV",
+      "Displacement": "1,998 cc",
+      "Power": "252 hp",
+      "Torque": "350–420 Nm",
+      "Efficiency": "12–14 km/l",
+      "Fuel Tank": "59 L",
+      "Transmission": "8-Speed Steptronic",
+      "Drive": "RWD",
+      "Seating": "5",
+      "Boot Space": "410 L",
+      "Length": "4,963 mm",
+      "Width": "1,868 mm",
+      "Height": "1,479 mm",
+      "Wheelbase": "2,966 mm",
+      "Ground Clearance": "140 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "PHEV delivers 57 km EV-only range",
+      "Business-class interior comfort",
+      "Bowers & Wilkins audio available",
+      "Long wheelbase rear passenger space"
+    ],
+    "cons": [
+      "Low ground clearance",
+      "Very expensive in Nepal after duties",
+      "RWD limits monsoon traction",
+      "Limited charging infrastructure"
+    ],
+    "highlights": [
+      "PHEV 57 km EV Range",
+      "Business Class",
+      "Bowers & Wilkins",
+      "M Sport Pack"
+    ]
+  },
+  {
+    "id": 806,
+    "slug": "bmw-ix3-2025",
+    "brand": "BMW",
+    "model": "iX3",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Mid-size Electric SAV",
+    "badge": "electric",
+    "tagline": "Nepal's first premium BMW EV — 460 km range, M Sport electric SAV",
+    "rating": 4.5,
+    "reviews": 62,
+    "expertScore": 8.7,
+    "baseEMI": 235000,
+    "overview": "The BMW iX3 is the first fully electric BMW launched in Nepal by Laxmi Premium Motors. Based on the X3 SAV platform, it uses an 80 kWh battery with a 210 kW eDrive motor for 286 PS and 400 Nm, offering an impressive 460 km WLTP range. It includes an 8-year battery warranty and both AC and DC fast charging support.",
+    "images": [
+      "https://images.unsplash.com/photo-1620891549027-942fdc95d3f5?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1518987048-93e29699e79a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Mineral White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Sophisto Grey",
+        "hex": "#7C7E84"
+      },
+      {
+        "name": "Jet Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Portimao Blue",
+        "hex": "#1C3D6E"
+      }
+    ],
+    "variants": [
+      {
+        "name": "iX3 M Sport",
+        "price": 22996000,
+        "label": "Rs. 2.29 Cr",
+        "popular": true,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "80 kWh Battery",
+          "460 km WLTP Range",
+          "286 PS eDrive Motor",
+          "M Sport Pack",
+          "Adaptive LED Headlights",
+          "Panoramic Roof",
+          "10.25\" iDrive 7"
+        ],
+        "specs": {
+          "power": "286 PS (210 kW)",
+          "torque": "400 Nm",
+          "range": "460 km",
+          "efficiency": "N/A",
+          "transmission": "Single-Speed Auto"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "BMW eDrive 210 kW Rear Motor",
+      "Power": "286 PS (210 kW)",
+      "Torque": "400 Nm",
+      "Battery": "80 kWh High-Voltage",
+      "Range (WLTP)": "460 km",
+      "Charging (AC)": "11 kW onboard (7.5 hr full)",
+      "Charging (DC)": "150 kW fast charge (0–80% in 34 min)",
+      "0–100 km/h": "6.8 sec",
+      "Top Speed": "180 km/h",
+      "Drive": "RWD",
+      "Seating": "5",
+      "Boot Space": "510 L (1,560 L folded)",
+      "Length": "4,734 mm",
+      "Width": "1,891 mm",
+      "Height": "1,668 mm",
+      "Wheelbase": "2,864 mm",
+      "Ground Clearance": "190 mm",
+      "Airbags": "6",
+      "Battery Warranty": "8 Years / 160,000 km"
+    },
+    "pros": [
+      "Nepal's first premium BMW EV",
+      "460 km range — strong for Nepal charging landscape",
+      "150 kW DC fast charge available",
+      "8-year battery warranty from Laxmi Premium Motors"
+    ],
+    "cons": [
+      "Very expensive at Rs. 2.29 Crore",
+      "RWD only — no all-wheel drive",
+      "DC fast charging infrastructure is still growing in Nepal",
+      "Single variant — no choice of spec level"
+    ],
+    "highlights": [
+      "460 km Range",
+      "150 kW DC Charging",
+      "286 PS Electric",
+      "8-Year Battery Warranty"
+    ]
+  },
+  {
+    "id": 807,
+    "slug": "bmw-7-series-2025",
+    "brand": "BMW",
+    "model": "7 Series",
+    "year": 2025,
+    "type": "Hybrid",
+    "body": "Ultra-Luxury Sedan",
+    "badge": "ultra-luxury",
+    "tagline": "BMW's ultimate flagship sedan — Nepal's most premium German luxury car",
+    "rating": 4.7,
+    "reviews": 45,
+    "expertScore": 9.2,
+    "baseEMI": 490000,
+    "overview": "The BMW 7 Series is the pinnacle of BMW's lineup in Nepal, distributed by Laxmi Premium Motors. Only available in plug-in hybrid trim, it combines a 3.0L inline-6 turbocharged petrol engine with an electric motor for a combined 394 hp and 600 Nm. With its 14.9-inch touchscreen, executive lounge rear seating, and the latest ADAS tech, it caters to Nepal's ultra-wealthy elite.",
+    "images": [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Alpine White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Carbon Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Individual Frozen Grey",
+        "hex": "#6E6E6E"
+      },
+      {
+        "name": "Dark Graphite",
+        "hex": "#3C3C3C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "730Ld DPE Signature",
+        "price": 54996000,
+        "label": "Rs. 5.49 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "12.3\" iDrive",
+          "Executive Lounge Rear",
+          "Ambient Lighting",
+          "Heated & Ventilated Seats",
+          "6 Airbags",
+          "Parking Assistant Plus"
+        ],
+        "specs": {
+          "power": "286 hp @ 4,000 rpm",
+          "torque": "650 Nm",
+          "efficiency": "15 km/l",
+          "transmission": "8-Speed Steptronic"
+        }
+      },
+      {
+        "name": "740Li DPE Signature",
+        "price": 58996000,
+        "label": "Rs. 5.89 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "Bowers & Wilkins 20-Speaker",
+          "Massage Seats",
+          "730Ld features+"
+        ],
+        "specs": {
+          "power": "333 hp @ 5,000 rpm",
+          "torque": "450 Nm",
+          "efficiency": "13 km/l",
+          "transmission": "8-Speed Steptronic"
+        }
+      },
+      {
+        "name": "745Le xDrive PHEV",
+        "price": 62596000,
+        "label": "Rs. 6.25 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Plug-in Hybrid",
+        "features": [
+          "PHEV 394 hp Combined",
+          "xDrive AWD",
+          "Level 3 ADAS",
+          "14.9\" Touchscreen",
+          "Executive Theater Screen",
+          "740Li features+"
+        ],
+        "specs": {
+          "power": "394 hp combined",
+          "torque": "600 Nm",
+          "efficiency": "N/A (PHEV)",
+          "transmission": "8-Speed Steptronic"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "3.0L I6 TwinPower Diesel / Petrol / PHEV",
+      "Displacement": "2,998 cc",
+      "Power": "286–394 hp",
+      "Torque": "450–650 Nm",
+      "Efficiency": "13–15 km/l",
+      "Fuel Tank": "68 L",
+      "Transmission": "8-Speed Steptronic",
+      "Drive": "RWD / xDrive AWD",
+      "Seating": "5",
+      "Boot Space": "510 L",
+      "Length": "5,391 mm",
+      "Width": "1,950 mm",
+      "Height": "1,468 mm",
+      "Wheelbase": "3,215 mm",
+      "Ground Clearance": "135 mm",
+      "Airbags": "6+"
+    },
+    "pros": [
+      "Nepal's most luxurious German car",
+      "PHEV reduces operating costs",
+      "xDrive AWD on top variant",
+      "Level 3 ADAS technology"
+    ],
+    "cons": [
+      "Nepal's most expensive BMW at Rs. 6.25 Crore",
+      "Very low ground clearance (135 mm) limits rural use",
+      "Extremely large — challenging in Kathmandu",
+      "Tiny production numbers imported to Nepal"
+    ],
+    "highlights": [
+      "Ultra-Luxury Flagship",
+      "394 hp PHEV",
+      "Level 3 ADAS",
+      "Executive Theater"
+    ]
+  }
+]

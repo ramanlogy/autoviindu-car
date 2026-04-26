@@ -1,0 +1,1915 @@
+[
+  {
+    "id": 101,
+    "slug": "hyundai-grand-i10-nios-fl-2024",
+    "brand": "Hyundai",
+    "model": "Grand i10 Nios FL",
+    "year": 2024,
+    "type": "Petrol",
+    "body": "Hatchback",
+    "badge": "value",
+    "tagline": "Nepal's safest city hatch — 6 airbags at an honest price",
+    "rating": 4.2,
+    "reviews": 3627,
+    "expertScore": 7.6,
+    "baseEMI": 29800,
+    "overview": "The Hyundai Grand i10 Nios Facelift packs a refined 1.2L Kappa engine, 6 airbags, 8-inch touchscreen with wireless CarPlay, and class-leading fit & finish. Backed by Laxmi Hyundai's wide service network across Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Fiery Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Typhoon Silver",
+        "hex": "#A8AFBA"
+      },
+      {
+        "name": "Atlas White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Atlas White / Abyss Black",
+        "hex": "#F5F5F5",
+        "dual": true,
+        "accent": "#1C1C1C"
+      },
+      {
+        "name": "Titan Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Amazon Grey",
+        "hex": "#7D8C7C"
+      },
+      {
+        "name": "Teal Blue",
+        "hex": "#1A7A8A"
+      },
+      {
+        "name": "Spark Green",
+        "hex": "#39C160"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Era",
+        "price": 3356000,
+        "label": "Rs. 33.56L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "1.2L Kappa Petrol (82 hp)",
+          "5-Speed MT",
+          "Dual Airbags",
+          "ABS + EBD",
+          "Power Windows (Front)",
+          "AC + Heater",
+          "Rear Parking Sensors"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "18 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Era Loaded",
+        "price": 3396000,
+        "label": "Rs. 33.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Rear Camera",
+          "Bluetooth Audio",
+          "USB Charging",
+          "All Era features"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "18 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Magna",
+        "price": 3896000,
+        "label": "Rs. 38.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "8\" Touchscreen + CarPlay/Android Auto",
+          "Height-Adj Driver Seat",
+          "Tilt Steering",
+          "Power Windows Rear",
+          "Rear Defogger",
+          "Power ORVM",
+          "Era features+"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "18 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Sportz",
+        "price": 4096000,
+        "label": "Rs. 40.96L",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "ESC + VSM + Hill Hold",
+          "TPMS",
+          "Smart Key + Push Start",
+          "Wireless Charging",
+          "Type-C Fast Charge",
+          "Cruise Control",
+          "Projector Headlamps + LED DRLs",
+          "15\" Diamond-Cut Alloys"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "18 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Magna AMT",
+        "price": 4126000,
+        "label": "Rs. 41.26L",
+        "popular": false,
+        "transmission": "AMT",
+        "fuel": "Petrol",
+        "features": [
+          "AMT Automatic Gearbox",
+          "Creep Function",
+          "All Magna features"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "17.2 km/l",
+          "transmission": "AMT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L Kappa Dual VTVT (BS6)",
+      "Displacement": "1,197 cc",
+      "Power": "82 hp @ 6,000 rpm",
+      "Torque": "113.8 Nm @ 4,000 rpm",
+      "Efficiency": "18 km/l (MT) / 17.2 km/l (AMT)",
+      "Fuel Tank": "37 L",
+      "Transmission": "5-Speed MT / AMT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "260 L",
+      "Length": "3,815 mm",
+      "Width": "1,680 mm",
+      "Wheelbase": "2,450 mm",
+      "Ground Clearance": "165 mm",
+      "Airbags": "2 (Era/Magna) / 6 (Sportz)"
+    },
+    "pros": [
+      "6 airbags on Sportz — best in class",
+      "Refined quiet 1.2L engine",
+      "Excellent fit & finish",
+      "Wide Laxmi service network",
+      "Wireless CarPlay"
+    ],
+    "cons": [
+      "Small 260L boot",
+      "No sunroof",
+      "AMT can be jerky",
+      "Bouncy at highway speeds"
+    ],
+    "highlights": [
+      "6 Airbags (Sportz)",
+      "Rs. 33.56L Start",
+      "18 km/l",
+      "Wireless CarPlay"
+    ]
+  },
+  {
+    "id": 102,
+    "slug": "hyundai-exter-2025",
+    "brand": "Hyundai",
+    "model": "Exter",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Micro SUV",
+    "badge": "new",
+    "tagline": "Nepal's first sub-4m SUV with 6 airbags & sunroof standard",
+    "rating": 4.3,
+    "reviews": 1842,
+    "expertScore": 7.9,
+    "baseEMI": 36700,
+    "overview": "The Hyundai Exter bridges the Grand i10 Nios and Venue with bold SUV stance, 185mm ground clearance, electric sunroof, dual dashcam, and a class-leading 391L boot. 6 airbags are standard across ALL variants — a first in Nepal's sub-4m segment.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Cosmic Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Starry Night",
+        "hex": "#1A1A2E"
+      },
+      {
+        "name": "Fiery Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Atlas White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Titan Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Ranger Khaki",
+        "hex": "#8B7355"
+      }
+    ],
+    "variants": [
+      {
+        "name": "EX",
+        "price": 4126000,
+        "label": "Rs. 41.26L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags (All Variants)",
+          "ESC + VSM + HAC",
+          "8\" HD Touchscreen + CarPlay/Android Auto",
+          "4.2\" Digital Cluster",
+          "Dual Dashcam (First in Segment)",
+          "Rear Camera + Sensors",
+          "14\" Steel Wheels",
+          "ISOFIX"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "19.4 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "S",
+        "price": 4296000,
+        "label": "Rs. 42.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Smart Electric Sunroof (Voice Enabled)",
+          "Wireless Phone Charging",
+          "Auto Climate Control",
+          "Rear AC Vents",
+          "Push Button Start",
+          "TPMS",
+          "EX features+"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "19.4 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "SX",
+        "price": 4696000,
+        "label": "Rs. 46.96L",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Diamond-Cut 15\" Alloy Wheels",
+          "Semi-Leatherette Upholstery",
+          "Cruise Control",
+          "Auto Headlamps + Wipers",
+          "Footwell Lighting",
+          "Bluelink Connected Car (Home-to-Car)",
+          "S features+"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "19.4 km/l",
+          "transmission": "5-Speed MT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L Kappa Dual VTVT Petrol",
+      "Displacement": "1,197 cc",
+      "Power": "82 hp @ 6,000 rpm",
+      "Torque": "113.8 Nm",
+      "Efficiency": "19.4 km/l",
+      "Fuel Tank": "37 L",
+      "Transmission": "5-Speed MT / AMT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "391 L",
+      "Length": "3,815 mm",
+      "Width": "1,710 mm",
+      "Height": "1,631 mm",
+      "Wheelbase": "2,450 mm",
+      "Ground Clearance": "185 mm",
+      "Airbags": "6 (Standard — all variants)"
+    },
+    "pros": [
+      "6 airbags standard on ALL variants",
+      "Best-in-class 185mm ground clearance",
+      "391L boot — massive for class",
+      "Electric sunroof + dual dashcam",
+      "SUV height for Nepal terrain"
+    ],
+    "cons": [
+      "No turbo or AMT in Nepal spec",
+      "EX/S have steel wheels",
+      "Shares engine with Grand i10 Nios",
+      "Pricier than i10 Nios for same power"
+    ],
+    "highlights": [
+      "6 Airbags (All)",
+      "185mm Ground Clearance",
+      "391L Boot",
+      "Electric Sunroof (S+)"
+    ]
+  },
+  {
+    "id": 103,
+    "slug": "hyundai-venue-fl-2024",
+    "brand": "Hyundai",
+    "model": "Venue FL",
+    "year": 2024,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "popular",
+    "tagline": "Nepal's best-selling compact SUV — refined, feature-rich, city-ready",
+    "rating": 4.3,
+    "reviews": 5214,
+    "expertScore": 8,
+    "baseEMI": 37300,
+    "overview": "The All-New Hyundai Venue Facelift is Nepal's best-selling compact SUV. Available with a 1.2L petrol and a sporty 1.0L Turbo DCT, it features Bluelink connected car tech, Bose audio, 360° camera, and ADAS on top trims. Built for city and highway equally.",
+    "images": [
+      "https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1570733577524-3a047079e80d?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Atlas White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Typhoon Silver",
+        "hex": "#A8AFBA"
+      },
+      {
+        "name": "Titan Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Fiery Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Ranger Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Abyss Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Atlas White / Abyss Black",
+        "hex": "#F5F5F5",
+        "dual": true,
+        "accent": "#1C1C1C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "E",
+        "price": 4196000,
+        "label": "Rs. 41.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "1.2L Kappa Petrol (82 hp)",
+          "8\" Touchscreen + CarPlay/Android Auto",
+          "4 Airbags",
+          "ABS + EBD",
+          "Rear Camera",
+          "Power Windows All",
+          "AC",
+          "Steel Wheels"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "17.5 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "S",
+        "price": 4596000,
+        "label": "Rs. 45.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "ESC + Hill Assist + TPMS",
+          "Smart Key + Push Start",
+          "Auto Climate Control",
+          "Wireless Charging",
+          "16\" Alloy Wheels",
+          "LED DRLs",
+          "Bluelink Connected Car",
+          "E features+"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "17.5 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "SX",
+        "price": 5456000,
+        "label": "Rs. 54.56L",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Sunroof",
+          "Bose 7-Speaker System",
+          "360° Surround Camera",
+          "ADAS (Lane Keep + FCA)",
+          "Ventilated Front Seats",
+          "Leatherette Upholstery",
+          "Ambient Lighting",
+          "S features+"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "17.5 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "S(O) DCT (1.0T)",
+        "price": 5996000,
+        "label": "Rs. 59.96L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol",
+        "features": [
+          "1.0L Turbo GDi (120 hp)",
+          "7-Speed DCT Automatic",
+          "Paddle Shifters",
+          "Sport Drive Mode",
+          "All SX features"
+        ],
+        "specs": {
+          "power": "120 hp @ 6,000 rpm",
+          "torque": "172 Nm @ 1,500 rpm",
+          "efficiency": "17.8 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L Kappa / 1.0L T-GDi",
+      "Power": "82 hp / 120 hp",
+      "Torque": "113.8 Nm / 172 Nm",
+      "Efficiency": "17.5 km/l (1.2L MT)",
+      "Fuel Tank": "45 L",
+      "Transmission": "5-Speed MT / 7-Speed DCT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "350 L",
+      "Length": "3,995 mm",
+      "Width": "1,770 mm",
+      "Wheelbase": "2,500 mm",
+      "Ground Clearance": "195 mm",
+      "Airbags": "4 (E) / 6 (S+)"
+    },
+    "pros": [
+      "Best-selling compact SUV in Nepal",
+      "195mm ground clearance for Nepal terrain",
+      "Turbo DCT option for performance",
+      "Bose sound system on SX",
+      "Strong resale value"
+    ],
+    "cons": [
+      "1.2L underpowered for highways",
+      "No diesel option",
+      "350L boot smaller than rivals",
+      "SX lacks ADAS without DCT upgrade"
+    ],
+    "highlights": [
+      "120hp Turbo (S(O) DCT)",
+      "Rs. 41.96L Start",
+      "195mm Clearance",
+      "Bose 7-Speaker (SX)"
+    ]
+  },
+  {
+    "id": 104,
+    "slug": "hyundai-i20-2024",
+    "brand": "Hyundai",
+    "model": "i20",
+    "year": 2024,
+    "type": "Petrol",
+    "body": "Hatchback",
+    "badge": "value",
+    "tagline": "The premium hatchback — sporty, refined, and tech-loaded",
+    "rating": 4.1,
+    "reviews": 2103,
+    "expertScore": 7.8,
+    "baseEMI": 35500,
+    "overview": "The Hyundai i20 sits above the Grand i10 Nios with a more premium interior, sportier European design, and a feature set that rivals compact SUVs. Offers the most fuel-efficient Hyundai in Nepal at 20.35 km/l with 6 airbags standard.",
+    "images": [
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Atlas White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Typhoon Silver",
+        "hex": "#A8AFBA"
+      },
+      {
+        "name": "Titan Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Fiery Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Abyss Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Starry Night",
+        "hex": "#1A1A2E"
+      },
+      {
+        "name": "Atlas White / Abyss Black",
+        "hex": "#F5F5F5",
+        "dual": true,
+        "accent": "#1C1C1C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Magna",
+        "price": 3996000,
+        "label": "Rs. 39.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "1.2L Kappa Petrol (82 hp)",
+          "8\" Touchscreen + CarPlay/Android Auto",
+          "6 Airbags (Standard)",
+          "ABS + EBD + ESC",
+          "Rear Camera",
+          "Smart Key + Push Start",
+          "Height-Adj Driver Seat",
+          "LED DRLs + Projector Lamps"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "20.35 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Sportz",
+        "price": 4396000,
+        "label": "Rs. 43.96L",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Sunroof",
+          "Wireless Charging",
+          "Auto Climate Control",
+          "Bose 7-Speaker Audio",
+          "16\" Alloy Wheels",
+          "Bluelink Connected Car",
+          "ADAS (Lane Keep + FCA)",
+          "64-Color Ambient Lighting",
+          "Magna features+"
+        ],
+        "specs": {
+          "power": "82 hp @ 6,000 rpm",
+          "torque": "113.8 Nm",
+          "efficiency": "20.35 km/l",
+          "transmission": "5-Speed MT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L Kappa Dual VTVT Petrol",
+      "Displacement": "1,197 cc",
+      "Power": "82 hp @ 6,000 rpm",
+      "Torque": "113.8 Nm",
+      "Efficiency": "20.35 km/l",
+      "Fuel Tank": "37 L",
+      "Transmission": "5-Speed MT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "311 L",
+      "Length": "3,995 mm",
+      "Width": "1,775 mm",
+      "Wheelbase": "2,580 mm",
+      "Ground Clearance": "170 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Best fuel efficiency Hyundai Nepal (20.35 km/l)",
+      "6 airbags standard on both variants",
+      "Premium interior quality",
+      "Bose audio on Sportz",
+      "Sporty European design"
+    ],
+    "cons": [
+      "Only 2 variants in Nepal",
+      "No turbo option",
+      "311L boot",
+      "170mm clearance — low for Nepal"
+    ],
+    "highlights": [
+      "20.35 km/l Efficiency",
+      "Bose 7-Speaker",
+      "Rs. 39.96L Start",
+      "6 Airbags"
+    ]
+  },
+  {
+    "id": 105,
+    "slug": "hyundai-creta-fl-2024",
+    "brand": "Hyundai",
+    "model": "All New Creta FL",
+    "year": 2024,
+    "type": "Petrol",
+    "body": "Mid-Size SUV",
+    "badge": "popular",
+    "tagline": "Nepal's #1 SUV — dual panoramic screens, ADAS & Made-in-Nepal option",
+    "rating": 4.5,
+    "reviews": 8941,
+    "expertScore": 8.6,
+    "baseEMI": 49400,
+    "overview": "The All-New Hyundai Creta Facelift is available in Nepal as Made-in-Nepal (MiN) and imported CBU units. Featuring dual 10.25-inch screens, Level 2 ADAS, panoramic sunroof, IVT/CVT gearboxes, and 433L boot — the most complete mid-size SUV in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1567818735868-e71b99932e29?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Atlas White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Abyss Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Titan Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Fiery Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Robust Emerald Pearl",
+        "hex": "#2D6A4F"
+      },
+      {
+        "name": "Starry Night",
+        "hex": "#1A1A2E"
+      },
+      {
+        "name": "Atlas White / Abyss Black",
+        "hex": "#F5F5F5",
+        "dual": true,
+        "accent": "#1C1C1C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "E MT (Made in Nepal)",
+        "price": 5556000,
+        "label": "Rs. 55.56L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "1.5L MPi Petrol (115 hp)",
+          "6-Speed MT",
+          "Dual 10.25\" Panoramic Screens",
+          "6 Airbags",
+          "ABS + EBD + ESC",
+          "Rear Camera",
+          "8-Speaker Arkamys Audio",
+          "Wireless CarPlay/Android Auto"
+        ],
+        "specs": {
+          "power": "115 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "E Loaded (Made in Nepal)",
+        "price": 5596000,
+        "label": "Rs. 55.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Ventilated Front Seats",
+          "Auto Climate Control",
+          "Sunroof",
+          "E MT MiN features+"
+        ],
+        "specs": {
+          "power": "115 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "E MT (CBU Import)",
+        "price": 5796000,
+        "label": "Rs. 57.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Fully Imported CBU Unit",
+          "All E MT MiN features"
+        ],
+        "specs": {
+          "power": "115 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "S(O) MT (Made in Nepal)",
+        "price": 6496000,
+        "label": "Rs. 64.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Panoramic Sunroof",
+          "Level 2 ADAS (Lane, FCA, Blind Spot)",
+          "360° Surround Camera",
+          "Smart Key + Push Start",
+          "Wireless Charging",
+          "Bose 8-Speaker",
+          "E features+"
+        ],
+        "specs": {
+          "power": "115 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "SX MT (Made in Nepal)",
+        "price": 6796000,
+        "label": "Rs. 67.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "HUD Heads-Up Display",
+          "ADAS Level 2+",
+          "Dual-Zone Climate",
+          "Premium Leatherette",
+          "64-Color Ambient Lighting",
+          "S(O) MiN features+"
+        ],
+        "specs": {
+          "power": "115 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "S(O) IVT (Made in Nepal)",
+        "price": 6956000,
+        "label": "Rs. 69.56L",
+        "popular": true,
+        "transmission": "IVT",
+        "fuel": "Petrol",
+        "features": [
+          "IVT CVT Automatic",
+          "Paddle Shifters",
+          "All S(O) MT MiN features"
+        ],
+        "specs": {
+          "power": "115 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "17.4 km/l",
+          "transmission": "IVT (CVT)"
+        }
+      },
+      {
+        "name": "S(O) MT (CBU Import)",
+        "price": 6996000,
+        "label": "Rs. 69.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Imported CBU",
+          "All S(O) MT MiN features"
+        ],
+        "specs": {
+          "power": "115 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "SX MT (CBU Import)",
+        "price": 7396000,
+        "label": "Rs. 73.96L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Imported CBU",
+          "All SX MT MiN features"
+        ],
+        "specs": {
+          "power": "115 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "S(O) CVT (CBU Import)",
+        "price": 7596000,
+        "label": "Rs. 75.96L",
+        "popular": false,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "CVT Automatic (CBU Import)",
+          "All S(O) features"
+        ],
+        "specs": {
+          "power": "115 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "17.4 km/l",
+          "transmission": "CVT"
+        }
+      },
+      {
+        "name": "SX(O) IVT (Made in Nepal)",
+        "price": 8056000,
+        "label": "Rs. 80.56L",
+        "popular": false,
+        "transmission": "IVT",
+        "fuel": "Petrol",
+        "features": [
+          "Top MiN Spec",
+          "IVT Automatic",
+          "Full ADAS Level 2+",
+          "HUD",
+          "Panoramic Sunroof",
+          "Bose Premium Audio",
+          "Memory Seats",
+          "All SX features+"
+        ],
+        "specs": {
+          "power": "115 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "17.4 km/l",
+          "transmission": "IVT"
+        }
+      },
+      {
+        "name": "SX(O) CVT (CBU Import)",
+        "price": 8796000,
+        "label": "Rs. 87.96L",
+        "popular": false,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "Top CBU Spec",
+          "CVT Automatic",
+          "All SX(O) IVT MiN features"
+        ],
+        "specs": {
+          "power": "115 hp @ 6,300 rpm",
+          "torque": "144 Nm",
+          "efficiency": "17.4 km/l",
+          "transmission": "CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L MPi Petrol (Smartstream)",
+      "Displacement": "1,497 cc",
+      "Power": "115 hp @ 6,300 rpm",
+      "Torque": "144 Nm @ 4,500 rpm",
+      "Efficiency": "16.8 km/l (MT) / 17.4 km/l (IVT)",
+      "Fuel Tank": "50 L",
+      "Transmission": "6-Speed MT / IVT / CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "433 L",
+      "Length": "4,330 mm",
+      "Width": "1,790 mm",
+      "Wheelbase": "2,610 mm",
+      "Ground Clearance": "190 mm",
+      "Airbags": "6",
+      "ADAS": "Level 2 (S(O)+)"
+    },
+    "pros": [
+      "Nepal's #1 mid-size SUV",
+      "Made-in-Nepal option reduces cost",
+      "Dual 10.25\" panoramic screens",
+      "Level 2 ADAS available",
+      "433L class-leading boot",
+      "190mm ground clearance"
+    ],
+    "cons": [
+      "No diesel in new FL",
+      "Top variants near Kona EV pricing",
+      "Base E lacks premium features",
+      "IVT not available on all variants"
+    ],
+    "highlights": [
+      "Rs. 55.56L Start (MiN)",
+      "Dual 10.25\" Screens",
+      "Level 2 ADAS",
+      "433L Boot"
+    ]
+  },
+  {
+    "id": 106,
+    "slug": "hyundai-creta-electric-2024",
+    "brand": "Hyundai",
+    "model": "Creta Electric",
+    "year": 2024,
+    "type": "Electric",
+    "body": "Electric Mid-Size SUV",
+    "badge": "new",
+    "tagline": "Nepal's most affordable long-range electric SUV — 473 km, V2L, ADAS",
+    "rating": 4.6,
+    "reviews": 612,
+    "expertScore": 8.8,
+    "baseEMI": 46200,
+    "overview": "The Hyundai Creta Electric brings the proven Creta form to the EV era. With up to 473km certified range, V2L (Vehicle to Load), Level 2 ADAS, dual panoramic screens, and two battery sizes — it's the most compelling electric SUV under Rs. 80L in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1620891549027-942fdc95d3f5?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1617886903355-9354bb57751f?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Atlas White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Abyss Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Starry Night",
+        "hex": "#1A1A2E"
+      },
+      {
+        "name": "Titan Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Fiery Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Robust Emerald Pearl",
+        "hex": "#2D6A4F"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Executive (99 kW)",
+        "price": 5196000,
+        "label": "Rs. 51.96L",
+        "popular": false,
+        "transmission": "Single-Speed Auto",
+        "fuel": "Electric",
+        "features": [
+          "42 kWh Battery",
+          "390 km Certified Range",
+          "99 kW Motor (134 hp)",
+          "8\" Infotainment",
+          "6 Airbags",
+          "Rear Camera",
+          "DC Fast Charge",
+          "AC Slow Charge"
+        ],
+        "specs": {
+          "power": "134 hp (99 kW)",
+          "torque": "255 Nm",
+          "efficiency": "390 km range",
+          "transmission": "Single-Speed Auto"
+        }
+      },
+      {
+        "name": "Smart (O) (99 kW)",
+        "price": 5696000,
+        "label": "Rs. 56.96L",
+        "popular": false,
+        "transmission": "Single-Speed Auto",
+        "fuel": "Electric",
+        "features": [
+          "42 kWh Battery",
+          "390 km Range",
+          "Dual 10.25\" Panoramic Screens",
+          "V2L (Vehicle to Load)",
+          "Panoramic Sunroof",
+          "Wireless Charging",
+          "Bluelink Connected Car",
+          "Executive features+"
+        ],
+        "specs": {
+          "power": "134 hp (99 kW)",
+          "torque": "255 Nm",
+          "efficiency": "390 km range",
+          "transmission": "Single-Speed Auto"
+        }
+      },
+      {
+        "name": "Premium+ (99 kW)",
+        "price": 5996000,
+        "label": "Rs. 59.96L",
+        "popular": true,
+        "transmission": "Single-Speed Auto",
+        "fuel": "Electric",
+        "features": [
+          "42 kWh Battery",
+          "390 km Range",
+          "Level 2 ADAS (Lane, FCA, Blind Spot)",
+          "Bose 8-Speaker Audio",
+          "360° Camera",
+          "HUD",
+          "Smart (O) features+"
+        ],
+        "specs": {
+          "power": "134 hp (99 kW)",
+          "torque": "255 Nm",
+          "efficiency": "390 km range",
+          "transmission": "Single-Speed Auto"
+        }
+      },
+      {
+        "name": "Smart (O) LR (126 kW)",
+        "price": 6996000,
+        "label": "Rs. 69.96L",
+        "popular": false,
+        "transmission": "Single-Speed Auto",
+        "fuel": "Electric",
+        "features": [
+          "51.4 kWh Long Range Battery",
+          "473 km Certified Range",
+          "126 kW Motor (171 hp)",
+          "All Smart (O) features"
+        ],
+        "specs": {
+          "power": "171 hp (126 kW)",
+          "torque": "255 Nm",
+          "efficiency": "473 km range",
+          "transmission": "Single-Speed Auto"
+        }
+      },
+      {
+        "name": "Excellence LR (126 kW)",
+        "price": 7696000,
+        "label": "Rs. 76.96L",
+        "popular": false,
+        "transmission": "Single-Speed Auto",
+        "fuel": "Electric",
+        "features": [
+          "51.4 kWh Long Range Battery",
+          "473 km Range",
+          "Top Spec — All Features",
+          "ADAS Level 2+",
+          "Memory Seats",
+          "64-Color Ambient Lighting",
+          "Premium Leatherette",
+          "All Premium+ features+"
+        ],
+        "specs": {
+          "power": "171 hp (126 kW)",
+          "torque": "255 Nm",
+          "efficiency": "473 km range",
+          "transmission": "Single-Speed Auto"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "Permanent Magnet Synchronous",
+      "Battery (SR)": "42 kWh",
+      "Battery (LR)": "51.4 kWh",
+      "Power (99kW)": "134 hp",
+      "Power (126kW)": "171 hp",
+      "Torque": "255 Nm",
+      "Range (SR)": "390 km (ARAI)",
+      "Range (LR)": "473 km (ARAI)",
+      "Fast Charge (DC)": "0-80% in ~45 min",
+      "AC Charge": "0-100% in ~10 hrs (11kW)",
+      "V2L": "Yes (3.6 kW)",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "433 L",
+      "Wheelbase": "2,610 mm",
+      "Ground Clearance": "190 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Most affordable electric SUV in Nepal",
+      "Up to 473km range (LR)",
+      "V2L — powers appliances from car",
+      "Proven Creta platform",
+      "DC fast charging",
+      "Level 2 ADAS"
+    ],
+    "cons": [
+      "No AWD option",
+      "SR range (390km) limited for long highway trips",
+      "Charging infra limited outside KTM",
+      "Top variants approach Ioniq 5 pricing"
+    ],
+    "highlights": [
+      "473 km Range (LR)",
+      "Rs. 51.96L Start",
+      "V2L Support",
+      "Level 2 ADAS"
+    ]
+  },
+  {
+    "id": 107,
+    "slug": "hyundai-ioniq-5-2024",
+    "brand": "Hyundai",
+    "model": "Ioniq 5",
+    "year": 2024,
+    "type": "Electric",
+    "body": "Electric SUV",
+    "badge": "top-rated",
+    "tagline": "The benchmark EV — 800V ultra-fast charging, futuristic design, V2G",
+    "rating": 4.7,
+    "reviews": 284,
+    "expertScore": 9.2,
+    "baseEMI": 82600,
+    "overview": "The Hyundai Ioniq 5 is Nepal's most technologically advanced car — purpose-built on the 800V E-GMP platform with 18-minute fast charging, Vehicle-to-Grid (V2G), a 2,900mm wheelbase with limo-like space, and a distinctive retro-futurist design unlike anything else on Nepal's roads.",
+    "images": [
+      "https://images.unsplash.com/photo-1619767886558-efdc259b6e09?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1617886903355-9354bb57751f?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Atlas White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Gravity Gold Matte",
+        "hex": "#B8A87A"
+      },
+      {
+        "name": "Lucid Blue",
+        "hex": "#4A90D9"
+      },
+      {
+        "name": "Abyss Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Digital Teal",
+        "hex": "#1A7A7A"
+      },
+      {
+        "name": "Cyber Grey",
+        "hex": "#7A7A8A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "GLS Vision Roof (100 kW)",
+        "price": 9296000,
+        "label": "Rs. 92.96L",
+        "popular": false,
+        "transmission": "Single-Speed Auto",
+        "fuel": "Electric",
+        "features": [
+          "58 kWh Battery",
+          "~385 km WLTP Range",
+          "100 kW Motor (136 hp)",
+          "800V Ultra-Fast Charging",
+          "V2L (3.6 kW)",
+          "Vision Roof Panoramic Glass",
+          "Digital Side Mirrors",
+          "20\" Alloy Wheels",
+          "Relaxation Seats (Sliding)",
+          "ADAS Level 2+",
+          "OTA Updates"
+        ],
+        "specs": {
+          "power": "136 hp (100 kW)",
+          "torque": "350 Nm",
+          "efficiency": "~385 km range",
+          "transmission": "Single-Speed Auto"
+        }
+      },
+      {
+        "name": "GLS Vision Roof (124.9 kW)",
+        "price": 10396000,
+        "label": "Rs. 1.04 Cr",
+        "popular": true,
+        "transmission": "Single-Speed Auto",
+        "fuel": "Electric",
+        "features": [
+          "72.6 kWh Long Range Battery",
+          "~480 km WLTP Range",
+          "124.9 kW Motor (170 hp)",
+          "800V Ultra-Fast: 10-80% in 18 min",
+          "V2G (Vehicle to Grid)",
+          "V2L (3.6 kW)",
+          "All GLS 100kW features"
+        ],
+        "specs": {
+          "power": "170 hp (124.9 kW)",
+          "torque": "350 Nm",
+          "efficiency": "~480 km range",
+          "transmission": "Single-Speed Auto"
+        }
+      }
+    ],
+    "specs": {
+      "Platform": "E-GMP (800V Architecture)",
+      "Battery (100kW)": "58 kWh",
+      "Battery (124.9kW)": "72.6 kWh",
+      "Power": "136 hp / 170 hp",
+      "Torque": "350 Nm",
+      "Range (100kW)": "~385 km WLTP",
+      "Range (124.9kW)": "~480 km WLTP",
+      "Fast Charge (DC)": "10-80% in 18-25 min (350kW DC)",
+      "AC Charge": "11 kW (~8 hrs)",
+      "V2L": "Yes (3.6 kW)",
+      "V2G": "Yes (LR model)",
+      "Drive": "RWD",
+      "Seating": "5",
+      "Boot Space": "527 L + 24L frunk",
+      "Length": "4,635 mm",
+      "Width": "1,890 mm",
+      "Wheelbase": "2,900 mm",
+      "Ground Clearance": "160 mm",
+      "Airbags": "7",
+      "ADAS": "Level 2+"
+    },
+    "pros": [
+      "800V ultra-fast charging — 18 min 10-80%",
+      "2,900mm wheelbase — limo-class rear legroom",
+      "527L boot + 24L frunk",
+      "V2L + V2G capability",
+      "OTA software updates",
+      "Unique design on Nepal roads"
+    ],
+    "cons": [
+      "Rs. 92.96L base — premium pricing",
+      "160mm clearance — low for Nepal hills",
+      "Limited 800V fast chargers in Nepal",
+      "RWD only in Nepal spec"
+    ],
+    "highlights": [
+      "18 min Fast Charge (800V)",
+      "480 km Range (LR)",
+      "2,900mm Wheelbase",
+      "V2L + V2G"
+    ]
+  },
+  {
+    "id": 108,
+    "slug": "hyundai-kona-electric-2024",
+    "brand": "Hyundai",
+    "model": "Kona Electric",
+    "year": 2024,
+    "type": "Electric",
+    "body": "Compact Electric SUV",
+    "badge": "value",
+    "tagline": "Proven compact EV — reliable, practical, and spirited to drive",
+    "rating": 4.2,
+    "reviews": 431,
+    "expertScore": 7.8,
+    "baseEMI": 53300,
+    "overview": "The Hyundai Kona Electric is a proven, reliable compact EV with a 39.2 kWh battery and 305km range. Its compact dimensions make it perfect for Kathmandu, while its instant 395 Nm torque and nippy performance make it surprisingly fun to drive.",
+    "images": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1617886903355-9354bb57751f?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1571987502227-9231b837d92a?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Atlas White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Abyss Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Typhoon Silver",
+        "hex": "#A8AFBA"
+      },
+      {
+        "name": "Lucent Blue",
+        "hex": "#4A90D9"
+      },
+      {
+        "name": "Teal Blue",
+        "hex": "#1A7A8A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "GL (100 kW)",
+        "price": 5996000,
+        "label": "Rs. 59.96L",
+        "popular": false,
+        "transmission": "Single-Speed Auto",
+        "fuel": "Electric",
+        "features": [
+          "39.2 kWh Battery",
+          "305 km Range",
+          "100 kW Motor (134 hp)",
+          "395 Nm Instant Torque",
+          "8\" Touchscreen + CarPlay/Android Auto",
+          "6 Airbags",
+          "Rear Camera",
+          "DC Fast Charge",
+          "17\" Alloy Wheels",
+          "LED Headlamps",
+          "Smart Key"
+        ],
+        "specs": {
+          "power": "134 hp (100 kW)",
+          "torque": "395 Nm",
+          "efficiency": "305 km range",
+          "transmission": "Single-Speed Auto"
+        }
+      },
+      {
+        "name": "GLS (100 kW)",
+        "price": 6496000,
+        "label": "Rs. 64.96L",
+        "popular": true,
+        "transmission": "Single-Speed Auto",
+        "fuel": "Electric",
+        "features": [
+          "39.2 kWh Battery",
+          "305 km Range",
+          "Wireless Phone Charging",
+          "Auto Climate Control",
+          "Heated + Ventilated Seats",
+          "Panoramic Sunroof",
+          "Push Button Start",
+          "GL features+"
+        ],
+        "specs": {
+          "power": "134 hp (100 kW)",
+          "torque": "395 Nm",
+          "efficiency": "305 km range",
+          "transmission": "Single-Speed Auto"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "Permanent Magnet Synchronous",
+      "Battery": "39.2 kWh",
+      "Power": "134 hp (100 kW)",
+      "Torque": "395 Nm",
+      "Range": "305 km (ARAI)",
+      "Fast Charge (DC)": "0-80% in ~57 min",
+      "AC Charge": "0-100% in 8-10 hrs",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "332 L",
+      "Length": "4,180 mm",
+      "Width": "1,800 mm",
+      "Wheelbase": "2,600 mm",
+      "Ground Clearance": "165 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Proven reliable EV platform",
+      "Strong 395 Nm instant torque",
+      "Compact — easy Kathmandu driving",
+      "DC fast charge supported",
+      "Panoramic sunroof on GLS"
+    ],
+    "cons": [
+      "305km lower range vs Creta Electric",
+      "332L boot — smaller than rivals",
+      "165mm GC can scrape on bad roads",
+      "Older platform vs newer EVs"
+    ],
+    "highlights": [
+      "305 km Range",
+      "395 Nm Torque",
+      "Rs. 59.96L Start",
+      "DC Fast Charge"
+    ]
+  },
+  {
+    "id": 109,
+    "slug": "hyundai-tucson-2024",
+    "brand": "Hyundai",
+    "model": "Tucson",
+    "year": 2024,
+    "type": "Petrol",
+    "body": "Large SUV",
+    "badge": "top-rated",
+    "tagline": "Premium large SUV — 4WD diesel, panoramic sunroof, BOSE audio",
+    "rating": 4.4,
+    "reviews": 923,
+    "expertScore": 8.4,
+    "baseEMI": 95900,
+    "overview": "The Hyundai Tucson is Nepal's go-to premium large SUV. Available in 2WD and 4WD with petrol and diesel engines, it brings a panoramic sunroof, BOSE sound system, full ADAS, and HTRAC 4WD for Nepal's diverse terrain. The 417 Nm diesel 4WD is the most popular choice.",
+    "images": [
+      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1567818735868-e71b99932e29?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Atlas White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Magnetic Force",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Shimmering Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Abyss Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Volcano Sunset Red",
+        "hex": "#B22222"
+      },
+      {
+        "name": "Deep Sea Blue",
+        "hex": "#1A3A5C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "GL 2WD MT (2.0L Petrol)",
+        "price": 10796000,
+        "label": "Rs. 1.08 Cr",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2.0L MPi Petrol (156 PS)",
+          "6-Speed MT",
+          "FWD",
+          "10.25\" Touchscreen",
+          "6 Airbags",
+          "LED Headlamps",
+          "Rear Camera",
+          "Smart Key",
+          "Panoramic Sunroof",
+          "Wireless Charging"
+        ],
+        "specs": {
+          "power": "156 PS @ 6,200 rpm",
+          "torque": "192 Nm @ 4,000 rpm",
+          "efficiency": "11.61 km/l",
+          "transmission": "6-Speed MT"
+        }
+      },
+      {
+        "name": "GLX 2WD AT (2.0L Petrol)",
+        "price": 13796000,
+        "label": "Rs. 1.38 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "2.0L MPi Petrol (156 PS)",
+          "6-Speed AT",
+          "FWD",
+          "BOSE Premium Audio",
+          "Ventilated Seats",
+          "Blind Spot Monitoring",
+          "ADAS Lane + FCA",
+          "360° Camera",
+          "GL features+"
+        ],
+        "specs": {
+          "power": "156 PS @ 6,200 rpm",
+          "torque": "192 Nm @ 4,000 rpm",
+          "efficiency": "11.2 km/l",
+          "transmission": "6-Speed AT"
+        }
+      },
+      {
+        "name": "GLX+ 2WD AT (2.0L Petrol)",
+        "price": 14496000,
+        "label": "Rs. 1.45 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "Premium Leather Seats",
+          "Memory Driver Seat",
+          "HUD",
+          "Full ADAS Suite",
+          "GLX features+"
+        ],
+        "specs": {
+          "power": "156 PS @ 6,200 rpm",
+          "torque": "192 Nm @ 4,000 rpm",
+          "efficiency": "11.2 km/l",
+          "transmission": "6-Speed AT"
+        }
+      },
+      {
+        "name": "GLX 4WD AT (2.0L Diesel)",
+        "price": 16096000,
+        "label": "Rs. 1.61 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.0L CRDi Diesel (186 PS)",
+          "8-Speed AT",
+          "HTRAC 4WD",
+          "417 Nm Torque for Nepal Hills",
+          "Terrain Modes",
+          "All GLX AT features"
+        ],
+        "specs": {
+          "power": "186 PS @ 4,000 rpm",
+          "torque": "417 Nm @ 1,750–2,750 rpm",
+          "efficiency": "14.2 km/l",
+          "transmission": "8-Speed AT"
+        }
+      },
+      {
+        "name": "GLX 4WD AT (1.6T Turbo Petrol)",
+        "price": 16296000,
+        "label": "Rs. 1.63 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "1.6L T-GDi Turbo Petrol (180 PS)",
+          "7-Speed DCT",
+          "HTRAC 4WD",
+          "Sporty Performance",
+          "All GLX features"
+        ],
+        "specs": {
+          "power": "180 PS @ 5,500 rpm",
+          "torque": "265 Nm @ 1,500–4,500 rpm",
+          "efficiency": "12.8 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine (2.0 Petrol)": "2.0L MPi GDi",
+      "Engine (Diesel)": "2.0L CRDi",
+      "Engine (1.6T Petrol)": "1.6L T-GDi",
+      "Power": "156–186 PS",
+      "Torque (Diesel)": "417 Nm",
+      "Efficiency": "11.2–14.2 km/l",
+      "Fuel Tank": "62 L",
+      "Transmission": "6MT / 6AT / 7DCT / 8AT",
+      "Drive": "FWD / HTRAC 4WD",
+      "Seating": "5",
+      "Boot Space": "620 L",
+      "Length": "4,630 mm",
+      "Width": "1,865 mm",
+      "Wheelbase": "2,670 mm",
+      "Ground Clearance": "172 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "620L class-leading boot space",
+      "4WD diesel for Nepal mountain roads",
+      "BOSE premium audio",
+      "Full ADAS available",
+      "Strong resale value in Nepal"
+    ],
+    "cons": [
+      "Rs. 1.08 Cr base — premium pricing",
+      "172mm GC modest for 4WD positioning",
+      "2.0L petrol MT underpowered",
+      "Modest fuel economy on petrol"
+    ],
+    "highlights": [
+      "417 Nm Diesel 4WD",
+      "620L Boot",
+      "BOSE Audio",
+      "Rs. 1.08 Cr Start"
+    ]
+  },
+  {
+    "id": 110,
+    "slug": "hyundai-santa-fe-2024",
+    "brand": "Hyundai",
+    "model": "Santa Fe",
+    "year": 2024,
+    "type": "Petrol",
+    "body": "7-Seater SUV",
+    "badge": "top-rated",
+    "tagline": "3-row 4WD luxury — commanding, comfortable, built for Nepal families",
+    "rating": 4.5,
+    "reviews": 318,
+    "expertScore": 8.7,
+    "baseEMI": 168800,
+    "overview": "The All-New Hyundai Santa Fe brings a boxy retro-modern design, genuine 7-seat capacity, 4WD HTRAC with terrain modes, and a full premium feature set. Powered by a 2.5L GDi petrol with 8-speed AT, it's Nepal's most capable 3-row family hauler from Hyundai.",
+    "images": [
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1567818735868-e71b99932e29?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Atlas White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Abyss Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Shimmering Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Deep Sea Blue",
+        "hex": "#1A3A5C"
+      },
+      {
+        "name": "Atlantis Blue",
+        "hex": "#3A7AB5"
+      }
+    ],
+    "variants": [
+      {
+        "name": "GLS 4WD AT",
+        "price": 18996000,
+        "label": "Rs. 1.90 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "2.5L MPi Petrol (198 PS)",
+          "8-Speed AT",
+          "4WD HTRAC",
+          "7 Seats (2+3+2)",
+          "Dual 12.3\" Panoramic Screens",
+          "BOSE 12-Speaker Premium Audio",
+          "Full ADAS Level 2+",
+          "Panoramic Sunroof",
+          "Ventilated + Heated All Seats",
+          "Terrain Modes (Snow/Mud/Sand)",
+          "V2L",
+          "HUD",
+          "Memory Seats"
+        ],
+        "specs": {
+          "power": "198 PS @ 6,100 rpm",
+          "torque": "232 Nm @ 4,000 rpm",
+          "efficiency": "11.0 km/l",
+          "transmission": "8-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.5L GDi MPi Petrol",
+      "Power": "198 PS @ 6,100 rpm",
+      "Torque": "232 Nm @ 4,000 rpm",
+      "Efficiency": "11.0 km/l",
+      "Fuel Tank": "67 L",
+      "Transmission": "8-Speed AT",
+      "Drive": "4WD HTRAC",
+      "Seating": "7",
+      "Boot Space": "628 L (3rd row folded)",
+      "Length": "4,830 mm",
+      "Width": "1,900 mm",
+      "Height": "1,720 mm",
+      "Wheelbase": "2,815 mm",
+      "Ground Clearance": "184 mm",
+      "Airbags": "6+",
+      "ADAS": "Level 2+"
+    },
+    "pros": [
+      "True 7-seater with usable 3rd row",
+      "4WD HTRAC with 4 terrain modes",
+      "BOSE 12-speaker premium audio",
+      "V2L capability",
+      "Full ADAS Level 2+",
+      "184mm clearance for varied terrain"
+    ],
+    "cons": [
+      "Rs. 1.90 Cr — ultra-premium pricing",
+      "Only 1 variant available in Nepal",
+      "2.5L petrol returns modest 11 km/l",
+      "Very large dimensions for Kathmandu streets"
+    ],
+    "highlights": [
+      "7 Seats + HTRAC 4WD",
+      "198 PS Engine",
+      "BOSE 12-Speaker",
+      "Rs. 1.90 Cr"
+    ]
+  },
+  {
+    "id": 111,
+    "slug": "hyundai-palisade-2024",
+    "brand": "Hyundai",
+    "model": "Palisade",
+    "year": 2024,
+    "type": "Diesel",
+    "body": "Full-Size SUV",
+    "badge": "top-rated",
+    "tagline": "Hyundai's flagship 8-seater — first class in every dimension",
+    "rating": 4.6,
+    "reviews": 142,
+    "expertScore": 9,
+    "baseEMI": 209600,
+    "overview": "The Hyundai Palisade is Hyundai's ultimate full-size SUV for Nepal — an 8-seater diesel powerhouse with HTRAC 4WD, Harman Kardon 12-speaker premium audio, captain's chair massaging seats, Highway Driving Assist, and a 440 Nm engine that effortlessly hauls 8 passengers over Nepal's mountain roads.",
+    "images": [
+      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Hyper White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Abyss Black Pearl",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Moonlight Cloud",
+        "hex": "#D0D0D8"
+      },
+      {
+        "name": "Magnetic Force",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Rainforest",
+        "hex": "#2D4A3E"
+      }
+    ],
+    "variants": [
+      {
+        "name": "GLS 4WD AT",
+        "price": 23596000,
+        "label": "Rs. 2.36 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.2L CRDi Diesel (202 PS)",
+          "8-Speed AT",
+          "4WD HTRAC",
+          "8 Seats or 7-Seat Captain Config",
+          "Dual 12.3\" Digital Screens",
+          "Harman Kardon 12-Speaker Premium Audio",
+          "Highway Driving Assist (Level 2+)",
+          "Panoramic Sunroof",
+          "Heated + Ventilated + Massage 2nd Row Seats",
+          "HUD",
+          "360° Camera",
+          "All Terrain Modes",
+          "Memory Seats"
+        ],
+        "specs": {
+          "power": "202 PS @ 3,800 rpm",
+          "torque": "440 Nm @ 1,750–2,750 rpm",
+          "efficiency": "12.6 km/l",
+          "transmission": "8-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.2L R-Series CRDi Diesel",
+      "Power": "202 PS @ 3,800 rpm",
+      "Torque": "440 Nm @ 1,750–2,750 rpm",
+      "Efficiency": "12.6 km/l",
+      "Fuel Tank": "72 L",
+      "Transmission": "8-Speed AT",
+      "Drive": "4WD HTRAC",
+      "Seating": "8 (or 7 captain config)",
+      "Boot Space": "510 L (3rd row folded) / 160 L all up",
+      "Length": "4,995 mm",
+      "Width": "1,975 mm",
+      "Height": "1,750 mm",
+      "Wheelbase": "2,955 mm",
+      "Ground Clearance": "185 mm",
+      "Airbags": "6+",
+      "ADAS": "Level 2+ (Highway Driving Assist)"
+    },
+    "pros": [
+      "440 Nm — effortless for 8 passengers",
+      "Harman Kardon 12-speaker audio",
+      "Massage seats in 2nd row",
+      "Highway Driving Assist ADAS",
+      "2,955mm WB — limo-class legroom",
+      "185mm clearance for Nepal terrain"
+    ],
+    "cons": [
+      "Rs. 2.36 Cr — Nepal's priciest Hyundai",
+      "Very large — challenging in Kathmandu",
+      "12.6 km/l loaded is modest",
+      "One variant only in Nepal"
+    ],
+    "highlights": [
+      "440 Nm Diesel 4WD",
+      "8 Seats",
+      "Harman Kardon Audio",
+      "Rs. 2.36 Cr"
+    ]
+  }
+]

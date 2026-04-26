@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Insurance &amp; Financing – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
+      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
+      --border:#E4E8ED; --bg:#F5F7F9; --bg2:#ECEEF2; --white:#ffffff;
+      --blue:#1A4DB8; --blue-l:#EEF3FC;
+      --gold:#B8900E; --gold-l:#FDF6E0;
+      --red:#C8271E; --red-l:#FFF0EF;
+      --teal:#0E7F73; --teal-l:#E6F5F4;
+      --purple:#6B35C7; --purple-l:#F0EBFA;
+      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
+      --sh1:0 1px 4px rgba(0,0,0,.07); --sh2:0 4px 14px rgba(0,0,0,.09); --sh3:0 8px 28px rgba(0,0,0,.11);
+      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
+      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
+    ::selection { background:rgba(26,107,42,.15); }
+    :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 18px; }
+    @media(min-width:640px){ .wrap{ padding:0 32px; } }
+    @media(min-width:1024px){ .wrap{ padding:0 40px; } }
+
+    /* ── BREADCRUMB ── */
+    .bc { background:var(--bg); border-bottom:1px solid var(--border); padding:11px 0; }
+    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
+    .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
+    .bc-inner a:hover { text-decoration:underline; }
+    .bc-inner i { width:12px; height:12px; }
+
+    /* ── HERO ── */
+    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:52px 0 0; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; padding-bottom:52px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .hero-badge i { width:13px; height:13px; color:var(--green-m); }
+    .hero h1 { font-family:var(--font-d); font-size:clamp(28px,5vw,50px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:14px; }
+    .hero h1 em { font-style:italic; color:var(--green-m); }
+    .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:560px; line-height:1.7; margin-bottom:30px; }
+    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
+    .hero-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:var(--pill); padding:7px 14px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.8); }
+    .hero-pill i { width:13px; height:13px; color:var(--green-m); }
+    /* Hero CTA buttons */
+    .hero-ctas { display:flex; flex-wrap:wrap; gap:10px; }
+    .btn-hero-primary { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; background:var(--white); color:var(--green); border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:14px; font-weight:800; cursor:pointer; text-decoration:none; transition:all var(--ease); }
+    .btn-hero-primary:hover { background:#f0faf2; box-shadow:0 6px 20px rgba(0,0,0,.18); transform:translateY(-1px); }
+    .btn-hero-primary i { width:16px; height:16px; }
+    .btn-hero-secondary { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; background:rgba(255,255,255,.1); color:#fff; border:1.5px solid rgba(255,255,255,.2); border-radius:var(--r10); font-family:var(--font-b); font-size:14px; font-weight:800; cursor:pointer; text-decoration:none; transition:all var(--ease); }
+    .btn-hero-secondary:hover { background:rgba(255,255,255,.18); transform:translateY(-1px); }
+    .btn-hero-secondary i { width:16px; height:16px; }
+
+    /* ── TAB NAV ── */
+    .tab-nav { background:var(--white); border-bottom:2px solid var(--border); position:sticky; top:0; z-index:100; }
+    .tab-nav-inner { display:flex; overflow-x:auto; scrollbar-width:none; }
+    .tab-nav-inner::-webkit-scrollbar { display:none; }
+    .tab-btn { display:flex; align-items:center; gap:8px; padding:16px 22px; font-size:13.5px; font-weight:700; color:var(--ink4); border:none; background:none; cursor:pointer; white-space:nowrap; border-bottom:2px solid transparent; margin-bottom:-2px; transition:all var(--ease); text-decoration:none; }
+    .tab-btn i { width:15px; height:15px; }
+    .tab-btn:hover { color:var(--ink2); }
+    .tab-btn.active { color:var(--green); border-bottom-color:var(--green); }
+    .tab-btn.active-finance { color:var(--blue); border-bottom-color:var(--blue); }
+    /* Separator between nav items and CTA links */
+    .tab-nav-sep { flex:1; }
+    .tab-cta-link { display:flex; align-items:center; gap:7px; padding:10px 16px; margin:8px 6px; font-size:13px; font-weight:700; border-radius:var(--r8); text-decoration:none; white-space:nowrap; transition:all var(--ease); }
+    .tab-cta-link i { width:14px; height:14px; }
+    .tab-cta-link.green { background:var(--green); color:#fff; }
+    .tab-cta-link.green:hover { background:var(--green-d); }
+    .tab-cta-link.blue { background:var(--blue); color:#fff; }
+    .tab-cta-link.blue:hover { background:#1340a0; }
+
+    /* ── SECTION SHARED ── */
+    .section { padding:64px 0; }
+    .section.alt { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
+    .eyebrow i { width:13px; height:13px; }
+    .eyebrow.blue { color:var(--blue); }
+    .sec-title { font-family:var(--font-d); font-size:clamp(22px,3.5vw,34px); font-weight:800; color:var(--ink); line-height:1.15; margin-bottom:6px; }
+    .sec-title em { font-style:italic; color:var(--green); }
+    .sec-title em.blue { color:var(--blue); }
+    .sec-sub { font-size:14.5px; color:var(--ink4); max-width:540px; line-height:1.7; margin-bottom:40px; }
+
+    /* ── SEGMENT DIVIDER ── */
+    .segment-divider { background:linear-gradient(135deg,#0F2F7A 0%,#1A4DB8 60%,#2563c9 100%); padding:52px 0; position:relative; overflow:hidden; }
+    .segment-divider::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .segment-divider-inner { position:relative; z-index:1; display:flex; flex-direction:column; gap:16px; }
+    @media(min-width:640px){ .segment-divider-inner{ flex-direction:row; align-items:center; justify-content:space-between; } }
+    .segment-divider h2 { font-family:var(--font-d); font-size:clamp(22px,3.5vw,32px); font-weight:800; color:#fff; line-height:1.2; }
+    .segment-divider h2 em { font-style:italic; color:#93b8f5; }
+    .segment-divider p { font-size:14px; color:rgba(255,255,255,.6); max-width:420px; margin-top:6px; }
+    .segment-pills { display:flex; flex-wrap:wrap; gap:8px; flex-shrink:0; }
+    .segment-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:8px 15px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.85); }
+    .segment-pill i { width:13px; height:13px; color:#93b8f5; }
+
+    /* ── COVERAGE CARDS ── */
+    .coverage-grid { display:grid; grid-template-columns:1fr; gap:16px; }
+    @media(min-width:640px){ .coverage-grid{ grid-template-columns:1fr 1fr; } }
+    .cov-card { border-radius:var(--r16); border:1.5px solid var(--border); overflow:hidden; transition:all var(--ease); }
+    .cov-card:hover { box-shadow:var(--sh2); transform:translateY(-2px); }
+    .cov-card.recommended { border-color:var(--green); }
+    .cov-head { padding:22px 22px 16px; }
+    .cov-badge { display:inline-flex; align-items:center; gap:5px; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; padding:3px 9px; border-radius:var(--pill); margin-bottom:12px; }
+    .cov-title { font-family:var(--font-d); font-size:22px; font-weight:800; color:var(--ink); margin-bottom:6px; }
+    .cov-law { font-size:11.5px; font-weight:700; padding:4px 10px; border-radius:var(--pill); display:inline-block; margin-bottom:10px; }
+    .cov-desc { font-size:13.5px; color:var(--ink4); line-height:1.65; }
+    .cov-body { padding:0 22px 22px; }
+    .cov-list { display:flex; flex-direction:column; gap:7px; margin-top:16px; }
+    .cov-row { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--ink3); }
+    .cov-row i { width:14px; height:14px; flex-shrink:0; margin-top:2px; }
+    .cov-row.no { color:var(--ink5); }
+    .cov-row.no i { color:var(--red); }
+    .cov-divider { height:1px; background:var(--border); margin:14px 0; }
+
+    /* ── ADD-ONS ── */
+    .addons-grid { display:grid; grid-template-columns:1fr; gap:10px; }
+    @media(min-width:480px){ .addons-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .addons-grid{ grid-template-columns:repeat(3,1fr); } }
+    .addon-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); padding:18px 16px; display:flex; gap:13px; transition:all var(--ease); cursor:default; }
+    .addon-card:hover { border-color:var(--green); box-shadow:var(--sh1); }
+    .addon-icon { width:38px; height:38px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .addon-icon i { width:18px; height:18px; }
+    .addon-name { font-size:13.5px; font-weight:800; color:var(--ink2); margin-bottom:4px; }
+    .addon-desc { font-size:12px; color:var(--ink4); line-height:1.55; }
+    .addon-tag { display:inline-block; margin-top:6px; font-size:10px; font-weight:700; padding:2px 8px; border-radius:var(--pill); text-transform:uppercase; letter-spacing:.4px; }
+
+    /* ── NCB ── */
+    .ncb-section { padding:64px 0; background:linear-gradient(160deg,var(--green),#145520); position:relative; overflow:hidden; }
+    .ncb-section::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .ncb-inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr; gap:40px; }
+    @media(min-width:768px){ .ncb-inner{ grid-template-columns:1fr 1fr; align-items:center; } }
+    .ncb-text h2 { font-family:var(--font-d); font-size:clamp(24px,3.5vw,34px); font-weight:800; color:#fff; line-height:1.15; margin-bottom:10px; }
+    .ncb-text h2 em { font-style:italic; color:var(--green-m); }
+    .ncb-text p { font-size:14.5px; color:rgba(255,255,255,.65); line-height:1.7; }
+    .ncb-rules { display:flex; flex-direction:column; gap:10px; }
+    .ncb-rule { display:flex; align-items:flex-start; gap:12px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:var(--r12); padding:14px 16px; }
+    .ncb-rule-icon { width:34px; height:34px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .ncb-rule-icon i { width:16px; height:16px; }
+    .ncb-rule-title { font-size:13px; font-weight:800; color:#fff; margin-bottom:2px; }
+    .ncb-rule-desc { font-size:12px; color:rgba(255,255,255,.55); line-height:1.5; }
+
+    /* ── EXCLUSIONS ── */
+    .excl-grid { display:grid; grid-template-columns:1fr; gap:8px; }
+    @media(min-width:480px){ .excl-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .excl-grid{ grid-template-columns:repeat(3,1fr); } }
+    .excl-item { display:flex; align-items:flex-start; gap:10px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r10); padding:13px 14px; }
+    .excl-item i { width:15px; height:15px; color:var(--red); flex-shrink:0; margin-top:2px; }
+    .excl-title { font-size:13px; font-weight:700; color:var(--ink2); margin-bottom:2px; }
+    .excl-desc { font-size:11.5px; color:var(--ink4); line-height:1.5; }
+
+    /* ── EV CARDS ── */
+    .ev-grid { display:grid; grid-template-columns:1fr; gap:16px; }
+    @media(min-width:640px){ .ev-grid{ grid-template-columns:1fr 1fr; } }
+    .ev-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); padding:18px; transition:all var(--ease); }
+    .ev-card:hover { border-color:var(--teal); box-shadow:var(--sh1); }
+    .ev-card-head { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+    .ev-card-icon { width:36px; height:36px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; flex-shrink:0; background:var(--teal-l); }
+    .ev-card-icon i { width:17px; height:17px; color:var(--teal); }
+    .ev-card-title { font-size:14px; font-weight:800; color:var(--ink2); }
+    .ev-card-body { font-size:13px; color:var(--ink4); line-height:1.65; }
+    .ev-card-list { display:flex; flex-direction:column; gap:6px; margin-top:10px; }
+    .ev-card-row { display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:var(--ink3); }
+    .ev-card-row i { width:13px; height:13px; color:var(--teal); flex-shrink:0; margin-top:2px; }
+
+    /* ── CLAIM STEPS ── */
+    .claim-steps { display:flex; flex-direction:column; gap:0; position:relative; }
+    .claim-step { display:flex; gap:16px; padding-bottom:28px; position:relative; }
+    .claim-step:last-child { padding-bottom:0; }
+    .claim-step-left { display:flex; flex-direction:column; align-items:center; flex-shrink:0; width:36px; }
+    .claim-step-num { width:36px; height:36px; border-radius:50%; background:var(--green-l); border:2px solid var(--green); display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-size:14px; font-weight:800; color:var(--green); flex-shrink:0; }
+    .claim-step-line { flex:1; width:2px; background:var(--border); margin-top:4px; }
+    .claim-step:last-child .claim-step-line { display:none; }
+    .claim-step-content { padding-top:6px; }
+    .claim-step-title { font-size:14px; font-weight:800; color:var(--ink2); margin-bottom:4px; }
+    .claim-step-desc { font-size:13px; color:var(--ink4); line-height:1.6; }
+
+    /* ── INSURERS ── */
+    .insurers-row { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+    @media(min-width:480px){ .insurers-row{ grid-template-columns:repeat(3,1fr); } }
+    @media(min-width:768px){ .insurers-row{ grid-template-columns:repeat(5,1fr); } }
+    .insurer-pill { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r10); padding:12px 10px; text-align:center; font-size:12px; font-weight:700; color:var(--ink2); transition:all var(--ease); }
+    .insurer-pill:hover { border-color:var(--green); background:var(--green-l); color:var(--green); }
+
+    /* ── LOAN COMPARISON TABLE ── */
+    .loan-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+    .loan-tab { padding:9px 18px; border-radius:var(--pill); border:1.5px solid var(--border); background:var(--white); font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; transition:all var(--ease); }
+    .loan-tab:hover { border-color:var(--blue); color:var(--blue); }
+    .loan-tab.active { background:var(--blue); border-color:var(--blue); color:#fff; }
+    .loan-panel { display:none; }
+    .loan-panel.active { display:block; }
+    .loan-table { width:100%; border-collapse:collapse; font-size:13px; }
+    .loan-table th { background:var(--bg2); color:var(--ink3); font-weight:700; font-size:11.5px; text-transform:uppercase; letter-spacing:.4px; padding:11px 14px; text-align:left; border-bottom:2px solid var(--border); }
+    .loan-table td { padding:12px 14px; border-bottom:1px solid var(--border); color:var(--ink3); vertical-align:top; }
+    .loan-table tr:last-child td { border-bottom:none; }
+    .loan-table tr:hover td { background:var(--bg); }
+    .loan-table .param { font-weight:700; color:var(--ink2); }
+    .loan-table .highlight { font-weight:700; color:var(--blue); }
+    .table-wrap { border:1.5px solid var(--border); border-radius:var(--r12); overflow:hidden; overflow-x:auto; }
+
+    /* ── LOAN PROVIDER CARDS ── */
+    .provider-grid { display:grid; grid-template-columns:1fr; gap:10px; }
+    @media(min-width:480px){ .provider-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .provider-grid{ grid-template-columns:repeat(4,1fr); } }
+    .provider-card { border:1.5px solid var(--border); border-radius:var(--r12); padding:18px; text-align:center; transition:all var(--ease); background:var(--white); }
+    .provider-card:hover { border-color:var(--blue); box-shadow:var(--sh1); }
+    .provider-card .p-type { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--ink5); margin-bottom:6px; }
+    .provider-card .p-name { font-family:var(--font-d); font-size:16px; font-weight:800; color:var(--ink2); margin-bottom:8px; }
+    .provider-card .p-rate { font-size:20px; font-weight:800; color:var(--blue); font-family:var(--font-d); }
+    .provider-card .p-rate-label { font-size:11px; color:var(--ink5); margin-bottom:10px; }
+    .provider-card .p-perks { display:flex; flex-direction:column; gap:4px; margin-top:10px; border-top:1px solid var(--border); padding-top:10px; }
+    .provider-card .p-perk { font-size:11.5px; color:var(--ink4); display:flex; align-items:center; gap:6px; justify-content:center; }
+    .provider-card .p-perk i { width:11px; height:11px; color:var(--blue); }
+
+    /* ── FAQ ── */
+    .faq-list { display:flex; flex-direction:column; gap:8px; }
+    .faq-item { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); overflow:hidden; transition:border-color var(--ease); }
+    .faq-item.open { border-color:var(--green); }
+    .faq-item.fin.open { border-color:var(--blue); }
+    .faq-q { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 18px; cursor:pointer; font-size:14px; font-weight:700; color:var(--ink2); user-select:none; }
+    .faq-q i { width:16px; height:16px; color:var(--ink5); flex-shrink:0; transition:transform var(--ease); }
+    .faq-item.open .faq-q i { transform:rotate(180deg); color:var(--green); }
+    .faq-item.fin.open .faq-q i { color:var(--blue); }
+    .faq-a { display:none; padding:14px 18px 16px; font-size:13.5px; color:var(--ink4); line-height:1.7; border-top:1px solid var(--border); }
+    .faq-item.open .faq-a { display:block; }
+    .faq-cols { display:grid; grid-template-columns:1fr; gap:8px; }
+    @media(min-width:768px){ .faq-cols{ grid-template-columns:1fr 1fr; } }
+
+    /* ── NOTICE ── */
+    .notice { display:flex; align-items:flex-start; gap:13px; padding:16px 18px; border-radius:var(--r12); margin-bottom:20px; }
+    .notice i { width:17px; height:17px; flex-shrink:0; margin-top:1px; }
+    .notice-title { font-size:13px; font-weight:800; margin-bottom:3px; }
+    .notice-text { font-size:12.5px; line-height:1.6; }
+    .notice.green { background:var(--green-l); border:1.5px solid rgba(26,107,42,.15); color:var(--green); }
+    .notice.gold { background:var(--gold-l); border:1.5px solid rgba(184,144,14,.2); color:var(--gold); }
+    .notice.teal { background:var(--teal-l); border:1.5px solid rgba(14,127,115,.15); color:var(--teal); }
+    .notice.blue { background:var(--blue-l); border:1.5px solid rgba(26,77,184,.15); color:var(--blue); }
+
+    /* ── CTA SECTION ── */
+    .cta-section { padding:64px 0; }
+    .cta-section.green-bg { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 100%); }
+    .cta-section.blue-bg { background:linear-gradient(145deg,#0F2F7A 0%,#1A4DB8 100%); }
+    .cta-inner { position:relative; z-index:1; display:flex; flex-direction:column; gap:20px; }
+    @media(min-width:640px){ .cta-inner{ flex-direction:row; align-items:center; justify-content:space-between; } }
+    .cta-text h2 { font-family:var(--font-d); font-size:clamp(22px,3.5vw,32px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:8px; }
+    .cta-text h2 em { font-style:italic; color:var(--green-m); }
+    .cta-text h2 em.blue { color:#93b8f5; }
+    .cta-text p { font-size:14px; color:rgba(255,255,255,.6); max-width:460px; line-height:1.65; }
+    .cta-btns { display:flex; flex-direction:column; gap:10px; flex-shrink:0; }
+    @media(min-width:480px){ .cta-btns{ flex-direction:row; } }
+    .btn-cta-white { display:inline-flex; align-items:center; gap:8px; padding:14px 24px; background:var(--white); border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:14px; font-weight:800; cursor:pointer; text-decoration:none; transition:all var(--ease); white-space:nowrap; }
+    .btn-cta-white.green-txt { color:var(--green); }
+    .btn-cta-white.blue-txt { color:var(--blue); }
+    .btn-cta-white:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.22); }
+    .btn-cta-white i { width:16px; height:16px; }
+    .btn-cta-ghost { display:inline-flex; align-items:center; gap:8px; padding:14px 24px; background:rgba(255,255,255,.1); border:1.5px solid rgba(255,255,255,.2); border-radius:var(--r10); font-family:var(--font-b); font-size:14px; font-weight:800; color:#fff; cursor:pointer; text-decoration:none; transition:all var(--ease); white-space:nowrap; }
+    .btn-cta-ghost:hover { background:rgba(255,255,255,.18); transform:translateY(-1px); }
+    .btn-cta-ghost i { width:16px; height:16px; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { opacity:0; animation:fadeUp .5s ease forwards; }
+    .d1{animation-delay:.05s} .d2{animation-delay:.12s} .d3{animation-delay:.19s}
+
+    /* ── SERVICES INTRO GRID ── */
+    .services-intro { display:grid; grid-template-columns:1fr; gap:12px; margin-bottom:0; }
+    @media(min-width:640px){ .services-intro{ grid-template-columns:1fr 1fr; } }
+    @media(min-width:900px){ .services-intro{ grid-template-columns:repeat(4,1fr); } }
+    .svc-intro-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); padding:18px 16px; transition:all var(--ease); cursor:pointer; }
+    .svc-intro-card:hover { border-color:var(--green); box-shadow:var(--sh1); transform:translateY(-2px); }
+    .svc-intro-card.blue-hover:hover { border-color:var(--blue); }
+    .svc-intro-icon { width:38px; height:38px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+    .svc-intro-icon i { width:18px; height:18px; }
+    .svc-intro-name { font-size:13.5px; font-weight:800; color:var(--ink2); margin-bottom:4px; }
+    .svc-intro-desc { font-size:12px; color:var(--ink4); line-height:1.5; }
+  </style>
+</head>
+<body>
+ <script src="assets/js/components/av-nav.js"></script>
+
+<!-- BREADCRUMB -->
+<nav class="bc">
+  <div class="wrap bc-inner">
+    <a href="/">Home</a>
+    <i data-lucide="chevron-right"></i>
+    <span>Insurance &amp; Financing</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner fade-up">
+      <div class="hero-badge"><i data-lucide="shield-check"></i>Beema Samiti &amp; NRB Regulated</div>
+      <h1>Insurance &amp; Financing,<br><em>All in One Place</em></h1>
+      <p class="hero-desc">From mandatory third-party cover to EV battery protection, and from new car loans to used vehicle financing — we handle everything so you can focus on driving.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><i data-lucide="shield"></i>Same-day insurance activation</span>
+        <span class="hero-pill"><i data-lucide="zap"></i>EV coverage &amp; battery protection</span>
+        <span class="hero-pill"><i data-lucide="banknote"></i>Loans from 5.37% p.a.</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>eSewa &amp; Khalti accepted</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="forms.html" class="btn-hero-primary"><i data-lucide="shield"></i>Get Insurance Quote</a>
+        <a href="forms.html#finance" class="btn-hero-secondary"><i data-lucide="banknote"></i>Apply for Finance</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAB NAV -->
+<div class="tab-nav" id="main-tabs">
+  <div class="wrap" style="padding:0">
+    <div class="tab-nav-inner">
+      <button class="tab-btn active" onclick="scrollTo('#insurance-section')"><i data-lucide="shield"></i>Insurance</button>
+      <button class="tab-btn" onclick="scrollTo('#coverage')"><i data-lucide="file-text"></i>Coverage Types</button>
+      <button class="tab-btn" onclick="scrollTo('#ev')"><i data-lucide="zap"></i>EV Cover</button>
+      <button class="tab-btn active-finance" onclick="scrollTo('#finance-section')"><i data-lucide="banknote"></i>Financing</button>
+      <button class="tab-btn" onclick="scrollTo('#loan-rates')"><i data-lucide="percent"></i>Loan Rates</button>
+      <div class="tab-nav-sep"></div>
+      <a href="forms.html" class="tab-cta-link green"><i data-lucide="send"></i>Get Insurance Quote</a>
+      <a href="forms.html#finance" class="tab-cta-link blue"><i data-lucide="calculator"></i>Apply for Loan</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  INSURANCE SECTION                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="insurance-section">
+
+  <!-- WHAT WE OFFER — INSURANCE -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="eyebrow"><i data-lucide="shield"></i>Insurance Services</div>
+      <h2 class="sec-title">Four Ways We <em>Protect You</em></h2>
+      <p class="sec-sub">We arrange, advise, and assist with vehicle insurance in Nepal — from finding the right policy to filing your claim.</p>
+      <div class="services-intro">
+        <div class="svc-intro-card" onclick="scrollTo('#coverage')">
+          <div class="svc-intro-icon" style="background:var(--green-l)"><i data-lucide="shield" style="color:var(--green)"></i></div>
+          <div class="svc-intro-name">Third-Party Arrangement</div>
+          <div class="svc-intro-desc">Quick policy setup, regulated rates, same-day activation, digital &amp; physical certificate.</div>
+        </div>
+        <div class="svc-intro-card" onclick="scrollTo('#addons')">
+          <div class="svc-intro-icon" style="background:var(--blue-l)"><i data-lucide="search" style="color:var(--blue)"></i></div>
+          <div class="svc-intro-name">Comprehensive Consultation</div>
+          <div class="svc-intro-desc">Expert advice, IDV optimisation, add-on suggestions, multi-year discounts &amp; EV-specific cover.</div>
+        </div>
+        <div class="svc-intro-card" onclick="scrollTo('#claims')">
+          <div class="svc-intro-icon" style="background:var(--gold-l)"><i data-lucide="file-text" style="color:var(--gold)"></i></div>
+          <div class="svc-intro-name">Claim Assistance</div>
+          <div class="svc-intro-desc">End-to-end claim filing, document prep, surveyor coordination &amp; settlement follow-up.</div>
+        </div>
+        <div class="svc-intro-card">
+          <div class="svc-intro-icon" style="background:var(--teal-l)"><i data-lucide="bell" style="color:var(--teal)"></i></div>
+          <div class="svc-intro-name">Renewal Reminders</div>
+          <div class="svc-intro-desc">Alerts 30, 15 &amp; 7 days before expiry. One-click renewal, NCB tracking, digital vault storage.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE TYPES -->
+  <section class="section" id="coverage">
+    <div class="wrap">
+      <div class="eyebrow"><i data-lucide="shield"></i>Policy Types</div>
+      <h2 class="sec-title">Third-Party vs <em>Comprehensive</em></h2>
+      <p class="sec-sub">Nepal law requires at minimum third-party insurance. Here is what each policy covers — and what it does not.</p>
+      <div class="coverage-grid">
+        <div class="cov-card">
+          <div class="cov-head">
+            <div class="cov-badge" style="background:var(--blue-l);color:var(--blue)"><i data-lucide="users" style="width:11px;height:11px"></i>Third-Party</div>
+            <div class="cov-title">Third-Party Insurance</div>
+            <span class="cov-law" style="background:var(--red-l);color:var(--red)">Mandatory by law</span>
+            <p class="cov-desc">Covers damage or injury you cause to others. Quick to arrange, regulated premium rates set by Beema Samiti, instant digital certificate.</p>
+          </div>
+          <div class="cov-body">
+            <div style="font-size:11.5px;font-weight:700;color:var(--ink5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Covers</div>
+            <div class="cov-list">
+              <div class="cov-row"><i data-lucide="check" style="color:var(--green)"></i>Legal liability for third-party death or injury</div>
+              <div class="cov-row"><i data-lucide="check" style="color:var(--green)"></i>Third-party property damage</div>
+              <div class="cov-row"><i data-lucide="check" style="color:var(--green)"></i>Legal costs and court fees if applicable</div>
+            </div>
+            <div class="cov-divider"></div>
+            <div style="font-size:11.5px;font-weight:700;color:var(--ink5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Does NOT cover</div>
+            <div class="cov-list">
+              <div class="cov-row no"><i data-lucide="x"></i>Your own vehicle damage</div>
+              <div class="cov-row no"><i data-lucide="x"></i>Your own injuries</div>
+              <div class="cov-row no"><i data-lucide="x"></i>Theft of your vehicle</div>
+              <div class="cov-row no"><i data-lucide="x"></i>Fire or natural calamity damage to your vehicle</div>
+            </div>
+          </div>
+        </div>
+        <div class="cov-card recommended">
+          <div class="cov-head">
+            <div class="cov-badge" style="background:var(--green-l);color:var(--green)"><i data-lucide="shield-check" style="width:11px;height:11px"></i>Comprehensive</div>
+            <div class="cov-title">Comprehensive Insurance</div>
+            <span class="cov-law" style="background:var(--green-l);color:var(--green)">Recommended</span>
+            <p class="cov-desc">Everything in third-party, plus full protection for your own vehicle against accidents, theft, fire, and Nepal's natural calamities.</p>
+          </div>
+          <div class="cov-body">
+            <div style="font-size:11.5px;font-weight:700;color:var(--ink5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Everything in Third-Party, plus</div>
+            <div class="cov-list">
+              <div class="cov-row"><i data-lucide="check" style="color:var(--green)"></i>Own vehicle damage — accidents, collisions</div>
+              <div class="cov-row"><i data-lucide="check" style="color:var(--green)"></i>Theft and burglary</div>
+              <div class="cov-row"><i data-lucide="check" style="color:var(--green)"></i>Fire damage</div>
+              <div class="cov-row"><i data-lucide="check" style="color:var(--green)"></i>Natural calamities — floods, earthquakes, landslides</div>
+              <div class="cov-row"><i data-lucide="check" style="color:var(--green)"></i>EV battery &amp; charging equipment damage</div>
+            </div>
+            <div class="cov-divider"></div>
+            <div style="font-size:11.5px;font-weight:700;color:var(--ink5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Does NOT cover</div>
+            <div class="cov-list">
+              <div class="cov-row no"><i data-lucide="x"></i>Wear &amp; tear or mechanical breakdown</div>
+              <div class="cov-row no"><i data-lucide="x"></i>Driving under the influence (DUI)</div>
+              <div class="cov-row no"><i data-lucide="x"></i>Driving outside declared geographical area</div>
+              <div class="cov-row no"><i data-lucide="x"></i>Consequential losses (loss of earnings)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADD-ONS -->
+  <section class="section alt" id="addons">
+    <div class="wrap">
+      <div class="eyebrow"><i data-lucide="plus-circle"></i>Add-On Cover</div>
+      <h2 class="sec-title">Enhance Your <em>Policy</em></h2>
+      <p class="sec-sub">Bolt these on to a comprehensive policy to fill the gaps standard cover misses.</p>
+      <div class="addons-grid">
+        <div class="addon-card"><div class="addon-icon" style="background:var(--green-l)"><i data-lucide="star" style="color:var(--green)"></i></div><div><div class="addon-name">Zero Depreciation</div><div class="addon-desc">Claims settled at full part cost — no depreciation deducted. New parts at current market value.</div><span class="addon-tag" style="background:var(--green-l);color:var(--green)">New vehicles, first 3–5 yrs</span></div></div>
+        <div class="addon-card"><div class="addon-icon" style="background:var(--blue-l)"><i data-lucide="settings-2" style="color:var(--blue)"></i></div><div><div class="addon-name">Engine Protection</div><div class="addon-desc">Covers water ingress, oil leakage, hydrostatic lock &amp; gearbox damage — critical during Nepal's monsoon.</div><span class="addon-tag" style="background:var(--blue-l);color:var(--blue)">Essential in Nepal</span></div></div>
+        <div class="addon-card"><div class="addon-icon" style="background:var(--gold-l)"><i data-lucide="receipt" style="color:var(--gold)"></i></div><div><div class="addon-name">Return to Invoice (RTI)</div><div class="addon-desc">Total loss or theft in year one? Receive the full invoice value — zero depreciation deducted.</div><span class="addon-tag" style="background:var(--gold-l);color:var(--gold)">First year only</span></div></div>
+        <div class="addon-card"><div class="addon-icon" style="background:var(--red-l)"><i data-lucide="phone-call" style="color:var(--red)"></i></div><div><div class="addon-name">Roadside Assistance</div><div class="addon-desc">24/7 towing, jumpstart &amp; emergency help across Nepal — including remote hilly roads.</div><span class="addon-tag" style="background:var(--red-l);color:var(--red)">24/7 Nepal-wide</span></div></div>
+        <div class="addon-card"><div class="addon-icon" style="background:var(--purple-l)"><i data-lucide="user-round" style="color:var(--purple)"></i></div><div><div class="addon-name">Personal Accident Cover</div><div class="addon-desc">Financial protection for the owner in case of death or permanent disability from a vehicle accident.</div><span class="addon-tag" style="background:var(--purple-l);color:var(--purple)">Mandatory for some types</span></div></div>
+        <div class="addon-card"><div class="addon-icon" style="background:var(--teal-l)"><i data-lucide="battery-charging" style="color:var(--teal)"></i></div><div><div class="addon-name">Extended Battery Protection</div><div class="addon-desc">EV-specific. Covers battery damage from fire, water ingress &amp; electrical faults beyond manufacturer warranty.</div><span class="addon-tag" style="background:var(--teal-l);color:var(--teal)">EV owners only</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NCB -->
+  <section class="ncb-section">
+    <div class="wrap">
+      <div class="ncb-inner">
+        <div class="ncb-text">
+          <div class="eyebrow" style="color:rgba(255,255,255,.6)"><i data-lucide="trending-down"></i>No Claim Bonus</div>
+          <h2>Drive Clean,<br><em>Pay Less</em></h2>
+          <p>No Claim Bonus (NCB) rewards you with a discount on next year's own-damage premium for every claim-free year. It belongs to <em>you</em> — not the vehicle — so it follows you to a new car.</p>
+          <div style="margin-top:24px;padding:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--r12)">
+            <div style="font-size:11.5px;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Smart tip</div>
+            <div style="font-size:13.5px;color:rgba(255,255,255,.75);line-height:1.65">For minor damages, consider paying out-of-pocket. One claim resets your NCB to 0%. Compare your repair cost against the discount you stand to lose.</div>
+          </div>
+        </div>
+        <div class="ncb-rules">
+          <div class="ncb-rule"><div class="ncb-rule-icon" style="background:rgba(76,175,106,.2)"><i data-lucide="trending-up" style="color:var(--green-m)"></i></div><div><div class="ncb-rule-title">Accumulates year after year</div><div class="ncb-rule-desc">The longer you stay claim-free, the higher your discount becomes at each renewal.</div></div></div>
+          <div class="ncb-rule"><div class="ncb-rule-icon" style="background:rgba(255,255,255,.1)"><i data-lucide="arrow-right-left" style="color:rgba(255,255,255,.7)"></i></div><div><div class="ncb-rule-title">Fully transferable to a new car</div><div class="ncb-rule-desc">NCB belongs to you, not the vehicle. Change your car and your NCB moves with you.</div></div></div>
+          <div class="ncb-rule"><div class="ncb-rule-icon" style="background:rgba(200,39,30,.2)"><i data-lucide="rotate-ccw" style="color:#ff6b6b"></i></div><div><div class="ncb-rule-title">One claim resets to zero</div><div class="ncb-rule-desc">Any claim — however small — wipes your NCB completely. You restart from 0%.</div></div></div>
+          <div class="ncb-rule"><div class="ncb-rule-icon" style="background:rgba(255,255,255,.1)"><i data-lucide="alert-circle" style="color:rgba(255,255,255,.7)"></i></div><div><div class="ncb-rule-title">Own damage premium only</div><div class="ncb-rule-desc">NCB does not apply to the third-party portion — only on the own-damage component.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXCLUSIONS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow"><i data-lucide="alert-triangle"></i>Exclusions</div>
+      <h2 class="sec-title">What is <em>Not Covered</em></h2>
+      <p class="sec-sub">Knowing these before you drive prevents surprises at claim time.</p>
+      <div class="excl-grid">
+        <div class="excl-item"><i data-lucide="beer"></i><div><div class="excl-title">Drunk Driving</div><div class="excl-desc">Any accident under influence of alcohol or drugs — claim rejected outright.</div></div></div>
+        <div class="excl-item"><i data-lucide="id-card"></i><div><div class="excl-title">No Valid Licence</div><div class="excl-desc">Driver holds no valid or expired licence at time of accident — full rejection.</div></div></div>
+        <div class="excl-item"><i data-lucide="wrench"></i><div><div class="excl-title">Mechanical Breakdown</div><div class="excl-desc">Faults from internal mechanical or electrical failure — not accident related.</div></div></div>
+        <div class="excl-item"><i data-lucide="clock"></i><div><div class="excl-title">Normal Wear &amp; Tear</div><div class="excl-desc">Gradual deterioration of parts over time is not a covered peril.</div></div></div>
+        <div class="excl-item"><i data-lucide="link-2-off"></i><div><div class="excl-title">Consequential Damage</div><div class="excl-desc">Losses that occur as an indirect result of the main incident.</div></div></div>
+        <div class="excl-item"><i data-lucide="car-taxi-front"></i><div><div class="excl-title">Commercial Use</div><div class="excl-desc">Private vehicles used for hire or delivery (taxi, Pathao, courier) are not covered.</div></div></div>
+        <div class="excl-item"><i data-lucide="map-pin-off"></i><div><div class="excl-title">Outside Declared Area</div><div class="excl-desc">Using the vehicle outside the permitted geographical area may void your claim.</div></div></div>
+        <div class="excl-item"><i data-lucide="scissors"></i><div><div class="excl-title">Depreciation on Parts</div><div class="excl-desc">Deducted on replaced parts unless Zero Depreciation add-on is active.</div></div></div>
+        <div class="excl-item"><i data-lucide="shield-off"></i><div><div class="excl-title">War / Terrorism</div><div class="excl-desc">Damages caused by war, nuclear events, or terrorist activities.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EV INSURANCE -->
+  <section class="section alt" id="ev">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--teal)"><i data-lucide="zap"></i>Electric Vehicles</div>
+      <h2 class="sec-title">EV Insurance is <em>Different</em></h2>
+      <p class="sec-sub">Standard policies may not cover EV-specific risks. Here is what you need before insuring an electric car in Nepal.</p>
+      <div class="notice teal" style="margin-bottom:28px">
+        <i data-lucide="info"></i>
+        <div><div class="notice-title">EV components need specialist cover</div><div class="notice-text">Battery, charging equipment &amp; electrical systems require dedicated coverage. Battery depreciation is also calculated differently from regular vehicles.</div></div>
+      </div>
+      <div class="ev-grid">
+        <div class="ev-card"><div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="battery-charging"></i></div><div class="ev-card-title">Battery Coverage — the critical difference</div></div><div class="ev-card-body">EV batteries are expensive and depreciate differently. Covered perils include:</div><div class="ev-card-list"><div class="ev-card-row"><i data-lucide="check"></i>Fire and explosion</div><div class="ev-card-row"><i data-lucide="check"></i>Accident damage</div><div class="ev-card-row"><i data-lucide="check"></i>Theft of battery</div><div class="ev-card-row"><i data-lucide="check"></i>Short circuit damage</div><div class="ev-card-row"><i data-lucide="check"></i>Water ingress — manufacturing defect</div><div class="ev-card-row"><i data-lucide="x" style="color:var(--red)"></i>Normal aging or capacity loss — not covered</div></div></div>
+        <div class="ev-card"><div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="plug-zap"></i></div><div class="ev-card-title">Charging Equipment Cover</div></div><div class="ev-card-body">Your home charger (wallbox) and cables also need protection:</div><div class="ev-card-list"><div class="ev-card-row"><i data-lucide="check"></i>Electrical surge damage to wallbox</div><div class="ev-card-row"><i data-lucide="check"></i>Fire during charging session</div><div class="ev-card-row"><i data-lucide="check"></i>Theft and vandalism</div><div class="ev-card-row"><i data-lucide="check"></i>Charging cable theft — Type-2, CCS2</div></div></div>
+        <div class="ev-card"><div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="truck"></i></div><div class="ev-card-title">EV Roadside Assistance</div></div><div class="ev-card-body">Standard towing can damage EVs. Our EV-specific assistance:</div><div class="ev-card-list"><div class="ev-card-row"><i data-lucide="check"></i>Battery depletion — mobile charging on site</div><div class="ev-card-row"><i data-lucide="check"></i>Towing to nearest EV charging station</div><div class="ev-card-row"><i data-lucide="check"></i>Flatbed tow only — EVs must NOT be towed on wheels</div></div></div>
+        <div class="ev-card"><div class="ev-card-head"><div class="ev-card-icon"><i data-lucide="star"></i></div><div class="ev-card-title">Recommended Cover for EV Owners</div></div><div class="ev-card-body">Must-have combination for complete EV protection:</div><div class="ev-card-list"><div class="ev-card-row"><i data-lucide="check"></i>Comprehensive insurance — third-party alone is insufficient</div><div class="ev-card-row"><i data-lucide="check"></i>Battery protection add-on</div><div class="ev-card-row"><i data-lucide="check"></i>Zero depreciation (vehicles under 5 years)</div><div class="ev-card-row"><i data-lucide="check"></i>EV roadside assistance</div><div class="ev-card-row"><i data-lucide="check"></i>Return to Invoice for first year</div></div></div>
+      </div>
+      <div class="notice green" style="margin-top:16px">
+        <i data-lucide="trending-down"></i>
+        <div><div class="notice-title">EV premiums are generally lower than equivalent ICE vehicles</div><div class="notice-text">Lower fire risk, fewer moving parts, and government EV incentives in Nepal make comprehensive EV insurance more affordable than most expect.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLAIM PROCESS -->
+  <section class="section" id="claims">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr;gap:40px;align-items:start">
+        <div>
+          <div class="eyebrow"><i data-lucide="file-text"></i>Claim Assistance</div>
+          <h2 class="sec-title">We Handle the <em>Claim</em></h2>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr;gap:40px" id="claim-layout">
+          <div>
+            <p style="font-size:14px;color:var(--ink4);line-height:1.7;margin-bottom:24px">Claim processes in Nepal can be lengthy and require specific documentation. We manage everything from first notice to final settlement.</p>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0"></i>FIR filing guidance</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0"></i>Document preparation — photos, estimates, invoices</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0"></i>Surveyor coordination and inspection scheduling</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0"></i>Settlement negotiation for fair payouts</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0"></i>Network garage access for cashless repairs</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0"></i>Real-time claim status tracking</div>
+            </div>
+            <div style="margin-top:20px;padding:16px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r12)">
+              <div style="font-size:11.5px;font-weight:700;color:var(--ink5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Typical settlement timelines</div>
+              <div style="display:flex;flex-direction:column;gap:7px">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--ink4)">Minor damage</span><span style="font-weight:700;color:var(--green)">10–15 days</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--ink4)">Major damage</span><span style="font-weight:700;color:var(--green)">15–25 days</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--ink4)">Total loss</span><span style="font-weight:700;color:var(--gold)">25–40 days</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--ink4)">Theft (after police investigation)</span><span style="font-weight:700;color:var(--red)">60–90 days</span></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:800;color:var(--ink2);margin-bottom:20px;text-transform:uppercase;letter-spacing:.5px">How a claim works</div>
+            <div class="claim-steps">
+              <div class="claim-step"><div class="claim-step-left"><div class="claim-step-num">1</div><div class="claim-step-line"></div></div><div class="claim-step-content"><div class="claim-step-title">Incident Reporting</div><div class="claim-step-desc">Notify us immediately after the accident or loss event. Do not delay — timely notification is critical.</div></div></div>
+              <div class="claim-step"><div class="claim-step-left"><div class="claim-step-num">2</div><div class="claim-step-line"></div></div><div class="claim-step-content"><div class="claim-step-title">Document Collection</div><div class="claim-step-desc">We guide you on FIR, accident photographs, repair estimates, and invoices — everything required.</div></div></div>
+              <div class="claim-step"><div class="claim-step-left"><div class="claim-step-num">3</div><div class="claim-step-line"></div></div><div class="claim-step-content"><div class="claim-step-title">Claim Filing</div><div class="claim-step-desc">We file the claim with your insurer — handling all paperwork and submissions.</div></div></div>
+              <div class="claim-step"><div class="claim-step-left"><div class="claim-step-num">4</div><div class="claim-step-line"></div></div><div class="claim-step-content"><div class="claim-step-title">Surveyor Coordination</div><div class="claim-step-desc">We schedule and coordinate the vehicle inspection with the assigned surveyor.</div></div></div>
+              <div class="claim-step"><div class="claim-step-left"><div class="claim-step-num">5</div><div class="claim-step-line"></div></div><div class="claim-step-content"><div class="claim-step-title">Settlement Follow-up</div><div class="claim-step-desc">We negotiate and follow up with the insurer until your settlement is completed.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURERS -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="eyebrow"><i data-lucide="building-2"></i>Our Network</div>
+      <h2 class="sec-title">Insurers We <em>Facilitate</em></h2>
+      <p class="sec-sub" style="margin-bottom:28px">We work with NRB-regulated insurance companies across Nepal to find the best policy for your vehicle and budget.</p>
+      <div class="insurers-row">
+        <div class="insurer-pill">Nepal Insurance Company</div>
+        <div class="insurer-pill">Rastriya Beema Sansthan</div>
+        <div class="insurer-pill">NLG Insurance</div>
+        <div class="insurer-pill">Shikhar Insurance</div>
+        <div class="insurer-pill">Oriental Insurance</div>
+        <div class="insurer-pill">Everest Insurance</div>
+        <div class="insurer-pill">Premier Insurance</div>
+        <div class="insurer-pill">IME General Insurance</div>
+        <div class="insurer-pill" style="color:var(--ink5);font-style:italic">+ more by vehicle type</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE FAQs -->
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow"><i data-lucide="circle-help"></i>Insurance FAQs</div>
+      <h2 class="sec-title">Common Insurance <em>Questions</em></h2>
+      <p class="sec-sub" style="margin-bottom:32px">Straight answers to the questions we get asked most.</p>
+      <div class="faq-cols">
+        <div class="faq-list">
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is car insurance mandatory in Nepal?<i data-lucide="chevron-down"></i></div><div class="faq-a">Yes. Third-party insurance is mandatory under the Motor Vehicles Act. Driving without it means an on-spot fine and possible vehicle impoundment. Comprehensive is optional but strongly recommended.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I drive immediately after buying insurance?<i data-lucide="chevron-down"></i></div><div class="faq-a">Yes. Your policy activates immediately upon payment. You receive a digital certificate via email and SMS right away. Physical certificate delivered within 3–5 days.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What if I miss my renewal date?<i data-lucide="chevron-down"></i></div><div class="faq-a">There is a grace period, but you are legally uninsured during this window. If an accident occurs in the grace period, there is no coverage. We send reminders 30, 15, and 7 days before expiry to help you avoid this.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I lose my NCB if I make a small claim?<i data-lucide="chevron-down"></i></div><div class="faq-a">Yes. Any claim — however small — resets your NCB to 0% for the next year. For minor repairs, consider paying out of pocket and preserving your NCB discount.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does insurance cover Nepal's earthquakes and floods?<i data-lucide="chevron-down"></i></div><div class="faq-a">Yes — for comprehensive policies. Natural calamities including earthquakes, floods, and landslides are covered as standard. Third-party does not cover your own vehicle from any cause.</div></div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What documents are needed to buy insurance?<i data-lucide="chevron-down"></i></div><div class="faq-a">Vehicle Registration Certificate (Bluebook), valid driving licence, previous insurance policy copy (for renewal or NCB transfer), citizenship or passport, and address proof.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I claim if I was at fault in the accident?<i data-lucide="chevron-down"></i></div><div class="faq-a">Yes, with comprehensive insurance. Your own vehicle damage is covered regardless of fault. Standard exclusions still apply — drunk driving, no valid licence, etc.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What happens if my car is stolen?<i data-lucide="chevron-down"></i></div><div class="faq-a">For comprehensive: file an FIR immediately, inform your insurer within 24 hours, submit original keys and RC book. After the 60–90 day investigation, insurer pays the declared IDV minus deductible. Third-party does not cover theft.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I get insurance for a very old car (15+ years)?<i data-lucide="chevron-down"></i></div><div class="faq-a">Comprehensive is difficult for vehicles over 10 years old. Some specialised insurers may offer cover after vehicle inspection. Third-party is always available — mandatory regardless of vehicle age.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I cancel my insurance mid-year?<i data-lucide="chevron-down"></i></div><div class="faq-a">Yes, but: refund = premium paid minus expired period premium minus cancellation charges. Your NCB for that year is also lost. Usually not beneficial unless vehicle is sold or declared total loss.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE CTA (replaced form) -->
+  <section class="cta-section green-bg">
+    <div class="wrap">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h2>Ready to protect<br>your <em>vehicle?</em></h2>
+          <p>Tell us about your vehicle and we'll get back to you with the best insurance options within one business day — third-party, comprehensive, EV cover, and add-ons.</p>
+        </div>
+        <div class="cta-btns">
+          <a href="forms.html" class="btn-cta-white green-txt"><i data-lucide="shield"></i>Get Insurance Quote</a>
+          <a href="forms.html" class="btn-cta-ghost"><i data-lucide="file-text"></i>Request Claim Help</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /insurance-section -->
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  FINANCING DIVIDER + SECTION               -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="segment-divider" id="finance-section">
+  <div class="wrap">
+    <div class="segment-divider-inner">
+      <div>
+        <h2>Vehicle <em>Financing</em> in Nepal</h2>
+        <p>Drive your car home today and pay for it in comfortable monthly installments. We connect you with banks, development banks, finance companies, and hire purchase providers — all NRB-regulated.</p>
+      </div>
+      <div class="segment-pills">
+        <span class="segment-pill"><i data-lucide="percent"></i>From 5.37% p.a.</span>
+        <span class="segment-pill"><i data-lucide="calendar"></i>Up to 10 years</span>
+        <span class="segment-pill"><i data-lucide="zap"></i>EV green loans</span>
+        <span class="segment-pill"><i data-lucide="car"></i>New &amp; used vehicles</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section alt">
+  <div class="wrap">
+    <div class="eyebrow blue"><i data-lucide="info"></i>How Financing Works</div>
+    <h2 class="sec-title">Pay a <em class="blue">little now,</em> drive today</h2>
+    <p class="sec-sub">You pay a portion upfront (down payment), and a bank or financial institution covers the rest. You repay in fixed monthly installments — EMI — over an agreed period.</p>
+    <div class="ev-grid">
+      <div class="ev-card" style="border-color:var(--border)"><div class="ev-card-head"><div class="ev-card-icon" style="background:var(--blue-l)"><i data-lucide="landmark" style="color:var(--blue)"></i></div><div class="ev-card-title">Who Can Apply</div></div><div class="ev-card-body">Both individuals and registered business firms. You generally need a stable income, valid citizenship, and the ability to make the required down payment.</div></div>
+      <div class="ev-card" style="border-color:var(--border)"><div class="ev-card-head"><div class="ev-card-icon" style="background:var(--blue-l)"><i data-lucide="building" style="color:var(--blue)"></i></div><div class="ev-card-title">Loan Providers</div></div><div class="ev-card-body">Class A Commercial Banks, Class B Development Banks, Class C Finance Companies, and NRB-licensed Hire Purchase Companies.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOAN RATE COMPARISON -->
+<section class="section" id="loan-rates">
+  <div class="wrap">
+    <div class="eyebrow blue"><i data-lucide="percent"></i>FY 2082/83 Rates</div>
+    <h2 class="sec-title">Current Loan <em class="blue">Rate Comparison</em></h2>
+    <p class="sec-sub" style="margin-bottom:28px">Rates are indicative for FY 2082/83 and subject to NRB directives. Always confirm directly with your chosen lender.</p>
+    <div class="provider-grid" style="margin-bottom:36px">
+      <div class="provider-card"><div class="p-type">New ICE / Hybrid</div><div class="p-name">Class A Bank</div><div class="p-rate">5.37%</div><div class="p-rate-label">starting rate p.a.</div><div class="p-perks"><div class="p-perk"><i data-lucide="check"></i>Up to 60% LTV</div><div class="p-perk"><i data-lucide="check"></i>Up to 7 years</div><div class="p-perk"><i data-lucide="check"></i>Min 40% down</div></div></div>
+      <div class="provider-card" style="border-color:var(--blue)"><div class="p-type">New Electric Vehicle (BEV)</div><div class="p-name">Class A Bank</div><div class="p-rate" style="color:var(--teal)">5.51%</div><div class="p-rate-label">starting rate p.a.</div><div class="p-perks"><div class="p-perk"><i data-lucide="check"></i>Up to 60% LTV</div><div class="p-perk"><i data-lucide="check"></i>Up to 10 years</div><div class="p-perk"><i data-lucide="check"></i>Green loan subsidy</div></div></div>
+      <div class="provider-card"><div class="p-type">Used Vehicle (ICE / EV)</div><div class="p-name">Class A Bank</div><div class="p-rate" style="color:var(--gold)">8.00%</div><div class="p-rate-label">starting rate p.a.</div><div class="p-perks"><div class="p-perk"><i data-lucide="check"></i>Up to 50% LTV</div><div class="p-perk"><i data-lucide="check"></i>Up to 5 years</div><div class="p-perk"><i data-lucide="check"></i>Vehicle up to 7 yrs old</div></div></div>
+      <div class="provider-card"><div class="p-type">Used Vehicle</div><div class="p-name">Hire Purchase</div><div class="p-rate" style="color:var(--red)">10%+</div><div class="p-rate-label">starting rate p.a.</div><div class="p-perks"><div class="p-perk"><i data-lucide="check"></i>Up to 40–50% LTV</div><div class="p-perk"><i data-lucide="check"></i>Up to 5 years</div><div class="p-perk"><i data-lucide="check"></i>More flexible eligibility</div></div></div>
+    </div>
+    <div class="loan-tabs">
+      <button class="loan-tab active" onclick="switchLoanTab('ice')">ICE &amp; Hybrid — New</button>
+      <button class="loan-tab" onclick="switchLoanTab('ev')">Electric (BEV) — New</button>
+      <button class="loan-tab" onclick="switchLoanTab('used')">Used Vehicles</button>
+    </div>
+    <div class="loan-panel active" id="panel-ice"><div class="table-wrap"><table class="loan-table"><thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B — Development Bank</th><th>Class C — Finance Company</th><th>Hire Purchase</th></tr></thead><tbody><tr><td class="param">Interest Rate</td><td class="highlight">~5.37% – 10.57% p.a.</td><td>~5.06% – 12.54% p.a.</td><td>~6.40% – 15.19% p.a.</td><td>~10% – 16%+ p.a.</td></tr><tr><td class="param">Loan Coverage (LTV)</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 50–60%</td></tr><tr><td class="param">Down Payment</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40–50%</td></tr><tr><td class="param">Max Tenure</td><td class="highlight">Up to 7 years</td><td>Up to 7 years</td><td>Up to 5–6 years</td><td>Up to 5 years</td></tr><tr><td class="param">Vehicle Condition</td><td>Brand New</td><td>Brand New</td><td>Brand New</td><td>Brand New</td></tr><tr><td class="param">Government Subsidy</td><td colspan="4" style="color:var(--ink5);font-style:italic">Not available for ICE / Hybrid vehicles</td></tr></tbody></table></div></div>
+    <div class="loan-panel" id="panel-ev"><div class="notice teal" style="margin-bottom:16px"><i data-lucide="zap"></i><div><div class="notice-title">EV Green Loan &amp; Customs Duty Relief</div><div class="notice-text">Government of Nepal offers green loan incentives and customs duty relief for new BEVs — making EV financing more attractive than ICE vehicle loans.</div></div></div><div class="table-wrap"><table class="loan-table"><thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B — Development Bank</th><th>Class C — Finance Company</th><th>Hire Purchase</th></tr></thead><tbody><tr><td class="param">Interest Rate</td><td class="highlight" style="color:var(--teal)">~5.51% – 9.90% p.a.</td><td>~5.90% – 9.90% p.a.</td><td>~6.40% – 10.40% p.a.</td><td>~10% – 14%+ p.a.</td></tr><tr><td class="param">Loan Coverage (LTV)</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 50–60%</td></tr><tr><td class="param">Down Payment</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40–50%</td></tr><tr><td class="param">Max Tenure</td><td class="highlight" style="color:var(--teal)">Up to 10 years</td><td>Up to 7 years</td><td>Up to 5–6 years</td><td>Up to 5 years</td></tr><tr><td class="param">Government Subsidy</td><td colspan="4" style="color:var(--teal);font-weight:700">✓ Green Loan &amp; Customs Duty Relief available</td></tr></tbody></table></div></div>
+    <div class="loan-panel" id="panel-used"><div class="notice gold" style="margin-bottom:16px"><i data-lucide="alert-triangle"></i><div><div class="notice-title">Used vehicle loans — higher rates, more requirements</div><div class="notice-text">Used vehicles carry higher lender risk due to depreciation and uncertain condition. Class B and C banks do not currently offer used vehicle financing — only Class A and Hire Purchase.</div></div></div><div class="table-wrap"><table class="loan-table"><thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B</th><th>Class C</th><th>Hire Purchase</th></tr></thead><tbody><tr><td class="param">Interest Rate</td><td class="highlight" style="color:var(--gold)">~8% – 13% p.a.</td><td style="color:var(--ink5)">— Not available</td><td style="color:var(--ink5)">— Not available</td><td>~10% – 16%+ p.a.</td></tr><tr><td class="param">Loan Coverage (LTV)</td><td>Up to 50% of assessed value</td><td>—</td><td>—</td><td>Up to 40–50% of assessed value</td></tr><tr><td class="param">Down Payment</td><td>Minimum 50%</td><td>—</td><td>—</td><td>Minimum 50–60%</td></tr><tr><td class="param">Max Tenure</td><td>Up to 5 years</td><td>—</td><td>—</td><td>Up to 5 years</td></tr><tr><td class="param">Max Vehicle Age</td><td>ICE/HEV up to 7 yrs; EV up to 7–8 yrs</td><td>—</td><td>—</td><td>Up to 7–8 yrs (T&amp;C apply)</td></tr><tr><td class="param">Extra Requirements</td><td>Mandatory valuation report; Battery SoH for used EVs; Comprehensive insurance mandatory</td><td>—</td><td>—</td><td>Same; Battery SoH for used EVs mandatory</td></tr><tr><td class="param">Documents</td><td colspan="4" style="font-size:12px;color:var(--ink4)">Citizenship, Income Proof, Bluebook, Buyer-Seller Agreement, PAN (firm), Financial Statements (firm)</td></tr></tbody></table></div></div>
+    <div class="notice blue" style="margin-top:20px;margin-bottom:0"><i data-lucide="info"></i><div><div class="notice-title">Rates are indicative</div><div class="notice-text">Loan rates, terms, and eligibility are governed by Nepal Rastra Bank (NRB) regulations and may change periodically. Always verify the latest terms directly with your preferred financial institution before deciding.</div></div></div>
+  </div>
+</section>
+
+<!-- FINANCING FAQs -->
+<section class="section alt">
+  <div class="wrap">
+    <div class="eyebrow blue"><i data-lucide="circle-help"></i>Financing FAQs</div>
+    <h2 class="sec-title">Common Financing <em class="blue">Questions</em></h2>
+    <p class="sec-sub" style="margin-bottom:32px">Everything you need to know before applying for a vehicle loan in Nepal.</p>
+    <div class="faq-cols">
+      <div class="faq-list">
+        <div class="faq-item fin"><div class="faq-q" onclick="toggleFaq(this)">How much loan can I get for a new vehicle?<i data-lucide="chevron-down"></i></div><div class="faq-a">As per current NRB directives, lenders can finance up to 60% of the vehicle's value. You need to arrange at least 40% as a down payment for new vehicles.</div></div>
+        <div class="faq-item fin"><div class="faq-q" onclick="toggleFaq(this)">Do EVs get better loan terms?<i data-lucide="chevron-down"></i></div><div class="faq-a">Yes. EVs attract lower interest rates due to the government's green loan incentives and customs duty relief. Class A banks offer EV loans up to 10 years — longer than the 7-year maximum for ICE vehicles.</div></div>
+        <div class="faq-item fin"><div class="faq-q" onclick="toggleFaq(this)">What is the difference between fixed and variable rates?<i data-lucide="chevron-down"></i></div><div class="faq-a">A fixed rate stays the same throughout your loan tenure — your EMI never changes. A variable rate fluctuates based on the lender's base rate, meaning your EMI can go up or down over time.</div></div>
+        <div class="faq-item fin"><div class="faq-q" onclick="toggleFaq(this)">What is Hire Purchase and how is it different from a bank loan?<i data-lucide="chevron-down"></i></div><div class="faq-a">In a Hire Purchase arrangement, the lender technically owns the vehicle while you are making payments. Full ownership transfers to you on the final installment. It is offered by NRB-licensed companies rather than commercial banks, and is one of the primary options for used vehicle financing.</div></div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item fin"><div class="faq-q" onclick="toggleFaq(this)">Can I get a loan for a used vehicle?<i data-lucide="chevron-down"></i></div><div class="faq-a">Yes, but options are more limited. Used vehicle financing is primarily offered by Class A Commercial Banks and NRB-licensed Hire Purchase Companies. Class B and C banks do not currently offer used vehicle loans.</div></div>
+        <div class="faq-item fin"><div class="faq-q" onclick="toggleFaq(this)">Is a vehicle valuation required for used vehicle loans?<i data-lucide="chevron-down"></i></div><div class="faq-a">Yes. A mandatory valuation report is required before loan disbursement. For used EVs, a Battery State of Health (SoH) assessment is also required to assess battery condition and remaining capacity.</div></div>
+        <div class="faq-item fin"><div class="faq-q" onclick="toggleFaq(this)">Is bluebook transfer mandatory?<i data-lucide="chevron-down"></i></div><div class="faq-a">Absolutely. Bluebook transfer to the buyer's name is mandatory before any loan is disbursed for a used vehicle. Lenders will not proceed without this.</div></div>
+        <div class="faq-item fin"><div class="faq-q" onclick="toggleFaq(this)">Can loan terms change after I apply?<i data-lucide="chevron-down"></i></div><div class="faq-a">Yes. All rates and terms are subject to revision based on Nepal Rastra Bank (NRB) directives and government policies. Always confirm the latest terms directly with your chosen institution before finalising.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING CTA (replaced form) -->
+<section class="cta-section blue-bg">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Ready to drive<br>on <em class="blue">finance?</em></h2>
+        <p>Tell us your vehicle and requirements and our team will connect you with the right NRB-regulated lender — new, used, ICE, EV, or hybrid.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="forms.html#finance" class="btn-cta-white blue-txt"><i data-lucide="calculator"></i>Apply for Finance</a>
+        <a href="forms.html#finance" class="btn-cta-ghost"><i data-lucide="percent"></i>Compare Loan Rates</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/components/av-footer.js"></script>
+
+<script>
+  lucide.createIcons();
+
+  function scrollTo(id) {
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function switchLoanTab(type) {
+    document.querySelectorAll('.loan-tab').forEach((t, i) => {
+      const types = ['ice','ev','used'];
+      t.classList.toggle('active', types[i] === type);
+    });
+    document.querySelectorAll('.loan-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + type).classList.add('active');
+  }
+
+  // Sticky tab highlight on scroll
+  const sections = { '#insurance-section':0, '#coverage':1, '#ev':2, '#finance-section':3, '#loan-rates':4 };
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  window.addEventListener('scroll', () => {
+    let active = 0;
+    Object.entries(sections).forEach(([id, idx]) => {
+      const el = document.querySelector(id);
+      if (el && window.scrollY >= el.offsetTop - 100) active = idx;
+    });
+    tabBtns.forEach((b, i) => {
+      b.classList.toggle('active', i === active && active < 3);
+      b.classList.toggle('active-finance', i === active && active >= 3);
+    });
+  });
+
+  // Two-column claim layout on desktop
+  const cl = document.getElementById('claim-layout');
+  if (window.innerWidth >= 768) cl.style.gridTemplateColumns = '1fr 1fr';
+  window.addEventListener('resize', () => {
+    cl.style.gridTemplateColumns = window.innerWidth >= 768 ? '1fr 1fr' : '1fr';
+  });
+</script>
+</body>
+</html>

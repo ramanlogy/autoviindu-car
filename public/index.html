@@ -1,0 +1,2257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoViindu — Find Your Perfect Car in Nepal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>/* ══ TOKENS ══ */
+:root {
+  --g0:#0a1a0d; --g1:#0f2414; --g2:#143018; --g3:#1a6b2a; --g4:#22883a; --g5:#2ea84a;
+  --g-l:#e8f5ec; --g-ll:#f4fbf6; --g-lll:#f9fdfb;
+  --gold:#c49a1e; --gold-l:#fdf7e4; --gold-t:#d4aa2e;
+  --red:#d63031; --red-l:#fff0f0;
+  --blue:#1e4db8; --blue-l:#eef2fd;
+  --teal:#0e8577; --teal-l:#e5f5f3;
+  --ink:#07100a; --ink2:#1a2b1f; --ink3:#3d5445; --ink4:#7a9483; --ink5:#b8cdbf;
+  --white:#fff; --bg:#f6faf7; --bg2:#eff6f2; --bg3:#e4eee8;
+  --border:#d6e6db; --border2:#c4daca;
+  --r4:4px; --r8:8px; --r12:12px; --r16:16px; --r20:20px; --r24:24px; --r32:32px; --pill:999px;
+  --nav:64px;
+  --sh1:0 1px 4px rgba(0,0,0,.06); --sh2:0 4px 16px rgba(0,0,0,.08); --sh3:0 12px 40px rgba(0,0,0,.12); --sh4:0 24px 64px rgba(0,0,0,.16);
+  --ease:.22s cubic-bezier(.4,0,.2,1); --spring:.4s cubic-bezier(.34,1.56,.64,1);
+  --font-d:'Clash Display',sans-serif; --font-b:'Cabinet Grotesk',sans-serif; --font-i:'Instrument Serif',serif;
+}
+:root {
+  --t-xs:  11px;   /* badges, captions, fine print */
+  --t-sm:  13px;   /* secondary UI, labels */
+  --t-md:  15px;   /* body, card text */
+  --t-lg:  18px;   /* card titles, section subs */
+  --t-xl:  24px;   /* section headings */
+  --t-2xl: 36px;   /* hero, page headings */
+  --lh-ui: 1.5;
+  --lh-body: 1.7;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-b);color:var(--ink);background:var(--bg);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:var(--font-b);border:none;background:none;outline:none}
+img{display:block;max-width:100%}
+input,select{font-family:var(--font-b)}
+::selection{background:rgba(26,107,42,.15)}
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:99px}
+
+/* ══ LAYOUT ══ */
+.wrap{max-width:1260px;margin:0 auto;padding:0 20px}
+@media(min-width:768px){.wrap{padding:0 32px}}
+@media(min-width:1280px){.wrap{padding:0 24px}}
+
+/* ══ TOPBAR ══ */
+.topbar{background:var(--g0);padding:7px 0;display:none}
+@media(min-width:768px){.topbar{display:block}}
+.topbar-in{display:flex;align-items:center;justify-content:space-between}
+.topbar-left,.topbar-right{display:flex;align-items:center;gap:18px}
+.topbar-item{font-size:11.5px;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:5px;transition:color var(--ease);cursor:pointer}
+.topbar-item:hover{color:rgba(255,255,255,.7)}
+.topbar-sep{width:1px;height:10px;background:rgba(255,255,255,.08)}
+
+/* ══ HEADER ══ */
+.site-header{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--sh1);transition:box-shadow var(--ease)}
+.site-header.scrolled{box-shadow:var(--sh2)}
+.header-in{display:flex;align-items:center;height:var(--nav);gap:10px}
+.logo{display:flex;align-items:center;gap:2px;cursor:pointer;flex-shrink:0}
+.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--g3),var(--g4));border-radius:var(--r10);display:flex;align-items:center;justify-content:center}
+.logo-mark svg{color:#fff}
+.logo-text{font-family:var(--font-d);font-size:20px;font-weight:700;color:var(--ink)}
+.logo-text span{color:var(--g3)}
+.header-search{flex:1;max-width:420px;position:relative;display:none}
+@media(min-width:960px){.header-search{display:block}}
+.hs-input{width:100%;height:40px;padding:0 40px 0 40px;border:1.5px solid var(--border);border-radius:var(--pill);font-size:13.5px;color:var(--ink);background:var(--bg);outline:none;transition:all var(--ease)}
+.hs-input:focus{border-color:var(--g3);background:var(--white);box-shadow:0 0 0 3px rgba(26,107,42,.08)}
+.hs-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--ink4);pointer-events:none}
+.hs-kbd{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:var(--bg2);border:1px solid var(--border);border-radius:4px;font-size:9px;padding:2px 5px;color:var(--ink4);font-family:var(--font-b);font-weight:700}
+.header-nav{display:none;align-items:center;gap:2px;margin-left:auto;flex-shrink:0}
+@media(min-width:960px){.header-nav{display:flex}}
+.hn-link{padding:8px 12px;border-radius:var(--r8);font-size:13.5px;font-weight:600;color:var(--ink3);cursor:pointer;transition:all var(--ease);white-space:nowrap;display:flex;align-items:center;gap:4px}
+.hn-link:hover,.hn-link.active{color:var(--g3);background:var(--g-ll)}
+.header-ctas{display:none;align-items:center;gap:8px;flex-shrink:0}
+@media(min-width:960px){.header-ctas{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 20px;border-radius:var(--r10);font-size:13.5px;font-weight:700;transition:all var(--ease);cursor:pointer;white-space:nowrap;font-family:var(--font-b)}
+.btn-primary{background:var(--g3);color:#fff;box-shadow:0 3px 12px rgba(26,107,42,.3)}
+.btn-primary:hover{background:var(--g4);transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,107,42,.38)}
+.btn-ghost{background:var(--bg2);color:var(--ink3);border:1.5px solid var(--border)}
+.btn-ghost:hover{border-color:var(--g3);color:var(--g3);background:var(--g-ll)}
+.btn-sell{padding:8px 14px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r8);font-size:13px;font-weight:700;color:var(--ink2);cursor:pointer;transition:all var(--ease)}
+.btn-sell:hover{border-color:var(--g3);color:var(--g3);background:var(--g-ll)}
+.btn-book{padding:8px 16px;background:var(--g3);color:#fff;border-radius:var(--r8);font-size:13px;font-weight:700;box-shadow:0 2px 8px rgba(26,107,42,.25);cursor:pointer;transition:all var(--ease)}
+.btn-book:hover{background:var(--g4)}
+.mob-icons{display:flex;align-items:center;gap:6px;margin-left:auto}
+@media(min-width:960px){.mob-icons{display:none}}
+.icon-btn{width:38px;height:38px;border:1.5px solid var(--border);border-radius:var(--r8);background:var(--bg);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink3);transition:all var(--ease)}
+.icon-btn:hover{border-color:var(--g3);color:var(--g3);background:var(--g-ll)}
+.burger{display:flex;flex-direction:column;gap:5px;width:38px;height:38px;padding:10px 9px;border:1.5px solid var(--border);border-radius:var(--r8);background:var(--bg);cursor:pointer}
+.burger-line{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:all .28s}
+.burger.open .burger-line:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open .burger-line:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open .burger-line:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:960px){.burger{display:none}}
+
+/* search dropdown */
+.search-dd{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r16);box-shadow:var(--sh3);display:none;z-index:800;overflow:hidden}
+.search-dd.open{display:block;animation:fadeIn .15s ease}
+.sdd-hd{padding:10px 14px 6px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--ink4);border-bottom:1px solid var(--bg2)}
+.sdd-chip-row{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px}
+.sdd-chip{padding:5px 11px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--pill);font-size:12px;font-weight:600;color:var(--ink3);cursor:pointer;transition:all var(--ease)}
+.sdd-chip:hover{border-color:var(--g3);color:var(--g3);background:var(--g-ll)}
+.sdd-item{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--bg2);transition:background var(--ease)}
+.sdd-item:hover{background:var(--bg)}
+.sdd-item:last-child{border-bottom:none}
+.sdd-img{width:56px;height:36px;border-radius:var(--r8);object-fit:cover;background:var(--bg2);flex-shrink:0}
+.sdd-name{font-size:13.5px;font-weight:700;color:var(--ink)}
+.sdd-meta{font-size:11.5px;color:var(--ink4);margin-top:1px}
+.sdd-price{font-size:12.5px;font-weight:800;color:var(--g3);margin-left:auto;flex-shrink:0}
+
+/* ══ HERO CAROUSEL ══ */
+.hero{position:relative;overflow:hidden;background:var(--g0)}
+.hero-slides{display:flex;transition:transform 1s cubic-bezier(.77,0,.175,1)}
+.hero-slide{min-width:100%;position:relative;height:520px;overflow:hidden;display:flex;align-items:center;justify-content:flex-start}
+@media(min-width:768px){.hero-slide{height:580px}}
+@media(min-width:1100px){.hero-slide{height:640px}}
+.slide-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.slide-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,15,8,.92) 0%,rgba(5,15,8,.65) 50%,rgba(5,15,8,.2) 100%)}
+.slide-content{position:relative;z-index:2;padding:0 24px;text-align:left;margin-left:0;margin-right:auto;width:100%}
+@media(min-width:768px){.slide-content{padding:0 48px;width:100%}}
+@media(min-width:1100px){.slide-content{padding:0 64px;max-width:52%;width:52%}}
+.slide-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(26,107,42,.2);border:1px solid rgba(26,107,42,.4);border-radius:var(--pill);padding:5px 12px;font-size:11px;font-weight:700;color:#4dd870;margin-bottom:14px;text-transform:uppercase;letter-spacing:.6px}
+.slide-badge .dot{width:6px;height:6px;border-radius:50%;background:#4dd870;animation:blink 1.8s infinite}
+.slide-title{font-family:var(--font-d);font-size:clamp(32px,5vw,60px);font-weight:700;color:#fff;line-height:1.05;margin-bottom:10px;text-align:left}
+.slide-title em{color:var(--gold-t);font-style:normal;font-family:var(--font-i)}
+.slide-sub{font-size:clamp(13px,2vw,15px);color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:24px;max-width:440px;text-align:left}
+.slide-offer{display:inline-flex;align-items:center;gap:8px;background:rgba(196,154,30,.15);border:1px solid rgba(196,154,30,.35);border-radius:var(--r10);padding:10px 16px;margin-bottom:24px}
+.slide-offer-icon{font-size:20px}
+.slide-offer-text .label{font-size:10px;font-weight:700;color:var(--gold-t);text-transform:uppercase;letter-spacing:.5px}
+.slide-offer-text .val{font-size:14px;font-weight:800;color:#fff}
+.slide-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-start}
+.slide-action-primary{display:inline-flex;align-items:center;gap:7px;padding:12px 24px;background:var(--g3);color:#fff;border-radius:var(--r12);font-size:14px;font-weight:700;cursor:pointer;transition:all var(--ease);box-shadow:0 4px 16px rgba(26,107,42,.4)}
+.slide-action-primary:hover{background:var(--g4);transform:translateY(-2px)}
+.slide-action-ghost{display:inline-flex;align-items:center;gap:7px;padding:12px 24px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.85);border:1.5px solid rgba(255,255,255,.15);border-radius:var(--r12);font-size:14px;font-weight:600;cursor:pointer;transition:all var(--ease)}
+.slide-action-ghost:hover{background:rgba(255,255,255,.14)}
+.hero-prev,.hero-next{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;transition:all var(--ease);z-index:10}
+.hero-prev{left:16px}
+.hero-next{right:16px}
+.hero-prev:hover,.hero-next:hover{background:rgba(255,255,255,.22)}
+.hero-dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:10}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all var(--ease)}
+.hero-dot.active{background:#fff;width:24px;border-radius:var(--pill)}
+.hero-progress{position:absolute;bottom:0;left:0;height:3px;background:var(--g3);transition:width 0s linear;z-index:10}
+/* Add this to your stylesheet: */
+.offer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(196,154,30,.15);
+  border: 1px solid rgba(196,154,30,.35);
+  border-radius: var(--r10);
+  padding: 10px 16px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: #fff;
+}
+.offer-pill strong { color: var(--gold-t); }
+
+/* hero mini cards strip */
+.hero-strip{background:var(--white);border-top:1px solid var(--border);padding:0}
+.strip-scroll{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.strip-scroll::-webkit-scrollbar{display:none}
+.strip-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 20px;min-width:90px;cursor:pointer;border-right:1px solid var(--border);transition:all var(--ease);flex-shrink:0}
+.strip-item:hover{background:var(--g-lll)}
+.strip-item.active{background:var(--g-ll);border-bottom:2.5px solid var(--g3)}
+.strip-icon{width:44px;height:44px;border-radius:var(--r10);display:flex;align-items:center;justify-content:center}
+.strip-label{font-size:11.5px;font-weight:700;color:var(--ink3);white-space:nowrap}
+
+/* ══ SECTIONS ══ */
+.section{padding:52px 0}
+@media(min-width:768px){.section{padding:72px 0}}
+.sec-hd{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+.sec-hd-left{display:flex;flex-direction:column;gap:5px}
+.eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--g3);display:flex;align-items:center;gap:6px}
+.eyebrow::before{content:'';width:16px;height:2px;background:var(--g3);border-radius:2px;display:inline-block}
+.sec-title{font-family:var(--font-d);font-size:clamp(22px,3.5vw,30px);color:var(--ink);font-weight:700;line-height:1.15}
+.sec-sub{font-size:13.5px;color:var(--ink4)}
+.view-all{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--g3);border:1.5px solid rgba(26,107,42,.22);background:var(--g-ll);border-radius:var(--pill);padding:7px 15px;cursor:pointer;transition:all var(--ease);white-space:nowrap;flex-shrink:0}
+.view-all:hover{background:var(--g3);color:#fff;border-color:var(--g3)}
+
+/* ══ SEARCH WIDGET ══ */
+.search-section{background:var(--white);border-bottom:1px solid var(--border)}
+.search-widget{background:var(--white);border:1px solid var(--border);border-radius:var(--r24);box-shadow:var(--sh3);overflow:hidden;margin-top:-44px;position:relative;z-index:20}
+.sw-tabs{display:flex;background:var(--bg2);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.sw-tabs::-webkit-scrollbar{display:none}
+.sw-tab{display:flex;align-items:center;gap:6px;padding:13px 20px;font-size:13.5px;font-weight:700;color:var(--ink4);cursor:pointer;border-bottom:2.5px solid transparent;margin-bottom:-1px;transition:all var(--ease);white-space:nowrap;flex-shrink:0}
+.sw-tab.active{color:var(--g3);border-bottom-color:var(--g3);background:var(--white)}
+.sw-body{padding:20px 22px}
+.sw-grid{display:grid;grid-template-columns:1fr;gap:12px;align-items:end}
+@media(min-width:600px){.sw-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.sw-grid{grid-template-columns:1fr 1fr 1fr auto}}
+.sw-field label{display:block;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink4);margin-bottom:6px}
+.sw-select,.sw-input{width:100%;padding:11px 32px 11px 12px;border:1.5px solid var(--border);border-radius:var(--r10);font-family:var(--font-b);font-size:13.5px;color:var(--ink);background:var(--bg);outline:none;transition:all var(--ease);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237a9483' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center}
+.sw-select:focus,.sw-input:focus{border-color:var(--g3);box-shadow:0 0 0 3px rgba(26,107,42,.07);background:var(--white)}
+.sw-input{background-image:none;padding:11px 12px}
+.sw-btn{padding:11px 28px;background:var(--g3);color:#fff;border-radius:var(--r10);font-size:14px;font-weight:700;cursor:pointer;transition:all var(--ease);box-shadow:0 3px 12px rgba(26,107,42,.3);white-space:nowrap;display:flex;align-items:center;gap:7px;width:100%;justify-content:center}
+@media(min-width:900px){.sw-btn{width:auto}}
+.sw-btn:hover{background:var(--g4);transform:translateY(-1px)}
+.sw-popular{padding:12px 22px 16px;border-top:1px solid var(--bg2);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sw-popular-label{font-size:11px;font-weight:800;color:var(--ink4);text-transform:uppercase;letter-spacing:.5px}
+.sw-pop-tag{padding:4px 12px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--pill);font-size:12px;font-weight:600;color:var(--ink3);cursor:pointer;transition:all var(--ease)}
+.sw-pop-tag:hover{border-color:var(--g3);color:var(--g3);background:var(--g-ll)}
+
+/* ══ BRANDS GRID ══ */
+.brands-section{background:var(--white)}
+.brands-grid{display:flex;flex-wrap:nowrap;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px}
+.brands-grid::-webkit-scrollbar{display:none}
+.brands-grid{scrollbar-width:none;-ms-overflow-style:none}
+.brand-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 12px;border:1.5px solid var(--border);border-radius:var(--r12);cursor:pointer;transition:all var(--ease);background:var(--white);flex:0 0 105px;scroll-snap-align:start}
+.brand-card:hover{border-color:var(--g3);background:var(--g-ll);transform:translateY(-2px);box-shadow:var(--sh2)}
+@media(min-width:640px){.brands-grid{display:grid;grid-template-columns:repeat(8,1fr);overflow-x:visible;flex-wrap:unset}.brand-card{flex:unset}}
+@media(min-width:900px){.brands-grid{grid-template-columns:repeat(10,1fr);gap:12px}}
+@media(min-width:1100px){.brands-grid{grid-template-columns:repeat(13,1fr)}}
+.brand-logo{width:68px;height:68px;border-radius:var(--r8);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:14px;font-weight:700;color:var(--ink2);background:var(--bg2)}
+.brand-logo img{width:64px;height:64px;object-fit:contain;image-rendering:auto}
+.brand-name{font-size:12.5px;font-weight:700;color:var(--ink3);text-align:center;line-height:1.3}
+.brand-count{font-size:11px;color:var(--ink4)}
+
+/* ══ CAR CARDS ══ */
+.cars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:640px){.cars-grid{gap:14px}}
+@media(min-width:900px){.cars-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1100px){.cars-grid{grid-template-columns:repeat(4,1fr)}}
+
+.car-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r16);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:box-shadow .25s cubic-bezier(.4,0,.2,1),transform .25s cubic-bezier(.4,0,.2,1),border-color .25s}
+.car-card:hover{box-shadow:var(--sh3);transform:translateY(-3px);border-color:rgba(26,107,42,.18)}
+.car-card:hover .cc-img img{transform:scale(1.05)}
+
+/* ── Image zone ── */
+.cc-img{position:relative;display:flex;flex-direction:column;background:var(--bg2);flex-shrink:0}
+.cc-img img{width:100%;height:150px;object-fit:contain;transition:transform .45s cubic-bezier(.4,0,.2,1);padding:8px 0;background:var(--bg2)}
+@media(min-width:480px){.cc-img img{height:165px}}
+@media(min-width:768px){.cc-img img{height:185px}}
+
+/* Top bar: badge + name + heart */
+.cc-top-bar{display:flex;align-items:center;gap:6px;padding:9px 10px 7px;background:var(--white);border-bottom:1px solid var(--border)}
+.cc-top-left{display:flex;align-items:center;gap:6px;flex:1;min-width:0}
+.cc-top-name{font-size:12px;font-weight:700;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(min-width:480px){.cc-top-name{font-size:13px}}
+
+/* Badges */
+.cc-badge{flex-shrink:0;font-size:9px;font-weight:800;padding:2px 7px;border-radius:var(--pill);text-transform:uppercase;letter-spacing:.4px}
+.badge-ev{background:#0d8566;color:#fff}
+.badge-hybrid{background:#6b35c7;color:#fff}
+.badge-popular{background:var(--g3);color:#fff}
+.badge-new{background:#e53935;color:#fff}
+.badge-trending{background:var(--gold);color:#fff}
+
+/* Wishlist */
+.cc-wish{flex-shrink:0;width:28px;height:28px;background:var(--bg2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background var(--ease),transform var(--ease)}
+.cc-wish:hover{background:var(--bg3);transform:scale(1.12)}
+.cc-wish.active svg{stroke:#ef4444;fill:#ef4444}
+
+/* ── Body ── */
+.cc-body{padding:11px 12px 13px;flex:1;display:flex;flex-direction:column}
+@media(min-width:480px){.cc-body{padding:12px 14px 14px}}
+
+.cc-name{font-family:var(--font-d);font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:3px}
+@media(min-width:768px){.cc-name{font-size:16px}}
+
+.cc-variant{font-size:11px;color:var(--ink4);margin-bottom:10px}
+@media(min-width:480px){.cc-variant{font-size:11.5px}}
+
+/* Price block */
+.cc-price-block{margin-top:auto;padding-top:9px;border-top:1px solid var(--bg2)}
+.cc-price-line{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.cc-price-line strong{font-family:var(--font-d);font-size:16px;font-weight:700;color:var(--ink)}
+@media(min-width:480px){.cc-price-line strong{font-size:17.5px}}
+.cc-emi{font-size:11px;color:var(--ink4);margin-bottom:10px}
+.cc-emi strong{color:#059669;font-weight:700}
+
+/* Action buttons */
+.cc-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.cc-btn-f{padding:8px 4px;background:var(--g3);color:#fff;border-radius:var(--r8);font-size:12px;font-weight:700;cursor:pointer;transition:background var(--ease);text-align:center;font-family:var(--font-b);border:none}
+.cc-btn-f:hover{background:var(--g4)}
+.cc-btn-o{padding:8px 4px;border:1.5px solid var(--border);color:var(--ink3);background:var(--white);border-radius:var(--r8);font-size:12px;font-weight:600;cursor:pointer;transition:all var(--ease);text-align:center;font-family:var(--font-b);display:flex;align-items:center;justify-content:center;gap:5px}
+.cc-btn-o:hover{border-color:var(--g3);color:var(--g3)}
+.cc-btn-o svg{width:13px;height:13px;flex-shrink:0}
+
+/* ══ BUDGET SECTION ══ */
+.budget-section{background:var(--white)}
+.budget-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:480px){.budget-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:768px){.budget-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1100px){.budget-grid{grid-template-columns:repeat(6,1fr)}}
+.budget-card{position:relative;border-radius:var(--r16);overflow:hidden;cursor:pointer;height:148px;border:none;background:none;padding:0;display:block;width:100%;transition:transform .2s ease,box-shadow .2s ease;text-align:left}
+.budget-card:hover{transform:translateY(-3px);box-shadow:var(--sh3)}
+.budget-card.active{transform:translateY(-4px);box-shadow:var(--sh3)}
+.budget-card.active .budget-sel-ring{opacity:1}
+.budget-card.active .budget-tick{opacity:1;transform:scale(1)}
+.budget-sel-ring{position:absolute;inset:0;border-radius:var(--r16);border:2.5px solid #fff;opacity:0;transition:opacity .18s;z-index:10;pointer-events:none}
+.budget-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .35s ease}
+.budget-card:hover .budget-bg{transform:scale(1.04)}
+.budget-overlay{position:absolute;inset:0}
+.budget-content{position:relative;z-index:1;padding:12px 14px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.budget-pill{display:inline-flex;align-items:center;padding:3px 10px;border-radius:50px;font-size:10px;font-weight:500;letter-spacing:.02em;background:rgba(255,255,255,.2);color:#fff;width:fit-content}
+.budget-info{display:flex;flex-direction:column;gap:2px}
+.budget-label{font-family:var(--font-d);font-size:14px;font-weight:700;color:#fff;line-height:1.2}
+.budget-examples{font-size:10px;color:rgba(255,255,255,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.budget-count{font-size:10px;color:rgba(255,255,255,.5);margin-top:1px}
+.budget-bar-wrap{height:2px;background:rgba(255,255,255,.2);border-radius:99px;overflow:hidden;margin-top:6px}
+.budget-bar{height:100%;border-radius:99px;background:rgba(255,255,255,.65)}
+.budget-tick{position:absolute;top:10px;right:10px;width:22px;height:22px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.6);transition:opacity .18s,transform .18s;z-index:11}
+.budget-tick svg{width:12px;height:12px;display:block}
+.budget-cta-wrap{margin-top:1.25rem}
+.budget-cta-btn{width:100%;padding:14px;border-radius:50px;background:var(--primary,#D85A30);color:#fff;border:none;font-family:var(--font-d);font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.03em;transition:background .18s,transform .15s}
+.budget-cta-btn:hover{filter:brightness(.9);transform:translateY(-1px)}
+.budget-cta-btn:active{transform:scale(.98)}
+.budget-cta-btn.budget-cta-off{background:#f0f0f0;color:#aaa;cursor:default}
+.budget-cta-btn.budget-cta-off:hover{filter:none;transform:none}
+.budget-cta-note{font-size:12px;color:#999;text-align:center;margin-top:8px;min-height:16px}
+
+/* ══ OFFERS SECTION ══ */
+.offers-section{background:linear-gradient(160deg,var(--g0),var(--white))}
+.offers-scroll-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 calc(-1 * var(--wrap-pad,16px));padding:4px var(--wrap-pad,16px) 8px}
+.offers-scroll-wrap::-webkit-scrollbar{display:none}
+.offers-chip-rail{display:flex;gap:8px;width:max-content}
+.offer-chip{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 10px;width:82px;flex-shrink:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:14px;cursor:pointer;transition:background var(--ease);scroll-snap-align:start}
+.offer-chip:hover{background:rgba(255,255,255,.13)}
+.offer-chip-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.offer-chip-lbl{font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);text-align:center;line-height:1.3}
+@media(min-width:640px){.offers-scroll-wrap{overflow-x:visible;margin:0;padding:0}.offers-chip-rail{display:grid;grid-template-columns:repeat(2,1fr);width:auto;gap:10px}.offer-chip{flex-direction:row;width:auto;align-items:center;text-align:left;padding:14px;gap:12px}.offer-chip-icon{width:38px;height:38px}.offer-chip-lbl{font-size:12px;text-align:left}}
+@media(min-width:900px){.offers-chip-rail{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1200px){.offers-chip-rail{grid-template-columns:repeat(5,1fr)}}
+
+/* ══ EV SECTION ══ */
+.ev-section{background:var(--white) }
+.ev-hero{background:linear-gradient(135deg,#040d06,#071209);border-radius:var(--r24);padding:36px 28px;position:relative;overflow:hidden}
+.ev-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 80% 50%,rgba(13,133,102,.15),transparent);pointer-events:none}
+.ev-hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.02) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.ev-hero-in{position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:768px){.ev-hero-in{grid-template-columns:1fr 1fr;align-items:center}}
+.ev-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(13,133,102,.2);border:1px solid rgba(13,133,102,.4);border-radius:var(--pill);padding:5px 12px;font-size:11px;font-weight:700;color:#3dcba5;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
+.ev-title{font-family:var(--font-d);font-size:clamp(26px,4vw,40px);color:#fff;font-weight:700;line-height:1.1;margin-bottom:10px}
+.ev-sub{font-size:13.5px;color:rgba(255,255,255,.4);line-height:1.75;margin-bottom:20px}
+.ev-stats{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.ev-stat .num{font-family:var(--font-d);font-size:24px;color:#fff;font-weight:700}
+.ev-stat .lbl{font-size:11px;color:rgba(255,255,255,.3);margin-top:2px}
+.ev-tags{display:flex;flex-wrap:wrap;gap:6px}
+.ev-tag{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:var(--pill);padding:5px 13px;font-size:12.5px;font-weight:700;color:rgba(255,255,255,.7);cursor:pointer;transition:all var(--ease)}
+.ev-tag:hover{background:rgba(255,255,255,.14)}
+.ev-cards{display:grid;grid-template-columns:1fr;gap:8px}
+@media(min-width:480px){.ev-cards{grid-template-columns:1fr 1fr}}
+.ev-mini{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:var(--r12);padding:14px;cursor:pointer;transition:all var(--ease)}
+.ev-mini:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.ev-mini-img{width:100%;height:80px;object-fit:cover;border-radius:var(--r8);margin-bottom:9px;background:rgba(255,255,255,.05)}
+.ev-mini-name{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
+.ev-mini-price{font-size:12px;color:rgba(255,255,255,.4)}
+.ev-mini-range{font-size:11px;color:#3dcba5;font-weight:700;margin-top:2px}
+
+/* ══ FEATURED COMPARISON ══ */
+.featured-compare{background:var(--white)}
+.compare-promo{background:linear-gradient(135deg,var(--g-ll),var(--white));border:1.5px solid rgba(26,107,42,.18);border-radius:var(--r20);padding:28px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.compare-promo-icon{width:60px;height:60px;background:var(--g3);border-radius:var(--r16);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.compare-promo-text{flex:1;min-width:200px}
+.compare-promo-title{font-family:var(--font-d);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.compare-promo-sub{font-size:13px;color:var(--ink4);line-height:1.6}
+
+/* ══ SERVICES STRIP ══ */
+.services-section{background:var(--bg)}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:640px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.services-grid{grid-template-columns:repeat(4,1fr);gap:12px}}
+.service-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r16);padding:18px;cursor:pointer;transition:all var(--ease)}
+.service-card:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:rgba(26,107,42,.2)}
+.sc-icon{width:44px;height:44px;border-radius:var(--r12);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.sc-name{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.sc-desc{font-size:12px;color:var(--ink4);line-height:1.6}
+.sc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.sc-tag{font-size:10px;padding:3px 8px;border-radius:var(--pill);background:var(--bg2);border:1px solid var(--border);color:var(--ink3);font-weight:600}
+
+/* ══ WHY SECTION ══ */
+.why-section{padding:52px 0}
+/* In the .why-rows style: */
+.why-rows { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  max-width: 100%;  /* was 560px */
+  gap: 0;
+}
+@media(max-width:768px){ .why-rows { grid-template-columns: 1fr; } }
+.why-row-item{display:flex;align-items:center;gap:20px;padding:22px 24px;border-bottom:1px solid var(--bg2);cursor:pointer;transition:background var(--ease)}
+.why-row-item:last-child{border-bottom:none}
+.why-row-item:hover{background:var(--g-lll)}
+.why-row-img{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:120px}
+.why-row-body{flex:1;min-width:0}
+.why-row-title{font-family:var(--font-d);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:5px;display:flex;align-items:center;gap:4px}
+.why-arr{font-size:18px;color:var(--g3);line-height:1;margin-top:1px}
+.why-row-desc{font-size:13px;color:var(--ink4);line-height:1.6}
+@media(max-width:480px){.why-rows{max-width:100%}.why-row-item{gap:14px;padding:18px 16px}.why-row-img{width:90px}.why-row-img svg{width:90px;height:60px}}
+
+/* ══ FEATURE BANNER ══ */
+.feature-banner{background:#0f1e11;border:1px solid rgba(74,222,128,.12);border-radius:16px;overflow:hidden;width:100%;max-width:860px;margin:0 auto;font-family:'Barlow',sans-serif}
+.banner-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(max-width:600px){.banner-inner{grid-template-columns:1fr}}
+.banner-left{padding:28px 28px 24px;display:flex;flex-direction:column;gap:12px;border-right:1px solid rgba(255,255,255,.06)}
+@media(max-width:600px){.banner-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding:22px 20px}}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);border-radius:999px;padding:5px 12px;font-size:10px;font-weight:700;letter-spacing:.12em;color:#4ade80;width:fit-content}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 5px #4ade80}
+.banner-title{font-size:clamp(22px,3.5vw,32px);font-weight:800;line-height:1.2;color:#fff}
+.banner-title span{color:#4ade80}
+.banner-desc{font-size:12.5px;color:rgba(255,255,255,.45);line-height:1.6;max-width:300px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(255,255,255,.18);border-radius:7px;padding:10px 18px;font-size:13px;font-weight:600;color:#000000;cursor:pointer;width:fit-content;transition:border-color .2s,background .2s;text-decoration:none}
+.btn-primary:hover{border-color:rgba(74,222,128,.5);background:rgba(74,222,128,.05)}
+.btn-icon{opacity:.6;font-size:14px}
+.stats-row{display:flex;gap:0;flex-wrap:wrap;padding-top:4px}
+.stat-item{padding-right:20px;margin-right:0;text-align:left}
+.stat-num{font-size:clamp(20px,2.5vw,26px);color:#fff;font-weight:800;line-height:1}
+.stat-num em{color:#4ade80;font-style:normal}
+.stat-label{font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:4px;line-height:1.4}
+.banner-right{padding:20px 20px 20px;display:flex;flex-direction:column;gap:8px}
+@media(max-width:600px){.banner-right{padding:18px 20px}}
+.salary-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:2px}
+.car-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px 14px}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.card-salary{font-size:10px;color:rgba(255,255,255,.35);font-weight:500;letter-spacing:.04em}
+.badge-popular{background:#92400e;color:#fbbf24;font-size:8px;font-weight:700;letter-spacing:.1em;padding:2px 7px;border-radius:3px;text-transform:uppercase}
+.badge-mid{background:rgba(74,222,128,.15);color:#4ade80;font-size:8px;font-weight:700;letter-spacing:.1em;padding:2px 7px;border-radius:3px;text-transform:uppercase}
+.badge-ev{background:rgba(74,222,128,.15);color:#4ade80;font-size:8px;font-weight:700;letter-spacing:.1em;padding:2px 7px;border-radius:3px;text-transform:uppercase}
+.card-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.card-range{font-size:11px;font-weight:600;margin-bottom:8px}
+.range-gold{color:#f59e0b}
+.range-green{color:#4ade80}
+.progress-track{background:rgba(255,255,255,.07);border-radius:999px;height:2px;width:100%}
+.progress-fill{height:2px;border-radius:999px}
+.fill-gold{background:#f59e0b;width:55%}
+.fill-green-mid{background:#4ade80;width:72%}
+.fill-green-ev{background:#4ade80;width:85%}
+.banner-footer{background:#0b1a0d;border-top:1px solid rgba(255,255,255,.06);padding:11px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.footer-tip{display:flex;align-items:center;gap:8px;font-size:11px;color:rgba(255,255,255,.4)}
+.footer-tip strong{color:#f59e0b;font-weight:600}
+.btn-how{background:transparent;border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:7px 14px;font-size:11px;font-weight:600;color:#fff;cursor:pointer;white-space:nowrap;transition:border-color .2s}
+.btn-how:hover{border-color:rgba(255,255,255,.35)}
+
+/* ══ RECENT / TRENDING CAROUSEL ══ */
+.car-carousel{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.car-carousel::-webkit-scrollbar{display:none}
+.car-carousel .car-card{min-width:240px;flex-shrink:0}
+@media(min-width:480px){.car-carousel .car-card{min-width:270px}}
+.car-carousel { scroll-snap-type: x mandatory; }
+.car-carousel .car-card { scroll-snap-align: start; }
+
+/* ══ TOAST ══ */
+.toast-wrap{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px}
+.toast{background:var(--ink2);color:#fff;padding:11px 16px;border-radius:var(--r12);font-size:13px;font-weight:600;box-shadow:var(--sh3);animation:slideRight .3s var(--spring);display:flex;align-items:center;gap:8px;max-width:280px}
+.toast.success{background:var(--g3)}
+.toast.error{background:var(--red)}
+
+/* ══ COMPARE TRAY ══ */
+.cmp-tray{position:fixed;bottom:0;left:0;right:0;z-index:800;background:rgba(7,16,10,.96);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.07);padding:12px 16px;display:none;align-items:center;gap:10px;flex-wrap:wrap}
+.cmp-tray.show{display:flex;animation:slideUp .25s var(--spring)}
+.cmp-label{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.35);flex-shrink:0;display:none}
+@media(min-width:640px){.cmp-label{display:block}}
+.cmp-slots{display:flex;gap:7px;flex:1;overflow-x:auto;scrollbar-width:none}
+.cmp-slot{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:var(--r10);padding:7px 10px;font-size:12px;font-weight:700;color:rgba(255,255,255,.8);flex-shrink:0}
+.cmp-slot img{width:40px;height:26px;border-radius:4px;object-fit:cover}
+.cmp-rm{color:rgba(255,255,255,.4);margin-left:2px;cursor:pointer;font-size:14px}
+.cmp-rm:hover{color:#fff}
+.cmp-add{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.12);border-radius:var(--r10);padding:7px 12px;font-size:11px;color:rgba(255,255,255,.25);flex-shrink:0}
+.cmp-btns{display:flex;gap:7px;flex-shrink:0}
+.cmp-go{padding:9px 18px;background:var(--g3);color:#fff;border-radius:var(--r8);font-size:13px;font-weight:700;cursor:pointer;transition:background var(--ease)}
+.cmp-go:hover{background:var(--g4)}
+.cmp-clr{padding:9px 12px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.6);border-radius:var(--r8);font-size:13px;cursor:pointer}
+
+/* ══ FILTER CHIPS ══ */
+/* ══ CHIP ROW ══ */
+  .filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+ 
+  /* ══ BASE CHIP ══ */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 15px;
+    border-radius: 100px;
+    border: 1px solid #d4d4d0;
+    background: #ffffff;
+    color: #6b6b66;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 120ms ease, color 120ms ease, background 120ms ease, transform 80ms ease;
+    user-select: none;
+    white-space: nowrap;
+    line-height: 1;
+  }
+ 
+  .chip:hover {
+    border-color: #1a1a1a;
+    color: #1a1a1a;
+    background: #f5f5f3;
+  }
+ 
+  .chip:active {
+    transform: scale(0.97);
+  }
+ 
+  /* ══ ACTIVE STATE ══ */
+  .chip.active {
+    background: #111111;
+    color: #ffffff;
+    border-color: #111111;
+    font-weight: 500;
+  }
+ 
+  /* ══ COUNT BADGE ══ */
+  .chip-count {
+    font-size: 11px;
+    font-weight: 600;
+    background: #ebebeb;
+    border-radius: 100px;
+    padding: 1px 7px;
+    margin-left: 2px;
+    color: #888;
+    transition: background 120ms, color 120ms;
+  }
+ 
+  .chip.active .chip-count {
+    background: rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.8);
+  }
+ 
+  /* ══ ICON SIZE ══ */
+  .chip-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    display: block;
+  }
+
+/* ══ DETAIL PAGE v2 ══ */
+.detail-page-body{padding-bottom:76px}
+@media(min-width:900px){.detail-page-body{padding-bottom:0}}
+.dp-layout{display:grid;grid-template-columns:1fr;align-items:start}
+@media(min-width:900px){.dp-layout{grid-template-columns:1fr 360px;gap:28px;padding-top:24px;padding-bottom:64px}}
+
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.45);flex-wrap:wrap;margin-bottom:10px}
+.breadcrumb a{color:rgba(255,255,255,.55);cursor:pointer;transition:color .2s}
+.breadcrumb a:hover{color:#fff}
+.bc-sep{color:rgba(255,255,255,.18)}
+
+/* ── Gallery ── */
+.dp-gallery-card{overflow:hidden;background:var(--white);border-bottom:1px solid var(--border)}
+@media(min-width:900px){.dp-gallery-card{border:1px solid var(--border);border-radius:var(--r16);margin-bottom:12px}}
+.gallery-main{position:relative;height:240px;overflow:hidden;background:var(--bg2)}
+@media(min-width:480px){.gallery-main{height:290px}}
+@media(min-width:900px){.gallery-main{height:360px}}
+.gallery-main img{width:100%;height:100%;object-fit:contain;background:var(--bg2);transition:opacity .2s}
+.gal-prev,.gal-next{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:all .2s;z-index:2}
+.gal-prev:hover,.gal-next:hover{transform:translateY(-50%) scale(1.1);background:#fff}
+.gal-prev{left:12px}.gal-next{right:12px}
+.gal-count{position:absolute;bottom:10px;right:12px;background:rgba(0,0,0,.62);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:var(--pill)}
+.gallery-thumbs{display:flex;gap:6px;padding:10px 12px;overflow-x:auto;scrollbar-width:none;background:var(--white);border-top:1px solid var(--border)}
+.gallery-thumbs::-webkit-scrollbar{display:none}
+.g-thumb{width:68px;height:48px;border-radius:8px;overflow:hidden;border:2px solid transparent;cursor:pointer;flex-shrink:0;background:var(--bg2);transition:border-color .2s}
+.g-thumb.active{border-color:var(--g3)}
+.g-thumb img{width:100%;height:100%;object-fit:contain}
+
+/* ── Quick stats strip ── */
+.dp-qs-strip{display:flex;overflow-x:auto;scrollbar-width:none;background:var(--bg);border-bottom:1px solid var(--border)}
+.dp-qs-strip::-webkit-scrollbar{display:none}
+@media(min-width:900px){.dp-qs-strip{border:1px solid var(--border);border-radius:var(--r12);margin-bottom:12px;background:var(--white)}}
+.dp-qs-cell{flex:0 0 auto;padding:11px 16px;text-align:center;border-right:1px solid var(--border)}
+.dp-qs-val{font-family:var(--font-d);font-size:13px;font-weight:700;color:var(--g3)}
+.dp-qs-lbl{font-size:10px;color:var(--ink4);font-weight:600;text-transform:uppercase;letter-spacing:.2px;margin-top:1px}
+
+/* ── Mobile car title ── */
+.dp-mob-title{padding:14px 16px;background:var(--white);border-bottom:1px solid var(--border)}
+@media(min-width:900px){.dp-mob-title{display:none}}
+.dp-mob-title h1{font-family:var(--font-d);font-size:21px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:4px}
+.dp-mob-title-sub{font-size:12px;color:var(--ink4);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+/* ── Variant tabs ── */
+.dp-var-wrap{padding:14px 16px;background:var(--white);border-bottom:1px solid var(--border)}
+@media(min-width:900px){.dp-var-wrap{border:1px solid var(--border);border-radius:var(--r12);margin-bottom:12px}}
+.dp-var-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink4);margin-bottom:9px}
+.dp-var-tabs{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.dp-var-tabs::-webkit-scrollbar{display:none}
+.dp-var-tab{flex-shrink:0;padding:10px 14px;border:1.5px solid var(--border);border-radius:var(--r10);background:var(--white);cursor:pointer;text-align:left;transition:all .2s;min-width:110px}
+.dp-var-tab:hover:not(.active){border-color:rgba(26,107,42,.4)}
+.dp-var-tab.active{border-color:var(--g3);background:var(--g-ll)}
+.dp-var-tab-name{font-size:11.5px;font-weight:700;color:var(--ink2);margin-bottom:2px}
+.dp-var-tab.active .dp-var-tab-name{color:var(--g3)}
+.dp-var-tab-price{font-family:var(--font-d);font-size:13px;font-weight:700;color:var(--ink)}
+.dp-var-tab.active .dp-var-tab-price{color:var(--g3)}
+.dp-var-tab-best{display:inline-block;margin-top:3px;font-size:9px;font-weight:800;background:var(--g3);color:#fff;border-radius:var(--pill);padding:1px 6px}
+
+/* ── Key info grid ── */
+.dp-ki-wrap{background:var(--white);border-bottom:1px solid var(--border)}
+@media(min-width:900px){.dp-ki-wrap{border:1px solid var(--border);border-radius:var(--r12);overflow:hidden;margin-bottom:12px}}
+.dp-ki-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+@media(min-width:500px){.dp-ki-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:720px){.dp-ki-grid{grid-template-columns:repeat(6,1fr)}}
+.dp-ki-cell{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 8px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.dp-ki-cell:nth-child(3n){border-right:none}
+@media(min-width:500px){.dp-ki-cell:nth-child(3n){border-right:1px solid var(--border)}.dp-ki-cell:nth-child(4n){border-right:none}}
+@media(min-width:720px){.dp-ki-cell{border-bottom:none}.dp-ki-cell:nth-child(4n){border-right:1px solid var(--border)}.dp-ki-cell:nth-child(3n){border-right:1px solid var(--border)}.dp-ki-cell:nth-child(6n),.dp-ki-cell:last-child{border-right:none}}
+.dp-ki-icon{width:30px;height:30px;border-radius:8px;background:var(--g-ll);display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+.dp-ki-icon svg{width:15px;height:15px;stroke:var(--g3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dp-ki-val{font-family:var(--font-d);font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:2px}
+.dp-ki-lbl{font-size:9.5px;color:var(--ink4);font-weight:600;text-transform:uppercase;letter-spacing:.2px}
+
+/* ── Accordion ── */
+.dp-accord-wrap{background:var(--white);border-top:1px solid var(--border)}
+@media(min-width:900px){.dp-accord-wrap{border:1px solid var(--border);border-radius:var(--r12);overflow:hidden;margin-bottom:10px}}
+.dp-accord-hd{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;user-select:none;transition:background .15s;gap:8px}
+.dp-accord-hd:hover{background:var(--bg)}
+.dp-accord-title{font-size:13.5px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;flex:1}
+.dp-accord-title svg{width:15px;height:15px;stroke:var(--g3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.dp-accord-arr{transition:transform .2s;color:var(--ink4)}
+.dp-accord-arr svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;display:block}
+.dp-accord-wrap.open .dp-accord-arr{transform:rotate(180deg)}
+.dp-accord-body{display:none;padding:0 16px 16px;border-top:1px solid var(--border)}
+.dp-accord-wrap.open .dp-accord-body{display:block;padding-top:14px}
+
+/* ── Spec table ── */
+.dp-spec-table{width:100%;border-collapse:collapse}
+.dp-spec-table tr:nth-child(even) td{background:var(--bg)}
+.dp-spec-table td{padding:9px 10px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:top;line-height:1.4}
+.dp-spec-table td:first-child{font-weight:700;color:var(--ink2);width:45%}
+.dp-spec-table td:last-child{color:var(--ink3)}
+
+/* ── Features grid ── */
+.dp-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+@media(min-width:480px){.dp-feat-grid{grid-template-columns:repeat(3,1fr)}}
+.dp-feat-item{display:flex;align-items:center;gap:7px;padding:9px 11px;background:var(--bg);border:1px solid var(--border);border-radius:9px;font-size:12px;font-weight:600;color:var(--ink2);line-height:1.3}
+.dp-feat-chk{width:16px;height:16px;border-radius:50%;background:var(--g-ll);border:1px solid rgba(26,107,42,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dp-feat-chk svg{width:9px;height:9px;stroke:var(--g3);stroke-width:2.5;fill:none;stroke-linecap:round}
+
+/* ── Colors ── */
+.dp-colors{display:flex;flex-wrap:wrap;gap:8px}
+.dp-color-swatch{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:7px 10px;border-radius:10px;border:2px solid transparent;transition:all .2s}
+.dp-color-swatch.active{border-color:var(--g3);background:var(--g-ll)}
+.dp-color-dot{width:28px;height:28px;border-radius:50%;box-shadow:0 0 0 1.5px rgba(0,0,0,.1)}
+.dp-color-name{font-size:10px;font-weight:600;color:var(--ink3);text-align:center;max-width:52px;line-height:1.3}
+
+/* ── Pros / Cons ── */
+.dp-pc-grid{display:grid;gap:10px}
+@media(min-width:480px){.dp-pc-grid{grid-template-columns:1fr 1fr}}
+.dp-pros{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:var(--r12);padding:14px}
+.dp-cons{background:#fff5f5;border:1.5px solid #fecaca;border-radius:var(--r12);padding:14px}
+.dp-pc-title{font-size:12.5px;font-weight:800;margin-bottom:9px}
+.dp-pc-item{display:flex;align-items:flex-start;gap:6px;padding:3px 0;font-size:12.5px;color:var(--ink2);line-height:1.5}
+.dp-score-bar{background:var(--g-ll);border:1px solid rgba(26,107,42,.14);border-radius:var(--r12);padding:16px;display:flex;align-items:center;gap:16px;margin-top:12px}
+.dp-score-num{font-family:var(--font-d);font-size:44px;font-weight:700;color:var(--g3);line-height:1;flex-shrink:0}
+
+/* ── Sidebar (desktop only) ── */
+.dp-sidebar{display:none;flex-direction:column;gap:12px}
+@media(min-width:900px){.dp-sidebar{display:flex;position:sticky;top:calc(var(--nav,60px) + 16px)}}
+.dp-scard{background:var(--white);border:1px solid var(--border);border-radius:var(--r16);overflow:hidden}
+.dp-price-box{padding:18px}
+.dp-price-main{font-family:var(--font-d);font-size:30px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:3px}
+.dp-price-note{font-size:11px;color:var(--ink5);margin-bottom:14px}
+.dp-cta-stack{display:flex;flex-direction:column;gap:8px}
+.dp-cta-primary{width:100%;padding:13px;background:var(--g3);color:#fff;border:none;border-radius:var(--r10);font-family:var(--font-b);font-size:14px;font-weight:800;cursor:pointer;transition:background .2s}
+.dp-cta-primary:hover{background:var(--g4)}
+.dp-cta-gold{width:100%;padding:13px;background:var(--gold);color:#fff;border:none;border-radius:var(--r10);font-family:var(--font-b);font-size:14px;font-weight:800;cursor:pointer;transition:opacity .2s}
+.dp-cta-gold:hover{opacity:.88}
+.dp-cta-ghost{width:100%;padding:11px;background:var(--white);color:var(--ink3);border:1.5px solid var(--border);border-radius:var(--r10);font-family:var(--font-b);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s}
+.dp-cta-ghost:hover{border-color:var(--g3);color:var(--g3)}
+.dp-contact-row{padding:12px 18px;border-top:1px solid var(--border);font-size:11.5px;color:var(--ink4);display:flex;align-items:center;gap:6px}
+.dp-contact-row a{color:var(--g3);font-weight:700}
+.dp-contact-row svg{width:13px;height:13px;stroke:var(--g3);fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0}
+
+/* ── EMI box ── */
+.dp-emi-box{padding:16px 18px;border-top:1px solid var(--border)}
+.dp-emi-hd{font-size:13px;font-weight:800;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.dp-emi-hd svg{width:14px;height:14px;stroke:var(--g3);fill:none;stroke-linecap:round;stroke-width:2}
+.dp-emi-field{margin-bottom:12px}
+.dp-emi-label{display:flex;justify-content:space-between;font-size:10px;font-weight:700;color:var(--ink4);text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px}
+.dp-emi-label .val{font-size:12.5px;font-weight:800;color:var(--ink);text-transform:none;letter-spacing:0}
+.tenure-btns{display:flex;flex-wrap:wrap;gap:4px}
+.ten-btn{padding:5px 8px;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--r6);font-size:11px;font-weight:700;color:var(--ink3);cursor:pointer;font-family:var(--font-b);transition:all .2s}
+.ten-btn.active{background:var(--g3);color:#fff;border-color:var(--g3)}
+.dp-emi-result{background:var(--g-ll);border:1px solid rgba(26,107,42,.15);border-radius:var(--r10);padding:12px;margin-top:8px}
+.dp-emi-amount{font-family:var(--font-d);font-size:26px;font-weight:700;color:var(--g3);line-height:1}
+.dp-emi-break{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:8px}
+.dp-emi-bd{background:rgba(255,255,255,.7);border-radius:7px;padding:7px 9px}
+.dp-emi-bd-val{font-size:12px;font-weight:800;color:var(--ink)}
+.dp-emi-bd-lbl{font-size:10px;color:var(--ink4);margin-top:1px}
+input[type=range]{width:100%;height:3px;border-radius:var(--pill);background:var(--bg3);-webkit-appearance:none;outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--g3);border:3px solid #fff;box-shadow:0 1px 4px rgba(26,107,42,.3);cursor:pointer}
+
+/* ── Mobile bottom sticky bar ── */
+.dp-mob-bar{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--border);padding:10px 14px;gap:8px;z-index:100;align-items:center}
+@media(min-width:900px){.dp-mob-bar{display:none}}
+.dp-mob-price{flex:1}
+.dp-mob-price-lbl{font-size:10px;color:var(--ink4);font-weight:600}
+.dp-mob-price-val{font-family:var(--font-d);font-size:17px;font-weight:700;color:var(--ink);line-height:1.2}
+.dp-mob-btns{display:flex;gap:7px}
+.dp-mob-btn-p{padding:10px 16px;background:var(--g3);color:#fff;border:none;border-radius:var(--r8);font-family:var(--font-b);font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap}
+.dp-mob-btn-g{padding:10px 16px;background:var(--gold);color:#fff;border:none;border-radius:var(--r8);font-family:var(--font-b);font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap}
+
+/* ── Mobile-only EMI accordion ── */
+.dp-mob-emi-acc{display:block}
+@media(min-width:900px){.dp-mob-emi-acc{display:none}}
+
+/* ── Similar / highlights ── */
+.dp-similar{padding:20px 16px;background:var(--white);border-top:1px solid var(--border)}
+@media(min-width:900px){.dp-similar{border:1px solid var(--border);border-radius:var(--r16);overflow:hidden}}
+.section-hd{font-family:var(--font-d);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:14px}
+.dp-hl-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.dp-hl-tag{display:inline-flex;align-items:center;gap:5px;background:var(--g-ll);border:1px solid rgba(26,107,42,.18);color:var(--g3);font-size:12px;font-weight:700;padding:5px 11px;border-radius:var(--pill)}
+/* ══ MOBILE MENU ══ */
+.mobile-menu{position:fixed;inset:0;top:var(--nav);z-index:850;display:none}
+.mobile-menu.open{display:block}
+.mm-backdrop{position:absolute;inset:0;background:rgba(7,16,10,.55);backdrop-filter:blur(8px)}
+.mm-panel{position:absolute;top:0;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);max-height:calc(100vh - var(--nav));overflow-y:auto;animation:slideDown .22s ease}
+.mm-search{padding:14px;border-bottom:1px solid var(--bg2)}
+.mm-search-box{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:var(--pill);background:var(--bg);overflow:hidden}
+.mm-search-box svg{margin:0 10px;color:var(--ink4);flex-shrink:0}
+.mm-search-box input{flex:1;border:none;background:transparent;font-size:14px;padding:10px 0;outline:none;font-family:var(--font-b)}
+.mm-search-box button{margin:4px;padding:7px 16px;background:var(--g3);color:#fff;border-radius:var(--pill);font-size:13px;font-weight:700;flex-shrink:0;font-family:var(--font-b)}
+.mm-item{border-bottom:1px solid var(--bg2)}
+.mm-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink2);background:none;text-align:left;cursor:pointer;font-family:var(--font-b)}
+.mm-sub{display:none;padding:0 0 8px 16px;background:var(--bg)}
+.mm-sub.open{display:block}
+.mm-sub-link{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:var(--r8);cursor:pointer;transition:all var(--ease);font-size:13.5px;font-weight:600;color:var(--ink2)}
+.mm-sub-link:hover{background:var(--g-ll);color:var(--g3)}
+.mm-cta{padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px;border-top:1px solid var(--bg2)}
+
+/* ══ COMPARE PAGE ══ */
+.compare-layout{display:grid;grid-template-columns:1fr;gap:24px;padding:32px 0 64px}
+@media(min-width:980px){.compare-layout{grid-template-columns:280px 1fr;gap:28px}}
+.cmp-picker-title{font-size:13px;font-weight:800;color:var(--ink);margin-bottom:12px}
+.cmp-car-pick{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1.5px solid var(--border);background:var(--white);border-radius:var(--r10);cursor:pointer;transition:all var(--ease);margin-bottom:7px}
+.cmp-car-pick:hover{border-color:var(--g3);background:var(--g-ll)}
+.cmp-car-pick.in{border-color:var(--g3);background:var(--g-ll)}
+.cmp-car-pick img{width:46px;height:30px;object-fit:cover;border-radius:var(--r6);flex-shrink:0}
+.cmp-car-pick-name{font-size:12.5px;font-weight:800;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cmp-car-pick-price{font-size:11px;color:var(--ink4)}
+
+/* ══ USED CARS ══ */
+.used-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:600px){.used-grid{gap:14px}}
+@media(min-width:900px){.used-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1100px){.used-grid{grid-template-columns:repeat(4,1fr)}}
+.used-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r16);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:all .25s cubic-bezier(.4,0,.2,1)}
+.used-card:hover{box-shadow:var(--sh3);transform:translateY(-4px);border-color:rgba(26,107,42,.2)}
+.used-card:hover .uc-img img{transform:scale(1.07)}
+.uc-img{position:relative;height:160px;overflow:hidden;background:linear-gradient(135deg,var(--bg2),var(--bg3));flex-shrink:0}
+@media(min-width:480px){.uc-img{height:178px}}
+@media(min-width:768px){.uc-img{height:200px}}
+.uc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.uc-badges{position:absolute;top:8px;left:8px;display:flex;gap:4px;flex-wrap:wrap}
+.uc-badge{font-size:9.5px;font-weight:800;padding:3px 8px;border-radius:var(--pill);text-transform:uppercase;letter-spacing:.3px}
+.uc-badge-cert{background:var(--g3);color:#fff}
+.uc-badge-fuel{background:var(--ink2);color:#fff}
+.uc-badge-owner{background:#7c3aed;color:#fff}
+.uc-badge-low{background:var(--gold);color:#fff}
+.uc-wish{position:absolute;top:8px;right:8px;width:30px;height:30px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--ease)}
+.uc-wish:hover{transform:scale(1.1)}
+.uc-wish.active svg{stroke:#ef4444;fill:#ef4444}
+.uc-km{position:absolute;bottom:8px;right:8px;background:rgba(7,16,10,.72);backdrop-filter:blur(6px);color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:var(--pill);display:flex;align-items:center;gap:3px}
+.uc-body{padding:12px;flex:1;display:flex;flex-direction:column}
+@media(min-width:480px){.uc-body{padding:14px}}
+.uc-meta-top{display:flex;align-items:center;gap:7px;margin-bottom:5px}
+.uc-rating{display:inline-flex;align-items:center;gap:3px;background:var(--g3);color:#fff;padding:2px 7px;border-radius:var(--pill);font-size:10.5px;font-weight:800}
+.uc-year{font-size:11px;color:var(--ink4)}
+.uc-name{font-family:var(--font-d);font-size:15px;font-weight:600;color:var(--ink);line-height:1.25}
+@media(min-width:768px){.uc-name{font-size:16.5px}}
+.uc-variant{font-size:11.5px;color:var(--ink4);margin-top:2px;margin-bottom:8px}
+.uc-specs{display:none;flex-wrap:wrap;gap:5px;margin-bottom:9px}
+@media(min-width:480px){.uc-specs{display:flex}}
+.uc-spec-pill{display:inline-flex;align-items:center;gap:4px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--pill);padding:3px 9px;font-size:10.5px;font-weight:600;color:var(--ink3)}
+.uc-price-row{margin-top:auto;padding-top:10px;border-top:1px solid var(--bg2)}
+.uc-from{font-size:9.5px;font-weight:700;color:var(--ink4);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
+.uc-price{font-family:var(--font-d);font-size:17px;font-weight:700;color:var(--g3);line-height:1}
+@media(min-width:768px){.uc-price{font-size:19px}}
+.uc-emi{font-size:10.5px;color:var(--ink4);margin-top:3px}
+.uc-emi strong{color:#059669;font-weight:700}
+.uc-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+.uc-btn-o{padding:8px 4px;border:1.5px solid var(--g3);color:var(--g3);background:var(--white);border-radius:var(--r8);font-size:12px;font-weight:700;cursor:pointer;transition:all var(--ease);text-align:center;font-family:var(--font-b)}
+.uc-btn-o:hover{background:var(--g3);color:#fff}
+.uc-btn-f{padding:8px 4px;background:var(--g3);color:#fff;border-radius:var(--r8);font-size:12px;font-weight:700;cursor:pointer;transition:background var(--ease);text-align:center;font-family:var(--font-b)}
+.uc-btn-f:hover{background:var(--g4)}
+.uc-trust-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:18px}
+@media(min-width:540px){.uc-trust-strip{grid-template-columns:repeat(4,1fr)}}
+.uc-trust-item{display:flex;align-items:center;gap:8px;padding:10px 12px;background:var(--g-ll);border:1px solid rgba(26,107,42,.14);border-radius:var(--r10)}
+.uc-trust-icon{width:28px;height:28px;background:var(--g3);border-radius:var(--r8);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.uc-trust-title{font-size:11.5px;font-weight:800;color:var(--ink2)}
+.uc-trust-sub{font-size:10px;color:var(--ink4);margin-top:1px}
+.uc-check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+@media(min-width:540px){.uc-check-grid{grid-template-columns:repeat(3,1fr)}}
+.uc-check-item{display:flex;align-items:center;gap:7px;padding:9px 11px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r8)}
+.uc-check-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.uc-check-label{font-size:11.5px;font-weight:600;color:var(--ink2)}
+.uc-check-status{font-size:10px;color:var(--ink4);margin-left:auto;font-weight:700}
+.uc-seller-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r16);padding:18px}
+.uc-seller-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.uc-seller-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--g3),var(--g4));display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:18px;font-weight:700;color:#fff;flex-shrink:0}
+.uc-seller-name{font-size:14px;font-weight:800;color:var(--ink)}
+.uc-seller-badge{font-size:10px;font-weight:700;color:var(--g3);background:var(--g-ll);border:1px solid rgba(26,107,42,.2);border-radius:var(--pill);padding:2px 7px;display:inline-block;margin-top:2px}
+.uc-seller-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:14px}
+.uc-ss-cell{text-align:center;padding:8px;background:var(--bg);border-radius:var(--r8)}
+.uc-ss-val{font-family:var(--font-d);font-size:14px;font-weight:700;color:var(--g3)}
+.uc-ss-lbl{font-size:9.5px;color:var(--ink4);margin-top:1px}
+
+/* ══ FOOTER ══ */
+.site-footer{background:#050d07;padding:52px 0 0}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:28px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.05)}
+@media(min-width:580px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1.2fr;gap:40px}}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.22);line-height:1.8;margin:12px 0 18px;max-width:270px}
+.footer-social{display:flex;gap:8px}
+.fsoc{width:34px;height:34px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:var(--r8);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--ease)}
+.fsoc:hover{background:var(--g3);border-color:var(--g3)}
+.fcol-title{font-size:10px;font-weight:800;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.8px;margin-bottom:13px}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fcol a{font-size:13px;color:rgba(255,255,255,.22);transition:color var(--ease);cursor:pointer}
+.fcol a:hover{color:rgba(255,255,255,.65)}
+.footer-bottom{padding:16px 0;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:rgba(255,255,255,.13);flex-wrap:wrap;gap:7px}
+.fbot-links{display:flex;gap:14px}
+.fbot-links a{color:rgba(255,255,255,.13);cursor:pointer;transition:color var(--ease)}
+.fbot-links a:hover{color:rgba(255,255,255,.4)}
+
+/* ══ CTA BANNER ══ */
+.cta-banner{background:linear-gradient(135deg,#040b06,#07120a);border-radius:var(--r24);padding:40px 24px;position:relative;overflow:hidden;text-align:center}
+.cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 50%,rgba(26,107,42,.12),transparent);pointer-events:none}
+.cta-banner::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.02) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta-label{font-size:11px;font-weight:700;color:var(--g5);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.cta-title{font-family:var(--font-d);font-size:clamp(24px,4vw,38px);color:#fff;margin-bottom:12px;line-height:1.1;font-weight:700}
+.cta-sub{font-size:14px;color:rgba(255,255,255,.38);margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.7}
+.cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+/* ── reset scoped to nav ── */
+.av-nav *, .av-nav *::before, .av-nav *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+/* ── variables ── */
+.av-nav {
+  --brand:    #e05a2b;
+  --brand-dk: #c44d22;
+  --t1:       #111111;
+  --t2:       #555555;
+  --t3:       #999999;
+  --bg:       #ffffff;
+  --bg2:      #f5f5f7;
+  --bd:       rgba(0,0,0,.10);
+  --bd2:      rgba(0,0,0,.14);
+  --sh:       0 8px 32px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06);
+  --r:        10px;
+  --h:        54px;
+  --ease:     .17s cubic-bezier(.25,.46,.45,.94);
+}
+ 
+/* ── shell ── */
+.av-nav {
+  position: sticky; top: 0; z-index: 900;
+  display: flex; align-items: center;
+  height: var(--h); padding: 0 20px;
+  background: var(--bg);
+  border-bottom: 0.5px solid var(--bd);
+  font-family: -apple-system,'Helvetica Neue',Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+/* ── logo ── */
+.av-logo {
+  font-size: 16px; font-weight: 600;
+  color: var(--t1); letter-spacing: -.3px;
+  margin-right: 20px; flex-shrink: 0;
+  text-decoration: none;
+}
+.av-logo em { color: var(--brand); font-style: normal; }
+ 
+/* ── items row ── */
+.av-items { display: flex; flex: 1; min-width: 0;}
+
+ 
+/* ── each top item ── */
+.av-item { position: relative; }
+/* bridge gap so mouse crossing doesn't close menu */
+.av-item::after {
+  content: ""; position: absolute;
+  top: 100%; left: 0; right: 0; height: 8px;
+}
+ 
+/* ── top link button ── */
+.av-link {
+  display: flex; align-items: center; gap: 4px;
+  height: var(--h); padding: 0 13px;
+  font-size: 13.5px; color: var(--t2);
+  cursor: pointer; white-space: nowrap;
+  border: none; background: none;
+  border-bottom: 2px solid transparent;
+  transition: color .15s, border-color .15s;
+  user-select: none;
+}
+.av-link:hover,
+.av-item.open > .av-link {
+  color: var(--t1);
+  border-bottom-color: var(--brand);
+}
+ 
+/* chevron */
+.av-chev {
+  width: 10px; height: 6px; opacity: .5;
+  transition: transform var(--ease); flex-shrink: 0;
+}
+.av-item.open > .av-link .av-chev { transform: rotate(180deg); }
+ 
+/* ── dropdown panel ── */
+.av-dd {
+  position: absolute; top: calc(100% + 2px); left: 0;
+  display: flex;
+  background: var(--bg);
+  border: 0.5px solid var(--bd2);
+  border-radius: var(--r);
+  box-shadow: var(--sh);
+  z-index: 999;
+  /* hidden */
+  opacity: 0; visibility: hidden;
+  transform: translateY(6px); pointer-events: none;
+  transition: opacity var(--ease), transform var(--ease), visibility var(--ease);
+  overflow: hidden;
+}
+.av-dd.av-dd--r { left: auto; right: 0; }
+.av-item.open > .av-dd {
+  opacity: 1; visibility: visible;
+  transform: translateY(0); pointer-events: auto;
+}
+ 
+/* ── column ── */
+.av-col { min-width: 185px; padding: 8px 0; }
+.av-col + .av-col { border-left: 0.5px solid var(--bd); }
+ 
+/* ── section label ── */
+.av-lbl {
+  display: block;
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: .07em; text-transform: uppercase;
+  color: var(--t3); padding: 12px 14px 5px;
+}
+ 
+/* ── row ── */
+.av-row {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 8px;
+  padding: 7px 14px;
+  cursor: pointer; text-decoration: none;
+  color: var(--t1); font-size: 13.5px;
+  transition: background .12s;
+}
+.av-row:hover { background: var(--bg2); }
+.av-ri { display: flex; flex-direction: column; }
+.av-rt { font-size: 13.5px; color: var(--t1); line-height: 1.3; }
+.av-rs { font-size: 11.5px; color: var(--t3); margin-top: 1px; }
+ 
+/* ── separator ── */
+.av-sep { height: 0.5px; background: var(--bd); margin: 5px 14px; }
+ 
+/* ── badges ── */
+.av-b {
+  font-size: 10px; font-weight: 600;
+  padding: 2px 7px; border-radius: 4px;
+  flex-shrink: 0; letter-spacing: .02em;
+}
+.av-b--g { background: #d6f2e7; color: #0d6b4f; }
+.av-b--o { background: #fde8d0; color: #7d4310; }
+.av-b--b { background: #daeaf9; color: #1458a0; }
+ 
+/* ── CTA ── */
+.av-cta {
+  margin-left: auto; flex-shrink: 0;
+  background: var(--brand); color: #fff;
+  font-size: 13px; font-weight: 500;
+  padding: 7px 15px; border-radius: 7px;
+  border: none; cursor: pointer;
+  transition: background .15s, transform .1s;
+}
+.av-cta:hover  { background: var(--brand-dk); }
+.av-cta:active { transform: scale(.97); }
+ 
+/* ── hide on mobile ── */
+@media (max-width: 768px) { .av-items { display: none; } }
+/* ══ SERVICES SECTION ══ */
+.svc-section{background:#f5f7f5;padding:72px 0}
+.svc-hd{text-align:center;margin-bottom:48px}
+.svc-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g3);margin-bottom:12px}
+.svc-eyebrow::before,.svc-eyebrow::after{content:'';display:block;width:28px;height:2px;background:var(--g3);border-radius:2px}
+.svc-title{font-family:var(--font-d);font-size:clamp(24px,3.5vw,36px);font-weight:700;color:#111;line-height:1.15;margin-bottom:10px}
+.svc-sub{font-size:14px;color:#666;max-width:520px;margin:0 auto;line-height:1.6}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;background:none;border-radius:0;overflow:visible}
+.svc-card{background:#fff;border:1px solid #e8ede9;border-radius:16px;padding:28px 24px;cursor:pointer;position:relative;display:flex;flex-direction:column;align-items:flex-start;transition:box-shadow .2s ease,border-color .2s ease,transform .2s ease}
+.svc-card:hover{box-shadow:0 8px 32px rgba(26,107,42,.1);border-color:rgba(26,107,42,.3);transform:translateY(-2px)}
+.svc-arr{display:none}
+.svc-icon{width:52px;height:52px;border-radius:12px;background:#f0f7f1;display:flex;align-items:center;justify-content:center;margin-bottom:18px;flex-shrink:0}
+.svc-name{font-size:16px;font-weight:700;color:#111;margin-bottom:8px;line-height:1.3}
+.svc-desc{font-size:13px;color:#777;line-height:1.65;margin-bottom:20px;flex:1}
+.svc-learn{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:var(--g3);text-decoration:none;margin-top:auto}
+.svc-learn:hover{gap:7px}
+.svc-learn svg{transition:transform .2s ease}
+.svc-learn:hover svg{transform:translateX(2px)}
+.svc-tags,.svc-cta-h,.svc-cta-checks,.svc-btn-primary,.svc-btn-ghost,.svc-hours,.svc-footer-row,.svc-stats{display:none}
+@media(max-width:639px){.svc-grid{grid-template-columns:1fr;gap:12px}}
+@media(min-width:640px) and (max-width:959px){.svc-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }}
+
+@media(min-width:960px){.svc-card:nth-child(1),.svc-card:nth-child(2),.svc-card:nth-child(3),.svc-card:nth-child(4),.svc-card:nth-child(5){grid-column:auto;grid-row:auto}}
+
+/* ══ OFFERS REDESIGN ══ */
+.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.offers-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.offers-grid{grid-template-columns:1fr}}
+.offer-card{background:rgba(235,228,228,.05);border:1px solid rgba(255,255,255,.09);border-radius:var(--r16);padding:22px;display:flex;flex-direction:column;min-height:200px;cursor:pointer;transition:all var(--ease)}
+.offer-card:hover{background:rgba(255,255,255,.09);transform:translateY(-3px);border-color:rgba(255,255,255,.16)}
+.offer-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.3}
+.offer-desc{font-size:12.5px;color:rgba(255,255,255,.38);line-height:1.65}
+.offer-tag{font-size:10px;font-weight:800;padding:4px 10px;border-radius:var(--pill);text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;align-self:flex-start}
+.sec-title{color:#3d3d3d}
+
+/* ══ MISC ══ */
+@keyframes carDrive{0%{transform:translateX(-200px);opacity:.6}50%{transform:translateX(200px);opacity:1}100%{transform:translateX(-200px);opacity:.6}}
+.car-icon-wrap{width:60px;height:60px;display:flex;align-items:center;justify-content:center;color:var(--brand);animation:carDrive 16s ease-in-out infinite}
+.logo-mark{background:none;border:none;padding:0;border-radius:0;box-shadow:none}
+.logo{display:flex;align-items:center;cursor:pointer;margin-left: 0}
+.footer-logo-img{height:120px;width:auto;display:block;object-fit:contain;background:transparent}
+@media(max-width:768px){.footer-logo-img{height:90px}}
+.mm-sub{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
+.mm-sub.open{max-height:600px;padding:4px 0 8px}
+.mm-btn svg.mm-chevron{transition:transform .25s ease;flex-shrink:0}
+.mm-btn.open svg.mm-chevron{transform:rotate(90deg)}
+#form-area{animation:fadeUp .35s ease both}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
+.logo-img{height: 38px;width:auto;display:block;object-fit:contain;background:transparent;animation:slideInLeft .6s cubic-bezier(.25,.46,.45,.94) forwards}
+
+
+/* ══ ANIMATIONS ══ */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes slideDown{from{transform:translateY(-10px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes slideRight{from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.hidden{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+
+/* ══════════════════════════════════════
+   ══ EVENTS SECTION  ══
+   ══════════════════════════════════════ */
+.events-section {
+  background: var(--white);
+  padding: 72px 0;
+}
+
+/* Section header — reuses existing .sec-hd pattern */
+
+/* ── Filter tabs ── */
+.ev-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.ev-tab-btn {
+  padding: 7px 16px;
+  border-radius: var(--pill);
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  font-family: var(--font-b);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink3);
+  cursor: pointer;
+  transition: all var(--ease);
+  white-space: nowrap;
+}
+.ev-tab-btn:hover { border-color: var(--g3); color: var(--g3); background: var(--g-ll); }
+.ev-tab-btn.active { background: var(--g3); color: #fff; border-color: var(--g3); }
+
+/* ── Event cards grid ── */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (max-width: 639px) {
+  .events-grid { grid-template-columns: 1fr; }
+  .event-card.featured-event { flex-direction: column; }
+}
+@media (min-width: 900px)  { .events-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1100px) { .events-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 480px)  { .events-grid { grid-template-columns: 1fr; } }
+
+/* ── Individual event card ── */
+.event-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r16);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all .25s cubic-bezier(.4, 0, .2, 1);
+}
+.event-card:hover {
+  box-shadow: var(--sh3);
+  transform: translateY(-4px);
+  border-color: rgba(26, 107, 42, .2);
+}
+
+/* Date banner at top of card */
+.event-card-date-bar {
+  background: var(--g3);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  flex-shrink: 0;
+}
+.ecd-day {
+  font-family: var(--font-d);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+}
+.ecd-month-year {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  opacity: .8;
+  text-align: right;
+}
+.ecd-type {
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: var(--pill);
+  background: rgba(255,255,255,.18);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Thumbnail image */
+.event-card-img {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  background: var(--bg2);
+  flex-shrink: 0;
+}
+@media (min-width: 768px) { .event-card-img { height: 168px; } }
+.event-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+}
+.event-card:hover .event-card-img img { transform: scale(1.06); }
+
+/* Free / Paid badge overlay */
+.event-fee-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--pill);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.event-fee-badge.free   { background: var(--g3); color: #fff; }
+.event-fee-badge.paid   { background: var(--gold); color: #fff; }
+.event-fee-badge.invite { background: var(--blue); color: #fff; }
+
+/* Body */
+.event-card-body {
+  padding: 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.event-card-title {
+  font-family: var(--font-d);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+}
+@media (min-width: 768px) { .event-card-title { font-size: 16px; } }
+
+.event-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 2px;
+}
+.event-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink4);
+  font-weight: 600;
+}
+.event-meta-row svg { flex-shrink: 0; color: var(--g3); }
+
+.event-card-desc {
+  font-size: 12px;
+  color: var(--ink4);
+  line-height: 1.6;
+  margin-top: 4px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Footer row */
+.event-card-footer {
+  padding: 10px 14px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px solid var(--bg2);
+}
+.event-seats {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink4);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.event-seats-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--g3);
+  flex-shrink: 0;
+}
+.event-seats-dot.low  { background: #f59e0b; }
+.event-seats-dot.full { background: var(--red); }
+
+.event-rsvp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  background: var(--g3);
+  color: #fff;
+  border: none;
+  border-radius: var(--r8);
+  font-family: var(--font-b);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--ease);
+  white-space: nowrap;
+}
+.event-rsvp-btn:hover { background: var(--g4); }
+.event-rsvp-btn.full  { background: var(--ink5); cursor: not-allowed; }
+
+/* ── Featured / wide card (first card spans 2 cols on md+) ── */
+@media (min-width: 900px) {
+  .event-card.featured-event {
+    grid-column: span 2;
+    flex-direction: row;
+  }
+  .event-card.featured-event .event-card-date-bar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    flex-shrink: 0;
+    text-align: center;
+    gap: 8px;
+  }
+  .event-card.featured-event .ecd-month-year { text-align: center; }
+  .event-card.featured-event .event-card-img {
+    width: 260px;
+    height: auto;
+    flex-shrink: 0;
+  }
+  .event-card.featured-event .event-card-body { padding: 20px; }
+  .event-card.featured-event .event-card-title { font-size: 20px; }
+  .event-card.featured-event .event-card-desc { -webkit-line-clamp: 3; }
+}
+
+/* ── No events placeholder ── */
+.events-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--ink4);
+  font-size: 14px;
+}
+.events-empty svg { margin: 0 auto 12px; opacity: .3; }
+
+.track {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+  }
+  .road {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-border-secondary);
+    border-radius: 2px;
+  }
+  .road-dashes {
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--color-border-tertiary) 0px, var(--color-border-tertiary) 18px, transparent 18px, transparent 36px);
+  }
+  .car-wrapper {
+    position: absolute;
+    bottom: 14px;
+    will-change: transform, left;
+  }
+  .car-wrapper svg {
+    display: block;
+  }
+  .shadow {
+    position: absolute;
+    bottom: 12px;
+    width: 60px;
+    height: 6px;
+    background: rgba(0,0,0,0.12);
+    border-radius: 50%;
+    filter: blur(3px);
+    will-change: transform, left;
+    pointer-events: none;
+  }
+  .speed-lines {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .speed-line {
+    height: 2px;
+     background: #aaaaaa; background: #aaaaaa;
+    border-radius: 1px;
+  }
+
+  /* Container Spacing */
+.hero-strip {
+  padding: 20px 0;
+  background: #ffffff;
+}
+
+.strip-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 5px;
+}
+
+/* The Individual Item */
+.strip-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid transparent; /* Keeps layout stable on hover */
+}
+
+/* Icon Wrapper - NO FILL */
+.strip-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: #4b5563; /* Subtle Grey-Blue icon color */
+  transition: color 0.3s ease;
+}
+
+/* Make SVG Strokes Thin and Clean */
+.strip-icon-wrapper svg {
+  width: 48px;
+  height: 48px;
+  fill: none; /* Removes the heavy fill */
+  stroke: currentColor;
+  stroke-width: 1.5; /* Makes lines look professional/expert */
+}
+
+/* Label Styling */
+.strip-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  text-align: center;
+}
+
+/* PROFESSIONAL ACTIVE/HOVER STATE (Matches Image) */
+.strip-item:hover, .strip-item.active {
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Soft depth shadow */
+  border-color: #e5e7eb;
+}
+
+.strip-item:hover .strip-icon-wrapper,
+.strip-item.active .strip-icon-wrapper {
+  color: #15803d; /* Professional Green from your image */
+}
+/* ═══ FOOTER ═══ */
+
+.site-footer {
+  background: #0f0f0f;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 60px 0 0;
+  font-size: 14px;
+}
+
+.site-footer .wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Grid ── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(6, 1fr);
+  gap: 32px 24px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+@media (max-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Brand col ── */
+.footer-logo-img {
+  height: 36px;
+  width: auto;
+  margin-bottom: 14px;
+}
+
+.footer-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0 18px;
+}
+
+/* ── Social icons ── */
+.footer-social {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.fsoc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.2s, border-color 0.2s;
+  text-decoration: none;
+}
+
+.fsoc:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.fsoc:hover svg {
+  fill: rgba(255, 255, 255, 0.8);
+  stroke: rgba(255, 255, 255, 0.8);
+}
+
+/* ── Column titles ── */
+.footer-col-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 14px;
+}
+
+/* ── Footer links ── */
+.footer-link {
+  display: block;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  padding: 4px 0;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: color 0.18s;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ── Bottom bar ── */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 0;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.footer-bottom-txt {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.fbot-links {
+  display: flex;
+  gap: 16px;
+}
+
+.fbot-links a {
+  color: rgba(255, 255, 255, 0.28);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.18s;
+}
+
+.fbot-links a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── CSS variable for border-radius used inline ── */
+:root {
+  --r10: 10px;
+}
+</style>
+
+<script src="assets/js/data/cars-db.js" defer></script>
+<script src="assets/js/data/used-cars-db.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+
+</head>
+<body>
+
+<div class="toast-wrap" id="toast-wrap"></div>
+<!-- ═══ TOPBAR ═══ -->
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <div class="topbar-left">
+      <span class="topbar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-.95a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+977-9701076240</span>
+      <span class="topbar-sep"></span>
+      <span class="topbar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon–Sat · 9am–6pm</span>
+      <span class="topbar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nayabazar, Kathmandu</span>
+    </div>
+    <div class="topbar-right"></div>
+  </div>
+</div>
+
+<header class="site-header" id="site-header">
+  <div class="wrap header-in">
+
+    <div id="honk-wrapper" style="display:contents">
+      <div class="logo" onclick="AV.goTo('home')">
+        <img src="/assets/images/cars/brands/logo.png" alt="AutoViindu Logo" class="logo-img" id="logo-img">
+      </div>
+    </div>
+
+    <div class="header-search" id="header-search-wrap">
+      <span class="hs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+      <input class="hs-input" id="hs-input" type="text" placeholder="Search brand, model, fuel type…" autocomplete="off">
+      <span class="hs-kbd">/</span>
+      <div class="search-dd" id="search-dd"></div>
+    </div>
+
+    <nav class="header-nav">
+
+       <!-- HOME (no dropdown) -->
+    <div class="av-item">
+      <button class="av-link" onclick="AV.goTo('home')">Home</button>
+    </div>
+ 
+    <!-- NEW CARS -->
+    <div class="av-item">
+      <button class="av-link">New Cars
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd">
+ 
+        <div class="av-col">
+          <span class="av-lbl">Body type</span>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'suv'});return false">
+            <div class="av-ri"><span class="av-rt">SUV / Crossover</span><span class="av-rs">Nepal's #1 category</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'sedan'});return false">
+            <div class="av-ri"><span class="av-rt">Sedan</span><span class="av-rs">Family &amp; city comfort</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'hatchback'});return false">
+            <div class="av-ri"><span class="av-rt">Hatchback</span><span class="av-rs">Compact city cars</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'pickup'});return false">
+            <div class="av-ri"><span class="av-rt">Pickup / Truck</span><span class="av-rs">Off-road &amp; commercial</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'van'});return false">
+            <div class="av-ri"><span class="av-rt">Van / MPV</span><span class="av-rs">Passenger &amp; cargo</span></div>
+          </a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Terrain</span>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'mountain'});return false">
+            <div class="av-ri"><span class="av-rt">Mountain &amp; Hilly Roads</span><span class="av-rs">High ground clearance</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'city'});return false">
+            <div class="av-ri"><span class="av-rt">City Commute</span><span class="av-rs">Compact &amp; fuel-efficient</span></div>
+          </a>
+        </div>
+ 
+        <div class="av-col">
+          <span class="av-lbl">Fuel type</span>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'electric'});return false">
+            <div class="av-ri"><span class="av-rt">Electric (EV)</span><span class="av-rs">Fastest growing in Nepal</span></div>
+            <span class="av-b av-b--g">Trending</span>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'hybrid'});return false">
+            <div class="av-ri"><span class="av-rt">Hybrid</span><span class="av-rs">Best of both worlds</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'petrol'});return false">
+            <div class="av-ri"><span class="av-rt">Petrol</span><span class="av-rs">Widest availability</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{filter:'diesel'});return false">
+            <div class="av-ri"><span class="av-rt">Diesel</span><span class="av-rs">Torque &amp; economy</span></div>
+          </a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Budget</span>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{budget:'under20'});return false"><div class="av-ri"><span class="av-rt">Under Rs 20L</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{budget:'20to40'});return false"><div class="av-ri"><span class="av-rt">Rs 20L – Rs 40L</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{budget:'40to70'});return false"><div class="av-ri"><span class="av-rt">Rs 40L – Rs 70L</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{budget:'70to1cr'});return false"><div class="av-ri"><span class="av-rt">Rs 70L – Rs 1Cr</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{budget:'above1cr'});return false"><div class="av-ri"><span class="av-rt">Rs 1Cr+</span></div></a>
+        </div>
+ 
+        <div class="av-col">
+          <span class="av-lbl">Quick finds</span>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{sort:'latest'});return false"><div class="av-ri"><span class="av-rt">Latest arrivals</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{sort:'upcoming'});return false">
+            <div class="av-ri"><span class="av-rt">Upcoming launches</span><span class="av-rs">Expected price &amp; date</span></div>
+            <span class="av-b av-b--o">New</span>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{sort:'bestseller'});return false"><div class="av-ri"><span class="av-rt">Best sellers in Nepal</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('cars',{view:'brands'});return false"><div class="av-ri"><span class="av-rt">Browse by brand</span></div></a>
+        </div>
+ 
+      </div>
+    </div>
+ 
+    <!-- USED CARS -->
+    <div class="av-item">
+      <button class="av-link">Used Cars
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd">
+        <div class="av-col" style="min-width:225px">
+          <span class="av-lbl">Pre-owned</span>
+          <a class="av-row" href="#" onclick="AV.goTo('used');return false">
+            <div class="av-ri"><span class="av-rt">Browse used cars</span><span class="av-rs">Verified · certified pre-owned</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{filter:'certified'});return false">
+            <div class="av-ri"><span class="av-rt">Certified used cars</span><span class="av-rs">140-point inspected</span></div>
+            <span class="av-b av-b--b">Verified</span>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{view:'history'});return false">
+            <div class="av-ri"><span class="av-rt">Vehicle history report</span><span class="av-rs">Accident &amp; ownership check</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="alert('Sell enquiry: +977-9701076240')">
+            <div class="av-ri"><span class="av-rt">Sell your car</span><span class="av-rs">Get instant valuation</span></div>
+          </a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Filter by</span>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{filter:'year'});return false"><div class="av-ri"><span class="av-rt">Year</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{filter:'price'});return false"><div class="av-ri"><span class="av-rt">Price range</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{filter:'mileage'});return false">
+            <div class="av-ri"><span class="av-rt">Mileage</span><span class="av-rs">Low km preferred</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('used',{filter:'brand'});return false"><div class="av-ri"><span class="av-rt">Brand</span></div></a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Finance</span>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'emi'});return false">
+            <div class="av-ri"><span class="av-rt">EMI calculator</span><span class="av-rs">Check monthly payments</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'loan'});return false"><div class="av-ri"><span class="av-rt">Loan eligibility check</span></div></a>
+          <a class="av-row" href="/insurance-finance.html"><div class="av-ri"><span class="av-rt">Banks &amp; finance options</span></div></a>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- COMPARE -->
+    <div class="av-item">
+      <button class="av-link">Compare
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd">
+ 
+        <div class="av-col" style="min-width:205px">
+          <span class="av-lbl">Tools</span>
+          <a class="av-row" href="#" onclick="AV.goTo('compare');return false">
+            <div class="av-ri"><span class="av-rt">New car comparison</span><span class="av-rs">Side-by-side specs &amp; price</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{type:'used'});return false"><div class="av-ri"><span class="av-rt">Used car comparison</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'ev_vs_petrol'});return false">
+            <div class="av-ri"><span class="av-rt">EV vs Petrol</span><span class="av-rs">Real cost over 5 years</span></div>
+            <span class="av-b av-b--g">Popular</span>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'hybrid_vs_ev'});return false"><div class="av-ri"><span class="av-rt">Hybrid vs EV</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{mode:'multi'});return false">
+            <div class="av-ri"><span class="av-rt">Compare up to 5 cars</span></div>
+            <span class="av-b av-b--o">New</span>
+          </a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Smart compare</span>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'custom'});return false">
+            <div class="av-ri"><span class="av-rt">Build your own</span><span class="av-rs">Pick any 2–5 cars</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'truecost'});return false">
+            <div class="av-ri"><span class="av-rt">True cost calculator</span><span class="av-rs">Price + tax + fuel + maintenance</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'roadscore'});return false">
+            <div class="av-ri"><span class="av-rt">Nepal road suitability</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'ownerscore'});return false">
+            <div class="av-ri"><span class="av-rt">Owner satisfaction score</span></div>
+          </a>
+        </div>
+ 
+        <div class="av-col" style="min-width:215px">
+          <span class="av-lbl">Popular comparisons</span>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'nexon_ev_vs_byd_atto3'});return false">
+            <div class="av-ri"><span class="av-rt">Nexon EV vs BYD Atto 3</span><span class="av-rs">Top EV battle</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'mg_zs_vs_byd_atto3'});return false"><div class="av-ri"><span class="av-rt">MG ZS EV vs BYD Atto 3</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'creta_vs_seltos'});return false"><div class="av-ri"><span class="av-rt">Hyundai Creta vs Kia Seltos</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'tata_nexon_vs_punch'});return false">
+            <div class="av-ri"><span class="av-rt">Tata Nexon vs Punch</span><span class="av-rs">Budget SUV battle</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'hyundai_venue_vs_sonet'});return false">
+            <div class="av-ri"><span class="av-rt">Venue vs Sonet</span><span class="av-rs">Compact SUV rivals</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'swift_vs_i20'});return false">
+            <div class="av-ri"><span class="av-rt">Maruti Swift vs Hyundai i20</span><span class="av-rs">Hatchback showdown</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'fortuner_vs_endeavour'});return false"><div class="av-ri"><span class="av-rt">Fortuner vs Endeavour</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{preset:'best_suvs'});return false"><div class="av-ri"><span class="av-rt">Best-selling SUVs</span></div></a>
+        </div>
+ 
+      </div>
+    </div>
+ 
+    <!-- SERVICES -->
+    <div class="av-item">
+      <button class="av-link" onclick="window.location.href='/services.html'">Services
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd">
+        <div class="av-col" style="min-width:230px">
+          <span class="av-lbl">All services</span>
+          <a class="av-row" href="/dotm-services.html">
+            <div class="av-ri"><span class="av-rt">DOTM services</span><span class="av-rs">Bluebook, fitness, transfers</span></div>
+          </a>
+          <a class="av-row" href="/parts-accessories.html">
+            <div class="av-ri"><span class="av-rt">Parts &amp; accessories</span><span class="av-rs">Genuine OEM &amp; accessories</span></div>
+          </a>
+          <a class="av-row" href="/maintenance-repairs.html">
+            <div class="av-ri"><span class="av-rt">Maintenance &amp; repairs</span><span class="av-rs">Servicing, AC, EV diagnostics</span></div>
+          </a>
+          <a class="av-row" href="/insurance-finance.html">
+            <div class="av-ri"><span class="av-rt">Insurance &amp; financing</span><span class="av-rs">EMI plans, insurance, trade-in</span></div>
+          </a>
+          <a class="av-row" href="/other-services.html">
+            <div class="av-ri"><span class="av-rt">Other services</span><span class="av-rs">GPS, ceramic coat, roadside</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- NEWS & REVIEWS -->
+    <div class="av-item">
+      <button class="av-link" onclick="window.location.href='/videos.html'">News &amp; Reviews
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd">
+ 
+        <div class="av-col">
+          <span class="av-lbl">Watch</span>
+          <a class="av-row" href="videos.html"><div class="av-ri"><span class="av-rt">Videos</span><span class="av-rs">New uploads &amp; trending reels</span></div></a>
+          <a class="av-row" href="videos.html?type=reviews"><div class="av-ri"><span class="av-rt">News &amp; reviews</span><span class="av-rs">Latest news and reviews</span></div></a>
+          <a class="av-row" href="videos.html?type=shorts"><div class="av-ri"><span class="av-rt">Short reels</span><span class="av-rs">Quick highlights &amp; clips</span></div></a>
+          <a class="av-row" href="videos.html?type=ev"><div class="av-ri"><span class="av-rt">EV videos</span><span class="av-rs">Nepal EV revolution</span></div></a>
+          <div class="av-sep"></div>
+          <span class="av-lbl">Latest news</span>
+          <a class="av-row" href="videos.html?type=ev"><div class="av-ri"><span class="av-rt">EV news</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('news',{tag:'upcoming'});return false"><div class="av-ri"><span class="av-rt">Upcoming launches</span><span class="av-rs">Price &amp; tax updates</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('news',{tag:'budget'});return false"><div class="av-ri"><span class="av-rt">Budget, excise &amp; customs</span></div></a>
+          <a class="av-row" href="#" onclick="AV.goTo('news',{tag:'market'});return false"><div class="av-ri"><span class="av-rt">Market trends</span></div></a>
+        </div>
+ 
+        <div class="av-col">
+          <span class="av-lbl">Guides &amp; info</span>
+          <a class="av-row" href="#" onclick="AV.goTo('guide',{topic:'buying'});return false">
+            <div class="av-ri"><span class="av-rt">Buying guide</span><span class="av-rs">Tips for Nepal buyers</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('guide',{topic:'maintenance'});return false">
+            <div class="av-ri"><span class="av-rt">Maintenance tips</span><span class="av-rs">Nepal roads &amp; monsoon care</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('guide',{topic:'women'});return false">
+            <div class="av-ri"><span class="av-rt">Women &amp; cars</span><span class="av-rs">Growing segment in Nepal</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('awards');return false">
+            <div class="av-ri"><span class="av-rt">Nepal car awards</span><span class="av-rs">Best cars of the year</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'tmv'});return false">
+            <div class="av-ri"><span class="av-rt">True market value</span><span class="av-rs">What others paid in Nepal</span></div>
+          </a>
+        </div>
+ 
+      </div>
+    </div>
+ 
+    <!-- TOOLS 
+    <div class="av-item">
+      <button class="av-link">
+        Tools <span class="av-b av-b--o" style="font-size:10px;padding:2px 6px;border-radius:4px">New</span>
+        <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="av-dd av-dd--r">
+        <div class="av-col" style="min-width:215px">
+          <span class="av-lbl">Smart tools</span>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'matchmaker'});return false">
+            <div class="av-ri"><span class="av-rt">Find my perfect car</span><span class="av-rs">Answer questions, get matched</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'emi'});return false">
+            <div class="av-ri"><span class="av-rt">EMI calculator</span><span class="av-rs">Estimate monthly payments</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'charging'});return false">
+            <div class="av-ri"><span class="av-rt">EV charging map</span><span class="av-rs">Find chargers near you</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'testdrive'});return false">
+            <div class="av-ri"><span class="av-rt">Test drive at home</span></div>
+          </a>
+          <a class="av-row" href="#" onclick="AV.goTo('compare',{tool:'tmv'});return false">
+            <div class="av-ri"><span class="av-rt">True market value</span><span class="av-rs">What others paid in Nepal</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+ 
+  </div> /.av-items --> 
+ 
+  <button class="av-cta" onclick="AV.goTo('quote')">Get a quote</button>
+ 
+</nav>
+
+    <div class="header-ctas">
+      <a href="/book-service.html" class="btn-book">Book Service</a>
+    </div>
+
+    <div class="mob-icons">
+      <button class="icon-btn" id="mob-search-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="icon-btn" onclick="AV.goTo('compare')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+      </button>
+    </div>
+    <button class="burger" id="burger">
+      <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══ MOBILE MENU ═══ -->
+<div class="mobile-menu" id="mm">
+  <div class="mm-backdrop" onclick="closeMM()"></div>
+  <div class="mm-panel">
+
+    <!-- Search -->
+    <div class="mm-search">
+      <div class="mm-search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Search brand, model…" onkeydown="if(event.key==='Enter'){AV.goTo('cars');closeMM()}">
+        <button onclick="AV.goTo('cars');closeMM()">Search</button>
+      </div>
+    </div>
+
+    <!-- Home -->
+    <div class="mm-item">
+      <button class="mm-btn" onclick="AV.goTo('home');closeMM()"><span>Home</span></button>
+    </div>
+
+    <!-- New Cars -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-cars-btn" onclick="mmToggle('mm-cars-sub',this)">
+        <span>New Cars</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="mm-sub" id="mm-cars-sub">
+        <div class="mm-sub-label">By Body Type</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'suv'});closeMM()">SUV / Crossover</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'sedan'});closeMM()">Sedan</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hatchback'});closeMM()">Hatchback</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'pickup'});closeMM()">Pickup / Truck</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'van'});closeMM()">Van / MPV / Microbus</div>
+        <div class="mm-sub-label">By Fuel Type</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'electric'});closeMM()">Electric (EV)</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hybrid'});closeMM()">Hybrid</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'petrol'});closeMM()">Petrol</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'diesel'});closeMM()">Diesel</div>
+        <div class="mm-sub-label">By Terrain</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'mountain'});closeMM()">Mountain &amp; Hilly Roads</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'city'});closeMM()">City Commute</div>
+        <div class="mm-sub-label">By Budget</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'under20'});closeMM()">Under Rs 20L</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'20to40'});closeMM()">Rs20L – Rs40L</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'40to70'});closeMM()">Rs40L – Rs70L</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'70to1cr'});closeMM()">Rs70L – Rs1Cr</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'above1cr'});closeMM()">Rs1Cr+</div>
+        <div class="mm-sub-label">Quick Finds</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{sort:'latest'});closeMM()">Latest Arrivals</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{sort:'upcoming'});closeMM()">Upcoming Launches</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{sort:'bestseller'});closeMM()">Best Sellers in Nepal</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{view:'brands'});closeMM()">Browse by Brand</div>
+      </div>
+    </div>
+
+    <!-- Used Cars -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-used-btn" onclick="mmToggle('mm-used-sub',this)">
+        <span>Used Cars</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="mm-sub" id="mm-used-sub">
+        <div class="mm-sub-link" onclick="AV.goTo('used');closeMM()">Browse Used Cars</div>
+        <div class="mm-sub-link" onclick="alert('Sell enquiry: +977-9701076240');closeMM()">Sell Your Car</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'certified'});closeMM()">Certified Cars</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{view:'history'});closeMM()">Vehicle History Report</div>
+        <div class="mm-sub-label">Filter By</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'year'});closeMM()">By Year</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'price'});closeMM()">By Price Range</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'mileage'});closeMM()">By Mileage</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'brand'});closeMM()">By Brand</div>
+        <div class="mm-sub-label">Finance</div>
+        <div class="mm-sub-link" onclick="AV.goTo('tools',{tool:'emi'});closeMM()">EMI Calculator</div>
+        <div class="mm-sub-link" onclick="AV.goTo('tools',{tool:'loan'});closeMM()">Loan Eligibility Check</div>
+        <div class="mm-sub-link" onclick="window.location.href='/insurance-finance.html';closeMM()">Banks &amp; Finance Options</div>
+      </div>
+    </div>
+
+    <!-- Compare -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-compare-btn" onclick="mmToggle('mm-compare-sub',this)">
+        <span>Compare Cars</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="mm-sub" id="mm-compare-sub">
+        <div class="mm-sub-link" onclick="AV.goTo('compare');closeMM()">Start Comparison</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'nexon_ev_vs_byd_atto3'});closeMM()">Nexon EV vs BYD Atto 3</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'mg_zs_vs_byd_atto3'});closeMM()">MG ZS EV vs BYD Atto 3</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'creta_vs_seltos'});closeMM()">Hyundai Creta vs Kia Seltos</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'tata_nexon_vs_punch'});closeMM()">Tata Nexon vs Punch</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'hyundai_venue_vs_sonet'});closeMM()">Venue vs Sonet</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'swift_vs_i20'});closeMM()">Maruti Swift vs Hyundai i20</div>
+        <div class="mm-sub-label">Smart Tools</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'truecost'});closeMM()">True Cost Calculator</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'roadscore'});closeMM()">Nepal Road Suitability Score</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'ownerscore'});closeMM()">Owner Satisfaction Score</div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-services-btn" onclick="mmToggle('mm-services-sub',this)">
+        <span>Our Services</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="mm-sub" id="mm-services-sub">
+        <div class="mm-sub-link" onclick="window.location.href='/dotm-services.html';closeMM()">DOTM Services</div>
+        <div class="mm-sub-link" onclick="window.location.href='/parts-accessories.html';closeMM()">Parts &amp; Accessories</div>
+        <div class="mm-sub-link" onclick="window.location.href='/maintenance-repairs.html';closeMM()">Maintenance &amp; Repairs</div>
+        <div class="mm-sub-link" onclick="window.location.href='/insurance-finance.html';closeMM()">Insurance &amp; Financing</div>
+        <div class="mm-sub-link" onclick="window.location.href='/other-services.html';closeMM()">Other Services</div>
+      </div>
+    </div>
+
+    <!-- News & Reviews -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-news-btn" onclick="mmToggle('mm-news-sub',this)">
+        <span>News &amp; Reviews</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="mm-sub" id="mm-news-sub">
+        <div class="mm-sub-link" onclick="window.location.href='videos.html';closeMM()">Latest Videos</div>
+        <div class="mm-sub-link" onclick="window.location.href='videos.html?type=reviews';closeMM()">Car Reviews</div>
+        <div class="mm-sub-link" onclick="window.location.href='videos.html?type=shorts';closeMM()">Short Reels</div>
+        <div class="mm-sub-link" onclick="window.location.href='videos.html?type=ev';closeMM()">EV Videos</div>
+        <div class="mm-sub-label">Latest News</div>
+        <div class="mm-sub-link" onclick="AV.goTo('news',{tag:'upcoming'});closeMM()">Upcoming Launches</div>
+        <div class="mm-sub-link" onclick="AV.goTo('news',{tag:'budget'});closeMM()">Budget &amp; Customs News</div>
+        <div class="mm-sub-link" onclick="AV.goTo('news',{tag:'market'});closeMM()">Market Trends</div>
+        <div class="mm-sub-label">Guides</div>
+        <div class="mm-sub-link" onclick="AV.goTo('guide',{topic:'buying'});closeMM()">Buying Guide</div>
+        <div class="mm-sub-link" onclick="AV.goTo('guide',{topic:'maintenance'});closeMM()">Maintenance Tips</div>
+        <div class="mm-sub-link" onclick="AV.goTo('guide',{topic:'women'});closeMM()">Women &amp; Cars</div>
+        <div class="mm-sub-link" onclick="AV.goTo('awards');closeMM()">Annual Nepal Car Awards</div>
+        <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'tmv'});closeMM()">True Market Value</div>
+      </div>
+    </div>
+
+
+    <!-- CTA Buttons -->
+    <div class="mm-cta">
+    
+      <button class="btn btn-primary" onclick="window.location.href='/book-service.html'">Book Service</button>
+    </div>
+
+    <!-- Phone -->
+    <div style="padding:14px 16px 20px;border-top:1px solid var(--bg2)">
+      <a href="tel:+9779701076240" style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--g3)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-.95a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +977-9701076240
+      </a>
+      <div style="font-size:12px;color:var(--ink4);margin-top:3px;margin-left:24px">Mon–Sat · 9am–6pm</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ COMPARE TRAY ═══ -->
+<div class="cmp-tray" id="cmp-tray">
+  <span class="cmp-label">Compare</span>
+  <div class="cmp-slots" id="cmp-slots"></div>
+  <div class="cmp-btns">
+    <button class="cmp-go" onclick="AV.goTo('compare')">Compare Now</button>
+    <button class="cmp-clr" onclick="AV.clearCompare()">✕ Clear</button>
+  </div>
+</div>
+
+<main id="app-root">
+  <div style="display:flex;align-items:center;justify-content:center;height:60vh">
+    <div style="text-align:center">
+      <div style="width:44px;height:44px;border:3px solid var(--g3);border-top-color:transparent;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px"></div>
+      <div style="font-size:14px;color:var(--ink4);font-weight:600">Loading AutoViindu…</div>
+    </div>
+  </div>
+</main>
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer" id="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <!-- Brand col -->
+      <div>
+        <div style="display:flex;align-items:center;">
+          <img src="assets/images/cars/logo.PNG" alt="AutoViindu Logo" class="footer-logo-img">
+        </div>
+        <p class="footer-desc">Nepal's most trusted automotive platform. Real prices, real specs, expert reviews.</p>
+        <div class="footer-social">
+          <a class="fsoc" href="https://www.facebook.com/profile.php?id=61576845804927" title="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.4)" width="14" height="14"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a class="fsoc" href="https://www.instagram.com/autoviindu/" title="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a class="fsoc" href="https://www.youtube.com/@autoviindu" title="YouTube" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14" height="14"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="rgba(255,255,255,.4)" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- New Cars col -->
+      <div>
+        <div class="footer-col-title">New Cars</div>
+        <a class="footer-link" onclick="AV.goTo('cars',{filter:'suv'})">SUV / Crossover</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{filter:'sedan'})">Sedan</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{filter:'hatchback'})">Hatchback</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{filter:'electric'})">Electric (EV)</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{filter:'hybrid'})">Hybrid</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{sort:'upcoming'})">Upcoming Launches</a>
+        <a class="footer-link" onclick="AV.goTo('cars',{view:'brands'})">Browse by Brand</a>
+      </div>
+
+      <!-- Used Cars col -->
+      <div>
+        <div class="footer-col-title">Used Cars</div>
+        <a class="footer-link" onclick="AV.goTo('used')">Browse Used Cars</a>
+        <a class="footer-link" onclick="alert('Sell enquiry: +977-9701076240')">Sell Your Car</a>
+        <a class="footer-link" onclick="AV.goTo('used',{filter:'certified'})">Certified Cars</a>
+        <a class="footer-link" onclick="AV.goTo('used',{view:'history'})">Vehicle History Report</a>
+        <a class="footer-link" onclick="AV.goTo('tools',{tool:'emi'})">EMI Calculator</a>
+        <a class="footer-link" href="insurance-finance.html">Finance Options</a>
+      </div>
+
+      <!-- Compare col -->
+      <div>
+        <div class="footer-col-title">Compare</div>
+        <a class="footer-link" onclick="AV.goTo('compare')">New Car Comparison</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{preset:'ev_vs_petrol'})">EV vs Petrol</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{preset:'hybrid_vs_ev'})">Hybrid vs EV</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{tool:'truecost'})">True Cost Calculator</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{tool:'specs'})">200+ Spec Comparison</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{tool:'roadscore'})">Nepal Road Score</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{tool:'ownerscore'})">Owner Satisfaction Score</a>
+      </div>
+
+      <!-- Services col -->
+      <div>
+        <div class="footer-col-title">Our Services</div>
+        <a class="footer-link" href="/dotm-services.html">DOTM Services</a>
+        <a class="footer-link" href="/parts-accessories.html">Parts &amp; Accessories</a>
+        <a class="footer-link" href="/maintenance-repairs.html">Maintenance &amp; Repairs</a>
+        <a class="footer-link" href="/insurance-finance.html">Insurance &amp; Financing</a>
+        <a class="footer-link" href="/other-services.html">Other Services</a>
+        <a class="footer-link" href="/book-service.html">Book Service</a>
+      </div>
+
+      <!-- News & Tools col -->
+      <div>
+        <div class="footer-col-title">News &amp; Tools</div>
+        <a class="footer-link" onclick="AV.goTo('guide',{topic:'buying'})">Buying Guide</a>
+        <a class="footer-link" onclick="AV.goTo('guide',{topic:'maintenance'})">Maintenance Tips</a>
+        <a class="footer-link" onclick="window.location.href='videos.html?type=ev'">EV News</a>
+        <a class="footer-link" onclick="AV.goTo('awards')">Annual Car Awards</a>
+        <a class="footer-link" onclick="AV.goTo('tools',{tool:'matchmaker'})">Find My Perfect Car</a>
+        <a class="footer-link" onclick="AV.goTo('tools',{tool:'charging'})">EV Charging Map</a>
+        <a class="footer-link" onclick="AV.goTo('compare',{tool:'tmv'})">True Market Value</a>
+      </div>
+
+      <!-- Contact col -->
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <a class="footer-link" href="tel:+9779701076240">+977-9701076240</a>
+        <a class="footer-link" href="mailto:info@autoviindu.com">info@autoviindu.com</a>
+        <a class="footer-link">Nayabazar, Kathmandu</a>
+        <a class="footer-link">Mon–Sat · 9am–6pm</a>
+        <div style="margin-top:14px;padding:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:var(--r10)">
+          <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Quick Contact</div>
+          <a href="tel:+9779701076240" style="display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:#4dd870">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-.95a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.footer-grid -->
+
+    <div class="footer-bottom">
+      <span class="footer-bottom-txt">© 2025 AutoViindu Pvt. Ltd. All rights reserved. Nayabazar, Kathmandu.</span>
+      <span class="footer-bottom-txt">+977-9701076240 · Mon–Sat 9am–6pm</span>
+      <div class="fbot-links">
+        <a>Privacy</a>
+        <a>Terms</a>
+        <a>Sitemap</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var current = null, timer = null;
+
+  function open(item){
+    if(current && current !== item) close(current, true);
+    clearTimeout(timer);
+    item.classList.add('open');
+    current = item;
+  }
+
+  function close(item, now){
+    if(!item) return;
+    if(now){ item.classList.remove('open'); if(current===item) current=null; }
+    else { timer = setTimeout(function(){ item.classList.remove('open'); if(current===item) current=null; }, 120); }
+  }
+
+  document.querySelectorAll('.av-item').forEach(function(item){
+    item.addEventListener('mouseenter', function(){ open(item); });
+    item.addEventListener('mouseleave', function(){ close(item); });
+    var btn = item.querySelector('.av-link');
+    if(btn){
+      btn.addEventListener('keydown', function(e){
+        if(e.key==='Enter'||e.key===' '){ e.preventDefault(); item.classList.contains('open') ? close(item,true) : open(item); }
+        if(e.key==='Escape') close(item,true);
+      });
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(current && !current.contains(e.target)) close(current,true);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && current) close(current,true);
+  });
+})();
+</script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

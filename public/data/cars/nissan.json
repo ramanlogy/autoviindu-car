@@ -1,0 +1,432 @@
+[
+  {
+    "id": 501,
+    "slug": "nissan-magnite-2025",
+    "brand": "Nissan",
+    "model": "Magnite",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "value",
+    "tagline": "Sub-4m SUV with turbo punch and 205mm clearance for Nepal roads",
+    "rating": 4.1,
+    "reviews": 1543,
+    "expertScore": 7.6,
+    "baseEMI": 35000,
+    "overview": "The Nissan Magnite delivers outstanding value in Nepal's compact SUV space with its 1.0L turbo engine, 205mm ground clearance, 8\" touchscreen with wireless CarPlay, and a spacious 336L boot. The CVT variant offers smooth city driving.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Onyx Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Fiery Copper",
+        "hex": "#B87333"
+      },
+      {
+        "name": "Vivid Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Blade Silver",
+        "hex": "#8C9098"
+      },
+      {
+        "name": "Magnetic Red",
+        "hex": "#C0392B"
+      }
+    ],
+    "variants": [
+      {
+        "name": "XE",
+        "price": 3490000,
+        "label": "Rs. 34.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "4 Airbags",
+          "8\" Touchscreen",
+          "Rear Camera",
+          "Keyless Entry",
+          "Push Button Start",
+          "15\" Steel Wheels"
+        ],
+        "specs": {
+          "power": "72 hp @ 6,250 rpm",
+          "torque": "96 Nm",
+          "efficiency": "17.7 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "XL",
+        "price": 3790000,
+        "label": "Rs. 37.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "1.0L Turbo Engine",
+          "100 hp",
+          "6 Airbags",
+          "Auto Climate Control",
+          "Rear AC Vents",
+          "XE features+"
+        ],
+        "specs": {
+          "power": "100 hp @ 5,000 rpm",
+          "torque": "160 Nm",
+          "efficiency": "17.4 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "XV",
+        "price": 4190000,
+        "label": "Rs. 41.90L",
+        "popular": true,
+        "transmission": "CVT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "Wireless CarPlay/Android Auto",
+          "360° Surround Camera",
+          "Ambient Lighting",
+          "Electric Sunroof",
+          "17\" Alloy Wheels",
+          "XL features+"
+        ],
+        "specs": {
+          "power": "100 hp @ 5,000 rpm",
+          "torque": "160 Nm",
+          "efficiency": "17.0 km/l",
+          "transmission": "CVT"
+        }
+      },
+      {
+        "name": "XV Premium",
+        "price": 4590000,
+        "label": "Rs. 45.90L",
+        "popular": false,
+        "transmission": "CVT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "Wireless Charging",
+          "6-Speaker Bose",
+          "TPMS",
+          "Drive Modes (Eco/Sport)",
+          "XV features+"
+        ],
+        "specs": {
+          "power": "100 hp @ 5,000 rpm",
+          "torque": "160 Nm",
+          "efficiency": "17.0 km/l",
+          "transmission": "CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.0L NA / 1.0L Turbo Petrol",
+      "Displacement": "999 cc",
+      "Power": "72–100 hp",
+      "Torque": "96–160 Nm",
+      "Efficiency": "17.0–17.7 km/l",
+      "Fuel Tank": "40 L",
+      "Transmission": "5MT / CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "336 L",
+      "Length": "3,994 mm",
+      "Width": "1,758 mm",
+      "Height": "1,572 mm",
+      "Wheelbase": "2,500 mm",
+      "Ground Clearance": "205 mm",
+      "Airbags": "4–6"
+    },
+    "pros": [
+      "205mm ground clearance",
+      "Turbo available from XL",
+      "Affordable entry price",
+      "360° camera on XV",
+      "Good fuel efficiency"
+    ],
+    "cons": [
+      "Only 4 airbags on XE",
+      "No ADAS",
+      "Smaller boot than rivals",
+      "CVT only on top 2 variants"
+    ],
+    "highlights": [
+      "205mm Ground Clearance",
+      "100hp Turbo",
+      "360° Camera",
+      "Wireless CarPlay"
+    ]
+  },
+  {
+    "id": 502,
+    "slug": "nissan-x-trail-2025",
+    "brand": "Nissan",
+    "model": "X-Trail",
+    "year": 2025,
+    "type": "Petrol Hybrid",
+    "body": "Mid-size SUV",
+    "badge": "premium",
+    "tagline": "E-Power hybrid tech meets 7-seat SUV capability for Nepal highways",
+    "rating": 4.4,
+    "reviews": 621,
+    "expertScore": 8.3,
+    "baseEMI": 98000,
+    "overview": "The Nissan X-Trail returns to Nepal with revolutionary e-POWER technology — a petrol engine that only generates electricity, driving the wheels entirely via motor. 7-seat layout, ProPILOT ADAS, and e-4ORCE AWD make it the most capable family SUV in its range.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Ceramic Grey",
+        "hex": "#A0A0A0"
+      },
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Aurora Red",
+        "hex": "#9B1B30"
+      },
+      {
+        "name": "Midnight Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Storm Blue",
+        "hex": "#1B3A6B"
+      }
+    ],
+    "variants": [
+      {
+        "name": "S e-POWER 2WD",
+        "price": 9990000,
+        "label": "Rs. 99.90L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Petrol Hybrid",
+        "features": [
+          "e-POWER Hybrid",
+          "7 Seats",
+          "12.3\" Touchscreen",
+          "6 Airbags",
+          "ProPILOT ADAS",
+          "360° Camera",
+          "18\" Alloy Wheels",
+          "Wireless CarPlay"
+        ],
+        "specs": {
+          "power": "204 hp (motor)",
+          "torque": "300 Nm",
+          "efficiency": "18.4 km/l",
+          "transmission": "Single Speed"
+        }
+      },
+      {
+        "name": "SV e-4ORCE AWD",
+        "price": 11490000,
+        "label": "Rs. 1.14 Cr",
+        "popular": true,
+        "transmission": "Single Speed",
+        "fuel": "Petrol Hybrid",
+        "features": [
+          "e-4ORCE AWD (Dual Motor)",
+          "Nappa Leather Seats",
+          "Bose 10-Speaker",
+          "Head-Up Display",
+          "Ambient Lighting",
+          "S features+"
+        ],
+        "specs": {
+          "power": "306 hp (dual motor)",
+          "torque": "600 Nm",
+          "efficiency": "16.8 km/l",
+          "transmission": "Single Speed"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L VC-Turbo + e-POWER",
+      "System Power": "204–306 hp",
+      "Torque": "300–600 Nm",
+      "Efficiency": "16.8–18.4 km/l",
+      "Fuel Tank": "55 L",
+      "Transmission": "Single Speed Electric",
+      "Drive": "FWD / e-4ORCE AWD",
+      "Seating": "7",
+      "Boot Space": "565 L (5-seat mode)",
+      "Length": "4,640 mm",
+      "Width": "1,840 mm",
+      "Height": "1,720 mm",
+      "Wheelbase": "2,705 mm",
+      "Ground Clearance": "210 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "e-POWER = EV driving feel",
+      "e-4ORCE AWD on top variant",
+      "18.4 km/l hybrid efficiency",
+      "ProPILOT ADAS",
+      "7-seat with huge boot"
+    ],
+    "cons": [
+      "Very high price",
+      "Petrol-only (no plug-in)",
+      "Heavier than rivals",
+      "Limited Nepal service experience"
+    ],
+    "highlights": [
+      "e-POWER Hybrid",
+      "e-4ORCE AWD",
+      "ProPILOT ADAS",
+      "18.4 km/l"
+    ]
+  },
+  {
+    "id": 503,
+    "slug": "nissan-kicks-2025",
+    "brand": "Nissan",
+    "model": "Kicks",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "new",
+    "tagline": "Bold urban SUV with class-leading 209mm clearance and turbo power",
+    "rating": 4.2,
+    "reviews": 489,
+    "expertScore": 7.9,
+    "baseEMI": 48000,
+    "overview": "The all-new Nissan Kicks arrives in Nepal as a bold urban-focused compact SUV, featuring a 1.2L turbo engine, 10.67\" floating touchscreen, 209mm ground clearance, and a head-turning exterior. Available exclusively with CVT for smooth city and highway drives.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Ceramic Grey",
+        "hex": "#A0A0A0"
+      },
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Onyx Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Magma Red",
+        "hex": "#B22222"
+      },
+      {
+        "name": "Sky Blue",
+        "hex": "#4A90D9"
+      }
+    ],
+    "variants": [
+      {
+        "name": "XL CVT",
+        "price": 4890000,
+        "label": "Rs. 48.90L",
+        "popular": false,
+        "transmission": "CVT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "6 Airbags",
+          "10.67\" Touchscreen + CarPlay",
+          "Rear Camera + Sensors",
+          "Auto Climate Control",
+          "Electric Sunroof",
+          "16\" Alloy Wheels",
+          "CVT"
+        ],
+        "specs": {
+          "power": "114 hp @ 5,000 rpm",
+          "torque": "190 Nm",
+          "efficiency": "17.2 km/l",
+          "transmission": "CVT"
+        }
+      },
+      {
+        "name": "XV CVT",
+        "price": 5390000,
+        "label": "Rs. 53.90L",
+        "popular": true,
+        "transmission": "CVT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "360° Camera",
+          "Wireless CarPlay/Android Auto",
+          "8-Speaker Audio",
+          "Ambient Lighting",
+          "Drive Modes",
+          "XL features+"
+        ],
+        "specs": {
+          "power": "114 hp @ 5,000 rpm",
+          "torque": "190 Nm",
+          "efficiency": "17.2 km/l",
+          "transmission": "CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L Turbo Petrol",
+      "Displacement": "1,199 cc",
+      "Power": "114 hp @ 5,000 rpm",
+      "Torque": "190 Nm",
+      "Efficiency": "17.2 km/l",
+      "Fuel Tank": "41 L",
+      "Transmission": "CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "345 L",
+      "Length": "4,192 mm",
+      "Width": "1,760 mm",
+      "Height": "1,588 mm",
+      "Wheelbase": "2,620 mm",
+      "Ground Clearance": "209 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "209mm ground clearance",
+      "1.2 Turbo in both variants",
+      "10.67\" large screen",
+      "Distinctive styling",
+      "Good torque for Nepal hills"
+    ],
+    "cons": [
+      "CVT only — no MT option",
+      "No ADAS",
+      "New model — less resale data",
+      "Limited boot vs Seltos"
+    ],
+    "highlights": [
+      "209mm Ground Clearance",
+      "114hp Turbo",
+      "10.67\" Screen",
+      "360° Camera"
+    ]
+  }
+]

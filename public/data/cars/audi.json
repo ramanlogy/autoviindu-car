@@ -1,0 +1,608 @@
+[
+  {
+    "id": 701,
+    "slug": "audi-q3-2025",
+    "brand": "Audi",
+    "model": "Q3",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact Luxury SUV",
+    "badge": "premium",
+    "tagline": "Entry-luxury German SUV with quattro AWD for Kathmandu and beyond",
+    "rating": 4.1,
+    "reviews": 312,
+    "expertScore": 7.8,
+    "baseEMI": 155000,
+    "overview": "The Audi Q3 is the most affordable entry point into the Audi SUV lineup in Nepal. Powered by a turbocharged 2.0L TFSI quattro engine and packed with Audi's MMI infotainment, virtual cockpit, and advanced safety tech, it appeals to urban professionals seeking German prestige at a relatively accessible price.",
+    "images": [
+      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1619767886558-efdc259b6e09?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Mythos Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Glacier White",
+        "hex": "#F8F8F8"
+      },
+      {
+        "name": "Chronos Grey",
+        "hex": "#7A7E83"
+      },
+      {
+        "name": "Turbo Blue",
+        "hex": "#1B5299"
+      }
+    ],
+    "variants": [
+      {
+        "name": "35 TFSI",
+        "price": 7073380,
+        "label": "Rs. 70.73L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "8.8\" MMI Display",
+          "Rear Camera",
+          "5 Seats",
+          "Dual-Zone Auto AC",
+          "17\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "150 hp @ 5,000 rpm",
+          "torque": "250 Nm",
+          "efficiency": "15.0 km/l",
+          "transmission": "7-Speed S-Tronic"
+        }
+      },
+      {
+        "name": "40 TFSI quattro",
+        "price": 8500000,
+        "label": "Rs. 85.00L",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "Audi Virtual Cockpit",
+          "Panoramic Sunroof",
+          "quattro AWD",
+          "Ambient Lighting",
+          "35 TFSI features+"
+        ],
+        "specs": {
+          "power": "190 hp @ 4,200 rpm",
+          "torque": "320 Nm",
+          "efficiency": "13.5 km/l",
+          "transmission": "7-Speed S-Tronic"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L TFSI Turbo Petrol",
+      "Displacement": "1,984 cc",
+      "Power": "150–190 hp",
+      "Torque": "250–320 Nm",
+      "Efficiency": "13.5–15.0 km/l",
+      "Fuel Tank": "60 L",
+      "Transmission": "7-Speed S-Tronic DCT",
+      "Drive": "FWD / quattro AWD",
+      "Seating": "5",
+      "Boot Space": "460 L",
+      "Length": "4,484 mm",
+      "Width": "1,856 mm",
+      "Height": "1,585 mm",
+      "Wheelbase": "2,680 mm",
+      "Ground Clearance": "175 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "Entry to Audi luxury at relatively lower cost",
+      "Audi Virtual Cockpit standard on higher trim",
+      "Compact size suits Kathmandu streets",
+      "Available with quattro AWD"
+    ],
+    "cons": [
+      "High import duty inflates price",
+      "No diesel option in Nepal",
+      "Limited after-sales network",
+      "Smaller than rivals at this price"
+    ],
+    "highlights": [
+      "Compact Luxury SUV",
+      "quattro AWD",
+      "Audi Virtual Cockpit",
+      "German Engineering"
+    ]
+  },
+  {
+    "id": 702,
+    "slug": "audi-q4-etron-2025",
+    "brand": "Audi",
+    "model": "Q4 35 e-tron",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Compact Electric SUV",
+    "badge": "electric",
+    "tagline": "Audi's most affordable EV — 349 km range, German luxury, zero emissions",
+    "rating": 4.3,
+    "reviews": 87,
+    "expertScore": 8.2,
+    "baseEMI": 215000,
+    "overview": "Launched in Nepal by Kaeros International, the Audi Q4 35 e-tron is the brand's electric gateway into the Nepali premium market. With a 55 kWh battery, 349 km WLTP range, and the same MMI infotainment found across the Audi EV range, it is the most stylish German EV under Rs. 1.75 Crore in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1620891549027-942fdc95d3f5?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1619767886558-efdc259b6e09?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Glacier White",
+        "hex": "#F0F0F0"
+      },
+      {
+        "name": "Mythos Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Floret Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Navarra Blue",
+        "hex": "#1A3A5C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Q4 35 e-tron (Standard)",
+        "price": 14500000,
+        "label": "Rs. 1.45 Cr",
+        "popular": true,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "Rear Permanently Excited Sync Motor",
+          "55 kWh Battery",
+          "349 km WLTP Range",
+          "10.1\" MMI Touchscreen",
+          "Audi Virtual Cockpit",
+          "6 Airbags"
+        ],
+        "specs": {
+          "power": "170 PS",
+          "torque": "310 Nm",
+          "range": "349 km",
+          "efficiency": "N/A",
+          "transmission": "Single-Speed Auto"
+        }
+      },
+      {
+        "name": "Q4 35 e-tron Sportback",
+        "price": 15000000,
+        "label": "Rs. 1.50 Cr",
+        "popular": false,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "Sportback Coupe Roofline",
+          "Standard variant features+",
+          "Panoramic Glass Roof",
+          "20\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "170 PS",
+          "torque": "310 Nm",
+          "range": "349 km",
+          "efficiency": "N/A",
+          "transmission": "Single-Speed Auto"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "Rear Permanently Excited Synchronous Motor",
+      "Power": "125 kW (170 PS)",
+      "Torque": "310 Nm",
+      "Battery": "55 kWh Lithium-ion",
+      "Range (WLTP)": "349 km",
+      "Charging (AC)": "11 kW onboard",
+      "Charging (DC)": "100 kW fast charge",
+      "0–100 km/h": "8.5 sec",
+      "Top Speed": "160 km/h",
+      "Drive": "RWD",
+      "Seating": "5",
+      "Boot Space": "520 L",
+      "Length": "4,588 mm",
+      "Width": "1,865 mm",
+      "Height": "1,632 mm",
+      "Wheelbase": "2,764 mm",
+      "Ground Clearance": "180 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Zero emission luxury EV in Nepal",
+      "349 km real-world range suitable for Nepal",
+      "Premium Audi interior quality",
+      "Exclusive Kaeros International dealership"
+    ],
+    "cons": [
+      "Very high price for a compact SUV",
+      "Charging infrastructure limited in Nepal",
+      "RWD only — no AWD in Nepal spec",
+      "Limited service centres outside Kathmandu"
+    ],
+    "highlights": [
+      "Electric Only",
+      "349 km Range",
+      "Audi Virtual Cockpit",
+      "Zero Emissions"
+    ]
+  },
+  {
+    "id": 703,
+    "slug": "audi-q5-2025",
+    "brand": "Audi",
+    "model": "Q5",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Mid-size Luxury SUV",
+    "badge": "premium",
+    "tagline": "The benchmark mid-size luxury SUV with quattro performance",
+    "rating": 4.2,
+    "reviews": 198,
+    "expertScore": 8,
+    "baseEMI": 225000,
+    "overview": "The Audi Q5 is one of the most recognisable luxury SUVs in Nepal, blending athletic styling, a refined turbocharged engine, and Audi's signature quattro all-wheel drive. It positions itself squarely against the BMW X3 and Mercedes GLC for discerning Nepali buyers who want premium performance and brand cachet.",
+    "images": [
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1506015391300-4802dc74316e?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Glacier White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Mythos Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "District Green",
+        "hex": "#3A5C3A"
+      },
+      {
+        "name": "Daytona Grey",
+        "hex": "#6A6D72"
+      }
+    ],
+    "variants": [
+      {
+        "name": "40 TFSI quattro",
+        "price": 10476610,
+        "label": "Rs. 1.05 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "7\" Audi Virtual Cockpit",
+          "10.1\" MMI Touchscreen",
+          "quattro AWD",
+          "Panoramic Sunroof",
+          "LED Headlights",
+          "6 Airbags"
+        ],
+        "specs": {
+          "power": "204 hp @ 4,500 rpm",
+          "torque": "320 Nm",
+          "efficiency": "13.0 km/l",
+          "transmission": "7-Speed S-Tronic"
+        }
+      },
+      {
+        "name": "45 TFSI quattro S-Line",
+        "price": 12500000,
+        "label": "Rs. 1.25 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "S-Line Exterior Pack",
+          "Matrix LED Headlights",
+          "Adaptive Cruise Control",
+          "360° Camera",
+          "40 TFSI features+"
+        ],
+        "specs": {
+          "power": "245 hp @ 5,000 rpm",
+          "torque": "370 Nm",
+          "efficiency": "12.5 km/l",
+          "transmission": "7-Speed S-Tronic"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L TFSI Turbo Petrol",
+      "Displacement": "1,984 cc",
+      "Power": "204–245 hp",
+      "Torque": "320–370 Nm",
+      "Efficiency": "12.5–13.0 km/l",
+      "Fuel Tank": "65 L",
+      "Transmission": "7-Speed S-Tronic",
+      "Drive": "quattro AWD",
+      "Seating": "5",
+      "Boot Space": "520 L",
+      "Length": "4,663 mm",
+      "Width": "1,893 mm",
+      "Height": "1,659 mm",
+      "Wheelbase": "2,820 mm",
+      "Ground Clearance": "200 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "quattro AWD enhances Nepal hill-driving confidence",
+      "Spacious 520 L boot",
+      "Strong residual value",
+      "Balanced performance and luxury"
+    ],
+    "cons": [
+      "Expensive parts and maintenance in Nepal",
+      "Petrol-only in Nepal spec",
+      "Fewer service centres outside Kathmandu",
+      "Heavy import taxes push price over Rs. 1 Crore"
+    ],
+    "highlights": [
+      "quattro AWD",
+      "520 L Boot",
+      "Panoramic Sunroof",
+      "Matrix LED"
+    ]
+  },
+  {
+    "id": 704,
+    "slug": "audi-q7-2025",
+    "brand": "Audi",
+    "model": "Q7",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Full-size Luxury SUV",
+    "badge": "flagship",
+    "tagline": "Nepal's entry flagship Audi — 7-seat quattro luxury SUV",
+    "rating": 4.4,
+    "reviews": 143,
+    "expertScore": 8.5,
+    "baseEMI": 162000,
+    "overview": "The Audi Q7 is actually the most affordable Audi available in Nepal (grey/parallel import) thanks to its 3.0L TDI diesel powertrain. A full-size 7-seater with Audi's air suspension, LED Matrix headlights, and the brand's latest MMI system, the Q7 is the go-to flagship luxury SUV for Nepal's executive class.",
+    "images": [
+      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Glacier White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Mythos Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Floret Silver",
+        "hex": "#C2C2C2"
+      },
+      {
+        "name": "Navarra Blue",
+        "hex": "#1E3560"
+      }
+    ],
+    "variants": [
+      {
+        "name": "45 TDI quattro",
+        "price": 5151200,
+        "label": "Rs. 51.51L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "7 Seats",
+          "Air Suspension",
+          "10.1\" MMI",
+          "quattro AWD",
+          "LED Headlights",
+          "6 Airbags"
+        ],
+        "specs": {
+          "power": "231 hp @ 3,250 rpm",
+          "torque": "500 Nm",
+          "efficiency": "14.0 km/l",
+          "transmission": "8-Speed Tiptronic"
+        }
+      },
+      {
+        "name": "55 TFSI quattro",
+        "price": 13225886,
+        "label": "Rs. 1.32 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "Matrix LED Headlights",
+          "Adaptive Air Suspension",
+          "Virtual Cockpit Plus",
+          "Head-Up Display",
+          "4-Zone Climate",
+          "45 TDI features+"
+        ],
+        "specs": {
+          "power": "340 hp @ 5,500 rpm",
+          "torque": "500 Nm",
+          "efficiency": "11.5 km/l",
+          "transmission": "8-Speed Tiptronic"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "3.0L V6 Diesel / 3.0L V6 TFSI Petrol",
+      "Displacement": "2,967 cc / 2,994 cc",
+      "Power": "231–340 hp",
+      "Torque": "500 Nm",
+      "Efficiency": "11.5–14.0 km/l",
+      "Fuel Tank": "85 L",
+      "Transmission": "8-Speed Tiptronic",
+      "Drive": "quattro AWD",
+      "Seating": "7",
+      "Boot Space": "295 L (all seats up)",
+      "Length": "5,063 mm",
+      "Width": "1,970 mm",
+      "Height": "1,741 mm",
+      "Wheelbase": "2,994 mm",
+      "Ground Clearance": "198 mm (air suspension variable)",
+      "Airbags": "6"
+    },
+    "pros": [
+      "7-seat flagship luxury in Nepal",
+      "Air suspension suits rough Nepali roads",
+      "Diesel variant available at lower cost",
+      "Excellent brand prestige"
+    ],
+    "cons": [
+      "Very expensive on petrol variant",
+      "Large size challenging in narrow Kathmandu streets",
+      "High maintenance costs",
+      "Diesel Nepal grey-import prices vary widely"
+    ],
+    "highlights": [
+      "7 Seats",
+      "Air Suspension",
+      "quattro AWD",
+      "V6 Power"
+    ]
+  },
+  {
+    "id": 705,
+    "slug": "audi-a4-2025",
+    "brand": "Audi",
+    "model": "A4",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Executive Sedan",
+    "badge": "premium",
+    "tagline": "Audi's iconic executive sedan — quattro precision meets Nepali roads",
+    "rating": 4,
+    "reviews": 156,
+    "expertScore": 7.9,
+    "baseEMI": 185000,
+    "overview": "The Audi A4 remains a cornerstone of the German luxury sedan segment in Nepal. With its 2.0L TFSI quattro, sleek exterior, and deeply featured MMI cabin, the A4 competes with the BMW 3 Series for Nepal's professional class wanting a sporty yet refined daily driver.",
+    "images": [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Glacier White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Myth Black",
+        "hex": "#111111"
+      },
+      {
+        "name": "Floret Silver",
+        "hex": "#C2C2C2"
+      },
+      {
+        "name": "Tango Red",
+        "hex": "#9C1B1B"
+      }
+    ],
+    "variants": [
+      {
+        "name": "40 TFSI",
+        "price": 7100072,
+        "label": "Rs. 71.00L",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "10.1\" MMI Infotainment",
+          "Audi Virtual Cockpit",
+          "LED Headlights",
+          "Dual-Zone Climate",
+          "5 Seats",
+          "Rear Camera"
+        ],
+        "specs": {
+          "power": "190 hp @ 4,200 rpm",
+          "torque": "320 Nm",
+          "efficiency": "14.5 km/l",
+          "transmission": "7-Speed S-Tronic"
+        }
+      },
+      {
+        "name": "40 TFSI quattro Premium Plus",
+        "price": 9000000,
+        "label": "Rs. 90.00L",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "quattro AWD",
+          "Matrix LED Headlights",
+          "Head-Up Display",
+          "Adaptive Cruise Control",
+          "Ambient Lighting",
+          "40 TFSI features+"
+        ],
+        "specs": {
+          "power": "190 hp @ 4,200 rpm",
+          "torque": "320 Nm",
+          "efficiency": "13.8 km/l",
+          "transmission": "7-Speed S-Tronic"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L TFSI Turbo Petrol",
+      "Displacement": "1,984 cc",
+      "Power": "190 hp @ 4,200 rpm",
+      "Torque": "320 Nm",
+      "Efficiency": "13.8–14.5 km/l",
+      "Fuel Tank": "54 L",
+      "Transmission": "7-Speed S-Tronic",
+      "Drive": "FWD / quattro AWD",
+      "Seating": "5",
+      "Boot Space": "460 L",
+      "Length": "4,762 mm",
+      "Width": "1,847 mm",
+      "Height": "1,427 mm",
+      "Wheelbase": "2,820 mm",
+      "Ground Clearance": "140 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Sporty sedan handling",
+      "Available with quattro AWD",
+      "Excellent build quality",
+      "Strong residual value in Nepal"
+    ],
+    "cons": [
+      "Low ground clearance for rural Nepal roads",
+      "Very expensive after duties",
+      "Maintenance costs are high",
+      "Sedan body less practical than SUV for Nepal"
+    ],
+    "highlights": [
+      "Executive Sedan",
+      "190 hp TFSI",
+      "Virtual Cockpit",
+      "quattro AWD"
+    ]
+  }
+]

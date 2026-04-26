@@ -1,0 +1,2081 @@
+[
+  {
+    "id": 8,
+    "slug": "suzuki-swift-epic-2024",
+    "brand": "Suzuki",
+    "brandSlug": "suzuki",
+    "model": "Swift",
+    "year": 2024,
+    "type": "Petrol",
+    "bodyType": "hatchback",
+    "body": "Hatchback",
+    "badge": "new",
+    "budgetTier": "Under 50L",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": true,
+    "tagline": "Time to go #Swifting",
+    "rating": 4.2,
+    "reviews": 210,
+    "expertScore": 8,
+    "baseEMI": 47000,
+    "overview": "The Epic New Suzuki Swift arrives with the all-new 1.2L Z-Series engine delivering best-in-segment fuel efficiency of 25.75 km/l (AMT). It raises the safety bar by making 6 airbags standard across every variant, paired with ESP and Hill Hold Assist as standard. Sporty all-black interiors, a SmartPlay Pro+ infotainment system, and Suzuki Connect telematics make it the most feature-rich Swift yet.",
+    "images": [
+      "/data/cars/5eaf5d15a3434f88f64dcc83e3117f10.png",
+      "assets/images/cars/suzuki-swift-epic-hatchback-02.jpg",
+      "assets/images/cars/suzuki-swift-epic-hatchback-03.jpg",
+      "assets/images/cars/suzuki-swift-epic-hatchback-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Sizzling Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Luster Blue",
+        "hex": "#2471A3"
+      },
+      {
+        "name": "Novel Orange",
+        "hex": "#E67E22"
+      },
+      {
+        "name": "Magma Grey",
+        "hex": "#616A6B"
+      },
+      {
+        "name": "Splendid Silver",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Pearl Arctic White",
+        "hex": "#F2F3F4"
+      },
+      {
+        "name": "Sizzling Red / Midnight Black Roof",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Luster Blue / Midnight Black Roof",
+        "hex": "#2471A3"
+      },
+      {
+        "name": "Pearl Arctic White / Midnight Black Roof",
+        "hex": "#F2F3F4"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Lxi",
+        "slug": "lxi",
+        "price": 3895000,
+        "label": "Base",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags Standard",
+          "ABS with EBD",
+          "Electronic Stability Program",
+          "Hill Hold Assist",
+          "Reverse Parking Sensors",
+          "LED Rear Combination Lamps",
+          "Steel Wheels (165/80 R14)"
+        ],
+        "specs": {
+          "power": "81.58 PS @ 5,700 rpm",
+          "torque": "111.7 Nm @ 4,300 rpm",
+          "efficiency": "24.80 km/l",
+          "transmission": "5MT"
+        }
+      },
+      {
+        "name": "Vxi",
+        "slug": "vxi",
+        "price": 4249000,
+        "label": "Mid",
+        "popular": false,
+        "transmission": "MT/AMT",
+        "fuel": "Petrol",
+        "features": [
+          "SmartPlay Pro 17.78 cm Touch Screen",
+          "FM/AM, USB, Bluetooth",
+          "4 Speakers",
+          "Keyless Entry System",
+          "Security Alarm System",
+          "Side Turn Indicators on ORVMs",
+          "Body Coloured ORVMs",
+          "Rear Wiper & Washer",
+          "Rear Defogger",
+          "Tilt Steering",
+          "Tachometer"
+        ],
+        "specs": {
+          "power": "81.58 PS @ 5,700 rpm",
+          "torque": "111.7 Nm @ 4,300 rpm",
+          "efficiency": "24.80 km/l (MT) / 25.75 km/l (AMT)",
+          "transmission": "5MT / 5AMT"
+        }
+      },
+      {
+        "name": "Vxi (O)",
+        "slug": "vxi-o",
+        "price": 4449000,
+        "label": "Mid+",
+        "popular": false,
+        "transmission": "MT/AMT",
+        "fuel": "Petrol",
+        "features": [
+          "SmartPlay Pro 17.78 cm Touch Screen",
+          "Onboard Voice Assistant (\"Hi Suzuki\")",
+          "OTA System Upgrades",
+          "Wireless Android Auto & Apple CarPlay",
+          "Steering Mounted Audio & Calling Controls",
+          "Wide-angle Rear Parking Camera",
+          "Security Alarm System with Shock Sensor"
+        ],
+        "specs": {
+          "power": "81.58 PS @ 5,700 rpm",
+          "torque": "111.7 Nm @ 4,300 rpm",
+          "efficiency": "24.80 km/l (MT) / 25.75 km/l (AMT)",
+          "transmission": "5MT / 5AMT"
+        }
+      },
+      {
+        "name": "Zxi",
+        "slug": "zxi",
+        "price": 4649000,
+        "label": "Top",
+        "popular": true,
+        "transmission": "MT/AMT",
+        "fuel": "Petrol",
+        "features": [
+          "LED Projector Headlamps",
+          "Painted Alloy Wheels (185/65 R15)",
+          "SmartPlay Pro+ 22.86 cm Touch Screen",
+          "Surround Sense Powered by ARKAMYS",
+          "Cruise Control",
+          "Rear AC Vent",
+          "Driver Seat Height Adjuster",
+          "Auto AC (Digital)",
+          "60:40 Split Rear Seat",
+          "Leather-Wrapped Steering Wheel with Stitching",
+          "Auto Headlamps (Lead Me / Follow Me Home)"
+        ],
+        "specs": {
+          "power": "81.58 PS @ 5,700 rpm",
+          "torque": "111.7 Nm @ 4,300 rpm",
+          "efficiency": "24.80 km/l (MT) / 25.75 km/l (AMT)",
+          "transmission": "5MT / 5AMT"
+        }
+      },
+      {
+        "name": "Zxi+",
+        "slug": "zxi-plus",
+        "price": 5229000,
+        "label": "Top+",
+        "popular": false,
+        "transmission": "MT/AMT",
+        "fuel": "Petrol",
+        "features": [
+          "Precision Cut Dual-Tone Alloy Wheels (185/65 R15)",
+          "Wireless Charger",
+          "Engine Push Start-Stop with Smart Key",
+          "Electrically Foldable ORVMs (Auto)",
+          "2 Tweeters (total 6 speakers)",
+          "Rear USB Ports (Type A & C)",
+          "Front LED Fog Lamps",
+          "Coloured Multi-Information Display",
+          "All Zxi features +"
+        ],
+        "specs": {
+          "power": "81.58 PS @ 5,700 rpm",
+          "torque": "111.7 Nm @ 4,300 rpm",
+          "efficiency": "24.80 km/l (MT) / 25.75 km/l (AMT)",
+          "transmission": "5MT / 5AMT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L Z12E, 3-Cylinder",
+      "Power": "81.58 PS (60 kW) @ 5,700 rpm",
+      "Torque": "111.7 Nm @ 4,300 rpm",
+      "Fuel Efficiency": "24.80 km/l (MT) / 25.75 km/l (AMT)",
+      "Fuel Tank": "37 L",
+      "Transmission": "5MT / 5AMT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Length": "3,860 mm",
+      "Width": "1,735 mm",
+      "Height": "1,520 mm",
+      "Wheelbase": "2,450 mm",
+      "Ground Clearance": "163 mm",
+      "Min Turning Radius": "4.8 m",
+      "Kerb Weight": "920 kg (MT) / 925 kg (AMT)",
+      "Front Brakes": "Ventilated Disc",
+      "Rear Brakes": "Drum",
+      "Front Suspension": "MacPherson Strut",
+      "Rear Suspension": "Torsion Beam",
+      "Emission": "BS VI"
+    },
+    "pros": [
+      "6 Airbags standard across ALL variants — class-leading safety",
+      "Best-in-segment fuel efficiency: 25.75 km/l (AMT)",
+      "ESP + Hill Hold Assist standard across all trims",
+      "Sporty all-black interior with futuristic centre console",
+      "SmartPlay Pro+ with Surround Sense audio on Zxi+",
+      "Wireless Android Auto & Apple CarPlay on Vxi(O) and above"
+    ],
+    "cons": [
+      "No cruise control on Lxi or Vxi",
+      "AMT (5AMT) gearbox can feel jerky in slow city traffic",
+      "No alloy wheels on base Lxi & Vxi"
+    ],
+    "highlights": [
+      "6 Airbags Standard",
+      "25.75 km/l AMT",
+      "ESP + Hill Hold",
+      "SmartPlay Pro+"
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "suzuki-celerio-2024",
+    "brand": "Suzuki",
+    "brandSlug": "suzuki",
+    "model": "Celerio",
+    "year": 2024,
+    "type": "Petrol",
+    "bodyType": "hatchback",
+    "body": "Hatchback",
+    "badge": "popular",
+    "budgetTier": "Under 40L",
+    "isEV": false,
+    "isNew": false,
+    "isFeatured": true,
+    "isBestSeller": false,
+    "tagline": "Perfect Family Car",
+    "rating": 4,
+    "reviews": 320,
+    "expertScore": 7.6,
+    "baseEMI": 37000,
+    "overview": "The All-New Suzuki Celerio is designed as the perfect family companion. Powered by the Next Gen K10C engine with Idle Start-Stop technology, it delivers best fuel efficiency at 26.68 km/l while offering a 3D Organic Sculpted Design, Smartplay Studio infotainment, and the segment-first Hill Hold Assist. The HEARTECT platform ensures a solid safety foundation.",
+    "images": [
+      "assets/images/cars/suzuki-celerio-family-hatchback-01.jpg",
+      "assets/images/cars/suzuki-celerio-family-hatchback-02.jpg",
+      "assets/images/cars/suzuki-celerio-family-hatchback-03.jpg",
+      "assets/images/cars/suzuki-celerio-family-hatchback-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Speedy Blue",
+        "hex": "#1A5276"
+      },
+      {
+        "name": "Glistening Grey",
+        "hex": "#717D7E"
+      },
+      {
+        "name": "Arctic White",
+        "hex": "#F2F3F4"
+      },
+      {
+        "name": "Silky Silver",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Solid Fire Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Caffeine Brown",
+        "hex": "#6E2C00"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Vxi",
+        "slug": "vxi",
+        "price": 3099000,
+        "label": "Base",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Driver & Passenger Airbags",
+          "ABS with EBD",
+          "Engine Idle Start-Stop",
+          "Manual Air Conditioner",
+          "Central Door Locks",
+          "Power Windows (Fr/Rr)",
+          "Remote Keyless Entry",
+          "Smartplay Dock",
+          "4 Speakers",
+          "Body Coloured ORVM, Bumper & Door Handles",
+          "Full Wheel Covers",
+          "Reverse Parking Sensors",
+          "Immobiliser"
+        ],
+        "specs": {
+          "power": "67 PS @ 5,500 rpm",
+          "torque": "89 Nm @ 3,500 rpm",
+          "efficiency": "25.24 km/l",
+          "transmission": "5MT"
+        }
+      },
+      {
+        "name": "Zxi",
+        "slug": "zxi",
+        "price": 3649000,
+        "label": "Mid",
+        "popular": true,
+        "transmission": "MT/AGS",
+        "fuel": "Petrol",
+        "features": [
+          "Smartplay Studio 17.78 cm (Smartphone Navigation)",
+          "Steering Mounted Audio Controls",
+          "Tilt Steering",
+          "Tachometer",
+          "Front Fog Lamps",
+          "Rear Wiper & Washer",
+          "Rear Defogger",
+          "Seatbelt Pretensioner + Force Limiter",
+          "All Vxi features +"
+        ],
+        "specs": {
+          "power": "67 PS @ 5,500 rpm",
+          "torque": "89 Nm @ 3,500 rpm",
+          "efficiency": "24.97 km/l (MT) / 26.00 km/l (AGS)",
+          "transmission": "5MT / AGS"
+        }
+      },
+      {
+        "name": "Zxi+",
+        "slug": "zxi-plus",
+        "price": 4099000,
+        "label": "Top",
+        "popular": false,
+        "transmission": "MT/AGS",
+        "fuel": "Petrol",
+        "features": [
+          "Smartplay Studio 17.78 cm",
+          "Steering Mounted Voice Controls",
+          "Engine Push Start-Stop with Smart Key",
+          "15\" Urbane Black Alloy Wheels",
+          "Electrically Foldable ORVMs",
+          "Driver Seat Height Adjuster",
+          "All Zxi features +"
+        ],
+        "specs": {
+          "power": "67 PS @ 5,500 rpm",
+          "torque": "89 Nm @ 3,500 rpm",
+          "efficiency": "26.68 km/l (AGS)",
+          "transmission": "5MT / AGS"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.0L K10C Next Gen K-Series Dual Jet, Dual VVT with ISS",
+      "Displacement": "998 cc, 3-Cylinder",
+      "Power": "67 PS @ 5,500 rpm",
+      "Torque": "89 Nm @ 3,500 rpm",
+      "Fuel Efficiency": "26.68 km/l (AGS)",
+      "Fuel Tank": "32 L",
+      "Transmission": "5MT / AGS",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "313 L",
+      "Length": "3,695 mm",
+      "Width": "1,655 mm",
+      "Height": "1,555 mm",
+      "Wheelbase": "2,435 mm",
+      "Kerb Weight": "825 kg",
+      "Front Brakes": "Disc",
+      "Rear Brakes": "Drum",
+      "Front Suspension": "MacPherson Strut with Coil Springs",
+      "Rear Suspension": "Torsion Beam with Coil Springs",
+      "Tyre Size": "165/70 R14 / 175/60 R15 (Zxi+)",
+      "Emission": "BS VI"
+    },
+    "pros": [
+      "26.68 km/l — best fuel efficiency in its segment",
+      "Segment-first Hill Hold Assist",
+      "HEARTECT platform for enhanced safety",
+      "313L boot — good for a subcompact hatchback",
+      "AGS (Auto Gear Shift) available on Zxi and Zxi+"
+    ],
+    "cons": [
+      "Only 2 airbags even on top trim",
+      "Smaller 1.0L engine — limited for highway overtakes",
+      "No wireless charging or Android Auto/Apple CarPlay",
+      "No rear AC vent"
+    ],
+    "highlights": [
+      "26.68 km/l",
+      "313L Boot",
+      "HEARTECT Platform",
+      "AGS Available"
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "suzuki-wagon-r-brochure",
+    "brand": "Suzuki",
+    "brandSlug": "suzuki",
+    "model": "Wagon R",
+    "year": 2022,
+    "type": "Petrol",
+    "bodyType": "hatchback",
+    "body": "Hatchback",
+    "badge": "best-seller",
+    "budgetTier": "Under 40L",
+    "isEV": false,
+    "isNew": false,
+    "isFeatured": true,
+    "isBestSeller": true,
+    "tagline": "The Only Car That Gives You Space — Big is Better",
+    "rating": 4.5,
+    "reviews": 1250,
+    "expertScore": 8.5,
+    "baseEMI": 40000,
+    "overview": "The Suzuki Wagon R is Nepal's #1 selling car, combining a robust design with a wide stance and a class-leading spacious cabin. Two engine options — the 1.0L and 1.2L Advanced K-Series Dual Jet with Idle Start-Stop — deliver up to 25.19 km/l. The available AGS, Smartplay Studio with Smartphone Navigation, Hill Hold Assist, and ESP make it the complete city car package.",
+    "images": [
+      "assets/images/cars/suzuki-wagonr-spacious-city-car-01.jpg",
+      "assets/images/cars/suzuki-wagonr-spacious-city-car-02.jpg",
+      "assets/images/cars/suzuki-wagonr-spacious-city-car-03.jpg",
+      "assets/images/cars/suzuki-wagonr-spacious-city-car-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Superior White",
+        "hex": "#F2F3F4"
+      },
+      {
+        "name": "Silky Silver",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Magna Grey",
+        "hex": "#616A6B"
+      },
+      {
+        "name": "Gallant Red",
+        "hex": "#B03A2E"
+      },
+      {
+        "name": "Nutmeg Brown",
+        "hex": "#5D4037"
+      },
+      {
+        "name": "Poolside Blue",
+        "hex": "#2E86C1"
+      },
+      {
+        "name": "Gallant Red / Black Roof",
+        "hex": "#B03A2E"
+      },
+      {
+        "name": "Magna Grey / Black Roof",
+        "hex": "#616A6B"
+      }
+    ],
+    "variants": [
+      {
+        "name": "VXI 1.0 MT",
+        "slug": "vxi-1-0",
+        "price": 3319000,
+        "label": "1.0L Base",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Front Power Windows",
+          "Driver + Passenger Airbag",
+          "ABS with EBD",
+          "Hill Hold Assist",
+          "Electronic Stability Program",
+          "HEARTECT Platform",
+          "Rear Parking Sensors",
+          "Smartplay Dock",
+          "Steering Mounted Controls"
+        ],
+        "specs": {
+          "power": "66.63 PS @ 6,000 rpm",
+          "torque": "89 Nm @ 3,500 rpm",
+          "efficiency": "24.35 km/l",
+          "transmission": "5MT"
+        }
+      },
+      {
+        "name": "VXI 1.0 AGS",
+        "slug": "vxi-1-0-ags",
+        "price": 3399000,
+        "label": "1.0L AGS",
+        "popular": true,
+        "transmission": "AGS",
+        "fuel": "Petrol",
+        "features": [
+          "Auto Gear Shift (AGS)",
+          "Smartplay Studio 17.78 cm",
+          "Remote Keyless Entry",
+          "Speed Sensitive Door Lock",
+          "All VXI MT features +"
+        ],
+        "specs": {
+          "power": "66.63 PS @ 6,000 rpm",
+          "torque": "89 Nm @ 3,500 rpm",
+          "efficiency": "25.19 km/l (AGS)",
+          "transmission": "AGS"
+        }
+      },
+      {
+        "name": "ZXI 1.2 MT",
+        "slug": "zxi-1-2",
+        "price": 3499000,
+        "label": "1.2L MT",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "1.2L Advanced K-Series Dual Jet Engine",
+          "Smartplay Studio 17.78 cm",
+          "4 Speakers",
+          "Electrically Adjustable ORVM",
+          "All VXI features +"
+        ],
+        "specs": {
+          "power": "89.7 PS @ 6,000 rpm",
+          "torque": "113 Nm @ 4,400 rpm",
+          "efficiency": "24.43 km/l",
+          "transmission": "5MT"
+        }
+      },
+      {
+        "name": "ZXI+ 1.2 Dualtone",
+        "slug": "zxi-plus-1-2",
+        "price": 3829000,
+        "label": "1.2L Top",
+        "popular": false,
+        "transmission": "MT/AGS",
+        "fuel": "Petrol",
+        "features": [
+          "Dual Tone Exterior (Sporty Floating Roof)",
+          "Dynamic Alloy Wheels",
+          "Rear Wiper & Washer",
+          "Electrically Retractable ORVM",
+          "All ZXI features +"
+        ],
+        "specs": {
+          "power": "89.7 PS @ 6,000 rpm",
+          "torque": "113 Nm @ 4,400 rpm",
+          "efficiency": "24.43 km/l",
+          "transmission": "5MT / AGS"
+        }
+      }
+    ],
+    "specs": {
+      "Engine (1.0L)": "1.0L Next-Gen K-Series Dual Jet, Dual VVT with ISS",
+      "Engine (1.2L)": "1.2L Advanced K-Series Dual Jet, Dual VVT with ISS",
+      "Power (1.0L)": "66.63 PS @ 6,000 rpm",
+      "Power (1.2L)": "89.7 PS @ 6,000 rpm",
+      "Torque (1.0L)": "89 Nm @ 3,500 rpm",
+      "Torque (1.2L)": "113 Nm @ 4,400 rpm",
+      "Fuel Efficiency": "25.19 km/l max (VXI AGS 1.0L)",
+      "Fuel Tank": "32 L",
+      "Transmission": "5MT / AGS",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "341 L",
+      "Length": "3,655 mm",
+      "Width": "1,620 mm",
+      "Height": "1,695 mm",
+      "Wheelbase": "2,435 mm",
+      "Ground Clearance": "165 mm",
+      "Kerb Weight": "810–850 kg",
+      "Front Brakes": "Disc",
+      "Rear Brakes": "Drum",
+      "Front Suspension": "MacPherson Strut",
+      "Rear Suspension": "Torsion Beam",
+      "Emission": "BS VI"
+    },
+    "pros": [
+      "Nepal's #1 selling car — proven reliability",
+      "Best-in-class fuel efficiency up to 25.19 km/l",
+      "Spacious 341L boot space for its segment",
+      "HEARTECT platform — strong safety foundation",
+      "12+ safety features including Hill Hold & ESP",
+      "Smartplay Studio with Smartphone Navigation"
+    ],
+    "cons": [
+      "AGS can feel jerky compared to a traditional automatic",
+      "Only Dual Front Airbags (no side/curtain airbags)",
+      "Limited premium features vs segment rivals"
+    ],
+    "highlights": [
+      "341L Boot",
+      "25.19 km/l",
+      "HEARTECT Platform",
+      "Nepal #1 Seller"
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "suzuki-alto-k10-2024",
+    "brand": "Suzuki",
+    "brandSlug": "suzuki",
+    "model": "Alto K10",
+    "year": 2024,
+    "type": "Petrol",
+    "bodyType": "hatchback",
+    "body": "Hatchback",
+    "badge": "popular",
+    "budgetTier": "Under 30L",
+    "isEV": false,
+    "isNew": false,
+    "isFeatured": true,
+    "isBestSeller": false,
+    "tagline": "Go Happy — Fresh Looks, Enhanced Performance",
+    "rating": 3.9,
+    "reviews": 480,
+    "expertScore": 7.4,
+    "baseEMI": 35000,
+    "overview": "The All-New Suzuki Alto K10 redefines the entry-level segment with a youthful honeycomb-grille design, 24.90 km/l fuel efficiency, and the Next Gen 1.0L K-Series Dual Jet Dual VVT engine with AGS technology. It packs a Smartplay Studio infotainment with Smartphone Navigation and 4 speakers — a first in its segment — alongside 15+ safety features including dual airbags, ABS with EBD, HEARTECT platform, and reverse parking sensors.",
+    "images": [
+      "assets/images/cars/suzuki-alto-k10-entry-level-hatchback-01.jpg",
+      "assets/images/cars/suzuki-alto-k10-entry-level-hatchback-02.jpg",
+      "assets/images/cars/suzuki-alto-k10-entry-level-hatchback-03.jpg",
+      "assets/images/cars/suzuki-alto-k10-entry-level-hatchback-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Metallic Sizzling Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Metallic Silky Silver",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Metallic Granite Grey",
+        "hex": "#616A6B"
+      },
+      {
+        "name": "Premium Earth Gold",
+        "hex": "#B7950B"
+      },
+      {
+        "name": "Metallic Speedy Blue",
+        "hex": "#2471A3"
+      },
+      {
+        "name": "Solid White",
+        "hex": "#F2F3F4"
+      },
+      {
+        "name": "Pearl Midnight Black",
+        "hex": "#1A1A2E"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Lxi MT",
+        "slug": "lxi-mt",
+        "price": 2890000,
+        "label": "Base",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Dual Front Airbags",
+          "ABS with EBD",
+          "HEARTECT Platform",
+          "Reverse Parking Sensors",
+          "High Speed Alert System",
+          "Collapsible Steering Column",
+          "Air Conditioner with Heater",
+          "Front Power Windows",
+          "Body Coloured Bumpers & Door Handles",
+          "Engine Immobiliser",
+          "Remote Back Door Opener",
+          "Remote Fuel Lid Opener"
+        ],
+        "specs": {
+          "power": "49 kW (66.7 PS) @ 5,500 rpm",
+          "torque": "89 Nm @ 3,500 rpm",
+          "efficiency": "24.39 km/l",
+          "transmission": "5MT"
+        }
+      },
+      {
+        "name": "Vxi MT/AGS",
+        "slug": "vxi-mt-ags",
+        "price": 3090000,
+        "label": "Mid",
+        "popular": true,
+        "transmission": "MT/AGS",
+        "fuel": "Petrol",
+        "features": [
+          "Smartplay Dock (Audio Connectivity)",
+          "Steering Mounted Audio & Voice Control",
+          "Digital Speedometer",
+          "2 Speakers",
+          "Remote Keyless Entry",
+          "Speed Sensing Auto Door Lock",
+          "All Lxi features +"
+        ],
+        "specs": {
+          "power": "49 kW (66.7 PS) @ 5,500 rpm",
+          "torque": "89 Nm @ 3,500 rpm",
+          "efficiency": "24.39 km/l (MT) / 24.90 km/l (AGS)",
+          "transmission": "5MT / AGS"
+        }
+      },
+      {
+        "name": "Vxi+ MT/AGS",
+        "slug": "vxi-plus-mt-ags",
+        "price": 3190000,
+        "label": "Top",
+        "popular": false,
+        "transmission": "MT/AGS",
+        "fuel": "Petrol",
+        "features": [
+          "Smartplay Studio 17.78 cm (Smartphone Navigation)",
+          "4 Speakers — 1st in Segment",
+          "Apple CarPlay",
+          "Bluetooth Connectivity",
+          "Distance to Empty Display",
+          "Silver Accent on Inside Door Handles, Steering Wheel",
+          "All Vxi features +"
+        ],
+        "specs": {
+          "power": "49 kW (66.7 PS) @ 5,500 rpm",
+          "torque": "89 Nm @ 3,500 rpm",
+          "efficiency": "24.39 km/l (MT) / 24.90 km/l (AGS)",
+          "transmission": "5MT / AGS"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.0L K10C Next Gen K-Series Dual Jet, Dual VVT",
+      "Displacement": "998 cc, 3-Cylinder",
+      "Power": "49 kW (≈66.7 PS) @ 5,500 rpm",
+      "Torque": "89 Nm @ 3,500 rpm",
+      "Fuel Efficiency": "24.39 km/l (MT) / 24.90 km/l (AGS)",
+      "Fuel Tank": "27 L",
+      "Transmission": "5MT / AGS",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "214 L",
+      "Length": "3,530 mm",
+      "Width": "1,490 mm",
+      "Height": "1,520 mm",
+      "Wheelbase": "2,380 mm",
+      "Min Turning Radius": "4.5 m",
+      "Front Brakes": "Disc",
+      "Rear Brakes": "Drum",
+      "Front Suspension": "MacPherson Strut with Coil Spring",
+      "Rear Suspension": "Torsion Beam with Coil Spring",
+      "Tyre Size": "145/80 R13",
+      "Emission": "BS VI"
+    },
+    "pros": [
+      "Most affordable Suzuki entry point in Nepal — starts at NPR 28.9L",
+      "24.90 km/l — strong fuel efficiency for category",
+      "Smartplay Studio with 4 speakers — 1st in segment on Vxi+",
+      "HEARTECT platform & 15+ safety features",
+      "Compact 3,530 mm body — ideal for tight city roads",
+      "AGS option removes clutch fatigue in city traffic"
+    ],
+    "cons": [
+      "Small 214L boot — limited luggage capacity",
+      "Only 2 airbags even on top Vxi+ trim",
+      "No Hill Hold Assist on any variant",
+      "Smallest Suzuki — limited power for mountain/highway driving"
+    ],
+    "highlights": [
+      "From NPR 28.9L",
+      "24.90 km/l AGS",
+      "Smartplay Studio",
+      "15+ Safety Feats"
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "suzuki-eeco-cargo-2024",
+    "brand": "Suzuki",
+    "brandSlug": "suzuki",
+    "model": "Eeco Cargo",
+    "year": 2024,
+    "type": "Petrol",
+    "bodyType": "van",
+    "body": "Van",
+    "badge": "commercial",
+    "budgetTier": "Under 20L",
+    "isEV": false,
+    "isNew": false,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "हुन्छ सबै सामान फिट् — Everything Fits in the New Eeco Cargo",
+    "rating": 4,
+    "reviews": 185,
+    "expertScore": 7.5,
+    "baseEMI": 24000,
+    "overview": "The Suzuki Eeco Cargo is Nepal's go-to commercial van, built for businesses that need maximum cargo capacity and reliability. Powered by the proven 1.2L Advanced K-Series Dual Jet Dual VVT engine (also available in CNG), it offers increased cargo space, Digital Instrument Cluster, Engine Immobiliser, and 8+ safety features including 4 Reverse Parking Sensors. Available through 42 sales outlets and 54 service centres across 35 cities in Nepal.",
+    "images": [
+      "assets/images/cars/suzuki-eeco-cargo-van-01.jpg",
+      "assets/images/cars/suzuki-eeco-cargo-van-02.jpg",
+      "assets/images/cars/suzuki-eeco-cargo-van-03.jpg",
+      "assets/images/cars/suzuki-eeco-cargo-van-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Solid White",
+        "hex": "#F2F3F4"
+      },
+      {
+        "name": "Metallic Silky Silver",
+        "hex": "#BFC9CA"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Cargo STD — Petrol",
+        "slug": "cargo-std-petrol",
+        "price": 1959000,
+        "label": "Petrol",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Digital Instrument Cluster with Digital Speedometer",
+          "Engine Immobiliser",
+          "4 Reverse Parking Sensors",
+          "Reclining Front Seat",
+          "Sliding Driver Seat",
+          "Flat Cargo Bed with Floor Carpet",
+          "Molded Roof Lining",
+          "Covered Cargo Cabin with Door Lock",
+          "Outside Rear View Mirror (Left & Right)",
+          "Side Impact Beams",
+          "Seat Belts for All Seats",
+          "High Mount Stop Lamp",
+          "Reflector Strips (Front & Rear)",
+          "Speed Limiting Device (Max 80 km/h)",
+          "Multi Tripmeter",
+          "12V Accessory Socket"
+        ],
+        "specs": {
+          "power": "59.4 kW (≈80.8 PS) @ 6,000 rpm",
+          "torque": "104.4 Nm @ 3,000 rpm",
+          "efficiency": "Commercial Use",
+          "transmission": "5MT"
+        }
+      },
+      {
+        "name": "Cargo STD — CNG",
+        "slug": "cargo-std-cng",
+        "price": 2059000,
+        "label": "CNG",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "CNG",
+        "features": [
+          "CNG Cylinder (65L water equivalent)",
+          "Dual Fuel: Petrol + CNG",
+          "All Petrol variant features +"
+        ],
+        "specs": {
+          "power": "59.4 kW (≈80.8 PS) @ 6,000 rpm",
+          "torque": "104.4 Nm @ 3,000 rpm",
+          "efficiency": "Lower running cost on CNG",
+          "transmission": "5MT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.2L K12N Advanced K-Series Dual Jet, Dual VVT",
+      "Displacement": "1,197 cc",
+      "Power": "59.4 kW (≈80.8 PS) @ 6,000 rpm",
+      "Torque": "104.4 Nm @ 3,000 rpm",
+      "Fuel Type": "Petrol / CNG",
+      "Fuel Tank (Petrol)": "32 L",
+      "CNG Cylinder": "65 L (water equivalent)",
+      "Transmission": "5MT",
+      "Seating": "2 (Commercial)",
+      "Length": "3,675 mm",
+      "Width": "1,475 mm",
+      "Height": "1,825 mm",
+      "Wheelbase": "2,350 mm",
+      "Min Turning Radius": "4.5 m",
+      "Kerb Weight (Petrol)": "915 kg",
+      "GVW": "1,540 kg",
+      "Max Speed": "80 km/h (Speed Limiter)",
+      "Tyre Size": "155/R13C 8PR"
+    },
+    "pros": [
+      "Most affordable Suzuki in Nepal — starts at NPR 19.59L",
+      "CNG variant lowers fuel running costs significantly",
+      "Widest service coverage: 54 centres across 35 cities",
+      "Digital Instrument Cluster & Engine Immobiliser",
+      "4 Reverse Parking Sensors — safety for commercial use",
+      "Flat cargo bed — easy loading"
+    ],
+    "cons": [
+      "Only 2-seater — no passenger carrying",
+      "Manual steering — heavy in urban loading bays",
+      "Speed-limited to 80 km/h by hardware",
+      "No air conditioning",
+      "Very basic interior — purely utilitarian"
+    ],
+    "highlights": [
+      "From NPR 19.59L",
+      "Max Cargo Space",
+      "Petrol + CNG",
+      "54 Service Centres"
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "suzuki-grand-vitara-2024",
+    "brand": "Suzuki",
+    "brandSlug": "suzuki",
+    "model": "Grand Vitara",
+    "year": 2024,
+    "type": "Petrol / Hybrid",
+    "bodyType": "suv",
+    "body": "SUV",
+    "badge": "new",
+    "budgetTier": "Above 50L",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": false,
+    "tagline": "Introducing All Wheel Drive — Rule Every Road",
+    "rating": 4.5,
+    "reviews": 95,
+    "expertScore": 8.8,
+    "baseEMI": 64000,
+    "overview": "The Advanced Grand Vitara features NEXA's Crafted Futurism Design Language with two powertrains: Smart Hybrid (1.5L K-Series) and Intelligent Electric Hybrid (strong hybrid) that delivers up to 27.97 km/l. AllGrip Select AWD, panoramic sunroof, Head Up Display, 360 View Camera, ventilated seats, and 6 airbags standard make it a class-leading SUV.",
+    "images": [
+      "assets/images/cars/suzuki-grand-vitara-allwheel-drive-suv-01.jpg",
+      "assets/images/cars/suzuki-grand-vitara-allwheel-drive-suv-02.jpg",
+      "assets/images/cars/suzuki-grand-vitara-allwheel-drive-suv-03.jpg",
+      "assets/images/cars/suzuki-grand-vitara-allwheel-drive-suv-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Grandeur Grey",
+        "hex": "#808080"
+      },
+      {
+        "name": "Splendid Silver",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Arctic White",
+        "hex": "#F2F3F4"
+      },
+      {
+        "name": "Opulent Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Chestnut Brown",
+        "hex": "#5D4037"
+      },
+      {
+        "name": "NEXA Blue",
+        "hex": "#1A5276"
+      },
+      {
+        "name": "Arctic White / Black Roof",
+        "hex": "#F2F3F4"
+      },
+      {
+        "name": "Opulent Red / Black Roof",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Splendid Silver / Black Roof",
+        "hex": "#BFC9CA"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Sigma",
+        "slug": "sigma",
+        "price": 5299000,
+        "label": "Base (Smart Hybrid)",
+        "popular": false,
+        "transmission": "5MT",
+        "fuel": "Petrol (Smart Hybrid)",
+        "features": [
+          "Dual Front Airbags",
+          "ABS with EBD",
+          "ESP",
+          "Hill Hold Assist",
+          "Rear Parking Sensors",
+          "SmartPlay Pro",
+          "Auto AC",
+          "Rear AC Vents",
+          "Adjustable Tilt & Telescopic Steering",
+          "TECT Platform",
+          "ISOFIX"
+        ],
+        "specs": {
+          "power": "75.8 kW (103.06 PS) @ 6,000 rpm",
+          "torque": "136.8 Nm @ 4,400 rpm",
+          "efficiency": "21.11 km/l",
+          "transmission": "5MT"
+        }
+      },
+      {
+        "name": "Delta",
+        "slug": "delta",
+        "price": 6099000,
+        "label": "Mid (Smart Hybrid)",
+        "popular": false,
+        "transmission": "5MT / 6AT",
+        "fuel": "Petrol (Smart Hybrid)",
+        "features": [
+          "Suzuki Connect",
+          "Rear Parking Camera",
+          "60:40 Folding Rear Seats",
+          "Leatherette Seats",
+          "All Sigma features +"
+        ],
+        "specs": {
+          "power": "75.8 kW (103.06 PS) @ 6,000 rpm",
+          "torque": "136.8 Nm @ 4,400 rpm",
+          "efficiency": "21.11 km/l (MT) / 20.58 km/l (AT)",
+          "transmission": "5MT / 6AT"
+        }
+      },
+      {
+        "name": "Zeta",
+        "slug": "zeta",
+        "price": 6399000,
+        "label": "Mid+ (Smart / Intelligent Hybrid)",
+        "popular": false,
+        "transmission": "5MT / 6AT / e-CVT",
+        "fuel": "Petrol (Smart or Intelligent Electric Hybrid)",
+        "features": [
+          "SmartPlay Pro+ 22.86 cm",
+          "ARKAMYS Sound",
+          "Panoramic Sunroof",
+          "6 Airbags",
+          "TPMS",
+          "4.2\" TFT MID",
+          "Leatherette Steering Wheel",
+          "All Delta features +"
+        ],
+        "specs": {
+          "power": "75.8 kW / 68 kW (Intelligent Hybrid)",
+          "torque": "136.8 Nm / 122 Nm (Intelligent Hybrid)",
+          "efficiency": "20.58 km/l (AT) / 27.97 km/l (e-CVT)",
+          "transmission": "5MT / 6AT / e-CVT"
+        }
+      },
+      {
+        "name": "Alpha",
+        "slug": "alpha",
+        "price": 7599000,
+        "label": "Top (AllGrip AWD)",
+        "popular": false,
+        "transmission": "5MT (AllGrip) / 6AT / e-CVT",
+        "fuel": "Petrol (Smart or Intelligent Electric Hybrid)",
+        "features": [
+          "AllGrip Select AWD (Auto/Sport/Snow/Lock)",
+          "Head Up Display",
+          "360 View Camera",
+          "Wireless Charger",
+          "Ventilated Seats",
+          "7\" TFT Digital Cluster",
+          "Paddle Shifters (AT)",
+          "Ambient Lighting",
+          "Auto Folding ORVMs",
+          "Cruise Control",
+          "All Zeta features +"
+        ],
+        "specs": {
+          "power": "75.8 kW / 85 kW total (Intelligent Hybrid)",
+          "torque": "136.8 Nm / 141 Nm motor",
+          "efficiency": "19.38 km/l (AllGrip MT) / 27.97 km/l (e-CVT)",
+          "transmission": "5MT AllGrip / 6AT / e-CVT"
+        }
+      },
+      {
+        "name": "Zeta+",
+        "slug": "zeta-plus",
+        "price": 7629000,
+        "label": "Top+ (Smart Hybrid)",
+        "popular": true,
+        "transmission": "5MT / 6AT",
+        "fuel": "Petrol (Smart Hybrid)",
+        "features": [
+          "Silver Roof Rails",
+          "Panoramic Sunroof",
+          "SmartPlay Pro+",
+          "ARKAMYS + Tweeter",
+          "Ambient Lighting",
+          "All Zeta features +"
+        ],
+        "specs": {
+          "power": "75.8 kW (103.06 PS) @ 6,000 rpm",
+          "torque": "136.8 Nm @ 4,400 rpm",
+          "efficiency": "21.11 km/l (MT) / 20.58 km/l (AT)",
+          "transmission": "5MT / 6AT"
+        }
+      },
+      {
+        "name": "Alpha+",
+        "slug": "alpha-plus",
+        "price": 10228000,
+        "label": "Flagship (Intelligent Hybrid)",
+        "popular": false,
+        "transmission": "6AT / e-CVT",
+        "fuel": "Petrol (Intelligent Electric Hybrid)",
+        "features": [
+          "All Alpha features",
+          "Intelligent Hybrid — 1,200 km claimed range",
+          "Premium Sound by Clarion",
+          "Auto Day/Night IRVM",
+          "All-Black Interior with Champagne Gold Accents"
+        ],
+        "specs": {
+          "power": "85 kW total system",
+          "torque": "141 Nm motor @ 0–3,995 rpm",
+          "efficiency": "27.97 km/l (e-CVT)",
+          "transmission": "6AT / e-CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine (Smart Hybrid)": "1.5L K15C, 4-Cylinder, Smart Hybrid (ISG)",
+      "Engine (Intelligent Hybrid)": "1.5L M15D + AC Synchronous Motor, Strong Hybrid",
+      "Power (Petrol)": "75.8 kW (103.06 PS) @ 6,000 rpm",
+      "Power (Intelligent Hybrid)": "68 kW petrol + 59 kW motor = 85 kW total",
+      "Torque (Petrol)": "136.8 Nm @ 4,400 rpm",
+      "Torque (Motor)": "141 Nm @ 0–3,995 rpm",
+      "Battery": "177.6 V Lithium-ion",
+      "Fuel Efficiency": "Up to 27.97 km/l (Intelligent Hybrid e-CVT)",
+      "Fuel Tank": "45 L",
+      "Transmission": "5MT / 6AT / AllGrip 5MT / e-CVT",
+      "Drive": "2WD / AllGrip AWD",
+      "Seating": "5",
+      "Length": "4,345 mm",
+      "Width": "1,795 mm",
+      "Height": "1,645 mm",
+      "Wheelbase": "2,600 mm",
+      "Min Turning Radius": "5.4 m",
+      "Front Brakes": "Ventilated Disc",
+      "Rear Brakes": "Solid Disc",
+      "Tyre Size": "215/60 R17",
+      "Emission": "BS VI"
+    },
+    "pros": [
+      "Intelligent Electric Hybrid delivers up to 27.97 km/l",
+      "Strong hybrid can drive on pure EV mode",
+      "AllGrip Select AWD with 4 terrain modes",
+      "6 airbags standard on Zeta and above",
+      "Panoramic Sunroof, HUD, 360 Camera, Ventilated Seats"
+    ],
+    "cons": [
+      "Intelligent Hybrid and AllGrip variants are significantly pricier",
+      "e-CVT only with Intelligent Hybrid",
+      "Boot space not published in brochure",
+      "No diesel option"
+    ],
+    "highlights": [
+      "27.97 km/l Hybrid",
+      "AllGrip AWD",
+      "6 Airbags",
+      "Panoramic Sunroof"
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "suzuki-jimny-5door-2024",
+    "brand": "Suzuki",
+    "brandSlug": "suzuki",
+    "model": "Jimny",
+    "year": 2024,
+    "type": "Petrol",
+    "bodyType": "suv",
+    "body": "Off-Road SUV",
+    "badge": "new",
+    "budgetTier": "Above 50L",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": false,
+    "tagline": "Tales From the Trails — 4 Generations of Legend",
+    "rating": 4.7,
+    "reviews": 60,
+    "expertScore": 9,
+    "baseEMI": 84000,
+    "overview": "The all-new 5-door Suzuki Jimny carries over 50 years of off-road heritage. Built on a Ladder Frame chassis with 3-Link Rigid Axle Suspension, the Jimny conquers the toughest terrain with ALLGRIP PRO 4WD (with Low Range Transfer Gear), 210 mm ground clearance, 47° approach angle, and 36° departure angle. Safety includes 6 airbags standard across all variants, Hill Descent Control, Hill Hold Assist, and Brake LSD.",
+    "images": [
+      "assets/images/cars/suzuki-jimny-5door-offroad-suv-01.jpg",
+      "assets/images/cars/suzuki-jimny-5door-offroad-suv-02.jpg",
+      "assets/images/cars/suzuki-jimny-5door-offroad-suv-03.jpg",
+      "assets/images/cars/suzuki-jimny-5door-offroad-suv-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Kinetic Yellow / Bluish Black Roof",
+        "hex": "#F4D03F"
+      },
+      {
+        "name": "Sizzling Red / Bluish Black Roof",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Sizzling Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Granite Gray",
+        "hex": "#616A6B"
+      },
+      {
+        "name": "NEXA Blue",
+        "hex": "#1A5276"
+      },
+      {
+        "name": "Bluish Black",
+        "hex": "#1C2833"
+      },
+      {
+        "name": "Pearl Arctic White",
+        "hex": "#F2F3F4"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Zeta MT",
+        "slug": "zeta-mt",
+        "price": 6930000,
+        "label": "Base MT",
+        "popular": false,
+        "transmission": "5MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags Standard",
+          "ABS with EBD",
+          "ESP",
+          "Hill Hold Assist",
+          "Hill Descent Control",
+          "Brake Limited Slip Differential",
+          "SmartPlay Pro 17.78 cm",
+          "Wireless Android Auto & Apple CarPlay",
+          "4 Speakers",
+          "Steel Wheels",
+          "ALLGRIP PRO 4WD with Low Range Transfer Gear"
+        ],
+        "specs": {
+          "power": "77.1 kW (104.8 PS) @ 6,000 rpm",
+          "torque": "134.2 Nm @ 4,000 rpm",
+          "efficiency": "16.94 km/l (MT)",
+          "transmission": "5MT"
+        }
+      },
+      {
+        "name": "Alpha MT",
+        "slug": "alpha-mt",
+        "price": 7049000,
+        "label": "Top MT",
+        "popular": false,
+        "transmission": "5MT",
+        "fuel": "Petrol",
+        "features": [
+          "Auto Headlamps",
+          "LED Headlamps",
+          "Alloy Wheels",
+          "Dark Green Glass",
+          "Adjustable + Retractable Electric ORVM",
+          "Push Start/Stop",
+          "Cruise Control",
+          "Leather Wrapped Steering Wheel",
+          "Auto Climate Control",
+          "SmartPlay Pro+ 22.86 cm",
+          "ARKAMYS Surround Sense",
+          "All Zeta features +"
+        ],
+        "specs": {
+          "power": "77.1 kW (104.8 PS) @ 6,000 rpm",
+          "torque": "134.2 Nm @ 4,000 rpm",
+          "efficiency": "16.94 km/l",
+          "transmission": "5MT"
+        }
+      },
+      {
+        "name": "Alpha AT",
+        "slug": "alpha-at",
+        "price": 7449000,
+        "label": "Top AT",
+        "popular": true,
+        "transmission": "4AT",
+        "fuel": "Petrol",
+        "features": [
+          "4-Speed Automatic Transmission",
+          "All Alpha MT features +"
+        ],
+        "specs": {
+          "power": "77.1 kW (104.8 PS) @ 6,000 rpm",
+          "torque": "134.2 Nm @ 4,000 rpm",
+          "efficiency": "16.39 km/l (AT)",
+          "transmission": "4AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L K15B, 4-Cylinder with Idle Start Stop",
+      "Displacement": "1,462 cc",
+      "Power": "77.1 kW (104.8 PS) @ 6,000 rpm",
+      "Torque": "134.2 Nm @ 4,000 rpm",
+      "Fuel Efficiency": "16.94 km/l (MT) / 16.39 km/l (AT)",
+      "Fuel Tank": "40 L",
+      "Transmission": "5MT / 4AT",
+      "Drive": "ALLGRIP PRO (4WD with Low Range Transfer Gear)",
+      "Chassis": "Ladder Frame",
+      "Seating": "4",
+      "Boot Space": "219 L (rear seats up) / 332 L (folded)",
+      "Length": "3,985 mm",
+      "Width": "1,645 mm",
+      "Height": "1,720 mm",
+      "Wheelbase": "2,590 mm",
+      "Ground Clearance": "210 mm",
+      "Approach Angle": "36°",
+      "Departure Angle": "47°",
+      "Ramp Breakover Angle": "24°",
+      "Min Turning Radius": "5.7 m",
+      "Front Brakes": "Disc",
+      "Rear Brakes": "Drum",
+      "Front Suspension": "3-Link Rigid Axle with Coil Spring",
+      "Rear Suspension": "3-Link Rigid Axle with Coil Spring",
+      "Tyre Size": "195/80 R15",
+      "Emission": "BS VI"
+    },
+    "pros": [
+      "True off-road 4WD with ALLGRIP PRO and Low Range Transfer Gear",
+      "6 airbags standard across ALL variants",
+      "Ladder Frame + 3-Link Rigid Axle — unmatched off-road articulation",
+      "210 mm ground clearance — handles Nepal mountain terrain",
+      "5-door body adds genuine rear passenger practicality"
+    ],
+    "cons": [
+      "Only 4-seater",
+      "Fuel efficiency of ~16 km/l is lower than modern crossovers",
+      "Only 4-speed AT",
+      "5.7 m turning radius — large for its size"
+    ],
+    "highlights": [
+      "ALLGRIP PRO 4WD",
+      "210mm Ground Clearance",
+      "6 Airbags Standard",
+      "Ladder Frame"
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "suzuki-fronx-2024",
+    "brand": "Suzuki",
+    "brandSlug": "suzuki",
+    "model": "Fronx",
+    "year": 2024,
+    "type": "Petrol / Turbo Petrol",
+    "bodyType": "suv",
+    "body": "Compact SUV (Crossover)",
+    "badge": "new",
+    "budgetTier": "Under 50L",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": false,
+    "tagline": "Face of New SUVs — Born to Outperform, In Style",
+    "rating": 4.4,
+    "reviews": 75,
+    "expertScore": 8.5,
+    "baseEMI": 50000,
+    "overview": "The Suzuki Fronx is a futuristic sporty compact SUV on the HEARTECT platform. It comes with a 1.2L K-Series Dual Jet Dual VVT (with AMT) and the powerful 1.0L Turbo Boosterjet engine with Smart Hybrid Technology that sprints 0–60 km/h in just 5.3 seconds. Top variants feature SmartPlay Pro+ 9\", 360 View Camera, Wireless Charging, HUD, and Next-Gen Suzuki Connect. Safety includes 6 airbags, standard ESP, and Hill Hold Assist.",
+    "images": [
+      "assets/images/cars/suzuki-fronx-compact-suv-01.jpg",
+      "assets/images/cars/suzuki-fronx-compact-suv-02.jpg",
+      "assets/images/cars/suzuki-fronx-compact-suv-03.jpg",
+      "assets/images/cars/suzuki-fronx-compact-suv-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Splendid Silver",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Pearl Arctic White",
+        "hex": "#F2F3F4"
+      },
+      {
+        "name": "Optic Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Bluish Black",
+        "hex": "#1C2833"
+      },
+      {
+        "name": "Celestial Blue",
+        "hex": "#2471A3"
+      },
+      {
+        "name": "Chestnut Brown",
+        "hex": "#5D4037"
+      },
+      {
+        "name": "Grandeur Grey",
+        "hex": "#808080"
+      },
+      {
+        "name": "Splendid Silver / Bluish Black",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Optic Red / Bluish Black",
+        "hex": "#C0392B"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Delta (1.2L MT/AMT)",
+        "slug": "delta-1-2",
+        "price": 4149000,
+        "label": "Base 1.2L",
+        "popular": false,
+        "transmission": "5MT / 5AMT",
+        "fuel": "Petrol",
+        "features": [
+          "Dual Front Airbags",
+          "ABS with EBD",
+          "ESP",
+          "Hill Hold Assist",
+          "Reverse Parking Sensors",
+          "SmartPlay Pro 17.78 cm",
+          "Wireless Android Auto & Apple CarPlay",
+          "Auto AC",
+          "Rear AC Vents",
+          "HEARTECT Platform",
+          "ISOFIX"
+        ],
+        "specs": {
+          "power": "66 kW (89.73 PS) @ 6,000 rpm",
+          "torque": "113 Nm @ 4,400 rpm",
+          "efficiency": "21.0 km/l (MT) / 22.89 km/l (AMT)",
+          "transmission": "5MT / 5AMT"
+        }
+      },
+      {
+        "name": "Delta+ (1.2L/1.0T)",
+        "slug": "delta-plus",
+        "price": 4649000,
+        "label": "Mid 1.2L / 1.0T",
+        "popular": false,
+        "transmission": "5MT / 5AMT (1.2L) | 5MT (1.0T)",
+        "fuel": "Petrol / Turbo Petrol",
+        "features": [
+          "1.0L Turbo Boosterjet engine option",
+          "Anti-theft Security System",
+          "All Delta features +"
+        ],
+        "specs": {
+          "power": "66 kW (1.2L) / 73.6 kW (1.0T)",
+          "torque": "113 Nm (1.2L) / 147.6 Nm (1.0T)",
+          "efficiency": "21.0 km/l (1.2L MT) / 21.5 km/l (1.0T MT)",
+          "transmission": "5MT / 5AMT (1.2L) | 5MT (1.0T)"
+        }
+      },
+      {
+        "name": "Zeta (1.0T MT/AT)",
+        "slug": "zeta-1-0t",
+        "price": 4999000,
+        "label": "Top 1.0T",
+        "popular": false,
+        "transmission": "5MT / 6AT",
+        "fuel": "Turbo Petrol (Smart Hybrid)",
+        "features": [
+          "'Hi Suzuki' Voice Assistant",
+          "OTA Updates",
+          "TFT Color MID",
+          "NEXTre LED DRLs",
+          "Auto Headlamps",
+          "Full LED Connected RCL",
+          "Alloy Wheels",
+          "Dual Tone Interior",
+          "Height Adjustable Driver Seat",
+          "Front Center Armrest",
+          "All Delta+ features +"
+        ],
+        "specs": {
+          "power": "73.6 kW (100.06 PS) @ 5,500 rpm",
+          "torque": "147.6 Nm @ 2,000–4,500 rpm",
+          "efficiency": "21.5 km/l (MT) / 20.0 km/l (AT)",
+          "transmission": "5MT / 6AT"
+        }
+      },
+      {
+        "name": "Alpha (1.0T MT/AT)",
+        "slug": "alpha-1-0t",
+        "price": 5299000,
+        "label": "Flagship 1.0T",
+        "popular": true,
+        "transmission": "5MT / 6AT",
+        "fuel": "Turbo Petrol (Smart Hybrid)",
+        "features": [
+          "SmartPlay Pro+ 22.86 cm",
+          "ARKAMYS Surround Sense",
+          "360 View Camera",
+          "Wireless Charger",
+          "Head Up Display",
+          "Paddle Shifters (AT)",
+          "Cruise Control",
+          "6 Airbags (Front, Side & Curtain)",
+          "Push Start with Smart Key",
+          "Leather Wrapped Steering Wheel",
+          "Rear Fast USB (Type A & C)",
+          "Suzuki Connect",
+          "All Zeta features +"
+        ],
+        "specs": {
+          "power": "73.6 kW (100.06 PS) @ 5,500 rpm",
+          "torque": "147.6 Nm @ 2,000–4,500 rpm",
+          "efficiency": "21.5 km/l (MT) / 20.0 km/l (AT)",
+          "transmission": "5MT / 6AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine (1.2L)": "1.2L Dual Jet, Dual VVT, K-Series",
+      "Engine (1.0T)": "1.0L Turbo Boosterjet with Smart Hybrid",
+      "Power (1.2L)": "66 kW (89.73 PS) @ 6,000 rpm",
+      "Power (1.0T)": "73.6 kW (100.06 PS) @ 5,500 rpm",
+      "Torque (1.2L)": "113 Nm @ 4,400 rpm",
+      "Torque (1.0T)": "147.6 Nm @ 2,000–4,500 rpm",
+      "Fuel Efficiency": "Up to 22.89 km/l (1.2L AMT) / 21.5 km/l (1.0T MT)",
+      "Fuel Tank": "37 L",
+      "Transmission": "5MT / 5AMT (1.2L) | 5MT / 6AT (1.0T)",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "308 L",
+      "Length": "3,995 mm",
+      "Width": "1,765 mm",
+      "Height": "1,550 mm",
+      "Wheelbase": "2,520 mm",
+      "Min Turning Radius": "4.9 m",
+      "Platform": "HEARTECT",
+      "Tyre Size": "195/60 R16",
+      "Emission": "BS VI"
+    },
+    "pros": [
+      "1.0T Turbo Boosterjet — 0 to 60 in 5.3s with 147.6 Nm torque",
+      "6 airbags + ESP + Hill Hold on Alpha",
+      "SmartPlay Pro+ 9\" with 360 Camera, HUD, Wireless Charging on Alpha",
+      "HEARTECT platform",
+      "308L boot space"
+    ],
+    "cons": [
+      "No AWD option",
+      "HUD and 360 Camera only on Alpha",
+      "37L fuel tank is smaller than rivals"
+    ],
+    "highlights": [
+      "1.0T Boosterjet",
+      "6 Airbags",
+      "308L Boot",
+      "SmartPlay Pro+ 9\""
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "suzuki-brezza-2024",
+    "brand": "Suzuki",
+    "brandSlug": "suzuki",
+    "model": "Brezza",
+    "year": 2024,
+    "type": "Petrol",
+    "bodyType": "suv",
+    "body": "Compact SUV",
+    "badge": "popular",
+    "budgetTier": "Above 50L",
+    "isEV": false,
+    "isNew": false,
+    "isFeatured": true,
+    "isBestSeller": false,
+    "tagline": "Smart & Powerful — The Sporty UV",
+    "rating": 4.3,
+    "reviews": 180,
+    "expertScore": 8.2,
+    "baseEMI": 60000,
+    "overview": "The Suzuki Brezza is a smart and powerful sporty urban vehicle powered by the 1.5L K15C engine with Smart Hybrid (AT). It delivers up to 19.80 km/l on the automatic. Top variants feature SmartPlay Pro+ 22.86 cm, electric sunroof, wireless charging dock, rear fast USB, cruise control, dual LED headlamps, and 360 View Camera.",
+    "images": [
+      "assets/images/cars/suzuki-brezza-sporty-urban-suv-01.jpg",
+      "assets/images/cars/suzuki-brezza-sporty-urban-suv-02.jpg",
+      "assets/images/cars/suzuki-brezza-sporty-urban-suv-03.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Splendid Silver",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Pearl Arctic White",
+        "hex": "#F2F3F4"
+      },
+      {
+        "name": "Exuberant Blue",
+        "hex": "#2471A3"
+      },
+      {
+        "name": "Magma Grey",
+        "hex": "#616A6B"
+      },
+      {
+        "name": "Sizzling Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Brave Khakhi",
+        "hex": "#7D6608"
+      },
+      {
+        "name": "Pearl Midnight Black",
+        "hex": "#1A1A2E"
+      },
+      {
+        "name": "Splendid Silver / Midnight Black Roof",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Sizzling Red / Midnight Black Roof",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Brave Khakhi / Arctic White Roof",
+        "hex": "#7D6608"
+      }
+    ],
+    "variants": [
+      {
+        "name": "LXi MT",
+        "slug": "lxi-mt",
+        "price": 5009000,
+        "label": "Base MT",
+        "popular": false,
+        "transmission": "5MT",
+        "fuel": "Petrol",
+        "features": [
+          "Driver & Co-Driver Airbags",
+          "ABS with EBD",
+          "ESP",
+          "Hill Hold Assist",
+          "Reverse Parking Sensors",
+          "Keyless Entry",
+          "All Power Windows",
+          "Rear AC Vents",
+          "Steel Wheels",
+          "Bi-Halogen Projector Headlamps",
+          "ISOFIX",
+          "TECT Body"
+        ],
+        "specs": {
+          "power": "75.8 kW (103.1 PS) @ 6,000 rpm",
+          "torque": "136.8 Nm @ 4,400 rpm",
+          "efficiency": "17.38 km/l",
+          "transmission": "5MT"
+        }
+      },
+      {
+        "name": "VXi MT/AT",
+        "slug": "vxi-mt-at",
+        "price": 5479000,
+        "label": "Mid",
+        "popular": false,
+        "transmission": "5MT / 6AT",
+        "fuel": "Petrol",
+        "features": [
+          "SmartPlay Studio 17.78 cm",
+          "Wireless Android Auto & Apple CarPlay",
+          "4 Speakers",
+          "MFD TFT Color Display",
+          "Height Adjustable Driver Seat",
+          "Electrically Adjustable ORVM",
+          "All LXi features +"
+        ],
+        "specs": {
+          "power": "75.8 kW (103.1 PS) @ 6,000 rpm",
+          "torque": "136.8 Nm @ 4,400 rpm",
+          "efficiency": "17.38 km/l (MT) / 19.80 km/l (AT)",
+          "transmission": "5MT / 6AT"
+        }
+      },
+      {
+        "name": "ZXi MT/AT",
+        "slug": "zxi-mt-at",
+        "price": 5949000,
+        "label": "Top",
+        "popular": true,
+        "transmission": "5MT / 6AT",
+        "fuel": "Petrol",
+        "features": [
+          "SmartPlay Pro 17.78 cm",
+          "ARKAMYS Surround Sense",
+          "Electric Sunroof",
+          "Cruise Control",
+          "Electrically Foldable ORVM",
+          "60:40 Split Rear Seat",
+          "Push Start/Stop with Smart Key",
+          "Dual LED Projector Headlamps",
+          "Floating LED DRLs",
+          "Painted Alloy Wheels",
+          "Dual Tone Exterior option",
+          "All VXi features +"
+        ],
+        "specs": {
+          "power": "75.8 kW (103.1 PS) @ 6,000 rpm",
+          "torque": "136.8 Nm @ 4,400 rpm",
+          "efficiency": "17.38 km/l (MT) / 19.80 km/l (AT)",
+          "transmission": "5MT / 6AT"
+        }
+      },
+      {
+        "name": "ZXi+ MT",
+        "slug": "zxi-plus-mt",
+        "price": 6179000,
+        "label": "Flagship MT",
+        "popular": false,
+        "transmission": "5MT",
+        "fuel": "Petrol",
+        "features": [
+          "SmartPlay Pro+ 22.86 cm",
+          "ARKAMYS + 2 Tweeters",
+          "360 View Camera",
+          "Wireless Charging Dock",
+          "Rear Fast USB (Type A & C)",
+          "Precision Cut Alloy Wheels",
+          "LED Front Fog Lamps",
+          "Auto Headlamps",
+          "Suzuki Connect",
+          "Cooled Glove Box",
+          "Interior Ambient Lights",
+          "All ZXi features +"
+        ],
+        "specs": {
+          "power": "75.8 kW (103.1 PS) @ 6,000 rpm",
+          "torque": "136.8 Nm @ 4,400 rpm",
+          "efficiency": "17.38 km/l",
+          "transmission": "5MT"
+        }
+      },
+      {
+        "name": "ZXi+ AT (Dualtone)",
+        "slug": "zxi-plus-at",
+        "price": 6929000,
+        "label": "Flagship AT",
+        "popular": false,
+        "transmission": "6AT",
+        "fuel": "Petrol (Smart Hybrid)",
+        "features": [
+          "6-Speed Automatic with Smart Hybrid",
+          "Dual Tone Exterior",
+          "All ZXi+ MT features +"
+        ],
+        "specs": {
+          "power": "75.8 kW (103.1 PS) @ 6,000 rpm",
+          "torque": "136.8 Nm @ 4,400 rpm",
+          "efficiency": "19.80 km/l",
+          "transmission": "6AT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L K15C, 4-Cylinder",
+      "Engine Type": "K15C (MT) / K15C Smart Hybrid (AT)",
+      "Displacement": "1,462 cc",
+      "Power": "75.8 kW (103.1 PS) @ 6,000 rpm",
+      "Torque": "136.8 Nm @ 4,400 rpm",
+      "Fuel Efficiency": "17.38 km/l (MT) / 19.80 km/l (AT)",
+      "Fuel Tank": "48 L",
+      "Transmission": "5MT / 6AT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "328 L (VDA Method)",
+      "Length": "3,995 mm",
+      "Width": "1,790 mm",
+      "Height": "1,685 mm",
+      "Wheelbase": "2,500 mm",
+      "Front Brakes": "Ventilated Disc",
+      "Rear Brakes": "Drum",
+      "Tyre Size": "215/60 R16",
+      "Platform": "TECT (Suzuki)",
+      "Emission": "BS VI"
+    },
+    "pros": [
+      "19.80 km/l with Smart Hybrid AT",
+      "Large 48L fuel tank",
+      "328L boot",
+      "Electric sunroof, wireless charging, 360 camera on ZXi+",
+      "Suzuki Connect telematics"
+    ],
+    "cons": [
+      "Smart Hybrid only with AT, not MT",
+      "Only 2 airbags standard",
+      "No HUD on any variant"
+    ],
+    "highlights": [
+      "19.80 km/l AT",
+      "328L Boot",
+      "48L Tank",
+      "SmartPlay Pro+ 9\""
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "suzuki-victoris-2024",
+    "brand": "Suzuki",
+    "brandSlug": "suzuki",
+    "model": "Victoris",
+    "year": 2024,
+    "type": "Petrol / Hybrid / CNG",
+    "bodyType": "suv",
+    "body": "Mid-Size SUV",
+    "badge": "new",
+    "budgetTier": "Above 50L",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": false,
+    "tagline": "The Most Feature Loaded SUV",
+    "rating": 4.6,
+    "reviews": 30,
+    "expertScore": 9.2,
+    "baseEMI": 0,
+    "overview": "The Suzuki Victoris is the most feature-loaded SUV in Suzuki's lineup. Available in Smart Hybrid (5MT/6AT), AllGrip AWD, Strong Hybrid (e-CVT), and S-CNG. Key highlights include Level 2 ADAS, 6 airbags, 360° HD Camera with 11 views, Electronic Parking Brake, 8-way powered driver seat, ventilated seats, Smart Powered Tailgate with gesture control, panoramic sunroof, SmartPlay Pro X 10.1\" HD, Dolby Atmos via 8 Infinity by Harman speakers, Alexa Auto, 64-colour ambient lighting, and auto purify with PM2.5 display.",
+    "images": [
+      "assets/images/cars/suzuki-victoris-feature-loaded-suv-01.jpg",
+      "assets/images/cars/suzuki-victoris-feature-loaded-suv-02.jpg",
+      "assets/images/cars/suzuki-victoris-feature-loaded-suv-03.jpg",
+      "assets/images/cars/suzuki-victoris-feature-loaded-suv-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Eternal Blue / Bluish Black Roof (Dual Tone)",
+        "hex": "#1A5276"
+      },
+      {
+        "name": "Sizzling Red / Bluish Black Roof (Dual Tone)",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Splendid Silver / Bluish Black Roof (Dual Tone)",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Eternal Blue",
+        "hex": "#1A5276"
+      },
+      {
+        "name": "Sizzling Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Mystic Green",
+        "hex": "#1E8449"
+      },
+      {
+        "name": "Bluish Black",
+        "hex": "#1C2833"
+      },
+      {
+        "name": "Splendid Silver",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Magma Grey",
+        "hex": "#616A6B"
+      },
+      {
+        "name": "Pearl Arctic White",
+        "hex": "#F2F3F4"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Lxi",
+        "slug": "lxi",
+        "price": 0,
+        "label": "Base",
+        "popular": false,
+        "transmission": "5MT / e-CVT (Strong Hybrid)",
+        "fuel": "Petrol / Strong Hybrid",
+        "features": [
+          "6 Airbags (Front, Side, Curtain) — Standard",
+          "ABS with EBD",
+          "ESP",
+          "TCS",
+          "Hill Hold Assist",
+          "Reverse Parking Camera",
+          "Rear Parking Sensors",
+          "TPMS (Strong Hybrid)",
+          "Auto AC",
+          "Rear AC Vents",
+          "PM2.5 Cabin Air Filter",
+          "Push Start with Smart Key",
+          "Keyless Entry",
+          "60:40 Folding Rear Seats",
+          "SmartPlay Pro 17.78 cm (7\")",
+          "Wireless Android Auto & Apple CarPlay",
+          "Suzuki Connect",
+          "Hi Suzuki Voice Assistant",
+          "LED Rear Combination Lamp"
+        ],
+        "specs": {
+          "power": "75.8 kW (103.06 PS) @ 6,000 rpm / 85 kW total (Hybrid)",
+          "torque": "139 Nm @ 4,300 rpm (Petrol)",
+          "efficiency": "21.18 km/l (MT) / 28.65 km/l (Strong Hybrid e-CVT)",
+          "transmission": "5MT / e-CVT"
+        }
+      },
+      {
+        "name": "Vxi",
+        "slug": "vxi",
+        "price": 0,
+        "label": "Mid",
+        "popular": false,
+        "transmission": "5MT / 6AT / e-CVT",
+        "fuel": "Petrol / Strong Hybrid",
+        "features": [
+          "Electronic Parking Brake with Brake Hold (6AT)",
+          "Paddle Shifters (6AT)",
+          "Cruise Control",
+          "TPMS",
+          "360° HD View Camera with 11 Views (Strong Hybrid)",
+          "Wireless Charger with Active Cooling",
+          "Auto Folding ORVMs",
+          "Rear USB-C+C (45W+45W)",
+          "SmartPlay Pro X 25.65 cm HD (Strong Hybrid)",
+          "Dolby Atmos + 8 Infinity Speakers (Strong Hybrid)",
+          "Alexa Auto Voice AI (Strong Hybrid)",
+          "App Store + Internet (Strong Hybrid)",
+          "Dual Tone Interior (Petrol)",
+          "All Lxi features +"
+        ],
+        "specs": {
+          "power": "75.8 kW (103.06 PS) @ 6,000 rpm",
+          "torque": "139 Nm @ 4,300 rpm",
+          "efficiency": "21.18 km/l (MT) / 21.06 km/l (AT) / 28.65 km/l (Strong Hybrid)",
+          "transmission": "5MT / 6AT / e-CVT"
+        }
+      },
+      {
+        "name": "Zxi / Zxi (O)",
+        "slug": "zxi",
+        "price": 0,
+        "label": "Top",
+        "popular": true,
+        "transmission": "5MT / 6AT / AllGrip 6AT / e-CVT",
+        "fuel": "Petrol / Strong Hybrid",
+        "features": [
+          "SmartPlay Pro X 25.65 cm HD (All)",
+          "Dolby Atmos + 8 Infinity Speakers (All)",
+          "360° HD Camera with 11 Views",
+          "Smart Powered Tailgate with Gesture Control",
+          "64-Color Ambient Lighting",
+          "Auto Purify with PM2.5 Display",
+          "Plush Leatherette Seats",
+          "LED Projector Headlamps",
+          "Painted Black Alloy Wheels",
+          "Panoramic Sunroof — Zxi (O) only",
+          "Ventilated Seats — Zxi (O) only",
+          "8-Way Driver Powered Seat — Zxi (O)",
+          "Head Up Display — Zxi (O)",
+          "All Vxi features +"
+        ],
+        "specs": {
+          "power": "75.8 kW (103.06 PS) / 85 kW total (Strong Hybrid)",
+          "torque": "139 Nm / 141 Nm motor (Strong Hybrid)",
+          "efficiency": "21.06 km/l (AT) / 19.07 km/l (AllGrip AT) / 28.65 km/l (Hybrid)",
+          "transmission": "5MT / 6AT / AllGrip 6AT / e-CVT"
+        }
+      },
+      {
+        "name": "Zxi+ / Zxi+ (O)",
+        "slug": "zxi-plus",
+        "price": 0,
+        "label": "Flagship",
+        "popular": false,
+        "transmission": "6AT / AllGrip 6AT / e-CVT",
+        "fuel": "Petrol (AllGrip) / Strong Hybrid",
+        "features": [
+          "Level 2 ADAS (6AT): LKA, AEB, FCW, BSD, ACC with Curve Speed Reduction, HBA, LDP, LDW, RCTA, Vehicle Sway Warning",
+          "Machined Alloy Wheels",
+          "Hill Descent Control (AllGrip)",
+          "Terrain Modes: Snow/Sport/Lock/Auto (AllGrip)",
+          "26.03 cm Fully Digital Cluster (Strong Hybrid)",
+          "Schedule AC Remote (6AT/e-CVT)",
+          "All Black Interior with Champagne Gold (Strong Hybrid)",
+          "All Zxi features +"
+        ],
+        "specs": {
+          "power": "75.8 kW / 85 kW total (Strong Hybrid)",
+          "torque": "139 Nm / 141 Nm motor",
+          "efficiency": "21.06 km/l (AT) / 19.07 km/l (AllGrip AT) / 28.65 km/l (Hybrid)",
+          "transmission": "6AT / AllGrip 6AT / e-CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine (Petrol)": "1.5L K15C Smart Hybrid",
+      "Engine (Strong Hybrid)": "1.5L M15D + AC Synchronous Motor",
+      "Displacement": "1,462 cc (Petrol) / 1,490 cc (Strong Hybrid)",
+      "Power (Petrol)": "75.8 kW (103.06 PS) @ 6,000 rpm",
+      "Power (Strong Hybrid)": "68 kW petrol + 59 kW motor = 85 kW total",
+      "Torque (Petrol)": "139 Nm @ 4,300 rpm",
+      "Torque (Motor)": "141 Nm @ 0–3,995 rpm",
+      "Battery": "177.6 V Lithium-ion",
+      "Fuel Efficiency": "21.18 km/l (MT) / 21.06 km/l (AT) / 19.07 km/l (AllGrip) / 28.65 km/l (Hybrid)",
+      "Fuel Tank": "45 L",
+      "Transmission": "5MT / 6AT / AllGrip 6AT / e-CVT",
+      "Drive": "2WD / AllGrip AWD",
+      "Seating": "5",
+      "Length": "4,360 mm",
+      "Width": "1,795 mm",
+      "Height": "1,655 mm",
+      "Wheelbase": "2,600 mm",
+      "Min Turning Radius": "5.4 m",
+      "Front Brakes": "Disc",
+      "Rear Brakes": "Disc",
+      "Tyre Size": "215/60 R17",
+      "Platform": "TECT (Suzuki)",
+      "Emission": "BS VI"
+    },
+    "pros": [
+      "Level 2 ADAS on Zxi+ 6AT — most advanced Suzuki in Nepal",
+      "28.65 km/l on Strong Hybrid",
+      "Dolby Atmos via 8 Infinity by Harman speakers",
+      "Smart Powered Tailgate with gesture control",
+      "64-color ambient lighting, panoramic sunroof, ventilated seats",
+      "AllGrip AWD available",
+      "Auto Purify with PM2.5 — ideal for Kathmandu"
+    ],
+    "cons": [
+      "Level 2 ADAS only on Zxi+ 6AT",
+      "AllGrip AWD only on Zxi+",
+      "Strong Hybrid commands significant premium",
+      "Boot space not published"
+    ],
+    "highlights": [
+      "Level 2 ADAS",
+      "28.65 km/l Hybrid",
+      "Dolby Atmos 8 Speakers",
+      "AllGrip AWD"
+    ]
+  }
+]

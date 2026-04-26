@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nepal Car Database</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; font-size: 13px; background: #fff; color: #111; }
+
+  .top {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: #f9f9f9;
+  }
+  .top h1 { font-size: 15px; font-weight: bold; margin-right: 8px; }
+  .top .stat { font-size: 12px; color: #555; }
+  .top .stat b { color: #111; }
+
+  .controls {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    background: #fff;
+  }
+  input[type="text"], select {
+    border: 1px solid #ccc;
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    outline: none;
+    background: #fff;
+  }
+  input[type="text"] { width: 220px; }
+  input[type="text"]:focus, select:focus { border-color: #888; }
+
+  button {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+  }
+  button:hover { background: #f0f0f0; }
+
+  .brand-row {
+    padding: 7px 16px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+  }
+  .brand-row span { font-size: 11px; color: #888; margin-right: 4px; }
+  .bpill {
+    border: 1px solid #ccc;
+    padding: 3px 9px;
+    font-size: 11px;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+  }
+  .bpill:hover { background: #f0f0f0; }
+  .bpill.active { background: #111; color: #fff; border-color: #111; }
+
+  .info-row {
+    padding: 5px 16px;
+    font-size: 11px;
+    color: #888;
+    border-bottom: 1px solid #eee;
+  }
+
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    background: #f5f5f5;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #ddd;
+    white-space: nowrap;
+  }
+  tbody tr { border-bottom: 1px solid #eee; }
+  tbody tr:hover { background: #fafafa; }
+  tbody td { padding: 7px 10px; vertical-align: top; }
+
+  .features-col { font-size: 11px; color: #555; max-width: 260px; line-height: 1.5; }
+
+  .tog {
+    border: 1px solid #ccc;
+    padding: 3px 9px;
+    font-size: 11px;
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: nowrap;
+    background: #fff;
+  }
+  .tog.added { background: #e6f4ea; border-color: #aad4b0; color: #1a6e2e; }
+  .tog.pending { background: #fff; border-color: #ccc; color: #555; }
+  .tog:hover { opacity: 0.8; }
+
+  .no-results { text-align: center; padding: 40px; color: #999; }
+  mark { background: #fff59d; border-radius: 2px; }
+
+  .prog-bar { height: 3px; background: #eee; border-radius: 2px; margin-top: 3px; display:inline-block; vertical-align:middle; }
+  .prog-fill { height: 100%; background: #4caf50; border-radius: 2px; transition: width 0.3s; }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>Nepal Car Database</h1>
+  <div class="stat">Total: <b id="s-total">0</b></div>
+  <div class="stat">Added: <b id="s-added" style="color:#1a6e2e">0</b></div>
+  <div class="stat">Pending: <b id="s-pending" style="color:#b45309">0</b></div>
+  <div class="stat">Brands: <b id="s-brands">0</b></div>
+  <div class="stat" style="margin-left:auto">
+    Progress: <b id="s-pct">0%</b>&nbsp;
+    <span class="prog-bar" style="width:120px"><span class="prog-fill" id="s-bar" style="width:0%"></span></span>
+  </div>
+</div>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Search brand, model, features...">
+  <select id="f-type"><option value="">All Fuel Types</option><option>Petrol</option><option>Diesel</option><option>Electric</option><option>Hybrid</option></select>
+  <select id="f-body"><option value="">All Body Types</option></select>
+  <select id="f-status"><option value="">All Status</option><option value="added">Added</option><option value="pending">Pending</option></select>
+  <select id="f-sort">
+    <option value="brand">Sort: Brand A–Z</option>
+    <option value="price_asc">Sort: Price Low–High</option>
+    <option value="price_desc">Sort: Price High–Low</option>
+    <option value="model">Sort: Model A–Z</option>
+  </select>
+  <button id="btn-all">✓ Mark All Added</button>
+  <button id="btn-reset">Reset All</button>
+</div>
+
+<div class="brand-row">
+  <span>Brand:</span>
+  <button class="bpill active" data-brand="">All</button>
+</div>
+
+<div class="info-row" id="info-row">Showing 0 entries</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Brand</th><th>Model</th><th>Body Type</th><th>Fuel</th>
+        <th>Variant</th><th>Price</th><th>Trans</th><th>Key Features</th><th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <div class="no-results" id="no-results" style="display:none">No results found.</div>
+</div>
+
+<script>
+const RAW = [
+  ["Audi","Q3","Compact Luxury SUV","Petrol","35 TFSI","Rs. 70.73L","AT","2 Airbags, 8.8\" MMI, Rear Camera, 5 Seats, Dual-Zone AC, 17\" Alloys"],
+  ["Audi","Q3","Compact Luxury SUV","Petrol","40 TFSI quattro","Rs. 85.00L","AT","6 Airbags, Audi Virtual Cockpit, Panoramic Sunroof, quattro AWD, Ambient Lighting"],
+  ["Audi","Q4 e-tron","Compact EV SUV","Electric","Q4 35 e-tron Standard","Rs. 1.45 Cr","Single Speed","55kWh, 349km WLTP, 170PS, 800V Architecture, MMI Touchscreen, 6 Airbags"],
+  ["Audi","Q4 e-tron","Compact EV SUV","Electric","Q4 35 e-tron Sportback","Rs. 1.50 Cr","Single Speed","Sportback Coupe Roofline, Panoramic Glass Roof, 20\" Alloys"],
+  ["Audi","Q5","Mid-Size Luxury SUV","Petrol","40 TFSI quattro","Rs. 1.05 Cr","AT","7\" Virtual Cockpit, 10.1\" MMI, quattro AWD, Panoramic Sunroof, LED, 6 Airbags"],
+  ["Audi","Q5","Mid-Size Luxury SUV","Petrol","45 TFSI quattro S-Line","Rs. 1.25 Cr","AT","S-Line Pack, Matrix LED, Adaptive Cruise, 360° Camera"],
+  ["Audi","Q7","Full-Size Luxury SUV","Diesel","45 TDI quattro","Rs. 51.51L","AT","7 Seats, Air Suspension, 10.1\" MMI, quattro AWD, LED, 6 Airbags"],
+  ["Audi","Q7","Full-Size Luxury SUV","Diesel","55 TFSI quattro","Rs. 1.32 Cr","AT","Matrix LED, Adaptive Air Suspension, Virtual Cockpit Plus, HUD, 4-Zone Climate"],
+  ["Audi","A4","Executive Sedan","Petrol","40 TFSI","Rs. 71.00L","AT","10.1\" MMI, Audi Virtual Cockpit, LED, Dual-Zone Climate, Rear Camera"],
+  ["Audi","A4","Executive Sedan","Petrol","40 TFSI quattro Premium Plus","Rs. 90.00L","AT","quattro AWD, Matrix LED, HUD, Adaptive Cruise, Ambient Lighting"],
+  ["BMW","X1","Compact SAV","Petrol","sDrive18i","Rs. 1.90 Cr","AT","8.8\" iDrive, 2 Airbags, LED, Parking Sensors, Dual-Zone Climate, 17\" Alloys"],
+  ["BMW","X1","Compact SAV","Petrol","xDrive20i M Sport","Rs. 2.30 Cr","AT","xDrive AWD, M Sport Pack, Panoramic Roof, Parking Assist Plus, 8 Airbags"],
+  ["BMW","X3","Mid-Size SAV","Diesel","xDrive20d xLine","Rs. 2.60 Cr","AT","6 Airbags, 10.25\" iDrive, LED, xDrive AWD, Heated Seats, 18\" Alloys"],
+  ["BMW","X3","Mid-Size SAV","Diesel","xDrive30e M Sport PHEV","Rs. 3.00 Cr","AT","PHEV 252hp, M Sport Pack, Panoramic Roof, Harman Kardon, Adaptive Cruise"],
+  ["BMW","X5","Full-Size SAV","Hybrid","xDrive30d Sport","Rs. 3.50 Cr","AT","6 Airbags, 12.3\" iDrive 7, Panoramic Roof, xDrive AWD, Adaptive Cruise, 19\" Alloys"],
+  ["BMW","X5","Full-Size SAV","Hybrid","xDrive40i M Sport","Rs. 4.00 Cr","AT","M Sport, Bowers & Wilkins Audio"],
+  ["BMW","X5","Full-Size SAV","Hybrid","xDrive45e M Sport PHEV","Rs. 4.97 Cr","AT","PHEV 394hp, 50km EV Range, Air Suspension, Executive Lounge Seats"],
+  ["BMW","3 Series","Executive Sedan","Hybrid","320d Sport","Rs. 2.00 Cr","AT","10.25\" iDrive, 6 Airbags, LED, Parking Assist, Heated Seats, Sport Line"],
+  ["BMW","3 Series","Executive Sedan","Hybrid","330e M Sport PHEV","Rs. 2.50 Cr","AT","M Sport, PHEV 252hp, Harman Kardon, Adaptive Suspension, HUD"],
+  ["BMW","5 Series","Business Sedan","Hybrid","530i M Sport","Rs. 2.40 Cr","AT","12.3\" iDrive, Panoramic Roof, M Sport, 6 Airbags, Ambient Lighting, Heated Seats"],
+  ["BMW","5 Series","Business Sedan","Hybrid","530e M Sport PHEV","Rs. 2.80 Cr","AT","PHEV 252hp, 57km EV Range, Bowers & Wilkins Audio, Adaptive Cruise"],
+  ["BMW","iX3","Electric SAV","Electric","iX3 M Sport","Rs. 2.30 Cr","Single Speed","80kWh, 460km WLTP, 286PS, M Sport, 150kW DC Charge 34min, Panoramic Roof"],
+  ["BMW","7 Series","Ultra-Luxury Sedan","Hybrid","730Ld DPE Signature","Rs. 5.50 Cr","AT","12.3\" iDrive, Executive Lounge, Ambient Lighting, Heated+Ventilated Seats, 6 Airbags"],
+  ["BMW","7 Series","Ultra-Luxury Sedan","Hybrid","740Li DPE Signature","Rs. 5.90 Cr","AT","Bowers & Wilkins 20-Speaker, Massage Seats"],
+  ["BMW","7 Series","Ultra-Luxury Sedan","Hybrid","745Le xDrive PHEV","Rs. 6.26 Cr","AT","PHEV 394hp, xDrive AWD, Level 3 ADAS, 14.9\" Touchscreen, Executive Theater Screen"],
+  ["BYD","Atto 1","Hatchback","Electric","Dynamic","Rs. 28.95L","Auto","30.08kWh, 230km WLTP, 61PS, V2L, 2 Airbags, 10.1\" Screen, 30kW DC"],
+  ["BYD","Atto 1","Hatchback","Electric","Premium","Rs. 32.99L","Auto","38.88kWh, 300km WLTP, 6 Airbags, Wireless Charging, 40kW DC"],
+  ["BYD","Dolphin","Hatchback","Electric","Standard","Rs. 41.15L","Auto","44.9kWh, 340km WLTP, 95PS, 6 Airbags, 5-Star NCAP, ADAS, 360° Camera, 12.8\" Rotating Screen, Panoramic Sunroof, V2L"],
+  ["BYD","Atto 2","Compact SUV","Electric","Standard","Rs. 44.99L","Auto","51.13kWh, 345km WLTP, 136PS, CTB Battery, 6 Airbags, ADAS, Panoramic Sunroof, 200mm Clearance"],
+  ["BYD","Atto 3","Compact SUV","Electric","Advanced","Rs. 56.90L","Auto","49.92kWh, 345km WLTP, 135PS, 7 Airbags, 5-Star NCAP, L2+ ADAS, 15.6\" Rotating Screen"],
+  ["BYD","Atto 3","Compact SUV","Electric","Superior","Rs. 67.80L","Auto","60.48kWh, 420km WLTP, All Advanced features"],
+  ["BYD","M6","MPV","Electric","Standard","Rs. 58.90L","Auto","71.8kWh, 440km WLTP, 7 Seats, 115kW DC Charge, 6 Airbags, ADAS, Panoramic Roof, V2L"],
+  ["BYD","Sealion 7","Mid-Size SUV","Electric","Premium RWD","Rs. 79.99L","Auto","71.8kWh, 440km WLTP, 312PS, 150kW DC 24min, 11 Airbags, ADAS, Dynaudio 12-Speaker, HUD, V2L"],
+  ["BYD","Seal","Sedan","Electric","Dynamic","Rs. 1.10 Cr","Auto","61.44kWh, 460km WLTP, 204PS, 9 Airbags, 5-Star NCAP, CTB, HUD, 15.6\" Screen"],
+  ["BYD","Seal","Sedan","Electric","Premium","Rs. 1.46 Cr","Auto","82.56kWh, 570km WLTP, 313PS"],
+  ["BYD","Seal","Sedan","Electric","Performance","Rs. 1.95 Cr","Auto","390kW AWD, 670Nm, 0-100 in 3.8s, 82.56kWh, 520km WLTP"],
+  ["Chery","Tiggo 4 Pro","Compact SUV","Petrol","Comfort","Rs. 38.90L","MT","6 Airbags, 10.25\" Touchscreen+CarPlay, Electric Sunroof, Auto AC, Alloys"],
+  ["Chery","Tiggo 4 Pro","Compact SUV","Petrol","Luxury","Rs. 42.90L","CVT","Panoramic Sunroof, Wireless Charging, Rear AC Vents, CVT"],
+  ["Chery","Tiggo 4 Pro","Compact SUV","Petrol","Premium","Rs. 46.90L","CVT","360° Camera, Ventilated Seats, Ambient Lighting, 8-Speaker"],
+  ["Chery","Tiggo 7 Pro","Mid-Size SUV","Petrol","Luxury","Rs. 51.90L","DCT","6 Airbags, 12.3\" Dual Screen, Electric Sunroof, Auto AC, 18\" Alloys, 7DCT"],
+  ["Chery","Tiggo 7 Pro","Mid-Size SUV","Petrol","Premium","Rs. 58.90L","DCT","ADAS, 360° Camera, Panoramic Sunroof, Ventilated Seats, Wireless Charging"],
+  ["Chery","Tiggo 7 Pro","Mid-Size SUV","Petrol","Elite","Rs. 65.90L","DCT","Nappa Leather, 64-Color Ambient, HUD, Power Tailgate"],
+  ["Chery","Tiggo 8 Pro","Large SUV","Petrol","Luxury 6-Seat","Rs. 69.90L","DCT","6 Airbags, 12.3\" Dual Screen, Captain Chairs, Panoramic Sunroof, ADAS Level 1, 19\" Alloys"],
+  ["Chery","Tiggo 8 Pro","Large SUV","Petrol","Premium 7-Seat","Rs. 76.90L","DCT","7-Seat, ADAS Level 2, 360° Camera, Ventilated Seats, Power Tailgate"],
+  ["Chery","Tiggo 8 Pro","Large SUV","Petrol","Elite AWD","Rs. 86.90L","DCT","AWD, Terrain Modes, HUD, Nappa Leather"],
+  ["Chery","Omoda 5","Coupe SUV","Petrol","Comfort","Rs. 41.90L","CVT","6 Airbags, 10.25\" Touchscreen+CarPlay, Electric Sunroof, Auto AC, Alloys, CVT"],
+  ["Chery","Omoda 5","Coupe SUV","Petrol","Premium","Rs. 47.90L","DCT","7-Speed DCT, 360° Camera, Wireless Charging, Ambient Lighting, Drive Modes"],
+  ["Chery","Omoda E5","Electric Coupe SUV","Electric","Standard","Rs. 59.90L","Single Speed","61kWh, 430km CLTC, 201hp, 10.25\" Screen, 6 Airbags, ADAS Level 1"],
+  ["Chery","Omoda E5","Electric Coupe SUV","Electric","Premium","Rs. 69.90L","Single Speed","ADAS Level 2, 360° Camera, Ventilated Seats, Wireless Charging, Ambient Lighting"],
+  ["Chery","Tiggo 2 Pro","Subcompact SUV","Petrol","Comfort","Rs. 28.90L","MT","4 Airbags, 10.25\" Touchscreen+CarPlay, Electric Sunroof, Manual AC, Alloys"],
+  ["Chery","Tiggo 2 Pro","Subcompact SUV","Petrol","Luxury","Rs. 32.90L","CVT","6 Airbags, Auto AC, Rear AC Vents, CVT, Wireless CarPlay"],
+  ["Deepal","S07","Mid-Size EV SUV","Electric","Standard RWD","Rs. 79.90L","Single Speed","61kWh, 420km CLTC, 218hp, 15.6\" Rotating Screen, ADAS Level 1, 6 Airbags"],
+  ["Deepal","S07","Mid-Size EV SUV","Electric","Long Range RWD","Rs. 92.90L","Single Speed","77kWh, 520km CLTC, ADAS Level 2, 360° Camera, Ventilated Seats"],
+  ["Deepal","S07","Mid-Size EV SUV","Electric","Long Range AWD","Rs. 1.10 Cr","Single Speed","402hp Dual Motor AWD, Air Suspension, HUD, Nappa Leather"],
+  ["Deepal","L07","Sedan","Hybrid","REEV Standard","Rs. 69.90L","Single Speed","40kWh, 130km EV, 1000km+ Combined, 218hp, ADAS Level 1, 6 Airbags"],
+  ["Deepal","L07","Sedan","Hybrid","REEV Premium","Rs. 81.90L","Single Speed","ADAS Level 2, Ventilated Seats, Nappa Leather, 360° Camera, HUD"],
+  ["Deepal","S05","Compact EV SUV","Electric","Standard","Rs. 54.90L","Single Speed","50kWh, 330km CLTC, 170hp, 12.8\" Touchscreen+CarPlay, ADAS Level 1"],
+  ["Deepal","S05","Compact EV SUV","Electric","Premium","Rs. 64.90L","Single Speed","60kWh, 400km CLTC, 201hp, ADAS Level 2, 360° Camera, Ventilated Seats"],
+  ["Ford","Ranger","Pickup Truck","Diesel","XL 2.0 ST","Rs. 1.06 Cr","AT","9 Airbags, 12\" SYNC4, 4WD, 6 Drive Modes, 800mm Wading, Hill Start"],
+  ["Ford","Ranger","Pickup Truck","Diesel","XLT 2.0 BT","Rs. 1.25 Cr","AT","Bi-Turbo 210PS, 10-Speed AT, 18\" Alloys, Wireless CarPlay"],
+  ["Ford","Ranger","Pickup Truck","Diesel","Wildtrak 2.0 BT","Rs. 1.45 Cr","AT","Sports Roll Bar, Bed Liner, 360° Camera, 9 Airbags, Adaptive Cruise"],
+  ["Ford","Everest","7-Seat SUV","Diesel","Titanium 2.0 BT 4WD","Rs. 2.40 Cr","AT","7 Seats, 210PS, 10-Speed AT, Matrix LED, Panoramic Moonroof, 7 Airbags, 360° Camera, ADAS, 800mm Wading, 5-Star ANCAP"],
+  ["Ford","Ranger Raptor","Performance Pickup","Petrol","Raptor 3.0L V6 Bi-Turbo","Rs. 2.29 Cr","AT","392hp V6, FOX Live Valve Shocks, 7 Drive Modes incl. Baja, Front Lock Diff, 272mm Clearance, 850mm Wading, 9 Airbags"],
+  ["Geely","Coolray","Compact SUV","Petrol","Comfort","Rs. 41.90L","DCT","6 Airbags, 10.25\" Touchscreen+CarPlay, Electric Sunroof, Auto AC, 17\" Alloys, 7DCT Wet"],
+  ["Geely","Coolray","Compact SUV","Petrol","Premium","Rs. 46.90L","DCT","360° Camera, Wireless Charging, ADAS Level 1, Rear AC Vents, Drive Modes"],
+  ["Geely","Coolray","Compact SUV","Petrol","Sport","Rs. 51.90L","DCT","ADAS Level 2, Panoramic Sunroof, Ventilated Seats, 32-Color Ambient"],
+  ["Geely","Azkarra","Mid-Size SUV","Hybrid","Premium FWD","Rs. 61.90L","DCT","6 Airbags, 48V Mild Hybrid, 12.3\" Curved Screen, ADAS Level 1, Panoramic Sunroof, 360° Camera"],
+  ["Geely","Azkarra","Mid-Size SUV","Hybrid","Elite AWD","Rs. 72.90L","DCT","AWD, ADAS Level 2, Bose 9-Speaker, Ventilated+Heated Seats, HUD, Nappa Leather"],
+  ["Geely","Emgrand","Sedan","Petrol","Comfort MT","Rs. 24.90L","MT","6 Airbags, 10.25\" Touchscreen+CarPlay, Rear Camera, Manual AC, Alloys"],
+  ["Geely","Emgrand","Sedan","Petrol","Premium CVT","Rs. 28.90L","CVT","CVT, Auto AC, Wireless CarPlay, TPMS, Rear Spoiler"],
+  ["Geely","Preface","Sedan","Hybrid","Premium","Rs. 54.90L","DCT","6 Airbags, 48V Mild Hybrid, 12.3\" Curved Screen+CarPlay, ADAS Level 1, Electric Sunroof"],
+  ["Geely","Preface","Sedan","Hybrid","Elite","Rs. 62.90L","DCT","ADAS Level 2, Bose 9-Speaker, Ventilated+Heated Seats, Nappa Leather, HUD"],
+  ["Geely","EX5","Compact EV SUV","Electric","Standard","Rs. 53.90L","Single Speed","52kWh, 360km CLTC, 201hp, 12.3\" Touchscreen+CarPlay, 6 Airbags, ADAS Level 1"],
+  ["Geely","EX5","Compact EV SUV","Electric","Premium","Rs. 62.90L","Single Speed","65kWh, 450km CLTC, 218hp, 800V Fast Charge, ADAS Level 2, 360° Camera, Ventilated Seats"],
+  ["Haval","Jolion","Compact SUV","Petrol","Comfort","Rs. 39.90L","DCT","6 Airbags, 10.25\" Touchscreen+CarPlay, Electric Sunroof, Auto AC, 17\" Alloys, 7DCT"],
+  ["Haval","Jolion","Compact SUV","Petrol","Luxury","Rs. 44.90L","DCT","360° Camera, Wireless Charging, ADAS Level 1, Panoramic Sunroof, Rear AC Vents"],
+  ["Haval","Jolion","Compact SUV","Petrol","Hybrid DHT","Rs. 51.90L","DHT","1.5L DHT Hybrid 190hp, 22.1km/l, ADAS Level 2, Ventilated Seats, Ambient Lighting"],
+  ["Haval","Jolion","Compact SUV","Petrol","Hybrid Premium","Rs. 58.90L","DHT","Nappa Leather, HUD, 10-Speaker Audio, 4 Drive Modes"],
+  ["Haval","H6","Mid-Size SUV","Hybrid","Luxury FWD","Rs. 63.90L","DHT","6 Airbags, 12.3\" Dual Screen, DHT Hybrid, Electric Sunroof, ADAS Level 1, 360° Camera"],
+  ["Haval","H6","Mid-Size SUV","Hybrid","Premium AWD","Rs. 74.90L","DHT AWD","AWD 240hp, ADAS Level 2, Harman 12-Speaker, Ventilated Seats, HUD"],
+  ["Haval","Dargo","Off-Road SUV","Petrol","Luxury","Rs. 68.90L","DCT","6 Airbags, 12.3\" Touchscreen, Terrain Control, 224mm Clearance, Rear Diff Lock, 360° Camera"],
+  ["Haval","Dargo","Off-Road SUV","Petrol","Premium AWD","Rs. 79.90L","DCT","AWD, Terrain Modes Sand/Snow/Rock/Mud, ADAS Level 2, Ventilated Seats, HUD"],
+  ["Haval","H9","Full-Size SUV","Petrol","Premium 4WD","Rs. 94.90L","AT","7 Seats, 6 Airbags, 12.3\" Dual Screen, 4WD Low Range, ADAS Level 1, Running Boards"],
+  ["Haval","H9","Full-Size SUV","Petrol","Elite 4WD","Rs. 1.10 Cr","AT","ADAS Level 2, Harman/Kardon 12-Speaker, Nappa Leather, Ventilated+Massage Seats, HUD, 360° Camera"],
+  ["Haval","Jolion EV","Compact EV SUV","Electric","Standard","Rs. 49.90L","Single Speed","50kWh, 350km CLTC, 201hp, 6 Airbags, 10.25\" Touchscreen, ADAS Level 1"],
+  ["Haval","Jolion EV","Compact EV SUV","Electric","Premium","Rs. 57.90L","Single Speed","60kWh, 420km CLTC, 218hp, ADAS Level 2, 360° Camera, Ventilated Seats"],
+  ["Hyundai","Grand i10 Nios FL","Hatchback","Petrol","Era","Rs. 33.56L","MT","2 Airbags, ABS+EBD, Power Windows, AC, Rear Sensors"],
+  ["Hyundai","Grand i10 Nios FL","Hatchback","Petrol","Era Loaded","Rs. 33.96L","MT","Rear Camera, Bluetooth Audio, USB Charging"],
+  ["Hyundai","Grand i10 Nios FL","Hatchback","Petrol","Magna","Rs. 38.96L","MT","8\" Touchscreen+CarPlay, Height Adj Seat, Tilt Steering, Defogger"],
+  ["Hyundai","Grand i10 Nios FL","Hatchback","Petrol","Sportz","Rs. 40.96L","MT","6 Airbags, ESC+VSM+Hill Hold, Smart Key, Wireless Charging, Projector Headlamps, Alloys"],
+  ["Hyundai","Grand i10 Nios FL","Hatchback","Petrol","Magna AMT","Rs. 41.26L","AMT","AMT, Creep Function, All Magna features"],
+  ["Hyundai","Exter","Micro SUV","Petrol","EX","Rs. 41.26L","MT","6 Airbags, ESC, 8\" Touchscreen, Dual Dashcam, Rear Camera"],
+  ["Hyundai","Exter","Micro SUV","Petrol","S","Rs. 42.96L","MT","Electric Sunroof, Wireless Charging, Auto AC, Rear AC Vents, Push Start"],
+  ["Hyundai","Exter","Micro SUV","Petrol","SX","Rs. 46.96L","MT","Alloy Wheels, Leatherette, Cruise Control, Auto Headlamps, Bluelink Connected Car"],
+  ["Hyundai","Venue FL","Compact SUV","Petrol","E","Rs. 41.96L","MT","1.2L 82hp, 8\" Touchscreen, 4 Airbags, Rear Camera, Steel Wheels"],
+  ["Hyundai","Venue FL","Compact SUV","Petrol","S","Rs. 45.96L","MT","6 Airbags, ESC, Smart Key, Wireless Charging, Alloys, Bluelink"],
+  ["Hyundai","Venue FL","Compact SUV","Petrol","SX","Rs. 54.56L","MT","Sunroof, Bose 7-Speaker, 360° Camera, ADAS, Ventilated Seats, Ambient Lighting"],
+  ["Hyundai","Venue FL","Compact SUV","Petrol","S(O) DCT 1.0T","Rs. 59.96L","DCT","1.0L Turbo 120hp, 7-Speed DCT, Paddle Shifters, Sport Mode"],
+  ["Hyundai","i20","Hatchback","Petrol","Magna","Rs. 39.96L","MT","6 Airbags, 8\" Touchscreen+CarPlay, Smart Key, LED DRLs"],
+  ["Hyundai","i20","Hatchback","Petrol","Sportz","Rs. 43.96L","MT","Sunroof, Wireless Charging, Bose 7-Speaker, ADAS, 64-Color Ambient, Alloys, Bluelink"],
+  ["Hyundai","All New Creta FL","Mid-Size SUV","Petrol","E MT MiN","Rs. 55.56L","MT","1.5L 115hp, Dual 10.25\" Screens, 6 Airbags, 8-Speaker Audio, Wireless CarPlay"],
+  ["Hyundai","All New Creta FL","Mid-Size SUV","Petrol","E Loaded MiN","Rs. 55.96L","MT","Ventilated Seats, Auto AC, Sunroof"],
+  ["Hyundai","All New Creta FL","Mid-Size SUV","Petrol","E MT CBU","Rs. 57.96L","MT","Fully Imported CBU, All E MT features"],
+  ["Hyundai","All New Creta FL","Mid-Size SUV","Petrol","S(O) MT MiN","Rs. 64.96L","MT","Panoramic Sunroof, Level 2 ADAS, 360° Camera, Bose 8-Speaker"],
+  ["Hyundai","All New Creta FL","Mid-Size SUV","Petrol","SX MT MiN","Rs. 67.96L","MT","HUD, ADAS Level 2+, Dual-Zone Climate, Ambient Lighting"],
+  ["Hyundai","All New Creta FL","Mid-Size SUV","Petrol","S(O) IVT MiN","Rs. 69.56L","IVT","IVT CVT Auto, Paddle Shifters, All S(O) features"],
+  ["Hyundai","All New Creta FL","Mid-Size SUV","Petrol","SX(O) IVT MiN","Rs. 80.56L","IVT","Top MiN Spec, Full ADAS Level 2+, HUD, Panoramic Sunroof, Bose"],
+  ["Hyundai","Creta Electric","Electric SUV","Electric","Executive 99kW","Rs. 51.96L","Single Speed","42kWh, 390km Range, 134hp, DC Fast Charge, 6 Airbags"],
+  ["Hyundai","Creta Electric","Electric SUV","Electric","Smart(O) 99kW","Rs. 56.96L","Single Speed","Dual 10.25\" Screens, V2L, Panoramic Sunroof, Wireless Charging, Bluelink"],
+  ["Hyundai","Creta Electric","Electric SUV","Electric","Premium+ 99kW","Rs. 59.96L","Single Speed","Level 2 ADAS, Bose 8-Speaker, 360° Camera, HUD"],
+  ["Hyundai","Creta Electric","Electric SUV","Electric","Smart(O) LR 126kW","Rs. 69.96L","Single Speed","51.4kWh, 473km Range, 171hp"],
+  ["Hyundai","Creta Electric","Electric SUV","Electric","Excellence LR 126kW","Rs. 76.96L","Single Speed","Top Spec, ADAS Level 2+, Memory Seats, 64-Color Ambient, Leatherette"],
+  ["Hyundai","Ioniq 5","Electric SUV","Electric","GLS Vision Roof 100kW","Rs. 92.96L","Single Speed","58kWh, 385km WLTP, 800V Ultra-Fast Charge, V2L, Digital Side Mirrors, ADAS Level 2+"],
+  ["Hyundai","Ioniq 5","Electric SUV","Electric","GLS Vision Roof 124.9kW","Rs. 1.04 Cr","Single Speed","72.6kWh, 480km WLTP, 18min 10-80%, V2G+V2L, 2900mm Wheelbase"],
+  ["Hyundai","Kona Electric","Compact EV SUV","Electric","GL 100kW","Rs. 59.96L","Single Speed","39.2kWh, 305km Range, 134hp, 395Nm, DC Fast Charge, 6 Airbags, LED"],
+  ["Hyundai","Kona Electric","Compact EV SUV","Electric","GLS 100kW","Rs. 64.96L","Single Speed","Wireless Charging, Auto AC, Heated+Ventilated Seats, Panoramic Sunroof"],
+  ["Hyundai","Tucson","Large SUV","Petrol/Diesel","GL 2WD MT Petrol","Rs. 1.08 Cr","MT","2.0L 156PS, 10.25\" Screen, 6 Airbags, LED, Panoramic Sunroof, Wireless Charging"],
+  ["Hyundai","Tucson","Large SUV","Petrol/Diesel","GLX 2WD AT Petrol","Rs. 1.38 Cr","AT","Bose Audio, Ventilated Seats, ADAS, 360° Camera"],
+  ["Hyundai","Tucson","Large SUV","Petrol/Diesel","GLX 4WD AT Diesel","Rs. 1.61 Cr","AT","2.0L CRDi 186PS, HTRAC 4WD, 417Nm, Terrain Modes"],
+  ["Hyundai","Tucson","Large SUV","Petrol/Diesel","GLX 4WD AT 1.6T Petrol","Rs. 1.63 Cr","DCT","1.6L T-GDi 180PS, 7-Speed DCT, HTRAC 4WD"],
+  ["Hyundai","Santa Fe","7-Seat SUV","Petrol","GLS 4WD AT","Rs. 1.90 Cr","AT","2.5L 198PS, HTRAC 4WD, 7 Seats, Dual 12.3\" Screens, Bose 12-Speaker, Full ADAS, V2L, HUD"],
+  ["Hyundai","Palisade","Full-Size SUV","Diesel","GLS 4WD AT","Rs. 2.36 Cr","AT","2.2L CRDi 202PS, 440Nm, HTRAC 4WD, 8 Seats, Harman Kardon, HDA ADAS, Massage Seats"],
+  ["Kia","Sonet","Compact SUV","Petrol","HTE","Rs. 48.90L","MT","6 Airbags, 8\" Touchscreen+CarPlay, Rear Camera, ISOFIX, 15\" Steel Wheels"],
+  ["Kia","Sonet","Compact SUV","Petrol","HTK","Rs. 51.90L","MT","10.25\" HD Touchscreen, Bose 7-Speaker, Electric Sunroof, Rear AC Vents"],
+  ["Kia","Sonet","Compact SUV","Petrol","HTK+","Rs. 54.90L","MT","16\" Alloys, Ventilated Seats, Wireless Charging, TPMS, Auto Headlamps"],
+  ["Kia","Sonet","Compact SUV","Petrol","HTX","Rs. 58.90L","IVT","ADAS Level 1, 10.25\" Digital Cluster, Panoramic Sunroof, IVT, Drive Modes"],
+  ["Kia","Sonet","Compact SUV","Petrol","HTX+","Rs. 63.90L","IVT","360° Camera, Blind Spot Monitor, Rear Cross Traffic, Ambient Lighting"],
+  ["Kia","Seltos","Compact SUV","Petrol","HTE","Rs. 62.90L","MT","6 Airbags, 10.25\" Touchscreen+CarPlay, Electric Sunroof, Auto AC, Alloys"],
+  ["Kia","Seltos","Compact SUV","Petrol","HTK+","Rs. 68.90L","MT","10.25\" Digital Cluster, Bose 8-Speaker, Ventilated Seats, 64-Color Ambient"],
+  ["Kia","Seltos","Compact SUV","Petrol","HTX 1.5T","Rs. 74.90L","DCT","1.5L Turbo 158hp, 7-Speed DCT, ADAS Level 1, 360° Camera, Panoramic Sunroof"],
+  ["Kia","Seltos","Compact SUV","Petrol","HTX+ 1.5T","Rs. 81.90L","DCT","Blind Spot, Rear Cross Traffic, Smart Power Tailgate, HUD"],
+  ["Kia","Carens","MPV","Petrol","Premium","Rs. 56.90L","MT","6 Airbags, 10.25\" Touchscreen, Electric Sunroof, 7-Seat Config, Auto AC"],
+  ["Kia","Carens","MPV","Petrol","Prestige","Rs. 61.90L","MT","10.25\" Cluster, Bose 8-Speaker, Ventilated Seats, 6-Seat Captain Chairs"],
+  ["Kia","Carens","MPV","Petrol","Prestige Plus","Rs. 67.90L","DCT","1.5T Turbo, 7-Speed DCT, ADAS Level 1, 360° Camera, Ambient Lighting"],
+  ["Kia","EV6","Electric Crossover","Electric","GT-Line RWD","Rs. 1.40 Cr","Single Speed","77.4kWh, 510km WLTP, 226hp, 800V 18min Fast Charge, Dual 12\" Screen, 6 Airbags, ADAS L2, V2L"],
+  ["Kia","EV6","Electric Crossover","Electric","GT-Line AWD","Rs. 1.65 Cr","Single Speed","Dual Motor AWD, 320hp, 605Nm, 0-100 in 5.1s, eLSD"],
+  ["Mahindra","Thar Roxx","Off-Road SUV","Diesel","MX1","Rs. 64.90L","MT","6 Airbags, 10.25\" Touchscreen+CarPlay, 4XPLOR AWD, 226mm Clearance, 18\" Alloys"],
+  ["Mahindra","Thar Roxx","Off-Road SUV","Diesel","MX3","Rs. 71.90L","MT","Sony 12-Speaker Roof Audio, Electric Sunroof, Wireless Charging, Adventure Stats"],
+  ["Mahindra","Thar Roxx","Off-Road SUV","Diesel","MX5","Rs. 79.90L","AT","6-Speed AT, Terrain Modes, Rear Locking Diff, ADAS, 360° Camera"],
+  ["Mahindra","Thar Roxx","Off-Road SUV","Diesel","AX7L","Rs. 89.90L","AT","Leatherette, Panoramic Sunroof, HUD, ADAS Level 2"],
+  ["Mahindra","XUV 3XO","Compact SUV","Petrol","MX1","Rs. 42.90L","MT","6 Airbags, 10.25\" Touchscreen+CarPlay, Rear Camera, Auto AC, Alloys"],
+  ["Mahindra","XUV 3XO","Compact SUV","Petrol","MX2","Rs. 46.90L","MT","Electric Sunroof, Wireless Charging, Sony 8-Speaker, Rear AC Vents"],
+  ["Mahindra","XUV 3XO","Compact SUV","Petrol","MX3 Pro","Rs. 51.90L","AMT","Panoramic Sunroof, 10.25\" Cluster, ADAS Level 2, 360° Camera"],
+  ["Mahindra","XUV 3XO","Compact SUV","Petrol","AX7L Turbo","Rs. 58.90L","AMT","1.2L Turbo 130hp, Leatherette, Ventilated Seats, Ambient Lighting"],
+  ["Mahindra","XUV700","Mid-Size SUV","Diesel","MX","Rs. 79.90L","MT","6 Airbags, 10.25\" Touchscreen+CarPlay, 7 Seats, Auto AC, Alloys"],
+  ["Mahindra","XUV700","Mid-Size SUV","Diesel","AX3","Rs. 87.90L","MT","10.25\" Cluster, Harman Kardon 12-Speaker, Electric Sunroof, Wireless Charging"],
+  ["Mahindra","XUV700","Mid-Size SUV","Diesel","AX5","Rs. 96.90L","AT","200hp Engine, 6AT, AdrenoX ADAS Level 2, 360° Camera, 64-Color Ambient"],
+  ["Mahindra","XUV700","Mid-Size SUV","Diesel","AX7 AWD","Rs. 1.15 Cr","AT","AWD, Terrain Modes, Sony 360° Sound, Panoramic Sunroof, Ventilated Seats, HUD"],
+  ["Mahindra","Scorpio N","Body-on-Frame SUV","Diesel","Z2","Rs. 69.90L","MT","6 Airbags, 8\" Touchscreen+CarPlay, 6-Seat, Push Start, Alloys"],
+  ["Mahindra","Scorpio N","Body-on-Frame SUV","Diesel","Z4","Rs. 77.90L","MT","10.25\" Touchscreen, Sony 12-Speaker, Electric Sunroof, Auto AC"],
+  ["Mahindra","Scorpio N","Body-on-Frame SUV","Diesel","Z6","Rs. 85.90L","AT","200hp Engine, 6AT, 7 Seats, Leatherette, ADAS"],
+  ["Mahindra","Scorpio N","Body-on-Frame SUV","Diesel","Z8 4WD","Rs. 99.90L","AT","4WD Low Range, Terrain Modes, Locking Diff, 360° Camera, HUD"],
+  ["Mahindra","Bolero Neo","Compact SUV","Diesel","N4","Rs. 37.90L","MT","2 Airbags, 7\" Touchscreen+CarPlay, 7 Seats, Manual AC"],
+  ["Mahindra","Bolero Neo","Compact SUV","Diesel","N8","Rs. 41.90L","MT","4 Airbags, Rear AC Vents, Auto AC, Alloys, Push Start"],
+  ["Mahindra","Bolero Neo","Compact SUV","Diesel","N10","Rs. 44.90L","MT","Cruise Control, Rear Wiper, TPMS, Fog Lamps"],
+  ["Maruti Suzuki","Alto","Micro Hatchback","Petrol","STD","Rs. 24.49L","MT","2 Airbags, ABS, AC, Power Steering"],
+  ["Maruti Suzuki","Alto","Micro Hatchback","Petrol","LXI","Rs. 26.49L","MT","Remote Lock, Rear Defogger, Digital Cluster"],
+  ["Maruti Suzuki","Alto","Micro Hatchback","Petrol","VXI","Rs. 28.49L","MT","7\" Touchscreen+CarPlay, Rear Camera, Push Button Start"],
+  ["Maruti Suzuki","WagonR","Tall Hatchback","Petrol","LXI 1.0L MT","Rs. 31.49L","MT","2 Airbags, ABS, Rear Camera, AC"],
+  ["Maruti Suzuki","WagonR","Tall Hatchback","Petrol","VXI 1.0L MT","Rs. 34.49L","MT","7\" Touchscreen+CarPlay, Push Button Start, Keyless Entry"],
+  ["Maruti Suzuki","WagonR","Tall Hatchback","Petrol","VXI 1.2L MT","Rs. 37.49L","MT","1.2L 83PS Engine"],
+  ["Maruti Suzuki","WagonR","Tall Hatchback","Petrol","ZXI+ 1.2L AMT","Rs. 40.99L","AMT","Auto Gear Shift, Alloy Wheels"],
+  ["Maruti Suzuki","Celerio","City Hatchback","Petrol","LXI MT","Rs. 27.99L","MT","2 Airbags, ABS, AC, Power Steering"],
+  ["Maruti Suzuki","Celerio","City Hatchback","Petrol","VXI MT","Rs. 30.99L","MT","7\" Touchscreen+CarPlay, Rear Camera, Keyless Entry"],
+  ["Maruti Suzuki","Celerio","City Hatchback","Petrol","ZXI AMT","Rs. 34.49L","AMT","AMT Auto, Alloy Wheels"],
+  ["Maruti Suzuki","Swift","Premium Hatchback","Petrol","VXI MT","Rs. 39.99L","MT","2 Airbags, ABS+EBD+ESC, 7\" SmartPlay Pro+, Rear Camera, LED DRL"],
+  ["Maruti Suzuki","Swift","Premium Hatchback","Petrol","ZXI MT","Rs. 43.99L","MT","4 Airbags, Alloys, Push Button Start, Auto Climate"],
+  ["Maruti Suzuki","Swift","Premium Hatchback","Petrol","ZXI+ AMT","Rs. 48.99L","AMT","6 Airbags, 360° Camera, HUD, Auto Gear Shift"],
+  ["Maruti Suzuki","Dzire","Compact Sedan","Petrol","VXI MT","Rs. 39.99L","MT","2 Airbags, 7\" SmartPlay Pro+, Rear Camera, ABS+ESC, 378L Boot"],
+  ["Maruti Suzuki","Dzire","Compact Sedan","Petrol","ZXI MT","Rs. 43.99L","MT","4 Airbags, Push Button Start, Alloy Wheels"],
+  ["Maruti Suzuki","Dzire","Compact Sedan","Petrol","ZXI+ AMT","Rs. 47.99L","AMT","6 Airbags, 360° Camera, Auto Climate, Auto Gear Shift"],
+  ["Maruti Suzuki","Baleno","Premium Hatchback","Petrol","Delta MT","Rs. 40.99L","MT","2 Airbags, ABS+ESC, 7\" SmartPlay Pro+, Rear Camera"],
+  ["Maruti Suzuki","Baleno","Premium Hatchback","Petrol","Zeta MT","Rs. 42.99L","MT","4 Airbags, Alloys, Push Button Start"],
+  ["Maruti Suzuki","Baleno","Premium Hatchback","Petrol","Alpha CVT","Rs. 44.49L","CVT","6 Airbags, HUD, 360° Camera, CVT Auto"],
+  ["Maruti Suzuki","Ignis","Micro Urban SUV","Petrol","Delta MT","Rs. 36.99L","MT","2 Airbags, 7\" Touchscreen+CarPlay, ABS+ESC, Rear Camera, 175mm Clearance"],
+  ["Maruti Suzuki","Ignis","Micro Urban SUV","Petrol","Alpha MT","Rs. 39.99L","MT","4 Airbags, Alloys, Rear Spoiler, Push Button Start"],
+  ["Maruti Suzuki","Ignis","Micro Urban SUV","Petrol","Alpha AMT","Rs. 41.99L","AMT","AMT Auto, All Alpha features"],
+  ["Maruti Suzuki","Vitara Brezza","Compact SUV","Petrol","LXI MT","Rs. 46.49L","MT","2 Airbags, 7\" SmartPlay Pro+, 210mm Clearance, ABS+ESC, LED DRL"],
+  ["Maruti Suzuki","Vitara Brezza","Compact SUV","Petrol","VXI MT","Rs. 51.99L","MT","4 Airbags, Rear Camera, Alloys, Push Button Start"],
+  ["Maruti Suzuki","Vitara Brezza","Compact SUV","Petrol","ZXI+ AT Smart Hybrid","Rs. 59.99L","AT","Smart Hybrid, 6 Airbags, Panoramic Sunroof, HUD"],
+  ["Maruti Suzuki","Vitara Brezza","Compact SUV","Petrol","ZXI+ 6AT Dual Tone","Rs. 65.29L","AT","Dual Tone Roof, 360° Camera, All ZXI+ Smart Hybrid features"],
+  ["Maruti Suzuki","Ertiga","Compact MPV","Petrol","VXI MT","Rs. 49.99L","MT","2 Airbags, 7 Seats, 7\" SmartPlay Pro+, ABS+ESC, Dual Sliding Doors"],
+  ["Maruti Suzuki","Ertiga","Compact MPV","Petrol","ZXI MT","Rs. 54.99L","MT","4 Airbags, Push Button Start, Alloys, Rear Camera"],
+  ["Maruti Suzuki","Ertiga","Compact MPV","Petrol","ZXI+ AT Smart Hybrid","Rs. 59.99L","AT","Smart Hybrid, 6 Airbags, 6AT, Auto Climate"],
+  ["Maruti Suzuki","Grand Vitara","Mid-Size SUV","Hybrid","Delta 1.5L MT Mild Hybrid","Rs. 57.99L","MT","2 Airbags, 9\" Touchscreen+CarPlay, 195mm Clearance, LED Headlights"],
+  ["Maruti Suzuki","Grand Vitara","Mid-Size SUV","Hybrid","Zeta+ AllGrip AWD","Rs. 72.99L","AT","AllGrip AWD, 6AT, 6 Airbags, 360° Camera, Panoramic Sunroof"],
+  ["Maruti Suzuki","Grand Vitara","Mid-Size SUV","Hybrid","Alpha Strong Hybrid AT","Rs. 82.99L","e-CVT","Toyota Strong Hybrid, 27.97km/l, EV Mode, 6 Airbags"],
+  ["Maruti Suzuki","Grand Vitara","Mid-Size SUV","Hybrid","Alpha Strong Hybrid Dual Tone","Rs. 97.29L","e-CVT","Dual Tone Roof, 360° Camera, HUD, Ventilated Seats, Panoramic Sunroof"],
+  ["Maruti Suzuki","Fronx","Urban Crossover","Petrol","Sigma 1.2L MT","Rs. 43.99L","MT","2 Airbags, 7\" SmartPlay, ABS+ESC, 175mm Clearance, LED DRL"],
+  ["Maruti Suzuki","Fronx","Urban Crossover","Petrol","Delta 1.0T MT","Rs. 50.99L","MT","1.0T 100PS, 4 Airbags, 9\" Touchscreen"],
+  ["Maruti Suzuki","Fronx","Urban Crossover","Petrol","Alpha+ 1.0T AMT","Rs. 59.99L","AMT","6 Airbags, HUD, 360° Camera, Dual Tone, Wireless CarPlay"],
+  ["Maruti Suzuki","Jimny","Off-Road SUV","Petrol","Zeta MT","Rs. 57.99L","MT","Ladder Frame 4WD, Low Range Gearbox, 7\" Touchscreen, 4 Airbags, 210mm Clearance"],
+  ["Maruti Suzuki","Jimny","Off-Road SUV","Petrol","Alpha MT","Rs. 60.99L","MT","6 Airbags, 9\" SmartPlay Pro+, 360° Camera, LED Projector Headlights"],
+  ["Maruti Suzuki","Jimny","Off-Road SUV","Petrol","Alpha AT","Rs. 62.99L","AT","4-Speed AT, All Alpha MT features"],
+  ["Maruti Suzuki","Eeco","Compact Van","Petrol","Standard AC 5-Seat","Rs. 18.99L","MT","5 Seats, AC, Power Steering, ABS, Rear Parking Sensor"],
+  ["Maruti Suzuki","Eeco","Compact Van","Petrol","Standard AC 7-Seat","Rs. 20.99L","MT","7 Seats, Rear AC Vents"],
+  ["Maxus","T60","Pickup Truck","Diesel","2WD MT","Rs. 46.90L","MT","2 Airbags, 7\" Touchscreen+CarPlay, Rear Camera, Manual AC, 1T Payload"],
+  ["Maxus","T60","Pickup Truck","Diesel","4WD MT","Rs. 52.90L","MT","4WD Low Range, 4 Airbags, Auto AC, Alloys, Rear Diff Lock"],
+  ["Maxus","T60","Pickup Truck","Diesel","4WD AT Premium","Rs. 58.90L","AT","6AT, 6 Airbags, 10.25\" Touchscreen, Wireless CarPlay, LED, Sports Bar"],
+  ["Maxus","D60","Mid-Size SUV","Petrol","Comfort 1.5T","Rs. 49.90L","DCT","6 Airbags, 10.25\" Touchscreen+CarPlay, Panoramic Sunroof, Auto AC, 18\" Alloys"],
+  ["Maxus","D60","Mid-Size SUV","Petrol","Luxury 2.0T","Rs. 57.90L","DCT","2.0T 190hp, 360° Camera, Wireless Charging, Ventilated Seats, ADAS Level 1"],
+  ["Maxus","D60","Mid-Size SUV","Petrol","Premium 2.0T AWD","Rs. 65.90L","DCT","AWD, ADAS Level 2, HUD, Nappa Leather"],
+  ["Maxus","Euniq 6","Electric MPV","Electric","Standard 6-Seat","Rs. 69.90L","Single Speed","70kWh, 420km CLTC, 6 Airbags, 12.3\" Touchscreen, Captain Chairs, ADAS Level 1"],
+  ["Maxus","Euniq 6","Electric MPV","Electric","Premium 6-Seat","Rs. 81.90L","Single Speed","90kWh, 520km CLTC, ADAS Level 2, 360° Camera, Ventilated Seats, Wireless Charging"],
+  ["Nissan","Magnite","Compact SUV","Petrol","XE","Rs. 34.90L","MT","4 Airbags, 8\" Touchscreen, Rear Camera, Keyless Entry, Push Start"],
+  ["Nissan","Magnite","Compact SUV","Petrol","XL","Rs. 37.90L","MT","1.0L Turbo 100hp, 6 Airbags, Auto AC, Rear AC Vents"],
+  ["Nissan","Magnite","Compact SUV","Petrol","XV","Rs. 41.90L","CVT","Wireless CarPlay, 360° Camera, Ambient Lighting, Electric Sunroof, 17\" Alloys"],
+  ["Nissan","Magnite","Compact SUV","Petrol","XV Premium","Rs. 45.90L","CVT","Wireless Charging, Bose 6-Speaker, TPMS, Drive Modes"],
+  ["Nissan","X-Trail","Mid-Size SUV","Hybrid","S e-POWER 2WD","Rs. 99.90L","Single Speed","e-POWER Hybrid, 7 Seats, 204hp, 12.3\" Screen, 6 Airbags, ProPILOT ADAS, 360° Camera"],
+  ["Nissan","X-Trail","Mid-Size SUV","Hybrid","SV e-4ORCE AWD","Rs. 1.15 Cr","Single Speed","Dual Motor e-4ORCE AWD, 306hp, Bose 10-Speaker, HUD, Nappa Leather"],
+  ["Nissan","Kicks","Compact SUV","Petrol","XL CVT","Rs. 48.90L","CVT","6 Airbags, 10.67\" Touchscreen+CarPlay, Electric Sunroof, 1.2T 114hp"],
+  ["Nissan","Kicks","Compact SUV","Petrol","XV CVT","Rs. 53.90L","CVT","360° Camera, Wireless CarPlay, 8-Speaker, Ambient Lighting, Drive Modes"],
+  ["Proton","X50","Compact SUV","Petrol","Standard","Rs. 43.90L","DCT","6 Airbags, 10.25\" Touchscreen+CarPlay, Electric Sunroof, Auto AC, 17\" Alloys, 7DCT"],
+  ["Proton","X50","Compact SUV","Petrol","Executive","Rs. 48.90L","DCT","ADAS Level 1, 360° Camera, Wireless Charging, Rear AC Vents"],
+  ["Proton","X50","Compact SUV","Petrol","Flagship","Rs. 53.90L","DCT","ADAS Level 2, Panoramic Sunroof, Ventilated Seats, Ambient Lighting, Drive Modes"],
+  ["Proton","X70","Mid-Size SUV","Petrol","Standard FWD","Rs. 59.90L","DCT","6 Airbags, 12.3\" Touchscreen+CarPlay, Panoramic Sunroof, 7-Seat, Auto AC"],
+  ["Proton","X70","Mid-Size SUV","Petrol","Executive FWD","Rs. 65.90L","DCT","ADAS Level 1, Bose 9-Speaker, 360° Camera, Wireless Charging, Ventilated Seats"],
+  ["Proton","X70","Mid-Size SUV","Petrol","Flagship AWD","Rs. 75.90L","DCT","AWD, ADAS Level 2, HUD, Ambient Lighting, Power Tailgate"],
+  ["Proton","Saga","Sedan","Petrol","Standard MT","Rs. 22.90L","MT","2 Airbags, 7\" Touchscreen+CarPlay, Rear Camera, Manual AC, 14\" Steel Wheels"],
+  ["Proton","Saga","Sedan","Petrol","Premium CVT","Rs. 26.90L","CVT","4 Airbags, CVT, Auto AC, Alloy Wheels, Rear Spoiler"],
+  ["Proton","X90","Large SUV","Petrol","Executive","Rs. 84.90L","DCT","6 Airbags, 12.3\" Dual Screen, 6-Seat Captain Chairs, Panoramic Sunroof, ADAS Level 1"],
+  ["Proton","X90","Large SUV","Petrol","Flagship","Rs. 96.90L","DCT","ADAS Level 2, Harman/Kardon 12-Speaker, Nappa Leather, Ventilated+Massage Seats, HUD"],
+  ["Renault","Kwid","Micro Hatchback","Petrol","RXE 0.8L MT","Rs. 26.79L","MT","2 Airbags, ABS, AC, Power Steering, LED DRL"],
+  ["Renault","Kwid","Micro Hatchback","Petrol","RXT 1.0L MT","Rs. 27.49L","MT","8\" MediaNAV+Android Auto/CarPlay, Rear Camera"],
+  ["Renault","Kwid","Micro Hatchback","Petrol","RXT 1.0L AMT","Rs. 28.49L","AMT","AMT Auto, All RXT MT features"],
+  ["Renault","Triber","7-Seat MPV","Petrol","RXE MT","Rs. 29.99L","MT","2 Airbags, 7 Seats, 8\" MediaNAV, AC, ABS, 182mm Clearance"],
+  ["Renault","Triber","7-Seat MPV","Petrol","RXT MT","Rs. 32.99L","MT","Android Auto/CarPlay, Rear Camera, Push Button Start"],
+  ["Renault","Triber","7-Seat MPV","Petrol","RXT AMT","Rs. 33.59L","AMT","AMT Auto, All RXT features"],
+  ["Renault","Triber","7-Seat MPV","Petrol","RXZ AMT","Rs. 35.09L","AMT","Sunroof, 16\" Alloys, Auto Climate, 6 Airbags"],
+  ["Renault","Kiger","Subcompact SUV","Petrol","RXE 1.0L MT","Rs. 34.99L","MT","2 Airbags, 8\" MediaNAV, 205mm Clearance, ESP, Hill Start, TPMS"],
+  ["Renault","Kiger","Subcompact SUV","Petrol","RXZ 1.0T MT","Rs. 40.99L","MT","100PS Turbo, 6 Airbags, Sunroof, Diamond-Cut Alloys"],
+  ["Renault","Kiger","Subcompact SUV","Petrol","RXZ 1.0T CVT","Rs. 43.99L","CVT","CVT, 360° Camera, Wireless CarPlay, All RXZ features"],
+  ["Riddara","RD6","Electric Pickup","Electric","RD6 2WD (63kWh)","TBA","Single Speed EV","4 Airbags, ESC/TCS/HHC/HDC, 373km NEDC, 90kW DC Charge, V2L, 3 Drive Modes"],
+  ["Riddara","RD6","Electric Pickup","Electric","RD6 4WD (73kWh)","TBA","Single Speed AWD","6 Airbags, 14 ADAS, 540° Camera, 7 Terrain Modes, 815mm Wading, 6kW V2L, 424km NEDC"],
+  ["Suzuki","Swift","Hatchback","Petrol","Lxi","Rs. 38.95L","MT","6 Airbags, ABS+EBD, ESP, Hill Hold, Reverse Sensors, LED Rear Lamps"],
+  ["Suzuki","Swift","Hatchback","Petrol","Vxi","Rs. 42.49L","MT/AMT","SmartPlay Pro 17.78cm, Keyless Entry, Rear Wiper, Tilt Steering"],
+  ["Suzuki","Swift","Hatchback","Petrol","Vxi (O)","Rs. 44.49L","MT/AMT","Wireless Android Auto & CarPlay, Voice Assistant, Wide-angle Camera"],
+  ["Suzuki","Swift","Hatchback","Petrol","Zxi","Rs. 46.49L","MT/AMT","LED Projector Headlamps, Alloy Wheels, SmartPlay Pro+ 22.86cm, Cruise Control, Auto AC"],
+  ["Suzuki","Swift","Hatchback","Petrol","Zxi+","Rs. 52.29L","MT/AMT","Wireless Charger, Push Start, Electric ORVM, 6 Speakers, Fog Lamps"],
+  ["Suzuki","Celerio","Hatchback","Petrol","Vxi","Rs. 30.99L","MT","2 Airbags, ABS, ISS, AC, Smartplay Dock, Reverse Sensors"],
+  ["Suzuki","Celerio","Hatchback","Petrol","Zxi","Rs. 36.49L","MT/AGS","Smartplay Studio 17.78cm, Steering Audio Controls, Fog Lamps, Defogger"],
+  ["Suzuki","Celerio","Hatchback","Petrol","Zxi+","Rs. 40.99L","MT/AGS","Push Start, 15\" Alloys, Electric ORVM, Driver Seat Adjuster"],
+  ["Suzuki","Wagon R","Hatchback","Petrol","VXI 1.0 MT","Rs. 33.19L","MT","2 Airbags, ABS, Hill Hold, ESP, HEARTECT, Smartplay Dock"],
+  ["Suzuki","Wagon R","Hatchback","Petrol","VXI 1.0 AGS","Rs. 33.99L","AGS","Auto Gear Shift, Smartplay Studio, Keyless Entry, Speed Sensing Lock"],
+  ["Suzuki","Wagon R","Hatchback","Petrol","ZXI 1.2 MT","Rs. 34.99L","MT","1.2L Engine, Smartplay Studio, Electric ORVM"],
+  ["Suzuki","Wagon R","Hatchback","Petrol","ZXI+ 1.2 Dualtone","Rs. 38.29L","MT/AGS","Dual Tone, Dynamic Alloys, Electric Retractable ORVM"],
+  ["Suzuki","Alto K10","Hatchback","Petrol","Lxi MT","Rs. 28.90L","MT","2 Airbags, ABS, HEARTECT, Reverse Sensors, AC, Power Windows"],
+  ["Suzuki","Alto K10","Hatchback","Petrol","Vxi MT/AGS","Rs. 30.90L","MT/AGS","Smartplay Dock, Steering Controls, Remote Keyless Entry"],
+  ["Suzuki","Alto K10","Hatchback","Petrol","Vxi+ MT/AGS","Rs. 31.90L","MT/AGS","Smartplay Studio, 4 Speakers, Apple CarPlay, Bluetooth"],
+  ["Suzuki","Eeco Cargo","Van","Petrol","Cargo STD – Petrol","Rs. 19.59L","MT","Digital Cluster, Immobiliser, 4 Reverse Sensors, Flat Cargo Bed, Speed Limiter 80 km/h"],
+  ["Suzuki","Eeco Cargo","Van","Petrol","Cargo STD – CNG","Rs. 20.59L","MT","65L CNG Cylinder, Dual Fuel Petrol+CNG, All Petrol features"],
+  ["Suzuki","Grand Vitara","SUV","Petrol / Hybrid","Sigma","Rs. 52.99L","5MT","2 Airbags, ESP, Hill Hold, SmartPlay Pro, Auto AC, ISOFIX"],
+  ["Suzuki","Grand Vitara","SUV","Petrol / Hybrid","Delta","Rs. 60.99L","5MT/6AT","Suzuki Connect, Rear Camera, Leatherette Seats"],
+  ["Suzuki","Grand Vitara","SUV","Petrol / Hybrid","Zeta","Rs. 63.99L","5MT/6AT/e-CVT","SmartPlay Pro+ 22.86cm, Panoramic Sunroof, 6 Airbags, TPMS"],
+  ["Suzuki","Grand Vitara","SUV","Petrol / Hybrid","Alpha","Rs. 75.99L","5MT/6AT/e-CVT","AllGrip AWD, HUD, 360° Camera, Wireless Charger, Ventilated Seats"],
+  ["Suzuki","Grand Vitara","SUV","Petrol / Hybrid","Zeta+","Rs. 76.29L","5MT/6AT","Silver Roof Rails, Panoramic Sunroof, SmartPlay Pro+, Ambient Lighting"],
+  ["Suzuki","Grand Vitara","SUV","Petrol / Hybrid","Alpha+","Rs. 1.02 Cr","6AT/e-CVT","Intelligent Hybrid 27.97km/l, Clarion Audio, Auto IRVM"],
+  ["Suzuki","Jimny","Off-Road SUV","Petrol","Zeta MT","Rs. 69.30L","5MT","6 Airbags, ESP, Hill Descent, Brake LSD, ALLGRIP PRO 4WD, SmartPlay Pro"],
+  ["Suzuki","Jimny","Off-Road SUV","Petrol","Alpha MT","Rs. 70.49L","5MT","LED Headlamps, Alloys, Push Start, Cruise, Auto Climate, SmartPlay Pro+"],
+  ["Suzuki","Jimny","Off-Road SUV","Petrol","Alpha AT","Rs. 74.49L","4AT","4-Speed AT, All Alpha MT features"],
+  ["Suzuki","Fronx","Compact SUV","Petrol/Turbo","Delta (1.2L)","Rs. 41.49L","5MT/5AMT","2 Airbags, ESP, Hill Hold, SmartPlay Pro 17.78cm, Auto AC, HEARTECT"],
+  ["Suzuki","Fronx","Compact SUV","Petrol/Turbo","Delta+","Rs. 46.49L","5MT/5AMT","1.0L Turbo option, Anti-theft Security"],
+  ["Suzuki","Fronx","Compact SUV","Petrol/Turbo","Zeta (1.0T)","Rs. 49.99L","5MT/6AT","Voice Assistant, TFT MID, NEXTre LED DRL, Auto Headlamps"],
+  ["Suzuki","Fronx","Compact SUV","Petrol/Turbo","Alpha (1.0T)","Rs. 52.99L","5MT/6AT","SmartPlay Pro+ 22.86cm, 360° Camera, Wireless Charger, HUD, 6 Airbags"],
+  ["Suzuki","Brezza","Compact SUV","Petrol","LXi MT","Rs. 50.09L","5MT","2 Airbags, ESP, Hill Hold, Keyless, Steel Wheels, Bi-Halogen Projector"],
+  ["Suzuki","Brezza","Compact SUV","Petrol","VXi MT/AT","Rs. 54.79L","5MT/6AT","SmartPlay Studio 17.78cm, Wireless CarPlay, 4 Speakers"],
+  ["Suzuki","Brezza","Compact SUV","Petrol","ZXi MT/AT","Rs. 59.49L","5MT/6AT","SmartPlay Pro, Electric Sunroof, Cruise Control, Dual LED Headlamps, Alloys"],
+  ["Suzuki","Brezza","Compact SUV","Petrol","ZXi+ MT","Rs. 61.79L","5MT","SmartPlay Pro+ 22.86cm, 360° Camera, Wireless Charging, Ambient Lights"],
+  ["Suzuki","Brezza","Compact SUV","Petrol","ZXi+ AT Dualtone","Rs. 69.29L","6AT","Smart Hybrid, Dual Tone Exterior, All ZXi+ features"],
+  ["Suzuki","Victoris","Mid-Size SUV","Petrol/Hybrid","Lxi","TBA","5MT/e-CVT","6 Airbags, ESP, TCS, Reverse Camera, Auto AC, SmartPlay Pro 7\", V2L"],
+  ["Suzuki","Victoris","Mid-Size SUV","Petrol/Hybrid","Vxi","TBA","5MT/6AT/e-CVT","EPB, Paddle Shifters, Cruise, 360° Camera, Wireless Charger, Dolby Atmos (Hybrid)"],
+  ["Suzuki","Victoris","Mid-Size SUV","Petrol/Hybrid","Zxi/Zxi(O)","TBA","5MT/6AT/AllGrip/e-CVT","SmartPlay Pro X 10.1\" HD, Powered Tailgate, 64-Color Ambient, Panoramic Sunroof (O)"],
+  ["Suzuki","Victoris","Mid-Size SUV","Petrol/Hybrid","Zxi+/Zxi+(O)","TBA","6AT/AllGrip/e-CVT","Level 2 ADAS, AllGrip AWD, Hill Descent, 28.65km/l Hybrid"],
+  ["Toyota","Raize","Compact SUV","Petrol","1.2G MT","Rs. 66.00L","MT","1.2L 88hp, 2 Airbags, 8\" Touchscreen+CarPlay, LED DRLs, 16\" Alloys"],
+  ["Toyota","Raize","Compact SUV","Petrol","1.2G CVT","Rs. 72.00L","CVT","CVT Auto, Paddle Shifters, Auto AC"],
+  ["Toyota","Raize","Compact SUV","Petrol","1.0 Turbo CVT","Rs. 86.00L","CVT","1.0L Turbo 98hp, 6 Airbags, VSC, Smart Key, LED Headlamps, Blind Spot Monitor"],
+  ["Toyota","Rush","7-Seat SUV","Petrol","Mid MT","Rs. 86.50L","MT","1.5L 104hp, 7 Seats, 220mm Clearance, LED Headlamps, 8\" Touchscreen+CarPlay, 2 Airbags"],
+  ["Toyota","Rush","7-Seat SUV","Petrol","High AT","Rs. 88.75L","AT","4-Speed AT, VSC, Traction Control, Hill Start, TPMS"],
+  ["Toyota","Corolla Cross","Crossover SUV","Petrol","Entry","Rs. 1.17 Cr","CVT","1.8L 140hp, 7 Airbags, CVT, Dual-Zone AC, LED, 18\" Alloys, Blind Spot Monitor"],
+  ["Toyota","Corolla Cross","Crossover SUV","Petrol","High","Rs. 1.38 Cr","CVT","360° Camera, Toyota Safety Sense, 9\" Touchscreen, JBL 9-Speaker, Panoramic Sunroof, HUD"],
+  ["Toyota","Hilux","Pickup Truck","Diesel","2.4L Standard","Rs. 96.00L","MT","2.4L 149hp, 400Nm, 4WD Low Range, 2 Airbags, LED, Leather Seats, Tow Hook"],
+  ["Toyota","Hilux","Pickup Truck","Diesel","2.8L High","Rs. 1.10 Cr","AT","2.8L 204hp, 500Nm, 6AT, Rear Diff Lock, 6 Airbags, 360° Camera, TSS"],
+  ["Toyota","Fortuner","7-Seat SUV","Diesel","2.7 Petrol MT","Rs. 2.10 Cr","MT","2.7L 163hp, 5MT, 4WD, 7 Seats, Leather, 7 Airbags, JBL, LED, 18\" Alloys"],
+  ["Toyota","Fortuner","7-Seat SUV","Diesel","2.8 Diesel AT","Rs. 2.22 Cr","AT","2.8L 204hp, 500Nm, 6AT Full-Time 4WD, Rear Diff Lock, TSS, 360° Camera"],
+  ["Toyota","RAV4","Crossover SUV","Petrol","MT Petrol","Rs. 1.56 Cr","MT","2.5L 203hp, 7 Airbags, Toyota Safety Sense, Dual-Zone AC, LED, 18\" Alloys"],
+  ["Toyota","RAV4","Crossover SUV","Petrol","AT Petrol","Rs. 1.70 Cr","AT","8-Speed AT, Power Liftgate, Panoramic Moonroof, JBL Audio, Wireless Charging"],
+  ["Toyota","RAV4","Crossover SUV","Petrol","AWD Petrol","Rs. 1.90 Cr","AT","AWD Torque Vectoring, Terrain Select, 360° Camera, HUD, Ventilated Seats"],
+  ["Toyota","Camry Hybrid","Sedan","Hybrid","Camry Hybrid","Rs. 1.85 Cr","e-CVT","2.5L Hybrid 218hp, 23km/l, 9 Airbags, TSS 2.5+, HUD, JBL 9-Speaker, 360° Camera"],
+  ["Toyota","Land Cruiser 70","Off-Road SUV","Diesel","LC70 Standard","Rs. 2.50 Cr","MT","4.0L V6 228hp / 2.8L Diesel, 4WD Locking Diff, Solid Axles, 285mm Clearance, 7 Seats"],
+  ["Toyota","Land Cruiser Prado","Luxury SUV","Diesel","VX","Rs. 2.83 Cr","AT","2.8L 204hp, 500Nm, 8AT, 4WD Multi-Terrain, 8 Airbags, TSS, 12.3\" Screen, HUD, JBL"],
+  ["Toyota","Land Cruiser Prado","Luxury SUV","Diesel","VXR","Rs. 3.30 Cr","AT","e-KDSS Suspension, Rear Diff Lock, Mark Levinson 14-Speaker, 4-Zone Climate"],
+  ["Volkswagen","Polo","Premium Hatchback","Petrol","Trendline Plus","Rs. 33.40L","MT","2 Airbags, ABS, AC, Rear Parking Sensors, 14\" Steel Wheels"],
+  ["Volkswagen","Polo","Premium Hatchback","Petrol","Comfortline","Rs. 38.40L","MT","Rear Camera, Automatic AC, Touchscreen Infotainment"],
+  ["Volkswagen","Polo","Premium Hatchback","Petrol","Highline 1.0L","Rs. 42.90L","MT","Sunroof, LED DRL, 16\" Alloys"],
+  ["Volkswagen","Polo","Premium Hatchback","Petrol","Highline 1.6L","Rs. 47.90L","MT","1.6L 105PS Engine, Higher Performance"],
+  ["Volkswagen","Taigun","Compact SUV","Petrol","Comfortline 1.0 TSI MT","Rs. 54.90L","MT","2 Airbags, 10\" Touchscreen+CarPlay, Rear Camera, Hill Hold, 188mm Clearance"],
+  ["Volkswagen","Taigun","Compact SUV","Petrol","Highline 1.0 TSI AT","Rs. 67.90L","AT","6 Airbags, Sunroof, Ventilated Seats, ESC, TPMS"],
+  ["Volkswagen","Taigun","Compact SUV","Petrol","Topline 1.0 TSI AT","Rs. 79.50L","AT","Digital Cockpit, 17\" Alloys, Wireless CarPlay"],
+  ["Volkswagen","Taigun","Compact SUV","Petrol","GT Plus 1.5 TSI DSG","Rs. 94.00L","DSG","1.5L TSI 150PS, 7-Speed DSG, Active Cylinder Deactivation, GT Sport Pack"],
+  ["Volkswagen","Virtus","Compact Sedan","Petrol","Comfortline 1.0 TSI MT","Rs. 56.00L","MT","2 Airbags, 8\" Touchscreen+CarPlay, Rear Camera, 5 Seats, Hill Hold"],
+  ["Volkswagen","Virtus","Compact Sedan","Petrol","Highline 1.0 TSI AT","Rs. 70.00L","AT","6 Airbags, Sunroof, ESC, TPMS, Multi-Collision Braking"],
+  ["Volkswagen","Virtus","Compact Sedan","Petrol","Topline 1.0 TSI AT","Rs. 78.00L","AT","Digital Cockpit, Wireless CarPlay, LED Headlights"],
+  ["Volkswagen","Virtus","Compact Sedan","Petrol","GT Plus 1.5 TSI DSG","Rs. 91.00L","DSG","1.5L TSI 150PS, 7-Speed DSG, Active Cylinder Deactivation, GT Sport Pack"],
+  ["Volkswagen","Tayron","7-Seat Mid-Size SUV","Petrol","R-Line 2.0 TSI 4MOTION","Rs. 1.40 Cr","DSG","7 Seats, 4MOTION AWD, 2.0L 204PS, 9 Airbags, 360° Camera, 10.25\" Screen, Matrix LED, Panoramic Roof"],
+  ["Volkswagen","Tiguan Allspace","7-Seat SUV","Petrol","Comfortline 2.0 TSI","Rs. 1.15 Cr","AT","7 Seats, 4MOTION AWD, 6 Airbags, 8\" Touchscreen, LED, 18\" Alloys"],
+  ["Volkswagen","Tiguan Allspace","7-Seat SUV","Petrol","Highline 2.0 TSI 4Motion","Rs. 1.48 Cr","AT","Panoramic Roof, Adaptive Cruise, 360° Camera, Heated Seats"],
+  ["Volkswagen","Touareg","Full-Size Luxury SUV","Petrol","V6 TSI 4Motion","Rs. 3.25 Cr","AT","7 Airbags, 15\" Innovision Cockpit, Air Suspension, 4MOTION AWD, Matrix LED, Panoramic Roof, Massage Seats"],
+];
+
+function parsePrice(p) {
+  if (!p || p === 'TBA') return Infinity;
+  const m = p.match(/([\d.]+)\s*(Cr|L)/i);
+  if (!m) return Infinity;
+  return m[2].toLowerCase() === 'cr' ? parseFloat(m[1]) * 100 : parseFloat(m[1]);
+}
+
+const SK = 'cardb_v2';
+let statuses = {};
+try { statuses = JSON.parse(localStorage.getItem(SK) || '{}'); } catch(e) {}
+
+let data = RAW.map((r, i) => ({
+  id: i, brand: r[0], model: r[1], body: r[2], type: r[3],
+  variant: r[4], price: r[5], transmission: r[6], features: r[7],
+  priceNum: parsePrice(r[5]), status: statuses[i] || 'pending'
+}));
+
+const brands = [...new Set(data.map(d => d.brand))].sort();
+const bodies = [...new Set(data.map(d => d.body))].sort();
+
+const brandRow = document.querySelector('.brand-row');
+brands.forEach(b => {
+  const btn = document.createElement('button');
+  btn.className = 'bpill'; btn.dataset.brand = b; btn.textContent = b;
+  brandRow.appendChild(btn);
+});
+
+const bodySelect = document.getElementById('f-body');
+bodies.forEach(b => { bodySelect.innerHTML += `<option>${b}</option>`; });
+
+let filterBrand = '', filterType = '', filterBody = '', filterStatus = '', search = '', sortKey = 'brand';
+
+function saveStatuses() {
+  const s = {};
+  data.forEach(d => { if (d.status === 'added') s[d.id] = 'added'; });
+  localStorage.setItem(SK, JSON.stringify(s));
+}
+
+function hl(text, q) {
+  if (!q) return text;
+  return text.replace(new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'), '<mark>$1</mark>');
+}
+
+function getFiltered() {
+  return data.filter(d => {
+    if (filterBrand && d.brand !== filterBrand) return false;
+    if (filterType && d.type !== filterType) return false;
+    if (filterBody && d.body !== filterBody) return false;
+    if (filterStatus && d.status !== filterStatus) return false;
+    if (search) {
+      const q = search.toLowerCase();
+      if (![d.brand,d.model,d.body,d.type,d.variant,d.price,d.transmission,d.features].some(f => f.toLowerCase().includes(q))) return false;
+    }
+    return true;
+  });
+}
+
+function getSorted(arr) {
+  return [...arr].sort((a, b) => {
+    if (sortKey === 'price_asc') return a.priceNum - b.priceNum;
+    if (sortKey === 'price_desc') return b.priceNum - a.priceNum;
+    if (sortKey === 'model') return a.model.localeCompare(b.model);
+    return a.brand.localeCompare(b.brand) || a.model.localeCompare(b.model);
+  });
+}
+
+function render() {
+  const filtered = getSorted(getFiltered());
+  const q = search.toLowerCase();
+  const total = data.length, added = data.filter(d => d.status === 'added').length;
+  document.getElementById('s-total').textContent = total;
+  document.getElementById('s-added').textContent = added;
+  document.getElementById('s-pending').textContent = total - added;
+  document.getElementById('s-brands').textContent = brands.length;
+  const pct = Math.round(added / total * 100);
+  document.getElementById('s-pct').textContent = pct + '%';
+  document.getElementById('s-bar').style.width = pct + '%';
+  document.getElementById('info-row').innerHTML = `Showing <b>${filtered.length}</b> of <b>${total}</b> entries`;
+
+  document.querySelectorAll('.bpill').forEach(p => p.classList.toggle('active', p.dataset.brand === filterBrand));
+
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = '';
+  document.getElementById('no-results').style.display = filtered.length ? 'none' : 'block';
+
+  filtered.forEach(d => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><b>${hl(d.brand, q)}</b></td>
+      <td>${hl(d.model, q)}</td>
+      <td style="color:#555;font-size:12px">${hl(d.body, q)}</td>
+      <td style="font-size:12px">${hl(d.type, q)}</td>
+      <td style="font-size:12px">${hl(d.variant, q)}</td>
+      <td style="font-size:12px;white-space:nowrap">${d.price === 'TBA' ? '<i style="color:#999">TBA</i>' : hl(d.price, q)}</td>
+      <td style="font-size:11px;color:#555;white-space:nowrap">${hl(d.transmission, q)}</td>
+      <td class="features-col">${hl(d.features, q)}</td>
+      <td><button class="tog ${d.status}" data-id="${d.id}">${d.status === 'added' ? '✓ Added' : 'Pending'}</button></td>`;
+    tbody.appendChild(tr);
+  });
+
+  document.querySelectorAll('.tog').forEach(btn => {
+    btn.onclick = () => {
+      const entry = data.find(d => d.id === +btn.dataset.id);
+      entry.status = entry.status === 'added' ? 'pending' : 'added';
+      saveStatuses(); render();
+    };
+  });
+}
+
+document.getElementById('search').addEventListener('input', e => { search = e.target.value.trim(); render(); });
+document.getElementById('f-type').addEventListener('change', e => { filterType = e.target.value; render(); });
+document.getElementById('f-body').addEventListener('change', e => { filterBody = e.target.value; render(); });
+document.getElementById('f-status').addEventListener('change', e => { filterStatus = e.target.value; render(); });
+document.getElementById('f-sort').addEventListener('change', e => { sortKey = e.target.value; render(); });
+
+document.querySelector('.bpill[data-brand=""]').onclick = function() { filterBrand = ''; render(); };
+document.querySelectorAll('.bpill:not([data-brand=""])').forEach(p => {
+  p.onclick = () => { filterBrand = filterBrand === p.dataset.brand ? '' : p.dataset.brand; render(); };
+});
+
+document.getElementById('btn-all').onclick = () => { data.forEach(d => d.status = 'added'); saveStatuses(); render(); };
+document.getElementById('btn-reset').onclick = () => { data.forEach(d => d.status = 'pending'); localStorage.removeItem(SK); render(); };
+
+render();
+</script>
+</body>
+</html>

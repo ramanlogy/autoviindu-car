@@ -1,0 +1,548 @@
+[
+  {
+    "id": 901,
+    "slug": "proton-x50-2025",
+    "brand": "Proton",
+    "model": "X50",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "popular",
+    "tagline": "Geely-based compact SUV with ADAS and 360° camera under Rs. 55L",
+    "rating": 4.1,
+    "reviews": 634,
+    "expertScore": 7.8,
+    "baseEMI": 43000,
+    "overview": "The Proton X50, built on Geely's BMA platform (same as Geely Coolray), brings European-grade engineering to Nepal with a 1.5T turbo engine, 3-cylinder smooth power, ADAS Level 2, 360° camera, and a 10.25\" touchscreen. Proton's Malaysian quality control gives it an edge over other Chinese brands.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Snow White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Jet Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Armour Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Ocean Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Midnight Black",
+        "hex": "#1A1A1A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard",
+        "price": 4390000,
+        "label": "Rs. 43.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera + Sensors",
+          "Electric Sunroof",
+          "Auto Climate Control",
+          "17\" Alloy Wheels",
+          "7-Speed DCT"
+        ],
+        "specs": {
+          "power": "150 hp @ 5,500 rpm",
+          "torque": "226 Nm",
+          "efficiency": "16.4 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Executive",
+        "price": 4890000,
+        "label": "Rs. 48.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "ADAS Level 1 (5 features)",
+          "360° Camera",
+          "Wireless Charging",
+          "Rear AC Vents",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "150 hp @ 5,500 rpm",
+          "torque": "226 Nm",
+          "efficiency": "16.4 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Flagship",
+        "price": 5390000,
+        "label": "Rs. 53.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "ADAS Level 2 (8 features)",
+          "Panoramic Sunroof",
+          "Ventilated Seats",
+          "Ambient Lighting",
+          "Drive Modes",
+          "Executive features+"
+        ],
+        "specs": {
+          "power": "150 hp @ 5,500 rpm",
+          "torque": "226 Nm",
+          "efficiency": "16.4 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L TGDi 3-Cylinder Turbo",
+      "Displacement": "1,497 cc",
+      "Power": "150 hp @ 5,500 rpm",
+      "Torque": "226 Nm",
+      "Efficiency": "16.4 km/l",
+      "Fuel Tank": "45 L",
+      "Transmission": "7-Speed DCT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "395 L",
+      "Length": "4,162 mm",
+      "Width": "1,760 mm",
+      "Height": "1,609 mm",
+      "Wheelbase": "2,550 mm",
+      "Ground Clearance": "195 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Geely BMA platform — European DNA",
+      "150hp from 1.5T 3-cylinder",
+      "ADAS Level 2 on Flagship",
+      "7DCT standard across all",
+      "Better QC than pure Chinese brands"
+    ],
+    "cons": [
+      "3-cylinder can vibrate at idle",
+      "7DCT clunky in stop-go",
+      "Limited Nepal service centres",
+      "No AWD option"
+    ],
+    "highlights": [
+      "Geely BMA Platform",
+      "150hp Turbo",
+      "ADAS Level 2",
+      "7-Speed DCT"
+    ]
+  },
+  {
+    "id": 902,
+    "slug": "proton-x70-2025",
+    "brand": "Proton",
+    "model": "X70",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Mid-size SUV",
+    "badge": "popular",
+    "tagline": "7-seat Geely-based SUV with 184hp and AWD for Nepal highways",
+    "rating": 4.2,
+    "reviews": 421,
+    "expertScore": 8,
+    "baseEMI": 62000,
+    "overview": "The Proton X70, based on Geely Boyue, is Nepal's most compelling mid-size SUV alternative — with a 1.8T engine pushing 184hp, available AWD, 7-seat layout, and a feature-rich interior with 12.3\" touchscreen, ADAS, and Bose audio. It undercuts Hyundai Tucson and Kia Sportage considerably.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Snow White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Jet Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Ocean Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Midnight Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Armour Silver",
+        "hex": "#C0C0C0"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard FWD",
+        "price": 5990000,
+        "label": "Rs. 59.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "6 Airbags",
+          "12.3\" Touchscreen + CarPlay",
+          "Rear Camera + Sensors",
+          "Panoramic Sunroof",
+          "Auto Climate Control",
+          "18\" Alloy Wheels",
+          "7-Seat"
+        ],
+        "specs": {
+          "power": "184 hp @ 5,500 rpm",
+          "torque": "300 Nm",
+          "efficiency": "14.9 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Executive FWD",
+        "price": 6590000,
+        "label": "Rs. 65.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "ADAS Level 1",
+          "Bose 9-Speaker Audio",
+          "360° Camera",
+          "Wireless Charging",
+          "Ventilated Seats",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "184 hp @ 5,500 rpm",
+          "torque": "300 Nm",
+          "efficiency": "14.9 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Flagship AWD",
+        "price": 7590000,
+        "label": "Rs. 75.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "AWD System",
+          "ADAS Level 2",
+          "Head-Up Display",
+          "Ambient Lighting",
+          "Power Tailgate",
+          "Executive features+"
+        ],
+        "specs": {
+          "power": "184 hp @ 5,500 rpm",
+          "torque": "300 Nm",
+          "efficiency": "14.2 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.8L TGDi Turbo Petrol",
+      "Displacement": "1,799 cc",
+      "Power": "184 hp @ 5,500 rpm",
+      "Torque": "300 Nm",
+      "Efficiency": "14.2–14.9 km/l",
+      "Fuel Tank": "55 L",
+      "Transmission": "7-Speed DCT",
+      "Drive": "FWD / AWD",
+      "Seating": "7",
+      "Boot Space": "550 L (5-seat)",
+      "Length": "4,585 mm",
+      "Width": "1,900 mm",
+      "Height": "1,745 mm",
+      "Wheelbase": "2,670 mm",
+      "Ground Clearance": "200 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "184hp — strongest in class at price",
+      "AWD available on flagship",
+      "Bose audio on Executive+",
+      "7-seat with 550L boot",
+      "ADAS Level 2 on AWD"
+    ],
+    "cons": [
+      "DCT can hesitate in city",
+      "No diesel option",
+      "Brand service limited in Nepal",
+      "AWD only on most expensive trim"
+    ],
+    "highlights": [
+      "184hp 1.8T",
+      "AWD Available",
+      "Bose 9-Speaker",
+      "7 Seats"
+    ]
+  },
+  {
+    "id": 903,
+    "slug": "proton-saga-2025",
+    "brand": "Proton",
+    "model": "Saga",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Sedan",
+    "badge": "value",
+    "tagline": "Most affordable Proton in Nepal — proven sedan for budget buyers",
+    "rating": 3.8,
+    "reviews": 312,
+    "expertScore": 6.8,
+    "baseEMI": 22000,
+    "overview": "The Proton Saga is Malaysia's most popular sedan, now available in Nepal as the most affordable Proton offering. With a 1.3L engine, CVT option, and solid build quality, it targets first-time buyers seeking a reliable, fuel-efficient sedan with a trusted Southeast Asian heritage.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Snow White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Midnight Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Armour Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Biru Langit",
+        "hex": "#4A90D9"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard MT",
+        "price": 2290000,
+        "label": "Rs. 22.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "7\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "Manual AC",
+          "14\" Steel Wheels"
+        ],
+        "specs": {
+          "power": "95 hp @ 6,000 rpm",
+          "torque": "120 Nm",
+          "efficiency": "18.9 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Premium CVT",
+        "price": 2690000,
+        "label": "Rs. 26.90L",
+        "popular": true,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "4 Airbags",
+          "CVT Automatic",
+          "Auto Climate Control",
+          "Alloy Wheels",
+          "Rear Spoiler",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "95 hp @ 6,000 rpm",
+          "torque": "120 Nm",
+          "efficiency": "18.2 km/l",
+          "transmission": "CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.3L VVT Petrol",
+      "Displacement": "1,332 cc",
+      "Power": "95 hp @ 6,000 rpm",
+      "Torque": "120 Nm",
+      "Efficiency": "18.2–18.9 km/l",
+      "Fuel Tank": "40 L",
+      "Transmission": "5MT / CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "440 L",
+      "Length": "4,400 mm",
+      "Width": "1,713 mm",
+      "Height": "1,477 mm",
+      "Wheelbase": "2,525 mm",
+      "Ground Clearance": "160 mm",
+      "Airbags": "2–4"
+    },
+    "pros": [
+      "Most affordable CVT sedan in Nepal",
+      "18.9 km/l excellent efficiency",
+      "440L big boot for price",
+      "Proven Southeast Asian reliability",
+      "Low maintenance cost"
+    ],
+    "cons": [
+      "Only 2 airbags on base",
+      "Low ground clearance for Nepal roads",
+      "No ADAS",
+      "Dated interior design"
+    ],
+    "highlights": [
+      "18.9 km/l",
+      "440L Boot",
+      "CVT Available",
+      "Most Affordable Proton"
+    ]
+  },
+  {
+    "id": 904,
+    "slug": "proton-x90-2025",
+    "brand": "Proton",
+    "model": "X90",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Large SUV",
+    "badge": "new",
+    "tagline": "Proton's flagship 6-seat large SUV with 204hp and ADAS Level 2",
+    "rating": 4.2,
+    "reviews": 98,
+    "expertScore": 8,
+    "baseEMI": 88000,
+    "overview": "The Proton X90 is Proton's largest and most premium SUV, based on the Geely Xingyue L, with a 2.0T engine delivering 204hp, 6-seat captain chair layout, panoramic sunroof, Harman/Kardon audio, and ADAS Level 2. A compelling premium large SUV alternative to Hyundai Santa Fe in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Snow White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Midnight Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Jet Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Ocean Blue",
+        "hex": "#1B4F8A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Executive",
+        "price": 8490000,
+        "label": "Rs. 84.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "6 Airbags",
+          "12.3\" Dual Screen",
+          "6-Seat Captain Chairs",
+          "Panoramic Sunroof",
+          "ADAS Level 1",
+          "20\" Alloy Wheels",
+          "360° Camera"
+        ],
+        "specs": {
+          "power": "204 hp @ 5,500 rpm",
+          "torque": "318 Nm",
+          "efficiency": "13.9 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Flagship",
+        "price": 9690000,
+        "label": "Rs. 96.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "ADAS Level 2 (10 features)",
+          "Harman/Kardon 12-Speaker",
+          "Nappa Leather",
+          "Ventilated + Massage Seats",
+          "Head-Up Display",
+          "Power Tailgate",
+          "Executive features+"
+        ],
+        "specs": {
+          "power": "204 hp @ 5,500 rpm",
+          "torque": "318 Nm",
+          "efficiency": "13.9 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L TGDi Turbo Petrol",
+      "Displacement": "1,997 cc",
+      "Power": "204 hp @ 5,500 rpm",
+      "Torque": "318 Nm",
+      "Efficiency": "13.9 km/l",
+      "Fuel Tank": "58 L",
+      "Transmission": "7-Speed DCT",
+      "Drive": "FWD",
+      "Seating": "6",
+      "Boot Space": "308 L (6-seat) / 680 L (4-seat)",
+      "Length": "4,869 mm",
+      "Width": "1,934 mm",
+      "Height": "1,780 mm",
+      "Wheelbase": "2,919 mm",
+      "Ground Clearance": "205 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "204hp 2.0T engine",
+      "Captain chairs standard",
+      "Harman/Kardon on flagship",
+      "ADAS Level 2",
+      "Geely platform quality"
+    ],
+    "cons": [
+      "FWD only — no AWD",
+      "Expensive for Proton brand",
+      "Fuel economy modest",
+      "Large size for Kathmandu"
+    ],
+    "highlights": [
+      "204hp 2.0T",
+      "Captain Chairs",
+      "Harman/Kardon",
+      "ADAS Level 2"
+    ]
+  }
+]

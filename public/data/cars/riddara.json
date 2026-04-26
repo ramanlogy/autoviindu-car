@@ -1,0 +1,193 @@
+[
+  {
+    "id": 18,
+    "slug": "riddara-rd6-2024",
+    "brand": "Riddara",
+    "brandSlug": "riddara",
+    "model": "RD6",
+    "year": 2024,
+    "type": "Electric",
+    "bodyType": "pickup",
+    "body": "Electric Pickup Truck",
+    "badge": "new",
+    "budgetTier": "Above 50L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": false,
+    "tagline": "Drive Like a SUV, Function Like a Pick-Up — 100% Pure EV Platform Pickup",
+    "rating": 4.5,
+    "reviews": 15,
+    "expertScore": 8.7,
+    "baseEMI": 0,
+    "overview": "The Riddara RD6 by Geely Auto Group (distributed by CG Motors Nepal) is Nepal's first 100% pure EV platform pickup truck. Available in 2WD (63 kWh) and 4WD (73 kWh). The 4WD delivers 315 kW, 595 Nm, 0–100 in 4.5s and 424 km NEDC range. Features 7 terrain drive modes, 815 mm wading depth, 95% max gradeability, 14 ADAS features, 6 airbags, 540° surround view camera, 6 kW V2L discharge, 1,200L cargo bed, 14.6\" HD touchscreen, and CN95 PM2.5 air filter.",
+    "images": [
+      "assets/images/cars/riddara-rd6-electric-pickup-truck-01.jpg",
+      "assets/images/cars/riddara-rd6-electric-pickup-truck-02.jpg",
+      "assets/images/cars/riddara-rd6-electric-pickup-truck-03.jpg",
+      "assets/images/cars/riddara-rd6-electric-pickup-truck-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Nordic Green / Black Top",
+        "hex": "#1E8449"
+      },
+      {
+        "name": "White Cloud / Black Top",
+        "hex": "#F2F3F4"
+      },
+      {
+        "name": "Black Knight",
+        "hex": "#1C2833"
+      },
+      {
+        "name": "Moonlit Silver",
+        "hex": "#BFC9CA"
+      },
+      {
+        "name": "Serene Blue",
+        "hex": "#2E86C1"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Blue Wave",
+        "hex": "#1A5276"
+      }
+    ],
+    "variants": [
+      {
+        "name": "RD6 2WD (63 kWh)",
+        "slug": "rd6-2wd-63kwh",
+        "price": 0,
+        "label": "2WD Base",
+        "popular": false,
+        "transmission": "Single Speed (EV)",
+        "fuel": "Electric",
+        "features": [
+          "4 Airbags",
+          "ESC, TCS, HHC, HDC, EBA",
+          "Electric Parking Brake + Auto Hold",
+          "High-Resolution Rear-View Camera",
+          "3-Level Regenerative Braking",
+          "Driver Side 6-Way Power Adjustable Seat",
+          "12.3-inch Touchscreen",
+          "CarbitLink",
+          "Smart Key",
+          "6 Speakers",
+          "Dual Zone Auto AC",
+          "CN95 + PM2.5 Air Filtration",
+          "LED Headlights + DRLs + LED Bar Taillights",
+          "70L Front Trunk + 48L Under-Seat Storage",
+          "3 Drive Modes: Economy / Comfort / Sport"
+        ],
+        "specs": {
+          "power": "200 kW",
+          "torque": "385 Nm",
+          "range": "373 km (NEDC)",
+          "acceleration": "0–100 km/h: 7.3s",
+          "charging": "DC 90kW / 30–80% in 32 min | AC 6.6kW / 7.8 hrs"
+        }
+      },
+      {
+        "name": "RD6 4WD (73 kWh)",
+        "slug": "rd6-4wd-73kwh",
+        "price": 0,
+        "label": "4WD Top",
+        "popular": true,
+        "transmission": "Single Speed AWD (EV)",
+        "fuel": "Electric",
+        "features": [
+          "6 Airbags (Front, Side & Curtain)",
+          "14 ADAS: ICC, ACC, AEB, FCW, LKA, ELKA, LDW, LCA, BSD, DOW, RCTA, RCTB, RCW, FDA",
+          "540° Surround-View Camera with Underbody View",
+          "TPMS",
+          "7 Drive Modes: Sand/Mud/Off-road/Wading/Economy/Comfort/Sport",
+          "815 mm Wading Depth",
+          "95% Max Gradeability",
+          "6 kW V2L Rear Discharge Port (European Standard)",
+          "Tow Hook + Aluminum Roof Rails",
+          "14.6-inch HD Touchscreen",
+          "50W Wireless Phone Charging",
+          "8 Speakers",
+          "Front Seats Recline 180°",
+          "Ventilated Front & Rear Seats",
+          "Power-Folding + Defrosting Side Mirrors",
+          "3,000 kg Towing Capacity",
+          "1,200L Cargo Bed",
+          "All 2WD features +"
+        ],
+        "specs": {
+          "power": "315 kW",
+          "torque": "595 Nm",
+          "range": "424 km (NEDC)",
+          "acceleration": "0–100 km/h: 4.5s",
+          "charging": "DC 110kW / 30–80% in 30 min | AC 6.6kW / 9.3 hrs"
+        }
+      }
+    ],
+    "specs": {
+      "Battery (2WD)": "63 kWh Lithium Iron Phosphate",
+      "Battery (4WD)": "73 kWh Lithium Iron Phosphate",
+      "Drivetrain (2WD)": "2WD Rear-Wheel Drive",
+      "Drivetrain (4WD)": "4WD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Max Power (2WD)": "200 kW",
+      "Max Power (4WD)": "315 kW",
+      "Max Torque (2WD)": "385 Nm",
+      "Max Torque (4WD)": "595 Nm",
+      "Range (2WD NEDC)": "373 km",
+      "Range (4WD NEDC)": "424 km",
+      "Max Speed (2WD)": "185 km/h",
+      "Max Speed (4WD)": "190 km/h",
+      "0–100 km/h (2WD)": "7.3 seconds",
+      "0–100 km/h (4WD)": "4.5 seconds",
+      "DC Fast Charging (2WD)": "90 kW / 30–80% in 32 min",
+      "DC Fast Charging (4WD)": "110 kW / 30–80% in 30 min",
+      "AC Charging": "6.6 kW (220V/240V)",
+      "Cargo Capacity": "1,030 kg",
+      "Towing Capacity (2WD)": "2,500 kg",
+      "Towing Capacity (4WD)": "3,000 kg",
+      "Wading Depth (2WD)": "500 mm",
+      "Wading Depth (4WD)": "815 mm",
+      "Cargo Bed Volume": "1,200 L (1,525 × 1,450 × 540 mm)",
+      "Front Trunk": "70 L",
+      "Under-Seat Storage": "48 L",
+      "Length": "5,260 mm",
+      "Width": "1,900 mm",
+      "Height": "1,880 mm",
+      "Wheelbase": "3,120 mm",
+      "Ground Clearance": "225 mm",
+      "Tyre Size": "235/60 R18",
+      "Front Suspension": "MacPherson Strut (Independent)",
+      "Rear Suspension": "Multi-link Independent",
+      "Brakes": "Ventilated Disc (All 4 Wheels)",
+      "Body Strength": "High Intensity Steel (30,300 Nm/deg)",
+      "V2L Discharge": "6 kW European-Standard Rear Port"
+    },
+    "pros": [
+      "Nepal's first 100% pure EV pickup — zero fuel cost",
+      "4WD: 0–100 in 4.5s with 595 Nm — supercar performance",
+      "424 km NEDC range",
+      "6 kW V2L port powers appliances off the truck bed",
+      "14 ADAS features on 4WD — most comprehensive in Nepal",
+      "815 mm wading depth + 95% gradeability",
+      "1,200L cargo bed + 3,000 kg towing (4WD)",
+      "540° camera with under-vehicle view"
+    ],
+    "cons": [
+      "Large 5,260 mm length — challenging in Kathmandu narrow streets",
+      "Fast DC charging infrastructure still limited in Nepal",
+      "NEDC range; real-world with load/mountains will be lower",
+      "Need 4WD for 6 airbags, ADAS, and TPMS"
+    ],
+    "highlights": [
+      "424 km Range (4WD)",
+      "4.5s 0-100 (4WD)",
+      "14 ADAS Features",
+      "6kW V2L Discharge"
+    ]
+  }
+]

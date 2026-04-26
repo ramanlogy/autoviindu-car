@@ -1,0 +1,56 @@
+/* ═══════════════════════════════════════════
+   AUTOVIINDU — BUDGET PAGE STYLES
+═══════════════════════════════════════════ */
+
+/* Featured / best pick card */
+.car-card-featured {
+  position: relative;
+  overflow: hidden;
+}
+
+.best-pick-banner {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-align: center;
+  padding: 5px;
+  letter-spacing: .5px;
+  color: #fff;
+}
+
+/* Budget tier nav pill */
+.budget-tier-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r12);
+  cursor: pointer;
+  transition: all var(--ease);
+}
+
+.budget-tier-pill:hover {
+  transform: translateX(3px);
+}
+
+/* EMI result box */
+.emi-result-box {
+  background: var(--green);
+  color: #fff;
+  border-radius: var(--r10);
+  padding: 14px 18px;
+  text-align: center;
+}
+
+.emi-result-label {
+  font-size: 11px;
+  font-weight: 700;
+  opacity: .7;
+}
+
+.emi-result-value {
+  font-size: 26px;
+  font-weight: 800;
+  margin-top: 4px;
+}

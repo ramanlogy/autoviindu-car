@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>DOTM Services – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
+      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
+      --border:#E4E8ED; --bg:#F5F7F9; --white:#ffffff;
+      --red:#C8271E;
+      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
+      --sh1:0 1px 4px rgba(0,0,0,.06); --sh2:0 4px 14px rgba(0,0,0,.08);
+      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
+      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
+    ::selection { background:rgba(26,107,42,.12); }
+    :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+    @media(min-width:640px){ .wrap{ padding:0 32px; } }
+    @media(min-width:1024px){ .wrap{ padding:0 48px; } }
+
+    /* BREADCRUMB */
+    .bc { background:var(--bg); border-bottom:1px solid var(--border); padding:11px 0; }
+    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
+    .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
+    .bc-inner a:hover { text-decoration:underline; }
+    .bc-inner i { width:12px; height:12px; }
+
+    /* HERO */
+    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:56px 0 0; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; padding-bottom:56px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .hero-badge i { width:13px; height:13px; color:var(--green-m); }
+    .hero h1 { font-family:var(--font-d); font-size:clamp(30px,5vw,52px); font-weight:800; color:#fff; line-height:1.08; margin-bottom:14px; }
+    .hero h1 em { font-style:italic; color:var(--green-m); }
+    .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:500px; line-height:1.75; margin-bottom:32px; }
+    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px; }
+    .hero-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:var(--pill); padding:7px 14px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.8); }
+    .hero-pill i { width:13px; height:13px; color:var(--green-m); }
+
+    /* HERO CTA */
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: #fff; color: var(--green); text-decoration: none;
+      padding: 13px 24px; border-radius: var(--r10);
+      font-size: 14.5px; font-weight: 800; transition: all var(--ease);
+      box-shadow: 0 4px 20px rgba(0,0,0,.2);
+    }
+    .hero-cta:hover { background: var(--green-l); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+    .hero-cta i { width: 16px; height: 16px; }
+
+    /* NAV STRIP */
+    .nav-strip { background:var(--white); border-bottom:1px solid var(--border); }
+    .nav-strip-inner { display:grid; grid-template-columns:repeat(2,1fr); }
+    @media(min-width:640px){ .nav-strip-inner{ grid-template-columns:repeat(4,1fr); } }
+    .nav-item { display:flex; flex-direction:column; gap:4px; padding:18px 16px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); text-decoration:none; }
+    .nav-item:last-child { border-right:none; }
+    @media(max-width:639px){ .nav-item:nth-child(2){ border-right:none; } .nav-item:nth-child(3){ border-right:1px solid var(--border); } }
+    .nav-item:hover { background:var(--green-l); }
+    .nav-item i { width:18px; height:18px; color:var(--ink5); margin-bottom:4px; }
+    .nav-item-name { font-size:12.5px; font-weight:800; color:var(--ink2); line-height:1.3; }
+    .nav-item-sub { font-size:11px; color:var(--ink5); }
+    /* Highlight the request link */
+    .nav-item.cta { background: var(--green-l); }
+    .nav-item.cta .nav-item-name { color: var(--green); }
+    .nav-item.cta i { color: var(--green); }
+    .nav-item.cta:hover { background: var(--green); }
+    .nav-item.cta:hover .nav-item-name,
+    .nav-item.cta:hover .nav-item-sub { color: #fff; }
+    .nav-item.cta:hover i { color: #fff; }
+
+    /* SECTION */
+    .section { padding:72px 0; }
+    .section.alt { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
+    .eyebrow i { width:13px; height:13px; }
+    .sec-title { font-family:var(--font-d); font-size:clamp(22px,3.5vw,36px); font-weight:800; color:var(--ink); line-height:1.12; margin-bottom:8px; }
+    .sec-title em { font-style:italic; color:var(--green); }
+    .sec-sub { font-size:14.5px; color:var(--ink4); max-width:520px; line-height:1.75; margin-bottom:44px; }
+
+    /* SERVICE GRID */
+    .svc-list { display:grid; grid-template-columns:1fr; gap:6px; }
+    @media(min-width:480px){ .svc-list{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .svc-list{ grid-template-columns:repeat(3,1fr); } }
+    .svc-item-row { display:flex; align-items:flex-start; gap:10px; padding:12px 14px; border:1.5px solid var(--border); border-radius:var(--r10); background:var(--white); transition:border-color var(--ease); }
+    .svc-item-row:hover { border-color:var(--green); }
+    .svc-item-row i { width:15px; height:15px; color:var(--ink5); flex-shrink:0; margin-top:2px; }
+    .svc-item-row span { font-size:13px; font-weight:600; color:var(--ink2); line-height:1.4; }
+
+    /* HOW IT WORKS */
+    .steps { display:flex; flex-direction:column; gap:0; }
+    .step { display:flex; gap:16px; padding-bottom:28px; }
+    .step:last-child { padding-bottom:0; }
+    .step-left { display:flex; flex-direction:column; align-items:center; flex-shrink:0; width:36px; }
+    .step-num { width:36px; height:36px; border-radius:50%; background:var(--green-l); border:2px solid var(--green); display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-size:14px; font-weight:800; color:var(--green); }
+    .step-line { flex:1; width:2px; background:var(--border); margin-top:4px; }
+    .step:last-child .step-line { display:none; }
+    .step-content { padding-top:6px; }
+    .step-title { font-size:14px; font-weight:800; color:var(--ink2); margin-bottom:3px; }
+    .step-desc { font-size:13px; color:var(--ink4); line-height:1.6; }
+
+    /* VALUE ADDS */
+    .va-grid { display:grid; grid-template-columns:1fr; gap:8px; }
+    @media(min-width:480px){ .va-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .va-grid{ grid-template-columns:repeat(3,1fr); } }
+    .va-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); padding:18px; display:flex; gap:13px; transition:border-color var(--ease); }
+    .va-card:hover { border-color:var(--green); }
+    .va-card i { width:18px; height:18px; color:var(--ink5); flex-shrink:0; margin-top:2px; }
+    .va-card-name { font-size:13.5px; font-weight:800; color:var(--ink2); margin-bottom:3px; }
+    .va-card-desc { font-size:12.5px; color:var(--ink4); line-height:1.55; }
+
+    /* NOTICE */
+    .notice { display:flex; align-items:flex-start; gap:12px; padding:16px 18px; border-radius:var(--r12); background:var(--green-l); border:1.5px solid rgba(26,107,42,.15); }
+    .notice i { width:16px; height:16px; color:var(--green); flex-shrink:0; margin-top:2px; }
+    .notice-title { font-size:13px; font-weight:800; color:var(--ink2); margin-bottom:2px; }
+    .notice-text { font-size:12.5px; color:var(--ink4); line-height:1.6; }
+    .notice.warn { background:#FFFBF0; border-color:rgba(160,110,0,.18); }
+
+    /* FAQ */
+    .faq-list { display:flex; flex-direction:column; gap:6px; }
+    .faq-item { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); overflow:hidden; transition:border-color var(--ease); }
+    .faq-item.open { border-color:var(--green); }
+    .faq-q { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 18px; cursor:pointer; font-size:14px; font-weight:700; color:var(--ink2); user-select:none; }
+    .faq-q i { width:15px; height:15px; color:var(--ink5); flex-shrink:0; transition:transform var(--ease); }
+    .faq-item.open .faq-q i { transform:rotate(180deg); color:var(--green); }
+    .faq-a { display:none; padding:14px 18px 16px; font-size:13.5px; color:var(--ink4); line-height:1.7; border-top:1px solid var(--border); }
+    .faq-item.open .faq-a { display:block; }
+    .faq-cols { display:grid; grid-template-columns:1fr; gap:6px; }
+    @media(min-width:768px){ .faq-cols{ grid-template-columns:1fr 1fr; } }
+
+    /* CTA SECTION */
+    .cta-section {
+      padding: 72px 0 88px;
+      background: linear-gradient(145deg,#0B2A12 0%,#1A6B2A 100%);
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .cta-inner { position:relative; z-index:1; text-align:center; }
+    .cta-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .cta-badge i { width:13px; height:13px; color:var(--green-m); }
+    .cta-title { font-family:var(--font-d); font-size:clamp(26px,4vw,44px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:12px; }
+    .cta-title em { font-style:italic; color:var(--green-m); }
+    .cta-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:440px; margin:0 auto 36px; line-height:1.75; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; color: var(--green);
+      padding: 15px 32px; border-radius: var(--r10);
+      font-size: 15px; font-weight: 800; text-decoration: none;
+      transition: all var(--ease); box-shadow: 0 4px 24px rgba(0,0,0,.25);
+    }
+    .cta-btn:hover { background: var(--green-l); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.3); }
+    .cta-btn i { width: 17px; height: 17px; }
+    .cta-meta { margin-top: 16px; font-size: 12.5px; color: rgba(255,255,255,.4); }
+    .cta-guarantees { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:28px; }
+    .cta-g { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:var(--pill); padding:6px 14px; font-size:12px; font-weight:600; color:rgba(255,255,255,.7); }
+    .cta-g i { width:12px; height:12px; color:var(--green-m); }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { opacity:0; animation:fadeUp .45s ease forwards; }
+  </style>
+</head>
+<body>
+   <script src="assets/js/components/av-nav.js"></script> 
+
+<!-- BREADCRUMB -->
+<nav class="bc">
+  <div class="wrap bc-inner">
+    <a href="/index.html">Home</a>
+    <i data-lucide="chevron-right"></i>
+    <a href="/services.html">Services</a>
+    <i data-lucide="chevron-right"></i>
+    <span>DOTM Services</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner fade-up">
+      <div class="hero-badge"><i data-lucide="landmark"></i>Department of Transport Management</div>
+      <h1>DOTM Services<br><em>Done for You</em></h1>
+      <p class="hero-desc">Registration, licensing, and vehicle documentation — handled on your behalf. No queues, no confusion, no wasted trips to DOTM.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Individual &amp; corporate</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Document pickup &amp; delivery</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Appointment management</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>SMS &amp; email status updates</span>
+      </div>
+      <!-- ★ HERO CTA BUTTON -->
+      <a href="/form/dotmform.html" class="hero-cta">
+        <i data-dotm-lucide="send"></i>
+        Request a Service
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NAV STRIP -->
+<div class="nav-strip">
+  <div class="wrap" style="padding:0">
+    <div class="nav-strip-inner">
+      <div class="nav-item" onclick="document.getElementById('registration').scrollIntoView({behavior:'smooth'})">
+        <i data-lucide="file-text"></i>
+        <div class="nav-item-name">Vehicle Registration</div>
+        <div class="nav-item-sub">New, renewal, transfer</div>
+      </div>
+      <div class="nav-item" onclick="document.getElementById('licensing').scrollIntoView({behavior:'smooth'})">
+        <i data-lucide="id-card"></i>
+        <div class="nav-item-name">Licensing</div>
+        <div class="nav-item-sub">Apply, renew, upgrade</div>
+      </div>
+      <div class="nav-item" onclick="document.getElementById('compliance').scrollIntoView({behavior:'smooth'})">
+        <i data-lucide="clipboard-check"></i>
+        <div class="nav-item-name">Documentation</div>
+        <div class="nav-item-sub">Certificates &amp; clearances</div>
+      </div>
+      <!-- ★ NOW LINKS TO SEPARATE PAGE -->
+      <a class="nav-item cta" href="/form/dotmform.html">
+        <i data-lucide="send"></i>
+        <div class="nav-item-name">Request a Service</div>
+        <div class="nav-item-sub">Submit your details →</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr;gap:64px" id="how-grid">
+      <div>
+        <div class="eyebrow"><i data-lucide="repeat-2"></i>How It Works</div>
+        <h2 class="sec-title">We handle the<br><em>paperwork</em></h2>
+        <p style="font-size:14.5px;color:var(--ink4);line-height:1.75;max-width:420px;margin-bottom:32px">DOTM processes involve multiple steps, specific documents, and appointment slots that fill up fast. We take over the entire process so you do not have to.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+            <div class="step-content"><div class="step-title">Submit your request</div><div class="step-desc">Tell us what you need — registration, license, documentation. Fill the form on our <a href="/form/dotmform.html" style="color:var(--green);font-weight:600">request page</a> with your vehicle and personal details.</div></div>
+          </div>
+          <div class="step">
+            <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+            <div class="step-content"><div class="step-title">We collect your documents</div><div class="step-desc">Our agent picks up all required paperwork from your location. You do not need to visit our office.</div></div>
+          </div>
+          <div class="step">
+            <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+            <div class="step-content"><div class="step-title">We book your appointment</div><div class="step-desc">We monitor DOTM appointment availability and secure a slot on your behalf — proactively, not reactively.</div></div>
+          </div>
+          <div class="step">
+            <div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div>
+            <div class="step-content"><div class="step-title">Processing &amp; follow-up</div><div class="step-desc">We submit your application, track progress, and follow up at every stage. You receive SMS and email updates.</div></div>
+          </div>
+          <div class="step">
+            <div class="step-left"><div class="step-num">5</div><div class="step-line"></div></div>
+            <div class="step-content"><div class="step-title">Documents returned to you</div><div class="step-desc">Once complete, we deliver your processed documents back to your address. Done.</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow"><i data-lucide="star"></i>Why use AutoViindu</div>
+        <h2 class="sec-title">Minimal effort<br>on your <em>part</em></h2>
+        <p style="font-size:14.5px;color:var(--ink4);line-height:1.75;max-width:420px;margin-bottom:24px">DOTM queues, unclear requirements, and limited appointment slots make vehicle administration frustrating. We know the process end-to-end.</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:2px"></i><span><strong style="color:var(--ink2)">One point of contact</strong> — we handle all communication with DOTM</span></div>
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:2px"></i><span><strong style="color:var(--ink2)">Document pickup &amp; delivery</strong> — no need to visit our office</span></div>
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:2px"></i><span><strong style="color:var(--ink2)">Real-time updates</strong> — SMS and email at every stage</span></div>
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:2px"></i><span><strong style="color:var(--ink2)">Corporate fleet support</strong> — bulk processing for businesses</span></div>
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:2px"></i><span><strong style="color:var(--ink2)">Fast-track available</strong> — where legally permitted</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VEHICLE REGISTRATION -->
+<section class="section alt" id="registration">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="file-text"></i>Vehicle Registration</div>
+    <h2 class="sec-title">Registration <em>Services</em></h2>
+    <p class="sec-sub">Everything related to your vehicle's official record — new registration, renewals, transfers, and corrections.</p>
+
+    <div class="svc-list">
+      <div class="svc-item-row"><i data-lucide="plus-circle"></i><span>New vehicle registration assistance</span></div>
+      <div class="svc-item-row"><i data-lucide="arrow-right-left"></i><span>Vehicle ownership transfer (buying or selling)</span></div>
+      <div class="svc-item-row"><i data-lucide="copy"></i><span>Duplicate registration certificate (Bluebook duplication)</span></div>
+      <div class="svc-item-row"><i data-lucide="refresh-cw"></i><span>Vehicle registration renewal (Bluebook renewal)</span></div>
+      <div class="svc-item-row"><i data-lucide="hash"></i><span>Vehicle number plate arrangement</span></div>
+      <div class="svc-item-row"><i data-lucide="stamp"></i><span>Embossed number plate coordination</span></div>
+      <div class="svc-item-row"><i data-lucide="rotate-ccw"></i><span>Embossed number plate re-issuance (lost or damaged)</span></div>
+      <div class="svc-item-row"><i data-lucide="map-pin"></i><span>Registration address change</span></div>
+      <div class="svc-item-row"><i data-lucide="pencil"></i><span>Vehicle detail correction (engine no., chassis no., name spelling)</span></div>
+      <div class="svc-item-row"><i data-lucide="truck"></i><span>Commercial vehicle registration</span></div>
+      <div class="svc-item-row"><i data-lucide="clock"></i><span>Temporary registration assistance</span></div>
+      <div class="svc-item-row"><i data-lucide="trash-2"></i><span>Vehicle de-registration and scrap processing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LICENSING -->
+<section class="section" id="licensing">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="id-card"></i>Licensing</div>
+    <h2 class="sec-title">Driving License <em>Services</em></h2>
+    <p class="sec-sub">New applications, renewals, upgrades, duplicates, and international permits — all handled from your doorstep.</p>
+
+    <div class="svc-list" style="margin-bottom:28px">
+      <div class="svc-item-row"><i data-lucide="file-plus"></i><span>Driving license application processing</span></div>
+      <div class="svc-item-row"><i data-lucide="monitor"></i><span>Online license form registration assistance</span></div>
+      <div class="svc-item-row"><i data-lucide="pen-line"></i><span>Written test booking assistance</span></div>
+      <div class="svc-item-row"><i data-lucide="calendar"></i><span>Trial exam scheduling support</span></div>
+      <div class="svc-item-row"><i data-lucide="redo"></i><span>Retrial application assistance</span></div>
+      <div class="svc-item-row"><i data-lucide="refresh-cw"></i><span>License renewal assistance</span></div>
+      <div class="svc-item-row"><i data-lucide="globe"></i><span>International Driving Permit (IDP) application</span></div>
+      <div class="svc-item-row"><i data-lucide="copy"></i><span>Duplicate license issuance</span></div>
+      <div class="svc-item-row"><i data-lucide="search"></i><span>Smart license print status tracking</span></div>
+      <div class="svc-item-row"><i data-lucide="package"></i><span>Smart license collection assistance</span></div>
+      <div class="svc-item-row"><i data-lucide="arrow-up-circle"></i><span>License category upgrade (two-wheeler to four-wheeler, etc.)</span></div>
+      <div class="svc-item-row"><i data-lucide="info"></i><span>License suspension status check</span></div>
+    </div>
+
+    <div class="notice">
+      <i data-lucide="info"></i>
+      <div>
+        <div class="notice-title">How long does a driving license take?</div>
+        <div class="notice-text">The full process typically takes 30–90 days depending on appointment availability, exam results, and smart license printing timelines. We help at every stage to avoid delays.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTATION & COMPLIANCE -->
+<section class="section alt" id="compliance">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="clipboard-check"></i>Documentation &amp; Compliance</div>
+    <h2 class="sec-title">Certificates &amp; <em>Clearances</em></h2>
+    <p class="sec-sub">Fitness certificates, emission stickers, tax clearance, fines — the documents your vehicle legally needs, obtained without the hassle.</p>
+
+    <div class="svc-list" style="margin-bottom:32px">
+      <div class="svc-item-row"><i data-lucide="shield-check"></i><span>Vehicle fitness certificate arrangements (commercial vehicles)</span></div>
+      <div class="svc-item-row"><i data-lucide="leaf"></i><span>Green sticker / emission certificate coordination</span></div>
+      <div class="svc-item-row"><i data-lucide="receipt"></i><span>Tax clearance certificate assistance</span></div>
+      <div class="svc-item-row"><i data-lucide="alert-circle"></i><span>Fine and penalty clearance support</span></div>
+      <div class="svc-item-row"><i data-lucide="calendar-check"></i><span>Vehicle inspection scheduling</span></div>
+      <div class="svc-item-row"><i data-lucide="file-check"></i><span>Insurance documentation verification</span></div>
+      <div class="svc-item-row"><i data-lucide="route"></i><span>Route permit applications (commercial vehicles)</span></div>
+      <div class="svc-item-row"><i data-lucide="git-merge"></i><span>Route modification assistance (commercial vehicles)</span></div>
+      <div class="svc-item-row"><i data-lucide="refresh-cw"></i><span>Commercial vehicle renewal package processing</span></div>
+      <div class="svc-item-row"><i data-lucide="link"></i><span>Hypothecation entry (bank loan entry in bluebook)</span></div>
+      <div class="svc-item-row"><i data-lucide="link-2-off"></i><span>Hypothecation removal (loan clearance update in bluebook)</span></div>
+      <div class="svc-item-row"><i data-lucide="banknote"></i><span>Revenue payment coordination</span></div>
+    </div>
+
+    <div class="notice warn">
+      <i data-lucide="alert-triangle"></i>
+      <div>
+        <div class="notice-title">Green sticker required in Kathmandu Valley</div>
+        <div class="notice-text">The emission certificate (green sticker) is mandatory during vehicle renewal and is actively enforced in urban areas. We coordinate the emission test and issuance for your vehicle.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE-ADDED SERVICES -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="plus-circle"></i>Value-Added Services</div>
+    <h2 class="sec-title">What makes it <em>effortless</em></h2>
+    <p class="sec-sub">Services built around saving your time — not just filing your paperwork.</p>
+    <div class="va-grid">
+      <div class="va-card">
+        <i data-lucide="truck"></i>
+        <div>
+          <div class="va-card-name">Document Pickup &amp; Delivery</div>
+          <div class="va-card-desc">We collect documents from your location and return completed paperwork to your door.</div>
+        </div>
+      </div>
+      <div class="va-card">
+        <i data-lucide="zap"></i>
+        <div>
+          <div class="va-card-name">Fast-Track Processing</div>
+          <div class="va-card-desc">For urgent cases where legally permitted, we prioritise your application at every step.</div>
+        </div>
+      </div>
+      <div class="va-card">
+        <i data-lucide="bell"></i>
+        <div>
+          <div class="va-card-name">SMS &amp; Email Updates</div>
+          <div class="va-card-desc">You are updated at each stage — application submitted, slot booked, processing complete.</div>
+        </div>
+      </div>
+      <div class="va-card">
+        <i data-lucide="calendar"></i>
+        <div>
+          <div class="va-card-name">Appointment Booking</div>
+          <div class="va-card-desc">We monitor availability and secure DOTM slots proactively. No missed windows.</div>
+        </div>
+      </div>
+      <div class="va-card">
+        <i data-lucide="building-2"></i>
+        <div>
+          <div class="va-card-name">Corporate Fleet Support</div>
+          <div class="va-card-desc">Bulk vehicle registration, renewals, and transfers for companies and institutions.</div>
+        </div>
+      </div>
+      <div class="va-card">
+        <i data-lucide="message-circle"></i>
+        <div>
+          <div class="va-card-name">DOTM Consultation</div>
+          <div class="va-card-desc">Not sure what you need? We advise on requirements, documents, and the correct process.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section alt">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="circle-help"></i>FAQs</div>
+    <h2 class="sec-title">Common <em>Questions</em></h2>
+    <p class="sec-sub" style="margin-bottom:32px">Clear answers to what people ask most before requesting a service.</p>
+    <div class="faq-cols">
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Can I change my vehicle's registration address through you?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Yes. If you have relocated or need to update your registered address in the bluebook, we handle the full process with DOTM including all required documentation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">How long does a driving license take in Nepal?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">The full process typically takes 30–90 days depending on appointment availability, exam performance, and smart license printing timelines. We help expedite each stage through proactive booking and document readiness.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What is hypothecation entry and removal?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Hypothecation entry is when a bank's lien is recorded in your bluebook against a vehicle loan. Hypothecation removal is when the loan is cleared and the bank's name is removed. We assist with both, in coordination with the bank and DOTM.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What is an IDP and can you process it?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">An International Driving Permit (IDP) allows you to drive in foreign countries and is issued alongside your Nepali driving license. We process IDP applications for Nepali citizens planning to drive abroad. An IDP supplements — it does not replace — your national license.</div>
+        </div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Do you offer corporate fleet registration?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Yes. For businesses, companies, and organisations with multiple vehicles, we provide bulk and corporate fleet registration support — handling multiple vehicles simultaneously to save time and effort.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Do you manage DOTM appointments on my behalf?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Yes. Appointment management is a core part of our service. We monitor availability, book slots proactively, and reschedule if needed — ensuring no delays from missed or unavailable appointments.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Is the green sticker required?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Yes. The emission certificate (green sticker) confirms your vehicle meets Nepal government emission standards. It is required during vehicle renewal and is actively enforced in Kathmandu Valley. We coordinate the test and issuance for you.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Can you process multiple vehicles at once?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Yes. We offer bulk vehicle processing for organisations needing to register, renew, or transfer multiple vehicles simultaneously. This is suitable for companies, government agencies, NGOs, and transport operators.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ★ CTA SECTION — replaces the inline form -->
+<section class="cta-section" id="request">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-badge"><i data-lucide="send"></i>Request a Service</div>
+      <h2 class="cta-title">Ready to get<br><em>started?</em></h2>
+      <p class="cta-desc">Fill in your details on our dedicated request page. We will review and confirm next steps within one business day.</p>
+      <a href="/form/dotmform.html" class="cta-btn">
+        <i data-lucide="send"></i>
+        Submit a Service Request
+      </a>
+      <div class="cta-meta">Mon–Sat · 9am–6pm NST · Responds within 1 business day</div>
+      <div class="cta-guarantees">
+        <span class="cta-g"><i data-lucide="shield-check"></i>Individual &amp; corporate</span>
+        <span class="cta-g"><i data-lucide="truck"></i>Document pickup &amp; delivery</span>
+        <span class="cta-g"><i data-lucide="lock"></i>Details never shared</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  lucide.createIcons();
+
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // responsive 2-col how grid
+  function setHowGrid() {
+    const g = document.getElementById('how-grid');
+    if(window.innerWidth >= 900) g.style.gridTemplateColumns = '1fr 1fr';
+    else g.style.gridTemplateColumns = '1fr';
+  }
+  setHowGrid();
+  window.addEventListener('resize', setHowGrid);
+</script>
+ <div id="av-toast-wrap"></div>
+  <script src="assets/js/components/av-footer.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

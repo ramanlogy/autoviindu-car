@@ -1,0 +1,441 @@
+[
+  {
+    "id": 1303,
+    "slug": "renault-kwid-2025",
+    "brand": "Renault",
+    "model": "Kwid",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Micro Hatchback",
+    "badge": "value",
+    "tagline": "France's most affordable hatchback for Nepal — SUV styling on a city budget",
+    "rating": 3.8,
+    "reviews": 1204,
+    "expertScore": 6.8,
+    "baseEMI": 27000,
+    "overview": "The Renault Kwid is the entry-level French hatchback in Nepal, distributed by Advanced Automobiles. Available in 0.8L and 1.0L petrol variants with optional AMT, it offers surprisingly high ground clearance (184 mm) for its class and a bold SUV-inspired design. Nepal's most affordable Renault, it targets first-time buyers and city commuters with a tight budget.",
+    "images": [
+      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Ice Cool White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Fiery Red",
+        "hex": "#CC2222"
+      },
+      {
+        "name": "Moonlight Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Zanskar Blue",
+        "hex": "#1A3A6E"
+      }
+    ],
+    "variants": [
+      {
+        "name": "RXE 0.8L MT",
+        "price": 2679000,
+        "label": "Rs. 26.79L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "ABS + EBD",
+          "AC",
+          "Power Steering",
+          "LED DRL",
+          "5 Seats"
+        ],
+        "specs": {
+          "power": "54 PS @ 5,678 rpm",
+          "torque": "72 Nm",
+          "efficiency": "22.30 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "RXT 1.0L MT",
+        "price": 2749000,
+        "label": "Rs. 27.49L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "8\" MediaNAV Touchscreen",
+          "Android Auto / CarPlay",
+          "Rear Camera",
+          "RXE features+"
+        ],
+        "specs": {
+          "power": "68 PS @ 5,500 rpm",
+          "torque": "91 Nm",
+          "efficiency": "22.0 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "RXT 1.0L AMT",
+        "price": 2849000,
+        "label": "Rs. 28.49L",
+        "popular": true,
+        "transmission": "AMT",
+        "fuel": "Petrol",
+        "features": [
+          "Auto AMT Gearbox",
+          "RXT MT features+"
+        ],
+        "specs": {
+          "power": "68 PS @ 5,500 rpm",
+          "torque": "91 Nm",
+          "efficiency": "21.5 km/l",
+          "transmission": "5-Speed AMT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "0.8L SCe / 1.0L SCe Petrol",
+      "Displacement": "799 / 999 cc",
+      "Power": "54–68 PS",
+      "Torque": "72–91 Nm",
+      "Efficiency": "21.5–22.30 km/l",
+      "Fuel Tank": "28 L",
+      "Transmission": "5-Speed MT / AMT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "279 L",
+      "Length": "3,679 mm",
+      "Width": "1,579 mm",
+      "Height": "1,478 mm",
+      "Wheelbase": "2,422 mm",
+      "Ground Clearance": "184 mm",
+      "Airbags": "2"
+    },
+    "pros": [
+      "Nepal's most affordable Renault",
+      "22+ km/l fuel efficiency",
+      "184 mm clearance — high for its class",
+      "AMT option for easy city driving"
+    ],
+    "cons": [
+      "Only 2 airbags",
+      "Tiny 279 L boot",
+      "0.8L engine feels underpowered with passengers",
+      "No ESP on base variant"
+    ],
+    "highlights": [
+      "22.30 km/l",
+      "184 mm Clearance",
+      "AMT Option",
+      "French Styling"
+    ]
+  },
+  {
+    "id": 1304,
+    "slug": "renault-triber-2025",
+    "brand": "Renault",
+    "model": "Triber",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact 7-Seat MPV",
+    "badge": "family",
+    "tagline": "7-seat family MPV under Rs. 35L — the smartest space solution in Nepal",
+    "rating": 4,
+    "reviews": 743,
+    "expertScore": 7.4,
+    "baseEMI": 32000,
+    "overview": "The Renault Triber is Nepal's most affordable 7-seat vehicle, offering clever modular seating, a 1.0L Energy petrol engine, and an optional AMT for city ease. Built on the CMFA+ platform shared with the Kiger, it offers 182 mm ground clearance and a genuinely usable third row for a family of seven — all for under Rs. 35 Lakhs. Advanced Automobiles distributes it across Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Moonlight Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Ice Cool White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Fiery Red",
+        "hex": "#CC2222"
+      },
+      {
+        "name": "Gravity Grey",
+        "hex": "#6A6D72"
+      }
+    ],
+    "variants": [
+      {
+        "name": "RXE MT",
+        "price": 2999000,
+        "label": "Rs. 29.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "7 Seats",
+          "8\" MediaNAV",
+          "AC",
+          "ABS + EBD",
+          "182 mm Clearance"
+        ],
+        "specs": {
+          "power": "72 PS @ 6,250 rpm",
+          "torque": "96 Nm",
+          "efficiency": "18.12 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "RXT MT",
+        "price": 3299000,
+        "label": "Rs. 32.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "Android Auto / CarPlay",
+          "Rear Camera",
+          "Push Button Start",
+          "RXE features+"
+        ],
+        "specs": {
+          "power": "72 PS @ 6,250 rpm",
+          "torque": "96 Nm",
+          "efficiency": "18.12 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "RXT AMT",
+        "price": 3359000,
+        "label": "Rs. 33.59L",
+        "popular": false,
+        "transmission": "AMT",
+        "fuel": "Petrol",
+        "features": [
+          "Auto AMT",
+          "RXT MT features+"
+        ],
+        "specs": {
+          "power": "72 PS @ 6,250 rpm",
+          "torque": "96 Nm",
+          "efficiency": "17.5 km/l",
+          "transmission": "5-Speed AMT"
+        }
+      },
+      {
+        "name": "RXZ AMT",
+        "price": 3509000,
+        "label": "Rs. 35.09L",
+        "popular": true,
+        "transmission": "AMT",
+        "fuel": "Petrol",
+        "features": [
+          "Sunroof",
+          "16\" Alloy Wheels",
+          "Auto Climate",
+          "6 Airbags",
+          "RXT AMT features+"
+        ],
+        "specs": {
+          "power": "72 PS @ 6,250 rpm",
+          "torque": "96 Nm",
+          "efficiency": "17.5 km/l",
+          "transmission": "5-Speed AMT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.0L Energy SCe Petrol",
+      "Displacement": "999 cc",
+      "Power": "72 PS @ 6,250 rpm",
+      "Torque": "96 Nm @ 3,500 rpm",
+      "Efficiency": "17.5–18.12 km/l",
+      "Fuel Tank": "40 L",
+      "Transmission": "5-Speed MT / AMT",
+      "Drive": "FWD",
+      "Seating": "7",
+      "Boot Space": "84 L (all 7 up) / 625 L (row 3 down)",
+      "Length": "3,990 mm",
+      "Width": "1,739 mm",
+      "Height": "1,643 mm",
+      "Wheelbase": "2,636 mm",
+      "Ground Clearance": "182 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "Nepal's most affordable 7-seater at under Rs. 35L",
+      "Modular seating flexibility for families",
+      "Optional sunroof on top RXZ trim",
+      "6 airbags on top variant"
+    ],
+    "cons": [
+      "Underpowered 72 PS for 7 passengers on hills",
+      "Tiny 84 L boot with all seats up",
+      "FWD only — no AWD option",
+      "No turbo engine"
+    ],
+    "highlights": [
+      "7 Seats Under Rs. 35L",
+      "Sunroof on RXZ",
+      "18 km/l",
+      "Modular Seating"
+    ]
+  },
+  {
+    "id": 1305,
+    "slug": "renault-kiger-2025",
+    "brand": "Renault",
+    "model": "Kiger",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Subcompact SUV",
+    "badge": "popular",
+    "tagline": "French style meets SUV practicality — Nepal's stylish sub-compact SUV",
+    "rating": 4.1,
+    "reviews": 456,
+    "expertScore": 7.6,
+    "baseEMI": 36000,
+    "overview": "The Renault Kiger is the most stylish and modern Renault in Nepal, built on the CMFA+ platform shared with the Nissan Magnite. With Tri-Octa LED headlamps, 205 mm ground clearance, a 405 L boot, and the option of a 100 PS turbo engine, it punches well above its price. Advanced Automobiles brought the 2023 model to Nepal, which adds Hill Start Assist, TPMS, and ESP as standard.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Pearl White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Mahogany Brown",
+        "hex": "#6B3A2A"
+      },
+      {
+        "name": "Moonlight Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Deep Blue",
+        "hex": "#1A3A6E"
+      },
+      {
+        "name": "Metal Mustard",
+        "hex": "#C8A000"
+      }
+    ],
+    "variants": [
+      {
+        "name": "RXE 1.0L Energy MT",
+        "price": 3499000,
+        "label": "Rs. 34.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "2 Airbags",
+          "8\" MediaNAV",
+          "205 mm Clearance",
+          "ABS + EBD + ESP",
+          "Hill Start Assist",
+          "TPMS"
+        ],
+        "specs": {
+          "power": "72 PS @ 6,250 rpm",
+          "torque": "96 Nm",
+          "efficiency": "20.1 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "RXZ 1.0L Turbo MT",
+        "price": 4099000,
+        "label": "Rs. 40.99L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "100 PS Turbo Engine",
+          "6 Airbags",
+          "Sunroof",
+          "16\" Diamond Cut Alloys",
+          "RXE features+"
+        ],
+        "specs": {
+          "power": "100 PS @ 5,000 rpm",
+          "torque": "160 Nm",
+          "efficiency": "18.5 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "RXZ 1.0L Turbo CVT",
+        "price": 4399000,
+        "label": "Rs. 43.99L",
+        "popular": true,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "X-Tronic CVT Auto",
+          "360° Parking Camera",
+          "Wireless Android/CarPlay",
+          "RXZ MT features+"
+        ],
+        "specs": {
+          "power": "100 PS @ 5,000 rpm",
+          "torque": "152 Nm (CVT)",
+          "efficiency": "17.4 km/l",
+          "transmission": "X-Tronic CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.0L Energy / 1.0L Turbo Petrol",
+      "Displacement": "999 cc",
+      "Power": "72–100 PS",
+      "Torque": "96–160 Nm",
+      "Efficiency": "17.4–20.1 km/l",
+      "Fuel Tank": "40 L",
+      "Transmission": "5-Speed MT / CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "405 L",
+      "Length": "3,991 mm",
+      "Width": "1,750 mm",
+      "Height": "1,605 mm",
+      "Wheelbase": "2,500 mm",
+      "Ground Clearance": "205 mm",
+      "Airbags": "2–6"
+    },
+    "pros": [
+      "205 mm ground clearance for Nepal's rough roads",
+      "100 PS turbo CVT is fun to drive",
+      "405 L boot — largest in class",
+      "Bold Tri-Octa LED headlamp design"
+    ],
+    "cons": [
+      "FWD only — no AWD",
+      "Base only has 2 airbags",
+      "Turbo CVT feels rubbery under hard acceleration",
+      "Limited showroom network vs Suzuki"
+    ],
+    "highlights": [
+      "205 mm Clearance",
+      "100 PS Turbo",
+      "405 L Boot",
+      "5-Star GNCAP Compatible Design"
+    ]
+  }
+]

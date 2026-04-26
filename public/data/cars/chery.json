@@ -1,0 +1,828 @@
+[
+  {
+    "id": 801,
+    "slug": "chery-tiggo-4-pro-2025",
+    "brand": "Chery",
+    "model": "Tiggo 4 Pro",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Compact SUV",
+    "badge": "value",
+    "tagline": "Feature-rich compact SUV with panoramic sunroof under Rs. 50L",
+    "rating": 4,
+    "reviews": 512,
+    "expertScore": 7.4,
+    "baseEMI": 38000,
+    "overview": "The Chery Tiggo 4 Pro delivers exceptional value in Nepal's compact SUV space with a panoramic sunroof, 10.25\" touchscreen, 6 airbags, and a 1.5L turbo engine. With eye-catching design and generous standard equipment, it challenges Hyundai Venue and Kia Sonet on features per rupee.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Diamond White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Obsidian Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Flame Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Ocean Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Titanium Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Champagne Gold",
+        "hex": "#C9A84C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Comfort",
+        "price": 3890000,
+        "label": "Rs. 38.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera + Sensors",
+          "Electric Sunroof",
+          "Auto Climate Control",
+          "16\" Alloy Wheels",
+          "Keyless Entry"
+        ],
+        "specs": {
+          "power": "113 hp @ 5,500 rpm",
+          "torque": "170 Nm",
+          "efficiency": "16.5 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Luxury",
+        "price": 4290000,
+        "label": "Rs. 42.90L",
+        "popular": false,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "Panoramic Sunroof",
+          "Wireless Charging",
+          "Rear AC Vents",
+          "TPMS",
+          "CVT Automatic",
+          "Comfort features+"
+        ],
+        "specs": {
+          "power": "113 hp @ 5,500 rpm",
+          "torque": "170 Nm",
+          "efficiency": "15.9 km/l",
+          "transmission": "CVT"
+        }
+      },
+      {
+        "name": "Premium",
+        "price": 4690000,
+        "label": "Rs. 46.90L",
+        "popular": true,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "360° Camera",
+          "Ventilated Front Seats",
+          "Ambient Lighting",
+          "8-Speaker Audio",
+          "Drive Modes",
+          "Luxury features+"
+        ],
+        "specs": {
+          "power": "113 hp @ 5,500 rpm",
+          "torque": "170 Nm",
+          "efficiency": "15.9 km/l",
+          "transmission": "CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L TGDI Turbo Petrol",
+      "Displacement": "1,497 cc",
+      "Power": "113 hp @ 5,500 rpm",
+      "Torque": "170 Nm",
+      "Efficiency": "15.9–16.5 km/l",
+      "Fuel Tank": "48 L",
+      "Transmission": "5MT / CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "352 L",
+      "Length": "4,318 mm",
+      "Width": "1,818 mm",
+      "Height": "1,615 mm",
+      "Wheelbase": "2,630 mm",
+      "Ground Clearance": "190 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Panoramic sunroof at this price",
+      "6 airbags standard",
+      "Good interior quality for price",
+      "360° camera on premium",
+      "Stylish exterior design"
+    ],
+    "cons": [
+      "Chery service centres limited",
+      "CVT only from Luxury upward",
+      "Resale value unproven",
+      "Brand trust lower than Korean rivals"
+    ],
+    "highlights": [
+      "Panoramic Sunroof",
+      "6 Airbags Standard",
+      "360° Camera",
+      "CVT Available"
+    ]
+  },
+  {
+    "id": 802,
+    "slug": "chery-tiggo-7-pro-2025",
+    "brand": "Chery",
+    "model": "Tiggo 7 Pro",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Mid-size SUV",
+    "badge": "popular",
+    "tagline": "Mid-size turbo SUV with ADAS and 540L boot challenging Korean rivals",
+    "rating": 4.1,
+    "reviews": 378,
+    "expertScore": 7.7,
+    "baseEMI": 52000,
+    "overview": "The Chery Tiggo 7 Pro steps up to the mid-size SUV class with a 1.6L turbo engine, 197mm ground clearance, dual 12.3\" screens, ADAS safety suite, and a best-in-class 540L boot. It undercuts Hyundai Tucson and Kia Sportage on price while matching them on features.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Diamond White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Obsidian Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Steel Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Ocean Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Crimson Red",
+        "hex": "#B22222"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Luxury",
+        "price": 5190000,
+        "label": "Rs. 51.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "6 Airbags",
+          "12.3\" Dual Screen (Touch + Cluster)",
+          "Rear Camera + Sensors",
+          "Electric Sunroof",
+          "Auto Climate Control",
+          "18\" Alloy Wheels",
+          "Wireless CarPlay"
+        ],
+        "specs": {
+          "power": "145 hp @ 5,500 rpm",
+          "torque": "230 Nm",
+          "efficiency": "15.4 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Premium",
+        "price": 5890000,
+        "label": "Rs. 58.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "ADAS (Lane Assist, Forward Collision, Blind Spot)",
+          "360° Camera",
+          "Panoramic Sunroof",
+          "Ventilated Seats",
+          "Wireless Charging",
+          "Luxury features+"
+        ],
+        "specs": {
+          "power": "145 hp @ 5,500 rpm",
+          "torque": "230 Nm",
+          "efficiency": "15.4 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Elite",
+        "price": 6590000,
+        "label": "Rs. 65.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "Nappa Leather Seats",
+          "Ambient Lighting (64 color)",
+          "Head-Up Display",
+          "Power Tailgate",
+          "Premium features+"
+        ],
+        "specs": {
+          "power": "145 hp @ 5,500 rpm",
+          "torque": "230 Nm",
+          "efficiency": "15.4 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.6L TGDI Turbo Petrol",
+      "Displacement": "1,598 cc",
+      "Power": "145 hp @ 5,500 rpm",
+      "Torque": "230 Nm",
+      "Efficiency": "15.4 km/l",
+      "Fuel Tank": "53 L",
+      "Transmission": "7-Speed DCT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "540 L",
+      "Length": "4,515 mm",
+      "Width": "1,862 mm",
+      "Height": "1,703 mm",
+      "Wheelbase": "2,670 mm",
+      "Ground Clearance": "197 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "540L boot — class leading",
+      "Dual 12.3\" screens standard",
+      "ADAS on Premium+",
+      "7DCT for sporty driving",
+      "Strong value vs Tucson/Sportage"
+    ],
+    "cons": [
+      "FWD only — no AWD",
+      "DCT can jerk in slow traffic",
+      "Service network thin in Nepal",
+      "Unproven long-term reliability"
+    ],
+    "highlights": [
+      "540L Boot",
+      "Dual 12.3\" Screens",
+      "ADAS Suite",
+      "7-Speed DCT"
+    ]
+  },
+  {
+    "id": 803,
+    "slug": "chery-tiggo-8-pro-2025",
+    "brand": "Chery",
+    "model": "Tiggo 8 Pro",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Large SUV",
+    "badge": "new",
+    "tagline": "6/7-seat large SUV with 2.0T engine and ADAS under Rs. 85L",
+    "rating": 4.2,
+    "reviews": 214,
+    "expertScore": 7.9,
+    "baseEMI": 68000,
+    "overview": "The Chery Tiggo 8 Pro is a full-size 7-seater with a powerful 2.0L turbo engine, panoramic sunroof, 12.3\" dual screens, ADAS Level 2, and third-row seating — all at a significantly lower price than equivalent Toyota Fortuner or Hyundai Tucson. Ideal for large families needing versatility.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Diamond White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Obsidian Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Steel Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Ocean Blue",
+        "hex": "#1B4F8A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Luxury 6-Seat",
+        "price": 6990000,
+        "label": "Rs. 69.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "6 Airbags",
+          "12.3\" Dual Screen",
+          "Captain Chairs (2nd Row)",
+          "Panoramic Sunroof",
+          "Auto Climate Control",
+          "ADAS Level 1",
+          "19\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "187 hp @ 5,500 rpm",
+          "torque": "300 Nm",
+          "efficiency": "14.1 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Premium 7-Seat",
+        "price": 7690000,
+        "label": "Rs. 76.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "7-Seat Layout",
+          "ADAS Level 2",
+          "360° Camera",
+          "Ventilated Seats",
+          "Power Tailgate",
+          "Luxury features+"
+        ],
+        "specs": {
+          "power": "187 hp @ 5,500 rpm",
+          "torque": "300 Nm",
+          "efficiency": "14.1 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      },
+      {
+        "name": "Elite AWD",
+        "price": 8690000,
+        "label": "Rs. 86.90L",
+        "popular": false,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "AWD System",
+          "Terrain Modes (Snow/Mud/Sand)",
+          "Head-Up Display",
+          "Nappa Leather",
+          "Premium features+"
+        ],
+        "specs": {
+          "power": "197 hp @ 5,500 rpm",
+          "torque": "320 Nm",
+          "efficiency": "13.6 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "2.0L TGDI Turbo Petrol",
+      "Displacement": "1,997 cc",
+      "Power": "187–197 hp",
+      "Torque": "300–320 Nm",
+      "Efficiency": "13.6–14.1 km/l",
+      "Fuel Tank": "57 L",
+      "Transmission": "7-Speed DCT",
+      "Drive": "FWD / AWD",
+      "Seating": "6 or 7",
+      "Boot Space": "193 L (7-seat) / 745 L (5-seat)",
+      "Length": "4,722 mm",
+      "Width": "1,932 mm",
+      "Height": "1,770 mm",
+      "Wheelbase": "2,820 mm",
+      "Ground Clearance": "200 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "AWD available",
+      "745L boot in 5-seat mode",
+      "2.0T engine strong power",
+      "7-seat with captain chairs",
+      "Much cheaper than Fortuner"
+    ],
+    "cons": [
+      "Fuel economy drops with 2.0T",
+      "Service sparse in Nepal",
+      "AWD only on top trim",
+      "Brand credibility vs Toyota/Hyundai"
+    ],
+    "highlights": [
+      "6 or 7 Seats",
+      "2.0T Turbo",
+      "AWD Available",
+      "745L Boot"
+    ]
+  },
+  {
+    "id": 804,
+    "slug": "chery-omoda-5-2025",
+    "brand": "Chery",
+    "model": "Omoda 5",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Coupe SUV",
+    "badge": "new",
+    "tagline": "Striking coupe-SUV design with turbo punch for Nepal's urban youth",
+    "rating": 4,
+    "reviews": 143,
+    "expertScore": 7.5,
+    "baseEMI": 42000,
+    "overview": "The Chery Omoda 5 brings European-inspired coupe-SUV design to Nepal with a 1.6T engine, 10.25\" floating touchscreen, 8-speaker audio, and a sportback silhouette rarely seen at this price. A bold alternative to the Kia Sonet and Hyundai Venue for style-first buyers.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Polar White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Jet Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Crimson Red",
+        "hex": "#B22222"
+      },
+      {
+        "name": "Gravity Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Smoke Grey",
+        "hex": "#5A5E63"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Comfort",
+        "price": 4190000,
+        "label": "Rs. 41.90L",
+        "popular": false,
+        "transmission": "CVT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "Electric Sunroof",
+          "Auto Climate Control",
+          "17\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "145 hp @ 5,500 rpm",
+          "torque": "210 Nm",
+          "efficiency": "16.1 km/l",
+          "transmission": "CVT"
+        }
+      },
+      {
+        "name": "Premium",
+        "price": 4790000,
+        "label": "Rs. 47.90L",
+        "popular": true,
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
+        "features": [
+          "7-Speed DCT",
+          "360° Camera",
+          "Wireless Charging",
+          "Ambient Lighting",
+          "Drive Modes (Sport/Eco/Normal)",
+          "Comfort features+"
+        ],
+        "specs": {
+          "power": "145 hp @ 5,500 rpm",
+          "torque": "210 Nm",
+          "efficiency": "15.6 km/l",
+          "transmission": "7-Speed DCT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.6L TGDI Turbo Petrol",
+      "Displacement": "1,598 cc",
+      "Power": "145 hp @ 5,500 rpm",
+      "Torque": "210 Nm",
+      "Efficiency": "15.6–16.1 km/l",
+      "Fuel Tank": "48 L",
+      "Transmission": "CVT / 7DCT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "310 L",
+      "Length": "4,403 mm",
+      "Width": "1,825 mm",
+      "Height": "1,588 mm",
+      "Wheelbase": "2,630 mm",
+      "Ground Clearance": "188 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "Unique coupe-SUV style in Nepal",
+      "145hp turbo from base",
+      "7DCT on premium",
+      "Strong tech for price",
+      "Youth-oriented design"
+    ],
+    "cons": [
+      "310L boot — smaller due to coupe roofline",
+      "FWD only",
+      "Coupe height limits headroom",
+      "Service network very limited"
+    ],
+    "highlights": [
+      "Coupe-SUV Design",
+      "145hp Turbo",
+      "7-Speed DCT",
+      "360° Camera"
+    ]
+  },
+  {
+    "id": 805,
+    "slug": "chery-omoda-e5-2025",
+    "brand": "Chery",
+    "model": "Omoda E5",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Electric Coupe SUV",
+    "badge": "new",
+    "tagline": "Electric Omoda with 430km range — Nepal's most stylish EV SUV",
+    "rating": 4.1,
+    "reviews": 89,
+    "expertScore": 7.8,
+    "baseEMI": 62000,
+    "overview": "The Chery Omoda E5 is the electric version of the Omoda 5, sharing its striking coupe silhouette but powered by a 61kWh battery delivering 430km CLTC range. With ADAS, 360° camera, and 150kW fast charging, it offers premium EV features at a competitive Nepal price point.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Polar White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Jet Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Gravity Blue",
+        "hex": "#1B4F8A"
+      },
+      {
+        "name": "Smoke Grey",
+        "hex": "#5A5E63"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard",
+        "price": 5990000,
+        "label": "Rs. 59.90L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "61kWh Battery",
+          "430km CLTC Range",
+          "6 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "ADAS Level 1",
+          "18\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "201 hp",
+          "torque": "310 Nm",
+          "efficiency": "6.7 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "Premium",
+        "price": 6990000,
+        "label": "Rs. 69.90L",
+        "popular": true,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "ADAS Level 2",
+          "360° Camera",
+          "Ventilated Seats",
+          "Wireless Charging",
+          "Ambient Lighting",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "201 hp",
+          "torque": "310 Nm",
+          "efficiency": "6.7 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      }
+    ],
+    "specs": {
+      "Battery": "61 kWh",
+      "Range": "430 km (CLTC)",
+      "Power": "201 hp",
+      "Torque": "310 Nm",
+      "Charging": "150 kW DC Fast Charge",
+      "Charge Time": "30 min (10–80%)",
+      "Transmission": "Single Speed",
+      "Drive": "RWD",
+      "Seating": "5",
+      "Boot Space": "290 L",
+      "Length": "4,403 mm",
+      "Width": "1,825 mm",
+      "Height": "1,575 mm",
+      "Wheelbase": "2,630 mm",
+      "Ground Clearance": "180 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "430km range for city use",
+      "Stylish coupe EV design",
+      "150kW fast charging",
+      "ADAS Level 2 on premium",
+      "Competitive Nepal pricing"
+    ],
+    "cons": [
+      "290L boot very small",
+      "RWD only",
+      "CLTC range optimistic",
+      "Charging infra thin outside KTM"
+    ],
+    "highlights": [
+      "430km Range",
+      "150kW Fast Charge",
+      "Coupe EV Design",
+      "ADAS Level 2"
+    ]
+  },
+  {
+    "id": 806,
+    "slug": "chery-tiggo-2-pro-2025",
+    "brand": "Chery",
+    "model": "Tiggo 2 Pro",
+    "year": 2025,
+    "type": "Petrol",
+    "body": "Subcompact SUV",
+    "badge": "value",
+    "tagline": "Nepal's most affordable Chery SUV with turbo and sunroof",
+    "rating": 3.9,
+    "reviews": 267,
+    "expertScore": 7.1,
+    "baseEMI": 28000,
+    "overview": "The Chery Tiggo 2 Pro is the entry point of the Chery SUV lineup in Nepal, offering a 1.5L turbo engine, electric sunroof, 10.25\" touchscreen, and 6 airbags in a sub-4m body. Best value-for-money proposition for first-time SUV buyers in Nepal.",
+    "images": [
+      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
+    ],
+    "colors": [
+      {
+        "name": "Polar White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Jet Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Crimson Red",
+        "hex": "#B22222"
+      },
+      {
+        "name": "Steel Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Lime Green",
+        "hex": "#4A7C59"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Comfort",
+        "price": 2890000,
+        "label": "Rs. 28.90L",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "4 Airbags",
+          "10.25\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "Electric Sunroof",
+          "Manual AC",
+          "15\" Alloy Wheels"
+        ],
+        "specs": {
+          "power": "108 hp @ 5,500 rpm",
+          "torque": "160 Nm",
+          "efficiency": "17.5 km/l",
+          "transmission": "5-Speed MT"
+        }
+      },
+      {
+        "name": "Luxury",
+        "price": 3290000,
+        "label": "Rs. 32.90L",
+        "popular": true,
+        "transmission": "CVT",
+        "fuel": "Petrol",
+        "features": [
+          "6 Airbags",
+          "Auto Climate Control",
+          "Rear AC Vents",
+          "CVT Automatic",
+          "Wireless CarPlay",
+          "Comfort features+"
+        ],
+        "specs": {
+          "power": "108 hp @ 5,500 rpm",
+          "torque": "160 Nm",
+          "efficiency": "16.9 km/l",
+          "transmission": "CVT"
+        }
+      }
+    ],
+    "specs": {
+      "Engine": "1.5L TGDI Turbo Petrol",
+      "Displacement": "1,497 cc",
+      "Power": "108 hp @ 5,500 rpm",
+      "Torque": "160 Nm",
+      "Efficiency": "16.9–17.5 km/l",
+      "Fuel Tank": "40 L",
+      "Transmission": "5MT / CVT",
+      "Drive": "FWD",
+      "Seating": "5",
+      "Boot Space": "298 L",
+      "Length": "3,995 mm",
+      "Width": "1,760 mm",
+      "Height": "1,570 mm",
+      "Wheelbase": "2,480 mm",
+      "Ground Clearance": "185 km",
+      "Airbags": "4–6"
+    },
+    "pros": [
+      "Most affordable turbo SUV in Nepal",
+      "Sunroof standard even on base",
+      "CVT on Luxury variant",
+      "Compact for city parking",
+      "Good fuel economy"
+    ],
+    "cons": [
+      "Only 4 airbags on base",
+      "Small 298L boot",
+      "No ADAS at all",
+      "Unproven Nepal resale value"
+    ],
+    "highlights": [
+      "Sunroof Standard",
+      "108hp Turbo",
+      "CVT Available",
+      "Sub-4m Body"
+    ]
+  }
+]

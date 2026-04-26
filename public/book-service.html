@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Book a Service – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
+      --gold:#B8920A; --gold-l:#FBF5E0;
+      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
+      --border:#E4E8ED; --bg:#F5F7F9; --white:#ffffff;
+      --red:#C8271E;
+      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
+      --sh1:0 1px 4px rgba(0,0,0,.06); --sh2:0 4px 16px rgba(0,0,0,.08); --sh3:0 16px 48px rgba(0,0,0,.12);
+      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
+      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-b); background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; min-height:100vh; }
+    ::selection { background:rgba(26,107,42,.12); }
+
+    /* TOPBAR */
+    .topbar { background:var(--ink); padding:8px 0; }
+    .topbar-inner { max-width:1120px; margin:0 auto; padding:0 24px; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:rgba(255,255,255,.4); }
+    .topbar-left { display:flex; align-items:center; gap:18px; }
+    .topbar-item { display:flex; align-items:center; gap:5px; color:rgba(255,255,255,.4); }
+    .topbar-item i { width:11px; height:11px; }
+    .topbar-back { display:flex; align-items:center; gap:5px; color:rgba(255,255,255,.4); text-decoration:none; font-size:12px; font-weight:600; transition:color var(--ease); }
+    .topbar-back:hover { color:rgba(255,255,255,.75); }
+    .topbar-back i { width:11px; height:11px; }
+    @media(max-width:640px){ .topbar-left span:not(:first-child){ display:none; } }
+
+    /* HEADER */
+    .hdr { background:var(--white); border-bottom:1px solid var(--border); box-shadow:var(--sh1); position:sticky; top:0; z-index:100; }
+    .hdr-inner { max-width:1120px; margin:0 auto; padding:0 24px; height:68px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; align-items:center; }
+    .hdr-badge { display:inline-flex; align-items:center; gap:6px; background:var(--green-l); border:1px solid rgba(26,107,42,.18); border-radius:var(--pill); padding:5px 12px; font-size:11.5px; font-weight:700; color:var(--green); }
+    .hdr-badge-dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.85)} }
+
+    /* HERO */
+    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:44px 0 56px; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; max-width:1120px; margin:0 auto; padding:0 24px; text-align:center; }
+    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(184,146,10,.12); border:1px solid rgba(184,146,10,.25); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:#D4AE30; margin-bottom:16px; }
+    .hero h1 { font-family:var(--font-d); font-size:clamp(28px,5vw,46px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:10px; }
+    .hero h1 em { font-style:italic; color:var(--green-m); }
+    .hero-desc { font-size:14.5px; color:rgba(255,255,255,.55); line-height:1.75; max-width:400px; margin:0 auto; }
+
+    /* MAIN LAYOUT */
+    .main { max-width:680px; margin:-28px auto 64px; padding:0 24px; position:relative; z-index:10; }
+
+    /* CARD */
+    .card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); box-shadow:var(--sh3); overflow:hidden; }
+    .card-header { background:linear-gradient(135deg,var(--green),var(--green-d)); padding:24px 28px 20px; }
+    .card-header h2 { font-family:var(--font-d); font-size:22px; font-weight:800; color:#fff; margin-bottom:4px; }
+    .card-header p { font-size:13px; color:rgba(255,255,255,.55); }
+    .card-body { padding:28px; }
+
+    /* SECTION LABEL */
+    .sec-label { font-size:10.5px; font-weight:800; color:var(--ink4); text-transform:uppercase; letter-spacing:.65px; margin-bottom:10px; margin-top:22px; display:flex; align-items:center; gap:7px; }
+    .sec-label:first-child { margin-top:0; }
+    .sec-label i { width:12px; height:12px; color:var(--green); }
+
+    /* SERVICE GRID */
+    .svc-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    @media(max-width:500px){ .svc-grid { grid-template-columns:1fr; } }
+    .svc-card { padding:14px 16px; border:1.5px solid var(--border); border-radius:var(--r12); cursor:pointer; transition:all var(--ease); background:var(--white); display:flex; align-items:flex-start; gap:11px; position:relative; user-select:none; }
+    .svc-card:hover { border-color:var(--green); background:var(--green-l); }
+    .svc-card.sel { border-color:var(--green); background:var(--green-l); }
+    .svc-card-check { position:absolute; top:10px; right:10px; width:18px; height:18px; background:var(--green); border-radius:50%; display:none; align-items:center; justify-content:center; }
+    .svc-card.sel .svc-card-check { display:flex; }
+    .svc-card-check i { width:10px; height:10px; color:#fff; }
+    .svc-icon { width:34px; height:34px; border-radius:var(--r8); background:var(--bg); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .svc-icon i { width:17px; height:17px; }
+    .svc-name { font-size:13px; font-weight:800; color:var(--ink2); line-height:1.3; }
+    .svc-sub { font-size:11.5px; color:var(--ink4); margin-top:2px; line-height:1.4; }
+
+    /* URGENCY */
+    .urg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .urg-opt { padding:12px 8px; border:1.5px solid var(--border); border-radius:var(--r10); cursor:pointer; text-align:center; transition:all var(--ease); background:var(--white); user-select:none; }
+    .urg-opt:hover { border-color:var(--border); transform:translateY(-1px); }
+    .urg-opt i { width:16px; height:16px; display:block; margin:0 auto 5px; color:var(--ink5); }
+    .urg-name { font-size:12.5px; font-weight:800; color:var(--ink2); }
+    .urg-sub { font-size:10.5px; color:var(--ink5); margin-top:2px; }
+    .urg-opt.sel-now { border-color:#EF4444; background:#FFF5F5; }
+    .urg-opt.sel-now i { color:#EF4444; }
+    .urg-opt.sel-soon { border-color:var(--green); background:var(--green-l); }
+    .urg-opt.sel-soon i { color:var(--green); }
+    .urg-opt.sel-plan { border-color:#2563EB; background:#EFF6FF; }
+    .urg-opt.sel-plan i { color:#2563EB; }
+
+    /* FUEL CHIPS */
+    .chips { display:flex; flex-wrap:wrap; gap:6px; }
+    .chip { display:inline-flex; align-items:center; gap:5px; padding:8px 14px; border:1.5px solid var(--border); border-radius:var(--pill); font-size:13px; font-weight:600; color:var(--ink3); background:var(--white); cursor:pointer; transition:all var(--ease); user-select:none; }
+    .chip:hover { border-color:var(--green); color:var(--green); background:var(--green-l); }
+    .chip.sel { background:var(--green); border-color:var(--green); color:#fff; }
+    .chip i { width:13px; height:13px; }
+
+    /* INPUTS */
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media(max-width:500px){ .form-grid { grid-template-columns:1fr; } }
+    .form-group { display:flex; flex-direction:column; gap:5px; }
+    .form-group.full { grid-column:1/-1; }
+    .form-label { font-size:10.5px; font-weight:800; color:var(--ink3); text-transform:uppercase; letter-spacing:.55px; }
+    .form-label span { color:var(--red); }
+    .form-input, .form-select, .form-textarea {
+      width:100%; padding:10px 12px; border:1.5px solid var(--border); border-radius:var(--r8);
+      font-family:var(--font-b); font-size:14px; color:var(--ink); background:var(--bg);
+      transition:border-color var(--ease),background var(--ease); outline:none;
+    }
+    .form-input:hover, .form-select:hover, .form-textarea:hover { border-color:var(--ink5); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green); background:var(--white); box-shadow:0 0 0 3px rgba(26,107,42,.07); }
+    .form-input::placeholder, .form-textarea::placeholder { color:var(--ink5); }
+    .form-textarea { resize:vertical; min-height:72px; }
+    .form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; background-color:var(--bg); padding-right:36px; }
+    .form-select:focus { background-color:var(--white); }
+
+    /* TOGGLES */
+    .toggle-stack { display:flex; flex-direction:column; gap:7px; }
+    .toggle-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px 15px; background:var(--bg); border:1.5px solid var(--border); border-radius:var(--r10); cursor:pointer; transition:all var(--ease); user-select:none; }
+    .toggle-row:hover { border-color:var(--ink5); }
+    .toggle-row.on { background:var(--green-l); border-color:var(--green); }
+    .toggle-info { flex:1; }
+    .toggle-name { font-size:13px; font-weight:700; color:var(--ink2); }
+    .toggle-sub { font-size:11.5px; color:var(--ink4); margin-top:1px; }
+    .sw { width:40px; height:23px; background:var(--border); border-radius:var(--pill); position:relative; flex-shrink:0; transition:background var(--ease); }
+    .sw::after { content:''; position:absolute; top:2.5px; left:2.5px; width:18px; height:18px; background:#fff; border-radius:50%; box-shadow:0 1px 3px rgba(0,0,0,.15); transition:transform var(--ease); }
+    .toggle-row.on .sw { background:var(--green); }
+    .toggle-row.on .sw::after { transform:translateX(17px); }
+
+    /* DIVIDER */
+    .divider { height:1px; background:var(--border); margin:22px 0; }
+
+    /* CONFIRM CHECKS */
+    .check-row { display:flex; align-items:flex-start; gap:9px; cursor:pointer; padding:7px 0; user-select:none; }
+    .check-row input { display:none; }
+    .cbox { width:17px; height:17px; border:1.5px solid var(--border); border-radius:4px; background:var(--white); flex-shrink:0; margin-top:1px; display:flex; align-items:center; justify-content:center; transition:all var(--ease); }
+    .check-row input:checked+.cbox { background:var(--green); border-color:var(--green); }
+    .check-row input:checked+.cbox::after { content:'✓'; color:#fff; font-size:10px; font-weight:900; }
+    .check-text { font-size:13px; color:var(--ink3); line-height:1.55; }
+    .check-text a { color:var(--green); font-weight:700; }
+
+    /* ERROR */
+    .err { font-size:11.5px; color:var(--red); font-weight:600; margin-top:4px; display:none; }
+
+    /* SUBMIT */
+    .btn-submit { width:100%; padding:14px 24px; background:var(--green); color:#fff; border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:all var(--ease); box-shadow:0 4px 16px rgba(26,107,42,.28); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:8px; }
+    .btn-submit:hover { background:var(--green-d); transform:translateY(-1px); box-shadow:0 7px 24px rgba(26,107,42,.38); }
+    .btn-submit:active { transform:scale(.98); }
+    .btn-submit i { width:16px; height:16px; }
+    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:10px; }
+
+    /* TRUST */
+    .trust-strip { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; padding:16px 0 0; border-top:1px solid var(--border); margin-top:20px; }
+    .trust-item { display:flex; align-items:center; gap:5px; font-size:11.5px; font-weight:600; color:var(--ink4); }
+    .trust-item i { width:13px; height:13px; color:var(--green); }
+
+    /* SUCCESS */
+    .success-screen { display:none; text-align:center; padding:48px 28px; }
+    .success-screen.show { display:block; animation:fadeUp .4s ease both; }
+    .success-ring { width:64px; height:64px; background:linear-gradient(135deg,var(--green),var(--green-d)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 18px; box-shadow:0 8px 24px rgba(26,107,42,.28); }
+    .success-ring i { width:26px; height:26px; color:#fff; }
+    .success-title { font-family:var(--font-d); font-size:28px; font-weight:800; color:var(--ink); margin-bottom:8px; }
+    .success-sub { font-size:14px; color:var(--ink3); line-height:1.7; margin-bottom:24px; max-width:360px; margin-left:auto; margin-right:auto; }
+    .ref-box { background:var(--green-l); border:1px solid rgba(26,107,42,.15); border-radius:var(--r12); padding:16px 24px; display:inline-block; margin-bottom:16px; }
+    .ref-label { font-size:10.5px; font-weight:800; color:var(--green); text-transform:uppercase; letter-spacing:.7px; margin-bottom:4px; }
+    .ref-num { font-family:var(--font-d); font-size:26px; font-weight:800; color:var(--ink); letter-spacing:2px; }
+    .contact-box { background:var(--bg); border:1px solid var(--border); border-radius:var(--r10); padding:13px 18px; font-size:13px; color:var(--ink3); display:inline-block; line-height:1.7; }
+    .contact-box strong { color:var(--ink); font-weight:800; }
+    .btn-reset { margin-top:18px; padding:10px 24px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r8); font-family:var(--font-b); font-size:13.5px; font-weight:700; color:var(--ink3); cursor:pointer; transition:all var(--ease); }
+    .btn-reset:hover { border-color:var(--green); color:var(--green); }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+    /* FORM VISIBLE */
+    #form-area { animation:fadeUp .35s ease both; }
+    .logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: -12px;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.logo-img {
+  height: 180px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  animation: slideInLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 130px;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+}
+  </style>
+</head>
+<body>
+   <script src="assets/js/components/av-nav.js"></script> 
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span class="topbar-item"><i data-lucide="phone"></i>+977-9701076240</span>
+      <span class="topbar-item"><i data-lucide="clock"></i>Mon–Sat 9am–6pm</span>
+      <span class="topbar-item"><i data-lucide="map-pin"></i>Kathmandu, Nepal</span>
+    </div>
+    <a class="topbar-back" href="javascript:history.back()"><i data-lucide="arrow-left"></i>Back</a>
+  </div>
+</div>
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">AutoViindu Service Request</div>
+    <h1>Contact Us for<br><em>Any Service</em></h1>
+    <p class="hero-desc">Fill in the form below — we'll get back to you within one business day to confirm and guide you through next steps.</p>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="card">
+    <div class="card-header">
+      <h2>Service Request Form</h2>
+      <p>Fields marked * are required. Your details are never shared with third parties.</p>
+    </div>
+    <div class="card-body">
+
+      <!-- FORM -->
+      <div id="form-area">
+
+        <!-- SERVICE TYPE -->
+        <div class="sec-label"><i data-lucide="list"></i>What do you need? <span style="color:var(--red);margin-left:2px">*</span></div>
+        <div class="svc-grid" id="svc-grid">
+
+          <div class="svc-card" data-val="DOTM Services" onclick="selectSvc(this)">
+            <div class="svc-card-check"><i data-lucide="check"></i></div>
+            <div class="svc-icon" style="color:#1A4DB8;background:#EEF2FF;"><i data-lucide="landmark"></i></div>
+            <div>
+              <div class="svc-name">DOTM Services</div>
+              <div class="svc-sub">Bluebook, license, ownership transfer</div>
+            </div>
+          </div>
+
+          <div class="svc-card" data-val="Maintenance & Repairs" onclick="selectSvc(this)">
+            <div class="svc-card-check"><i data-lucide="check"></i></div>
+            <div class="svc-icon" style="color:var(--green);background:var(--green-l);"><i data-lucide="wrench"></i></div>
+            <div>
+              <div class="svc-name">Maintenance &amp; Repairs</div>
+              <div class="svc-sub">Oil change, AC, EV diagnostics</div>
+            </div>
+          </div>
+
+          <div class="svc-card" data-val="Insurance & Financing" onclick="selectSvc(this)">
+            <div class="svc-card-check"><i data-lucide="check"></i></div>
+            <div class="svc-icon" style="color:var(--gold);background:var(--gold-l);"><i data-lucide="shield-check"></i></div>
+            <div>
+              <div class="svc-name">Insurance &amp; Financing</div>
+              <div class="svc-sub">Coverage, EMI plans &amp; trade-in</div>
+            </div>
+          </div>
+
+          <div class="svc-card" data-val="Parts & Accessories" onclick="selectSvc(this)">
+            <div class="svc-card-check"><i data-lucide="check"></i></div>
+            <div class="svc-icon" style="color:#7C3AED;background:#F5F3FF;"><i data-lucide="package"></i></div>
+            <div>
+              <div class="svc-name">Parts &amp; Accessories</div>
+              <div class="svc-sub">OEM parts, wheels, fitments</div>
+            </div>
+          </div>
+
+          <div class="svc-card" data-val="Other Services" onclick="selectSvc(this)">
+            <div class="svc-card-check"><i data-lucide="check"></i></div>
+            <div class="svc-icon" style="color:#0891B2;background:#ECFEFF;"><i data-lucide="sparkles"></i></div>
+            <div>
+              <div class="svc-name">Other Services</div>
+              <div class="svc-sub">GPS, cosmetic care, roadside</div>
+            </div>
+          </div>
+
+          <div class="svc-card" data-val="New / Used Car Enquiry" onclick="selectSvc(this)">
+            <div class="svc-card-check"><i data-lucide="check"></i></div>
+            <div class="svc-icon" style="color:#DC2626;background:#FEF2F2;"><i data-lucide="car"></i></div>
+            <div>
+              <div class="svc-name">New / Used Car Enquiry</div>
+              <div class="svc-sub">Buying, selling or valuation</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="err" id="err-svc">Please select at least one service to continue.</div>
+
+        <!-- DETAILS -->
+        <div class="sec-label" style="margin-top:22px;"><i data-lucide="file-text"></i>Service Details</div>
+        <div class="form-group">
+          <div class="form-label">Describe what you need <span>*</span></div>
+          <textarea class="form-textarea" id="fnotes" placeholder="e.g. Bluebook renewal for my Honda City, looking for a 2022 used SUV under 50 lakh, need ceramic coating, interested in bike insurance…" required></textarea>
+          <div class="err" id="err-notes">Please describe what you need.</div>
+        </div>
+
+        <!-- URGENCY -->
+        <div class="sec-label" style="margin-top:20px;"><i data-lucide="clock"></i>How soon do you need this?</div>
+        <div class="urg-grid">
+          <div class="urg-opt" id="urg-now" onclick="setUrgency('Immediate')">
+            <i data-lucide="zap"></i>
+            <div class="urg-name">Immediate</div>
+            <div class="urg-sub">Need help now</div>
+          </div>
+          <div class="urg-opt sel-soon" id="urg-soon" onclick="setUrgency('This week')">
+            <i data-lucide="calendar"></i>
+            <div class="urg-name">This week</div>
+            <div class="urg-sub">In a few days</div>
+          </div>
+          <div class="urg-opt" id="urg-plan" onclick="setUrgency('Planning')">
+            <i data-lucide="search"></i>
+            <div class="urg-name">Planning</div>
+            <div class="urg-sub">Just exploring</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- VEHICLE -->
+        <div class="sec-label"><i data-lucide="car"></i>Vehicle Details <span style="font-size:10px;font-weight:500;color:var(--ink5);text-transform:none;letter-spacing:0">(if applicable)</span></div>
+
+        <div class="sec-label" style="margin-top:0;font-size:10px;">Fuel Type</div>
+        <div class="chips" id="chips-fuel">
+          <div class="chip" data-val="Petrol" onclick="selectChip(this,'fuel')"><i data-lucide="flame"></i>Petrol</div>
+          <div class="chip" data-val="Diesel" onclick="selectChip(this,'fuel')"><i data-lucide="droplet"></i>Diesel</div>
+          <div class="chip" data-val="Electric" onclick="selectChip(this,'fuel')"><i data-lucide="zap"></i>Electric</div>
+          <div class="chip" data-val="Hybrid" onclick="selectChip(this,'fuel')"><i data-lucide="activity"></i>Hybrid</div>
+        </div>
+
+        <div class="form-grid" style="margin-top:14px;">
+          <div class="form-group">
+            <label class="form-label">Brand</label>
+            <select class="form-select" id="vbrand">
+              <option value="">Select brand</option>
+              <option>Toyota</option><option>Honda</option><option>Hyundai</option>
+              <option>Kia</option><option>Maruti Suzuki</option><option>BMW</option>
+              <option>Mercedes-Benz</option><option>BYD</option><option>MG</option>
+              <option>Tata</option><option>Audi</option><option>Volkswagen</option>
+              <option>Nissan</option><option>Lexus</option><option>Jeep</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Model</label>
+            <input class="form-input" id="vmodel" placeholder="e.g. City, Nexon, Seltos">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Year</label>
+            <select class="form-select" id="vyear">
+              <option value="">Year</option>
+              <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+              <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
+              <option>2017</option><option>2016</option><option>2015</option>
+              <option>2014 or older</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Registration Number</label>
+            <input class="form-input" id="vreg" placeholder="e.g. BA 1 PA 1234" style="text-transform:uppercase">
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- PERSONAL DETAILS -->
+        <div class="sec-label"><i data-lucide="user"></i>Your Details</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Full Name <span>*</span></label>
+            <input class="form-input" id="fname" placeholder="Your full name">
+            <div class="err" id="err-fname">Required</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mobile Number <span>*</span></label>
+            <input class="form-input" id="fmobile" type="tel" placeholder="98XXXXXXXX" maxlength="10">
+            <div class="err" id="err-fmobile">Enter a valid 10-digit number</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input class="form-input" id="femail" type="email" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Address / Area <span>*</span></label>
+            <input class="form-input" id="faddress" placeholder="Street, area, city">
+            <div class="err" id="err-faddress">Required</div>
+          </div>
+        </div>
+
+        <!-- PREFERENCES -->
+        <div class="sec-label" style="margin-top:20px;"><i data-lucide="settings-2"></i>Preferences</div>
+        <div class="toggle-stack">
+          <div class="toggle-row" id="tog-pickup" onclick="toggleRow(this)">
+            <div class="toggle-info">
+              <div class="toggle-name">Pick-up &amp; Drop-off</div>
+              <div class="toggle-sub">We collect and return your vehicle</div>
+            </div>
+            <div class="sw"></div>
+          </div>
+          <div class="toggle-row" id="tog-appt" onclick="toggleRow(this)">
+            <div class="toggle-info">
+              <div class="toggle-name">Appointment Assistance</div>
+              <div class="toggle-sub">We'll arrange your preferred slot</div>
+            </div>
+            <div class="sw"></div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- CONFIRM -->
+        <label class="check-row" onclick="toggleCB('cb1')">
+          <input type="checkbox" id="cb1">
+          <div class="cbox"></div>
+          <span class="check-text">I confirm the information provided is true and correct.</span>
+        </label>
+        <label class="check-row" onclick="toggleCB('cb2')">
+          <input type="checkbox" id="cb2">
+          <div class="cbox"></div>
+          <span class="check-text">I agree to <a href="#">AutoViindu's service terms and conditions</a>.</span>
+        </label>
+        <div class="err" id="err-terms" style="margin-top:4px;">Please agree to both to continue.</div>
+
+        <button class="btn-submit" id="submit-btn" onclick="submitForm()">
+          <i data-lucide="send"></i>
+          <span id="submit-label">Submit Request</span>
+        </button>
+        <div class="form-note">We'll respond within one business day · Mon–Sat, 9am–6pm NST</div>
+
+        <div class="trust-strip">
+          <div class="trust-item"><i data-lucide="check-circle-2"></i>No payment upfront</div>
+          <div class="trust-item"><i data-lucide="phone-call"></i>We call you to confirm</div>
+          <div class="trust-item"><i data-lucide="lock"></i>Your data is secure</div>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="success-screen" id="success-screen">
+        <div class="success-ring"><i data-lucide="check"></i></div>
+        <div class="success-title">Request Submitted!</div>
+        <p class="success-sub">Our team will get back to you within <strong>one business day</strong> to confirm and discuss next steps.</p>
+        <div class="ref-box">
+          <div class="ref-label">Reference Number</div>
+          <div class="ref-num" id="ref-num">AV-000000</div>
+        </div>
+        <br>
+        <div class="contact-box">
+          <strong>+977-9701076240</strong><br>
+          Newroad, Kathmandu &nbsp;·&nbsp; Mon–Sat, 9am–6pm
+        </div>
+        <br>
+        <button class="btn-reset" onclick="resetForm()">Submit Another Request</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:var(--ink);color:rgba(255,255,255,.25);padding:18px 0;text-align:center;font-size:12px;font-family:var(--font-b);">
+  &copy; 2025 AutoViindu Pvt. Ltd. &nbsp;·&nbsp; Kathmandu, Nepal &nbsp;·&nbsp; "Your trust, our commitment"
+</div>
+
+<script>
+  // ─── REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL ───────────────
+  // See setup instructions below the script tag.
+  const SHEETS_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+  // ─────────────────────────────────────────────────────────────────────────
+
+  let state = {
+    serviceType: '',
+    urgency: 'This week',
+    notes: '',
+    fuelType: '',
+    brand: '',
+    model: '',
+    year: '',
+    regNumber: '',
+    fullName: '',
+    mobile: '',
+    email: '',
+    address: '',
+    pickupRequired: 'No',
+    appointmentNeeded: 'No',
+  };
+
+  function selectSvc(el) {
+    el.classList.toggle('sel');
+    const sel = [...document.querySelectorAll('#svc-grid .svc-card.sel')].map(e => e.dataset.val);
+    state.serviceType = sel.join(', ');
+    hide('err-svc');
+    lucide.createIcons();
+  }
+
+  function setUrgency(val) {
+    document.querySelectorAll('.urg-opt').forEach(o => o.className = 'urg-opt');
+    const map = {
+      'Immediate': ['urg-now', 'sel-now'],
+      'This week': ['urg-soon', 'sel-soon'],
+      'Planning':  ['urg-plan', 'sel-plan']
+    };
+    const [id, cls] = map[val];
+    document.getElementById(id).classList.add(cls);
+    state.urgency = val;
+  }
+
+  function selectChip(el, group) {
+    document.querySelectorAll(`#chips-${group} .chip`).forEach(c => c.classList.remove('sel'));
+    el.classList.add('sel');
+    if (group === 'fuel') state.fuelType = el.dataset.val;
+  }
+
+  function toggleRow(el) {
+    el.classList.toggle('on');
+    if (el.id === 'tog-pickup') state.pickupRequired  = el.classList.contains('on') ? 'Yes' : 'No';
+    if (el.id === 'tog-appt')   state.appointmentNeeded = el.classList.contains('on') ? 'Yes' : 'No';
+  }
+
+  function toggleCB(id) {
+    const cb = document.getElementById(id);
+    cb.checked = !cb.checked;
+  }
+
+  function validate() {
+    let ok = true;
+    if (!state.serviceType)           { show('err-svc');     ok = false; } else hide('err-svc');
+    const notes = v('fnotes').trim();
+    if (!notes)                       { show('err-notes');   ok = false; } else hide('err-notes');
+    const name = v('fname').trim();
+    if (!name)                        { show('err-fname');   ok = false; } else hide('err-fname');
+    const mob = v('fmobile').trim();
+    if (!mob || mob.length < 10)      { show('err-fmobile'); ok = false; } else hide('err-fmobile');
+    const addr = v('faddress').trim();
+    if (!addr)                        { show('err-faddress');ok = false; } else hide('err-faddress');
+    const cb1 = document.getElementById('cb1').checked;
+    const cb2 = document.getElementById('cb2').checked;
+    if (!cb1 || !cb2)                 { show('err-terms');   ok = false; } else hide('err-terms');
+    return ok;
+  }
+
+  async function submitForm() {
+    if (!validate()) {
+      const firstErr = document.querySelector('.err[style*="block"],.err:not([style])');
+      return;
+    }
+
+    // Collect all values
+    state.notes   = v('fnotes').trim();
+    state.brand   = v('vbrand');
+    state.model   = v('vmodel').trim();
+    state.year    = v('vyear');
+    state.regNumber = v('vreg').toUpperCase().trim();
+    state.fullName = v('fname').trim();
+    state.mobile   = v('fmobile').trim();
+    state.email    = v('femail').trim();
+    state.address  = v('faddress').trim();
+
+    const ref = 'AV-' + Date.now().toString().slice(-6);
+    const timestamp = new Date().toLocaleString('en-GB', { timeZone: 'Asia/Kathmandu' });
+    const payload = { ...state, ref, timestamp };
+
+    // Disable button
+    const btn = document.getElementById('submit-btn');
+    btn.style.opacity = '.7';
+    btn.style.pointerEvents = 'none';
+    document.getElementById('submit-label').textContent = 'Submitting…';
+
+    // Send to Google Sheets
+    if (SHEETS_URL && SHEETS_URL !== 'YOUR_APPS_SCRIPT_URL_HERE') {
+      try {
+        await fetch(SHEETS_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {
+        console.warn('Sheets submission error:', e);
+      }
+    } else {
+      // Demo mode — log payload
+      await new Promise(r => setTimeout(r, 800));
+      console.log('DEMO — Form payload:', payload);
+    }
+
+    // Show success
+    document.getElementById('form-area').style.display = 'none';
+    document.getElementById('ref-num').textContent = ref;
+    document.getElementById('success-screen').classList.add('show');
+    lucide.createIcons();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function resetForm() {
+    state = { serviceType:'', urgency:'This week', notes:'', fuelType:'', brand:'', model:'', year:'', regNumber:'', fullName:'', mobile:'', email:'', address:'', pickupRequired:'No', appointmentNeeded:'No' };
+    document.getElementById('success-screen').classList.remove('show');
+    document.getElementById('form-area').style.display = '';
+    document.querySelectorAll('.svc-card').forEach(c => c.classList.remove('sel'));
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('sel'));
+    document.querySelectorAll('.urg-opt').forEach(o => o.className = 'urg-opt');
+    document.getElementById('urg-soon').classList.add('sel-soon');
+    document.querySelectorAll('.toggle-row').forEach(t => t.classList.remove('on'));
+    document.querySelectorAll('input[type=checkbox]').forEach(c => c.checked = false);
+    document.querySelectorAll('.form-input,.form-textarea').forEach(i => i.value = '');
+    document.querySelectorAll('.form-select').forEach(s => s.selectedIndex = 0);
+    document.querySelectorAll('.err').forEach(e => e.style.display = 'none');
+    const btn = document.getElementById('submit-btn');
+    btn.style.opacity = '';
+    btn.style.pointerEvents = '';
+    document.getElementById('submit-label').textContent = 'Submit Request';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Pre-select service from URL param (?service=dotm etc.)
+  (function() {
+    const p = new URLSearchParams(location.search);
+    const map = {
+      dotm: 'DOTM Services',
+      maintenance: 'Maintenance & Repairs',
+      insurance: 'Insurance & Financing',
+      parts: 'Parts & Accessories',
+      other: 'Other Services',
+      cars: 'New / Used Car Enquiry'
+    };
+    const key = p.get('service');
+    if (key && map[key]) {
+      const card = [...document.querySelectorAll('.svc-card')].find(c => c.dataset.val === map[key]);
+      if (card) { card.classList.add('sel'); state.serviceType = map[key]; lucide.createIcons(); }
+    }
+  })();
+
+  function v(id) { return document.getElementById(id)?.value || ''; }
+  function show(id) { const e = document.getElementById(id); if (e) e.style.display = 'block'; }
+  function hide(id) { const e = document.getElementById(id); if (e) e.style.display = 'none'; }
+
+  lucide.createIcons();
+</script>
+
+  <div id="av-toast-wrap"></div>
+  <script src="assets/js/components/av-footer.js"></script>  <!-- ← before </body> -->
+  <script>lucide.createIcons();</script>
+
+<!--
+════════════════════════════════════════════════════════════════════
+  GOOGLE SHEETS SETUP — Step-by-step
+════════════════════════════════════════════════════════════════════
+
+STEP 1 — Create a Google Sheet
+  - Go to sheets.google.com and create a new spreadsheet
+  - Name it "AutoViindu Service Requests"
+  - Add these headers in Row 1 (one per column, in this order):
+    Timestamp | Ref | Service Type | Urgency | Notes | Fuel Type |
+    Brand | Model | Year | Reg Number | Full Name | Mobile | Email |
+    Address | Pickup Required | Appointment Needed
+
+STEP 2 — Open Apps Script
+  - In the sheet: Extensions → Apps Script
+  - Delete any existing code and paste the following:
+
+─────────────────────────────────────────────────────────────────
+function doPost(e) {
+  try {
+    var data = JSON.parse(e.postData.contents);
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    sheet.appendRow([
+      data.timestamp,
+      data.ref,
+      data.serviceType,
+      data.urgency,
+      data.notes,
+      data.fuelType,
+      data.brand,
+      data.model,
+      data.year,
+      data.regNumber,
+      data.fullName,
+      data.mobile,
+      data.email,
+      data.address,
+      data.pickupRequired,
+      data.appointmentNeeded
+    ]);
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'ok' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch(err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'error', message: err.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+─────────────────────────────────────────────────────────────────
+
+STEP 3 — Deploy as Web App
+  - Click Deploy → New Deployment
+  - Type: Web App
+  - Execute as: Me
+  - Who has access: Anyone
+  - Click Deploy → Authorize → Copy the Web App URL
+
+STEP 4 — Paste the URL into this file
+  - Find:  const SHEETS_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+  - Replace with your copied URL, e.g.:
+    const SHEETS_URL = 'https://script.google.com/macros/s/XXXX/exec';
+
+STEP 5 — Test
+  - Open the page, fill the form, submit
+  - Check your Google Sheet — the row should appear within seconds
+
+NOTE: Because the form uses mode:'no-cors', the browser won't
+receive the JSON response — but the data WILL be written to the
+sheet. This is normal and expected behaviour.
+════════════════════════════════════════════════════════════════════
+-->
+</body>
+</html>

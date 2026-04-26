@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Request a Part – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #1A6B2A; --green-d: #145520; --green-l: #EEF7F0; --green-m: #4CAF6A;
+      --ink: #0B0F14; --ink2: #1C2228; --ink3: #3D4754; --ink4: #6B7685; --ink5: #9AA3AE;
+      --border: #E4E8ED; --bg: #F5F7F9; --white: #ffffff; --red: #C8271E;
+      --r8: 8px; --r10: 10px; --r12: 12px; --r16: 16px; --r20: 20px; --pill: 999px;
+      --sh1: 0 1px 4px rgba(0,0,0,.06); --sh2: 0 4px 14px rgba(0,0,0,.09);
+      --ease: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-d: 'Fraunces', Georgia, serif; --font-b: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    ::selection { background: rgba(26,107,42,.12); }
+    :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 4px; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    @media(min-width: 640px) { .wrap { padding: 0 32px; } }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--sh1);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .topbar-brand {
+      font-family: var(--font-d);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: -.3px;
+    }
+    .topbar-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink4);
+      text-decoration: none;
+      padding: 7px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--pill);
+      transition: all var(--ease);
+    }
+    .topbar-back:hover { color: var(--green); border-color: var(--green); background: var(--green-l); }
+    .topbar-back i { width: 14px; height: 14px; }
+
+    /* ── BREADCRUMB ── */
+    .bc { background: var(--bg); border-bottom: 1px solid var(--border); padding: 11px 0; }
+    .bc-inner { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink4); }
+    .bc-inner a { color: var(--green); text-decoration: none; font-weight: 600; }
+    .bc-inner a:hover { text-decoration: underline; }
+    .bc-inner i { width: 12px; height: 12px; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(145deg, #0B2A12 0%, #1A6B2A 60%, #1f8535 100%);
+      padding: 48px 0 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .page-hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--pill); padding: 5px 13px;
+      font-size: 11.5px; font-weight: 700; color: rgba(255,255,255,.75);
+      letter-spacing: .4px; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .page-hero-badge i { width: 13px; height: 13px; color: var(--green-m); }
+    .page-hero h1 {
+      font-family: var(--font-d);
+      font-size: clamp(26px, 4.5vw, 42px);
+      font-weight: 800; color: #fff;
+      line-height: 1.1; margin-bottom: 10px;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--green-m); }
+    .page-hero p { font-size: 14.5px; color: rgba(255,255,255,.6); max-width: 480px; line-height: 1.75; }
+
+    /* ── FORM SHELL ── */
+    .form-section { padding: 52px 0 80px; }
+    .form-wrap {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r20);
+      overflow: hidden;
+      box-shadow: var(--sh2);
+    }
+    .form-header {
+      background: linear-gradient(135deg, var(--green), var(--green-d));
+      padding: 28px 32px 24px;
+    }
+    .form-header h3 { font-family: var(--font-d); font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 5px; }
+    .form-header p { font-size: 13.5px; color: rgba(255,255,255,.6); }
+    .form-body { padding: 28px 32px 32px; }
+    @media(max-width: 540px) { .form-body { padding: 20px 18px 24px; } }
+
+    /* ── FORM ELEMENTS ── */
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media(min-width: 640px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label { font-size: 11.5px; font-weight: 700; color: var(--ink3); text-transform: uppercase; letter-spacing: .45px; }
+    .form-label span { color: var(--red); }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--r8);
+      font-family: var(--font-b); font-size: 14px; color: var(--ink); background: var(--white);
+      transition: border-color var(--ease); outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(26,107,42,.08); }
+    .form-textarea { resize: vertical; min-height: 80px; }
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center;
+    }
+    .radio-group { display: flex; flex-wrap: wrap; gap: 7px; }
+    .radio-option {
+      display: flex; align-items: center; gap: 7px;
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: var(--r8); padding: 8px 13px;
+      cursor: pointer; font-size: 13px; font-weight: 600;
+      color: var(--ink3); transition: all var(--ease);
+    }
+    .radio-option input { display: none; }
+    .radio-option:has(input:checked) { background: var(--green-l); border-color: var(--green); color: var(--green); }
+    .radio-option:hover { border-color: var(--green-m); }
+    .form-sec-title {
+      font-size: 13px; font-weight: 800; color: var(--ink2);
+      padding: 20px 0 4px; border-top: 1px solid var(--border);
+      margin-top: 8px; display: flex; align-items: center; gap: 8px;
+    }
+    .form-sec-title i { width: 14px; height: 14px; color: var(--green); }
+    .form-sec-title.first { border-top: none; padding-top: 0; margin-top: 0; }
+
+    /* ── SUBMIT ── */
+    .form-submit-row { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+    .form-submit {
+      width: 100%; padding: 15px;
+      background: var(--green); color: #fff;
+      border: none; border-radius: var(--r10);
+      font-family: var(--font-b); font-size: 15px; font-weight: 800;
+      cursor: pointer; transition: background var(--ease);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .form-submit:hover { background: var(--green-d); }
+    .form-submit i { width: 16px; height: 16px; }
+    .form-note { font-size: 11.5px; color: var(--ink5); text-align: center; margin-top: 8px; }
+
+    /* ── SUCCESS STATE ── */
+    .success-banner {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 56px 32px;
+      gap: 14px;
+    }
+    .success-banner.show { display: flex; }
+    .success-icon {
+      width: 64px; height: 64px;
+      background: var(--green-l); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 6px;
+    }
+    .success-icon i { width: 30px; height: 30px; color: var(--green); }
+    .success-banner h3 { font-family: var(--font-d); font-size: 26px; font-weight: 800; color: var(--ink); }
+    .success-banner p { font-size: 14.5px; color: var(--ink4); max-width: 380px; line-height: 1.7; }
+    .success-back {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--green); color: #fff;
+      padding: 11px 22px; border-radius: var(--pill);
+      font-size: 13.5px; font-weight: 700; text-decoration: none;
+      margin-top: 8px; transition: background var(--ease);
+    }
+    .success-back:hover { background: var(--green-d); }
+    .success-back i { width: 14px; height: 14px; }
+
+    /* ── SIDEBAR INFO ── */
+    .page-layout { display: grid; grid-template-columns: 1fr; gap: 28px; }
+    @media(min-width: 860px) { .page-layout { grid-template-columns: 1fr 260px; align-items: start; } }
+    .sidebar { display: flex; flex-direction: column; gap: 16px; }
+    .info-card {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: var(--r16); padding: 20px;
+    }
+    .info-card-title {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 800; color: var(--ink2);
+      margin-bottom: 12px;
+    }
+    .info-card-title i { width: 15px; height: 15px; color: var(--green); }
+    .info-item {
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: 13px; color: var(--ink4); line-height: 1.55;
+      padding: 8px 0; border-bottom: 1px solid var(--border);
+    }
+    .info-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-item i { width: 13px; height: 13px; color: var(--green-m); flex-shrink: 0; margin-top: 2px; }
+    .info-item strong { color: var(--ink3); font-weight: 700; display: block; font-size: 12px; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { opacity: 0; animation: fadeUp .45s ease forwards; }
+    .fade-up-2 { opacity: 0; animation: fadeUp .45s .1s ease forwards; }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="/index.html" class="topbar-brand">AutoViindu</a>
+    <a href="/parts-accessories.html" class="topbar-back">
+      <i data-lucide="arrow-left"></i>Back to Parts &amp; Accessories
+    </a>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="bc">
+  <div class="wrap bc-inner">
+    <a href="/index.html">Home</a>
+    <i data-lucide="chevron-right"></i>
+    <a href="/services.html">Services</a>
+    <i data-lucide="chevron-right"></i>
+    <a href="/parts-accessories.html">Parts &amp; Accessories</a>
+    <i data-lucide="chevron-right"></i>
+    <span>Request a Part</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="page-hero-inner fade-up">
+     <a href="/form/partsandacc.html" class="page-hero-badge">
+  <i data-lucide="send"></i>
+  Part Request
+</a>
+      <h1>Tell us what<br>you <em>need</em></h1>
+      <p>Fill in your vehicle details and the part you're looking for. We check availability, confirm fitment, and get back to you within one business day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section">
+  <div class="wrap">
+    <div class="page-layout fade-up-2">
+
+      <!-- MAIN FORM -->
+      <div class="form-wrap">
+        <div class="form-header">
+          <h3>Parts &amp; Accessories Request</h3>
+          <p>Fields marked * are required. We confirm availability within one business day.</p>
+        </div>
+        <div class="form-body">
+
+          <!-- SUCCESS STATE -->
+          <div class="success-banner" id="successBanner">
+            <div class="success-icon"><i data-lucide="check-circle-2"></i></div>
+            <h3>Request submitted!</h3>
+            <p>We've received your request and will confirm availability and pricing within one business day. Mon–Sat · 9am–6pm NST</p>
+            <a href="/parts-accessories.html" class="success-back"><i data-lucide="arrow-left"></i>Back to Parts &amp; Accessories</a>
+          </div>
+
+          <!-- FORM -->
+          <form id="partForm" onsubmit="handleSubmit(event)">
+
+            <!-- SECTION 1: What you need -->
+            <div class="form-sec-title first"><i data-lucide="package"></i>What are you looking for?</div>
+            <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
+              <div>
+                <div class="form-label" style="margin-bottom:6px">Request Type <span>*</span></div>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="req_type" value="parts" checked>Parts</label>
+                  <label class="radio-option"><input type="radio" name="req_type" value="accessories">Accessories</label>
+                  <label class="radio-option"><input type="radio" name="req_type" value="both">Both</label>
+                </div>
+              </div>
+              <div>
+                <div class="form-label" style="margin-bottom:6px">Type of Item <span>*</span></div>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="item_type" value="oem" checked>Genuine OEM</label>
+                  <label class="radio-option"><input type="radio" name="item_type" value="aftermarket">Aftermarket</label>
+                  <label class="radio-option"><input type="radio" name="item_type" value="refurbished">Refurbished</label>
+                  <label class="radio-option"><input type="radio" name="item_type" value="unsure">Not Sure</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-grid" style="margin-top:14px">
+              <div class="form-group full">
+                <label class="form-label">Item Name or Description <span>*</span></label>
+                <textarea class="form-textarea" placeholder="e.g. Brake pad set for rear axle, alloy wheel 16 inch, EV charging cable Type-2…" required style="min-height:80px"></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Part Code (if known)</label>
+                <input class="form-input" type="text" placeholder="OEM or aftermarket part number">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Quantity <span>*</span></label>
+                <input class="form-input" type="number" min="1" value="1" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Is installation needed?</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="install" value="yes">Yes</label>
+                  <label class="radio-option"><input type="radio" name="install" value="no" checked>No</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 2: Vehicle -->
+            <div class="form-sec-title"><i data-lucide="car"></i>Vehicle Details</div>
+            <div class="form-grid" style="margin-top:10px">
+              <div class="form-group"><label class="form-label">Vehicle Brand <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Hyundai, Toyota, MG" required></div>
+              <div class="form-group"><label class="form-label">Model Name <span>*</span></label><input class="form-input" type="text" placeholder="e.g. Creta, Prius, ZS EV" required></div>
+              <div class="form-group"><label class="form-label">Variant / Trim</label><input class="form-input" type="text" placeholder="e.g. SX Diesel MT"></div>
+              <div class="form-group">
+                <label class="form-label">Year of Manufacture <span>*</span></label>
+                <select class="form-select" required>
+                  <option value="">Select Year</option>
+                  <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+                  <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
+                  <option>2017</option><option>2016</option><option>2015</option><option>2014</option>
+                  <option>2013</option><option>2012</option><option>2011</option><option>2010</option>
+                  <option>2009 or older</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Fuel Type <span>*</span></label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="fuel" value="petrol" checked>Petrol</label>
+                  <label class="radio-option"><input type="radio" name="fuel" value="diesel">Diesel</label>
+                  <label class="radio-option"><input type="radio" name="fuel" value="ev">EV</label>
+                  <label class="radio-option"><input type="radio" name="fuel" value="hybrid">Hybrid</label>
+                </div>
+              </div>
+              <div class="form-group"><label class="form-label">Vehicle Photo (optional)</label><input class="form-input" type="file" accept="image/*" style="padding:8px 12px;font-size:13px"></div>
+            </div>
+
+            <!-- SECTION 3: Contact -->
+            <div class="form-sec-title"><i data-lucide="user"></i>Contact &amp; Delivery</div>
+            <div class="form-grid" style="margin-top:10px">
+              <div class="form-group"><label class="form-label">Full Name <span>*</span></label><input class="form-input" type="text" placeholder="Your full name" required></div>
+              <div class="form-group"><label class="form-label">Mobile Number <span>*</span></label><input class="form-input" type="tel" placeholder="+977 98XXXXXXXX" required></div>
+              <div class="form-group full"><label class="form-label">Delivery Address <span>*</span></label><input class="form-input" type="text" placeholder="Full address for delivery" required></div>
+              <div class="form-group"><label class="form-label">Email (optional)</label><input class="form-input" type="email" placeholder="you@example.com"></div>
+              <div class="form-group">
+                <label class="form-label">Preferred Delivery Method</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="delivery" value="home" checked>Home Delivery</label>
+                  <label class="radio-option"><input type="radio" name="delivery" value="pickup">I will pick up</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- AGREEMENTS + SUBMIT -->
+            <div class="form-submit-row">
+              <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer"><input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">I confirm the vehicle details provided are accurate.</label>
+              <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer"><input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">I agree to AutoViindu's terms for parts sales.</label>
+              <button class="form-submit" type="submit"><i data-lucide="send"></i>Submit Request</button>
+              <div class="form-note">We confirm availability within one business day. Mon–Sat · 9am–6pm NST</div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="info-card">
+          <div class="info-card-title"><i data-lucide="clock"></i>How it works</div>
+          <div class="info-item"><i data-lucide="send"></i><div><strong>1. You submit</strong>Fill in your vehicle and part details below.</div></div>
+          <div class="info-item"><i data-lucide="search"></i><div><strong>2. We source</strong>We check availability and confirm fitment.</div></div>
+          <div class="info-item"><i data-lucide="message-circle"></i><div><strong>3. We quote</strong>You get pricing and delivery options within 1 business day.</div></div>
+          <div class="info-item"><i data-lucide="truck"></i><div><strong>4. We deliver</strong>Order confirmed and part delivered to your door.</div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title"><i data-lucide="layers"></i>Part types</div>
+          <div class="info-item"><i data-lucide="badge-check"></i><div><strong>Genuine OEM</strong>Exact-fit manufacturer parts. Required for vehicles under warranty.</div></div>
+          <div class="info-item"><i data-lucide="package-2"></i><div><strong>Aftermarket</strong>Third-party parts to OEM spec. More affordable.</div></div>
+          <div class="info-item"><i data-lucide="recycle"></i><div><strong>Refurbished</strong>Cleaned, tested &amp; restored used parts. Best value for older vehicles.</div></div>
+        </div>
+        <div class="info-card" style="background:var(--green-l);border-color:rgba(26,107,42,.15)">
+          <div class="info-card-title" style="color:var(--green)"><i data-lucide="phone"></i>Need help?</div>
+          <p style="font-size:13px;color:var(--ink4);line-height:1.65">Call or WhatsApp us and we'll help you identify the right part for your vehicle.</p>
+          <a href="tel:+97798XXXXXXXX" style="display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:13.5px;font-weight:700;color:var(--green);text-decoration:none"><i data-lucide="phone-call" style="width:14px;height:14px"></i>+977 98XX XXXXXX</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  lucide.createIcons();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('partForm').style.display = 'none';
+    const banner = document.getElementById('successBanner');
+    banner.classList.add('show');
+    lucide.createIcons();
+    banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+</script>
+<script src="/assets/js/components/av-footer.js"></script>
+</body>
+</html>

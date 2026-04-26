@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nepal Car Database — Team</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; background: #fafafa; color: #111; }
+
+  /* ── MODALS ── */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.45); z-index: 1000;
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: #fff; border-radius: 8px; padding: 28px;
+    width: 500px; max-width: 95vw; max-height: 90vh; overflow-y: auto;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  }
+  .modal h2 { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+  .modal p  { font-size: 12px; color: #555; margin-bottom: 10px; line-height: 1.6; }
+  .modal label { font-size: 11px; color: #777; display: block; margin: 10px 0 3px; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+  .modal input, .modal select, .modal textarea {
+    width: 100%; border: 1px solid #ddd; padding: 8px 10px;
+    font-size: 12px; border-radius: 4px; outline: none;
+    font-family: inherit; color: #111;
+  }
+  .modal input:focus, .modal select:focus { border-color: #111; }
+  .modal-actions { display: flex; gap: 8px; margin-top: 18px; justify-content: flex-end; }
+  .modal .steps {
+    background: #f8f8f8; border: 1px solid #e5e5e5; border-radius: 6px;
+    padding: 12px 14px; font-size: 12px; line-height: 1.8; margin-top: 10px;
+  }
+  .modal .steps b { color: #111; }
+
+  .add-row-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    background: #111; color: #fff; border: none; padding: 8px 18px;
+    font-size: 12px; border-radius: 4px; cursor: pointer; font-family: inherit;
+  }
+  .btn-primary:hover { background: #333; }
+  .btn-secondary {
+    background: #fff; color: #111; border: 1px solid #ddd; padding: 8px 18px;
+    font-size: 12px; border-radius: 4px; cursor: pointer; font-family: inherit;
+  }
+  .btn-secondary:hover { background: #f5f5f5; }
+  .btn-danger {
+    background: transparent; color: #c00; border: 1px solid #fcc;
+    padding: 3px 8px; font-size: 11px; border-radius: 3px; cursor: pointer;
+    font-family: inherit; white-space: nowrap;
+  }
+  .btn-danger:hover { background: #fff0f0; }
+
+  /* ── SETUP BANNER ── */
+  #setup-banner {
+    background: #fffbeb; padding: 8px 16px; border-bottom: 1px solid #fde68a;
+    font-size: 12px; display: none; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  #setup-banner .btn-primary { padding: 4px 12px; }
+
+  /* ── TOP BAR ── */
+  .top {
+    padding: 10px 16px; border-bottom: 1px solid #e5e5e5;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    background: #fff;
+  }
+  .top h1 { font-size: 14px; font-weight: 700; letter-spacing: -.2px; }
+  .top .stat { font-size: 12px; color: #777; }
+  .top .stat b { color: #111; }
+
+  .sync-badge {
+    font-size: 11px; padding: 3px 10px; border-radius: 20px; white-space: nowrap;
+    border: 1px solid transparent; transition: all .2s;
+  }
+  .sync-idle    { color: #999;    border-color: #e5e5e5; background: #f5f5f5; }
+  .sync-loading { color: #1d4ed8; border-color: #bfdbfe; background: #eff6ff; }
+  .sync-saving  { color: #b45309; border-color: #fde68a; background: #fffbeb; }
+  .sync-saved   { color: #166534; border-color: #bbf7d0; background: #f0fdf4; }
+  .sync-error   { color: #991b1b; border-color: #fecaca; background: #fff1f2; }
+
+  .top-actions { display: flex; gap: 6px; margin-left: auto; align-items: center; }
+  .top-actions button {
+    border: 1px solid #e5e5e5; padding: 5px 10px; font-size: 12px;
+    border-radius: 4px; background: #fff; cursor: pointer; font-family: inherit;
+  }
+  .top-actions button:hover { background: #f5f5f5; }
+
+  .prog-bar  { height: 4px; background: #e5e5e5; border-radius: 2px; display: inline-block; vertical-align: middle; }
+  .prog-fill { height: 100%; background: #22c55e; border-radius: 2px; transition: width .4s; }
+
+  /* ── CONTROLS ── */
+  .controls {
+    padding: 8px 16px; border-bottom: 1px solid #e5e5e5;
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    background: #fff;
+  }
+  .controls input, .controls select {
+    border: 1px solid #e5e5e5; padding: 6px 8px; font-size: 12px;
+    border-radius: 4px; outline: none; font-family: inherit; background: #fff;
+  }
+  .controls input:focus, .controls select:focus { border-color: #999; }
+  .controls input[type="text"] { width: 200px; }
+  .controls button {
+    border: 1px solid #e5e5e5; padding: 6px 10px; font-size: 12px;
+    border-radius: 4px; background: #fff; cursor: pointer; font-family: inherit;
+  }
+  .controls button:hover { background: #f5f5f5; }
+  .btn-add-car { background: #111 !important; color: #fff !important; border-color: #111 !important; }
+  .btn-add-car:hover { background: #333 !important; }
+
+  /* ── BRAND PILLS ── */
+  .brand-row {
+    padding: 7px 16px; border-bottom: 1px solid #e5e5e5;
+    display: flex; flex-wrap: wrap; gap: 5px; align-items: center;
+    background: #fff;
+  }
+  .brand-row span { font-size: 11px; color: #aaa; margin-right: 4px; text-transform: uppercase; letter-spacing: .5px; }
+  .bpill {
+    border: 1px solid #e5e5e5; padding: 3px 10px; font-size: 11px;
+    border-radius: 20px; background: #fff; cursor: pointer; font-family: inherit;
+    transition: all .15s;
+  }
+  .bpill:hover { background: #f5f5f5; border-color: #ccc; }
+  .bpill.active { background: #111; color: #fff; border-color: #111; }
+
+  .info-row { padding: 5px 16px; font-size: 11px; color: #aaa; border-bottom: 1px solid #eee; background: #fafafa; }
+
+  /* ── TABLE ── */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    background: #f5f5f5; padding: 8px 10px; text-align: left;
+    font-size: 10px; text-transform: uppercase; letter-spacing: .7px; font-weight: 700;
+    border-bottom: 2px solid #e5e5e5; white-space: nowrap; position: sticky; top: 0; z-index: 10;
+  }
+  .th-inner { display: flex; align-items: center; gap: 4px; }
+  .del-col-btn {
+    opacity: 0; font-size: 10px; color: #c00; border: none;
+    background: none; padding: 0 2px; cursor: pointer; line-height: 1;
+  }
+  thead th:hover .del-col-btn { opacity: 1; }
+
+  tbody tr { border-bottom: 1px solid #f0f0f0; }
+  tbody tr:hover { background: #fafafa; }
+  tbody td { padding: 6px 10px; vertical-align: middle; }
+
+  .row-num { color: #ccc; font-size: 11px; text-align: center; width: 30px; font-variant-numeric: tabular-nums; }
+
+  /* Inline editable cells */
+  .cell-edit {
+    display: block; min-width: 60px; padding: 3px 5px; border-radius: 3px;
+    cursor: text; line-height: 1.45; outline: none; white-space: pre-wrap;
+    word-break: break-word;
+    transition: background .1s;
+  }
+  .cell-edit:hover    { background: #f0f7ff; }
+  .cell-edit:focus    { background: #e8f3ff; outline: 2px solid #3b82f6; outline-offset: 0; }
+  .features-cell .cell-edit { font-size: 11px; color: #555; max-width: 230px; }
+
+  /* Status toggle */
+  .tog {
+    border: 1px solid #e5e5e5; padding: 3px 10px; font-size: 11px;
+    border-radius: 4px; cursor: pointer; white-space: nowrap;
+    background: #fff; font-family: inherit; transition: all .15s;
+  }
+  .tog.added   { background: #f0fdf4; border-color: #bbf7d0; color: #166534; }
+  .tog.pending { background: #fff; border-color: #e5e5e5; color: #666; }
+  .tog:hover { opacity: .8; }
+
+  mark { background: #fef08a; border-radius: 2px; }
+
+  .no-results, .empty-state {
+    text-align: center; padding: 60px 20px; color: #aaa; font-size: 13px;
+  }
+
+  #loading-state { text-align: center; padding: 60px; color: #aaa; display: none; }
+  .spinner {
+    display: inline-block; width: 20px; height: 20px;
+    border: 2px solid #e5e5e5; border-top-color: #111;
+    border-radius: 50%; animation: spin .7s linear infinite; vertical-align: middle; margin-right: 8px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<!-- ── SETUP BANNER ── -->
+<div id="setup-banner">
+  ⚠️ Not connected to Google Sheets — changes won't be saved.
+  <button class="btn-primary" onclick="openModal('modal-setup')">Connect Now</button>
+  <span style="color:#92400e;font-size:11px">Paste your Apps Script URL to enable real-time sync.</span>
+</div>
+
+<!-- ── SETUP MODAL ── -->
+<div id="modal-setup" class="modal-overlay">
+  <div class="modal">
+    <h2>⚙ Connect to Google Sheets</h2>
+    <p>This database syncs with a Google Sheet so your whole team sees changes instantly. Follow the steps below once, then paste the URL here.</p>
+    <div class="steps">
+      <b>One-time setup (5 min):</b><br>
+      1. Open any Google Sheet (create one named <b>CarDatabase</b>)<br>
+      2. Go to <b>Extensions → Apps Script</b><br>
+      3. Delete all code and paste the contents of <b>apps-script.gs</b><br>
+      4. Click <b>Deploy → New deployment → Web app</b><br>
+      5. Set "Who has access" to <b>Anyone</b> → Deploy<br>
+      6. Copy the <b>Web app URL</b> and paste below ↓
+    </div>
+    <label>Apps Script Web App URL</label>
+    <input type="text" id="api-url-input" placeholder="https://script.google.com/macros/s/.../exec">
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="closeModal('modal-setup')">Cancel</button>
+      <button class="btn-primary" onclick="saveSetup()">Connect &amp; Load Data</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── ADD ROW MODAL ── -->
+<div id="modal-add-row" class="modal-overlay">
+  <div class="modal">
+    <h2>+ Add New Car</h2>
+    <div id="add-row-fields" class="add-row-grid"></div>
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="closeModal('modal-add-row')">Cancel</button>
+      <button class="btn-primary" onclick="submitAddRow()">Add Car</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── ADD COLUMN MODAL ── -->
+<div id="modal-add-col" class="modal-overlay">
+  <div class="modal">
+    <h2>+ Add Column</h2>
+    <p>The new column will be added to both the app and your Google Sheet.</p>
+    <label>Column Name</label>
+    <input type="text" id="new-col-name" placeholder="e.g. Engine CC, Year, Seats, Warranty…">
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="closeModal('modal-add-col')">Cancel</button>
+      <button class="btn-primary" onclick="submitAddCol()">Add Column</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TOP BAR ── -->
+<div class="top">
+  <h1>🚗 Nepal Car Database</h1>
+  <div class="stat">Total: <b id="s-total">0</b></div>
+  <div class="stat">Added: <b id="s-added" style="color:#166534">0</b></div>
+  <div class="stat">Pending: <b id="s-pending" style="color:#b45309">0</b></div>
+  <div class="stat">Brands: <b id="s-brands">0</b></div>
+  <div class="stat">
+    <b id="s-pct">0%</b>&nbsp;<span class="prog-bar" style="width:90px"><span class="prog-fill" id="s-bar" style="width:0%"></span></span>
+  </div>
+  <div id="sync-status" class="sync-badge sync-idle">● Not connected</div>
+  <div class="top-actions">
+    <button onclick="loadData()" title="Refresh from Google Sheets">↻ Refresh</button>
+    <button onclick="openModal('modal-setup')">⚙ Settings</button>
+  </div>
+</div>
+
+<!-- ── CONTROLS ── -->
+<div class="controls">
+  <input type="text" id="search" placeholder="🔍  Search brand, model, features…">
+  <select id="f-type"><option value="">All Fuel Types</option></select>
+  <select id="f-body"><option value="">All Body Types</option></select>
+  <select id="f-status">
+    <option value="">All Status</option>
+    <option value="Added">✓ Added</option>
+    <option value="Pending">Pending</option>
+  </select>
+  <select id="f-sort">
+    <option value="brand">Sort: Brand A–Z</option>
+    <option value="price_asc">Sort: Price Low–High</option>
+    <option value="price_desc">Sort: Price High–Low</option>
+    <option value="model">Sort: Model A–Z</option>
+  </select>
+  <button class="btn-add-car" onclick="openAddRow()">+ Add Car</button>
+  <button onclick="openModal('modal-add-col')">+ Column</button>
+  <button id="btn-all">✓ Mark All Added</button>
+  <button id="btn-reset">↺ Reset Status</button>
+</div>
+
+<!-- ── BRAND PILLS ── -->
+<div class="brand-row" id="brand-row">
+  <span>Brand:</span>
+  <button class="bpill active" data-brand="">All</button>
+</div>
+
+<div class="info-row" id="info-row">Showing 0 entries</div>
+
+<!-- ── TABLE ── -->
+<div class="table-wrap">
+  <div id="loading-state">
+    <span class="spinner"></span> Loading from Google Sheets…
+  </div>
+  <table id="main-table" style="display:none">
+    <thead><tr id="thead-row"></tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <div class="no-results" id="no-results" style="display:none">No cars match your filters.</div>
+  <div class="empty-state" id="empty-state" style="display:none">
+    No data yet. <button class="btn-primary" style="margin-left:8px" onclick="openAddRow()">+ Add First Car</button>
+  </div>
+</div>
+
+<script>
+// ================================================================
+//  STATE
+// ================================================================
+const API_KEY   = 'cardb_api_v2';
+const CACHE_KEY = 'cardb_cache_v2';
+
+let apiUrl     = localStorage.getItem(API_KEY) || '';
+let headers    = [];
+let data       = []; // [{_row, data:[...]}]
+let syncTimer  = null;
+
+let filterBrand  = '';
+let filterType   = '';
+let filterBody   = '';
+let filterStatus = '';
+let search       = '';
+let sortKey      = 'brand';
+
+// ================================================================
+//  SETUP
+// ================================================================
+function checkSetup() {
+  const banner = document.getElementById('setup-banner');
+  if (!apiUrl) {
+    banner.style.display = 'flex';
+    setSyncStatus('idle', '● Not connected');
+    // Load cached data if available
+    try {
+      const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+      if (cached && cached.headers) {
+        headers = cached.headers; data = cached.rows;
+        buildUI(); render();
+      }
+    } catch(e) {}
+    return false;
+  }
+  banner.style.display = 'none';
+  document.getElementById('api-url-input').value = apiUrl;
+  return true;
+}
+
+function saveSetup() {
+  const url = document.getElementById('api-url-input').value.trim();
+  if (!url) return alert('Please paste your Apps Script Web App URL.');
+  if (!url.includes('script.google.com')) {
+    return alert('That does not look like an Apps Script URL. Check the URL and try again.');
+  }
+  apiUrl = url;
+  localStorage.setItem(API_KEY, url);
+  closeModal('modal-setup');
+  loadData();
+}
+
+// ================================================================
+//  API LAYER
+// ================================================================
+function setSyncStatus(state, text) {
+  const el = document.getElementById('sync-status');
+  el.className = 'sync-badge sync-' + state;
+  el.textContent = text;
+}
+
+async function apiGet(params) {
+  const url = new URL(apiUrl);
+  Object.entries(params).forEach(([k,v]) => url.searchParams.set(k, v));
+  const res = await fetch(url.toString(), { redirect: 'follow' });
+  return res.json();
+}
+
+async function apiPost(body) {
+  const res = await fetch(apiUrl, {
+    method: 'POST',
+    body: JSON.stringify(body),
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    redirect: 'follow'
+  });
+  return res.json();
+}
+
+async function loadData() {
+  if (!checkSetup()) return;
+  setSyncStatus('loading', '⟳ Loading…');
+  document.getElementById('loading-state').style.display = 'block';
+  document.getElementById('main-table').style.display = 'none';
+  document.getElementById('no-results').style.display = 'none';
+  document.getElementById('empty-state').style.display = 'none';
+  try {
+    const res = await apiGet({ action: 'getData' });
+    if (res.error) throw new Error(res.error);
+    headers = res.headers;
+    data    = res.rows;
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ headers, rows: data }));
+    buildUI();
+    render();
+    setSyncStatus('saved', '✓ Synced');
+    document.getElementById('loading-state').style.display = 'none';
+    document.getElementById('main-table').style.display = '';
+  } catch(e) {
+    setSyncStatus('error', '✗ Load failed');
+    document.getElementById('loading-state').innerHTML =
+      `<b style="color:#c00">Error loading data.</b><br><small>${e.message}</small><br><br>` +
+      `<button class="btn-primary" onclick="openModal('modal-setup')">Check Settings</button>`;
+    console.error(e);
+  }
+}
+
+async function syncUpdateCell(rowNum, colNum, value) {
+  if (!apiUrl) return;
+  setSyncStatus('saving', '↑ Saving…');
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(async () => {
+    try {
+      const res = await apiPost({ action: 'updateCell', rowNum, colNum, value });
+      if (res.error) throw new Error(res.error);
+      setSyncStatus('saved', '✓ Saved');
+    } catch(e) {
+      setSyncStatus('error', '✗ Save failed');
+      console.error(e);
+    }
+  }, 700);
+}
+
+async function syncAddRow(rowObj) {
+  if (!apiUrl) return;
+  setSyncStatus('saving', '↑ Adding…');
+  try {
+    const res = await apiPost({ action: 'addRow', row: rowObj });
+    if (res.error) throw new Error(res.error);
+    await loadData();
+  } catch(e) {
+    setSyncStatus('error', '✗ Add failed');
+    alert('Could not add row: ' + e.message);
+  }
+}
+
+async function syncDeleteRow(rowNum) {
+  if (!apiUrl) return;
+  setSyncStatus('saving', '↑ Deleting…');
+  try {
+    const res = await apiPost({ action: 'deleteRow', rowNum });
+    if (res.error) throw new Error(res.error);
+    setSyncStatus('saved', '✓ Deleted');
+  } catch(e) {
+    setSyncStatus('error', '✗ Delete failed');
+    alert('Could not delete row: ' + e.message);
+  }
+}
+
+async function syncAddColumn(name) {
+  if (!apiUrl) { headers.push(name); buildTableHeader(); render(); return; }
+  setSyncStatus('saving', '↑ Adding column…');
+  try {
+    const res = await apiPost({ action: 'addColumn', name });
+    if (res.error) throw new Error(res.error);
+    await loadData();
+  } catch(e) {
+    setSyncStatus('error', '✗ Column failed');
+    alert('Could not add column: ' + e.message);
+  }
+}
+
+async function syncDeleteColumn(colNum) {
+  if (!apiUrl) return;
+  setSyncStatus('saving', '↑ Deleting column…');
+  try {
+    const res = await apiPost({ action: 'deleteColumn', colNum });
+    if (res.error) throw new Error(res.error);
+    await loadData();
+  } catch(e) {
+    setSyncStatus('error', '✗ Column delete failed');
+    alert('Could not delete column: ' + e.message);
+  }
+}
+
+// ================================================================
+//  BUILD UI SKELETON
+// ================================================================
+function buildUI() {
+  buildBrandPills();
+  buildFilterDropdowns();
+  buildTableHeader();
+}
+
+function buildBrandPills() {
+  const bi = headers.indexOf('Brand');
+  const brands = bi >= 0
+    ? [...new Set(data.map(d => d.data[bi]).filter(Boolean))].sort()
+    : [];
+
+  const row = document.getElementById('brand-row');
+  row.innerHTML = '<span>Brand:</span>';
+
+  const allBtn = document.createElement('button');
+  allBtn.className = 'bpill' + (filterBrand === '' ? ' active' : '');
+  allBtn.dataset.brand = '';
+  allBtn.textContent = 'All';
+  allBtn.onclick = () => { filterBrand = ''; render(); };
+  row.appendChild(allBtn);
+
+  brands.forEach(b => {
+    const btn = document.createElement('button');
+    btn.className = 'bpill' + (filterBrand === b ? ' active' : '');
+    btn.dataset.brand = b;
+    btn.textContent = b;
+    btn.onclick = () => { filterBrand = filterBrand === b ? '' : b; render(); };
+    row.appendChild(btn);
+  });
+}
+
+function buildFilterDropdowns() {
+  const fi = headers.indexOf('Fuel');
+  const fuels = fi >= 0 ? [...new Set(data.map(d => d.data[fi]).filter(Boolean))].sort() : [];
+  const fuelSel = document.getElementById('f-type');
+  const prevFuel = fuelSel.value;
+  fuelSel.innerHTML = '<option value="">All Fuel Types</option>';
+  fuels.forEach(f => fuelSel.innerHTML += `<option ${f === prevFuel ? 'selected' : ''}>${f}</option>`);
+
+  const bodi = headers.indexOf('Body Type');
+  const bodies = bodi >= 0 ? [...new Set(data.map(d => d.data[bodi]).filter(Boolean))].sort() : [];
+  const bodySel = document.getElementById('f-body');
+  const prevBody = bodySel.value;
+  bodySel.innerHTML = '<option value="">All Body Types</option>';
+  bodies.forEach(b => bodySel.innerHTML += `<option ${b === prevBody ? 'selected' : ''}>${b}</option>`);
+}
+
+function buildTableHeader() {
+  const tr = document.getElementById('thead-row');
+  tr.innerHTML = '<th><span class="th-inner">#</span></th>';
+
+  headers.forEach((h, i) => {
+    const th = document.createElement('th');
+    const colNum = i + 1;
+    th.innerHTML = `<span class="th-inner">${esc(h)}<button class="del-col-btn" title="Delete column '${esc(h)}'" onclick="confirmDeleteColumn(${colNum},'${h.replace(/'/g,"\\'")}')">✕</button></span>`;
+    tr.appendChild(th);
+  });
+
+  const act = document.createElement('th');
+  act.innerHTML = '<span class="th-inner">Actions</span>';
+  tr.appendChild(act);
+}
+
+// ================================================================
+//  FILTER & SORT
+// ================================================================
+function parsePrice(p) {
+  if (!p || p === 'TBA') return Infinity;
+  const m = String(p).match(/([\d.]+)\s*(Cr|L)/i);
+  if (!m) return Infinity;
+  return m[2].toLowerCase() === 'cr' ? parseFloat(m[1]) * 100 : parseFloat(m[1]);
+}
+
+function getFiltered() {
+  const bi    = headers.indexOf('Brand');
+  const fi    = headers.indexOf('Fuel');
+  const bodi  = headers.indexOf('Body Type');
+  const si    = headers.indexOf('Status');
+  return data.filter(d => {
+    if (filterBrand  && bi   >= 0 && d.data[bi]   !== filterBrand)  return false;
+    if (filterType   && fi   >= 0 && d.data[fi]   !== filterType)   return false;
+    if (filterBody   && bodi >= 0 && d.data[bodi] !== filterBody)   return false;
+    if (filterStatus && si   >= 0 && d.data[si]   !== filterStatus) return false;
+    if (search) {
+      const q = search.toLowerCase();
+      if (!d.data.some(v => String(v).toLowerCase().includes(q))) return false;
+    }
+    return true;
+  });
+}
+
+function getSorted(arr) {
+  const bi = headers.indexOf('Brand');
+  const mi = headers.indexOf('Model');
+  const pi = headers.indexOf('Price');
+  return [...arr].sort((a, b) => {
+    if (sortKey === 'price_asc')  return parsePrice(a.data[pi]) - parsePrice(b.data[pi]);
+    if (sortKey === 'price_desc') return parsePrice(b.data[pi]) - parsePrice(a.data[pi]);
+    if (sortKey === 'model' && mi >= 0) return String(a.data[mi]).localeCompare(String(b.data[mi]));
+    const brandCmp = bi >= 0 ? String(a.data[bi]).localeCompare(String(b.data[bi])) : 0;
+    return brandCmp || (mi >= 0 ? String(a.data[mi]).localeCompare(String(b.data[mi])) : 0);
+  });
+}
+
+// ================================================================
+//  RENDER
+// ================================================================
+function esc(t) { return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function hl(text, q) {
+  if (!q) return esc(text);
+  return esc(text).replace(
+    new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'),
+    '<mark>$1</mark>'
+  );
+}
+
+function render() {
+  const filtered = getSorted(getFiltered());
+  const q  = search.toLowerCase();
+  const si = headers.indexOf('Status');
+  const bi = headers.indexOf('Brand');
+
+  // Stats
+  const total   = data.length;
+  const added   = si >= 0 ? data.filter(d => d.data[si] === 'Added').length : 0;
+  const brands  = bi >= 0 ? new Set(data.map(d => d.data[bi]).filter(Boolean)).size : 0;
+  const pct     = total ? Math.round(added / total * 100) : 0;
+
+  document.getElementById('s-total').textContent   = total;
+  document.getElementById('s-added').textContent   = added;
+  document.getElementById('s-pending').textContent = total - added;
+  document.getElementById('s-brands').textContent  = brands;
+  document.getElementById('s-pct').textContent     = pct + '%';
+  document.getElementById('s-bar').style.width     = pct + '%';
+  document.getElementById('info-row').innerHTML =
+    `Showing <b>${filtered.length}</b> of <b>${total}</b> entries — click any cell to edit`;
+
+  // Brand pills
+  document.querySelectorAll('.bpill').forEach(p =>
+    p.classList.toggle('active', p.dataset.brand === filterBrand));
+
+  // Empty / no-results states
+  document.getElementById('empty-state').style.display  = total === 0 ? 'block' : 'none';
+  document.getElementById('no-results').style.display   = (total > 0 && filtered.length === 0) ? 'block' : 'none';
+  document.getElementById('main-table').style.display   = total > 0 ? '' : 'none';
+
+  // Build rows
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = '';
+
+  const pi = headers.indexOf('Price');
+
+  filtered.forEach((d, idx) => {
+    const tr = document.createElement('tr');
+
+    // Row number
+    const tdNum = document.createElement('td');
+    tdNum.className = 'row-num';
+    tdNum.textContent = idx + 1;
+    tr.appendChild(tdNum);
+
+    // Data cells
+    headers.forEach((h, ci) => {
+      const td  = document.createElement('td');
+      const val = (d.data[ci] !== undefined && d.data[ci] !== null) ? d.data[ci] : '';
+      const colNum = ci + 1;
+      const rowNum = d._row;
+
+      if (h === 'Status') {
+        const isAdded = String(val) === 'Added';
+        const btn = document.createElement('button');
+        btn.className = 'tog ' + (isAdded ? 'added' : 'pending');
+        btn.textContent = isAdded ? '✓ Added' : 'Pending';
+        btn.onclick = async () => {
+          const newStatus = isAdded ? 'Pending' : 'Added';
+          d.data[ci] = newStatus;
+          render();
+          await syncUpdateCell(rowNum, colNum, newStatus);
+        };
+        td.appendChild(btn);
+
+      } else {
+        if (h === 'Key Features') td.className = 'features-cell';
+
+        const cell = document.createElement('div');
+        cell.className = 'cell-edit';
+        cell.contentEditable = 'false';
+        cell.innerHTML = hl(val, q);
+        cell.title = 'Click to edit';
+
+        // Enter edit mode on click
+        cell.onclick = () => {
+          if (cell.contentEditable === 'true') return;
+          cell.contentEditable = 'true';
+          cell.textContent = String(d.data[ci]); // strip highlights
+          cell.focus();
+          // Move cursor to end
+          const range = document.createRange();
+          range.selectNodeContents(cell);
+          range.collapse(false);
+          const sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        };
+
+        // Save on blur
+        cell.onblur = async () => {
+          cell.contentEditable = 'false';
+          const newVal = cell.textContent.trim();
+          const oldVal = String(d.data[ci]);
+          if (newVal !== oldVal) {
+            d.data[ci] = newVal;
+            // Rebuild brand pills and dropdowns live if key columns changed
+            if (['Brand','Fuel','Body Type'].includes(h)) {
+              buildBrandPills(); buildFilterDropdowns();
+            }
+            await syncUpdateCell(rowNum, colNum, newVal);
+          }
+          cell.innerHTML = hl(d.data[ci], q);
+        };
+
+        cell.onkeydown = e => {
+          if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); cell.blur(); }
+          if (e.key === 'Escape') {
+            cell.textContent = String(d.data[ci]);
+            cell.contentEditable = 'false';
+          }
+        };
+
+        td.appendChild(cell);
+      }
+      tr.appendChild(td);
+    });
+
+    // Delete button
+    const tdAct = document.createElement('td');
+    const delBtn = document.createElement('button');
+    delBtn.className = 'btn-danger';
+    delBtn.textContent = '✕ Delete';
+    delBtn.onclick = async () => {
+      const label = bi >= 0 && d.data[bi]
+        ? `${d.data[bi]} ${(d.data[headers.indexOf('Model')] || '')}`.trim()
+        : 'this row';
+      if (!confirm(`Delete "${label}"? This cannot be undone.`)) return;
+      const rowNum = d._row;
+      data = data.filter(r => r._row !== rowNum);
+      render();
+      await syncDeleteRow(rowNum);
+      await loadData(); // refresh row numbers after deletion
+    };
+    tdAct.appendChild(delBtn);
+    tr.appendChild(tdAct);
+
+    tbody.appendChild(tr);
+  });
+}
+
+// ================================================================
+//  ADD ROW MODAL
+// ================================================================
+function openAddRow() {
+  const container = document.getElementById('add-row-fields');
+  container.innerHTML = '';
+
+  headers.forEach(h => {
+    const label = document.createElement('label');
+    label.textContent = h;
+
+    if (h === 'Status') {
+      const sel = document.createElement('select');
+      sel.dataset.col = h;
+      sel.innerHTML = '<option>Pending</option><option>Added</option>';
+      container.appendChild(label);
+      container.appendChild(sel);
+    } else if (h === 'Key Features') {
+      const ta = document.createElement('textarea');
+      ta.dataset.col = h; ta.rows = 2;
+      ta.style.cssText = 'resize:vertical;font-size:12px;width:100%;padding:7px;border:1px solid #ddd;border-radius:4px;font-family:inherit';
+      // Make features span full width
+      label.style.cssText = 'grid-column:1/-1';
+      ta.style.cssText += ';grid-column:1/-1';
+      container.appendChild(label);
+      container.appendChild(ta);
+    } else {
+      const input = document.createElement('input');
+      input.type = 'text'; input.dataset.col = h;
+      if (h === 'Fuel') {
+        const sel = document.createElement('select');
+        sel.dataset.col = h;
+        sel.innerHTML = '<option value="">— select —</option><option>Petrol</option><option>Diesel</option><option>Electric</option><option>Hybrid</option><option>Mild Hybrid</option>';
+        container.appendChild(label); container.appendChild(sel); return;
+      }
+      if (h === 'Trans' || h === 'Transmission') {
+        const sel = document.createElement('select');
+        sel.dataset.col = h;
+        sel.innerHTML = '<option value="">— select —</option><option>AT</option><option>MT</option><option>CVT</option><option>AMT</option>';
+        container.appendChild(label); container.appendChild(sel); return;
+      }
+      container.appendChild(label);
+      container.appendChild(input);
+    }
+  });
+
+  openModal('modal-add-row');
+  // Focus first input
+  setTimeout(() => {
+    const first = container.querySelector('input, select, textarea');
+    if (first) first.focus();
+  }, 100);
+}
+
+async function submitAddRow() {
+  const container = document.getElementById('add-row-fields');
+  const rowObj = {};
+  container.querySelectorAll('[data-col]').forEach(el => {
+    rowObj[el.dataset.col] = el.value.trim();
+  });
+
+  const bi = headers.indexOf('Brand');
+  const mi = headers.indexOf('Model');
+  if (bi >= 0 && !rowObj[headers[bi]] && mi >= 0 && !rowObj[headers[mi]]) {
+    alert('Please enter at least Brand and Model.');
+    return;
+  }
+
+  closeModal('modal-add-row');
+  await syncAddRow(rowObj);
+}
+
+// ================================================================
+//  COLUMN ACTIONS
+// ================================================================
+async function submitAddCol() {
+  const name = document.getElementById('new-col-name').value.trim();
+  if (!name) { alert('Please enter a column name.'); return; }
+  closeModal('modal-add-col');
+  document.getElementById('new-col-name').value = '';
+  await syncAddColumn(name);
+}
+
+async function confirmDeleteColumn(colNum, name) {
+  if (!confirm(`Delete column "${name}"?\n\nThis will permanently remove ALL data in this column from your Google Sheet.`)) return;
+  await syncDeleteColumn(colNum);
+}
+
+// ================================================================
+//  MARK ALL / RESET
+// ================================================================
+document.getElementById('btn-all').onclick = async () => {
+  const si = headers.indexOf('Status');
+  if (si < 0) return alert('No Status column found.');
+  if (!confirm(`Mark all ${data.length} cars as Added?`)) return;
+  data.forEach(d => d.data[si] = 'Added');
+  render();
+  setSyncStatus('saving', '↑ Syncing…');
+  try {
+    const res = await apiPost({ action: 'markAllAdded', statusCol: si + 1 });
+    if (res.error) throw new Error(res.error);
+    setSyncStatus('saved', '✓ All marked Added');
+  } catch(e) { setSyncStatus('error', '✗ Sync failed'); }
+};
+
+document.getElementById('btn-reset').onclick = async () => {
+  const si = headers.indexOf('Status');
+  if (si < 0) return alert('No Status column found.');
+  if (!confirm('Reset all status to Pending?')) return;
+  data.forEach(d => d.data[si] = 'Pending');
+  render();
+  setSyncStatus('saving', '↑ Syncing…');
+  try {
+    const res = await apiPost({ action: 'resetStatus', statusCol: si + 1 });
+    if (res.error) throw new Error(res.error);
+    setSyncStatus('saved', '✓ All reset');
+  } catch(e) { setSyncStatus('error', '✗ Sync failed'); }
+};
+
+// ================================================================
+//  FILTER EVENTS
+// ================================================================
+document.getElementById('search').addEventListener('input', e => { search = e.target.value.trim(); render(); });
+document.getElementById('f-type').addEventListener('change', e => { filterType = e.target.value; render(); });
+document.getElementById('f-body').addEventListener('change', e => { filterBody = e.target.value; render(); });
+document.getElementById('f-status').addEventListener('change', e => { filterStatus = e.target.value; render(); });
+document.getElementById('f-sort').addEventListener('change', e => { sortKey = e.target.value; render(); });
+
+// ================================================================
+//  MODAL HELPERS
+// ================================================================
+function openModal(id)  { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
+  }
+});
+
+// ================================================================
+//  INIT
+// ================================================================
+checkSetup();
+if (apiUrl) loadData();
+</script>
+</body>
+</html>

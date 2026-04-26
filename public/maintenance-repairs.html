@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Car Servicing & Repairs – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
+      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
+      --border:#E4E8ED; --bg:#F5F7F9; --bg2:#ECEEF2; --white:#ffffff;
+      --red:#C8271E; --red-l:#FFF0EF;
+      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
+      --sh1:0 1px 4px rgba(0,0,0,.07); --sh2:0 4px 14px rgba(0,0,0,.09); --sh3:0 8px 28px rgba(0,0,0,.11);
+      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
+      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
+    ::selection { background:rgba(26,107,42,.15); }
+    :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 18px; }
+    @media(min-width:640px){ .wrap{ padding:0 32px; } }
+    @media(min-width:1024px){ .wrap{ padding:0 40px; } }
+
+    /* BREADCRUMB */
+    .bc { background:var(--bg); border-bottom:1px solid var(--border); padding:11px 0; }
+    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
+    .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
+    .bc-inner a:hover { text-decoration:underline; }
+    .bc-inner i { width:12px; height:12px; }
+
+    /* HERO */
+    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:52px 0 0; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; padding-bottom:52px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .hero-badge i { width:13px; height:13px; color:var(--green-m); }
+    .hero h1 { font-family:var(--font-d); font-size:clamp(30px,5vw,50px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:14px; }
+    .hero h1 em { font-style:italic; color:var(--green-m); }
+    .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:520px; line-height:1.7; margin-bottom:30px; }
+    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px; }
+    .hero-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:var(--pill); padding:7px 14px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.8); }
+    .hero-pill i { width:13px; height:13px; color:var(--green-m); }
+    .hero-cta { display:inline-flex; align-items:center; gap:9px; background:#fff; color:var(--green); border-radius:var(--pill); padding:13px 26px; font-size:14.5px; font-weight:800; text-decoration:none; transition:all var(--ease); box-shadow:0 4px 18px rgba(0,0,0,.18); }
+    .hero-cta:hover { background:var(--green-l); transform:translateY(-1px); box-shadow:0 6px 24px rgba(0,0,0,.22); }
+    .hero-cta i { width:16px; height:16px; }
+
+    /* SERVICES STRIP */
+    .services-strip { background:var(--white); border-bottom:1px solid var(--border); }
+    .services-strip-inner { display:grid; grid-template-columns:repeat(2,1fr); }
+    @media(min-width:640px){ .services-strip-inner{ grid-template-columns:repeat(4,1fr); } }
+    .svc-item { display:flex; flex-direction:column; gap:6px; padding:20px 16px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); text-decoration:none; color:inherit; }
+    .svc-item:last-child { border-right:none; }
+    @media(max-width:639px){ .svc-item:nth-child(2){ border-right:none; } .svc-item:nth-child(3){ border-right:1px solid var(--border); } }
+    .svc-item:hover { background:var(--green-l); }
+    .svc-item.cta-strip { background:var(--green-l); }
+    .svc-item.cta-strip:hover { background:#ddf0e1; }
+    .svc-item.cta-strip .svc-icon i { color:var(--green); }
+    .svc-item.cta-strip .svc-name { color:var(--green); }
+    .svc-icon { width:36px; height:36px; display:flex; align-items:center; justify-content:center; }
+    .svc-icon i { width:20px; height:20px; color:var(--ink4); }
+    .svc-name { font-size:12.5px; font-weight:800; color:var(--ink2); line-height:1.3; }
+    .svc-tag { font-size:11px; color:var(--ink5); }
+
+    /* SECTION */
+    .section { padding:64px 0; }
+    .section.alt { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
+    .eyebrow i { width:13px; height:13px; }
+    .sec-title { font-family:var(--font-d); font-size:clamp(22px,3.5vw,34px); font-weight:800; color:var(--ink); line-height:1.15; margin-bottom:6px; }
+    .sec-title em { font-style:italic; color:var(--green); }
+    .sec-sub { font-size:14.5px; color:var(--ink4); max-width:540px; line-height:1.7; margin-bottom:40px; }
+
+    /* HOW IT WORKS */
+    .steps { display:flex; flex-direction:column; gap:0; }
+    .step { display:flex; gap:16px; padding-bottom:28px; }
+    .step:last-child { padding-bottom:0; }
+    .step-left { display:flex; flex-direction:column; align-items:center; flex-shrink:0; width:36px; }
+    .step-num { width:36px; height:36px; border-radius:50%; background:var(--green-l); border:2px solid var(--green); display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-size:14px; font-weight:800; color:var(--green); }
+    .step-line { flex:1; width:2px; background:var(--border); margin-top:4px; }
+    .step:last-child .step-line { display:none; }
+    .step-content { padding-top:6px; }
+    .step-title { font-size:14px; font-weight:800; color:var(--ink2); margin-bottom:4px; }
+    .step-desc { font-size:13px; color:var(--ink4); line-height:1.6; }
+
+    /* SERVICE CATEGORIES */
+    .cat-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:32px; }
+    .cat-tab { padding:8px 16px; border:1.5px solid var(--border); border-radius:var(--pill); font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; transition:all var(--ease); background:var(--white); }
+    .cat-tab.active, .cat-tab:hover { border-color:var(--green); color:var(--green); background:var(--green-l); }
+
+    .services-grid { display:grid; grid-template-columns:1fr; gap:8px; }
+    @media(min-width:480px){ .services-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .services-grid{ grid-template-columns:repeat(3,1fr); } }
+
+    .service-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); padding:16px 16px; display:flex; align-items:flex-start; gap:12px; transition:all var(--ease); }
+    .service-card:hover { border-color:var(--green); box-shadow:var(--sh1); }
+    .service-card-icon { flex-shrink:0; margin-top:1px; }
+    .service-card-icon i { width:18px; height:18px; color:var(--ink5); }
+    .service-card-name { font-size:13.5px; font-weight:700; color:var(--ink2); margin-bottom:2px; }
+    .service-card-desc { font-size:12px; color:var(--ink5); line-height:1.5; }
+
+    /* VEHICLE TABS */
+    .vtab-wrap { margin-bottom:0; }
+    .vtabs { display:flex; gap:0; border:1.5px solid var(--border); border-radius:var(--r10); overflow:hidden; margin-bottom:28px; width:fit-content; }
+    .vtab { padding:9px 20px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; transition:all var(--ease); background:var(--white); border-right:1.5px solid var(--border); }
+    .vtab:last-child { border-right:none; }
+    .vtab.active { background:var(--green); color:#fff; }
+
+    .vtab-content { display:none; }
+    .vtab-content.active { display:block; }
+
+    /* DIAGNOSTICS */
+    .diag-grid { display:grid; grid-template-columns:1fr; gap:8px; }
+    @media(min-width:480px){ .diag-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .diag-grid{ grid-template-columns:repeat(3,1fr); } }
+    .diag-item { display:flex; align-items:flex-start; gap:10px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r10); padding:13px 14px; transition:border-color var(--ease); }
+    .diag-item:hover { border-color:var(--green); }
+    .diag-item i { width:15px; height:15px; color:var(--ink5); flex-shrink:0; margin-top:2px; }
+    .diag-name { font-size:13px; font-weight:700; color:var(--ink2); }
+
+    /* GARAGE TYPES */
+    .garage-grid { display:grid; grid-template-columns:1fr; gap:16px; }
+    @media(min-width:640px){ .garage-grid{ grid-template-columns:1fr 1fr; } }
+    .garage-card { border:1.5px solid var(--border); border-radius:var(--r16); overflow:hidden; transition:all var(--ease); }
+    .garage-card:hover { box-shadow:var(--sh2); transform:translateY(-2px); }
+    .garage-card.rec { border-color:var(--green); }
+    .garage-head { padding:22px 22px 16px; border-bottom:1px solid var(--border); }
+    .garage-label { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; color:var(--ink5); margin-bottom:8px; }
+    .garage-title { font-family:var(--font-d); font-size:22px; font-weight:800; color:var(--ink); margin-bottom:6px; }
+    .garage-desc { font-size:13.5px; color:var(--ink4); line-height:1.65; }
+    .garage-body { padding:20px 22px; }
+    .garage-list { display:flex; flex-direction:column; gap:7px; }
+    .garage-row { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--ink3); }
+    .garage-row i { width:14px; height:14px; flex-shrink:0; margin-top:2px; color:var(--ink5); }
+    .garage-row.yes i { color:var(--green); }
+
+    /* NOTICE */
+    .notice { display:flex; align-items:flex-start; gap:13px; padding:16px 18px; border-radius:var(--r12); margin-bottom:20px; background:var(--green-l); border:1.5px solid rgba(26,107,42,.15); color:var(--green); }
+    .notice i { width:17px; height:17px; flex-shrink:0; margin-top:1px; }
+    .notice-title { font-size:13px; font-weight:800; margin-bottom:3px; }
+    .notice-text { font-size:12.5px; line-height:1.6; color:var(--ink3); }
+    .notice.warn { background:#FFFBF0; border-color:rgba(180,130,0,.2); color:#7A5800; }
+    .notice.warn .notice-text { color:var(--ink3); }
+
+    /* FAQ */
+    .faq-list { display:flex; flex-direction:column; gap:8px; }
+    .faq-item { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); overflow:hidden; transition:border-color var(--ease); }
+    .faq-item.open { border-color:var(--green); }
+    .faq-q { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 18px; cursor:pointer; font-size:14px; font-weight:700; color:var(--ink2); user-select:none; }
+    .faq-q i { width:16px; height:16px; color:var(--ink5); flex-shrink:0; transition:transform var(--ease); }
+    .faq-item.open .faq-q i { transform:rotate(180deg); color:var(--green); }
+    .faq-a { display:none; padding:14px 18px 16px; font-size:13.5px; color:var(--ink4); line-height:1.7; border-top:1px solid var(--border); }
+    .faq-item.open .faq-a { display:block; }
+    .faq-cols { display:grid; grid-template-columns:1fr; gap:8px; }
+    @media(min-width:768px){ .faq-cols{ grid-template-columns:1fr 1fr; } }
+
+    /* CTA BANNER */
+    .cta-banner { padding:72px 0 80px; background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); position:relative; overflow:hidden; }
+    .cta-banner::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .cta-inner { position:relative; z-index:1; text-align:center; }
+    .cta-eyebrow { display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 14px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.7); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .cta-eyebrow i { width:13px; height:13px; color:var(--green-m); }
+    .cta-banner h2 { font-family:var(--font-d); font-size:clamp(26px,4vw,42px); font-weight:800; color:#fff; line-height:1.12; margin-bottom:12px; }
+    .cta-banner h2 em { font-style:italic; color:var(--green-m); }
+    .cta-banner p { font-size:15px; color:rgba(255,255,255,.6); max-width:480px; margin:0 auto 32px; line-height:1.7; }
+    .cta-btns { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+    .btn-primary { display:inline-flex; align-items:center; gap:9px; background:#fff; color:var(--green); border-radius:var(--pill); padding:14px 30px; font-size:15px; font-weight:800; text-decoration:none; transition:all var(--ease); box-shadow:0 4px 18px rgba(0,0,0,.2); }
+    .btn-primary:hover { background:var(--green-l); transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,0,0,.25); }
+    .btn-primary i { width:17px; height:17px; }
+    .btn-secondary { display:inline-flex; align-items:center; gap:9px; background:rgba(255,255,255,.1); color:#fff; border:1.5px solid rgba(255,255,255,.2); border-radius:var(--pill); padding:13px 24px; font-size:14px; font-weight:700; text-decoration:none; transition:all var(--ease); }
+    .btn-secondary:hover { background:rgba(255,255,255,.18); }
+    .btn-secondary i { width:15px; height:15px; }
+    .cta-reassure { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:28px; }
+    .cta-reassure-item { display:flex; align-items:center; gap:7px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.55); }
+    .cta-reassure-item i { width:13px; height:13px; color:var(--green-m); }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { opacity:0; animation:fadeUp .5s ease forwards; }
+    .d1{animation-delay:.05s} .d2{animation-delay:.12s} .d3{animation-delay:.19s}
+  </style>
+</head>
+<body>
+ <script src="assets/js/components/av-nav.js"></script>
+<!-- BREADCRUMB -->
+<nav class="bc">
+  <div class="wrap bc-inner">
+    <a href="/index.html">Home</a>
+    <i data-lucide="chevron-right"></i>
+    <a href="/services.html">Services</a>
+    <i data-lucide="chevron-right"></i>
+    <span>Car Servicing &amp; Repairs</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner fade-up">
+      <div class="hero-badge"><i data-lucide="wrench"></i>ICE · EV · Hybrid</div>
+      <h1>Car Servicing &amp;<br><em>Repairs</em></h1>
+      <p class="hero-desc">We collect your car, get it fixed at a trusted workshop, and return it to you — no chasing garages, no follow-up calls, no surprises on the bill.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>We collect &amp; return</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>ICE, EV &amp; Hybrid</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Authorized &amp; independent garages</span>
+        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Transparent estimates before work begins</span>
+      </div>
+      <a href="/form/maintenanceform           " class="hero-cta">
+        <i data-lucide="calendar-check"></i>Book a Service
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="services-strip">
+  <div class="wrap" style="padding:0">
+    <div class="services-strip-inner">
+      <div class="svc-item" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">
+        <div class="svc-icon"><i data-lucide="repeat-2"></i></div>
+        <div class="svc-name">How It Works</div>
+        <div class="svc-tag">Collect · Fix · Return</div>
+      </div>
+      <div class="svc-item" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+        <div class="svc-icon"><i data-lucide="list"></i></div>
+        <div class="svc-name">What We Service</div>
+        <div class="svc-tag">All job types</div>
+      </div>
+      <div class="svc-item" onclick="document.getElementById('garages').scrollIntoView({behavior:'smooth'})">
+        <div class="svc-icon"><i data-lucide="building-2"></i></div>
+        <div class="svc-name">Workshop Types</div>
+        <div class="svc-tag">Authorized vs independent</div>
+      </div>
+      <a class="svc-item cta-strip" href="/form/maintenanceform.html">
+        <div class="svc-icon"><i data-lucide="calendar-check"></i></div>
+        <div class="svc-name">Book a Service</div>
+        <div class="svc-tag">Request pickup &amp; repair →</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr;gap:48px;align-items:start">
+      <div style="display:grid;grid-template-columns:1fr;gap:48px" id="how-grid">
+        <div>
+          <div class="eyebrow"><i data-lucide="repeat-2"></i>How It Works</div>
+          <h2 class="sec-title">Simple from start<br>to <em>finish</em></h2>
+          <p style="font-size:14.5px;color:var(--ink4);line-height:1.7;max-width:440px;margin-bottom:32px">No need to find a garage, negotiate, or follow up. Tell us what your car needs, and we take care of everything from pickup to delivery.</p>
+          <div class="steps">
+            <div class="step">
+              <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+              <div class="step-content"><div class="step-title">Book online</div><div class="step-desc">Fill in your vehicle details, the job needed, and your location. Choose pickup or drop-off.</div></div>
+            </div>
+            <div class="step">
+              <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+              <div class="step-content"><div class="step-title">We collect your car</div><div class="step-desc">Our driver picks up your car at an agreed time. You stay at home or work — no interruption to your day.</div></div>
+            </div>
+            <div class="step">
+              <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+              <div class="step-content"><div class="step-title">We get an estimate</div><div class="step-desc">Before any work starts, you receive a transparent cost estimate. You approve it — then work begins.</div></div>
+            </div>
+            <div class="step">
+              <div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div>
+              <div class="step-content"><div class="step-title">The car gets fixed</div><div class="step-desc">Your car goes to an authorized or independent garage based on your preference and the job type.</div></div>
+            </div>
+            <div class="step">
+              <div class="step-left"><div class="step-num">5</div><div class="step-line"></div></div>
+              <div class="step-content"><div class="step-title">We return it to you</div><div class="step-desc">Once done, we deliver the car back to your address. You pay only after you see the completed work.</div></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="eyebrow"><i data-lucide="shield-check"></i>Why use AutoViindu</div>
+          <h2 class="sec-title">No more chasing<br><em>workshops</em></h2>
+          <p style="font-size:14.5px;color:var(--ink4);line-height:1.7;max-width:440px;margin-bottom:24px">Dealing with garages directly means language barriers, unclear pricing, and long wait times. We manage the whole process and only work with workshops we have verified.</p>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:2px"></i><span><strong style="color:var(--ink2)">Transparent pricing</strong> — you see the estimate before we touch the car</span></div>
+            <div style="display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:2px"></i><span><strong style="color:var(--ink2)">Verified workshops only</strong> — we do not use garages we have not checked</span></div>
+            <div style="display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:2px"></i><span><strong style="color:var(--ink2)">One point of contact</strong> — no need to call the garage directly</span></div>
+            <div style="display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:2px"></i><span><strong style="color:var(--ink2)">Post-repair warranty follow-up</strong> — if something is not right, we go back</span></div>
+            <div style="display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink3)"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:2px"></i><span><strong style="color:var(--ink2)">EV-trained partners</strong> — proper facilities for electric and hybrid vehicles</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section alt" id="services">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="settings"></i>Services</div>
+    <h2 class="sec-title">What We <em>Fix</em></h2>
+    <p class="sec-sub">All common maintenance and repair jobs, for petrol, diesel, electric, and hybrid vehicles.</p>
+
+    <div class="vtab-wrap">
+      <div class="vtabs">
+        <div class="vtab active" onclick="switchVtab('ice',this)">Petrol / Diesel</div>
+        <div class="vtab" onclick="switchVtab('ev',this)">Electric (EV)</div>
+        <div class="vtab" onclick="switchVtab('hybrid',this)">Hybrid</div>
+      </div>
+
+      <!-- ICE -->
+      <div class="vtab-content active" id="tab-ice">
+        <div class="services-grid">
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="droplets"></i></div><div><div class="service-card-name">Engine Oil &amp; Filter</div><div class="service-card-desc">Oil change, filter replacement, top-up check</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="thermometer"></i></div><div><div class="service-card-name">Cooling System</div><div class="service-card-desc">Radiator, coolant flush, thermostat, hoses</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="fuel"></i></div><div><div class="service-card-name">Fuel System</div><div class="service-card-desc">Pump, injectors, fuel filter</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="settings-2"></i></div><div><div class="service-card-name">Clutch &amp; Transmission</div><div class="service-card-desc">Manual and automatic, gear oil</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="circle-dot"></i></div><div><div class="service-card-name">Brakes</div><div class="service-card-desc">Pads, discs, brake fluid replacement</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="move-horizontal"></i></div><div><div class="service-card-name">Suspension &amp; Steering</div><div class="service-card-desc">Shock absorbers, bushings, alignment</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="battery"></i></div><div><div class="service-card-name">Battery &amp; Alternator</div><div class="service-card-desc">12V battery, charging system check</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="wind"></i></div><div><div class="service-card-name">Air Conditioning</div><div class="service-card-desc">Compressor, gas refill, cabin filter</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="zap"></i></div><div><div class="service-card-name">Electricals &amp; Lighting</div><div class="service-card-desc">Sensors, fuses, bulbs, wiring</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="cloud"></i></div><div><div class="service-card-name">Exhaust &amp; Emissions</div><div class="service-card-desc">Exhaust pipe, catalytic converter, EGR</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="shield"></i></div><div><div class="service-card-name">Body &amp; Exterior Repairs</div><div class="service-card-desc">Dents, paint, panels</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="circle"></i></div><div><div class="service-card-name">Tyres, Wheels &amp; Alignment</div><div class="service-card-desc">Puncture repair, rotation, balancing</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="droplet"></i></div><div><div class="service-card-name">Wipers &amp; Washers</div><div class="service-card-desc">Wiper blades, washer pump, fluid</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="clipboard-list"></i></div><div><div class="service-card-name">General Servicing</div><div class="service-card-desc">Full inspection, service logbook stamping</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="sofa"></i></div><div><div class="service-card-name">Interior Repairs</div><div class="service-card-desc">Dashboard, controls, upholstery</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="cpu"></i></div><div><div class="service-card-name">Diagnostics (ECU &amp; Sensors)</div><div class="service-card-desc">OBD scan, fault code reading, reset</div></div></div>
+        </div>
+      </div>
+
+      <!-- EV -->
+      <div class="vtab-content" id="tab-ev">
+        <div class="services-grid">
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="battery-charging"></i></div><div><div class="service-card-name">High-Voltage Battery System</div><div class="service-card-desc">State of Health (SoH), cell balancing, cooling</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="plug-zap"></i></div><div><div class="service-card-name">Charging Port &amp; On-board Charger</div><div class="service-card-desc">AC/DC port, cables, OBC diagnostics</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="zap"></i></div><div><div class="service-card-name">Electric Motor &amp; Inverter</div><div class="service-card-desc">Motor diagnostics, inverter faults</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="rotate-ccw"></i></div><div><div class="service-card-name">Regenerative Braking System</div><div class="service-card-desc">Regen calibration, brake blend check</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="thermometer"></i></div><div><div class="service-card-name">Thermal Management</div><div class="service-card-desc">Battery and motor cooling system</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="shield-alert"></i></div><div><div class="service-card-name">HV Safety &amp; Cable Inspection</div><div class="service-card-desc">Orange HV cable check, insulation test</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="code-2"></i></div><div><div class="service-card-name">Software &amp; Firmware Updates</div><div class="service-card-desc">OTA updates, BMS recalibration</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="move-horizontal"></i></div><div><div class="service-card-name">Suspension &amp; Steering</div><div class="service-card-desc">Alignment, steering rack, shock absorbers</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="circle-dot"></i></div><div><div class="service-card-name">Brakes &amp; Tyres</div><div class="service-card-desc">Pads, wheel alignment, tyre rotation</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="lightbulb"></i></div><div><div class="service-card-name">Lights, Sensors &amp; Electricals</div><div class="service-card-desc">ADAS sensors, camera calibration</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="wind"></i></div><div><div class="service-card-name">Air Conditioning &amp; Heat Pump</div><div class="service-card-desc">Heat pump system, cabin air filter</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="monitor"></i></div><div><div class="service-card-name">Interior Controls &amp; Infotainment</div><div class="service-card-desc">Touchscreen, cluster display, audio</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="sparkles"></i></div><div><div class="service-card-name">General Wash &amp; Cabin Filter</div><div class="service-card-desc">Interior cleaning, HEPA filter replacement</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="cpu"></i></div><div><div class="service-card-name">EV Diagnostics (OBD, BMS, Motor ECU)</div><div class="service-card-desc">Full scan, fault code read and reset</div></div></div>
+        </div>
+      </div>
+
+      <!-- HYBRID -->
+      <div class="vtab-content" id="tab-hybrid">
+        <div class="services-grid">
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="battery-charging"></i></div><div><div class="service-card-name">HV Battery System</div><div class="service-card-desc">Diagnostics, module replacement, SoH</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="settings-2"></i></div><div><div class="service-card-name">Power Split Device / Hybrid Gearbox</div><div class="service-card-desc">eCVT, DHT or AMT transmission</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="zap"></i></div><div><div class="service-card-name">Electric Motor &amp; Inverter</div><div class="service-card-desc">Motor faults, inverter diagnostics</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="cpu"></i></div><div><div class="service-card-name">Hybrid ECU &amp; Software Calibration</div><div class="service-card-desc">Hybrid control unit, firmware sync</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="power"></i></div><div><div class="service-card-name">Start-Stop System</div><div class="service-card-desc">Auto start-stop, idle charge management</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="plug-zap"></i></div><div><div class="service-card-name">Charging Port &amp; Cable (PHEV)</div><div class="service-card-desc">PHEV AC charging port and cable check</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="droplets"></i></div><div><div class="service-card-name">ICE Engine (Oil, Filters, Fuel Injection)</div><div class="service-card-desc">Oil service, air/fuel filter, injector clean</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="circle-dot"></i></div><div><div class="service-card-name">Brakes &amp; Regenerative Calibration</div><div class="service-card-desc">Regen brake blend, pads, fluid</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="thermometer"></i></div><div><div class="service-card-name">Dual Cooling System</div><div class="service-card-desc">ICE coolant circuit + battery cooling circuit</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="move-horizontal"></i></div><div><div class="service-card-name">Suspension &amp; Steering</div><div class="service-card-desc">Alignment, bushings, shocks</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="wind"></i></div><div><div class="service-card-name">Air Conditioning &amp; Cabin Heater</div><div class="service-card-desc">Electric + engine-based HVAC systems</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="zap"></i></div><div><div class="service-card-name">Electricals, Sensors &amp; 12V Battery</div><div class="service-card-desc">Auxiliary battery, sensor calibration</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="monitor"></i></div><div><div class="service-card-name">Interior &amp; Infotainment</div><div class="service-card-desc">Display, cluster, hybrid energy monitor</div></div></div>
+          <div class="service-card"><div class="service-card-icon"><i data-lucide="cpu"></i></div><div><div class="service-card-name">Advanced Diagnostics</div><div class="service-card-desc">Hybrid fault codes, cross-system sync</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTICS -->
+<section class="section" id="diagnostics">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="search"></i>Diagnostics</div>
+    <h2 class="sec-title">Not sure what's <em>wrong?</em></h2>
+    <p class="sec-sub">These are the most common symptoms people bring to us. A proper diagnostic scan tells us exactly what to fix — saving you from unnecessary parts replacement.</p>
+
+    <div style="margin-bottom:20px">
+      <div class="vtabs" style="margin-bottom:28px">
+        <div class="vtab active" onclick="switchDiagTab('ice',this)">Petrol / Diesel</div>
+        <div class="vtab" onclick="switchDiagTab('ev',this)">Electric (EV)</div>
+        <div class="vtab" onclick="switchDiagTab('hybrid',this)">Hybrid</div>
+      </div>
+
+      <div id="dtab-ice" class="vtab-content active">
+        <div class="diag-grid">
+          <div class="diag-item"><i data-lucide="key-round"></i><div class="diag-name">Car won't start</div></div>
+          <div class="diag-item"><i data-lucide="thermometer-snowflake"></i><div class="diag-name">Car heater not working</div></div>
+          <div class="diag-item"><i data-lucide="gauge"></i><div class="diag-name">Loss of power / sluggish acceleration</div></div>
+          <div class="diag-item"><i data-lucide="flame"></i><div class="diag-name">Burning rubber smell</div></div>
+          <div class="diag-item"><i data-lucide="radio"></i><div class="diag-name">Car radio not working</div></div>
+          <div class="diag-item"><i data-lucide="move-horizontal"></i><div class="diag-name">Car pulling to one side</div></div>
+          <div class="diag-item"><i data-lucide="lightbulb"></i><div class="diag-name">Dim headlights</div></div>
+          <div class="diag-item"><i data-lucide="wind"></i><div class="diag-name">Car AC not working</div></div>
+          <div class="diag-item"><i data-lucide="vibrate"></i><div class="diag-name">Car shakes when braking</div></div>
+          <div class="diag-item"><i data-lucide="zap-off"></i><div class="diag-name">Engine misfiring</div></div>
+          <div class="diag-item"><i data-lucide="waves"></i><div class="diag-name">Rough and bumpy ride</div></div>
+          <div class="diag-item"><i data-lucide="volume-2"></i><div class="diag-name">Clunking / knocking noise</div></div>
+          <div class="diag-item"><i data-lucide="circle-slash-2"></i><div class="diag-name">Grinding noise when braking</div></div>
+        </div>
+      </div>
+
+      <div id="dtab-ev" class="vtab-content">
+        <div class="diag-grid">
+          <div class="diag-item"><i data-lucide="key-round"></i><div class="diag-name">Car won't start</div></div>
+          <div class="diag-item"><i data-lucide="plug-zap"></i><div class="diag-name">EV not charging</div></div>
+          <div class="diag-item"><i data-lucide="volume-2"></i><div class="diag-name">Clicking or popping noise</div></div>
+          <div class="diag-item"><i data-lucide="lightbulb-off"></i><div class="diag-name">Dim headlights / electrical faults</div></div>
+          <div class="diag-item"><i data-lucide="triangle-alert"></i><div class="diag-name">EV system fault on dashboard</div></div>
+          <div class="diag-item"><i data-lucide="download"></i><div class="diag-name">Software update not installing</div></div>
+          <div class="diag-item"><i data-lucide="flame"></i><div class="diag-name">Burning smell from battery area</div></div>
+          <div class="diag-item"><i data-lucide="vibrate"></i><div class="diag-name">Car shakes when braking</div></div>
+          <div class="diag-item"><i data-lucide="volume-2"></i><div class="diag-name">Loud motor whining</div></div>
+        </div>
+      </div>
+
+      <div id="dtab-hybrid" class="vtab-content">
+        <div class="diag-grid">
+          <div class="diag-item"><i data-lucide="triangle-alert"></i><div class="diag-name">Hybrid system malfunction warning</div></div>
+          <div class="diag-item"><i data-lucide="zap-off"></i><div class="diag-name">Engine not switching to EV mode</div></div>
+          <div class="diag-item"><i data-lucide="thermometer-snowflake"></i><div class="diag-name">Heater not working in EV mode</div></div>
+          <div class="diag-item"><i data-lucide="plug-zap"></i><div class="diag-name">Charging issue (PHEV)</div></div>
+          <div class="diag-item"><i data-lucide="waves"></i><div class="diag-name">Rough or bumpy ride</div></div>
+          <div class="diag-item"><i data-lucide="lightbulb-off"></i><div class="diag-name">Warning lights flickering</div></div>
+          <div class="diag-item"><i data-lucide="search-code"></i><div class="diag-name">Check Hybrid System light</div></div>
+          <div class="diag-item"><i data-lucide="power-off"></i><div class="diag-name">Engine stalls when switching modes</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice" style="margin-top:28px">
+      <i data-lucide="info"></i>
+      <div>
+        <div class="notice-title">Not on the list?</div>
+        <div class="notice-text">Describe the symptom in the booking form and we will assess it during the diagnostic inspection before quoting for repairs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSHOP TYPES -->
+<section class="section alt" id="garages">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="building-2"></i>Workshop Types</div>
+    <h2 class="sec-title">Authorized vs <em>Independent</em></h2>
+    <p class="sec-sub">Both have their place. We work with both types and help you choose the right one depending on your vehicle's age, warranty status, and the job.</p>
+    <div class="garage-grid">
+      <div class="garage-card">
+        <div class="garage-head">
+          <div class="garage-label">Option A</div>
+          <div class="garage-title">Authorized Service Center</div>
+          <p class="garage-desc">Brand-official workshops with factory-trained technicians and genuine parts. The right choice for new or under-warranty vehicles.</p>
+        </div>
+        <div class="garage-body">
+          <div class="garage-list">
+            <div class="garage-row yes"><i data-lucide="check"></i>Factory-trained technicians</div>
+            <div class="garage-row yes"><i data-lucide="check"></i>Genuine OEM parts used</div>
+            <div class="garage-row yes"><i data-lucide="check"></i>Service history logged to warranty record</div>
+            <div class="garage-row yes"><i data-lucide="check"></i>Manufacturer warranty preserved</div>
+            <div class="garage-row yes"><i data-lucide="check"></i>Advanced diagnostic tools specific to brand</div>
+            <div class="garage-row"><i data-lucide="minus"></i>Generally higher cost than independent</div>
+            <div class="garage-row"><i data-lucide="minus"></i>Longer waiting time for appointments</div>
+          </div>
+        </div>
+      </div>
+      <div class="garage-card rec">
+        <div class="garage-head">
+          <div class="garage-label">Option B</div>
+          <div class="garage-title">Independent Garage</div>
+          <p class="garage-desc">Skilled mechanics not tied to one brand. Often faster, more flexible, and more affordable for routine servicing and out-of-warranty repairs.</p>
+        </div>
+        <div class="garage-body">
+          <div class="garage-list">
+            <div class="garage-row yes"><i data-lucide="check"></i>More affordable for routine jobs</div>
+            <div class="garage-row yes"><i data-lucide="check"></i>Faster turnaround</div>
+            <div class="garage-row yes"><i data-lucide="check"></i>Good for multi-brand households</div>
+            <div class="garage-row yes"><i data-lucide="check"></i>Flexible with OEM or quality aftermarket parts</div>
+            <div class="garage-row yes"><i data-lucide="check"></i>We only use garages we have verified</div>
+            <div class="garage-row"><i data-lucide="minus"></i>Not suitable if your car is under manufacturer warranty</div>
+            <div class="garage-row"><i data-lucide="minus"></i>Quality varies — which is why we vet them for you</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notice warn" style="margin-top:20px">
+      <i data-lucide="alert-triangle"></i>
+      <div>
+        <div class="notice-title">Is your car still under manufacturer warranty?</div>
+        <div class="notice-text">If so, you must use an authorized service center for covered repairs. Using an independent garage for warranty work may void your coverage. Tell us in the booking form and we will route it correctly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow"><i data-lucide="circle-help"></i>FAQs</div>
+    <h2 class="sec-title">Common <em>Questions</em></h2>
+    <p class="sec-sub" style="margin-bottom:32px">Quick answers before you book.</p>
+    <div class="faq-cols">
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">How do I know how much the repair will cost?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Before any work starts, we send you a written cost estimate. You confirm or reject it. Nothing is done without your approval.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Do you service EVs and hybrids?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Yes. We have partner workshops with high-voltage trained technicians for electric and hybrid vehicles. EV-specific jobs like battery diagnostics, regenerative brake calibration, and charging port repairs are all available.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Can I choose authorized or independent?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Yes, you can state your preference in the booking form. We will also advise based on your vehicle's warranty status and the type of work needed.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What if the garage finds more problems?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">If the workshop discovers additional issues during the inspection, we will contact you before proceeding. You decide what gets fixed. No hidden charges.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">How long does a typical service take?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Routine oil service: same day. Brake pad replacement: same day. Diagnostics: 1–2 days. Major mechanical work: 3–7 days depending on parts availability.</div>
+        </div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Is pickup and drop-off available everywhere?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Pickup and drop-off is available in Kathmandu Valley. For locations outside the valley, you can drop your car directly at the partner workshop — we coordinate the rest.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Do I need to stay with the car?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">No. Once we collect the car, you are free. We keep you updated at key stages — when it arrives at the workshop, when work starts, and when it is ready for return.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What documents do I need?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Just your vehicle's Bluebook (registration certificate) and a phone number. For warranty repairs, we may also need your service record or warranty card.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What happens after the repair — any warranty?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Most jobs come with a parts and labour warranty from the workshop. If an issue recurs related to the same repair, we go back to the workshop and follow up on your behalf.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">My car was in an accident. Can you help?<i data-lucide="chevron-down"></i></div>
+          <div class="faq-a">Yes. For major accidents, note this in the booking form and upload photos of the vehicle. We will route it to a body shop and coordinate any insurance claim if applicable.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-eyebrow"><i data-lucide="calendar-check"></i>Ready to book?</div>
+      <h2>Get your car sorted,<br><em>stress-free</em></h2>
+      <p>Tell us what your car needs. We handle pickup, repairs, and drop-off — from start to finish.</p>
+      <div class="cta-btns">
+        <a href="car-servicing-booking.html" class="btn-primary">
+          <i data-lucide="calendar-check"></i>Book a Service Now
+        </a>
+        <a href="#how" class="btn-secondary">
+          <i data-lucide="repeat-2"></i>See How It Works
+        </a>
+      </div>
+      <div class="cta-reassure">
+        <div class="cta-reassure-item"><i data-lucide="check-circle-2"></i>Estimate before work starts</div>
+        <div class="cta-reassure-item"><i data-lucide="check-circle-2"></i>Confirmed within 1 business day</div>
+        <div class="cta-reassure-item"><i data-lucide="check-circle-2"></i>Collect &amp; return included</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  lucide.createIcons();
+
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function switchVtab(id, el) {
+    const parent = el.closest('.vtab-wrap');
+    parent.querySelectorAll('.vtab').forEach(t => t.classList.remove('active'));
+    parent.querySelectorAll('.vtab-content').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    parent.querySelector('#tab-' + id).classList.add('active');
+  }
+
+  function switchDiagTab(id, el) {
+    const section = document.getElementById('diagnostics');
+    section.querySelectorAll('.vtab').forEach(t => t.classList.remove('active'));
+    section.querySelectorAll('.vtab-content').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('dtab-' + id).classList.add('active');
+  }
+</script>
+
+  <div id="av-toast-wrap"></div>
+  <script src="assets/js/components/av-footer.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
