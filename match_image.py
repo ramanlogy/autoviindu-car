@@ -34,8 +34,8 @@ CARS_DB_FILE  = "frontend/assets/js/data/cars-db.js"
 IMAGES_SRC    = "car_images"
 IMAGES_DST    = "frontend/assets/images/cars"
 
-# Match the path style already in your file: '/frontend/assets/images/cars/...'
-WEB_PREFIX    = "/frontend/assets/images/cars"
+# Match the path style already in your file: '/assets/images/cars/...'
+WEB_PREFIX    = "/assets/images/cars"
 
 IMAGE_EXT     = [".jpg", ".jpeg", ".png", ".webp"]
 MAX_EXTERIOR  = 4
@@ -208,7 +208,7 @@ def main():
 
         # Skip if already local and FORCE_REPLACE is off
         if not FORCE_REPLACE:
-            has_local = "/frontend/assets/images" in existing_block or \
+            has_local = "/assets/images" in existing_block or \
                         "assets/images/cars" in existing_block
             has_remote = "unsplash" in existing_block or "http" in existing_block
             if has_local and not has_remote:

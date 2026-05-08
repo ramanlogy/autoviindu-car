@@ -7,7 +7,7 @@ const path = require('path');
 const vm = require('vm');
 
 // ── 1. Read the cars-db.js file as text ──────────────────────────────────────
-const dbPath = path.join(__dirname, 'frontend', 'assets', 'js', 'data', 'cars-db.js');
+const dbPath = path.join(__dirname,  'assets', 'js', 'data', 'cars-db.js');
 
 if (!fs.existsSync(dbPath)) {
   console.error('❌ Cannot find:', dbPath);
@@ -44,7 +44,7 @@ CARS_DB.forEach(car => {
 });
 
 // ── 4. Write one JSON file per brand ─────────────────────────────────────────
-const outDir = path.join(__dirname, 'frontend', 'data', 'cars');
+const outDir = path.join(__dirname, 'data', 'cars');
 fs.mkdirSync(outDir, { recursive: true });
 
 Object.entries(byBrand).forEach(([brand, cars]) => {
@@ -53,5 +53,5 @@ Object.entries(byBrand).forEach(([brand, cars]) => {
   console.log(`✅ ${brand}.json  →  ${cars.length} car(s)  [${outPath}]`);
 });
 
-console.log(`\n🎉 Done! Upload the folder  frontend/data/cars/  to your server.`);
+console.log(`\n🎉 Done! Upload the folder  /data/cars/  to your server.`);
 console.log(`   Path on server: public_html/autoviindu/data/cars/`);
