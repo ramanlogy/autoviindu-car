@@ -17,6 +17,7 @@
 const USED = window.USED_CARS_DB || [];
 
 const Rs=n=>n>=100000?`Rs. ${(n/100000).toFixed(2)}L`:`Rs. ${n.toLocaleString()}`;
+window.Rs = Rs;
 const calcEMI=(p,ar,m)=>{const r=ar/12/100;return r===0?p/m:p*(r*Math.pow(1+r,m))/(Math.pow(1+r,m)-1)};
 const carBySlug=s=>CARS_DB.find(c=>c.slug===s);
 const fmtR=r=>r.toFixed(1);
@@ -139,7 +140,7 @@ function carCard(car) {
       <div class="cc-variant">${car.year} · ${car.body}</div>
 
       <div class="cc-price-block">
-        <div class="cc-price-line">Price <strong>Rs. ${car.variants[0].label}</strong></div>
+        <div class="cc-price-line">Price <strong>${window.Rs(car.variants[0].price)}</strong></div>
         <div class="cc-emi">EMI From <strong>Rs. ${car.baseEMI.toLocaleString()}/mo</strong></div>
         <div class="cc-actions">
           <button class="cc-btn-f" onclick="event.stopPropagation();alert('Call: +977-9701076240')">Get Price</button>
@@ -789,7 +790,7 @@ ${BRANDS.map(b=>`<div class="brand-card" onclick="AV.goTo('cars',{brand:'${b.nam
             ${evCars.slice(0,4).map(c=>`<div class="ev-mini" onclick="AV.openDetail('${c.slug}')">
               <img src="${c.images[0]}" class="ev-mini-img" alt="${c.brand} ${c.model}" loading="lazy">
               <div class="ev-mini-name">${c.brand} ${c.model}</div>
-              <div class="ev-mini-price">${c.variants[0].label}</div>
+              <div class="ev-mini-price">${window.Rs(c.variants[0].price)}</div>
               <div class="ev-mini-range">${c.specs['Range (WLTP)']||''}</div>
             </div>`).join('')}
           </div>
@@ -1339,8 +1340,8 @@ function selectVariant(slug,vi){
   const vr=car.variants[vi];
   document.querySelectorAll('.variant-tab').forEach((t,i)=>t.classList.toggle('active',i===vi));
   document.querySelectorAll('.pcv-item').forEach((t,i)=>t.classList.toggle('active',i===vi));
-  document.querySelectorAll('[data-price-d]').forEach(el=>el.textContent=vr.label);
-  const pa=document.getElementById('price-amount');if(pa)pa.textContent=vr.label;
+  document.querySelectorAll('[data-price-d]').forEach(el=>el.textContent=window.Rs(vr.price));
+  const pa=document.getElementById('price-amount');if(pa)pa.textContent=window.Rs(vr.price);
   const vdp=document.getElementById('vdp');
   if(vdp&&vr.specs)vdp.innerHTML=Object.entries(vr.specs).map(([k,v])=>`<div class="vdp-item" style="background:rgba(255,255,255,.7);border-radius:var(--r8);padding:10px;text-align:center"><div style="font-family:var(--font-d);font-size:14px;font-weight:700;color:var(--g3)">${v}</div><div style="font-size:10px;color:var(--ink4);margin-top:2px">${k}</div></div>`).join('');
   const downEl=document.getElementById('emi-down');
@@ -1390,7 +1391,7 @@ function buildEmiHTML(car, vi){
       <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="emi-loan">${Rs(Math.round(loan))}</div><div class="dp-emi-bd-lbl">Loan amount</div></div>
       <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="emi-int">${Rs(Math.round(intr))}</div><div class="dp-emi-bd-lbl">Interest</div></div>
       <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="emi-tot">${Rs(Math.round(tot))}</div><div class="dp-emi-bd-lbl">Total payable</div></div>
-      <div class="dp-emi-bd"><div class="dp-emi-bd-val">${vr.label}</div><div class="dp-emi-bd-lbl">Vehicle price</div></div>
+      <div class="dp-emi-bd"><div class="dp-emi-bd-val">${window.Rs(vr.price)}</div><div class="dp-emi-bd-lbl">Vehicle price</div></div>
     </div>
     <button onclick="alert('Finance: +977-9701076240')" class="dp-cta-ghost" style="margin-top:10px">Apply for finance</button>`;
 }
@@ -1514,7 +1515,7 @@ function renderDetail(slug) {
     return car.variants.map((v, i) => `
       <div class="dp-var-tab${i===vi()?' active':''}" onclick="AV.switchVariant('${slug}',${i})">
         <div class="dp-var-tab-name">${v.name}</div>
-        <div class="dp-var-tab-price">${v.label}</div>
+        <div class="dp-var-tab-price">${window.Rs(v.price)}</div>
         ${v.popular ? '<div class="dp-var-tab-best">★ Best Value</div>' : ''}
       </div>`).join('');
   }
@@ -1586,7 +1587,7 @@ function renderDetail(slug) {
         <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-loan">${Rs(Math.round(loan))}</div><div class="dp-emi-bd-lbl">Loan amount</div></div>
         <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-int">${Rs(Math.round(intr))}</div><div class="dp-emi-bd-lbl">Interest</div></div>
         <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-tot">${Rs(Math.round(tot))}</div><div class="dp-emi-bd-lbl">Total payable</div></div>
-        <div class="dp-emi-bd"><div class="dp-emi-bd-val">${v.label}</div><div class="dp-emi-bd-lbl">Vehicle price</div></div>
+        <div class="dp-emi-bd"><div class="dp-emi-bd-val">${window.Rs(v.price)}</div><div class="dp-emi-bd-lbl">Vehicle price</div></div>
       </div>
       <button onclick="alert('Finance: +977-9701076240')" class="dp-cta-ghost" style="margin-top:10px;width:100%">Apply for finance →</button>`;
   }
@@ -1597,7 +1598,7 @@ function renderDetail(slug) {
     return `<div class="dp-scard">
       <div class="dp-price-box">
         <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink4);margin-bottom:4px">Ex-showroom price</div>
-        <div class="dp-price-main" id="dp-price-d">${v.label}</div>
+        <div class="dp-price-main" id="dp-price-d">${window.Rs(v.price)}</div>
         <div class="dp-price-note" id="dp-var-note">${v.name} · Contact for on-road price</div>
         <div class="dp-cta-stack">
           <button class="dp-cta-primary" onclick="alert('+977-9701076240')">Get best price</button>
@@ -1754,7 +1755,7 @@ function renderDetail(slug) {
   <div class="dp-mob-bar">
     <div class="dp-mob-price">
       <div class="dp-mob-price-lbl">Ex-showroom from</div>
-      <div class="dp-mob-price-val" id="dp-mob-price">${v0.label}</div>
+      <div class="dp-mob-price-val" id="dp-mob-price">${window.Rs(v0.price)}</div>
     </div>
     <div class="dp-mob-btns">
       <button class="dp-mob-btn-g" onclick="alert('Test drive: +977-9701076240')">Test Drive</button>
@@ -1805,9 +1806,9 @@ function renderDetail(slug) {
 
     /* price displays */
     const setText = (id,val) => { const el=document.getElementById(id); if(el) el.textContent=val; };
-    setText('dp-price-d',  v.label);
+    setText('dp-price-d',  window.Rs(v.price));
     setText('dp-var-note', `${v.name} · Contact for on-road price`);
-    setText('dp-mob-price', v.label);
+    setText('dp-mob-price', window.Rs(v.price));
 
     /* key info grid */
     const ki = document.getElementById('dp-ki');
@@ -1962,7 +1963,7 @@ function renderCompare(){
       <div style="max-height:420px;overflow-y:auto;scrollbar-width:thin">
         ${CARS_DB.map(car=>`<div class="cmp-car-pick ${compareList.includes(car.slug)?'in':''}" onclick="AV.toggleCompare('${car.slug}')">
           <img src="${car.images[0]}" alt="${car.brand}">
-          <div style="flex:1;min-width:0"><div class="cmp-car-pick-name">${car.brand} ${car.model}</div><div class="cmp-car-pick-price">${car.variants[0].label}</div></div>
+          <div style="flex:1;min-width:0"><div class="cmp-car-pick-name">${car.brand} ${car.model}</div><div class="cmp-car-pick-price">${window.Rs(car.variants[0].price)}</div></div>
           <span style="font-size:18px;color:${compareList.includes(car.slug)?'var(--g3)':'var(--ink5)'}">${compareList.includes(car.slug)?'✓':'+'}</span>
         </div>`).join('')}
       </div>
@@ -2006,7 +2007,7 @@ function renderCmpTable(cols){
   const cars=cols.map(s=>carBySlug(s)).filter(Boolean);
   const specs=['Base Price','Rating','Reviews Score','Power','Torque','Efficiency','0–100','Boot','Ground Clearance','Seating'];
   const getVal=(car,s)=>{
-    if(s==='Base Price')return car.variants[0].label;
+    if(s==='Base Price')return window.Rs(car.variants[0].price);
     if(s==='Rating')return fmtR(car.rating)+'★';
     if(s==='Reviews Score')return car.expertScore+'/10';
     const map={Power:['Power','Motor Power','Combined Power'],Torque:['Torque'],Efficiency:['Fuel Efficiency','Range (WLTP)'],'0–100':['0–100 km/h'],Boot:['Boot Space'],'Ground Clearance':['Ground Clearance'],Seating:['Seating']};
@@ -2022,7 +2023,7 @@ function renderCmpTable(cols){
             <img src="${c.images[0]}" style="width:100%;height:72px;object-fit:cover;border-radius:var(--r8);margin-bottom:8px;display:block">
             <div style="font-size:10px;color:rgba(255,255,255,.35)">${c.brand}</div>
             <div style="font-size:15px;font-weight:700;color:#fff;font-family:var(--font-d)">${c.model}</div>
-            <div style="font-size:13px;font-weight:700;color:var(--gold-t);margin-top:4px">${c.variants[0].label}</div>
+            <div style="font-size:13px;font-weight:700;color:var(--gold-t);margin-top:4px">${window.Rs(c.variants[0].price)}</div>
             <div style="display:flex;gap:6px;justify-content:center;margin-top:9px">
               <button onclick="AV.openDetail('${c.slug}')" style="padding:5px 10px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);border:none;border-radius:var(--r6);font-family:var(--font-b);font-size:10.5px;font-weight:700;cursor:pointer">Details</button>
               <button onclick="AV.toggleCompare('${c.slug}')" style="padding:5px 10px;background:rgba(214,48,49,.2);color:#ff8a80;border:none;border-radius:var(--r6);font-family:var(--font-b);font-size:10.5px;font-weight:700;cursor:pointer">Remove</button>
@@ -2261,6 +2262,7 @@ function renderUsedDetail(id){
   setNav('used');
  
   const Rs=n=>n>=100000?`Rs. ${(n/100000).toFixed(2)}L`:`Rs. ${n.toLocaleString()}`;
+window.Rs = Rs;
   const calcEMI=(p,ar,m)=>{const r=ar/12/100;return r===0?p/m:p*(r*Math.pow(1+r,m))/(Math.pow(1+r,m)-1)};
   const checkIcon=(ok)=>ok
     ?`<svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg>`
@@ -2575,7 +2577,7 @@ function openDetail(slug){
 }
 
 /* ─ SEARCH ─ */
-let searchIdx=CARS_DB.map(c=>({slug:c.slug,display:`${c.brand} ${c.model}`,searchText:`${c.brand} ${c.model} ${c.type} ${c.body}`.toLowerCase(),image:c.images[0],year:c.year,type:c.type,body:c.body,price:c.variants[0].label}));
+let searchIdx=CARS_DB.map(c=>({slug:c.slug,display:`${c.brand} ${c.model}`,searchText:`${c.brand} ${c.model} ${c.type} ${c.body}`.toLowerCase(),image:c.images[0],year:c.year,type:c.type,body:c.body,price:window.Rs(c.variants[0].price)}));
 let searchTimer=null;
 const hsInput=document.getElementById('hs-input');
 const searchDD=document.getElementById('search-dd');
@@ -2596,7 +2598,7 @@ if(hsInput){
   document.addEventListener('click',e=>{if(!e.target.closest('#header-search-wrap'))closeSD()});
 }
 function showQS(){if(!searchDD)return;searchDD.innerHTML=`<div class="sdd-hd">Popular Searches</div><div class="sdd-chip-row">${['MG Hector','IONIQ 5','Toyota Prius','Honda City','Kia Seltos','BYD Atto 3','Swift 2024','Electric Cars'].map(t=>`<span class="sdd-chip" onclick="AV.goTo('cars');closeSD()">${t}</span>`).join('')}</div>`;searchDD.classList.add('open')}
-function closeSD(){if(searchDD)searchDD.classList.remove('open')}
+function closeSD(){if(searchDD)searchDD.classList.remove('open');const h=document.querySelector('.header-in');if(h)h.classList.remove('search-active');document.body.style.overflow=''}
 window.closeSD=closeSD;
 
 /* ─ HEADER SCROLL ─ */
@@ -2611,6 +2613,28 @@ const mmCarsBtn=document.getElementById('mm-cars-btn');
 const mmCarsSub=document.getElementById('mm-cars-sub');
 if(mmCarsBtn)mmCarsBtn.addEventListener('click',()=>{const open=mmCarsSub.classList.contains('open');mmCarsSub.classList.toggle('open',!open)});
 window.closeMM=closeMM;
+
+
+
+/* ─ MOBILE SEARCH TOGGLE ─ */
+const mobSearchBtn2 = document.getElementById('mob-search-btn');
+const mobSearchBack2 = document.getElementById('mob-search-back');
+const headerIn2 = document.querySelector('.header-in');
+
+if(mobSearchBtn2 && mobSearchBack2 && headerIn2) {
+  mobSearchBtn2.addEventListener('click', () => {
+    headerIn2.classList.add('search-active');
+    document.body.style.overflow = 'hidden'; // prevent background scrolling while searching
+    setTimeout(() => {
+      document.getElementById('hs-input')?.focus();
+    }, 100);
+  });
+  mobSearchBack2.addEventListener('click', () => {
+    headerIn2.classList.remove('search-active');
+    document.body.style.overflow = '';
+    closeSD();
+  });
+}
 
 /* ─ KEYBOARD ─ */
 document.addEventListener('keydown',e=>{

@@ -275,3 +275,32 @@
 .mob-overlay-chips { display: flex; flex-wrap: wrap; gap: 7px; }
 .mob-overlay-chip { padding: 7px 13px; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--pill); font-size: 13px; font-weight: 600; color: var(--ink-3); cursor: pointer; }
 .mob-search-results { max-height: 340px; overflow-y: auto; }
+/* ─ MOBILE SEARCH TOGGLE ─ */
+@media (max-width: 959px) {
+  .header-in.search-active #honk-wrapper,
+  .header-in.search-active .mob-icons,
+  .header-in.search-active .burger,
+  .header-in.search-active .header-ctas {
+    display: none !important;
+  }
+  .header-in.search-active .header-search {
+    display: block !important;
+    flex: 1;
+    max-width: 100%;
+  }
+  .header-in.search-active #mob-search-back {
+    display: flex !important;
+  }
+  /* The dropdown should span full width on mobile */
+  .search-dd {
+    position: fixed !important;
+    top: var(--nav-h) !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow-y: auto !important;
+  }
+}

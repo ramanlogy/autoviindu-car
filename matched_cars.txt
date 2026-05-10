@@ -1,0 +1,81 @@
+DB: Hyundai | Grand i10 Nios FL | Era -> 3356000
+DB: Hyundai | Grand i10 Nios FL | Era Loaded -> 3396000
+DB: Hyundai | Grand i10 Nios FL | Magna -> 3896000
+DB: Hyundai | Grand i10 Nios FL | Sportz -> 4096000
+DB: Hyundai | Grand i10 Nios FL | Magna AMT -> 4126000
+DB: Hyundai | Exter | EX -> 3696000
+DB: Hyundai | Exter | S -> 4296000
+DB: Hyundai | Exter | SX -> 4696000
+DB: Hyundai | Venue FL | E -> 4196000
+DB: Hyundai | Venue FL | S -> 4596000
+DB: Hyundai | Venue FL | SX -> 5456000
+DB: Hyundai | Venue FL | S(O) DCT (1.0T) -> 5996000
+DB: Hyundai | i20 | Magna -> 3996000
+DB: Hyundai | i20 | Sportz -> 4396000
+DB: Hyundai | All New Creta FL | E MT (Made in Nepal) -> 5556000
+DB: Hyundai | All New Creta FL | E Loaded (Made in Nepal) -> 5596000
+DB: Hyundai | All New Creta FL | E MT (CBU Import) -> 5796000
+DB: Hyundai | All New Creta FL | S(O) MT (Made in Nepal) -> 6496000
+DB: Hyundai | All New Creta FL | SX MT (Made in Nepal) -> 6796000
+DB: Hyundai | All New Creta FL | S(O) IVT (Made in Nepal) -> 6956000
+DB: Hyundai | All New Creta FL | S(O) MT (CBU Import) -> 6996000
+DB: Hyundai | All New Creta FL | SX MT (CBU Import) -> 7396000
+DB: Hyundai | All New Creta FL | S(O) CVT (CBU Import) -> 7596000
+DB: Hyundai | All New Creta FL | SX(O) IVT (Made in Nepal) -> 8056000
+DB: Hyundai | All New Creta FL | SX(O) CVT (CBU Import) -> 8796000
+DB: Hyundai | Creta Electric | Executive (99 kW) -> 5196000
+DB: Hyundai | Creta Electric | Smart (O) (99 kW) -> 5696000
+DB: Hyundai | Creta Electric | Premium+ (99 kW) -> 5996000
+DB: Hyundai | Creta Electric | Smart (O) LR (126 kW) -> 6996000
+DB: Hyundai | Creta Electric | Excellence LR (126 kW) -> 7696000
+DB: Hyundai | Ioniq 5 | GLS Vision Roof (100 kW) -> 10396000
+DB: Hyundai | Ioniq 5 | GLS Vision Roof (124.9 kW) -> 10396000
+DB: Hyundai | Kona Electric | GL (100 kW) -> 5996000
+DB: Hyundai | Kona Electric | GLS (100 kW) -> 6496000
+DB: Hyundai | Tucson | GL 2WD MT (2.0L Petrol) -> 10796000
+DB: Hyundai | Tucson | GLX 2WD AT (2.0L Petrol) -> 13796000
+DB: Hyundai | Tucson | GLX+ 2WD AT (2.0L Petrol) -> 13796000
+DB: Hyundai | Tucson | GLX 4WD AT (2.0L Diesel) -> 16096000
+DB: Hyundai | Tucson | GLX 4WD AT (1.6T Turbo Petrol) -> 16296000
+DB: Hyundai | Santa Fe | GLS 4WD AT -> 18996000
+DB: Hyundai | Palisade | GLS 4WD AT -> 23596000
+DB: Toyota | Raize | 1.2G MT -> 6600000
+DB: Toyota | Raize | 1.2G CVT -> 7200000
+DB: Toyota | Raize | 1.0 Turbo CVT -> 8600000
+DB: Toyota | Rush | Mid MT -> 8650000
+DB: Toyota | Rush | High AT -> 8875000
+DB: Toyota | Corolla Cross | Entry -> 11650000
+DB: Toyota | Corolla Cross | High -> 13800000
+DB: Toyota | Hilux | 2.4L Standard -> 9600000
+DB: Toyota | Hilux | 2.8L High -> 11000000
+DB: Toyota | Fortuner | 2.7 Petrol MT -> 21000000
+DB: Toyota | Fortuner | 2.8 Diesel AT -> 22200000
+DB: Toyota | RAV4 | MT Petrol -> 15600000
+DB: Toyota | RAV4 | AT Petrol -> 17000000
+DB: Toyota | RAV4 | AWD Petrol -> 19000000
+DB: Toyota | Camry Hybrid | Camry Hybrid -> 18500000
+DB: Toyota | Land Cruiser 70 | LC70 Standard -> 25000000
+DB: Toyota | Land Cruiser Prado | VX -> 28300000
+DB: Toyota | Land Cruiser Prado | VXR -> 33000000
+DB: BYD | Atto 1 | Dynamic -> 2975000
+DB: BYD | Atto 1 | Premium -> 3380000
+DB: BYD | Dolphin | Standard -> 4115000
+DB: BYD | Atto 2 | Standard -> 4499000
+DB: BYD | Atto 3 | Advanced -> 5999000
+DB: BYD | Atto 3 | Superior -> 6780000
+DB: BYD | M6 | Standard -> 5890000
+DB: BYD | Sealion 7 | Premium RWD -> 7999000
+DB: BYD | Seal | Dynamic -> 11000000
+DB: BYD | Seal | Premium -> 14550000
+DB: BYD | Seal | Performance -> 19500000
+DB: Deepal | S07 | Standard Range RWD -> 7990000
+DB: Deepal | S07 | Long Range RWD -> 9290000
+DB: Deepal | S07 | Long Range AWD -> 10990000
+DB: Deepal | L07 | REEV Standard -> 6990000
+DB: Deepal | L07 | REEV Premium -> 8190000
+DB: Deepal | S05 | Standard -> 5490000
+DB: Deepal | S05 | Premium -> 6490000
+DB: Chery | Omoda 5 | Comfort -> 4190000
+DB: Chery | Omoda 5 | Premium -> 4790000
+DB: Chery | Omoda E5 | Standard -> 5990000
+DB: Chery | Omoda E5 | Premium -> 6990000

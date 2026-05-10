@@ -78,7 +78,7 @@ window.CarCard = {
 
           '<div class="car-card-price-row">' +
             '<div class="car-card-price-from">Starting from</div>' +
-            '<div class="car-card-price">' + car.variants[0].label + '</div>' +
+            '<div class="car-card-price">' + window.Rs(car.variants[0].price) + '</div>' +
             '<div class="car-card-emi">EMI from <strong>Rs. ' + car.baseEMI.toLocaleString() + '/mo</strong></div>' +
             '<div class="car-card-actions">' +
               '<button class="cc-btn-outline" onclick="event.stopPropagation();alert(\'Call: +977-9701076240\')">Get Quote</button>' +
@@ -97,7 +97,7 @@ window.CarCard = {
       '<div style="flex:1;min-width:0">' +
         '<div style="font-size:13px;font-weight:800;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + car.brand + ' ' + car.model + '</div>' +
         '<div style="font-size:11px;color:var(--ink-4);margin-top:1px">' + car.type + ' &middot; ' + car.body + '</div>' +
-        '<div style="font-size:14px;font-weight:800;color:var(--green);margin-top:4px">' + car.variants[0].label + '</div>' +
+        '<div style="font-size:14px;font-weight:800;color:var(--green);margin-top:4px">' + window.Rs(car.variants[0].price) + '</div>' +
       '</div>' +
     '</div>';
   },

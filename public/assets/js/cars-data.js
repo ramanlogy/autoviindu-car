@@ -821,7 +821,7 @@ window.buildSearchIndex = function() {
       car.tagline, car.overview
     ].join(' ').toLowerCase(),
     display: `${car.brand} ${car.model}`,
-    price: car.variants[0].label,
+    price: window.Rs(car.variants[0].price),
     badge: car.badge,
     image: car.images[0],
     year: car.year,

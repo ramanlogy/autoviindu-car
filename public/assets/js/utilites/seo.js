@@ -40,7 +40,7 @@
       if (!car) return;
       var title = car.brand + ' ' + car.model + ' ' + car.year + ' Price in Nepal – Specs, Variants & EMI | AutoViindu';
       document.title = title;
-      var desc = car.brand + ' ' + car.model + ' ' + car.year + ' Nepal price starts at ' + car.variants[0].label +
+      var desc = car.brand + ' ' + car.model + ' ' + car.year + ' Nepal price starts at ' + window.Rs(car.variants[0].price) +
         '. ' + car.variants.length + ' variants, full specs, EMI calculator.';
       setMeta('description', desc);
       setMeta('og:title', car.brand + ' ' + car.model + ' ' + car.year + ' – AutoViindu Nepal');

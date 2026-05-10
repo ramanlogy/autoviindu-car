@@ -51,7 +51,7 @@ window.renderCars = function (filter, options) {
       '<div class="car-card-brand">' + car.brand + ' · ' + car.year + '</div>' +
       '<div class="car-card-name">' + car.model + '</div>' +
       '<div class="car-card-tagline">' + car.tagline + '</div>' +
-      '<div class="car-card-price-row"><span class="car-card-price">' + car.variants[0].label + '</span>' +
+      '<div class="car-card-price-row"><span class="car-card-price">' + window.Rs(car.variants[0].price) + '</span>' +
       (car.variants.length > 1 ? '<span class="car-card-variants">' + car.variants.length + ' variants</span>' : '') + '</div>' +
       '<div class="car-card-meta"><span>★ ' + car.rating.toFixed(1) + '</span><span>' + car.type + '</span><span>' + car.body + '</span></div>' +
       '<div class="car-card-actions">' +

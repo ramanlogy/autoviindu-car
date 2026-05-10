@@ -23,7 +23,7 @@ window.renderHome = function () {
       '<div class="car-card-brand">' + c.brand + ' &middot; ' + c.year + '</div>' +
       '<div class="car-card-name">' + c.model + '</div>' +
       '<div class="car-card-tagline">' + c.tagline + '</div>' +
-      '<div class="car-card-price-row"><span class="car-card-price">' + c.variants[0].label + '</span>' +
+      '<div class="car-card-price-row"><span class="car-card-price">' + window.Rs(c.variants[0].price) + '</span>' +
       (c.variants.length > 1 ? '<span class="car-card-variants">' + c.variants.length + ' variants</span>' : '') + '</div>' +
       '<div class="car-card-meta"><span>&#9733; ' + c.rating.toFixed(1) + '</span><span>' + c.type + '</span><span>' + c.body + '</span></div>' +
       '<div class="car-card-actions">' +

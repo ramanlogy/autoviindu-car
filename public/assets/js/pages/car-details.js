@@ -82,7 +82,7 @@
         '<div class="car-card-brand">' + car.brand + ' &middot; ' + car.year + '</div>' +
         '<div class="car-card-name">' + car.model + '</div>' +
         '<div class="car-card-tagline">' + (car.tagline||'') + '</div>' +
-        '<div class="car-card-price-row"><span class="car-card-price">' + car.variants[0].label + '</span>' +
+        '<div class="car-card-price-row"><span class="car-card-price">' + window.Rs(car.variants[0].price) + '</span>' +
         (car.variants.length > 1 ? '<span class="car-card-variants">' + car.variants.length + ' variants</span>' : '') + '</div>' +
         '<div class="car-card-meta"><span>&#9733; ' + car.rating.toFixed(1) + '</span><span>' + car.type + '</span><span>' + car.body + '</span></div>' +
         '<div class="car-card-actions">' +
@@ -145,7 +145,7 @@
               return '<div class="variant-tab ' + (i===vi?'active':'') + '" onclick="AV.selectVariant(\'' + slug + '\',' + i + ')">' +
                 (v.popular ? '<div class="popular-tag">Best Value</div>' : '') +
                 '<div class="vt-name">' + v.name + '</div>' +
-                '<div class="vt-price">' + v.label + '</div>' +
+                '<div class="vt-price">' + window.Rs(v.price) + '</div>' +
                 '<div class="vt-features">' + v.features.slice(0,3).map(function(f){ return '<div class="vt-feature"><span class="tick">' + (IC.check||'✓') + '</span>' + f + '</div>'; }).join('') + '</div>' +
               '</div>';
             }).join('') +
@@ -184,7 +184,7 @@
             '<div style="font-size:13px;color:var(--ink-3);margin-bottom:16px">' + car.brand + ' ' + car.model + ' comes in <strong>' + car.variants.length + ' variants</strong>:</div>' +
             '<div style="overflow-x:auto;border-radius:var(--r12);box-shadow:var(--shadow-xs)">' +
               '<table class="var-matrix"><thead><tr><th style="text-align:left">Feature</th>' +
-              car.variants.map(function(v){ return '<th>' + v.name + '<br><span style="color:var(--gold-text);font-size:11px">' + v.label + '</span></th>'; }).join('') +
+              car.variants.map(function(v){ return '<th>' + v.name + '<br><span style="color:var(--gold-text);font-size:11px">' + window.Rs(v.price) + '</span></th>'; }).join('') +
               '</tr></thead><tbody>' + buildVariantMatrix(car) + '</tbody></table></div>' +
           '</div>' +
 
@@ -214,11 +214,11 @@
       '<div class="detail-sidebar">' +
         '<div class="price-card">' +
           '<div class="price-card-from">Ex-Showroom Price</div>' +
-          '<div class="price-card-amount" data-price-display>' + vr.label + '</div>' +
+          '<div class="price-card-amount" data-price-display>' + window.Rs(vr.price) + '</div>' +
           '<div class="price-card-note">*Contact for final on-road price</div>' +
           '<div style="margin:14px 0 0"><label style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--ink-4);display:block;margin-bottom:6px">Select Variant</label>' +
             '<div style="position:relative"><select id="variant-dropdown" onchange="AV.selectVariant(\'' + slug + '\',+this.value)" style="width:100%;padding:11px 36px 11px 12px;border:1.5px solid var(--border);border-radius:var(--r10);font-family:var(--font-body);font-size:13.5px;font-weight:700;color:var(--ink);background:var(--white);appearance:none;outline:none;cursor:pointer">' +
-              car.variants.map(function(v,i){ return '<option value="' + i + '"' + (i===vi?' selected':'') + '>' + v.name + ' — ' + v.label + (v.popular?' (Best Value)':'') + '</option>'; }).join('') +
+              car.variants.map(function(v,i){ return '<option value="' + i + '"' + (i===vi?' selected':'') + '>' + v.name + ' — ' + window.Rs(v.price) + (v.popular?' (Best Value)':'') + '</option>'; }).join('') +
             '</select></div>' +
           '</div>' +
           '<div id="variant-quick-specs" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:12px 0">' +
@@ -289,7 +289,7 @@
         var c = carBySlug(s); if (!c) return;
         var v = c.variants[idx];
         document.querySelectorAll('.variant-tab').forEach(function(t,i){ t.classList.toggle('active', i===idx); });
-        document.querySelectorAll('[data-price-display]').forEach(function(el){ el.textContent = v.label; });
+        document.querySelectorAll('[data-price-display]').forEach(function(el){ el.textContent = window.Rs(v.price); });
         var panel = document.getElementById('variant-detail-panel');
         if (panel && v.specs) panel.innerHTML = Object.entries(v.specs).map(function(e){ return '<div class="vdp-item"><div class="vdp-value">' + e[1] + '</div><div class="vdp-label">' + e[0] + '</div></div>'; }).join('');
         var qsp = document.getElementById('variant-quick-specs');

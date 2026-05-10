@@ -50,7 +50,7 @@ window.renderVariantPage = function (carSlug, variantSlug) {
           '<div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r16);padding:22px">' +
             '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--ink-4);margin-bottom:4px">' + car.brand + ' ' + car.model + '</div>' +
             '<div style="font-size:22px;font-weight:900;color:var(--ink);margin-bottom:4px">' + vr.name + ' Variant</div>' +
-            '<div style="font-size:30px;font-weight:900;color:var(--green);margin-bottom:4px">' + vr.label + '</div>' +
+            '<div style="font-size:30px;font-weight:900;color:var(--green);margin-bottom:4px">' + window.Rs(vr.price) + '</div>' +
             '<div style="font-size:12px;color:var(--ink-4);margin-bottom:20px">Ex-Showroom &middot; Nepal</div>' +
             '<div style="display:flex;flex-direction:column;gap:9px">' +
               '<button class="btn btn-primary btn-full" onclick="alert(\'Best price: +977-9701076240\')">Get Best Price</button>' +
@@ -68,7 +68,7 @@ window.renderVariantPage = function (carSlug, variantSlug) {
               return '<div class="variant-tab ' + (i===varIdx?'active':'') + '" onclick="window.renderVariantPage(\'' + car.slug + '\',\'' + v.slug + '\');history.pushState({},'','#variant/' + car.slug + '/' + v.slug + '\')">' +
                 (v.popular ? '<div class="popular-tag">Best Value</div>' : '') +
                 '<div class="vt-name">' + v.name + '</div>' +
-                '<div class="vt-price">' + v.label + '</div>' +
+                '<div class="vt-price">' + window.Rs(v.price) + '</div>' +
               '</div>';
             }).join('') +
           '</div>' +

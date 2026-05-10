@@ -24,7 +24,7 @@ window.RelatedCars = {
 
     var cardFn = window.CarCard && window.CarCard.html
       ? function (c) { return window.CarCard.html(c); }
-      : function (c) { return '<div onclick="AV.openDetail(\'' + c.slug + '\')" style="cursor:pointer;padding:12px;border:1px solid var(--border);border-radius:var(--r10)">' + c.brand + ' ' + c.model + ' · ' + c.variants[0].label + '</div>'; };
+      : function (c) { return '<div onclick="AV.openDetail(\'' + c.slug + '\')" style="cursor:pointer;padding:12px;border:1px solid var(--border);border-radius:var(--r10)">' + c.brand + ' ' + c.model + ' · ' + window.Rs(c.variants[0].price) + '</div>'; };
 
     return '<div class="related-cars-section">' +
       '<div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--ink);margin-bottom:16px">' +
@@ -49,7 +49,7 @@ window.RelatedCars = {
             '<img src="' + c.images[0] + '" style="width:100%;height:100px;object-fit:cover">' +
             '<div style="padding:10px">' +
               '<div style="font-size:13px;font-weight:800;color:var(--ink);margin-bottom:3px">' + c.brand + ' ' + c.model + '</div>' +
-              '<div style="font-size:12px;color:var(--green);font-weight:700">' + c.variants[0].label + '</div>' +
+              '<div style="font-size:12px;color:var(--green);font-weight:700">' + window.Rs(c.variants[0].price) + '</div>' +
             '</div>' +
           '</div>';
         }).join('') +

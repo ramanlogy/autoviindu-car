@@ -14,7 +14,7 @@ window.VariantSelector = {
         return '<div class="variant-tab' + (i === activeIdx ? ' active' : '') + '" onclick="AV.selectVariant(\'' + car.slug + '\',' + i + ')">' +
           (v.popular ? '<div class="popular-tag">Best Value</div>' : '') +
           '<div class="vt-name">' + v.name + '</div>' +
-          '<div class="vt-price">' + v.label + '</div>' +
+          '<div class="vt-price">' + window.Rs(v.price) + '</div>' +
           '<div class="vt-features">' +
             v.features.slice(0, 3).map(function (f) {
               return '<div class="vt-feature"><span class="tick">' + self._check + '</span>' + f + '</div>';
@@ -34,7 +34,7 @@ window.VariantSelector = {
       'appearance:none;outline:none;cursor:pointer">' +
       car.variants.map(function (v, i) {
         return '<option value="' + i + '"' + (i === activeIdx ? ' selected' : '') + '>' +
-          v.name + ' — ' + v.label + (v.popular ? ' (Best Value)' : '') +
+          v.name + ' — ' + window.Rs(v.price) + (v.popular ? ' (Best Value)' : '') +
         '</option>';
       }).join('') +
     '</select>';
@@ -56,7 +56,7 @@ window.VariantSelector = {
       car.variants.map(function (v, i) {
         return '<div class="pcv-item' + (i === 0 ? ' active' : '') + '" onclick="AV.selectVariant(\'' + car.slug + '\',' + i + ')">' +
           '<div class="pcv-name">' + v.name + (v.popular ? ' <span class="popular-tag" style="font-size:9px;padding:1px 6px">Best Value</span>' : '') + '</div>' +
-          '<div class="pcv-price">' + v.label + '</div>' +
+          '<div class="pcv-price">' + window.Rs(v.price) + '</div>' +
         '</div>';
       }).join('') +
     '</div>';

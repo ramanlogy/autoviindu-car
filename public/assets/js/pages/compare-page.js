@@ -15,7 +15,7 @@ window.renderCompare = function () {
   function carBySlug(s) { return db.find(function (c) { return c.slug === s; }); }
 
   function getVal(car, spec) {
-    if (spec === 'price') return car.variants[0].label;
+    if (spec === 'price') return window.Rs(car.variants[0].price);
     if (spec === 'rating') return car.rating.toFixed(1) + '★';
     if (spec === 'expertScore') return (car.expertScore || '—') + '/10';
     var keys = spec.split('||');
@@ -50,7 +50,7 @@ window.renderCompare = function () {
           '<img src="' + c.images[0] + '" style="width:100%;height:80px;object-fit:cover;border-radius:var(--r10);margin-bottom:8px;display:block">' +
           '<div style="font-size:11px;color:rgba(255,255,255,.4);font-weight:600">' + c.brand + '</div>' +
           '<div style="font-size:15px;font-weight:800;color:#fff">' + c.model + '</div>' +
-          '<div style="font-size:13px;font-weight:800;color:var(--gold-text);margin-top:5px">' + c.variants[0].label + '</div>' +
+          '<div style="font-size:13px;font-weight:800;color:var(--gold-text);margin-top:5px">' + window.Rs(c.variants[0].price) + '</div>' +
           '<div style="display:flex;gap:6px;justify-content:center;margin-top:9px">' +
           '<button onclick="AV.openDetail(\'' + c.slug + '\')" style="padding:5px 10px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);border:none;border-radius:var(--r6);font-family:var(--font-body);font-size:10.5px;font-weight:700;cursor:pointer">Details</button>' +
           '<button onclick="AV.toggleCompare(\'' + c.slug + '\')" style="padding:5px 10px;background:rgba(220,38,38,.2);color:#FCA5A5;border:none;border-radius:var(--r6);font-family:var(--font-body);font-size:10.5px;font-weight:700;cursor:pointer">Remove</button>' +
@@ -77,7 +77,7 @@ window.renderCompare = function () {
     var inCmp = compareList.includes(car.slug);
     return '<div onclick="AV.toggleCompare(\'' + car.slug + '\')" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1.5px solid ' + (inCmp ? 'var(--green)' : 'var(--border)') + ';background:' + (inCmp ? 'var(--green-ll)' : 'var(--white)') + ';border-radius:var(--r10);cursor:pointer;transition:all var(--ease)">' +
       '<img src="' + car.images[0] + '" style="width:46px;height:30px;object-fit:cover;border-radius:var(--r6);flex-shrink:0">' +
-      '<div style="flex:1;min-width:0"><div style="font-size:12.5px;font-weight:800;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + car.brand + ' ' + car.model + '</div><div style="font-size:11px;color:var(--ink-4)">' + car.variants[0].label + '</div></div>' +
+      '<div style="flex:1;min-width:0"><div style="font-size:12.5px;font-weight:800;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + car.brand + ' ' + car.model + '</div><div style="font-size:11px;color:var(--ink-4)">' + window.Rs(car.variants[0].price) + '</div></div>' +
       '<span style="font-size:16px;color:' + (inCmp ? 'var(--green)' : 'var(--ink-5)') + '">' + (inCmp ? '✓' : '+') + '</span>' +
       '</div>';
   }).join('');
