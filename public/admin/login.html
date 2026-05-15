@@ -79,7 +79,7 @@
         const data = await res.json();
         if(res.ok && data.success) {
           localStorage.setItem('adminToken', data.token);
-          window.location.href = 'dashboard.html';
+          window.location.href = '/dashboard';
         } else {
           err.innerText = data.message || 'Login failed';
           err.style.display = 'block';

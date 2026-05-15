@@ -1159,7 +1159,7 @@
         </svg>
         Settings
       </div>
-      <div class="nav-item" onclick="localStorage.removeItem('adminToken'); window.location.href='login.html'">
+      <div class="nav-item" onclick="localStorage.removeItem('adminToken'); window.location.href='/login'">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
           <polyline points="16 17 21 12 16 7" />
@@ -1541,10 +1541,10 @@
     // ── FETCH DATA ──
     async function fetchData() {
       const token = localStorage.getItem('adminToken');
-      if (!token) { window.location.href = 'login.html'; return; }
+      if (!token) { window.location.href = '/login'; return; }
       try {
         const res = await fetch('/api/forms/responses', { headers: { 'Authorization': 'Bearer ' + token } });
-        if (res.status === 401) { localStorage.removeItem('adminToken'); window.location.href = 'login.html'; return; }
+        if (res.status === 401) { localStorage.removeItem('adminToken'); window.location.href = '/login'; return; }
         if (!res.ok) throw new Error('Server error ' + res.status);
         const data = await res.json();
         allData = Array.isArray(data) ? data : [];
