@@ -31,6 +31,15 @@ app.post('/api/admin/login', (req, res) => {
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/images', express.static(path.join(__dirname, 'backend/uploads')));
 
+// Convenient routes for admin
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/admin/login.html'));
+});
+
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/admin/dashboard.html'));
+});
+
 // ── API: Get all new cars ─────────────────────────────────────────────────────
 // The cars data lives in cars-db.js on the frontend.
 // This endpoint is a lightweight health-check / meta endpoint.
