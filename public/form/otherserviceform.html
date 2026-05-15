@@ -699,6 +699,35 @@
 
     function handleSubmit(e) {
       e.preventDefault();
+    const form = e.target;
+    const type = arguments.length > 1 ? arguments[1] : null;
+    // Collect data automatically
+    const data = { formId: form.id || type || 'unknown' };
+    const elements = form.querySelectorAll('input, select, textarea');
+    elements.forEach((el, i) => {
+      let label = el.name || el.placeholder;
+      if (!label) {
+        const group = el.closest('.form-group') || el.closest('div');
+        if (group) {
+          const lblEl = group.querySelector('.form-label') || group.querySelector('label');
+          if (lblEl) label = lblEl.innerText.replace('*', '').trim();
+        }
+      }
+      if (!label) label = 'field_' + i;
+      
+      if (el.type === 'radio' || el.type === 'checkbox') {
+        if (el.checked) data[label] = el.value || 'checked';
+      } else {
+        data[label] = el.value;
+      }
+    });
+
+    fetch('/api/forms/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).catch(err => console.error(err));
+
       const form = document.getElementById('requestForm');
       const success = document.getElementById('successState');
       // Update progress step

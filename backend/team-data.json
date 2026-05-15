@@ -1,0 +1,33 @@
+{
+  "notices": [
+    {
+      "id": 1,
+      "text": "Welcome to the new AutoViindu Admin Dashboard!",
+      "date": "2026-05-16T10:00:00.000Z",
+      "author": "Admin"
+    },
+    {
+      "id": 1778873090245,
+      "text": "im on leave tommorw morning",
+      "date": "2026-05-15T19:24:50.245Z",
+      "author": "Admin"
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "text": "Review new finance applications",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "text": "Update used car pricing for Toyota Corolla",
+      "completed": false
+    },
+    {
+      "id": 1778873105030,
+      "text": "make me new video asap",
+      "completed": true
+    }
+  ]
+}
