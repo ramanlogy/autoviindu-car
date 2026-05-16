@@ -605,22 +605,23 @@
     btn.style.pointerEvents = 'none';
     document.getElementById('submit-label').textContent = 'Submitting…';
 
-    // Send to Google Sheets
-    if (SHEETS_URL && SHEETS_URL !== 'YOUR_APPS_SCRIPT_URL_HERE') {
-      try {
-        await fetch(SHEETS_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-      } catch (e) {
-        console.warn('Sheets submission error:', e);
-      }
-    } else {
-      // Demo mode — log payload
-      await new Promise(r => setTimeout(r, 800));
-      console.log('DEMO — Form payload:', payload);
+    // Send to AutoViindu Backend Server
+    try {
+      const response = await fetch('/api/forms/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formType: 'Book Service', ...payload })
+      });
+      const data = await response.json();
+      if (!data.success) throw new Error(data.message || 'Submission failed');
+    } catch (e) {
+      console.error('Server submission error:', e);
+      alert('There was a problem submitting your request. Please try again or call us directly.');
+      // Re-enable button
+      btn.style.opacity = '';
+      btn.style.pointerEvents = '';
+      document.getElementById('submit-label').textContent = 'Submit Request';
+      return;
     }
 
     // Show success
