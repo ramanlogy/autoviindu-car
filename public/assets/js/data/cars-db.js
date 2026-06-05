@@ -23,11 +23,13 @@ window.CARS_DB = [
     "baseEMI": 47000,
     "overview": "The Epic New Suzuki Swift arrives with the all-new 1.2L Z-Series engine delivering best-in-segment fuel efficiency of 25.75 km/l (AMT). It raises the safety bar by making 6 airbags standard across every variant, paired with ESP and Hill Hold Assist as standard. Sporty all-black interiors, a SmartPlay Pro+ infotainment system, and Suzuki Connect telematics make it the most feature-rich Swift yet.",
     "images": [
-      "/assets/images/cars/suzuki/swift-2024/front.jpg",
-      "assets/images/cars/suzuki-swift-epic-hatchback-02.jpg",
-      "assets/images/cars/suzuki-swift-epic-hatchback-03.jpg",
-      "assets/images/cars/suzuki-swift-epic-hatchback-04.jpg"
-    ],
+    '/assets/images/cars/suzuki/swift/suzuki-swift-exterior-front-white-bg.jpg',
+    '/assets/images/cars/suzuki/swift/suzuki-swift-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/suzuki/swift/suzuki-swift-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/suzuki/swift/suzuki-swift-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/suzuki/swift/suzuki-swift-interior-cargo-space.jpg',
+    '/assets/images/cars/suzuki/swift/suzuki-swift-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Sizzling Red",
@@ -263,11 +265,13 @@ window.CARS_DB = [
     "baseEMI": 37000,
     "overview": "The All-New Suzuki Celerio is designed as the perfect family companion. Powered by the Next Gen K10C engine with Idle Start-Stop technology, it delivers best fuel efficiency at 26.68 km/l while offering a 3D Organic Sculpted Design, Smartplay Studio infotainment, and the segment-first Hill Hold Assist. The HEARTECT platform ensures a solid safety foundation.",
     "images": [
-      "assets/images/cars/suzuki-celerio-family-hatchback-01.jpg",
-      "assets/images/cars/suzuki-celerio-family-hatchback-02.jpg",
-      "assets/images/cars/suzuki-celerio-family-hatchback-03.jpg",
-      "assets/images/cars/suzuki-celerio-family-hatchback-04.jpg"
-    ],
+    '/assets/images/cars/suzuki/celerio/suzuki-celerio-exterior-front-white-bg.jpg',
+    '/assets/images/cars/suzuki/celerio/suzuki-celerio-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/suzuki/celerio/suzuki-celerio-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/suzuki/celerio/suzuki-celerio-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/suzuki/celerio/suzuki-celerio-interior-cargo-space.jpg',
+    '/assets/images/cars/suzuki/celerio/suzuki-celerio-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Speedy Blue",
@@ -442,11 +446,13 @@ window.CARS_DB = [
     "baseEMI": 40000,
     "overview": "The Suzuki Wagon R is Nepal's #1 selling car, combining a robust design with a wide stance and a class-leading spacious cabin. Two engine options — the 1.0L and 1.2L Advanced K-Series Dual Jet with Idle Start-Stop — deliver up to 25.19 km/l. The available AGS, Smartplay Studio with Smartphone Navigation, Hill Hold Assist, and ESP make it the complete city car package.",
     "images": [
-      "assets/images/cars/suzuki-wagonr-spacious-city-car-01.jpg",
-      "assets/images/cars/suzuki-wagonr-spacious-city-car-02.jpg",
-      "assets/images/cars/suzuki-wagonr-spacious-city-car-03.jpg",
-      "assets/images/cars/suzuki-wagonr-spacious-city-car-04.jpg"
-    ],
+    '/assets/images/cars/suzuki/wagon-r/suzuki-wagon-r-exterior-front-white-bg.jpg',
+    '/assets/images/cars/suzuki/wagon-r/suzuki-wagon-r-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/suzuki/wagon-r/suzuki-wagon-r-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/suzuki/wagon-r/suzuki-wagon-r-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/suzuki/wagon-r/suzuki-wagon-r-interior-cargo-space.jpg',
+    '/assets/images/cars/suzuki/wagon-r/suzuki-wagon-r-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Superior White",
@@ -643,11 +649,13 @@ window.CARS_DB = [
     "baseEMI": 35000,
     "overview": "The All-New Suzuki Alto K10 redefines the entry-level segment with a youthful honeycomb-grille design, 24.90 km/l fuel efficiency, and the Next Gen 1.0L K-Series Dual Jet Dual VVT engine with AGS technology. It packs a Smartplay Studio infotainment with Smartphone Navigation and 4 speakers — a first in its segment — alongside 15+ safety features including dual airbags, ABS with EBD, HEARTECT platform, and reverse parking sensors.",
     "images": [
-      "assets/images/cars/suzuki-alto-k10-entry-level-hatchback-01.jpg",
-      "assets/images/cars/suzuki-alto-k10-entry-level-hatchback-02.jpg",
-      "assets/images/cars/suzuki-alto-k10-entry-level-hatchback-03.jpg",
-      "assets/images/cars/suzuki-alto-k10-entry-level-hatchback-04.jpg"
-    ],
+    '/assets/images/cars/suzuki/alto-k10/suzuki-alto-k10-exterior-front-white-bg.jpg',
+    '/assets/images/cars/suzuki/alto-k10/suzuki-alto-k10-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/suzuki/alto-k10/suzuki-alto-k10-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/suzuki/alto-k10/suzuki-alto-k10-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/suzuki/alto-k10/suzuki-alto-k10-interior-cargo-space.jpg',
+    '/assets/images/cars/suzuki/alto-k10/suzuki-alto-k10-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Metallic Sizzling Red",
@@ -824,11 +832,13 @@ window.CARS_DB = [
     "baseEMI": 24000,
     "overview": "The Suzuki Eeco Cargo is Nepal's go-to commercial van, built for businesses that need maximum cargo capacity and reliability. Powered by the proven 1.2L Advanced K-Series Dual Jet Dual VVT engine (also available in CNG), it offers increased cargo space, Digital Instrument Cluster, Engine Immobiliser, and 8+ safety features including 4 Reverse Parking Sensors. Available through 42 sales outlets and 54 service centres across 35 cities in Nepal.",
     "images": [
-      "assets/images/cars/suzuki-eeco-cargo-van-01.jpg",
-      "assets/images/cars/suzuki-eeco-cargo-van-02.jpg",
-      "assets/images/cars/suzuki-eeco-cargo-van-03.jpg",
-      "assets/images/cars/suzuki-eeco-cargo-van-04.jpg"
-    ],
+    '/assets/images/cars/suzuki/eeco-cargo/suzuki-eeco-cargo-exterior-front-white-bg.jpg',
+    '/assets/images/cars/suzuki/eeco-cargo/suzuki-eeco-cargo-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/suzuki/eeco-cargo/suzuki-eeco-cargo-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/suzuki/eeco-cargo/suzuki-eeco-cargo-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/suzuki/eeco-cargo/suzuki-eeco-cargo-interior-cargo-space.jpg',
+    '/assets/images/cars/suzuki/eeco-cargo/suzuki-eeco-cargo-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Solid White",
@@ -959,11 +969,13 @@ window.CARS_DB = [
     "baseEMI": 64000,
     "overview": "The Advanced Grand Vitara features NEXA's Crafted Futurism Design Language with two powertrains: Smart Hybrid (1.5L K-Series) and Intelligent Electric Hybrid (strong hybrid) that delivers up to 27.97 km/l. AllGrip Select AWD, panoramic sunroof, Head Up Display, 360 View Camera, ventilated seats, and 6 airbags standard make it a class-leading SUV.",
     "images": [
-      "assets/images/cars/suzuki-grand-vitara-allwheel-drive-suv-01.jpg",
-      "assets/images/cars/suzuki-grand-vitara-allwheel-drive-suv-02.jpg",
-      "assets/images/cars/suzuki-grand-vitara-allwheel-drive-suv-03.jpg",
-      "assets/images/cars/suzuki-grand-vitara-allwheel-drive-suv-04.jpg"
-    ],
+    '/assets/images/cars/suzuki/grand-vitara/suzuki-grand-vitara-exterior-front-white-bg.jpg',
+    '/assets/images/cars/suzuki/grand-vitara/suzuki-grand-vitara-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/suzuki/grand-vitara/suzuki-grand-vitara-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/suzuki/grand-vitara/suzuki-grand-vitara-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/suzuki/grand-vitara/suzuki-grand-vitara-interior-cargo-space.jpg',
+    '/assets/images/cars/suzuki/grand-vitara/suzuki-grand-vitara-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Grandeur Grey",
@@ -1218,11 +1230,13 @@ window.CARS_DB = [
     "baseEMI": 84000,
     "overview": "The all-new 5-door Suzuki Jimny carries over 50 years of off-road heritage. Built on a Ladder Frame chassis with 3-Link Rigid Axle Suspension, the Jimny conquers the toughest terrain with ALLGRIP PRO 4WD (with Low Range Transfer Gear), 210 mm ground clearance, 47° approach angle, and 36° departure angle. Safety includes 6 airbags standard across all variants, Hill Descent Control, Hill Hold Assist, and Brake LSD.",
     "images": [
-      "assets/images/cars/suzuki-jimny-5door-offroad-suv-01.jpg",
-      "assets/images/cars/suzuki-jimny-5door-offroad-suv-02.jpg",
-      "assets/images/cars/suzuki-jimny-5door-offroad-suv-03.jpg",
-      "assets/images/cars/suzuki-jimny-5door-offroad-suv-04.jpg"
-    ],
+    '/assets/images/cars/suzuki/jimny/suzuki-jimny-exterior-front-white-bg.jpg',
+    '/assets/images/cars/suzuki/jimny/suzuki-jimny-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/suzuki/jimny/suzuki-jimny-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/suzuki/jimny/suzuki-jimny-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/suzuki/jimny/suzuki-jimny-interior-cargo-space.jpg',
+    '/assets/images/cars/suzuki/jimny/suzuki-jimny-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Kinetic Yellow / Bluish Black Roof",
@@ -1402,11 +1416,13 @@ window.CARS_DB = [
     "baseEMI": 50000,
     "overview": "The Suzuki Fronx is a futuristic sporty compact SUV on the HEARTECT platform. It comes with a 1.2L K-Series Dual Jet Dual VVT (with AMT) and the powerful 1.0L Turbo Boosterjet engine with Smart Hybrid Technology that sprints 0–60 km/h in just 5.3 seconds. Top variants feature SmartPlay Pro+ 9\", 360 View Camera, Wireless Charging, HUD, and Next-Gen Suzuki Connect. Safety includes 6 airbags, standard ESP, and Hill Hold Assist.",
     "images": [
-      "assets/images/cars/suzuki-fronx-compact-suv-01.jpg",
-      "assets/images/cars/suzuki-fronx-compact-suv-02.jpg",
-      "assets/images/cars/suzuki-fronx-compact-suv-03.jpg",
-      "assets/images/cars/suzuki-fronx-compact-suv-04.jpg"
-    ],
+    '/assets/images/cars/suzuki/fronx/suzuki-fronx-exterior-front-white-bg.jpg',
+    '/assets/images/cars/suzuki/fronx/suzuki-fronx-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/suzuki/fronx/suzuki-fronx-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/suzuki/fronx/suzuki-fronx-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/suzuki/fronx/suzuki-fronx-interior-cargo-space.jpg',
+    '/assets/images/cars/suzuki/fronx/suzuki-fronx-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Splendid Silver",
@@ -1617,10 +1633,13 @@ window.CARS_DB = [
     "baseEMI": 60000,
     "overview": "The Suzuki Brezza is a smart and powerful sporty urban vehicle powered by the 1.5L K15C engine with Smart Hybrid (AT). It delivers up to 19.80 km/l on the automatic. Top variants feature SmartPlay Pro+ 22.86 cm, electric sunroof, wireless charging dock, rear fast USB, cruise control, dual LED headlamps, and 360 View Camera.",
     "images": [
-      "assets/images/cars/suzuki-brezza-sporty-urban-suv-01.jpg",
-      "assets/images/cars/suzuki-brezza-sporty-urban-suv-02.jpg",
-      "assets/images/cars/suzuki-brezza-sporty-urban-suv-03.jpg"
-    ],
+    '/assets/images/cars/suzuki/brezza/suzuki-brezza-exterior-front-white-bg.jpg',
+    '/assets/images/cars/suzuki/brezza/suzuki-brezza-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/suzuki/brezza/suzuki-brezza-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/suzuki/brezza/suzuki-brezza-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/suzuki/brezza/suzuki-brezza-interior-cargo-space.jpg',
+    '/assets/images/cars/suzuki/brezza/suzuki-brezza-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Splendid Silver",
@@ -1860,11 +1879,13 @@ window.CARS_DB = [
     "baseEMI": 0,
     "overview": "The Suzuki Victoris is the most feature-loaded SUV in Suzuki's lineup. Available in Smart Hybrid (5MT/6AT), AllGrip AWD, Strong Hybrid (e-CVT), and S-CNG. Key highlights include Level 2 ADAS, 6 airbags, 360° HD Camera with 11 views, Electronic Parking Brake, 8-way powered driver seat, ventilated seats, Smart Powered Tailgate with gesture control, panoramic sunroof, SmartPlay Pro X 10.1\" HD, Dolby Atmos via 8 Infinity by Harman speakers, Alexa Auto, 64-colour ambient lighting, and auto purify with PM2.5 display.",
     "images": [
-      "/assets/images/cars/suzuki/victorios/suzuki-victorios-2024.webp",
-      "assets/images/cars/suzuki-victoris-feature-loaded-suv-02.jpg",
-      "assets/images/cars/suzuki-victoris-feature-loaded-suv-03.jpg",
-      "assets/images/cars/suzuki-victoris-feature-loaded-suv-04.jpg"
-    ],
+    '/assets/images/cars/suzuki/victoris/suzuki-victoris-exterior-front-white-bg.jpg',
+    '/assets/images/cars/suzuki/victoris/suzuki-victoris-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/suzuki/victoris/suzuki-victoris-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/suzuki/victoris/suzuki-victoris-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/suzuki/victoris/suzuki-victoris-interior-cargo-space.jpg',
+    '/assets/images/cars/suzuki/victoris/suzuki-victoris-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Eternal Blue / Bluish Black Roof (Dual Tone)",
@@ -2102,11 +2123,13 @@ window.CARS_DB = [
     "baseEMI": 0,
     "overview": "The Riddara RD6 by Geely Auto Group (distributed by CG Motors Nepal) is Nepal's first 100% pure EV platform pickup truck. Available in 2WD (63 kWh) and 4WD (73 kWh). The 4WD delivers 315 kW, 595 Nm, 0–100 in 4.5s and 424 km NEDC range. Features 7 terrain drive modes, 815 mm wading depth, 95% max gradeability, 14 ADAS features, 6 airbags, 540° surround view camera, 6 kW V2L discharge, 1,200L cargo bed, 14.6\" HD touchscreen, and CN95 PM2.5 air filter.",
     "images": [
-      "assets/images/cars/riddara-rd6-electric-pickup-truck-01.jpg",
-      "assets/images/cars/riddara-rd6-electric-pickup-truck-02.jpg",
-      "assets/images/cars/riddara-rd6-electric-pickup-truck-03.jpg",
-      "assets/images/cars/riddara-rd6-electric-pickup-truck-04.jpg"
-    ],
+    '/assets/images/cars/riddara/rd6/riddara-rd6-exterior-front-white-bg.jpg',
+    '/assets/images/cars/riddara/rd6/riddara-rd6-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/riddara/rd6/riddara-rd6-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/riddara/rd6/riddara-rd6-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/riddara/rd6/riddara-rd6-interior-cargo-space.jpg',
+    '/assets/images/cars/riddara/rd6/riddara-rd6-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Nordic Green / Black Top",
@@ -2286,11 +2309,13 @@ window.CARS_DB = [
     "baseEMI": 29800,
     "overview": "The Hyundai Grand i10 Nios Facelift packs a refined 1.2L Kappa engine, 6 airbags, 8-inch touchscreen with wireless CarPlay, and class-leading fit & finish. Backed by Laxmi Hyundai's wide service network across Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/hyundai/grand-i10-nios-fl/hyundai-grand-i10-nios-exterior-front-white-bg.jpg',
+    '/assets/images/cars/hyundai/grand-i10-nios-fl/hyundai-grand-i10-nios-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/hyundai/grand-i10-nios-fl/hyundai-grand-i10-nios-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/hyundai/grand-i10-nios-fl/hyundai-grand-i10-nios-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/hyundai/grand-i10-nios-fl/hyundai-grand-i10-nios-interior-cargo-space.jpg',
+    '/assets/images/cars/hyundai/grand-i10-nios-fl/hyundai-grand-i10-nios-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Fiery Red",
@@ -2492,11 +2517,13 @@ window.CARS_DB = [
     "baseEMI": 36700,
     "overview": "The Hyundai Exter bridges the Grand i10 Nios and Venue with bold SUV stance, 185mm ground clearance, electric sunroof, dual dashcam, and a class-leading 391L boot. 6 airbags are standard across ALL variants — a first in Nepal's sub-4m segment.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/hyundai/exter/hyundai-exter-exterior-front-white-bg.jpg',
+    '/assets/images/cars/hyundai/exter/hyundai-exter-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/hyundai/exter/hyundai-exter-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/hyundai/exter/hyundai-exter-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/hyundai/exter/hyundai-exter-interior-cargo-space.jpg',
+    '/assets/images/cars/hyundai/exter/hyundai-exter-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Cosmic Blue",
@@ -2649,11 +2676,13 @@ window.CARS_DB = [
     "baseEMI": 37300,
     "overview": "The All-New Hyundai Venue Facelift is Nepal's best-selling compact SUV. Available with a 1.2L petrol and a sporty 1.0L Turbo DCT, it features Bluelink connected car tech, Bose audio, 360° camera, and ADAS on top trims. Built for city and highway equally.",
     "images": [
-      "https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1570733577524-3a047079e80d?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/hyundai/venue-fl/hyundai-venue-exterior-front-white-bg.jpg',
+    '/assets/images/cars/hyundai/venue-fl/hyundai-venue-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/hyundai/venue-fl/hyundai-venue-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/hyundai/venue-fl/hyundai-venue-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/hyundai/venue-fl/hyundai-venue-interior-cargo-space.jpg',
+    '/assets/images/cars/hyundai/venue-fl/hyundai-venue-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Atlas White",
@@ -2834,11 +2863,13 @@ window.CARS_DB = [
     "baseEMI": 35500,
     "overview": "The Hyundai i20 sits above the Grand i10 Nios with a more premium interior, sportier European design, and a feature set that rivals compact SUVs. Offers the most fuel-efficient Hyundai in Nepal at 20.35 km/l with 6 airbags standard.",
     "images": [
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/hyundai/i20/hyundai-i20-exterior-front-white-bg.jpg',
+    '/assets/images/cars/hyundai/i20/hyundai-i20-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/hyundai/i20/hyundai-i20-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/hyundai/i20/hyundai-i20-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/hyundai/i20/hyundai-i20-interior-cargo-space.jpg',
+    '/assets/images/cars/hyundai/i20/hyundai-i20-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Atlas White",
@@ -2975,11 +3006,13 @@ window.CARS_DB = [
     "baseEMI": 49400,
     "overview": "The All-New Hyundai Creta Facelift is available in Nepal as Made-in-Nepal (MiN) and imported CBU units. Featuring dual 10.25-inch screens, Level 2 ADAS, panoramic sunroof, IVT/CVT gearboxes, and 433L boot — the most complete mid-size SUV in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1567818735868-e71b99932e29?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/hyundai/all-new-creta-fl/hyundai-creta-exterior-front-white-bg.jpg',
+    '/assets/images/cars/hyundai/all-new-creta-fl/hyundai-creta-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/hyundai/all-new-creta-fl/hyundai-creta-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/hyundai/all-new-creta-fl/hyundai-creta-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/hyundai/all-new-creta-fl/hyundai-creta-interior-cargo-space.jpg',
+    '/assets/images/cars/hyundai/all-new-creta-fl/hyundai-creta-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Atlas White",
@@ -3292,11 +3325,13 @@ window.CARS_DB = [
     "baseEMI": 46200,
     "overview": "The Hyundai Creta Electric brings the proven Creta form to the EV era. With up to 473km certified range, V2L (Vehicle to Load), Level 2 ADAS, dual panoramic screens, and two battery sizes — it's the most compelling electric SUV under Rs. 80L in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1620891549027-942fdc95d3f5?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1617886903355-9354bb57751f?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/hyundai/creta-electric/hyundai-creta-electric-exterior-front-white-bg.jpg',
+    '/assets/images/cars/hyundai/creta-electric/hyundai-creta-electric-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/hyundai/creta-electric/hyundai-creta-electric-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/hyundai/creta-electric/hyundai-creta-electric-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/hyundai/creta-electric/hyundai-creta-electric-interior-cargo-space.jpg',
+    '/assets/images/cars/hyundai/creta-electric/hyundai-creta-electric-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Atlas White",
@@ -3496,11 +3531,13 @@ window.CARS_DB = [
     "baseEMI": 82600,
     "overview": "The Hyundai Ioniq 5 is Nepal's most technologically advanced car — purpose-built on the 800V E-GMP platform with 18-minute fast charging, Vehicle-to-Grid (V2G), a 2,900mm wheelbase with limo-like space, and a distinctive retro-futurist design unlike anything else on Nepal's roads.",
     "images": [
-      "https://images.unsplash.com/photo-1619767886558-efdc259b6e09?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1617886903355-9354bb57751f?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/hyundai/ioniq-5/hyundai-ioniq-5-exterior-front-white-bg.jpg',
+    '/assets/images/cars/hyundai/ioniq-5/hyundai-ioniq-5-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/hyundai/ioniq-5/hyundai-ioniq-5-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/hyundai/ioniq-5/hyundai-ioniq-5-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/hyundai/ioniq-5/hyundai-ioniq-5-interior-cargo-space.jpg',
+    '/assets/images/cars/hyundai/ioniq-5/hyundai-ioniq-5-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Atlas White",
@@ -3638,11 +3675,13 @@ window.CARS_DB = [
     "baseEMI": 53300,
     "overview": "The Hyundai Kona Electric is a proven, reliable compact EV with a 39.2 kWh battery and 305km range. Its compact dimensions make it perfect for Kathmandu, while its instant 395 Nm torque and nippy performance make it surprisingly fun to drive.",
     "images": [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1617886903355-9354bb57751f?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1571987502227-9231b837d92a?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/hyundai/kona-electric/hyundai-kona-electric-exterior-front-white-bg.jpg',
+    '/assets/images/cars/hyundai/kona-electric/hyundai-kona-electric-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/hyundai/kona-electric/hyundai-kona-electric-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/hyundai/kona-electric/hyundai-kona-electric-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/hyundai/kona-electric/hyundai-kona-electric-interior-cargo-space.jpg',
+    '/assets/images/cars/hyundai/kona-electric/hyundai-kona-electric-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Atlas White",
@@ -3771,11 +3810,13 @@ window.CARS_DB = [
     "baseEMI": 95900,
     "overview": "The Hyundai Tucson is Nepal's go-to premium large SUV. Available in 2WD and 4WD with petrol and diesel engines, it brings a panoramic sunroof, BOSE sound system, full ADAS, and HTRAC 4WD for Nepal's diverse terrain. The 417 Nm diesel 4WD is the most popular choice.",
     "images": [
-      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1567818735868-e71b99932e29?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/hyundai/tucson/hyundai-tucson-exterior-front-white-bg.jpg',
+    '/assets/images/cars/hyundai/tucson/hyundai-tucson-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/hyundai/tucson/hyundai-tucson-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/hyundai/tucson/hyundai-tucson-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/hyundai/tucson/hyundai-tucson-interior-cargo-space.jpg',
+    '/assets/images/cars/hyundai/tucson/hyundai-tucson-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Atlas White",
@@ -3973,11 +4014,13 @@ window.CARS_DB = [
     "baseEMI": 168800,
     "overview": "The All-New Hyundai Santa Fe brings a boxy retro-modern design, genuine 7-seat capacity, 4WD HTRAC with terrain modes, and a full premium feature set. Powered by a 2.5L GDi petrol with 8-speed AT, it's Nepal's most capable 3-row family hauler from Hyundai.",
     "images": [
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1567818735868-e71b99932e29?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/hyundai/santa-fe/hyundai-santa-fe-exterior-front-white-bg.jpg',
+    '/assets/images/cars/hyundai/santa-fe/hyundai-santa-fe-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/hyundai/santa-fe/hyundai-santa-fe-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/hyundai/santa-fe/hyundai-santa-fe-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/hyundai/santa-fe/hyundai-santa-fe-interior-cargo-space.jpg',
+    '/assets/images/cars/hyundai/santa-fe/hyundai-santa-fe-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Atlas White",
@@ -4086,11 +4129,13 @@ window.CARS_DB = [
     "baseEMI": 209600,
     "overview": "The Hyundai Palisade is Hyundai's ultimate full-size SUV for Nepal — an 8-seater diesel powerhouse with HTRAC 4WD, Harman Kardon 12-speaker premium audio, captain's chair massaging seats, Highway Driving Assist, and a 440 Nm engine that effortlessly hauls 8 passengers over Nepal's mountain roads.",
     "images": [
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/hyundai/palisade/hyundai-palisade-exterior-front-white-bg.jpg',
+    '/assets/images/cars/hyundai/palisade/hyundai-palisade-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/hyundai/palisade/hyundai-palisade-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/hyundai/palisade/hyundai-palisade-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/hyundai/palisade/hyundai-palisade-interior-cargo-space.jpg',
+    '/assets/images/cars/hyundai/palisade/hyundai-palisade-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Hyper White",
@@ -4199,11 +4244,13 @@ window.CARS_DB = [
     "baseEMI": 58000,
     "overview": "The Toyota Raize is Nepal's entry-point Toyota SUV, built on the DNGA platform developed with Daihatsu. It offers a choice of a 1.2L naturally aspirated or a 1.0L turbo petrol engine, 369L boot space, 200mm ground clearance, and smart Toyota packaging. Distributed by United Traders Syndicate (UTS).",
     "images": [
-      "https://images.unsplash.com/photo-1633270540428-d63b9e97a11b?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/toyota/raize/toyota-raize-exterior-front-white-bg.jpg',
+    '/assets/images/cars/toyota/raize/toyota-raize-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/toyota/raize/toyota-raize-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/toyota/raize/toyota-raize-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/toyota/raize/toyota-raize-interior-cargo-space.jpg',
+    '/assets/images/cars/toyota/raize/toyota-raize-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "White",
@@ -4363,11 +4410,13 @@ window.CARS_DB = [
     "baseEMI": 76000,
     "overview": "The Toyota Rush is a purpose-built 7-seat family SUV with a 1.5L petrol engine, 220mm ground clearance and ladder-frame-inspired body-on-frame rigidity. With both MT and AT options, LED headlamps, touchscreen infotainment and rear parking camera as standard, it punches well above its price in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1580414057403-c5f451f30e1c?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/toyota/rush/toyota-rush-exterior-front-white-bg.jpg',
+    '/assets/images/cars/toyota/rush/toyota-rush-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/toyota/rush/toyota-rush-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/toyota/rush/toyota-rush-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/toyota/rush/toyota-rush-interior-cargo-space.jpg',
+    '/assets/images/cars/toyota/rush/toyota-rush-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "White",
@@ -4500,11 +4549,13 @@ window.CARS_DB = [
     "baseEMI": 102000,
     "overview": "The Toyota Corolla Cross sits on Toyota's TNGA (GA-C) platform — the same underpinning as the Corolla sedan. It combines a spacious 5-seat cabin, class-leading safety tech including Toyota Safety Sense, a 360-degree camera on the top variant, and dual-zone climate control, all wrapped in a sharp coupe-SUV silhouette.",
     "images": [
-      "https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/toyota/corolla-cross/toyota-corolla-cross-exterior-front-white-bg.jpg',
+    '/assets/images/cars/toyota/corolla-cross/toyota-corolla-cross-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/toyota/corolla-cross/toyota-corolla-cross-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/toyota/corolla-cross/toyota-corolla-cross-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/toyota/corolla-cross/toyota-corolla-cross-interior-cargo-space.jpg',
+    '/assets/images/cars/toyota/corolla-cross/toyota-corolla-cross-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Platinum White Pearl",
@@ -4643,11 +4694,13 @@ window.CARS_DB = [
     "baseEMI": 85000,
     "overview": "The Toyota Hilux is Nepal's best-selling pickup and a segment legend. Available in 2.4L and 2.8L diesel double-cab configurations with permanent 4WD, it conquers Nepal's toughest terrains. Standard equipment includes diff lock, LED headlamps, leather seats, and a touchscreen infotainment system. Built in Thailand to global export standards.",
     "images": [
-      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1569171767200-cee31ff71f78?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/toyota/hilux/toyota-hilux-exterior-front-white-bg.jpg',
+    '/assets/images/cars/toyota/hilux/toyota-hilux-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/toyota/hilux/toyota-hilux-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/toyota/hilux/toyota-hilux-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/toyota/hilux/toyota-hilux-interior-cargo-space.jpg',
+    '/assets/images/cars/toyota/hilux/toyota-hilux-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "White",
@@ -4784,11 +4837,13 @@ window.CARS_DB = [
     "baseEMI": 185000,
     "overview": "The Toyota Fortuner is the aspirational SUV benchmark in Nepal. Body-on-frame construction, powerful diesel engines (2.7L petrol or 2.8L diesel), full-time or part-time 4WD, 7 seats with leather, and a commanding road presence make it the definitive choice for Nepal's diverse terrain — from Kathmandu ring road to mountain highways.",
     "images": [
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/toyota/fortuner/toyota-fortuner-exterior-front-white-bg.jpg',
+    '/assets/images/cars/toyota/fortuner/toyota-fortuner-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/toyota/fortuner/toyota-fortuner-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/toyota/fortuner/toyota-fortuner-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/toyota/fortuner/toyota-fortuner-interior-cargo-space.jpg',
+    '/assets/images/cars/toyota/fortuner/toyota-fortuner-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Platinum White Pearl",
@@ -4925,11 +4980,13 @@ window.CARS_DB = [
     "baseEMI": 138000,
     "overview": "The Toyota RAV4 is Nepal's global-spec crossover choice, built on the TNGA-K platform with FWD and AWD options. It offers a 2.5L naturally aspirated petrol, a panoramic moonroof, Toyota Safety Sense, and an upmarket cabin experience that blends everyday practicality with highway excellence.",
     "images": [
-      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1581540222194-0def2dda95b8?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/toyota/rav4/toyota-rav4-exterior-front-white-bg.jpg',
+    '/assets/images/cars/toyota/rav4/toyota-rav4-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/toyota/rav4/toyota-rav4-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/toyota/rav4/toyota-rav4-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/toyota/rav4/toyota-rav4-interior-cargo-space.jpg',
+    '/assets/images/cars/toyota/rav4/toyota-rav4-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Blizzard Pearl White",
@@ -5085,11 +5142,13 @@ window.CARS_DB = [
     "baseEMI": 163000,
     "overview": "The Toyota Camry Hybrid brings Japan's most celebrated executive sedan to Nepali roads. Powered by a 2.5L hybrid system producing 218hp combined with legendary Toyota hybrid reliability, it offers a head-up display, 9-speaker JBL audio, 9 airbags, Toyota Safety Sense, and class-leading fuel efficiency of ~23 km/l.",
     "images": [
-      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1493238792000-8113da705763?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/toyota/camry-hybrid/toyota-camry-hybrid-exterior-front-white-bg.jpg',
+    '/assets/images/cars/toyota/camry-hybrid/toyota-camry-hybrid-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/toyota/camry-hybrid/toyota-camry-hybrid-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/toyota/camry-hybrid/toyota-camry-hybrid-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/toyota/camry-hybrid/toyota-camry-hybrid-interior-cargo-space.jpg',
+    '/assets/images/cars/toyota/camry-hybrid/toyota-camry-hybrid-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Platinum White Pearl",
@@ -5205,11 +5264,13 @@ window.CARS_DB = [
     "baseEMI": 220000,
     "overview": "The Toyota Land Cruiser 70 Series is a living legend in Nepal — the go-to vehicle for government agencies, NGOs, trekking operators, and hill district duty. Powered by a 4.0L V6 petrol or 2.8L diesel with a ladder frame, solid axles, and a locking centre diff, it remains the most capable production vehicle available through UTS Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/toyota/land-cruiser-70/toyota-land-cruiser-70-exterior-front-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-70/toyota-land-cruiser-70-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-70/toyota-land-cruiser-70-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-70/toyota-land-cruiser-70-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-70/toyota-land-cruiser-70-interior-cargo-space.jpg',
+    '/assets/images/cars/toyota/land-cruiser-70/toyota-land-cruiser-70-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "White",
@@ -5314,11 +5375,13 @@ window.CARS_DB = [
     "baseEMI": 249000,
     "overview": "The new-generation Toyota Land Cruiser Prado (250 Series) arrives in Nepal as the ultimate combination of off-road dominance and executive luxury. Built on an all-new ladder frame with multi-link rear suspension, the Prado brings a 2.8L turbodiesel, multi-terrain select, e-KDSS electronic suspension, 8 airbags, Toyota Safety Sense, and a premium 12.3\" infotainment screen.",
     "images": [
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1581540222194-0def2dda95b8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/toyota/land-cruiser-prado/toyota-land-cruiser-prado-exterior-front-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-prado/toyota-land-cruiser-prado-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-prado/toyota-land-cruiser-prado-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-prado/toyota-land-cruiser-prado-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-prado/toyota-land-cruiser-prado-interior-cargo-space.jpg',
+    '/assets/images/cars/toyota/land-cruiser-prado/toyota-land-cruiser-prado-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Platinum White Pearl",
@@ -5462,11 +5525,12 @@ window.CARS_DB = [
     "baseEMI": 56000,
     "overview": "The BYD Atto 1 (known as Seagull in China) is BYD's entry-level electric hatchback in Nepal. Built on e-Platform 3.0 with Blade Battery technology and V2L capability, it offers a surprising amount of kit for its price. The Premium variant adds range, extra airbags, and faster DC charging — making it the smarter buy between the two.",
     "images": [
-      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/byd/atto-1/byd-att0-1-exterior-front-white-bg.jpg',
+    '/assets/images/cars/byd/atto-1/byd-att0-1-exterior-top.png',
+    '/assets/images/cars/byd/atto-1/byd-atto-1-exterior-front-white-bg.webp',
+    '/assets/images/cars/byd/atto-1/byd-atto-1-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/byd/atto-1/byd-att0-1-interior-seats-front.jpg',
+  ],
     "colors": [
       {
         "name": "White",
@@ -5595,11 +5659,11 @@ window.CARS_DB = [
     "baseEMI": 79500,
     "overview": "The BYD Dolphin is Nepal's best-selling hatchback EV with over 2,500 units on the road. Powered by a 70 kW motor, 44.9 kWh Blade Battery, and rated 5-star by Euro NCAP, it delivers 340 km WLTP range, 6 airbags, 360° camera, and full ADAS. The 2025 update adds NFC, a Bluetooth key, stiffer suspension, and a new Atlantis Grey color.",
     "images": [
-      "/assets/images/cars/byd/dolphin/Dolphin-exterior-04-SkiingwhiteUrbangrey-s.webp",
-      "/assets/images/cars/byd/dolphin/Dolphin-interior-01-blue-s.webp",
-      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/byd/dolphin/byd-dolphin-exterior-front-white-bg.webp',
+    '/assets/images/cars/byd/dolphin/byd-dolphin-exterior-front.webp',
+    '/assets/images/cars/byd/dolphin/byd-dolphin-interior-dashboard.webp',
+    '/assets/images/cars/byd/dolphin/byd-dolphin-interior-seats-front.webp',
+  ],
     "colors": [
       {
         "name": "Ski White",
@@ -5710,11 +5774,11 @@ window.CARS_DB = [
     "baseEMI": 86000,
     "overview": "The BYD Atto 2 is the newest compact SUV in Nepal's BYD lineup, built on e-Platform 3.0 with the world-first Cell-to-Body (CTB) battery integration. It slots between the Dolphin and Atto 3 with a 100 kW motor, 51 kWh Blade Battery, 345 km range, 200mm ground clearance, panoramic sunroof, vegan leather, 12.8\" rotating screen, and full ADAS — all for Rs. 44.99L.",
     "images": [
-      "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1580414057403-c5f451f30e1c?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/byd/atto-2/byd-atto-2-exterior-front.png',
+    '/assets/images/cars/byd/atto-2/byd-atto-2-exterior-side-left-white-bg.png',
+    '/assets/images/cars/byd/atto-2/byd-atto-2-interior-dashboard.jpg',
+    '/assets/images/cars/byd/atto-2/byd-atto-2-interior-seats-front.jpg',
+  ],
     "colors": [
       {
         "name": "Hiking Green",
@@ -5832,11 +5896,11 @@ window.CARS_DB = [
     "baseEMI": 131000,
     "overview": "The BYD Atto 3 is Nepal's best-selling electric car, and the model that kickstarted the EV revolution here. The 2025 facelift brings Dragon Face 3.0 styling, a larger 15.6\" rotating touchscreen, refreshed interior, and new Cosmos Black color. Two Blade Battery variants offer 345 km and 420 km WLTP range, both powered by a 100 kW PMSM. 5-Star Euro NCAP rated.",
     "images": [
-      "https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/byd/atto-3/byd-atto-3-exterior-front-white-bg.webp',
+    '/assets/images/cars/byd/atto-3/byd-atto-3-exterior-rear.webp',
+    '/assets/images/cars/byd/atto-3/byd-atto-3-interior-cargo-space.jpg',
+    '/assets/images/cars/byd/atto-3/byd-atto-3-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Boulder Grey",
@@ -5976,11 +6040,10 @@ window.CARS_DB = [
     "baseEMI": 113000,
     "overview": "The BYD M6 is Nepal's first and only premium 7-seat electric MPV, launched at the International Balloon Festival in Pokhara. Successor to the BYD E6, it packs a 71.8 kWh Blade Battery with 440 km WLTP range, 115 kW DC fast charging, Dragon Face 3.0 design, 12.8\" rotating screen, panoramic sunroof, and ventilated seats — all for under Rs. 59L.",
     "images": [
-      "https://images.unsplash.com/photo-1569171767200-cee31ff71f78?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/byd/m6/byd-m6-exterior-front.webp',
+    '/assets/images/cars/byd/m6/byd-m6-interior-dashboard.webp',
+    '/assets/images/cars/byd/m6/byd-m6-interior-seats-rear.webp',
+  ],
     "colors": [
       {
         "name": "Demon Domain Black",
@@ -6100,11 +6163,10 @@ window.CARS_DB = [
     "baseEMI": 154000,
     "overview": "The BYD Sealion 7 is BYD Nepal's premium mid-size SUV from the Ocean Series, positioned above the Atto 3. Built on e-Platform 3.0 with a 230 kW rear-wheel-drive motor, 71.8 kWh Blade Battery, 440 km WLTP range, 11 airbags, 15.6\" rotating screen, Dynaudio 12-speaker system, HUD, and panoramic sunroof — it's the most feature-complete BYD SUV you can buy in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1581540222194-0def2dda95b8?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/byd/sealion-7/byd-sealion-exterior-front.png',
+    '/assets/images/cars/byd/sealion-7/byd-sealion-exterior-side-left-white-bg.webp',
+    '/assets/images/cars/byd/sealion-7/byd-sealion-interior-dashboard.webp',
+  ],
     "colors": [
       {
         "name": "Shark Grey",
@@ -6229,11 +6291,11 @@ window.CARS_DB = [
     "baseEMI": 212000,
     "overview": "The BYD Seal is BYD Nepal's flagship — a sleek performance sedan that stands alone in the Nepali market with no direct rival. Available in three variants spanning Rs. 1.10 Cr to Rs. 1.95 Cr, from a 150 kW RWD daily driver to a 390 kW AWD performance machine with 670 Nm system torque. All variants get 9 airbags, 5-Star Euro NCAP, 15.6\" rotating screen, HUD, and ocean-inspired design.",
     "images": [
-      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1493238792000-8113da705763?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/byd/seal/byd-seal-exterior-front-white-bg.webp',
+    '/assets/images/cars/byd/seal/byd-seal-exterior-side-left-white-bg.webp',
+    '/assets/images/cars/byd/seal/byd-seal-interior-dashboard.webp',
+    '/assets/images/cars/byd/seal/byd-seal-interior-seats-front.webp',
+  ],
     "colors": [
       {
         "name": "Arctic Blue",
@@ -6394,11 +6456,10 @@ window.CARS_DB = [
     "baseEMI": 42000,
     "overview": "The Kia Sonet is Nepal's best-selling compact SUV, offering ADAS Level 1 safety, a 10.25\" touchscreen, ventilated seats, and a 1.5L petrol engine. Available in MT and IVT, it punches well above its price in features and build quality.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/kia/sonet/kia-sonet-exterior-front-white-bg.png',
+    '/assets/images/cars/kia/sonet/kia-sonet-interior-cargo-space.jpg',
+    '/assets/images/cars/kia/sonet/kia-sonet-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Glacier White Pearl",
@@ -6592,11 +6653,11 @@ window.CARS_DB = [
     "baseEMI": 58000,
     "overview": "The Kia Seltos remains Nepal's premium compact SUV benchmark with a 10.25\" dual screen setup, ADAS, Bose sound, and a powerful 1.5L turbo petrol. Available in multiple powertrain options with class-leading feature density.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/kia/seltos/kia-seltos-exterior-front-white-bg.png',
+    '/assets/images/cars/kia/seltos/kia-seltos-exterior-side-left-white-bg.webp',
+    '/assets/images/cars/kia/seltos/kia-seltos-interior-cargo-space.jpg',
+    '/assets/images/cars/kia/seltos/kia-seltos-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Pewter Olive",
@@ -6766,11 +6827,10 @@ window.CARS_DB = [
     "baseEMI": 52000,
     "overview": "The Kia Carens redefines the MPV segment in Nepal with SUV-inspired styling, a 10.25\" touchscreen, 6 airbags standard, and flexible 6 or 7-seat configurations. Ideal for Nepali families needing space and safety without compromise.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/kia/carens/kia-caren-exterior-front-white-bg.png',
+    '/assets/images/cars/kia/carens/kia-carens-interior-cargo-space.jpg',
+    '/assets/images/cars/kia/carens/kia-carens-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Aurora Black Pearl",
@@ -6915,11 +6975,10 @@ window.CARS_DB = [
     "baseEMI": 128000,
     "overview": "The Kia EV6 is Nepal's most technologically advanced EV, featuring 800V ultra-fast charging, a 77.4 kWh battery, 510km WLTP range, and a stunning interior with dual 12\" curved screens. Available in RWD and AWD GT-Line.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/kia/ev6/kia-ev6-exterior-front-white-bg.png',
+    '/assets/images/cars/kia/ev6/kia-ev6-interior-cargo-space.jpg',
+    '/assets/images/cars/kia/ev6/kia-ev6-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Snow White Pearl",
@@ -7043,11 +7102,13 @@ window.CARS_DB = [
     "baseEMI": 35000,
     "overview": "The Nissan Magnite delivers outstanding value in Nepal's compact SUV space with its 1.0L turbo engine, 205mm ground clearance, 8\" touchscreen with wireless CarPlay, and a spacious 336L boot. The CVT variant offers smooth city driving.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/nissan/magnite/nissan-magnite-exterior-front-white-bg.jpg',
+    '/assets/images/cars/nissan/magnite/nissan-magnite-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/nissan/magnite/nissan-magnite-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/nissan/magnite/nissan-magnite-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/nissan/magnite/nissan-magnite-interior-cargo-space.jpg',
+    '/assets/images/cars/nissan/magnite/nissan-magnite-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Pearl White",
@@ -7217,11 +7278,13 @@ window.CARS_DB = [
     "baseEMI": 98000,
     "overview": "The Nissan X-Trail returns to Nepal with revolutionary e-POWER technology — a petrol engine that only generates electricity, driving the wheels entirely via motor. 7-seat layout, ProPILOT ADAS, and e-4ORCE AWD make it the most capable family SUV in its range.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/nissan/x-trail/nissan-x-trail-exterior-front-white-bg.jpg',
+    '/assets/images/cars/nissan/x-trail/nissan-x-trail-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/nissan/x-trail/nissan-x-trail-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/nissan/x-trail/nissan-x-trail-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/nissan/x-trail/nissan-x-trail-interior-cargo-space.jpg',
+    '/assets/images/cars/nissan/x-trail/nissan-x-trail-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Ceramic Grey",
@@ -7345,11 +7408,13 @@ window.CARS_DB = [
     "baseEMI": 48000,
     "overview": "The all-new Nissan Kicks arrives in Nepal as a bold urban-focused compact SUV, featuring a 1.2L turbo engine, 10.67\" floating touchscreen, 209mm ground clearance, and a head-turning exterior. Available exclusively with CVT for smooth city and highway drives.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/nissan/kicks/nissan-kicks-exterior-front-white-bg.jpg',
+    '/assets/images/cars/nissan/kicks/nissan-kicks-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/nissan/kicks/nissan-kicks-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/nissan/kicks/nissan-kicks-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/nissan/kicks/nissan-kicks-interior-cargo-space.jpg',
+    '/assets/images/cars/nissan/kicks/nissan-kicks-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Ceramic Grey",
@@ -7473,11 +7538,13 @@ window.CARS_DB = [
     "baseEMI": 68000,
     "overview": "The Mahindra Thar Roxx is the most anticipated SUV launch in Nepal — a 4-door Thar with 4XPLOR AWD, 226mm ground clearance, roof-mounted 12-speaker Sony audio, and proper off-road credentials including terrain modes, locking differential, and an Adventure Statistics display.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/mahindra/thar-roxx/mahindra-thar-roxx-exterior-front-white-bg.jpg',
+    '/assets/images/cars/mahindra/thar-roxx/mahindra-thar-roxx-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/mahindra/thar-roxx/mahindra-thar-roxx-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/mahindra/thar-roxx/mahindra-thar-roxx-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/mahindra/thar-roxx/mahindra-thar-roxx-interior-cargo-space.jpg',
+    '/assets/images/cars/mahindra/thar-roxx/mahindra-thar-roxx-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Everest White",
@@ -7649,11 +7716,13 @@ window.CARS_DB = [
     "baseEMI": 44000,
     "overview": "The Mahindra XUV 3XO (formerly XUV300) arrives with a complete overhaul — stunning new design, Level 2 ADAS, a massive panoramic sunroof, and a 10.25\" dual-screen setup. It packs class-leading 6 airbags and the most features per rupee in Nepal's compact SUV segment.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/mahindra/xuv-3xo/mahindra-xuv-3xo-exterior-front-white-bg.jpg',
+    '/assets/images/cars/mahindra/xuv-3xo/mahindra-xuv-3xo-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/mahindra/xuv-3xo/mahindra-xuv-3xo-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/mahindra/xuv-3xo/mahindra-xuv-3xo-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/mahindra/xuv-3xo/mahindra-xuv-3xo-interior-cargo-space.jpg',
+    '/assets/images/cars/mahindra/xuv-3xo/mahindra-xuv-3xo-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Everest White",
@@ -7824,11 +7893,13 @@ window.CARS_DB = [
     "baseEMI": 82000,
     "overview": "The Mahindra XUV700 is Nepal's most feature-rich 7-seater, with AdrenoX ADAS (Level 2), a stunning 10.25\" dual-screen cockpit, Harman Kardon audio, Sony 360° sound, and a 200hp diesel engine. AWD available on top variants for Nepal's demanding terrain.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/mahindra/xuv700/mahindra-xuv700-exterior-front-white-bg.jpg',
+    '/assets/images/cars/mahindra/xuv700/mahindra-xuv700-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/mahindra/xuv700/mahindra-xuv700-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/mahindra/xuv700/mahindra-xuv700-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/mahindra/xuv700/mahindra-xuv700-interior-cargo-space.jpg',
+    '/assets/images/cars/mahindra/xuv700/mahindra-xuv700-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Midnight Black",
@@ -7999,11 +8070,13 @@ window.CARS_DB = [
     "baseEMI": 72000,
     "overview": "The Mahindra Scorpio N is Nepal's most capable body-on-frame SUV, combining authentic 4WD with a 200hp diesel, 12-speaker Sony audio, and a premium interior. Ideal for both Kathmandu commuting and Himalayan trail driving.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/mahindra/scorpio-n/mahindra-scorpio-n-exterior-front-white-bg.jpg',
+    '/assets/images/cars/mahindra/scorpio-n/mahindra-scorpio-n-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/mahindra/scorpio-n/mahindra-scorpio-n-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/mahindra/scorpio-n/mahindra-scorpio-n-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/mahindra/scorpio-n/mahindra-scorpio-n-interior-cargo-space.jpg',
+    '/assets/images/cars/mahindra/scorpio-n/mahindra-scorpio-n-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Everest White",
@@ -8170,11 +8243,13 @@ window.CARS_DB = [
     "baseEMI": 38000,
     "overview": "The Mahindra Bolero Neo is Nepal's most trusted rural-duty SUV, combining a proven mHawk diesel engine, 7-seat layout, and genuine off-road ability at an affordable price. Preferred by businesses, government fleets, and families in hilly regions.",
     "images": [
-      "/assets/images/cars/hyndai/mahindra/front-left-side-47.avif",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/mahindra/bolero-neo/mahindra-bolero-neo-exterior-front-white-bg.jpg',
+    '/assets/images/cars/mahindra/bolero-neo/mahindra-bolero-neo-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/mahindra/bolero-neo/mahindra-bolero-neo-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/mahindra/bolero-neo/mahindra-bolero-neo-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/mahindra/bolero-neo/mahindra-bolero-neo-interior-cargo-space.jpg',
+    '/assets/images/cars/mahindra/bolero-neo/mahindra-bolero-neo-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Diamond White",
@@ -8310,11 +8385,12 @@ window.CARS_DB = [
     "baseEMI": 88000,
     "overview": "The Deepal S07 is Changan's premium EV brand entry into Nepal, offering a 77kWh battery, 520km CLTC range, ADAS Level 2, a massive 15.6\" rotating touchscreen, and dual-motor AWD option. Built on Changan's EPA platform, it rivals the BYD Atto 3 with superior range and tech.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/deepal/s07/deepal-s07-exterior-front.jpg',
+    '/assets/images/cars/deepal/s07/deepal-s07-exterior-rear.jpg',
+    '/assets/images/cars/deepal/s07/deepal-s07-exterior-side-left-white-bg.png',
+    '/assets/images/cars/deepal/s07/deepal-s07-interior-dashboard.jpg',
+    '/assets/images/cars/deepal/s07/deepal-s07-interior-seats-rear.jpg',
+  ],
     "colors": [
       {
         "name": "Crystal White",
@@ -8462,11 +8538,12 @@ window.CARS_DB = [
     "baseEMI": 72000,
     "overview": "The Deepal L07 is a Range-Extended EV (REEV) sedan — it runs on electric motors with a small petrol engine acting solely as a generator, never driving the wheels directly. This delivers EV smoothness with 1,000km+ combined range, eliminating range anxiety for Nepal's long-distance drivers.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/deepal/l07/deepal-l07-exterior-front-white-bg.jpg',
+    '/assets/images/cars/deepal/l07/deepal-l07-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/deepal/l07/deepal-l07-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/deepal/l07/deepal-l07-interior-boot-front.jpg',
+    '/assets/images/cars/deepal/l07/deepal-l07-interior-console.jpg',
+  ],
     "colors": [
       {
         "name": "Pearl White",
@@ -8588,11 +8665,12 @@ window.CARS_DB = [
     "baseEMI": 58000,
     "overview": "The Deepal S05 is Changan's entry-level EV SUV, positioned below the S07 with a 60kWh battery, 400km CLTC range, and a 12.8\" touchscreen. It offers excellent value in Nepal's growing EV market with solid build quality and Changan's proven EPA2.0 platform.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/deepal/s05/deepal-s05-exterior-front-white-bg.png',
+    '/assets/images/cars/deepal/s05/deepal-s05-exterior-rear.jpg',
+    '/assets/images/cars/deepal/s05/deepal-s05-exterior-side-white-bg.jpg',
+    '/assets/images/cars/deepal/s05/deepal-s05-interior-dashboard.jpg',
+    '/assets/images/cars/deepal/s05/deepal-s05-interior-seats-front.jpg',
+  ],
     "colors": [
       {
         "name": "Crystal White",
@@ -8713,11 +8791,13 @@ window.CARS_DB = [
     "baseEMI": 38000,
     "overview": "The Chery Tiggo 4 Pro delivers exceptional value in Nepal's compact SUV space with a panoramic sunroof, 10.25\" touchscreen, 6 airbags, and a 1.5L turbo engine. With eye-catching design and generous standard equipment, it challenges Hyundai Venue and Kia Sonet on features per rupee.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/chery/tiggo-4-pro/chery-tiggo-4-pro-exterior-front-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-4-pro/chery-tiggo-4-pro-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-4-pro/chery-tiggo-4-pro-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-4-pro/chery-tiggo-4-pro-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-4-pro/chery-tiggo-4-pro-interior-cargo-space.jpg',
+    '/assets/images/cars/chery/tiggo-4-pro/chery-tiggo-4-pro-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Diamond White",
@@ -8867,11 +8947,13 @@ window.CARS_DB = [
     "baseEMI": 52000,
     "overview": "The Chery Tiggo 7 Pro steps up to the mid-size SUV class with a 1.6L turbo engine, 197mm ground clearance, dual 12.3\" screens, ADAS safety suite, and a best-in-class 540L boot. It undercuts Hyundai Tucson and Kia Sportage on price while matching them on features.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/chery/tiggo-7-pro/chery-tiggo-7-pro-exterior-front-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-7-pro/chery-tiggo-7-pro-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-7-pro/chery-tiggo-7-pro-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-7-pro/chery-tiggo-7-pro-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-7-pro/chery-tiggo-7-pro-interior-cargo-space.jpg',
+    '/assets/images/cars/chery/tiggo-7-pro/chery-tiggo-7-pro-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Diamond White",
@@ -9016,11 +9098,13 @@ window.CARS_DB = [
     "baseEMI": 68000,
     "overview": "The Chery Tiggo 8 Pro is a full-size 7-seater with a powerful 2.0L turbo engine, panoramic sunroof, 12.3\" dual screens, ADAS Level 2, and third-row seating — all at a significantly lower price than equivalent Toyota Fortuner or Hyundai Tucson. Ideal for large families needing versatility.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/chery/tiggo-8-pro/chery-tiggo-8-pro-exterior-front-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-8-pro/chery-tiggo-8-pro-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-8-pro/chery-tiggo-8-pro-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-8-pro/chery-tiggo-8-pro-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-8-pro/chery-tiggo-8-pro-interior-cargo-space.jpg',
+    '/assets/images/cars/chery/tiggo-8-pro/chery-tiggo-8-pro-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Diamond White",
@@ -9161,11 +9245,13 @@ window.CARS_DB = [
     "baseEMI": 42000,
     "overview": "The Chery Omoda 5 brings European-inspired coupe-SUV design to Nepal with a 1.6T engine, 10.25\" floating touchscreen, 8-speaker audio, and a sportback silhouette rarely seen at this price. A bold alternative to the Kia Sonet and Hyundai Venue for style-first buyers.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/chery/omoda-5/chery-omoda-5-exterior-front-white-bg.jpg',
+    '/assets/images/cars/chery/omoda-5/chery-omoda-5-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/chery/omoda-5/chery-omoda-5-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/chery/omoda-5/chery-omoda-5-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/chery/omoda-5/chery-omoda-5-interior-cargo-space.jpg',
+    '/assets/images/cars/chery/omoda-5/chery-omoda-5-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Polar White",
@@ -9288,11 +9374,13 @@ window.CARS_DB = [
     "baseEMI": 62000,
     "overview": "The Chery Omoda E5 is the electric version of the Omoda 5, sharing its striking coupe silhouette but powered by a 61kWh battery delivering 430km CLTC range. With ADAS, 360° camera, and 150kW fast charging, it offers premium EV features at a competitive Nepal price point.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/chery/omoda-e5/chery-omoda-e5-exterior-front-white-bg.jpg',
+    '/assets/images/cars/chery/omoda-e5/chery-omoda-e5-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/chery/omoda-e5/chery-omoda-e5-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/chery/omoda-e5/chery-omoda-e5-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/chery/omoda-e5/chery-omoda-e5-interior-cargo-space.jpg',
+    '/assets/images/cars/chery/omoda-e5/chery-omoda-e5-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Polar White",
@@ -9412,11 +9500,13 @@ window.CARS_DB = [
     "baseEMI": 28000,
     "overview": "The Chery Tiggo 2 Pro is the entry point of the Chery SUV lineup in Nepal, offering a 1.5L turbo engine, electric sunroof, 10.25\" touchscreen, and 6 airbags in a sub-4m body. Best value-for-money proposition for first-time SUV buyers in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/chery/tiggo-2-pro/chery-tiggo-2-pro-exterior-front-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-2-pro/chery-tiggo-2-pro-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-2-pro/chery-tiggo-2-pro-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-2-pro/chery-tiggo-2-pro-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/chery/tiggo-2-pro/chery-tiggo-2-pro-interior-cargo-space.jpg',
+    '/assets/images/cars/chery/tiggo-2-pro/chery-tiggo-2-pro-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Polar White",
@@ -9539,11 +9629,13 @@ window.CARS_DB = [
     "baseEMI": 43000,
     "overview": "The Proton X50, built on Geely's BMA platform (same as Geely Coolray), brings European-grade engineering to Nepal with a 1.5T turbo engine, 3-cylinder smooth power, ADAS Level 2, 360° camera, and a 10.25\" touchscreen. Proton's Malaysian quality control gives it an edge over other Chinese brands.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/proton/x50/proton-x50-exterior-front-white-bg.jpg',
+    '/assets/images/cars/proton/x50/proton-x50-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/proton/x50/proton-x50-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/proton/x50/proton-x50-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/proton/x50/proton-x50-interior-cargo-space.jpg',
+    '/assets/images/cars/proton/x50/proton-x50-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Snow White",
@@ -9688,11 +9780,13 @@ window.CARS_DB = [
     "baseEMI": 62000,
     "overview": "The Proton X70, based on Geely Boyue, is Nepal's most compelling mid-size SUV alternative — with a 1.8T engine pushing 184hp, available AWD, 7-seat layout, and a feature-rich interior with 12.3\" touchscreen, ADAS, and Bose audio. It undercuts Hyundai Tucson and Kia Sportage considerably.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/proton/x70/proton-x70-exterior-front-white-bg.jpg',
+    '/assets/images/cars/proton/x70/proton-x70-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/proton/x70/proton-x70-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/proton/x70/proton-x70-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/proton/x70/proton-x70-interior-cargo-space.jpg',
+    '/assets/images/cars/proton/x70/proton-x70-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Snow White",
@@ -9838,11 +9932,13 @@ window.CARS_DB = [
     "baseEMI": 22000,
     "overview": "The Proton Saga is Malaysia's most popular sedan, now available in Nepal as the most affordable Proton offering. With a 1.3L engine, CVT option, and solid build quality, it targets first-time buyers seeking a reliable, fuel-efficient sedan with a trusted Southeast Asian heritage.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/proton/saga/proton-saga-exterior-front-white-bg.jpg',
+    '/assets/images/cars/proton/saga/proton-saga-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/proton/saga/proton-saga-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/proton/saga/proton-saga-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/proton/saga/proton-saga-interior-cargo-space.jpg',
+    '/assets/images/cars/proton/saga/proton-saga-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Snow White",
@@ -9960,11 +10056,13 @@ window.CARS_DB = [
     "baseEMI": 88000,
     "overview": "The Proton X90 is Proton's largest and most premium SUV, based on the Geely Xingyue L, with a 2.0T engine delivering 204hp, 6-seat captain chair layout, panoramic sunroof, Harman/Kardon audio, and ADAS Level 2. A compelling premium large SUV alternative to Hyundai Santa Fe in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/proton/x90/proton-x90-exterior-front-white-bg.jpg',
+    '/assets/images/cars/proton/x90/proton-x90-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/proton/x90/proton-x90-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/proton/x90/proton-x90-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/proton/x90/proton-x90-interior-cargo-space.jpg',
+    '/assets/images/cars/proton/x90/proton-x90-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Snow White",
@@ -10085,11 +10183,13 @@ window.CARS_DB = [
     "baseEMI": 40000,
     "overview": "The Haval Jolion is Great Wall Motor's compact SUV flagship in Nepal, available in standard 1.5T petrol and DHT (Dedicated Hybrid Transmission) hybrid variants. It stands out with its coupe-inspired styling, 10.25\" floating touchscreen, 6 airbags standard, and ADAS on top trims.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/haval/jolion/haval-jolion-exterior-front-white-bg.jpg',
+    '/assets/images/cars/haval/jolion/haval-jolion-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/haval/jolion/haval-jolion-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/haval/jolion/haval-jolion-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/haval/jolion/haval-jolion-interior-cargo-space.jpg',
+    '/assets/images/cars/haval/jolion/haval-jolion-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Pearl White",
@@ -10259,11 +10359,13 @@ window.CARS_DB = [
     "baseEMI": 65000,
     "overview": "The Haval H6 is Great Wall Motor's best-selling global SUV, arriving in Nepal with a DHT plug-in hybrid system, 240hp combined output, AWD option, and a premium interior with 12.3\" dual screens, Harman audio, and Level 2 ADAS. It challenges the Kia Seltos and Hyundai Tucson at a lower price.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/haval/h6/haval-h6-exterior-front-white-bg.jpg',
+    '/assets/images/cars/haval/h6/haval-h6-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/haval/h6/haval-h6-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/haval/h6/haval-h6-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/haval/h6/haval-h6-interior-cargo-space.jpg',
+    '/assets/images/cars/haval/h6/haval-h6-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Pearl White",
@@ -10388,11 +10490,13 @@ window.CARS_DB = [
     "baseEMI": 70000,
     "overview": "The Haval Dargo is GWM's off-road-focused SUV inspired by military aesthetics, featuring a 2.0L turbo engine, body-on-frame-style rigidity, terrain control modes, 224mm ground clearance, and a bold boxy exterior. Ideal for Nepal buyers who want Thar Roxx character at a slightly lower price.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/haval/dargo/haval-dargo-exterior-front-white-bg.jpg',
+    '/assets/images/cars/haval/dargo/haval-dargo-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/haval/dargo/haval-dargo-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/haval/dargo/haval-dargo-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/haval/dargo/haval-dargo-interior-cargo-space.jpg',
+    '/assets/images/cars/haval/dargo/haval-dargo-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Desert Khaki",
@@ -10516,11 +10620,13 @@ window.CARS_DB = [
     "baseEMI": 95000,
     "overview": "The Haval H9 is GWM's most premium body-on-frame SUV — a direct Fortuner rival with a 2.0T petrol engine, 4WD with low range, 7-seat layout, and a luxurious interior with 12.3\" screens, Harman/Kardon audio, and full ADAS Level 2. Positions as Nepal's affordable luxury off-roader.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/haval/h9/haval-h9-exterior-front-white-bg.jpg',
+    '/assets/images/cars/haval/h9/haval-h9-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/haval/h9/haval-h9-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/haval/h9/haval-h9-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/haval/h9/haval-h9-interior-cargo-space.jpg',
+    '/assets/images/cars/haval/h9/haval-h9-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Pearl White",
@@ -10642,11 +10748,13 @@ window.CARS_DB = [
     "baseEMI": 50000,
     "overview": "The Haval Jolion EV brings the popular Jolion nameplate into the electric age with a 60kWh battery, 420km CLTC range, and all the premium features of the petrol version — ADAS, 360° camera, and ventilated seats — in a zero-emission package.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/haval/jolion-ev/haval-jolion-ev-exterior-front-white-bg.jpg',
+    '/assets/images/cars/haval/jolion-ev/haval-jolion-ev-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/haval/jolion-ev/haval-jolion-ev-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/haval/jolion-ev/haval-jolion-ev-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/haval/jolion-ev/haval-jolion-ev-interior-cargo-space.jpg',
+    '/assets/images/cars/haval/jolion-ev/haval-jolion-ev-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Pearl White",
@@ -10767,11 +10875,13 @@ window.CARS_DB = [
     "baseEMI": 42000,
     "overview": "The Geely Coolray is built on the same BMA platform as Volvo and uses a 1.5T 3-cylinder engine co-developed with Volvo. With a 7-speed wet DCT, 10.25\" touchscreen, electric sunroof, and 6 airbags standard, it offers genuine European-heritage engineering at a Chinese price.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/geely/coolray/geely-coolray-exterior-front-white-bg.jpg',
+    '/assets/images/cars/geely/coolray/geely-coolray-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/geely/coolray/geely-coolray-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/geely/coolray/geely-coolray-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/geely/coolray/geely-coolray-interior-cargo-space.jpg',
+    '/assets/images/cars/geely/coolray/geely-coolray-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Moonlight White",
@@ -10917,11 +11027,13 @@ window.CARS_DB = [
     "baseEMI": 62000,
     "overview": "The Geely Azkarra is a mid-size SUV with Geely's 48V mild hybrid system, 197hp 2.0T engine, AWD, and a stunning interior featuring a 12.3\" curved screen, Bose audio, and full ADAS Level 2. On the CMA platform shared with Volvo XC40, it brings near-premium quality at a mid-tier price.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/geely/azkarra/geely-azkarra-exterior-front-white-bg.jpg',
+    '/assets/images/cars/geely/azkarra/geely-azkarra-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/geely/azkarra/geely-azkarra-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/geely/azkarra/geely-azkarra-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/geely/azkarra/geely-azkarra-interior-cargo-space.jpg',
+    '/assets/images/cars/geely/azkarra/geely-azkarra-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Moonlight White",
@@ -11042,11 +11154,13 @@ window.CARS_DB = [
     "baseEMI": 24000,
     "overview": "The Geely Emgrand is one of the world's best-selling sedans with over 3 million units sold. In Nepal it offers a spacious 450L boot, 10.25\" touchscreen, CVT option, and 6 airbags — making it one of the most complete value sedans available against the Toyota Vios and Honda City.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/geely/emgrand/geely-emgrand-exterior-front-white-bg.jpg',
+    '/assets/images/cars/geely/emgrand/geely-emgrand-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/geely/emgrand/geely-emgrand-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/geely/emgrand/geely-emgrand-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/geely/emgrand/geely-emgrand-interior-cargo-space.jpg',
+    '/assets/images/cars/geely/emgrand/geely-emgrand-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Pearl White",
@@ -11164,11 +11278,13 @@ window.CARS_DB = [
     "baseEMI": 55000,
     "overview": "The Geely Preface is a premium mid-size sedan built on the Volvo CMA platform, featuring a 2.0T engine with 48V mild hybrid, a 12.3\" curved screen, ADAS Level 2, Bose audio, and a Volvo-grade interior. It rivals the Toyota Camry Hybrid at a significantly lower Nepal price.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/geely/preface/geely-preface-exterior-front-white-bg.jpg',
+    '/assets/images/cars/geely/preface/geely-preface-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/geely/preface/geely-preface-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/geely/preface/geely-preface-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/geely/preface/geely-preface-interior-cargo-space.jpg',
+    '/assets/images/cars/geely/preface/geely-preface-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Moonlight White",
@@ -11289,11 +11405,13 @@ window.CARS_DB = [
     "baseEMI": 56000,
     "overview": "The Geely EX5 is a purpose-built compact electric SUV on Geely's GEA electric platform, with a 65kWh battery delivering 450km CLTC range, 800V fast charging architecture, and ADAS Level 2. One of the most technically advanced compact EVs available in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/geely/ex5/geely-ex5-exterior-front-white-bg.jpg',
+    '/assets/images/cars/geely/ex5/geely-ex5-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/geely/ex5/geely-ex5-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/geely/ex5/geely-ex5-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/geely/ex5/geely-ex5-interior-cargo-space.jpg',
+    '/assets/images/cars/geely/ex5/geely-ex5-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Crystal White",
@@ -11414,11 +11532,13 @@ window.CARS_DB = [
     "baseEMI": 48000,
     "overview": "The Maxus T60 is SAIC Motor's popular double-cab pickup truck in Nepal, offering a 2.0T diesel engine, 4WD with low range, 1,000kg payload, and a 7\" touchscreen with CarPlay. Built for both commercial use and leisure, it competes with the Toyota Hilux at a considerably lower price.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maxus/t60/maxus-t60-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maxus/t60/maxus-t60-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maxus/t60/maxus-t60-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maxus/t60/maxus-t60-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maxus/t60/maxus-t60-interior-cargo-space.jpg',
+    '/assets/images/cars/maxus/t60/maxus-t60-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Glacier White",
@@ -11567,11 +11687,13 @@ window.CARS_DB = [
     "baseEMI": 50000,
     "overview": "The Maxus D60 is SAIC's mid-size SUV offering in Nepal, featuring a 1.5T or 2.0T petrol engine, panoramic sunroof, 10.25\" touchscreen, 6 airbags, and a spacious 5-seat interior — all at a price significantly below comparable Korean and Japanese rivals.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maxus/d60/maxus-d60-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maxus/d60/maxus-d60-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maxus/d60/maxus-d60-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maxus/d60/maxus-d60-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maxus/d60/maxus-d60-interior-cargo-space.jpg',
+    '/assets/images/cars/maxus/d60/maxus-d60-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Pearl White",
@@ -11716,11 +11838,13 @@ window.CARS_DB = [
     "baseEMI": 72000,
     "overview": "The Maxus Euniq 6 is Nepal's sole electric MPV, offering a 90kWh battery with 520km CLTC range, 6-seat captain chair layout, and a premium interior with 12.3\" touchscreen, ADAS, and wireless charging. A unique green-mobility solution for Nepal's family MPV market.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maxus/euniq-6/maxus-euniq-6-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maxus/euniq-6/maxus-euniq-6-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maxus/euniq-6/maxus-euniq-6-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maxus/euniq-6/maxus-euniq-6-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maxus/euniq-6/maxus-euniq-6-interior-cargo-space.jpg',
+    '/assets/images/cars/maxus/euniq-6/maxus-euniq-6-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Pearl White",
@@ -11842,10 +11966,13 @@ window.CARS_DB = [
     "baseEMI": 155000,
     "overview": "The Audi Q3 is the most affordable entry point into the Audi SUV lineup in Nepal. Powered by a turbocharged 2.0L TFSI quattro engine and packed with Audi's MMI infotainment, virtual cockpit, and advanced safety tech, it appeals to urban professionals seeking German prestige at a relatively accessible price.",
     "images": [
-      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1619767886558-efdc259b6e09?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/audi/q3/audi-q3-exterior-front-white-bg.jpg',
+    '/assets/images/cars/audi/q3/audi-q3-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/audi/q3/audi-q3-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/audi/q3/audi-q3-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/audi/q3/audi-q3-interior-cargo-space.jpg',
+    '/assets/images/cars/audi/q3/audi-q3-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Mythos Black",
@@ -11963,10 +12090,13 @@ window.CARS_DB = [
     "baseEMI": 215000,
     "overview": "Launched in Nepal by Kaeros International, the Audi Q4 35 e-tron is the brand's electric gateway into the Nepali premium market. With a 55 kWh battery, 349 km WLTP range, and the same MMI infotainment found across the Audi EV range, it is the most stylish German EV under Rs. 1.75 Crore in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1620891549027-942fdc95d3f5?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1619767886558-efdc259b6e09?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/audi/q4-35-e-tron/audi-q4-e-tron-exterior-front-white-bg.jpg',
+    '/assets/images/cars/audi/q4-35-e-tron/audi-q4-e-tron-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/audi/q4-35-e-tron/audi-q4-e-tron-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/audi/q4-35-e-tron/audi-q4-e-tron-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/audi/q4-35-e-tron/audi-q4-e-tron-interior-cargo-space.jpg',
+    '/assets/images/cars/audi/q4-35-e-tron/audi-q4-e-tron-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Glacier White",
@@ -12086,10 +12216,13 @@ window.CARS_DB = [
     "baseEMI": 225000,
     "overview": "The Audi Q5 is one of the most recognisable luxury SUVs in Nepal, blending athletic styling, a refined turbocharged engine, and Audi's signature quattro all-wheel drive. It positions itself squarely against the BMW X3 and Mercedes GLC for discerning Nepali buyers who want premium performance and brand cachet.",
     "images": [
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1506015391300-4802dc74316e?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/audi/q5/audi-q5-exterior-front-white-bg.jpg',
+    '/assets/images/cars/audi/q5/audi-q5-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/audi/q5/audi-q5-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/audi/q5/audi-q5-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/audi/q5/audi-q5-interior-cargo-space.jpg',
+    '/assets/images/cars/audi/q5/audi-q5-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Glacier White",
@@ -12206,10 +12339,13 @@ window.CARS_DB = [
     "baseEMI": 162000,
     "overview": "The Audi Q7 is actually the most affordable Audi available in Nepal (grey/parallel import) thanks to its 3.0L TDI diesel powertrain. A full-size 7-seater with Audi's air suspension, LED Matrix headlights, and the brand's latest MMI system, the Q7 is the go-to flagship luxury SUV for Nepal's executive class.",
     "images": [
-      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/audi/q7/audi-q7-exterior-front-white-bg.jpg',
+    '/assets/images/cars/audi/q7/audi-q7-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/audi/q7/audi-q7-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/audi/q7/audi-q7-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/audi/q7/audi-q7-interior-cargo-space.jpg',
+    '/assets/images/cars/audi/q7/audi-q7-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Glacier White",
@@ -12327,10 +12463,13 @@ window.CARS_DB = [
     "baseEMI": 185000,
     "overview": "The Audi A4 remains a cornerstone of the German luxury sedan segment in Nepal. With its 2.0L TFSI quattro, sleek exterior, and deeply featured MMI cabin, the A4 competes with the BMW 3 Series for Nepal's professional class wanting a sporty yet refined daily driver.",
     "images": [
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/audi/a4/audi-a4-exterior-front-white-bg.jpg',
+    '/assets/images/cars/audi/a4/audi-a4-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/audi/a4/audi-a4-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/audi/a4/audi-a4-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/audi/a4/audi-a4-interior-cargo-space.jpg',
+    '/assets/images/cars/audi/a4/audi-a4-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Glacier White",
@@ -12448,10 +12587,13 @@ window.CARS_DB = [
     "baseEMI": 195000,
     "overview": "The BMW X1 is the entry point into the BMW X SAV family in Nepal, distributed by Laxmi Premium Motors from their Tinkune showroom. It packs a turbocharged 1.5L or 2.0L petrol engine, optional xDrive all-wheel drive, and BMW's latest iDrive system in a compact, urban-friendly footprint.",
     "images": [
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1516189983068-71b1d30867e8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/bmw/x1/bmw-x1-exterior-front-white-bg.jpg',
+    '/assets/images/cars/bmw/x1/bmw-x1-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/bmw/x1/bmw-x1-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/bmw/x1/bmw-x1-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/bmw/x1/bmw-x1-interior-cargo-space.jpg',
+    '/assets/images/cars/bmw/x1/bmw-x1-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Alpine White",
@@ -12569,10 +12711,13 @@ window.CARS_DB = [
     "baseEMI": 260000,
     "overview": "The BMW X3 is the most popular BMW model in Nepal, combining the ideal mix of size, performance, and luxury. With its 2.0L TwinPower diesel or petrol, xDrive AWD, and optional iX3 electric sibling, it is a favourite among Kathmandu's executive class and entrepreneurs.",
     "images": [
-      "https://images.unsplash.com/photo-1518987048-93e29699e79a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1516189983068-71b1d30867e8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/bmw/x3/bmw-x3-exterior-front-white-bg.jpg',
+    '/assets/images/cars/bmw/x3/bmw-x3-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/bmw/x3/bmw-x3-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/bmw/x3/bmw-x3-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/bmw/x3/bmw-x3-interior-cargo-space.jpg',
+    '/assets/images/cars/bmw/x3/bmw-x3-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Alpine White",
@@ -12690,10 +12835,13 @@ window.CARS_DB = [
     "baseEMI": 350000,
     "overview": "The BMW X5 is the top-selling flagship of Laxmi Premium Motors' lineup in Nepal. Available in petrol, diesel, and plug-in hybrid variants, the X5 combines 214 mm ground clearance, executive-class interiors, and optional 7-seat configuration. It rivals the Audi Q7 and Mercedes GLE at the very top of Nepal's luxury SUV segment.",
     "images": [
-      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1518987048-93e29699e79a?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/bmw/x5/bmw-x5-exterior-front-white-bg.jpg',
+    '/assets/images/cars/bmw/x5/bmw-x5-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/bmw/x5/bmw-x5-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/bmw/x5/bmw-x5-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/bmw/x5/bmw-x5-interior-cargo-space.jpg',
+    '/assets/images/cars/bmw/x5/bmw-x5-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Alpine White",
@@ -12829,10 +12977,13 @@ window.CARS_DB = [
     "baseEMI": 205000,
     "overview": "The BMW 3 Series is one of Nepal's most celebrated luxury sedans, offering the brand's legendary rear-wheel-drive dynamics paired with a turbocharged 2.0L diesel or plug-in hybrid powertrain. It is BMW's most driver-focused model available in Nepal and competes directly with the Audi A4 and Mercedes C-Class.",
     "images": [
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/bmw/3-series/bmw-3-series-exterior-front-white-bg.jpg',
+    '/assets/images/cars/bmw/3-series/bmw-3-series-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/bmw/3-series/bmw-3-series-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/bmw/3-series/bmw-3-series-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/bmw/3-series/bmw-3-series-interior-cargo-space.jpg',
+    '/assets/images/cars/bmw/3-series/bmw-3-series-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Alpine White",
@@ -12950,10 +13101,13 @@ window.CARS_DB = [
     "baseEMI": 245000,
     "overview": "The BMW 5 Series represents BMW's business-class sedan in Nepal, offering the flagship comfort and technology of the brand in a longer wheelbase package. The 530e PHEV combines a 2.0L petrol engine with an electric motor for 252 hp combined output, making it more cost-efficient than ever to run in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/bmw/5-series/bmw-5-series-exterior-front-white-bg.jpg',
+    '/assets/images/cars/bmw/5-series/bmw-5-series-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/bmw/5-series/bmw-5-series-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/bmw/5-series/bmw-5-series-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/bmw/5-series/bmw-5-series-interior-cargo-space.jpg',
+    '/assets/images/cars/bmw/5-series/bmw-5-series-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Alpine White",
@@ -13070,10 +13224,13 @@ window.CARS_DB = [
     "baseEMI": 235000,
     "overview": "The BMW iX3 is the first fully electric BMW launched in Nepal by Laxmi Premium Motors. Based on the X3 SAV platform, it uses an 80 kWh battery with a 210 kW eDrive motor for 286 PS and 400 Nm, offering an impressive 460 km WLTP range. It includes an 8-year battery warranty and both AC and DC fast charging support.",
     "images": [
-      "https://images.unsplash.com/photo-1620891549027-942fdc95d3f5?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1518987048-93e29699e79a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/bmw/ix3/bmw-ix3-exterior-front-white-bg.jpg',
+    '/assets/images/cars/bmw/ix3/bmw-ix3-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/bmw/ix3/bmw-ix3-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/bmw/ix3/bmw-ix3-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/bmw/ix3/bmw-ix3-interior-cargo-space.jpg',
+    '/assets/images/cars/bmw/ix3/bmw-ix3-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Mineral White",
@@ -13174,10 +13331,13 @@ window.CARS_DB = [
     "baseEMI": 490000,
     "overview": "The BMW 7 Series is the pinnacle of BMW's lineup in Nepal, distributed by Laxmi Premium Motors. Only available in plug-in hybrid trim, it combines a 3.0L inline-6 turbocharged petrol engine with an electric motor for a combined 394 hp and 600 Nm. With its 14.9-inch touchscreen, executive lounge rear seating, and the latest ADAS tech, it caters to Nepal's ultra-wealthy elite.",
     "images": [
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/bmw/7-series/bmw-7-series-exterior-front-white-bg.jpg',
+    '/assets/images/cars/bmw/7-series/bmw-7-series-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/bmw/7-series/bmw-7-series-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/bmw/7-series/bmw-7-series-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/bmw/7-series/bmw-7-series-interior-cargo-space.jpg',
+    '/assets/images/cars/bmw/7-series/bmw-7-series-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Alpine White",
@@ -13314,10 +13474,13 @@ window.CARS_DB = [
     "baseEMI": 28000,
     "overview": "The Volkswagen Polo is the most affordable and accessible Volkswagen in Nepal, distributed by Pooja International. Built on a proven MQB platform with a quiet 1.0L MPI engine, it offers genuine German build quality, safety features, and refinement in a compact hatchback body at a competitive price for its segment.",
     "images": [
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/volkswagen/polo/volkswagen-polo-exterior-front-white-bg.jpg',
+    '/assets/images/cars/volkswagen/polo/volkswagen-polo-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/volkswagen/polo/volkswagen-polo-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/volkswagen/polo/volkswagen-polo-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/volkswagen/polo/volkswagen-polo-interior-cargo-space.jpg',
+    '/assets/images/cars/volkswagen/polo/volkswagen-polo-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Reflex Silver",
@@ -13472,10 +13635,12 @@ window.CARS_DB = [
     "baseEMI": 55000,
     "overview": "The Volkswagen Taigun is Nepal's best-known compact SUV in the premium mid-segment, built on the MQB A0 IN platform shared with the Skoda Kushaq. It earned a 5-star Global NCAP safety rating for both adult and child occupants — the safest in its class. Available with 1.0L TSI and the new 1.5L TSI GT Plus engine at the NAIMA 2025 Expo, it offers solid German engineering at an accessible price.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/volkswagen/taigun/volkswagen-taigun-exterior-front-white-bg.webp',
+    '/assets/images/cars/volkswagen/taigun/volkswagen-taigun-exterior-rear.webp',
+    '/assets/images/cars/volkswagen/taigun/volkswagen-taigun-exterior-side-right-white-bg.webp',
+    '/assets/images/cars/volkswagen/taigun/volkswagen-taigun-interior-cargo-space.jpg',
+    '/assets/images/cars/volkswagen/taigun/volkswagen-taigun-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Wild Cherry Red",
@@ -13637,10 +13802,13 @@ window.CARS_DB = [
     "baseEMI": 58000,
     "overview": "The Volkswagen Virtus is the newest sedan addition to VW Nepal's lineup, officially launched at the NAIMA Nepal Mobility Expo 2025. Built on the same MQB A0 IN platform as the Taigun, it carries a 5-star Global NCAP safety rating and offers a choice of 1.0L TSI and 1.5L TSI EVO engines with both manual and automatic options.",
     "images": [
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/volkswagen/virtus/volkswagen-virtus-exterior-front-white-bg.jpg',
+    '/assets/images/cars/volkswagen/virtus/volkswagen-virtus-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/volkswagen/virtus/volkswagen-virtus-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/volkswagen/virtus/volkswagen-virtus-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/volkswagen/virtus/volkswagen-virtus-interior-cargo-space.jpg',
+    '/assets/images/cars/volkswagen/virtus/volkswagen-virtus-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Candy White",
@@ -13798,10 +13966,13 @@ window.CARS_DB = [
     "baseEMI": 125000,
     "overview": "The Volkswagen Tayron is the newest addition to VW Nepal's SUV lineup, officially listed on the Volkswagen Nepal website (volkswagen.com.np) alongside the Taigun and Virtus. Replacing the Tiguan Allspace as the brand's 7-seat mid-size SUV, the Tayron is built on the MQB EVO platform and powered by a 2.0L TSI EVO with 4MOTION AWD. It competes with the Skoda Kodiaq and Jeep Meridian in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/volkswagen/tayron/volkswagen-tayron-exterior-front-white-bg.jpg',
+    '/assets/images/cars/volkswagen/tayron/volkswagen-tayron-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/volkswagen/tayron/volkswagen-tayron-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/volkswagen/tayron/volkswagen-tayron-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/volkswagen/tayron/volkswagen-tayron-interior-cargo-space.jpg',
+    '/assets/images/cars/volkswagen/tayron/volkswagen-tayron-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Candy White",
@@ -13900,10 +14071,13 @@ window.CARS_DB = [
     "baseEMI": 120000,
     "overview": "The Volkswagen Tiguan Allspace is the established 7-seater SUV in the VW Nepal lineup, now being gradually supplemented by the Tayron. It is powered by a 2.0L TSI petrol engine with 7-speed automatic and 4MOTION AWD. With 177 PS and a 2,787 mm wheelbase, it provides a comfortable ride for families in Nepal, competing with the Skoda Kodiaq and Toyota RAV4 in the mid-premium SUV segment.",
     "images": [
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/volkswagen/tiguan-allspace/volkswagen-tiguan-allspace-exterior-front-white-bg.jpg',
+    '/assets/images/cars/volkswagen/tiguan-allspace/volkswagen-tiguan-allspace-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/volkswagen/tiguan-allspace/volkswagen-tiguan-allspace-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/volkswagen/tiguan-allspace/volkswagen-tiguan-allspace-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/volkswagen/tiguan-allspace/volkswagen-tiguan-allspace-interior-cargo-space.jpg',
+    '/assets/images/cars/volkswagen/tiguan-allspace/volkswagen-tiguan-allspace-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Pure White",
@@ -14020,10 +14194,13 @@ window.CARS_DB = [
     "baseEMI": 295000,
     "overview": "The Volkswagen Touareg is the brand's most premium and expensive offering in Nepal, distributed by Pooja International. Powered by a mighty 3.0L V6 TSI engine producing 340 PS and 450 Nm, mated to an 8-speed sequential AT with 4MOTION AWD, it rivals the BMW X5 and Audi Q7 in Nepal's ultra-premium SUV segment while offering Volkswagen's practical luxury at a slightly lower price than its German rivals.",
     "images": [
-      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1518987048-93e29699e79a?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/volkswagen/touareg/volkswagen-touareg-exterior-front-white-bg.jpg',
+    '/assets/images/cars/volkswagen/touareg/volkswagen-touareg-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/volkswagen/touareg/volkswagen-touareg-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/volkswagen/touareg/volkswagen-touareg-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/volkswagen/touareg/volkswagen-touareg-interior-cargo-space.jpg',
+    '/assets/images/cars/volkswagen/touareg/volkswagen-touareg-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Tungsten Silver",
@@ -14120,10 +14297,10 @@ window.CARS_DB = [
     "baseEMI": 105000,
     "overview": "The Next-Generation Ford Ranger is Nepal's best-selling premium pickup, imported from Thailand by GO Automobiles. Built to Euro 6 standards, it offers two 2.0L diesel options (Single-Turbo & Bi-Turbo), 800 mm water wading depth, six selectable terrain modes, and a dramatically updated interior with 12-inch SYNC4 infotainment. It competes directly with the Toyota Hilux and Isuzu D-Max in Nepal's growing lifestyle pickup segment.",
     "images": [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1571987502227-9231b837d92a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1593055357429-62b4c8c8a0af?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/ford/next-gen-ranger/ford-rangerr-exterior-front-white-bg.png',
+    '/assets/images/cars/ford/next-gen-ranger/ford-ranger-interior-cargo-space.jpg',
+    '/assets/images/cars/ford/next-gen-ranger/ford-ranger-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Arctic White",
@@ -14267,10 +14444,10 @@ window.CARS_DB = [
     "baseEMI": 248000,
     "overview": "The Next-Generation Ford Everest replaces the Endeavour as GO Ford's flagship 7-seat SUV in Nepal. Imported from Thailand, the Titanium variant — the only spec sold in Nepal — combines a 210 PS bi-turbo diesel with a 10-speed SelectShift AT, intelligent 4WD, 800 mm wading depth, 12-inch SYNC4A touchscreen, panoramic moonroof, and a 5-star ANCAP safety rating. It competes directly with the Toyota Fortuner and Jeep Meridian at the top of Nepal's off-road luxury segment.",
     "images": [
-      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1571987502227-9231b837d92a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/ford/next-gen-everest/ford-everest-exterior-front-white-bg.png',
+    '/assets/images/cars/ford/next-gen-everest/ford-everest-interior-cargo-space.jpg',
+    '/assets/images/cars/ford/next-gen-everest/ford-everest-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Absolute Black",
@@ -14384,10 +14561,10 @@ window.CARS_DB = [
     "baseEMI": 235000,
     "overview": "The Next-Generation Ford Ranger Raptor is the most extreme performance vehicle currently sold by an authorized dealer in Nepal. Powered by a 3.0L V6 Twin-Turbo EcoBoost petrol engine tuned by Ford Performance, it delivers 392 hp and 583 Nm with FOX Live Valve shocks, 272 mm ground clearance, and seven selectable drive modes including Baja and Rock Crawl. GO Ford sells it at Rs. 2.29 Crore, making it the ultimate Nepal mountain conquest machine.",
     "images": [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1593055357429-62b4c8c8a0af?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1571987502227-9231b837d92a?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/ford/next-gen-ranger-raptor/ford-ranger-raptor-exterior-front-white-bg.png',
+    '/assets/images/cars/ford/next-gen-ranger-raptor/ford-ranger-raptor-interior-cargo-space.jpg',
+    '/assets/images/cars/ford/next-gen-ranger-raptor/ford-ranger-raptor-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Arctic White",
@@ -14499,10 +14676,13 @@ window.CARS_DB = [
     "baseEMI": 27000,
     "overview": "The Renault Kwid is the entry-level French hatchback in Nepal, distributed by Advanced Automobiles. Available in 0.8L and 1.0L petrol variants with optional AMT, it offers surprisingly high ground clearance (184 mm) for its class and a bold SUV-inspired design. Nepal's most affordable Renault, it targets first-time buyers and city commuters with a tight budget.",
     "images": [
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/renault/kwid/renault-kwid-exterior-front-white-bg.jpg',
+    '/assets/images/cars/renault/kwid/renault-kwid-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/renault/kwid/renault-kwid-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/renault/kwid/renault-kwid-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/renault/kwid/renault-kwid-interior-cargo-space.jpg',
+    '/assets/images/cars/renault/kwid/renault-kwid-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Ice Cool White",
@@ -14636,10 +14816,13 @@ window.CARS_DB = [
     "baseEMI": 32000,
     "overview": "The Renault Triber is Nepal's most affordable 7-seat vehicle, offering clever modular seating, a 1.0L Energy petrol engine, and an optional AMT for city ease. Built on the CMFA+ platform shared with the Kiger, it offers 182 mm ground clearance and a genuinely usable third row for a family of seven — all for under Rs. 35 Lakhs. Advanced Automobiles distributes it across Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/renault/triber/renault-triber-exterior-front-white-bg.jpg',
+    '/assets/images/cars/renault/triber/renault-triber-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/renault/triber/renault-triber-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/renault/triber/renault-triber-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/renault/triber/renault-triber-interior-cargo-space.jpg',
+    '/assets/images/cars/renault/triber/renault-triber-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Moonlight Silver",
@@ -14794,10 +14977,13 @@ window.CARS_DB = [
     "baseEMI": 36000,
     "overview": "The Renault Kiger is the most stylish and modern Renault in Nepal, built on the CMFA+ platform shared with the Nissan Magnite. With Tri-Octa LED headlamps, 205 mm ground clearance, a 405 L boot, and the option of a 100 PS turbo engine, it punches well above its price. Advanced Automobiles brought the 2023 model to Nepal, which adds Hill Start Assist, TPMS, and ESP as standard.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/renault/kiger/renault-kiger-exterior-front-white-bg.jpg',
+    '/assets/images/cars/renault/kiger/renault-kiger-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/renault/kiger/renault-kiger-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/renault/kiger/renault-kiger-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/renault/kiger/renault-kiger-interior-cargo-space.jpg',
+    '/assets/images/cars/renault/kiger/renault-kiger-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Pearl White",
@@ -14938,10 +15124,13 @@ window.CARS_DB = [
     "baseEMI": 25000,
     "overview": "The Maruti Suzuki Alto is Nepal's most iconic entry-level car, historically the best-selling Suzuki model in the country and widely used as a taxi. With a tiny 796 cc engine, 22+ km/l fuel efficiency, and ultra-low maintenance costs via CG Motocorp's extensive service network, it remains the first-choice car for budget buyers and commercial users across Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/alto/maruti-suzuki-alto-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/alto/maruti-suzuki-alto-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/alto/maruti-suzuki-alto-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/alto/maruti-suzuki-alto-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/alto/maruti-suzuki-alto-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/alto/maruti-suzuki-alto-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Silky Silver",
@@ -15076,10 +15265,13 @@ window.CARS_DB = [
     "baseEMI": 30000,
     "overview": "The Maruti Suzuki WagonR is one of Nepal's most popular family hatchbacks, offering a tall-boy design that maximizes interior space for 5 passengers. Available in 1.0L and 1.2L engines with AMT option, it is popular with families and taxi operators needing maximum capacity in a small footprint. CG Motocorp offers it across all Suzuki showrooms in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/wagonr/maruti-suzuki-wagonr-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/wagonr/maruti-suzuki-wagonr-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/wagonr/maruti-suzuki-wagonr-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/wagonr/maruti-suzuki-wagonr-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/wagonr/maruti-suzuki-wagonr-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/wagonr/maruti-suzuki-wagonr-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Solid White",
@@ -15233,10 +15425,13 @@ window.CARS_DB = [
     "baseEMI": 28000,
     "overview": "The Suzuki Celerio is Nepal's most fuel-efficient petrol hatchback, claiming 26.68 km/l on the 1.0L engine — the highest of any petrol car in Nepal. With its lightweight HEARTECT platform, smart AMT transmission option, and attractive price under Rs. 30 Lakhs, it is an ideal city runabout for Kathmandu's congested streets.",
     "images": [
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/celerio/maruti-suzuki-celerio-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/celerio/maruti-suzuki-celerio-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/celerio/maruti-suzuki-celerio-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/celerio/maruti-suzuki-celerio-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/celerio/maruti-suzuki-celerio-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/celerio/maruti-suzuki-celerio-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Solid White",
@@ -15370,10 +15565,13 @@ window.CARS_DB = [
     "baseEMI": 38000,
     "overview": "The Maruti Suzuki Swift is Nepal's most beloved premium hatchback and one of the best-selling cars in the country. The new-generation Swift runs on the HEARTECT platform with a new 1.2L Z12E 3-cylinder engine offering improved performance and efficiency. Sporty design, class-leading safety (6 airbags on top trim), and a willing AMT option make it the go-to hatchback for Nepal's urban buyers.",
     "images": [
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/swift/maruti-suzuki-swift-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/swift/maruti-suzuki-swift-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/swift/maruti-suzuki-swift-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/swift/maruti-suzuki-swift-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/swift/maruti-suzuki-swift-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/swift/maruti-suzuki-swift-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Solid White",
@@ -15515,10 +15713,13 @@ window.CARS_DB = [
     "baseEMI": 40000,
     "overview": "The Maruti Suzuki Dzire is Nepal's most popular compact sedan, combining the Swift's proven 1.2L engine with a 378 L boot in a 3-box sedan body. With CNG-ready variants in India (not yet in Nepal) and the HEARTECT platform, the Dzire offers one of the best overall value propositions in Nepal's sedan segment, priced between the WagonR and Baleno.",
     "images": [
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/dzire/maruti-suzuki-dzire-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/dzire/maruti-suzuki-dzire-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/dzire/maruti-suzuki-dzire-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/dzire/maruti-suzuki-dzire-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/dzire/maruti-suzuki-dzire-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/dzire/maruti-suzuki-dzire-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Solid White",
@@ -15654,10 +15855,13 @@ window.CARS_DB = [
     "baseEMI": 42000,
     "overview": "The Suzuki Baleno is a premium hatchback in Nepal, sitting a step above the Swift in the CG Motocorp lineup. Built on the HEARTECT platform with a 1.2L DualJet engine, it delivers 22.35 km/l and a surprisingly roomy interior with 318 L boot. Available in both MT and CVT, the top ZXI+ trim packs 6 airbags, a HUD, and Head-Up Display into an accessible price point.",
     "images": [
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/baleno/maruti-suzuki-baleno-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/baleno/maruti-suzuki-baleno-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/baleno/maruti-suzuki-baleno-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/baleno/maruti-suzuki-baleno-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/baleno/maruti-suzuki-baleno-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/baleno/maruti-suzuki-baleno-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Splendid Silver",
@@ -15797,10 +16001,13 @@ window.CARS_DB = [
     "baseEMI": 38000,
     "overview": "The Suzuki Ignis is the quirkiest car in Nepal's Suzuki lineup — a true micro-SUV with an elevated stance (163 mm clearance), boxy crossover styling, and a willing 1.2L petrol engine. It targets Nepal's younger urban buyers who want SUV styling in a compact, affordable package. Available in MT and AMT.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/ignis/maruti-suzuki-ignis-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/ignis/maruti-suzuki-ignis-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/ignis/maruti-suzuki-ignis-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/ignis/maruti-suzuki-ignis-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/ignis/maruti-suzuki-ignis-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/ignis/maruti-suzuki-ignis-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Turquoise Blue",
@@ -15934,10 +16141,13 @@ window.CARS_DB = [
     "baseEMI": 48000,
     "overview": "The Suzuki Vitara Brezza is Nepal's best-selling compact SUV and the flagship of CG Motocorp's passenger car lineup. Now equipped with a Smart Hybrid system on top variants, it combines a 1.5L K15B engine with a lithium-ion battery to improve city efficiency. With 210 mm ground clearance, a panoramic sunroof, and up to 6 airbags, it competes directly with the Hyundai Venue and Kia Sonet in Nepal's hottest car segment.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/vitara-brezza/maruti-suzuki-vitara-brezza-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/vitara-brezza/maruti-suzuki-vitara-brezza-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/vitara-brezza/maruti-suzuki-vitara-brezza-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/vitara-brezza/maruti-suzuki-vitara-brezza-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/vitara-brezza/maruti-suzuki-vitara-brezza-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/vitara-brezza/maruti-suzuki-vitara-brezza-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Brave Khaki",
@@ -16097,10 +16307,13 @@ window.CARS_DB = [
     "baseEMI": 52000,
     "overview": "The Suzuki Ertiga is Nepal's most popular 7-seat MPV for family use, combining a spacious 3-row cabin, 1.5L Smart Hybrid engine, and CG Motocorp's unbeatable after-sales support. With 19.01 km/l ARAI efficiency, dual sliding doors, and class-leading 803 L boot (all seats folded), the Ertiga is the top family MPV choice for tour operators and large families across Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/ertiga/maruti-suzuki-ertiga-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/ertiga/maruti-suzuki-ertiga-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/ertiga/maruti-suzuki-ertiga-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/ertiga/maruti-suzuki-ertiga-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/ertiga/maruti-suzuki-ertiga-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/ertiga/maruti-suzuki-ertiga-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Auburn Red",
@@ -16238,10 +16451,13 @@ window.CARS_DB = [
     "baseEMI": 75000,
     "overview": "The Suzuki Grand Vitara is the most premium and technically advanced Maruti Suzuki in Nepal, jointly developed with Toyota (sharing platform with the Toyota Urban Cruiser Hyryder). The Strong Hybrid variant uses a 1.5L 3-cylinder petrol engine with Toyota's proven strong hybrid system for 27.97 km/l, while a mild-hybrid 1.5L variant with AllGrip AWD caters to those who want off-road capability.",
     "images": [
-      "https://images.unsplash.com/photo-1518987048-93e29699e79a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/grand-vitara/maruti-suzuki-grand-vitara-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/grand-vitara/maruti-suzuki-grand-vitara-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/grand-vitara/maruti-suzuki-grand-vitara-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/grand-vitara/maruti-suzuki-grand-vitara-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/grand-vitara/maruti-suzuki-grand-vitara-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/grand-vitara/maruti-suzuki-grand-vitara-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Celestial Blue",
@@ -16391,10 +16607,13 @@ window.CARS_DB = [
     "baseEMI": 50000,
     "overview": "The Suzuki Fronx is the newest addition to CG Motocorp's Nepal lineup, a Baleno-based coupe-style crossover SUV offering the best of both worlds: the hatchback's efficiency with an elevated crossover stance. Available with a 1.0L turbo engine for those who want spirited performance, or a 1.2L mild hybrid for efficiency, the Fronx targets Nepal's style-conscious younger buyers.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/fronx/maruti-suzuki-fronx-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/fronx/maruti-suzuki-fronx-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/fronx/maruti-suzuki-fronx-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/fronx/maruti-suzuki-fronx-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/fronx/maruti-suzuki-fronx-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/fronx/maruti-suzuki-fronx-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Opulent Red",
@@ -16535,10 +16754,13 @@ window.CARS_DB = [
     "baseEMI": 63000,
     "overview": "The Suzuki Jimny is the most iconic off-road vehicle in Nepal's compact SUV segment, relaunched by CG Motocorp as Nepal's most expensive Suzuki at Rs. 62.99 Lakhs. With a genuine ladder-frame chassis, 4WD with low-range gearbox, 210 mm ground clearance, and approach/departure angles that rival much larger 4x4s, the Jimny is Nepal's purest off-road compact. It is available in the 5-door body style in Nepal.",
     "images": [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/jimny/maruti-suzuki-jimny-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/jimny/maruti-suzuki-jimny-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/jimny/maruti-suzuki-jimny-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/jimny/maruti-suzuki-jimny-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/jimny/maruti-suzuki-jimny-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/jimny/maruti-suzuki-jimny-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Kinetic Yellow",
@@ -16678,10 +16900,13 @@ window.CARS_DB = [
     "baseEMI": 19000,
     "overview": "The Suzuki Eeco is Nepal's most affordable and popular compact van, widely used as a family MPV, small business vehicle, and taxi/shared transport. With a 1.2L petrol engine, the Eeco can seat up to 7 passengers in its standard form and offers a large flat-floor loading area. CG Motocorp prices it from Rs. 18.99 Lakhs, making it Nepal's cheapest 7-seat vehicle.",
     "images": [
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop"
-    ],
+    '/assets/images/cars/maruti-suzuki/eeco/maruti-suzuki-eeco-exterior-front-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/eeco/maruti-suzuki-eeco-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/eeco/maruti-suzuki-eeco-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/eeco/maruti-suzuki-eeco-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/maruti-suzuki/eeco/maruti-suzuki-eeco-interior-cargo-space.jpg',
+    '/assets/images/cars/maruti-suzuki/eeco/maruti-suzuki-eeco-interior-dashboard.jpg',
+  ],
     "colors": [
       {
         "name": "Silky Silver",
@@ -17546,10 +17771,12 @@ window.CARS_DB = [
   baseEMI: 285000,
   overview: 'The Toyota Yaris Cross Hybrid Electric is a stylish, fuel-efficient compact crossover SUV distributed by United Traders Syndicate (UTS) in Nepal. Built on the TNGA-B platform and powered by Toyota\'s proven 5th-generation hybrid system, it combines a 1.5L petrol engine with an electric motor for class-leading efficiency. It offers a confident urban ride, high ground clearance for Nepal\'s roads, and Toyota\'s comprehensive safety suite — Toyota Safety Sense (TSS) — making it an ideal family urban SUV.',
   images: [
-    '/assets/images/cars/toyota/yaris-cross/front.jpg',
-    '/assets/images/cars/toyota/yaris-cross/side.jpg',
-    '/assets/images/cars/toyota/yaris-cross/interior.jpg',
-    '/assets/images/cars/toyota/yaris-cross/rear.jpg',
+    '/assets/images/cars/toyota/yaris-cross-hybrid/toyota-camry-hybrid-exterior-front-white-bg.jpg',
+    '/assets/images/cars/toyota/yaris-cross-hybrid/toyota-camry-hybrid-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/toyota/yaris-cross-hybrid/toyota-camry-hybrid-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/toyota/yaris-cross-hybrid/toyota-camry-hybrid-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/toyota/yaris-cross-hybrid/toyota-camry-hybrid-interior-cargo-space.jpg',
+    '/assets/images/cars/toyota/yaris-cross-hybrid/toyota-camry-hybrid-interior-dashboard.jpg',
   ],
   colors: [
     { name: 'Super White',          hex: '#F5F5F5' },
@@ -17754,10 +17981,12 @@ window.CARS_DB = [
   baseEMI: 1200000,
   overview: 'The Toyota Land Cruiser 300 is the pinnacle of Toyota\'s SUV lineup and arguably the most desirable full-size SUV in Nepal. Built on the GA-F platform, it features a 3.5L twin-turbo V6 petrol engine producing over 300 PS, replacing the previous V8. It offers KDSS (Kinetic Dynamic Suspension System), Multi-Terrain Select, Crawl Control, and a comprehensive Toyota Safety Sense package. The LC300 is equally at home navigating Kathmandu traffic or traversing Himalayan mountain passes — and its legendary resale value makes it an investment as much as a vehicle.',
   images: [
-    '/assets/images/cars/toyota/lc300/front.jpg',
-    '/assets/images/cars/toyota/lc300/side.jpg',
-    '/assets/images/cars/toyota/lc300/interior.jpg',
-    '/assets/images/cars/toyota/lc300/off-road.jpg',
+    '/assets/images/cars/toyota/land-cruiser-300-v6/toyota-land-cruiser-70-exterior-front-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-300-v6/toyota-land-cruiser-70-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-300-v6/toyota-land-cruiser-70-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-300-v6/toyota-land-cruiser-70-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/toyota/land-cruiser-300-v6/toyota-land-cruiser-70-interior-cargo-space.jpg',
+    '/assets/images/cars/toyota/land-cruiser-300-v6/toyota-land-cruiser-70-interior-dashboard.jpg',
   ],
   colors: [
     { name: 'White Pearl Crystal Shine',   hex: '#F0EEE6' },

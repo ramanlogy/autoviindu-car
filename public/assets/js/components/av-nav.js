@@ -27,18 +27,18 @@
       --white:#fff;--bg:#f6faf7;--bg2:#eff6f2;--bg3:#e4eee8;
       --border:#d6e6db;--border2:#c4daca;
       --r4:4px;--r8:8px;--r10:10px;--r12:12px;--r16:16px;--r20:20px;--r24:24px;--pill:999px;
-      --nav:64px;
+      --nav:52px;
       --sh1:0 1px 4px rgba(0,0,0,.06);--sh2:0 4px 16px rgba(0,0,0,.08);--sh3:0 12px 40px rgba(0,0,0,.12);
       --ease:.22s cubic-bezier(.4,0,.2,1);--spring:.4s cubic-bezier(.34,1.56,.64,1);
       --font-d:'Clash Display',sans-serif;--font-b:'Cabinet Grotesk',sans-serif;
     }
 
     /* ── Topbar ── */
-    .av-topbar{background:var(--g0);padding:7px 0;display:none}
-    @media(min-width:768px){.av-topbar{display:block}}
+    .av-topbar{background:var(--g0);padding:5px 0;display:none}
+    @media(min-width:1100px){.av-topbar{display:block}}
     .av-topbar-in{display:flex;align-items:center;justify-content:space-between}
-    .av-topbar-left{display:flex;align-items:center;gap:18px}
-    .av-topbar-item{font-size:11.5px;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:5px;transition:color var(--ease);cursor:pointer}
+    .av-topbar-left{display:flex;align-items:center;gap:14px}
+    .av-topbar-item{font-size:11px;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:5px;transition:color var(--ease);cursor:pointer}
     .av-topbar-item:hover{color:rgba(255,255,255,.7)}
     .av-topbar-item a{color:inherit;text-decoration:none}
     .av-topbar-sep{width:1px;height:10px;background:rgba(255,255,255,.08)}
@@ -52,23 +52,39 @@
     }
     .av-header.scrolled{box-shadow:var(--sh2)}
     .av-header-in{
-      display:flex;align-items:center;height:var(--nav);gap:10px;
-      max-width:1260px;margin:0 auto;padding:0 20px;
+      display:flex;align-items:center;height:var(--nav);gap:8px;
+      max-width:1280px;margin:0 auto;padding:0 16px;
     }
-    @media(min-width:768px){.av-header-in{padding:0 32px}}
-    @media(min-width:1280px){.av-header-in{padding:0 24px}}
+    @media(min-width:768px){.av-header-in{padding:0 24px}}
+    @media(min-width:1280px){.av-header-in{padding:0 32px}}
 
     /* ── Logo ── */
     .av-logo{display:flex;align-items:center;cursor:pointer;flex-shrink:0;text-decoration:none}
     .av-logo-img{
-      height:38px;width:auto;display:block;object-fit:contain;
+      height:32px;width:auto;display:block;object-fit:contain;
       animation:avLogoIn .6s cubic-bezier(.25,.46,.45,.94) forwards;
     }
     @keyframes avLogoIn{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
 
     /* ── Desktop nav ── */
-    .av-header-nav{display:none;align-items:center;gap:2px;margin-left:auto;flex-shrink:0}
+    .av-header-nav{display:none;align-items:center;gap:1px;margin-left:12px;flex-shrink:0}
     @media(min-width:960px){.av-header-nav{display:flex}}
+
+    /* ── Inline search (desktop) ── */
+    .av-hs{position:relative;margin-left:8px;margin-right:4px}
+    @media(max-width:1059px){.av-hs{display:none}}
+    .av-hs-input{
+      height:34px;width:190px;padding:0 34px 0 32px;
+      border:1.5px solid var(--border,#d6e6db);border-radius:var(--pill);
+      background:var(--bg,#f6faf7);font-size:12.5px;font-weight:500;
+      color:var(--ink,#07100a);outline:none;transition:all var(--ease);
+      font-family:var(--font-b,'Cabinet Grotesk',sans-serif);
+    }
+    .av-hs-input:focus{border-color:var(--g3,#1a6b2a);background:#fff;width:230px;box-shadow:0 0 0 3px rgba(26,107,42,.07)}
+    .av-hs-input::placeholder{color:var(--ink4,#7a9483)}
+    .av-hs-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--ink4,#7a9483);pointer-events:none;width:14px;height:14px}
+    .av-hs-kbd{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:10px;font-weight:600;color:var(--ink4);background:var(--bg2,#eff6f2);border:1px solid var(--border);border-radius:4px;padding:1px 5px;pointer-events:none;transition:opacity var(--ease)}
+    .av-hs-input:focus+.av-hs-kbd,.av-hs-input:not(:placeholder-shown)+.av-hs-kbd{opacity:0}
 
     /* ── Nav items & top links ── */
     .av-item{position:relative}
@@ -77,16 +93,15 @@
 
     .av-link{
       display:flex;align-items:center;gap:4px;
-      height:var(--nav);padding:0 13px;
-      font-size:13.5px;font-weight:600;color:var(--ink3);
+      padding:6px 10px;
+      font-size:13px;font-weight:600;color:var(--ink3);
       cursor:pointer;white-space:nowrap;
-      background:none;border:none;border-bottom:2px solid transparent;
+      background:none;border:none;border-radius:var(--r8);
       font-family:var(--font-b);text-decoration:none;
-      transition:color .15s,border-color .15s;user-select:none;
+      transition:color .15s,background .15s;user-select:none;
     }
-    .av-link:hover,.av-link.active,.av-item.open>.av-link{
-      color:var(--g3);border-bottom-color:var(--g3);
-    }
+    .av-link:hover,.av-item.open>.av-link{color:var(--g3);background:var(--g-ll,#f4fbf6)}
+    .av-link.active{color:var(--g3)}
 
     /* chevron */
     .av-chev{width:10px;height:6px;opacity:.5;transition:transform var(--ease);flex-shrink:0}
@@ -148,20 +163,20 @@
     .av-b--b{background:#daeaf9;color:#1458a0}
 
     /* ── CTAs ── */
-    .av-header-ctas{display:none;align-items:center;gap:8px;flex-shrink:0}
+    .av-header-ctas{display:none;align-items:center;gap:6px;flex-shrink:0;margin-left:auto}
     @media(min-width:960px){.av-header-ctas{display:flex}}
     .av-btn-sell{
-      padding:8px 14px;background:var(--bg);border:1.5px solid var(--border);
-      border-radius:var(--r8);font-size:13px;font-weight:700;color:var(--ink2);
+      padding:6px 12px;background:transparent;border:1.5px solid var(--border);
+      border-radius:var(--r8);font-size:12.5px;font-weight:700;color:var(--ink2);
       cursor:pointer;transition:all var(--ease);text-decoration:none;
-      font-family:var(--font-b);
+      font-family:var(--font-b);white-space:nowrap;
     }
     .av-btn-sell:hover{border-color:var(--g3);color:var(--g3);background:var(--g-ll)}
     .av-btn-book{
-      padding:8px 16px;background:var(--g3);color:#fff;border-radius:var(--r8);
-      font-size:13px;font-weight:700;box-shadow:0 2px 8px rgba(26,107,42,.25);
+      padding:6px 14px;background:var(--g3);color:#fff;border-radius:var(--r8);
+      font-size:12.5px;font-weight:700;box-shadow:0 2px 8px rgba(26,107,42,.22);
       cursor:pointer;transition:all var(--ease);text-decoration:none;
-      font-family:var(--font-b);
+      font-family:var(--font-b);white-space:nowrap;
     }
     .av-btn-book:hover{background:var(--g4)}
 
@@ -189,7 +204,7 @@
     .av-burger.open .av-burger-line:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
     /* ── Mobile menu ── */
-    .av-mm{position:fixed;inset:0;top:var(--nav);z-index:850;display:none}
+    .av-mm{position:fixed;inset:0;top:var(--nav);z-index:850;display:none;--nav:52px}
     .av-mm.open{display:block}
     .av-mm-backdrop{position:absolute;inset:0;background:rgba(7,16,10,.55);backdrop-filter:blur(8px)}
     .av-mm-panel{
@@ -557,6 +572,12 @@
 
       </nav>
 
+      <div class="av-hs" id="av-hs">
+        <svg class="av-hs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input class="av-hs-input" id="av-hs-input" type="search" placeholder="Search cars…" autocomplete="off" spellcheck="false">
+        <span class="av-hs-kbd">/</span>
+      </div>
+
       <div class="av-header-ctas">
         <a href="tel:+9779701076240" class="av-btn-sell">Sell My Car</a>
         <a href="book-service.html" class="av-btn-book">Book Service</a>
@@ -828,6 +849,28 @@
     } else {
       init();
     }
+  })();
+
+  /* ── 11. Desktop "/" shortcut for search ── */
+  (function () {
+    function init() {
+      var inp = document.getElementById('av-hs-input');
+      if (!inp) return;
+      document.addEventListener('keydown', function (e) {
+        if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+          e.preventDefault();
+          inp.focus();
+          inp.select();
+        }
+        if (e.key === 'Escape' && document.activeElement === inp) {
+          inp.blur();
+          inp.value = '';
+        }
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else { init(); }
   })();
 
 })();
