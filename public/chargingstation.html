@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChargeNepal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gotham:wght@300;400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:   #171A20;
+  --black2:  #1B1F27;
+  --black3:  #222831;
+  --black4:  #2C3140;
+  --border:  rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.15);
+  --white:   #FFFFFF;
+  --white2:  #E8EAF0;
+  --white3:  #9DA3B4;
+  --white4:  #5E6478;
+  --red:     #CC0000;
+  --red2:    #E31937;
+  --green:   #3E9142;
+  --amber:   #D4860F;
+  --sidebar: 360px;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Barlow', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow: hidden;
+}
+
+/* NAV — Tesla style: black bar, centered logo, right actions */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: 52px;
+  background: var(--black);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center;
+  padding: 0 24px;
+}
+
+.nav-wordmark {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.nav-wordmark span {
+  color: var(--red2);
+}
+
+.nav-links {
+  display: flex; gap: 0; margin-left: 40px;
+}
+
+.nav-link {
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white3);
+  padding: 0 16px;
+  height: 52px;
+  display: flex; align-items: center;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  text-decoration: none;
+}
+.nav-link:hover { color: var(--white); }
+.nav-link.active { color: var(--white); border-bottom-color: var(--red2); }
+
+.nav-right {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.nav-pill {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.nav-pill-outline {
+  border: 1px solid var(--border2);
+  color: var(--white2);
+  background: transparent;
+}
+.nav-pill-outline:hover { background: var(--black3); }
+
+/* LAYOUT */
+.layout {
+  position: fixed; top: 52px; left: 0; right: 0; bottom: 0;
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: var(--sidebar);
+  background: var(--black);
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* SEARCH */
+.search-section {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white4);
+  margin-bottom: 10px;
+}
+
+.search-row {
+  display: flex; gap: 8px;
+}
+
+.search-field {
+  flex: 1;
+  background: var(--black3);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px;
+  transition: border-color 0.15s;
+}
+.search-field:focus-within { border-color: var(--border2); }
+.search-field svg { width: 14px; height: 14px; stroke: var(--white4); flex-shrink: 0; }
+.search-field input {
+  background: none; border: none; outline: none;
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px; color: var(--white); width: 100%;
+}
+.search-field input::placeholder { color: var(--white4); }
+
+/* FILTERS */
+.filter-section {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.filter-row {
+  margin-bottom: 12px;
+}
+.filter-row:last-child { margin-bottom: 0; }
+
+.filter-title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white4);
+  margin-bottom: 8px;
+}
+
+.chips {
+  display: flex; flex-wrap: wrap; gap: 5px;
+}
+
+.chip {
+  padding: 4px 10px;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  font-family: 'Barlow', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--white4);
+  cursor: pointer;
+  transition: all 0.12s;
+  background: transparent;
+}
+.chip:hover { border-color: var(--border2); color: var(--white2); }
+.chip.active {
+  background: var(--red2);
+  border-color: var(--red2);
+  color: var(--white);
+}
+
+/* STATION COUNT */
+.count-bar {
+  padding: 10px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.count-text {
+  font-size: 11px;
+  color: var(--white4);
+  letter-spacing: 0.03em;
+}
+
+.count-text strong {
+  color: var(--white2);
+  font-weight: 600;
+}
+
+.status-dots {
+  display: flex; gap: 10px;
+}
+
+.sdot {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 10px; color: var(--white4);
+  letter-spacing: 0.04em;
+}
+.sdot-circle {
+  width: 7px; height: 7px; border-radius: 50%;
+}
+.sdot-circle.av { background: var(--green); }
+.sdot-circle.bu { background: var(--amber); }
+.sdot-circle.of { background: var(--white4); }
+
+/* STATION LIST */
+.station-list {
+  flex: 1; overflow-y: auto;
+}
+.station-list::-webkit-scrollbar { width: 3px; }
+.station-list::-webkit-scrollbar-track { background: transparent; }
+.station-list::-webkit-scrollbar-thumb { background: var(--black4); }
+
+.station-item {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.12s;
+  position: relative;
+}
+.station-item:hover { background: var(--black2); }
+.station-item.selected {
+  background: var(--black2);
+}
+.station-item.selected::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--red2);
+}
+
+.si-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 8px; margin-bottom: 6px;
+}
+
+.si-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.si-status {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.si-status.av { color: var(--green); }
+.si-status.bu { color: var(--amber); }
+.si-status.of { color: var(--white4); }
+
+.si-meta {
+  display: flex; gap: 14px; align-items: center; margin-bottom: 6px;
+}
+
+.si-detail {
+  font-size: 11px;
+  color: var(--white4);
+  display: flex; align-items: center; gap: 4px;
+}
+.si-detail svg { width: 11px; height: 11px; stroke: currentColor; }
+
+.si-plugs {
+  display: flex; gap: 4px; flex-wrap: wrap;
+}
+
+.plug {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--white3);
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.si-op {
+  font-size: 10px;
+  color: var(--white4);
+  margin-top: 5px;
+  letter-spacing: 0.03em;
+}
+
+/* MAP */
+.map-wrap {
+  flex: 1; position: relative;
+}
+#map { width: 100%; height: 100%; }
+
+/* Leaflet tile treatment — Tesla uses clean map look */
+.leaflet-tile { filter: brightness(0.28) saturate(0.3) contrast(1.1); }
+.leaflet-control-zoom {
+  border: 1px solid var(--border2) !important;
+  border-radius: 3px !important;
+  overflow: hidden;
+}
+.leaflet-control-zoom a {
+  background: var(--black2) !important;
+  color: var(--white3) !important;
+  border-bottom: 1px solid var(--border) !important;
+  font-size: 18px !important;
+  line-height: 30px !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+.leaflet-control-zoom a:hover {
+  background: var(--black3) !important;
+  color: var(--white) !important;
+}
+.leaflet-control-attribution {
+  background: rgba(23,26,32,0.7) !important;
+  color: var(--white4) !important;
+  font-size: 9px !important;
+}
+.leaflet-control-attribution a { color: var(--white4) !important; }
+
+/* MAP MARKERS */
+.ev-pin {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #3E9142;
+  border: 2px solid rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.ev-pin.busy { background: #D4860F; }
+.ev-pin.offline { background: #5E6478; }
+.ev-pin.selected {
+  transform: scale(1.8);
+  border-color: rgba(255,255,255,0.6);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.1);
+}
+
+/* MAP TOP BAR — Tesla trip overview style */
+.map-topbar {
+  position: absolute; top: 0; left: 0; right: 0;
+  background: rgba(23,26,32,0.92);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 0;
+  z-index: 800;
+  backdrop-filter: blur(8px);
+}
+
+.mt-stat {
+  padding: 0 20px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.mt-stat:first-child { padding-left: 0; }
+.mt-stat:last-child { border-right: none; }
+
+.mt-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.mt-val.green { color: #4EAD52; }
+.mt-val.amber { color: #E09B2A; }
+.mt-val.dim   { color: var(--white3); }
+
+.mt-lbl {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white4);
+}
+
+/* DETAIL PANEL — Tesla card bottom right */
+.detail-panel {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 300px;
+  background: var(--black);
+  border-left: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  z-index: 800;
+  display: none;
+  animation: slideLeft 0.2s ease;
+}
+.detail-panel.open { display: block; }
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.dp-header {
+  padding: 16px 20px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+
+.dp-close {
+  width: 24px; height: 24px;
+  background: var(--black3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white4); font-size: 12px;
+  transition: all 0.12s; flex-shrink: 0;
+  line-height: 1;
+}
+.dp-close:hover { background: var(--black4); color: var(--white); }
+
+.dp-op-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white4);
+  margin-bottom: 6px;
+}
+
+.dp-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  line-height: 1.3;
+  padding-right: 12px;
+}
+
+.dp-addr {
+  font-size: 11px;
+  color: var(--white4);
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+
+/* Tesla-style data grid */
+.dp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.dp-cell {
+  padding: 14px 16px;
+  border-right: 1px solid var(--border);
+}
+.dp-cell:last-child { border-right: none; }
+
+.dp-cell-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.dp-cell-lbl {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white4);
+}
+
+.dp-cell-unit {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--white4);
+}
+
+.dp-connectors {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dp-conn-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white4);
+  margin-bottom: 8px;
+}
+
+.dp-conn-list {
+  display: flex; gap: 5px; flex-wrap: wrap;
+}
+
+.dp-conn {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--white2);
+  padding: 4px 8px;
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  background: var(--black3);
+}
+
+.dp-hours-row {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.dp-hours-text {
+  font-size: 12px;
+  color: var(--white3);
+}
+
+.dp-open-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4EAD52;
+}
+
+.dp-status-row {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+
+.dp-status-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+
+.dp-status-text {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.dp-btn {
+  display: block; width: 100%;
+  padding: 14px 20px;
+  background: var(--red2);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  border: none; cursor: pointer;
+  transition: background 0.15s;
+}
+.dp-btn:hover { background: #B5001A; }
+
+/* LOADING */
+#loading {
+  position: fixed; inset: 0; z-index: 2000;
+  background: var(--black);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 24px;
+  transition: opacity 0.3s;
+}
+#loading.hide { opacity: 0; pointer-events: none; }
+
+.load-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.load-logo span { color: var(--red2); }
+
+.load-bar {
+  width: 160px; height: 1px;
+  background: var(--black3);
+}
+.load-fill {
+  height: 100%;
+  background: var(--white2);
+  animation: barFill 1.4s ease forwards;
+}
+@keyframes barFill { from { width: 0 } to { width: 100% } }
+
+.load-sub {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white4);
+}
+</style>
+</head>
+<body>
+
+<div id="loading">
+  <div class="load-logo">Charge<span>Nepal</span></div>
+  <div class="load-bar"><div class="load-fill"></div></div>
+  <div class="load-sub">Loading charging network</div>
+</div>
+
+<nav>
+  <div class="nav-wordmark">Charge<span>Nepal</span></div>
+  <div class="nav-links">
+    <a class="nav-link active">Map</a>
+    <a class="nav-link">Routes</a>
+    <a class="nav-link">Network</a>
+  </div>
+  <div class="nav-right">
+    <button class="nav-pill nav-pill-outline">Sign In</button>
+  </div>
+</nav>
+
+<div class="layout">
+  <div class="sidebar">
+
+    <div class="search-section">
+      <div class="search-label">Find Charging Station</div>
+      <div class="search-row">
+        <div class="search-field">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input type="text" id="searchInput" placeholder="City, station name, address…">
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-row">
+        <div class="filter-title">Network</div>
+        <div class="chips" id="networkFilter">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="NEA">NEA</button>
+          <button class="chip" data-filter="BYD">BYD</button>
+          <button class="chip" data-filter="CG Motors">CG Motors</button>
+          <button class="chip" data-filter="Tata">Tata</button>
+          <button class="chip" data-filter="MG">MG</button>
+          <button class="chip" data-filter="Hyundai">Hyundai</button>
+          <button class="chip" data-filter="ElectriVa">ElectriVa</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <div class="filter-title">Charger Type</div>
+        <div class="chips" id="typeFilter">
+          <button class="chip active" data-type="all">All</button>
+          <button class="chip" data-type="DC Fast">DC Fast</button>
+          <button class="chip" data-type="AC">AC Level 2</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="count-bar">
+      <div class="count-text"><strong id="countShown">50</strong> stations</div>
+      <div class="status-dots">
+        <div class="sdot"><div class="sdot-circle av"></div><span id="cAvail">0</span></div>
+        <div class="sdot"><div class="sdot-circle bu"></div><span id="cBusy">0</span></div>
+        <div class="sdot"><div class="sdot-circle of"></div><span id="cOff">0</span></div>
+      </div>
+    </div>
+
+    <div class="station-list" id="stationList"></div>
+  </div>
+
+  <div class="map-wrap">
+    <div id="map"></div>
+
+    <div class="map-topbar">
+      <div class="mt-stat">
+        <div class="mt-val green" id="statAvail">—</div>
+        <div class="mt-lbl">Available</div>
+      </div>
+      <div class="mt-stat">
+        <div class="mt-val amber" id="statBusy">—</div>
+        <div class="mt-lbl">In Use</div>
+      </div>
+      <div class="mt-stat">
+        <div class="mt-val dim" id="statOffline">—</div>
+        <div class="mt-lbl">Offline</div>
+      </div>
+      <div class="mt-stat">
+        <div class="mt-val" id="statTotal">—</div>
+        <div class="mt-lbl">Total Shown</div>
+      </div>
+      <div class="mt-stat">
+        <div class="mt-val">77</div>
+        <div class="mt-lbl">Districts</div>
+      </div>
+      <div class="mt-stat">
+        <div class="mt-val">CCS2 · GBT · AC</div>
+        <div class="mt-lbl">Connector Types</div>
+      </div>
+    </div>
+
+    <div class="detail-panel" id="detailPanel">
+      <div class="dp-header">
+        <div>
+          <div class="dp-op-badge" id="dpOp"></div>
+          <div class="dp-name" id="dpName"></div>
+        </div>
+        <button class="dp-close" id="dpClose">✕</button>
+      </div>
+      <div class="dp-addr" id="dpAddr"></div>
+      <div class="dp-status-row" id="dpStatusRow">
+        <div class="dp-status-dot" id="dpStatusDot"></div>
+        <div class="dp-status-text" id="dpStatusText"></div>
+      </div>
+      <div class="dp-grid">
+        <div class="dp-cell">
+          <div class="dp-cell-val" id="dpPower"></div>
+          <div class="dp-cell-lbl">Power <span class="dp-cell-unit">kW</span></div>
+        </div>
+        <div class="dp-cell">
+          <div class="dp-cell-val" id="dpGuns"></div>
+          <div class="dp-cell-lbl">Chargers</div>
+        </div>
+        <div class="dp-cell">
+          <div class="dp-cell-val" id="dpRate"></div>
+          <div class="dp-cell-lbl">NPR <span class="dp-cell-unit">/kWh</span></div>
+        </div>
+      </div>
+      <div class="dp-connectors">
+        <div class="dp-conn-label">Connectors</div>
+        <div class="dp-conn-list" id="dpConns"></div>
+      </div>
+      <div class="dp-hours-row">
+        <div class="dp-hours-text" id="dpHours"></div>
+        <div class="dp-open-tag" id="dpOpenTag"></div>
+      </div>
+      <a class="dp-btn" id="dpDir" href="#" target="_blank">Get Directions</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const STATIONS = [
+  { id:1,  name:"NEA Charging — Ratna Park",          operator:"NEA",       city:"Kathmandu", address:"Ratna Park Path, Kathmandu",              lat:27.7041, lng:85.3131, power:60, guns:3, plugs:["CCS2","AC Type 2"],          type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:2,  name:"NEA Charging — Kuleshwor",            operator:"NEA",       city:"Kathmandu", address:"Kuleshwor, Kathmandu",                    lat:27.6953, lng:85.2985, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:3,  name:"NEA Charging — Tinkune",              operator:"NEA",       city:"Kathmandu", address:"Tinkune, Koteshwor",                      lat:27.6839, lng:85.3500, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"busy",      hours:"00:00–24:00", rate:17 },
+  { id:4,  name:"NEA Charging — Baneshwor",            operator:"NEA",       city:"Kathmandu", address:"New Baneshwor, Kathmandu",                lat:27.6916, lng:85.3365, power:60, guns:2, plugs:["CCS2","AC Type 2"],          type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:5,  name:"NEA Charging — Sundhara",             operator:"NEA",       city:"Kathmandu", address:"Sundhara, Kathmandu",                     lat:27.7019, lng:85.3096, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:6,  name:"BYD — Eco Auto Trading, Naxal",       operator:"BYD",       city:"Kathmandu", address:"Naxal, Kathmandu",                        lat:27.7127, lng:85.3241, power:60, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
+  { id:7,  name:"Sipradi Tata — Naikap",               operator:"Tata",      city:"Kathmandu", address:"Naikap, Kathmandu",                       lat:27.7197, lng:85.2661, power:50, guns:2, plugs:["CCS2","AC Type 2"],          type:"DC Fast", status:"available", hours:"08:00–18:00", rate:18 },
+  { id:8,  name:"Sipradi Tata — Tripureshwor",         operator:"Tata",      city:"Kathmandu", address:"Tripureshwor, Kathmandu",                 lat:27.6975, lng:85.3054, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"busy",      hours:"08:00–18:00", rate:18 },
+  { id:9,  name:"CG Motors EV — Lazimpat",             operator:"CG Motors", city:"Kathmandu", address:"Lazimpat, Kathmandu",                     lat:27.7197, lng:85.3182, power:60, guns:4, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"06:00–22:00", rate:16 },
+  { id:10, name:"CG Motors EV — Sitapaila",            operator:"CG Motors", city:"Kathmandu", address:"Sitapaila, Kathmandu",                    lat:27.7245, lng:85.2712, power:30, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"06:00–22:00", rate:16 },
+  { id:11, name:"MG Motor Nepal — Dhumbarahi",         operator:"MG",        city:"Kathmandu", address:"Dhumbarahi, Kathmandu",                   lat:27.7286, lng:85.3295, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"available", hours:"09:00–19:00", rate:18 },
+  { id:12, name:"Hyundai Charging — Syuchatar",        operator:"Hyundai",   city:"Kathmandu", address:"Syuchatar, Kathmandu",                    lat:27.7079, lng:85.2877, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"offline",   hours:"09:00–18:00", rate:18 },
+  { id:13, name:"ElectriVa Hub — Balaju",              operator:"ElectriVa", city:"Kathmandu", address:"Balaju Industrial Area",                  lat:27.7361, lng:85.2981, power:60, guns:4, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"06:00–22:00", rate:15 },
+  { id:14, name:"NEA E-Bus Station — Koteshwor",       operator:"NEA",       city:"Kathmandu", address:"Koteshwor Bus Park",                      lat:27.6835, lng:85.3548, power:60, guns:6, plugs:["GBT","CCS2"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:15, name:"ElectriVa — Kalanki",                 operator:"ElectriVa", city:"Kathmandu", address:"Kalanki Chowk, Kathmandu",                lat:27.6964, lng:85.2836, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"busy",      hours:"06:00–22:00", rate:15 },
+  { id:16, name:"ElectriVa — Sanepa",                  operator:"ElectriVa", city:"Lalitpur",  address:"Sanepa, Lalitpur",                        lat:27.6745, lng:85.3147, power:22, guns:2, plugs:["AC Type 2"],                  type:"AC",      status:"available", hours:"00:00–24:00", rate:14 },
+  { id:17, name:"NEA Charging — Pulchowk",             operator:"NEA",       city:"Lalitpur",  address:"Pulchowk, Lalitpur",                      lat:27.6774, lng:85.3192, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:18, name:"CG Motors EV — Satdobato",            operator:"CG Motors", city:"Lalitpur",  address:"Satdobato, Lalitpur",                     lat:27.6541, lng:85.3194, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"06:00–20:00", rate:16 },
+  { id:19, name:"Sipradi Tata — Bhaktapur",            operator:"Tata",      city:"Bhaktapur", address:"Sipadol, Bhaktapur",                      lat:27.6741, lng:85.4298, power:50, guns:2, plugs:["CCS2","AC Type 2"],          type:"DC Fast", status:"available", hours:"08:00–18:00", rate:18 },
+  { id:20, name:"NEA Charging — Bhaktapur Bus Park",   operator:"NEA",       city:"Bhaktapur", address:"Bhaktapur Bus Park",                      lat:27.6715, lng:85.4282, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"busy",      hours:"00:00–24:00", rate:17 },
+  { id:21, name:"NEA Charging — Pokhara Airport",      operator:"NEA",       city:"Pokhara",   address:"Pokhara Regional Airport",               lat:28.2006, lng:83.9816, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:22, name:"ElectriVa — Lakeside Pokhara",        operator:"ElectriVa", city:"Pokhara",   address:"Lakeside, Pokhara",                       lat:28.2089, lng:83.9559, power:60, guns:4, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"07:00–22:00", rate:15 },
+  { id:23, name:"BYD — BKG Engineering, Pokhara",      operator:"BYD",       city:"Pokhara",   address:"Siddhartha Highway, Pokhara",             lat:28.2152, lng:83.9756, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"available", hours:"08:00–19:00", rate:18 },
+  { id:24, name:"CG Motors EV — Prithvi Chowk",        operator:"CG Motors", city:"Pokhara",   address:"Prithvi Chowk, Pokhara",                  lat:28.2082, lng:83.9904, power:30, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"busy",      hours:"07:00–21:00", rate:16 },
+  { id:25, name:"Hyundai Charging — Pokhara",          operator:"Hyundai",   city:"Pokhara",   address:"New Road, Pokhara",                       lat:28.2029, lng:83.9842, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
+  { id:26, name:"ElectriVa — Ashoka Resort, Bharatpur",operator:"ElectriVa", city:"Bharatpur", address:"Bharatpur, Chitwan",                      lat:27.6784, lng:84.4305, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:27, name:"NEA Charging — Bharatpur Bus Park",   operator:"NEA",       city:"Bharatpur", address:"Bharatpur Bus Park, Chitwan",              lat:27.6829, lng:84.4237, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:28, name:"CG Motors EV — Narayanghat",          operator:"CG Motors", city:"Bharatpur", address:"Narayanghat, Chitwan",                    lat:27.7050, lng:84.4103, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"07:00–20:00", rate:16 },
+  { id:29, name:"BYD — Niraj Auto, Birgunj",           operator:"BYD",       city:"Birgunj",   address:"Bypass Road, Birgunj",                    lat:27.0069, lng:84.8804, power:60, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
+  { id:30, name:"NEA Charging — Birgunj",              operator:"NEA",       city:"Birgunj",   address:"Adarsh Nagar, Birgunj",                   lat:27.0122, lng:84.8751, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:31, name:"Sipradi Tata — Birgunj",              operator:"Tata",      city:"Birgunj",   address:"Ghantaghar, Birgunj",                     lat:26.9960, lng:84.8698, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"busy",      hours:"08:00–18:00", rate:18 },
+  { id:32, name:"NEA Charging — Biratnagar",           operator:"NEA",       city:"Biratnagar",address:"Traffic Chowk, Biratnagar",               lat:26.4679, lng:87.2704, power:60, guns:3, plugs:["GBT","CCS2","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:33, name:"CG Motors EV — Biratnagar",           operator:"CG Motors", city:"Biratnagar",address:"Golbazar Rd, Biratnagar",                 lat:26.4551, lng:87.2832, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"07:00–20:00", rate:16 },
+  { id:34, name:"ElectriVa — Maharaja Resort, Butwal", operator:"ElectriVa", city:"Butwal",    address:"Butwal, Rupandehi",                       lat:27.6990, lng:83.4573, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"07:00–22:00", rate:15 },
+  { id:35, name:"NEA Charging — Butwal Bus Park",      operator:"NEA",       city:"Butwal",    address:"Butwal Bus Park",                         lat:27.7079, lng:83.4634, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:36, name:"NEA Charging — Dharan",               operator:"NEA",       city:"Dharan",    address:"B.P. Highway, Dharan",                    lat:26.8150, lng:87.2840, power:60, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:37, name:"NEA E-Stop — Mugling",                operator:"NEA",       city:"Mugling",   address:"Mugling, Chitwan",                        lat:27.8665, lng:84.5225, power:60, guns:4, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:38, name:"ElectriVa — Gurkha Inn, Gorkha",      operator:"ElectriVa", city:"Gorkha",    address:"Gorkha Highway",                          lat:28.0028, lng:84.6313, power:60, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:39, name:"Sipradi Tata — Dharke",               operator:"Tata",      city:"Dharke",    address:"Dharke, Nuwakot Highway",                 lat:27.8412, lng:85.0634, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"available", hours:"08:00–18:00", rate:18 },
+  { id:40, name:"ElectriVa — Energy Palace, Hetauda",  operator:"ElectriVa", city:"Hetauda",   address:"Mahendra Highway, Hetauda",               lat:27.4246, lng:85.0340, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"06:00–22:00", rate:15 },
+  { id:41, name:"NEA Charging — Hetauda",              operator:"NEA",       city:"Hetauda",   address:"Hetauda Municipality",                    lat:27.4149, lng:85.0298, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"busy",      hours:"00:00–24:00", rate:17 },
+  { id:42, name:"ElectriVa — Lekali Restaurant, Dhangadhi", operator:"ElectriVa", city:"Dhangadhi", address:"Uttarbehandi Road, Dhangadhi",      lat:28.6926, lng:80.5939, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"07:00–21:00", rate:15 },
+  { id:43, name:"NEA Charging — Dhangadhi",            operator:"NEA",       city:"Dhangadhi", address:"Seti Provincial Highway",                 lat:28.7024, lng:80.5862, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:44, name:"NEA Charging — Nepalgunj",            operator:"NEA",       city:"Nepalgunj", address:"Mahendra Highway, Nepalgunj",             lat:28.0455, lng:81.6154, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:45, name:"CG Motors EV — Nepalgunj",            operator:"CG Motors", city:"Nepalgunj", address:"Birendra Chowk, Nepalgunj",               lat:28.0502, lng:81.6221, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"offline",   hours:"07:00–20:00", rate:16 },
+  { id:46, name:"NEA Charging — Janakpur",             operator:"NEA",       city:"Janakpur",  address:"Bhansar Chowk, Janakpur",                 lat:26.7276, lng:85.9259, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:47, name:"Hyundai — Alaska Autos, Pokhara",     operator:"Hyundai",   city:"Pokhara",   address:"Siddhartha Highway, Pokhara entry",       lat:28.1863, lng:83.9672, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
+  { id:48, name:"NEA E-Hub — Abukhaireni–Gorkha",      operator:"NEA",       city:"Gorkha",    address:"Abukhaireni–Gorkha Highway",              lat:28.1345, lng:84.6231, power:60, guns:4, plugs:["GBT","CCS2"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:49, name:"ElectriVa — Hotel Makalu, Dhulikhel", operator:"ElectriVa", city:"Dhulikhel", address:"Dhulikhel, Kavrepalanchok",               lat:27.6222, lng:85.5482, power:60, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:50, name:"NEA Charging — Bhojpur",              operator:"NEA",       city:"Bhojpur",   address:"Bhojpur Municipality",                    lat:27.1737, lng:87.0531, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"offline",   hours:"06:00–20:00", rate:17 },
+];
+
+const map = L.map('map', { center:[28.0, 84.2], zoom:7, zoomControl:false });
+L.control.zoom({ position:'bottomright' }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution:'© OpenStreetMap', maxZoom:19
+}).addTo(map);
+
+let markers = {};
+let activeNet = 'all';
+let activeType = 'all';
+let searchQ = '';
+let selectedId = null;
+
+function makeIcon(s) {
+  const cls = s.status === 'busy' ? 'busy' : s.status === 'offline' ? 'offline' : '';
+  const sel  = selectedId === s.id ? ' selected' : '';
+  return L.divIcon({
+    className: '',
+    html: `<div class="ev-pin ${cls}${sel}" id="pin-${s.id}"></div>`,
+    iconSize: [10,10], iconAnchor: [5,5]
+  });
+}
+
+function renderList(filtered) {
+  const el = document.getElementById('stationList');
+  el.innerHTML = '';
+  filtered.forEach(s => {
+    const statusCls = s.status === 'available' ? 'av' : s.status === 'busy' ? 'bu' : 'of';
+    const statusLabel = s.status === 'available' ? 'Available' : s.status === 'busy' ? 'In Use' : 'Offline';
+    const div = document.createElement('div');
+    div.className = 'station-item' + (selectedId === s.id ? ' selected' : '');
+    div.innerHTML = `
+      <div class="si-top">
+        <div class="si-name">${s.name}</div>
+        <div class="si-status ${statusCls}">${statusLabel}</div>
+      </div>
+      <div class="si-meta">
+        <div class="si-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          ${s.city}
+        </div>
+        <div class="si-detail">${s.power} kW</div>
+        <div class="si-detail">${s.type}</div>
+      </div>
+      <div class="si-plugs">${s.plugs.map(p=>`<span class="plug">${p}</span>`).join('')}</div>
+      <div class="si-op">${s.operator} · NPR ${s.rate}/kWh · ${s.hours}</div>
+    `;
+    div.addEventListener('click', () => selectStation(s));
+    el.appendChild(div);
+  });
+}
+
+function updateStats(filtered) {
+  const av = filtered.filter(s=>s.status==='available').length;
+  const bu = filtered.filter(s=>s.status==='busy').length;
+  const of = filtered.filter(s=>s.status==='offline').length;
+  document.getElementById('statAvail').textContent = av;
+  document.getElementById('statBusy').textContent  = bu;
+  document.getElementById('statOffline').textContent = of;
+  document.getElementById('statTotal').textContent = filtered.length;
+  document.getElementById('countShown').textContent = filtered.length;
+  document.getElementById('cAvail').textContent = av;
+  document.getElementById('cBusy').textContent  = bu;
+  document.getElementById('cOff').textContent   = of;
+}
+
+function applyFilters() {
+  const filtered = STATIONS.filter(s => {
+    const netOk  = activeNet === 'all' || s.operator === activeNet;
+    const typeOk = activeType === 'all' || s.type === activeType;
+    const srchOk = !searchQ || s.name.toLowerCase().includes(searchQ)
+                             || s.city.toLowerCase().includes(searchQ)
+                             || s.address.toLowerCase().includes(searchQ);
+    return netOk && typeOk && srchOk;
+  });
+
+  // Clear markers
+  Object.values(markers).forEach(m => map.removeLayer(m));
+  markers = {};
+
+  filtered.forEach(s => {
+    const m = L.marker([s.lat, s.lng], { icon: makeIcon(s) }).addTo(map);
+    m.on('click', () => selectStation(s));
+    markers[s.id] = m;
+  });
+
+  renderList(filtered);
+  updateStats(filtered);
+}
+
+function selectStation(s) {
+  selectedId = s.id;
+  applyFilters();
+
+  // Detail panel
+  document.getElementById('dpOp').textContent   = s.operator + ' Network';
+  document.getElementById('dpName').textContent = s.name;
+  document.getElementById('dpAddr').textContent = s.address + ', ' + s.city;
+
+  const dot = document.getElementById('dpStatusDot');
+  const txt = document.getElementById('dpStatusText');
+  if (s.status === 'available') { dot.style.background = '#3E9142'; txt.style.color = '#4EAD52'; txt.textContent = 'Available'; }
+  else if (s.status === 'busy') { dot.style.background = '#D4860F'; txt.style.color = '#E09B2A'; txt.textContent = 'In Use'; }
+  else { dot.style.background = '#5E6478'; txt.style.color = '#9DA3B4'; txt.textContent = 'Offline'; }
+
+  document.getElementById('dpPower').textContent = s.power;
+  document.getElementById('dpGuns').textContent  = s.guns;
+  document.getElementById('dpRate').textContent  = s.rate;
+
+  document.getElementById('dpConns').innerHTML = s.plugs.map(p =>
+    `<div class="dp-conn">${p}</div>`
+  ).join('');
+
+  document.getElementById('dpHours').textContent = s.hours;
+  document.getElementById('dpOpenTag').textContent = s.hours === '00:00–24:00' ? '24/7' : '';
+  document.getElementById('dpDir').href = `https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}`;
+
+  document.getElementById('detailPanel').classList.add('open');
+  map.setView([s.lat, s.lng], 14, { animate:true });
+}
+
+document.getElementById('dpClose').addEventListener('click', () => {
+  document.getElementById('detailPanel').classList.remove('open');
+  selectedId = null;
+  applyFilters();
+});
+
+document.getElementById('networkFilter').addEventListener('click', e => {
+  const chip = e.target.closest('[data-filter]');
+  if (!chip) return;
+  activeNet = chip.dataset.filter;
+  document.querySelectorAll('#networkFilter .chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  applyFilters();
+});
+
+document.getElementById('typeFilter').addEventListener('click', e => {
+  const chip = e.target.closest('[data-type]');
+  if (!chip) return;
+  activeType = chip.dataset.type;
+  document.querySelectorAll('#typeFilter .chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  applyFilters();
+});
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQ = e.target.value.toLowerCase().trim();
+  applyFilters();
+});
+
+fetch('/api/site/charging-stations').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+  if (d && d.stations && d.stations.length) { STATIONS = d.stations; applyFilters(); }
+}).catch(function(){});
+
+applyFilters();
+
+setTimeout(() => {
+  document.getElementById('loading').classList.add('hide');
+  setTimeout(() => document.getElementById('loading').remove(), 350);
+}, 1400);
+</script>
+</body>
+</html>

@@ -401,7 +401,7 @@
               <a class="av-row" href="index.html#used-brand"><div class="av-ri"><span class="av-rt">Brand</span></div></a>
               <div class="av-sep"></div>
               <span class="av-lbl">Finance</span>
-              <a class="av-row" href="index.html#emi">
+              <a class="av-row" href="caremi.html">
                 <div class="av-ri"><span class="av-rt">EMI calculator</span><span class="av-rs">Check monthly payments</span></div>
               </a>
               <a class="av-row" href="insurance-services.html">
@@ -544,27 +544,21 @@
 
         <!-- TOOLS -->
         <div class="av-item">
-          <button class="av-link">
+          <button class="av-link ${isActive(['caremi.html','whatcarcanyouaffoard.html','chargingstation.html'])}">
             Tools <span class="av-b av-b--o" style="font-size:10px;padding:2px 6px;border-radius:4px;margin-left:2px">New</span>
             ${chev}
           </button>
           <div class="av-dd av-dd--r">
             <div class="av-col" style="min-width:215px">
               <span class="av-lbl">Smart tools</span>
-              <a class="av-row" href="index.html#matchmaker">
-                <div class="av-ri"><span class="av-rt">Find my perfect car</span><span class="av-rs">Answer questions, get matched</span></div>
+              <a class="av-row" href="whatcarcanyouaffoard.html">
+                <div class="av-ri"><span class="av-rt">What car can you afford?</span><span class="av-rs">Check budget &amp; loan eligibility</span></div>
               </a>
-              <a class="av-row" href="index.html#emi">
+              <a class="av-row" href="caremi.html">
                 <div class="av-ri"><span class="av-rt">EMI calculator</span><span class="av-rs">Estimate monthly payments</span></div>
               </a>
-              <a class="av-row" href="index.html#charging">
+              <a class="av-row" href="chargingstation.html">
                 <div class="av-ri"><span class="av-rt">EV charging map</span><span class="av-rs">Find chargers near you</span></div>
-              </a>
-              <a class="av-row" href="index.html#testdrive">
-                <div class="av-ri"><span class="av-rt">Test drive at home</span></div>
-              </a>
-              <a class="av-row" href="index.html#tmv">
-                <div class="av-ri"><span class="av-rt">True market value</span><span class="av-rs">What others paid in Nepal</span></div>
               </a>
             </div>
           </div>
@@ -660,8 +654,9 @@
           { href:'index.html#used-history',    text:'Vehicle History Report' },
         ]},
         { label: 'Finance', links: [
-          { href:'index.html#emi',         text:'EMI Calculator' },
-          { href:'insurance-services.html', text:'Banks & Finance Options' },
+          { href:'caremi.html',                 text:'EMI Calculator' },
+          { href:'whatcarcanyouaffoard.html',   text:'What Car Can You Afford?' },
+          { href:'insurance-services.html',     text:'Banks & Finance Options' },
         ]},
       ])}
 
@@ -711,15 +706,13 @@
         ]},
       ])}
 
-      ${mmSection('tools', 'Smart Tools', [
-        { label: '', links: [
-          { href:'index.html#matchmaker', text:'Find My Perfect Car' },
-          { href:'index.html#emi',        text:'EMI Calculator' },
-          { href:'index.html#charging',   text:'EV Charging Map' },
-          { href:'index.html#testdrive',  text:'Test Drive at Home' },
-          { href:'index.html#tmv',        text:'True Market Value' },
-        ]},
-      ])}
+    ${mmSection('tools', 'Smart Tools', [
+  { label: '', links: [
+    { href:'whatcarcanyouaffoard.html', text:'What Car Can You Afford?' },
+    { href:'caremi.html',               text:'EMI Calculator' },
+    { href:'chargingstation.html',      text:'EV Charging Map' },
+  ]},
+])}
 
       <div class="av-mm-cta">
         <a href="tel:+9779701076240" class="av-mm-cta-btn av-mm-cta-ghost">Call Us</a>

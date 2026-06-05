@@ -1,0 +1,956 @@
+{
+  "stations": [
+    {
+      "id": 1,
+      "name": "NEA Charging — Ratna Park",
+      "operator": "NEA",
+      "city": "Kathmandu",
+      "address": "Ratna Park Path, Kathmandu",
+      "lat": 27.7041,
+      "lng": 85.3131,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 2,
+      "name": "NEA Charging — Kuleshwor",
+      "operator": "NEA",
+      "city": "Kathmandu",
+      "address": "Kuleshwor, Kathmandu",
+      "lat": 27.6953,
+      "lng": 85.2985,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 3,
+      "name": "NEA Charging — Tinkune",
+      "operator": "NEA",
+      "city": "Kathmandu",
+      "address": "Tinkune, Koteshwor",
+      "lat": 27.6839,
+      "lng": 85.35,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "busy",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 4,
+      "name": "NEA Charging — Baneshwor",
+      "operator": "NEA",
+      "city": "Kathmandu",
+      "address": "New Baneshwor, Kathmandu",
+      "lat": 27.6916,
+      "lng": 85.3365,
+      "power": 60,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 5,
+      "name": "NEA Charging — Sundhara",
+      "operator": "NEA",
+      "city": "Kathmandu",
+      "address": "Sundhara, Kathmandu",
+      "lat": 27.7019,
+      "lng": 85.3096,
+      "power": 30,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 6,
+      "name": "BYD — Eco Auto Trading, Naxal",
+      "operator": "BYD",
+      "city": "Kathmandu",
+      "address": "Naxal, Kathmandu",
+      "lat": 27.7127,
+      "lng": 85.3241,
+      "power": 60,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "09:00–18:00",
+      "rate": 18
+    },
+    {
+      "id": 7,
+      "name": "Sipradi Tata — Naikap",
+      "operator": "Tata",
+      "city": "Kathmandu",
+      "address": "Naikap, Kathmandu",
+      "lat": 27.7197,
+      "lng": 85.2661,
+      "power": 50,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "08:00–18:00",
+      "rate": 18
+    },
+    {
+      "id": 8,
+      "name": "Sipradi Tata — Tripureshwor",
+      "operator": "Tata",
+      "city": "Kathmandu",
+      "address": "Tripureshwor, Kathmandu",
+      "lat": 27.6975,
+      "lng": 85.3054,
+      "power": 50,
+      "guns": 2,
+      "plugs": [
+        "CCS2"
+      ],
+      "type": "DC Fast",
+      "status": "busy",
+      "hours": "08:00–18:00",
+      "rate": 18
+    },
+    {
+      "id": 9,
+      "name": "CG Motors EV — Lazimpat",
+      "operator": "CG Motors",
+      "city": "Kathmandu",
+      "address": "Lazimpat, Kathmandu",
+      "lat": 27.7197,
+      "lng": 85.3182,
+      "power": 60,
+      "guns": 4,
+      "plugs": [
+        "CCS2",
+        "GBT",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "06:00–22:00",
+      "rate": 16
+    },
+    {
+      "id": 10,
+      "name": "CG Motors EV — Sitapaila",
+      "operator": "CG Motors",
+      "city": "Kathmandu",
+      "address": "Sitapaila, Kathmandu",
+      "lat": 27.7245,
+      "lng": 85.2712,
+      "power": 30,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "06:00–22:00",
+      "rate": 16
+    },
+    {
+      "id": 11,
+      "name": "MG Motor Nepal — Dhumbarahi",
+      "operator": "MG",
+      "city": "Kathmandu",
+      "address": "Dhumbarahi, Kathmandu",
+      "lat": 27.7286,
+      "lng": 85.3295,
+      "power": 50,
+      "guns": 2,
+      "plugs": [
+        "CCS2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "09:00–19:00",
+      "rate": 18
+    },
+    {
+      "id": 12,
+      "name": "Hyundai Charging — Syuchatar",
+      "operator": "Hyundai",
+      "city": "Kathmandu",
+      "address": "Syuchatar, Kathmandu",
+      "lat": 27.7079,
+      "lng": 85.2877,
+      "power": 50,
+      "guns": 2,
+      "plugs": [
+        "CCS2"
+      ],
+      "type": "DC Fast",
+      "status": "offline",
+      "hours": "09:00–18:00",
+      "rate": 18
+    },
+    {
+      "id": 13,
+      "name": "ElectriVa Hub — Balaju",
+      "operator": "ElectriVa",
+      "city": "Kathmandu",
+      "address": "Balaju Industrial Area",
+      "lat": 27.7361,
+      "lng": 85.2981,
+      "power": 60,
+      "guns": 4,
+      "plugs": [
+        "CCS2",
+        "GBT",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "06:00–22:00",
+      "rate": 15
+    },
+    {
+      "id": 14,
+      "name": "NEA E-Bus Station — Koteshwor",
+      "operator": "NEA",
+      "city": "Kathmandu",
+      "address": "Koteshwor Bus Park",
+      "lat": 27.6835,
+      "lng": 85.3548,
+      "power": 60,
+      "guns": 6,
+      "plugs": [
+        "GBT",
+        "CCS2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 15,
+      "name": "ElectriVa — Kalanki",
+      "operator": "ElectriVa",
+      "city": "Kathmandu",
+      "address": "Kalanki Chowk, Kathmandu",
+      "lat": 27.6964,
+      "lng": 85.2836,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "busy",
+      "hours": "06:00–22:00",
+      "rate": 15
+    },
+    {
+      "id": 16,
+      "name": "ElectriVa — Sanepa",
+      "operator": "ElectriVa",
+      "city": "Lalitpur",
+      "address": "Sanepa, Lalitpur",
+      "lat": 27.6745,
+      "lng": 85.3147,
+      "power": 22,
+      "guns": 2,
+      "plugs": [
+        "AC Type 2"
+      ],
+      "type": "AC",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 14
+    },
+    {
+      "id": 17,
+      "name": "NEA Charging — Pulchowk",
+      "operator": "NEA",
+      "city": "Lalitpur",
+      "address": "Pulchowk, Lalitpur",
+      "lat": 27.6774,
+      "lng": 85.3192,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 18,
+      "name": "CG Motors EV — Satdobato",
+      "operator": "CG Motors",
+      "city": "Lalitpur",
+      "address": "Satdobato, Lalitpur",
+      "lat": 27.6541,
+      "lng": 85.3194,
+      "power": 30,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "06:00–20:00",
+      "rate": 16
+    },
+    {
+      "id": 19,
+      "name": "Sipradi Tata — Bhaktapur",
+      "operator": "Tata",
+      "city": "Bhaktapur",
+      "address": "Sipadol, Bhaktapur",
+      "lat": 27.6741,
+      "lng": 85.4298,
+      "power": 50,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "08:00–18:00",
+      "rate": 18
+    },
+    {
+      "id": 20,
+      "name": "NEA Charging — Bhaktapur Bus Park",
+      "operator": "NEA",
+      "city": "Bhaktapur",
+      "address": "Bhaktapur Bus Park",
+      "lat": 27.6715,
+      "lng": 85.4282,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "busy",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 21,
+      "name": "NEA Charging — Pokhara Airport",
+      "operator": "NEA",
+      "city": "Pokhara",
+      "address": "Pokhara Regional Airport",
+      "lat": 28.2006,
+      "lng": 83.9816,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 22,
+      "name": "ElectriVa — Lakeside Pokhara",
+      "operator": "ElectriVa",
+      "city": "Pokhara",
+      "address": "Lakeside, Pokhara",
+      "lat": 28.2089,
+      "lng": 83.9559,
+      "power": 60,
+      "guns": 4,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "07:00–22:00",
+      "rate": 15
+    },
+    {
+      "id": 23,
+      "name": "BYD — BKG Engineering, Pokhara",
+      "operator": "BYD",
+      "city": "Pokhara",
+      "address": "Siddhartha Highway, Pokhara",
+      "lat": 28.2152,
+      "lng": 83.9756,
+      "power": 50,
+      "guns": 2,
+      "plugs": [
+        "CCS2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "08:00–19:00",
+      "rate": 18
+    },
+    {
+      "id": 24,
+      "name": "CG Motors EV — Prithvi Chowk",
+      "operator": "CG Motors",
+      "city": "Pokhara",
+      "address": "Prithvi Chowk, Pokhara",
+      "lat": 28.2082,
+      "lng": 83.9904,
+      "power": 30,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "busy",
+      "hours": "07:00–21:00",
+      "rate": 16
+    },
+    {
+      "id": 25,
+      "name": "Hyundai Charging — Pokhara",
+      "operator": "Hyundai",
+      "city": "Pokhara",
+      "address": "New Road, Pokhara",
+      "lat": 28.2029,
+      "lng": 83.9842,
+      "power": 50,
+      "guns": 2,
+      "plugs": [
+        "CCS2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "09:00–18:00",
+      "rate": 18
+    },
+    {
+      "id": 26,
+      "name": "ElectriVa — Ashoka Resort, Bharatpur",
+      "operator": "ElectriVa",
+      "city": "Bharatpur",
+      "address": "Bharatpur, Chitwan",
+      "lat": 27.6784,
+      "lng": 84.4305,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 15
+    },
+    {
+      "id": 27,
+      "name": "NEA Charging — Bharatpur Bus Park",
+      "operator": "NEA",
+      "city": "Bharatpur",
+      "address": "Bharatpur Bus Park, Chitwan",
+      "lat": 27.6829,
+      "lng": 84.4237,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 28,
+      "name": "CG Motors EV — Narayanghat",
+      "operator": "CG Motors",
+      "city": "Bharatpur",
+      "address": "Narayanghat, Chitwan",
+      "lat": 27.705,
+      "lng": 84.4103,
+      "power": 30,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "07:00–20:00",
+      "rate": 16
+    },
+    {
+      "id": 29,
+      "name": "BYD — Niraj Auto, Birgunj",
+      "operator": "BYD",
+      "city": "Birgunj",
+      "address": "Bypass Road, Birgunj",
+      "lat": 27.0069,
+      "lng": 84.8804,
+      "power": 60,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "09:00–18:00",
+      "rate": 18
+    },
+    {
+      "id": 30,
+      "name": "NEA Charging — Birgunj",
+      "operator": "NEA",
+      "city": "Birgunj",
+      "address": "Adarsh Nagar, Birgunj",
+      "lat": 27.0122,
+      "lng": 84.8751,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 31,
+      "name": "Sipradi Tata — Birgunj",
+      "operator": "Tata",
+      "city": "Birgunj",
+      "address": "Ghantaghar, Birgunj",
+      "lat": 26.996,
+      "lng": 84.8698,
+      "power": 50,
+      "guns": 2,
+      "plugs": [
+        "CCS2"
+      ],
+      "type": "DC Fast",
+      "status": "busy",
+      "hours": "08:00–18:00",
+      "rate": 18
+    },
+    {
+      "id": 32,
+      "name": "NEA Charging — Biratnagar",
+      "operator": "NEA",
+      "city": "Biratnagar",
+      "address": "Traffic Chowk, Biratnagar",
+      "lat": 26.4679,
+      "lng": 87.2704,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "GBT",
+        "CCS2",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 33,
+      "name": "CG Motors EV — Biratnagar",
+      "operator": "CG Motors",
+      "city": "Biratnagar",
+      "address": "Golbazar Rd, Biratnagar",
+      "lat": 26.4551,
+      "lng": 87.2832,
+      "power": 30,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "07:00–20:00",
+      "rate": 16
+    },
+    {
+      "id": 34,
+      "name": "ElectriVa — Maharaja Resort, Butwal",
+      "operator": "ElectriVa",
+      "city": "Butwal",
+      "address": "Butwal, Rupandehi",
+      "lat": 27.699,
+      "lng": 83.4573,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "07:00–22:00",
+      "rate": 15
+    },
+    {
+      "id": 35,
+      "name": "NEA Charging — Butwal Bus Park",
+      "operator": "NEA",
+      "city": "Butwal",
+      "address": "Butwal Bus Park",
+      "lat": 27.7079,
+      "lng": 83.4634,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 36,
+      "name": "NEA Charging — Dharan",
+      "operator": "NEA",
+      "city": "Dharan",
+      "address": "B.P. Highway, Dharan",
+      "lat": 26.815,
+      "lng": 87.284,
+      "power": 60,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 37,
+      "name": "NEA E-Stop — Mugling",
+      "operator": "NEA",
+      "city": "Mugling",
+      "address": "Mugling, Chitwan",
+      "lat": 27.8665,
+      "lng": 84.5225,
+      "power": 60,
+      "guns": 4,
+      "plugs": [
+        "CCS2",
+        "GBT",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 38,
+      "name": "ElectriVa — Gurkha Inn, Gorkha",
+      "operator": "ElectriVa",
+      "city": "Gorkha",
+      "address": "Gorkha Highway",
+      "lat": 28.0028,
+      "lng": 84.6313,
+      "power": 60,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 15
+    },
+    {
+      "id": 39,
+      "name": "Sipradi Tata — Dharke",
+      "operator": "Tata",
+      "city": "Dharke",
+      "address": "Dharke, Nuwakot Highway",
+      "lat": 27.8412,
+      "lng": 85.0634,
+      "power": 50,
+      "guns": 2,
+      "plugs": [
+        "CCS2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "08:00–18:00",
+      "rate": 18
+    },
+    {
+      "id": 40,
+      "name": "ElectriVa — Energy Palace, Hetauda",
+      "operator": "ElectriVa",
+      "city": "Hetauda",
+      "address": "Mahendra Highway, Hetauda",
+      "lat": 27.4246,
+      "lng": 85.034,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "06:00–22:00",
+      "rate": 15
+    },
+    {
+      "id": 41,
+      "name": "NEA Charging — Hetauda",
+      "operator": "NEA",
+      "city": "Hetauda",
+      "address": "Hetauda Municipality",
+      "lat": 27.4149,
+      "lng": 85.0298,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "busy",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 42,
+      "name": "ElectriVa — Lekali Restaurant, Dhangadhi",
+      "operator": "ElectriVa",
+      "city": "Dhangadhi",
+      "address": "Uttarbehandi Road, Dhangadhi",
+      "lat": 28.6926,
+      "lng": 80.5939,
+      "power": 30,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "07:00–21:00",
+      "rate": 15
+    },
+    {
+      "id": 43,
+      "name": "NEA Charging — Dhangadhi",
+      "operator": "NEA",
+      "city": "Dhangadhi",
+      "address": "Seti Provincial Highway",
+      "lat": 28.7024,
+      "lng": 80.5862,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 44,
+      "name": "NEA Charging — Nepalgunj",
+      "operator": "NEA",
+      "city": "Nepalgunj",
+      "address": "Mahendra Highway, Nepalgunj",
+      "lat": 28.0455,
+      "lng": 81.6154,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT",
+        "AC Type 2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 45,
+      "name": "CG Motors EV — Nepalgunj",
+      "operator": "CG Motors",
+      "city": "Nepalgunj",
+      "address": "Birendra Chowk, Nepalgunj",
+      "lat": 28.0502,
+      "lng": 81.6221,
+      "power": 30,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "offline",
+      "hours": "07:00–20:00",
+      "rate": 16
+    },
+    {
+      "id": 46,
+      "name": "NEA Charging — Janakpur",
+      "operator": "NEA",
+      "city": "Janakpur",
+      "address": "Bhansar Chowk, Janakpur",
+      "lat": 26.7276,
+      "lng": 85.9259,
+      "power": 60,
+      "guns": 3,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 47,
+      "name": "Hyundai — Alaska Autos, Pokhara",
+      "operator": "Hyundai",
+      "city": "Pokhara",
+      "address": "Siddhartha Highway, Pokhara entry",
+      "lat": 28.1863,
+      "lng": 83.9672,
+      "power": 50,
+      "guns": 2,
+      "plugs": [
+        "CCS2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "09:00–18:00",
+      "rate": 18
+    },
+    {
+      "id": 48,
+      "name": "NEA E-Hub — Abukhaireni–Gorkha",
+      "operator": "NEA",
+      "city": "Gorkha",
+      "address": "Abukhaireni–Gorkha Highway",
+      "lat": 28.1345,
+      "lng": 84.6231,
+      "power": 60,
+      "guns": 4,
+      "plugs": [
+        "GBT",
+        "CCS2"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 17
+    },
+    {
+      "id": 49,
+      "name": "ElectriVa — Hotel Makalu, Dhulikhel",
+      "operator": "ElectriVa",
+      "city": "Dhulikhel",
+      "address": "Dhulikhel, Kavrepalanchok",
+      "lat": 27.6222,
+      "lng": 85.5482,
+      "power": 60,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "available",
+      "hours": "00:00–24:00",
+      "rate": 15
+    },
+    {
+      "id": 50,
+      "name": "NEA Charging — Bhojpur",
+      "operator": "NEA",
+      "city": "Bhojpur",
+      "address": "Bhojpur Municipality",
+      "lat": 27.1737,
+      "lng": 87.0531,
+      "power": 30,
+      "guns": 2,
+      "plugs": [
+        "CCS2",
+        "GBT"
+      ],
+      "type": "DC Fast",
+      "status": "offline",
+      "hours": "06:00–20:00",
+      "rate": 17
+    }
+  ]
+}

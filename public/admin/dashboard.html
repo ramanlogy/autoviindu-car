@@ -3,365 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoViindu · Admin</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    :root {
-      --bg:            #f4f6f9;
-      --card:          #ffffff;
-      --border:        #e3e8ef;
-      --border-strong: #c8d3de;
-      --accent:        #16a34a;
-      --accent-lt:     #dcfce7;
-      --accent-dk:     #15803d;
-      --blue:          #2563eb;
-      --blue-lt:       #dbeafe;
-      --amber:         #d97706;
-      --amber-lt:      #fef3c7;
-      --red:           #dc2626;
-      --red-lt:        #fee2e2;
-      --purple:        #7c3aed;
-      --purple-lt:     #ede9fe;
-      --text:          #0f172a;
-      --text-2:        #64748b;
-      --text-3:        #94a3b8;
-      --sidebar:       #0c1222;
-      --sidebar-hover: rgba(255,255,255,0.06);
-      --sidebar-act:   rgba(255,255,255,0.1);
-      --sw:            218px;
-      --r4:  4px;
-      --r6:  6px;
-      --r8:  8px;
-      --r10: 10px;
-      --r14: 14px;
-      --sh0: 0 1px 2px rgba(0,0,0,0.05),0 0 0 1px rgba(0,0,0,0.03);
-      --sh1: 0 1px 3px rgba(0,0,0,0.07),0 4px 12px rgba(0,0,0,0.05),0 0 0 1px rgba(0,0,0,0.04);
-      --sh2: 0 8px 32px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.05);
-      --font: 'DM Sans', system-ui, sans-serif;
-      --mono: 'DM Mono', monospace;
-      --ease: 0.14s ease;
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{font-size:14px}
-    body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
-
-    /* ── SIDEBAR ── */
-    .sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sw);background:var(--sidebar);display:flex;flex-direction:column;z-index:100;transition:transform var(--ease)}
-    .sb-logo{padding:18px 14px 14px;border-bottom:1px solid rgba(255,255,255,0.06)}
-    .logo-row{display:flex;align-items:center;gap:9px}
-    .logo-icon{width:28px;height:28px;background:var(--accent);border-radius:var(--r6);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .logo-icon svg{width:14px;height:14px;color:#fff}
-    .logo-name{font-size:14px;font-weight:700;color:#fff;letter-spacing:-0.2px}
-    .logo-sub{font-size:10px;color:rgba(255,255,255,0.28);letter-spacing:0.7px;text-transform:uppercase;margin-top:1px}
-    .sb-nav{padding:10px 8px;flex:1;display:flex;flex-direction:column;gap:1px;overflow-y:auto}
-    .sb-label{font-size:10px;font-weight:600;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:0.7px;padding:10px 8px 4px}
-    .sb-link{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:var(--r6);color:rgba(255,255,255,0.45);font-size:13px;font-weight:500;cursor:pointer;transition:all var(--ease);user-select:none}
-    .sb-link svg{width:14px;height:14px;flex-shrink:0}
-    .sb-link:hover{background:var(--sidebar-hover);color:rgba(255,255,255,0.8)}
-    .sb-link.on{background:var(--sidebar-act);color:#fff}
-    .sb-badge{margin-left:auto;font-family:var(--mono);font-size:10px;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.4);padding:1px 6px;border-radius:99px}
-    .sb-link.on .sb-badge{background:rgba(22,163,74,0.18);color:#4ade80}
-    .sb-foot{padding:8px 8px 18px;border-top:1px solid rgba(255,255,255,0.06)}
-    .sb-foot .sb-link{color:rgba(255,255,255,0.28)}
-    .sb-foot .sb-link:hover{color:rgba(255,255,255,0.55)}
-    .sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:99}
-
-    /* ── MAIN ── */
-    .main{margin-left:var(--sw);display:flex;flex-direction:column;min-height:100vh}
-
-    /* ── TOPBAR ── */
-    .topbar{background:#fff;border-bottom:1px solid var(--border);height:54px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}
-    .tb-left{display:flex;align-items:center;gap:12px}
-    .tb-title{font-size:15px;font-weight:600;color:var(--text)}
-    .tb-crumb{font-size:11.5px;color:var(--text-3);margin-top:1px}
-    .tb-right{display:flex;align-items:center;gap:6px}
-    .hamburger{display:none;width:30px;height:30px;border:1px solid var(--border);background:#fff;border-radius:var(--r6);cursor:pointer;align-items:center;justify-content:center}
-    .hamburger svg{width:15px;height:15px}
-
-    /* ── BUTTONS ── */
-    .btn{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border:1px solid var(--border);border-radius:var(--r6);background:#fff;font-size:12.5px;font-weight:500;color:var(--text);cursor:pointer;font-family:var(--font);transition:all var(--ease);white-space:nowrap}
-    .btn svg{width:13px;height:13px}
-    .btn:hover{background:var(--bg);border-color:var(--border-strong)}
-    .btn-dark{background:var(--text);color:#fff;border-color:var(--text)}
-    .btn-dark:hover{background:#1e293b;border-color:#1e293b}
-    .btn-green{background:var(--accent);color:#fff;border-color:var(--accent)}
-    .btn-green:hover{background:var(--accent-dk);border-color:var(--accent-dk)}
-
-    /* ── PAGE ── */
-    .page{padding:22px 24px;flex:1}
-
-    /* ── STATS ── */
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
-    .stat{background:#fff;border:1px solid var(--border);border-radius:var(--r10);padding:16px 18px;box-shadow:var(--sh0);transition:box-shadow var(--ease)}
-    .stat:hover{box-shadow:var(--sh1)}
-    .stat-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-    .stat-lbl{font-size:11.5px;font-weight:500;color:var(--text-2)}
-    .stat-ico{width:30px;height:30px;border-radius:var(--r6);display:flex;align-items:center;justify-content:center}
-    .stat-ico svg{width:14px;height:14px}
-    .ico-g{background:var(--accent-lt);color:var(--accent)}
-    .ico-b{background:var(--blue-lt);color:var(--blue)}
-    .ico-a{background:var(--amber-lt);color:var(--amber)}
-    .ico-p{background:var(--purple-lt);color:var(--purple)}
-    .stat-val{font-size:26px;font-weight:700;color:var(--text);letter-spacing:-0.5px;line-height:1}
-    .stat-meta{font-size:11.5px;color:var(--text-3);margin-top:6px}
-
-    /* ── PIPELINE ── */
-    .pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
-    .pipe-stage{background:#fff;border:1px solid var(--border);border-radius:var(--r10);padding:12px 14px;box-shadow:var(--sh0)}
-    .pipe-lbl{font-size:10.5px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px}
-    .pipe-val{font-size:20px;font-weight:700;color:var(--text)}
-    .pipe-bar{height:2px;border-radius:99px;margin-top:8px}
-    .pb-blue{background:var(--blue)} .pb-amber{background:var(--amber)} .pb-green{background:var(--accent)} .pb-gray{background:#e2e8f0}
-
-    /* ── CARD ── */
-    .card{background:#fff;border:1px solid var(--border);border-radius:var(--r10);box-shadow:var(--sh0);overflow:hidden}
-    .card-head{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .card-head-l{display:flex;align-items:center;gap:8px}
-    .card-title{font-size:13.5px;font-weight:600;color:var(--text)}
-    .card-cnt{font-family:var(--mono);font-size:11px;color:var(--text-2);background:var(--bg);border:1px solid var(--border);padding:1px 7px;border-radius:99px}
-    .card-head-r{display:flex;align-items:center;gap:6px}
-
-    /* ── TABLE ── */
-    .t-wrap{overflow-x:auto}
-    table{width:100%;border-collapse:collapse;min-width:680px}
-    thead th{padding:9px 14px;text-align:left;font-size:10.5px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.5px;background:#fafbfc;border-bottom:1px solid var(--border);white-space:nowrap}
-    tbody td{padding:12px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle}
-    tbody tr:last-child td{border-bottom:none}
-    tbody tr{transition:background var(--ease);cursor:pointer}
-    tbody tr:hover{background:#fafbfc}
-    .c-mono{font-family:var(--mono);font-size:11.5px;color:var(--text-2)}
-    .c-bold{font-weight:600}
-    .c-dim{color:var(--text-2);font-size:12.5px}
-
-    /* ── BADGE ── */
-    .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:var(--r4);font-size:11px;font-weight:600;white-space:nowrap}
-    .bg-g{background:var(--accent-lt);color:#15803d}
-    .bg-b{background:var(--blue-lt);color:#1d4ed8}
-    .bg-a{background:var(--amber-lt);color:#b45309}
-    .bg-r{background:var(--red-lt);color:#b91c1c}
-    .bg-p{background:var(--purple-lt);color:#6d28d9}
-    .bg-n{background:#f1f5f9;color:#64748b}
-
-    /* ── AVATAR ── */
-    .avatar{width:26px;height:26px;border-radius:50%;background:#f1f5f9;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-2);flex-shrink:0;font-family:var(--font)}
-
-    /* ── SEARCH ── */
-    .srch{position:relative}
-    .srch svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:13px;height:13px;color:var(--text-3);pointer-events:none}
-    .srch input{padding:6px 9px 6px 28px;border:1px solid var(--border);border-radius:var(--r6);font-size:13px;font-family:var(--font);color:var(--text);background:#fff;outline:none;width:185px;transition:all var(--ease)}
-    .srch input:focus{border-color:#93c5fd;box-shadow:0 0 0 3px rgba(37,99,235,0.07);width:220px}
-    .srch input::placeholder{color:var(--text-3)}
-    .f-sel{padding:6px 9px;border:1px solid var(--border);border-radius:var(--r6);background:#fff;font-size:13px;font-family:var(--font);color:var(--text);cursor:pointer;outline:none}
-    .f-sel:focus{border-color:#93c5fd}
-
-    /* ── LEAD STATUS SELECT ── */
-    .ls{border:1px solid transparent;border-radius:var(--r4);font-size:11px;font-weight:600;font-family:var(--font);cursor:pointer;outline:none;padding:2px 6px;appearance:none;transition:border-color var(--ease)}
-    .ls:hover{border-color:var(--border)}
-    .ls.s-new{background:var(--blue-lt);color:#1d4ed8}
-    .ls.s-contacted{background:var(--amber-lt);color:#b45309}
-    .ls.s-qualified{background:var(--accent-lt);color:#15803d}
-    .ls.s-closed{background:#f1f5f9;color:#64748b}
-
-    /* ── FLAG BTN ── */
-    .flag-btn{background:none;border:none;cursor:pointer;padding:2px;color:var(--text-3);transition:color var(--ease);display:flex;align-items:center}
-    .flag-btn:hover{color:var(--amber)}
-    .flag-btn.on{color:var(--amber)}
-    .flag-btn svg{width:13px;height:13px}
-
-    /* ── ICON BTN ── */
-    .ico-btn{width:26px;height:26px;border-radius:var(--r6);border:1px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text-2);transition:all var(--ease);flex-shrink:0}
-    .ico-btn svg{width:12px;height:12px}
-    .ico-btn:hover{background:var(--bg);color:var(--text);border-color:var(--border-strong)}
-    .ico-btn.del:hover{background:var(--red-lt);color:var(--red);border-color:var(--red)}
-
-    /* ── AVAIL BADGE ── */
-    .avail{display:inline-flex;align-items:center;gap:4px;padding:3px 7px;border-radius:var(--r4);font-size:11px;font-weight:600;cursor:pointer;transition:opacity var(--ease)}
-    .avail:hover{opacity:0.8}
-    .av-available{background:var(--accent-lt);color:#15803d}
-    .av-reserved{background:var(--amber-lt);color:#b45309}
-    .av-sold{background:var(--red-lt);color:#b91c1c}
-    .dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex-shrink:0}
-    .d-g{background:var(--accent)} .d-a{background:var(--amber)} .d-r{background:var(--red)} .d-gray{background:#cbd5e1}
-
-    /* ── FILTER TABS ── */
-    .tab-row{display:flex;gap:3px}
-    .tab{padding:4px 11px;border-radius:var(--r4);font-size:12px;font-weight:500;cursor:pointer;border:1px solid transparent;color:var(--text-2);transition:all var(--ease);background:none;font-family:var(--font)}
-    .tab:hover{background:var(--bg);border-color:var(--border);color:var(--text)}
-    .tab.on{background:var(--text);color:#fff;border-color:var(--text)}
-
-    /* ── MODAL ── */
-    .m-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.5);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity 0.15s ease;backdrop-filter:blur(2px)}
-    .m-overlay.on{opacity:1;pointer-events:all}
-    .modal{background:#fff;width:540px;max-width:calc(100vw - 40px);max-height:88vh;border-radius:var(--r14);box-shadow:var(--sh2);display:flex;flex-direction:column;transform:translateY(10px) scale(0.99);transition:transform 0.15s ease;border:1px solid var(--border);overflow:hidden}
-    .m-overlay.on .modal{transform:translateY(0) scale(1)}
-    .m-head{padding:16px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-    .m-head-l{display:flex;align-items:center;gap:10px}
-    .m-ico{width:34px;height:34px;border-radius:var(--r6);background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-2)}
-    .m-ico svg{width:15px;height:15px}
-    .m-title{font-size:14px;font-weight:600;color:var(--text)}
-    .m-sub{font-size:11.5px;color:var(--text-3);margin-top:1px}
-    .m-close{width:26px;height:26px;border:1px solid var(--border);border-radius:var(--r6);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-2);transition:all var(--ease)}
-    .m-close:hover{background:var(--bg);color:var(--text)}
-    .m-close svg{width:13px;height:13px}
-    .m-body{padding:16px 18px;overflow-y:auto;flex:1}
-    .m-foot{padding:12px 18px;border-top:1px solid var(--border);background:#fafbfc;display:flex;gap:8px}
-    .kv{display:grid;grid-template-columns:120px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid var(--border)}
-    .kv:last-child{border-bottom:none}
-    .kv-k{font-size:11px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.4px;padding-top:2px}
-    .kv-v{font-size:13.5px;color:var(--text);word-break:break-word}
-
-    /* ── FORM ── */
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .form-field{display:flex;flex-direction:column;gap:4px}
-    .form-field.full{grid-column:span 2}
-    .form-lbl{font-size:11.5px;font-weight:600;color:var(--text-2)}
-    .form-inp{padding:7px 10px;border:1px solid var(--border);border-radius:var(--r6);font-size:13px;font-family:var(--font);color:var(--text);background:#fff;outline:none;transition:all var(--ease)}
-    .form-inp:focus{border-color:#93c5fd;box-shadow:0 0 0 3px rgba(37,99,235,0.07)}
-    .form-inp::placeholder{color:var(--text-3)}
-    .btn-full{width:100%;justify-content:center;padding:9px 14px;font-size:13.5px;font-weight:600;margin-top:14px}
-
-    /* ── TEXTAREA ── */
-    .ta-json{width:100%;height:290px;font-family:var(--mono);font-size:12px;padding:12px;border:1px solid var(--border);border-radius:var(--r6);background:#fafbfc;color:var(--text);line-height:1.6;outline:none;resize:vertical}
-    .ta-json:focus{border-color:#93c5fd;box-shadow:0 0 0 3px rgba(37,99,235,0.07)}
-
-    /* ── WORKSPACE ── */
-    .ws-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .notice{padding:11px 13px;background:#fafbfc;border:1px solid var(--border);border-radius:var(--r8)}
-    .n-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
-    .n-author{font-size:11.5px;font-weight:600;color:var(--accent)}
-    .n-date{font-size:10.5px;color:var(--text-3);font-family:var(--mono)}
-    .n-text{font-size:13px;color:var(--text)}
-    .todo{display:flex;align-items:center;gap:9px;padding:9px 11px;border:1px solid var(--border);border-radius:var(--r6);background:#fff}
-    .todo input[type=checkbox]{width:14px;height:14px;cursor:pointer;accent-color:var(--accent);flex-shrink:0}
-    .todo span{flex:1;font-size:13px}
-    .todo.done span{text-decoration:line-through;color:var(--text-3)}
-
-    /* ── EMPTY ── */
-    .empty{padding:52px 20px;text-align:center}
-    .empty p{font-size:13px;color:var(--text-2)}
-
-    /* ── QUICK ACTIONS BAR ── */
-    .qa-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
-    .qa{background:#fff;border:1px solid var(--border);border-radius:var(--r10);padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all var(--ease);box-shadow:var(--sh0)}
-    .qa:hover{border-color:var(--border-strong);box-shadow:var(--sh1)}
-    .qa-ico{width:32px;height:32px;border-radius:var(--r6);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .qa-ico svg{width:14px;height:14px}
-    .qa-name{font-size:12.5px;font-weight:600;color:var(--text)}
-    .qa-desc{font-size:11px;color:var(--text-3);margin-top:1px}
-
-    /* ── ANIMATIONS ── */
-    @keyframes up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-    .stat{animation:up 0.28s ease both}
-    .stat:nth-child(1){animation-delay:0s}
-    .stat:nth-child(2){animation-delay:.04s}
-    .stat:nth-child(3){animation-delay:.08s}
-    .stat:nth-child(4){animation-delay:.12s}
-    .card{animation:up 0.3s .18s ease both}
-
-    /* ── RESPONSIVE ── */
-    @media(max-width:1100px){.stats-grid{grid-template-columns:repeat(2,1fr)}.pipeline{grid-template-columns:repeat(2,1fr)}.qa-bar{grid-template-columns:1fr 1fr}}
-    @media(max-width:900px){
-      :root{--sw:0px}
-      .sidebar{transform:translateX(-218px);width:218px}
-      .sidebar.open{transform:translateX(0)}
-      .sb-overlay{display:block}
-      .main{margin-left:0}
-      .topbar{padding:0 14px}
-      .page{padding:16px 14px}
-      .hamburger{display:flex}
-    }
-    @media(max-width:640px){.ws-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:span 1}.qa-bar{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}.pipeline{grid-template-columns:1fr 1fr}}
-    @media(max-width:400px){.stats-grid{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr}}
-  </style>
+  <title>Dashboard — AutoViindu Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/css/admin.css">
 </head>
 <body>
 
-<div class="sb-overlay" id="sbOverlay" onclick="closeSb()" style="display:none"></div>
+<div class="sb-overlay" id="sbOverlay" onclick="closeSb()"></div>
 
-<!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
   <div class="sb-logo">
     <div class="logo-row">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v2"/><circle cx="16" cy="19" r="2"/><circle cx="9" cy="19" r="2"/><path d="M3 13h4M14 13h5v4"/></svg>
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v2"/><circle cx="16" cy="19" r="2"/><circle cx="9" cy="19" r="2"/></svg>
       </div>
       <div>
         <div class="logo-name">AutoViindu</div>
-        <div class="logo-sub">Admin Panel</div>
+        <div class="logo-sub">Control panel</div>
       </div>
     </div>
   </div>
   <nav class="sb-nav">
     <div class="sb-label">Main</div>
-    <div class="sb-link on" id="nav-overview" onclick="go('overview')">
+    <button class="sb-link on" id="nav-overview" onclick="go('overview')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
       Dashboard
       <span class="sb-badge" id="sb-total">0</span>
-    </div>
-    <div class="sb-link" id="nav-leads" onclick="go('leads')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+    </button>
+    <button class="sb-link" id="nav-leads" onclick="go('leads')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
       Leads
       <span class="sb-badge" id="sb-leads">0</span>
-    </div>
+    </button>
     <div class="sb-label">Inventory</div>
-    <div class="sb-link" id="nav-inventory" onclick="go('inventory')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M12 12v4M10 14h4"/></svg>
+    <button class="sb-link" id="nav-inventory" onclick="go('inventory')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/></svg>
       Cars
-    </div>
+    </button>
+    <div class="sb-label">Website</div>
+    <button class="sb-link" id="nav-content" onclick="go('content')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Content
+    </button>
+    <button class="sb-link" id="nav-brands" onclick="go('brands')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+      Brands
+    </button>
+    <button class="sb-link" id="nav-media" onclick="go('media')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      Media
+    </button>
+    <button class="sb-link" id="nav-settings" onclick="go('settings')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      Settings
+    </button>
     <div class="sb-label">Team</div>
-    <div class="sb-link" id="nav-workspace" onclick="go('workspace')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    <button class="sb-link" id="nav-workspace" onclick="go('workspace')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       Workspace
-    </div>
+    </button>
   </nav>
   <div class="sb-foot">
-    <div class="sb-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M20 12h-2M17.66 17.66l-1.41-1.41M12 20v-2M8.34 17.66l-1.41 1.41M4 12H2M6.34 6.34L4.93 4.93"/></svg>
-      Settings
-    </div>
-    <div class="sb-link" onclick="localStorage.removeItem('adminToken');location.href='/login'">
+    <a href="/" target="_blank" class="sb-link" style="text-decoration:none">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      View website
+    </a>
+    <button class="sb-link" onclick="localStorage.removeItem('adminToken');location.href='/login'">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
       Sign out
-    </div>
+    </button>
   </div>
 </aside>
 
 <div class="main">
-  <!-- TOPBAR -->
   <header class="topbar">
     <div class="tb-left">
       <button class="hamburger" onclick="openSb()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
       <div>
         <div class="tb-title" id="tb-title">Dashboard</div>
-        <div class="tb-crumb" id="tb-crumb">AutoViindu · Overview</div>
+        <div class="tb-crumb" id="tb-crumb">Overview & submissions</div>
       </div>
     </div>
     <div class="tb-right">
-      <div id="act-overview" style="display:flex;gap:6px;align-items:center">
-        <button class="btn" onclick="fetchData()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>Refresh</button>
-        <button class="btn" onclick="exportCSV()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
+      <div id="act-overview" style="display:flex;gap:6px">
+        <button class="btn" onclick="fetchData()">Refresh</button>
+        <button class="btn" onclick="exportCSV()">Export CSV</button>
       </div>
-      <div id="act-leads" style="display:none;gap:6px;align-items:center">
-        <button class="btn" onclick="fetchData()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>Refresh</button>
-        <button class="btn" onclick="exportCSV()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
+      <div id="act-leads" style="display:none;gap:6px">
+        <button class="btn" onclick="fetchData()">Refresh</button>
+        <button class="btn" onclick="exportCSV()">Export CSV</button>
       </div>
       <div id="act-inventory" style="display:none;gap:6px;align-items:center">
-        <button class="btn" onclick="openAddCar('used')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Used Car</button>
-        <button class="btn" onclick="openAddCar('new')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>New Car</button>
-        <button class="btn btn-green" onclick="publishInv()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>Publish</button>
+        <span class="unsaved-pill" id="unsaved-pill">● Unsaved changes</span>
+        <button class="btn" onclick="openAddCar('used')">+ Used</button>
+        <button class="btn" onclick="openAddCar('new')">+ New car</button>
+        <button class="btn btn-green" id="publish-btn" onclick="publishInv('all')">Publish changes</button>
       </div>
-      <div id="act-workspace" style="display:none;gap:6px;align-items:center"></div>
+      <div id="act-workspace" style="display:none"></div>
+      <div id="act-content" style="display:none;gap:6px"><button class="btn" onclick="loadContent()">Refresh</button></div>
+      <div id="act-settings" style="display:none;gap:6px"><button class="btn btn-green" onclick="saveSettings()">Save</button></div>
     </div>
   </header>
 
-  <!-- ═══ DASHBOARD ═══ -->
+  <!-- Overview -->
   <div class="page" id="view-overview">
+    <div id="insights-panel"></div>
     <div class="stats-grid">
       <div class="stat">
-        <div class="stat-top"><div class="stat-lbl">Total Submissions</div><div class="stat-ico ico-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div></div>
+        <div class="stat-top"><div class="stat-lbl">Total submissions</div><div class="stat-ico ico-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div></div>
         <div class="stat-val" id="st-total">–</div>
         <div class="stat-meta">All time</div>
       </div>
@@ -376,13 +128,12 @@
         <div class="stat-meta">Loan applications</div>
       </div>
       <div class="stat">
-        <div class="stat-top"><div class="stat-lbl">Service & Parts</div><div class="stat-ico ico-p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M20 12h-2M17.66 17.66l-1.41-1.41M12 20v-2M8.34 17.66l-1.41 1.41M4 12H2M6.34 6.34L4.93 4.93"/></svg></div></div>
+        <div class="stat-top"><div class="stat-lbl">Service & parts</div><div class="stat-ico ico-p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></div></div>
         <div class="stat-val" id="st-svc">–</div>
         <div class="stat-meta">Bookings & orders</div>
       </div>
     </div>
 
-    <!-- Pipeline -->
     <div class="pipeline">
       <div class="pipe-stage"><div class="pipe-lbl">New</div><div class="pipe-val" id="pp-new">0</div><div class="pipe-bar pb-blue"></div></div>
       <div class="pipe-stage"><div class="pipe-lbl">Contacted</div><div class="pipe-val" id="pp-contacted">0</div><div class="pipe-bar pb-amber"></div></div>
@@ -390,33 +141,34 @@
       <div class="pipe-stage"><div class="pipe-lbl">Closed</div><div class="pipe-val" id="pp-closed">0</div><div class="pipe-bar pb-gray"></div></div>
     </div>
 
-    <!-- Quick actions -->
     <div class="qa-bar">
       <div class="qa" onclick="go('leads')">
         <div class="qa-ico ico-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-        <div><div class="qa-name">Manage Leads</div><div class="qa-desc">Update pipeline status</div></div>
+        <div><div class="qa-name">Manage leads</div><div class="qa-desc">Update pipeline status</div></div>
       </div>
       <div class="qa" onclick="go('inventory')">
-        <div class="qa-ico ico-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/></svg></div>
-        <div><div class="qa-name">Car Inventory</div><div class="qa-desc">Add, edit & publish cars</div></div>
+        <div class="qa-ico ico-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/></svg></div>
+        <div><div class="qa-name">Car inventory</div><div class="qa-desc">Add, edit & publish listings</div></div>
       </div>
       <div class="qa" onclick="exportCSV()">
         <div class="qa-ico ico-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-        <div><div class="qa-name">Export All Data</div><div class="qa-desc">Download leads as CSV</div></div>
+        <div><div class="qa-name">Export leads</div><div class="qa-desc">Download as CSV</div></div>
       </div>
     </div>
 
-    <!-- Submissions table -->
     <div class="card">
       <div class="card-head">
         <div class="card-head-l">
-          <div class="card-title">Submissions</div>
+          <div class="card-title">Recent submissions</div>
           <div class="card-cnt" id="ov-cnt">0 entries</div>
         </div>
         <div class="card-head-r">
-          <div class="srch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" id="srch" placeholder="Search…" oninput="renderTable()"></div>
+          <div class="srch">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="srch" placeholder="Search…" oninput="renderTable()">
+          </div>
           <select class="f-sel" id="tf" onchange="renderTable()">
-            <option value="all">All Types</option>
+            <option value="all">All types</option>
             <option value="ins">Insurance</option>
             <option value="fin">Finance</option>
             <option value="partForm">Parts</option>
@@ -426,19 +178,19 @@
       </div>
       <div class="t-wrap">
         <table>
-          <thead><tr><th>Date</th><th>Type</th><th>Customer</th><th>Contact</th><th>Details</th><th>Status</th><th>Flag</th><th></th></tr></thead>
-          <tbody id="t-body"><tr><td colspan="8"><div class="empty"><p>Loading…</p></div></td></tr></tbody>
+          <thead><tr><th>Date</th><th>Type</th><th>Customer</th><th>Contact</th><th>Details</th><th>Status</th><th></th><th></th></tr></thead>
+          <tbody id="t-body"><tr><td colspan="8"><div class="empty">Loading…</div></td></tr></tbody>
         </table>
       </div>
     </div>
   </div>
 
-  <!-- ═══ LEADS ═══ -->
+  <!-- Leads -->
   <div class="page" id="view-leads" style="display:none">
     <div class="card">
       <div class="card-head">
         <div class="card-head-l">
-          <div class="card-title">Lead Pipeline</div>
+          <div class="card-title">Lead pipeline</div>
           <div class="card-cnt" id="leads-cnt">0 leads</div>
         </div>
         <div class="card-head-r">
@@ -453,500 +205,165 @@
       </div>
       <div class="t-wrap">
         <table>
-          <thead><tr><th>Date</th><th>Customer</th><th>Contact</th><th>Interest</th><th>Type</th><th>Status</th><th>Priority</th><th></th></tr></thead>
-          <tbody id="leads-body"><tr><td colspan="8"><div class="empty"><p>Loading…</p></div></td></tr></tbody>
+          <thead><tr><th>Date</th><th>Customer</th><th>Contact</th><th>Interest</th><th>Type</th><th>Status</th><th></th><th></th></tr></thead>
+          <tbody id="leads-body"><tr><td colspan="8"><div class="empty">Loading…</div></td></tr></tbody>
         </table>
       </div>
     </div>
   </div>
 
-  <!-- ═══ INVENTORY ═══ -->
+  <!-- Inventory -->
   <div class="page" id="view-inventory" style="display:none">
-    <div class="card">
-      <div class="card-head">
-        <div class="card-head-l">
-          <div class="card-title">Car Inventory</div>
-          <div class="card-cnt" id="inv-cnt">0 cars</div>
-        </div>
-        <div class="card-head-r">
-          <div class="srch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" id="inv-srch" placeholder="Search cars…" oninput="renderInv()"></div>
-          <select class="f-sel" id="inv-type" onchange="renderInv()">
-            <option value="new">New Cars</option>
-            <option value="used">Used Cars</option>
-          </select>
-        </div>
+    <div class="inv-stats" id="inv-stats"></div>
+
+    <div class="inv-toolbar">
+      <div class="tab-row" id="inv-type-tabs">
+        <button class="tab on" onclick="setInvType('new',this)">New cars</button>
+        <button class="tab" onclick="setInvType('used',this)">Used cars</button>
       </div>
+      <div class="srch">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="inv-srch" placeholder="Search brand or model…" oninput="renderInv()">
+      </div>
+      <select class="f-sel" id="inv-brand" onchange="renderInv()"><option value="all">All brands</option></select>
+      <select class="f-sel" id="inv-fuel" onchange="renderInv()">
+        <option value="all">All fuel</option>
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Hybrid">Hybrid</option>
+        <option value="Electric">Electric</option>
+      </select>
+      <select class="f-sel" id="inv-body" onchange="renderInv()">
+        <option value="all">All body</option>
+        <option value="SUV">SUV</option>
+        <option value="Sedan">Sedan</option>
+        <option value="Hatchback">Hatchback</option>
+        <option value="MPV">MPV</option>
+      </select>
+      <select class="f-sel" id="inv-sort" onchange="renderInv()">
+        <option value="name">Sort: Name</option>
+        <option value="price-asc">Price ↑</option>
+        <option value="price-desc">Price ↓</option>
+        <option value="year">Year</option>
+      </select>
+      <div class="view-toggle">
+        <button class="on" data-view="grid" onclick="setInvView('grid')" title="Grid view">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        </button>
+        <button data-view="table" onclick="setInvView('table')" title="Table view">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        </button>
+      </div>
+      <span class="card-cnt" id="inv-cnt">0 cars</span>
+    </div>
+
+    <div class="inv-grid" id="inv-grid"></div>
+
+    <div class="card" id="inv-table-wrap" style="display:none;margin-top:0">
       <div class="t-wrap">
         <table>
-          <thead><tr><th>#</th><th>Vehicle</th><th>Year</th><th>Fuel</th><th>Price / Tier</th><th>Availability</th><th>Actions</th></tr></thead>
+          <thead><tr><th>#</th><th>Vehicle</th><th>Year</th><th>Fuel</th><th>Price</th><th>Status</th><th>Actions</th></tr></thead>
           <tbody id="inv-body"></tbody>
         </table>
       </div>
     </div>
   </div>
 
-  <!-- ═══ WORKSPACE ═══ -->
+  <!-- Content -->
+  <div class="page" id="view-content" style="display:none">
+    <div class="tab-row" id="content-tabs" style="margin-bottom:14px">
+      <button class="tab on" onclick="setContentTab('videos',this)">Videos</button>
+      <button class="tab" onclick="setContentTab('services',this)">Services</button>
+      <button class="tab" onclick="setContentTab('charging',this)">Charging map</button>
+      <button class="tab" onclick="setContentTab('homepage',this)">Homepage</button>
+    </div>
+    <div class="card" style="padding:16px 18px" id="content-panel"></div>
+  </div>
+
+  <!-- Brands -->
+  <div class="page" id="view-brands" style="display:none">
+    <div id="brands-panel"></div>
+  </div>
+
+  <!-- Media -->
+  <div class="page" id="view-media" style="display:none">
+    <p class="section-hint" style="margin-bottom:12px">Images uploaded from the car editor or elsewhere. Copy URL to use in listings.</p>
+    <div class="media-grid" id="media-grid"></div>
+  </div>
+
+  <!-- Settings -->
+  <div class="page" id="view-settings" style="display:none">
+    <div class="card" style="padding:18px" id="settings-form"></div>
+  </div>
+
+  <!-- Workspace -->
   <div class="page" id="view-workspace" style="display:none">
     <div class="ws-grid">
       <div class="card">
-        <div class="card-head"><div class="card-title">Team Notices</div><span style="font-size:11px;color:var(--text-3)">All team members</span></div>
+        <div class="card-head"><div class="card-title">Team notices</div></div>
         <div style="padding:14px">
           <div style="display:flex;gap:6px;margin-bottom:12px">
             <input type="text" id="notice-inp" class="form-inp" style="flex:1" placeholder="Post an announcement…">
             <button class="btn btn-dark" onclick="postNotice()">Post</button>
           </div>
-          <div id="notices-list" style="display:flex;flex-direction:column;gap:7px"></div>
+          <div id="notices-list"></div>
         </div>
       </div>
       <div class="card">
-        <div class="card-head"><div class="card-title">To-Do</div></div>
+        <div class="card-head"><div class="card-title">To-do</div></div>
         <div style="padding:14px">
           <div style="display:flex;gap:6px;margin-bottom:12px">
             <input type="text" id="todo-inp" class="form-inp" style="flex:1" placeholder="Add a task…">
             <button class="btn btn-dark" onclick="addTodo()">Add</button>
           </div>
-          <div id="todos-active" style="display:flex;flex-direction:column;gap:5px;margin-bottom:12px"></div>
-          <div style="font-size:10.5px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:7px">Completed</div>
-          <div id="todos-done" style="display:flex;flex-direction:column;gap:5px;opacity:0.55"></div>
+          <div id="todos-active" style="margin-bottom:12px"></div>
+          <div style="font-size:10.5px;font-weight:600;color:var(--text-3);text-transform:uppercase;margin-bottom:7px">Completed</div>
+          <div id="todos-done" style="opacity:.55"></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══ DETAIL MODAL ═══ -->
+<!-- Lead detail modal -->
 <div class="m-overlay" id="m-detail" onclick="if(event.target===this)closeModal()">
   <div class="modal">
     <div class="m-head">
-      <div class="m-head-l">
-        <div class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div><div class="m-title" id="m-title">Submission</div><div class="m-sub" id="m-sub">Details</div></div>
-      </div>
-      <button class="m-close" onclick="closeModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div><div class="m-title" id="m-title">Submission</div><div style="font-size:12px;color:var(--text-3);margin-top:2px" id="m-sub"></div></div>
+      <button class="m-close" onclick="closeModal()">×</button>
     </div>
-    <div class="m-body" id="m-body"></div>
+    <div class="m-body kv-list" id="m-body"></div>
     <div class="m-foot" id="m-foot"></div>
   </div>
 </div>
 
-<!-- ═══ EDIT JSON MODAL ═══ -->
-<div class="m-overlay" id="m-edit" onclick="if(event.target===this)this.classList.remove('on')">
-  <div class="modal">
-    <div class="m-head">
-      <div class="m-head-l">
-        <div class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-        <div><div class="m-title">Edit Car</div><div class="m-sub">JSON — local until you publish</div></div>
+<!-- Car editor drawer -->
+<div class="drawer-overlay" id="car-drawer" onclick="if(event.target===this)closeCarEditor()">
+  <div class="drawer" onclick="event.stopPropagation()">
+    <div class="drawer-head">
+      <div>
+        <div class="drawer-title" id="drawer-title">Edit car</div>
+        <div class="drawer-sub" id="drawer-sub"></div>
       </div>
-      <button class="m-close" onclick="document.getElementById('m-edit').classList.remove('on')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <button class="m-close" onclick="closeCarEditor()">×</button>
     </div>
-    <div class="m-body">
-      <textarea class="ta-json" id="car-json"></textarea>
-      <button class="btn btn-dark btn-full" onclick="saveJson()">Save to Memory</button>
+    <div class="drawer-tabs">
+      <button class="drawer-tab on" data-tab="basics" onclick="setEditorTab('basics')">Basics</button>
+      <button class="drawer-tab" data-tab="pricing" onclick="setEditorTab('pricing')">Pricing</button>
+      <button class="drawer-tab" data-tab="media" onclick="setEditorTab('media')">Photos</button>
+      <button class="drawer-tab" data-tab="specs" onclick="setEditorTab('specs')" id="tab-specs">Specs</button>
+      <button class="drawer-tab" data-tab="content" onclick="setEditorTab('content')">Content</button>
+    </div>
+    <div class="drawer-body" id="editor-panes"></div>
+    <div class="drawer-foot">
+      <button class="btn" onclick="closeCarEditor()">Cancel</button>
+      <button class="btn btn-red" onclick="deleteEditingCar()">Delete</button>
+      <button class="btn btn-green" onclick="saveCarEditor()">Save</button>
     </div>
   </div>
 </div>
 
-<!-- ═══ ADD CAR MODAL ═══ -->
-<div class="m-overlay" id="m-add" onclick="if(event.target===this)this.classList.remove('on')">
-  <div class="modal">
-    <div class="m-head">
-      <div class="m-head-l">
-        <div class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        <div><div class="m-title" id="add-title">Add Car</div><div class="m-sub">Fill basics — add full specs via Edit JSON</div></div>
-      </div>
-      <button class="m-close" onclick="document.getElementById('m-add').classList.remove('on')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-    </div>
-    <div class="m-body">
-      <div class="form-grid">
-        <div class="form-field"><label class="form-lbl">Brand</label><input id="add-brand" class="form-inp" placeholder="e.g. Toyota"></div>
-        <div class="form-field"><label class="form-lbl">Model</label><input id="add-model" class="form-inp" placeholder="e.g. Yaris"></div>
-        <div class="form-field"><label class="form-lbl">Year</label><input id="add-year" type="number" class="form-inp" placeholder="2024"></div>
-        <div class="form-field"><label class="form-lbl">Fuel Type</label><input id="add-ftype" class="form-inp" placeholder="Petrol / EV / Hybrid"></div>
-        <div class="form-field full"><label class="form-lbl">Car Image</label><input id="add-img" type="file" accept="image/*" class="form-inp" style="padding:5px 10px"></div>
-      </div>
-      <button class="btn btn-dark btn-full" id="add-btn" onclick="submitAdd(event)">Add Car</button>
-    </div>
-  </div>
-</div>
-<!-- Data Sources -->
-<script src="/assets/js/data/cars-db.js"></script>
-<script src="/assets/js/data/used-cars-db.js"></script>
-
-<script>
-  let allData = [], leadStatuses = {}, leadFlags = {}, carAvail = {}, teamData = { notices: [], todos: [] };
-  let editIdx = -1, editType = 'new', addType = 'new', leadsFilter = 'all';
-
-  // ── SIDEBAR ──
-  function openSb(){ document.getElementById('sidebar').classList.add('open'); document.getElementById('sbOverlay').style.display='block'; }
-  function closeSb(){ document.getElementById('sidebar').classList.remove('open'); document.getElementById('sbOverlay').style.display='none'; }
-
-  // ── ROUTING ──
-  const TABS = ['overview','leads','inventory','workspace'];
-  const TITLES = {overview:'Dashboard',leads:'Leads',inventory:'Inventory',workspace:'Workspace'};
-  const CRUMBS = {overview:'AutoViindu · Overview',leads:'AutoViindu · Lead Pipeline',inventory:'AutoViindu · Cars',workspace:'AutoViindu · Team'};
-
-  function go(tab) {
-    TABS.forEach(t => {
-      const n = document.getElementById('nav-'+t); if(n) n.classList.toggle('on', t===tab);
-      const v = document.getElementById('view-'+t); if(v) v.style.display = t===tab ? 'block' : 'none';
-      const a = document.getElementById('act-'+t); if(a) a.style.display = t===tab ? 'flex' : 'none';
-    });
-    document.getElementById('tb-title').textContent = TITLES[tab];
-    document.getElementById('tb-crumb').textContent = CRUMBS[tab];
-    if(tab==='inventory') renderInv();
-    if(tab==='workspace') renderWs();
-    if(tab==='leads') renderLeads();
-    closeSb();
-  }
-
-  // ── FETCH ──
-  async function fetchData() {
-    const tok = localStorage.getItem('adminToken');
-    if(!tok){ location.href='/login'; return; }
-    try {
-      const r = await fetch('/api/forms/responses',{headers:{'Authorization':'Bearer '+tok}});
-      if(r.status===401){ localStorage.removeItem('adminToken'); location.href='/login'; return; }
-      if(!r.ok) throw new Error('Server '+r.status);
-      const d = await r.json();
-      allData = Array.isArray(d) ? d : [];
-      allData.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
-      const sv = localStorage.getItem('av_ls'); if(sv) leadStatuses = JSON.parse(sv);
-      const sf = localStorage.getItem('av_lf'); if(sf) leadFlags = JSON.parse(sf);
-      const sa = localStorage.getItem('av_ca'); if(sa) carAvail = JSON.parse(sa);
-      updateStats(); renderTable(); updatePipeline();
-      try {
-        const tr = await fetch('/api/admin/team',{headers:{'Authorization':'Bearer '+tok}});
-        if(tr.ok) teamData = await tr.json();
-      } catch(_) {}
-    } catch(err) {
-      document.getElementById('t-body').innerHTML = `<tr><td colspan="8"><div class="empty"><p style="color:var(--red)">Failed: ${err.message}</p></div></td></tr>`;
-    }
-  }
-
-  function updateStats() {
-    const ins = allData.filter(d=>d.formId==='ins').length;
-    const fin = allData.filter(d=>d.formId==='fin').length;
-    const svc = allData.filter(d=>!['ins','fin','partForm'].includes(d.formId)).length;
-    ['total','ins','fin','svc'].forEach((k,i) => {
-      const el = document.getElementById('st-'+k);
-      if(el) el.textContent = [allData.length,ins,fin,svc][i];
-    });
-    document.getElementById('sb-total').textContent = allData.length;
-    document.getElementById('sb-leads').textContent = allData.length;
-  }
-
-  function updatePipeline() {
-    const s = {new:0,contacted:0,qualified:0,closed:0};
-    allData.forEach((_,i) => { const st=leadStatuses[i]||'new'; s[st]=(s[st]||0)+1; });
-    Object.keys(s).forEach(k => { const el=document.getElementById('pp-'+k); if(el) el.textContent=s[k]; });
-  }
-
-  function saveLeadStatus(idx, status) {
-    leadStatuses[idx] = status;
-    localStorage.setItem('av_ls', JSON.stringify(leadStatuses));
-    updatePipeline();
-    // update the select style
-    ['ls-','lls-'].forEach(pfx => {
-      const el = document.getElementById(pfx+idx);
-      if(el) el.className = 'ls s-'+status;
-    });
-  }
-
-  function toggleFlag(idx) {
-    leadFlags[idx] = !leadFlags[idx];
-    localStorage.setItem('av_lf', JSON.stringify(leadFlags));
-    ['flag-','lflag-'].forEach(pfx => {
-      const el = document.getElementById(pfx+idx);
-      if(el) {
-        el.classList.toggle('on', leadFlags[idx]);
-        el.querySelector('svg').setAttribute('fill', leadFlags[idx]?'currentColor':'none');
-      }
-    });
-  }
-
-  // ── HELPERS ──
-  function badge(formId) {
-    if(formId==='ins') return '<span class="badge bg-b">Insurance</span>';
-    if(formId==='fin') return '<span class="badge bg-a">Finance</span>';
-    if(formId==='partForm') return '<span class="badge bg-g">Parts</span>';
-    return '<span class="badge bg-p">Service</span>';
-  }
-
-  function initials(name) {
-    if(!name||name==='-') return '?';
-    return name.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
-  }
-
-  function parseRow(row) {
-    let name='-', contact='-', main='-';
-    for(const k of Object.keys(row)) {
-      const kl=k.toLowerCase(), v=String(row[k]||'').trim();
-      if(!v) continue;
-      if(name==='-'&&kl.includes('name')) name=v;
-      if(contact==='-'&&(kl.includes('phone')||kl.includes('mobile')||kl.includes('email'))) contact=v;
-      if(main==='-'&&(kl.includes('brand')||kl.includes('model')||kl.includes('service')||kl.includes('item')||kl.includes('vehicle'))) main=v;
-    }
-    return {name,contact,main};
-  }
-
-  // ── RENDER TABLE ──
-  function renderTable() {
-    const filter = document.getElementById('tf').value;
-    const srch = document.getElementById('srch').value.toLowerCase();
-    let data = allData.filter(d => {
-      if(filter==='service') return !['ins','fin','partForm'].includes(d.formId);
-      return filter==='all' || d.formId===filter;
-    });
-    if(srch) data = data.filter(d => {
-      const {name,contact} = parseRow(d);
-      return name.toLowerCase().includes(srch)||contact.toLowerCase().includes(srch)||JSON.stringify(d).toLowerCase().includes(srch);
-    });
-    document.getElementById('ov-cnt').textContent = data.length+' entr'+(data.length===1?'y':'ies');
-    const tbody = document.getElementById('t-body');
-    if(!data.length) { tbody.innerHTML=`<tr><td colspan="8"><div class="empty"><p>No submissions found.</p></div></td></tr>`; return; }
-    tbody.innerHTML = data.map(row => {
-      const idx = allData.indexOf(row);
-      const dt = row.timestamp ? new Date(row.timestamp) : null;
-      const ds = dt ? dt.toLocaleDateString('en-GB',{day:'2-digit',month:'short'}) : '–';
-      const ts = dt ? dt.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}) : '';
-      const {name,contact,main} = parseRow(row);
-      const st = leadStatuses[idx]||'new';
-      const fl = leadFlags[idx]||false;
-      const ms = main.length>32?main.slice(0,32)+'…':main;
-      return `<tr onclick="openModal(${idx})">
-        <td><div class="c-mono">${ds}</div><div style="font-size:11px;color:var(--text-3)">${ts}</div></td>
-        <td>${badge(row.formId)}</td>
-        <td><div style="display:flex;align-items:center;gap:7px"><div class="avatar">${initials(name)}</div><span class="c-bold">${name}</span></div></td>
-        <td class="c-dim">${contact}</td>
-        <td class="c-dim" style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${ms}</td>
-        <td onclick="event.stopPropagation()">
-          <select id="ls-${idx}" class="ls s-${st}" onchange="saveLeadStatus(${idx},this.value)">
-            <option value="new" ${st==='new'?'selected':''}>New</option>
-            <option value="contacted" ${st==='contacted'?'selected':''}>Contacted</option>
-            <option value="qualified" ${st==='qualified'?'selected':''}>Qualified</option>
-            <option value="closed" ${st==='closed'?'selected':''}>Closed</option>
-          </select>
-        </td>
-        <td onclick="event.stopPropagation()">
-          <button id="flag-${idx}" class="flag-btn ${fl?'on':''}" onclick="toggleFlag(${idx})">
-            <svg viewBox="0 0 24 24" fill="${fl?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-          </button>
-        </td>
-        <td onclick="event.stopPropagation()"><button class="btn" style="padding:4px 9px;font-size:12px" onclick="openModal(${idx})">View</button></td>
-      </tr>`;
-    }).join('');
-  }
-
-  // ── LEADS VIEW ──
-  function setLeadFilter(f, btn) {
-    leadsFilter = f;
-    document.querySelectorAll('#view-leads .tab').forEach(t => t.classList.remove('on'));
-    btn.classList.add('on');
-    renderLeads();
-  }
-
-  function renderLeads() {
-    let data = allData.filter((_,i) => leadsFilter==='all' || (leadStatuses[i]||'new')===leadsFilter);
-    document.getElementById('leads-cnt').textContent = data.length+' leads';
-    const tbody = document.getElementById('leads-body');
-    if(!data.length) { tbody.innerHTML=`<tr><td colspan="8"><div class="empty"><p>No leads in this stage.</p></div></td></tr>`; return; }
-    tbody.innerHTML = data.map(row => {
-      const idx = allData.indexOf(row);
-      const dt = row.timestamp ? new Date(row.timestamp) : null;
-      const ds = dt ? dt.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'2-digit'}) : '–';
-      const {name,contact,main} = parseRow(row);
-      const st = leadStatuses[idx]||'new';
-      const fl = leadFlags[idx]||false;
-      return `<tr onclick="openModal(${idx})">
-        <td class="c-mono">${ds}</td>
-        <td><div style="display:flex;align-items:center;gap:7px"><div class="avatar">${initials(name)}</div><span class="c-bold">${name}</span></div></td>
-        <td class="c-dim">${contact}</td>
-        <td class="c-dim" style="max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${main}</td>
-        <td>${badge(row.formId)}</td>
-        <td onclick="event.stopPropagation()">
-          <select id="lls-${idx}" class="ls s-${st}" onchange="saveLeadStatus(${idx},this.value);renderLeads()">
-            <option value="new" ${st==='new'?'selected':''}>New</option>
-            <option value="contacted" ${st==='contacted'?'selected':''}>Contacted</option>
-            <option value="qualified" ${st==='qualified'?'selected':''}>Qualified</option>
-            <option value="closed" ${st==='closed'?'selected':''}>Closed</option>
-          </select>
-        </td>
-        <td onclick="event.stopPropagation()">
-          <button id="lflag-${idx}" class="flag-btn ${fl?'on':''}" onclick="toggleFlagL(${idx})">
-            <svg viewBox="0 0 24 24" fill="${fl?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-          </button>
-        </td>
-        <td onclick="event.stopPropagation()"><button class="btn" style="padding:4px 9px;font-size:12px" onclick="openModal(${idx})">View</button></td>
-      </tr>`;
-    }).join('');
-  }
-
-  function toggleFlagL(idx) {
-    leadFlags[idx] = !leadFlags[idx];
-    localStorage.setItem('av_lf', JSON.stringify(leadFlags));
-    renderLeads();
-  }
-
-  // ── MODAL ──
-  function openModal(idx) {
-    const row = allData[idx];
-    const {name, contact} = parseRow(row);
-    document.getElementById('m-title').textContent = name!=='-' ? name : 'Submission';
-    document.getElementById('m-sub').textContent = row.timestamp ? new Date(row.timestamp).toLocaleString() : 'Details';
-    const skip = ['formId','timestamp'];
-    let html = Object.entries(row).filter(([k])=>!skip.includes(k))
-      .map(([k,v])=>`<div class="kv"><div class="kv-k">${k}</div><div class="kv-v">${v||'–'}</div></div>`).join('');
-    document.getElementById('m-body').innerHTML = html || '<p style="color:var(--text-3)">No fields.</p>';
-    // action buttons
-    let foot = '';
-    if(contact.match(/\d{7,}/)) foot += `<a href="tel:${contact}" class="btn btn-green" style="text-decoration:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.85 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Call</a>`;
-    if(contact.includes('@')) foot += `<a href="mailto:${contact}" class="btn" style="text-decoration:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a>`;
-    foot += `<button class="btn" onclick="navigator.clipboard.writeText('${contact}').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy</button>`;
-    document.getElementById('m-foot').innerHTML = foot;
-    document.getElementById('m-detail').classList.add('on');
-  }
-  function closeModal(){ document.getElementById('m-detail').classList.remove('on'); }
-
-  // ── CSV ──
-  function exportCSV() {
-    if(!allData.length){ alert('No data.'); return; }
-    const keys = [...new Set(allData.flatMap(r=>Object.keys(r)))];
-    const rows = [keys.join(','), ...allData.map(r=>keys.map(k=>`"${String(r[k]||'').replace(/"/g,'""')}"`).join(','))];
-    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([rows.join('\n')],{type:'text/csv'})); a.download='autoviindu-leads.csv'; a.click();
-  }
-
-  // ── WORKSPACE ──
-  async function saveTeam() {
-    try {
-      await fetch('/api/admin/team',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+localStorage.getItem('adminToken')},body:JSON.stringify(teamData)});
-    } catch(_) {}
-    renderWs();
-  }
-
-  function renderWs() {
-    const nl = document.getElementById('notices-list');
-    if(nl) nl.innerHTML = [...(teamData.notices||[])].reverse().map(n=>`
-      <div class="notice">
-        <div class="n-meta"><span class="n-author">${n.author||'Admin'}</span><span class="n-date">${new Date(n.date).toLocaleString('en-GB',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}</span></div>
-        <div class="n-text">${n.text}</div>
-      </div>`).join('') || '<p style="font-size:13px;color:var(--text-3)">No notices yet.</p>';
-
-    const ta = document.getElementById('todos-active');
-    const td = document.getElementById('todos-done');
-    const todos = teamData.todos||[];
-    if(ta) ta.innerHTML = todos.filter(t=>!t.completed).map(t=>`
-      <div class="todo"><input type="checkbox" onclick="toggleTodo(${t.id})"><span>${t.text}</span>
-      <button class="ico-btn del" onclick="delTodo(${t.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>`
-    ).join('') || '<p style="font-size:12.5px;color:var(--text-3)">No active tasks.</p>';
-    if(td) td.innerHTML = todos.filter(t=>t.completed).map(t=>`
-      <div class="todo done"><input type="checkbox" checked onclick="toggleTodo(${t.id})"><span>${t.text}</span>
-      <button class="ico-btn del" onclick="delTodo(${t.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>`
-    ).join('') || '<p style="font-size:12.5px;color:var(--text-3)">None yet.</p>';
-  }
-
-  function postNotice(){ const i=document.getElementById('notice-inp'); if(!i.value.trim()) return; (teamData.notices=teamData.notices||[]).push({id:Date.now(),text:i.value.trim(),date:new Date().toISOString(),author:'Admin'}); i.value=''; saveTeam(); }
-  function addTodo(){ const i=document.getElementById('todo-inp'); if(!i.value.trim()) return; (teamData.todos=teamData.todos||[]).push({id:Date.now(),text:i.value.trim(),completed:false}); i.value=''; saveTeam(); }
-  function toggleTodo(id){ const t=teamData.todos.find(t=>t.id===id); if(t){t.completed=!t.completed;saveTeam();} }
-  function delTodo(id){ teamData.todos=teamData.todos.filter(t=>t.id!==id); saveTeam(); }
-
-  // ── INVENTORY ──
-  function cycleAvail(idx, type) {
-    const key = type+'-'+idx;
-    const s = ['available','reserved','sold'];
-    carAvail[key] = s[(s.indexOf(carAvail[key]||'available')+1)%3];
-    localStorage.setItem('av_ca', JSON.stringify(carAvail));
-    renderInv();
-  }
-
-  function renderInv() {
-    const type = document.getElementById('inv-type').value;
-    const srch = (document.getElementById('inv-srch').value||'').toLowerCase();
-    const db = type==='new' ? window.CARS_DB : window.USED_CARS_DB;
-    const tbody = document.getElementById('inv-body');
-    if(!db||!db.length){ tbody.innerHTML=`<tr><td colspan="7"><div class="empty"><p>No cars here.</p></div></td></tr>`; document.getElementById('inv-cnt').textContent='0 cars'; return; }
-    let list = db;
-    if(srch) list = db.filter(c => `${c.brand} ${c.model}`.toLowerCase().includes(srch));
-    document.getElementById('inv-cnt').textContent = list.length+' car'+(list.length===1?'':'s');
-    tbody.innerHTML = list.map(car => {
-      const i = db.indexOf(car);
-      const key = type+'-'+i;
-      const av = carAvail[key]||'available';
-      const avLabel = av.charAt(0).toUpperCase()+av.slice(1);
-      const dotCls = av==='available'?'d-g':av==='reserved'?'d-a':'d-r';
-      return `<tr>
-        <td class="c-mono" style="color:var(--text-3)">#${car.id||i+1}</td>
-        <td><span class="c-bold">${car.brand} ${car.model}</span></td>
-        <td>${car.year||'–'}</td>
-        <td><span class="badge bg-n">${car.type||'–'}</span></td>
-        <td class="c-mono">${type==='new'?(car.budgetTier||'–'):(car.price||'–')}</td>
-        <td><span class="avail av-${av}" onclick="cycleAvail(${i},'${type}')" title="Click to change"><span class="dot ${dotCls}"></span>${avLabel}</span></td>
-        <td>
-          <div style="display:flex;gap:5px">
-            <button class="ico-btn" onclick="openEdit(${i},'${type}')" title="Edit JSON"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></button>
-            <button class="ico-btn del" onclick="delCar(${i},'${type}')" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg></button>
-          </div>
-        </td>
-      </tr>`;
-    }).join('');
-  }
-
-  function delCar(idx, type){ if(!confirm('Delete this car?')) return; (type==='new'?window.CARS_DB:window.USED_CARS_DB).splice(idx,1); renderInv(); }
-  function openEdit(idx, type){ editIdx=idx; editType=type; const db=type==='new'?window.CARS_DB:window.USED_CARS_DB; document.getElementById('car-json').value=JSON.stringify(db[idx],null,2); document.getElementById('m-edit').classList.add('on'); }
-  function saveJson(){ try{ const u=JSON.parse(document.getElementById('car-json').value); (editType==='new'?window.CARS_DB:window.USED_CARS_DB)[editIdx]=u; document.getElementById('m-edit').classList.remove('on'); renderInv(); }catch(_){alert('Invalid JSON.');} }
-
-  async function publishInv() {
-    try {
-      const type = document.getElementById('inv-type').value;
-      const ep = type==='new' ? '/api/admin/inventory' : '/api/admin/inventory/used';
-      const pl = type==='new' ? window.CARS_DB : window.USED_CARS_DB;
-      const r = await fetch(ep,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+localStorage.getItem('adminToken')},body:JSON.stringify(pl)});
-      alert(r.ok ? '✓ Published!' : 'Failed to publish.');
-    } catch(_){ alert('Network error.'); }
-  }
-
-  function openAddCar(type){ addType=type; document.getElementById('add-title').textContent=type==='new'?'Add New Car':'Add Used Car'; ['add-brand','add-model','add-year','add-ftype'].forEach(id=>document.getElementById(id).value=''); document.getElementById('add-img').value=''; document.getElementById('m-add').classList.add('on'); }
-
-  async function submitAdd(e) {
-    const btn=e.currentTarget; btn.disabled=true; btn.textContent='Adding…';
-    try {
-      const brand=document.getElementById('add-brand').value;
-      const model=document.getElementById('add-model').value;
-      const year=document.getElementById('add-year').value;
-      const ftype=document.getElementById('add-ftype').value;
-      const fi=document.getElementById('add-img');
-      let imgUrl='';
-      if(fi.files.length){
-        const f=fi.files[0];
-        const b64=await new Promise(res=>{const r=new FileReader();r.onload=()=>res(r.result);r.readAsDataURL(f);});
-        try{const up=await fetch('/api/admin/upload-image',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+localStorage.getItem('adminToken')},body:JSON.stringify({imageBase64:b64,filename:f.name})});if(up.ok){const d=await up.json();imgUrl=d.url;}}catch(_){}
-      }
-      const brandSlug = (brand || 'unknown').toLowerCase().replace(/[^a-z0-9]+/g, '-');
-      const modelSlug = (model || 'unknown').toLowerCase().replace(/[^a-z0-9]+/g, '-');
-      const slug = `${brandSlug}-${modelSlug}`;
-      const car={
-        id: Date.now()%100000,
-        slug: slug,
-        brand: brand || 'Unknown',
-        brandSlug: brandSlug,
-        model: model || 'Unknown',
-        year: parseInt(year)||new Date().getFullYear(),
-        type: ftype || 'Petrol',
-        images: imgUrl?[imgUrl]:[],
-        bodyType: 'suv',
-        budgetTier: 'Under 50L',
-        isEV: (ftype || '').toLowerCase().includes('ev') || (ftype || '').toLowerCase().includes('electric'),
-        isNew: addType === 'new'
-      };
-      if(addType==='new'){car.variants=[{name:'Base',price:0}];window.CARS_DB.unshift(car);}
-      else{car.price='Rs. 0L';window.USED_CARS_DB.unshift(car);}
-      document.getElementById('m-add').classList.remove('on');
-      document.getElementById('inv-type').value=addType;
-      renderInv();
-    }catch(err){alert('Error: '+err.message);}
-    btn.disabled=false; btn.textContent='Add Car';
-  }
-
-  fetchData();
-</script>
+<script src="/admin/js/admin-app.js"></script>
+<script src="/admin/js/admin-ext.js"></script>
 </body>
 </html>

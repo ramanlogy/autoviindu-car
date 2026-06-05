@@ -1,0 +1,54 @@
+{
+  "categories": [
+    {
+      "id": "cosmetic",
+      "name": "Cosmetic Car Care",
+      "color": "#1a6b2a",
+      "bg": "#eef7f0",
+      "icon": "✨",
+      "items": [
+        "Basic Washing & Cleaning",
+        "Ceramic Coating (9H)",
+        "Paint Protection Film (PPF)",
+        "Full Body Detailing"
+      ]
+    },
+    {
+      "id": "workshop",
+      "name": "Workshop Services",
+      "color": "#b8900e",
+      "bg": "#fdf6e0",
+      "icon": "🔧",
+      "items": [
+        "Hybrid / EV Electrical Work",
+        "Transmission Repair",
+        "Pre-purchase Inspection",
+        "Brake Inspection & Service"
+      ]
+    },
+    {
+      "id": "telematics",
+      "name": "Telematics & GPS",
+      "color": "#1a4db8",
+      "bg": "#eef3fc",
+      "icon": "📡",
+      "items": [
+        "GPS Tracking Units",
+        "Dashcam & Security Kits",
+        "Fleet Management Solutions"
+      ]
+    },
+    {
+      "id": "roadside",
+      "name": "Roadside Assistance",
+      "color": "#d63031",
+      "bg": "#fff0ef",
+      "icon": "🚨",
+      "items": [
+        "Emergency Towing",
+        "Battery Jumpstart",
+        "24/7 SOS Support"
+      ]
+    }
+  ]
+}

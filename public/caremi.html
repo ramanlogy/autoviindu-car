@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car EMI Calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:       #1a1814;
+  --ink-mid:   #5c574f;
+  --ink-light: #a09890;
+  --paper:     #faf8f4;
+  --surface:   #f2ede5;
+  --line:      #e0d9ce;
+  --accent:    #c8511a;
+  --accent-pale: #f5ede7;
+  --good:      #2d6a4f;
+  --good-pale: #eaf4ef;
+  --radius:    4px;
+  --radius-lg: 10px;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  padding: 0 0 60px;
+}
+
+/* ── HEADER ── */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding: 28px 24px 24px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.site-header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 6vw, 40px);
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.site-header h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.site-header p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--ink-mid);
+  letter-spacing: 0.01em;
+}
+
+/* ── LAYOUT ── */
+.layout {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px 24px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* ── SECTION ── */
+.section-title {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 20px;
+}
+
+/* ── FIELD ── */
+.field {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.field:first-of-type { padding-top: 0; }
+
+.field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+.field-name {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.field-hint {
+  font-size: 12px;
+  color: var(--ink-light);
+  font-weight: 300;
+}
+
+.field-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+}
+
+/* ── SLIDER ── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: var(--line);
+  border-radius: 1px;
+  outline: none;
+  cursor: pointer;
+  display: block;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid var(--paper);
+  box-shadow: 0 0 0 1.5px var(--ink);
+  transition: transform 0.15s, background 0.15s;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: var(--accent);
+  box-shadow: 0 0 0 1.5px var(--accent);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.25);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid var(--paper);
+  box-shadow: 0 0 0 1.5px var(--ink);
+  cursor: pointer;
+}
+
+.range-ends {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.range-ends span {
+  font-size: 11px;
+  color: var(--ink-light);
+  font-weight: 300;
+}
+
+/* ── TEXT INPUT ── */
+.text-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.text-entry label {
+  font-size: 12px;
+  color: var(--ink-light);
+  white-space: nowrap;
+  font-weight: 300;
+}
+
+.text-entry input[type="number"] {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--paper);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.text-entry input[type="number"]:focus {
+  border-color: var(--ink-mid);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
+input[type="number"] { -moz-appearance: textfield; }
+
+/* ── RESULT PANEL ── */
+.result-panel {
+  background: var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  margin-top: 36px;
+  color: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+
+.result-panel::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.07);
+  pointer-events: none;
+}
+
+.result-panel::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -30px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+
+.result-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 8px;
+}
+
+.result-emi {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(44px, 10vw, 64px);
+  letter-spacing: -2px;
+  line-height: 1;
+  color: #fff;
+}
+
+.result-period {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 300;
+  margin-top: 6px;
+}
+
+.result-period strong {
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 28px;
+}
+
+.result-cell {
+  background: rgba(255,255,255,0.05);
+  padding: 16px;
+}
+
+.result-cell-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.result-cell-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+/* ── BREAKDOWN ── */
+.breakdown-section {
+  margin-top: 28px;
+  padding: 24px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+}
+
+.progress-track {
+  height: 6px;
+  background: var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 16px 0 10px;
+  display: flex;
+}
+
+.progress-principal {
+  height: 100%;
+  background: var(--ink);
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+.progress-interest {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--ink-mid);
+  font-weight: 300;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.breakdown-rows {
+  margin-top: 20px;
+}
+
+.b-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.b-row:last-child { border-bottom: none; }
+
+.b-row-label { color: var(--ink-mid); font-weight: 300; }
+.b-row-val   { font-weight: 500; color: var(--ink); }
+.b-row-val.accent { color: var(--accent); }
+
+/* ── TIP ── */
+.tip {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.55;
+  border-left: 3px solid;
+}
+
+.tip.good {
+  background: var(--good-pale);
+  border-color: var(--good);
+  color: var(--good);
+}
+
+.tip.warn {
+  background: var(--accent-pale);
+  border-color: var(--accent);
+  color: #8b3a10;
+}
+
+.tip strong { font-weight: 500; }
+
+/* ── RESET ── */
+.reset-row {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.reset-btn {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 11px 28px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  color: var(--ink-mid);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.reset-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--surface);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 460px) {
+  .site-header, .layout { padding-left: 20px; padding-right: 20px; }
+  .result-panel { padding: 24px 20px; }
+  .breakdown-section { padding: 20px; }
+  .result-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Car <em>EMI</em> Calculator</h1>
+  <p>Estimate your monthly payment before you buy or sell</p>
+</header>
+
+<div class="layout">
+
+  <div class="section-title">Loan details</div>
+
+  <!-- Car Price -->
+  <div class="field">
+    <div class="field-row">
+      <span class="field-name">Car price <span class="field-hint">in rupees</span></span>
+      <span class="field-val" id="priceDisplay">5,00,000</span>
+    </div>
+    <input type="range" id="priceSlider" min="100000" max="10000000" step="50000" value="500000">
+    <div class="range-ends"><span>1 Lakh</span><span>1 Crore</span></div>
+    <div class="text-entry">
+      <label>Type amount</label>
+      <input type="number" id="priceInput" min="100000" max="10000000" step="1000" value="500000" placeholder="500000">
+    </div>
+  </div>
+
+  <!-- Down Payment -->
+  <div class="field">
+    <div class="field-row">
+      <span class="field-name">Down payment <span class="field-hint">upfront</span></span>
+      <span class="field-val" id="downDisplay">1,00,000</span>
+    </div>
+    <input type="range" id="downSlider" min="0" max="2000000" step="10000" value="100000">
+    <div class="range-ends"><span>0</span><span>20 Lakh</span></div>
+    <div class="text-entry">
+      <label>Type amount</label>
+      <input type="number" id="downInput" min="0" max="10000000" step="1000" value="100000" placeholder="100000">
+    </div>
+  </div>
+
+  <!-- Tenure -->
+  <div class="field">
+    <div class="field-row">
+      <span class="field-name">Loan tenure</span>
+      <span class="field-val" id="tenureDisplay">5 years</span>
+    </div>
+    <input type="range" id="tenureSlider" min="1" max="7" step="1" value="5">
+    <div class="range-ends"><span>1 year</span><span>7 years</span></div>
+  </div>
+
+  <!-- Interest Rate -->
+  <div class="field">
+    <div class="field-row">
+      <span class="field-name">Interest rate <span class="field-hint">% per year</span></span>
+      <span class="field-val" id="rateDisplay">9.5%</span>
+    </div>
+    <input type="range" id="rateSlider" min="5" max="20" step="0.5" value="9.5">
+    <div class="range-ends"><span>5%</span><span>20%</span></div>
+    <div class="text-entry">
+      <label>Type rate</label>
+      <input type="number" id="rateInput" min="1" max="30" step="0.1" value="9.5" placeholder="9.5">
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div class="result-panel">
+    <div class="result-label">Monthly EMI</div>
+    <div class="result-emi" id="emiDisplay">&#8377;8,355</div>
+    <div class="result-period">per month &nbsp;&mdash;&nbsp; <strong id="monthsText">60 months</strong></div>
+
+    <div class="result-grid">
+      <div class="result-cell">
+        <div class="result-cell-label">Loan amount</div>
+        <div class="result-cell-val" id="r-loan">&#8377;4,00,000</div>
+      </div>
+      <div class="result-cell">
+        <div class="result-cell-label">Total interest</div>
+        <div class="result-cell-val" id="r-int">&#8377;1,01,302</div>
+      </div>
+      <div class="result-cell">
+        <div class="result-cell-label">Total payable</div>
+        <div class="result-cell-val" id="r-total">&#8377;5,01,302</div>
+      </div>
+      <div class="result-cell">
+        <div class="result-cell-label">Interest share</div>
+        <div class="result-cell-val" id="r-pct">25.3%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Breakdown -->
+  <div class="breakdown-section">
+    <div class="section-title">Payment split</div>
+    <div class="progress-track">
+      <div class="progress-principal" id="barP" style="width:70%"></div>
+      <div class="progress-interest" id="barI" style="width:30%"></div>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--ink)"></div>Principal</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div>Interest</div>
+    </div>
+
+    <div class="breakdown-rows">
+      <div class="b-row"><span class="b-row-label">Car price</span><span class="b-row-val" id="d-price">&#8377;5,00,000</span></div>
+      <div class="b-row"><span class="b-row-label">Down payment</span><span class="b-row-val" id="d-down">&#8377;1,00,000</span></div>
+      <div class="b-row"><span class="b-row-label">Loan amount</span><span class="b-row-val" id="d-loan">&#8377;4,00,000</span></div>
+      <div class="b-row"><span class="b-row-label">Total interest paid</span><span class="b-row-val accent" id="d-interest">&#8377;1,01,302</span></div>
+      <div class="b-row"><span class="b-row-label">Total amount paid</span><span class="b-row-val" id="d-total">&#8377;5,01,302</span></div>
+    </div>
+
+    <div class="tip good" id="tipBox">
+      <strong>Tip:</strong> A higher down payment reduces both your EMI and the total interest you pay over the loan period.
+    </div>
+  </div>
+
+  <div class="reset-row">
+    <button class="reset-btn" onclick="resetAll()">Reset to defaults</button>
+  </div>
+
+</div>
+
+<script>
+function inr(n) {
+  return '\u20B9' + Math.round(n).toLocaleString('en-IN');
+}
+
+function calc() {
+  const price  = +document.getElementById('priceSlider').value;
+  const down   = +document.getElementById('downSlider').value;
+  const years  = +document.getElementById('tenureSlider').value;
+  const rate   = +document.getElementById('rateSlider').value;
+
+  const loan   = Math.max(0, price - down);
+  const months = years * 12;
+  const r      = rate / 100 / 12;
+
+  let emi = 0;
+  if (loan > 0) {
+    if (r > 0) {
+      const pow = Math.pow(1 + r, months);
+      emi = loan * r * pow / (pow - 1);
+    } else {
+      emi = loan / months;
+    }
+  }
+
+  const totalPay = emi * months;
+  const totalInt = totalPay - loan;
+  const intPct   = loan > 0 ? (totalInt / totalPay * 100) : 0;
+  const loanPct  = 100 - intPct;
+
+  document.getElementById('emiDisplay').textContent  = inr(emi);
+  document.getElementById('monthsText').textContent  = months + ' months';
+  document.getElementById('r-loan').textContent      = inr(loan);
+  document.getElementById('r-int').textContent       = inr(totalInt);
+  document.getElementById('r-total').textContent     = inr(totalPay);
+  document.getElementById('r-pct').textContent       = intPct.toFixed(1) + '%';
+
+  document.getElementById('barP').style.width = loanPct.toFixed(2) + '%';
+  document.getElementById('barI').style.width = intPct.toFixed(2) + '%';
+
+  document.getElementById('d-price').textContent    = inr(price);
+  document.getElementById('d-down').textContent     = inr(down);
+  document.getElementById('d-loan').textContent     = inr(loan);
+  document.getElementById('d-interest').textContent = inr(totalInt);
+  document.getElementById('d-total').textContent    = inr(totalPay);
+
+  document.getElementById('priceDisplay').textContent  = Math.round(price).toLocaleString('en-IN');
+  document.getElementById('downDisplay').textContent   = Math.round(down).toLocaleString('en-IN');
+  document.getElementById('tenureDisplay').textContent = years + (years === 1 ? ' year' : ' years');
+  document.getElementById('rateDisplay').textContent   = parseFloat(rate).toFixed(1) + '%';
+
+  const tip = document.getElementById('tipBox');
+  const dpRatio = price > 0 ? down / price : 0;
+  if (intPct > 38) {
+    tip.className = 'tip warn';
+    tip.innerHTML = '<strong>Heads up:</strong> More than a third of your payments go to interest. Consider a larger down payment or a shorter loan period.';
+  } else if (dpRatio >= 0.3) {
+    tip.className = 'tip good';
+    tip.innerHTML = '<strong>Well done:</strong> Your down payment is over 30% of the car price. That is a healthy start and keeps your interest low.';
+  } else {
+    tip.className = 'tip good';
+    tip.innerHTML = '<strong>Tip:</strong> A higher down payment reduces both your EMI and the total interest you pay over the loan period.';
+  }
+}
+
+function syncPair(sliderId, inputId, min, max) {
+  const slider = document.getElementById(sliderId);
+  const input  = document.getElementById(inputId);
+  slider.addEventListener('input', () => { input.value = slider.value; calc(); });
+  input.addEventListener('input', () => {
+    let v = parseFloat(input.value) || 0;
+    v = Math.min(Math.max(v, min), max);
+    slider.value = v;
+    calc();
+  });
+  input.addEventListener('blur', () => {
+    let v = parseFloat(input.value) || min;
+    v = Math.min(Math.max(v, min), max);
+    input.value = v;
+    slider.value = v;
+    calc();
+  });
+}
+
+syncPair('priceSlider',  'priceInput',  100000, 10000000);
+syncPair('downSlider',   'downInput',   0,      2000000);
+syncPair('rateSlider',   'rateInput',   5,      20);
+document.getElementById('tenureSlider').addEventListener('input', calc);
+
+function resetAll() {
+  document.getElementById('priceSlider').value  = 500000;
+  document.getElementById('priceInput').value   = 500000;
+  document.getElementById('downSlider').value   = 100000;
+  document.getElementById('downInput').value    = 100000;
+  document.getElementById('tenureSlider').value = 5;
+  document.getElementById('rateSlider').value   = 9.5;
+  document.getElementById('rateInput').value    = 9.5;
+  calc();
+}
+
+calc();
+</script>
+</body>
+</html>

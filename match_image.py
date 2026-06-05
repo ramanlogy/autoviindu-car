@@ -30,17 +30,17 @@ import re, shutil, sys
 from pathlib import Path
 
 # ─── SETTINGS ──────────────────────────────────────────────────────────────
-CARS_DB_FILE  = "frontend/assets/js/data/cars-db.js"
-IMAGES_SRC    = "car_images"
-IMAGES_DST    = "frontend/assets/images/cars"
+CARS_DB_FILE  = "public/assets/js/data/cars-db.js"
+IMAGES_SRC    = "public/assets/images/car_images"
+IMAGES_DST    = "public/assets/images/cars"
 
-# Match the path style already in your file: '/assets/images/cars/...'
-WEB_PREFIX    = "/assets/images/cars"
+# Match the path style already in your file: '/assets/images/car_images/...'
+WEB_PREFIX    = "/assets/images/car_images"
 
 IMAGE_EXT     = [".jpg", ".jpeg", ".png", ".webp"]
 MAX_EXTERIOR  = 4
 MAX_INTERIOR  = 2
-COPY_IMAGES   = True
+COPY_IMAGES   = False
 FORCE_REPLACE = True   # True = always replace existing images arrays
 DRY_RUN       = False  # True = preview only, nothing saved
 # ───────────────────────────────────────────────────────────────────────────
@@ -59,7 +59,7 @@ def find_all_cars(content):
     """
     results = []
 
-    for img_match in re.finditer(r'\bimages\s*:\s*\[', content):
+    for img_match in re.finditer(r'(?:"images"|\bimages)\s*:\s*\[', content):
         img_start = img_match.start()
 
         # Count brackets to find the matching closing ]
@@ -82,10 +82,10 @@ def find_all_cars(content):
 
         brand_val = None
         model_val = None
-        # Find LAST occurrence of brand: '...' and model: '...' before this images block
-        for m in re.finditer(r'''\bbrand\s*:\s*['"]([^'"]+)['"]''', lookback):
+        # Find LAST occurrence of brand/model before this images block (quoted or unquoted keys)
+        for m in re.finditer(r'''(?:\bbrand|"brand")\s*:\s*['"]([^'"]+)['"]''', lookback):
             brand_val = m.group(1)
-        for m in re.finditer(r'''\bmodel\s*:\s*['"]([^'"]+)['"]''', lookback):
+        for m in re.finditer(r'''(?:\bmodel|"model")\s*:\s*['"]([^'"]+)['"]''', lookback):
             model_val = m.group(1)
 
         if brand_val and model_val:
@@ -154,13 +154,14 @@ def get_images(folder):
 
 
 def copy_and_web_path(img_path, brand, model):
-    bs = slugify(brand)
-    ms = slugify(model)
-    dst_dir = Path(IMAGES_DST) / bs / ms
+    rel = img_path.relative_to(Path(IMAGES_SRC))
     if COPY_IMAGES and not DRY_RUN:
+        bs = slugify(brand)
+        ms = slugify(model)
+        dst_dir = Path(IMAGES_DST) / bs / ms
         dst_dir.mkdir(parents=True, exist_ok=True)
         shutil.copy2(img_path, dst_dir / img_path.name)
-    return f"{WEB_PREFIX}/{bs}/{ms}/{img_path.name}"
+    return f"{WEB_PREFIX}/{rel.as_posix()}"
 
 
 def build_images_block(web_paths):

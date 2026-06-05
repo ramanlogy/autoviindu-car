@@ -1,0 +1,22 @@
+{
+  "businessName": "AutoViindu",
+  "phone": "+977-9701076240",
+  "email": "info@autoviindu.com",
+  "address": "Nayabazar, Kathmandu, Nepal",
+  "hours": "Mon–Sat · 9am–6pm",
+  "whatsapp": "+9779701076240",
+  "tagline": "Nepal's trusted car marketplace",
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": "https://youtube.com/@autoviindu"
+  },
+  "emi": {
+    "defaultRate": 9.5,
+    "defaultTenure": 60
+  },
+  "seo": {
+    "defaultTitle": "AutoViindu — Buy & Compare Cars in Nepal",
+    "defaultDescription": "Browse new and used cars, compare specs, calculate EMI, and book services at AutoViindu Kathmandu."
+  }
+}
