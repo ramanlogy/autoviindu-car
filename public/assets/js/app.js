@@ -137,7 +137,7 @@
         </div>
         <button class="cc-wish ${isWished ? 'active' : ''}" onclick="event.stopPropagation();AV.toggleWish('${car.slug}',this)">${IC.heart}</button>
       </div>
-      <img src="${car.images[0]}" alt="${car.brand} ${car.model}" loading="lazy">
+      <img src="${car.images && car.images.length ? car.images[0] : ''}" alt="${car.brand} ${car.model}" loading="lazy">
     </div>
 
     <div class="cc-body">
@@ -145,8 +145,8 @@
       <div class="cc-variant">${car.year} · ${car.body}</div>
 
       <div class="cc-price-block">
-        <div class="cc-price-line">Price <strong>${window.Rs(car.variants[0].price)}</strong></div>
-        <div class="cc-emi">EMI From <strong>Rs. ${car.baseEMI.toLocaleString()}/mo</strong></div>
+        <div class="cc-price-line">Price <strong>${car.variants && car.variants[0] && car.variants[0].price ? window.Rs(car.variants[0].price) : 'TBA'}</strong></div>
+        <div class="cc-emi">EMI From <strong>Rs. ${car.baseEMI ? car.baseEMI.toLocaleString() : 'TBA'}/mo</strong></div>
         <div class="cc-actions">
           <button class="cc-btn-f" onclick="event.stopPropagation();alert('Call: +977-9701076240')">Get Price</button>
           <button class="cc-btn-o ${inCmp ? 'added' : ''}" onclick="event.stopPropagation();AV.toggleCompare('${car.slug}')">
@@ -164,7 +164,7 @@
 
   const HERO_SLIDES = [
     {
-      bg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&h',
+      bg: 'assets/images/car_images/hyundai/ioniq-5/exterior/ioniq-5-exterior-left-side-view.avif',
       badge: 'New Arrival 2024',
       title: 'Hyundai<br><em>IONIQ 5</em>',
       sub: 'Nepal\'s best EV. 481 km range, V2L for load-shedding, 800V ultra-fast charging.',
@@ -177,7 +177,7 @@
       slug: 'hyundai-ioniq5'
     },
     {
-      bg: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=1400&h=700&fit=crop',
+      bg: 'assets/images/car_images/maruti-suzuki/grand-vitara/exterior/maruti-suzuki-grand-vitara-exterior-front-white-bg.jpg',
       badge: 'Best Seller',
       title: 'Hyundai<br><em>Creta</em>',
       sub: 'Nepal\'s #1 mid-size SUV. 160 bhp, dual 10.25" screens, Level 2 ADAS.',
@@ -194,7 +194,7 @@
       slug: 'hyundai-creta'
     },
     {
-      bg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&h=700&fit=crop',
+      bg: 'assets/images/car_images/byd/atto-2/exterior/byd-atto-2-exterior-side-left-white-bg.png',
       badge: 'Hill Conqueror',
       title: 'Toyota<br><em>Fortuner</em>',
       sub: '221mm ground clearance, 500 Nm diesel torque. No road is too rough.',
@@ -208,7 +208,7 @@
       slug: 'toyota-fortuner'
     },
     {
-      bg: 'https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=1400&h=700&fit=crop',
+      bg: 'assets/images/car_images/toyota/land-cruiser-250/exterior/image-6.jpg',
       badge: 'Fuel Champion',
       title: 'Toyota<br><em>Prius PHEV</em>',
       sub: '40+ km/l with solar roof. 26 km pure EV range for your daily commute.',
@@ -258,7 +258,7 @@
       count: '12 cars',
       filter: 'budget-30',
       examples: 'Tata Tiago EV · MG Comet · Alto K10',
-      bg: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=400&h=220&fit=crop', // compact hatchback
+      bg: 'assets/images/car_images/renault/kwid/exterior/Renault_Kwid_Photo_1.webp', // compact hatchback
       overlay: 'linear-gradient(135deg,rgba(15,118,110,.88),rgba(6,78,59,.75))',   // teal-green (budget/eco)
     },
     {
@@ -266,7 +266,7 @@
       count: '34 cars',
       filter: 'budget-50',
       examples: 'Hyundai Venue · Tata Nexon · Kia Sonet',
-      bg: 'https://images.unsplash.com/photo-1619767886558-efdc259b6e09?w=400&h=220&fit=crop', // compact SUV
+      bg: 'assets/images/car_images/hyundai/venue/exterior/hyundai-venue-exterior-rear-white-bg.jpg', // compact SUV
       overlay: 'linear-gradient(135deg,rgba(37,99,235,.88),rgba(29,78,216,.75))',   // royal blue (mid range)
     },
     {
@@ -274,7 +274,7 @@
       count: '28 cars',
       filter: 'budget-80',
       examples: 'Hyundai Creta · Kia Seltos · MG Hector',
-      bg: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=220&fit=crop', // mid SUV
+      bg: 'assets/images/car_images/hyundai/creta/exterior/092828684Hyundai_Creta_FL_1_Price_in_Nepal.jpg', // mid SUV
       overlay: 'linear-gradient(135deg,rgba(202,138,4,.88),rgba(161,98,7,.75))',    // amber-gold (popular segment)
     },
     {
@@ -282,7 +282,7 @@
       count: '18 cars',
       filter: 'budget-120',
       examples: 'Toyota Fortuner · Hyundai Tucson · Kia Sportage',
-      bg: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=400&h=220&fit=crop', // full-size SUV
+      bg: 'assets/images/car_images/toyota/fortuner/exterior/fortuner-exterior-right-front-three-quarter-3.avif', // full-size SUV
       overlay: 'linear-gradient(135deg,rgba(124,45,18,.88),rgba(154,52,18,.75))',   // burnt orange (premium)
     },
     {
@@ -290,7 +290,7 @@
       count: '11 cars',
       filter: 'budget-200',
       examples: 'BMW 3 Series · Mercedes C-Class · Audi A4',
-      bg: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=220&fit=crop', // luxury sedan
+      bg: 'assets/images/car_images/volkswagen/virtus/exterior/volkswagen-virtus-exterior-front-white-bg.jpg', // luxury sedan
       overlay: 'linear-gradient(135deg,rgba(30,27,75,.9),rgba(49,46,129,.78))',     // deep indigo (luxury)
     },
     {
@@ -298,7 +298,7 @@
       count: '9 cars',
       filter: 'budget-2cr+',
       examples: 'BMW X5 · Mercedes GLE · Land Cruiser 300',
-      bg: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=400&h=220&fit=crop', // ultra-luxury
+      bg: 'assets/images/car_images/audi/q7/exterior/audi-q7-exterior-front-white-bg.jpg', // ultra-luxury
       overlay: 'linear-gradient(135deg,rgba(15,15,15,.92),rgba(40,40,40,.82))',     // near-black carbon (ultra-lux)
     },
   ];
@@ -999,7 +999,7 @@
 
     /* ── Similar cars ── */
     function similarCars() {
-      const similar = CARS_DB.filter(c => c.slug !== slug && (c.body === car.body || c.type === car.type)).slice(0, 4);
+      const similar = CARS_DB.filter(c => c.slug && c.slug !== slug && (c.body === car.body || c.type === car.type)).slice(0, 4);
       if (!similar.length) return '';
       return `<div class="dp-similar">
       <div class="section-hd">Similar cars</div>
@@ -1934,7 +1934,7 @@
         </div>
         <button class="cc-wish" onclick="event.stopPropagation();this.classList.toggle('active')">${heartSVG}</button>
       </div>
-      <img src="${car.img}" alt="${car.brand} ${car.model}" loading="lazy">
+      <img src="${car.img || ''}" alt="${car.brand} ${car.model}" loading="lazy">
     </div>
 
     <div class="cc-body">
@@ -1943,10 +1943,10 @@
 
       <div class="cc-price-block">
         <div class="cc-price-line">Asking <strong>${car.price}</strong></div>
-        <div class="cc-emi">EMI From <strong>Rs. ${car.emiEst.toLocaleString()}/mo</strong></div>
+        <div class="cc-emi">EMI From <strong>Rs. ${car.emiEst ? car.emiEst.toLocaleString() : 'TBA'}/mo</strong></div>
         <div class="cc-actions">
-          <button class="cc-btn-f" onclick="event.stopPropagation();AV.openUsedDetail('${car.id}')">Details</button>
-          <button class="cc-btn-o" onclick="event.stopPropagation();alert('Call: +977-9701076240')">Get Price</button>
+           <button class="cc-btn-f" onclick="event.stopPropagation();AV.openUsedDetail('${car.id}')">Details</button>
+           <button class="cc-btn-o" onclick="event.stopPropagation();alert('Call: +977-9701076240')">Get Price</button>
         </div>
       </div>
     </div>

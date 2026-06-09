@@ -548,6 +548,7 @@
 
     /* mobile search — expand header search like desktop */
     @media (max-width: 959px) {
+
       .header-in.search-active #honk-wrapper,
       .header-in.search-active .mob-icons,
       .header-in.search-active .burger,
@@ -4103,6 +4104,7 @@
       overflow: hidden
     }
 
+
     .mm-search-box svg {
       margin: 0 10px;
       color: var(--ink4);
@@ -5553,7 +5555,7 @@
       padding: 80px 0;
       overflow: hidden;
     }
-    
+
     .ev-header {
       display: flex;
       justify-content: space-between;
@@ -5562,11 +5564,11 @@
       gap: 20px;
       flex-wrap: wrap;
     }
-    
+
     .ev-hd-left {
       max-width: 600px;
     }
-    
+
     .ev-eyebrow {
       font-size: 13px;
       font-weight: 800;
@@ -5579,7 +5581,7 @@
       background: rgba(36, 160, 68, 0.1);
       border-radius: var(--pill);
     }
-    
+
     .ev-title {
       font-family: var(--font-h);
       font-size: clamp(28px, 4vw, 40px);
@@ -5589,13 +5591,13 @@
       margin-bottom: 12px;
       letter-spacing: -1px;
     }
-    
+
     .ev-sub {
       font-size: 16px;
       color: var(--ink3);
       line-height: 1.6;
     }
-    
+
     .ev-btn-outline {
       display: inline-flex;
       align-items: center;
@@ -5610,31 +5612,32 @@
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .ev-btn-outline:hover {
       border-color: var(--brand);
       color: var(--brand);
       box-shadow: 0 4px 12px rgba(36, 160, 68, 0.1);
       transform: translateY(-2px);
     }
-    
+
     .ev-modern-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
-    
+
     @media (max-width: 992px) {
       .ev-modern-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
+
     @media (max-width: 640px) {
       .ev-modern-grid {
         grid-template-columns: 1fr;
       }
     }
-    
+
     .ev-modern-card {
       position: relative;
       border-radius: 24px;
@@ -5643,29 +5646,30 @@
       cursor: pointer;
       isolation: isolate;
     }
-    
+
     .ev-modern-card.featured {
       grid-column: span 2;
       aspect-ratio: 2/1;
     }
-    
+
     @media (max-width: 992px) {
       .ev-modern-card.featured {
         grid-column: span 2;
         aspect-ratio: 16/9;
       }
     }
-    
+
     @media (max-width: 640px) {
       .ev-modern-card.featured {
         grid-column: span 1;
         aspect-ratio: 4/5;
       }
+
       .ev-modern-card {
         aspect-ratio: 4/5;
       }
     }
-    
+
     .ev-card-bg {
       position: absolute;
       inset: 0;
@@ -5674,23 +5678,23 @@
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 1;
     }
-    
+
     .ev-card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.9) 100%);
       z-index: 2;
       transition: background 0.4s ease;
     }
-    
+
     .ev-modern-card:hover .ev-card-bg {
       transform: scale(1.08);
     }
-    
+
     .ev-modern-card:hover .ev-card-overlay {
-      background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.95) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.95) 100%);
     }
-    
+
     .ev-card-top {
       position: absolute;
       top: 20px;
@@ -5701,7 +5705,7 @@
       gap: 10px;
       z-index: 3;
     }
-    
+
     .ev-badge {
       padding: 6px 12px;
       border-radius: var(--pill);
@@ -5712,25 +5716,25 @@
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(8px);
       color: #fff;
-      border: 1px solid rgba(255,255,255,0.3);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
-    
+
     .ev-badge.live {
       background: var(--brand);
       border-color: var(--brand);
     }
-    
+
     .ev-badge.free {
       background: rgba(255, 255, 255, 0.9);
       color: var(--ink);
       border: none;
     }
-    
+
     .ev-badge.invite {
       background: var(--ink);
-      border-color: rgba(255,255,255,0.2);
+      border-color: rgba(255, 255, 255, 0.2);
     }
-    
+
     .ev-card-content {
       position: absolute;
       bottom: 24px;
@@ -5742,15 +5746,15 @@
       align-items: flex-end;
       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .ev-modern-card:hover .ev-card-content {
       transform: translateY(-50px);
     }
-    
+
     .ev-date-box {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 16px;
       padding: 12px 14px;
       display: flex;
@@ -5760,7 +5764,7 @@
       min-width: 64px;
       flex-shrink: 0;
     }
-    
+
     .ev-day {
       font-family: var(--font-d);
       font-size: 26px;
@@ -5769,18 +5773,18 @@
       line-height: 1;
       margin-bottom: 2px;
     }
-    
+
     .ev-month {
       font-size: 12px;
       font-weight: 700;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.8);
       letter-spacing: 1px;
     }
-    
+
     .ev-info {
       flex: 1;
     }
-    
+
     .ev-card-title {
       font-family: var(--font-h);
       font-size: 22px;
@@ -5789,32 +5793,32 @@
       line-height: 1.2;
       margin-bottom: 10px;
     }
-    
+
     .ev-modern-card.featured .ev-card-title {
       font-size: 28px;
     }
-    
+
     .ev-card-meta {
       display: flex;
       flex-direction: column;
       gap: 6px;
     }
-    
+
     .ev-card-meta span {
       display: flex;
       align-items: center;
       gap: 6px;
       font-size: 13px;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       font-weight: 500;
     }
-    
+
     .ev-modern-card.featured .ev-card-meta {
       flex-direction: row;
       flex-wrap: wrap;
       gap: 16px;
     }
-    
+
     .ev-card-hover {
       position: absolute;
       bottom: 24px;
@@ -5826,25 +5830,26 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       pointer-events: none;
     }
-    
+
     @media (max-width: 480px) {
       .ev-card-hover {
         left: 24px;
       }
+
       .ev-modern-card:hover .ev-card-content {
         transform: translateY(-80px);
       }
     }
-    
+
     .ev-modern-card:hover .ev-card-hover {
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
     }
-    
+
     .ev-card-hover p {
       font-size: 13px;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.8);
       line-height: 1.5;
       margin-bottom: 16px;
       display: -webkit-box;
@@ -5852,7 +5857,7 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    
+
     .ev-rsvp-btn {
       background: #fff;
       color: var(--ink);
@@ -5864,19 +5869,19 @@
       cursor: pointer;
       transition: transform 0.2s, background 0.2s;
     }
-    
+
     .ev-rsvp-btn:hover {
       transform: scale(1.05);
       background: var(--brand);
       color: #fff;
     }
-    
+
     .ev-rsvp-btn.locked {
-      background: rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.5);
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.5);
       cursor: not-allowed;
     }
-    
+
     .ev-rsvp-btn.locked:hover {
       transform: none;
     }
@@ -6182,7 +6187,9 @@
     }
 
     @media (max-width: 900px) {
-      .lf-page-wrap { grid-template-columns: 1fr; }
+      .lf-page-wrap {
+        grid-template-columns: 1fr;
+      }
     }
 
     .lf-sidebar {
@@ -6225,14 +6232,18 @@
       font-family: var(--font-b);
     }
 
-    .lf-clear-btn:hover { background: var(--g-ll); }
+    .lf-clear-btn:hover {
+      background: var(--g-ll);
+    }
 
     .lf-sf-section {
       padding: 14px 16px;
       border-bottom: 1px solid var(--bg3);
     }
 
-    .lf-sf-section:last-child { border-bottom: none; }
+    .lf-sf-section:last-child {
+      border-bottom: none;
+    }
 
     .lf-sf-title {
       font-size: 11px;
@@ -6252,7 +6263,11 @@
       margin-bottom: 8px;
     }
 
-    .lf-price-track { position: relative; height: 28px; margin-bottom: 6px; }
+    .lf-price-track {
+      position: relative;
+      height: 28px;
+      margin-bottom: 6px;
+    }
 
     .lf-range {
       position: absolute;
@@ -6285,7 +6300,12 @@
       margin-top: -7px;
     }
 
-    .lf-budget-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+    .lf-budget-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 10px;
+    }
 
     .sf-budget-btn {
       padding: 4px 10px;
@@ -6307,7 +6327,11 @@
       color: #fff;
     }
 
-    .lf-cb-list { display: flex; flex-direction: column; gap: 2px; }
+    .lf-cb-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
     .sf-cb-label {
       display: flex;
@@ -6323,7 +6347,9 @@
       user-select: none;
     }
 
-    .sf-cb-label:hover { background: var(--bg); }
+    .sf-cb-label:hover {
+      background: var(--bg);
+    }
 
     .sf-cb-label.sf-cb-active {
       background: var(--g-ll);
@@ -6350,7 +6376,11 @@
       color: #fff;
     }
 
-    .lf-pill-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+    .lf-pill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
 
     .lf-pill-btn {
       padding: 6px 11px;
@@ -6379,9 +6409,15 @@
       box-shadow: 0 2px 8px rgba(26, 107, 42, .25);
     }
 
-    .lf-cb-scroll { max-height: 180px; overflow-y: auto; scrollbar-width: thin; }
+    .lf-cb-scroll {
+      max-height: 180px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
 
-    .lf-main { min-width: 0; }
+    .lf-main {
+      min-width: 0;
+    }
 
     .lf-toolbar {
       display: flex;
@@ -6407,7 +6443,9 @@
     }
 
     @media (max-width: 900px) {
-      .lf-filter-mob-btn { display: flex; }
+      .lf-filter-mob-btn {
+        display: flex;
+      }
     }
 
     .lf-badge {
@@ -6484,8 +6522,15 @@
     }
 
     @keyframes lfTagsIn {
-      from { opacity: 0; transform: translateY(-4px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .lf-active-tag {
@@ -6525,8 +6570,15 @@
     }
 
     @keyframes lfCardPop {
-      0% { opacity: .5; transform: scale(.96) translateY(6px); }
-      100% { opacity: 1; transform: scale(1) translateY(0); }
+      0% {
+        opacity: .5;
+        transform: scale(.96) translateY(6px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
     }
 
     .lf-empty-state {
@@ -6537,7 +6589,10 @@
       border: 1px dashed var(--border);
     }
 
-    .lf-empty-icon { font-size: 38px; margin-bottom: 12px; }
+    .lf-empty-icon {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
 
     .lf-empty-title {
       font-size: 18px;
@@ -6561,7 +6616,9 @@
       z-index: 200;
     }
 
-    .lf-overlay.lf-mob-open { display: block; }
+    .lf-overlay.lf-mob-open {
+      display: block;
+    }
 
     @media (max-width: 900px) {
       .lf-sidebar {
@@ -6578,7 +6635,9 @@
         box-shadow: var(--sh4);
       }
 
-      .lf-sidebar.lf-mob-open { transform: translateX(0); }
+      .lf-sidebar.lf-mob-open {
+        transform: translateX(0);
+      }
     }
 
     .uc-sell-cta {
@@ -6612,8 +6671,131 @@
       margin-bottom: 6px;
     }
 
-    .uc-sell-sub { font-size: 13px; color: rgba(255, 255, 255, .38); }
+    .uc-sell-sub {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .38);
+    }
 
+    .home-cat-header {
+      margin-bottom: 16px;
+    }
+
+    .home-cat-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink1, #1a1a1a);
+      margin: 0 0 4px;
+    }
+
+    .home-cat-sub {
+      font-size: 13px;
+      color: var(--ink3, #888);
+      margin: 0;
+    }
+
+    .home-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .home-pill {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 18px;
+      background: #fff;
+      border: 0.5px solid #e0ddd6;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s, transform 0.12s;
+      min-width: 88px;
+      position: relative;
+    }
+
+    .home-pill:hover {
+      border-color: #C4840A;
+      background: #FEF7E6;
+      transform: translateY(-2px);
+    }
+
+    .home-pill::after {
+      content: '↗';
+      position: absolute;
+      top: 7px;
+      right: 9px;
+      font-size: 9px;
+      color: #C4840A;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .home-pill:hover::after {
+      opacity: 1;
+    }
+
+    .home-pill svg {
+      width: 56px;
+      height: 32px;
+      color: #888;
+      transition: color 0.15s;
+    }
+
+    .home-pill:hover svg {
+      color: #C4840A;
+    }
+
+    .home-pill__label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #666;
+      transition: color 0.15s;
+    }
+
+    .home-pill:hover .home-pill__label {
+      color: #7A5200;
+    }
+
+    .home-cat-header {
+      padding: 28px 0 16px;
+    }
+
+    .home-cat-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--g3);
+      margin-bottom: 6px;
+    }
+
+    .home-cat-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--ink1);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .home-cat-title em {
+      font-style: normal;
+      color: var(--g3);
+      position: relative;
+    }
+
+    .home-cat-title em::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--g3);
+      border-radius: 2px;
+      opacity: 0.4;
+    }
   </style>
 
   <link rel="stylesheet" href="assets/css/home-premium.css">
@@ -6673,8 +6855,9 @@
         </div>
       </div>
 
-      
-      <div class="mobile-search-back" id="mob-search-back" style="display:none; align-items:center; padding-right:12px; cursor:pointer;">
+
+      <div class="mobile-search-back" id="mob-search-back"
+        style="display:none; align-items:center; padding-right:12px; cursor:pointer;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
@@ -6700,28 +6883,37 @@
         <div class="av-item">
           <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">New Cars
             <svg class="av-chev" viewBox="0 0 10 6" fill="none">
-              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
             </svg>
           </button>
           <div class="av-dd" role="menu">
             <div class="av-acc open">
               <button class="av-acc-hd" type="button">Body Type
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'suv'});return false">SUV / Crossover</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'suv'});return false">SUV /
+                  Crossover</a>
                 <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'sedan'});return false">Sedan</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'hatchback'});return false">Hatchback</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'pickup'});return false">Pickup / Truck</a>
+                <a class="av-menu-link" href="#"
+                  onclick="AV.goTo('cars',{filter:'hatchback'});return false">Hatchback</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'pickup'});return false">Pickup /
+                  Truck</a>
                 <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'van'});return false">Van / MPV</a>
               </div>
             </div>
             <div class="av-acc">
               <button class="av-acc-hd" type="button">Fuel Type
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'electric'});return false">Electric (EV)<span class="av-tag av-tag--g">Hot</span></a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'electric'});return false">Electric
+                  (EV)<span class="av-tag av-tag--g">Hot</span></a>
                 <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'hybrid'});return false">Hybrid</a>
                 <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'petrol'});return false">Petrol</a>
                 <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'diesel'});return false">Diesel</a>
@@ -6729,24 +6921,35 @@
             </div>
             <div class="av-acc">
               <button class="av-acc-hd" type="button">Budget
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'under20'});return false">Under Rs 20L</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'20to40'});return false">Rs 20L – 40L</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'40to70'});return false">Rs 40L – 70L</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'70to1cr'});return false">Rs 70L – 1Cr</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'under20'});return false">Under Rs
+                  20L</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'20to40'});return false">Rs 20L –
+                  40L</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'40to70'});return false">Rs 40L –
+                  70L</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'70to1cr'});return false">Rs 70L –
+                  1Cr</a>
                 <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'above1cr'});return false">Rs 1Cr+</a>
               </div>
             </div>
             <div class="av-acc">
               <button class="av-acc-hd" type="button">Quick Finds
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{sort:'latest'});return false">Latest arrivals</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{sort:'bestseller'});return false">Best sellers</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{view:'brands'});return false">Browse by brand</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{sort:'latest'});return false">Latest
+                  arrivals</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{sort:'bestseller'});return false">Best
+                  sellers</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{view:'brands'});return false">Browse by
+                  brand</a>
               </div>
             </div>
             <a class="av-menu-cta" href="#" onclick="AV.goTo('cars');return false">View all new cars →</a>
@@ -6755,33 +6958,45 @@
 
         <div class="av-item">
           <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">Used Cars
-            <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="av-chev" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </button>
           <div class="av-dd" role="menu">
             <div class="av-acc open">
               <button class="av-acc-hd" type="button">Browse
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
                 <a class="av-menu-link" href="#" onclick="AV.goTo('used');return false">All used cars</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'certified'});return false">Certified used<span class="av-tag av-tag--g">Verified</span></a>
-                <a class="av-menu-link" href="#" onclick="alert('Sell enquiry: +977-9701076240');return false">Sell your car</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'certified'});return false">Certified
+                  used<span class="av-tag av-tag--g">Verified</span></a>
+                <a class="av-menu-link" href="#" onclick="alert('Sell enquiry: +977-9701076240');return false">Sell your
+                  car</a>
               </div>
             </div>
             <div class="av-acc">
               <button class="av-acc-hd" type="button">Filter by
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
                 <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'year'});return false">Year</a>
                 <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'price'});return false">Price range</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'mileage'});return false">Low mileage</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'mileage'});return false">Low
+                  mileage</a>
                 <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'brand'});return false">Brand</a>
               </div>
             </div>
             <div class="av-acc">
               <button class="av-acc-hd" type="button">Finance
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
                 <a class="av-menu-link" href="caremi.html">EMI calculator</a>
@@ -6795,29 +7010,43 @@
 
         <div class="av-item">
           <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">Compare
-            <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="av-chev" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </button>
           <div class="av-dd" role="menu">
             <div class="av-acc open">
               <button class="av-acc-hd" type="button">Compare Tools
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
                 <a class="av-menu-link" href="#" onclick="AV.goTo('compare');return false">New car comparison</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{type:'used'});return false">Used car comparison</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{preset:'ev_vs_petrol'});return false">EV vs Petrol<span class="av-tag av-tag--g">Popular</span></a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{mode:'multi'});return false">Compare up to 5 cars</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{type:'used'});return false">Used car
+                  comparison</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{preset:'ev_vs_petrol'});return false">EV vs
+                  Petrol<span class="av-tag av-tag--g">Popular</span></a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{mode:'multi'});return false">Compare up to
+                  5 cars</a>
               </div>
             </div>
             <div class="av-acc">
               <button class="av-acc-hd" type="button">Popular Matchups
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{preset:'creta_vs_seltos'});return false">Creta vs Seltos</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{preset:'nexon_ev_vs_byd_atto3'});return false">Nexon EV vs Atto 3</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{preset:'swift_vs_i20'});return false">Swift vs i20</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{preset:'fortuner_vs_endeavour'});return false">Fortuner vs Endeavour</a>
+                <a class="av-menu-link" href="#"
+                  onclick="AV.goTo('compare',{preset:'creta_vs_seltos'});return false">Creta vs Seltos</a>
+                <a class="av-menu-link" href="#"
+                  onclick="AV.goTo('compare',{preset:'nexon_ev_vs_byd_atto3'});return false">Nexon EV vs Atto 3</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{preset:'swift_vs_i20'});return false">Swift
+                  vs i20</a>
+                <a class="av-menu-link" href="#"
+                  onclick="AV.goTo('compare',{preset:'fortuner_vs_endeavour'});return false">Fortuner vs Endeavour</a>
               </div>
             </div>
             <a class="av-menu-cta" href="#" onclick="AV.goTo('compare');return false">Open compare tool →</a>
@@ -6826,12 +7055,17 @@
 
         <div class="av-item">
           <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">Services
-            <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="av-chev" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </button>
           <div class="av-dd" role="menu">
             <div class="av-acc open">
               <button class="av-acc-hd" type="button">Vehicle Care
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
                 <a class="av-menu-link" href="maintenance-repairs.html">Maintenance &amp; repairs</a>
@@ -6841,7 +7075,9 @@
             </div>
             <div class="av-acc">
               <button class="av-acc-hd" type="button">Paperwork &amp; Finance
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
                 <a class="av-menu-link" href="dotm-services.html">DOTM services</a>
@@ -6854,12 +7090,17 @@
 
         <div class="av-item">
           <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">News &amp; Reviews
-            <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="av-chev" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </button>
           <div class="av-dd av-dd--r" role="menu">
             <div class="av-acc open">
               <button class="av-acc-hd" type="button">Watch &amp; Read
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
                 <a class="av-menu-link" href="videos.html">Videos</a>
@@ -6870,11 +7111,15 @@
             </div>
             <div class="av-acc">
               <button class="av-acc-hd" type="button">Guides
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('guide',{topic:'buying'});return false">Buying guide</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('guide',{topic:'maintenance'});return false">Maintenance tips</a>
+                <a class="av-menu-link" href="#" onclick="AV.goTo('guide',{topic:'buying'});return false">Buying
+                  guide</a>
+                <a class="av-menu-link" href="#"
+                  onclick="AV.goTo('guide',{topic:'maintenance'});return false">Maintenance tips</a>
                 <a class="av-menu-link" href="#" onclick="AV.goTo('awards');return false">Nepal car awards</a>
               </div>
             </div>
@@ -6884,12 +7129,17 @@
 
         <div class="av-item">
           <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">Tools
-            <svg class="av-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="av-chev" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </button>
           <div class="av-dd av-dd--r" role="menu">
             <div class="av-acc open">
               <button class="av-acc-hd" type="button">Smart Tools
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
               <div class="av-acc-body">
                 <a class="av-menu-link" href="whatcarcanyouaffoard.html">What car can you afford?</a>
@@ -7012,7 +7262,8 @@
           <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'brand'});closeMM()">By Brand</div>
           <div class="mm-sub-label">Finance</div>
           <div class="mm-sub-link" onclick="window.location.href='caremi.html';closeMM()">EMI Calculator</div>
-          <div class="mm-sub-link" onclick="window.location.href='whatcarcanyouaffoard.html';closeMM()">What Car Can You Afford?</div>
+          <div class="mm-sub-link" onclick="window.location.href='whatcarcanyouaffoard.html';closeMM()">What Car Can You
+            Afford?</div>
           <div class="mm-sub-link" onclick="window.location.href='/insurance-finance.html';closeMM()">Banks &amp;
             Finance Options</div>
         </div>
@@ -7109,7 +7360,8 @@
           </svg>
         </button>
         <div class="mm-sub" id="mm-tools-sub">
-          <div class="mm-sub-link" onclick="window.location.href='whatcarcanyouaffoard.html';closeMM()">What Car Can You Afford?</div>
+          <div class="mm-sub-link" onclick="window.location.href='whatcarcanyouaffoard.html';closeMM()">What Car Can You
+            Afford?</div>
           <div class="mm-sub-link" onclick="window.location.href='caremi.html';closeMM()">EMI Calculator</div>
           <div class="mm-sub-link" onclick="window.location.href='chargingstation.html';closeMM()">EV Charging Map</div>
         </div>
@@ -7164,17 +7416,33 @@
 
         <!-- Brand -->
         <div class="footer-brand-col">
-          <img src="assets/images/cars/logo.PNG" alt="AutoViindu" class="footer-logo-img" style="height:36px;width:auto;margin-bottom:16px">
-          <p class="footer-desc">Nepal's trusted automotive platform — real prices, full specs, and expert guidance from search to service.</p>
+          <img src="assets/images/cars/logo.PNG" alt="AutoViindu" class="footer-logo-img"
+            style="height:36px;width:auto;margin-bottom:16px">
+          <p class="footer-desc">Nepal's trusted automotive platform — real prices, full specs, and expert guidance from
+            search to service.</p>
           <div class="footer-social">
-            <a class="fsoc" href="https://www.facebook.com/profile.php?id=61576845804927" title="Facebook" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.4)" width="14" height="14"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            <a class="fsoc" href="https://www.facebook.com/profile.php?id=61576845804927" title="Facebook"
+              target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.4)" width="14" height="14">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
             </a>
-            <a class="fsoc" href="https://www.instagram.com/autoviindu/" title="Instagram" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <a class="fsoc" href="https://www.instagram.com/autoviindu/" title="Instagram" target="_blank"
+              rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14"
+                height="14">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
             </a>
             <a class="fsoc" href="https://www.youtube.com/@autoviindu" title="YouTube" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14" height="14"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="rgba(255,255,255,.4)" stroke="none"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14"
+                height="14">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="rgba(255,255,255,.4)" stroke="none" />
+              </svg>
             </a>
           </div>
         </div>
@@ -7290,5 +7558,6 @@
   <script>lucide.createIcons();</script>
 
 
-  </body>
+</body>
+
 </html>
