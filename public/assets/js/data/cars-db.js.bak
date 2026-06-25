@@ -7,6 +7,7 @@
                  Under 50L / Above 50L  (1L = NPR 100,000)
 ═══════════════════════════════════════════════════════ */
 window.CARS_DB = [
+<<<<<<< HEAD
 
 /* ─────────────────────────────────────────────────────
    1. SUZUKI SWIFT (EPIC NEW — Z-SERIES)
@@ -43,6 +44,37 @@ window.CARS_DB = [
     { name: 'Sizzling Red / Midnight Black Roof',       hex: '#C0392B' },
     { name: 'Luster Blue / Midnight Black Roof',        hex: '#2471A3' },
     { name: 'Pearl Arctic White / Midnight Black Roof', hex: '#F2F3F4' },
+=======
+  {
+    "id": 8,
+    "slug": "samjhana cars",
+    "brand": "Suzuki",
+    "brandSlug": "suzuki",
+    "model": "Swift",
+    "year": 2024,
+    "type": "Petrol",
+    "bodyType": "hatchback",
+    "body": "Hatchback",
+    "badge": "new",
+    "budgetTier": "Under 50L",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": true,
+    "tagline": "ma lage sahar ",
+    "rating": 4.2,
+    "reviews": 210,
+    "expertScore": 8,
+    "baseEMI": 47000,
+    "overview": "The Epic New Suzuki Swift arrives with the all-new 1.2L Z-Series engine delivering best-in-segment fuel efficiency of 25.75 km/l (AMT). It raises the safety bar by making 6 airbags standard across every variant, paired with ESP and Hill Hold Assist as standard. Sporty all-black interiors, a SmartPlay Pro+ infotainment system, and Suzuki Connect telematics make it the most feature-rich Swift yet.",
+    "images": [
+    '/assets/images/cars/suzuki/swift/suzuki-swift-exterior-front-white-bg.jpg',
+    '/assets/images/cars/suzuki/swift/suzuki-swift-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/suzuki/swift/suzuki-swift-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/suzuki/swift/suzuki-swift-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/suzuki/swift/suzuki-swift-interior-cargo-space.jpg',
+    '/assets/images/cars/suzuki/swift/suzuki-swift-interior-dashboard.jpg',
+>>>>>>> 95e6b8b (clean project structure)
   ],
   variants: [
     {
@@ -4357,6 +4389,7 @@ window.CARS_DB = [
     "Height": "1,877 mm", "Wheelbase": "2,680 mm", "Ground Clearance": "180 mm",
     "Airbags": "2–4",
   },
+<<<<<<< HEAD
   pros: ["Most affordable 7-seater diesel", "Proven reliability in Nepal", "High ground clearance for body-on-frame", "Government fleet trusted", "Easy rural serviceability"],
   cons: ["Only 2 airbags on base", "Basic interior", "No AMT or AT", "Dated platform vs rivals"],
   highlights: ["7 Seats", "Diesel Only", "16.4 km/l", "Proven Rural Reliability"],
@@ -4379,10 +4412,29 @@ window.CARS_DB = [
   overview: "The Deepal S07 is Changan's premium EV brand entry into Nepal, offering a 77kWh battery, 520km CLTC range, ADAS Level 2, a massive 15.6\" rotating touchscreen, and dual-motor AWD option. Built on Changan's EPA platform, it rivals the BYD Atto 3 with superior range and tech.",
   images: [
     '/assets/images/cars/deepal/s07/S07_green.png',
+=======
+  {
+    "id": 701,
+    "slug": "deepal-s07-2025",
+    "brand": "Deepal",
+    "model": "S07",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Mid-size Electric SUV",
+    "badge": "new",
+    "tagline": "Changan's flagship EV with 520km range and Level 2 ADAS for Nepal",
+    "rating": 4.3,
+    "reviews": 187,
+    "expertScore": 8.2,
+    "baseEMI": 88000,
+    "overview": "The Deepal S07 is Changan's premium EV brand entry into Nepal, offering a 77kWh battery, 520km CLTC range, ADAS Level 2, a massive 15.6\" rotating touchscreen, and dual-motor AWD option. Built on Changan's EPA platform, it rivals the BYD Atto 3 with superior range and tech.",
+    "images": [
+>>>>>>> 95e6b8b (clean project structure)
     '/assets/images/cars/deepal/s07/deepal-s07-exterior-front.jpg',
     '/assets/images/cars/deepal/s07/deepal-s07-exterior-rear.jpg',
     '/assets/images/cars/deepal/s07/deepal-s07-exterior-side-left-white-bg.png',
     '/assets/images/cars/deepal/s07/deepal-s07-interior-dashboard.jpg',
+<<<<<<< HEAD
     '/assets/images/cars/deepal/s07/deepal-s07-interior-seats-front.jpg',
   ],
   colors: [
@@ -4443,6 +4495,157 @@ window.CARS_DB = [
   overview: "The Deepal L07 is a Range-Extended EV (REEV) sedan — it runs on electric motors with a small petrol engine acting solely as a generator, never driving the wheels directly. This delivers EV smoothness with 1,000km+ combined range, eliminating range anxiety for Nepal's long-distance drivers.",
   images: [
     '/assets/images/cars/deepal/l07/L07_green.png',
+=======
+    '/assets/images/cars/deepal/s07/deepal-s07-interior-seats-rear.jpg',
+  ],
+    "colors": [
+      {
+        "name": "Crystal White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Cosmos Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Sky Blue",
+        "hex": "#4A90D9"
+      },
+      {
+        "name": "Titanium Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Aurora Green",
+        "hex": "#2D5A3D"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard Range RWD",
+        "price": 7499000,
+        "label": "Rs. 79.90L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "61kWh Battery",
+          "420km CLTC Range",
+          "6 Airbags",
+          "15.6\" Rotating Touchscreen",
+          "ADAS Level 1",
+          "Rear Camera + Sensors",
+          "18\" Alloy Wheels",
+          "Wireless CarPlay"
+        ],
+        "specs": {
+          "power": "218 hp",
+          "torque": "320 Nm",
+          "efficiency": "6.8 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "Long Range RWD",
+        "price": 8499000,
+        "label": "Rs. 92.90L",
+        "popular": true,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "77kWh Battery",
+          "520km CLTC Range",
+          "ADAS Level 2 (8 features)",
+          "360° Camera",
+          "Ventilated Seats",
+          "Wireless Charging",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "218 hp",
+          "torque": "320 Nm",
+          "efficiency": "6.5 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "Long Range AWD",
+        "price": 8499000,
+        "label": "Rs. 1.09 Cr",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "Dual Motor AWD",
+          "0-100 in 4.9s",
+          "Air Suspension",
+          "Head-Up Display",
+          "Nappa Leather",
+          "Long Range RWD features+"
+        ],
+        "specs": {
+          "power": "402 hp",
+          "torque": "620 Nm",
+          "efficiency": "5.9 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      }
+    ],
+    "specs": {
+      "Battery": "61 kWh / 77 kWh",
+      "Range": "420–520 km (CLTC)",
+      "Power": "218–402 hp",
+      "Torque": "320–620 Nm",
+      "Charging": "150 kW DC Fast Charge",
+      "Charge Time": "30 min (10–80%)",
+      "Transmission": "Single Speed",
+      "Drive": "RWD / AWD",
+      "Seating": "5",
+      "Boot Space": "520 L + 72 L frunk",
+      "Length": "4,747 mm",
+      "Width": "1,930 mm",
+      "Height": "1,625 mm",
+      "Wheelbase": "2,900 mm",
+      "Ground Clearance": "175 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "520km range on long range",
+      "15.6\" rotating screen",
+      "AWD with 402hp available",
+      "Air suspension on top trim",
+      "Strong Changan build quality"
+    ],
+    "cons": [
+      "CLTC range overstates real-world by ~20%",
+      "Brand new to Nepal — service unproven",
+      "Ground clearance lower than petrol rivals",
+      "No spare tyre"
+    ],
+    "highlights": [
+      "520km Range",
+      "15.6\" Rotating Screen",
+      "ADAS Level 2",
+      "AWD Option"
+    ]
+  },
+  {
+    "id": 702,
+    "slug": "deepal-l07-2025",
+    "brand": "Deepal",
+    "model": "L07",
+    "year": 2025,
+    "type": "Hybrid",
+    "body": "Sedan",
+    "badge": "new",
+    "tagline": "Changan's REEV plug-in hybrid sedan with 1,000km+ combined range",
+    "rating": 4.2,
+    "reviews": 94,
+    "expertScore": 7.9,
+    "baseEMI": 72000,
+    "overview": "The Deepal L07 is a Range-Extended EV (REEV) sedan — it runs on electric motors with a small petrol engine acting solely as a generator, never driving the wheels directly. This delivers EV smoothness with 1,000km+ combined range, eliminating range anxiety for Nepal's long-distance drivers.",
+    "images": [
+>>>>>>> 95e6b8b (clean project structure)
     '/assets/images/cars/deepal/l07/deepal-l07-exterior-front-white-bg.jpg',
     '/assets/images/cars/deepal/l07/deepal-l07-exterior-side-left-white-bg.jpg',
     '/assets/images/cars/deepal/l07/deepal-l07-exterior-side-right-white-bg.jpg',

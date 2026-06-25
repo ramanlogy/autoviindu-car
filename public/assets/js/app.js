@@ -156,6 +156,7 @@ function carCard(car) {
 
 /* ─ HOME ─ */
 
+<<<<<<< HEAD
 const HERO_SLIDES=[
   {
     bg:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&h',
@@ -164,10 +165,21 @@ const HERO_SLIDES=[
     sub:'Nepal\'s best EV. 481 km range, V2L for load-shedding, 800V ultra-fast charging.',
     offer:{
       icon:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+=======
+  const HERO_SLIDES = [
+    {
+      bg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&h',
+      badge: 'New Arrival 2024',
+      title: 'Hyundai<br><em>IONIQ 5</em>',
+      sub: 'Nepal\'s best EV. 481 km range, V2L for load-shedding, 800V ultra-fast charging.',
+      offer: {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+>>>>>>> 95e6b8b (clean project structure)
         <path d="M14.615 1.595a.75.75 0 0 1 .36.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143z"/>
       </svg>`,
       label:'EV Offer',val:'Zero road tax + Free home charger'
     },
+<<<<<<< HEAD
     slug:'hyundai-ioniq5'
   },
   {
@@ -177,6 +189,15 @@ const HERO_SLIDES=[
     sub:'Nepal\'s #1 mid-size SUV. 160 bhp, dual 10.25" screens, Level 2 ADAS.',
     offer:{
       icon:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+=======
+    {
+      bg: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=1400&h=700&fit=crop',
+      badge: 'Best Seller',
+      title: 'Hyundai<br><em>Creta</em>',
+      sub: 'Nepal\'s #1 mid-size SUV. 160 bhp, dual 10.25" screens, Level 2 ADAS.',
+      offer: {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+>>>>>>> 95e6b8b (clean project structure)
         <path d="M20 12v10H4V12"/>
         <path d="M22 7H2v5h20V7z"/>
         <path d="M12 22V7"/>
@@ -185,6 +206,7 @@ const HERO_SLIDES=[
       </svg>`,
       label:'Festival Offer',val:'Rs. 2L cashback + Free accessories'
     },
+<<<<<<< HEAD
     slug:'hyundai-creta'
   },
   {
@@ -194,11 +216,21 @@ const HERO_SLIDES=[
     sub:'221mm ground clearance, 500 Nm diesel torque. No road is too rough.',
     offer:{
       icon:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+=======
+    {
+      bg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&h=700&fit=crop',
+      badge: 'Hill Conqueror',
+      title: 'Toyota<br><em>Fortuner</em>',
+      sub: '221mm ground clearance, 500 Nm diesel torque. No road is too rough.',
+      offer: {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+>>>>>>> 95e6b8b (clean project structure)
         <path d="M3 20 L8.5 8 L12 13 L15.5 7 L21 20 Z"/>
         <path d="M1 20h22"/>
       </svg>`,
       label:'Nepal Special',val:'5-year extended warranty'
     },
+<<<<<<< HEAD
     slug:'toyota-fortuner'
   },
   {
@@ -208,11 +240,21 @@ const HERO_SLIDES=[
     sub:'40+ km/l with solar roof. 26 km pure EV range for your daily commute.',
     offer:{
       icon:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+=======
+    {
+      bg: 'https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=1400&h=700&fit=crop',
+      badge: 'Fuel Champion',
+      title: 'Toyota<br><em>Prius PHEV</em>',
+      sub: '40+ km/l with solar roof. 26 km pure EV range for your daily commute.',
+      offer: {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+>>>>>>> 95e6b8b (clean project structure)
         <circle cx="12" cy="12" r="4"/>
         <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
       </svg>`,
       label:'Green Deal',val:'Free solar charging installation'
     },
+<<<<<<< HEAD
     slug:'toyota-prius'
   },
 ];
@@ -296,6 +338,91 @@ const BUDGETS = [
     overlay: 'linear-gradient(135deg,rgba(15,15,15,.92),rgba(40,40,40,.82))',     // near-black carbon (ultra-lux)
   },
 ];
+=======
+  ];
+
+
+  const BASE = 'https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/';
+
+  const BRANDS = [
+    { name: 'Hyundai', count: '165 cars', logo: `${BASE}hyundai.png` },
+    { name: 'Suzuki', count: '81 cars', logo: `${BASE}suzuki.png` },
+    { name: 'Tata', count: '64 cars', logo: `${BASE}tata.png` },
+    { name: 'Ford', count: '57 cars', logo: `${BASE}ford.png` },
+    { name: 'Kia', count: '50 cars', logo: `${BASE}kia.png` },
+    { name: 'Toyota', count: '28 cars', logo: `${BASE}toyota.png` },
+    { name: 'Nissan', count: '28 cars', logo: `${BASE}nissan.png` },
+    { name: 'Maruti Suzuki', count: '21 cars', logo: `${BASE}maruti-suzuki.png` },
+    { name: 'Volkswagen', count: '20 cars', logo: `${BASE}volkswagen.png` },
+    { name: 'Renault', count: '20 cars', logo: `${BASE}renault.png` },
+    { name: 'Mahindra', count: '20 cars', logo: `${BASE}mahindra.png` },
+    { name: 'BYD', count: '15 cars', logo: `${BASE}byd.png` },
+    { name: 'MG', count: '14 cars', logo: `${BASE}mg.png` },
+    { name: 'Skoda', count: '13 cars', logo: `${BASE}skoda.png` },
+    { name: 'Honda', count: '10 cars', logo: `${BASE}honda.png` },
+    { name: 'Deepal', count: '3 cars', logo: `${BASE}deepal.png` },
+    { name: 'Chery', count: '6 cars', logo: `${BASE}chery.png` },
+    { name: 'Proton', count: '4 cars', logo: `${BASE}proton.png` },
+    { name: 'Haval', count: '5 cars', logo: `${BASE}haval.png` },
+    { name: 'Geely', count: '5 cars', logo: `${BASE}geely.png` },
+    { name: 'Mazda', count: '4 cars', logo: `${BASE}mazda.png` },
+    { name: 'Maxus', count: '3 cars', logo: `${BASE}maxus.png` },
+    { name: 'Mercedes', count: '14 cars', logo: `${BASE}mercedes-benz.png` },
+    { name: 'BMW', count: '12 cars', logo: `${BASE}bmw.png` },
+    { name: 'Audi', count: '10 cars', logo: `${BASE}audi.png` },
+    { name: 'Lexus', count: '7 cars', logo: `${BASE}lexus.png` },
+  ];
+  const BUDGETS = [
+    {
+      label: 'Under Rs. 30L',
+      count: '12 cars',
+      filter: 'budget-30',
+      examples: 'Tata Tiago EV · MG Comet · Alto K10',
+      bg: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=400&h=220&fit=crop', // compact hatchback
+      overlay: 'linear-gradient(135deg,rgba(15,118,110,.88),rgba(6,78,59,.75))',   // teal-green (budget/eco)
+    },
+    {
+      label: 'Rs. 30L–50L',
+      count: '34 cars',
+      filter: 'budget-50',
+      examples: 'Hyundai Venue · Tata Nexon · Kia Sonet',
+      bg: 'https://images.unsplash.com/photo-1619767886558-efdc259b6e09?w=400&h=220&fit=crop', // compact SUV
+      overlay: 'linear-gradient(135deg,rgba(37,99,235,.88),rgba(29,78,216,.75))',   // royal blue (mid range)
+    },
+    {
+      label: 'Rs. 50L–80L',
+      count: '28 cars',
+      filter: 'budget-80',
+      examples: 'Hyundai Creta · Kia Seltos · MG Hector',
+      bg: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=220&fit=crop', // mid SUV
+      overlay: 'linear-gradient(135deg,rgba(202,138,4,.88),rgba(161,98,7,.75))',    // amber-gold (popular segment)
+    },
+    {
+      label: 'Rs. 80L–1.2Cr',
+      count: '18 cars',
+      filter: 'budget-120',
+      examples: 'Toyota Fortuner · Hyundai Tucson · Kia Sportage',
+      bg: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=400&h=220&fit=crop', // full-size SUV
+      overlay: 'linear-gradient(135deg,rgba(124,45,18,.88),rgba(154,52,18,.75))',   // burnt orange (premium)
+    },
+    {
+      label: 'Rs. 1.2Cr–2Cr',
+      count: '11 cars',
+      filter: 'budget-200',
+      examples: 'BMW 3 Series · Mercedes C-Class · Audi A4',
+      bg: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=220&fit=crop', // luxury sedan
+      overlay: 'linear-gradient(135deg,rgba(30,27,75,.9),rgba(49,46,129,.78))',     // deep indigo (luxury)
+    },
+    {
+      label: 'Above Rs. 2Cr',
+      count: '9 cars',
+      filter: 'budget-2cr+',
+      examples: 'BMW X5 · Mercedes GLE · Land Cruiser 300',
+      bg: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=400&h=220&fit=crop', // ultra-luxury
+      overlay: 'linear-gradient(135deg,rgba(15,15,15,.92),rgba(40,40,40,.82))',     // near-black carbon (ultra-lux)
+    },
+  ];
+>>>>>>> 95e6b8b (clean project structure)
 
 const OFFERS = [
   {
@@ -1885,9 +2012,221 @@ function renderCars(filter, opts={}) {
     pickup:    'Pickup Trucks',
   };
 
+<<<<<<< HEAD
   const title = filter ? (fl[filter] || filter) : 'New Cars in Nepal 2024–25';
   setNav(filter === 'electric' ? 'electric' : 'cars');
   document.getElementById('app-root').innerHTML = `
+=======
+  
+  function buildCategorizedView() {
+    const section = (title, items, filterAction) => {
+      if (!items || !items.length) return '';
+      return `
+        <div class="cat-section" style="margin-bottom: 40px;">
+          <div class="cat-head" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 10px;">
+            <h3 class="cat-title" style="font-size: 20px; font-weight: 700; color: var(--ink); margin: 0;">${title}</h3>
+            <button class="cat-view-all" onclick="${filterAction}; window.scrollTo({top: 0, behavior: 'smooth'});" style="font-size: 14px; font-weight: 600; color: var(--g3); cursor: pointer; display: flex; align-items: center; gap: 4px; background: none; border: none;">View all ${IC.chevR}</button>
+          </div>
+          <div class="car-carousel" style="display: flex; gap: 16px; overflow-x: auto; padding-bottom: 16px; scroll-snap-type: x mandatory;">
+            ${items.map(c => `<div style="min-width: 280px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">${carCard(c)}</div>`).join('')}
+          </div>
+        </div>
+      `;
+    };
+
+    const trending = [...CARS_DB].filter(c => c.isBestSeller || (c.reviews && c.reviews > 100)).slice(0, 8);
+    const under40 = [...CARS_DB].filter(c => _carPrice(c) > 0 && _carPrice(c) <= 40).sort((a,b) => _carPrice(a) - _carPrice(b)).slice(0, 8);
+    const premium = [...CARS_DB].filter(c => _carPrice(c) >= 80).sort((a,b) => _carPrice(b) - _carPrice(a)).slice(0, 8);
+    const ev = [...CARS_DB].filter(c => c.isEV || c.type === 'Electric').slice(0, 8);
+    const suv = [...CARS_DB].filter(c => c.bodyType === 'suv' || c.body === 'SUV').slice(0, 8);
+    const maruti = [...CARS_DB].filter(c => c.brand === 'Suzuki' || c.brand === 'Maruti Suzuki').slice(0, 8);
+
+    return `
+      <div class="categorized-wrapper" style="width: 100%; animation: fadeIn 0.3s ease;">
+        ${section('Trending & Popular', trending, "AV.sfSort('rating')")}
+        ${section('Top Electric Vehicles', ev, "AV.sfToggle('fuels', 'Electric', null)")}
+        ${section('Budget Friendly (Under Rs. 40L)', under40, "AV.sfSetPrice(0, 40)")}
+        ${section('Premium & Luxury', premium, "AV.sfSetPrice(80, 999)")}
+        ${section('Top SUVs', suv, "AV.sfToggle('bodies', 'SUV', null)")}
+        ${section('Most Searched: Suzuki', maruti, "AV.sfToggle('brands', 'Suzuki', null)")}
+      </div>
+    `;
+  }
+
+  
+  function buildCategorizedView() {
+    const section = (title, items, filterAction) => {
+      if (!items || !items.length) return '';
+      return `
+        <div class="cat-section" style="margin-bottom: 40px;">
+          <div class="cat-head" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 10px;">
+            <h3 class="cat-title" style="font-size: 20px; font-weight: 700; color: var(--ink); margin: 0;">${title}</h3>
+            <button class="cat-view-all" onclick="${filterAction}; window.scrollTo({top: 0, behavior: 'smooth'});" style="font-size: 14px; font-weight: 600; color: var(--g3); cursor: pointer; display: flex; align-items: center; gap: 4px; background: none; border: none;">View all ${IC.chevR}</button>
+          </div>
+          <div class="car-carousel" style="display: flex; gap: 16px; overflow-x: auto; padding-bottom: 16px; scroll-snap-type: x mandatory;">
+            ${items.map(c => `<div style="min-width: 280px; max-width: 300px; flex-shrink: 0; scroll-snap-align: start;">${carCard(c)}</div>`).join('')}
+          </div>
+        </div>
+      `;
+    };
+
+    const trending = [...CARS_DB].filter(c => c.isBestSeller || (c.reviews && c.reviews > 100)).slice(0, 8);
+    const under40 = [...CARS_DB].filter(c => _carPrice(c) > 0 && _carPrice(c) <= 40).sort((a,b) => _carPrice(a) - _carPrice(b)).slice(0, 8);
+    const premium = [...CARS_DB].filter(c => _carPrice(c) >= 80).sort((a,b) => _carPrice(b) - _carPrice(a)).slice(0, 8);
+    const ev = [...CARS_DB].filter(c => c.isEV || c.type === 'Electric').slice(0, 8);
+    const suv = [...CARS_DB].filter(c => c.bodyType === 'suv' || c.body === 'SUV').slice(0, 8);
+    const maruti = [...CARS_DB].filter(c => c.brand === 'Suzuki' || c.brand === 'Maruti Suzuki').slice(0, 8);
+
+    return `
+      <div class="categorized-wrapper" style="width: 100%; animation: fadeIn 0.3s ease;">
+        ${section('Trending & Popular', trending, "AV.sfSort('rating')")}
+        ${section('Top Electric Vehicles', ev, "AV.sfToggle('fuels', 'Electric', null)")}
+        ${section('Budget Friendly (Under Rs. 40L)', under40, "AV.sfSetPrice(0, 40)")}
+        ${section('Premium & Luxury', premium, "AV.sfSetPrice(80, 999)")}
+        ${section('Top SUVs', suv, "AV.sfToggle('bodies', 'SUV', null)")}
+        ${section('Most Searched: Suzuki', maruti, "AV.sfToggle('brands', 'Suzuki', null)")}
+      </div>
+    `;
+  }
+
+  function _sfApply() {
+    const sf = window._sf;
+    let cars = CARS_DB;
+    if (sf.q) {
+      const ql = sf.q.toLowerCase();
+      cars = cars.filter(c => `${c.brand} ${c.model} ${c.type} ${c.body}`.toLowerCase().includes(ql));
+    }
+    if (sf.brands.length) cars = cars.filter(c => sf.brands.includes(c.brand));
+    if (sf.fuels.length) cars = cars.filter(c => sf.fuels.some(f => c.type?.toLowerCase().includes(f.toLowerCase())));
+    if (sf.bodies.length) cars = cars.filter(c => sf.bodies.some(b => c.body?.toLowerCase().includes(b.toLowerCase())));
+    if (sf.transmissions.length) cars = cars.filter(c => sf.transmissions.includes(_carTransType(c)));
+    if (sf.years.length) cars = cars.filter(c => sf.years.includes(c.year));
+    cars = _priceFilter(cars, sf);
+    if (sf.sort === 'price-asc') cars.sort((a, b) => _carPrice(a) - _carPrice(b));
+    else if (sf.sort === 'price-desc') cars.sort((a, b) => _carPrice(b) - _carPrice(a));
+    else if (sf.sort === 'rating') cars.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+    else if (sf.sort === 'year-desc') cars.sort((a, b) => (b.year || 0) - (a.year || 0));
+    const g = document.getElementById('lf-grid'), cnt = document.getElementById('lf-count'), empty = document.getElementById('lf-empty');
+    if (!g) return;
+    const isFiltered = sf.q || sf.brands.length || sf.fuels.length || sf.bodies.length || sf.transmissions.length || sf.years.length || sf.minP > 0 || sf.maxP < sf._maxSlider || sf.budget || sf.sort;
+    if (!isFiltered) {
+      g.innerHTML = buildCategorizedView();
+      g.classList.remove('cars-grid');
+      g.style.display = 'block';
+      if (empty) empty.style.display = 'none';
+    } else if (cars.length) {
+      g.innerHTML = cars.map(c => carCard(c)).join('');
+      g.classList.add('cars-grid');
+      g.style.display = '';
+      if (empty) empty.style.display = 'none';
+    } else {
+      g.innerHTML = '';
+      if (empty) empty.style.display = 'block';
+    }
+    if (cnt) cnt.textContent = cars.length;
+    updateCmpBtns();
+    _syncCbUI('sf', sf);
+    _renderActiveTags(sf, 'lf-active-tags', 'sf', (type, val) => {
+      if (type === 'budget') { sf.budget = ''; document.querySelectorAll('.sf-budget-btn').forEach(b => b.classList.remove('active')); }
+      else if (type === 'price') { sf.minP = 0; sf.maxP = sf._maxSlider; const lo = document.getElementById('lf-price-lo'), hi = document.getElementById('lf-price-hi'); if (lo) lo.value = 0; if (hi) hi.value = sf._maxSlider; const loV = document.getElementById('lf-lo-val'), hiV = document.getElementById('lf-hi-val'); if (loV) loV.textContent = 'Rs. 0L'; if (hiV) hiV.textContent = 'Rs. ' + sf._maxSlider + 'L'; }
+      else if (type === 'years') { const i = sf.years.indexOf(+val); if (i > -1) sf.years.splice(i, 1); }
+      else if (Array.isArray(sf[type])) { const i = sf[type].indexOf(val); if (i > -1) sf[type].splice(i, 1); }
+      _sfApply();
+    });
+    const badge = document.getElementById('lf-badge');
+    const active = _countActive(sf);
+    if (badge) { badge.textContent = active || ''; badge.style.display = active ? 'inline-flex' : 'none'; }
+    _filterPulse('lf-grid');
+  }
+
+  /* ── USED CARS FILTER ── */
+  const _usedMaxPrice = Math.max(100, Math.ceil(Math.max(...USED.map(c => c.priceNum || 0), 1000000) / 100000));
+  window._uf = { q: '', brands: [], fuels: [], bodies: [], transmissions: [], years: [], minP: 0, maxP: _usedMaxPrice, sort: '', budget: '', certified: false, owners: null, _maxSlider: _usedMaxPrice, _priceKey: 'priceNum' };
+
+  function _ufApply() {
+    const uf = window._uf;
+    let cars = USED;
+    if (uf.q) {
+      const ql = uf.q.toLowerCase();
+      cars = cars.filter(c => `${c.brand} ${c.model} ${c.type} ${c.variant}`.toLowerCase().includes(ql));
+    }
+    if (uf.brands.length) cars = cars.filter(c => uf.brands.includes(c.brand));
+    if (uf.fuels.length) cars = cars.filter(c => uf.fuels.includes(c.type));
+    if (uf.bodies.length) cars = cars.filter(c => uf.bodies.some(b => c.body?.toLowerCase().includes(b.toLowerCase())));
+    if (uf.transmissions.length) cars = cars.filter(c => uf.transmissions.includes(_usedTransType(c)));
+    if (uf.years.length) cars = cars.filter(c => uf.years.includes(c.year));
+    if (uf.certified) cars = cars.filter(c => c.certified);
+    if (uf.owners === 1) cars = cars.filter(c => c.owners === 1);
+    cars = _priceFilter(cars, uf);
+    if (uf.sort === 'price-asc') cars.sort((a, b) => a.priceNum - b.priceNum);
+    else if (uf.sort === 'price-desc') cars.sort((a, b) => b.priceNum - a.priceNum);
+    else if (uf.sort === 'km-asc') cars.sort((a, b) => parseInt(String(a.km).replace(/,/g, ''), 10) - parseInt(String(b.km).replace(/,/g, ''), 10));
+    else if (uf.sort === 'year-desc') cars.sort((a, b) => b.year - a.year);
+    const g = document.getElementById('used-grid'), cnt = document.getElementById('used-count'), empty = document.getElementById('uf-empty');
+    if (!g) return;
+    if (cars.length) {
+      g.innerHTML = cars.map(c => usedCard(c)).join('');
+      if (empty) empty.style.display = 'none';
+    } else {
+      g.innerHTML = '';
+      if (empty) empty.style.display = 'block';
+    }
+    if (cnt) cnt.textContent = cars.length;
+    _syncCbUI('uf', uf);
+    _renderActiveTags(uf, 'uf-active-tags', 'uf', (type, val) => {
+      if (type === 'budget') { uf.budget = ''; document.querySelectorAll('.uf-budget-btn').forEach(b => b.classList.remove('active')); }
+      else if (type === 'price') { uf.minP = 0; uf.maxP = uf._maxSlider; const lo = document.getElementById('uf-price-lo'), hi = document.getElementById('uf-price-hi'); if (lo) lo.value = 0; if (hi) hi.value = uf._maxSlider; const loV = document.getElementById('uf-lo-val'), hiV = document.getElementById('uf-hi-val'); if (loV) loV.textContent = 'Rs. 0L'; if (hiV) hiV.textContent = 'Rs. ' + uf._maxSlider + 'L'; }
+      else if (type === 'certified') uf.certified = false;
+      else if (type === 'owners') uf.owners = null;
+      else if (type === 'years') { const i = uf.years.indexOf(+val); if (i > -1) uf.years.splice(i, 1); }
+      else if (Array.isArray(uf[type])) { const i = uf[type].indexOf(val); if (i > -1) uf[type].splice(i, 1); }
+      _ufApply();
+    });
+    const badge = document.getElementById('uf-badge');
+    const active = _countActive(uf);
+    if (badge) { badge.textContent = active || ''; badge.style.display = active ? 'inline-flex' : 'none'; }
+    _filterPulse('used-grid');
+  }
+
+  function _bindFilterSidebar(ns, applyFn) {
+    const sf = ns === 'sf' ? window._sf : window._uf;
+    document.querySelectorAll(`[data-${ns}-type]`).forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        const type = el.dataset[`${ns}Type`];
+        let val = el.dataset[`${ns}Val`];
+        if (type === 'years') val = +val;
+        if (type === 'certified') { sf.certified = !sf.certified; applyFn(); return; }
+        if (type === 'owners') { sf.owners = sf.owners === 1 ? null : 1; applyFn(); return; }
+        const arr = sf[type];
+        if (!Array.isArray(arr)) return;
+        const idx = arr.indexOf(val);
+        if (idx === -1) arr.push(val); else arr.splice(idx, 1);
+        applyFn();
+      });
+    });
+  }
+
+  function renderCars(filter, opts = {}) {
+    clearInterval(heroTimer);
+    document.title = 'New Cars Nepal — AutoViindu';
+    const maxSlider = 600;
+    window._sf = { q: opts.q || '', brands: opts.brand ? [opts.brand] : [], fuels: [], bodies: [], transmissions: [], years: [], minP: 0, maxP: maxSlider, sort: '', budget: '', _maxSlider: maxSlider };
+    const fuelSeed = { electric: 'Electric', hybrid: 'Hybrid', petrol: 'Petrol', diesel: 'Diesel' };
+    const bodySeed = { suv: 'SUV', sedan: 'Sedan', hatchback: 'Hatchback', crossover: 'Crossover', van: 'Van', pickup: 'Pickup' };
+    if (filter && fuelSeed[filter]) window._sf.fuels = [fuelSeed[filter]];
+    else if (filter && bodySeed[filter]) window._sf.bodies = [bodySeed[filter]];
+
+    const fl = { electric: 'Electric Cars', hybrid: 'Hybrid Cars', petrol: 'Petrol Cars', diesel: 'Diesel Cars', suv: 'SUVs', sedan: 'Sedans', hatchback: 'Hatchbacks', crossover: 'Crossovers', van: 'Vans & Microvans', pickup: 'Pickup Trucks' };
+    const title = filter ? (fl[filter] || filter) : 'New Cars in Nepal 2024\u201325';
+    setNav(filter === 'electric' ? 'electric' : 'cars');
+
+    const sf = window._sf;
+    const allBrands = [...new Set(CARS_DB.map(c => c.brand))].sort();
+    const allYears = [...new Set(CARS_DB.map(c => c.year))].sort((a, b) => b - a);
+
+    document.getElementById('app-root').innerHTML = `
+>>>>>>> 95e6b8b (clean project structure)
   <div class="page-hero">
     <div class="wrap">
       <div class="breadcrumb"><a onclick="AV.goTo('home')">Home</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,.7)">${title}</span></div>
@@ -1942,6 +2281,7 @@ function sortList(val){
   updateCmpBtns();
 }
 
+<<<<<<< HEAD
 /* ─ COMPARE ─ */
 function renderCompare(){
   clearInterval(heroTimer);
@@ -1964,6 +2304,142 @@ function renderCompare(){
           <img src="${car.images[0]}" alt="${car.brand}">
           <div style="flex:1;min-width:0"><div class="cmp-car-pick-name">${car.brand} ${car.model}</div><div class="cmp-car-pick-price">${car.variants[0].label}</div></div>
           <span style="font-size:18px;color:${compareList.includes(car.slug)?'var(--g3)':'var(--ink5)'}">${compareList.includes(car.slug)?'✓':'+'}</span>
+=======
+  function filterList(q) { window._sf.q = q; _sfApply(); }
+  function sortList(val) { window._sf.sort = val; _sfApply(); }
+
+  /* ─ COMPARE ─ */
+  const CMP_SPEC_GROUPS = [
+    {
+      id: 'overview', label: 'Overview', rows: [
+        { label: 'Base Price', key: 'price', compare: 'lower', fmt: 'price' },
+        { label: 'Expert Score', key: 'expertScore', compare: 'higher', fmt: 'score' },
+        { label: 'User Rating', key: 'rating', compare: 'higher', fmt: 'rating' },
+        { label: 'Body Type', key: 'body', fmt: 'text' },
+        { label: 'Fuel Type', key: 'type', fmt: 'text' },
+      ]
+    },
+    {
+      id: 'performance', label: 'Performance', rows: [
+        { label: 'Power', key: 'Power||Motor Power||Combined Power', compare: 'higher', fmt: 'text' },
+        { label: 'Torque', key: 'Torque', compare: 'higher', fmt: 'text' },
+        { label: '0–100 km/h', key: '0–100 km/h', compare: 'lower', fmt: 'text' },
+        { label: 'Top Speed', key: 'Top Speed', fmt: 'text' },
+        { label: 'Drive', key: 'Drive', fmt: 'text' },
+      ]
+    },
+    {
+      id: 'practical', label: 'Practical', rows: [
+        { label: 'Fuel / Range', key: 'Fuel Efficiency||Range (WLTP)||Range', compare: 'higher', fmt: 'text' },
+        { label: 'Boot Space', key: 'Boot Space', compare: 'higher', fmt: 'text' },
+        { label: 'Ground Clearance', key: 'Ground Clearance', compare: 'higher', fmt: 'text' },
+        { label: 'Seating', key: 'Seating', fmt: 'text' },
+        { label: 'Transmission', key: 'Transmission', fmt: 'text' },
+      ]
+    },
+  ];
+
+  function cmpGetVal(car, row) {
+    if (row.key === 'price') return car.variants[0].price;
+    if (row.key === 'expertScore') return car.expertScore || 0;
+    if (row.key === 'rating') return car.rating || 0;
+    if (row.key === 'body') return car.body || car.bodyType || '—';
+    if (row.key === 'type') return car.type || '—';
+    const keys = row.key.split('||');
+    for (const k of keys) { const v = car.specs?.[k.trim()]; if (v) return v; }
+    return '—';
+  }
+
+  function cmpDisplayVal(car, row) {
+    const raw = cmpGetVal(car, row);
+    if (row.fmt === 'price') return window.Rs(raw);
+    if (row.fmt === 'score') return raw + '/10';
+    if (row.fmt === 'rating') return fmtR(raw) + '★';
+    return raw === 0 ? '—' : raw;
+  }
+
+  function cmpParseNum(v) {
+    if (v == null || v === '—') return null;
+    const m = String(v).match(/[\d,.]+/);
+    return m ? parseFloat(m[0].replace(/,/g, '')) : null;
+  }
+
+  function cmpWinners(cars, row) {
+    if (!row.compare || cars.length < 2) return [];
+    const nums = cars.map(c => {
+      const raw = cmpGetVal(c, row);
+      const n = row.fmt === 'price' || row.fmt === 'score' || row.fmt === 'rating'
+        ? (typeof raw === 'number' ? raw : cmpParseNum(raw))
+        : cmpParseNum(raw);
+      return n;
+    });
+    if (nums.some(n => n == null)) return [];
+    const best = row.compare === 'lower' ? Math.min(...nums) : Math.max(...nums);
+    return nums.map((n, i) => n === best ? i : -1).filter(i => i >= 0);
+  }
+
+  function cmpVerdict(cars) {
+    if (cars.length < 2) return null;
+    const byPrice = [...cars].sort((a, b) => a.variants[0].price - b.variants[0].price);
+    const byScore = [...cars].sort((a, b) => (b.expertScore || 0) - (a.expertScore || 0));
+    const byValue = [...cars].sort((a, b) => {
+      const va = (a.expertScore || 0) / (a.variants[0].price / 1e6);
+      const vb = (b.expertScore || 0) / (b.variants[0].price / 1e6);
+      return vb - va;
+    });
+    const eff = (c) => cmpParseNum(cmpGetVal(c, { key: 'Fuel Efficiency||Range (WLTP)||Range' }));
+    const byEff = [...cars].sort((a, b) => (eff(b) || 0) - (eff(a) || 0));
+    return {
+      budget: { car: byPrice[0], reason: 'Lowest starting price' },
+      topRated: { car: byScore[0], reason: 'Highest expert score (' + (byScore[0].expertScore || '—') + '/10)' },
+      bestValue: { car: byValue[0], reason: 'Best score-to-price ratio' },
+      efficient: { car: byEff[0], reason: eff(byEff[0]) ? 'Best fuel efficiency / range' : 'Strong everyday practicality' },
+    };
+  }
+
+  function renderCmpSlots(cols) {
+    const slots = [0, 1, 2].map(i => {
+      const slug = cols[i];
+      const car = slug ? carBySlug(slug) : null;
+      if (car) return `<div class="cmp-slot-card filled">
+        <span class="cmp-slot-num">#${i + 1}</span>
+        <button class="cmp-slot-rm" onclick="AV.toggleCompare('${car.slug}')" aria-label="Remove">✕</button>
+        <img class="cmp-slot-img" src="${car.images[0]}" alt="${car.brand} ${car.model}">
+        <div class="cmp-slot-brand">${car.brand}</div>
+        <div class="cmp-slot-model">${car.model}</div>
+        <div class="cmp-slot-price">${window.Rs(car.variants[0].price)}</div>
+      </div>`;
+      return `<div class="cmp-slot-card" onclick="document.getElementById('cmp-picker')?.scrollIntoView({behavior:'smooth'})">
+        <span class="cmp-slot-num">#${i + 1}</span>
+        <div class="cmp-slot-empty-icon">+</div>
+        <div class="cmp-slot-empty-text">Add a car</div>
+      </div>`;
+    });
+    return `<div class="cmp-garage">${slots.join('')}</div>`;
+  }
+
+  function renderCmpVerdict(cars) {
+    const v = cmpVerdict(cars);
+    if (!v) return '';
+    const cards = [
+      { badge: '🏆 Top Rated', item: v.topRated },
+      { badge: '💰 Best Value', item: v.bestValue },
+      { badge: '⛽ Most Efficient', item: v.efficient },
+    ];
+    return `<div class="cmp-verdict">
+      <div class="cmp-verdict-hd">
+        <div class="cmp-verdict-icon">✨</div>
+        <div>
+          <div class="cmp-verdict-title">Quick verdict</div>
+          <div class="cmp-verdict-sub">Based on price, expert scores &amp; specs — use this as a starting point</div>
+        </div>
+      </div>
+      <div class="cmp-verdict-grid">${cards.map(c => `
+        <div class="cmp-verdict-card">
+          <div class="cmp-verdict-badge">${c.badge}</div>
+          <div class="cmp-verdict-car">${c.item.car.brand} ${c.item.car.model}</div>
+          <div class="cmp-verdict-reason">${c.item.reason}</div>
+>>>>>>> 95e6b8b (clean project structure)
         </div>`).join('')}
       </div>
     </div>
@@ -2461,6 +2937,7 @@ function renderUsedDetail(id){
     const main=document.querySelector('.detail-layout > div:last-child');
     if(sb&&main){sb.style.order=e.matches?'2':'0';main.style.order='1'}
   }
+<<<<<<< HEAD
   applyOrder(mq);
   mq.addEventListener('change',applyOrder);
  
@@ -2479,6 +2956,366 @@ function renderUsedDetail(id){
     if(img){img.style.opacity='0';setTimeout(()=>{img.src=imgs[idx];img.style.opacity='1'},200)}
     document.querySelectorAll('[id^="ud-thumb-"]').forEach((t,i)=>t.style.borderColor=i===idx?'var(--g3)':'transparent');
     const c=document.getElementById('ud-gal-cnt');if(c)c.textContent=`${idx+1}/${imgs.length}`;
+=======
+
+
+  function filterUsed(q) { window._uf.q = q; _ufApply(); }
+  function sortUsed(val) { window._uf.sort = val; _ufApply(); }
+  function chipFilterUsed(label, btn) {
+    AV.ufClear();
+    if (label === 'Certified') window._uf.certified = true;
+    else if (label === 'Petrol') window._uf.fuels = ['Petrol'];
+    else if (label === 'Diesel') window._uf.fuels = ['Diesel'];
+    else if (label === 'Hybrid') window._uf.fuels = ['Hybrid'];
+    else if (label === 'Under 30L') window._uf.budget = 'u20';
+    else if (label === 'Under 50L') window._uf.budget = 'u40';
+    else if (label === '1 Owner') window._uf.owners = 1;
+    _ufApply();
+  }
+
+  function openUsedDetail(id) {
+    clearInterval(heroTimer);
+    renderUsedDetail(id);
+    history.pushState({ page: 'used-detail', id }, '', `#used/${id}`);
+  }
+
+
+
+  /* ─ NAV ─ */
+  function setNav(p) {
+    document.querySelectorAll('.hn-link').forEach(n => n.classList.remove('active'));
+    const m = { home: 'nav-home', cars: 'nav-cars', electric: 'nav-electric', used: 'nav-used', compare: 'nav-compare', services: 'nav-services' };
+    if (m[p]) document.getElementById(m[p])?.classList.add('active');
+  }
+  function goTo(page, opts = {}) {
+    clearInterval(heroTimer);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    closeMM();
+    const p = page || 'home';
+    if (p === 'home') renderHome();
+    else if (p === 'cars') renderCars(opts.filter || null, opts);
+    else if (p === 'electric') renderCars('electric');
+    else if (p === 'hybrid') renderCars('hybrid');
+    else if (p === 'used') renderUsed();
+    else if (p === 'compare') renderCompare();
+    else if (p === 'services') renderServices();
+    else if (p === 'tools') {
+      const toolPages = {
+        emi: 'caremi.html',
+        loan: 'whatcarcanyouaffoard.html',
+        afford: 'whatcarcanyouaffoard.html',
+        matchmaker: 'whatcarcanyouaffoard.html',
+        charging: 'chargingstation.html',
+      };
+      window.location.href = toolPages[opts.tool] || 'caremi.html';
+      return;
+    }
+    else renderHome();
+    history.pushState({ page: p, opts }, '', `#${p}`);
+  }
+  function openDetail(slug) {
+    clearInterval(heroTimer);
+    renderDetail(slug);
+    history.pushState({ page: 'detail', slug }, '', `#car/${slug}`);
+  }
+
+  /* ─ SEARCH ─ */
+  let searchIdx = CARS_DB.map(c => ({ slug: c.slug, display: `${c.brand} ${c.model}`, searchText: `${c.brand} ${c.model} ${c.type} ${c.body}`.toLowerCase(), image: c.images[0], year: c.year, type: c.type, body: c.body, price: window.Rs(c.variants[0].price) }));
+  let searchTimer = null;
+  const hsInput = document.getElementById('hs-input');
+  const searchDD = document.getElementById('search-dd');
+  if (hsInput) {
+    hsInput.addEventListener('input', e => {
+      const v = e.target.value;
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => {
+        if (v.length < 2) { showQS(); return }
+        const q = v.toLowerCase();
+        const res = searchIdx.filter(c => c.searchText.includes(q)).slice(0, 6);
+        if (!res.length) { searchDD.innerHTML = `<div style="padding:18px;text-align:center;font-size:13px;color:var(--ink4)">No results for "<strong>${v}</strong>"</div>`; searchDD.classList.add('open') }
+        else { searchDD.innerHTML = `<div class="sdd-hd">${res.length} results</div>${res.map(r => `<div class="sdd-item" onclick="AV.openDetail('${r.slug}');closeSD()"><img class="sdd-img" src="${r.image}" alt=""><div style="flex:1;min-width:0"><div class="sdd-name">${r.display}</div><div class="sdd-meta">${r.year} · ${r.type} · ${r.body}</div></div><div class="sdd-price">${r.price}</div></div>`).join('')}`; searchDD.classList.add('open') }
+      }, 180);
+    });
+    hsInput.addEventListener('focus', () => showQS());
+    hsInput.addEventListener('keydown', e => { if (e.key === 'Escape') closeSD(); if (e.key === 'Enter') { AV.goTo('cars', { q: hsInput.value }); closeSD() } });
+    document.addEventListener('click', e => {
+      if (e.target.closest('#header-search-wrap') || e.target.closest('#mob-search-btn') || e.target.closest('#mob-search-back')) return;
+      closeSD();
+    });
+  }
+  function showQS() { if (!searchDD) return; searchDD.innerHTML = `<div class="sdd-hd">Popular Searches</div><div class="sdd-chip-row">${['MG Hector', 'IONIQ 5', 'Toyota Prius', 'Honda City', 'Kia Seltos', 'BYD Atto 3', 'Swift 2024', 'Electric Cars'].map(t => `<span class="sdd-chip" onclick="AV.goTo('cars');closeSD()">${t}</span>`).join('')}</div>`; searchDD.classList.add('open') }
+  function closeSD() { if (searchDD) searchDD.classList.remove('open'); const h = document.querySelector('.header-in'); if (h) h.classList.remove('search-active'); document.body.style.overflow = '' }
+  window.closeSD = closeSD;
+
+  /* ─ HEADER SCROLL ─ */
+  window.addEventListener('scroll', () => { document.getElementById('site-header')?.classList.toggle('scrolled', window.scrollY > 20) }, { passive: true });
+
+  /* ─ MOBILE ─ */
+  const burger = document.getElementById('burger');
+  const mm = document.getElementById('mm');
+  function closeMM() { if (mm) mm.classList.remove('open'); if (burger) burger.classList.remove('open'); document.body.style.overflow = '' }
+  if (burger) burger.addEventListener('click', () => { const open = mm.classList.contains('open'); if (open) closeMM(); else { mm.classList.add('open'); burger.classList.add('open'); document.body.style.overflow = 'hidden' } });
+  const mmCarsBtn = document.getElementById('mm-cars-btn');
+  const mmCarsSub = document.getElementById('mm-cars-sub');
+  if (mmCarsBtn) mmCarsBtn.addEventListener('click', () => { const open = mmCarsSub.classList.contains('open'); mmCarsSub.classList.toggle('open', !open) });
+  window.closeMM = closeMM;
+
+
+
+  /* ─ MOBILE SEARCH TOGGLE ─ */
+  const mobSearchBtn2 = document.getElementById('mob-search-btn');
+  const mobSearchBack2 = document.getElementById('mob-search-back');
+  const headerIn2 = document.querySelector('.header-in');
+
+  if (mobSearchBtn2 && mobSearchBack2 && headerIn2) {
+    mobSearchBtn2.addEventListener('click', e => {
+      e.stopPropagation();
+      headerIn2.classList.add('search-active');
+      document.body.style.overflow = 'hidden';
+      showQS();
+      setTimeout(() => hsInput?.focus(), 100);
+    });
+    mobSearchBack2.addEventListener('click', e => {
+      e.stopPropagation();
+      closeSD();
+    });
+  }
+
+  /* ─ KEYBOARD ─ */
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && !e.target.matches('input,textarea,select')) { e.preventDefault(); hsInput?.focus() }
+    if (e.key === 'Escape') { closeSD(); closeMM() }
+  });
+
+  /* ─ POPSTATE ─ */
+  window.addEventListener('popstate', e => {
+    const hash = location.hash;
+    if (!hash || hash === '#home') renderHome();
+    else if (hash.startsWith('#car/')) renderDetail(hash.replace('#car/', ''));
+    else if (hash.startsWith('#used/')) renderUsedDetail(hash.replace('#used/', ''));
+    else if (hash === '#cars') renderCars();
+    else if (hash === '#electric') renderCars('electric');
+    else if (hash === '#compare') renderCompare();
+    else if (hash === '#services') renderServices();
+    else if (hash === '#used') renderUsed();
+    else renderHome();
+  });
+
+  /* ─ PUBLIC API ─ */
+  window.AV = {
+    goTo, openDetail, toggleCompare, toggleWish, clearCompare, cmpTab, cmpSearch,
+    galNav, galSet, selectVariant, selectColor, dtab,
+    updateEMI, setTenure, getVI,
+    homeFilter, filterList, sortList,
+    swSearch, submitForm,
+    heroNav, heroGo, updateCompareTray, recalcEmi, setTenure2,
+    openUsedDetail, filterUsed, sortUsed, chipFilterUsed, renderUsed, dpAccord,
+    sfApply: _sfApply,
+    sfToggle(type, val, el) {
+      const arr = window._sf[type];
+      const idx = arr.indexOf(val);
+      if (idx === -1) arr.push(val); else arr.splice(idx, 1);
+      el?.classList.toggle('sf-cb-active', arr.includes(val));
+      _sfApply();
+    },
+    sfBudget(val, el) {
+      window._sf.budget = window._sf.budget === val ? '' : val;
+      document.querySelectorAll('.sf-budget-btn').forEach(b => b.classList.remove('active'));
+      if (window._sf.budget) el?.classList.add('active');
+      _sfApply();
+    },
+    sfSort(val) { window._sf.sort = val; _sfApply(); },
+    sfSearch(val) { window._sf.q = val; _sfApply(); },
+    sfPrice() {
+      window._sf.budget = '';
+      document.querySelectorAll('.sf-budget-btn').forEach(b => b.classList.remove('active'));
+      const lo = document.getElementById('lf-price-lo'), hi = document.getElementById('lf-price-hi');
+      if (lo) window._sf.minP = +lo.value;
+      if (hi) window._sf.maxP = +hi.value;
+      const loV = document.getElementById('lf-lo-val'), hiV = document.getElementById('lf-hi-val');
+      if (loV) loV.textContent = 'Rs. ' + window._sf.minP + 'L';
+      if (hiV) hiV.textContent = 'Rs. ' + window._sf.maxP + 'L';
+      _sfApply();
+    },
+    sfSetPrice(min, max) {
+      const maxSl = window._sf?._maxSlider || 600;
+      window._sf.minP = min;
+      window._sf.maxP = max > maxSl ? maxSl : max;
+      const lo = document.getElementById('lf-price-lo'), hi = document.getElementById('lf-price-hi');
+      if (lo) lo.value = window._sf.minP;
+      if (hi) hi.value = window._sf.maxP;
+      const loV = document.getElementById('lf-lo-val'), hiV = document.getElementById('lf-hi-val');
+      if (loV) loV.textContent = 'Rs. ' + window._sf.minP + 'L';
+      if (hiV) hiV.textContent = 'Rs. ' + window._sf.maxP + 'L';
+      _sfApply();
+    },
+    sfSetPrice(min, max) {
+      const maxSl = window._sf?._maxSlider || 600;
+      window._sf.minP = min;
+      window._sf.maxP = max > maxSl ? maxSl : max;
+      const lo = document.getElementById('lf-price-lo'), hi = document.getElementById('lf-price-hi');
+      if (lo) lo.value = window._sf.minP;
+      if (hi) hi.value = window._sf.maxP;
+      const loV = document.getElementById('lf-lo-val'), hiV = document.getElementById('lf-hi-val');
+      if (loV) loV.textContent = 'Rs. ' + window._sf.minP + 'L';
+      if (hiV) hiV.textContent = 'Rs. ' + window._sf.maxP + 'L';
+      _sfApply();
+    },
+    sfClear() {
+      const max = window._sf?._maxSlider || 600;
+      window._sf = { q: '', brands: [], fuels: [], bodies: [], transmissions: [], years: [], minP: 0, maxP: max, sort: '', budget: '', _maxSlider: max };
+      document.querySelectorAll('.sf-budget-btn').forEach(b => b.classList.remove('active'));
+      const lo = document.getElementById('lf-price-lo'), hi = document.getElementById('lf-price-hi');
+      if (lo) lo.value = 0;
+      if (hi) hi.value = max;
+      const loV = document.getElementById('lf-lo-val'), hiV = document.getElementById('lf-hi-val');
+      if (loV) loV.textContent = 'Rs. 0L';
+      if (hiV) hiV.textContent = 'Rs. ' + max + 'L';
+      const s = document.getElementById('lf-search');
+      if (s) s.value = '';
+      const sort = document.getElementById('lf-sort');
+      if (sort) sort.value = '';
+      _sfApply();
+    },
+    sfMobileToggle() {
+      const p = document.getElementById('lf-sidebar');
+      if (!p) return;
+      const isOpen = p.classList.contains('lf-mob-open');
+      p.classList.toggle('lf-mob-open', !isOpen);
+      document.getElementById('lf-overlay')?.classList.toggle('lf-mob-open', !isOpen);
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    },
+    ufApply: _ufApply,
+    ufToggle(type, val, el) { AV.sfToggle.call(AV, type, val, el); },
+    ufBudget(val, el) {
+      window._uf.budget = window._uf.budget === val ? '' : val;
+      document.querySelectorAll('.uf-budget-btn').forEach(b => b.classList.remove('active'));
+      if (window._uf.budget) el?.classList.add('active');
+      _ufApply();
+    },
+    ufSort(val) { window._uf.sort = val; _ufApply(); },
+    ufSearch(val) { window._uf.q = val; _ufApply(); },
+    ufPrice() {
+      window._uf.budget = '';
+      document.querySelectorAll('.uf-budget-btn').forEach(b => b.classList.remove('active'));
+      const lo = document.getElementById('uf-price-lo'), hi = document.getElementById('uf-price-hi');
+      if (lo) window._uf.minP = +lo.value;
+      if (hi) window._uf.maxP = +hi.value;
+      const loV = document.getElementById('uf-lo-val'), hiV = document.getElementById('uf-hi-val');
+      if (loV) loV.textContent = 'Rs. ' + window._uf.minP + 'L';
+      if (hiV) hiV.textContent = 'Rs. ' + window._uf.maxP + 'L';
+      _ufApply();
+    },
+    ufClear() {
+      const max = window._uf?._maxSlider || _usedMaxPrice;
+      window._uf = { q: '', brands: [], fuels: [], bodies: [], transmissions: [], years: [], minP: 0, maxP: max, sort: '', budget: '', certified: false, owners: null, _maxSlider: max, _priceKey: 'priceNum' };
+      document.querySelectorAll('.uf-budget-btn').forEach(b => b.classList.remove('active'));
+      const lo = document.getElementById('uf-price-lo'), hi = document.getElementById('uf-price-hi');
+      if (lo) lo.value = 0;
+      if (hi) hi.value = max;
+      const loV = document.getElementById('uf-lo-val'), hiV = document.getElementById('uf-hi-val');
+      if (loV) loV.textContent = 'Rs. 0L';
+      if (hiV) hiV.textContent = 'Rs. ' + max + 'L';
+      const s = document.getElementById('uf-search');
+      if (s) s.value = '';
+      const sort = document.getElementById('uf-sort');
+      if (sort) sort.value = '';
+      _ufApply();
+    },
+    ufMobileToggle() {
+      const p = document.getElementById('uf-sidebar');
+      if (!p) return;
+      const isOpen = p.classList.contains('lf-mob-open');
+      p.classList.toggle('lf-mob-open', !isOpen);
+      document.getElementById('uf-overlay')?.classList.toggle('lf-mob-open', !isOpen);
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    },
+  };
+
+
+  /* ─ INIT ─ */
+  function init() {
+    const hash = location.hash;
+    if (hash.startsWith('#car/')) renderDetail(hash.replace('#car/', ''));
+    else if (hash === '#cars') renderCars();
+    else if (hash === '#electric') renderCars('electric');
+    else if (hash === '#compare') renderCompare();
+    else if (hash === '#services') renderServices();
+    else if (hash === '#used') renderUsed();
+    else renderHome();
+    lucide.createIcons();
+  }
+  function startApp() {
+    if (window.AV_DATA_READY) {
+      window.AV_DATA_READY.then(init).catch(init);
+    } else {
+      init();
+    }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startApp);
+  else startApp();
+
+
+
+  // AFTER — wrap everything in a function, call it from renderCompare()
+  window._initCompareAnimation = function () {
+    const track = document.getElementById('track');
+    const car = document.getElementById('car');
+    const shadow = document.getElementById('shadow');
+    const speedLines = document.getElementById('speedLines');
+    if (!track || !car) return; // ← guard: stop if elements don't exist
+
+    const CAR_WIDTH = 100;
+    let pos = 0, direction = 1, turning = false;
+    let scaleX = -1, scaleY = 1, bouncePhase = 0;
+    let speed = 1.6, turnProgress = 0;
+
+    function getTrackWidth() { return track.offsetWidth; }
+
+    function setCarTransform(x, scX, scY, bounce) {
+      car.style.left = x + 'px';
+      car.style.transform = `scaleX(${scX}) scaleY(${scY}) translateY(${bounce}px)`;
+      car.style.transformOrigin = 'center bottom';
+      shadow.style.left = (x + CAR_WIDTH / 2 - 30) + 'px';
+      shadow.style.transform = `scaleX(${Math.abs(scX) * (1 + Math.abs(bounce) * 0.04)})`;
+      speedLines.style.left = direction === 1
+        ? (x - 28) + 'px'
+        : (x + CAR_WIDTH + 4) + 'px';
+    }
+
+    function easeInOut(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }
+
+    function animate() {
+      const trackW = getTrackWidth();
+      const maxX = trackW - CAR_WIDTH - 8;
+      bouncePhase += 0.08;
+      const bounce = -Math.abs(Math.sin(bouncePhase)) * 2.5;
+
+      if (turning) {
+        turnProgress += 0.045;
+        const t = easeInOut(Math.min(turnProgress, 1));
+        const midScale = Math.cos(t * Math.PI);
+        const currentScaleX = direction === 1 ? -midScale : midScale;
+        const squish = 1 + Math.abs(midScale < 0 ? midScale * 0.08 : 0);
+        setCarTransform(pos, currentScaleX, squish, bounce * 0.3);
+        shadow.style.opacity = 0.5 + Math.abs(midScale) * 0.5;
+        if (turnProgress >= 1) { turning = false; turnProgress = 0; scaleX = direction === 1 ? 1 : -1; }
+        speedLines.style.opacity = 0;
+      } else {
+        pos += direction * speed;
+        setCarTransform(pos, scaleX, scaleY, bounce);
+        shadow.style.opacity = '0.7';
+        speedLines.style.opacity = speed > 1 ? '0.7' : '0';
+        if (pos >= maxX) { pos = maxX; direction = -1; turning = true; turnProgress = 0; speed = 1.6 + Math.random() * 0.4; }
+        else if (pos <= 4) { pos = 4; direction = 1; turning = true; turnProgress = 0; speed = 1.6 + Math.random() * 0.4; }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    pos = 4; scaleX = 1;
+    animate();
+>>>>>>> 95e6b8b (clean project structure)
   };
  
   /* EMI calculator */
