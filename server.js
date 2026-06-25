@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ── Serve all frontend static files ──────────────────────────────────────────
-app.use(express.static(path.join(__dirname, "frontend")));
+app.use(express.static(path.join(__dirname, "public")));
 app.use('/images', express.static(path.join(__dirname, 'backend/uploads')));
 
 // ── API: Get all new cars ─────────────────────────────────────────────────────
@@ -18,7 +18,7 @@ app.get("/api/status", (req, res) => {
 
 // ── Catch-all: SPA fallback (serves index.html for any unknown route) ─────────
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(PORT, () => {

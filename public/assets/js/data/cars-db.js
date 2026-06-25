@@ -32,9 +32,6 @@ window.CARS_DB = [
   overview: 'The Epic New Suzuki Swift arrives with the all-new 1.2L Z-Series engine delivering best-in-segment fuel efficiency of 25.75 km/l (AMT). It raises the safety bar by making 6 airbags standard across every variant, paired with ESP and Hill Hold Assist as standard. Sporty all-black interiors, a SmartPlay Pro+ infotainment system, and Suzuki Connect telematics make it the most feature-rich Swift yet.',
   images: [
     '/assets/images/cars/suzuki/swift-2024/front.jpg',
-    'assets/images/cars/suzuki-swift-epic-hatchback-02.jpg',
-    'assets/images/cars/suzuki-swift-epic-hatchback-03.jpg',
-    'assets/images/cars/suzuki-swift-epic-hatchback-04.jpg',
   ],
   colors: [
     { name: 'Sizzling Red',                    hex: '#C0392B' },
@@ -569,10 +566,7 @@ window.CARS_DB = [
   baseEMI: 35000,
   overview: 'The All-New Suzuki Alto K10 redefines the entry-level segment with a youthful honeycomb-grille design, 24.90 km/l fuel efficiency, and the Next Gen 1.0L K-Series Dual Jet Dual VVT engine with AGS technology. It packs a Smartplay Studio infotainment with Smartphone Navigation and 4 speakers — a first in its segment — alongside 15+ safety features including dual airbags, ABS with EBD, HEARTECT platform, and reverse parking sensors.',
   images: [
-    'assets/images/cars/suzuki-alto-k10-entry-level-hatchback-01.jpg',
-    'assets/images/cars/suzuki-alto-k10-entry-level-hatchback-02.jpg',
-    'assets/images/cars/suzuki-alto-k10-entry-level-hatchback-03.jpg',
-    'assets/images/cars/suzuki-alto-k10-entry-level-hatchback-04.jpg',
+    '/assets/images/cars/maruti-suzuki/alto/maruti-suzuki-alto-interior-seats-front.jpg',
   ],
   colors: [
     { name: 'Metallic Sizzling Red',   hex: '#C0392B' },
@@ -985,10 +979,7 @@ window.CARS_DB = [
   baseEMI: 84000,
   overview: 'The all-new 5-door Suzuki Jimny carries over 50 years of off-road heritage. Built on a Ladder Frame chassis with 3-Link Rigid Axle Suspension, the Jimny conquers the toughest terrain with ALLGRIP PRO 4WD (with Low Range Transfer Gear), 210 mm ground clearance, 47° approach angle, and 36° departure angle. Safety includes 6 airbags standard across all variants, Hill Descent Control, Hill Hold Assist, and Brake LSD.',
   images: [
-    'assets/images/cars/suzuki-jimny-5door-offroad-suv-01.jpg',
-    'assets/images/cars/suzuki-jimny-5door-offroad-suv-02.jpg',
-    'assets/images/cars/suzuki-jimny-5door-offroad-suv-03.jpg',
-    'assets/images/cars/suzuki-jimny-5door-offroad-suv-04.jpg',
+    '/assets/images/cars/maruti-suzuki/jimny/maruti-suzuki-jimny-exterior-front-white-bg.jpg',
   ],
   colors: [
     { name: 'Kinetic Yellow / Bluish Black Roof', hex: '#F4D03F' },
@@ -2896,10 +2887,11 @@ window.CARS_DB = [
   baseEMI: 56000,
   overview: "The BYD Atto 1 (known as Seagull in China) is BYD's entry-level electric hatchback in Nepal. Built on e-Platform 3.0 with Blade Battery technology and V2L capability, it offers a surprising amount of kit for its price. The Premium variant adds range, extra airbags, and faster DC charging — making it the smarter buy between the two.",
   images: [
-    "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&h=560&fit=crop",
+    '/assets/images/cars/byd/atto-1/byd-att0-1-exterior-front-white-bg.jpg',
+    '/assets/images/cars/byd/atto-1/byd-att0-1-exterior-top.png',
+    '/assets/images/cars/byd/atto-1/byd-atto-1-exterior-front-white-bg.webp',
+    '/assets/images/cars/byd/atto-1/byd-atto-1-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/byd/atto-1/byd-att0-1-interior-seats-front.jpg',
   ],
   colors: [
     { name: "White",  hex: "#F5F5F5" },
@@ -2998,10 +2990,10 @@ window.CARS_DB = [
   baseEMI: 79500,
   overview: "The BYD Dolphin is Nepal's best-selling hatchback EV with over 2,500 units on the road. Powered by a 70 kW motor, 44.9 kWh Blade Battery, and rated 5-star by Euro NCAP, it delivers 340 km WLTP range, 6 airbags, 360° camera, and full ADAS. The 2025 update adds NFC, a Bluetooth key, stiffer suspension, and a new Atlantis Grey color.",
   images: [
-    "/assets/images/cars/byd/dolphin/Dolphin-exterior-04-SkiingwhiteUrbangrey-s.webp",
-    "/assets/images/cars/byd/dolphin/Dolphin-interior-01-blue-s.webp",
-    "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?w=900&h=560&fit=crop",
+    '/assets/images/cars/byd/dolphin/byd-dolphin-exterior-front-white-bg.webp',
+    '/assets/images/cars/byd/dolphin/byd-dolphin-exterior-front.webp',
+    '/assets/images/cars/byd/dolphin/byd-dolphin-interior-dashboard.webp',
+    '/assets/images/cars/byd/dolphin/byd-dolphin-interior-seats-front.webp',
   ],
   colors: [
     { name: "Ski White",     hex: "#F5F5F5" },
@@ -3092,6 +3084,8 @@ window.CARS_DB = [
   baseEMI: 86000,
   overview: "The BYD Atto 2 is the newest compact SUV in Nepal's BYD lineup, built on e-Platform 3.0 with the world-first Cell-to-Body (CTB) battery integration. It slots between the Dolphin and Atto 3 with a 100 kW motor, 51 kWh Blade Battery, 345 km range, 200mm ground clearance, panoramic sunroof, vegan leather, 12.8\" rotating screen, and full ADAS — all for Rs. 44.99L.",
   images: [
+    '/assets/images/cars/byd/atto-2/byd-atto-2-exterior-front.png',
+    '/assets/images/cars/byd/atto-2/byd-atto-2-exterior-side-left-white-bg.png',
     '/assets/images/cars/byd/atto-2/byd-atto-2-interior-dashboard.jpg',
     '/assets/images/cars/byd/atto-2/byd-atto-2-interior-seats-front.jpg',
   ],
@@ -3188,10 +3182,8 @@ window.CARS_DB = [
   baseEMI: 131000,
   overview: "The BYD Atto 3 is Nepal's best-selling electric car, and the model that kickstarted the EV revolution here. The 2025 facelift brings Dragon Face 3.0 styling, a larger 15.6\" rotating touchscreen, refreshed interior, and new Cosmos Black color. Two Blade Battery variants offer 345 km and 420 km WLTP range, both powered by a 100 kW PMSM. 5-Star Euro NCAP rated.",
   images: [
-    "https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&h=560&fit=crop",
+    '/assets/images/cars/byd/atto-3/byd-atto-3-exterior-front-white-bg.webp',
+    '/assets/images/cars/byd/atto-3/byd-atto-3-exterior-rear.webp',
   ],
   colors: [
     { name: "Boulder Grey",  hex: "#7A7E82" },
@@ -3298,7 +3290,10 @@ window.CARS_DB = [
   baseEMI: 113000,
   overview: "The BYD M6 is Nepal's first and only premium 7-seat electric MPV, launched at the International Balloon Festival in Pokhara. Successor to the BYD E6, it packs a 71.8 kWh Blade Battery with 440 km WLTP range, 115 kW DC fast charging, Dragon Face 3.0 design, 12.8\" rotating screen, panoramic sunroof, and ventilated seats — all for under Rs. 59L.",
   images: [
+    '/assets/images/cars/byd/m6/byd-m6-exterior-front.webp',
     '/assets/images/cars/byd/m6/byd-m6-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/byd/m6/byd-m6-interior-dashboard.webp',
+    '/assets/images/cars/byd/m6/byd-m6-interior-seats-rear.webp',
   ],
   colors: [
     { name: "Demon Domain Black", hex: "#1A1A1C" },
@@ -3397,7 +3392,10 @@ window.CARS_DB = [
   images: [
     '/assets/images/cars/byd/sealion-7/byd-sealion-7-exterior-front-white-bg.jpg',
     '/assets/images/cars/byd/sealion-7/byd-sealion-7-exterior-rear-white-bg.jpg',
+    '/assets/images/cars/byd/sealion-7/byd-sealion-exterior-front.png',
+    '/assets/images/cars/byd/sealion-7/byd-sealion-exterior-side-left-white-bg.webp',
     '/assets/images/cars/byd/sealion-7/byd-sealion-7-interior-seats-rear.jpg',
+    '/assets/images/cars/byd/sealion-7/byd-sealion-interior-dashboard.webp',
   ],
   colors: [
     { name: "Shark Grey",   hex: "#5E6266" },
@@ -3499,10 +3497,10 @@ window.CARS_DB = [
   baseEMI: 212000,
   overview: "The BYD Seal is BYD Nepal's flagship — a sleek performance sedan that stands alone in the Nepali market with no direct rival. Available in three variants spanning Rs. 1.10 Cr to Rs. 1.95 Cr, from a 150 kW RWD daily driver to a 390 kW AWD performance machine with 670 Nm system torque. All variants get 9 airbags, 5-Star Euro NCAP, 15.6\" rotating screen, HUD, and ocean-inspired design.",
   images: [
-    "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1493238792000-8113da705763?w=900&h=560&fit=crop",
+    '/assets/images/cars/byd/seal/byd-seal-exterior-front-white-bg.webp',
+    '/assets/images/cars/byd/seal/byd-seal-exterior-side-left-white-bg.webp',
+    '/assets/images/cars/byd/seal/byd-seal-interior-dashboard.webp',
+    '/assets/images/cars/byd/seal/byd-seal-interior-seats-front.webp',
   ],
   colors: [
     { name: "Arctic Blue",   hex: "#1A3A6A" },
@@ -3620,10 +3618,7 @@ window.CARS_DB = [
   baseEMI: 42000,
   overview: "The Kia Sonet is Nepal's best-selling compact SUV, offering ADAS Level 1 safety, a 10.25\" touchscreen, ventilated seats, and a 1.5L petrol engine. Available in MT and IVT, it punches well above its price in features and build quality.",
   images: [
-    "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop",
+    '/assets/images/cars/kia/sonet/kia-sonet-exterior-front-white-bg.png',
   ],
   colors: [
     { name: "Glacier White Pearl", hex: "#F0F0F0" },
@@ -3696,6 +3691,8 @@ window.CARS_DB = [
   overview: "The Kia Seltos remains Nepal's premium compact SUV benchmark with a 10.25\" dual screen setup, ADAS, Bose sound, and a powerful 1.5L turbo petrol. Available in multiple powertrain options with class-leading feature density.",
   images: [
     '/assets/images/cars/kia/seltos/kia-seltos-exterior-front-white-bg.jpg',
+    '/assets/images/cars/kia/seltos/kia-seltos-exterior-front-white-bg.png',
+    '/assets/images/cars/kia/seltos/kia-seltos-exterior-side-left-white-bg.webp',
   ],
   colors: [
     { name: "Pewter Olive",       hex: "#6B6B47" },
@@ -3761,10 +3758,7 @@ window.CARS_DB = [
   baseEMI: 52000,
   overview: "The Kia Carens redefines the MPV segment in Nepal with SUV-inspired styling, a 10.25\" touchscreen, 6 airbags standard, and flexible 6 or 7-seat configurations. Ideal for Nepali families needing space and safety without compromise.",
   images: [
-    "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop",
+    '/assets/images/cars/kia/carens/kia-caren-exterior-front-white-bg.png',
   ],
   colors: [
     { name: "Aurora Black Pearl",  hex: "#1A1A1A" },
@@ -3823,6 +3817,7 @@ window.CARS_DB = [
   baseEMI: 128000,
   overview: "The Kia EV6 is Nepal's most technologically advanced EV, featuring 800V ultra-fast charging, a 77.4 kWh battery, 510km WLTP range, and a stunning interior with dual 12\" curved screens. Available in RWD and AWD GT-Line.",
   images: [
+    '/assets/images/cars/kia/ev6/kia-ev6-exterior-front-white-bg.png',
     '/assets/images/cars/kia/ev6/kia-ev6-interior-dashboard.jpg',
   ],
   colors: [
@@ -4383,14 +4378,12 @@ window.CARS_DB = [
   baseEMI: 88000,
   overview: "The Deepal S07 is Changan's premium EV brand entry into Nepal, offering a 77kWh battery, 520km CLTC range, ADAS Level 2, a massive 15.6\" rotating touchscreen, and dual-motor AWD option. Built on Changan's EPA platform, it rivals the BYD Atto 3 with superior range and tech.",
   images: [
-    '/backend/car-image/deepal/l07/exterior/deepal-l07-exterior-front-white-bg.jpg',
-     '/backend/car-image/deepal/l07/exterior/deepal-l07-exterior-side-left-white-bg.jpg',
-      '/backend/car-image/deepal/l07/exterior/deepal-l07-exterior-side-right-white-bg.jpg',
-      '/backend/car-image/deepal/l07/interior/deepal-l07-interior-boot-front.jpg',
-      '/backend/car-image/deepal/l07/interior/deepal-l07-interior-seats-front (1).jpg',
-      '/backend/car-image/deepal/l07/interior/deepal-l07-interior-console.jpg',
-
-    
+    '/assets/images/cars/deepal/s07/S07_green.png',
+    '/assets/images/cars/deepal/s07/deepal-s07-exterior-front.jpg',
+    '/assets/images/cars/deepal/s07/deepal-s07-exterior-rear.jpg',
+    '/assets/images/cars/deepal/s07/deepal-s07-exterior-side-left-white-bg.png',
+    '/assets/images/cars/deepal/s07/deepal-s07-interior-dashboard.jpg',
+    '/assets/images/cars/deepal/s07/deepal-s07-interior-seats-front.jpg',
   ],
   colors: [
     { name: "Crystal White",   hex: "#F5F5F5" },
@@ -4449,7 +4442,12 @@ window.CARS_DB = [
   baseEMI: 72000,
   overview: "The Deepal L07 is a Range-Extended EV (REEV) sedan — it runs on electric motors with a small petrol engine acting solely as a generator, never driving the wheels directly. This delivers EV smoothness with 1,000km+ combined range, eliminating range anxiety for Nepal's long-distance drivers.",
   images: [
+    '/assets/images/cars/deepal/l07/L07_green.png',
+    '/assets/images/cars/deepal/l07/deepal-l07-exterior-front-white-bg.jpg',
     '/assets/images/cars/deepal/l07/deepal-l07-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/deepal/l07/deepal-l07-exterior-side-right-white-bg.jpg',
+    '/assets/images/cars/deepal/l07/deepal-l07-interior-boot-front.jpg',
+    '/assets/images/cars/deepal/l07/deepal-l07-interior-console.jpg',
   ],
   colors: [
     { name: "Pearl White",   hex: "#F5F5F5" },
@@ -4502,12 +4500,11 @@ window.CARS_DB = [
   baseEMI: 58000,
   overview: "The Deepal S05 is Changan's entry-level EV SUV, positioned below the S07 with a 60kWh battery, 400km CLTC range, and a 12.8\" touchscreen. It offers excellent value in Nepal's growing EV market with solid build quality and Changan's proven EPA2.0 platform.",
   images: [
-    '/backend/car-image/deepal/s05/exterior/deepal-s05-exterior-front-white-bg.png',
-'/backend/car-image/deepal/s05/exterior/deepal-s05-exterior-rear.jpg',
-'/backend/car-image/deepal/s05/exterior/deepal-s05-exterior-side-white-bg.jpg',
-'/backend/car-image/deepal/s05/interior/deepal-s05-interior-dashboard.jpg',
-'/backend/car-image/deepal/s05/interior/deepal-s05-interior-seats-front.jpg',
-'/backend/car-image/deepal/s05/interior/deepal-s05-interior-seats-rear.jpg',
+    '/assets/images/cars/deepal/s05/deepal-s05-exterior-front-white-bg.png',
+    '/assets/images/cars/deepal/s05/deepal-s05-exterior-rear.jpg',
+    '/assets/images/cars/deepal/s05/deepal-s05-exterior-side-white-bg.jpg',
+    '/assets/images/cars/deepal/s05/deepal-s05-interior-dashboard.jpg',
+    '/assets/images/cars/deepal/s05/deepal-s05-interior-seats-front.jpg',
   ],
   colors: [
     { name: "Crystal White",  hex: "#F5F5F5" },
@@ -4620,10 +4617,7 @@ window.CARS_DB = [
   baseEMI: 52000,
   overview: "The Chery Tiggo 7 Pro steps up to the mid-size SUV class with a 1.6L turbo engine, 197mm ground clearance, dual 12.3\" screens, ADAS safety suite, and a best-in-class 540L boot. It undercuts Hyundai Tucson and Kia Sportage on price while matching them on features.",
   images: [
-    "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop",
+    '/assets/images/cars/chery/tiggo-4-pro/chery-tiggo-4-pro-interior-dashboard.jpg',
   ],
   colors: [
     { name: "Diamond White",  hex: "#F5F5F5" },
@@ -4794,10 +4788,8 @@ window.CARS_DB = [
   baseEMI: 62000,
   overview: "The Chery Omoda E5 is the electric version of the Omoda 5, sharing its striking coupe silhouette but powered by a 61kWh battery delivering 430km CLTC range. With ADAS, 360° camera, and 150kW fast charging, it offers premium EV features at a competitive Nepal price point.",
   images: [
-    "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop",
+    '/assets/images/cars/chery/omoda-5/chery-omoda-5-interior-seats-front.jpg',
+    '/assets/images/cars/chery/omoda-5/chery-omoda-5-interior-seats-rear.jpg',
   ],
   colors: [
     { name: "Polar White",  hex: "#F5F5F5" },
@@ -4849,10 +4841,7 @@ window.CARS_DB = [
   baseEMI: 28000,
   overview: "The Chery Tiggo 2 Pro is the entry point of the Chery SUV lineup in Nepal, offering a 1.5L turbo engine, electric sunroof, 10.25\" touchscreen, and 6 airbags in a sub-4m body. Best value-for-money proposition for first-time SUV buyers in Nepal.",
   images: [
-    "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop",
+    '/assets/images/cars/chery/tiggo-4-pro/chery-tiggo-4-pro-interior-dashboard.jpg',
   ],
   colors: [
     { name: "Polar White",   hex: "#F5F5F5" },
@@ -5369,10 +5358,8 @@ window.CARS_DB = [
   baseEMI: 50000,
   overview: "The Haval Jolion EV brings the popular Jolion nameplate into the electric age with a 60kWh battery, 420km CLTC range, and all the premium features of the petrol version — ADAS, 360° camera, and ventilated seats — in a zero-emission package.",
   images: [
-    "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-    "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=900&h=560&fit=crop",
+    '/assets/images/cars/haval/jolion/haval-jolion-exterior-side-left-white-bg.jpg',
+    '/assets/images/cars/haval/jolion/haval-jolion-interior-dashboard.jpg',
   ],
   colors: [
     { name: "Pearl White",  hex: "#F5F5F5" },
@@ -6392,10 +6379,8 @@ window.CARS_DB = [
     overview:
       "The BMW 5 Series represents BMW's business-class sedan in Nepal, offering the flagship comfort and technology of the brand in a longer wheelbase package. The 530e PHEV combines a 2.0L petrol engine with an electric motor for 252 hp combined output, making it more cost-efficient than ever to run in Nepal.",
     images: [
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&h=560&fit=crop",
-    ],
+    '/assets/images/cars/bmw/3-series/bmw-3-series-interior-dashboard.jpg',
+  ],
     colors: [
       { name: "Alpine White",      hex: "#F5F5F5" },
       { name: "Jet Black",         hex: "#111111" },
@@ -6631,10 +6616,10 @@ window.CARS_DB = [
     overview:
       "The Volkswagen Taigun is Nepal's best-known compact SUV in the premium mid-segment, built on the MQB A0 IN platform shared with the Skoda Kushaq. It earned a 5-star Global NCAP safety rating for both adult and child occupants — the safest in its class. Available with 1.0L TSI and the new 1.5L TSI GT Plus engine at the NAIMA 2025 Expo, it offers solid German engineering at an accessible price.",
     images: [
-      "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=900&h=560&fit=crop",
-    ],
+    '/assets/images/cars/volkswagen/taigun/volkswagen-taigun-exterior-front-white-bg.webp',
+    '/assets/images/cars/volkswagen/taigun/volkswagen-taigun-exterior-rear.webp',
+    '/assets/images/cars/volkswagen/taigun/volkswagen-taigun-exterior-side-right-white-bg.webp',
+  ],
     colors: [
       { name: "Wild Cherry Red",  hex: "#CC2222" },
       { name: "Candy White",      hex: "#F8F8F8" },
@@ -6926,10 +6911,8 @@ window.CARS_DB = [
     overview:
       "The Next-Generation Ford Ranger is Nepal's best-selling premium pickup, imported from Thailand by GO Automobiles. Built to Euro 6 standards, it offers two 2.0L diesel options (Single-Turbo & Bi-Turbo), 800 mm water wading depth, six selectable terrain modes, and a dramatically updated interior with 12-inch SYNC4 infotainment. It competes directly with the Toyota Hilux and Isuzu D-Max in Nepal's growing lifestyle pickup segment.",
     images: [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1571987502227-9231b837d92a?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1593055357429-62b4c8c8a0af?w=900&h=560&fit=crop",
-    ],
+    '/assets/images/cars/ford/next-gen-ranger/ford-rangerr-exterior-front-white-bg.png',
+  ],
     colors: [
       { name: "Arctic White",    hex: "#F5F5F5" },
       { name: "Meteor Grey",     hex: "#6A6D72" },
@@ -6990,8 +6973,8 @@ window.CARS_DB = [
     overview:
       "The Next-Generation Ford Everest replaces the Endeavour as GO Ford's flagship 7-seat SUV in Nepal. Imported from Thailand, the Titanium variant — the only spec sold in Nepal — combines a 210 PS bi-turbo diesel with a 10-speed SelectShift AT, intelligent 4WD, 800 mm wading depth, 12-inch SYNC4A touchscreen, panoramic moonroof, and a 5-star ANCAP safety rating. It competes directly with the Toyota Fortuner and Jeep Meridian at the top of Nepal's off-road luxury segment.",
     images: [
-     '/backend/car-image/ford/everest/exterior/ford-everest-exterior-front-white-bg.png',
-    ],
+    '/assets/images/cars/ford/next-gen-everest/ford-everest-exterior-front-white-bg.png',
+  ],
     colors: [
       { name: "Absolute Black",  hex: "#111111" },
       { name: "Aluminium",       hex: "#C0C0C0" },
@@ -7049,7 +7032,8 @@ window.CARS_DB = [
     overview:
       "The Next-Generation Ford Ranger Raptor is the most extreme performance vehicle currently sold by an authorized dealer in Nepal. Powered by a 3.0L V6 Twin-Turbo EcoBoost petrol engine tuned by Ford Performance, it delivers 392 hp and 583 Nm with FOX Live Valve shocks, 272 mm ground clearance, and seven selectable drive modes including Baja and Rock Crawl. GO Ford sells it at Rs. 2.29 Crore, making it the ultimate Nepal mountain conquest machine.",
     images: [
-    '/backend/car-image/ford/ranger-raptor/exterior/ford-ranger-raptor-exterior-front-white-bg.png',
+    '/assets/images/cars/ford/next-gen-ranger-raptor/ford-ranger-raptor-exterior-front-white-bg.png',
+    '/assets/images/cars/ford/next-gen-ranger-raptor/ford-ranger-raptor-exterior-rear-white-bg.jpg',
     '/assets/images/cars/ford/next-gen-ranger-raptor/ford-ranger-raptor-interior-seats-front.jpg',
   ],
     colors: [
@@ -7377,10 +7361,8 @@ window.CARS_DB = [
     overview:
       "The Maruti Suzuki WagonR is one of Nepal's most popular family hatchbacks, offering a tall-boy design that maximizes interior space for 5 passengers. Available in 1.0L and 1.2L engines with AMT option, it is popular with families and taxi operators needing maximum capacity in a small footprint. CG Motocorp offers it across all Suzuki showrooms in Nepal.",
     images: [
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop",
-    ],
+    '/assets/images/cars/maruti-suzuki/wagonr/suzuki-wagon-r-exterior-front-white-bg.jpg',
+  ],
     colors: [
       { name: "Solid White",       hex: "#F8F8F8" },
       { name: "Silky Silver",      hex: "#C0C0C0" },
@@ -7507,10 +7489,8 @@ window.CARS_DB = [
     overview:
       "The Maruti Suzuki Swift is Nepal's most beloved premium hatchback and one of the best-selling cars in the country. The new-generation Swift runs on the HEARTECT platform with a new 1.2L Z12E 3-cylinder engine offering improved performance and efficiency. Sporty design, class-leading safety (6 airbags on top trim), and a willing AMT option make it the go-to hatchback for Nepal's urban buyers.",
     images: [
-      "https://images.unsplash.com/photo-1541038520399-6b1d44e4e0a9?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=900&h=560&fit=crop",
-      "https://images.unsplash.com/photo-1501066927591-314112b5888e?w=900&h=560&fit=crop",
-    ],
+    '/assets/images/cars/suzuki/swift-2024/front.jpg',
+  ],
     colors: [
       { name: "Solid White",         hex: "#F8F8F8" },
       { name: "Excellent White",     hex: "#EFEFEF" },
