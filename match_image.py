@@ -34,8 +34,13 @@ CARS_DB_FILE  = "public/assets/js/data/cars-db.js"
 IMAGES_SRC    = "public/assets/images/car_images"
 IMAGES_DST    = "public/assets/images/cars"
 
+<<<<<<< HEAD
 # Match the path style already in your file: '/assets/images/car_images/...'
 WEB_PREFIX    = "/assets/images/car_images"
+=======
+# Match the path style already in your file: '/assets/images/cars/...'
+WEB_PREFIX    = "/assets/images/cars"
+>>>>>>> d8bfd5da6b0f94d2599d6898456e1d255e89380c
 
 IMAGE_EXT     = [".jpg", ".jpeg", ".png", ".webp"]
 MAX_EXTERIOR  = 4

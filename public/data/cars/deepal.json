@@ -401,5 +401,104 @@
       "90kW Fast Charge",
       "Compact SUV"
     ]
+  },
+  {
+    "slug": "deepal-s07l-2025",
+    "brand": "Deepal",
+    "model": "S07L",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Mid-size Electric SUV",
+    "badge": "premium",
+    "tagline": "Long-range flagship Deepal SUV with 485km WLTP range for Nepal",
+    "overview": "The Deepal S07L is the long-range, more powerful variant of the S07, built on Changan's EPA1 EV platform. It steps up to a 79.97kWh battery and a 160kW motor, adding frameless doors, a rotating 15.6\" touchscreen, and an AR head-up display over the standard S07.",
+    "distributor": "MAW Vriddhi AutoCorp",
+    "price": {
+      "value": 8499000,
+      "label": "Rs. 84.99 Lakh (ex-showroom)"
+    },
+    "variants": "Single fully-loaded variant",
+    "colors": [
+      {
+        "name": "Comet White"
+      },
+      {
+        "name": "Lunar Grey"
+      },
+      {
+        "name": "Eclipse Black"
+      },
+      {
+        "name": "Nebula Green"
+      },
+      {
+        "name": "Cosmic Yellow"
+      },
+      {
+        "name": "Sunset Orange"
+      }
+    ],
+    "interiorColors": [
+      "Orange",
+      "Black"
+    ],
+    "specs": {
+      "Battery": "79.97 kWh Ternary Lithium (NMC)",
+      "Range": "485 km (WLTP) / 560 km (NEDC, as quoted at launch)",
+      "Motor": "160 kW Permanent Magnet Synchronous Motor",
+      "Power": "218 PS (~160 kW)",
+      "Torque": "320 Nm",
+      "0-100km/h": "6.6 sec",
+      "Top Speed": "180 km/h",
+      "Drive": "RWD",
+      "Seating": "5",
+      "Charging (DC)": "30-80% in 35 min (fast charger)",
+      "Charging (AC)": "0-100% in ~10-12 hrs (7.2 kW)",
+      "Charging Port": "CCS2",
+      "Length": "4,750 mm",
+      "Width": "1,930 mm",
+      "Height": "1,625 mm",
+      "Wheelbase": "2,900 mm",
+      "Ground Clearance": "165 mm (some listings cite 175 mm for base S07)",
+      "Kerb Weight": "2,148 kg",
+      "Boot Space": "445 L trunk + 125 L frunk (one source cites 1,385 L total)",
+      "Wheels": "20-inch alloys, 255/45 R20 tires",
+      "Airbags": "6"
+    },
+    "features": [
+      "15.6\" rotating 'Sunflower' touchscreen (Snapdragon 8155)",
+      "AR Head-Up Display with navigation",
+      "Wireless Apple CarPlay/Android Auto",
+      "14-speaker Sony sound system",
+      "40W wireless phone charger",
+      "V2L (Vehicle-to-Load)",
+      "Starry panoramic sunroof",
+      "Frameless doors, hidden handles",
+      "Dual-zone auto AC with PM2.5 filter",
+      "Digital key + gesture recognition",
+      "360° camera",
+      "ADAS: IACC (adaptive cruise), Lane Keep Assist, Blind Spot Detection, AEB"
+    ],
+    "warranty": {
+      "vehicle": "3 years / 120,000 km",
+      "battery": "8 years / 160,000 km",
+      "charger": "1 year"
+    },
+    "ownership": {
+      "annualRoadTax": "Rs. 20,000",
+      "thirdPartyInsurance": "Rs. 8,250/year"
+    },
+    "pros": [
+      "Strong 485km real WLTP-rated range, best in segment",
+      "Premium tech: rotating screen, AR HUD, 14 speakers",
+      "Frameless doors and design stand out from rivals",
+      "Long 8-year battery warranty"
+    ],
+    "cons": [
+      "RWD only, no AWD option",
+      "Premium pricing near Rs. 85L puts it against established rivals",
+      "Conflicting range figures (NEDC vs WLTP) quoted across listings",
+      "Charging infra in Nepal still developing despite MAW's 91-station rollout"
+    ]
   }
 ]
