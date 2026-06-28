@@ -1,5 +1,8 @@
 {
   "leadStatuses": {},
   "leadFlags": {},
-  "carAvail": {}
+  "leadNotes": {},
+  "carAvail": {
+    "used-3": "reserved"
+  }
 }

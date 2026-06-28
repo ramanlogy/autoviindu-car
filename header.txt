@@ -555,9 +555,12 @@
           <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'emi'});return false">
             <div class="av-ri"><span class="av-rt">EMI calculator</span><span class="av-rs">Estimate monthly payments</span></div>
           </a>
-          <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'charging'});return false">
-            <div class="av-ri"><span class="av-rt">EV charging map</span><span class="av-rs">Find chargers near you</span></div>
-          </a>
+          <a class="av-row" href="/chargingstation.html">
+    <div class="av-ri">
+        <span class="av-rt">EV charging map</span>
+        <span class="av-rs">Find chargers near you</span>
+    </div>
+</a>
           <a class="av-row" href="#" onclick="AV.goTo('tools',{tool:'testdrive'});return false">
             <div class="av-ri"><span class="av-rt">Test drive at home</span></div>
           </a>

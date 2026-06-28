@@ -1,159 +1,5 @@
 /* AutoViindu Auto-Generated Cars DB */
 window.CARS_DB = [
-
-  {
-    "id": 1,
-    "slug": "deepal-s07-2025",
-    "brand": "Deepal",
-    "model": "S07",
-    "year": 2025,
-    "type": "Electric",
-    "body": "Mid-size Electric SUV",
-    "badge": "new",
-    "tagline": "Changan's flagship EV with 520km range and Level 2 ADAS for Nepal",
-    "rating": 4.3,
-    "reviews": 187,
-    "expertScore": 8.2,
-    "baseEMI": 88000,
-    "overview": "The Deepal S07 is Changan's premium EV brand entry into Nepal, offering a 77kWh battery, 520km CLTC range, ADAS Level 2, a massive 15.6\" rotating touchscreen, and dual-motor AWD option. Built on Changan's EPA platform, it rivals the BYD Atto 3 with superior range and tech.",
-    "images": [
-    '/assets/images/cars/deepal/s07/deepal-s07-exterior-front.jpg',
-    '/assets/images/cars/deepal/s07/deepal-s07-exterior-rear.jpg',
-    '/assets/images/cars/deepal/s07/deepal-s07-exterior-side-left-white-bg.png',
-    '/assets/images/cars/deepal/s07/deepal-s07-interior-dashboard.jpg',
-    '/assets/images/cars/deepal/s07/deepal-s07-interior-seats-rear.jpg',
-  ],
-    "colors": [
-      {
-        "name": "Crystal White",
-        "hex": "#F5F5F5"
-      },
-      {
-        "name": "Cosmos Black",
-        "hex": "#1A1A1A"
-      },
-      {
-        "name": "Sky Blue",
-        "hex": "#4A90D9"
-      },
-      {
-        "name": "Titanium Grey",
-        "hex": "#5A5E63"
-      },
-      {
-        "name": "Aurora Green",
-        "hex": "#2D5A3D"
-      }
-    ],
-    "variants": [
-      {
-        "name": "Standard Range RWD",
-        "price": 7499000,
-        "label": "Rs. 79.90L",
-        "popular": false,
-        "transmission": "Single Speed",
-        "fuel": "Electric",
-        "features": [
-          "61kWh Battery",
-          "420km CLTC Range",
-          "6 Airbags",
-          "15.6\" Rotating Touchscreen",
-          "ADAS Level 1",
-          "Rear Camera + Sensors",
-          "18\" Alloy Wheels",
-          "Wireless CarPlay"
-        ],
-        "specs": {
-          "power": "218 hp",
-          "torque": "320 Nm",
-          "efficiency": "6.8 km/kWh",
-          "transmission": "Single Speed Reducer"
-        }
-      },
-      {
-        "name": "Long Range RWD",
-        "price": 8499000,
-        "label": "Rs. 92.90L",
-        "popular": true,
-        "transmission": "Single Speed",
-        "fuel": "Electric",
-        "features": [
-          "77kWh Battery",
-          "520km CLTC Range",
-          "ADAS Level 2 (8 features)",
-          "360° Camera",
-          "Ventilated Seats",
-          "Wireless Charging",
-          "Standard features+"
-        ],
-        "specs": {
-          "power": "218 hp",
-          "torque": "320 Nm",
-          "efficiency": "6.5 km/kWh",
-          "transmission": "Single Speed Reducer"
-        }
-      },
-      {
-        "name": "Long Range AWD",
-        "price": 8499000,
-        "label": "Rs. 1.09 Cr",
-        "popular": false,
-        "transmission": "Single Speed",
-        "fuel": "Electric",
-        "features": [
-          "Dual Motor AWD",
-          "0-100 in 4.9s",
-          "Air Suspension",
-          "Head-Up Display",
-          "Nappa Leather",
-          "Long Range RWD features+"
-        ],
-        "specs": {
-          "power": "402 hp",
-          "torque": "620 Nm",
-          "efficiency": "5.9 km/kWh",
-          "transmission": "Single Speed Reducer"
-        }
-      }
-    ],
-    "specs": {
-      "Battery": "61 kWh / 77 kWh",
-      "Range": "420–520 km (CLTC)",
-      "Power": "218–402 hp",
-      "Torque": "320–620 Nm",
-      "Charging": "150 kW DC Fast Charge",
-      "Charge Time": "30 min (10–80%)",
-      "Transmission": "Single Speed",
-      "Drive": "RWD / AWD",
-      "Seating": "5",
-      "Boot Space": "520 L + 72 L frunk",
-      "Length": "4,747 mm",
-      "Width": "1,930 mm",
-      "Height": "1,625 mm",
-      "Wheelbase": "2,900 mm",
-      "Ground Clearance": "175 mm",
-      "Airbags": "6"
-    },
-    "pros": [
-      "520km range on long range",
-      "15.6\" rotating screen",
-      "AWD with 402hp available",
-      "Air suspension on top trim",
-      "Strong Changan build quality"
-    ],
-    "cons": [
-      "CLTC range overstates real-world by ~20%",
-      "Brand new to Nepal — service unproven",
-      "Ground clearance lower than petrol rivals",
-      "No spare tyre"
-    ],
-    "highlights": [
-      "520km Range",
-      "15.6\" Rotating Screen",
-      "ADAS Level 2",
-      "AWD Option"
-    ]
-  },
   {
     "id": 8,
     "slug": "samjhana cars",
@@ -8522,7 +8368,159 @@ window.CARS_DB = [
       "Proven Rural Reliability"
     ]
   },
-  
+  {
+    "id": 701,
+    "slug": "deepal-s07-2025",
+    "brand": "Deepal",
+    "model": "S07",
+    "year": 2025,
+    "type": "Electric",
+    "body": "Mid-size Electric SUV",
+    "badge": "new",
+    "tagline": "Changan's flagship EV with 520km range and Level 2 ADAS for Nepal",
+    "rating": 4.3,
+    "reviews": 187,
+    "expertScore": 8.2,
+    "baseEMI": 88000,
+    "overview": "The Deepal S07 is Changan's premium EV brand entry into Nepal, offering a 77kWh battery, 520km CLTC range, ADAS Level 2, a massive 15.6\" rotating touchscreen, and dual-motor AWD option. Built on Changan's EPA platform, it rivals the BYD Atto 3 with superior range and tech.",
+    "images": [
+    '/assets/images/cars/deepal/s07/deepal-s07-exterior-front.jpg',
+    '/assets/images/cars/deepal/s07/deepal-s07-exterior-rear.jpg',
+    '/assets/images/cars/deepal/s07/deepal-s07-exterior-side-left-white-bg.png',
+    '/assets/images/cars/deepal/s07/deepal-s07-interior-dashboard.jpg',
+    '/assets/images/cars/deepal/s07/deepal-s07-interior-seats-rear.jpg',
+  ],
+    "colors": [
+      {
+        "name": "Crystal White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Cosmos Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Sky Blue",
+        "hex": "#4A90D9"
+      },
+      {
+        "name": "Titanium Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Aurora Green",
+        "hex": "#2D5A3D"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard Range RWD",
+        "price": 7499000,
+        "label": "Rs. 79.90L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "61kWh Battery",
+          "420km CLTC Range",
+          "6 Airbags",
+          "15.6\" Rotating Touchscreen",
+          "ADAS Level 1",
+          "Rear Camera + Sensors",
+          "18\" Alloy Wheels",
+          "Wireless CarPlay"
+        ],
+        "specs": {
+          "power": "218 hp",
+          "torque": "320 Nm",
+          "efficiency": "6.8 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "Long Range RWD",
+        "price": 8499000,
+        "label": "Rs. 92.90L",
+        "popular": true,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "77kWh Battery",
+          "520km CLTC Range",
+          "ADAS Level 2 (8 features)",
+          "360° Camera",
+          "Ventilated Seats",
+          "Wireless Charging",
+          "Standard features+"
+        ],
+        "specs": {
+          "power": "218 hp",
+          "torque": "320 Nm",
+          "efficiency": "6.5 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      },
+      {
+        "name": "Long Range AWD",
+        "price": 8499000,
+        "label": "Rs. 1.09 Cr",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "Dual Motor AWD",
+          "0-100 in 4.9s",
+          "Air Suspension",
+          "Head-Up Display",
+          "Nappa Leather",
+          "Long Range RWD features+"
+        ],
+        "specs": {
+          "power": "402 hp",
+          "torque": "620 Nm",
+          "efficiency": "5.9 km/kWh",
+          "transmission": "Single Speed Reducer"
+        }
+      }
+    ],
+    "specs": {
+      "Battery": "61 kWh / 77 kWh",
+      "Range": "420–520 km (CLTC)",
+      "Power": "218–402 hp",
+      "Torque": "320–620 Nm",
+      "Charging": "150 kW DC Fast Charge",
+      "Charge Time": "30 min (10–80%)",
+      "Transmission": "Single Speed",
+      "Drive": "RWD / AWD",
+      "Seating": "5",
+      "Boot Space": "520 L + 72 L frunk",
+      "Length": "4,747 mm",
+      "Width": "1,930 mm",
+      "Height": "1,625 mm",
+      "Wheelbase": "2,900 mm",
+      "Ground Clearance": "175 mm",
+      "Airbags": "6"
+    },
+    "pros": [
+      "520km range on long range",
+      "15.6\" rotating screen",
+      "AWD with 402hp available",
+      "Air suspension on top trim",
+      "Strong Changan build quality"
+    ],
+    "cons": [
+      "CLTC range overstates real-world by ~20%",
+      "Brand new to Nepal — service unproven",
+      "Ground clearance lower than petrol rivals",w
+      "No spare tyre"
+    ],
+    "highlights": [
+      "520km Range",
+      "15.6\" Rotating Screen",
+      "ADAS Level 2",
+      "AWD Option"
+    ]
+  },
   {
     "id": 702,
     "slug": "deepal-l07-2025",

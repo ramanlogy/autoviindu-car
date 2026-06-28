@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "validate:dbs": "node scripts/validate-cars-dbs.js"
   },
   "repository": {
     "type": "git",

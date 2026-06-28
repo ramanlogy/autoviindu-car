@@ -726,7 +726,13 @@
       try {
         const up = await api('/api/admin/upload-image', {
           method: 'POST',
-          body: JSON.stringify({ imageBase64: b64, filename: file.name }),
+          body: JSON.stringify({
+            imageBase64: b64,
+            filename: file.name,
+            brandSlug: car.brandSlug || slugify(car.brand),
+            modelSlug: car.slug || slugify(car.brand + '-' + car.model),
+            carSlug: car.slug,
+          }),
         });
         if (up.ok) {
           const d = await up.json();

@@ -14,6 +14,9 @@
 
 (function () {
   'use strict';
+
+  function startApp() {
+  let CARS_DB = window.CARS_DB || [];
   const USED = window.USED_CARS_DB || [];
 
   const Rs = n => n >= 100000 ? `Rs. ${(n / 100000).toFixed(2)}L` : `Rs. ${n.toLocaleString()}`;
@@ -2448,14 +2451,44 @@
     else renderHome();
     history.pushState({ page: p, opts }, '', `#${p}`);
   }
-  function openDetail(slug) {
+  function openDetail(slug, opts) {
+    opts = opts || {};
     clearInterval(heroTimer);
-    renderDetail(slug);
-    history.pushState({ page: 'detail', slug }, '', `#car/${slug}`);
+    const car = carBySlug(slug);
+    const needsFetch = car && !car.overview && window.AV_ensureCar;
+    const root = document.getElementById('app-root');
+    if (needsFetch && root) {
+      root.innerHTML = '<div style="padding:64px 24px;text-align:center;color:var(--ink3)">Loading car details\u2026</div>';
+    }
+    const ready = window.AV_ensureCar
+      ? window.AV_ensureCar(slug)
+      : Promise.resolve(car);
+    return ready.then(function (resolved) {
+      if (!resolved) { goTo('cars'); return; }
+      CARS_DB = window.CARS_DB || CARS_DB;
+      renderDetail(slug);
+      if (!opts.skipHistory) history.pushState({ page: 'detail', slug }, '', `#car/${slug}`);
+    }).catch(function () { goTo('cars'); });
   }
 
   /* ─ SEARCH ─ */
-  let searchIdx = CARS_DB.map(c => ({ slug: c.slug, display: `${c.brand} ${c.model}`, searchText: `${c.brand} ${c.model} ${c.type} ${c.body}`.toLowerCase(), image: c.images[0], year: c.year, type: c.type, body: c.body, price: window.Rs(c.variants[0].price) }));
+  function buildSearchIdx(db) {
+    return db.map(c => ({
+      slug: c.slug,
+      display: `${c.brand} ${c.model}`,
+      searchText: `${c.brand} ${c.model} ${c.type} ${c.body}`.toLowerCase(),
+      image: (c.images && c.images[0]) || c.thumb || '',
+      year: c.year,
+      type: c.type,
+      body: c.body,
+      price: c.variants && c.variants[0] ? window.Rs(c.variants[0].price) : 'TBA',
+    }));
+  }
+  let searchIdx = buildSearchIdx(CARS_DB);
+  document.addEventListener('av:cars-updated', function () {
+    CARS_DB = window.CARS_DB || [];
+    searchIdx = buildSearchIdx(CARS_DB);
+  });
   let searchTimer = null;
   const hsInput = document.getElementById('hs-input');
   const searchDD = document.getElementById('search-dd');
@@ -2526,7 +2559,7 @@
   window.addEventListener('popstate', e => {
     const hash = location.hash;
     if (!hash || hash === '#home') renderHome();
-    else if (hash.startsWith('#car/')) renderDetail(hash.replace('#car/', ''));
+    else if (hash.startsWith('#car/')) openDetail(hash.replace('#car/', ''), { skipHistory: true });
     else if (hash.startsWith('#used/')) renderUsedDetail(hash.replace('#used/', ''));
     else if (hash === '#cars') renderCars();
     else if (hash === '#electric') renderCars('electric');
@@ -2647,7 +2680,7 @@
   /* ─ INIT ─ */
   function init() {
     const hash = location.hash;
-    if (hash.startsWith('#car/')) renderDetail(hash.replace('#car/', ''));
+    if (hash.startsWith('#car/')) openDetail(hash.replace('#car/', ''));
     else if (hash === '#cars') renderCars();
     else if (hash === '#electric') renderCars('electric');
     else if (hash === '#compare') renderCompare();
@@ -2720,5 +2753,15 @@
     animate();
   };
 
+  } // startApp
 
+  const dataReady = window.AV_DATA_READY;
+  if (dataReady && typeof dataReady.then === 'function') {
+    dataReady.then(startApp).catch(function (err) {
+      console.error('[AutoViindu] Failed to load car data:', err);
+      startApp();
+    });
+  } else {
+    startApp();
+  }
 })();

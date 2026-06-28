@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+const crypto = require("crypto");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -27,9 +28,13 @@ app.post('/api/admin/login', (req, res) => {
 });
 
 
-// ── Serve all frontend static files ──────────────────────────────────────────
+// ── Serve static assets (car images cached at the edge) ─────────────────────
+app.use("/assets/images/cars", express.static(
+  path.join(__dirname, "public", "assets", "images", "cars"),
+  { maxAge: "365d", immutable: true }
+));
 app.use(express.static(path.join(__dirname, "public")));
-app.use('/images', express.static(path.join(__dirname, 'backend/uploads')));
+app.use("/images", express.static(path.join(__dirname, "backend", "uploads")));
 
 // Convenient routes for admin
 app.get('/login', (req, res) => {
@@ -40,10 +45,6 @@ app.get('/dashboard', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/admin/dashboard.html'));
 });
 
-// ── API: Get all new cars ─────────────────────────────────────────────────────
-// The cars data lives in cars-db.js on the frontend.
-// This endpoint is a lightweight health-check / meta endpoint.
-// Your actual car data is loaded from cars-db.js on the client side.
 app.get("/api/status", (req, res) => {
   res.json({ status: "ok", site: "AutoViindu" });
 });
@@ -71,9 +72,17 @@ app.post("/api/forms/submit", (req, res) => {
   res.json({ success: true, message: "Form submitted successfully" });
 });
 
-const carsDbPath = path.join(__dirname, "public", "assets", "js", "data", "cars-db.js");
-const usedDbPath = path.join(__dirname, "public", "assets", "js", "data", "used-cars-db.js");
+const dataDir = path.join(__dirname, "backend", "data");
+const carsJsonPath = path.join(dataDir, "cars.json");
+const usedJsonPath = path.join(dataDir, "used-cars.json");
+const legacyCarsJsPath = path.join(__dirname, "public", "assets", "js", "data", "cars-db.js");
+const legacyUsedJsPath = path.join(__dirname, "public", "assets", "js", "data", "used-cars-db.js");
 const adminMetaPath = path.join(__dirname, "backend", "admin-meta.json");
+const carsImageRoot = path.join(__dirname, "public", "assets", "images", "cars");
+
+function slugify(text) {
+  return String(text || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
 
 function readJsArray(filePath) {
   if (!fs.existsSync(filePath)) return [];
@@ -86,12 +95,99 @@ function readJsArray(filePath) {
   catch { return Function("return " + slice)(); }
 }
 
-function writeCarsDb(filePath, globalName, data) {
-  const header = globalName === "CARS_DB"
-    ? "/* AutoViindu Auto-Generated Cars DB */\n"
-    : "/* AutoViindu Auto-Generated Used Cars DB */\n";
-  fs.writeFileSync(filePath, header + "window." + globalName + " = " + JSON.stringify(data, null, 2) + ";\n", "utf-8");
+function assertNoConflictMarkers(content, label) {
+  if (/^<<<<<<<|^=======|^>>>>>>>/m.test(content)) {
+    throw new Error(label + " contains unresolved git merge conflict markers");
+  }
 }
+
+function readCarsJson(filePath, legacyJsPath) {
+  if (fs.existsSync(filePath)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+      return Array.isArray(data) ? data : [];
+    } catch { /* fall through */ }
+  }
+  if (fs.existsSync(legacyJsPath)) {
+    const data = readJsArray(legacyJsPath);
+    writeCarsJson(filePath, data);
+    return data;
+  }
+  return [];
+}
+
+function writeCarsJson(filePath, data) {
+  if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+  const body = JSON.stringify(data, null, 2) + "\n";
+  assertNoConflictMarkers(body, path.basename(filePath));
+  fs.writeFileSync(filePath, body, "utf-8");
+}
+
+function readNewCars() { return readCarsJson(carsJsonPath, legacyCarsJsPath); }
+function readUsedCars() { return readCarsJson(usedJsonPath, legacyUsedJsPath); }
+
+function toCardView(car) {
+  const thumb = car.thumb || (car.images && car.images[0]) || "";
+  return {
+    id: car.id,
+    slug: car.slug,
+    brand: car.brand,
+    brandSlug: car.brandSlug,
+    model: car.model,
+    year: car.year,
+    type: car.type,
+    body: car.body,
+    bodyType: car.bodyType,
+    tagline: car.tagline,
+    badge: car.badge,
+    budgetTier: car.budgetTier,
+    isEV: car.isEV,
+    isFeatured: car.isFeatured,
+    isBestSeller: car.isBestSeller,
+    rating: car.rating,
+    reviews: car.reviews,
+    expertScore: car.expertScore,
+    baseEMI: car.baseEMI,
+    thumb,
+    images: thumb ? [thumb] : [],
+    variants: Array.isArray(car.variants)
+      ? car.variants.map((v) => ({ name: v.name, slug: v.slug, price: v.price }))
+      : [],
+  };
+}
+
+function sendJsonCached(req, res, payload) {
+  const body = JSON.stringify(payload);
+  const etag = '"' + crypto.createHash("md5").update(body).digest("hex") + '"';
+  res.set("Cache-Control", "public, max-age=300");
+  res.set("ETag", etag);
+  if (req.headers["if-none-match"] === etag) return res.status(304).end();
+  res.type("application/json").send(body);
+}
+
+function mapCarsResponse(req, cars) {
+  if (req.query.view === "card") return cars.map(toCardView);
+  return cars;
+}
+
+// ── Public car inventory API ──────────────────────────────────────────────────
+app.get("/api/cars/used", (req, res) => {
+  try { sendJsonCached(req, res, mapCarsResponse(req, readUsedCars())); }
+  catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+app.get("/api/cars", (req, res) => {
+  try { sendJsonCached(req, res, mapCarsResponse(req, readNewCars())); }
+  catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+app.get("/api/cars/:slug", (req, res) => {
+  try {
+    const car = readNewCars().find((c) => c.slug === req.params.slug);
+    if (!car) return res.status(404).json({ error: "Car not found" });
+    sendJsonCached(req, res, car);
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
 
 function readAdminMeta() {
   if (!fs.existsSync(adminMetaPath)) {
@@ -104,12 +200,12 @@ function readAdminMeta() {
 }
 
 app.get("/api/admin/inventory", apiAuth, (req, res) => {
-  try { res.json(readJsArray(carsDbPath)); }
+  try { res.json(readNewCars()); }
   catch (e) { res.status(500).json({ error: e.message }); }
 });
 
 app.get("/api/admin/inventory/used", apiAuth, (req, res) => {
-  try { res.json(readJsArray(usedDbPath)); }
+  try { res.json(readUsedCars()); }
   catch (e) { res.status(500).json({ error: e.message }); }
 });
 
@@ -304,8 +400,8 @@ app.delete("/api/forms/responses/:index", apiAuth, (req, res) => {
 // ── Analytics snapshot ──
 app.get("/api/admin/analytics", apiAuth, (req, res) => {
   try {
-    const cars = readJsArray(carsDbPath);
-    const used = readJsArray(usedDbPath);
+    const cars = readNewCars();
+    const used = readUsedCars();
     const formsPath = path.join(__dirname, "backend", "form-submissions.json");
     let submissions = [];
     if (fs.existsSync(formsPath)) submissions = JSON.parse(fs.readFileSync(formsPath, "utf-8"));
@@ -352,7 +448,7 @@ app.post("/api/admin/publish-budget-tiers", apiAuth, (req, res) => {
 
 app.post("/api/admin/sitemap/regenerate", apiAuth, (req, res) => {
   try {
-    const cars = readJsArray(carsDbPath);
+    const cars = readNewCars();
     const base = "https://autoviindu.com";
     const staticPages = ["/", "/#cars", "/#electric", "/#compare", "/#used", "/#services", "/caremi.html", "/chargingstation.html", "/videos.html"];
     let urls = staticPages.map((p) => "  <url><loc>" + base + p + "</loc><changefreq>weekly</changefreq></url>");
@@ -382,7 +478,7 @@ app.post("/api/admin/inventory", apiAuth, (req, res) => {
   try {
     const newData = req.body;
     if (!Array.isArray(newData)) return res.status(400).json({ error: "Invalid data format" });
-    writeCarsDb(carsDbPath, "CARS_DB", newData);
+    writeCarsJson(carsJsonPath, newData);
     res.json({ success: true });
   } catch (e) {
     res.status(500).json({ error: e.message });
@@ -393,7 +489,7 @@ app.post("/api/admin/inventory/used", apiAuth, (req, res) => {
   try {
     const newData = req.body;
     if (!Array.isArray(newData)) return res.status(400).json({ error: "Invalid data format" });
-    writeCarsDb(usedDbPath, "USED_CARS_DB", newData);
+    writeCarsJson(usedJsonPath, newData);
     res.json({ success: true });
   } catch (e) {
     res.status(500).json({ error: e.message });
@@ -402,21 +498,23 @@ app.post("/api/admin/inventory/used", apiAuth, (req, res) => {
 
 app.post("/api/admin/upload-image", apiAuth, (req, res) => {
   try {
-    const { imageBase64, filename } = req.body;
+    const { imageBase64, filename, brandSlug, modelSlug, carSlug } = req.body;
     if (!imageBase64 || !filename) return res.status(400).json({ error: "Missing data" });
-    
+
     const base64Data = imageBase64.replace(/^data:image\/\w+;base64,/, "");
-    const ext = filename.split('.').pop() || 'jpg';
-    const finalName = "img_" + Date.now() + "_" + Math.floor(Math.random()*1000) + "." + ext;
-    const uploadDir = path.join(__dirname, "backend", "uploads");
+    const ext = (filename.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "") || "jpg";
+    const brand = slugify(brandSlug || "misc");
+    const model = slugify(modelSlug || carSlug || "general");
+    const uploadDir = path.join(carsImageRoot, brand, model);
+
+    if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+
+    const finalName = "gallery-" + Date.now() + "-" + Math.floor(Math.random() * 1000) + "." + ext;
     const uploadPath = path.join(uploadDir, finalName);
-    
-    if(!fs.existsSync(uploadDir)) {
-        fs.mkdirSync(uploadDir, { recursive: true });
-    }
-    fs.writeFileSync(uploadPath, base64Data, 'base64');
-    
-    res.json({ success: true, url: "/images/" + finalName });
+    fs.writeFileSync(uploadPath, base64Data, "base64");
+
+    const publicUrl = "/assets/images/cars/" + brand + "/" + model + "/" + finalName;
+    res.json({ success: true, url: publicUrl });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }

@@ -11,22 +11,23 @@
       "text": "im on leave tommorw morning",
       "date": "2026-05-15T19:24:50.245Z",
       "author": "Admin"
+    },
+    {
+      "id": 1781681999581,
+      "text": "Hello Team, Mr, Aajeevan is in leave today due to health problem .",
+      "date": "2026-06-17T07:39:59.581Z",
+      "author": "Admin"
     }
   ],
   "todos": [
     {
-      "id": 1,
-      "text": "Review new finance applications",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "text": "Update used car pricing for Toyota Corolla",
-      "completed": false
-    },
-    {
       "id": 1778873105030,
       "text": "make me new video asap",
+      "completed": true
+    },
+    {
+      "id": 1781682037433,
+      "text": "tomorrow is shoot",
       "completed": true
     }
   ]
