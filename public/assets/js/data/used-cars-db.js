@@ -19,11 +19,13 @@ window.USED_CARS_DB = [
     "reviews": 12,
     "emiEst": 32739,
     "certified": false,
+    "video": "https://youtu.be/31RPEh8KjeE?si=wpwmi5Z-EIu4jRm-",
     "img": "assets/images/cars/used car/corollafront.webp",
     "images": [
       "assets/images/cars/used car/corollafront.webp",
       "assets/images/cars/used car/corolla_back.webp",
-      "assets/images/cars/used car/corolla_side.webp"
+      "assets/images/cars/used car/corolla_side.webp",
+      "assets/images/cars/used car/interior-dummy.jpg"
     ],
     "overview": "Well-maintained Corolla with no accident history. Smooth driving experience and reliable engine. Suitable for daily use.",
     "highlights": [
@@ -62,7 +64,7 @@ window.USED_CARS_DB = [
       "rating": 4.2,
       "phone": [
         "9828364940",
-        "9701076240"
+        "9828364940"
       ]
     },
     "inspection": [
@@ -125,7 +127,8 @@ window.USED_CARS_DB = [
       "testDriveAvailable": true,
       "inspectionScore": 4.22,
       "grade": "B"
-    }
+    },
+    "slug": "u1"
   },
   {
     "id": "u2",
@@ -146,10 +149,12 @@ window.USED_CARS_DB = [
     "reviews": 0,
     "emiEst": 82500,
     "certified": false,
+    "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "img": "assets/images/used_car_images/hilux1.webp",
     "images": [
       "assets/images/used_car_images/hilux1.webp",
-      "assets/images/used_car_images/hilux2.webp"
+      "assets/images/used_car_images/hilux2.webp",
+      "assets/images/cars/used car/interior-dummy.jpg"
     ],
     "overview": "Well-maintained 2010 Toyota Hilux with 4WD capability. Diesel engine in good condition. Suitable for both city and off-road use. Seller claims good upkeep throughout ownership.",
     "highlights": [
@@ -251,9 +256,9 @@ window.USED_CARS_DB = [
       "adExpiry": "2026-07-04",
       "delivery": false,
       "source": "Hamrobazar"
-    }
+    },
+    "slug": "u2"
   },
-
   {
     "id": "u3",
     "brand": "Hyundai",
@@ -273,10 +278,12 @@ window.USED_CARS_DB = [
     "reviews": 0,
     "emiEst": 51075,
     "certified": false,
+    "video": "https://youtu.be/J6sH1sF6zQk",
     "img": "assets/images/used_car_images/grandi10.webp",
     "images": [
       "assets/images/used_car_images/grandi10.webp",
-      "assets/images/used_car_images/garndi100.webp"
+      "assets/images/used_car_images/garndi100.webp",
+      "assets/images/cars/used car/interior-dummy.jpg"
     ],
     "overview": "2016 Hyundai Grand i10 automatic with 67,000 km — primarily used for hospital commutes (home-to-hospital daily use). Engine in good condition. Front and rear bumpers need denting and painting. No cosmetic touch-up done before listing; photos are as-is.",
     "highlights": [
@@ -379,9 +386,9 @@ window.USED_CARS_DB = [
       "adExpiry": "2026-07-07",
       "delivery": false,
       "source": "Hamrobazar"
-    }
+    },
+    "slug": "u3"
   },
-  // Listing 1 — Hyundai Creta S 2023
   {
     "id": "u4",
     "brand": "Hyundai",
@@ -401,10 +408,12 @@ window.USED_CARS_DB = [
     "reviews": 0,
     "emiEst": 137475,
     "certified": false,
+    "video": "https://youtu.be/31RPEh8KjeE?si=wpwmi5Z-EIu4jRm-",
     "img": "assets/images/used_car_images/creatas.webp",
     "images": [
       "assets/images/used_car_images/creatas.webp",
-      "assets/images/used_car_images/creatas1.webp"
+      "assets/images/used_car_images/creatas1.webp",
+      "assets/images/cars/used car/interior-dummy.jpg"
     ],
     "overview": "2023 Hyundai Creta S in Starry Night color. Single owner, single driven. Only 23,000 km on the clock with no dents or paint damage — described as like new. 1497 cc petrol engine.",
     "highlights": [
@@ -445,24 +454,61 @@ window.USED_CARS_DB = [
       "verified": false,
       "sold": 1,
       "rating": 0,
-      "phone": ["9818957224"]
+      "phone": [
+        "9818957224"
+      ]
     },
     "inspection": [
-      { "label": "Engine", "status": "Good condition per seller", "ok": true },
-      { "label": "Transmission", "status": "Manual 2WD, no issues reported", "ok": true },
-      { "label": "Brakes", "status": "Not specified", "ok": null },
-      { "label": "AC System", "status": "Not specified", "ok": null },
-      { "label": "Body & Paint", "status": "No dents, paint like new", "ok": true },
-      { "label": "Tyres", "status": "Not specified", "ok": null },
-      { "label": "Suspension", "status": "Not specified", "ok": null },
-      { "label": "Electrical", "status": "Not specified", "ok": null }
+      {
+        "label": "Engine",
+        "status": "Good condition per seller",
+        "ok": true
+      },
+      {
+        "label": "Transmission",
+        "status": "Manual 2WD, no issues reported",
+        "ok": true
+      },
+      {
+        "label": "Brakes",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "AC System",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Body & Paint",
+        "status": "No dents, paint like new",
+        "ok": true
+      },
+      {
+        "label": "Tyres",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Suspension",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Electrical",
+        "status": "Not specified",
+        "ok": null
+      }
     ],
     "meta": {
       "odometer": 23000,
       "serviceHistory": "Unknown",
       "lastServiceDate": null,
       "accidentHistory": "No Accident (claimed)",
-      "insurance": { "type": "Unknown", "validTill": "Unknown" },
+      "insurance": {
+        "type": "Unknown",
+        "validTill": "Unknown"
+      },
       "roadTaxValidTill": "Unknown",
       "loanStatus": "Unknown",
       "billbook": "Unknown",
@@ -476,10 +522,9 @@ window.USED_CARS_DB = [
       "adExpiry": "2026-06-14",
       "delivery": false,
       "source": "Hamrobazar"
-    }
+    },
+    "slug": "u4"
   },
-
-  // Listing 2 — Hyundai Creta SX 2021
   {
     "id": "u5",
     "brand": "Hyundai",
@@ -499,10 +544,12 @@ window.USED_CARS_DB = [
     "reviews": 0,
     "emiEst": 142725,
     "certified": false,
+    "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "img": "assets/images/used_car_images/creta1.webp",
     "images": [
       "assets/images/used_car_images/creta1.webp",
-      "assets/images/used_car_images/creata2.webp"
+      "assets/images/used_car_images/creata2.webp",
+      "assets/images/cars/used car/interior-dummy.jpg"
     ],
     "overview": "2021 Hyundai Creta SX in full option trim. First owner, used for office-to-home commute. Excellent condition with no accidents. Runs as when first bought — well looked after throughout.",
     "highlights": [
@@ -546,24 +593,61 @@ window.USED_CARS_DB = [
       "verified": false,
       "sold": 2,
       "rating": 0,
-      "phone": ["9851344821"]
+      "phone": [
+        "9851344821"
+      ]
     },
     "inspection": [
-      { "label": "Engine", "status": "Excellent condition per seller", "ok": true },
-      { "label": "Transmission", "status": "Manual 2WD, no issues reported", "ok": true },
-      { "label": "Brakes", "status": "Not specified", "ok": null },
-      { "label": "AC System", "status": "Not specified", "ok": null },
-      { "label": "Body & Paint", "status": "No accidents, excellent condition", "ok": true },
-      { "label": "Tyres", "status": "Not specified", "ok": null },
-      { "label": "Suspension", "status": "Not specified", "ok": null },
-      { "label": "Electrical", "status": "Not specified", "ok": null }
+      {
+        "label": "Engine",
+        "status": "Excellent condition per seller",
+        "ok": true
+      },
+      {
+        "label": "Transmission",
+        "status": "Manual 2WD, no issues reported",
+        "ok": true
+      },
+      {
+        "label": "Brakes",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "AC System",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Body & Paint",
+        "status": "No accidents, excellent condition",
+        "ok": true
+      },
+      {
+        "label": "Tyres",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Suspension",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Electrical",
+        "status": "Not specified",
+        "ok": null
+      }
     ],
     "meta": {
       "odometer": 51000,
       "serviceHistory": "Unknown",
       "lastServiceDate": null,
       "accidentHistory": "No Accident",
-      "insurance": { "type": "Unknown", "validTill": "Unknown" },
+      "insurance": {
+        "type": "Unknown",
+        "validTill": "Unknown"
+      },
       "roadTaxValidTill": "Unknown",
       "loanStatus": "Unknown",
       "billbook": "Unknown",
@@ -578,9 +662,9 @@ window.USED_CARS_DB = [
       "delivery": false,
       "usedFor": "Office to Home",
       "source": "Hamrobazar"
-    }
+    },
+    "slug": "u5"
   },
-  // Listing 1 — Toyota Fortuner 2018
   {
     "id": "u6",
     "brand": "Toyota",
@@ -600,10 +684,12 @@ window.USED_CARS_DB = [
     "reviews": 0,
     "emiEst": null,
     "certified": false,
+    "video": "https://youtu.be/J6sH1sF6zQk",
     "img": "assets/images/used_car_images/fortuner.webp",
     "images": [
       "assets/images/used_car_images/fortuner.webp",
-      "assets/images/used_car_images/fortuner1.webp"
+      "assets/images/used_car_images/fortuner1.webp",
+      "assets/images/cars/used car/interior-dummy.jpg"
     ],
     "overview": "2018 Toyota Fortuner in like-new condition. Single owner, never been in an accident. Full service history maintained at authorized service center with record track. Off-road capable 4WD with 3000 cc diesel engine.",
     "highlights": [
@@ -648,24 +734,61 @@ window.USED_CARS_DB = [
       "verified": false,
       "sold": 1,
       "rating": 0,
-      "phone": ["9849805704"]
+      "phone": [
+        "9849805704"
+      ]
     },
     "inspection": [
-      { "label": "Engine", "status": "Good condition, service center maintained", "ok": true },
-      { "label": "Transmission", "status": "Manual 4WD, no issues reported", "ok": true },
-      { "label": "Brakes", "status": "Not specified", "ok": null },
-      { "label": "AC System", "status": "Not specified", "ok": null },
-      { "label": "Body & Paint", "status": "Like new, no accident history", "ok": true },
-      { "label": "Tyres", "status": "Not specified", "ok": null },
-      { "label": "Suspension", "status": "Not specified", "ok": null },
-      { "label": "Electrical", "status": "Not specified", "ok": null }
+      {
+        "label": "Engine",
+        "status": "Good condition, service center maintained",
+        "ok": true
+      },
+      {
+        "label": "Transmission",
+        "status": "Manual 4WD, no issues reported",
+        "ok": true
+      },
+      {
+        "label": "Brakes",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "AC System",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Body & Paint",
+        "status": "Like new, no accident history",
+        "ok": true
+      },
+      {
+        "label": "Tyres",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Suspension",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Electrical",
+        "status": "Not specified",
+        "ok": null
+      }
     ],
     "meta": {
       "odometer": 60000,
       "serviceHistory": "Full — Authorized Service Center with Records",
       "lastServiceDate": null,
       "accidentHistory": "No Accident",
-      "insurance": { "type": "Unknown", "validTill": "Unknown" },
+      "insurance": {
+        "type": "Unknown",
+        "validTill": "Unknown"
+      },
       "roadTaxValidTill": "Unknown",
       "loanStatus": "Unknown",
       "billbook": "Unknown",
@@ -681,9 +804,9 @@ window.USED_CARS_DB = [
       "adExpiry": "2026-08-21",
       "delivery": false,
       "source": "Hamrobazar"
-    }
+    },
+    "slug": "u6"
   },
-  // Listing 2 — Toyota RAV4 Hybrid 2022
   {
     "id": "u7",
     "brand": "Toyota",
@@ -703,10 +826,12 @@ window.USED_CARS_DB = [
     "reviews": 0,
     "emiEst": 379750,
     "certified": false,
+    "video": "https://youtu.be/31RPEh8KjeE?si=wpwmi5Z-EIu4jRm-",
     "img": "assets/images/used_car_images/toyotarav.webp",
     "images": [
       "assets/images/used_car_images/toyotarav.webp",
-      "assets/images/used_car_images/toyatarav2.webp"
+      "assets/images/used_car_images/toyatarav2.webp",
+      "assets/images/cars/used car/interior-dummy.jpg"
     ],
     "overview": "2022 Toyota RAV4 Hybrid, single owner with only 28,000 km. Fully loaded spec. Servicing done exclusively at company service center since purchase. No accident record. Sealer pack engine — engine never opened.",
     "highlights": [
@@ -757,24 +882,61 @@ window.USED_CARS_DB = [
       "verified": false,
       "sold": 4,
       "rating": 0,
-      "phone": ["9801306797"]
+      "phone": [
+        "9801306797"
+      ]
     },
     "inspection": [
-      { "label": "Engine", "status": "Sealer pack — never opened, company serviced", "ok": true },
-      { "label": "Transmission", "status": "Automatic AWD, no issues reported", "ok": true },
-      { "label": "Brakes", "status": "Not specified", "ok": null },
-      { "label": "AC System", "status": "Not specified", "ok": null },
-      { "label": "Body & Paint", "status": "Like new, no accident history", "ok": true },
-      { "label": "Tyres", "status": "Not specified", "ok": null },
-      { "label": "Suspension", "status": "Not specified", "ok": null },
-      { "label": "Electrical", "status": "Hybrid system company maintained", "ok": true }
+      {
+        "label": "Engine",
+        "status": "Sealer pack — never opened, company serviced",
+        "ok": true
+      },
+      {
+        "label": "Transmission",
+        "status": "Automatic AWD, no issues reported",
+        "ok": true
+      },
+      {
+        "label": "Brakes",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "AC System",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Body & Paint",
+        "status": "Like new, no accident history",
+        "ok": true
+      },
+      {
+        "label": "Tyres",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Suspension",
+        "status": "Not specified",
+        "ok": null
+      },
+      {
+        "label": "Electrical",
+        "status": "Hybrid system company maintained",
+        "ok": true
+      }
     ],
     "meta": {
       "odometer": 28000,
       "serviceHistory": "Full — Company Service Center",
       "lastServiceDate": null,
       "accidentHistory": "No Accident",
-      "insurance": { "type": "Unknown", "validTill": "Unknown" },
+      "insurance": {
+        "type": "Unknown",
+        "validTill": "Unknown"
+      },
       "roadTaxValidTill": "Unknown",
       "loanStatus": "Unknown",
       "billbook": "Unknown",
@@ -788,6 +950,7 @@ window.USED_CARS_DB = [
       "adExpiry": "2026-06-26",
       "delivery": false,
       "source": "Hamrobazar"
-    }
+    },
+    "slug": "u7"
   }
 ];

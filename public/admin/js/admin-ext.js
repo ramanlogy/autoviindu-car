@@ -345,7 +345,7 @@
       max: parseInt(val('bt-max-' + i), 10) || 999999999,
       heroText: val('bt-hero-' + i),
       targetBuyer: t.targetBuyer || '',
-      emoji: t.emoji || '⭐',
+      emoji: t.emoji || '<i data-lucide="star"></i>',
       color: t.color || '#1A6B2A',
       bgColor: t.bgColor || '#EEF7F0',
     }));
@@ -360,12 +360,19 @@
   async function loadMedia() {
     const grid = $('media-grid');
     if (!grid) return;
-    grid.innerHTML = '<div class="empty">Loading…</div>';
+    grid.innerHTML =
+      '<div style="margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">' +
+      '<p class="section-hint" style="margin:0;flex:1">Upload images here and copy the URL into articles, homepage slides, or car listings.</p>' +
+      '<button class="btn btn-dark" onclick="document.getElementById(\'media-upload\').click()">Upload image</button>' +
+      '<input type="file" id="media-upload" accept="image/*" style="display:none" onchange="uploadMediaFile(this)">' +
+      '</div><div class="media-grid" id="media-grid-inner"><div class="empty">Loading…</div></div>';
     try {
       const r = await api('/api/admin/media');
       const files = await r.json();
-      if (!files.length) { grid.innerHTML = '<div class="empty">No uploads yet. Add images when editing cars.</div>'; return; }
-      grid.innerHTML = files.map((f) =>
+      const inner = $('media-grid-inner');
+      if (!inner) return;
+      if (!files.length) { inner.innerHTML = '<div class="empty">No uploads yet. Use the button above or upload when editing cars.</div>'; return; }
+      inner.innerHTML = files.map((f) =>
         '<div class="media-tile">' +
         '<img src="' + f.url + '" alt="" loading="lazy">' +
         '<div class="media-tile-foot">' +
@@ -375,8 +382,23 @@
         '<button class="ico-btn del" onclick="deleteMedia(\'' + f.name + '\')">×</button>' +
         '</div></div></div>'
       ).join('');
-    } catch (e) { grid.innerHTML = '<div class="empty">' + e.message + '</div>'; }
+    } catch (e) {
+      const inner = $('media-grid-inner');
+      if (inner) inner.innerHTML = '<div class="empty">' + e.message + '</div>';
+    }
   }
+
+  window.uploadMediaFile = async function (input) {
+    if (!input.files.length) return;
+    const file = input.files[0];
+    const b64 = await new Promise(function (res) { const r = new FileReader(); r.onload = function () { res(r.result); }; r.readAsDataURL(file); });
+    try {
+      const up = await api('/api/admin/media/upload', { method: 'POST', body: JSON.stringify({ imageBase64: b64, filename: file.name }) });
+      if (up.ok) { toast('Uploaded', 'ok'); loadMedia(); }
+      else toast('Upload failed', 'err');
+    } catch (e) { toast(e.message, 'err'); }
+    input.value = '';
+  };
 
   window.deleteMedia = async function (name) {
     if (!confirm('Delete ' + name + '?')) return;
@@ -390,17 +412,18 @@
   /* ── Lead enhancements ── */
   window.saveLeadNote = async function (idx) {
     const notes = window.AdminAPI.leadNotes || {};
+    const keyFn = window.AdminAPI.getLeadKey || function (i) { return String(i); };
     const inp = $('lead-note-' + idx);
-    if (inp) notes[idx] = inp.value;
+    if (inp) notes[keyFn(idx)] = inp.value;
     window.AdminAPI.leadNotes = notes;
     if (window.AdminAPI.saveMeta) await window.AdminAPI.saveMeta();
     toast('Note saved', 'ok');
   };
 
-  window.deleteLead = async function (idx) {
+  window.deleteLead = async function (key) {
     if (!confirm('Delete this submission permanently?')) return;
     try {
-      const r = await api('/api/forms/responses/' + idx, { method: 'DELETE' });
+      const r = await api('/api/forms/responses/' + encodeURIComponent(key), { method: 'DELETE' });
       if (r.ok) { toast('Deleted', 'ok'); fetchData(); closeModal(); }
       else toast('Delete failed', 'err');
     } catch (e) { toast(e.message, 'err'); }

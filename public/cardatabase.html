@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
 <meta charset="UTF-8">
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nepal Car Database</title>
 <style>
@@ -117,6 +124,7 @@
 </style>
 </head>
 <body>
+<script src="assets/js/site-chrome.js"></script>
 
 <div class="top">
   <h1>Nepal Car Database</h1>
@@ -141,7 +149,7 @@
     <option value="price_desc">Sort: Price High–Low</option>
     <option value="model">Sort: Model A–Z</option>
   </select>
-  <button id="btn-all">✓ Mark All Added</button>
+  <button id="btn-all"><i data-lucide="check"></i> Mark All Added</button>
   <button id="btn-reset">Reset All</button>
 </div>
 
@@ -572,7 +580,7 @@ function render() {
       <td style="font-size:12px;white-space:nowrap">${d.price === 'TBA' ? '<i style="color:#999">TBA</i>' : hl(d.price, q)}</td>
       <td style="font-size:11px;color:#555;white-space:nowrap">${hl(d.transmission, q)}</td>
       <td class="features-col">${hl(d.features, q)}</td>
-      <td><button class="tog ${d.status}" data-id="${d.id}">${d.status === 'added' ? '✓ Added' : 'Pending'}</button></td>`;
+      <td><button class="tog ${d.status}" data-id="${d.id}">${d.status === 'added' ? '<i data-lucide="check"></i> Added' : 'Pending'}</button></td>`;
     tbody.appendChild(tr);
   });
 

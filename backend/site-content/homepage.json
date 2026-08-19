@@ -1,26 +1,26 @@
 {
   "heroSlides": [
     {
-      "bg": "https://images.unsplash.com/photo-1619767886558-efdc259b6e09?w=1400&h=700&fit=crop",
-      "badge": "Electric",
       "title": "Hyundai IONIQ 5",
+      "badge": "Electric",
+      "slug": "hyundai-ioniq-5",
+      "bg": "https://images.unsplash.com/photo-1619767886558-efdc259b6e09?w=1400&h=700&fit=crop",
       "sub": "481 km range, ultra-fast charging, built for Nepal roads.",
-      "offerLabel": "EV Offer",
-      "offerVal": "Zero road tax + home charger",
-      "slug": "hyundai-ioniq-5"
+      "offerLabel": "",
+      "offerVal": "Zero road tax + home charger"
     },
     {
-      "bg": "https://images.unsplash.com/photo-1590362891991-f776e747a588?w=1400&h=700&fit=crop",
-      "badge": "Best Seller",
       "title": "Hyundai Creta",
+      "badge": "Best Seller",
+      "slug": "hyundai-creta",
+      "bg": "https://images.unsplash.com/photo-1590362891991-f776e747a588?w=1400&h=700&fit=crop",
       "sub": "Nepal's favourite mid-size SUV with ADAS and dual screens.",
-      "offerLabel": "Festival Offer",
-      "offerVal": "Rs. 2L cashback + accessories",
-      "slug": "hyundai-creta"
+      "offerLabel": "",
+      "offerVal": "Rs. 2L cashback + accessories"
     }
   ],
   "popularSearches": [
-    "MG Hector",
+    "alseT",
     "IONIQ 5",
     "Toyota Fortuner",
     "Kia Seltos",

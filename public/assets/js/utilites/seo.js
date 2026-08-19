@@ -11,7 +11,7 @@
 
   function setMeta(name, content) {
     var el = document.querySelector('meta[name="' + name + '"]') ||
-             document.querySelector('meta[property="' + name + '"]');
+      document.querySelector('meta[property="' + name + '"]');
     if (el) el.setAttribute('content', content);
   }
 
@@ -32,8 +32,10 @@
       setMeta('og:url', BASE_URL + '/');
       setMeta('og:image', DEFAULT_OG_IMG);
       setMeta('twitter:title', 'AutoViindu – Nepal\'s Most Trusted Car Platform');
-      setSchema({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'AutoViindu', url: BASE_URL,
-        potentialAction: { '@type': 'SearchAction', target: BASE_URL + '/#cars?q={search_term_string}', 'query-input': 'required name=search_term_string' } });
+      setSchema({
+        '@context': 'https://schema.org', '@type': 'WebSite', name: 'AutoViindu', url: BASE_URL,
+        potentialAction: { '@type': 'SearchAction', target: BASE_URL + '/#cars?q={search_term_string}', 'query-input': 'required name=search_term_string' }
+      });
     },
 
     carDetail: function (car) {
@@ -96,17 +98,17 @@
 
     compare: function () {
       document.title = 'Compare Cars Side by Side Nepal – Specs & Price | AutoViindu';
-      setMeta('description', 'Compare up to 3 cars side by side with full specs, price, variants, and winner highlights. AutoViindu Nepal.');
+      setMeta('description', 'Compare up to 5 cars side by side with full specs, price, variants, and winner highlights. AutoViindu Nepal.');
     },
 
     services: function () {
       document.title = 'Car Services Kathmandu – Workshop, GPS & Cosmetic Care | AutoViindu';
-      setMeta('description', 'Complete automotive services in Kathmandu – cosmetic care, workshop repairs, GPS/telematics, and roadside assistance. Call +977-9701076240.');
+      setMeta('description', 'Complete automotive services in Kathmandu – cosmetic care, workshop repairs, GPS/telematics, and roadside assistance. Call +977-9828364940.');
       setSchema({
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
         name: 'AutoViindu',
-        telephone: '+977-9701076240',
+        telephone: '+977-9828364940',
         address: { '@type': 'PostalAddress', addressLocality: 'Kathmandu', addressCountry: 'NP', streetAddress: 'Nayabazar' },
         geo: { '@type': 'GeoCoordinates', latitude: 27.7172, longitude: 85.324 },
       });

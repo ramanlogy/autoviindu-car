@@ -11,14 +11,25 @@ window.renderCars = function (filter, options) {
   var IC = window.AV_ICONS || {};
   var chevR = IC.chevR || '›';
 
+  var norm = function (s) { return String(s || '').toLowerCase().replace(/[\s-_]+/g, ''); };
   var filterMap = {
     electric: function (c) { return c.type === 'Electric'; },
-    hybrid:   function (c) { return c.type === 'Hybrid'; },
-    petrol:   function (c) { return c.type === 'Petrol'; },
-    diesel:   function (c) { return c.type === 'Diesel'; },
-    suv:      function (c) { return c.body === 'SUV'; },
-    sedan:    function (c) { return c.body === 'Sedan'; },
-    hatchback:function (c) { return c.body === 'Hatchback'; },
+    hybrid: function (c) { return c.type === 'Hybrid'; },
+    petrol: function (c) { return c.type === 'Petrol'; },
+    diesel: function (c) { return c.type === 'Diesel'; },
+    suv: function (c) { return norm(c.body || c.bodyType).includes('suv'); },
+    crossover: function (c) { return norm(c.body || c.bodyType).includes('crossover'); },
+    sedan: function (c) { return norm(c.body || c.bodyType).includes('sedan'); },
+    hatchback: function (c) { return norm(c.body || c.bodyType).includes('hatchback'); },
+    coupe: function (c) { return norm(c.body || c.bodyType).includes('coupe'); },
+    mpv: function (c) { return norm(c.body || c.bodyType).includes('mpv') || norm(c.body || c.bodyType).includes('muv'); },
+    offroad: function (c) { return norm(c.body || c.bodyType).includes('offroad') || norm(c.body || c.bodyType).includes('sav'); },
+    'off-road': function (c) { return norm(c.body || c.bodyType).includes('offroad') || norm(c.body || c.bodyType).includes('sav'); },
+    pickup: function (c) { return norm(c.body || c.bodyType).includes('pickup'); },
+    microcar: function (c) { return norm(c.body || c.bodyType).includes('micro'); },
+    micro: function (c) { return norm(c.body || c.bodyType).includes('micro'); },
+    wagon: function (c) { return norm(c.body || c.bodyType).includes('wagon'); },
+    van: function (c) { return norm(c.body || c.bodyType).includes('van'); },
   };
 
   var cars = db.slice();
@@ -26,46 +37,94 @@ window.renderCars = function (filter, options) {
   if (options.q) {
     var q = options.q.toLowerCase();
     cars = cars.filter(function (c) {
-      return (c.brand + ' ' + c.model + ' ' + c.type + ' ' + c.body).toLowerCase().includes(q);
+      return (c.brand + ' ' + c.model + ' ' + c.type + ' ' + (c.body || c.bodyType || '')).toLowerCase().includes(q);
     });
   }
 
   var filterLabels = {
-    electric:'Electric Cars',hybrid:'Hybrid Cars',petrol:'Petrol Cars',
-    diesel:'Diesel Cars',suv:'SUVs',sedan:'Sedans',hatchback:'Hatchbacks'
+    electric: 'Electric Cars', hybrid: 'Hybrid Cars', petrol: 'Petrol Cars',
+    diesel: 'Diesel Cars', suv: 'SUVs', crossover: 'Crossovers', sedan: 'Sedans',
+    hatchback: 'Hatchbacks', coupe: 'Coupes', mpv: 'MPVs', offroad: 'Off-road Vehicles',
+    pickup: 'Pickup Trucks', microcar: 'Microcars', wagon: 'Wagons', van: 'Vans & Microvans'
   };
   var title = filter ? (filterLabels[filter] || filter) : 'New Cars in Nepal 2024–25';
 
-  var badgeMap = {ev:'badge-ev',hybrid:'badge-hybrid',popular:'badge-pop',new:'badge-new'};
-  var badgeLabelMap = {ev:'Electric',hybrid:'Hybrid',popular:'Popular',new:'New'};
-
-  function carCardHTML(car) {
-    return '<div class="car-card" onclick="AV.openDetail(\'' + car.slug + '\')">' +
-      '<div class="car-card-img-wrap">' +
-      '<img src="' + car.images[0] + '" alt="' + car.brand + ' ' + car.model + '" loading="lazy">' +
-      (car.badge ? '<span class="badge ' + (badgeMap[car.badge]||'badge-pop') + '">' + (badgeLabelMap[car.badge]||'') + '</span>' : '') +
-      '<button class="wish-btn" onclick="event.stopPropagation();AV.toggleWish(\'' + car.slug + '\',this)">' +
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>' +
-      '</button></div>' +
-      '<div class="car-card-body">' +
-      '<div class="car-card-brand">' + car.brand + ' · ' + car.year + '</div>' +
-      '<div class="car-card-name">' + car.model + '</div>' +
-      '<div class="car-card-tagline">' + car.tagline + '</div>' +
-      '<div class="car-card-price-row"><span class="car-card-price">' + window.Rs(car.variants[0].price) + '</span>' +
-      (car.variants.length > 1 ? '<span class="car-card-variants">' + car.variants.length + ' variants</span>' : '') + '</div>' +
-      '<div class="car-card-meta"><span>★ ' + car.rating.toFixed(1) + '</span><span>' + car.type + '</span><span>' + car.body + '</span></div>' +
-      '<div class="car-card-actions">' +
-      '<button onclick="event.stopPropagation();AV.toggleCompare(\'' + car.slug + '\')" data-cmp-slug="' + car.slug + '" class="btn-cmp">+ Compare</button>' +
-      '<button onclick="event.stopPropagation();AV.openDetail(\'' + car.slug + '\')" class="btn btn-primary btn-sm">View Details</button>' +
-      '</div></div></div>';
-  }
-
-  var filterTabs = ['All','Electric','Hybrid','Petrol','Diesel','SUV','Sedan','Hatchback'];
+  var filterTabs = ['All', 'Electric', 'Hybrid', 'Petrol', 'Diesel', 'SUV', 'Crossover', 'Sedan', 'Hatchback', 'Coupe', 'MPV', 'Off-road', 'Pickup', 'Microcar', 'Wagon', 'Van'];
   var filterChips = filterTabs.map(function (t) {
-    var f = t.toLowerCase() === 'all' ? '' : t.toLowerCase();
-    var isActive = (!filter && t === 'All') || (filter && filter === t.toLowerCase());
+    var f = t.toLowerCase() === 'all' ? '' : (t.toLowerCase() === 'off-road' ? 'offroad' : t.toLowerCase());
+    var isActive = (!filter && t === 'All') || (filter && (filter === f || filter === t.toLowerCase()));
     return '<span class="chip ' + (isActive ? 'active' : '') + '" onclick="AV.goTo(\'cars\',{filter:\'' + f + '\'})">' + t + '</span>';
   }).join('');
+  
+  // Pagination State
+  var pageSize = 16;
+  var currentPage = 1;
+  var initialCars = cars.slice(0, pageSize);
+  window._listingCars = cars;
+  window._listingFilter = filter || null;
+
+  window.AV.loadMoreCars = function() {
+    var grid = document.getElementById('listing-grid');
+    var start = currentPage * pageSize;
+    var end = start + pageSize;
+    var nextCars = window._listingCars.slice(start, end);
+    if (!nextCars.length) return;
+    
+    var temp = document.createElement('div');
+    temp.innerHTML = nextCars.map(window.AV.carCard).join('');
+    while(temp.firstChild) {
+      grid.appendChild(temp.firstChild);
+    }
+    
+    currentPage++;
+    if (currentPage * pageSize >= window._listingCars.length) {
+      document.getElementById('load-more-btn-wrap').style.display = 'none';
+    }
+  };
+
+  // Section Data
+  var trendingCars = db.filter(c => c.badge === 'Trending' || c.badge === 'popular').slice(0, 5);
+  if (trendingCars.length < 5) trendingCars = db.slice(5, 10); // fallback
+  var upcomingCars = db.filter(c => c.isUpcoming).slice(0, 5);
+  if (upcomingCars.length < 4) upcomingCars = db.filter(c => c.type === 'Electric').slice(0, 5); // fallback
+
+  var sectionHTML = function(title, carsArr, scrollId) {
+    return '<div class="home-section" style="margin-top: 60px;">' +
+      '<div class="hs-head" style="margin-bottom: 20px; display:flex; align-items:center; justify-content:space-between;">' +
+      '<h2 class="hs-title" style="font-size: 24px; margin:0;">' + title + '</h2>' +
+      '<div class="carousel-nav-arrows" style="display:flex; align-items:center; gap:8px;">' +
+      '<button class="nav-arrow-btn prev" onclick="AV.scrollCarousel(\'' + scrollId + '\', -1)" aria-label="Scroll left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="15 18 9 12 15 6"/></svg></button>' +
+      '<button class="nav-arrow-btn next" onclick="AV.scrollCarousel(\'' + scrollId + '\', 1)" aria-label="Scroll right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></button>' +
+      '</div></div>' +
+      '<div class="home-carousel car-carousel" id="' + scrollId + '">' +
+      carsArr.map(window.AV.carCard).join('') +
+      '</div></div>';
+  };
+
+  var newsHTML = '<div class="home-section" style="margin-top: 60px;">' +
+    '<h2 class="hs-title" style="font-size: 24px; margin-bottom: 20px;">Latest News & Reviews</h2>' +
+    '<div class="news-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">' +
+    '<div class="news-card" style="background:#fff; border-radius:12px; overflow:hidden; border:1px solid var(--border); cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: transform 0.2s;">' +
+    '<img src="assets/images/car_images/byd/atto-3/exterior/byd-atto-3-exterior-right-front-three-quarter.avif" style="width:100%; height:180px; object-fit:cover;" alt="News 1">' +
+    '<div style="padding:20px;">' +
+    '<div style="font-size:11px; color:var(--green); font-weight:700; margin-bottom:8px; text-transform:uppercase;">Review</div>' +
+    '<h3 style="font-size:16px; font-weight:800; color:var(--ink); line-height:1.4; margin:0 0 8px 0;">BYD Atto 3 Long Range Review: Still the best EV?</h3>' +
+    '<p style="font-size:13.5px; color:var(--ink-3); line-height:1.5; margin:0;">An in-depth look at how the 2024 BYD Atto 3 handles Nepalese roads and its true real-world range.</p>' +
+    '</div></div>' +
+    '<div class="news-card" style="background:#fff; border-radius:12px; overflow:hidden; border:1px solid var(--border); cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: transform 0.2s;">' +
+    '<img src="assets/images/car_images/hyundai/creta/exterior/hyundai-creta-exterior-right-front-three-quarter.jpeg" style="width:100%; height:180px; object-fit:cover;" alt="News 2">' +
+    '<div style="padding:20px;">' +
+    '<div style="font-size:11px; color:#007bff; font-weight:700; margin-bottom:8px; text-transform:uppercase;">News</div>' +
+    '<h3 style="font-size:16px; font-weight:800; color:var(--ink); line-height:1.4; margin:0 0 8px 0;">Hyundai Launches the All New Creta Facelift</h3>' +
+    '<p style="font-size:13.5px; color:var(--ink-3); line-height:1.5; margin:0;">The much-awaited 2024 Hyundai Creta Facelift is finally here with Level 2 ADAS and panoramic sunroof.</p>' +
+    '</div></div>' +
+    '<div class="news-card" style="background:#fff; border-radius:12px; overflow:hidden; border:1px solid var(--border); cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: transform 0.2s;">' +
+    '<img src="assets/images/car_images/tata/nexon-ev/exterior/tata-nexon-ev-exterior-right-front-three-quarter.avif" style="width:100%; height:180px; object-fit:cover;" alt="News 3">' +
+    '<div style="padding:20px;">' +
+    '<div style="font-size:11px; color:#dc3545; font-weight:700; margin-bottom:8px; text-transform:uppercase;">Comparison</div>' +
+    '<h3 style="font-size:16px; font-weight:800; color:var(--ink); line-height:1.4; margin:0 0 8px 0;">Nexon EV vs XUV400: Which electric SUV makes sense?</h3>' +
+    '<p style="font-size:13.5px; color:var(--ink-3); line-height:1.5; margin:0;">We pit the two most popular compact electric SUVs against each other to help you decide.</p>' +
+    '</div></div></div></div>';
 
   var root = document.getElementById('app-root');
   root.innerHTML =
@@ -94,30 +153,39 @@ window.renderCars = function (filter, options) {
 
     '<div class="filter-chips" style="margin-bottom:16px">' + filterChips + '</div>' +
 
-    '<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r10);margin-bottom:18px">' +
+    '<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r10);margin-bottom:24px">' +
     '<div style="font-size:13px;font-weight:700;color:var(--ink)">Showing <span style="color:var(--green)" id="listing-count">' + cars.length + '</span> cars</div>' +
     '<div style="font-size:12px;color:var(--ink-4)">' + db.length + ' total in database</div>' +
     '</div>' +
 
     '<div class="cars-grid" id="listing-grid">' +
-    (cars.length ? cars.map(carCardHTML).join('') :
+    (initialCars.length ? initialCars.map(window.AV.carCard).join('') :
       '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;background:var(--bg);border-radius:var(--r20)">' +
-      '<div style="font-size:40px;margin-bottom:12px">🔍</div>' +
+      '<div style="font-size:40px;margin-bottom:12px"><i data-lucide="search"></i></div>' +
       '<div style="font-size:18px;font-weight:800;margin-bottom:8px">No cars found</div>' +
       '<button onclick="AV.goTo(\'cars\')" class="btn btn-primary" style="margin-top:8px">Browse all cars</button>' +
       '</div>') +
     '</div>' +
+    
+    (cars.length > pageSize ? 
+      '<div id="load-more-btn-wrap" style="text-align:center; margin-top:32px;">' +
+      '<button class="btn btn-outline" style="padding:12px 32px; font-weight:600;" onclick="AV.loadMoreCars()">Load More Vehicles</button>' +
+      '</div>' : '') +
 
-    '<div style="margin-top:40px;padding:28px;background:var(--green-ll);border:1.5px solid rgba(26,107,42,.14);border-radius:var(--r20);text-align:center">' +
+    '<div style="margin-top:60px;padding:28px;background:var(--green-ll);border:1.5px solid rgba(26,107,42,.14);border-radius:var(--r20);text-align:center">' +
     '<div style="font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:6px">Can\'t find the right car?</div>' +
     '<p style="font-size:13px;color:var(--ink-3);margin-bottom:16px">Our experts help you choose the best car for Nepal\'s roads and your budget.</p>' +
-    '<a href="tel:+9779701076240" class="btn btn-primary">📞 Call +977-9701076240</a>' +
-    '</div></div>';
+    '<a href="tel:+9779828364940" class="btn btn-primary"><i data-lucide="phone"></i> Call +977-9828364940</a>' +
+    '</div>' + 
+    
+    sectionHTML('Trending Now', trendingCars, 'list-trend-carousel') +
+    sectionHTML('Upcoming Arrivals', upcomingCars, 'list-up-carousel') +
+    newsHTML +
+    
+    '</div>';
 
   if (window.AV) {
     window.AV.updateCompareTray && window.AV.updateCompareTray();
     window.AV.updateCompareButtons && window.AV.updateCompareButtons();
   }
-  window._listingCars = cars;
-  window._listingFilter = filter || null;
 };

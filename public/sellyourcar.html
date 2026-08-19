@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
+    <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>Sell Your Car – AutoViindu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+            :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
+    }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-b);
+            background: var(--bg);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        ::selection { background: rgba(26, 107, 42, .12); }
+        :focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 4px; }
+
+        .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+        @media(min-width:640px) { .wrap { padding: 0 32px; } }
+        @media(min-width:1024px) { .wrap { padding: 0 48px; } }
+
+        /* BREADCRUMB */
+        .bc { background: var(--bg); border-bottom: 1px solid var(--border); padding: 11px 0; }
+        .bc-inner { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink4); }
+        .bc-inner a { color: var(--green); text-decoration: none; font-weight: 600; }
+        .bc-inner a:hover { text-decoration: underline; }
+        .bc-inner i { width: 12px; height: 12px; }
+
+        /* PAGE TOP */
+        .top-section {
+            padding: 52px 0 28px;
+            background:
+                radial-gradient(680px 320px at 88% -10%, rgba(26,107,42,.09), transparent 65%),
+                var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 11.5px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+        .eyebrow i { width: 13px; height: 13px; }
+        .eyebrow::before { content: ''; width: 20px; height: 1.5px; background: var(--green); display: inline-block; }
+
+        .page-title {
+            font-family: var(--font-d);
+            font-size: clamp(30px, 4.4vw, 46px);
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.08;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+        .page-title em { font-style: italic; color: var(--green); }
+
+        /* TWO COLUMN GRID */
+        .sell-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            align-items: start;
+            padding-bottom: 64px;
+            padding-top: 12px;
+        }
+        @media(min-width:960px) {
+            .sell-grid { grid-template-columns: 0.86fr 1.14fr; gap: 44px; }
+        }
+
+        .sell-left-desc {
+            font-size: 16px;
+            color: var(--ink2);
+            line-height: 1.85;
+            margin-bottom: 22px;
+        }
+        .sell-left-desc + .sell-left-desc { margin-top: -8px; }
+
+        .hero-pills { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 30px; }
+        .hero-pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--green-l); border: 1px solid rgba(26,107,42,.15);
+            border-radius: var(--pill); padding: 8px 15px; font-size: 12.5px;
+            font-weight: 700; color: var(--green-d);
+        }
+        .hero-pill i { width: 13px; height: 13px; color: var(--green); }
+
+        .left-divider { height: 1px; background: var(--border); margin: 28px 0 26px; }
+
+        .why-mini-head { font-size: 11.5px; font-weight: 800; color: var(--ink4); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 18px; }
+        .why-mini { display: flex; flex-direction: column; gap: 18px; }
+        .why-mini-item { display: flex; gap: 13px; }
+        .why-mini-icon {
+            width: 38px; height: 38px; border-radius: var(--r10); background: var(--green-l);
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            border: 1px solid rgba(26,107,42,.12);
+        }
+        .why-mini-icon i { width: 17px; height: 17px; color: var(--green); }
+        .why-mini-name { font-size: 14px; font-weight: 800; color: var(--ink2); margin-bottom: 2px; }
+        .why-mini-desc { font-size: 12.5px; color: var(--ink4); line-height: 1.6; }
+
+        /* FORM COLUMN HEADING */
+        .form-col-head { margin-bottom: 18px; }
+        .form-col-title {
+            font-family: var(--font-d); font-size: clamp(20px, 2.6vw, 25px);
+            font-weight: 800; color: var(--ink); line-height: 1.2; margin-bottom: 8px;
+        }
+        .form-col-sub { font-size: 14px; color: var(--ink2); line-height: 1.7; }
+
+        /* NOTICE */
+        .notice {
+            display: flex; align-items: flex-start; gap: 10px;
+            padding: 13px 15px; border-radius: var(--r12);
+            background: var(--green-l); border: 1.5px solid rgba(26, 107, 42, .15);
+            margin-bottom: 20px;
+        }
+        .notice i { width: 15px; height: 15px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
+        .notice-title { font-size: 13.5px; font-weight: 600; color: var(--ink2); margin-bottom: 4px; }
+        .notice-text { font-size: 13px; color: var(--ink2); line-height: 1.6; }
+
+        /* FORM CARD */
+        .form-card {
+            background: var(--white); border: 1.5px solid var(--border);
+            border-radius: var(--r16); overflow: hidden; box-shadow: var(--sh3);
+        }
+
+        /* VISUAL STEPPER */
+        .stepper { padding: 26px 26px 22px; background: var(--white); border-bottom: 1px solid var(--border); }
+        .stepper-title { font-family: var(--font-d); font-size: 19px; font-weight: 800; color: var(--ink); margin-bottom: 2px; }
+        .stepper-sub { font-size: 12.5px; color: var(--ink4); font-weight: 600; margin-bottom: 18px; }
+
+        .stepper-track { position: relative; padding-top: 6px; }
+        .stepper-track-line { position: absolute; top: 21px; left: 18px; right: 18px; height: 2px; background: var(--border); z-index: 0; }
+        .stepper-track-fill {
+            position: absolute; top: 21px; left: 18px; height: 2px; background: var(--green);
+            z-index: 1; width: 0%; transition: width var(--ease-slow);
+        }
+        .stepper-track-car {
+            position: absolute; top: 3px; width: 34px; height: 34px; left: 1px;
+            transform: translateX(-50%); transition: left var(--ease-slow);
+            z-index: 3; display: flex; align-items: center; justify-content: center;
+            background: var(--ink); border-radius: 50%; box-shadow: var(--sh2);
+        }
+        .stepper-track-car i { width: 16px; height: 16px; color: #fff; }
+        .stepper-nodes { display: flex; justify-content: space-between; position: relative; z-index: 2; }
+        .stepper-node { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 36px; }
+        .stepper-dot {
+            width: 12px; height: 12px; border-radius: 50%; background: var(--white);
+            border: 2px solid var(--border); transition: all var(--ease);
+        }
+        .stepper-node.done .stepper-dot { background: var(--green); border-color: var(--green); }
+        .stepper-node.active .stepper-dot { border-color: var(--green); box-shadow: 0 0 0 4px var(--green-l); }
+        .stepper-label { font-size: 10.5px; font-weight: 700; color: var(--ink5); text-align: center; white-space: nowrap; }
+        .stepper-node.active .stepper-label { color: var(--green-d); }
+        .stepper-node.done .stepper-label { color: var(--ink3); }
+        @media(max-width:479px) { .stepper-label { display: none; } }
+
+        /* FORM STEP */
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: stepIn .38s cubic-bezier(0.16, 1, 0.3, 1); }
+        @keyframes stepIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+        .form-group-body { padding: 24px 26px 8px; }
+        .form-step-intro { font-size: 14px; color: var(--ink2); margin-bottom: 22px; }
+
+        .field-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+        @media(min-width:640px) {
+            .field-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+            .field-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+        }
+        .row-gap { height: 16px; }
+
+        .field { display: flex; flex-direction: column; gap: 8px; }
+        .field label { font-size: 14.5px; font-weight: 700; color: var(--ink); }
+        .field label .opt { font-weight: 500; color: var(--ink4); text-transform: none; }
+
+        .field input, .field select, .field textarea {
+            font-family: var(--font-b); font-size: 15px; color: var(--ink2);
+            border: 1.5px solid var(--border); border-radius: 9px;
+            padding: 13.5px 16px; background: var(--white); transition: border-color var(--ease), box-shadow var(--ease); width: 100%;
+        }
+        .field input:hover, .field select:hover, .field textarea:hover { border-color: var(--ink5); }
+        .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--green); outline: none; box-shadow: 0 0 0 3px var(--green-l); }
+        .field textarea { resize: vertical; min-height: 96px; font-family: var(--font-b); }
+        .field select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px;
+        }
+        .field-hint { font-size: 11.5px; color: var(--ink5); }
+        .field.invalid input, .field.invalid select, .field.invalid textarea { border-color: var(--red); }
+        .field.invalid .seg-box { border-color: var(--red); }
+        .field-error { font-size: 11.5px; color: var(--red); display: none; }
+        .field.invalid .field-error { display: block; }
+
+        .field-icon-wrap { position: relative; }
+        .field-icon-wrap i.fi { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--ink5); }
+        .field-icon-wrap input { padding-left: 42px; }
+
+        /* PRICE INPUT */
+        .price-input { position: relative; }
+        .price-input span { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 14px; font-weight: 700; color: var(--ink5); }
+        .price-input input { padding-left: 48px; }
+
+        /* NATIVE RADIO */
+        .radio-group { display: flex; gap: 32px; align-items: center; margin-top: 6px; }
+        .radio-item { display: flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 600; color: var(--ink2); cursor: pointer; }
+        .radio-item input[type=radio] { width: 18px; height: 18px; accent-color: var(--green); margin: 0; cursor: pointer; }
+
+        /* SEGMENTED / YES-NO CONTROL (Kept for compatibility if used elsewhere) */
+        .seg-row { display: flex; gap: 10px; }
+        .seg-option { flex: 1; position: relative; }
+        .seg-option input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; cursor: pointer; margin: 0; }
+        .seg-box {
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+            border: 1px solid var(--border); border-radius: 4px;
+            padding: 11px; font-size: 13.5px; font-weight: 700; color: var(--ink3);
+            transition: all var(--ease); text-align: center;
+        }
+        .seg-option input:checked + .seg-box { border-color: var(--green); background: var(--green-l); color: var(--green-d); }
+        .seg-option input:focus-visible + .seg-box { outline: 2px solid var(--green); outline-offset: 2px; }
+
+        /* SALVAGE QUESTION CALLOUT */
+        .salvage-box {
+            border: 1.5px solid var(--border); border-radius: var(--r12);
+            padding: 18px 18px; background: var(--bg);
+        }
+        .salvage-box label.q { font-size: 15.5px; font-weight: 800; color: var(--ink); display: block; margin-bottom: 4px; }
+        .salvage-box .q-sub { font-size: 12.5px; color: var(--ink4); margin-bottom: 12px; }
+
+        /* UPLOAD */
+        .upload-zone {
+            border: 2px dashed var(--border); border-radius: var(--r12);
+            padding: 26px 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;
+            text-align: center; cursor: pointer; transition: all var(--ease); background: var(--bg);
+        }
+        .upload-zone:hover, .upload-zone.drag { border-color: var(--green); background: var(--green-l); }
+        .upload-zone i { width: 26px; height: 26px; color: var(--green); }
+        .upload-zone-title { font-size: 13.5px; font-weight: 700; color: var(--ink2); }
+        .upload-zone-sub { font-size: 12px; color: var(--ink5); }
+        .upload-zone input[type=file] { display: none; }
+
+        .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+        @media(min-width:640px) { .photo-grid { grid-template-columns: repeat(5, 1fr); } }
+        .photo-thumb { position: relative; aspect-ratio: 1; border-radius: var(--r10); overflow: hidden; border: 1.5px solid var(--border); background: var(--bg); }
+        .photo-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .photo-thumb .cover-tag { position: absolute; bottom: 5px; left: 5px; background: var(--green); color: #fff; font-size: 9.5px; font-weight: 800; padding: 2px 7px; border-radius: var(--pill); }
+        .photo-remove { position: absolute; top: 5px; right: 5px; width: 22px; height: 22px; border-radius: 50%; background: rgba(11, 15, 20, .65); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .photo-remove i { width: 12px; height: 12px; color: #fff; }
+        .photo-count { font-size: 12px; color: var(--ink5); margin-top: 10px; }
+
+        /* CHECKBOX */
+        .check-row { display: flex; align-items: flex-start; gap: 10px; }
+        .check-row input[type=checkbox] { width: 17px; height: 17px; margin-top: 2px; accent-color: var(--green); flex-shrink: 0; }
+        .check-row label { font-size: 14px; color: var(--ink2); line-height: 1.6; }
+
+        .check-grid { display: grid; grid-template-columns: 1fr; gap: 10px 20px; margin-top: 4px; }
+        @media(min-width:560px) { .check-grid { grid-template-columns: 1fr 1fr; } }
+        .check-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--ink3); cursor: pointer; }
+        .check-item input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--green); flex-shrink: 0; }
+
+        /* STEP NAV / FOOTER */
+        .step-nav {
+            display: flex; align-items: center; justify-content: space-between; gap: 12px;
+            padding: 22px 26px 26px; background: var(--white); margin-top: 8px;
+        }
+        .btn-back {
+            display: inline-flex; align-items: center; gap: 7px; border: none;
+            border-radius: 4px; padding: 12px 18px; font-size: 11.5px; font-weight: 800;
+            color: var(--ink3); background: transparent; cursor: pointer; transition: color var(--ease); font-family: var(--font-b);
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .btn-back:hover { color: var(--ink); }
+        .btn-back i { display: none; }
+        .btn-back.invisible { visibility: hidden; }
+
+        .btn-next, .submit-btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+            background: var(--green); color: #fff; border: none; border-radius: 9px;
+            font-family: var(--font-b); font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 16px 32px; cursor: pointer; transition: all var(--ease);
+            box-shadow: 0 1px 0 rgba(0,0,0,.06);
+        }
+        .btn-next:hover, .submit-btn:hover { background: var(--green-d); transform: translateY(-2px); box-shadow: var(--sh2); }
+        .submit-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; box-shadow: none; }
+        .btn-next i, .submit-btn i { display: none; }
+
+        /* MODALS */
+        .av-modal-overlay {
+            position: fixed; inset: 0; background: rgba(11,15,20,.7); backdrop-filter: blur(4px);
+            z-index: 9999; display: none; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.2s;
+        }
+        .av-modal-overlay.open { display: flex; }
+        .av-modal-overlay.show { opacity: 1; }
+        .av-modal-box {
+            background: var(--white); border-radius: var(--r20); padding: 32px;
+            width: 100%; max-width: 480px; position: relative; margin: 20px;
+            transform: scale(0.95) translateY(10px); transition: transform 0.2s;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .av-modal-overlay.show .av-modal-box { transform: scale(1) translateY(0); }
+        .av-modal-close {
+            position: absolute; top: 16px; right: 16px; background: var(--bg); border: none;
+            cursor: pointer; width: 32px; height: 32px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; color: var(--ink4);
+            transition: background var(--ease), color var(--ease);
+        }
+        .av-modal-close:hover { background: var(--border); color: var(--ink); }
+
+        .form-footer-note { font-size: 11px; color: var(--ink5); text-align: center; padding: 0 26px 24px; }
+
+        /* SUCCESS STATE */
+        .success-card { display: none; text-align: center; padding: 56px 24px; }
+        .success-card.show { display: block; }
+        .success-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--green-l); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+        .success-icon i { width: 30px; height: 30px; color: var(--green); }
+        .success-card h3 { font-family: var(--font-d); font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
+        .success-card p { font-size: 14px; color: var(--ink4); max-width: 400px; margin: 0 auto 18px; line-height: 1.7; }
+        .ref-id { display: inline-flex; align-items: center; gap: 8px; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--pill); padding: 8px 18px; font-size: 13px; font-weight: 800; color: var(--ink2); margin-bottom: 22px; }
+        .ref-id i { width: 14px; height: 14px; color: var(--green); }
+        .status-track { display: flex; align-items: center; justify-content: center; gap: 0; max-width: 420px; margin: 0 auto 26px; }
+        .status-step { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; }
+        .status-dot { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--border); background: #fff; }
+        .status-dot i { width: 13px; height: 13px; color: var(--ink5); }
+        .status-step.active .status-dot { border-color: var(--green); background: var(--green-l); }
+        .status-step.active .status-dot i { color: var(--green); }
+        .status-step span { font-size: 10.5px; font-weight: 700; color: var(--ink5); }
+        .status-step.active span { color: var(--green); }
+        .status-line { flex: 1; height: 2px; background: var(--border); margin-top: -24px; }
+        .success-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .btn-ghost { display: inline-flex; align-items: center; gap: 7px; border: 1.5px solid var(--border); border-radius: var(--r10); padding: 11px 18px; font-size: 13px; font-weight: 700; color: var(--ink3); text-decoration: none; background: #fff; transition: border-color var(--ease); }
+        .btn-ghost:hover { border-color: var(--green); color: var(--green); }
+        .btn-ghost i { width: 14px; height: 14px; }
+
+        /* HOW IT WORKS */
+        .section { padding: 56px 0; }
+        .section.alt { background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .sec-title { font-family: var(--font-d); font-size: clamp(22px, 3.5vw, 34px); font-weight: 800; color: var(--ink); line-height: 1.12; margin-bottom: 8px; }
+        .sec-title em { font-style: italic; color: var(--green); }
+        .sec-sub { font-size: 14.5px; color: var(--ink4); max-width: 560px; line-height: 1.75; margin-bottom: 36px; }
+
+        .how-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+        @media(min-width:768px) { .how-grid { grid-template-columns: repeat(3, 1fr); } }
+        .how-step { text-align: center; position: relative; }
+        .how-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--white); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+        .how-icon i { width: 26px; height: 26px; color: var(--green); }
+        .how-num { font-size: 12px; font-weight: 800; color: var(--green); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+        .how-step h3 { font-family: var(--font-d); font-size: 20px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
+        .how-step p { font-size: 15px; color: var(--ink2); line-height: 1.65; max-width: 280px; margin: 0 auto; }
+
+        /* WHY SELL WITH US */
+        .va-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+        @media(min-width:480px) { .va-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width:900px) { .va-grid { grid-template-columns: repeat(4, 1fr); } }
+        .va-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r12); padding: 18px; display: flex; gap: 13px; transition: border-color var(--ease); }
+        .va-card:hover { border-color: var(--green); }
+        .va-card i { width: 18px; height: 18px; color: var(--ink5); flex-shrink: 0; margin-top: 2px; }
+        .va-card-name { font-size: 13px; font-weight: 800; color: var(--ink2); margin-bottom: 3px; }
+        .va-card-desc { font-size: 12px; color: var(--ink4); line-height: 1.55; }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: translateY(0) } }
+        .fade-up { opacity: 0; animation: fadeUp .45s ease forwards; }
+
+        @media(max-width:639px) {
+            .stepper { padding: 18px 16px 16px; }
+            .form-group-body { padding: 18px 16px 4px; }
+            .step-nav { padding: 16px 16px 20px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .fade-up, .form-step.active { animation: none; opacity: 1; }
+            .btn-next:hover, .submit-btn:hover { transform: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="assets/js/site-chrome.js"></script>
+    <!-- BREADCRUMB -->
+    <nav class="bc">
+        <div class="wrap bc-inner">
+            <a href="/">Home</a>
+            <i data-lucide="chevron-right"></i>
+            <span>Sell Your Car</span>
+        </div>
+    </nav>
+
+    <!-- TOP -->
+    <section class="top-section">
+        <div class="wrap">
+            <div class="eyebrow fade-up"><i data-lucide="car"></i>Sell Your Vehicle</div>
+            <h1 class="page-title fade-up">Sell or trade your vehicle <em>the honest way.</em></h1>
+        </div>
+    </section>
+
+    <!-- MAIN GRID -->
+    <section>
+        <div class="wrap sell-grid">
+
+            <!-- LEFT COLUMN -->
+            <div class="fade-up">
+                <p class="sell-left-desc">At Autoviindu, we make the process simple, transparent, and stress free. Our
+                    straightforward vehicle appraisal and trade-in process — backed by our AV Score — ensures you get
+                    the best value for your car, whether you're trading it in for an upgrade or selling it directly to
+                    us.</p>
+                <p class="sell-left-desc">With Autoviindu, there's no pressure and no obligation — just honest,
+                    competitive offers based on your vehicle's current market value. We also make it easy to exchange
+                    your current car for another desirable new or used vehicle, giving you more flexibility to upgrade
+                    on your own terms. Plus, our team of experts is ready to assist you at every step, providing fast
+                    appraisals and answers to all your questions. Start your trade-in or selling experience with
+                    Autoviindu today and discover why Nepali drivers trust us for fair, hassle-free transactions.</p>
+
+               
+
+                <div class="left-divider"></div>
+
+               
+            </div>
+
+            <!-- RIGHT COLUMN: FORM -->
+            <div class="fade-up">
+                <div class="form-col-head">
+                    <div class="form-col-title">Get an accurate offer for your vehicle.</div>
+                    <p class="form-col-sub">Share a few details about your vehicle below, and our team will carefully
+                        inspect it to determine its true market value. No guesswork, no rushed estimates — just a
+                        fair, honest offer backed by a real evaluation.</p>
+                </div>
+
+                <form class="form-card" id="sell-car-form">
+
+                   
+
+                    <!-- STEP 1: VEHICLE BASICS -->
+                    <div class="form-step active" data-step="1">
+                        <div class="form-group-body">
+                            <p class="form-step-intro">Tell us the basics — brand, model, and specification.</p>
+                            <div class="salvage-box">
+                                <div class="field" data-field="salvageStatus" data-type="radio">
+                                    <label class="q">Has this vehicle been repaired after major damage?</label>
+                                    <p class="q-sub">This helps us confirm the vehicle meets our purchase standards.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-item"><input type="radio" name="salvageStatus" value="Yes" onchange="checkSalvage(this)"> Yes</label>
+                                        <label class="radio-item"><input type="radio" name="salvageStatus" value="No" onchange="checkSalvage(this)"> No</label>
+                                    </div>
+                                    <span class="field-error">Please select an option.</span>
+                                </div>
+                            </div>
+                            <div class="row-gap"></div>
+                            <div class="field-grid cols-2">
+                                <div class="field" data-field="brand">
+                                    <label>Brand</label>
+                                    <input type="text" name="brand" placeholder="e.g. Hyundai" required>
+                                    <span class="field-error">Please enter the brand.</span>
+                                </div>
+                                <div class="field" data-field="model">
+                                    <label>Model</label>
+                                    <input type="text" name="model" placeholder="e.g. Creta" required>
+                                    <span class="field-error">Please enter the model.</span>
+                                </div>
+                            </div>
+                            <div class="row-gap"></div>
+                            <div class="field-grid cols-2">
+                                <div class="field" data-field="variant">
+                                    <label>Variant / Trim <span class="opt">(optional)</span></label>
+                                    <input type="text" name="variant" placeholder="e.g. SX(O), GLS">
+                                </div>
+                                <div class="field" data-field="year">
+                                    <label>Manufacture year</label>
+                                    <select name="year" required></select>
+                                </div>
+                            </div>
+                            <div class="row-gap"></div>
+                            <div class="field-grid cols-2">
+                                <div class="field" data-field="km">
+                                    <label>KM driven</label>
+                                    <input type="number" name="km" min="0" placeholder="e.g. 24000" required>
+                                    <span class="field-error">Please enter kilometers driven.</span>
+                                </div>
+                                <div class="field" data-field="bodyType">
+                                    <label>Body type</label>
+                                    <select name="bodyType" required>
+                                        <option value="">Choose...</option>
+                                        <option>Hatchback</option>
+                                        <option>Sedan</option>
+                                        <option>SUV</option>
+                                        <option>Van / Minibus</option>
+                                        <option>Pickup</option>
+                                        <option>Motorbike / Scooter</option>
+                                        <option>Truck</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <span class="field-error">Please select a body type.</span>
+                                </div>
+                            </div>
+                            <div class="row-gap"></div>
+                            <div class="field-grid cols-3">
+                                <div class="field" data-field="fuel">
+                                    <label>Fuel type</label>
+                                    <select name="fuel" required>
+                                        <option value="">Choose...</option>
+                                        <option>Petrol</option>
+                                        <option>Diesel</option>
+                                        <option>Electric</option>
+                                        <option>Hybrid</option>
+                                    </select>
+                                    <span class="field-error">Please select fuel type.</span>
+                                </div>
+                                <div class="field" data-field="drivetrain">
+                                    <label>Drivetrain</label>
+                                    <select name="drivetrain" required>
+                                        <option value="">Choose...</option>
+                                        <option>FWD (Front-Wheel Drive)</option>
+                                        <option>RWD (Rear-Wheel Drive)</option>
+                                        <option>AWD (All-Wheel Drive)</option>
+                                        <option>4WD (Four-Wheel Drive)</option>
+                                        <option>4x4 (Part-Time 4WD)</option>
+                                    </select>
+                                    <span class="field-error">Please select drivetrain.</span>
+                                </div>
+                                <div class="field" data-field="transmission">
+                                    <label>Transmission</label>
+                                    <select name="transmission" required>
+                                        <option value="">Choose...</option>
+                                        <option>Manual</option>
+                                        <option>Automatic</option>
+                                    </select>
+                                    <span class="field-error">Please select transmission.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-nav">
+                            <button type="button" class="btn-back invisible"><i data-lucide="arrow-left"></i>Back</button>
+                            <button type="button" class="btn-next" data-next="2">Continue<i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: CONDITION & HISTORY -->
+                    <div class="form-step" data-step="2">
+                        <div class="form-group-body">
+                            <h3 style="font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 6px;">Additional information required.</h3>
+                            <p class="form-step-intro" style="font-size: 14px;">Just a few remaining questions we require to give you the most accurate appraisal possible.</p>
+
+                            <div class="field-grid">
+                                <div class="field" data-field="color">
+                                    <label>Vehicle exterior colour</label>
+                                    <select name="color" required>
+                                        <option value="">Choose...</option>
+                                        <option>White</option>
+                                        <option>Black</option>
+                                        <option>Silver</option>
+                                        <option>Grey</option>
+                                        <option>Red</option>
+                                        <option>Blue</option>
+                                        <option>Green</option>
+                                        <option>Brown</option>
+                                        <option>Golden</option>
+                                        <option>Maroon</option>
+                                        <option>Pearl White</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <span class="field-error">Please select a colour.</span>
+                                </div>
+                                <div class="field" data-field="condition">
+                                    <label>How would you rate your vehicle's overall condition?</label>
+                                    <select name="condition" required>
+                                        <option value="">Choose...</option>
+                                        <option>Excellent</option>
+                                        <option>Good</option>
+                                        <option>Fair</option>
+                                        <option>Needs work</option>
+                                    </select>
+                                    <span class="field-error">Please select condition.</span>
+                                </div>
+                            </div>
+
+                            <div class="row-gap"></div>
+                            <div class="field-grid">
+                                <div class="field" data-field="accidentHistory">
+                                    <label>Was your vehicle ever in an accident?</label>
+                                    <select name="accidentHistory" required>
+                                        <option value="">Choose...</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                    <span class="field-error">Please select an option.</span>
+                                </div>
+                                <div class="field" data-field="damage">
+                                    <label>Does your vehicle have any existing damage inside or out?</label>
+                                    <select name="damage" required>
+                                        <option value="">Choose...</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                    <span class="field-error">Please select an option.</span>
+                                </div>
+                            </div>
+                            <div class="row-gap"></div>
+                            <div class="field-grid">
+                                <div class="field" data-field="smokedIn">
+                                    <label>Has your vehicle ever been smoked in?</label>
+                                    <select name="smokedIn" required>
+                                        <option value="">Choose...</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                    <span class="field-error">Please select an option.</span>
+                                </div>
+                                <div class="field" data-field="windshield">
+                                    <label>Are there any chips or cracks in the windshield?</label>
+                                    <select name="windshield" required>
+                                        <option value="">Choose...</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                    <span class="field-error">Please select an option.</span>
+                                </div>
+                            </div>
+                            <div class="row-gap"></div>
+                            <div class="field-grid">
+                                <div class="field" data-field="mechanicalIssues">
+                                    <label>Does your vehicle have any mechanical issues or dashboard warning lights on?</label>
+                                    <select name="mechanicalIssues" required>
+                                        <option value="">Choose...</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                    <span class="field-error">Please select an option.</span>
+                                </div>
+                            </div>
+
+                            <div class="row-gap"></div>
+                            <div class="field-grid cols-3">
+                                <div class="field" data-field="bluebookRenewal">
+                                    <label>Last Bluebook renewal date</label>
+                                    <input type="date" name="bluebookRenewal" required>
+                                    <span class="field-error">Please enter the date.</span>
+                                </div>
+                                <div class="field" data-field="lastServiceDate">
+                                    <label>Last service date</label>
+                                    <input type="date" name="lastServiceDate" required>
+                                    <span class="field-error">Please enter the date.</span>
+                                </div>
+                                <div class="field" data-field="lastServiceKm">
+                                    <label>Last service km</label>
+                                    <input type="number" name="lastServiceKm" placeholder="e.g. 25000" required>
+                                    <span class="field-error">Please enter the km.</span>
+                                </div>
+                            </div>
+
+                            <div class="row-gap"></div>
+                            <div class="field-grid cols-2">
+                                <div class="field" data-field="serviceType">
+                                    <label>Service type</label>
+                                    <select name="serviceType" required>
+                                        <option value="">Choose...</option>
+                                        <option>Authorized Service Center</option>
+                                        <option>Non-authorized Garage</option>
+                                    </select>
+                                    <span class="field-error">Please select an option.</span>
+                                </div>
+                                <div class="field" data-field="ownership" data-type="radio">
+                                    <label>Do you own your vehicle outright or financed?</label>
+                                    <div class="radio-group">
+                                        <label class="radio-item">
+                                            <input type="radio" name="ownership" value="Own it">
+                                            Own It
+                                        </label>
+                                        <label class="radio-item">
+                                            <input type="radio" name="ownership" value="Finance">
+                                            Finance
+                                        </label>
+                                    </div>
+                                    <span class="field-error">Please select an option.</span>
+                                </div>
+                            </div>
+
+                            <div id="finance-details-fields" style="display:none; margin-top:12px; background:#f0f7f2; border:1.5px solid #b2d8bc; border-radius:12px; padding:18px 18px 6px; animation:fadeSlideIn .25s ease;">
+                                <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+                                    <span style="font-size:13px;font-weight:700;color:var(--green);">📋 Finance Details</span>
+                                </div>
+                                <div class="field-grid cols-2">
+                                    <div class="field" data-field="financeMonthsLeft">
+                                        <label>How many months left? <span class="req">*</span></label>
+                                        <input type="number" name="financeMonthsLeft" id="financeMonthsLeft" placeholder="e.g. 24" min="1">
+                                        <span class="field-error">Please enter the number of months left.</span>
+                                    </div>
+                                    <div class="field" data-field="financeAmountRemaining">
+                                        <label>Amount yet to be paid (Rs.) <span class="req">*</span></label>
+                                        <input type="text" name="financeAmountRemaining" id="financeAmountRemaining" placeholder="e.g. 5,00,000">
+                                        <span class="field-error">Please enter the remaining amount.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row-gap"></div>
+                            <div class="field" data-field="photos">
+                                <label>Vehicle photos <span class="opt">(interior &amp; exterior)</span></label>
+                                <p class="field-hint" style="margin-bottom: 4px;">Please upload at least 2 photos showing the interior and exterior of your vehicle.</p>
+                                <label class="upload-zone" id="upload-zone" for="photo-input">
+                                    <i data-lucide="camera"></i>
+                                    <div class="upload-zone-title">Click to upload or drag photos here</div>
+                                    <div class="upload-zone-sub">JPG or PNG, up to 10 photos, min 2 required</div>
+                                    <input type="file" id="photo-input" accept="image/png, image/jpeg" multiple>
+                                </label>
+                                <div class="photo-grid" id="photo-grid"></div>
+                                <div class="photo-count" id="photo-count">0 of 2 minimum photos added</div>
+                                <span class="field-error" id="photo-error">Please add at least 2 photos of your vehicle (interior and exterior).</span>
+                            </div>
+                        </div>
+                        <div class="step-nav">
+                            <button type="button" class="btn-back" data-back="1">Go Back</button>
+                            <button type="button" class="btn-next" data-next="3">Continue<i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: CONTACT DETAILS -->
+                    <div class="form-step" data-step="3">
+                        <div class="form-group-body">
+                            <h3 style="font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 6px;">Almost done — where should we send your offer?</h3>
+                            <p class="form-step-intro" style="font-size: 14px;">Your contact details are only shared with our verified appraisal team.</p>
+
+                            <div class="field-grid cols-2">
+    <div class="field" data-field="fullName">
+        <label>Full name</label>
+        <div class="field-icon-wrap">
+            <i data-lucide="user" class="fi"></i>
+            <input type="text" name="fullName" placeholder="e.g. Sujan Shrestha"
+                   required
+                   pattern="[A-Za-z\s]+"
+                   title="Only letters and spaces are allowed"
+                   oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '')">
+        </div>
+        <span class="field-error">Please enter your name.</span>
+    </div>
+    <div class="field" data-field="phone">
+        <label>Phone number</label>
+        <div class="field-icon-wrap">
+            <i data-lucide="phone" class="fi"></i>
+            <input type="tel" name="phone" placeholder="98XXXXXXXX"
+                   required
+                   maxlength="10"
+                   pattern="[0-9]{10}"
+                   title="Enter exactly 10 digits"
+                   inputmode="numeric"
+                   oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)">
+        </div>
+        <span class="field-error">Please enter a valid 10-digit phone number.</span>
+    </div>
+</div>
+<div class="row-gap"></div>
+<div class="field-grid">
+    <div class="field" data-field="address">
+        <label>Address</label>
+        <div class="field-icon-wrap">
+            <i data-lucide="map-pin" class="fi"></i>
+            <input type="text" name="address" placeholder="e.g. Baneshwor, Kathmandu" required>
+        </div>
+        <span class="field-error">Please enter your address.</span>
+    </div>
+</div>
+<div class="row-gap"></div>
+<div class="field-grid">
+    <div class="field" data-field="email">
+        <label>Email address</label>
+        <div class="field-icon-wrap">
+            <i data-lucide="mail" class="fi"></i>
+            <input type="email" name="email" placeholder="e.g. sujan@example.com" required>
+        </div>
+        <span class="field-error">Please enter a valid email address.</span>
+    </div>
+</div>
+
+                            <div class="row-gap"></div>
+                            <div class="check-row">
+                                <input type="checkbox" id="c-agree" name="agree" required>
+                                <label for="c-agree">I confirm the details above are accurate and I am the legal owner or authorised seller of this vehicle.</label>
+                            </div>
+                        </div>
+                        <div class="step-nav">
+                            <button type="button" class="btn-back" data-back="2">Go Back</button>
+                            <button type="submit" class="submit-btn" id="submit-btn">Get My Offer</button>
+                        </div>
+                        <p class="form-footer-note">By submitting, you agree to be contacted by our team regarding your vehicle appraisal.</p>
+                    </div>
+                </form>
+
+                <!-- SUCCESS STATE -->
+                <div class="form-card success-card" id="success-card">
+                    <div class="success-icon"><i data-lucide="check-check"></i></div>
+                    <h3>Listing submitted</h3>
+                    <p>Thanks — we've received your car's details. Our team typically reviews new listings within 24
+                        hours.</p>
+                    <div class="ref-id"><i data-lucide="hash"></i><span id="ref-id-text">AV-CAR-0000</span></div>
+                    <div class="status-track">
+                        <div class="status-step active">
+                            <div class="status-dot"><i data-lucide="upload"></i></div><span>Submitted</span>
+                        </div>
+                        <div class="status-line"></div>
+                        <div class="status-step">
+                            <div class="status-dot"><i data-lucide="search-check"></i></div><span>Under Review</span>
+                        </div>
+                        <div class="status-line"></div>
+                        <div class="status-step">
+                            <div class="status-dot"><i data-lucide="badge-check"></i></div><span>Live</span>
+                        </div>
+                    </div>
+                    <div class="success-actions">
+                        <a href="/" class="btn-ghost"><i data-lucide="home"></i>Back to Home</a>
+                        <button class="btn-ghost" id="list-another"><i data-lucide="plus"></i>List Another Car</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REJECTION MODAL -->
+    <div class="av-modal-overlay" id="reject-modal">
+        <div class="av-modal-box" style="text-align: center; position: relative;">
+            <button type="button" onclick="closeRejectModal()" aria-label="Close" style="position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: var(--ink4); display: flex; align-items: center; justify-content: center; padding: 4px; border-radius: 4px; transition: background var(--ease);"><i data-lucide="x" style="width: 20px; height: 20px;"></i></button>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: #FFF0EF; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+                <i data-lucide="info" style="color: var(--red); width: 32px; height: 32px;"></i>
+            </div>
+            <h3 style="font-family: var(--font-d); font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 12px;">Thank You for Your Interest</h3>
+            <p style="font-size: 15px; color: var(--ink3); line-height: 1.6; margin-bottom: 24px;">To maintain our strict quality standards for buyers, Autoviindu unfortunately does not purchase vehicles that have been involved in major accidents.</p>
+            <button type="button" class="btn-next" onclick="closeRejectModal()" style="width: 100%;">Ok</button>
+        </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+        <div class="wrap">
+            <h2 class="sec-title" style="text-align:center;margin:0 auto 36px;">How Our Offer Works</h2>
+            <div class="how-grid">
+                <div class="how-step">
+                    <div class="how-icon"><i data-lucide="calendar-clock"></i></div>
+                    <h3>Make an Appointment</h3>
+                    <p>Schedule a time convenient for you to bring in your vehicle for us to appraise.</p>
+                </div>
+                <div class="how-step">
+                    <div class="how-icon"><i data-lucide="clipboard-check"></i></div>
+                    <h3>Get Your Offer</h3>
+                    <p>It takes just a couple minutes for us to look over your vehicle and present you a guaranteed
+                        written offer.</p>
+                </div>
+                <div class="how-step">
+                    <div class="how-icon"><i data-lucide="hand-coins"></i></div>
+                    <h3>Get Paid</h3>
+                    <p>If you choose to accept our offer, we will pay you the same day or you can take it home and
+                        consider it.</p>
+                </div>
+            </div>
+            <p style="text-align:center;font-weight:700;font-size:14px;color:var(--ink3);margin-top:36px;">We are
+                interested in purchasing your vehicle whether or not you are looking to trade.</p>
+        </div>
+    </section>
+
+    <script>
+        function safeCreateIcons() {
+            try {
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            } catch (e) {
+                console.warn('Lucide icons failed to render:', e);
+            }
+        }
+        safeCreateIcons();
+
+        /* Populate year dropdown */
+        const yearSelect = document.querySelector('select[name="year"]');
+        const thisYear = new Date().getFullYear();
+        yearSelect.innerHTML = '<option value="">Choose...</option>' +
+            Array.from({ length: thisYear - 1989 }, (_, i) => thisYear - i)
+                .map(y => `<option value="${y}">${y}</option>`).join('');
+
+        /* ---------------- PHOTO UPLOAD LOGIC ---------------- */
+        const MIN_PHOTOS = 2;
+        const MAX_PHOTOS = 10;
+        let uploadedPhotos = []; // { file, dataUrl }
+
+        const photoInput = document.getElementById('photo-input');
+        const photoGrid = document.getElementById('photo-grid');
+        const photoCount = document.getElementById('photo-count');
+        const photoField = document.querySelector('.field[data-field="photos"]');
+        const uploadZone = document.getElementById('upload-zone');
+
+        function renderPhotos() {
+            photoGrid.innerHTML = '';
+            uploadedPhotos.forEach((p, idx) => {
+                const thumb = document.createElement('div');
+                thumb.className = 'photo-thumb';
+                thumb.innerHTML = `
+                    <img src="${p.dataUrl}" alt="Vehicle photo ${idx + 1}">
+                    ${idx === 0 ? '<span class="cover-tag">Cover</span>' : ''}
+                    <button type="button" class="photo-remove" data-idx="${idx}" aria-label="Remove photo">
+                        <i data-lucide="x"></i>
+                    </button>
+                `;
+                photoGrid.appendChild(thumb);
+            });
+            photoCount.textContent = uploadedPhotos.length >= MIN_PHOTOS
+                ? `${uploadedPhotos.length} photo${uploadedPhotos.length === 1 ? '' : 's'} added`
+                : `${uploadedPhotos.length} of ${MIN_PHOTOS} minimum photos added`;
+
+            if (uploadedPhotos.length >= MIN_PHOTOS) {
+                photoField.classList.remove('invalid');
+            }
+
+            lucide.createIcons();
+
+            photoGrid.querySelectorAll('.photo-remove').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = Number(btn.dataset.idx);
+                    uploadedPhotos.splice(idx, 1);
+                    renderPhotos();
+                });
+            });
+        }
+
+        function addFiles(fileList) {
+            const files = Array.from(fileList).filter(f => f.type === 'image/jpeg' || f.type === 'image/png');
+            const remaining = MAX_PHOTOS - uploadedPhotos.length;
+            files.slice(0, remaining).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    uploadedPhotos.push({ file, dataUrl: e.target.result });
+                    renderPhotos();
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        photoInput.addEventListener('change', (e) => {
+            addFiles(e.target.files);
+            photoInput.value = '';
+        });
+
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('drag');
+        });
+        uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag'));
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('drag');
+            if (e.dataTransfer.files.length) addFiles(e.dataTransfer.files);
+        });
+
+        renderPhotos();
+
+        /* ---------------- STEPPER LOGIC ---------------- */
+        const form = document.getElementById('sell-car-form');
+        const stepEls = Array.from(form.querySelectorAll('.form-step'));
+        const stepperTitle = document.getElementById('stepper-title');
+        const stepperSub = document.getElementById('stepper-sub');
+        const stepperFill = document.getElementById('stepper-fill');
+        const stepperCar = document.getElementById('stepper-car');
+        const stepperNodes = Array.from(document.querySelectorAll('.stepper-node'));
+        const TOTAL_STEPS = 3;
+        const STEP_TITLES = { 1: 'Vehicle Details', 2: 'Condition & History', 3: 'Contact Details' };
+        let currentStep = 1;
+        let maxReached = 1;
+
+        function renderStepper() {
+            stepperTitle.textContent = STEP_TITLES[currentStep];
+            stepperSub.textContent = `Step ${currentStep} of ${TOTAL_STEPS}`;
+
+            const pct = ((currentStep - 1) / (TOTAL_STEPS - 1)) * 100;
+            stepperFill.style.width = pct + '%';
+            stepperCar.style.left = `calc(${pct}% )`;
+
+            stepperNodes.forEach(node => {
+                const n = Number(node.dataset.node);
+                node.classList.toggle('active', n === currentStep);
+                node.classList.toggle('done', n < currentStep);
+            });
+        }
+
+        function goToStep(n) {
+            if (n > maxReached) return;
+            currentStep = n;
+            stepEls.forEach(el => el.classList.toggle('active', Number(el.dataset.step) === n));
+            renderStepper();
+            lucide.createIcons();
+            const card = document.querySelector('.form-card');
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function validateStep(stepEl) {
+            let valid = true;
+            
+            // Validate all visible inputs in the current step
+            const fields = stepEl.querySelectorAll('.field');
+            for (let field of fields) {
+                // Skip fields inside hidden containers
+                let ancestor = field.parentElement;
+                let isHidden = false;
+                while (ancestor && ancestor !== stepEl) {
+                    if (ancestor.style && ancestor.style.display === 'none') {
+                        isHidden = true;
+                        break;
+                    }
+                    ancestor = ancestor.parentElement;
+                }
+                if (isHidden) continue;
+
+                // Handle photos field
+                if (field.dataset.field === 'photos') {
+                    if (uploadedPhotos.length < MIN_PHOTOS) {
+                        field.classList.add('invalid');
+                        valid = false;
+                    } else {
+                        field.classList.remove('invalid');
+                    }
+                    continue;
+                }
+
+                // Handle radio fields
+                if (field.dataset.type === 'radio') {
+                    const checkedRadio = field.querySelector('input[type=radio]:checked');
+                    const checked = !!checkedRadio;
+                    field.classList.toggle('invalid', !checked);
+                    if (!checked) {
+                        valid = false;
+                    } else if (checkedRadio.name === 'salvageStatus' && checkedRadio.value === 'Yes') {
+                        // Show reject modal if they try to continue with 'Yes'
+                        const rejectModal = document.getElementById('reject-modal');
+                        if (rejectModal) {
+                            rejectModal.style.display = 'flex';
+                            requestAnimationFrame(() => rejectModal.classList.add('open', 'show'));
+                        }
+                        field.classList.add('invalid');
+                        valid = false;
+                    }
+                    continue;
+                }
+
+                // Handle standard inputs
+                const input = field.querySelector('input, select, textarea');
+                if (input) {
+                    if (!input.checkValidity()) {
+                        field.classList.add('invalid');
+                        input.reportValidity();
+                        valid = false;
+                        return false; // stop and show tooltip
+                    } else {
+                        field.classList.remove('invalid');
+                    }
+                }
+            }
+            return valid;
+        }
+
+        form.querySelectorAll('[data-next]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const currentEl = form.querySelector(`.form-step[data-step="${currentStep}"]`);
+                if (!validateStep(currentEl)) return;
+                const next = Number(btn.dataset.next);
+                maxReached = Math.max(maxReached, next);
+                goToStep(next);
+            });
+        });
+
+        form.querySelectorAll('[data-back]').forEach(btn => {
+            btn.addEventListener('click', () => goToStep(Number(btn.dataset.back)));
+        });
+
+        renderStepper();
+
+        // Finance fields toggle — show when 'Finance' is selected, hide otherwise
+        const ownershipRadios = document.querySelectorAll('input[name="ownership"]');
+        const financeContainer = document.getElementById('finance-details-fields');
+        const monthsLeftInput = document.getElementById('financeMonthsLeft');
+        const amountRemainingInput = document.getElementById('financeAmountRemaining');
+
+        function updateFinanceVisibility() {
+            const financeSelected = document.querySelector('input[name="ownership"][value="Finance"]')?.checked;
+            if (financeSelected) {
+                financeContainer.style.display = 'block';
+                monthsLeftInput.setAttribute('required', 'required');
+                amountRemainingInput.setAttribute('required', 'required');
+            } else {
+                financeContainer.style.display = 'none';
+                monthsLeftInput.removeAttribute('required');
+                amountRemainingInput.removeAttribute('required');
+                monthsLeftInput.value = '';
+                amountRemainingInput.value = '';
+                monthsLeftInput.closest('.field')?.classList.remove('invalid');
+                amountRemainingInput.closest('.field')?.classList.remove('invalid');
+            }
+        }
+
+        ownershipRadios.forEach(radio => {
+            radio.addEventListener('change', updateFinanceVisibility);
+        });
+
+        // Run once on load in case Finance was pre-selected
+        updateFinanceVisibility();
+
+        function checkSalvage(radio) {
+            if (radio.value === 'Yes') {
+                const rejectModal = document.getElementById('reject-modal');
+                rejectModal.style.display = 'flex';
+                requestAnimationFrame(() => rejectModal.classList.add('open', 'show'));
+            }
+        }
+
+        function closeRejectModal() {
+            const rejectModal = document.getElementById('reject-modal');
+            rejectModal.classList.remove('open', 'show');
+            setTimeout(() => {
+                rejectModal.style.display = 'none';
+            }, 300);
+            // Note: salvage status is NOT reset — user can choose again
+        }
+
+        /* ---------------- FINAL SUBMIT ---------------- */
+        const submitBtn = document.getElementById('submit-btn');
+        const successCard = document.getElementById('success-card');
+
+        form.addEventListener('submit', submitFinal);
+
+        async function submitFinal(e) {
+            e.preventDefault();
+            const step3 = form.querySelector('.form-step[data-step="3"]');
+
+            if (!validateStep(step3)) return;
+            if (!document.getElementById('c-agree').checked) {
+                document.getElementById('c-agree').closest('.check-row').style.outline = '1.5px solid var(--red)';
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i data-lucide="loader-2"></i> Submitting...';
+            lucide.createIcons();
+
+            const fd = new FormData(form);
+            const listing = {
+                formId: 'sellCar',
+                salvageStatus: fd.get('salvageStatus'),
+                brand: fd.get('brand'), model: fd.get('model'),
+                variant: fd.get('variant'),
+                year: fd.get('year'), km: fd.get('km'), bodyType: fd.get('bodyType'),
+                fuel: fd.get('fuel'), powertrain: fd.get('powertrain'), transmission: fd.get('transmission'),
+                color: fd.get('color'), condition: fd.get('condition'),
+                accidentHistory: fd.get('accidentHistory'), damage: fd.get('damage'),
+                smokedIn: fd.get('smokedIn'), windshield: fd.get('windshield'),
+                mechanicalIssues: fd.get('mechanicalIssues'),
+                bluebookRenewal: fd.get('bluebookRenewal'),
+                lastServiceDate: fd.get('lastServiceDate'), lastServiceKm: fd.get('lastServiceKm'),
+                serviceType: fd.get('serviceType'),
+                ownership: fd.get('ownership'),
+                financeMonthsLeft: fd.get('financeMonthsLeft'),
+                financeAmountRemaining: fd.get('financeAmountRemaining'),
+                fullName: fd.get('fullName'),
+                phone: fd.get('phone'),
+                address: fd.get('address'),
+                email: fd.get('email'),
+                photos: uploadedPhotos.map(p => p.dataUrl),
+            };
+
+            try {
+                const res = await fetch('/api/forms/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(listing)
+                });
+                if (!res.ok) throw new Error('Submission failed');
+
+                document.getElementById('ref-id-text').textContent = 'AV-CAR-' + Math.floor(1000 + Math.random() * 9000);
+                form.style.display = 'none';
+                successCard.classList.add('show');
+                successCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } catch (err) {
+                console.error('Could not submit form:', err);
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Get My Offer';
+                lucide.createIcons();
+                alert('An error occurred. Please try again.');
+            }
+        }
+
+        document.getElementById('list-another').addEventListener('click', () => {
+            form.reset();
+            form.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
+            uploadedPhotos = [];
+            renderPhotos();
+            currentStep = 1;
+            maxReached = 1;
+            stepEls.forEach(el => el.classList.toggle('active', Number(el.dataset.step) === 1));
+            renderStepper();
+            form.style.display = '';
+            successCard.classList.remove('show');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Get My Offer';
+            lucide.createIcons();
+            window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

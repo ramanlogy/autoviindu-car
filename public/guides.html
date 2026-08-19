@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Buying Guide, Maintenance Tips & Car Awards – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/content-loader.js"></script>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
+    ::selection { background:rgba(26,107,42,.12); }
+    :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+    @media(min-width:640px){ .wrap{ padding:0 32px; } }
+    @media(min-width:1024px){ .wrap{ padding:0 48px; } }
+
+    .bc { background:var(--bg); border-bottom:1px solid var(--border); padding:11px 0; }
+    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
+    .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
+    .bc-inner a:hover { text-decoration:underline; }
+    .bc-inner i { width:12px; height:12px; }
+
+    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:52px 0 0; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; padding-bottom:36px; display:flex; flex-direction:column; align-items:center; text-align:center; }
+    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .hero-badge i { width:13px; height:13px; color:var(--green-m); }
+    .hero h1 { font-family:var(--font-d); font-size:clamp(28px,4.6vw,46px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:14px; }
+    .hero h1 em { font-style:italic; color:var(--green-m); }
+    .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:620px; line-height:1.75; margin-bottom:30px; }
+
+    /* SEGMENTED TOGGLE (3-way) */
+    .seg-toggle { display:inline-flex; flex-wrap:wrap; justify-content:center; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:var(--pill); padding:4px; margin-bottom:8px; gap:2px; }
+    .seg-btn { padding:9px 18px; border-radius:var(--pill); font-size:13px; font-weight:700; color:rgba(255,255,255,.65); cursor:pointer; background:none; border:none; font-family:var(--font-b); transition:all var(--ease); display:flex; align-items:center; gap:6px; white-space:nowrap; }
+    .seg-btn i { width:14px; height:14px; }
+    .seg-btn.active { background:#fff; color:var(--green-d); }
+
+    .filter-bar { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+    .filter-bar-inner { display:flex; align-items:center; gap:16px; padding:14px 0; flex-wrap:wrap; }
+    .search-box { position:relative; flex-shrink:0; width:100%; max-width:260px; }
+    .search-box input { width:100%; padding:9px 14px 9px 36px; border:1.5px solid var(--border); border-radius:var(--pill); font-family:var(--font-b); font-size:13.5px; color:var(--ink2); transition:border-color var(--ease); }
+    .search-box input:focus { border-color:var(--green); }
+    .search-box i { position:absolute; left:13px; top:50%; transform:translateY(-50%); width:15px; height:15px; color:var(--ink5); }
+    .tabs-scroll { display:flex; gap:4px; overflow-x:auto; scrollbar-width:none; flex:1; }
+    .tabs-scroll::-webkit-scrollbar { display:none; }
+    .filter-tab { flex-shrink:0; padding:9px 16px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; border-radius:var(--pill); white-space:nowrap; border:1.5px solid transparent; transition:all var(--ease); background:none; font-family:var(--font-b); }
+    .filter-tab:hover { color:var(--ink2); background:var(--bg); }
+    .filter-tab.active { color:var(--white); background:var(--green); }
+
+    .section { padding:52px 0; }
+    .section.alt { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
+    .eyebrow i { width:13px; height:13px; }
+    .sec-title { font-family:var(--font-d); font-size:clamp(22px,3.5vw,32px); font-weight:800; color:var(--ink); line-height:1.12; margin-bottom:8px; }
+    .sec-title em { font-style:italic; color:var(--green); }
+
+    /* FEATURED */
+    .featured-story { display:grid; grid-template-columns:1.1fr 1fr; border:1.5px solid var(--border); border-radius:var(--r16); overflow:hidden; background:var(--white); cursor:pointer; transition:box-shadow var(--ease), border-color var(--ease); margin-bottom:40px; }
+    .featured-story:hover { box-shadow:var(--sh2); border-color:var(--green); }
+    @media(max-width:800px){ .featured-story{ grid-template-columns:1fr; } }
+    .featured-story-img { aspect-ratio:16/10; background:linear-gradient(135deg,#1a3a22,#2d6b3e); display:flex; align-items:center; justify-content:center; }
+    .featured-story-img.gold { background:linear-gradient(135deg,#6b4f10,#b8862c); }
+    .featured-story-img i { width:44px; height:44px; color:rgba(255,255,255,.35); }
+    .featured-story-body { padding:28px 30px; display:flex; flex-direction:column; gap:12px; justify-content:center; }
+    .featured-story-badge { display:inline-flex; align-items:center; gap:6px; background:var(--red); color:#fff; font-size:11px; font-weight:800; padding:4px 11px; border-radius:var(--pill); width:fit-content; text-transform:uppercase; letter-spacing:.4px; }
+    .featured-story-badge.gold { background:var(--gold); color:#2b2200; }
+    .featured-story-body h3 { font-family:var(--font-d); font-size:clamp(19px,2.6vw,26px); font-weight:800; color:var(--ink); line-height:1.25; }
+    .featured-story-body p { font-size:14px; color:var(--ink4); line-height:1.7; }
+    .featured-story-footer { display:flex; align-items:center; gap:14px; margin-top:4px; flex-wrap:wrap; }
+    .featured-story-footer span { font-size:12px; color:var(--ink5); font-weight:600; display:flex; align-items:center; gap:5px; }
+    .read-link { display:inline-flex; align-items:center; gap:5px; font-size:13.5px; font-weight:700; color:var(--green); }
+
+    /* GRID */
+    .news-grid { display:grid; grid-template-columns:1fr; gap:20px; }
+    @media(min-width:640px){ .news-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .news-grid{ grid-template-columns:repeat(3,1fr); } }
+    .news-card { border:1.5px solid var(--border); border-radius:var(--r12); background:var(--white); overflow:hidden; transition:box-shadow var(--ease), transform var(--ease), border-color var(--ease); display:flex; flex-direction:column; cursor:pointer; }
+    .news-card:hover { box-shadow:var(--sh2); transform:translateY(-2px); border-color:var(--green); }
+    .news-img { aspect-ratio:16/9; overflow:hidden; background:var(--bg); position:relative; }
+    .news-placeholder { width:100%; height:100%; background:linear-gradient(135deg,#f0f4f1,#e0ebe2); display:flex; align-items:center; justify-content:center; }
+    .news-placeholder.gold { background:linear-gradient(135deg,var(--gold-l),#f3e2b8); }
+    .news-placeholder i { width:28px; height:28px; color:rgba(26,107,42,.3); }
+    .news-placeholder.gold i { color:rgba(180,130,20,.55); }
+    .corner-pill { position:absolute; top:10px; right:10px; font-size:11px; font-weight:800; padding:4px 10px; border-radius:var(--pill); display:flex; align-items:center; gap:4px; text-transform:uppercase; letter-spacing:.3px; }
+    .corner-pill.level-beginner { background:rgba(76,175,106,.95); color:#fff; }
+    .corner-pill.level-intermediate { background:rgba(217,164,65,.95); color:#2b2200; }
+    .corner-pill.level-advanced { background:rgba(200,39,30,.9); color:#fff; }
+    .corner-pill.award { background:rgba(11,15,20,.85); color:var(--gold); }
+    .corner-pill i { width:11px; height:11px; }
+    .news-body { padding:16px 18px 18px; flex:1; display:flex; flex-direction:column; gap:8px; }
+    .news-category { font-size:10.5px; font-weight:800; color:var(--green); text-transform:uppercase; letter-spacing:.5px; }
+    .news-category.gold-text { color:#9c7415; }
+    .news-title { font-size:15px; font-weight:700; color:var(--ink2); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .news-excerpt { font-size:13px; color:var(--ink4); line-height:1.65; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; flex:1; }
+    .news-footer { display:flex; align-items:center; gap:10px; margin-top:6px; flex-wrap:wrap; justify-content:space-between; }
+    .news-date { font-size:11.5px; color:var(--ink5); font-weight:600; display:flex; align-items:center; gap:4px; }
+
+    .no-results { text-align:center; padding:40px 20px; color:var(--ink5); font-size:14px; display:none; }
+    .no-results.show { display:block; }
+    .load-more-wrap { text-align:center; margin-top:36px; }
+    .btn-load-more { display:inline-flex; align-items:center; gap:8px; background:var(--white); border:1.5px solid var(--border); color:var(--ink2); font-family:var(--font-b); font-size:14px; font-weight:700; padding:11px 24px; border-radius:var(--r10); cursor:pointer; transition:all var(--ease); }
+    .btn-load-more:hover { border-color:var(--green); color:var(--green); background:var(--green-l); }
+    .btn-load-more:disabled { opacity:.4; cursor:default; }
+
+    /* MODAL */
+    .article-modal-overlay { display:none; position:fixed; inset:0; background:rgba(11,15,20,.6); z-index:1000; align-items:flex-start; justify-content:center; padding:40px 20px; overflow-y:auto; }
+    .article-modal-overlay.open { display:flex; }
+    .article-modal { background:var(--white); border-radius:var(--r16); max-width:720px; width:100%; position:relative; box-shadow:0 24px 80px rgba(0,0,0,.3); margin-bottom:40px; }
+    .article-modal-close { position:absolute; top:16px; right:16px; z-index:10; background:var(--bg); border:none; border-radius:50%; width:38px; height:38px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink2); transition:background var(--ease); }
+    .article-modal-close:hover { background:var(--border); }
+    .article-modal-img { aspect-ratio:16/8; background:linear-gradient(135deg,#1a3a22,#2d6b3e); border-radius:var(--r16) var(--r16) 0 0; display:flex; align-items:center; justify-content:center; }
+    .article-modal-img.gold { background:linear-gradient(135deg,#6b4f10,#b8862c); }
+    .article-modal-img i { width:40px; height:40px; color:rgba(255,255,255,.35); }
+    .article-modal-body { padding:32px 36px 40px; }
+    .article-modal-body .news-category { margin-bottom:10px; display:block; }
+    .article-modal-body h2 { font-family:var(--font-d); font-size:clamp(22px,3.2vw,30px); font-weight:800; color:var(--ink); line-height:1.25; margin-bottom:14px; }
+    .article-modal-meta { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid var(--border); }
+    .article-modal-meta span { font-size:12.5px; color:var(--ink5); font-weight:600; display:flex; align-items:center; gap:5px; }
+    .article-modal-body p { font-size:14.5px; color:var(--ink3); line-height:1.85; margin-bottom:16px; }
+    .award-box { background:var(--gold-l); border:1px solid #ecd8a0; border-radius:var(--r12); padding:16px 18px; margin-bottom:20px; display:flex; gap:12px; align-items:flex-start; }
+    .award-box i { width:22px; height:22px; color:#9c7415; flex-shrink:0; margin-top:1px; }
+    .award-box div strong { display:block; font-size:14px; color:#4d3a10; margin-bottom:2px; }
+    .award-box div span { font-size:12.5px; color:#7a5c17; }
+    .checklist { list-style:none; margin:0 0 16px; padding:0; }
+    .checklist li { display:flex; gap:9px; align-items:flex-start; font-size:14px; color:var(--ink3); line-height:1.6; margin-bottom:9px; }
+    .checklist li i { width:16px; height:16px; color:var(--green); flex-shrink:0; margin-top:2px; }
+  </style>
+</head>
+<body>
+  <script src="assets/js/site-chrome.js"></script>
+
+  <nav class="bc">
+    <div class="wrap bc-inner">
+      <a href="/">Home</a>
+      <i data-lucide="chevron-right"></i>
+      <a href="/hub">News, Reviews, Events &amp; Videos</a>
+      <i data-lucide="chevron-right"></i>
+      <span>Buying Guide, Maintenance &amp; Awards</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-badge"><i data-lucide="compass"></i>AutoViindu Resource Centre</div>
+        <h1>Buy Smarter. <em>Maintain Better.</em></h1>
+        <p class="hero-desc">Everything you need before and after you buy — practical buying guides, real maintenance tips for Nepali roads, and a look at which cars actually won this year's awards.</p>
+        <div class="seg-toggle">
+          <button class="seg-btn active" id="tabGuideBtn" onclick="setTab('guide')"><i data-lucide="clipboard-list"></i>Buying Guide</button>
+          <button class="seg-btn" id="tabMaintBtn" onclick="setTab('maintenance')"><i data-lucide="wrench"></i>Maintenance Tips</button>
+          <button class="seg-btn" id="tabAwardsBtn" onclick="setTab('awards')"><i data-lucide="trophy"></i>Car Awards</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH + FILTER -->
+  <div class="filter-bar">
+    <div class="wrap">
+      <div class="filter-bar-inner">
+        <div class="search-box">
+          <i data-lucide="search"></i>
+          <input type="text" id="articleSearch" placeholder="Search articles...">
+        </div>
+        <div class="tabs-scroll" id="categoryTabs"><!-- populated by JS --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED -->
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow" id="featuredEyebrow"><i data-lucide="flame"></i>Start Here</div>
+      <div id="featuredStorySlot"><!-- populated by JS --></div>
+
+      <div class="sec-header" style="margin-top:44px;">
+        <div>
+          <h2 class="sec-title" id="gridHeading">All <em>Guides</em></h2>
+        </div>
+      </div>
+      <div class="news-grid" id="articleGrid"><!-- populated by JS --></div>
+      <p class="no-results" id="articleNoResults">Nothing matches your search. Try another keyword or category.</p>
+      <div class="load-more-wrap">
+        <button class="btn-load-more" id="articleLoadMore" onclick="loadMoreArticles()"><i data-lucide="refresh-cw"></i>Load more</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAIL MODAL -->
+  <div class="article-modal-overlay" id="articleModal" onclick="closeArticleOnOverlay(event)">
+    <div class="article-modal">
+      <button class="article-modal-close" onclick="closeArticle()"><i data-lucide="x"></i></button>
+      <div class="article-modal-img" id="articleModalImgWrap"><i data-lucide="image" id="articleModalIcon"></i></div>
+      <div class="article-modal-body">
+        <span class="news-category" id="articleModalCat">Category</span>
+        <h2 id="articleModalTitle">Title</h2>
+        <div class="article-modal-meta">
+          <span id="articleModalDate"><i data-lucide="calendar"></i>—</span>
+          <span id="articleModalRead"><i data-lucide="clock"></i>—</span>
+        </div>
+        <div id="articleModalAwardBox"></div>
+        <div id="articleModalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="av-toast-wrap"></div>
+
+  <script>
+    lucide.createIcons();
+
+    // ---------- BUYING GUIDE ----------
+    let GUIDE = [
+      { id:'g1', cat:'New vs Used', catKey:'newused', title:"New or Used in Nepal: A Straight-Talking Cost Comparison", excerpt:"With import duties as high as they are, a used car often makes more financial sense than most first-time buyers assume. Here's the real math.", date:'Updated Jun 2026', read:'6 min read', icon:'scale', level:'beginner',
+        body:["A new compact SUV in Nepal typically carries 60–90% of its ex-showroom price in taxes and duties alone, which is why depreciation hits hardest in the first two years.","Buying a two- or three-year-old car lets the first owner absorb that steepest depreciation curve, often for 30–40% less than the new price.","The trade-off is warranty coverage and financing terms — used car loans generally carry shorter tenures and slightly higher interest rates than new car loans."] },
+      { id:'g2', cat:'EV Buying', catKey:'ev', title:"First-Time EV Buyer's Checklist for Nepal", excerpt:"Charging access, real-world range in hill terrain, and resale value are the three questions every EV shopper should answer before booking.", date:'Updated Jun 2026', read:'7 min read', icon:'zap', level:'intermediate',
+        body:["Home charging access should be the first question you answer, since public fast-charging outside the Kathmandu-Pokhara corridor is still limited.","Manufacturer range claims are usually tested on flat terrain; expect 15-25% less real-world range on hill routes with elevation gain.","Battery warranty terms vary significantly between brands — check whether it covers capacity degradation, not just outright failure, before signing."] },
+      { id:'g3', cat:'Financing', catKey:'financing', title:"How Car Loans Actually Work in Nepal: Interest, Margin & Tenure Explained", excerpt:"Banks typically finance 60-70% of a vehicle's value. Here's how to read the fine print before you commit to a multi-year EMI.", date:'Updated May 2026', read:'5 min read', icon:'landmark', level:'beginner',
+        body:["Most commercial banks finance 60-70% of a new vehicle's value, meaning buyers should budget for a 30-40% down payment plus registration costs.","Interest rates on auto loans have ranged between 9.5% and 12.5% over the past year, with EV loans occasionally offered at a discount by select banks.","Always calculate the total interest paid over the full tenure, not just the monthly EMI — a longer tenure lowers the monthly payment but can add lakhs in total interest."] },
+      { id:'g4', cat:'Family Cars', catKey:'family', title:"Best Family SUVs Under NPR 60 Lakh in 2026", excerpt:"Seven seats, safety ratings, and boot space compared across the models Nepali families are actually cross-shopping this year.", date:'Updated May 2026', read:'8 min read', icon:'users', level:'beginner',
+        body:["Third-row usability varies a lot more than spec sheets suggest — we found real differences in adult legroom once child seats occupy the second row.","Ground clearance matters more than most buyers expect outside the Ring Road, especially for families who regularly drive to hill districts.","Across the models we compared, boot space with the third row in use ranged from just 130 litres to over 300 litres, a meaningful gap for luggage-heavy trips."] },
+      { id:'g5', cat:'Import & Duty', catKey:'duty', title:"Understanding Nepal's Vehicle Tax Structure Before You Shop", excerpt:"Customs duty, excise, and VAT stack differently for EVs, hybrids, and petrol cars. Knowing the split helps you understand the sticker price.", date:'Updated Apr 2026', read:'6 min read', icon:'receipt', level:'intermediate',
+        body:["Petrol and diesel vehicles carry the full stack of customs duty, excise duty, and VAT, which is why identical-looking cars can cost 2-3x more here than in neighbouring markets.","EVs currently benefit from a reduced or waived customs duty band depending on motor power, though this is reviewed annually in the federal budget.","Hybrids sit in between, with tax treatment that has shifted in recent budget cycles — always confirm the current rate with your dealer before assuming last year's pricing still applies."] },
+      { id:'g6', cat:'First Car', catKey:'newused', title:"Buying Your First Car: 8 Questions to Ask Before You Sign Anything", excerpt:"From service history to resale value, a practical checklist for anyone about to make their first car purchase in Nepal.", date:'Updated Mar 2026', read:'5 min read', icon:'clipboard-check', level:'beginner',
+        body:["Ask for the full service history before anything else — a documented record from an authorised centre is worth more than a lower asking price.","Check resale value trends for the specific model, not just the brand; some models hold value far better than others in the local market.","Always insist on an independent inspection for used purchases, even when buying from a dealer, and budget the inspection cost into your decision upfront."] },
+    ];
+
+    // ---------- MAINTENANCE TIPS ----------
+    let MAINT = [
+      { id:'m1', cat:'Seasonal Care', catKey:'seasonal', title:"Monsoon Car Care: 9 Checks Before the Rains Hit Kathmandu", excerpt:"Wiper condition, tyre tread depth, and underbody rust protection matter more here than almost anywhere else in the region.", date:'Updated Jun 2026', read:'5 min read', icon:'cloud-rain', level:'beginner',
+        body:["Tyre tread depth below 3mm significantly increases stopping distance on wet tarmac — check with a coin test if you don't have a tread gauge handy.","Underbody rust-proofing is worth revisiting annually given how much standing water valley roads see during monsoon months.","Test your wipers and washer fluid before the first heavy rain, not during it — worn blades that streak are a common cause of reduced visibility on the Ring Road."] },
+      { id:'m2', cat:'Routine Servicing', catKey:'routine', title:"The Service Schedule Most Owners in Nepal Get Wrong", excerpt:"Dusty roads and stop-start traffic shorten typical service intervals. Here's what to adjust from the manufacturer's default schedule.", date:'Updated Jun 2026', read:'6 min read', icon:'settings', level:'beginner',
+        body:["Manufacturer service intervals are usually set for cleaner, faster-moving roads than typical Kathmandu Valley driving conditions.","Air filter and cabin filter changes are worth doing roughly 20-30% more often than the manual suggests, given dust levels on unpaved and under-construction roads.","Brake fluid absorbs moisture faster in humid conditions, so a 2-year change interval is safer here than the often-quoted 3-year default."] },
+      { id:'m3', cat:'EV Care', catKey:'ev', title:"EV Battery Health: What Actually Affects Long-Term Range", excerpt:"Charging habits matter more than most owners realise. Here's what preserves battery capacity over years of ownership.", date:'Updated May 2026', read:'6 min read', icon:'battery-charging', level:'intermediate',
+        body:["Keeping daily charge levels between 20% and 80% is one of the simplest habits for slowing long-term capacity loss on most lithium-ion EV batteries.","Frequent DC fast-charging generates more heat than home AC charging, and repeated heat cycles are a known contributor to accelerated degradation.","Extended parking at very low or very high state of charge, especially in direct sun, is worth avoiding if the vehicle will sit unused for more than a week or two."] },
+      { id:'m4', cat:'High Altitude', catKey:'terrain', title:"Driving and Maintaining Your Car for Hill Districts", excerpt:"Reduced engine power, brake wear on long descents, and cooling system stress all behave differently above 2,000 metres.", date:'Updated May 2026', read:'5 min read', icon:'mountain', level:'intermediate',
+        body:["Naturally aspirated petrol engines lose noticeable power at altitude due to thinner air, which is worth accounting for when overtaking on hill roads.","Long descents put sustained load on brakes — using engine braking in a lower gear reduces the risk of brake fade on extended downhill stretches.","Coolant levels and radiator condition deserve extra attention before any hill trip, since cooling systems work harder on sustained climbs in low gears."] },
+      { id:'m5', cat:'DIY Checks', catKey:'diy', title:"5-Minute Checks You Can Do Before Every Long Drive", excerpt:"No tools required — just a five-minute walk-around that catches most issues before they become a problem on the highway.", date:'Updated Apr 2026', read:'4 min read', icon:'clipboard-check', level:'beginner',
+        body:["Walk around the car and check tyre pressure and visible wear, including the spare, before any drive longer than an hour outside the valley.","Test all lights, including indicators and brake lights, especially before night driving on unlit highway stretches.","Pop the bonnet and glance at coolant and oil levels — a low-cost habit that catches leaks before they strand you somewhere with no cell signal."] },
+      { id:'m6', cat:'Routine Servicing', catKey:'routine', title:"Battery, Brakes, Belts: A Simple Guide to What Wears Out When", excerpt:"A plain-language breakdown of typical component lifespans so you're not caught off guard by an unexpected repair bill.", date:'Updated Mar 2026', read:'5 min read', icon:'wrench', level:'beginner',
+        body:["A conventional 12V battery typically lasts 3-4 years in Nepal's climate, somewhat shorter than cooler markets due to average ambient temperatures.","Brake pads generally need replacement every 25,000-40,000 km depending on driving style, sooner for drivers doing frequent hill descents.","Timing belts, where fitted, are a scheduled replacement rather than a wear-and-see item — missing the interval risks serious engine damage."] },
+    ];
+
+    // ---------- CAR AWARDS ----------
+    let AWARDS = [
+      { id:'a1', cat:'Car of the Year', catKey:'coty', title:"AutoViindu Car of the Year 2026: BYD Seal", excerpt:"Our panel scored the Seal highest across value, real-world range, and cabin quality among every vehicle launched in Nepal this year.", date:'2026', read:'7 min read', icon:'trophy', winner:'BYD Seal', runnerUp:'Hyundai Creta EV',
+        body:["The Seal took the top spot on the strength of its real-world range accuracy, dual-motor performance, and pricing relative to its closest premium-sedan rivals.","Our panel weighed four factors equally: value for money, real-world range or fuel efficiency, cabin quality, and after-sales service network coverage.","The Hyundai Creta EV finished a close second, losing out primarily on charging network support at the time of judging rather than the vehicle itself."] },
+      { id:'a2', cat:'Best EV', catKey:'ev', title:"Best Electric Vehicle 2026: BYD Atto 3", excerpt:"Judged on charging convenience, cabin tech, and cost per kilometre, the Atto 3 edged out a strong field of contenders.", date:'2026', read:'5 min read', icon:'zap', winner:'BYD Atto 3', runnerUp:'MG ZS EV',
+        body:["The Atto 3 won on a combination of accessible pricing, a genuinely usable back seat, and one of the most consistent real-world range figures we recorded all year.","Cost per kilometre came out lowest among all EVs tested, factoring in current electricity tariffs against typical charging patterns.","The MG ZS EV placed second, offering strong value but falling behind on rear cabin space and infotainment responsiveness."] },
+      { id:'a3', cat:'Best SUV', catKey:'suv', title:"Best SUV 2026: Kia Seltos", excerpt:"A refreshed design, class-leading ride comfort, and one of the strongest dealer networks outside Kathmandu secured the win.", date:'2026', read:'5 min read', icon:'car', winner:'Kia Seltos', runnerUp:'Hyundai Creta',
+        body:["The Seltos won largely on ride comfort — our panel consistently rated it the most composed over broken tarmac among compact SUVs tested this year.","Dealer and service network reach outside the Kathmandu Valley was a deciding factor, with Kia's coverage now extending to several regional hubs.","The Hyundai Creta remained a close runner-up, praised for interior quality but marked down slightly on rear suspension harshness on rougher roads."] },
+      { id:'a4', cat:'Best Value', catKey:'value', title:"Best Value for Money 2026: Suzuki Swift", excerpt:"Low running costs, strong resale value, and dependable service history make the Swift our value pick two years running.", date:'2026', read:'4 min read', icon:'badge-percent', winner:'Suzuki Swift', runnerUp:'Hyundai Grand i10 Nios',
+        body:["The Swift retained the value award largely on fuel efficiency, recording the best real-world mileage among all hatchbacks tested this year.","Resale value data from local dealers showed the Swift holding a higher percentage of its original price after three years than most rivals in its class.","The Grand i10 Nios came a close second, offering more cabin space but slightly higher running costs over a typical ownership period."] },
+      { id:'a5', cat:'Best Family Car', catKey:'family', title:"Best Family Car 2026: Toyota Innova Hycross", excerpt:"Seven-seat comfort, strong resale value, and Toyota's established service network made this an easy call for our panel.", date:'2026', read:'5 min read', icon:'users', winner:'Toyota Innova Hycross', runnerUp:'Maruti Suzuki Ertiga',
+        body:["The Hycross won on a combination of genuinely usable third-row space and the hybrid variant's noticeably lower fuel bills for family-sized trips.","Toyota's service network depth, particularly outside the valley, remains a meaningful advantage for owners planning regular long-distance family travel.","The Ertiga placed second, offering a lower entry price but less rear-row comfort on longer journeys."] },
+      { id:'a6', cat:'Readers\' Choice', catKey:'readers', title:"Readers' Choice Award 2026: Hyundai Creta", excerpt:"Over 12,000 AutoViindu readers voted, and the Creta topped the poll for the second consecutive year.", date:'2026', read:'4 min read', icon:'heart', winner:'Hyundai Creta', runnerUp:'BYD Seal',
+        body:["More than 12,000 readers cast votes in this year's poll, with the Creta topping the results for the second consecutive year.","Voters cited resale confidence and dealer trust most often as their reasons, ahead of specification or pricing considerations.","The BYD Seal placed second, reflecting growing reader interest in EVs even where charging infrastructure concerns persist."] },
+    ];
+
+    let currentTab = 'guide';
+    let currentCat = 'all';
+    let currentQuery = '';
+    let visibleCount = 6;
+    const PAGE_SIZE = 6;
+
+    let CATS = {
+      guide: [ ['all','All'], ['newused','New vs Used'], ['ev','EV Buying'], ['financing','Financing'], ['family','Family Cars'], ['duty','Import & Duty'] ],
+      maintenance: [ ['all','All'], ['routine','Routine Servicing'], ['seasonal','Seasonal Care'], ['ev','EV Care'], ['terrain','High Altitude'], ['diy','DIY Checks'] ],
+      awards: [ ['all','All'], ['coty','Car of the Year'], ['ev','Best EV'], ['suv','Best SUV'], ['value','Best Value'], ['family','Best Family Car'], ['readers','Readers\' Choice'] ]
+    };
+
+    function levelPill(item) {
+      if (currentTab === 'awards') return `<span class="corner-pill award"><i data-lucide="trophy"></i>Winner</span>`;
+      const map = { beginner:['Beginner','level-beginner'], intermediate:['Intermediate','level-intermediate'], advanced:['Advanced','level-advanced'] };
+      const [label, cls] = map[item.level] || map.beginner;
+      return `<span class="corner-pill ${cls}"><i data-lucide="signal-medium"></i>${label}</span>`;
+    }
+
+    function renderCategoryTabs() {
+      const el = document.getElementById('categoryTabs');
+      el.innerHTML = CATS[currentTab].map(([key,label], idx) => `<button class="filter-tab ${idx===0?'active':''}" onclick="setCategory(this,'${key}')">${label}</button>`).join('');
+    }
+
+    const TAB_META = {
+      guide: { heading:'All <em>Guides</em>', eyebrow:'<i data-lucide="flame"></i>Start Here', badge:'Must Read' },
+      maintenance: { heading:'All <em>Maintenance Tips</em>', eyebrow:'<i data-lucide="wrench"></i>Keep It Running', badge:'Essential' },
+      awards: { heading:'All <em>Award Winners</em>', eyebrow:'<i data-lucide="trophy"></i>2026 Winners', badge:'Car of the Year' }
+    };
+
+    function setTab(tab) {
+      currentTab = tab;
+      currentCat = 'all';
+      currentQuery = '';
+      visibleCount = PAGE_SIZE;
+      document.getElementById('articleSearch').value = '';
+      document.getElementById('tabGuideBtn').classList.toggle('active', tab==='guide');
+      document.getElementById('tabMaintBtn').classList.toggle('active', tab==='maintenance');
+      document.getElementById('tabAwardsBtn').classList.toggle('active', tab==='awards');
+      document.getElementById('gridHeading').innerHTML = TAB_META[tab].heading;
+      document.getElementById('featuredEyebrow').innerHTML = TAB_META[tab].eyebrow;
+      renderCategoryTabs();
+      renderFeatured();
+      renderArticles();
+      lucide.createIcons();
+    }
+
+    function setCategory(el, key) {
+      document.querySelectorAll('#categoryTabs .filter-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      currentCat = key;
+      visibleCount = PAGE_SIZE;
+      renderArticles();
+    }
+
+    function dataset() { return currentTab === 'guide' ? GUIDE : currentTab === 'maintenance' ? MAINT : AWARDS; }
+
+    function matches(item) {
+      const inCat = currentCat === 'all' || item.catKey === currentCat;
+      const q = currentQuery;
+      const inQuery = !q || item.title.toLowerCase().includes(q) || item.excerpt.toLowerCase().includes(q) || item.cat.toLowerCase().includes(q);
+      return inCat && inQuery;
+    }
+
+    function renderFeatured() {
+      const list = dataset();
+      const featured = list[0];
+      const isAwards = currentTab === 'awards';
+      const slot = document.getElementById('featuredStorySlot');
+      slot.innerHTML = `
+        <div class="featured-story" onclick="openArticle('${featured.id}')">
+          <div class="featured-story-img ${isAwards?'gold':''}"><i data-lucide="${featured.icon}"></i></div>
+          <div class="featured-story-body">
+            <span class="featured-story-badge ${isAwards?'gold':''}">${TAB_META[currentTab].badge}</span>
+            <h3>${featured.title}</h3>
+            <p>${featured.excerpt}</p>
+            <div class="featured-story-footer">
+              <span><i data-lucide="calendar" style="width:13px;height:13px"></i>${featured.date}</span>
+              <span><i data-lucide="clock" style="width:13px;height:13px"></i>${featured.read}</span>
+              ${isAwards ? `<span><i data-lucide="trophy" style="width:13px;height:13px"></i>${featured.winner}</span>` : ''}
+              <span class="read-link">Read full story <i data-lucide="arrow-right" style="width:13px;height:13px"></i></span>
+            </div>
+          </div>
+        </div>`;
+      lucide.createIcons();
+    }
+
+    function renderArticles() {
+      const isAwards = currentTab === 'awards';
+      const list = dataset().slice(1).filter(matches);
+      const shown = list.slice(0, visibleCount);
+      const grid = document.getElementById('articleGrid');
+      grid.innerHTML = shown.map(item => `
+        <div class="news-card" onclick="openArticle('${item.id}')">
+          <div class="news-img">
+            <div class="news-placeholder ${isAwards?'gold':''}"><i data-lucide="${item.icon}"></i></div>
+            ${levelPill(item)}
+          </div>
+          <div class="news-body">
+            <span class="news-category ${isAwards?'gold-text':''}">${item.cat}</span>
+            <h3 class="news-title">${item.title}</h3>
+            <p class="news-excerpt">${item.excerpt}</p>
+            <div class="news-footer">
+              <span class="news-date"><i data-lucide="calendar"></i>${item.date}</span>
+              <span class="news-date"><i data-lucide="clock"></i>${item.read}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+
+      document.getElementById('articleNoResults').classList.toggle('show', list.length === 0);
+      const btn = document.getElementById('articleLoadMore');
+      if (visibleCount >= list.length) {
+        btn.disabled = true;
+        btn.innerHTML = '<i data-lucide="check"></i>All loaded';
+        btn.style.display = list.length <= PAGE_SIZE ? 'none' : 'inline-flex';
+      } else {
+        btn.disabled = false;
+        btn.innerHTML = '<i data-lucide="refresh-cw"></i>Load more';
+        btn.style.display = 'inline-flex';
+      }
+      lucide.createIcons();
+    }
+
+    function loadMoreArticles() { visibleCount += PAGE_SIZE; renderArticles(); }
+
+    document.getElementById('articleSearch').addEventListener('input', e => {
+      currentQuery = e.target.value.trim().toLowerCase();
+      visibleCount = PAGE_SIZE;
+      renderArticles();
+    });
+
+    function openArticle(id) {
+      const item = [...GUIDE, ...MAINT, ...AWARDS].find(x => x.id === id);
+      if (!item) return;
+      const isAwards = AWARDS.some(a => a.id === id);
+
+      document.getElementById('articleModalImgWrap').className = 'article-modal-img' + (isAwards ? ' gold' : '');
+      document.getElementById('articleModalIcon').setAttribute('data-lucide', item.icon);
+      document.getElementById('articleModalCat').textContent = item.cat;
+      document.getElementById('articleModalCat').className = 'news-category' + (isAwards ? ' gold-text' : '');
+      document.getElementById('articleModalTitle').textContent = item.title;
+      document.getElementById('articleModalDate').innerHTML = `<i data-lucide="calendar"></i>${item.date}`;
+      document.getElementById('articleModalRead').innerHTML = `<i data-lucide="clock"></i>${item.read}`;
+
+      const awardBox = document.getElementById('articleModalAwardBox');
+      if (isAwards) {
+        awardBox.innerHTML = `<div class="award-box"><i data-lucide="trophy"></i><div><strong>Winner: ${item.winner}</strong><span>Runner-up: ${item.runnerUp}</span></div></div>`;
+      } else {
+        awardBox.innerHTML = '';
+      }
+
+      document.getElementById('articleModalBody').innerHTML = item.body.map(p => `<p>${p}</p>`).join('');
+      document.getElementById('articleModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+    function closeArticle() {
+      document.getElementById('articleModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function closeArticleOnOverlay(e) { if (e.target === document.getElementById('articleModal')) closeArticle(); }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArticle(); });
+
+    async function boot() {
+      try {
+        const data = await AVContent.load('blogs');
+        if (data) {
+          if (data.guides && data.guides.length) GUIDE = AVContent.published(data.guides);
+          if (data.maintenance && data.maintenance.length) MAINT = AVContent.published(data.maintenance);
+          if (data.awards && data.awards.length) AWARDS = AVContent.published(data.awards);
+          if (data.categories) CATS = data.categories;
+        }
+      } catch (_) {}
+      renderCategoryTabs();
+      renderFeatured();
+      renderArticles();
+    }
+    boot();
+  </script>
+</body>
+</html>

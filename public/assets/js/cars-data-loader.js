@@ -42,14 +42,53 @@
     fetchJson('/api/cars/used'),
   ]).then(function (results) {
     window.CARS_DB = results[0];
-    window.USED_CARS_DB = results[1];
+    // Only set from API if no static data loaded yet
+    if (!window.USED_CARS_DB || window.USED_CARS_DB.length === 0) {
+      window.USED_CARS_DB = results[1];
+    }
 
     Promise.all([
       fetchJson('/api/cars'),
       fetchJson('/api/cars/used'),
     ]).then(function (full) {
       window.CARS_DB = full[0];
-      window.USED_CARS_DB = full[1];
+      // Merge API used cars with existing static data instead of overwriting
+      var existing = window.USED_CARS_DB || [];
+      var apiCars = full[1] || [];
+      if (existing.length > 0) {
+        // Merge: update existing entries with API data but keep static-only fields
+        var merged = existing.map(function (staticCar) {
+          var apiCar = apiCars.find(function (a) { return String(a.id) === String(staticCar.id); });
+          if (apiCar) {
+            // Keep static-only fields (seller, inspection, meta, features, etc.)
+            var result = Object.assign({}, apiCar);
+            var staticOnlyFields = ['seller', 'inspection', 'meta', 'features', 'video',
+              'overview', 'highlights', 'specs', 'tags', 'images', 'img',
+              'km', 'color', 'body', 'variant', 'rating', 'reviews', 'emiEst'];
+            staticOnlyFields.forEach(function (f) {
+              if (staticCar[f] !== undefined && staticCar[f] !== null && staticCar[f] !== '') {
+                result[f] = staticCar[f];
+              }
+            });
+            return result;
+          }
+          return staticCar;
+        });
+        // Add any new cars from API that don't exist in static data
+        apiCars.forEach(function (apiCar) {
+          var exists = merged.some(function (m) { return String(m.id) === String(apiCar.id); });
+          if (!exists) {
+            // Add fallback seller/inspection for API-only cars
+            apiCar.seller = apiCar.seller || { name: 'AutoViindu', verified: true, sold: 0, rating: 4.2, phone: ['9828364940'] };
+            apiCar.inspection = apiCar.inspection || [];
+            apiCar.features = apiCar.features || apiCar.tags || [];
+            merged.push(apiCar);
+          }
+        });
+        window.USED_CARS_DB = merged;
+      } else {
+        window.USED_CARS_DB = apiCars;
+      }
       document.dispatchEvent(new CustomEvent('av:cars-updated'));
     }).catch(function (err) {
       console.warn('[AutoViindu] Full catalog prefetch failed:', err);

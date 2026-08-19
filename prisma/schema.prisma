@@ -1,0 +1,155 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Car {
+  id           Int       @id @default(autoincrement())
+  slug         String    @unique
+  brand        String
+  brandSlug    String
+  model        String
+  year         Int
+  type         String
+  bodyType     String
+  body         String?
+  badge        String?
+  budgetTier   String?
+  isEV         Boolean   @default(false)
+  isNew        Boolean   @default(true)
+  isFeatured   Boolean   @default(false)
+  isBestSeller Boolean   @default(false)
+  tagline      String?
+  rating       Float?
+  reviews      Int?
+  expertScore  Float?
+  baseEMI      Int?
+  overview     String?
+  images       Json?
+  colors       Json?
+  variants     Json?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model UsedCar {
+  id           Int       @id @default(autoincrement())
+  slug         String    @unique
+  brand        String
+  model        String
+  year         Int
+  price        String
+  mileage      String?
+  fuelType     String
+  transmission String
+  condition    String?
+  location     String?
+  ownerCount   Int?
+  images       Json?
+  features     Json?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Brand {
+  id              Int      @id @default(autoincrement())
+  slug            String   @unique
+  name            String
+  fullName        String?
+  tagline         String?
+  country         String?
+  founded         Int?
+  nepalDealer     String?
+  dealerPhone     String?
+  warranty        String?
+  serviceNetwork  String?
+  overview        String?
+  color           String?
+  bgColor         String?
+  heroImage       String?
+  logo            String?
+  strengths       Json?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model BlogPost {
+  id           Int       @id @default(autoincrement())
+  slug         String    @unique
+  title        String
+  excerpt      String?
+  content      String
+  category     String    @default("guide")
+  author       String?
+  publishedAt  DateTime?
+  coverImage   String?
+  tags         Json?
+  isPublished  Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model NewsPost {
+  id           Int       @id @default(autoincrement())
+  slug         String    @unique
+  title        String
+  excerpt      String?
+  content      String
+  category     String    @default("launch")
+  author       String?
+  publishedAt  DateTime?
+  coverImage   String?
+  isPublished  Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Lead {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String    @default("")
+  phone        String    @default("")
+  inquiryType  String?
+  message      String?
+  carInterest  String?
+  status       String    @default("NEW")
+  notes        String?
+  isFlagged    Boolean   @default(false)
+  rawData      Json?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model HeroSlide {
+  id           Int       @id @default(autoincrement())
+  title        String
+  badge        String?
+  slug         String?
+  bg           String?
+  sub          String?
+  offerLabel   String?
+  offerVal     String?
+  sortOrder    Int       @default(0)
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model SiteSetting {
+  id           Int      @id @default(1)
+  data         Json
+  updatedAt    DateTime @updatedAt
+}
+
+model SiteContent {
+  id           Int      @id @default(autoincrement())
+  key          String   @unique
+  data         Json
+  updatedAt    DateTime @updatedAt
+}

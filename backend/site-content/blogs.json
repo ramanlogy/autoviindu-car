@@ -1,0 +1,89 @@
+{
+  "guides": [],
+  "maintenance": [],
+  "awards": [],
+  "categories": {
+    "guide": [
+      [
+        "all",
+        "All"
+      ],
+      [
+        "newused",
+        "New vs Used"
+      ],
+      [
+        "ev",
+        "EV Buying"
+      ],
+      [
+        "financing",
+        "Financing"
+      ],
+      [
+        "family",
+        "Family Cars"
+      ],
+      [
+        "duty",
+        "Import & Duty"
+      ]
+    ],
+    "maintenance": [
+      [
+        "all",
+        "All"
+      ],
+      [
+        "routine",
+        "Routine Servicing"
+      ],
+      [
+        "seasonal",
+        "Seasonal Care"
+      ],
+      [
+        "ev",
+        "EV Care"
+      ],
+      [
+        "terrain",
+        "High Altitude"
+      ],
+      [
+        "diy",
+        "DIY Checks"
+      ]
+    ],
+    "awards": [
+      [
+        "all",
+        "All"
+      ],
+      [
+        "coty",
+        "Car of the Year"
+      ],
+      [
+        "ev",
+        "Best EV"
+      ],
+      [
+        "suv",
+        "Best SUV"
+      ],
+      [
+        "value",
+        "Best Value"
+      ],
+      [
+        "family",
+        "Best Family Car"
+      ],
+      [
+        "readers",
+        "Readers' Choice"
+      ]
+    ]
+  }
+}

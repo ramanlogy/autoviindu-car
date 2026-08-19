@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
 <meta charset="UTF-8">
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nepal Car Database — Team</title>
 <!-- Google tag (gtag.js) -->
@@ -197,10 +204,11 @@
 </style>
 </head>
 <body>
+<script src="assets/js/site-chrome.js"></script>
 
 <!-- ── SETUP BANNER ── -->
 <div id="setup-banner">
-  ⚠️ Not connected to Google Sheets — changes won't be saved.
+  <i data-lucide="alert-triangle"></i>️ Not connected to Google Sheets — changes won't be saved.
   <button class="btn-primary" onclick="openModal('modal-setup')">Connect Now</button>
   <span style="color:#92400e;font-size:11px">Paste your Apps Script URL to enable real-time sync.</span>
 </div>
@@ -208,7 +216,7 @@
 <!-- ── SETUP MODAL ── -->
 <div id="modal-setup" class="modal-overlay">
   <div class="modal">
-    <h2>⚙ Connect to Google Sheets</h2>
+    <h2><i data-lucide="settings"></i> Connect to Google Sheets</h2>
     <p>This database syncs with a Google Sheet so your whole team sees changes instantly. Follow the steps below once, then paste the URL here.</p>
     <div class="steps">
       <b>One-time setup (5 min):</b><br>
@@ -256,7 +264,7 @@
 
 <!-- ── TOP BAR ── -->
 <div class="top">
-  <h1>🚗 Nepal Car Database</h1>
+  <h1><i data-lucide="car"></i> Nepal Car Database</h1>
   <div class="stat">Total: <b id="s-total">0</b></div>
   <div class="stat">Added: <b id="s-added" style="color:#166534">0</b></div>
   <div class="stat">Pending: <b id="s-pending" style="color:#b45309">0</b></div>
@@ -267,18 +275,18 @@
   <div id="sync-status" class="sync-badge sync-idle">● Not connected</div>
   <div class="top-actions">
     <button onclick="loadData()" title="Refresh from Google Sheets">↻ Refresh</button>
-    <button onclick="openModal('modal-setup')">⚙ Settings</button>
+    <button onclick="openModal('modal-setup')"><i data-lucide="settings"></i> Settings</button>
   </div>
 </div>
 
 <!-- ── CONTROLS ── -->
 <div class="controls">
-  <input type="text" id="search" placeholder="🔍  Search brand, model, features…">
+  <input type="text" id="search" placeholder="<i data-lucide="search"></i>  Search brand, model, features…">
   <select id="f-type"><option value="">All Fuel Types</option></select>
   <select id="f-body"><option value="">All Body Types</option></select>
   <select id="f-status">
     <option value="">All Status</option>
-    <option value="Added">✓ Added</option>
+    <option value="Added"><i data-lucide="check"></i> Added</option>
     <option value="Pending">Pending</option>
   </select>
   <select id="f-sort">
@@ -289,7 +297,7 @@
   </select>
   <button class="btn-add-car" onclick="openAddRow()">+ Add Car</button>
   <button onclick="openModal('modal-add-col')">+ Column</button>
-  <button id="btn-all">✓ Mark All Added</button>
+  <button id="btn-all"><i data-lucide="check"></i> Mark All Added</button>
   <button id="btn-reset">↺ Reset Status</button>
 </div>
 
@@ -411,11 +419,11 @@ async function loadData() {
     localStorage.setItem(CACHE_KEY, JSON.stringify({ headers, rows: data }));
     buildUI();
     render();
-    setSyncStatus('saved', '✓ Synced');
+    setSyncStatus('saved', '<i data-lucide="check"></i> Synced');
     document.getElementById('loading-state').style.display = 'none';
     document.getElementById('main-table').style.display = '';
   } catch(e) {
-    setSyncStatus('error', '✗ Load failed');
+    setSyncStatus('error', '<i data-lucide="x"></i> Load failed');
     document.getElementById('loading-state').innerHTML =
       `<b style="color:#c00">Error loading data.</b><br><small>${e.message}</small><br><br>` +
       `<button class="btn-primary" onclick="openModal('modal-setup')">Check Settings</button>`;
@@ -431,9 +439,9 @@ async function syncUpdateCell(rowNum, colNum, value) {
     try {
       const res = await apiPost({ action: 'updateCell', rowNum, colNum, value });
       if (res.error) throw new Error(res.error);
-      setSyncStatus('saved', '✓ Saved');
+      setSyncStatus('saved', '<i data-lucide="check"></i> Saved');
     } catch(e) {
-      setSyncStatus('error', '✗ Save failed');
+      setSyncStatus('error', '<i data-lucide="x"></i> Save failed');
       console.error(e);
     }
   }, 700);
@@ -447,7 +455,7 @@ async function syncAddRow(rowObj) {
     if (res.error) throw new Error(res.error);
     await loadData();
   } catch(e) {
-    setSyncStatus('error', '✗ Add failed');
+    setSyncStatus('error', '<i data-lucide="x"></i> Add failed');
     alert('Could not add row: ' + e.message);
   }
 }
@@ -458,9 +466,9 @@ async function syncDeleteRow(rowNum) {
   try {
     const res = await apiPost({ action: 'deleteRow', rowNum });
     if (res.error) throw new Error(res.error);
-    setSyncStatus('saved', '✓ Deleted');
+    setSyncStatus('saved', '<i data-lucide="check"></i> Deleted');
   } catch(e) {
-    setSyncStatus('error', '✗ Delete failed');
+    setSyncStatus('error', '<i data-lucide="x"></i> Delete failed');
     alert('Could not delete row: ' + e.message);
   }
 }
@@ -473,7 +481,7 @@ async function syncAddColumn(name) {
     if (res.error) throw new Error(res.error);
     await loadData();
   } catch(e) {
-    setSyncStatus('error', '✗ Column failed');
+    setSyncStatus('error', '<i data-lucide="x"></i> Column failed');
     alert('Could not add column: ' + e.message);
   }
 }
@@ -486,7 +494,7 @@ async function syncDeleteColumn(colNum) {
     if (res.error) throw new Error(res.error);
     await loadData();
   } catch(e) {
-    setSyncStatus('error', '✗ Column delete failed');
+    setSyncStatus('error', '<i data-lucide="x"></i> Column delete failed');
     alert('Could not delete column: ' + e.message);
   }
 }
@@ -549,7 +557,7 @@ function buildTableHeader() {
   headers.forEach((h, i) => {
     const th = document.createElement('th');
     const colNum = i + 1;
-    th.innerHTML = `<span class="th-inner">${esc(h)}<button class="del-col-btn" title="Delete column '${esc(h)}'" onclick="confirmDeleteColumn(${colNum},'${h.replace(/'/g,"\\'")}')">✕</button></span>`;
+    th.innerHTML = `<span class="th-inner">${esc(h)}<button class="del-col-btn" title="Delete column '${esc(h)}'" onclick="confirmDeleteColumn(${colNum},'${h.replace(/'/g,"\\'")}')"><i data-lucide="x"></i></button></span>`;
     tr.appendChild(th);
   });
 
@@ -668,7 +676,7 @@ function render() {
         const isAdded = String(val) === 'Added';
         const btn = document.createElement('button');
         btn.className = 'tog ' + (isAdded ? 'added' : 'pending');
-        btn.textContent = isAdded ? '✓ Added' : 'Pending';
+        btn.textContent = isAdded ? '<i data-lucide="check"></i> Added' : 'Pending';
         btn.onclick = async () => {
           const newStatus = isAdded ? 'Pending' : 'Added';
           d.data[ci] = newStatus;
@@ -734,7 +742,7 @@ function render() {
     const tdAct = document.createElement('td');
     const delBtn = document.createElement('button');
     delBtn.className = 'btn-danger';
-    delBtn.textContent = '✕ Delete';
+    delBtn.textContent = '<i data-lucide="x"></i> Delete';
     delBtn.onclick = async () => {
       const label = bi >= 0 && d.data[bi]
         ? `${d.data[bi]} ${(d.data[headers.indexOf('Model')] || '')}`.trim()
@@ -854,8 +862,8 @@ document.getElementById('btn-all').onclick = async () => {
   try {
     const res = await apiPost({ action: 'markAllAdded', statusCol: si + 1 });
     if (res.error) throw new Error(res.error);
-    setSyncStatus('saved', '✓ All marked Added');
-  } catch(e) { setSyncStatus('error', '✗ Sync failed'); }
+    setSyncStatus('saved', '<i data-lucide="check"></i> All marked Added');
+  } catch(e) { setSyncStatus('error', '<i data-lucide="x"></i> Sync failed'); }
 };
 
 document.getElementById('btn-reset').onclick = async () => {
@@ -868,8 +876,8 @@ document.getElementById('btn-reset').onclick = async () => {
   try {
     const res = await apiPost({ action: 'resetStatus', statusCol: si + 1 });
     if (res.error) throw new Error(res.error);
-    setSyncStatus('saved', '✓ All reset');
-  } catch(e) { setSyncStatus('error', '✗ Sync failed'); }
+    setSyncStatus('saved', '<i data-lucide="check"></i> All reset');
+  } catch(e) { setSyncStatus('error', '<i data-lucide="x"></i> Sync failed'); }
 };
 
 // ================================================================

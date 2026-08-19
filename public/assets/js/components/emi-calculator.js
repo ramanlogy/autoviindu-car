@@ -38,39 +38,39 @@ window.EmiCalc = {
     return '<div class="emi-card">' +
       '<div class="emi-card-title">' + this._calc + ' EMI Calculator</div>' +
       '<div class="emi-field">' +
-        '<label>Down Payment <span class="val" id="emi-down-val">' + dp + '%</span></label>' +
-        '<input type="range" id="emi-down" min="10" max="60" value="' + dp + '" step="5"' +
-        ' oninput="document.getElementById(\'emi-down-val\').textContent=this.value+\'%\';EmiCalc.update(\'' + car.slug + '\',' + varIdx + ')">' +
+      '<label>Down Payment <span class="val" id="emi-down-val">' + dp + '%</span></label>' +
+      '<input type="range" id="emi-down" min="10" max="60" value="' + dp + '" step="5"' +
+      ' oninput="document.getElementById(\'emi-down-val\').textContent=this.value+\'%\';EmiCalc.update(\'' + car.slug + '\',' + varIdx + ')">' +
       '</div>' +
       '<div class="emi-field">' +
-        '<label>Tenure <span class="val"><span id="emi-tenure-val">' + tenure + '</span> months</span></label>' +
-        '<div class="tenure-buttons">' +
-          [12, 24, 36, 48, 60, 72, 84].map(function (m) {
-            return '<button class="tenure-btn' + (m === tenure ? ' active' : '') + '" onclick="EmiCalc.setTenure(' + m + ',\'' + car.slug + '\',' + varIdx + ')">' + m + 'm</button>';
-          }).join('') +
-        '</div>' +
+      '<label>Tenure <span class="val"><span id="emi-tenure-val">' + tenure + '</span> months</span></label>' +
+      '<div class="tenure-buttons">' +
+      [12, 24, 36, 48, 60, 72, 84].map(function (m) {
+        return '<button class="tenure-btn' + (m === tenure ? ' active' : '') + '" onclick="EmiCalc.setTenure(' + m + ',\'' + car.slug + '\',' + varIdx + ')">' + m + 'm</button>';
+      }).join('') +
+      '</div>' +
       '</div>' +
       '<div class="emi-field">' +
-        '<label>Interest Rate <span class="val" id="emi-rate-val">' + rate + '%</span></label>' +
-        '<input type="range" id="emi-rate" min="7" max="18" value="' + rate + '" step="0.5"' +
-        ' oninput="document.getElementById(\'emi-rate-val\').textContent=this.value+\'%\';EmiCalc.update(\'' + car.slug + '\',' + varIdx + ')">' +
+      '<label>Interest Rate <span class="val" id="emi-rate-val">' + rate + '%</span></label>' +
+      '<input type="range" id="emi-rate" min="7" max="18" value="' + rate + '" step="0.5"' +
+      ' oninput="document.getElementById(\'emi-rate-val\').textContent=this.value+\'%\';EmiCalc.update(\'' + car.slug + '\',' + varIdx + ')">' +
       '</div>' +
       '<div class="emi-result" id="emi-result">' +
-        '<div class="emi-monthly-label">Monthly EMI</div>' +
-        '<div style="display:flex;align-items:baseline;gap:5px">' +
-          '<span class="emi-monthly-amount" id="emi-amount">Rs. ' + Math.round(emi).toLocaleString() + '</span>' +
-          '<span class="emi-monthly-period">/month</span>' +
-        '</div>' +
-        '<div class="emi-breakdown-grid" id="emi-breakdown">' + this._breakdown(vr.price, loan, emi, tenure) + '</div>' +
-        '<div class="emi-pbar-wrap">' +
-          '<div class="emi-pbar-track"><div class="emi-pbar-fill" id="emi-pbar" style="width:' + pp + '%"></div></div>' +
-          '<div class="emi-pbar-labels"><span id="emi-pl">Principal ' + pp + '%</span><span id="emi-il">Interest ' + (100 - pp) + '%</span></div>' +
-        '</div>' +
+      '<div class="emi-monthly-label">Monthly EMI</div>' +
+      '<div style="display:flex;align-items:baseline;gap:5px">' +
+      '<span class="emi-monthly-amount" id="emi-amount">Rs. ' + Math.round(emi).toLocaleString() + '</span>' +
+      '<span class="emi-monthly-period">/month</span>' +
       '</div>' +
-      '<button onclick="alert(\'Apply for Finance — Call +977-9701076240\')" class="btn btn-ghost btn-full" style="margin-top:10px;font-size:13px">' +
-        this._phone + ' Apply for Finance' +
+      '<div class="emi-breakdown-grid" id="emi-breakdown">' + this._breakdown(vr.price, loan, emi, tenure) + '</div>' +
+      '<div class="emi-pbar-wrap">' +
+      '<div class="emi-pbar-track"><div class="emi-pbar-fill" id="emi-pbar" style="width:' + pp + '%"></div></div>' +
+      '<div class="emi-pbar-labels"><span id="emi-pl">Principal ' + pp + '%</span><span id="emi-il">Interest ' + (100 - pp) + '%</span></div>' +
+      '</div>' +
+      '</div>' +
+      '<button onclick="alert(\'Apply for Finance — Call +977-9828364940\')" class="btn btn-ghost btn-full" style="margin-top:10px;font-size:13px">' +
+      this._phone + ' Apply for Finance' +
       '</button>' +
-    '</div>';
+      '</div>';
   },
 
   update: function (slug, varIdx) {

@@ -14,6 +14,30 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma Client
+        run: npx prisma generate
+
+      - name: Remove dev-only dependencies
+        # prisma is an optional peer dep of @prisma/client, so `npm prune --omit=dev`
+        # won't drop it (or its own heavy deps) even though it's devDependencies-only here.
+        run: |
+          npm prune --omit=dev
+          rm -rf node_modules/prisma node_modules/.bin/prisma \
+                 node_modules/@prisma/studio-core node_modules/@prisma/dev \
+                 node_modules/@prisma/engines node_modules/@prisma/config \
+                 node_modules/@prisma/query-plan-executor node_modules/@prisma/fetch-engine \
+                 node_modules/@prisma/streams-local node_modules/@prisma/get-platform \
+                 node_modules/effect
+
       - name: Validate car database files
         run: node scripts/validate-cars-dbs.js
 
@@ -24,3 +48,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**

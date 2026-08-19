@@ -1,0 +1,542 @@
+<!-- ═══ TOPBAR ═══ -->
+
+
+<header class="site-header" id="site-header">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <div class="wrap header-in">
+
+    <div id="honk-wrapper" style="display:flex; align-items:center;">
+      <a href="/" class="logo" aria-label="AutoViindu Home">
+        <img src="assets/logo/logo.jpeg" alt="AutoViindu Logo" class="logo-img" id="logo-img">
+      </a>
+    </div>
+
+
+    <div class="mobile-search-back" id="mob-search-back"
+      style="display:none; align-items:center; padding-right:12px; cursor:pointer;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </div>
+    <div class="header-search" id="header-search-wrap">
+      <span class="hs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"
+          height="15">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg></span>
+      <input class="hs-input" id="hs-input" type="text" placeholder="What kind of car are you looking for?"
+        autocomplete="off">
+      <span class="hs-kbd">/</span>
+      <div class="search-dd" id="search-dd"></div>
+    </div>
+
+    <nav class="header-nav">
+
+
+      <div class="av-item">
+        <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">New Cars
+          <svg class="av-chev" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="av-dd" role="menu">
+          <div class="av-acc">
+            <button class="av-acc-hd" type="button">By body type
+              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="av-acc-body">
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'suv-mpv-crossover'});return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">SUV / MPV / Crossover</div>
+                  <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Nepal's #1 category</div>
+                </div>
+              </a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'sedan'});return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">Sedan</div>
+                  <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Family & city comfort</div>
+                </div>
+              </a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'hatchback'});return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">Hatchback</div>
+                  <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Compact city cars</div>
+                </div>
+              </a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'pickup'});return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">Pickup / Truck</div>
+                  <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Off-road & commercial</div>
+                </div>
+              </a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'van'});return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">Cargo/ Van </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="av-acc">
+            <button class="av-acc-hd" type="button">By terrain
+              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="av-acc-body">
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{terrain:'mountain'});return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">Mountain & hilly roads</div>
+                  <div style="font-size:11px;color:var(--ink4);margin-top:2px;">High ground clearance</div>
+                </div>
+              </a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{terrain:'city'});return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">City commute</div>
+                  <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Compact & fuel-efficient</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="av-acc">
+            <button class="av-acc-hd" type="button">By fuel type
+              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="av-acc-body">
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'electric'});return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">Electric (EV) </div>
+                  <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Fastest growing in Nepal</div>
+                </div>
+              </a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'hybrid'});return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">Hybrid</div>
+                </div>
+              </a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'petrol'});return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">Petrol</div>
+                </div>
+              </a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'diesel'});return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">Diesel</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="av-acc">
+            <button class="av-acc-hd" type="button">By budget
+              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="av-acc-body">
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'under20'});return false">Under 20L</a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'20to40'});return false">20–40L</a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'40to70'});return false">40–70L</a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'70to1cr'});return false">70L–1Cr</a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'above1cr'});return false">1Cr+</a>
+            </div>
+          </div>
+
+          <div class="av-acc">
+            <button class="av-acc-hd" type="button">Quick finds
+              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="av-acc-body">
+              <a class="av-menu-link" href="#" onclick="AV.goTo('latest');return false">Latest arrivals</a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('upcoming');return false">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">Upcoming launches</div>
+                  <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Expected price & date</div>
+                </div>
+              </a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('bestseller');return false">Best sellers in Nepal</a>
+              <a class="av-menu-link" href="/brands">Browse by brand</a>
+            </div>
+          </div>
+
+
+
+          <a class="av-menu-link" href="#" onclick="AV.goTo('compare');return false">Compare new cars</a>
+          <a class="av-menu-cta" href="#" onclick="AV.goTo('cars');return false">View all new cars →</a>
+        </div>
+      </div>
+
+      <div class="av-item">
+        <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">Used Cars
+          <svg class="av-chev" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="av-dd" role="menu">
+          <div class="av-acc">
+            <button class="av-acc-hd" type="button">Browse
+              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="av-acc-body">
+              <a class="av-menu-link" href="#" onclick="AV.goTo('used');return false">All used cars</a>
+              <a class="av-menu-link" href="/sellyourcar">Sell or Trade your car</a>
+            </div>
+          </div>
+          <div class="av-acc">
+            <button class="av-acc-hd" type="button">Filter by
+              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="av-acc-body">
+              <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'year'});return false">Year</a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'price'});return false">Price range</a>
+              <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'lowest_km'});return false">Lowest KM
+                run</a>
+             
+            </div>
+          </div>
+
+          <a class="av-menu-link" href="#" onclick="AV.goTo('compare-used');return false">Compare used cars</a>
+          <a class="av-menu-cta" href="#" onclick="AV.goTo('used');return false">Browse all used cars →</a>
+        </div>
+      </div>
+
+
+      <div class="av-item">
+        <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">Services
+          <svg class="av-chev" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="av-dd" role="menu">
+          <div class="av-acc">
+            <button class="av-acc-hd" type="button">Vehicle Care
+              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="av-acc-body">
+              <a class="av-menu-link" href="/maintenance-repairs">Maintenance &amp; Repairs</a>
+              <a class="av-menu-link" href="/parts-accessories">Parts &amp; Accessories</a>
+              <a class="av-menu-link" href="/other-services">Other Services</a>
+            </div>
+          </div>
+          <div class="av-acc">
+            <button class="av-acc-hd" type="button">Paperwork &amp; Finance
+              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="av-acc-body">
+              <a class="av-menu-link" href="/dotm-services">DOTM Services</a>
+              <a class="av-menu-link" href="/insurance-finance">Insurance &amp; Financing</a>
+            </div>
+          </div>
+          <a class="av-menu-cta" href="/services">All services →</a>
+        </div>
+      </div>
+
+      <div class="av-item">
+        <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">News &amp; Reviews
+          <svg class="av-chev" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="av-dd av-dd--r" role="menu">
+          <div class="av-acc">
+            <button class="av-acc-hd" type="button">Watch &amp; Read
+              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="av-acc-body">
+              <a class="av-menu-link" href="/newsandreviews">News &amp; Reviews</a>
+              <a class="av-menu-link" href="/events">Events & Campaigns</a>
+              <a class="av-menu-link" href="/videos">Videos</a>
+
+
+
+            </div>
+          </div>
+
+          <a class="av-menu-cta" href="/newsandreviews">All news &amp; reviews →</a>
+        </div>
+      </div>
+
+      <div class="av-item">
+        <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">Tools
+          <svg class="av-chev" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="av-dd av-dd--r" role="menu">
+          <div class="av-acc">
+            <button class="av-acc-hd" type="button">Smart Tools
+              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="av-acc-body">
+              <a class="av-menu-link" href="/whatcarcanyouaffoard">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">What car can you afford?</div>
+                  <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Find options in your budget</div>
+                </div>
+              </a>
+              <a class="av-menu-link" href="/caremi">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">EMI calculator</div>
+                  <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Estimate monthly payments</div>
+                </div>
+              </a>
+              <a class="av-menu-link" href="/chargingstation">
+                <div>
+                  <div style="font-weight:500;color:var(--ink)">EV charging map</div>
+                  <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Locate stations near you</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+      </div>
+
+
+
+    </nav>
+
+    <div class="header-ctas">
+      <a href="/book-service" class="btn-book">Book Service</a>
+    </div>
+
+    <div class="mob-icons">
+      <button class="icon-btn" id="mob-search-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+      </button>
+    </div>
+    <button class="burger" id="burger" onclick="toggleMM()">
+      <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══ MOBILE MENU ═══ -->
+<div class="mobile-menu" id="mm">
+  <div class="mm-backdrop" onclick="closeMM()"></div>
+  <div class="mm-panel">
+
+    <!-- New Cars -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-cars-btn" onclick="mmToggle('mm-cars-sub',this)">
+        <span>New Cars</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13"
+          height="13">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+      <div class="mm-sub" id="mm-cars-sub">
+
+        <div class="mm-sub-label">By body type</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'suv-mpv-crossover'});closeMM()">SUV / MPV / Crossover</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'sedan'});closeMM()">Sedan</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hatchback'});closeMM()">Hatchback</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'pickup'});closeMM()">Pickup / Truck</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'van'});closeMM()">Cargo / Van</div>
+
+        <div class="mm-sub-label">By terrain</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{terrain:'mountain'});closeMM()">Mountain & hilly roads</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{terrain:'city'});closeMM()">City commute</div>
+
+        <div class="mm-sub-label">By fuel type</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'electric'});closeMM()">
+          Electric (EV) <span class="av-tag av-tag--g" style="margin-left:4px;">Fastest growing</span>
+        </div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hybrid'});closeMM()">Hybrid</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'petrol'});closeMM()">Petrol</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'diesel'});closeMM()">Diesel</div>
+
+        <div class="mm-sub-label">By budget</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'under20'});closeMM()">Under 20L</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'20to40'});closeMM()">20–40L</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'40to70'});closeMM()">40–70L</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'70to1cr'});closeMM()">70L–1Cr</div>
+        <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'above1cr'});closeMM()">1Cr+</div>
+
+        <div class="mm-sub-label">Quick finds</div>
+        <div class="mm-sub-link" onclick="AV.goTo('latest');closeMM()">Latest arrivals</div>
+        <div class="mm-sub-link" onclick="AV.goTo('upcoming');closeMM()">Upcoming launches</div>
+        <div class="mm-sub-link" onclick="AV.goTo('bestseller');closeMM()">Best sellers in Nepal</div>
+        <div class="mm-sub-link" onclick="window.location.href='/brands';closeMM()">Browse by brand</div>
+
+        <div class="mm-sub-link" onclick="AV.goTo('compare');closeMM()">Compare new cars</div>
+
+        <div style="margin-top:16px;">
+          <button class="btn btn-outline" style="width:100%;border-radius:var(--r8);"
+            onclick="AV.goTo('cars');closeMM()">View all new cars →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Used Cars -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-used-btn" onclick="mmToggle('mm-used-sub',this)">
+        <span>Used Cars</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13"
+          height="13">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+      <div class="mm-sub" id="mm-used-sub">
+
+        <div class="mm-sub-label">Browse</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used');closeMM()">All used cars</div>
+       
+        <div class="mm-sub-link" onclick="window.location.href='/sellyourcar';closeMM()">Sell or Trade your car</div>
+
+        <div class="mm-sub-label">Filter by</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'year'});closeMM()">Year</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'price'});closeMM()">Price range</div>
+        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'lowest_km'});closeMM()">Lowest KM run</div>
+        
+
+        <div class="mm-sub-link" onclick="AV.goTo('compare-used');closeMM()">Compare used cars</div>
+
+        <div style="margin-top:16px;">
+          <button class="btn btn-outline" style="width:100%;border-radius:var(--r8);"
+            onclick="AV.goTo('used');closeMM()">Browse all used cars →</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Services -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-services-btn" onclick="mmToggle('mm-services-sub',this)">
+        <span>Services</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13"
+          height="13">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+      <div class="mm-sub" id="mm-services-sub">
+
+        <div class="mm-sub-label">Vehicle care</div>
+        <div class="mm-sub-link" onclick="window.location.href='/maintenance-repairs';closeMM()">Maintenance &amp; Repairs</div>
+        <div class="mm-sub-link" onclick="window.location.href='/parts-accessories';closeMM()">Parts &amp; Accessories</div>
+        <div class="mm-sub-link" onclick="window.location.href='/other-services';closeMM()">Other Services</div>
+
+        <div class="mm-sub-label">Paperwork &amp; finance</div>
+        <div class="mm-sub-link" onclick="window.location.href='/dotm-services';closeMM()">DOTM Services</div>
+        <div class="mm-sub-link" onclick="window.location.href='/insurance-finance';closeMM()">Insurance &amp; Financing</div>
+
+        <div style="margin-top:16px;">
+          <button class="btn btn-outline" style="width:100%;border-radius:var(--r8);"
+            onclick="window.location.href='/services';closeMM()">All services →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- News & Reviews -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-news-btn" onclick="mmToggle('mm-news-sub',this)">
+        <span>News &amp; Reviews</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13"
+          height="13">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+      <div class="mm-sub" id="mm-news-sub">
+
+        <div class="mm-sub-label">Watch &amp; read</div>
+        <div class="mm-sub-link" onclick="window.location.href='/newsandreviews';closeMM()">News &amp; reviews</div>
+        <div class="mm-sub-link" onclick="window.location.href='/events';closeMM()">Events &amp; Campaigns</div>
+        <div class="mm-sub-link" onclick="window.location.href='/videos';closeMM()">Videos</div>
+
+        <div style="margin-top:16px;">
+          <button class="btn btn-outline" style="width:100%;border-radius:var(--r8);"
+            onclick="window.location.href='/newsandreviews';closeMM()">All news &amp; reviews →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="mm-item">
+      <button class="mm-btn" id="mm-tools-btn" onclick="mmToggle('mm-tools-sub',this)">
+        <span>Tools</span>
+        <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13"
+          height="13">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+      <div class="mm-sub" id="mm-tools-sub">
+
+        <div class="mm-sub-label">Smart tools</div>
+        <div class="mm-sub-link" onclick="window.location.href='/whatcarcanyouaffoard';closeMM()">
+          <div>
+            <div style="font-weight:500;color:var(--ink)">What car can you afford?</div>
+            <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Find options in your budget</div>
+          </div>
+        </div>
+        <div class="mm-sub-link" onclick="window.location.href='/caremi';closeMM()">
+          <div>
+            <div style="font-weight:500;color:var(--ink)">EMI calculator</div>
+            <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Estimate monthly payments</div>
+          </div>
+        </div>
+        <div class="mm-sub-link" onclick="window.location.href='/chargingstation';closeMM()">
+          <div>
+            <div style="font-weight:500;color:var(--ink)">EV charging map</div>
+            <div style="font-size:11px;color:var(--ink4);margin-top:2px;">Locate stations near you</div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="mm-cta">
+      <a href="/book-service" class="btn btn-primary">Book Service</a>
+    </div>
+
+    <!-- Phone -->
+    <div style="padding:14px 16px 20px;border-top:1px solid var(--bg2)">
+      <a href="tel:+9779828364940"
+        style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--g3)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <path
+            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-.95a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+        </svg>
+        +977-9828364940
+      </a>
+      <div style="font-size:12px;color:var(--ink4);margin-top:3px;margin-left:24px">Mon–Sat · 9am–6pm</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+</div>
+</div>

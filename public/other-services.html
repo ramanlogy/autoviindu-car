@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <title>Other Services – AutoViindu</title>
@@ -8,17 +11,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
-      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
-      --border:#E4E8ED; --bg:#F5F7F9; --white:#ffffff;
-      --red:#C8271E;
-      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
-      --sh1:0 1px 4px rgba(0,0,0,.06); --sh2:0 4px 14px rgba(0,0,0,.08);
-      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
-      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+        :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
     }
     html { scroll-behavior:smooth; }
     body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
@@ -49,20 +72,20 @@
     .hero-pill i { width:13px; height:13px; color:var(--green-m); }
 
     /* NAV STRIP */
-    .nav-strip { background:var(--white); border-bottom:1px solid var(--border); }
+    .nav-strip { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:var(--nav); z-index:100; }
     .nav-strip-inner { display:grid; grid-template-columns:repeat(2,1fr); }
     @media(min-width:640px){ .nav-strip-inner{ grid-template-columns:repeat(4,1fr); } }
-    .nav-item { display:flex; flex-direction:column; gap:4px; padding:18px 16px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); text-decoration:none; color:inherit; }
+    .nav-item { display:flex; flex-direction:column; gap:4px; padding:10px 8px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); text-decoration:none; color:inherit; }
     .nav-item:last-child { border-right:none; }
     @media(max-width:639px){ .nav-item:nth-child(2){ border-right:none; } .nav-item:nth-child(3){ border-right:1px solid var(--border); } }
     .nav-item:hover { background:var(--green-l); }
     .nav-item.request-link { background:var(--green-l); }
     .nav-item.request-link:hover { background:#dff0e3; }
-    .nav-item i { width:18px; height:18px; color:var(--ink5); margin-bottom:4px; }
-    .nav-item.request-link i { color:var(--green); }
-    .nav-item-name { font-size:12.5px; font-weight:800; color:var(--ink2); line-height:1.3; }
+    .nav-item i, .nav-item svg { width:16px; height:16px; color:var(--ink3); margin-bottom:4px; }
+    .nav-item.request-link i, .nav-item.request-link svg { color:var(--green); }
+    .nav-item-name { font-size:11px; font-weight:800; color:var(--ink2); line-height:1.3; }
     .nav-item.request-link .nav-item-name { color:var(--green); }
-    .nav-item-sub { font-size:11px; color:var(--ink5); }
+    .nav-item-sub { font-size:10px; color:var(--ink5); }
 
     /* SECTION */
     .section { padding:72px 0; }
@@ -155,14 +178,14 @@
   </style>
 </head>
 <body>
-  <script src="assets/js/components/av-nav.js"></script>
+  <script src="assets/js/site-chrome.js"></script>
 
 <!-- BREADCRUMB -->
 <nav class="bc">
   <div class="wrap bc-inner">
-    <a href="index.html">Home</a>
+    <a href="/">Home</a>
     <i data-lucide="chevron-right"></i>
-    <a href="services.html">Services</a>
+    <a href="/services">Services</a>
     <i data-lucide="chevron-right"></i>
     <span>Other Services</span>
   </div>
@@ -205,7 +228,7 @@
         <div class="nav-item-sub">Towing, jumpstart, fuel</div>
       </div>
       <!-- Link instead of same-page scroll -->
-      <a class="nav-item request-link" href="form/otherserviceform.html">
+      <a class="nav-item request-link" href="/form/otherserviceform">
         <i data-lucide="send"></i>
         <div class="nav-item-name">Request a Service</div>
         <div class="nav-item-sub">Submit your details →</div>
@@ -374,7 +397,7 @@
       <h2>Request a Service,<br><em>it only takes 2 minutes</em></h2>
       <p>Tell us your vehicle, what you need, and where you are. We handle the rest — confirmed within one business day.</p>
       <div class="cta-buttons">
-        <a href="form/otherserviceform.html" class="btn-primary">
+        <a href="/form/otherserviceform" class="btn-primary">
           <i data-lucide="send"></i>
           Fill in Service Request Form
         </a>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <title>Vehicle Parts &amp; Accessories – AutoViindu</title>
@@ -17,16 +20,37 @@
 
   gtag('config', 'G-N2BCQWQPPZ');
 </script>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green: #1A6B2A; --green-d: #145520; --green-l: #EEF7F0; --green-m: #4CAF6A;
-      --ink: #0B0F14; --ink2: #1C2228; --ink3: #3D4754; --ink4: #6B7685; --ink5: #9AA3AE;
-      --border: #E4E8ED; --bg: #F5F7F9; --white: #ffffff; --red: #C8271E;
-      --r8: 8px; --r10: 10px; --r12: 12px; --r16: 16px; --r20: 20px; --pill: 999px;
-      --sh1: 0 1px 4px rgba(0,0,0,.06); --sh2: 0 4px 14px rgba(0,0,0,.09);
-      --ease: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-      --font-d: 'Fraunces', Georgia, serif; --font-b: 'DM Sans', system-ui, sans-serif;
+        :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
     }
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-b); background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.6; }
@@ -43,34 +67,39 @@
     .bc-inner a:hover { text-decoration: underline; }
     .bc-inner i { width: 12px; height: 12px; }
 
-    /* HERO */
-    .hero { background: linear-gradient(145deg, #0B2A12 0%, #1A6B2A 60%, #1f8535 100%); padding: 56px 0 0; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
-    .hero-inner { position: relative; z-index: 1; padding-bottom: 56px; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); border-radius: var(--pill); padding: 5px 13px; font-size: 11.5px; font-weight: 700; color: rgba(255,255,255,.75); letter-spacing: .4px; text-transform: uppercase; margin-bottom: 18px; }
-    .hero-badge i { width: 13px; height: 13px; color: var(--green-m); }
-    .hero h1 { font-family: var(--font-d); font-size: clamp(30px, 5vw, 52px); font-weight: 800; color: #fff; line-height: 1.08; margin-bottom: 14px; }
-    .hero h1 em { font-style: italic; color: var(--green-m); }
-    .hero-desc { font-size: 15px; color: rgba(255,255,255,.6); max-width: 500px; line-height: 1.75; margin-bottom: 32px; }
+    /* HERO — Clean, utility-focused light layout */
+    .hero {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 0 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--pill); padding: 5px 13px; font-size: 11px; font-weight: 600; color: var(--ink3); letter-spacing: .4px; text-transform: uppercase; margin-bottom: 18px; }
+    .hero-badge i { width: 13px; height: 13px; color: var(--ink3); }
+    .hero h1 { font-family: var(--font-d); font-size: clamp(30px, 4.5vw, 48px); font-weight: 800; color: var(--ink); line-height: 1.15; margin-bottom: 14px; }
+    .hero h1 em { font-style: italic; color: inherit; }
+    .hero-desc { font-size: 15px; color: var(--ink3); max-width: 500px; line-height: 1.75; margin-bottom: 32px; }
     .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-    .hero-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.13); border-radius: var(--pill); padding: 7px 14px; font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,.8); }
-    .hero-pill i { width: 13px; height: 13px; color: var(--green-m); }
+    .hero-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--border); border-radius: var(--pill); padding: 7px 14px; font-size: 12px; font-weight: 500; color: var(--ink2); }
+    .hero-pill i { width: 13px; height: 13px; color: var(--g3); }
 
     /* NAV STRIP */
-    .nav-strip { background: var(--white); border-bottom: 1px solid var(--border); }
+    .nav-strip { background: var(--white); border-bottom: 1px solid var(--border); position:sticky; top:var(--nav); z-index:100; }
     .nav-strip-inner { display: grid; grid-template-columns: repeat(2, 1fr); }
     @media(min-width: 640px) { .nav-strip-inner { grid-template-columns: repeat(4, 1fr); } }
     .nav-item {
-      display: flex; flex-direction: column; gap: 4px; padding: 18px 16px;
+      display: flex; flex-direction: column; gap: 4px; padding: 10px 8px;
       border-right: 1px solid var(--border); cursor: pointer;
       transition: background var(--ease); text-decoration: none;
     }
     .nav-item:last-child { border-right: none; }
     @media(max-width: 639px) { .nav-item:nth-child(2) { border-right: none; } .nav-item:nth-child(3) { border-right: 1px solid var(--border); } }
     .nav-item:hover { background: var(--green-l); }
-    .nav-item i { width: 18px; height: 18px; color: var(--ink5); margin-bottom: 4px; }
-    .nav-item-name { font-size: 12.5px; font-weight: 800; color: var(--ink2); }
-    .nav-item-sub { font-size: 11px; color: var(--ink5); }
+    .nav-item i, .nav-item svg { width: 16px; height: 16px; color: var(--ink3); margin-bottom: 4px; }
+    .nav-item-name { font-size: 11px; font-weight: 800; color: var(--ink2); }
+    .nav-item-sub { font-size: 10px; color: var(--ink5); }
     /* CTA nav item highlight */
     .nav-item.nav-cta { background: var(--green-l); }
     .nav-item.nav-cta .nav-item-name { color: var(--green); }
@@ -116,8 +145,12 @@
     @media(min-width: 640px) { .cond-grid { grid-template-columns: repeat(3, 1fr); } }
     .cond-card { border: 1.5px solid var(--border); border-radius: var(--r12); padding: 22px; background: var(--white); transition: all var(--ease); }
     .cond-card:hover { border-color: var(--green); box-shadow: var(--sh1); }
-    .cond-icon { width: 40px; height: 40px; background: var(--green-l); border-radius: var(--r10); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
-    .cond-icon i { width: 20px; height: 20px; color: var(--green); }
+    .cond-icon { width: 40px; height: 40px; background: var(--white); border: 1.5px solid var(--border); box-shadow: var(--sh1); border-radius: var(--r10); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; position: relative; }
+    .cond-icon i { width: 20px; height: 20px; color: var(--ink3); }
+    .cond-icon::after { content: ''; position: absolute; bottom: -4px; right: -5px; width: 13px; height: 13px; border-radius: 50%; box-shadow: 0 0 0 2px var(--white); }
+    .cond-card:nth-child(3n+1) .cond-icon::after { background: var(--green); }
+    .cond-card:nth-child(3n+2) .cond-icon::after { background: var(--gold); }
+    .cond-card:nth-child(3n+3) .cond-icon::after { background: var(--blue); }
     .cond-title { font-size: 15px; font-weight: 800; color: var(--ink2); margin-bottom: 5px; }
     .cond-desc { font-size: 13px; color: var(--ink4); line-height: 1.65; }
 
@@ -152,14 +185,14 @@
   </style>
 </head>
 <body>
-<script src="assets/js/components/av-nav.js"></script>
+<script src="assets/js/site-chrome.js"></script>
 
 <!-- BREADCRUMB -->
 <nav class="bc">
   <div class="wrap bc-inner">
-    <a href="index.html">Home</a>
+    <a href="/">Home</a>
     <i data-lucide="chevron-right"></i>
-    <a href="services.html">Services</a>
+    <a href="/services">Services</a>
     <i data-lucide="chevron-right"></i>
     <span>Parts &amp; Accessories</span>
   </div>
@@ -202,7 +235,7 @@
         <div class="nav-item-sub">Battery, motor, charging</div>
       </div>
       <!-- ✦ Changed to <a> linking to standalone form page -->
-      <a class="nav-item nav-cta" href="form/partsandacc.html">
+      <a class="nav-item nav-cta" href="/form/partsandacc">
         <i data-lucide="send"></i>
         <div class="nav-item-name">Request a Part →</div>
         <div class="nav-item-sub">Open request form</div>
@@ -739,7 +772,7 @@
     <div class="eyebrow" style="justify-content:center"><i data-lucide="send"></i>Request a Part</div>
     <h2 class="sec-title" style="text-align:center">Tell us what you <em>need</em></h2>
     <p style="font-size:14.5px;color:var(--ink4);max-width:460px;margin:0 auto 36px;line-height:1.7">Fill in your vehicle details and the part you're looking for. We confirm availability and pricing within one business day.</p>
-    <a href="form/partsandacc.html" class="cta-btn">
+    <a href="/form/partsandacc" class="cta-btn">
       <i data-lucide="send"></i>
       Request a Part or Accessory
     </a>
@@ -754,7 +787,6 @@
 </section>
 
 <div id="av-toast-wrap"></div>
-<script src="assets/js/components/av-footer.js"></script>
 
 <script>
   lucide.createIcons();

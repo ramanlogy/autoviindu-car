@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/logo/favicon_io/favicon-16x16.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoViindu CMS — Premium Content Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --sidebar-bg: #0f172a;
+      --sidebar-text: #94a3b8;
+      --sidebar-hover: #1e293b;
+      --sidebar-active: #4f46e5;
+      --border: #e2e8f0;
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-light: #eeebff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --sidebar-width: 260px;
+      
+      --purple: #7c3aed;
+      --pink: #db2777;
+      --green: #10b981;
+      --red: #ef4444;
+      --yellow: #f59e0b;
+      --blue: #3b82f6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); display: flex; min-height: 100vh; overflow-x: hidden; }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      width: var(--sidebar-width); background: var(--sidebar-bg); min-height: 100vh;
+      display: flex; flex-direction: column; position: fixed; top: 0; left: 0; bottom: 0; z-index: 100;
+      border-right: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;
+    }
+    .sb-header { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 12px; }
+    .sb-logo-icon { width: 32px; height: 32px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .sb-logo-text { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .sb-logo-title { font-size: 16px; font-weight: 800; color: white; }
+    .sb-logo-sub { font-size: 11px; color: var(--sidebar-text); margin-top: 1px; }
+    .sb-nav { flex: 1; overflow-y: auto; padding: 16px 12px; display: flex; flex-direction: column; gap: 4px; }
+    .sb-section { font-size: 10px; font-weight: 700; color: #475569; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 12px 6px; }
+    .sb-btn {
+      display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 12px;
+      border: none; background: none; color: var(--sidebar-text); border-radius: var(--radius-sm);
+      cursor: pointer; font-size: 13px; font-weight: 500; text-align: left;
+      transition: background 0.15s, color 0.15s;
+    }
+    .sb-btn:hover { background: var(--sidebar-hover); color: white; }
+    .sb-btn.active { background: var(--sidebar-active); color: white; font-weight: 600; }
+    .sb-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+    
+    /* Submenus */
+    .sb-submenu { display: none; flex-direction: column; gap: 2px; padding-left: 24px; margin-top: 2px; }
+    .sb-submenu.open { display: flex; }
+    .sb-sub-btn {
+      display: flex; align-items: center; gap: 8px; width: 100%; padding: 8px 12px;
+      border: none; background: none; color: var(--sidebar-text); border-radius: var(--radius-sm);
+      cursor: pointer; font-size: 12px; font-weight: 500; text-align: left;
+      transition: background 0.15s, color 0.15s;
+    }
+    .sb-sub-btn:hover { background: var(--sidebar-hover); color: white; }
+    .sb-sub-btn.active { color: white; background: rgba(79, 70, 229, 0.2); font-weight: 600; }
+    
+    .sb-badge { margin-left: auto; background: var(--primary); color: white; font-size: 10px; font-weight: 700; border-radius: 20px; padding: 2px 8px; }
+    .sb-badge.red { background: var(--red); }
+    .sb-foot { padding: 16px 12px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 4px; }
+
+    /* Main Container */
+    .main { margin-left: var(--sidebar-width); flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
+    .topbar {
+      position: sticky; top: 0; z-index: 50; background: var(--surface);
+      border-bottom: 1px solid var(--border); padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .topbar-title { font-size: 16px; font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .topbar-right { display: flex; align-items: center; gap: 16px; }
+    .view-site-btn {
+      display: flex; align-items: center; gap: 6px; padding: 8px 16px;
+      background: #f1f5f9; border: 1px solid var(--border); border-radius: var(--radius-sm);
+      color: var(--text); text-decoration: none; font-size: 13px; font-weight: 600; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .view-site-btn:hover { background: #e2e8f0; }
+    .avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--border); }
+    .page { padding: 32px; flex: 1; max-width: 1400px; width: 100%; margin: 0 auto; }
+
+    /* Panels */
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+    .page-title { font-size: 24px; font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); }
+    .page-sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+    /* Stats Grid */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .stat-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .stat-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .stat-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .stat-val { font-size: 32px; font-weight: 800; color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; }
+    .stat-label { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+    .stat-trend { font-size: 11px; font-weight: 600; padding: 2px 6px; border-radius: 20px; display: inline-flex; align-items: center; gap: 2px; }
+    .trend-up { background: #d1fae5; color: #065f46; }
+    .trend-neutral { background: #f1f5f9; color: #475569; }
+
+    /* Cards & Tables */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 1px 3px rgba(0,0,0,0.05); overflow: hidden; }
+    .card-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .card-title { font-size: 15px; font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .card-body { padding: 24px; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
+    th { font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 20px; border-bottom: 1px solid var(--border); background: #f8fafc; }
+    td { padding: 16px 20px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+    
+    .table-checkbox { width: 18px; height: 18px; border-radius: 4px; border: 1px solid var(--border); cursor: pointer; }
+    .table-thumb { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; background: #f1f5f9; border: 1px solid var(--border); }
+    
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 18px;
+      border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; cursor: pointer; border: none;
+      transition: all 0.15s; outline: none;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-secondary { background: var(--primary-light); color: var(--primary); }
+    .btn-secondary:hover { background: #e0dbff; }
+    .btn-ghost { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
+    .btn-ghost:hover { background: #f1f5f9; color: var(--text); }
+    .btn-danger { background: rgba(239,68,68,0.08); color: var(--red); border: 1px solid rgba(239,68,68,0.18); }
+    .btn-danger:hover { background: rgba(239,68,68,0.15); }
+    .btn-sm { padding: 6px 12px; font-size: 12px; border-radius: 6px; }
+
+    /* Badges */
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; text-align: center; }
+    .badge-purple { background: rgba(124,58,237,0.08); color: var(--purple); }
+    .badge-pink { background: rgba(219,39,119,0.08); color: var(--pink); }
+    .badge-green { background: rgba(16,185,129,0.08); color: var(--green); }
+    .badge-red { background: rgba(239,68,68,0.08); color: var(--red); }
+    .badge-yellow { background: rgba(245,158,11,0.08); color: var(--yellow); }
+    .badge-blue { background: rgba(59,130,246,0.08); color: var(--blue); }
+
+    /* Toolbar Filter Row */
+    .toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; gap: 16px; flex-wrap: wrap; }
+    .toolbar-left { display: flex; align-items: center; gap: 12px; flex: 1; }
+    .search-box { display: flex; align-items: center; gap: 8px; background: white; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 16px; flex: 1; max-width: 320px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
+    .search-box input { background: none; border: none; color: var(--text); font-size: 13px; outline: none; width: 100%; }
+    .search-box svg { color: var(--text-muted); width: 16px; height: 16px; }
+    .filter-select { background: white; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 16px; color: var(--text); font-size: 13px; outline: none; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
+
+    /* Floating Selected Pill Bar */
+    .batch-bar {
+      position: fixed; bottom: 32px; left: calc(50% + var(--sidebar-width)/2); transform: translateX(-50%);
+      background: var(--sidebar-bg); color: white; border-radius: 30px; padding: 10px 24px;
+      display: none; align-items: center; gap: 20px; z-index: 150; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      animation: popUp 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .batch-bar.show { display: flex; }
+    .batch-info { font-size: 13px; font-weight: 500; color: var(--sidebar-text); }
+    .batch-info span { color: white; font-weight: 700; }
+    .batch-actions { display: flex; align-items: center; gap: 10px; }
+    .batch-btn { background: none; border: none; color: white; cursor: pointer; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 20px; transition: background 0.15s; }
+    .batch-btn:hover { background: rgba(255,255,255,0.1); }
+    .batch-btn-danger { color: var(--red); }
+    .batch-btn-danger:hover { background: rgba(239,68,68,0.15); }
+    @keyframes popUp { from { bottom: -50px; opacity: 0; } to { bottom: 32px; opacity: 1; } }
+
+    /* Modals with Multi-tab structure */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px);
+      z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      width: 100%; max-width: 780px; max-height: 85vh; display: flex; flex-direction: column;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); overflow: hidden;
+    }
+    .modal-header { padding: 20px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: #f8fafc; }
+    .modal-title { font-size: 16px; font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .modal-close { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 20px; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+    .modal-close:hover { background: #e2e8f0; color: var(--text); }
+    
+    /* Modal Tabs */
+    .modal-tabs { display: flex; border-bottom: 1px solid var(--border); background: #f8fafc; padding: 0 28px; }
+    .modal-tab-btn {
+      padding: 14px 18px; border: none; background: none; font-size: 13px; font-weight: 600;
+      color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s;
+    }
+    .modal-tab-btn:hover { color: var(--text); }
+    .modal-tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+    
+    .modal-body { padding: 28px; overflow-y: auto; flex: 1; }
+    .modal-tab-content { display: none; }
+    .modal-tab-content.active { display: block; }
+    .modal-footer { padding: 18px 28px; border-top: 1px solid var(--border); display: flex; gap: 12px; justify-content: flex-end; background: #f8fafc; }
+
+    /* Form Controls */
+    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .form-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+    .form-group input, .form-group select, .form-group textarea {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 10px 16px; color: var(--text); font-size: 13px; font-family: inherit; transition: all 0.15s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+    }
+    .form-span-2 { grid-column: span 2; }
+    .form-span-3 { grid-column: span 3; }
+    
+    /* Lists Editor (Colors, Variants, Images) */
+    .list-editor-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; }
+    .list-editor-row input { flex: 1; }
+    .list-editor-row .color-preview { width: 38px; height: 38px; border-radius: var(--radius-sm); border: 1px solid var(--border); flex-shrink: 0; }
+
+    /* Toast Notification */
+    .toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; flex-direction: column; gap: 8px; }
+    .toast {
+      background: #0f172a; color: white; border-radius: var(--radius-sm);
+      padding: 14px 20px; font-size: 13px; font-weight: 500; min-width: 280px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 10px;
+      animation: slideIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .toast.error { border-left: 4px solid var(--red); }
+    .toast.success { border-left: 4px solid var(--green); }
+    @keyframes slideIn { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+    /* Lead Submissions View Details Grid */
+    .submission-detail-card { background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px; margin-bottom: 16px; }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; font-size: 13px; }
+    .detail-item { display: flex; flex-direction: column; gap: 4px; }
+    .detail-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; }
+    .detail-value { font-weight: 500; color: var(--text); }
+    .detail-photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 10px; }
+    .detail-photo-grid img { width: 100%; height: 90px; border-radius: 8px; object-fit: cover; border: 1px solid var(--border); cursor: pointer; }
+
+    /* Toggle switches */
+    .switch-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #f8fafc; }
+    .switch-label { font-size: 13px; font-weight: 600; }
+    
+    .empty-state { text-align: center; padding: 64px 24px; color: var(--text-muted); }
+    .empty-icon { font-size: 48px; margin-bottom: 16px; color: #cbd5e1; }
+    
+    /* Layout fix */
+    .tab-pane-container { display: flex; flex-direction: column; gap: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="toast-container" id="toasts"></div>
+
+<!-- Batch Action Pill Floating Bar -->
+<div class="batch-bar" id="batchBar">
+  <div class="batch-info"><span id="batchCount">0</span> selected</div>
+  <div class="batch-actions">
+    <button class="batch-btn" onclick="triggerBatchAction('feature')"><i data-lucide="star" style="width:14px;height:14px"></i> Toggle Featured</button>
+    <button class="batch-btn batch-btn-danger" onclick="triggerBatchAction('delete')"><i data-lucide="trash-2" style="width:14px;height:14px"></i> Delete</button>
+  </div>
+</div>
+
+<!-- Main Modal Overlay -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modalBox">
+    <div class="modal-header">
+      <span class="modal-title" id="modalTitle">Edit Details</span>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-tabs" id="modalTabs"></div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer" id="modalFooter">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" id="modalSave">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sb-header">
+    <div class="sb-logo-icon">AV</div>
+    <div class="sb-logo-text">
+      <div class="sb-logo-title">AutoViindu</div>
+      <div class="sb-logo-sub">Global Admin CMS</div>
+    </div>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-section">Overview</div>
+    <button class="sb-btn active" id="nav-dashboard" onclick="go('dashboard')">
+      <i data-lucide="layout-dashboard"></i> Dashboard
+    </button>
+
+    <div class="sb-section">Inventory</div>
+    <button class="sb-btn" id="nav-new-cars" onclick="go('new-cars')">
+      <i data-lucide="car"></i> New Cars <span class="sb-badge" id="sb-new-car-count">0</span>
+    </button>
+    <button class="sb-btn" id="nav-used-cars" onclick="go('used-cars')">
+      <i data-lucide="refresh-cw"></i> Used Cars <span class="sb-badge" id="sb-used-car-count">0</span>
+    </button>
+    <button class="sb-btn" id="nav-brands" onclick="go('brands')">
+      <i data-lucide="award"></i> Brands
+    </button>
+
+    <div class="sb-section">Forms & Submissions</div>
+    <button class="sb-btn" id="nav-sell-car-leads" onclick="go('sell-car-leads')">
+      <i data-lucide="banknote"></i> Sell Your Car <span class="sb-badge red" id="badge-sell-car">0</span>
+    </button>
+    
+    <!-- Collapsible Car Inquiries -->
+    <button class="sb-btn" onclick="toggleSubmenu('sub-car-inquiries')">
+      <i data-lucide="car"></i> Car Inquiries
+      <i data-lucide="chevron-down" style="margin-left:auto;width:12px;height:12px"></i>
+    </button>
+    <div class="sb-submenu" id="sub-car-inquiries">
+      <button class="sb-sub-btn" id="nav-leads-testdrive" onclick="go('leads-testdrive')">🚗 Test Drive Bookings <span class="sb-badge red" id="badge-testdrive">0</span></button>
+      <button class="sb-sub-btn" id="nav-leads-brochure" onclick="go('leads-brochure')">📄 Brochure/PDF Requests <span class="sb-badge red" id="badge-brochure">0</span></button>
+      <button class="sb-sub-btn" id="nav-leads-requestinfo" onclick="go('leads-requestinfo')">ℹ️ Car Detail Requests <span class="sb-badge red" id="badge-requestinfo">0</span></button>
+      <button class="sb-sub-btn" id="nav-leads-usedcar" onclick="go('leads-usedcar')">🔄 Used Car Inquiries <span class="sb-badge red" id="badge-usedcar">0</span></button>
+    </div>
+
+    <!-- Collapsible Service Submissions Nav -->
+    <button class="sb-btn" onclick="toggleSubmenu('sub-service-submissions')">
+      <i data-lucide="clipboard-list"></i> Services Inquiries
+      <i data-lucide="chevron-down" style="margin-left:auto;width:12px;height:12px"></i>
+    </button>
+    <div class="sb-submenu" id="sub-service-submissions">
+      <button class="sb-sub-btn" id="nav-service-dotm" onclick="go('service-dotm')">DOTM Services</button>
+      <button class="sb-sub-btn" id="nav-service-maint" onclick="go('service-maint')">Maintenance & Repair</button>
+      <button class="sb-sub-btn" id="nav-service-insure" onclick="go('service-insure')">Insurance Services</button>
+      <button class="sb-sub-btn" id="nav-service-parts" onclick="go('service-parts')">Parts & Accessories</button>
+      <button class="sb-sub-btn" id="nav-service-other" onclick="go('service-other')">Other Services</button>
+      <button class="sb-sub-btn" id="nav-service-general" onclick="go('service-general')">General Inquiries</button>
+    </div>
+
+    <div class="sb-section">Global Content</div>
+    <button class="sb-btn" id="nav-hero" onclick="go('hero')">
+      <i data-lucide="image"></i> Hero Slideshow
+    </button>
+    <button class="sb-btn" id="nav-blog" onclick="go('blog')">
+      <i data-lucide="book-open"></i> Blogs & Guides
+    </button>
+    <button class="sb-btn" id="nav-news" onclick="go('news')">
+      <i data-lucide="newspaper"></i> News & Updates
+    </button>
+    <button class="sb-btn" id="nav-services-config" onclick="go('services-config')">
+      <i data-lucide="wrench"></i> Services List
+    </button>
+    <button class="sb-btn" id="nav-videos" onclick="go('videos')">
+      <i data-lucide="youtube"></i> Videos Config
+    </button>
+    <button class="sb-btn" id="nav-settings" onclick="go('settings')">
+      <i data-lucide="settings"></i> Site Settings
+    </button>
+  </nav>
+  <div class="sb-foot">
+    <a href="/" target="_blank" class="sb-btn" style="text-decoration:none;">
+      <i data-lucide="external-link"></i> Launch Website
+    </a>
+    <button class="sb-btn" onclick="logout()">
+      <i data-lucide="log-out"></i> Sign out
+    </button>
+  </div>
+</aside>
+
+<!-- Main Area -->
+<div class="main">
+  <header class="topbar">
+    <span class="topbar-title" id="topbarTitle">Dashboard</span>
+    <div class="topbar-right">
+      <a href="/" target="_blank" class="view-site-btn"><i data-lucide="external-link" style="width:14px;height:14px"></i> Preview Website</a>
+      <div class="avatar">SA</div>
+    </div>
+  </header>
+
+  <div class="page">
+
+    <!-- PANEL: DASHBOARD -->
+    <div class="panel active" id="panel-dashboard">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Dashboard Overview</div>
+          <div class="page-sub">Operational statistics and analytical snapshot</div>
+        </div>
+      </div>
+      
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-card">
+          <div class="stat-header">
+            <div class="stat-icon" style="background:#eeebff;color:var(--primary);"><i data-lucide="car"></i></div>
+            <span class="stat-trend trend-up">+3 new</span>
+          </div>
+          <div>
+            <div class="stat-val" id="stat-new-cars">0</div>
+            <div class="stat-label">New Cars listed</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-header">
+            <div class="stat-icon" style="background:rgba(219,39,119,0.1);color:var(--pink);"><i data-lucide="refresh-cw"></i></div>
+            <span class="stat-trend trend-neutral">active</span>
+          </div>
+          <div>
+            <div class="stat-val" id="stat-used-cars">0</div>
+            <div class="stat-label">Used Cars listed</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-header">
+            <div class="stat-icon" style="background:rgba(16,185,129,0.1);color:var(--green);"><i data-lucide="zap"></i></div>
+            <span class="stat-trend trend-up">Eco friendly</span>
+          </div>
+          <div>
+            <div class="stat-val" id="stat-ev">0</div>
+            <div class="stat-label">EVs Available</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-header">
+            <div class="stat-icon" style="background:rgba(59,130,246,0.1);color:var(--blue);"><i data-lucide="clipboard-list"></i></div>
+            <span class="stat-trend trend-up" id="stat-new-leads">+0 this wk</span>
+          </div>
+          <div>
+            <div class="stat-val" id="stat-leads">0</div>
+            <div class="stat-label">Total Inquiries & Leads</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:24px;">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Recent Inquiries & Form submissions</span></div>
+          <div class="card-body" id="recentLeads">
+            <div class="empty-state">Loading...</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Brand Distribution Chart</span></div>
+          <div class="card-body" id="carsByBrand">
+            <div class="empty-state">Loading...</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:24px;margin-top:24px;">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Quick Actions & Shortcuts</span></div>
+          <div class="card-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+            <button class="btn btn-secondary" onclick="openAddCar()"><i data-lucide="plus"></i> Add New Car Listing</button>
+            <button class="btn btn-ghost" onclick="go('sell-car-leads')"><i data-lucide="banknote"></i> View Sell Car Offers</button>
+            <button class="btn btn-ghost" onclick="openAddBlog()"><i data-lucide="pen-tool"></i> Write New Buying Guide</button>
+            <button class="btn btn-ghost" onclick="go('settings')"><i data-lucide="settings"></i> Manage Site Settings</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Server Diagnostics</span></div>
+          <div class="card-body">
+            <div style="display:flex;flex-direction:column;gap:12px;font-size:13px;">
+              <div style="display:flex;justify-content:space-between;padding-bottom:8px;border-bottom:1px solid var(--border);">
+                <span style="font-weight:600;color:var(--text-muted);">Database Provider</span>
+                <span class="badge badge-green">SQLite (dev.db)</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding-bottom:8px;border-bottom:1px solid var(--border);">
+                <span style="font-weight:600;color:var(--text-muted);">Server Environment</span>
+                <span class="badge badge-purple">Node.js Express</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding-bottom:8px;border-bottom:1px solid var(--border);">
+                <span style="font-weight:600;color:var(--text-muted);">ORM Layer</span>
+                <span class="badge badge-blue">Prisma Client</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;">
+                <span style="font-weight:600;color:var(--text-muted);">Real-time Sync</span>
+                <span class="badge badge-green" style="display:inline-flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;"></span> Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: NEW CARS -->
+    <div class="panel" id="panel-new-cars">
+      <div class="page-header">
+        <div>
+          <div class="page-title">New Car Inventory</div>
+          <div class="page-sub">Manage new car listings, pricing, colors, and variant specifications</div>
+        </div>
+        <button class="btn btn-primary" onclick="openAddCar()"><i data-lucide="plus"></i> Add New Car</button>
+      </div>
+      
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <div class="search-box">
+            <i data-lucide="search"></i>
+            <input type="text" placeholder="Search by model or brand..." id="carSearch" oninput="filterCars()">
+          </div>
+          <select id="carBrandFilter" onchange="filterCars()" class="filter-select">
+            <option value="">All Brands</option>
+          </select>
+          <select id="carTypeFilter" onchange="filterCars()" class="filter-select">
+            <option value="">All Fuel Types</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Electric">Electric</option>
+            <option value="Hybrid">Hybrid</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:40px;"><input type="checkbox" class="table-checkbox" id="selectAllNewCars" onchange="toggleSelectAll('new-cars')"></th>
+                <th>Car details</th>
+                <th>Brand</th>
+                <th>Year</th>
+                <th>Fuel type</th>
+                <th>Base EMI</th>
+                <th>Featured</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="carsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: USED CARS -->
+    <div class="panel" id="panel-used-cars">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Used Car Inventory</div>
+          <div class="page-sub">Manage customer and dealer second-hand vehicle listings</div>
+        </div>
+        <button class="btn btn-primary" onclick="openAddUsedCar()"><i data-lucide="plus"></i> Add Used Car</button>
+      </div>
+
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:40px;"><input type="checkbox" class="table-checkbox" id="selectAllUsedCars" onchange="toggleSelectAll('used-cars')"></th>
+                <th>Listing</th>
+                <th>Year</th>
+                <th>Price</th>
+                <th>Mileage</th>
+                <th>Location</th>
+                <th>Condition</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="usedCarsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: BRANDS -->
+    <div class="panel" id="panel-brands">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Car Brands</div>
+          <div class="page-sub">Manage corporate profiles, taglines, and dealers of brands listed on your site</div>
+        </div>
+        <button class="btn btn-primary" onclick="openAddBrand()"><i data-lucide="plus"></i> Add Brand</button>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Brand profile</th>
+                <th>Full corporate name</th>
+                <th>Origin country</th>
+                <th>Official Nepal dealer</th>
+                <th>Resale rating</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="brandsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: SELL CAR LEADS -->
+    <div class="panel" id="panel-sell-car-leads">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Sell Your Car Offers</div>
+          <div class="page-sub">Customer submissions requesting evaluations or direct sales of pre-owned cars</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Owner Details</th>
+                <th>Vehicle Details</th>
+                <th>Condition</th>
+                <th>Bluebook Renewal</th>
+                <th>Status</th>
+                <th>Date Submitted</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="sellCarLeadsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: TEST DRIVE BOOKINGS -->
+    <div class="panel" id="panel-leads-testdrive">
+      <div class="page-header">
+        <div>
+          <div class="page-title">🚗 Test Drive Bookings</div>
+          <div class="page-sub">Customers who booked a test drive for a specific vehicle</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Customer</th><th>Contact</th><th>Vehicle</th><th>Preferred Date</th><th>Status</th><th>Submitted</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="leadsTestdriveTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: BROCHURE / PDF REQUESTS -->
+    <div class="panel" id="panel-leads-brochure">
+      <div class="page-header">
+        <div>
+          <div class="page-title">📄 Brochure & PDF Price Requests</div>
+          <div class="page-sub">Customers who requested a car brochure, spec sheet, or price list PDF</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Customer</th><th>Contact</th><th>Vehicle</th><th>Status</th><th>Submitted</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="leadsBrochureTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: CAR DETAIL / REQUEST INFO -->
+    <div class="panel" id="panel-leads-requestinfo">
+      <div class="page-header">
+        <div>
+          <div class="page-title">ℹ️ Car Detail & Info Requests</div>
+          <div class="page-sub">Customers who filled the "Request Information" form on a car listing page</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Customer</th><th>Contact</th><th>Vehicle</th><th>Message</th><th>Status</th><th>Submitted</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="leadsRequestinfoTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: USED CAR INQUIRIES -->
+    <div class="panel" id="panel-leads-usedcar">
+      <div class="page-header">
+        <div>
+          <div class="page-title">🔄 Used Car Inquiries</div>
+          <div class="page-sub">Customers who inquired about a specific used / pre-owned vehicle</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Customer</th><th>Contact</th><th>Vehicle</th><th>Message</th><th>Status</th><th>Submitted</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="leadsUsedcarTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANELS FOR THE 5 SERVICE FORMS -->
+    <div class="panel" id="panel-service-dotm">
+      <div class="page-header">
+        <div>
+          <div class="page-title">DOTM Service Submissions</div>
+          <div class="page-sub">Inquiries for government vehicle registration, taxes, bluebook renewals, license help</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Customer</th><th>Contact Info</th><th>Service Details</th><th>Status</th><th>Submitted</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="serviceDotmTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-service-maint">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Maintenance & Repairs Submissions</div>
+          <div class="page-sub">Inquiries for workshops, mechanical works, servicing, and pre-purchase checkups</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Customer</th><th>Contact Info</th><th>Service Details</th><th>Status</th><th>Submitted</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="serviceMaintTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-service-insure">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Insurance Services Submissions</div>
+          <div class="page-sub">Inquiries for third party or comprehensive vehicle insurance renewals and claims</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Customer</th><th>Contact Info</th><th>Service Details</th><th>Status</th><th>Submitted</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="serviceInsureTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-service-parts">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Parts & Accessories Requests</div>
+          <div class="page-sub">Orders or requests for vehicle parts, OEM spares, modifications, and add-ons</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Customer</th><th>Contact Info</th><th>Request specifications</th><th>Status</th><th>Submitted</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="servicePartsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-service-other">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Other Services Submissions</div>
+          <div class="page-sub">Inquiries for detailing, car wash, ceramic coating, PPF, GPS, car styling</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Customer</th><th>Contact Info</th><th>Service Request</th><th>Status</th><th>Submitted</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="serviceOtherTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-service-general">
+      <div class="page-header">
+        <div>
+          <div class="page-title">General Inquiries & Test Drives</div>
+          <div class="page-sub">General contact form submissions, dealership queries, or test drive requests</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Customer</th><th>Contact Info</th><th>Details</th><th>Status</th><th>Submitted</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="serviceGeneralTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: HERO SLIDESHOW -->
+    <div class="panel" id="panel-hero">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Homepage Slideshow Banners</div>
+          <div class="page-sub">Edit the premium slides displayed in the main hero header carousel on your homepage</div>
+        </div>
+        <div style="display:flex;gap:12px;">
+          <button class="btn btn-secondary" onclick="addHeroSlide()"><i data-lucide="plus"></i> Add Slide</button>
+          <button class="btn btn-primary" onclick="saveHeroSlides()"><i data-lucide="save"></i> Save Slideshow</button>
+        </div>
+      </div>
+      <div id="heroSlidesContainer" style="display:flex;flex-direction:column;gap:20px;"></div>
+    </div>
+
+    <!-- PANEL: BLOGS -->
+    <div class="panel" id="panel-blog">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Blogs & Buying Guides</div>
+          <div class="page-sub">Manage expert reviews, buying tips, guides, and awards</div>
+        </div>
+        <button class="btn btn-primary" onclick="openAddBlog()"><i data-lucide="pen-tool"></i> Write Blog Post</button>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Title</th><th>Category</th><th>Author</th><th>Status</th><th>Date Created</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="blogsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: NEWS -->
+    <div class="panel" id="panel-news">
+      <div class="page-header">
+        <div>
+          <div class="page-title">News Articles & Events</div>
+          <div class="page-sub">Publish news, automobile launches, events calendar, and policy alerts</div>
+        </div>
+        <div style="display:flex;gap:10px;">
+          <button class="btn btn-secondary" id="news-tab-btn" onclick="switchNewsTab('news')">News Articles</button>
+          <button class="btn btn-ghost" id="events-tab-btn" onclick="switchNewsTab('events')">Events Schedule</button>
+        </div>
+      </div>
+      
+      <div id="news-tab">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
+          <button class="btn btn-primary" onclick="openAddNews()"><i data-lucide="plus"></i> Add News Post</button>
+        </div>
+        <div class="card">
+          <div style="overflow-x:auto;">
+            <table>
+              <thead><tr><th>Headline</th><th>Category</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+              <tbody id="newsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <div id="events-tab" style="display:none;">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
+          <button class="btn btn-primary" onclick="openAddEvent()"><i data-lucide="plus"></i> Add Event</button>
+        </div>
+        <div class="card">
+          <div style="overflow-x:auto;">
+            <table>
+              <thead><tr><th>Event Title</th><th>Date / Timing</th><th>Venue</th><th>Category</th><th>Actions</th></tr></thead>
+              <tbody id="eventsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: SERVICES CONFIG -->
+    <div class="panel" id="panel-services-config">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Services Configurations</div>
+          <div class="page-sub">Manage category details, colors, icons, and menu list of services provided on the platform</div>
+        </div>
+        <button class="btn btn-primary" onclick="saveServices()"><i data-lucide="save"></i> Save Configurations</button>
+      </div>
+      <div id="servicesContainer"></div>
+    </div>
+
+    <!-- PANEL: VIDEOS -->
+    <div class="panel" id="panel-videos">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Media Hub Videos</div>
+          <div class="page-sub">Configure YouTube video reviews, guides, and tutorials displayed in the website media center</div>
+        </div>
+        <div style="display:flex;gap:12px;">
+          <button class="btn btn-secondary" onclick="addVideoCard()"><i data-lucide="plus"></i> Add Video</button>
+          <button class="btn btn-primary" onclick="saveVideos()"><i data-lucide="save"></i> Save Videos</button>
+        </div>
+      </div>
+      <div id="videosContainer" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(360px, 1fr));gap:20px;"></div>
+    </div>
+
+    <!-- PANEL: SITE SETTINGS -->
+    <div class="panel" id="panel-settings">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Site Settings</div>
+          <div class="page-sub">Manage global configurations, contact info, social links, EMI calculators, and primary SEO metadata</div>
+        </div>
+        <button class="btn btn-primary" onclick="saveSettings()"><i data-lucide="save"></i> Save Settings</button>
+      </div>
+      
+      <div class="card">
+        <div class="card-body">
+          <div class="form-grid">
+            <div class="form-group"><label>Business Name</label><input id="s-businessName" type="text"></div>
+            <div class="form-group"><label>Slogan/Tagline</label><input id="s-tagline" type="text"></div>
+            <div class="form-group"><label>Official Phone</label><input id="s-phone" type="text"></div>
+            <div class="form-group"><label>WhatsApp Number</label><input id="s-whatsapp" type="text"></div>
+            <div class="form-group"><label>Official Email Address</label><input id="s-email" type="email"></div>
+            <div class="form-group"><label>Working Hours Description</label><input id="s-hours" type="text"></div>
+            <div class="form-group form-span-2"><label>Dealership Address</label><input id="s-address" type="text"></div>
+          </div>
+          <hr class="section-divider">
+          <div class="page-sub" style="font-weight:700;color:var(--text);margin-bottom:12px;">Social Media Accounts</div>
+          <div class="form-grid">
+            <div class="form-group"><label>Facebook Link</label><input id="s-facebook" type="url"></div>
+            <div class="form-group"><label>Instagram Link</label><input id="s-instagram" type="url"></div>
+            <div class="form-group form-span-2"><label>YouTube Channel Link</label><input id="s-youtube" type="url"></div>
+          </div>
+          <hr class="section-divider">
+          <div class="page-sub" style="font-weight:700;color:var(--text);margin-bottom:12px;">Default EMI Settings</div>
+          <div class="form-grid">
+            <div class="form-group"><label>Interest Rate (%)</label><input id="s-emiRate" type="number" step="0.1"></div>
+            <div class="form-group"><label>Tenure (Months)</label><input id="s-emiTenure" type="number"></div>
+          </div>
+          <hr class="section-divider">
+          <div class="page-sub" style="font-weight:700;color:var(--text);margin-bottom:12px;">SEO Optimization</div>
+          <div class="form-group" style="margin-bottom:12px;"><label>Default Page Title Header</label><input id="s-seoTitle" type="text"></div>
+          <div class="form-group"><label>Default Meta Description (HTML Head)</label><textarea id="s-seoDesc" rows="3"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── Auth Validation ───────────────────────────────────────────────────────────
+const token = localStorage.getItem('adminToken');
+if (!token) { location.href = '/admin/login.html'; }
+
+const HEADERS = { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token };
+
+async function api(method, path, body) {
+  const r = await fetch(path, { method, headers: HEADERS, body: body ? JSON.stringify(body) : undefined });
+  if (r.status === 401) { localStorage.removeItem('adminToken'); location.href = '/admin/login.html'; }
+  return r.json();
+}
+function logout() { localStorage.removeItem('adminToken'); location.href = '/admin/login.html'; }
+
+// ── Toast Utility ─────────────────────────────────────────────────────────────
+function toast(msg, type = 'success') {
+  const container = document.getElementById('toasts');
+  const el = document.createElement('div');
+  el.className = `toast ${type}`;
+  el.innerHTML = `<i data-lucide="${type==='success'?'check':'alert-circle'}" style="width:16px;height:16px"></i> <span>${msg}</span>`;
+  container.prepend(el);
+  lucide.createIcons({ attrs: { class: 'lucide-icon' } });
+  setTimeout(() => el.remove(), 4000);
+}
+
+// ── Sidebar Submenu Toggle ────────────────────────────────────────────────────
+function toggleSubmenu(id) {
+  const sub = document.getElementById(id);
+  sub.classList.toggle('open');
+}
+
+// ── Tab Management inside Modal ───────────────────────────────────────────────
+function selectModalTab(index) {
+  document.querySelectorAll('.modal-tab-btn').forEach((b, i) => b.classList.toggle('active', i === index));
+  document.querySelectorAll('.modal-tab-content').forEach((c, i) => c.classList.toggle('active', i === index));
+}
+
+// ── Panel Switcher ────────────────────────────────────────────────────────────
+let currentPanel = 'dashboard';
+function go(panel) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sb-btn, .sb-sub-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + panel).classList.add('active');
+  
+  const navBtn = document.getElementById('nav-' + panel);
+  if (navBtn) {
+    navBtn.classList.add('active');
+    // Open parent submenu if it is a sub-btn
+    if (navBtn.classList.contains('sb-sub-btn')) {
+      navBtn.closest('.sb-submenu').classList.add('open');
+    }
+  }
+  document.getElementById('topbarTitle').textContent = TITLES[panel] || panel;
+  currentPanel = panel;
+  
+  // Clear batch selection on change
+  selectedIds = [];
+  updateBatchBar();
+  
+  loadPanel(panel);
+}
+
+const TITLES = {
+  dashboard: 'Dashboard Overview',
+  'new-cars': 'New Car Inventory',
+  'used-cars': 'Used Car Inventory',
+  brands: 'Car Brands Profiles',
+  'sell-car-leads': 'Sell Your Car submissions',
+  'leads-testdrive': 'Test Drive Bookings',
+  'leads-brochure': 'Brochure & PDF Price Requests',
+  'leads-requestinfo': 'Car Detail & Info Requests',
+  'leads-usedcar': 'Used Car Inquiries',
+  'service-dotm': 'DOTM Service Submissions',
+  'service-maint': 'Maintenance & Repairs Inquiries',
+  'service-insure': 'Insurance Services Requests',
+  'service-parts': 'Parts & Accessories Requests',
+  'service-other': 'Other Services Requests',
+  'service-general': 'General Inquiries',
+  hero: 'Homepage Slideshow Banners',
+  blog: 'Blogs & Guides',
+  news: 'News Articles & Events',
+  'services-config': 'Services Setup Config',
+  videos: 'Media Hub Videos',
+  settings: 'Site Settings Config'
+};
+
+function loadPanel(p) {
+  if (p === 'dashboard') loadDashboard();
+  else if (p === 'leads') loadLeads();
+  else if (p === 'new-cars') loadNewCars();
+  else if (p === 'used-cars') loadUsedCars();
+  else if (p === 'brands') loadBrands();
+  else if (p === 'sell-car-leads') loadServiceLeads('sellCar');
+  else if (p === 'leads-testdrive') loadServiceLeads('testDrive');
+  else if (p === 'leads-brochure') loadServiceLeads('brochure');
+  else if (p === 'leads-requestinfo') loadServiceLeads('requestInfo');
+  else if (p === 'leads-usedcar') loadServiceLeads('usedCarInquiry');
+  else if (p === 'service-dotm') loadServiceLeads('dotm');
+  else if (p === 'service-maint') loadServiceLeads('maint');
+  else if (p === 'service-insure') loadServiceLeads('insure');
+  else if (p === 'service-parts') loadServiceLeads('parts');
+  else if (p === 'service-other') loadServiceLeads('other');
+  else if (p === 'service-general') loadServiceLeads('general');
+  else if (p === 'hero') loadHero();
+  else if (p === 'blog') loadBlogs();
+  else if (p === 'news') { loadNews(); loadEvents(); }
+  else if (p === 'services-config') loadServices();
+  else if (p === 'videos') loadVideos();
+  else if (p === 'settings') loadSettings();
+}
+
+// Modal closing
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
+
+// ── Batch Selections ──────────────────────────────────────────────────────────
+let selectedIds = [];
+function toggleSelectAll(panelType) {
+  const selectAllChk = document.getElementById(panelType === 'new-cars' ? 'selectAllNewCars' : 'selectAllUsedCars');
+  const checked = selectAllChk.checked;
+  const selector = panelType === 'new-cars' ? '#carsTableBody .row-check' : '#usedCarsTableBody .row-check';
+  selectedIds = [];
+  document.querySelectorAll(selector).forEach(chk => {
+    chk.checked = checked;
+    if (checked) selectedIds.push(parseInt(chk.dataset.id));
+  });
+  updateBatchBar();
+}
+
+function updateRowSelection(chk) {
+  const id = parseInt(chk.dataset.id);
+  if (chk.checked) {
+    if (!selectedIds.includes(id)) selectedIds.push(id);
+  } else {
+    selectedIds = selectedIds.filter(x => x !== id);
+  }
+  updateBatchBar();
+}
+
+function updateBatchBar() {
+  const bar = document.getElementById('batchBar');
+  if (selectedIds.length > 0) {
+    document.getElementById('batchCount').textContent = selectedIds.length;
+    bar.classList.add('show');
+  } else {
+    bar.classList.remove('show');
+  }
+}
+
+async function triggerBatchAction(action) {
+  if (action === 'delete') {
+    if (!confirm(`Delete all ${selectedIds.length} selected items permanently?`)) return;
+    const endpoint = currentPanel === 'new-cars' ? '/api/admin/cars/' : '/api/admin/used-cars/';
+    for (const id of selectedIds) {
+      await api('DELETE', endpoint + id);
+    }
+    toast('Selected items deleted');
+  } else if (action === 'feature') {
+    const endpoint = currentPanel === 'new-cars' ? '/api/admin/cars/' : '/api/admin/used-cars/';
+    const arrayList = currentPanel === 'new-cars' ? allCars : allUsedCars;
+    for (const id of selectedIds) {
+      const match = arrayList.find(x => x.id === id);
+      if (match) {
+        await api('PATCH', endpoint + id, { isFeatured: !match.isFeatured });
+      }
+    }
+    toast('Featured status toggled');
+  }
+  selectedIds = [];
+  updateBatchBar();
+  loadPanel(currentPanel);
+}
+
+// ── Dashboard Overview ────────────────────────────────────────────────────────
+async function loadDashboard() {
+  const data = await api('GET', '/api/admin/analytics');
+  document.getElementById('stat-new-cars').textContent = data.totalNew || 0;
+  document.getElementById('stat-used-cars').textContent = data.totalUsed || 0;
+  document.getElementById('stat-ev').textContent = data.totalEV || 0;
+  document.getElementById('stat-leads').textContent = data.totalLeads || 0;
+  document.getElementById('stat-new-leads').textContent = `+${data.leadsLast7Days || 0} this wk`;
+  
+  document.getElementById('sb-new-car-count').textContent = data.totalNew || 0;
+  document.getElementById('sb-used-car-count').textContent = data.totalUsed || 0;
+
+  // Render recent submissions list
+  const leads = await api('GET', '/api/admin/leads');
+  const sellCarCount = leads.filter(l => l.inquiryType === 'sellCar').length;
+  document.getElementById('badge-sell-car').textContent = sellCarCount;
+  
+  const recent = leads.slice(0, 5);
+  const container = document.getElementById('recentLeads');
+  if (recent.length === 0) {
+    container.innerHTML = '<div class="empty-state">No submissions yet.</div>';
+  } else {
+    container.innerHTML = `<table style="width:100%">
+      <thead><tr><th>Submitter</th><th>Category</th><th>Status</th></tr></thead>
+      <tbody>
+        ${recent.map(l => `<tr>
+          <td><div style="font-weight:600">${l.name}</div><div style="color:var(--text-muted);font-size:11px">${l.phone}</div></td>
+          <td><span class="badge badge-purple">${l.inquiryType}</span></td>
+          <td><span class="badge ${l.status==='NEW'?'badge-blue':l.status==='CONTACTED'?'badge-yellow':'badge-green'}">${l.status}</span></td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+  }
+
+  // Render brand distribution
+  const brandData = document.getElementById('carsByBrand');
+  if (data.topBrands && data.topBrands.length > 0) {
+    const maxVal = Math.max(...data.topBrands.map(x => x[1]));
+    brandData.innerHTML = data.topBrands.map(([brandName, count]) => `
+      <div style="margin-bottom:12px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:4px">
+          <span>${brandName}</span>
+          <span style="color:var(--text-muted)">${count} listings</span>
+        </div>
+        <div style="height:8px;background:#f1f5f9;border-radius:4px;overflow:hidden">
+          <div style="width:${(count/maxVal)*100}%;height:100%;background:var(--primary);border-radius:4px"></div>
+        </div>
+      </div>
+    `).join('');
+  } else {
+    brandData.innerHTML = '<div class="empty-state">No car data.</div>';
+  }
+}
+
+// ── Service & Form Submissions Loader ─────────────────────────────────────────
+let leadsData = [];
+async function loadServiceLeads(inquiryTypeFilter) {
+  leadsData = await api('GET', '/api/admin/leads');
+  const filtered = leadsData.filter(l => {
+    const type = (l.inquiryType || '').toLowerCase().trim();
+    switch (inquiryTypeFilter) {
+      case 'maint':         return type === 'maintenance';
+      case 'dotm':          return type === 'dotm';
+      case 'insure':        return type === 'insurance';
+      case 'parts':         return type === 'parts';
+      case 'other':         return type === 'otherservice';
+      case 'sellCar':       return type === 'sellcar';
+      case 'testDrive':     return type === 'testdrive';
+      case 'brochure':      return type === 'brochure';
+      case 'usedCarInquiry':return type === 'usedcarinquiry';
+      case 'requestInfo':   return type === 'requestinfo';
+      case 'general':
+        const known = ['maintenance','dotm','insurance','parts','otherservice','sellcar','testdrive','brochure','usedcarinquiry','requestinfo'];
+        return !known.includes(type);
+      default: return type === inquiryTypeFilter.toLowerCase();
+    }
+  });
+  
+  if (inquiryTypeFilter === 'sellCar') {
+    renderSellCarSubmissions(filtered);
+  } else {
+    renderServiceSubmissions(inquiryTypeFilter, filtered);
+  }
+}
+
+function renderSellCarSubmissions(submissions) {
+  const tbody = document.getElementById('sellCarLeadsTableBody');
+  if (submissions.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">📋</div>No submissions yet.</div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = submissions.map(s => {
+    const raw = s.rawData || {};
+    return `<tr>
+      <td><div style="font-weight:700">${s.name}</div><div style="color:var(--text-muted);font-size:11px">${s.phone}</div></td>
+      <td><div style="font-weight:600">${raw.year || ''} ${raw.brand || ''} ${raw.model || ''}</div><div style="color:var(--text-muted);font-size:11px">${raw.variant || ''}</div></td>
+      <td><span class="badge badge-purple">${raw.condition || '—'}</span></td>
+      <td>${raw.bluebookRenewal || '—'}</td>
+      <td>
+        <select onchange="updateLeadStatus(${s.id}, this.value)" class="filter-select" style="padding:4px 8px;font-size:12px;">
+          <option ${s.status==='NEW'?'selected':''} value="NEW">New</option>
+          <option ${s.status==='CONTACTED'?'selected':''} value="CONTACTED">Contacted</option>
+          <option ${s.status==='CLOSED'?'selected':''} value="CLOSED">Closed</option>
+        </select>
+      </td>
+      <td>${new Date(s.createdAt).toLocaleDateString()}</td>
+      <td>
+        <button class="btn btn-ghost btn-sm" onclick="viewLeadDetail(${s.id})">Open File</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteLead(${s.id}, 'sellCar')"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
+      </td>
+    </tr>`;
+  }).join('');
+  lucide.createIcons();
+}
+
+function renderServiceSubmissions(type, submissions) {
+  const targetBodyId = {
+    dotm: 'serviceDotmTableBody',
+    maint: 'serviceMaintTableBody',
+    insure: 'serviceInsureTableBody',
+    parts: 'servicePartsTableBody',
+    other: 'serviceOtherTableBody',
+    general: 'serviceGeneralTableBody',
+    testDrive: 'leadsTestdriveTableBody',
+    brochure: 'leadsBrochureTableBody',
+    requestInfo: 'leadsRequestinfoTableBody',
+    usedCarInquiry: 'leadsUsedcarTableBody',
+  }[type];
+
+  const tbody = document.getElementById(targetBodyId);
+  if (!tbody) return;
+  if (submissions.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">📋</div>No submissions yet.</div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = submissions.map(s => {
+    const raw = s.rawData || {};
+    const vehicle = s.carInterest || raw.carModel || raw.brand && raw.model ? `${raw.brand||''} ${raw.model||''}`.trim() : '—';
+    const detail = type === 'testDrive' ? (raw.preferredDate ? `📅 ${raw.preferredDate} ${raw.preferredTime||''}` : '—')
+                 : type === 'brochure' ? (raw.downloadedAt ? new Date(raw.downloadedAt).toLocaleDateString() : '—')
+                 : (s.message ? s.message.substring(0, 55) + (s.message.length > 55 ? '…' : '') : '—');
+    return `<tr>
+      <td><div style="font-weight:700">${s.name}</div></td>
+      <td><div style="font-size:12px;">${s.phone||'—'}</div><div style="color:var(--text-muted);font-size:11px;">${s.email||'—'}</div></td>
+      <td><div style="font-weight:600">${vehicle}</div></td>
+      <td style="max-width:200px;font-size:12px;color:var(--text-muted)">${detail}</td>
+      <td>
+        <select onchange="updateLeadStatus(${s.id}, this.value)" class="filter-select" style="padding:4px 8px;font-size:12px;">
+          <option ${s.status==='NEW'?'selected':''} value="NEW">New</option>
+          <option ${s.status==='CONTACTED'?'selected':''} value="CONTACTED">Contacted</option>
+          <option ${s.status==='CLOSED'?'selected':''} value="CLOSED">Closed</option>
+        </select>
+      </td>
+      <td>${new Date(s.createdAt).toLocaleDateString()}</td>
+      <td>
+        <button class="btn btn-ghost btn-sm" onclick="viewLeadDetail(${s.id})">Open File</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteLead(${s.id}, '${type}')"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
+      </td>
+    </tr>`;
+  }).join('');
+  lucide.createIcons();
+}
+
+async function updateLeadStatus(id, status) {
+  await api('PATCH', `/api/admin/leads/${id}`, { status });
+  toast('Status updated');
+}
+
+async function deleteLead(id, type) {
+  if (!confirm('Remove this submission?')) return;
+  await api('DELETE', `/api/admin/leads/${id}`);
+  toast('Submission deleted');
+  loadServiceLeads(type);
+}
+
+function viewLeadDetail(id) {
+  const lead = leadsData.find(l => l.id === id);
+  if (!lead) return;
+  const raw = lead.rawData || {};
+  
+  // Format keys beautifully
+  const blacklistKeys = ['id', 'timestamp', 'formId', 'formType', 'photos', 'photos_base64'];
+  const dataRows = Object.entries(raw)
+    .filter(([k]) => !blacklistKeys.includes(k))
+    .map(([k, v]) => `
+      <div class="detail-item">
+        <div class="detail-label">${k.replace(/_/g, ' ')}</div>
+        <div class="detail-value">${v || '—'}</div>
+      </div>
+    `).join('');
+
+  const photoGrid = raw.photos && raw.photos.length > 0
+    ? `<div style="margin-top:16px">
+        <div class="detail-label">Uploaded vehicle photos</div>
+        <div class="detail-photo-grid">
+          ${raw.photos.map(p => `<img src="${p}" onclick="window.open('${p}', '_blank')" title="Click to view full image">`).join('')}
+        </div>
+       </div>`
+    : '';
+
+  const bodyHtml = `
+    <div class="submission-detail-card">
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Status</div><div class="detail-value"><span class="badge badge-purple">${lead.status}</span></div></div>
+        <div class="detail-item"><div class="detail-label">Date Submitted</div><div class="detail-value">${new Date(lead.createdAt).toLocaleString()}</div></div>
+        <div class="detail-item"><div class="detail-label">Customer Name</div><div class="detail-value">${lead.name}</div></div>
+        <div class="detail-item"><div class="detail-label">Contact Number</div><div class="detail-value">${lead.phone}</div></div>
+        <div class="detail-item"><div class="detail-label">Email address</div><div class="detail-value">${lead.email || '—'}</div></div>
+        <div class="detail-item"><div class="detail-label">Inquiry category</div><div class="detail-value">${lead.inquiryType || '—'}</div></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:20px;">
+      <div class="card-header"><span class="card-title">Detailed Form Fields</span></div>
+      <div class="card-body">
+        <div class="detail-grid">${dataRows || '<div style="color:var(--text-muted)">No custom attributes</div>'}</div>
+        ${photoGrid}
+      </div>
+    </div>
+  `;
+
+  openModal('Form Submission Details', bodyHtml, () => closeModal());
+  document.getElementById('modalSave').style.display = 'none';
+}
+
+// ── New Cars Inventory ────────────────────────────────────────────────────────
+let allCars = [];
+async function loadNewCars() {
+  allCars = await api('GET', '/api/cars');
+  
+  // Populate brands list for brand filters
+  const brands = [...new Set(allCars.map(c => c.brand))].sort();
+  document.getElementById('carBrandFilter').innerHTML = '<option value="">All Brands</option>' + brands.map(b => `<option value="${b}">${b}</option>`).join('');
+  
+  renderCars(allCars);
+}
+
+function renderCars(cars) {
+  const tbody = document.getElementById('carsTableBody');
+  if (cars.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="8"><div class="empty-state"><div class="empty-icon">🚗</div>No new cars listed yet.</div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = cars.map(c => {
+    const isChecked = selectedIds.includes(c.id) ? 'checked' : '';
+    const imgUrl = c.images && c.images[0] ? c.images[0] : '';
+    const formattedPrice = c.variants && c.variants[0] ? 'Rs. ' + (c.variants[0].price / 100000).toFixed(1) + ' Lakhs' : '—';
+    return `<tr>
+      <td><input type="checkbox" class="row-check table-checkbox" data-id="${c.id}" ${isChecked} onchange="updateRowSelection(this)"></td>
+      <td>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <img src="${imgUrl}" class="table-thumb">
+          <div>
+            <div style="font-weight:700;font-size:14px;">${c.model}</div>
+            <div style="color:var(--text-muted);font-size:11px;">${c.slug}</div>
+          </div>
+        </div>
+      </td>
+      <td><strong>${c.brand}</strong></td>
+      <td>${c.year}</td>
+      <td><span class="badge badge-purple">${c.type}</span></td>
+      <td>${formattedPrice}</td>
+      <td>
+        <span class="badge ${c.isFeatured?'badge-green':'badge-red'}">${c.isFeatured?'Yes':'No'}</span>
+      </td>
+      <td style="display:flex;gap:6px;align-items:center;">
+        <button class="btn btn-ghost btn-sm" onclick="editCar(${c.id})"><i data-lucide="edit-3" style="width:12px;height:12px"></i> Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteCar(${c.id})"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
+      </td>
+    </tr>`;
+  }).join('');
+  lucide.createIcons();
+}
+
+function filterCars() {
+  const q = document.getElementById('carSearch').value.toLowerCase();
+  const b = document.getElementById('carBrandFilter').value;
+  const t = document.getElementById('carTypeFilter').value;
+  const filtered = allCars.filter(c => 
+    (!q || (c.brand + ' ' + c.model).toLowerCase().includes(q)) &&
+    (!b || c.brand === b) &&
+    (!t || c.type === t)
+  );
+  renderCars(filtered);
+}
+
+function openAddCar() {
+  openModalTabs('Add New Car', carFormTabs({}), async () => {
+    const data = readCarFormTabs();
+    const res = await api('POST', '/api/admin/cars', data);
+    if (res.id) { toast('Car listing created!'); closeModal(); loadNewCars(); }
+    else toast(res.error || 'Server error', 'error');
+  });
+}
+
+function editCar(id) {
+  const car = allCars.find(c => c.id === id);
+  if (!car) return;
+  openModalTabs('Edit Car — ' + car.brand + ' ' + car.model, carFormTabs(car), async () => {
+    const data = readCarFormTabs();
+    const res = await api('PATCH', `/api/admin/cars/${id}`, data);
+    if (res.id) { toast('Car specs saved!'); closeModal(); loadNewCars(); }
+    else toast(res.error || 'Server error', 'error');
+  });
+}
+
+async function deleteCar(id) {
+  if (!confirm('Delete this car listing permanently?')) return;
+  await api('DELETE', `/api/admin/cars/${id}`);
+  toast('Car listing removed');
+  loadNewCars();
+}
+
+function openModal(title, html, saveFn) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalTabs').innerHTML = '';
+  document.getElementById('modalBody').innerHTML = html;
+  const saveBtn = document.getElementById('modalSave');
+  saveBtn.style.display = saveFn ? '' : 'none';
+  saveBtn.onclick = saveFn;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function openModalTabs(title, tabSet, saveFn) {
+  document.getElementById('modalTitle').textContent = title;
+  
+  // Set tab buttons
+  document.getElementById('modalTabs').innerHTML = tabSet.tabs.map((t, idx) => `
+    <button class="modal-tab-btn ${idx===0?'active':''}" onclick="selectModalTab(${idx})">${t}</button>
+  `).join('');
+  
+  // Set tab body contents
+  document.getElementById('modalBody').innerHTML = `
+    <div class="tab-pane-container">
+      ${tabSet.contents.map((c, idx) => `<div class="modal-tab-content ${idx===0?'active':''}">${c}</div>`).join('')}
+    </div>
+  `;
+  
+  const saveBtn = document.getElementById('modalSave');
+  saveBtn.style.display = '';
+  saveBtn.onclick = saveFn;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+// ── Multi-Tab Car Specification Editor Form ──────────────────────────────────
+function carFormTabs(c = {}) {
+  // Prep lists for dynamic inputs
+  const imagesList = c.images || [];
+  const colorsList = c.colors || [];
+  const variantsList = c.variants || [];
+
+  return {
+    tabs: ['Basic Specifications', 'Image URLs & Gallery', 'Price Variants', 'Color Options'],
+    contents: [
+      // Tab 1: Basics
+      `<div class="form-grid">
+        <div class="form-group"><label>Brand Name</label><input id="cf-brand" type="text" value="${c.brand||''}" placeholder="e.g. Hyundai"></div>
+        <div class="form-group"><label>Model Name</label><input id="cf-model" type="text" value="${c.model||''}" placeholder="e.g. Creta"></div>
+        <div class="form-group"><label>Model Year</label><input id="cf-year" type="number" value="${c.year||2024}"></div>
+        <div class="form-group"><label>Fuel Type / Engine</label><select id="cf-type">
+          <option ${c.type==='Petrol'?'selected':''}>Petrol</option>
+          <option ${c.type==='Diesel'?'selected':''}>Diesel</option>
+          <option ${c.type==='Electric'?'selected':''}>Electric</option>
+          <option ${c.type==='Hybrid'?'selected':''}>Hybrid</option>
+        </select></div>
+        <div class="form-group"><label>Body Type</label><input id="cf-bodyType" type="text" value="${c.bodyType||''}" placeholder="e.g. SUV, Hatchback"></div>
+        <div class="form-group"><label>Model Badge</label><input id="cf-badge" type="text" value="${c.badge||''}" placeholder="e.g. SX (O)"></div>
+        <div class="form-group"><label>Base Monthly EMI (NPR)</label><input id="cf-baseEMI" type="number" value="${c.baseEMI||''}"></div>
+        <div class="form-group"><label>Budget Range Tier</label><input id="cf-budgetTier" type="text" value="${c.budgetTier||''}" placeholder="e.g. mid"></div>
+        <div class="form-group"><label>Overall Rating (0-5 Stars)</label><input id="cf-rating" type="number" step="0.1" value="${c.rating||''}"></div>
+        <div class="form-group"><label>Expert Evaluation Score</label><input id="cf-expertScore" type="number" step="0.1" value="${c.expertScore||''}"></div>
+        <div class="form-group form-span-2"><label>Catchy Marketing Tagline</label><input id="cf-tagline" type="text" value="${c.tagline||''}"></div>
+        <div class="form-group form-span-2"><label>Car Overview Description</label><textarea id="cf-overview" rows="4">${c.overview||''}</textarea></div>
+      </div>
+      <div style="margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div class="switch-row"><span class="switch-label">Is Electric (EV)</span><label class="toggle"><input type="checkbox" id="cf-isEV" ${c.isEV?'checked':''}><span class="toggle-slider"></span></label></div>
+        <div class="switch-row"><span class="switch-label">Feature on Home</span><label class="toggle"><input type="checkbox" id="cf-isFeatured" ${c.isFeatured?'checked':''}><span class="toggle-slider"></span></label></div>
+        <div class="switch-row"><span class="switch-label">Best Seller Banner</span><label class="toggle"><input type="checkbox" id="cf-isBestSeller" ${c.isBestSeller?'checked':''}><span class="toggle-slider"></span></label></div>
+      </div>`,
+      
+      // Tab 2: Gallery
+      `<div>
+        <div class="detail-label" style="margin-bottom:12px;">Manage Photo URLs (order determines slideshow display)</div>
+        <div id="cf-images-container">
+          ${imagesList.map((img, idx) => `
+            <div class="list-editor-row" id="img-row-${idx}">
+              <input type="text" class="cf-image-url" value="${img}" placeholder="https://image-url.com">
+              <button class="btn btn-danger btn-sm" onclick="document.getElementById('img-row-${idx}').remove()">✕</button>
+            </div>
+          `).join('')}
+        </div>
+        <button class="btn btn-secondary btn-sm" style="margin-top:10px" onclick="addCarImageRow()">+ Add Image URL</button>
+      </div>`,
+
+      // Tab 3: Variants
+      `<div>
+        <div class="detail-label" style="margin-bottom:12px;">Add/Edit Engine Variants & Showroom Price</div>
+        <div id="cf-variants-container">
+          ${variantsList.map((v, idx) => `
+            <div class="list-editor-row" id="variant-row-${idx}">
+              <input type="text" class="cf-variant-name" value="${v.name||''}" placeholder="Variant name (e.g. S+ Diesel)">
+              <input type="number" class="cf-variant-price" value="${v.price||''}" placeholder="Ex-showroom Price (NPR)">
+              <button class="btn btn-danger btn-sm" onclick="document.getElementById('variant-row-${idx}').remove()">✕</button>
+            </div>
+          `).join('')}
+        </div>
+        <button class="btn btn-secondary btn-sm" style="margin-top:10px" onclick="addCarVariantRow()">+ Add Variant</button>
+      </div>`,
+
+      // Tab 4: Colors
+      `<div>
+        <div class="detail-label" style="margin-bottom:12px;">Available Exterior Color Options</div>
+        <div id="cf-colors-container">
+          ${colorsList.map((col, idx) => `
+            <div class="list-editor-row" id="color-row-${idx}">
+              <input type="text" class="cf-color-name" value="${col.name||''}" placeholder="Color name (e.g. Polar White)">
+              <input type="color" class="cf-color-hex" value="${col.hex||'#ffffff'}" oninput="this.nextElementSibling.value = this.value">
+              <input type="text" style="max-width:90px" value="${col.hex||'#ffffff'}" oninput="this.previousElementSibling.value = this.value">
+              <button class="btn btn-danger btn-sm" onclick="document.getElementById('color-row-${idx}').remove()">✕</button>
+            </div>
+          `).join('')}
+        </div>
+        <button class="btn btn-secondary btn-sm" style="margin-top:10px" onclick="addCarColorRow()">+ Add Color</button>
+      </div>`
+    ]
+  };
+}
+
+function addCarImageRow() {
+  const container = document.getElementById('cf-images-container');
+  const idx = container.children.length + '-' + Date.now();
+  container.insertAdjacentHTML('beforeend', `
+    <div class="list-editor-row" id="img-row-${idx}">
+      <input type="text" class="cf-image-url" placeholder="https://image-url.com">
+      <button class="btn btn-danger btn-sm" onclick="document.getElementById('img-row-${idx}').remove()">✕</button>
+    </div>
+  `);
+}
+
+function addCarVariantRow() {
+  const container = document.getElementById('cf-variants-container');
+  const idx = container.children.length + '-' + Date.now();
+  container.insertAdjacentHTML('beforeend', `
+    <div class="list-editor-row" id="variant-row-${idx}">
+      <input type="text" class="cf-variant-name" placeholder="Variant name (e.g. S+ Diesel)">
+      <input type="number" class="cf-variant-price" placeholder="Ex-showroom Price (NPR)">
+      <button class="btn btn-danger btn-sm" onclick="document.getElementById('variant-row-${idx}').remove()">✕</button>
+    </div>
+  `);
+}
+
+function addCarColorRow() {
+  const container = document.getElementById('cf-colors-container');
+  const idx = container.children.length + '-' + Date.now();
+  container.insertAdjacentHTML('beforeend', `
+    <div class="list-editor-row" id="color-row-${idx}">
+      <input type="text" class="cf-color-name" placeholder="Color name (e.g. Polar White)">
+      <input type="color" class="cf-color-hex" value="#3b82f6" oninput="this.nextElementSibling.value = this.value">
+      <input type="text" style="max-width:90px" value="#3b82f6" oninput="this.previousElementSibling.value = this.value">
+      <button class="btn btn-danger btn-sm" onclick="document.getElementById('color-row-${idx}').remove()">✕</button>
+    </div>
+  `);
+}
+
+// ── Used Cars Inventory ───────────────────────────────────────────────────────
+let allUsedCars = [];
+async function loadUsedCars() {
+  allUsedCars = await api('GET', '/api/admin/inventory/used');
+  renderUsedCars(allUsedCars);
+}
+
+function renderUsedCars(cars) {
+  const tbody = document.getElementById('usedCarsTableBody');
+  if (cars.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="8"><div class="empty-state"><div class="empty-icon">🚗</div>No used cars listed.</div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = cars.map(c => {
+    const isChecked = selectedIds.includes(c.id) ? 'checked' : '';
+    const imgUrl = c.images && c.images[0] ? c.images[0] : '';
+    return `<tr>
+      <td><input type="checkbox" class="row-check table-checkbox" data-id="${c.id}" ${isChecked} onchange="updateRowSelection(this)"></td>
+      <td>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <img src="${imgUrl}" class="table-thumb">
+          <div>
+            <div style="font-weight:700;font-size:14px;">${c.brand} ${c.model}</div>
+            <div style="color:var(--text-muted);font-size:11px;">${c.slug}</div>
+          </div>
+        </div>
+      </td>
+      <td>${c.year}</td>
+      <td><strong>${c.price}</strong></td>
+      <td>${c.mileage || '—'} km</td>
+      <td>${c.location || '—'}</td>
+      <td>
+        <span class="badge badge-green">${c.condition || 'Good'}</span>
+      </td>
+      <td style="display:flex;gap:6px;align-items:center;">
+        <button class="btn btn-ghost btn-sm" onclick="editUsedCar(${c.id})"><i data-lucide="edit-3" style="width:12px;height:12px"></i> Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteUsedCar(${c.id})"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
+      </td>
+    </tr>`;
+  }).join('');
+  lucide.createIcons();
+}
+
+function openAddUsedCar() {
+  openModal('Add Used Car Listing', usedCarForm({}), async () => {
+    const data = readUsedCarForm();
+    const res = await api('POST', '/api/admin/used-cars', data);
+    if (res.id) { toast('Used Car listing added!'); closeModal(); loadUsedCars(); }
+    else toast(res.error || 'Server error', 'error');
+  });
+}
+
+function editUsedCar(id) {
+  const car = allUsedCars.find(c => c.id === id);
+  if (!car) return;
+  openModal('Edit Used Car Listing', usedCarForm(car), async () => {
+    const data = readUsedCarForm();
+    const res = await api('PATCH', `/api/admin/used-cars/${id}`, data);
+    if (res.id) { toast('Changes saved!'); closeModal(); loadUsedCars(); }
+    else toast(res.error || 'Server error', 'error');
+  });
+}
+
+async function deleteUsedCar(id) {
+  if (!confirm('Remove this used car listing?')) return;
+  await api('DELETE', `/api/admin/used-cars/${id}`);
+  toast('Listing removed');
+  loadUsedCars();
+}
+
+function usedCarForm(c = {}) {
+  return `<div class="form-grid">
+    <div class="form-group"><label>Make / Brand</label><input id="uf-brand" type="text" value="${c.brand||''}" placeholder="e.g. Maruti Suzuki"></div>
+    <div class="form-group"><label>Model Name</label><input id="uf-model" type="text" value="${c.model||''}" placeholder="e.g. Swift"></div>
+    <div class="form-group"><label>Year of Manufacture</label><input id="uf-year" type="number" value="${c.year||2020}"></div>
+    <div class="form-group"><label>Resale Listing Price</label><input id="uf-price" type="text" value="${c.price||''}" placeholder="e.g. Rs. 14.5 Lakhs"></div>
+    <div class="form-group"><label>Total Mileage (km)</label><input id="uf-mileage" type="text" value="${c.mileage||''}" placeholder="e.g. 45,000"></div>
+    <div class="form-group"><label>Fuel Type</label><select id="uf-fuelType">
+      <option ${c.fuelType==='Petrol'?'selected':''}>Petrol</option>
+      <option ${c.fuelType==='Diesel'?'selected':''}>Diesel</option>
+      <option ${c.fuelType==='Hybrid'?'selected':''}>Hybrid</option>
+      <option ${c.fuelType==='Electric'?'selected':''}>Electric</option>
+    </select></div>
+    <div class="form-group"><label>Transmission Type</label><select id="uf-transmission">
+      <option ${c.transmission==='Manual'?'selected':''}>Manual</option>
+      <option ${c.transmission==='Automatic'?'selected':''}>Automatic</option>
+    </select></div>
+    <div class="form-group"><label>Vehicle Condition Rating</label><input id="uf-condition" type="text" value="${c.condition||''}" placeholder="e.g. Excellent / Like New"></div>
+    <div class="form-group form-span-2"><label>Current Location (City/Area)</label><input id="uf-location" type="text" value="${c.location||''}" placeholder="e.g. Nayabazar, Kathmandu"></div>
+    <div class="form-group form-span-2"><label>Cover Picture URL</label><input id="uf-image" type="text" value="${(c.images && c.images[0])||''}" placeholder="https://image-url.com"></div>
+  </div>`;
+}
+
+function readUsedCarForm() {
+  const brand = document.getElementById('uf-brand').value;
+  const model = document.getElementById('uf-model').value;
+  const year = document.getElementById('uf-year').value;
+  return {
+    brand, model, year: parseInt(year),
+    slug: slugify(brand + '-' + model + '-' + year + '-' + Date.now()),
+    price: document.getElementById('uf-price').value,
+    mileage: document.getElementById('uf-mileage').value,
+    fuelType: document.getElementById('uf-fuelType').value,
+    transmission: document.getElementById('uf-transmission').value,
+    condition: document.getElementById('uf-condition').value,
+    location: document.getElementById('uf-location').value,
+    images: [document.getElementById('uf-image').value].filter(Boolean),
+  };
+}
+
+// ── Brands Profiles ───────────────────────────────────────────────────────────
+let allBrands = [];
+async function loadBrands() {
+  const data = await api('GET', '/api/admin/site/brands');
+  allBrands = data.items || [];
+  renderBrands(allBrands);
+}
+
+function renderBrands(brands) {
+  const tbody = document.getElementById('brandsTableBody');
+  if (brands.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6"><div class="empty-state"><div class="empty-icon">🏷️</div>No brands listed.</div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = brands.map(b => `<tr>
+    <td>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:36px;height:36px;border-radius:6px;background:${b.bgColor||'#f1f5f9'};display:flex;align-items:center;justify-content:center;font-weight:700;color:${b.color||'#000'};border:1px solid var(--border);">
+          ${b.name.substring(0, 2)}
+        </div>
+        <div>
+          <div style="font-weight:700">${b.name}</div>
+          <div style="color:var(--text-muted);font-size:11px">${b.slug}</div>
+        </div>
+      </div>
+    </td>
+    <td>${b.fullName || '—'}</td>
+    <td>${b.country || '—'}</td>
+    <td>${b.nepalDealer || '—'}</td>
+    <td><span class="badge badge-yellow">★ ${b.founded ? 'Premium' : 'Standard'}</span></td>
+    <td style="display:flex;gap:6px;">
+      <button class="btn btn-ghost btn-sm" onclick="editBrand('${b.slug}')"><i data-lucide="edit-3" style="width:12px;height:12px"></i> Edit</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteBrand('${b.slug}')"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
+    </td>
+  </tr>`).join('');
+  lucide.createIcons();
+}
+
+function openAddBrand() {
+  openModal('Add New Brand Profile', brandForm({}), async () => {
+    const data = readBrandForm();
+    const items = [...allBrands, data];
+    const res = await api('POST', '/api/admin/site/brands', { items });
+    if (res.success) { toast('Brand profile added!'); closeModal(); loadBrands(); }
+    else toast('Failed to save profile', 'error');
+  });
+}
+
+function editBrand(slug) {
+  const brand = allBrands.find(b => b.slug === slug);
+  if (!brand) return;
+  openModal('Edit Brand Profile — ' + brand.name, brandForm(brand), async () => {
+    const data = readBrandForm();
+    const items = allBrands.map(b => b.slug === slug ? { ...b, ...data } : b);
+    const res = await api('POST', '/api/admin/site/brands', { items });
+    if (res.success) { toast('Brand profile updated!'); closeModal(); loadBrands(); }
+    else toast('Failed to update profile', 'error');
+  });
+}
+
+async function deleteBrand(slug) {
+  if (!confirm('Remove this brand profile completely?')) return;
+  const items = allBrands.filter(b => b.slug !== slug);
+  await api('POST', '/api/admin/site/brands', { items });
+  toast('Brand profile deleted');
+  loadBrands();
+}
+
+function brandForm(b = {}) {
+  return `<div class="form-grid">
+    <div class="form-group"><label>Unique URL Slug</label><input id="bf-slug" type="text" value="${b.slug||''}" placeholder="e.g. hyundai"></div>
+    <div class="form-group"><label>Display Name</label><input id="bf-name" type="text" value="${b.name||''}" placeholder="e.g. Hyundai"></div>
+    <div class="form-group form-span-2"><label>Full Corporate Name</label><input id="bf-fullName" type="text" value="${b.fullName||''}" placeholder="e.g. Hyundai Motor Company"></div>
+    <div class="form-group"><label>Origin Country</label><input id="bf-country" type="text" value="${b.country||''}"></div>
+    <div class="form-group"><label>Founded Year</label><input id="bf-founded" type="number" value="${b.founded||''}"></div>
+    <div class="form-group"><label>Official Nepal Distributer</label><input id="bf-dealer" type="text" value="${b.nepalDealer||''}"></div>
+    <div class="form-group"><label>Dealer Hotline Number</label><input id="bf-phone" type="text" value="${b.dealerPhone||''}"></div>
+    <div class="form-group"><label>Brand Accent Color</label><input id="bf-color" type="color" value="${b.color||'#4f46e5'}"></div>
+    <div class="form-group"><label>Logo BG Color</label><input id="bf-bgColor" type="color" value="${b.bgColor||'#f1f5f9'}"></div>
+    <div class="form-group form-span-2"><label>Brand Slogan/Tagline</label><input id="bf-tagline" type="text" value="${b.tagline||''}"></div>
+    <div class="form-group form-span-2"><label>Banner Hero Image URL</label><input id="bf-heroImage" type="text" value="${b.heroImage||''}"></div>
+    <div class="form-group form-span-2"><label>Brand Overview Summary</label><textarea id="bf-overview" rows="3">${b.overview||''}</textarea></div>
+  </div>`;
+}
+
+function readBrandForm() {
+  return {
+    slug: document.getElementById('bf-slug').value,
+    name: document.getElementById('bf-name').value,
+    fullName: document.getElementById('bf-fullName').value,
+    country: document.getElementById('bf-country').value,
+    founded: parseInt(document.getElementById('bf-founded').value) || null,
+    nepalDealer: document.getElementById('bf-dealer').value,
+    dealerPhone: document.getElementById('bf-phone').value,
+    color: document.getElementById('bf-color').value,
+    bgColor: document.getElementById('bf-bgColor').value,
+    tagline: document.getElementById('bf-tagline').value,
+    heroImage: document.getElementById('bf-heroImage').value,
+    overview: document.getElementById('bf-overview').value,
+  };
+}
+
+// ── Hero slideshow banners ────────────────────────────────────────────────────
+let heroSlides = [];
+async function loadHero() {
+  const data = await api('GET', '/api/admin/site/homepage');
+  heroSlides = data.heroSlides || [];
+  renderHeroSlides();
+}
+
+function renderHeroSlides() {
+  document.getElementById('heroSlidesContainer').innerHTML = heroSlides.map((s, idx) => `
+    <div class="card" id="slide-card-${idx}">
+      <div class="card-header">
+        <span class="card-title">Slide Banner #${idx + 1}: ${s.title || 'Draft Banner'}</span>
+        <button class="btn btn-danger btn-sm" onclick="removeHeroSlideCard(${idx})"><i data-lucide="trash-2" style="width:12px;height:12px"></i> Delete Slide</button>
+      </div>
+      <div class="card-body">
+        <div class="form-grid">
+          <div class="form-group"><label>Banner Main Title</label><input type="text" value="${s.title||''}" oninput="heroSlides[${idx}].title=this.value"></div>
+          <div class="form-group"><label>Top Accent Badge</label><input type="text" value="${s.badge||''}" oninput="heroSlides[${idx}].badge=this.value"></div>
+          <div class="form-group form-span-2"><label>Subtitle Caption</label><input type="text" value="${s.sub||''}" oninput="heroSlides[${idx}].sub=this.value"></div>
+          <div class="form-group form-span-2"><label>Background Image URL</label><input type="text" value="${s.bg||''}" oninput="heroSlides[${idx}].bg=this.value"></div>
+          <div class="form-group"><label>Offer Label (Optional)</label><input type="text" value="${s.offerLabel||''}" oninput="heroSlides[${idx}].offerLabel=this.value"></div>
+          <div class="form-group"><label>Offer Detail Text</label><input type="text" value="${s.offerVal||''}" oninput="heroSlides[${idx}].offerVal=this.value"></div>
+          <div class="form-group form-span-2"><label>Model Link Slug (on click)</label><input type="text" value="${s.slug||''}" oninput="heroSlides[${idx}].slug=this.value" placeholder="e.g. hyundai-creta"></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  lucide.createIcons();
+}
+
+function addHeroSlide() {
+  heroSlides.push({ title: 'New Slide Banner', badge: '', sub: '', bg: '', offerLabel: '', offerVal: '', slug: '' });
+  renderHeroSlides();
+}
+
+function removeHeroSlideCard(i) {
+  heroSlides.splice(i, 1);
+  renderHeroSlides();
+}
+
+async function saveHeroSlides() {
+  const currentData = await api('GET', '/api/admin/site/homepage');
+  const res = await api('POST', '/api/admin/site/homepage', { ...currentData, heroSlides });
+  if (res.success) toast('Slideshow carousel updated!');
+  else toast('Failed to update slideshow', 'error');
+}
+
+// ── Blogs and Guides editor ───────────────────────────────────────────────────
+let allBlogs = [];
+async function loadBlogs() {
+  allBlogs = await api('GET', '/api/admin/blogs');
+  renderBlogs(allBlogs);
+}
+
+function renderBlogs(blogs) {
+  const tbody = document.getElementById('blogsTableBody');
+  if (blogs.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6"><div class="empty-state"><div class="empty-icon">📋</div>No blog posts yet.</div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = blogs.map(b => `<tr>
+    <td><div style="font-weight:700">${b.title}</div></td>
+    <td><span class="badge badge-purple">${b.category}</span></td>
+    <td>${b.author || '—'}</td>
+    <td>
+      <span class="badge ${b.isPublished?'badge-green':'badge-yellow'}">${b.isPublished?'Published':'Draft'}</span>
+    </td>
+    <td>${new Date(b.createdAt).toLocaleDateString()}</td>
+    <td style="display:flex;gap:6px;">
+      <button class="btn btn-ghost btn-sm" onclick="editBlog(${b.id})"><i data-lucide="edit-3" style="width:12px;height:12px"></i> Edit</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteBlog(${b.id})"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
+    </td>
+  </tr>`).join('');
+  lucide.createIcons();
+}
+
+function openAddBlog() {
+  openModal('Write New Article / Guide', blogForm({}), async () => {
+    const data = readBlogForm();
+    const res = await api('POST', '/api/admin/blogs', data);
+    if (res.id) { toast('Article posted!'); closeModal(); loadBlogs(); }
+    else toast(res.error || 'Server error', 'error');
+  });
+}
+
+function editBlog(id) {
+  const post = allBlogs.find(b => b.id === id);
+  if (!post) return;
+  openModal('Edit Article: ' + post.title, blogForm(post), async () => {
+    const data = readBlogForm();
+    const res = await api('PATCH', `/api/admin/blogs/${id}`, data);
+    if (res.id) { toast('Article changes saved!'); closeModal(); loadBlogs(); }
+    else toast(res.error || 'Server error', 'error');
+  });
+}
+
+async function deleteBlog(id) {
+  if (!confirm('Remove this blog post permanently?')) return;
+  await api('DELETE', `/api/admin/blogs/${id}`);
+  toast('Post removed');
+  loadBlogs();
+}
+
+function blogForm(b = {}) {
+  return `<div class="form-grid">
+    <div class="form-group form-span-2"><label>Article Title</label><input id="bl-title" type="text" value="${b.title||''}"></div>
+    <div class="form-group"><label>Category Section</label><select id="bl-category">
+      <option ${b.category==='guide'?'selected':''} value="guide">Buying Guide</option>
+      <option ${b.category==='maintenance'?'selected':''} value="maintenance">Maintenance Tips</option>
+      <option ${b.category==='awards'?'selected':''} value="awards">Industry Awards</option>
+    </select></div>
+    <div class="form-group"><label>Author Name</label><input id="bl-author" type="text" value="${b.author||''}" placeholder="e.g. AutoViindu Editorial"></div>
+    <div class="form-group form-span-2"><label>Cover Banner Image URL</label><input id="bl-cover" type="text" value="${b.coverImage||''}"></div>
+    <div class="form-group form-span-2"><label>Short Excerpt (Summary)</label><textarea id="bl-excerpt" rows="2">${b.excerpt||''}</textarea></div>
+    <div class="form-group form-span-2"><label>Full Content (Markdown or HTML)</label><textarea id="bl-content" rows="8">${b.content||''}</textarea></div>
+  </div>
+  <div style="margin-top:16px;">
+    <div class="switch-row" style="max-width:240px;"><span class="switch-label">Publish publicly</span><label class="toggle"><input type="checkbox" id="bl-pub" ${b.isPublished?'checked':''}><span class="toggle-slider"></span></label></div>
+  </div>`;
+}
+
+function readBlogForm() {
+  const title = document.getElementById('bl-title').value;
+  const isPub = document.getElementById('bl-pub').checked;
+  return {
+    title, category: document.getElementById('bl-category').value,
+    author: document.getElementById('bl-author').value,
+    coverImage: document.getElementById('bl-cover').value,
+    excerpt: document.getElementById('bl-excerpt').value,
+    content: document.getElementById('bl-content').value,
+    isPublished: isPub,
+    slug: slugify(title) + '-' + Date.now(),
+    publishedAt: isPub ? new Date().toISOString() : null
+  };
+}
+
+// ── News posts & Calendar Events ──────────────────────────────────────────────
+let allNews = [];
+async function loadNews() {
+  allNews = await api('GET', '/api/admin/news');
+  const tbody = document.getElementById('newsTableBody');
+  if (allNews.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="5"><div class="empty-state"><div class="empty-icon">📰</div>No news posts yet.</div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = allNews.map(n => `<tr>
+    <td><div style="font-weight:700">${n.title}</div></td>
+    <td><span class="badge badge-purple">${n.category}</span></td>
+    <td>
+      <span class="badge ${n.isPublished?'badge-green':'badge-yellow'}">${n.isPublished?'Published':'Draft'}</span>
+    </td>
+    <td>${new Date(n.createdAt).toLocaleDateString()}</td>
+    <td style="display:flex;gap:6px;">
+      <button class="btn btn-ghost btn-sm" onclick="editNews(${n.id})"><i data-lucide="edit-3" style="width:12px;height:12px"></i> Edit</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteNews(${n.id})"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
+    </td>
+  </tr>`).join('');
+  lucide.createIcons();
+}
+
+function openAddNews() {
+  openModal('Add News Update', newsForm({}), async () => {
+    const data = readNewsForm();
+    const res = await api('POST', '/api/admin/news', data);
+    if (res.id) { toast('News published!'); closeModal(); loadNews(); }
+    else toast(res.error || 'Server error', 'error');
+  });
+}
+
+function editNews(id) {
+  const post = allNews.find(n => n.id === id);
+  if (!post) return;
+  openModal('Edit News Update', newsForm(post), async () => {
+    const data = readNewsForm();
+    const res = await api('PATCH', `/api/admin/news/${id}`, data);
+    if (res.id) { toast('News updated!'); closeModal(); loadNews(); }
+    else toast(res.error || 'Server error', 'error');
+  });
+}
+
+async function deleteNews(id) {
+  if (!confirm('Delete this news post?')) return;
+  await api('DELETE', `/api/admin/news/${id}`);
+  toast('Post removed');
+  loadNews();
+}
+
+function newsForm(n = {}) {
+  return `<div class="form-grid">
+    <div class="form-group form-span-2"><label>Headline</label><input id="nf-title" type="text" value="${n.title||''}"></div>
+    <div class="form-group"><label>News Category</label><select id="nf-category">
+      <option ${n.category==='launch'?'selected':''} value="launch">Automotive Launches</option>
+      <option ${n.category==='policy'?'selected':''} value="policy">Government Policy</option>
+      <option ${n.category==='market'?'selected':''} value="market">Market Trends</option>
+      <option ${n.category==='infrastructure'?'selected':''} value="infrastructure">Infrastructure</option>
+      <option ${n.category==='car awards'?'selected':''} value="car awards">Awards & Reviews</option>
+      <option ${n.category==='buying tips'?'selected':''} value="buying tips">Buying Tips</option>
+    </select></div>
+    <div class="form-group"><label>Reporter/Author</label><input id="nf-author" type="text" value="${n.author||''}"></div>
+    <div class="form-group form-span-2"><label>Cover Image URL</label><input id="nf-cover" type="text" value="${n.coverImage||''}"></div>
+    <div class="form-group form-span-2"><label>Short Excerpt</label><textarea id="nf-excerpt" rows="2">${n.excerpt||''}</textarea></div>
+    <div class="form-group form-span-2"><label>Full News Content</label><textarea id="nf-content" rows="6">${n.content||''}</textarea></div>
+  </div>
+  <div style="margin-top:16px;">
+    <div class="switch-row" style="max-width:240px;"><span class="switch-label">Publish publicly</span><label class="toggle"><input type="checkbox" id="nf-pub" ${n.isPublished?'checked':''}><span class="toggle-slider"></span></label></div>
+  </div>`;
+}
+
+function readNewsForm() {
+  const title = document.getElementById('nf-title').value;
+  const isPub = document.getElementById('nf-pub').checked;
+  return {
+    title, category: document.getElementById('nf-category').value,
+    author: document.getElementById('nf-author').value,
+    coverImage: document.getElementById('nf-cover').value,
+    excerpt: document.getElementById('nf-excerpt').value,
+    content: document.getElementById('nf-content').value,
+    isPublished: isPub,
+    slug: slugify(title) + '-' + Date.now(),
+    publishedAt: isPub ? new Date().toISOString() : null
+  };
+}
+
+// ── Calendar Events List (Stored inside SiteContent) ──────────────────────────
+let eventsData = { upcoming: [], past: [], categories: {} };
+async function loadEvents() {
+  eventsData = await api('GET', '/api/admin/site/events') || { upcoming: [], past: [], categories: {} };
+  const allEvents = [...(eventsData.upcoming||[]), ...(eventsData.past||[])];
+  
+  const tbody = document.getElementById('eventsTableBody');
+  if (allEvents.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="5"><div class="empty-state"><div class="empty-icon">📅</div>No events scheduled.</div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = allEvents.map((e, idx) => `<tr>
+    <td><div style="font-weight:700">${e.title}</div></td>
+    <td>${e.date}</td>
+    <td>${e.location}</td>
+    <td><span class="badge badge-purple">${e.category || 'General'}</span></td>
+    <td>
+      <button class="btn btn-danger btn-sm" onclick="deleteEvent(${idx})"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
+    </td>
+  </tr>`).join('');
+  lucide.createIcons();
+}
+
+function openAddEvent() {
+  openModal('Schedule New Event', `<div class="form-grid">
+    <div class="form-group form-span-2"><label>Event Title</label><input id="ef-title" type="text" placeholder="e.g. EV Test Drive Expo 2026"></div>
+    <div class="form-group"><label>Event Date & Timing</label><input id="ef-date" type="text" placeholder="e.g. March 14, 2026 at 10 AM"></div>
+    <div class="form-group"><label>Venue / Location</label><input id="ef-location" type="text" placeholder="e.g. Bhrikutimandap, Kathmandu"></div>
+    <div class="form-group form-span-2"><label>Description Details</label><textarea id="ef-desc" rows="3"></textarea></div>
+  </div>`, async () => {
+    const ev = {
+      title: document.getElementById('ef-title').value,
+      date: document.getElementById('ef-date').value,
+      location: document.getElementById('ef-location').value,
+      description: document.getElementById('ef-desc').value,
+      category: 'launch', published: true
+    };
+    eventsData.upcoming = [...(eventsData.upcoming||[]), ev];
+    const res = await api('POST', '/api/admin/site/events', eventsData);
+    if (res.success) { toast('Event added to calendar!'); closeModal(); loadEvents(); }
+    else toast('Failed to add event', 'error');
+  });
+}
+
+async function deleteEvent(idx) {
+  if (!confirm('Remove this event listing?')) return;
+  const upcoming = eventsData.upcoming || [], past = eventsData.past || [];
+  if (idx < upcoming.length) {
+    upcoming.splice(idx, 1);
+  } else {
+    past.splice(idx - upcoming.length, 1);
+  }
+  eventsData.upcoming = upcoming;
+  eventsData.past = past;
+  await api('POST', '/api/admin/site/events', eventsData);
+  toast('Event removed');
+  loadEvents();
+}
+
+function switchNewsTab(tab) {
+  document.getElementById('news-tab').style.display = tab === 'news' ? '' : 'none';
+  document.getElementById('events-tab').style.display = tab === 'events' ? '' : 'none';
+  document.getElementById('news-tab-btn').className = 'btn ' + (tab === 'news' ? 'btn-primary' : 'btn-ghost');
+  document.getElementById('events-tab-btn').className = 'btn ' + (tab === 'events' ? 'btn-primary' : 'btn-ghost');
+}
+
+// ── Site Services configurations ──────────────────────────────────────────────
+let servicesData = { categories: [] };
+async function loadServices() {
+  servicesData = await api('GET', '/api/admin/site/services') || { categories: [] };
+  
+  const container = document.getElementById('servicesContainer');
+  container.innerHTML = (servicesData.categories || []).map((cat, idx) => `
+    <div class="card" style="margin-bottom:20px;">
+      <div class="card-header">
+        <span class="card-title">${cat.icon||'🔧'} ${cat.name || 'Service Group'}</span>
+        <button class="btn btn-danger btn-sm" onclick="removeServiceCategory(${idx})"><i data-lucide="trash-2" style="width:12px;height:12px"></i> Remove Category</button>
+      </div>
+      <div class="card-body">
+        <div class="form-grid" style="margin-bottom:16px;">
+          <div class="form-group"><label>Category Title</label><input type="text" value="${cat.name||''}" oninput="servicesData.categories[${idx}].name=this.value"></div>
+          <div class="form-group"><label>Icon (Emoji)</label><input type="text" value="${cat.icon||''}" oninput="servicesData.categories[${idx}].icon=this.value" style="max-width:90px"></div>
+          <div class="form-group"><label>Brand Accent Color</label><input type="color" value="${cat.color||'#000000'}" oninput="servicesData.categories[${idx}].color=this.value"></div>
+          <div class="form-group"><label>Background color</label><input type="color" value="${cat.bg||'#ffffff'}" oninput="servicesData.categories[${idx}].bg=this.value"></div>
+        </div>
+        <div class="form-group">
+          <label>Services list (one item per line)</label>
+          <textarea rows="4" oninput="servicesData.categories[${idx}].items = this.value.split('\\n').filter(Boolean)">${(cat.items||[]).join('\n')}</textarea>
+        </div>
+      </div>
+    </div>
+  `).join('') + `
+    <button class="btn btn-secondary" onclick="addServiceCategory()">+ Add Service Category</button>
+  `;
+  lucide.createIcons();
+}
+
+function addServiceCategory() {
+  servicesData.categories.push({ id: 'cat-' + Date.now(), name: 'New Service Group', icon: '✨', color: '#4f46e5', bg: '#f1f5f9', items: [] });
+  loadServices();
+}
+
+function removeServiceCategory(idx) {
+  servicesData.categories.splice(idx, 1);
+  loadServices();
+}
+
+async function saveServices() {
+  const res = await api('POST', '/api/admin/site/services', servicesData);
+  if (res.success) toast('Service lists updated!');
+  else toast('Failed to save service config', 'error');
+}
+
+// ── Media Hub Video reviews ───────────────────────────────────────────────────
+let videosData = { items: [] };
+async function loadVideos() {
+  videosData = await api('GET', '/api/admin/site/videos') || { items: [] };
+  
+  const container = document.getElementById('videosContainer');
+  container.innerHTML = (videosData.items || []).map((v, idx) => `
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">${v.title || 'Video Review'}</span>
+        <button class="btn btn-danger btn-sm" onclick="removeVideoCardItem(${idx})"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
+      </div>
+      <div class="card-body">
+        <div class="form-grid">
+          <div class="form-group form-span-2"><label>Video Title Headline</label><input type="text" value="${v.title||''}" oninput="videosData.items[${idx}].title=this.value"></div>
+          <div class="form-group"><label>YouTube Video ID</label><input type="text" value="${v.id||''}" oninput="videosData.items[${idx}].id=this.value" placeholder="e.g. dQw4w9WgXcQ"></div>
+          <div class="form-group"><label>Brand Model Tag</label><input type="text" value="${v.brand||''}" oninput="videosData.items[${idx}].brand=this.value" placeholder="e.g. Suzuki"></div>
+          <div class="form-group"><label>Video Category</label><input type="text" value="${v.category||'Reviews'}" oninput="videosData.items[${idx}].category=this.value"></div>
+          <div class="form-group"><label>Featured on Center</label><select onchange="videosData.items[${idx}].featured = this.value === 'true'" class="filter-select">
+            <option value="false" ${!v.featured?'selected':''}>No</option>
+            <option value="true" ${v.featured?'selected':''}>Yes</option>
+          </select></div>
+          <div class="form-group form-span-2"><label>Short Description Caption</label><input type="text" value="${v.sub||''}" oninput="videosData.items[${idx}].sub=this.value"></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  lucide.createIcons();
+}
+
+function addVideoCard() {
+  videosData.items.push({ id: '', title: 'New Video Review', brand: '', category: 'Reviews', sub: '', featured: false });
+  loadVideos();
+}
+
+function removeVideoCardItem(idx) {
+  videosData.items.splice(idx, 1);
+  loadVideos();
+}
+
+async function saveVideos() {
+  const res = await api('POST', '/api/admin/site/videos', videosData);
+  if (res.success) toast('Media hub videos updated!');
+  else toast('Failed to save videos', 'error');
+}
+
+// ── Site Configurations & Settings ───────────────────────────────────────────
+async function loadSettings() {
+  const s = await api('GET', '/api/admin/site/settings');
+  if (!s) return;
+  
+  document.getElementById('s-businessName').value = s.businessName || '';
+  document.getElementById('s-tagline').value = s.tagline || '';
+  document.getElementById('s-phone').value = s.phone || '';
+  document.getElementById('s-whatsapp').value = s.whatsapp || '';
+  document.getElementById('s-email').value = s.email || '';
+  document.getElementById('s-hours').value = s.hours || '';
+  document.getElementById('s-address').value = s.address || '';
+  
+  document.getElementById('s-facebook').value = (s.social && s.social.facebook) || '';
+  document.getElementById('s-instagram').value = (s.social && s.social.instagram) || '';
+  document.getElementById('s-youtube').value = (s.social && s.social.youtube) || '';
+  
+  document.getElementById('s-emiRate').value = (s.emi && s.emi.defaultRate) || 9.5;
+  document.getElementById('s-emiTenure').value = (s.emi && s.emi.defaultTenure) || 60;
+  
+  document.getElementById('s-seoTitle').value = (s.seo && s.seo.defaultTitle) || '';
+  document.getElementById('s-seoDesc').value = (s.seo && s.seo.defaultDescription) || '';
+}
+
+async function saveSettings() {
+  const data = {
+    businessName: document.getElementById('s-businessName').value,
+    tagline: document.getElementById('s-tagline').value,
+    phone: document.getElementById('s-phone').value,
+    whatsapp: document.getElementById('s-whatsapp').value,
+    email: document.getElementById('s-email').value,
+    hours: document.getElementById('s-hours').value,
+    address: document.getElementById('s-address').value,
+    social: {
+      facebook: document.getElementById('s-facebook').value,
+      instagram: document.getElementById('s-instagram').value,
+      youtube: document.getElementById('s-youtube').value
+    },
+    emi: {
+      defaultRate: parseFloat(document.getElementById('s-emiRate').value) || 9.5,
+      defaultTenure: parseInt(document.getElementById('s-emiTenure').value) || 60
+    },
+    seo: {
+      defaultTitle: document.getElementById('s-seoTitle').value,
+      defaultDescription: document.getElementById('s-seoDesc').value
+    }
+  };
+
+  const res = await api('POST', '/api/admin/site/settings', data);
+  if (res.success) toast('Global settings updated!');
+  else toast('Failed to save settings', 'error');
+}
+
+// Helper Slugification
+function slugify(text) {
+  return String(text || '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+// ── Initialization on load ───────────────────────────────────────────────────
+loadDashboard();
+lucide.createIcons();
+</script>
+</body>
+</html>

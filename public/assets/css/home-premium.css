@@ -2,32 +2,50 @@
 
 :root {
   --brand: var(--g3, #1a6b2a);
-  --font-h: var(--font-d, 'Clash Display', sans-serif);
-  --section-y: clamp(3rem, 6vw, 5rem);
+  --font-h: var(--font-display);
+  --section-y: 80px;
   --section-gap: clamp(1.5rem, 3vw, 2.5rem);
   --home-radius: 20px;
+  --home-trust-tint: #eef3ee;
+  --home-grey: #f7f9f7;
 }
 
 .home-page {
-  background: var(--bg, #f6faf7);
+  background: var(--white, #fff);
 }
 
-/* ── Section rhythm ── */
+/* ── Section rhythm — every section gets exactly --section-y, no exceptions ── */
 .home-section {
   padding: var(--section-y) 0;
+  background: var(--white, #fff);
 }
 
 .home-section--white {
   background: var(--white, #fff);
 }
 
-.home-section--muted {
-  background: var(--bg2, #eff6f2);
+/* Reserved for exactly one block per page: the trust/customer section.
+   Every other section stays white — see the home page design brief. */
+.home-section--trust {
+  background: var(--home-trust-tint);
 }
 
 .home-section--dark {
   background: var(--g0, #0a1a0d);
   color: #fff;
+}
+
+/* Page container: wide rails, narrower reading measure for headers.
+   1440px page, headers/content settle to a 1200px column, and rail
+   grids (carousels, brand/tool/budget grids) run to the container edge. */
+.home-page .wrap {
+  max-width: 1440px;
+}
+
+.home-page .home-head {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .home-section__inner {
@@ -114,6 +132,7 @@
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   padding: 2px 0;
+  cursor: grab;
 }
 
 .home-discover__scroll::-webkit-scrollbar {
@@ -136,11 +155,12 @@
   transition: all var(--ease);
 }
 
+.home-pill img,
 .home-pill svg {
   width: 72px;
   height: 44px;
-  color: #842020;
-  transition: color 0.15s;
+  object-fit: contain;
+  transition: transform 0.2s ease;
 }
 
 .home-pill:hover,
@@ -148,6 +168,11 @@
   border-color: var(--g3);
   background: var(--g-ll);
   color: var(--g3);
+}
+
+.home-pill:hover img,
+.home-pill:hover svg {
+  transform: scale(1.08);
 }
 
 .home-pill__icon {
@@ -204,8 +229,19 @@
 }
 
 .home-carousel .car-card {
-  flex: 0 0 min(280px, 78vw);
+  flex: 0 0 280px;
   scroll-snap-align: start;
+}
+
+/* Explore section carousel - 4 cards visible */
+.carousel-card-item {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  min-width: 0;
+}
+.carousel-card-item .car-card,
+.carousel-card-item .used-card {
+  width: 100%;
 }
 
 .home-chips {
@@ -221,34 +257,84 @@
 
 /* ── Brand grid ── */
 .home-brands {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 4px 0 8px;
+  margin: 0 -4px;
+}
+
+.home-brands::-webkit-scrollbar {
+  display: none;
+}
+
+.home-brands .brand-card {
+  flex: 0 0 76px;
+  scroll-snap-align: start;
 }
 
 @media (min-width: 640px) {
   .home-brands {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    overflow-x: visible;
+    padding: 0;
+    margin: 0;
+  }
+  .home-brands .brand-card {
+    flex: initial;
   }
 }
 
 @media (min-width: 1024px) {
   .home-brands {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 12px;
   }
 }
 
 .home-brands .brand-card {
-  padding: 16px 12px;
-  border-radius: var(--r16);
+  padding: 10px 8px;
+  border-radius: var(--r12);
   transition: transform var(--ease), box-shadow var(--ease);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
 .home-brands .brand-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--sh2);
+}
+
+.home-brands .brand-logo {
+  width: 56px !important;
+  height: 56px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r8);
+}
+
+.home-brands .brand-logo img {
+  width: 46px !important;
+  height: 46px !important;
+  object-fit: contain;
+}
+
+.home-brands .brand-name {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink3);
+  text-align: center;
+}
+
+.home-brands .brand-count {
+  display: none;
 }
 
 /* ── Tools strip ── */
@@ -292,14 +378,14 @@
 }
 
 .home-tool-card__icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: var(--g-ll);
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--home-grey, #f7f9f7);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--g3);
 }
 
 .home-tool-card__title {
@@ -339,10 +425,192 @@
   border-radius: var(--r16);
 }
 
-/* ── EV block ── */
-.home-ev .ev-hero {
+/* ── Budget calculator ── */
+.bcalc-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
   border-radius: var(--home-radius);
-  overflow: hidden;
+  padding: 28px 22px;
+  box-shadow: var(--sh1, 0 1px 4px rgba(0, 0, 0, .06));
+}
+
+@media (min-width: 768px) {
+  .bcalc-card {
+    padding: 44px 48px;
+  }
+}
+
+.bcalc-title {
+  font-family: var(--font-h);
+  font-size: clamp(1.5rem, 3.6vw, 2.15rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin: 12px 0 30px;
+  max-width: 640px;
+}
+
+.bcalc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 560px) {
+  .bcalc-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 20px;
+  }
+}
+
+.bcalc-field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink4);
+  margin-bottom: 8px;
+}
+
+.bcalc-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--border);
+  border-radius: var(--pill);
+  background: var(--white);
+  transition: border-color var(--ease);
+}
+
+.bcalc-input-wrap:focus-within {
+  border-color: var(--g3);
+}
+
+.bcalc-prefix,
+.bcalc-suffix {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink3);
+  padding: 0 4px 0 18px;
+  white-space: nowrap;
+}
+
+.bcalc-suffix {
+  padding: 0 18px 0 4px;
+}
+
+.bcalc-input-wrap input,
+.bcalc-input-wrap select {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  height: 52px;
+  font-family: var(--font-h);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 0 18px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.bcalc-input-wrap input {
+  -moz-appearance: textfield;
+}
+
+.bcalc-input-wrap input::-webkit-outer-spin-button,
+.bcalc-input-wrap input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bcalc-input-wrap select {
+  cursor: pointer;
+  padding-right: 38px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a9483' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 13px;
+}
+
+.bcalc-result {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: var(--g-ll);
+  border: 1.5px solid rgba(26, 107, 42, .16);
+  border-radius: var(--r16);
+  padding: 22px 24px;
+}
+
+@media (min-width: 640px) {
+  .bcalc-result {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.bcalc-result-label {
+  font-size: 13px;
+  color: var(--ink4);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.bcalc-result-price {
+  font-family: var(--font-h);
+  font-size: clamp(24px, 4vw, 30px);
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.bcalc-result-price .unit {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink4);
+  margin-left: 4px;
+}
+
+.bcalc-result-count {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #92720f;
+  margin-top: 6px;
+}
+
+.bcalc-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--g2);
+  color: #fff;
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 16px 26px;
+  border-radius: var(--pill);
+  white-space: nowrap;
+  transition: all var(--ease);
+  flex-shrink: 0;
+}
+
+.bcalc-cta:hover {
+  background: var(--g3);
+  transform: translateY(-1px);
+}
+
+.bcalc-disclaimer {
+  font-size: 12px;
+  color: var(--ink5);
+  margin-top: 16px;
+  text-align: center;
 }
 
 /* ── Events ── */
@@ -390,32 +658,116 @@
 
 .home-services .svc-card {
   border-radius: var(--home-radius);
-  padding: 24px;
+  padding: 26px 24px;
   border: 1px solid var(--border);
   background: var(--white);
+  cursor: pointer;
   transition: all var(--ease);
 }
 
 .home-services .svc-card:hover {
   border-color: var(--g3);
   box-shadow: var(--sh2);
+  transform: translateY(-2px);
 }
 
 .home-services .svc-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: var(--g-ll);
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: var(--home-grey, #f7f9f7);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6), 0 1px 3px rgba(17, 22, 18, .06);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 18px;
+}
+
+.svc-name {
+  font-family: var(--font-h);
+  font-size: 16.5px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.svc-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink4);
   margin-bottom: 16px;
+}
+
+.svc-learn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 800;
   color: var(--g3);
 }
 
-.home-services .svc-icon svg {
-  width: 24px;
-  height: 24px;
+.home-services .svc-card:hover .svc-learn {
+  text-decoration: underline;
+}
+
+/* ── Duotone icon: muted line-icon + small colour badge, bottom-right ──
+   Reused wherever a "feature icon" appears (services grid, tools strip).
+   Build one from any existing icon path: dicon(basePaths, badgeColor, badgePaths) */
+.av-dicon {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+}
+
+.av-dicon-base {
+  width: 26px;
+  height: 26px;
+  color: var(--ink3);
+}
+
+.av-dicon-badge {
+  position: absolute;
+  bottom: -6px;
+  right: -8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 2.5px var(--white);
+}
+
+.av-dicon-badge svg {
+  width: 11px;
+  height: 11px;
+}
+
+/* ── "3D" sticker variant: bigger canvas for the layered/gradient icons ── */
+.av-dicon--lg {
+  width: 34px;
+  height: 34px;
+}
+
+.av-dicon--lg .av-dicon-base {
+  width: 34px;
+  height: 34px;
+}
+
+.av-dicon--lg .av-dicon-badge {
+  width: 20px;
+  height: 20px;
+  bottom: -5px;
+  right: -7px;
+  box-shadow: 0 0 0 2.5px var(--white), 0 2px 5px rgba(17, 22, 18, .18);
+}
+
+.av-dicon--lg .av-dicon-badge svg {
+  width: 12px;
+  height: 12px;
 }
 
 /* ── CTA ── */
@@ -424,75 +776,8 @@
   overflow: hidden;
 }
 
-/* ── Footer premium ── */
-.site-footer {
-  background: #07100a !important;
-  padding: clamp(3rem, 5vw, 4rem) 0 0 !important;
-}
-
-.footer-grid {
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 32px !important;
-  padding-bottom: 40px !important;
-}
-
-@media (min-width: 640px) {
-  .footer-grid {
-    grid-template-columns: 1.4fr 1fr 1fr !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  .footer-grid {
-    grid-template-columns: 1.6fr 1fr 1fr 1fr !important;
-    gap: 48px !important;
-  }
-}
-
-.footer-col-title {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
-  margin-bottom: 16px;
-}
-
-.footer-link {
-  display: block;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.55) !important;
-  padding: 6px 0;
-  transition: color var(--ease);
-  cursor: pointer;
-}
-
-.footer-link:hover {
-  color: rgba(255, 255, 255, 0.95) !important;
-}
-
-.footer-desc {
-  font-size: 14px !important;
-  line-height: 1.75 !important;
-  color: rgba(255, 255, 255, 0.4) !important;
-  max-width: 320px !important;
-}
-
-.footer-bottom {
-  padding: 20px 0 !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.footer-bottom-txt {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.3);
-}
+/* Footer styling now comes solely from assets/css/site-chrome.css,
+   shared with every other page. */
 
 /* ── Hero tweaks ── */
 .home-page .hero {
@@ -546,4 +831,45 @@
 /* Smooth section flow */
 .home-page>*+* {
   scroll-margin-top: calc(var(--nav, 64px) + 48px);
+}
+
+/* Airbnb style carousel navigation arrows */
+.carousel-nav-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-arrow-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--ink2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--ease);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.nav-arrow-btn:hover {
+  border-color: var(--ink3);
+  transform: scale(1.04);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+.nav-arrow-btn svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.5px;
+}
+
+/* Hide on mobile, since swipe is native and preferred */
+@media (max-width: 767px) {
+  .carousel-nav-arrows {
+    display: none;
+  }
 }

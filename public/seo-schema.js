@@ -11,7 +11,7 @@ window.SEO = (function () {
     name: "AutoViindu",
     url: "https://www.autoviindu.com",
     logo: "https://www.autoviindu.com/assets/images/cars/brands/logo.png",
-    phone: "+977-9701076240",
+    phone: "+977-9828364940",
     email: "info@autoviindu.com",
     address: {
       "@type": "PostalAddress",
@@ -38,7 +38,7 @@ window.SEO = (function () {
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           "opens": "09:00",
           "closes": "18:00"
         }
@@ -104,7 +104,7 @@ window.SEO = (function () {
       "model": car.model,
       "modelDate": String(car.year),
       "description": car.overview || (car.brand + " " + car.model + " price in Nepal with specs and variants"),
-      "image": car.images ? car.images[0] : SITE.url + "/assets/images/cars/" + car.slug + "-1.jpg",
+      "image": car.images ? car.images[0] : SITE.url + "/assets/images/car_images/" + car.slug + "-1.jpg",
       "url": SITE.url + "/cars/" + car.slug,
       "fuelType": car.type,
       "vehicleTransmission": (car.variants && car.variants[0]) ? car.variants[0].specs.transmission : "",
@@ -177,7 +177,7 @@ window.SEO = (function () {
     if (pageType === "home") {
       inject(faqSchema([
         { q: "What is AutoViindu?", a: "AutoViindu is Nepal's most trusted automotive platform where you can compare 500+ cars, check prices, calculate EMI, and book car services in Kathmandu." },
-        { q: "How do I buy a car through AutoViindu?", a: "Browse cars on AutoViindu, compare models, choose a variant, and contact us via phone at +977-9701076240 or book a test drive directly through the website." },
+        { q: "How do I buy a car through AutoViindu?", a: "Browse cars on AutoViindu, compare models, choose a variant, and contact us via phone at +977-9828364940 or book a test drive directly through the website." },
         { q: "Does AutoViindu offer car services?", a: "Yes, AutoViindu offers cosmetic car care (ceramic coating, PPF, detailing), workshop repairs, EV diagnostics, GPS installation, and 24/7 roadside assistance in Kathmandu." },
         { q: "Can I calculate car EMI on AutoViindu?", a: "Yes, every car page has a built-in EMI calculator. You can enter your down payment and loan tenure to estimate monthly installments." }
       ]));

@@ -1,0 +1,42 @@
+{
+  "upcoming": [],
+  "past": [],
+  "categories": {
+    "upcoming": [
+      [
+        "all",
+        "All"
+      ],
+      [
+        "expo",
+        "Auto Expo"
+      ],
+      [
+        "launch",
+        "Launch Event"
+      ],
+      [
+        "community",
+        "Community Drive"
+      ]
+    ],
+    "past": [
+      [
+        "all",
+        "All"
+      ],
+      [
+        "expo",
+        "Auto Expo"
+      ],
+      [
+        "launch",
+        "Launch Event"
+      ],
+      [
+        "community",
+        "Community Drive"
+      ]
+    ]
+  }
+}

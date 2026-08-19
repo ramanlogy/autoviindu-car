@@ -2,11 +2,16 @@
 <html lang="en">
 
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AutoViindu — Find Your Perfect Car in Nepal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -18,10 +23,10 @@
     })(window, document, 'script', 'dataLayer', 'GTM-K29LVM8H');</script>
   <!-- End Google Tag Manager -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <link rel="stylesheet" href="assets/css/cars.css">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
-    rel="stylesheet">
+  
   <style>
     /* ══ TOKENS ══ */
     :root {
@@ -69,8 +74,8 @@
       --sh4: 0 24px 64px rgba(0, 0, 0, .16);
       --ease: .22s cubic-bezier(.4, 0, .2, 1);
       --spring: .4s cubic-bezier(.34, 1.56, .64, 1);
-      --font-d: 'Clash Display', sans-serif;
-      --font-b: 'Cabinet Grotesk', sans-serif;
+      --font-d: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-b: 'Inter', system-ui, sans-serif;
       --font-i: 'Instrument Serif', serif;
     }
 
@@ -108,7 +113,7 @@
       font-family: var(--font-b);
       color: var(--ink);
       background: var(--bg);
-      overflow-x: hidden;
+      overflow-x: clip;
       line-height: 1.6
     }
 
@@ -140,8 +145,8 @@
     }
 
     ::-webkit-scrollbar {
-      width: 4px;
-      height: 4px
+      width: 10px;
+      height: 10px
     }
 
     ::-webkit-scrollbar-track {
@@ -149,7 +154,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: var(--border2);
+      background: #888;
       border-radius: 99px
     }
 
@@ -526,68 +531,12 @@
       }
     }
 
-    /* search dropdown */
-    .search-dd {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      right: 0;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--r16);
-      box-shadow: var(--sh3);
-      display: none;
-      z-index: 800;
-      overflow: hidden
-    }
-
-    .search-dd.open {
-      display: block;
-      animation: fadeIn .15s ease
-    }
-
-    /* mobile search — expand header search like desktop */
-    @media (max-width: 959px) {
-
-      .header-in.search-active #honk-wrapper,
-      .header-in.search-active .mob-icons,
-      .header-in.search-active .burger,
-      .header-in.search-active .header-ctas {
-        display: none !important;
-      }
-
-      .header-in.search-active .header-search {
-        display: block !important;
-        flex: 1;
-        max-width: 100%;
-        margin-right: 0;
-      }
-
-      .header-in.search-active #mob-search-back {
-        display: flex !important;
-      }
-
-      .header-in.search-active .search-dd.open {
-        position: fixed !important;
-        top: var(--nav) !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        border-radius: 0 !important;
-        border: none !important;
-        box-shadow: none !important;
-        overflow-y: auto !important;
-      }
-
-      .header-in.search-active .hs-kbd {
-        display: none;
-      }
-    }
+    /* search dropdown — see assets/css/site-chrome.css for the shared rules */
 
     .sdd-hd {
       padding: 10px 14px 6px;
       font-size: 10px;
-      font-weight: 800;
+      font-weight: 500;
       text-transform: uppercase;
       letter-spacing: .6px;
       color: var(--ink4);
@@ -1105,37 +1054,39 @@
     }
 
     .sw-tabs {
-      display: flex;
-      background: var(--bg2);
-      border-bottom: 1px solid var(--border);
-      overflow-x: auto;
-      scrollbar-width: none
-    }
-
-    .sw-tabs::-webkit-scrollbar {
-      display: none
+      display: inline-flex;
+      background: #f1f3f5;
+      padding: 4px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+      gap: 4px;
+      border: 1px solid var(--border);
     }
 
     .sw-tab {
       display: flex;
       align-items: center;
       gap: 6px;
-      padding: 13px 20px;
-      font-size: 13.5px;
+      padding: 8px 20px;
+      font-size: 13px;
       font-weight: 700;
-      color: var(--ink4);
+      color: white;
       cursor: pointer;
-      border-bottom: 2.5px solid transparent;
-      margin-bottom: -1px;
-      transition: all var(--ease);
+      border-radius: 99px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       white-space: nowrap;
-      flex-shrink: 0
+      flex-shrink: 0;
+      border: none;
+    }
+
+    .sw-tab:hover {
+      color: var(--ink2);
     }
 
     .sw-tab.active {
-      color: var(--g3);
-      border-bottom-color: var(--g3);
-      background: var(--white)
+      color: #ffffff;
+      background: var(--g3);
+      box-shadow: 0 4px 12px rgba(26, 107, 42, 0.2);
     }
 
     .sw-body {
@@ -1167,7 +1118,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: .5px;
-      color: var(--ink4);
+      color: white;
       margin-bottom: 6px
     }
 
@@ -1370,6 +1321,15 @@
       font-size: 11px;
       color: var(--ink4)
     }
+.brands-grid {
+    display: grid;
+    grid-auto-flow: column;
+    overflow: hidden;
+}
+
+.brands-grid.expanded {
+    grid-auto-flow: row;
+}
 
     /* ══ CAR CARDS ══ */
     .cars-grid {
@@ -1514,6 +1474,34 @@
     .badge-trending {
       background: var(--gold);
       color: #fff
+    }
+
+    .cmp-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .cmp-filter-group {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .cmp-filter-btn {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, .12);
+      background: #fff;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .cmp-filter-btn.active {
+      background: #1a6b2a;
+      color: #fff;
+      border-color: #1a6b2a;
     }
 
     /* Wishlist */
@@ -2710,7 +2698,8 @@
       gap: 12px;
       overflow-x: auto;
       scrollbar-width: none;
-      padding-bottom: 4px
+      padding-bottom: 4px;
+      cursor: grab
     }
 
     .car-carousel::-webkit-scrollbar {
@@ -3023,15 +3012,26 @@
       .dp-gallery-card {
         border: 1px solid var(--border);
         border-radius: var(--r16);
-        margin-bottom: 12px
+        margin-bottom: 12px;
       }
+      .dp-gallery-card > div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .gallery-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
     }
 
     .gallery-main {
       position: relative;
       height: 240px;
       overflow: hidden;
-      background: var(--bg2)
+      background: #f8fafc;
     }
 
     @media(min-width:480px) {
@@ -3042,7 +3042,7 @@
 
     @media(min-width:900px) {
       .gallery-main {
-        height: 360px
+        height: 380px
       }
     }
 
@@ -3050,9 +3050,81 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      background: var(--bg2);
-      transition: opacity .2s
+      background: #f8fafc;
+      transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1), opacity 0.2s;
     }
+
+    .gallery-main:hover img {
+      transform: scale(1.05);
+      cursor: zoom-in;
+    }
+    
+    /* Lightbox */
+    .av-lightbox {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95); z-index: 99999;
+      display: none; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .av-lightbox.active { display: flex; opacity: 1; }
+    .lb-close {
+      position: absolute; top: 20px; right: 20px;
+      background: rgba(255,255,255,0.1); border: none; color: #fff;
+      width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 100000; transition: background 0.2s;
+    }
+    .lb-close:hover { background: rgba(255,255,255,0.3); }
+    .lb-controls {
+      position: absolute; top: 50%; left: 0; right: 0;
+      transform: translateY(-50%); display: flex; justify-content: space-between;
+      padding: 0 20px; pointer-events: none; z-index: 100000;
+    }
+    .lb-prev, .lb-next {
+      background: rgba(255,255,255,0.1); border: none; color: #fff;
+      width: 50px; height: 50px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; pointer-events: auto; transition: background 0.2s;
+    }
+    .lb-prev:hover, .lb-next:hover { background: rgba(255,255,255,0.3); }
+    .lb-content {
+      width: 100%; height: 100%; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .lb-content img { max-width: 100%; max-height: 100%; object-fit: contain; cursor: grab; user-select: none; }
+    .lb-content img:active { cursor: grabbing; }
+
+    /* ── Video Modal ── */
+    .av-video-modal {
+      position: fixed; inset: 0; z-index: 99999;
+      background: rgba(0,0,0,0.92); backdrop-filter: blur(6px);
+      display: none; align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .av-video-modal.active { display: flex; }
+    .av-video-modal .vm-inner {
+      position: relative; width: 100%; max-width: 900px;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+      background: #000;
+    }
+    .av-video-modal .vm-ratio {
+      position: relative; padding-bottom: 56.25%; /* 16:9 */
+      height: 0; overflow: hidden;
+    }
+    .av-video-modal .vm-ratio iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      border: none;
+    }
+    .av-video-modal .vm-close {
+      position: absolute; top: -44px; right: 0;
+      background: rgba(255,255,255,0.12); border: none; color: #fff;
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background 0.2s; font-size: 18px; line-height: 1;
+    }
+    .av-video-modal .vm-close:hover { background: rgba(255,255,255,0.3); }
 
     .gal-prev,
     .gal-next {
@@ -3106,8 +3178,121 @@
       overflow-x: auto;
       scrollbar-width: none;
       background: var(--white);
-      border-top: 1px solid var(--border)
     }
+    
+    .gallery-thumbs::-webkit-scrollbar { display: none; }
+
+    /* New Gallery Bottom Sidebar for Colors */
+    .gallery-right {
+      width: 100%;
+      padding: 16px 24px;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media(min-width:900px) {
+      .gallery-right {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--border);
+      }
+    }
+
+    .gal-style-tabs {
+      display: flex;
+      gap: 8px;
+      padding: 4px;
+      background: var(--bg2);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    @media(min-width:900px) {
+      .gal-style-tabs {
+        margin-bottom: 0;
+        width: auto;
+        min-width: 200px;
+      }
+    }
+
+    .gal-color-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media(min-width:900px) {
+      .gal-color-section {
+        align-items: flex-end;
+      }
+    }
+
+    .gal-style-btn {
+      flex: 1;
+      padding: 8px 12px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink4);
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .gal-style-btn.active {
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    }
+
+    .gal-color-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .gal-color-title span {
+      font-weight: 400;
+      color: var(--ink4);
+      margin-left: 6px;
+      font-size: 13px;
+    }
+
+    .gal-color-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .gal-color-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.15);
+      position: relative;
+      transition: transform .2s;
+    }
+
+    .gal-color-dot:hover {
+      transform: scale(1.1);
+    }
+
+    .gal-color-dot.active {
+      border-color: var(--ink);
+      box-shadow: 0 0 0 2px #fff, inset 0 0 0 1px rgba(0,0,0,.15);
+    }
+     
 
     .gallery-thumbs::-webkit-scrollbar {
       display: none
@@ -3135,49 +3320,58 @@
       object-fit: contain
     }
 
-    /* ── Quick stats strip ── */
+            /* ── Quick stats strip (Ultra Minimal Box) ── */
     .dp-qs-strip {
       display: flex;
-      overflow-x: auto;
-      scrollbar-width: none;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border)
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 12px 14px;
+      background: #f1f5f9; /* Soft low-attention slate background */
+      border: 1px solid var(--border);
+      border-radius: var(--r8);
     }
 
-    .dp-qs-strip::-webkit-scrollbar {
-      display: none
+    .dp-qs-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
     }
 
-    @media(min-width:900px) {
-      .dp-qs-strip {
-        border: 1px solid var(--border);
-        border-radius: var(--r12);
-        margin-bottom: 12px;
-        background: var(--white)
-      }
+    .dp-qs-row:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      padding-bottom: 8px;
     }
 
     .dp-qs-cell {
-      flex: 0 0 auto;
-      padding: 11px 16px;
-      text-align: center;
-      border-right: 1px solid var(--border)
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 6px;
+      flex: 1 1 calc(25% - 16px);
+      min-width: 110px;
     }
 
-    .dp-qs-val {
-      font-family: var(--font-d);
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--g3)
+    @media(max-width: 600px) {
+      .dp-qs-cell {
+        flex: 1 1 calc(50% - 16px);
+      }
     }
 
     .dp-qs-lbl {
+      font-family: var(--font-b);
       font-size: 10px;
       color: var(--ink4);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .2px;
-      margin-top: 1px
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    .dp-qs-val {
+      font-family: var(--font-b);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink);
+      order: -1;
     }
 
     /* ── Mobile car title ── */
@@ -3249,23 +3443,29 @@
 
     .dp-var-tab {
       flex-shrink: 0;
-      padding: 10px 14px;
+      padding: 12px 16px;
       border: 1.5px solid var(--border);
-      border-radius: var(--r10);
-      background: var(--white);
+      border-radius: var(--r12);
+      background: #f8fafc;
       cursor: pointer;
       text-align: left;
       transition: all .2s;
-      min-width: 110px
+      min-width: 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
     .dp-var-tab:hover:not(.active) {
-      border-color: rgba(26, 107, 42, .4)
+      border-color: rgba(26, 107, 42, .3);
+      background: #f1f5f9;
+      transform: translateY(-2px);
     }
 
     .dp-var-tab.active {
       border-color: var(--g3);
-      background: var(--g-ll)
+      background: #eef7f0;
+      box-shadow: 0 4px 12px rgba(26,107,42,.1);
     }
 
     .dp-var-tab-name {
@@ -3281,137 +3481,107 @@
 
     .dp-var-tab-price {
       font-family: var(--font-d);
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 700;
-      color: var(--ink)
+      color: var(--ink);
     }
 
     .dp-var-tab.active .dp-var-tab-price {
       color: var(--g3)
     }
 
-    .dp-var-tab-best {
-      display: inline-block;
-      margin-top: 3px;
-      font-size: 9px;
+        .dp-var-tab-best {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      align-self: flex-start;
+      margin-top: 6px;
+      font-size: 10px;
       font-weight: 800;
       background: var(--g3);
       color: #fff;
-      border-radius: var(--pill);
-      padding: 1px 6px
+      border-radius: 4px;
+      padding: 3px 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .dp-var-tab-best svg {
+      width: 10px;
+      height: 10px;
+      stroke-width: 2.5;
     }
 
-    /* ── Key info grid ── */
+            /* ── Key info grid (Ultra Minimal) ── */
     .dp-ki-wrap {
-      background: var(--white);
-      border-bottom: 1px solid var(--border)
-    }
-
-    @media(min-width:900px) {
-      .dp-ki-wrap {
-        border: 1px solid var(--border);
-        border-radius: var(--r12);
-        overflow: hidden;
-        margin-bottom: 12px
-      }
+      margin-bottom: 32px;
     }
 
     .dp-ki-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr)
-    }
-
-    @media(min-width:500px) {
-      .dp-ki-grid {
-        grid-template-columns: repeat(4, 1fr)
-      }
-    }
-
-    @media(min-width:720px) {
-      .dp-ki-grid {
-        grid-template-columns: repeat(6, 1fr)
-      }
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 24px;
     }
 
     .dp-ki-cell {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 12px;
+      row-gap: 2px;
       align-items: center;
-      text-align: center;
-      padding: 14px 8px;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border)
+      flex: 1 1 calc(33.333% - 24px);
+      min-width: 120px;
     }
 
-    .dp-ki-cell:nth-child(3n) {
-      border-right: none
-    }
-
-    @media(min-width:500px) {
-      .dp-ki-cell:nth-child(3n) {
-        border-right: 1px solid var(--border)
-      }
-
-      .dp-ki-cell:nth-child(4n) {
-        border-right: none
-      }
-    }
-
-    @media(min-width:720px) {
+    @media(max-width: 600px) {
       .dp-ki-cell {
-        border-bottom: none
-      }
-
-      .dp-ki-cell:nth-child(4n) {
-        border-right: 1px solid var(--border)
-      }
-
-      .dp-ki-cell:nth-child(3n) {
-        border-right: 1px solid var(--border)
-      }
-
-      .dp-ki-cell:nth-child(6n),
-      .dp-ki-cell:last-child {
-        border-right: none
+        flex: 1 1 calc(50% - 24px);
       }
     }
 
     .dp-ki-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
-      background: var(--g-ll);
+      grid-row: 1 / 3;
+      grid-column: 1;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--bg2);
+      color: var(--g3);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 6px
     }
 
     .dp-ki-icon svg {
-      width: 15px;
-      height: 15px;
-      stroke: var(--g3);
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
       fill: none;
-      stroke-width: 2;
+      stroke-width: 1.8;
       stroke-linecap: round;
-      stroke-linejoin: round
-    }
-
-    .dp-ki-val {
-      font-family: var(--font-d);
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.2;
-      margin-bottom: 2px
+      stroke-linejoin: round;
     }
 
     .dp-ki-lbl {
-      font-size: 9.5px;
+      grid-row: 1;
+      grid-column: 2;
+      font-family: var(--font-b);
+      font-size: 11px;
       color: var(--ink4);
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: .2px
+      letter-spacing: 0.5px;
+      align-self: end;
+    }
+
+    .dp-ki-val {
+      grid-row: 2;
+      grid-column: 2;
+      font-family: var(--font-b);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      align-self: start;
     }
 
     /* ── Accordion ── */
@@ -3433,7 +3603,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 16px;
+      padding: 18px 20px;
       cursor: pointer;
       user-select: none;
       transition: background .15s;
@@ -3445,12 +3615,12 @@
     }
 
     .dp-accord-title {
-      font-size: 13.5px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--ink);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
       flex: 1
     }
 
@@ -3485,14 +3655,26 @@
     }
 
     .dp-accord-body {
-      display: none;
-      padding: 0 16px 16px;
-      border-top: 1px solid var(--border)
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease-out, border-color 0.3s ease-out;
+      border-top: 1px solid transparent;
+    }
+
+    .dp-accord-body-inner {
+      overflow: hidden;
+      padding: 0 20px 0;
+      transition: padding 0.3s ease-out;
     }
 
     .dp-accord-wrap.open .dp-accord-body {
-      display: block;
-      padding-top: 14px
+      grid-template-rows: 1fr;
+      border-top-color: var(--border);
+    }
+
+    .dp-accord-wrap.open .dp-accord-body-inner {
+      padding-top: 16px;
+      padding-bottom: 20px;
     }
 
     /* ── Spec table ── */
@@ -3683,8 +3865,7 @@
     @media(min-width:900px) {
       .dp-sidebar {
         display: flex;
-        position: sticky;
-        top: calc(var(--nav, 60px) + 16px)
+        /* No fixed positioning, it will naturally flow and scroll */
       }
     }
 
@@ -3803,20 +3984,28 @@
     /* ── EMI box ── */
     .dp-emi-box {
       padding: 16px 18px;
-      border-top: 1px solid var(--border)
+      border-top: 1px solid var(--border);
+      background: linear-gradient(135deg, #f0faf3 0%, #fff 100%)
     }
 
     .dp-emi-hd {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       color: var(--ink);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px
+    }
+
+    .dp-emi-hd-left {
       display: flex;
       align-items: center;
       gap: 6px
     }
 
-    .dp-emi-hd svg {
+    .dp-emi-hd-left svg {
       width: 14px;
       height: 14px;
       stroke: var(--g3);
@@ -3825,93 +4014,136 @@
       stroke-width: 2
     }
 
-    .dp-emi-field {
-      margin-bottom: 12px
-    }
-
-    .dp-emi-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 10px;
+    .dp-emi-badge {
+      font-size: 9px;
       font-weight: 700;
-      color: var(--ink4);
-      text-transform: uppercase;
-      letter-spacing: .4px;
-      margin-bottom: 5px
-    }
-
-    .dp-emi-label .val {
-      font-size: 12.5px;
-      font-weight: 800;
-      color: var(--ink);
-      text-transform: none;
-      letter-spacing: 0
-    }
-
-    .tenure-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px
-    }
-
-    .ten-btn {
-      padding: 5px 8px;
-      background: var(--bg2);
-      border: 1.5px solid var(--border);
-      border-radius: var(--r6);
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--ink3);
-      cursor: pointer;
-      font-family: var(--font-b);
-      transition: all .2s
-    }
-
-    .ten-btn.active {
       background: var(--g3);
       color: #fff;
+      padding: 2px 7px;
+      border-radius: 99px;
+      letter-spacing: .04em;
+      text-transform: uppercase
+    }
+
+    .dp-emi-note-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10.5px;
+      color: var(--ink4);
+      background: rgba(255,255,255,.8);
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-bottom: 10px;
+      border: 1px solid var(--border)
+    }
+
+    .dp-emi-note-row strong {
+      color: var(--ink2);
+      font-weight: 700
+    }
+
+    .dp-emi-rows { margin-bottom: 10px }
+
+    .dp-emi-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 10px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.6);
+      margin-bottom: 5px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all .15s
+    }
+
+    .dp-emi-row:hover {
+      border-color: rgba(26,107,42,.25);
+      background: rgba(255,255,255,1)
+    }
+
+    .dp-emi-row.highlight {
+      background: var(--g3);
       border-color: var(--g3)
     }
 
-    .dp-emi-result {
-      background: var(--g-ll);
-      border: 1px solid rgba(26, 107, 42, .15);
-      border-radius: var(--r10);
-      padding: 12px;
-      margin-top: 8px
+    .dp-emi-row.highlight .dp-emi-row-lbl,
+    .dp-emi-row.highlight .dp-emi-row-val { color: #fff }
+
+    .dp-emi-row-lbl {
+      font-size: 11.5px;
+      color: var(--ink3);
+      font-weight: 500
     }
 
-    .dp-emi-amount {
-      font-family: var(--font-d);
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--g3);
-      line-height: 1
-    }
-
-    .dp-emi-break {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5px;
-      margin-top: 8px
-    }
-
-    .dp-emi-bd {
-      background: rgba(255, 255, 255, .7);
-      border-radius: 7px;
-      padding: 7px 9px
-    }
-
-    .dp-emi-bd-val {
-      font-size: 12px;
+    .dp-emi-row-val {
+      font-size: 13px;
       font-weight: 800;
       color: var(--ink)
     }
 
-    .dp-emi-bd-lbl {
-      font-size: 10px;
+    .dp-emi-tool-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: 1.5px solid var(--g3);
+      border-radius: var(--r8);
+      color: var(--g3);
+      font-family: var(--font-b);
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .18s;
+      margin-top: 8px
+    }
+
+    .dp-emi-tool-btn:hover {
+      background: var(--g3);
+      color: #fff
+    }
+
+    .dp-emi-tool-btn svg {
+      width: 13px;
+      height: 13px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      transition: stroke .18s
+    }
+
+    /* Color bar at top of sidebar */
+    .dp-color-bar {
+      padding: 10px 14px;
+      background: #fafafa;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .dp-color-bar-label {
+      font-size: 10.5px;
+      font-weight: 700;
       color: var(--ink4);
-      margin-top: 1px
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      white-space: nowrap
+    }
+
+    .dp-color-bar-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ink3);
+      margin-left: auto;
+      white-space: nowrap
     }
 
     input[type=range] {
@@ -4042,20 +4274,28 @@
     .dp-hl-wrap {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px
+      gap: 10px;
     }
 
     .dp-hl-tag {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      background: var(--g-ll);
-      border: 1px solid rgba(26, 107, 42, .18);
+      gap: 6px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: var(--ink2);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .dp-hl-tag:hover {
+      background: #eef7f0;
+      border-color: rgba(26,107,42,0.3);
       color: var(--g3);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 5px 11px;
-      border-radius: var(--pill)
+      transform: translateY(-1px);
     }
 
     /* ══ MOBILE MENU ══ */
@@ -4736,117 +4976,6 @@
       margin-top: 1px
     }
 
-    /* ══ FOOTER ══ */
-    .site-footer {
-      background: #050d07;
-      padding: 52px 0 0
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      padding-bottom: 36px;
-      border-bottom: 1px solid rgba(255, 255, 255, .05)
-    }
-
-    @media(min-width:580px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr
-      }
-    }
-
-    @media(min-width:900px) {
-      .footer-grid {
-        grid-template-columns: 2fr 1fr 1fr 1.2fr;
-        gap: 40px
-      }
-    }
-
-    .footer-desc {
-      font-size: 13px;
-      color: rgba(255, 255, 255, .22);
-      line-height: 1.8;
-      margin: 12px 0 18px;
-      max-width: 270px
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 8px
-    }
-
-    .fsoc {
-      width: 34px;
-      height: 34px;
-      background: rgba(255, 255, 255, .05);
-      border: 1px solid rgba(255, 255, 255, .07);
-      border-radius: var(--r8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all var(--ease)
-    }
-
-    .fsoc:hover {
-      background: var(--g3);
-      border-color: var(--g3)
-    }
-
-    .fcol-title {
-      font-size: 10px;
-      font-weight: 800;
-      color: rgba(255, 255, 255, .4);
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      margin-bottom: 13px
-    }
-
-    .fcol ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px
-    }
-
-    .fcol a {
-      font-size: 13px;
-      color: rgba(255, 255, 255, .22);
-      transition: color var(--ease);
-      cursor: pointer
-    }
-
-    .fcol a:hover {
-      color: rgba(255, 255, 255, .65)
-    }
-
-    .footer-bottom {
-      padding: 16px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11.5px;
-      color: rgba(255, 255, 255, .13);
-      flex-wrap: wrap;
-      gap: 7px
-    }
-
-    .fbot-links {
-      display: flex;
-      gap: 14px
-    }
-
-    .fbot-links a {
-      color: rgba(255, 255, 255, .13);
-      cursor: pointer;
-      transition: color var(--ease)
-    }
-
-    .fbot-links a:hover {
-      color: rgba(255, 255, 255, .4)
-    }
-
     /* ══ CTA BANNER ══ */
     .cta-banner {
       background: linear-gradient(135deg, #040b06, #07120a);
@@ -5044,8 +5173,8 @@
       gap: 8px;
       padding: 7px 11px 7px 18px;
       font-size: 12.5px;
-      font-weight: 500;
-      color: var(--ink3);
+      font-weight: 600;
+      color: #060606;
       text-decoration: none;
       border-radius: var(--r8);
       transition: background .12s, color .12s;
@@ -5586,7 +5715,7 @@
       font-family: var(--font-h);
       font-size: clamp(28px, 4vw, 40px);
       font-weight: 800;
-      color: var(--ink);
+      color: rgb(197, 194, 194);
       line-height: 1.1;
       margin-bottom: 12px;
       letter-spacing: -1px;
@@ -6026,151 +6155,6 @@
       /* Professional Green from your image */
     }
 
-    /* ═══ FOOTER ═══ */
-
-    .site-footer {
-      background: #0f0f0f;
-      color: rgba(255, 255, 255, 0.6);
-      padding: 60px 0 0;
-      font-size: 14px;
-    }
-
-    .site-footer .wrap {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ── Grid ── */
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.6fr repeat(6, 1fr);
-      gap: 32px 24px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    @media (max-width: 1100px) {
-      .footer-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    @media (max-width: 720px) {
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 420px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ── Brand col ── */
-    .footer-logo-img {
-      height: 36px;
-      width: auto;
-      margin-bottom: 14px;
-    }
-
-    .footer-desc {
-      font-size: 13px;
-      line-height: 1.65;
-      color: rgba(255, 255, 255, 0.4);
-      margin: 0 0 18px;
-    }
-
-    /* ── Social icons ── */
-    .footer-social {
-      display: flex;
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .fsoc {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: background 0.2s, border-color 0.2s;
-      text-decoration: none;
-    }
-
-    .fsoc:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.18);
-    }
-
-    .fsoc:hover svg {
-      fill: rgba(255, 255, 255, 0.8);
-      stroke: rgba(255, 255, 255, 0.8);
-    }
-
-    /* ── Column titles ── */
-    .footer-col-title {
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 14px;
-    }
-
-    /* ── Footer links ── */
-    .footer-link {
-      display: block;
-      font-size: 13.5px;
-      color: rgba(255, 255, 255, 0.45);
-      text-decoration: none;
-      padding: 4px 0;
-      line-height: 1.5;
-      cursor: pointer;
-      transition: color 0.18s;
-    }
-
-    .footer-link:hover {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    /* ── Bottom bar ── */
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 20px 0;
-      font-size: 12.5px;
-      color: rgba(255, 255, 255, 0.28);
-    }
-
-    .footer-bottom-txt {
-      color: rgba(255, 255, 255, 0.28);
-    }
-
-    .fbot-links {
-      display: flex;
-      gap: 16px;
-    }
-
-    .fbot-links a {
-      color: rgba(255, 255, 255, 0.28);
-      text-decoration: none;
-      cursor: pointer;
-      transition: color 0.18s;
-    }
-
-    .fbot-links a:hover {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
     /* ── CSS variable for border-radius used inline ── */
     :root {
       --r10: 10px;
@@ -6197,11 +6181,60 @@
       top: calc(var(--nav) + 12px);
       max-height: calc(100vh - var(--nav) - 24px);
       overflow-y: auto;
-      scrollbar-width: thin;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--r16);
       box-shadow: var(--sh1);
+    }
+
+    .lf-sidebar::-webkit-scrollbar { display: none; }
+
+    /* ── New Car Accordion Filter Sections ── */
+    .av-acc {
+      border-bottom: 1px solid var(--bg3);
+    }
+    .av-acc:last-child { border-bottom: none; }
+
+    .av-acc-head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--ink4);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      text-align: left;
+      font-family: var(--font-b);
+      transition: background 0.2s;
+    }
+
+    .av-acc-head:hover { background: var(--bg); }
+
+    .av-acc-arrow {
+      transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      color: var(--ink4);
+      flex-shrink: 0;
+    }
+    .av-acc.open .av-acc-arrow { transform: rotate(-180deg); color: var(--g3); }
+
+    .av-acc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.2s;
+      padding: 0 16px;
+    }
+    .av-acc.open .av-acc-body {
+      max-height: 520px;
+      padding-bottom: 14px;
     }
 
     .lf-sf-hd {
@@ -6707,7 +6740,7 @@
       padding: 14px 18px;
       background: #fff;
       border: 0.5px solid #e0ddd6;
-      border-radius: 10px;
+      border-radius: 30px;
       cursor: pointer;
       transition: border-color 0.15s, background 0.15s, transform 0.12s;
       min-width: 88px;
@@ -6720,20 +6753,6 @@
       transform: translateY(-2px);
     }
 
-    .home-pill::after {
-      content: '↗';
-      position: absolute;
-      top: 7px;
-      right: 9px;
-      font-size: 9px;
-      color: #C4840A;
-      opacity: 0;
-      transition: opacity 0.15s;
-    }
-
-    .home-pill:hover::after {
-      opacity: 1;
-    }
 
     .home-pill svg {
       width: 56px;
@@ -6796,13 +6815,60 @@
       border-radius: 2px;
       opacity: 0.4;
     }
+
+    .logo-img {
+      width: clamp(120px, 12vw, 120px);
+      height: auto;
+    }
+    /* Premium EMI */
+    .dp-emi-premium-card {
+      background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-top: 8px;
+    }
+    .dp-emi-summary {
+      display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px; flex-wrap: wrap; gap: 8px;
+    }
+    .dp-emi-loan-amt { display: flex; flex-direction: column; }
+    .dp-emi-loan-amt .lbl { font-size: 11px; font-weight: 700; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .dp-emi-loan-amt .val { font-size: 18px; font-weight: 800; color: var(--ink); }
+    .dp-emi-details { font-size: 11px; color: var(--ink3); }
+    .dp-emi-details strong { color: var(--ink); }
+
+    /* Services Section */
+    .dp-services { margin: 32px 0 24px; }
+    .dp-services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; }
+    @media(min-width: 600px) { .dp-services-grid { grid-template-columns: repeat(3, 1fr); } }
+    .dp-srv-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 16px;
+      display: flex; align-items: center; gap: 16px; transition: all 0.2s;
+    }
+    .dp-srv-card:hover { border-color: var(--g3); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(26,107,42,0.1); }
+    .dp-srv-card .icon {
+      width: 44px; height: 44px; border-radius: 50%; background: #eef7f0; color: var(--g3);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .dp-srv-card .icon svg { width: 22px; height: 22px; }
+    .dp-srv-card .text { display: flex; flex-direction: column; }
+    .dp-srv-card .text strong { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+    .dp-srv-card .text span { font-size: 12px; color: var(--ink3); }
+
+    /* Horizontal Similar Cars */
+    .cars-hz-scroll {
+      display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding: 16px 4px; margin: 0 -4px;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .cars-hz-scroll::-webkit-scrollbar { display: none; }
+    .cars-hz-scroll > * { scroll-snap-align: start; min-width: 280px; flex-shrink: 0; }
+    @media(min-width: 900px) {
+      .cars-hz-scroll { display: grid; grid-template-columns: repeat(4, 1fr); overflow: visible; scroll-snap-type: none; margin: 0; padding: 16px 0; }
+      .cars-hz-scroll > * { min-width: 0; flex-shrink: unset; }
+    }
   </style>
 
   <link rel="stylesheet" href="assets/css/home-premium.css">
   <link rel="stylesheet" href="assets/css/compare.css">
-  <script src="assets/js/cars-data-loader.js"></script>
-  <script src="assets/js/home-render.js" defer></script>
-  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/cars-data-loader.js?v=2"></script>
+  <script src="assets/js/home-render.js?v=2" defer></script>
+  <script src="assets/js/app.js?v=13" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2BCQWQPPZ"></script>
   <script>
@@ -6815,586 +6881,35 @@
 </head>
 
 <body>
+  <script src="assets/js/site-chrome.js"></script>
+
+  <!-- Image Lightbox -->
+  </div>
+
+  <!-- ═══ VIDEO MODAL ═══ -->
+  <div id="av-video-modal" class="av-video-modal" onclick="if(event.target===this)AV.closeVideoModal()">
+    <div class="vm-inner">
+      <button class="vm-close" onclick="AV.closeVideoModal()">&times;</button>
+      <div class="vm-ratio">
+        <iframe id="vm-iframe" src="" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/data/used-cars-db.js"></script>
+  <script src="/assets/js/data/cars-db.js"></script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K29LVM8H" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div class="toast-wrap" id="toast-wrap"></div>
-  <!-- ═══ TOPBAR ═══ -->
-  <div class="topbar">
-    <div class="wrap topbar-in">
-      <div class="topbar-left">
-        <span class="topbar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11"
-            height="11">
-            <path
-              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-.95a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-          </svg>+977-9701076240</span>
-        <span class="topbar-sep"></span>
-        <span class="topbar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11"
-            height="11">
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
-          </svg>Mon–Sat · 9am–6pm</span>
-        <span class="topbar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11"
-            height="11">
-            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>Nayabazar, Kathmandu</span>
-      </div>
-      <div class="topbar-right"></div>
-    </div>
-  </div>
-
-  <header class="site-header" id="site-header">
-    <div class="wrap header-in">
-
-      <div id="honk-wrapper" style="display:contents">
-        <div class="logo" onclick="AV.goTo('home')">
-          <img src="assets/images/cars/brands/logo.png" alt="AutoViindu Logo" class="logo-img" id="logo-img">
-        </div>
-      </div>
-
-
-      <div class="mobile-search-back" id="mob-search-back"
-        style="display:none; align-items:center; padding-right:12px; cursor:pointer;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </div>
-      <div class="header-search" id="header-search-wrap">
-        <span class="hs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"
-            height="15">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg></span>
-        <input class="hs-input" id="hs-input" type="text" placeholder="Search brand, model, fuel type…"
-          autocomplete="off">
-        <span class="hs-kbd">/</span>
-        <div class="search-dd" id="search-dd"></div>
-      </div>
-
-      <nav class="header-nav">
-
-        <div class="av-item">
-          <button class="av-link" type="button" onclick="AV.goTo('home')">Home</button>
-        </div>
-
-        <div class="av-item">
-          <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">New Cars
-            <svg class="av-chev" viewBox="0 0 10 6" fill="none">
-              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-          <div class="av-dd" role="menu">
-            <div class="av-acc open">
-              <button class="av-acc-hd" type="button">Body Type
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'suv'});return false">SUV /
-                  Crossover</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'sedan'});return false">Sedan</a>
-                <a class="av-menu-link" href="#"
-                  onclick="AV.goTo('cars',{filter:'hatchback'});return false">Hatchback</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'pickup'});return false">Pickup /
-                  Truck</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'van'});return false">Van / MPV</a>
-              </div>
-            </div>
-            <div class="av-acc">
-              <button class="av-acc-hd" type="button">Fuel Type
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'electric'});return false">Electric
-                  (EV)<span class="av-tag av-tag--g">Hot</span></a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'hybrid'});return false">Hybrid</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'petrol'});return false">Petrol</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{filter:'diesel'});return false">Diesel</a>
-              </div>
-            </div>
-            <div class="av-acc">
-              <button class="av-acc-hd" type="button">Budget
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'under20'});return false">Under Rs
-                  20L</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'20to40'});return false">Rs 20L –
-                  40L</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'40to70'});return false">Rs 40L –
-                  70L</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'70to1cr'});return false">Rs 70L –
-                  1Cr</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{budget:'above1cr'});return false">Rs 1Cr+</a>
-              </div>
-            </div>
-            <div class="av-acc">
-              <button class="av-acc-hd" type="button">Quick Finds
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{sort:'latest'});return false">Latest
-                  arrivals</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{sort:'bestseller'});return false">Best
-                  sellers</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('cars',{view:'brands'});return false">Browse by
-                  brand</a>
-              </div>
-            </div>
-            <a class="av-menu-cta" href="#" onclick="AV.goTo('cars');return false">View all new cars →</a>
-          </div>
-        </div>
-
-        <div class="av-item">
-          <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">Used Cars
-            <svg class="av-chev" viewBox="0 0 10 6" fill="none">
-              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-          <div class="av-dd" role="menu">
-            <div class="av-acc open">
-              <button class="av-acc-hd" type="button">Browse
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('used');return false">All used cars</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'certified'});return false">Certified
-                  used<span class="av-tag av-tag--g">Verified</span></a>
-                <a class="av-menu-link" href="#" onclick="alert('Sell enquiry: +977-9701076240');return false">Sell your
-                  car</a>
-              </div>
-            </div>
-            <div class="av-acc">
-              <button class="av-acc-hd" type="button">Filter by
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'year'});return false">Year</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'price'});return false">Price range</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'mileage'});return false">Low
-                  mileage</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'brand'});return false">Brand</a>
-              </div>
-            </div>
-            <div class="av-acc">
-              <button class="av-acc-hd" type="button">Finance
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="caremi.html">EMI calculator</a>
-                <a class="av-menu-link" href="whatcarcanyouaffoard.html">What car can you afford?</a>
-                <a class="av-menu-link" href="insurance-finance.html">Banks &amp; finance</a>
-              </div>
-            </div>
-            <a class="av-menu-cta" href="#" onclick="AV.goTo('used');return false">Browse all used cars →</a>
-          </div>
-        </div>
-
-        <div class="av-item">
-          <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">Compare
-            <svg class="av-chev" viewBox="0 0 10 6" fill="none">
-              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-          <div class="av-dd" role="menu">
-            <div class="av-acc open">
-              <button class="av-acc-hd" type="button">Compare Tools
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare');return false">New car comparison</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{type:'used'});return false">Used car
-                  comparison</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{preset:'ev_vs_petrol'});return false">EV vs
-                  Petrol<span class="av-tag av-tag--g">Popular</span></a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{mode:'multi'});return false">Compare up to
-                  5 cars</a>
-              </div>
-            </div>
-            <div class="av-acc">
-              <button class="av-acc-hd" type="button">Popular Matchups
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="#"
-                  onclick="AV.goTo('compare',{preset:'creta_vs_seltos'});return false">Creta vs Seltos</a>
-                <a class="av-menu-link" href="#"
-                  onclick="AV.goTo('compare',{preset:'nexon_ev_vs_byd_atto3'});return false">Nexon EV vs Atto 3</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('compare',{preset:'swift_vs_i20'});return false">Swift
-                  vs i20</a>
-                <a class="av-menu-link" href="#"
-                  onclick="AV.goTo('compare',{preset:'fortuner_vs_endeavour'});return false">Fortuner vs Endeavour</a>
-              </div>
-            </div>
-            <a class="av-menu-cta" href="#" onclick="AV.goTo('compare');return false">Open compare tool →</a>
-          </div>
-        </div>
-
-        <div class="av-item">
-          <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">Services
-            <svg class="av-chev" viewBox="0 0 10 6" fill="none">
-              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-          <div class="av-dd" role="menu">
-            <div class="av-acc open">
-              <button class="av-acc-hd" type="button">Vehicle Care
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="maintenance-repairs.html">Maintenance &amp; repairs</a>
-                <a class="av-menu-link" href="parts-accessories.html">Parts &amp; accessories</a>
-                <a class="av-menu-link" href="other-services.html">Other services</a>
-              </div>
-            </div>
-            <div class="av-acc">
-              <button class="av-acc-hd" type="button">Paperwork &amp; Finance
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="dotm-services.html">DOTM services</a>
-                <a class="av-menu-link" href="insurance-finance.html">Insurance &amp; financing</a>
-              </div>
-            </div>
-            <a class="av-menu-cta" href="services.html">All services →</a>
-          </div>
-        </div>
-
-        <div class="av-item">
-          <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">News &amp; Reviews
-            <svg class="av-chev" viewBox="0 0 10 6" fill="none">
-              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-          <div class="av-dd av-dd--r" role="menu">
-            <div class="av-acc open">
-              <button class="av-acc-hd" type="button">Watch &amp; Read
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="videos.html">Videos</a>
-                <a class="av-menu-link" href="videos.html?type=reviews">News &amp; reviews</a>
-                <a class="av-menu-link" href="videos.html?type=shorts">Short reels</a>
-                <a class="av-menu-link" href="videos.html?type=ev">EV videos</a>
-              </div>
-            </div>
-            <div class="av-acc">
-              <button class="av-acc-hd" type="button">Guides
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="#" onclick="AV.goTo('guide',{topic:'buying'});return false">Buying
-                  guide</a>
-                <a class="av-menu-link" href="#"
-                  onclick="AV.goTo('guide',{topic:'maintenance'});return false">Maintenance tips</a>
-                <a class="av-menu-link" href="#" onclick="AV.goTo('awards');return false">Nepal car awards</a>
-              </div>
-            </div>
-            <a class="av-menu-cta" href="videos.html">All news &amp; reviews →</a>
-          </div>
-        </div>
-
-        <div class="av-item">
-          <button class="av-link" type="button" aria-expanded="false" aria-haspopup="true">Tools
-            <svg class="av-chev" viewBox="0 0 10 6" fill="none">
-              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-          <div class="av-dd av-dd--r" role="menu">
-            <div class="av-acc open">
-              <button class="av-acc-hd" type="button">Smart Tools
-                <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-              <div class="av-acc-body">
-                <a class="av-menu-link" href="whatcarcanyouaffoard.html">What car can you afford?</a>
-                <a class="av-menu-link" href="caremi.html">EMI calculator</a>
-                <a class="av-menu-link" href="chargingstation.html">EV charging map</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <button class="av-cta" onclick="AV.goTo('quote')">Get a quote</button>
-
-      </nav>
-
-      <div class="header-ctas">
-        <a href="book-service.html" class="btn-book">Book Service</a>
-      </div>
-
-      <div class="mob-icons">
-        <button class="icon-btn" id="mob-search-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-        </button>
-        <button class="icon-btn" onclick="AV.goTo('compare')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-            <path d="M18 20V10" />
-            <path d="M12 20V4" />
-            <path d="M6 20v-6" />
-          </svg>
-        </button>
-      </div>
-      <button class="burger" id="burger">
-        <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ═══ MOBILE MENU ═══ -->
-  <div class="mobile-menu" id="mm">
-    <div class="mm-backdrop" onclick="closeMM()"></div>
-    <div class="mm-panel">
-
-      <!-- Search -->
-      <div class="mm-search">
-        <div class="mm-search-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          <input type="text" placeholder="Search brand, model…"
-            onkeydown="if(event.key==='Enter'){AV.goTo('cars');closeMM()}">
-          <button onclick="AV.goTo('cars');closeMM()">Search</button>
-        </div>
-      </div>
-
-      <!-- Home -->
-      <div class="mm-item">
-        <button class="mm-btn" onclick="AV.goTo('home');closeMM()"><span>Home</span></button>
-      </div>
-
-      <!-- New Cars -->
-      <div class="mm-item">
-        <button class="mm-btn" id="mm-cars-btn" onclick="mmToggle('mm-cars-sub',this)">
-          <span>New Cars</span>
-          <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13"
-            height="13">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-        <div class="mm-sub" id="mm-cars-sub">
-          <div class="mm-sub-label">By Body Type</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'suv'});closeMM()">SUV / Crossover</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'sedan'});closeMM()">Sedan</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hatchback'});closeMM()">Hatchback</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'pickup'});closeMM()">Pickup / Truck</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'van'});closeMM()">Van / MPV / Microbus</div>
-          <div class="mm-sub-label">By Fuel Type</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'electric'});closeMM()">Electric (EV)</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'hybrid'});closeMM()">Hybrid</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'petrol'});closeMM()">Petrol</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'diesel'});closeMM()">Diesel</div>
-          <div class="mm-sub-label">By Terrain</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'mountain'});closeMM()">Mountain &amp; Hilly Roads
-          </div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{filter:'city'});closeMM()">City Commute</div>
-          <div class="mm-sub-label">By Budget</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'under20'});closeMM()">Under Rs 20L</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'20to40'});closeMM()">Rs20L – Rs40L</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'40to70'});closeMM()">Rs40L – Rs70L</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'70to1cr'});closeMM()">Rs70L – Rs1Cr</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{budget:'above1cr'});closeMM()">Rs1Cr+</div>
-          <div class="mm-sub-label">Quick Finds</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{sort:'latest'});closeMM()">Latest Arrivals</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{sort:'upcoming'});closeMM()">Upcoming Launches</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{sort:'bestseller'});closeMM()">Best Sellers in Nepal</div>
-          <div class="mm-sub-link" onclick="AV.goTo('cars',{view:'brands'});closeMM()">Browse by Brand</div>
-        </div>
-      </div>
-
-      <!-- Used Cars -->
-      <div class="mm-item">
-        <button class="mm-btn" id="mm-used-btn" onclick="mmToggle('mm-used-sub',this)">
-          <span>Used Cars</span>
-          <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13"
-            height="13">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-        <div class="mm-sub" id="mm-used-sub">
-          <div class="mm-sub-link" onclick="AV.goTo('used');closeMM()">Browse Used Cars</div>
-          <div class="mm-sub-link" onclick="alert('Sell enquiry: +977-9701076240');closeMM()">Sell Your Car</div>
-          <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'certified'});closeMM()">Certified Cars</div>
-          <div class="mm-sub-link" onclick="AV.goTo('used',{view:'history'});closeMM()">Vehicle History Report</div>
-          <div class="mm-sub-label">Filter By</div>
-          <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'year'});closeMM()">By Year</div>
-          <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'price'});closeMM()">By Price Range</div>
-          <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'mileage'});closeMM()">By Mileage</div>
-          <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'brand'});closeMM()">By Brand</div>
-          <div class="mm-sub-label">Finance</div>
-          <div class="mm-sub-link" onclick="window.location.href='caremi.html';closeMM()">EMI Calculator</div>
-          <div class="mm-sub-link" onclick="window.location.href='whatcarcanyouaffoard.html';closeMM()">What Car Can You
-            Afford?</div>
-          <div class="mm-sub-link" onclick="window.location.href='/insurance-finance.html';closeMM()">Banks &amp;
-            Finance Options</div>
-        </div>
-      </div>
-
-      <!-- Compare -->
-      <div class="mm-item">
-        <button class="mm-btn" id="mm-compare-btn" onclick="mmToggle('mm-compare-sub',this)">
-          <span>Compare Cars</span>
-          <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13"
-            height="13">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-        <div class="mm-sub" id="mm-compare-sub">
-          <div class="mm-sub-link" onclick="AV.goTo('compare');closeMM()">Start Comparison</div>
-          <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'nexon_ev_vs_byd_atto3'});closeMM()">Nexon EV vs
-            BYD Atto 3</div>
-          <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'mg_zs_vs_byd_atto3'});closeMM()">MG ZS EV vs BYD
-            Atto 3</div>
-          <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'creta_vs_seltos'});closeMM()">Hyundai Creta vs
-            Kia Seltos</div>
-          <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'tata_nexon_vs_punch'});closeMM()">Tata Nexon vs
-            Punch</div>
-          <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'hyundai_venue_vs_sonet'});closeMM()">Venue vs
-            Sonet</div>
-          <div class="mm-sub-link" onclick="AV.goTo('compare',{preset:'swift_vs_i20'});closeMM()">Maruti Swift vs
-            Hyundai i20</div>
-          <div class="mm-sub-label">Smart Tools</div>
-          <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'truecost'});closeMM()">True Cost Calculator</div>
-          <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'roadscore'});closeMM()">Nepal Road Suitability
-            Score</div>
-          <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'ownerscore'});closeMM()">Owner Satisfaction Score
-          </div>
-        </div>
-      </div>
-
-      <!-- Services -->
-      <div class="mm-item">
-        <button class="mm-btn" id="mm-services-btn" onclick="mmToggle('mm-services-sub',this)">
-          <span>Our Services</span>
-          <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13"
-            height="13">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-        <div class="mm-sub" id="mm-services-sub">
-          <div class="mm-sub-link" onclick="window.location.href='/dotm-services.html';closeMM()">DOTM Services</div>
-          <div class="mm-sub-link" onclick="window.location.href='/parts-accessories.html';closeMM()">Parts &amp;
-            Accessories</div>
-          <div class="mm-sub-link" onclick="window.location.href='/maintenance-repairs.html';closeMM()">Maintenance
-            &amp; Repairs</div>
-          <div class="mm-sub-link" onclick="window.location.href='/insurance-finance.html';closeMM()">Insurance &amp;
-            Financing</div>
-          <div class="mm-sub-link" onclick="window.location.href='/other-services.html';closeMM()">Other Services</div>
-        </div>
-      </div>
-
-      <!-- News & Reviews -->
-      <div class="mm-item">
-        <button class="mm-btn" id="mm-news-btn" onclick="mmToggle('mm-news-sub',this)">
-          <span>News &amp; Reviews</span>
-          <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13"
-            height="13">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-        <div class="mm-sub" id="mm-news-sub">
-          <div class="mm-sub-link" onclick="window.location.href='videos.html';closeMM()">Latest Videos</div>
-          <div class="mm-sub-link" onclick="window.location.href='videos.html?type=reviews';closeMM()">Car Reviews</div>
-          <div class="mm-sub-link" onclick="window.location.href='videos.html?type=shorts';closeMM()">Short Reels</div>
-          <div class="mm-sub-link" onclick="window.location.href='videos.html?type=ev';closeMM()">EV Videos</div>
-          <div class="mm-sub-label">Latest News</div>
-          <div class="mm-sub-link" onclick="AV.goTo('news',{tag:'upcoming'});closeMM()">Upcoming Launches</div>
-          <div class="mm-sub-link" onclick="AV.goTo('news',{tag:'budget'});closeMM()">Budget &amp; Customs News</div>
-          <div class="mm-sub-link" onclick="AV.goTo('news',{tag:'market'});closeMM()">Market Trends</div>
-          <div class="mm-sub-label">Guides</div>
-          <div class="mm-sub-link" onclick="AV.goTo('guide',{topic:'buying'});closeMM()">Buying Guide</div>
-          <div class="mm-sub-link" onclick="AV.goTo('guide',{topic:'maintenance'});closeMM()">Maintenance Tips</div>
-          <div class="mm-sub-link" onclick="AV.goTo('guide',{topic:'women'});closeMM()">Women &amp; Cars</div>
-          <div class="mm-sub-link" onclick="AV.goTo('awards');closeMM()">Annual Nepal Car Awards</div>
-          <div class="mm-sub-link" onclick="AV.goTo('compare',{tool:'tmv'});closeMM()">True Market Value</div>
-        </div>
-      </div>
-
-
-      <!-- Tools -->
-      <div class="mm-item">
-        <button class="mm-btn" id="mm-tools-btn" onclick="mmToggle('mm-tools-sub',this)">
-          <span>Smart Tools</span>
-          <svg class="mm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13"
-            height="13">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-        <div class="mm-sub" id="mm-tools-sub">
-          <div class="mm-sub-link" onclick="window.location.href='whatcarcanyouaffoard.html';closeMM()">What Car Can You
-            Afford?</div>
-          <div class="mm-sub-link" onclick="window.location.href='caremi.html';closeMM()">EMI Calculator</div>
-          <div class="mm-sub-link" onclick="window.location.href='chargingstation.html';closeMM()">EV Charging Map</div>
-        </div>
-      </div>
-
-      <!-- CTA Buttons -->
-      <div class="mm-cta">
-
-        <button class="btn btn-primary" onclick="window.location.href='/book-service.html'">Book Service</button>
-      </div>
-
-      <!-- Phone -->
-      <div style="padding:14px 16px 20px;border-top:1px solid var(--bg2)">
-        <a href="tel:+9779701076240"
-          style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--g3)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-            <path
-              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-.95a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-          </svg>
-          +977-9701076240
-        </a>
-        <div style="font-size:12px;color:var(--ink4);margin-top:3px;margin-left:24px">Mon–Sat · 9am–6pm</div>
-      </div>
-
-    </div>
-  </div>
-
   <!-- ═══ COMPARE TRAY ═══ -->
   <div class="cmp-tray" id="cmp-tray">
     <span class="cmp-label">Compare</span>
     <div class="cmp-slots" id="cmp-slots"></div>
     <div class="cmp-btns">
       <button class="cmp-go" onclick="AV.goTo('compare')">Compare Now</button>
-      <button class="cmp-clr" onclick="AV.clearCompare()">✕ Clear</button>
+      <button class="cmp-clr" onclick="AV.clearCompare()"><i data-lucide="x"></i> Clear</button>
     </div>
   </div>
 
@@ -7408,152 +6923,7 @@
       </div>
     </div>
   </main>
-  <!-- ═══ FOOTER ═══ -->
-  <footer class="site-footer" id="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
 
-        <!-- Brand -->
-        <div class="footer-brand-col">
-          <img src="assets/images/cars/logo.PNG" alt="AutoViindu" class="footer-logo-img"
-            style="height:36px;width:auto;margin-bottom:16px">
-          <p class="footer-desc">Nepal's trusted automotive platform — real prices, full specs, and expert guidance from
-            search to service.</p>
-          <div class="footer-social">
-            <a class="fsoc" href="https://www.facebook.com/profile.php?id=61576845804927" title="Facebook"
-              target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.4)" width="14" height="14">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-              </svg>
-            </a>
-            <a class="fsoc" href="https://www.instagram.com/autoviindu/" title="Instagram" target="_blank"
-              rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14"
-                height="14">
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-              </svg>
-            </a>
-            <a class="fsoc" href="https://www.youtube.com/@autoviindu" title="YouTube" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" width="14"
-                height="14">
-                <path
-                  d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
-                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="rgba(255,255,255,.4)" stroke="none" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Explore -->
-        <div>
-          <div class="footer-col-title">Explore</div>
-          <a class="footer-link" onclick="AV.goTo('cars')">New Cars</a>
-          <a class="footer-link" onclick="AV.goTo('used')">Used Cars</a>
-          <a class="footer-link" onclick="AV.goTo('cars',{filter:'electric'})">Electric Vehicles</a>
-          <a class="footer-link" onclick="AV.goTo('compare')">Compare Cars</a>
-          <a class="footer-link" onclick="AV.goTo('cars',{view:'brands'})">Browse by Brand</a>
-        </div>
-
-        <!-- Services & Tools -->
-        <div>
-          <div class="footer-col-title">Services &amp; Tools</div>
-          <a class="footer-link" href="caremi.html">EMI Calculator</a>
-          <a class="footer-link" href="whatcarcanyouaffoard.html">Affordability Check</a>
-          <a class="footer-link" href="dotm-services.html">DOTM Services</a>
-          <a class="footer-link" href="maintenance-repairs.html">Maintenance</a>
-          <a class="footer-link" href="insurance-finance.html">Insurance &amp; Finance</a>
-          <a class="footer-link" href="book-service.html">Book Service</a>
-        </div>
-
-        <!-- Contact -->
-        <div>
-          <div class="footer-col-title">Contact</div>
-          <a class="footer-link" href="tel:+9779701076240">+977-9701076240</a>
-          <a class="footer-link" href="mailto:info@autoviindu.com">info@autoviindu.com</a>
-          <span class="footer-link" style="cursor:default">Nayabazar, Kathmandu</span>
-          <span class="footer-link" style="cursor:default">Mon–Sat · 9am–6pm</span>
-        </div>
-
-      </div><!-- /.footer-grid -->
-
-      <div class="footer-bottom">
-        <span class="footer-bottom-txt">© 2026 AutoViindu Pvt. Ltd. · Nayabazar, Kathmandu</span>
-        <span class="footer-bottom-txt">+977-9701076240 · Mon–Sat 9am–6pm</span>
-        <div class="fbot-links">
-          <a>Privacy</a>
-          <a>Terms</a>
-          <a>Sitemap</a>
-        </div>
-      </div>
-
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      'use strict';
-      var current = null;
-      var nav = document.querySelector('.header-nav');
-      if (!nav) return;
-
-      function setExpanded(item, open) {
-        var btn = item && item.querySelector('.av-link[aria-haspopup]');
-        if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      }
-
-      function closeAll() {
-        nav.querySelectorAll('.av-item.open').forEach(function (item) {
-          item.classList.remove('open');
-          setExpanded(item, false);
-        });
-        current = null;
-      }
-
-      nav.querySelectorAll('.av-item').forEach(function (item) {
-        var btn = item.querySelector('.av-link');
-        var dd = item.querySelector('.av-dd');
-        if (!dd || !btn) return;
-
-        btn.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          var isOpen = item.classList.contains('open');
-          closeAll();
-          if (!isOpen) {
-            item.classList.add('open');
-            setExpanded(item, true);
-            current = item;
-          }
-        });
-      });
-
-      nav.querySelectorAll('.av-acc-hd').forEach(function (hd) {
-        hd.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var acc = hd.closest('.av-acc');
-          var panel = acc && acc.parentElement;
-          if (!acc || !panel) return;
-          var wasOpen = acc.classList.contains('open');
-          panel.querySelectorAll('.av-acc').forEach(function (a) { a.classList.remove('open'); });
-          if (!wasOpen) acc.classList.add('open');
-        });
-      });
-
-      nav.querySelectorAll('.av-menu-link, .av-menu-cta').forEach(function (link) {
-        link.addEventListener('click', function () { closeAll(); });
-      });
-
-      document.addEventListener('click', function (e) {
-        if (current && !current.contains(e.target)) closeAll();
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && current) closeAll();
-      });
-    })();
-  </script>
   <script>lucide.createIcons();</script>
 
 

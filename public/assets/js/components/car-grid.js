@@ -12,7 +12,7 @@ window.CarGrid = {
 
     if (!cars || !cars.length) {
       el.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;background:var(--bg);border-radius:var(--r20)">' +
-        '<div style="font-size:40px;margin-bottom:12px">🔍</div>' +
+        '<div style="font-size:40px;margin-bottom:12px"><i data-lucide="search"></i></div>' +
         '<div style="font-size:18px;font-weight:800;color:var(--ink);margin-bottom:8px">' + (opts.emptyMsg || 'No cars found') + '</div>' +
         (opts.emptyAction || '<button onclick="AV.goTo(\'cars\')" class="btn btn-primary" style="margin-top:10px">Browse all cars</button>') +
       '</div>';

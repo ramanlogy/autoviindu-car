@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <title>Insurance &amp; Financing – AutoViindu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
-      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
-      --border:#E4E8ED; --bg:#F5F7F9; --bg2:#ECEEF2; --white:#ffffff;
-      --blue:#1A4DB8; --blue-l:#EEF3FC;
-      --gold:#B8900E; --gold-l:#FDF6E0;
-      --red:#C8271E; --red-l:#FFF0EF;
-      --teal:#0E7F73; --teal-l:#E6F5F4;
-      --purple:#6B35C7; --purple-l:#F0EBFA;
-      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
-      --sh1:0 1px 4px rgba(0,0,0,.07); --sh2:0 4px 14px rgba(0,0,0,.09); --sh3:0 8px 28px rgba(0,0,0,.11);
-      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
-      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+        :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
     }
     html { scroll-behavior:smooth; }
     body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
@@ -39,40 +61,45 @@
     .bc-inner a:hover { text-decoration:underline; }
     .bc-inner i { width:12px; height:12px; }
 
-    /* ── HERO ── */
-    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:52px 0 0; position:relative; overflow:hidden; }
-    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
-    .hero-inner { position:relative; z-index:1; padding-bottom:52px; }
-    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
-    .hero-badge i { width:13px; height:13px; color:var(--green-m); }
-    .hero h1 { font-family:var(--font-d); font-size:clamp(28px,5vw,50px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:14px; }
-    .hero h1 em { font-style:italic; color:var(--green-m); }
-    .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:560px; line-height:1.7; margin-bottom:30px; }
-    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
-    .hero-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:var(--pill); padding:7px 14px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.8); }
-    .hero-pill i { width:13px; height:13px; color:var(--green-m); }
+    /* HERO — Clean, utility-focused light layout */
+    .hero {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 0 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--pill); padding: 5px 13px; font-size: 11px; font-weight: 600; color: var(--ink3); letter-spacing: .4px; text-transform: uppercase; margin-bottom: 18px; }
+    .hero-badge i { width: 13px; height: 13px; color: var(--ink3); }
+    .hero h1 { font-family: var(--font-d); font-size: clamp(28px, 4.5vw, 42px); font-weight: 800; color: var(--ink); line-height: 1.15; margin-bottom: 14px; }
+    .hero h1 em { font-style: italic; color: inherit; }
+    .hero-desc { font-size: 15px; color: var(--ink3); max-width: 560px; line-height: 1.75; margin-bottom: 30px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .hero-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--border); border-radius: var(--pill); padding: 7px 14px; font-size: 12px; font-weight: 500; color: var(--ink2); }
+    .hero-pill i { width: 13px; height: 13px; color: var(--g3); }
     /* Hero CTA buttons */
-    .hero-ctas { display:flex; flex-wrap:wrap; gap:10px; }
-    .btn-hero-primary { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; background:var(--white); color:var(--green); border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:14px; font-weight:800; cursor:pointer; text-decoration:none; transition:all var(--ease); }
-    .btn-hero-primary:hover { background:#f0faf2; box-shadow:0 6px 20px rgba(0,0,0,.18); transform:translateY(-1px); }
-    .btn-hero-primary i { width:16px; height:16px; }
-    .btn-hero-secondary { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; background:rgba(255,255,255,.1); color:#fff; border:1.5px solid rgba(255,255,255,.2); border-radius:var(--r10); font-family:var(--font-b); font-size:14px; font-weight:800; cursor:pointer; text-decoration:none; transition:all var(--ease); }
-    .btn-hero-secondary:hover { background:rgba(255,255,255,.18); transform:translateY(-1px); }
-    .btn-hero-secondary i { width:16px; height:16px; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn-hero-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; background: var(--ink); color: #fff; border: none; border-radius: var(--r10); font-family: var(--font-b); font-size: 14px; font-weight: 800; cursor: pointer; text-decoration: none; transition: all var(--ease); }
+    .btn-hero-primary:hover { background: var(--ink2); transform: translateY(-1px); }
+    .btn-hero-primary i { width: 16px; height: 16px; }
+    .btn-hero-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; background: var(--white); color: var(--ink); border: 1.5px solid var(--border); border-radius: var(--r10); font-family: var(--font-b); font-size: 14px; font-weight: 800; cursor: pointer; text-decoration: none; transition: all var(--ease); }
+    .btn-hero-secondary:hover { background: var(--bg2); transform: translateY(-1px); }
+    .btn-hero-secondary i { width: 16px; height: 16px; }
 
     /* ── TAB NAV ── */
-    .tab-nav { background:var(--white); border-bottom:2px solid var(--border); position:sticky; top:0; z-index:100; }
+    .tab-nav { background:var(--white); border-bottom:2px solid var(--border); position:sticky; top:var(--nav); z-index:100; }
     .tab-nav-inner { display:flex; overflow-x:auto; scrollbar-width:none; }
     .tab-nav-inner::-webkit-scrollbar { display:none; }
-    .tab-btn { display:flex; align-items:center; gap:8px; padding:16px 22px; font-size:13.5px; font-weight:700; color:var(--ink4); border:none; background:none; cursor:pointer; white-space:nowrap; border-bottom:2px solid transparent; margin-bottom:-2px; transition:all var(--ease); text-decoration:none; }
-    .tab-btn i { width:15px; height:15px; }
+    .tab-btn { display:flex; align-items:center; gap:8px; padding:12px 18px; font-size:12.5px; font-weight:700; color:var(--ink4); border:none; background:none; cursor:pointer; white-space:nowrap; border-bottom:2px solid transparent; margin-bottom:-2px; transition:all var(--ease); text-decoration:none; }
+    .tab-btn i, .tab-btn svg { width:14px; height:14px; color:var(--ink3); }
     .tab-btn:hover { color:var(--ink2); }
     .tab-btn.active { color:var(--green); border-bottom-color:var(--green); }
     .tab-btn.active-finance { color:var(--blue); border-bottom-color:var(--blue); }
     /* Separator between nav items and CTA links */
     .tab-nav-sep { flex:1; }
-    .tab-cta-link { display:flex; align-items:center; gap:7px; padding:10px 16px; margin:8px 6px; font-size:13px; font-weight:700; border-radius:var(--r8); text-decoration:none; white-space:nowrap; transition:all var(--ease); }
-    .tab-cta-link i { width:14px; height:14px; }
+    .tab-cta-link { display:flex; align-items:center; gap:7px; padding:8px 14px; margin:6px 4px; font-size:12.5px; font-weight:700; border-radius:var(--r8); text-decoration:none; white-space:nowrap; transition:all var(--ease); }
+    .tab-cta-link i, .tab-cta-link svg { width:13px; height:13px; }
     .tab-cta-link.green { background:var(--green); color:#fff; }
     .tab-cta-link.green:hover { background:var(--green-d); }
     .tab-cta-link.blue { background:var(--blue); color:#fff; }
@@ -126,8 +153,15 @@
     @media(min-width:900px){ .addons-grid{ grid-template-columns:repeat(3,1fr); } }
     .addon-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); padding:18px 16px; display:flex; gap:13px; transition:all var(--ease); cursor:default; }
     .addon-card:hover { border-color:var(--green); box-shadow:var(--sh1); }
-    .addon-icon { width:38px; height:38px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .addon-icon { width:38px; height:38px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; background:var(--white) !important; border:1.5px solid var(--border); box-shadow:var(--sh1); }
     .addon-icon i { width:18px; height:18px; }
+    .addon-icon::after { content:''; position:absolute; bottom:-4px; right:-5px; width:12px; height:12px; border-radius:50%; box-shadow:0 0 0 2px var(--white); }
+    .addon-card:nth-child(6n+1) .addon-icon::after { background:var(--green); }
+    .addon-card:nth-child(6n+2) .addon-icon::after { background:var(--blue); }
+    .addon-card:nth-child(6n+3) .addon-icon::after { background:var(--gold); }
+    .addon-card:nth-child(6n+4) .addon-icon::after { background:var(--red); }
+    .addon-card:nth-child(6n+5) .addon-icon::after { background:var(--purple); }
+    .addon-card:nth-child(6n+6) .addon-icon::after { background:var(--teal); }
     .addon-name { font-size:13.5px; font-weight:800; color:var(--ink2); margin-bottom:4px; }
     .addon-desc { font-size:12px; color:var(--ink4); line-height:1.55; }
     .addon-tag { display:inline-block; margin-top:6px; font-size:10px; font-weight:700; padding:2px 8px; border-radius:var(--pill); text-transform:uppercase; letter-spacing:.4px; }
@@ -142,8 +176,13 @@
     .ncb-text p { font-size:14.5px; color:rgba(255,255,255,.65); line-height:1.7; }
     .ncb-rules { display:flex; flex-direction:column; gap:10px; }
     .ncb-rule { display:flex; align-items:flex-start; gap:12px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:var(--r12); padding:14px 16px; }
-    .ncb-rule-icon { width:34px; height:34px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .ncb-rule-icon i { width:16px; height:16px; }
+    .ncb-rule-icon { width:34px; height:34px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; background:rgba(255,255,255,.12) !important; }
+    .ncb-rule-icon i { width:16px; height:16px; color:#fff !important; }
+    .ncb-rule-icon::after { content:''; position:absolute; bottom:-4px; right:-5px; width:12px; height:12px; border-radius:50%; box-shadow:0 0 0 2px rgba(255,255,255,.18); }
+    .ncb-rule:nth-child(4n+1) .ncb-rule-icon::after { background:var(--green-m); }
+    .ncb-rule:nth-child(4n+2) .ncb-rule-icon::after { background:var(--blue); }
+    .ncb-rule:nth-child(4n+3) .ncb-rule-icon::after { background:var(--red); }
+    .ncb-rule:nth-child(4n+4) .ncb-rule-icon::after { background:var(--gold); }
     .ncb-rule-title { font-size:13px; font-weight:800; color:#fff; margin-bottom:2px; }
     .ncb-rule-desc { font-size:12px; color:rgba(255,255,255,.55); line-height:1.5; }
 
@@ -162,8 +201,9 @@
     .ev-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); padding:18px; transition:all var(--ease); }
     .ev-card:hover { border-color:var(--teal); box-shadow:var(--sh1); }
     .ev-card-head { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
-    .ev-card-icon { width:36px; height:36px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; flex-shrink:0; background:var(--teal-l); }
+    .ev-card-icon { width:36px; height:36px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; background:var(--white) !important; border:1.5px solid var(--border); box-shadow:var(--sh1); }
     .ev-card-icon i { width:17px; height:17px; color:var(--teal); }
+    .ev-card-icon::after { content:''; position:absolute; bottom:-4px; right:-5px; width:11px; height:11px; border-radius:50%; background:var(--teal); box-shadow:0 0 0 2px var(--white); }
     .ev-card-title { font-size:14px; font-weight:800; color:var(--ink2); }
     .ev-card-body { font-size:13px; color:var(--ink4); line-height:1.65; }
     .ev-card-list { display:flex; flex-direction:column; gap:6px; margin-top:10px; }
@@ -276,19 +316,24 @@
     .svc-intro-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); padding:18px 16px; transition:all var(--ease); cursor:pointer; }
     .svc-intro-card:hover { border-color:var(--green); box-shadow:var(--sh1); transform:translateY(-2px); }
     .svc-intro-card.blue-hover:hover { border-color:var(--blue); }
-    .svc-intro-icon { width:38px; height:38px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+    .svc-intro-icon { width:38px; height:38px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center; margin-bottom:12px; position:relative; background:var(--white) !important; border:1.5px solid var(--border); box-shadow:var(--sh1); }
     .svc-intro-icon i { width:18px; height:18px; }
+    .svc-intro-icon::after { content:''; position:absolute; bottom:-4px; right:-5px; width:12px; height:12px; border-radius:50%; box-shadow:0 0 0 2px var(--white); }
+    .svc-intro-card:nth-child(4n+1) .svc-intro-icon::after { background:var(--green); }
+    .svc-intro-card:nth-child(4n+2) .svc-intro-icon::after { background:var(--blue); }
+    .svc-intro-card:nth-child(4n+3) .svc-intro-icon::after { background:var(--gold); }
+    .svc-intro-card:nth-child(4n+4) .svc-intro-icon::after { background:var(--teal); }
     .svc-intro-name { font-size:13.5px; font-weight:800; color:var(--ink2); margin-bottom:4px; }
     .svc-intro-desc { font-size:12px; color:var(--ink4); line-height:1.5; }
   </style>
 </head>
 <body>
- <script src="assets/js/components/av-nav.js"></script>
+ <script src="assets/js/site-chrome.js"></script>
 
 <!-- BREADCRUMB -->
 <nav class="bc">
   <div class="wrap bc-inner">
-    <a href="index.html">Home</a>
+    <a href="/">Home</a>
     <i data-lucide="chevron-right"></i>
     <span>Insurance &amp; Financing</span>
   </div>
@@ -308,8 +353,8 @@
         <span class="hero-pill"><i data-lucide="check-circle-2"></i>eSewa &amp; Khalti accepted</span>
       </div>
       <div class="hero-ctas">
-        <a href="forms.html" class="btn-hero-primary"><i data-lucide="shield"></i>Get Insurance Quote</a>
-        <a href="forms.html#finance" class="btn-hero-secondary"><i data-lucide="banknote"></i>Apply for Finance</a>
+        <a href="/form/insuranceform" class="btn-hero-primary"><i data-lucide="shield"></i>Get Insurance Quote</a>
+        <a href="/form/insuranceform#finance" class="btn-hero-secondary"><i data-lucide="banknote"></i>Apply for Finance</a>
       </div>
     </div>
   </div>
@@ -319,14 +364,14 @@
 <div class="tab-nav" id="main-tabs">
   <div class="wrap" style="padding:0">
     <div class="tab-nav-inner">
-      <button class="tab-btn active" onclick="scrollTo('#insurance-section')"><i data-lucide="shield"></i>Insurance</button>
-      <button class="tab-btn" onclick="scrollTo('#coverage')"><i data-lucide="file-text"></i>Coverage Types</button>
-      <button class="tab-btn" onclick="scrollTo('#ev')"><i data-lucide="zap"></i>EV Cover</button>
-      <button class="tab-btn active-finance" onclick="scrollTo('#finance-section')"><i data-lucide="banknote"></i>Financing</button>
-      <button class="tab-btn" onclick="scrollTo('#loan-rates')"><i data-lucide="percent"></i>Loan Rates</button>
+      <button class="tab-btn active" onclick="scrollSection('#insurance-section')"><i data-lucide="shield"></i>Insurance</button>
+      <button class="tab-btn" onclick="scrollSection('#coverage')"><i data-lucide="file-text"></i>Coverage Types</button>
+      <button class="tab-btn" onclick="scrollSection('#ev')"><i data-lucide="zap"></i>EV Cover</button>
+      <button class="tab-btn active-finance" onclick="scrollSection('#finance-section')"><i data-lucide="banknote"></i>Financing</button>
+      <button class="tab-btn" onclick="scrollSection('#loan-rates')"><i data-lucide="percent"></i>Loan Rates</button>
       <div class="tab-nav-sep"></div>
-      <a href="forms.html" class="tab-cta-link green"><i data-lucide="send"></i>Get Insurance Quote</a>
-      <a href="forms.html#finance" class="tab-cta-link blue"><i data-lucide="calculator"></i>Apply for Loan</a>
+      <a href="/form/insuranceform" class="tab-cta-link green"><i data-lucide="send"></i>Get Insurance Quote</a>
+      <a href="/form/insuranceform#finance" class="tab-cta-link blue"><i data-lucide="calculator"></i>Apply for Loan</a>
     </div>
   </div>
 </div>
@@ -343,17 +388,17 @@
       <h2 class="sec-title">Four Ways We <em>Protect You</em></h2>
       <p class="sec-sub">We arrange, advise, and assist with vehicle insurance in Nepal — from finding the right policy to filing your claim.</p>
       <div class="services-intro">
-        <div class="svc-intro-card" onclick="scrollTo('#coverage')">
+        <div class="svc-intro-card" onclick="scrollSection('#coverage')">
           <div class="svc-intro-icon" style="background:var(--green-l)"><i data-lucide="shield" style="color:var(--green)"></i></div>
           <div class="svc-intro-name">Third-Party Arrangement</div>
           <div class="svc-intro-desc">Quick policy setup, regulated rates, same-day activation, digital &amp; physical certificate.</div>
         </div>
-        <div class="svc-intro-card" onclick="scrollTo('#addons')">
+        <div class="svc-intro-card" onclick="scrollSection('#addons')">
           <div class="svc-intro-icon" style="background:var(--blue-l)"><i data-lucide="search" style="color:var(--blue)"></i></div>
           <div class="svc-intro-name">Comprehensive Consultation</div>
           <div class="svc-intro-desc">Expert advice, IDV optimisation, add-on suggestions, multi-year discounts &amp; EV-specific cover.</div>
         </div>
-        <div class="svc-intro-card" onclick="scrollTo('#claims')">
+        <div class="svc-intro-card" onclick="scrollSection('#claims')">
           <div class="svc-intro-icon" style="background:var(--gold-l)"><i data-lucide="file-text" style="color:var(--gold)"></i></div>
           <div class="svc-intro-name">Claim Assistance</div>
           <div class="svc-intro-desc">End-to-end claim filing, document prep, surveyor coordination &amp; settlement follow-up.</div>
@@ -609,8 +654,8 @@
           <p>Tell us about your vehicle and we'll get back to you with the best insurance options within one business day — third-party, comprehensive, EV cover, and add-ons.</p>
         </div>
         <div class="cta-btns">
-          <a href="forms.html" class="btn-cta-white green-txt"><i data-lucide="shield"></i>Get Insurance Quote</a>
-          <a href="forms.html" class="btn-cta-ghost"><i data-lucide="file-text"></i>Request Claim Help</a>
+          <a href="/form/insuranceform" class="btn-cta-white green-txt"><i data-lucide="shield"></i>Get Insurance Quote</a>
+          <a href="/form/insuranceform" class="btn-cta-ghost"><i data-lucide="file-text"></i>Request Claim Help</a>
         </div>
       </div>
     </div>
@@ -669,7 +714,7 @@
       <button class="loan-tab" onclick="switchLoanTab('used')">Used Vehicles</button>
     </div>
     <div class="loan-panel active" id="panel-ice"><div class="table-wrap"><table class="loan-table"><thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B — Development Bank</th><th>Class C — Finance Company</th><th>Hire Purchase</th></tr></thead><tbody><tr><td class="param">Interest Rate</td><td class="highlight">~5.37% – 10.57% p.a.</td><td>~5.06% – 12.54% p.a.</td><td>~6.40% – 15.19% p.a.</td><td>~10% – 16%+ p.a.</td></tr><tr><td class="param">Loan Coverage (LTV)</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 50–60%</td></tr><tr><td class="param">Down Payment</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40–50%</td></tr><tr><td class="param">Max Tenure</td><td class="highlight">Up to 7 years</td><td>Up to 7 years</td><td>Up to 5–6 years</td><td>Up to 5 years</td></tr><tr><td class="param">Vehicle Condition</td><td>Brand New</td><td>Brand New</td><td>Brand New</td><td>Brand New</td></tr><tr><td class="param">Government Subsidy</td><td colspan="4" style="color:var(--ink5);font-style:italic">Not available for ICE / Hybrid vehicles</td></tr></tbody></table></div></div>
-    <div class="loan-panel" id="panel-ev"><div class="notice teal" style="margin-bottom:16px"><i data-lucide="zap"></i><div><div class="notice-title">EV Green Loan &amp; Customs Duty Relief</div><div class="notice-text">Government of Nepal offers green loan incentives and customs duty relief for new BEVs — making EV financing more attractive than ICE vehicle loans.</div></div></div><div class="table-wrap"><table class="loan-table"><thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B — Development Bank</th><th>Class C — Finance Company</th><th>Hire Purchase</th></tr></thead><tbody><tr><td class="param">Interest Rate</td><td class="highlight" style="color:var(--teal)">~5.51% – 9.90% p.a.</td><td>~5.90% – 9.90% p.a.</td><td>~6.40% – 10.40% p.a.</td><td>~10% – 14%+ p.a.</td></tr><tr><td class="param">Loan Coverage (LTV)</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 50–60%</td></tr><tr><td class="param">Down Payment</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40–50%</td></tr><tr><td class="param">Max Tenure</td><td class="highlight" style="color:var(--teal)">Up to 10 years</td><td>Up to 7 years</td><td>Up to 5–6 years</td><td>Up to 5 years</td></tr><tr><td class="param">Government Subsidy</td><td colspan="4" style="color:var(--teal);font-weight:700">✓ Green Loan &amp; Customs Duty Relief available</td></tr></tbody></table></div></div>
+    <div class="loan-panel" id="panel-ev"><div class="notice teal" style="margin-bottom:16px"><i data-lucide="zap"></i><div><div class="notice-title">EV Green Loan &amp; Customs Duty Relief</div><div class="notice-text">Government of Nepal offers green loan incentives and customs duty relief for new BEVs — making EV financing more attractive than ICE vehicle loans.</div></div></div><div class="table-wrap"><table class="loan-table"><thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B — Development Bank</th><th>Class C — Finance Company</th><th>Hire Purchase</th></tr></thead><tbody><tr><td class="param">Interest Rate</td><td class="highlight" style="color:var(--teal)">~5.51% – 9.90% p.a.</td><td>~5.90% – 9.90% p.a.</td><td>~6.40% – 10.40% p.a.</td><td>~10% – 14%+ p.a.</td></tr><tr><td class="param">Loan Coverage (LTV)</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 60%</td><td>Up to 50–60%</td></tr><tr><td class="param">Down Payment</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40%</td><td>Minimum 40–50%</td></tr><tr><td class="param">Max Tenure</td><td class="highlight" style="color:var(--teal)">Up to 10 years</td><td>Up to 7 years</td><td>Up to 5–6 years</td><td>Up to 5 years</td></tr><tr><td class="param">Government Subsidy</td><td colspan="4" style="color:var(--teal);font-weight:700"><i data-lucide="check"></i> Green Loan &amp; Customs Duty Relief available</td></tr></tbody></table></div></div>
     <div class="loan-panel" id="panel-used"><div class="notice gold" style="margin-bottom:16px"><i data-lucide="alert-triangle"></i><div><div class="notice-title">Used vehicle loans — higher rates, more requirements</div><div class="notice-text">Used vehicles carry higher lender risk due to depreciation and uncertain condition. Class B and C banks do not currently offer used vehicle financing — only Class A and Hire Purchase.</div></div></div><div class="table-wrap"><table class="loan-table"><thead><tr><th>Parameter</th><th>Class A — Commercial Bank</th><th>Class B</th><th>Class C</th><th>Hire Purchase</th></tr></thead><tbody><tr><td class="param">Interest Rate</td><td class="highlight" style="color:var(--gold)">~8% – 13% p.a.</td><td style="color:var(--ink5)">— Not available</td><td style="color:var(--ink5)">— Not available</td><td>~10% – 16%+ p.a.</td></tr><tr><td class="param">Loan Coverage (LTV)</td><td>Up to 50% of assessed value</td><td>—</td><td>—</td><td>Up to 40–50% of assessed value</td></tr><tr><td class="param">Down Payment</td><td>Minimum 50%</td><td>—</td><td>—</td><td>Minimum 50–60%</td></tr><tr><td class="param">Max Tenure</td><td>Up to 5 years</td><td>—</td><td>—</td><td>Up to 5 years</td></tr><tr><td class="param">Max Vehicle Age</td><td>ICE/HEV up to 7 yrs; EV up to 7–8 yrs</td><td>—</td><td>—</td><td>Up to 7–8 yrs (T&amp;C apply)</td></tr><tr><td class="param">Extra Requirements</td><td>Mandatory valuation report; Battery SoH for used EVs; Comprehensive insurance mandatory</td><td>—</td><td>—</td><td>Same; Battery SoH for used EVs mandatory</td></tr><tr><td class="param">Documents</td><td colspan="4" style="font-size:12px;color:var(--ink4)">Citizenship, Income Proof, Bluebook, Buyer-Seller Agreement, PAN (firm), Financial Statements (firm)</td></tr></tbody></table></div></div>
     <div class="notice blue" style="margin-top:20px;margin-bottom:0"><i data-lucide="info"></i><div><div class="notice-title">Rates are indicative</div><div class="notice-text">Loan rates, terms, and eligibility are governed by Nepal Rastra Bank (NRB) regulations and may change periodically. Always verify the latest terms directly with your preferred financial institution before deciding.</div></div></div>
   </div>
@@ -707,19 +752,18 @@
         <p>Tell us your vehicle and requirements and our team will connect you with the right NRB-regulated lender — new, used, ICE, EV, or hybrid.</p>
       </div>
       <div class="cta-btns">
-        <a href="forms.html#finance" class="btn-cta-white blue-txt"><i data-lucide="calculator"></i>Apply for Finance</a>
-        <a href="forms.html#finance" class="btn-cta-ghost"><i data-lucide="percent"></i>Compare Loan Rates</a>
+        <a href="/form/insuranceform#finance" class="btn-cta-white blue-txt"><i data-lucide="calculator"></i>Apply for Finance</a>
+        <a href="/form/insuranceform#finance" class="btn-cta-ghost"><i data-lucide="percent"></i>Compare Loan Rates</a>
       </div>
     </div>
   </div>
 </section>
 
-<script src="assets/js/components/av-footer.js"></script>
 
 <script>
   lucide.createIcons();
 
-  function scrollTo(id) {
+  function scrollSection(id) {
     const el = document.querySelector(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }

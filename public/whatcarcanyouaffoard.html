@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <title>Can I Afford This Car? — AutoViindu Nepal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Can I Afford This Car? — Nepal Car Affordability Tool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@13/font/simple-icons.min.css">
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --green:   #1A6B2A;
-      --green-d: #0f4519;
-      --green-m: #4CAF6A;
-      --green-l: #E8F5EB;
-      --green-ll:#F4FAF5;
-      --ink:     #0D1117;
-      --ink2:    #1E2630;
-      --ink3:    #38444F;
-      --ink4:    #5C6B78;
-      --ink5:    #8A97A3;
-      --border:  #DDE3E9;
-      --border2: #C8D1DA;
-      --bg:      #F3F6F8;
-      --bg2:     #E8ECF0;
-      --white:   #ffffff;
-      --blue:    #1A4DB8;
-      --blue-l:  #EBF1FC;
-      --gold:    #A67C00;
-      --gold-l:  #FBF3DC;
-      --red:     #B91C1C;
-      --red-l:   #FEF2F2;
-      --teal:    #0B7068;
-      --teal-l:  #E0F4F2;
-      --purple:  #5B21B6;
-      --purple-l:#EDE9FE;
-      --pill: 999px;
-      --r8:  8px; --r10: 10px; --r12: 12px;
-      --r16: 16px; --r20: 20px; --r24: 24px;
-      --sh3: 0 8px 28px rgba(0,0,0,.12);
-      --ease: 0.18s cubic-bezier(0.4,0,0.2,1);
-      --font-d: 'Fraunces', Georgia, serif;
-      --font-b: 'DM Sans', system-ui, sans-serif;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+        :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: var(--font-b);
       background: var(--bg);
@@ -57,48 +69,77 @@
       line-height: 1.6;
     }
 
-    ::selection { background: rgba(26,107,42,.15); }
+    ::selection {
+      background: rgba(26, 107, 42, .15);
+    }
 
     /* HERO */
     .hero {
       background: linear-gradient(148deg, #081c0c 0%, #1A6B2A 52%, #24883A 100%);
-      padding: 48px 24px 52px;
+      padding: 44px 20px 50px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
+
     .hero::before {
       content: '';
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
       pointer-events: none;
     }
+
     .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.18);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .18);
       border-radius: var(--pill);
       padding: 6px 16px;
-      font-size: 12px; font-weight: 700;
-      color: rgba(255,255,255,.75);
-      letter-spacing: .4px; text-transform: uppercase;
-      margin-bottom: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .75);
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
-    .hero-badge i { width: 13px; height: 13px; color: var(--green-m); }
+
+    .hero-badge i {
+      width: 13px;
+      height: 13px;
+      color: var(--green-m);
+    }
+
     .hero h1 {
       font-family: var(--font-d);
-      font-size: clamp(32px, 9vw, 50px);
-      font-weight: 800; color: #fff;
-      line-height: 1.08; margin-bottom: 14px;
+      font-size: clamp(30px, 8.5vw, 48px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.08;
+      margin-bottom: 12px;
     }
-    .hero h1 em { font-style: italic; color: var(--green-m); }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--green-m);
+    }
+
     .hero-sub {
-      font-size: 15px; color: rgba(255,255,255,.6);
-      max-width: 380px; margin: 0 auto; line-height: 1.7;
+      font-size: 14.5px;
+      color: rgba(255, 255, 255, .6);
+      max-width: 400px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
 
     /* WRAPPER */
-    .main-wrap { max-width: 560px; margin: 0 auto; padding: 0 16px 72px; }
+    .main-wrap {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 0 16px 60px;
+    }
 
     /* CARD */
     .card {
@@ -106,858 +147,1686 @@
       border: 1.5px solid var(--border);
       border-radius: var(--r24);
       overflow: hidden;
-      margin-top: -28px;
+      margin-top: -26px;
       box-shadow: var(--sh3);
+    }
+
+    /* MODE SWITCH */
+    .mode-switch {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      padding: 14px;
+      background: var(--ink2);
+    }
+
+    .mode-btn {
+      border: none;
+      border-radius: var(--r10);
+      padding: 12px 8px;
+      font-family: var(--font-b);
+      font-size: 13.5px;
+      font-weight: 700;
+      background: transparent;
+      color: rgba(255, 255, 255, .55);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: all var(--ease);
+    }
+
+    .mode-btn i {
+      width: 15px;
+      height: 15px;
+    }
+
+    .mode-btn.active {
+      background: var(--green-m);
+      color: #06210b;
     }
 
     /* FUEL SELECTOR */
     .fuel-tabs {
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       border-bottom: 1.5px solid var(--border);
       background: var(--bg);
     }
+
     .fuel-tab {
-      display: flex; flex-direction: column;
-      align-items: center; gap: 7px;
-      padding: 20px 8px 17px;
-      border: none; background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      padding: 18px 8px 15px;
+      border: none;
+      background: transparent;
       cursor: pointer;
       transition: background var(--ease);
       position: relative;
     }
+
     .fuel-tab::after {
       content: '';
-      position: absolute; bottom: -1.5px; left: 16px; right: 16px;
-      height: 3px; border-radius: 3px 3px 0 0;
-      background: transparent; transition: background var(--ease);
+      position: absolute;
+      bottom: -1.5px;
+      left: 16px;
+      right: 16px;
+      height: 3px;
+      border-radius: 3px 3px 0 0;
+      background: transparent;
+      transition: background var(--ease);
     }
-    .fuel-tab.active { background: var(--white); }
-    .fuel-tab.active.ev::after     { background: var(--green); }
-    .fuel-tab.active.hybrid::after { background: var(--gold); }
-    .fuel-tab.active.petrol::after { background: var(--red); }
+
+    .fuel-tab.active {
+      background: var(--white);
+    }
+
+    .fuel-tab.active.ev::after {
+      background: var(--green);
+    }
+
+    .fuel-tab.active.hybrid::after {
+      background: var(--gold);
+    }
+
+    .fuel-tab.active.petrol::after {
+      background: var(--red);
+    }
 
     .fuel-icon {
-      width: 46px; height: 46px;
+      width: 42px;
+      height: 42px;
       border-radius: var(--r10);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .fuel-icon i { width: 22px; height: 22px; }
-    .fuel-tab:not(.active) .fuel-icon { background: var(--bg2); }
-    .fuel-tab:not(.active) .fuel-icon i { color: var(--ink5); }
-    .fuel-tab.active.ev     .fuel-icon { background: var(--green-l); }
-    .fuel-tab.active.ev     .fuel-icon i { color: var(--green); }
-    .fuel-tab.active.hybrid .fuel-icon { background: var(--gold-l); }
-    .fuel-tab.active.hybrid .fuel-icon i { color: var(--gold); }
-    .fuel-tab.active.petrol .fuel-icon { background: var(--red-l); }
-    .fuel-tab.active.petrol .fuel-icon i { color: var(--red); }
+
+    .fuel-icon i {
+      width: 20px;
+      height: 20px;
+    }
+
+    .fuel-tab:not(.active) .fuel-icon {
+      background: var(--bg2);
+    }
+
+    .fuel-tab:not(.active) .fuel-icon i {
+      color: var(--ink5);
+    }
+
+    .fuel-tab.active.ev .fuel-icon {
+      background: var(--green-l);
+    }
+
+    .fuel-tab.active.ev .fuel-icon i {
+      color: var(--green);
+    }
+
+    .fuel-tab.active.hybrid .fuel-icon {
+      background: var(--gold-l);
+    }
+
+    .fuel-tab.active.hybrid .fuel-icon i {
+      color: var(--gold);
+    }
+
+    .fuel-tab.active.petrol .fuel-icon {
+      background: var(--red-l);
+    }
+
+    .fuel-tab.active.petrol .fuel-icon i {
+      color: var(--red);
+    }
 
     .fuel-label {
-      font-size: 14px; font-weight: 700;
-      color: var(--ink4); line-height: 1;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink4);
+      line-height: 1;
     }
-    .fuel-tab.active .fuel-label { color: var(--ink); }
-    .fuel-sub { font-size: 11.5px; color: var(--ink5); line-height: 1; }
-    .fuel-tab.active.ev     .fuel-sub { color: var(--green); }
-    .fuel-tab.active.hybrid .fuel-sub { color: var(--gold); }
-    .fuel-tab.active.petrol .fuel-sub { color: var(--red); }
+
+    .fuel-tab.active .fuel-label {
+      color: var(--ink);
+    }
+
+    .fuel-sub {
+      font-size: 11px;
+      color: var(--ink5);
+      line-height: 1;
+    }
+
+    .fuel-tab.active.ev .fuel-sub {
+      color: var(--green);
+    }
+
+    .fuel-tab.active.hybrid .fuel-sub {
+      color: var(--gold);
+    }
+
+    .fuel-tab.active.petrol .fuel-sub {
+      color: var(--red);
+    }
 
     /* FORM */
-    .form-body { padding: 30px 24px 26px; }
+    .form-body {
+      padding: 28px 22px 24px;
+    }
 
-    .step-head { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .step-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
     .step-num-badge {
-      width: 30px; height: 30px; border-radius: 50%;
-      background: var(--green); color: #fff;
-      font-size: 14px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
-    .step-title-text { font-size: 16px; font-weight: 800; color: var(--ink); }
-    .step-subtitle { font-size: 13px; color: var(--ink4); margin-top: 2px; }
 
-    .section-divider { height: 1px; background: var(--border); margin: 30px -24px; }
+    .step-title-text {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .step-subtitle {
+      font-size: 13px;
+      color: var(--ink4);
+      margin-top: 2px;
+    }
+
+    .section-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 28px -22px;
+    }
 
     /* FIELD */
-    .field { margin-bottom: 26px; }
-    .field:last-of-type { margin-bottom: 0; }
+    .field {
+      margin-bottom: 24px;
+    }
+
+    .field:last-of-type {
+      margin-bottom: 0;
+    }
 
     .field-top {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; gap: 12px; margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 6px;
     }
 
     .field-question {
-      font-size: 15.5px; font-weight: 700;
-      color: var(--ink); line-height: 1.35;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.35;
     }
 
     .field-hint {
-      font-size: 13.5px; color: var(--ink4);
-      margin-top: 3px; line-height: 1.45;
+      font-size: 13px;
+      color: var(--ink4);
+      margin-top: 3px;
+      line-height: 1.45;
     }
 
     .live-val {
       font-family: var(--font-d);
-      font-size: 20px; font-weight: 800;
+      font-size: 19px;
+      font-weight: 800;
       color: var(--green);
-      white-space: nowrap; flex-shrink: 0;
+      white-space: nowrap;
+      flex-shrink: 0;
       line-height: 1.1;
     }
 
     /* Number input */
     .num-wrap {
-      display: flex; align-items: stretch;
+      display: flex;
+      align-items: stretch;
       border: 2px solid var(--border);
       border-radius: var(--r10);
       overflow: hidden;
       transition: border-color var(--ease);
     }
-    .num-wrap:focus-within { border-color: var(--green); }
+
+    .num-wrap:focus-within {
+      border-color: var(--green);
+    }
 
     .num-affix {
-      display: flex; align-items: center;
+      display: flex;
+      align-items: center;
       padding: 0 14px;
       background: var(--bg);
-      font-size: 14px; font-weight: 700; color: var(--ink3);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink3);
       white-space: nowrap;
     }
-    .num-affix.left  { border-right: 2px solid var(--border); }
-    .num-affix.right { border-left:  2px solid var(--border); }
+
+    .num-affix.left {
+      border-right: 2px solid var(--border);
+    }
+
+    .num-affix.right {
+      border-left: 2px solid var(--border);
+    }
 
     .num-input {
-      flex: 1; border: none; outline: none;
+      flex: 1;
+      border: none;
+      outline: none;
       padding: 0 16px;
       font-family: var(--font-d);
-      font-size: 19px; font-weight: 800; color: var(--ink);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--ink);
       background: var(--white);
-      height: 54px; min-width: 0;
+      height: 52px;
+      min-width: 0;
     }
-    .num-input::placeholder { color: var(--ink5); font-weight: 400; font-size: 15px; font-family: var(--font-b); }
+
+    .num-input::placeholder {
+      color: var(--ink5);
+      font-weight: 400;
+      font-size: 15px;
+      font-family: var(--font-b);
+    }
 
     /* Slider */
-    .range-row { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
-    .range-edge { font-size: 12.5px; font-weight: 600; color: var(--ink5); white-space: nowrap; }
+    .range-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 13px;
+    }
+
+    .range-edge {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink5);
+      white-space: nowrap;
+    }
 
     input[type="range"].srange {
-      -webkit-appearance: none; appearance: none;
-      flex: 1; height: 6px; border-radius: 3px;
-      background: var(--bg2); outline: none; cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      flex: 1;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--bg2);
+      outline: none;
+      cursor: pointer;
     }
+
     input[type="range"].srange::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 26px; height: 26px; border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
       background: var(--green);
-      box-shadow: 0 2px 8px rgba(26,107,42,.3);
-      cursor: pointer; transition: transform 0.12s;
+      box-shadow: 0 2px 8px rgba(26, 107, 42, .3);
+      cursor: pointer;
+      transition: transform 0.12s;
     }
-    input[type="range"].srange::-webkit-slider-thumb:hover { transform: scale(1.12); }
+
+    input[type="range"].srange::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+    }
+
     input[type="range"].srange::-moz-range-thumb {
-      width: 26px; height: 26px; border-radius: 50%;
-      background: var(--green); border: none; cursor: pointer;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--green);
+      border: none;
+      cursor: pointer;
     }
 
     /* Tenure stepper */
     .stepper {
-      display: flex; align-items: center;
+      display: flex;
+      align-items: center;
       border: 2px solid var(--border);
-      border-radius: var(--r12); overflow: hidden;
-      background: var(--white); margin-top: 14px;
+      border-radius: var(--r12);
+      overflow: hidden;
+      background: var(--white);
+      margin-top: 13px;
     }
+
     .stepper-btn {
-      width: 60px; height: 60px;
-      border: none; background: var(--bg);
-      font-size: 26px; color: var(--ink3);
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border: none;
+      background: var(--bg);
+      font-size: 24px;
+      color: var(--ink3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
       transition: background var(--ease), color var(--ease);
     }
-    .stepper-btn:hover { background: var(--green-l); color: var(--green); }
-    .stepper-btn:active { background: var(--green); color: #fff; }
-    .stepper-divider { width: 2px; height: 60px; background: var(--border); flex-shrink: 0; }
-    .stepper-mid {
-      flex: 1; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 2px;
+
+    .stepper-btn:hover {
+      background: var(--green-l);
+      color: var(--green);
     }
+
+    .stepper-btn:active {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .stepper-divider {
+      width: 2px;
+      height: 56px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    .stepper-mid {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+    }
+
     .stepper-num {
       font-family: var(--font-d);
-      font-size: 28px; font-weight: 800; color: var(--ink);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--ink);
       line-height: 1;
     }
+
     .stepper-unit {
-      font-size: 12px; font-weight: 700;
-      color: var(--ink4); text-transform: uppercase;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--ink4);
+      text-transform: uppercase;
       letter-spacing: .5px;
     }
 
+    /* Choice pills (budget style) */
+    .pill-choice-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 13px;
+    }
+
+    .pill-choice {
+      border: 2px solid var(--border);
+      border-radius: var(--r12);
+      background: var(--white);
+      padding: 12px 6px;
+      cursor: pointer;
+      text-align: center;
+      transition: all var(--ease);
+    }
+
+    .pill-choice:hover {
+      border-color: var(--green);
+    }
+
+    .pill-choice.active {
+      border-color: var(--green);
+      background: var(--green-l);
+    }
+
+    .pill-choice-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .pill-choice-sub {
+      font-size: 11px;
+      color: var(--ink4);
+      margin-top: 2px;
+    }
+
+    .pill-choice.active .pill-choice-title {
+      color: var(--green-d);
+    }
+
     /* Brand grid */
-    .brand-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+    }
+
     .brand-btn {
-      display: flex; flex-direction: column;
-      align-items: center; gap: 7px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
       padding: 13px 6px 11px;
       border: 2px solid var(--border);
       border-radius: var(--r12);
-      background: var(--white); cursor: pointer;
+      background: var(--white);
+      cursor: pointer;
       transition: all var(--ease);
     }
-    .brand-btn:hover  { border-color: var(--green); background: var(--green-ll); }
-    .brand-btn.active { border-color: var(--green); background: var(--green-l); }
-    .brand-initial {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: var(--bg2);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 800; color: var(--ink4);
-      transition: all var(--ease);
+
+    .brand-btn:hover {
+      border-color: var(--green);
+      background: var(--green-ll);
     }
-    .brand-btn.active .brand-initial { background: var(--green); color: #fff; }
+
+    .brand-btn.active {
+      border-color: var(--green);
+      background: var(--green-l);
+    }
+
+    .brand-icon {
+      font-size: 22px;
+      color: #1E2630;
+      display: block;
+      margin-bottom: 2px
+    }
+
+    .brand-btn.active .brand-icon {
+      color: var(--green)
+    }
+
     .brand-name {
-      font-size: 12px; font-weight: 700; color: var(--ink3); text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink3);
+      text-align: center;
     }
-    .brand-btn.active .brand-name { color: var(--green-d); }
+
+    .brand-btn.active .brand-name {
+      color: var(--green-d);
+    }
 
     /* CTA */
     .cta-btn {
-      width: 100%; padding: 18px 20px;
-      background: var(--green); color: #fff;
-      border: none; border-radius: var(--r12);
+      width: 100%;
+      padding: 18px 20px;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      border-radius: var(--r12);
       font-family: var(--font-d);
-      font-size: 19px; font-weight: 800;
-      cursor: pointer; margin-top: 30px;
-      display: flex; align-items: center; justify-content: center; gap: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       transition: background var(--ease), transform 0.1s;
     }
-    .cta-btn i { width: 22px; height: 22px; }
-    .cta-btn:hover  { background: var(--green-d); }
-    .cta-btn:active { transform: scale(0.99); }
+
+    .cta-btn i {
+      width: 21px;
+      height: 21px;
+    }
+
+    .cta-btn:hover {
+      background: var(--green-d);
+    }
+
+    .cta-btn:active {
+      transform: scale(0.99);
+    }
+
+    .warn-note {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: var(--red-l);
+      border: 1.5px solid rgba(185, 28, 28, .25);
+      border-radius: var(--r10);
+      font-size: 13px;
+      color: #7f1212;
+      line-height: 1.55;
+      gap: 9px;
+      align-items: flex-start;
+    }
+
+    .warn-note.show {
+      display: flex;
+    }
+
+    .warn-note i {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
 
     /* RESULTS */
-    .result-panel { display: none; }
-    .result-panel.show { display: block; animation: fadeUp 0.4s ease; }
+    .result-panel {
+      display: none;
+    }
+
+    .result-panel.show {
+      display: block;
+      animation: fadeUp 0.4s ease;
+    }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Verdict */
-    .verdict { margin: 0 24px 24px; border-radius: var(--r16); padding: 26px; }
-    .verdict.go     { background: linear-gradient(135deg, #092b10 0%, #1A6B2A 100%); }
-    .verdict.maybe  { background: linear-gradient(135deg, #2c1f00 0%, #A67C00 100%); }
-    .verdict.no     { background: linear-gradient(135deg, #2b0808 0%, #B91C1C 100%); }
+    .verdict {
+      margin: 0 22px 22px;
+      border-radius: var(--r16);
+      padding: 25px;
+    }
+
+    .verdict.go {
+      background: linear-gradient(135deg, #092b10 0%, #1A6B2A 100%);
+    }
+
+    .verdict.maybe {
+      background: linear-gradient(135deg, #2c1f00 0%, #A67C00 100%);
+    }
+
+    .verdict.no {
+      background: linear-gradient(135deg, #2b0808 0%, #B91C1C 100%);
+    }
+
+    .verdict.budget {
+      background: linear-gradient(135deg, #071a2e 0%, #1A4DB8 100%);
+    }
 
     .verdict-eyebrow {
-      font-size: 11.5px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 1.5px;
-      color: rgba(255,255,255,.5); margin-bottom: 8px;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 8px;
     }
+
     .verdict-heading {
       font-family: var(--font-d);
-      font-size: 27px; font-weight: 800;
-      color: #fff; line-height: 1.15; margin-bottom: 12px;
+      font-size: 25px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 12px;
     }
+
+    .verdict-price {
+      font-family: var(--font-d);
+      font-size: 38px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
     .verdict-body {
-      font-size: 15px; color: rgba(255,255,255,.72);
-      line-height: 1.7; margin-bottom: 20px;
+      font-size: 14.5px;
+      color: rgba(255, 255, 255, .72);
+      line-height: 1.7;
+      margin-bottom: 18px;
     }
+
     .verdict-meter-row {
-      display: flex; justify-content: space-between;
-      font-size: 12.5px; font-weight: 600;
-      color: rgba(255,255,255,.5); margin-bottom: 7px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 7px;
     }
+
     .verdict-track {
-      height: 10px; background: rgba(255,255,255,.15);
-      border-radius: var(--pill); overflow: hidden;
+      height: 10px;
+      background: rgba(255, 255, 255, .15);
+      border-radius: var(--pill);
+      overflow: hidden;
     }
+
     .verdict-fill {
-      height: 100%; border-radius: var(--pill);
-      background: rgba(255,255,255,.7);
-      transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+      height: 100%;
+      border-radius: var(--pill);
+      background: rgba(255, 255, 255, .7);
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .verdict-badges {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .verdict-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: var(--pill);
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .verdict-badge i {
+      width: 13px;
+      height: 13px;
+    }
+
+    .verdict-badge.bad {
+      background: rgba(185, 28, 28, .35);
+    }
+
+    .verdict-badge.good {
+      background: rgba(76, 175, 106, .3);
     }
 
     /* Breakdown */
-    .breakdown-wrap { padding: 0 24px 24px; }
+    .breakdown-wrap {
+      padding: 0 22px 22px;
+    }
 
     .breakdown-head {
-      font-size: 11px; font-weight: 800;
-      text-transform: uppercase; letter-spacing: 1px;
-      color: var(--ink5); margin: 24px 0 12px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--ink5);
+      margin: 22px 0 12px;
     }
 
     .brow {
-      display: flex; align-items: center;
+      display: flex;
+      align-items: center;
       justify-content: space-between;
-      padding: 15px 16px;
+      padding: 14px 16px;
       border-radius: var(--r12);
       border: 1.5px solid var(--border);
       background: var(--white);
-      margin-bottom: 8px; gap: 12px;
+      margin-bottom: 8px;
+      gap: 12px;
       transition: border-color var(--ease), background var(--ease);
     }
-    .brow:hover { border-color: rgba(26,107,42,.35); background: var(--green-ll); }
 
-    .brow-left { display: flex; align-items: center; gap: 13px; flex: 1; min-width: 0; }
+    .brow:hover {
+      border-color: rgba(26, 107, 42, .35);
+      background: var(--green-ll);
+    }
+
+    .brow-left {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      flex: 1;
+      min-width: 0;
+    }
+
     .brow-icon {
-      width: 38px; height: 38px; border-radius: var(--r8);
-      display: flex; align-items: center; justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--r8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
-    .brow-icon i { width: 17px; height: 17px; }
+
+    .brow-icon i {
+      width: 16px;
+      height: 16px;
+    }
 
     .brow-label {
-      font-size: 14.5px; font-weight: 700; color: var(--ink); line-height: 1.3;
-    }
-    .brow-note {
-      font-size: 12.5px; color: var(--ink4); margin-top: 2px; line-height: 1.35;
-    }
-    .brow-val {
-      font-family: var(--font-d);
-      font-size: 17px; font-weight: 800;
-      color: var(--ink); white-space: nowrap; flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
     }
 
-    /* Accent row (on-road) */
-    .brow.accent {
-      background: var(--bg); border-color: var(--border2);
+    .brow-note {
+      font-size: 12px;
+      color: var(--ink4);
+      margin-top: 2px;
+      line-height: 1.35;
     }
-    .brow.accent .brow-label { font-size: 15.5px; }
-    .brow.accent .brow-val   { font-size: 20px; }
+
+    .brow-val {
+      font-family: var(--font-d);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Accent row */
+    .brow.accent {
+      background: var(--bg);
+      border-color: var(--border2);
+    }
+
+    .brow.accent .brow-label {
+      font-size: 15px;
+    }
+
+    .brow.accent .brow-val {
+      font-size: 19px;
+    }
 
     /* Total row */
     .brow.total {
-      background: var(--ink2); border-color: var(--ink2);
-      padding: 17px 18px;
-    }
-    .brow.total .brow-label { color: rgba(255,255,255,.85); font-size: 15.5px; }
-    .brow.total .brow-note  { color: rgba(255,255,255,.45); }
-    .brow.total .brow-val   { color: var(--green-m); font-size: 22px; }
-    .brow.total .brow-icon  { background: rgba(255,255,255,.08); }
-    .brow.total .brow-icon i { color: var(--green-m); }
-
-    /* Tax banner */
-    .tax-banner {
-      margin: 0 24px 24px;
+      background: var(--ink2);
+      border-color: var(--ink2);
       padding: 16px 18px;
+    }
+
+    .brow.total .brow-label {
+      color: rgba(255, 255, 255, .85);
+      font-size: 15px;
+    }
+
+    .brow.total .brow-note {
+      color: rgba(255, 255, 255, .45);
+    }
+
+    .brow.total .brow-val {
+      color: var(--green-m);
+      font-size: 21px;
+    }
+
+    .brow.total .brow-icon {
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .brow.total .brow-icon i {
+      color: var(--green-m);
+    }
+
+    /* Info banner */
+    .info-banner {
+      margin: 0 22px 22px;
+      padding: 15px 17px;
       border-radius: var(--r12);
       border: 1.5px solid;
-      display: flex; gap: 12px; align-items: flex-start;
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
     }
-    .tax-banner.ev     { background: var(--green-ll); border-color: rgba(26,107,42,.22); }
-    .tax-banner.hybrid { background: var(--gold-l);   border-color: rgba(166,124,0,.22); }
-    .tax-banner.petrol { background: var(--red-l);    border-color: rgba(185,28,28,.22); }
-    .tax-banner i { width: 17px; height: 17px; flex-shrink: 0; margin-top: 1px; }
-    .tax-banner.ev     i { color: var(--green); }
-    .tax-banner.hybrid i { color: var(--gold); }
-    .tax-banner.petrol i { color: var(--red); }
-    .tax-banner-text { font-size: 14px; line-height: 1.65; }
-    .tax-banner.ev     .tax-banner-text { color: var(--green-d); }
-    .tax-banner.hybrid .tax-banner-text { color: #6b4b00; }
-    .tax-banner.petrol .tax-banner-text { color: #7f1212; }
+
+    .info-banner.ev {
+      background: var(--green-ll);
+      border-color: rgba(26, 107, 42, .22);
+    }
+
+    .info-banner.hybrid {
+      background: var(--gold-l);
+      border-color: rgba(166, 124, 0, .22);
+    }
+
+    .info-banner.petrol {
+      background: var(--red-l);
+      border-color: rgba(185, 28, 28, .22);
+    }
+
+    .info-banner i {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .info-banner.ev i {
+      color: var(--green);
+    }
+
+    .info-banner.hybrid i {
+      color: var(--gold);
+    }
+
+    .info-banner.petrol i {
+      color: var(--red);
+    }
+
+    .info-banner-text {
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .info-banner.ev .info-banner-text {
+      color: var(--green-d);
+    }
+
+    .info-banner.hybrid .info-banner-text {
+      color: #6b4b00;
+    }
+
+    .info-banner.petrol .info-banner-text {
+      color: #7f1212;
+    }
 
     /* Footer */
     .footer-note {
-      text-align: center; font-size: 13px; color: var(--ink5);
-      padding: 0 16px 36px; line-height: 1.65;
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--ink5);
+      padding: 0 16px 34px;
+      line-height: 1.65;
     }
-    .footer-note a { color: var(--green); font-weight: 700; text-decoration: none; }
-  .brand-icon{font-size:22px;color:#000000;display:block;margin-bottom:4px}
-.brand-btn.active .brand-icon{color:#fa0000}
+
+    .footer-note a {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 380px) {
+      .brand-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 7px;
+      }
+
+      .num-input {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <script src="assets/js/components/av-nav.js"></script> 
+  <script src="assets/js/site-chrome.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2BCQWQPPZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-N2BCQWQPPZ');
+  </script>
 
-<div class="hero">
-  <div class="hero-badge">
-    <i data-lucide="map-pin"></i>
-    Nepal — FY 2082 / 83
-  </div>
-  <h1>Can I Afford<br><em>This Car?</em></h1>
-  <p class="hero-sub">Real Nepali taxes. Real bank rates.<br>Know before you go to the showroom.</p>
-</div>
-
-<div class="main-wrap">
-<div class="card">
-
-  <!-- FUEL SELECTOR -->
-  <div class="fuel-tabs">
-    <button class="fuel-tab ev active" onclick="setFuel('ev',this)">
-      <div class="fuel-icon"><i data-lucide="zap"></i></div>
-      <div class="fuel-label">Electric</div>
-      <div class="fuel-sub">BEV</div>
-    </button>
-    <button class="fuel-tab hybrid" onclick="setFuel('hybrid',this)">
-      <div class="fuel-icon"><i data-lucide="leaf"></i></div>
-      <div class="fuel-label">Hybrid</div>
-      <div class="fuel-sub">HEV / PHEV</div>
-    </button>
-    <button class="fuel-tab petrol" onclick="setFuel('petrol',this)">
-      <div class="fuel-icon"><i data-lucide="fuel"></i></div>
-      <div class="fuel-label">Petrol</div>
-      <div class="fuel-sub">ICE / Diesel</div>
-    </button>
+  <div class="hero">
+    <div class="hero-badge">
+      <i data-lucide="map-pin"></i>
+      Nepal — FY 2082/83 tax &amp; loan rules
+    </div>
+    <h1>Can I Afford<br><em>This Car?</em></h1>
+    <p class="hero-sub">Built from real Nepali bank loan rules, road tax slabs, and insurance rates &mdash; not
+      guesswork. Showroom prices already include import tax, so we don't double it.</p>
   </div>
 
-  <div class="form-body">
+  <div class="main-wrap">
+    <div class="card">
 
-    <!-- STEP 1 -->
-    <div class="step-head">
-      <div class="step-num-badge">1</div>
-      <div>
-        <div class="step-title-text">Your Money</div>
-        <div class="step-subtitle">Tell us your income and savings</div>
+      <!-- MODE SWITCH -->
+      <div class="mode-switch">
+        <button class="mode-btn active" id="modeCheckBtn" onclick="setMode('check')">
+          <i data-lucide="search-check"></i> Check a Car
+        </button>
+        <button class="mode-btn" id="modeBudgetBtn" onclick="setMode('budget')">
+          <i data-lucide="target"></i> Find My Budget
+        </button>
       </div>
-    </div>
 
-    <div class="field">
-      <div class="field-top">
-        <div>
-          <div class="field-question">What do you earn each month?</div>
-          <div class="field-hint">Your monthly salary or take-home income</div>
+      <!-- FUEL SELECTOR -->
+      <div class="fuel-tabs">
+        <button class="fuel-tab ev active" onclick="setFuel('ev',this)">
+          <div class="fuel-icon"><i data-lucide="zap"></i></div>
+          <div class="fuel-label">Electric</div>
+          <div class="fuel-sub">BEV</div>
+        </button>
+        <button class="fuel-tab hybrid" onclick="setFuel('hybrid',this)">
+          <div class="fuel-icon"><i data-lucide="leaf"></i></div>
+          <div class="fuel-label">Hybrid</div>
+          <div class="fuel-sub">HEV / PHEV</div>
+        </button>
+        <button class="fuel-tab petrol" onclick="setFuel('petrol',this)">
+          <div class="fuel-icon"><i data-lucide="fuel"></i></div>
+          <div class="fuel-label">Petrol</div>
+          <div class="fuel-sub">ICE / Diesel</div>
+        </button>
+      </div>
+
+      <div class="form-body">
+
+        <!-- STEP 1: MONEY -->
+        <div class="step-head">
+          <div class="step-num-badge">1</div>
+          <div>
+            <div class="step-title-text">Your Money</div>
+            <div class="step-subtitle">Income and savings, honestly</div>
+          </div>
         </div>
-        <div class="live-val" id="salaryOut">Rs 80K</div>
-      </div>
-      <div class="num-wrap">
-        <div class="num-affix left">Rs.</div>
-        <input class="num-input" type="number" id="salaryInput"
-          min="20000" max="600000" step="5000" value="80000"
-          placeholder="e.g. 80000"
-          oninput="onNum('salaryInput','salaryRange','salaryOut','m')">
-      </div>
-      <div class="range-row">
-        <span class="range-edge">Rs 20K</span>
-        <input type="range" class="srange" id="salaryRange"
-          min="20000" max="600000" step="5000" value="80000"
-          oninput="onRange('salaryRange','salaryInput','salaryOut','m')">
-        <span class="range-edge">Rs 6L</span>
-      </div>
-    </div>
 
-    <div class="field">
-      <div class="field-top">
-        <div>
-          <div class="field-question">How much can you pay upfront?</div>
-          <div class="field-hint">Banks require at least 40% as down payment</div>
+        <div class="field">
+          <div class="field-top">
+            <div>
+              <div class="field-question">Monthly income?</div>
+              <div class="field-hint">Yours, or combined with a co-applicant &mdash; banks look at total household
+                income</div>
+            </div>
+            <div class="live-val" id="salaryOut">Rs 80K</div>
+          </div>
+          <div class="num-wrap">
+            <div class="num-affix left">Rs.</div>
+            <input class="num-input" type="number" id="salaryInput" min="20000" max="1000000" step="5000" value="80000"
+              placeholder="e.g. 80000" oninput="onNum('salaryInput','salaryRange','salaryOut','m')">
+          </div>
+          <div class="range-row">
+            <span class="range-edge">Rs 20K</span>
+            <input type="range" class="srange" id="salaryRange" min="20000" max="1000000" step="5000" value="80000"
+              oninput="onRange('salaryRange','salaryInput','salaryOut','m')">
+            <span class="range-edge">Rs 10L</span>
+          </div>
         </div>
-        <div class="live-val" id="downOut">Rs 8L</div>
-      </div>
-      <div class="num-wrap">
-        <div class="num-affix left">Rs.</div>
-        <input class="num-input" type="number" id="downInput"
-          min="100000" max="5000000" step="50000" value="800000"
-          placeholder="e.g. 800000"
-          oninput="onNum('downInput','downRange','downOut','m')">
-      </div>
-      <div class="range-row">
-        <span class="range-edge">Rs 1L</span>
-        <input type="range" class="srange" id="downRange"
-          min="100000" max="5000000" step="50000" value="800000"
-          oninput="onRange('downRange','downInput','downOut','m')">
-        <span class="range-edge">Rs 50L</span>
-      </div>
-    </div>
 
-    <div class="section-divider"></div>
-
-    <!-- STEP 2 -->
-    <div class="step-head">
-      <div class="step-num-badge">2</div>
-      <div>
-        <div class="step-title-text">The Car</div>
-        <div class="step-subtitle">Price, interest rate, and loan length</div>
-      </div>
-    </div>
-
-    <div class="field">
-      <div class="field-top">
-        <div>
-          <div class="field-question">What is the showroom price?</div>
-          <div class="field-hint">The price tag at the dealer, before tax</div>
+        <div class="field">
+          <div class="field-top">
+            <div>
+              <div class="field-question">Total savings for this car?</div>
+              <div class="field-hint">Cash you're willing to put toward the down payment &amp; fees</div>
+            </div>
+            <div class="live-val" id="downOut">Rs 8L</div>
+          </div>
+          <div class="num-wrap">
+            <div class="num-affix left">Rs.</div>
+            <input class="num-input" type="number" id="downInput" min="0" max="10000000" step="50000" value="800000"
+              placeholder="e.g. 800000" oninput="onNum('downInput','downRange','downOut','m')">
+          </div>
+          <div class="range-row">
+            <span class="range-edge">Rs 0</span>
+            <input type="range" class="srange" id="downRange" min="0" max="10000000" step="50000" value="800000"
+              oninput="onRange('downRange','downInput','downOut','m')">
+            <span class="range-edge">Rs 1Cr</span>
+          </div>
         </div>
-        <div class="live-val" id="priceOut">Rs 35L</div>
-      </div>
-      <div class="num-wrap">
-        <div class="num-affix left">Rs.</div>
-        <input class="num-input" type="number" id="priceInput"
-          min="500000" max="30000000" step="100000" value="3500000"
-          placeholder="e.g. 3500000"
-          oninput="onNum('priceInput','priceRange','priceOut','m')">
-      </div>
-      <div class="range-row">
-        <span class="range-edge">Rs 5L</span>
-        <input type="range" class="srange" id="priceRange"
-          min="500000" max="30000000" step="100000" value="3500000"
-          oninput="onRange('priceRange','priceInput','priceOut','m')">
-        <span class="range-edge">Rs 3Cr</span>
-      </div>
-    </div>
 
-    <div class="field">
-      <div class="field-top">
-        <div>
-          <div class="field-question">Bank interest rate (per year)?</div>
-          <div class="field-hint">Class A banks start from 5.5% — ask your bank</div>
+        <div class="section-divider"></div>
+
+        <!-- STEP 2: THE CAR -->
+        <div class="step-head">
+          <div class="step-num-badge">2</div>
+          <div>
+            <div class="step-title-text">The Car &amp; Loan</div>
+            <div class="step-subtitle" id="step2Sub">Price, engine size, rate, and tenure</div>
+          </div>
         </div>
-        <div class="live-val" id="rateOut">11.5%</div>
-      </div>
-      <div class="num-wrap">
-        <input class="num-input" type="number" id="rateInput"
-          min="5" max="18" step="0.5" value="11.5"
-          style="padding-left:16px"
-          placeholder="e.g. 11.5"
-          oninput="onNum('rateInput','rateRange','rateOut','r')">
-        <div class="num-affix right">% per year</div>
-      </div>
-      <div class="range-row">
-        <span class="range-edge">5%</span>
-        <input type="range" class="srange" id="rateRange"
-          min="5" max="18" step="0.5" value="11.5"
-          oninput="onRange('rateRange','rateInput','rateOut','r')">
-        <span class="range-edge">18%</span>
-      </div>
-    </div>
 
-    <div class="field">
-      <div class="field-question">How many years to repay the loan?</div>
-      <div class="field-hint" id="tenureHint">Electric: up to 10 years &nbsp;&bull;&nbsp; Petrol / Hybrid: up to 7 years</div>
-      <div class="stepper">
-        <button class="stepper-btn" onclick="changeTenure(-1)" aria-label="Less">&#8722;</button>
-        <div class="stepper-divider"></div>
-        <div class="stepper-mid">
-          <div class="stepper-num" id="tenureNum">5</div>
-          <div class="stepper-unit" id="tenureUnit">Years</div>
+        <div class="field" id="priceField">
+          <div class="field-top">
+            <div>
+              <div class="field-question">Showroom / on-road price?</div>
+              <div class="field-hint">The price quoted by the dealer &mdash; it already includes Nepal's import duty,
+                excise &amp; VAT</div>
+            </div>
+            <div class="live-val" id="priceOut">Rs 35L</div>
+          </div>
+          <div class="num-wrap">
+            <div class="num-affix left">Rs.</div>
+            <input class="num-input" type="number" id="priceInput" min="500000" max="50000000" step="100000"
+              value="3500000" placeholder="e.g. 3500000" oninput="onNum('priceInput','priceRange','priceOut','m')">
+          </div>
+          <div class="range-row">
+            <span class="range-edge">Rs 5L</span>
+            <input type="range" class="srange" id="priceRange" min="500000" max="50000000" step="100000" value="3500000"
+              oninput="onRange('priceRange','priceInput','priceOut','m')">
+            <span class="range-edge">Rs 5Cr</span>
+          </div>
         </div>
-        <div class="stepper-divider"></div>
-        <button class="stepper-btn" onclick="changeTenure(1)" aria-label="More">&#43;</button>
+
+        <div class="field" id="budgetStyleField" style="display:none">
+          <div class="field-question">How tight do you want your budget?</div>
+          <div class="field-hint">This sets the share of income kept for car costs &mdash; EMI, tax, insurance, fuel
+            &amp; upkeep combined</div>
+          <div class="pill-choice-row">
+            <div class="pill-choice" data-ratio="0.20" onclick="setBudgetStyle(this)">
+              <div class="pill-choice-title">Safe</div>
+              <div class="pill-choice-sub">20% of income</div>
+            </div>
+            <div class="pill-choice active" data-ratio="0.30" onclick="setBudgetStyle(this)">
+              <div class="pill-choice-title">Balanced</div>
+              <div class="pill-choice-sub">30% of income</div>
+            </div>
+            <div class="pill-choice" data-ratio="0.40" onclick="setBudgetStyle(this)">
+              <div class="pill-choice-title">Flexible</div>
+              <div class="pill-choice-sub">40% of income</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field" id="engineField">
+          <div class="field-top">
+            <div>
+              <div class="field-question" id="engineQuestion">Engine size?</div>
+              <div class="field-hint" id="engineHint">Bigger engines pay more annual road tax and burn more fuel</div>
+            </div>
+            <div class="live-val" id="engineOut">1500 cc</div>
+          </div>
+          <div class="range-row">
+            <span class="range-edge" id="engineMinLbl">800cc</span>
+            <input type="range" class="srange" id="engineRange" min="800" max="4000" step="100" value="1500"
+              oninput="onEngine()">
+            <span class="range-edge" id="engineMaxLbl">4000cc</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="field-top">
+            <div>
+              <div class="field-question">Bank interest rate (per year)?</div>
+              <div class="field-hint">Nepali auto loans currently run roughly 9&ndash;13% depending on the bank &amp;
+                scheme</div>
+            </div>
+            <div class="live-val" id="rateOut">11.5%</div>
+          </div>
+          <div class="num-wrap">
+            <input class="num-input" type="number" id="rateInput" min="5" max="18" step="0.25" value="11.5"
+              style="padding-left:16px" placeholder="e.g. 11.5" oninput="onNum('rateInput','rateRange','rateOut','r')">
+            <div class="num-affix right">% per year</div>
+          </div>
+          <div class="range-row">
+            <span class="range-edge">5%</span>
+            <input type="range" class="srange" id="rateRange" min="5" max="18" step="0.25" value="11.5"
+              oninput="onRange('rateRange','rateInput','rateOut','r')">
+            <span class="range-edge">18%</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="field-question">Loan tenure?</div>
+          <div class="field-hint" id="tenureHint">Petrol / Hybrid: up to 7 years &nbsp;&bull;&nbsp; Electric: up to 10
+            years under green-loan schemes</div>
+          <div class="stepper">
+            <button class="stepper-btn" onclick="changeTenure(-1)" aria-label="Less">&#8722;</button>
+            <div class="stepper-divider"></div>
+            <div class="stepper-mid">
+              <div class="stepper-num" id="tenureNum">5</div>
+              <div class="stepper-unit" id="tenureUnit">Years</div>
+            </div>
+            <div class="stepper-divider"></div>
+            <button class="stepper-btn" onclick="changeTenure(1)" aria-label="More">&#43;</button>
+          </div>
+        </div>
+
+        <div class="warn-note" id="downWarn">
+          <i data-lucide="alert-triangle"></i>
+          <span id="downWarnText"></span>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- STEP 3: BRAND -->
+        <div class="step-head">
+          <div class="step-num-badge">3</div>
+          <div>
+            <div class="step-title-text">Your Dream Brand</div>
+            <div class="step-subtitle">Pick one — just for fun</div>
+          </div>
+        </div>
+        <div class="brand-grid">
+          <button class="brand-btn active" onclick="setBrand(this)">
+            <i class="si si-toyota brand-icon"></i>
+            <div class="brand-name">Toyota</div>
+          </button>
+          <button class="brand-btn" onclick="setBrand(this)">
+            <i class="si si-hyundai brand-icon"></i>
+            <div class="brand-name">Hyundai</div>
+          </button>
+          <button class="brand-btn" onclick="setBrand(this)">
+            <i class="si si-honda brand-icon"></i>
+            <div class="brand-name">Honda</div>
+          </button>
+          <button class="brand-btn" onclick="setBrand(this)">
+            <i class="si si-suzuki brand-icon"></i>
+            <div class="brand-name">Suzuki</div>
+          </button>
+          <button class="brand-btn" onclick="setBrand(this)">
+            <i class="si si-kia brand-icon"></i>
+            <div class="brand-name">KIA</div>
+          </button>
+          <button class="brand-btn" onclick="setBrand(this)">
+            <i class="si si-mg brand-icon"></i>
+            <div class="brand-name">MG</div>
+          </button>
+          <button class="brand-btn" onclick="setBrand(this)">
+            <i class="si si-tata brand-icon"></i>
+            <div class="brand-name">Tata</div>
+          </button>
+          <button class="brand-btn" onclick="setBrand(this)">
+            <i class="si si-byd brand-icon"></i>
+            <div class="brand-name">BYD</div>
+          </button>
+        </div>
+
+        <button class="cta-btn" onclick="calculate()" id="ctaBtn">
+          <i data-lucide="calculator"></i>
+          <span id="ctaText">Check If I Can Afford It</span>
+        </button>
+
+      </div>
+
+      <!-- RESULTS -->
+      <div class="result-panel" id="resultPanel">
+
+        <div class="verdict" id="verdict">
+          <div class="verdict-eyebrow" id="verdictEyebrow">Your Result</div>
+          <div class="verdict-heading" id="verdictHeading" style="display:none">—</div>
+          <div class="verdict-price" id="verdictPrice" style="display:none">—</div>
+          <div class="verdict-body" id="verdictBody">—</div>
+          <div class="verdict-meter-row">
+            <span id="verdictMeterLabel">0% of your income</span>
+            <span id="verdictPct">—</span>
+          </div>
+          <div class="verdict-track">
+            <div class="verdict-fill" id="verdictFill" style="width:0%"></div>
+          </div>
+          <div class="verdict-badges" id="verdictBadges"></div>
+        </div>
+
+        <div class="breakdown-wrap">
+
+          <div class="breakdown-head">One-Time, At Signing</div>
+
+          <div class="brow">
+            <div class="brow-left">
+              <div class="brow-icon" style="background:var(--blue-l)"><i data-lucide="tag"
+                  style="color:var(--blue)"></i></div>
+              <div>
+                <div class="brow-label">On-road price</div>
+                <div class="brow-note">Already includes Nepal's import duty, excise &amp; VAT</div>
+              </div>
+            </div>
+            <div class="brow-val" id="val-onroad">—</div>
+          </div>
+
+          <div class="brow">
+            <div class="brow-left">
+              <div class="brow-icon" style="background:var(--green-l)"><i data-lucide="wallet"
+                  style="color:var(--green)"></i></div>
+              <div>
+                <div class="brow-label">Your down payment</div>
+                <div class="brow-note" id="note-down">—</div>
+              </div>
+            </div>
+            <div class="brow-val" id="val-down">—</div>
+          </div>
+
+          <div class="brow">
+            <div class="brow-left">
+              <div class="brow-icon" style="background:var(--purple-l)"><i data-lucide="file-text"
+                  style="color:var(--purple)"></i></div>
+              <div>
+                <div class="brow-label">Registration, plate &amp; loan fees</div>
+                <div class="brow-note">Bluebook, number plate &amp; ~0.75% loan processing fee</div>
+              </div>
+            </div>
+            <div class="brow-val" id="val-fees">—</div>
+          </div>
+
+          <div class="brow accent">
+            <div class="brow-left">
+              <div class="brow-icon" style="background:var(--teal-l)"><i data-lucide="hand-coins"
+                  style="color:var(--teal)"></i></div>
+              <div>
+                <div class="brow-label">Total cash needed at signing</div>
+                <div class="brow-note">Down payment + registration &amp; loan fees</div>
+              </div>
+            </div>
+            <div class="brow-val" id="val-cashneeded">—</div>
+          </div>
+
+          <div class="brow">
+            <div class="brow-left">
+              <div class="brow-icon" style="background:var(--red-l)"><i data-lucide="landmark"
+                  style="color:var(--red)"></i></div>
+              <div>
+                <div class="brow-label">Bank loan amount</div>
+                <div class="brow-note" id="note-loan">—</div>
+              </div>
+            </div>
+            <div class="brow-val" id="val-loan">—</div>
+          </div>
+
+          <div class="breakdown-head" style="margin-top:22px">Every Month, Ongoing</div>
+
+          <div class="brow">
+            <div class="brow-left">
+              <div class="brow-icon" style="background:var(--green-l)"><i data-lucide="banknote"
+                  style="color:var(--green)"></i></div>
+              <div>
+                <div class="brow-label">Loan repayment (EMI)</div>
+                <div class="brow-note" id="note-emi">—</div>
+              </div>
+            </div>
+            <div class="brow-val" id="val-emi">—</div>
+          </div>
+
+          <div class="brow">
+            <div class="brow-left">
+              <div class="brow-icon" style="background:var(--blue-l)"><i data-lucide="scroll"
+                  style="color:var(--blue)"></i></div>
+              <div>
+                <div class="brow-label">Annual road tax (monthly share)</div>
+                <div class="brow-note" id="note-tax">Bagmati Province reference rate, paid yearly</div>
+              </div>
+            </div>
+            <div class="brow-val" id="val-tax">—</div>
+          </div>
+
+          <div class="brow">
+            <div class="brow-left">
+              <div class="brow-icon" style="background:var(--gold-l)"><i data-lucide="shield-check"
+                  style="color:var(--gold)"></i></div>
+              <div>
+                <div class="brow-label">Insurance (monthly share)</div>
+                <div class="brow-note">Comprehensive premium, paid yearly &mdash; drops as the car ages</div>
+              </div>
+            </div>
+            <div class="brow-val" id="val-ins">—</div>
+          </div>
+
+          <div class="brow">
+            <div class="brow-left">
+              <div class="brow-icon" style="background:var(--gold-l)"><i data-lucide="droplets"
+                  style="color:var(--gold)"></i></div>
+              <div>
+                <div class="brow-label" id="label-fuel">Fuel cost</div>
+                <div class="brow-note">Estimated Kathmandu-average monthly usage</div>
+              </div>
+            </div>
+            <div class="brow-val" id="val-fuel">—</div>
+          </div>
+
+          <div class="brow">
+            <div class="brow-left">
+              <div class="brow-icon" style="background:var(--purple-l)"><i data-lucide="wrench"
+                  style="color:var(--purple)"></i></div>
+              <div>
+                <div class="brow-label">Servicing &amp; maintenance</div>
+                <div class="brow-note">Oil changes, tyres, periodic service</div>
+              </div>
+            </div>
+            <div class="brow-val" id="val-maint">—</div>
+          </div>
+
+          <div class="brow total">
+            <div class="brow-left">
+              <div class="brow-icon"><i data-lucide="wallet"></i></div>
+              <div>
+                <div class="brow-label">Total you pay per month</div>
+                <div class="brow-note">EMI + tax + insurance + fuel + maintenance</div>
+              </div>
+            </div>
+            <div class="brow-val" id="val-total">—</div>
+          </div>
+
+        </div>
+
+        <div class="info-banner ev" id="infoBanner">
+          <i data-lucide="info"></i>
+          <div class="info-banner-text" id="infoBannerText">—</div>
+        </div>
+
       </div>
     </div>
 
-    <div class="section-divider"></div>
-
-    <!-- STEP 3 -->
-    <div class="step-head">
-      <div class="step-num-badge">3</div>
-      <div>
-        <div class="step-title-text">Your Dream Brand</div>
-        <div class="step-subtitle">Pick one — just for fun</div>
-      </div>
-    </div>
-<div class="brand-grid">
-  <button class="brand-btn active" onclick="setBrand(this)">
-    <i class="si si-toyota brand-icon"></i>
-    <div class="brand-name">Toyota</div>
-  </button>
-  <button class="brand-btn" onclick="setBrand(this)">
-    <i class="si si-hyundai brand-icon"></i>
-    <div class="brand-name">Hyundai</div>
-  </button>
-  <button class="brand-btn" onclick="setBrand(this)">
-    <i class="si si-honda brand-icon"></i>
-    <div class="brand-name">Honda</div>
-  </button>
-  <button class="brand-btn" onclick="setBrand(this)">
-    <i class="si si-suzuki brand-icon"></i>
-    <div class="brand-name">Suzuki</div>
-  </button>
-  <button class="brand-btn" onclick="setBrand(this)">
-    <i class="si si-kia brand-icon"></i>
-    <div class="brand-name">KIA</div>
-  </button>
-  <button class="brand-btn" onclick="setBrand(this)">
-    <i class="si si-mg brand-icon"></i>
-    <div class="brand-name">MG</div>
-  </button>
-  <button class="brand-btn" onclick="setBrand(this)">
-    <i class="si si-tata brand-icon"></i>
-    <div class="brand-name">Tata</div>
-  </button>
-  <button class="brand-btn" onclick="setBrand(this)">
-    <i class="si si-byd brand-icon"></i>
-    <div class="brand-name">BYD</div>
-  </button>
-</div>
-
-    <button class="cta-btn" onclick="calculate()">
-      <i data-lucide="calculator"></i>
-      Check If I Can Afford It
-    </button>
-
+    <p class="footer-note" style="margin-top:20px">
+      Reference rates: Bagmati Province road tax &amp; NRB-guided bank loan norms, FY 2082/83. Actual quotes vary by
+      bank, insurer, and municipality &mdash; treat this as a planning estimate, not a loan offer, and confirm exact
+      figures with your bank before committing.
+    </p>
   </div>
 
-  <!-- RESULTS -->
-  <div class="result-panel" id="resultPanel">
+  <script>
+    lucide.createIcons();
 
-    <div class="verdict" id="verdict">
-      <div class="verdict-eyebrow" id="verdictEyebrow">Your Result</div>
-      <div class="verdict-heading" id="verdictHeading">—</div>
-      <div class="verdict-body" id="verdictBody">—</div>
-      <div class="verdict-meter-row">
-        <span>0% of your income</span>
-        <span id="verdictPct">—</span>
-      </div>
-      <div class="verdict-track">
-        <div class="verdict-fill" id="verdictFill" style="width:0%"></div>
-      </div>
-    </div>
+    let mode = 'check';          // 'check' | 'budget'
+    let fuelType = 'ev';
+    let selectedBrand = 'Toyota';
+    let tenure = 5;
+    let budgetRatio = 0.30;
 
-    <div class="breakdown-wrap">
-
-      <div class="breakdown-head">Full Cost Picture</div>
-
-      <div class="brow">
-        <div class="brow-left">
-          <div class="brow-icon" style="background:var(--blue-l)"><i data-lucide="tag" style="color:var(--blue)"></i></div>
-          <div>
-            <div class="brow-label">Showroom price</div>
-            <div class="brow-note">Price tag at dealer, before any taxes</div>
-          </div>
-        </div>
-        <div class="brow-val" id="val-showroom">—</div>
-      </div>
-
-      <div class="brow">
-        <div class="brow-left">
-          <div class="brow-icon" style="background:var(--red-l)"><i data-lucide="receipt-text" style="color:var(--red)"></i></div>
-          <div>
-            <div class="brow-label">Nepal customs &amp; tax</div>
-            <div class="brow-note" id="note-tax">—</div>
-          </div>
-        </div>
-        <div class="brow-val" id="val-tax">—</div>
-      </div>
-
-      <div class="brow accent">
-        <div class="brow-left">
-          <div class="brow-icon" style="background:var(--teal-l)"><i data-lucide="key" style="color:var(--teal)"></i></div>
-          <div>
-            <div class="brow-label">On-road price (what you pay)</div>
-            <div class="brow-note">Showroom price plus all taxes</div>
-          </div>
-        </div>
-        <div class="brow-val" id="val-onroad">—</div>
-      </div>
-
-      <div class="brow">
-        <div class="brow-left">
-          <div class="brow-icon" style="background:var(--green-l)"><i data-lucide="landmark" style="color:var(--green)"></i></div>
-          <div>
-            <div class="brow-label">Bank loan amount</div>
-            <div class="brow-note">On-road price minus your down payment</div>
-          </div>
-        </div>
-        <div class="brow-val" id="val-loan">—</div>
-      </div>
-
-      <div class="breakdown-head" style="margin-top:22px">What You Pay Every Month</div>
-
-      <div class="brow">
-        <div class="brow-left">
-          <div class="brow-icon" style="background:var(--green-l)"><i data-lucide="banknote" style="color:var(--green)"></i></div>
-          <div>
-            <div class="brow-label">Monthly loan repayment (EMI)</div>
-            <div class="brow-note" id="note-emi">—</div>
-          </div>
-        </div>
-        <div class="brow-val" id="val-emi">—</div>
-      </div>
-
-      <div class="brow">
-        <div class="brow-left">
-          <div class="brow-icon" style="background:var(--gold-l)"><i data-lucide="droplets" style="color:var(--gold)"></i></div>
-          <div>
-            <div class="brow-label" id="label-fuel">Fuel cost</div>
-            <div class="brow-note">Estimated Kathmandu average monthly usage</div>
-          </div>
-        </div>
-        <div class="brow-val" id="val-fuel">—</div>
-      </div>
-
-      <div class="brow">
-        <div class="brow-left">
-          <div class="brow-icon" style="background:var(--purple-l)"><i data-lucide="wrench" style="color:var(--purple)"></i></div>
-          <div>
-            <div class="brow-label">Servicing &amp; maintenance</div>
-            <div class="brow-note">Oil changes, tyres, periodic service</div>
-          </div>
-        </div>
-        <div class="brow-val" id="val-maint">—</div>
-      </div>
-
-      <div class="brow total">
-        <div class="brow-left">
-          <div class="brow-icon"><i data-lucide="wallet"></i></div>
-          <div>
-            <div class="brow-label">Total you pay per month</div>
-            <div class="brow-note">EMI + fuel + maintenance combined</div>
-          </div>
-        </div>
-        <div class="brow-val" id="val-total">—</div>
-      </div>
-
-    </div>
-
-    <div class="tax-banner ev" id="taxBanner">
-      <i data-lucide="info"></i>
-      <div class="tax-banner-text" id="taxBannerText">—</div>
-    </div>
-
-  </div>
-</div>
-
-<p class="footer-note" style="margin-top:22px">
-  Powered by <a href="#">AutoViindu Nepal</a> &mdash; FY 2082/83 tax brackets &amp; NRB-regulated loan rates. All figures are estimates — verify with your bank before committing.
-</p>
-</div>
-
-<script>
-  lucide.createIcons();
-
-  let fuelType = 'ev';
-  let selectedBrand = 'Toyota';
-  let tenure = 5;
-
-  function fmt(n) {
-    n = Math.round(n);
-    if (n >= 10000000) return 'Rs\u00a0' + (n/10000000).toFixed(2) + '\u00a0Cr';
-    if (n >= 100000)   return 'Rs\u00a0' + (n/100000).toFixed(2) + '\u00a0L';
-    return 'Rs\u00a0' + n.toLocaleString('en-IN');
-  }
-
-  function fmtShort(n) {
-    n = Math.round(n);
-    if (n >= 10000000) return 'Rs\u00a0' + (n/10000000).toFixed(1) + 'Cr';
-    if (n >= 100000)   return 'Rs\u00a0' + Math.round(n/100000) + 'L';
-    if (n >= 1000)     return 'Rs\u00a0' + Math.round(n/1000) + 'K';
-    return 'Rs\u00a0' + n;
-  }
-
-  function onNum(iId, rId, oId, type) {
-    const v = document.getElementById(iId).value;
-    document.getElementById(rId).value = v;
-    document.getElementById(oId).textContent =
-      type === 'r' ? (parseFloat(v)||0).toFixed(1) + '%' : fmtShort(parseFloat(v)||0);
-  }
-
-  function onRange(rId, iId, oId, type) {
-    const v = document.getElementById(rId).value;
-    document.getElementById(iId).value = v;
-    document.getElementById(oId).textContent =
-      type === 'r' ? parseFloat(v).toFixed(1) + '%' : fmtShort(parseFloat(v));
-  }
-
-  function setFuel(type, el) {
-    fuelType = type;
-    document.querySelectorAll('.fuel-tab').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
-    const max = type === 'ev' ? 10 : 7;
-    if (tenure > max) { tenure = max; renderTenure(); }
-    document.getElementById('tenureHint').textContent =
-      type === 'ev'
-        ? 'Electric: up to 10 years \u00a0\u2022\u00a0 Petrol / Hybrid: up to 7 years'
-        : 'Petrol & Hybrid: up to 7 years \u00a0\u2022\u00a0 Electric: up to 10 years';
-  }
-
-  function renderTenure() {
-    document.getElementById('tenureNum').textContent = tenure;
-    document.getElementById('tenureUnit').textContent = tenure === 1 ? 'Year' : 'Years';
-  }
-
-  function changeTenure(d) {
-    tenure = Math.max(1, Math.min(fuelType === 'ev' ? 10 : 7, tenure + d));
-    renderTenure();
-  }
-
-  function setBrand(el) {
-    document.querySelectorAll('.brand-btn').forEach(b => b.classList.remove('active'));
-    el.classList.add('active');
-    selectedBrand = el.querySelector('.brand-name').textContent;
-  }
-
-  function getTaxRate(price) {
-    if (fuelType === 'ev')     return price <= 5000000 ? 0.10 : 0.15;
-    if (fuelType === 'hybrid') return price <= 3000000 ? 0.40 : price <= 5000000 ? 0.60 : 0.80;
-    return price <= 3000000 ? 0.80 : price <= 5000000 ? 1.05 : 1.60;
-  }
-
-  function getMaint(price) {
-    const y = price * 0.015;
-    return (fuelType==='ev' ? y*.5 : fuelType==='hybrid' ? y*.8 : y) / 12;
-  }
-
-  function getFuel() {
-    return fuelType==='ev' ? 2500 : fuelType==='hybrid' ? 5500 : 9000;
-  }
-
-  function getEMI(p, r, n) {
-    if (p <= 0) return 0;
-    const m = r/100/12;
-    return p * m * Math.pow(1+m,n) / (Math.pow(1+m,n)-1);
-  }
-
-  function calculate() {
-    const salary = parseFloat(document.getElementById('salaryInput').value)||0;
-    const down   = parseFloat(document.getElementById('downInput').value)||0;
-    const price  = parseFloat(document.getElementById('priceInput').value)||0;
-    const rate   = parseFloat(document.getElementById('rateInput').value)||0;
-
-    const taxRate = getTaxRate(price);
-    const taxAmt  = price * taxRate;
-    const onRoad  = price + taxAmt;
-    const loan    = Math.max(0, onRoad - down);
-    const emi     = getEMI(loan, rate, tenure*12);
-    const fuel    = getFuel();
-    const maint   = getMaint(price);
-    const total   = emi + fuel + maint;
-    const ratio   = salary > 0 ? (total/salary)*100 : 999;
-
-    document.getElementById('val-showroom').textContent = fmt(price);
-    document.getElementById('val-tax').textContent      = fmt(taxAmt);
-    document.getElementById('note-tax').textContent     = 'Nepal customs & tax at ' + Math.round(taxRate*100) + '% \u2014 ' +
-      (fuelType==='ev' ? 'EV duty relief applied' : fuelType==='hybrid' ? 'Hybrid bracket' : 'ICE/Petrol bracket');
-    document.getElementById('val-onroad').textContent   = fmt(onRoad);
-    document.getElementById('val-loan').textContent     = fmt(loan);
-    document.getElementById('note-emi').textContent     = tenure + ' years at ' + rate.toFixed(1) + '% per year';
-    document.getElementById('label-fuel').textContent   = fuelType==='ev' ? 'Charging cost' : fuelType==='hybrid' ? 'Fuel + charging' : 'Fuel cost';
-    document.getElementById('val-emi').textContent      = fmt(emi);
-    document.getElementById('val-fuel').textContent     = fmt(fuel);
-    document.getElementById('val-maint').textContent    = fmt(maint);
-    document.getElementById('val-total').textContent    = fmt(total);
-
-    const v = document.getElementById('verdict');
-    v.className = 'verdict';
-    document.getElementById('verdictFill').style.width = Math.min(ratio,100).toFixed(1) + '%';
-    document.getElementById('verdictPct').textContent  = ratio.toFixed(1) + '% of your income';
-
-    const eyebrow = selectedBrand + ' \u2014 ' + fuelType.toUpperCase();
-    document.getElementById('verdictEyebrow').textContent = eyebrow;
-
-    if (ratio <= 30) {
-      v.classList.add('go');
-      document.getElementById('verdictHeading').textContent = 'Yes, you can afford this car!';
-      document.getElementById('verdictBody').textContent    = 'Your total monthly cost is ' + ratio.toFixed(1) + '% of your income \u2014 comfortably within the safe 30% limit. You\u2019re in great shape to visit the showroom.';
-    } else if (ratio <= 45) {
-      v.classList.add('maybe');
-      document.getElementById('verdictHeading').textContent = 'Possible, but it\u2019s a stretch.';
-      document.getElementById('verdictBody').textContent    = 'Your total monthly cost is ' + ratio.toFixed(1) + '% of your income. You can manage it, but there\u2019ll be very little left over for savings or emergencies.';
-    } else {
-      v.classList.add('no');
-      document.getElementById('verdictHeading').textContent = 'This car is too expensive right now.';
-      document.getElementById('verdictBody').textContent    = 'Your total monthly cost is ' + ratio.toFixed(1) + '% of your income \u2014 that\u2019s too high. Try a lower-priced car, a bigger down payment, or a longer repayment period.';
+    /* ---------- formatting ---------- */
+    function fmt(n) {
+      n = Math.round(n);
+      const sign = n < 0 ? '-' : '';
+      n = Math.abs(n);
+      if (n >= 10000000) return sign + 'Rs\u00a0' + (n / 10000000).toFixed(2) + '\u00a0Cr';
+      if (n >= 100000) return sign + 'Rs\u00a0' + (n / 100000).toFixed(2) + '\u00a0L';
+      return sign + 'Rs\u00a0' + n.toLocaleString('en-IN');
+    }
+    function fmtShort(n) {
+      n = Math.round(n);
+      if (n >= 10000000) return 'Rs\u00a0' + (n / 10000000).toFixed(1) + 'Cr';
+      if (n >= 100000) return 'Rs\u00a0' + Math.round(n / 100000) + 'L';
+      if (n >= 1000) return 'Rs\u00a0' + Math.round(n / 1000) + 'K';
+      return 'Rs\u00a0' + n;
     }
 
-    const banner = document.getElementById('taxBanner');
-    banner.className = 'tax-banner ' + fuelType;
-    document.getElementById('taxBannerText').textContent = {
-      ev:     'Good news: EVs get customs duty relief in Nepal (only 10\u201315%). That saves a significant amount compared to petrol cars.',
-      hybrid: 'Hybrid vehicles attract 40\u201380% customs duty in Nepal depending on engine size, which adds considerably to the on-road price.',
-      petrol: 'Petrol and diesel cars carry 80\u2013160% customs duty in Nepal \u2014 the highest bracket. The on-road price is often nearly double the showroom price.'
-    }[fuelType];
+    function onNum(iId, rId, oId, type) {
+      const v = document.getElementById(iId).value;
+      document.getElementById(rId).value = v;
+      document.getElementById(oId).textContent =
+        type === 'r' ? (parseFloat(v) || 0).toFixed(2) + '%' : fmtShort(parseFloat(v) || 0);
+    }
+    function onRange(rId, iId, oId, type) {
+      const v = document.getElementById(rId).value;
+      document.getElementById(iId).value = v;
+      document.getElementById(oId).textContent =
+        type === 'r' ? parseFloat(v).toFixed(2) + '%' : fmtShort(parseFloat(v));
+    }
+    function onEngine() {
+      const v = parseFloat(document.getElementById('engineRange').value);
+      document.getElementById('engineOut').textContent = fuelType === 'ev' ? (v + ' kW') : (v + ' cc');
+    }
 
-    const panel = document.getElementById('resultPanel');
-    panel.classList.add('show');
-    setTimeout(() => panel.scrollIntoView({ behavior:'smooth', block:'nearest' }), 80);
-    lucide.createIcons();
-  }
-</script>
-  <script src="assets/js/components/av-footer.js"></script> 
+    /* ---------- mode ---------- */
+    function setMode(m) {
+      mode = m;
+      document.getElementById('modeCheckBtn').classList.toggle('active', m === 'check');
+      document.getElementById('modeBudgetBtn').classList.toggle('active', m === 'budget');
+      document.getElementById('priceField').style.display = m === 'check' ? '' : 'none';
+      document.getElementById('budgetStyleField').style.display = m === 'budget' ? '' : 'none';
+      document.getElementById('step2Sub').textContent = m === 'check'
+        ? 'Price, engine size, rate, and tenure'
+        : 'Engine size, rate, and tenure — we\u2019ll find the price';
+      document.getElementById('ctaText').textContent = m === 'check'
+        ? 'Check If I Can Afford It' : 'Find My Max Budget';
+      document.getElementById('resultPanel').classList.remove('show');
+    }
+
+    function setBudgetStyle(el) {
+      document.querySelectorAll('.pill-choice').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      budgetRatio = parseFloat(el.dataset.ratio);
+    }
+
+    /* ---------- fuel ---------- */
+    function setFuel(type, el) {
+      fuelType = type;
+      document.querySelectorAll('.fuel-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+
+      const maxT = type === 'ev' ? 10 : 7;
+      if (tenure > maxT) { tenure = maxT; }
+      renderTenure();
+      document.getElementById('tenureHint').textContent =
+        type === 'ev'
+          ? 'Electric (green-loan scheme): up to 10 years \u00a0\u2022\u00a0 Petrol / Hybrid: up to 7 years'
+          : 'Petrol & Hybrid: up to 7 years \u00a0\u2022\u00a0 Electric (green-loan scheme): up to 10 years';
+
+      // default interest rate per fuel type
+      const rDefault = type === 'ev' ? 9.5 : (type === 'hybrid' ? 11.5 : 11.5);
+      document.getElementById('rateInput').value = rDefault;
+      document.getElementById('rateRange').value = rDefault;
+      document.getElementById('rateOut').textContent = rDefault.toFixed(2) + '%';
+
+      // engine field
+      const eRange = document.getElementById('engineRange');
+      if (type === 'ev') {
+        eRange.min = 20; eRange.max = 250; eRange.step = 5; eRange.value = 60;
+        document.getElementById('engineQuestion').textContent = 'Motor power?';
+        document.getElementById('engineHint').textContent = 'Higher-powered motors pay more annual EV road tax and use more electricity';
+        document.getElementById('engineMinLbl').textContent = '20 kW';
+        document.getElementById('engineMaxLbl').textContent = '250 kW';
+      } else {
+        eRange.min = 800; eRange.max = 4000; eRange.step = 100; eRange.value = 1500;
+        document.getElementById('engineQuestion').textContent = 'Engine size?';
+        document.getElementById('engineHint').textContent = 'Bigger engines pay more annual road tax and burn more fuel';
+        document.getElementById('engineMinLbl').textContent = '800cc';
+        document.getElementById('engineMaxLbl').textContent = '4000cc';
+      }
+      onEngine();
+    }
+
+    function renderTenure() {
+      document.getElementById('tenureNum').textContent = tenure;
+      document.getElementById('tenureUnit').textContent = tenure === 1 ? 'Year' : 'Years';
+    }
+    function changeTenure(d) {
+      const maxT = fuelType === 'ev' ? 10 : 7;
+      tenure = Math.max(1, Math.min(maxT, tenure + d));
+      renderTenure();
+    }
+
+    function setBrand(el) {
+      document.querySelectorAll('.brand-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      selectedBrand = el.querySelector('.brand-name').textContent;
+    }
+
+    /* ---------- first-principles cost model ---------- */
+
+    // Bagmati Province reference annual road tax, ICE/Hybrid by cc (upper bound of band)
+    const TAX_ICE = [
+      { max: 1000, tax: 22000 }, { max: 1500, tax: 25000 }, { max: 2000, tax: 35000 },
+      { max: 2500, tax: 40000 }, { max: 2900, tax: 45000 }, { max: 3500, tax: 55000 },
+      { max: Infinity, tax: 70000 }
+    ];
+    // Bagmati Province reference annual road tax, EV by kW
+    const TAX_EV = [
+      { max: 50, tax: 5000 }, { max: 125, tax: 15000 }, { max: 200, tax: 20000 }, { max: Infinity, tax: 30000 }
+    ];
+
+    function annualRoadTax(fuel, engineVal) {
+      const table = fuel === 'ev' ? TAX_EV : TAX_ICE;
+      for (const row of table) if (engineVal <= row.max) return row.tax;
+      return table[table.length - 1].tax;
+    }
+
+    function minDownPct(fuel) { return fuel === 'ev' ? 0.20 : 0.40; }
+
+    function calcEMI(principal, annualRatePct, months) {
+      if (principal <= 0 || months <= 0) return 0;
+      const m = annualRatePct / 100 / 12;
+      if (m === 0) return principal / months;
+      return principal * m * Math.pow(1 + m, months) / (Math.pow(1 + m, months) - 1);
+    }
+
+    function insuranceAnnual(price) { return price * 0.016; }               // blended comprehensive estimate
+
+    function maintenanceAnnual(price, fuel) {
+      const factor = fuel === 'ev' ? 0.5 : (fuel === 'hybrid' ? 0.8 : 1.0);
+      return price * 0.015 * factor;
+    }
+
+    function fuelMonthly(fuel, engineVal) {
+      if (fuel === 'ev') return 2200 + engineVal * 15;   // kW
+      if (fuel === 'hybrid') return 4500 + engineVal * 0.5;  // cc
+      return 6000 + engineVal * 1.6;                          // cc, petrol/diesel
+    }
+
+    function registrationFlatFee() { return 15000; }
+    function loanProcessingFee(loan) { return loan * 0.0075; }
+
+    // full monthly ownership cost given a price, down payment amount, fuel, engine, rate, months
+    function monthlyCost(price, down, fuel, engineVal, ratePct, months) {
+      const loan = Math.max(0, price - down);
+      const emi = calcEMI(loan, ratePct, months);
+      const tax = annualRoadTax(fuel, engineVal) / 12;
+      const ins = insuranceAnnual(price) / 12;
+      const maint = maintenanceAnnual(price, fuel) / 12;
+      const fuelCost = fuelMonthly(fuel, engineVal);
+      return { emi, tax, ins, maint, fuelCost, total: emi + tax + ins + maint + fuelCost, loan };
+    }
+
+    function maxAffordablePrice(income, savings, fuel, engineVal, ratePct, months, ratio) {
+      const dPct = minDownPct(fuel);
+      const targetMonthly = income * ratio;
+      let lo = 0, hi = 60000000;
+      for (let i = 0; i < 60; i++) {
+        const mid = (lo + hi) / 2;
+        const down = Math.min(savings, mid);
+        const requiredMin = mid * dPct;
+        const feasible = down >= requiredMin - 1;
+        const cost = monthlyCost(mid, down, fuel, engineVal, ratePct, months).total;
+        if (feasible && cost <= targetMonthly) lo = mid; else hi = mid;
+      }
+      return lo;
+    }
+
+    /* ---------- main calculate ---------- */
+    function calculate() {
+      const income = parseFloat(document.getElementById('salaryInput').value) || 0;
+      const savings = parseFloat(document.getElementById('downInput').value) || 0;
+      const ratePct = parseFloat(document.getElementById('rateInput').value) || 0;
+      const engineVal = parseFloat(document.getElementById('engineRange').value) || 0;
+      const months = tenure * 12;
+      const dPct = minDownPct(fuelType);
+
+      let price, down, downShortfall = 0;
+
+      if (mode === 'check') {
+        price = parseFloat(document.getElementById('priceInput').value) || 0;
+        down = Math.min(savings, price);
+        const requiredMin = price * dPct;
+        downShortfall = Math.max(0, requiredMin - down);
+      } else {
+        price = maxAffordablePrice(income, savings, fuelType, engineVal, ratePct, months, budgetRatio);
+        down = Math.min(savings, price);
+        downShortfall = 0;
+      }
+
+      const cost = monthlyCost(price, down, fuelType, engineVal, ratePct, months);
+      const loan = cost.loan;
+      const fees = registrationFlatFee() + loanProcessingFee(loan);
+      const cashNeeded = down + fees;
+      const ratio = income > 0 ? (cost.total / income) * 100 : 999;
+      const bankOk = income >= cost.emi * 2; // common rule: income at least 2x the EMI
+
+      // ---- fill breakdown ----
+      document.getElementById('val-onroad').textContent = fmt(price);
+      document.getElementById('val-down').textContent = fmt(down);
+      document.getElementById('note-down').textContent = fmt(price * dPct) + ' minimum required (' + Math.round(dPct * 100) + '% of price)';
+      document.getElementById('val-fees').textContent = fmt(fees);
+      document.getElementById('val-cashneeded').textContent = fmt(cashNeeded);
+      document.getElementById('val-loan').textContent = fmt(loan);
+      document.getElementById('note-loan').textContent = 'On-road price minus your down payment';
+      document.getElementById('note-emi').textContent = tenure + ' years at ' + ratePct.toFixed(2) + '% per year';
+      document.getElementById('val-emi').textContent = fmt(cost.emi);
+      document.getElementById('val-tax').textContent = fmt(cost.tax);
+      document.getElementById('note-tax').textContent = 'Rs ' + Math.round(annualRoadTax(fuelType, engineVal)).toLocaleString('en-IN') + '/year \u2014 Bagmati Province reference rate';
+      document.getElementById('val-ins').textContent = fmt(cost.ins);
+      document.getElementById('label-fuel').textContent = fuelType === 'ev' ? 'Charging cost' : fuelType === 'hybrid' ? 'Fuel + charging' : 'Fuel cost';
+      document.getElementById('val-fuel').textContent = fmt(cost.fuelCost);
+      document.getElementById('val-maint').textContent = fmt(cost.maint);
+      document.getElementById('val-total').textContent = fmt(cost.total);
+
+      // ---- down payment warning ----
+      const warn = document.getElementById('downWarn');
+      if (mode === 'check' && downShortfall > 0) {
+        warn.classList.add('show');
+        document.getElementById('downWarnText').textContent =
+          'Nepali banks typically require at least ' + Math.round(dPct * 100) + '% down payment for a ' +
+          (fuelType === 'ev' ? 'an EV' : fuelType) + '. Your savings fall short by ' + fmt(downShortfall) +
+          ' \u2014 the figures below assume you find that extra cash, since the loan likely won\u2019t be approved otherwise.';
+      } else {
+        warn.classList.remove('show');
+      }
+
+      // ---- verdict ----
+      const v = document.getElementById('verdict');
+      v.className = 'verdict';
+      document.getElementById('verdictFill').style.width = Math.min(ratio, 100).toFixed(1) + '%';
+      document.getElementById('verdictPct').textContent = ratio.toFixed(1) + '% of income';
+      document.getElementById('verdictMeterLabel').textContent = 'Total monthly car cost';
+
+      const eyebrow = selectedBrand + ' \u2014 ' + fuelType.toUpperCase() + (mode === 'budget' ? ' \u2014 Your Budget' : '');
+      document.getElementById('verdictEyebrow').textContent = eyebrow;
+
+      const headingEl = document.getElementById('verdictHeading');
+      const priceEl = document.getElementById('verdictPrice');
+      const bodyEl = document.getElementById('verdictBody');
+      const badges = document.getElementById('verdictBadges');
+      badges.innerHTML = '';
+
+      function addBadge(text, cls, icon) {
+        const b = document.createElement('div');
+        b.className = 'verdict-badge ' + (cls || '');
+        b.innerHTML = '<i data-lucide="' + icon + '"></i><span>' + text + '</span>';
+        badges.appendChild(b);
+      }
+
+      if (mode === 'budget') {
+        headingEl.style.display = 'none';
+        priceEl.style.display = '';
+        priceEl.textContent = fmt(price);
+        v.classList.add('budget');
+        bodyEl.textContent = 'The most you can comfortably put toward a ' + fuelType.toUpperCase() +
+          ' at a ' + Math.round(budgetRatio * 100) + '% of income budget, given ' + fmt(savings) + ' in savings and ' + fmt(income) + '/month income.';
+        addBadge(downShortfall > 0 ? 'Down payment limited' : 'Down payment OK', downShortfall > 0 ? 'bad' : 'good', 'wallet');
+        addBadge(bankOk ? 'Meets bank income rule' : 'Below bank income rule', bankOk ? 'good' : 'bad', 'landmark');
+      } else {
+        headingEl.style.display = '';
+        priceEl.style.display = 'none';
+        if (ratio <= 20) {
+          v.classList.add('go');
+          headingEl.textContent = 'Yes, you can afford this car!';
+          bodyEl.textContent = 'Total monthly cost is ' + ratio.toFixed(1) + '% of your income \u2014 comfortably within a safe 20% guideline. Plenty of room for savings and emergencies.';
+        } else if (ratio <= 35) {
+          v.classList.add('maybe');
+          headingEl.textContent = 'Possible, but it\u2019s a stretch.';
+          bodyEl.textContent = 'Total monthly cost is ' + ratio.toFixed(1) + '% of your income. Manageable, but there\u2019ll be little left over for savings, rent, or an emergency.';
+        } else {
+          v.classList.add('no');
+          headingEl.textContent = 'This car is too expensive right now.';
+          bodyEl.textContent = 'Total monthly cost is ' + ratio.toFixed(1) + '% of your income \u2014 too high by most guidelines. Try a lower price, bigger down payment, or longer tenure.';
+        }
+        addBadge(downShortfall > 0 ? 'Down payment short' : 'Down payment OK', downShortfall > 0 ? 'bad' : 'good', 'wallet');
+        addBadge(bankOk ? 'Meets bank income rule' : 'Below bank income rule', bankOk ? 'good' : 'bad', 'landmark');
+      }
+
+      // ---- info banner ----
+      const banner = document.getElementById('infoBanner');
+      banner.className = 'info-banner ' + fuelType;
+      document.getElementById('infoBannerText').textContent = {
+        ev: 'EVs cost more upfront tax-wise than they used to, but running costs stay low: cheaper annual road tax, cheaper "fuel", and lower maintenance since there\u2019s no engine oil or timing belt to service.',
+        hybrid: 'Hybrids sit in the middle \u2014 meaningfully better fuel economy than petrol, but full annual road tax and maintenance since they still carry a combustion engine.',
+        petrol: 'Petrol/diesel cars carry the highest running costs of the three: full road tax, the highest fuel spend, and the most maintenance. Loan financing is also capped lower (max ~60% of price) than EV green-loan schemes.'
+      }[fuelType];
+
+      document.getElementById('resultPanel').classList.add('show');
+      setTimeout(() => document.getElementById('resultPanel').scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+      lucide.createIcons();
+    }
+
+    // init
+    setFuel('ev', document.querySelector('.fuel-tab.ev'));
+    renderTenure();
+  </script>
 </body>
+
 </html>

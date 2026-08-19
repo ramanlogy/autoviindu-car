@@ -11,13 +11,13 @@ window.CarCard = {
     opts = opts || {};
     var IC = window.AV_ICONS || {};
     var heart = IC.heart || this._heart;
-    var star  = IC.star  || this._star;
+    var star = IC.star || this._star;
     var check = IC.check || this._check;
 
     var bcClass = { ev: 'badge-ev', hybrid: 'badge-hybrid', popular: 'badge-pop', new: 'badge-new' };
     var bcLabel = { ev: 'Electric', hybrid: 'Hybrid', popular: 'Popular', new: 'New' };
 
-    var inCmp  = window.AV && window.AV.compareList ? window.AV.compareList.includes(car.slug) : false;
+    var inCmp = window.AV && window.AV.compareList ? window.AV.compareList.includes(car.slug) : false;
     var inWish = window.AV && window.AV.wishlistIncludes ? window.AV.wishlistIncludes(car.slug) : false;
 
     var specPill1 = car.type;
@@ -26,67 +26,67 @@ window.CarCard = {
     return (
       '<div class="car-card" onclick="AV.openDetail(\'' + car.slug + '\')">' +
 
-        /* FULL-BLEED IMAGE AREA */
-        '<div class="car-card-img">' +
-          '<img src="' + car.images[0] + '" alt="' + car.brand + ' ' + car.model + '" loading="lazy">' +
+      /* FULL-BLEED IMAGE AREA */
+      '<div class="car-card-img">' +
+      '<img src="' + car.images[0] + '" alt="' + car.brand + ' ' + car.model + '" loading="lazy">' +
 
-          /* Brand + model name overlay (bottom) */
-          '<div class="card-photo-content">' +
-            '<div class="card-photo-brand">' + car.brand + ' &middot; ' + car.year + '</div>' +
-            '<div class="card-photo-name">' + car.model + '</div>' +
-          '</div>' +
+      /* Brand + model name overlay (bottom) */
+      '<div class="card-photo-content">' +
+      '<div class="card-photo-brand">' + car.brand + ' &middot; ' + car.year + '</div>' +
+      '<div class="card-photo-name">' + car.model + '</div>' +
+      '</div>' +
 
-          /* Badge */
-          '<div class="card-badges">' +
-            (car.badge ? '<span class="badge ' + (bcClass[car.badge] || 'badge-pop') + '">' + (bcLabel[car.badge] || car.badge) + '</span>' : '') +
-          '</div>' +
+      /* Badge */
+      '<div class="card-badges">' +
+      (car.badge ? '<span class="badge ' + (bcClass[car.badge] || 'badge-pop') + '">' + (bcLabel[car.badge] || car.badge) + '</span>' : '') +
+      '</div>' +
 
-          /* Wishlist */
-          '<button class="card-wishlist' + (inWish ? ' wishlisted' : '') + '" onclick="event.stopPropagation();AV.toggleWish(\'' + car.slug + '\',this)">' + heart + '</button>' +
+      /* Wishlist */
+      '<button class="card-wishlist' + (inWish ? ' wishlisted' : '') + '" onclick="event.stopPropagation();AV.toggleWish(\'' + car.slug + '\',this)">' + heart + '</button>' +
 
-          /* Expert score */
-          '<div class="card-score">' + star + ' ' + car.expertScore + '/10</div>' +
+      /* Expert score */
+      '<div class="card-score">' + star + ' ' + car.expertScore + '/10</div>' +
 
-          /* Compare */
-          '<button class="card-compare-btn' + (inCmp ? ' added' : '') + '" data-cmp-slug="' + car.slug + '" onclick="event.stopPropagation();AV.toggleCompare(\'' + car.slug + '\')">' +
-            (inCmp ? '&#10003; Added' : '+ Compare') +
-          '</button>' +
+      /* Compare */
+      '<button class="card-compare-btn' + (inCmp ? ' added' : '') + '" data-cmp-slug="' + car.slug + '" onclick="event.stopPropagation();AV.toggleCompare(\'' + car.slug + '\')">' +
+      (inCmp ? '&#10003; Added' : '+ Compare') +
+      '</button>' +
 
-        '</div>' +
+      '</div>' +
 
-        /* CARD BODY */
-        '<div class="car-card-body">' +
+      /* CARD BODY */
+      '<div class="car-card-body">' +
 
-          '<div class="car-card-meta">' +
-            '<span class="rating-badge">' + star + ' ' + Number(car.rating).toFixed(1) + '</span>' +
-            '<span style="font-size:11px;color:var(--ink-5)">' + car.reviews + ' reviews</span>' +
-          '</div>' +
+      '<div class="car-card-meta">' +
+      '<span class="rating-badge">' + star + ' ' + Number(car.rating).toFixed(1) + '</span>' +
+      '<span style="font-size:11px;color:var(--ink-5)">' + car.reviews + ' reviews</span>' +
+      '</div>' +
 
-          (specPill1 || specPill2 ?
-            '<div class="car-card-specs">' +
-              (specPill1 ? '<span class="spec-pill">' + specPill1 + '</span>' : '') +
-              (specPill2 ? '<span class="spec-pill">' + specPill2 + '</span>' : '') +
-            '</div>' : ''
-          ) +
+      (specPill1 || specPill2 ?
+        '<div class="car-card-specs">' +
+        (specPill1 ? '<span class="spec-pill">' + specPill1 + '</span>' : '') +
+        (specPill2 ? '<span class="spec-pill">' + specPill2 + '</span>' : '') +
+        '</div>' : ''
+      ) +
 
-          '<div class="car-card-colors">' +
-            car.colors.slice(0, 5).map(function (c) {
-              return '<span class="color-dot" style="background:' + c.hex + '" title="' + c.name + '"></span>';
-            }).join('') +
-            '<span class="colors-count">' + car.colors.length + ' colours &middot; ' + car.variants.length + ' variants</span>' +
-          '</div>' +
+      '<div class="car-card-colors">' +
+      car.colors.slice(0, 5).map(function (c) {
+        return '<span class="color-dot" style="background:' + c.hex + '" title="' + c.name + '"></span>';
+      }).join('') +
+      '<span class="colors-count">' + car.colors.length + ' colours &middot; ' + car.variants.length + ' variants</span>' +
+      '</div>' +
 
-          '<div class="car-card-price-row">' +
-            '<div class="car-card-price-from">Starting from</div>' +
-            '<div class="car-card-price">' + window.Rs(car.variants[0].price) + '</div>' +
-            '<div class="car-card-emi">EMI from <strong>Rs. ' + car.baseEMI.toLocaleString() + '/mo</strong></div>' +
-            '<div class="car-card-actions">' +
-              '<button class="cc-btn-outline" onclick="event.stopPropagation();alert(\'Call: +977-9701076240\')">Get Quote</button>' +
-              '<button class="cc-btn-fill" onclick="event.stopPropagation();AV.openDetail(\'' + car.slug + '\')">View Details</button>' +
-            '</div>' +
-          '</div>' +
+      '<div class="car-card-price-row">' +
+      '<div class="car-card-price-from">Starting from</div>' +
+      '<div class="car-card-price">' + window.Rs(car.variants[0].price) + '</div>' +
+      '<div class="car-card-emi">EMI from <strong>Rs. ' + car.baseEMI.toLocaleString() + '/mo</strong></div>' +
+      '<div class="car-card-actions">' +
+      '<button class="cc-btn-outline" onclick="event.stopPropagation();alert(\'Call: +977-9828364940\')">Get Quote</button>' +
+      '<button class="cc-btn-fill" onclick="event.stopPropagation();AV.openDetail(\'' + car.slug + '\')">View Details</button>' +
+      '</div>' +
+      '</div>' +
 
-        '</div>' +
+      '</div>' +
       '</div>'
     );
   },
@@ -95,10 +95,10 @@ window.CarCard = {
     return '<div class="car-card-compact" onclick="AV.openDetail(\'' + car.slug + '\')" style="display:flex;gap:12px;padding:12px;border:1.5px solid var(--border);border-radius:14px;cursor:pointer;transition:all .2s ease" onmouseenter="this.style.background=\'var(--bg)\';this.style.borderColor=\'var(--green)\'" onmouseleave="this.style.background=\'var(--white)\';this.style.borderColor=\'var(--border)\'">' +
       '<img src="' + car.images[0] + '" style="width:72px;height:50px;object-fit:cover;border-radius:10px;flex-shrink:0">' +
       '<div style="flex:1;min-width:0">' +
-        '<div style="font-size:13px;font-weight:800;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + car.brand + ' ' + car.model + '</div>' +
-        '<div style="font-size:11px;color:var(--ink-4);margin-top:1px">' + car.type + ' &middot; ' + car.body + '</div>' +
-        '<div style="font-size:14px;font-weight:800;color:var(--green);margin-top:4px">' + window.Rs(car.variants[0].price) + '</div>' +
+      '<div style="font-size:13px;font-weight:800;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + car.brand + ' ' + car.model + '</div>' +
+      '<div style="font-size:11px;color:var(--ink-4);margin-top:1px">' + car.type + ' &middot; ' + car.body + '</div>' +
+      '<div style="font-size:14px;font-weight:800;color:var(--green);margin-top:4px">' + window.Rs(car.variants[0].price) + '</div>' +
       '</div>' +
-    '</div>';
+      '</div>';
   },
 };

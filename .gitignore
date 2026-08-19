@@ -22,8 +22,32 @@ npm-debug.log*
 dist/
 build/
 
-# Junk / temp files — DO NOT commit these
-frontend/assets/images/cars/127.0.0.1_5500_index.html.png
-frontend/assets/images/cars/autoviindu.vercel.app_*.png
-frontend/assets/images/cars/create a woocommerce*
-frontend/assets/images/cars/WhatsApp Image*
+# Archives
+*.zip
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Temp / scratch / one-off scripts
+tmp/
+scratch/
+car_images/
+
+# Legacy dirs
+Frontend-main/
+frontend/
+
+# Junk files
+*.tsv
+stderr.log
+/generated/prisma
+
+# Local database
+dev.db
+
+# Local tool/agent config
+.claude/
+.agents/
+.windsurf/

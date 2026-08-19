@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
 <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SURF — Find Anything on the Internet</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -341,9 +347,9 @@ footer{text-align:center;padding:18px;font-size:11px;color:var(--border)}
 <header id="hdr">
   <div id="logo">SURF<span>.</span></div>
   <div class="hdr-right">
-    <button class="hdr-btn" id="btn-bm" onclick="openPanel('bm')">★ Saved <span id="bm-ct">0</span></button>
+    <button class="hdr-btn" id="btn-bm" onclick="openPanel('bm')"><i data-lucide="star"></i> Saved <span id="bm-ct">0</span></button>
     <button class="hdr-btn" id="btn-hist" onclick="openPanel('hist')">History <span id="hist-ct">0</span></button>
-    <button class="hdr-icon-btn" title="Settings" onclick="openSetup()">⚙</button>
+    <button class="hdr-icon-btn" title="Settings" onclick="openSetup()"><i data-lucide="settings"></i></button>
   </div>
 </header>
 
@@ -360,7 +366,7 @@ footer{text-align:center;padding:18px;font-size:11px;color:var(--border)}
   <div id="match-line" aria-live="polite">Ready to explore the whole internet</div>
 
   <div id="chips">
-    <button class="chip on" data-c="random" onclick="setChip(this,'random')">✦ surprise me</button>
+    <button class="chip on" data-c="random" onclick="setChip(this,'random')"><i data-lucide="sparkles"></i> surprise me</button>
     <button class="chip" data-c="learn" onclick="setChip(this,'learn')">learn</button>
     <button class="chip" data-c="tools" onclick="setChip(this,'tools')">tools</button>
     <button class="chip" data-c="music" onclick="setChip(this,'music')">music</button>
@@ -373,7 +379,7 @@ footer{text-align:center;padding:18px;font-size:11px;color:var(--border)}
 
   <button id="launch" onclick="doLaunch()">
     <span class="lb-text" id="lb-txt">Surf the internet</span>
-    <span class="lb-icon">↗</span>
+    <span class="lb-icon"><i data-lucide="arrow-up-right"></i></span>
   </button>
 
   <p id="kbd-hint">Press <kbd>Space</kbd> or <kbd>↵</kbd> to launch · <kbd>H</kbd> history · <kbd>B</kbd> saved</p>
@@ -572,7 +578,7 @@ async function doLaunch(){
   } catch(e){
     hideLoading();
     console.error(e);
-    if(e.message.includes('401')){ showErr('Invalid API key. Click ⚙ to update it.'); }
+    if(e.message.includes('401')){ showErr('Invalid API key. Click <i data-lucide="settings"></i> to update it.'); }
     else if(e.message.includes('429')){ showErr('Rate limit hit. Wait a moment and try again.'); }
     else { showErr('Connection error. Check your API key and try again.\n'+e.message); }
   }
@@ -726,8 +732,8 @@ function renderHist(){
         <div class="pi-url">${esc(h.url)}</div>
       </div>
       <div class="pi-acts">
-        <button class="pi-act ${bm?'bm':''}" onclick="toggleBm(${i},'hist')" title="${bm?'Unsave':'Save'}">★</button>
-        <button class="pi-act" onclick="window.open('${esc(h.url)}','_blank')" title="Open">↗</button>
+        <button class="pi-act ${bm?'bm':''}" onclick="toggleBm(${i},'hist')" title="${bm?'Unsave':'Save'}"><i data-lucide="star"></i></button>
+        <button class="pi-act" onclick="window.open('${esc(h.url)}','_blank')" title="Open"><i data-lucide="arrow-up-right"></i></button>
       </div>
     </div>`;
   }).join('');
@@ -735,7 +741,7 @@ function renderHist(){
 
 function renderBm(){
   const el = document.getElementById('bm-list');
-  if(!bmarks.length){ el.innerHTML='<div class="p-empty">No saved sites yet.<br>★ one from your history.</div>'; return; }
+  if(!bmarks.length){ el.innerHTML='<div class="p-empty">No saved sites yet.<br><i data-lucide="star"></i> one from your history.</div>'; return; }
   el.innerHTML = bmarks.map((b,i)=>{
     const dot = `<span class="cat-dot" style="background:${CAT_COLORS[b.cat]||'#aaa'}"></span>`;
     return `<div class="pi">
@@ -745,8 +751,8 @@ function renderBm(){
         <div class="pi-url">${esc(b.url)}</div>
       </div>
       <div class="pi-acts">
-        <button class="pi-act bm" onclick="toggleBm(${i},'bm')" title="Remove">★</button>
-        <button class="pi-act" onclick="window.open('${esc(b.url)}','_blank')" title="Open">↗</button>
+        <button class="pi-act bm" onclick="toggleBm(${i},'bm')" title="Remove"><i data-lucide="star"></i></button>
+        <button class="pi-act" onclick="window.open('${esc(b.url)}','_blank')" title="Open"><i data-lucide="arrow-up-right"></i></button>
       </div>
     </div>`;
   }).join('');

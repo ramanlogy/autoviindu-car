@@ -39,7 +39,7 @@ window.renderBudgetPage = function (tierSlug) {
 
   var IC = window.AV_ICONS || {};
   var chevR = IC.chevR || '›';
-  var star = IC.star || '★';
+  var star = IC.star || '<i data-lucide="star"></i>';
   var badgeMap = { ev: 'badge-ev', hybrid: 'badge-hybrid', popular: 'badge-pop', new: 'badge-new' };
   var badgeLabelMap = { ev: 'Electric', hybrid: 'Hybrid', popular: 'Popular', new: 'New' };
 
@@ -47,7 +47,7 @@ window.renderBudgetPage = function (tierSlug) {
 
   function carCardHTML(car, isBest) {
     return '<div class="car-card' + (isBest ? ' car-card-featured' : '') + '" onclick="AV.openDetail(\'' + car.slug + '\')" style="' + (isBest ? 'border-color:' + tier.color + ';box-shadow:0 0 0 2px ' + tier.color + '22' : '') + '">' +
-      (isBest ? '<div style="background:' + tier.color + ';color:#fff;font-size:10.5px;font-weight:800;text-align:center;padding:5px;letter-spacing:.5px">⭐ BEST PICK IN ' + tier.shortLabel + '</div>' : '') +
+      (isBest ? '<div style="background:' + tier.color + ';color:#fff;font-size:10.5px;font-weight:800;text-align:center;padding:5px;letter-spacing:.5px"><i data-lucide="star"></i> BEST PICK IN ' + tier.shortLabel + '</div>' : '') +
       '<div class="car-card-img-wrap">' +
       '<img src="' + car.images[0] + '" alt="' + car.brand + ' ' + car.model + '" loading="lazy">' +
       (car.badge ? '<span class="badge ' + (badgeMap[car.badge] || 'badge-pop') + '">' + (badgeLabelMap[car.badge] || '') + '</span>' : '') +
@@ -231,7 +231,7 @@ function _rebuildBudgetGrid(cars, tierSlug) {
   var badgeMap = { ev: 'badge-ev', hybrid: 'badge-hybrid', popular: 'badge-pop', new: 'badge-new' };
   var badgeLabelMap = { ev: 'Electric', hybrid: 'Hybrid', popular: 'Popular', new: 'New' };
   var IC = window.AV_ICONS || {};
-  var star = IC.star || '★';
+  var star = IC.star || '<i data-lucide="star"></i>';
   if (!cars.length) {
     grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;background:var(--bg);border-radius:var(--r16)"><div style="font-size:15px;font-weight:700;color:var(--ink-3)">No cars match this filter</div><button onclick="AV.filterBudgetCars(\'' + tierSlug + '\',\'All\')" class="btn btn-primary" style="margin-top:12px">Show All</button></div>';
     return;
@@ -239,7 +239,7 @@ function _rebuildBudgetGrid(cars, tierSlug) {
   grid.innerHTML = cars.map(function (car, i) {
     var isBest = i === 0;
     return '<div class="car-card" onclick="AV.openDetail(\'' + car.slug + '\')" style="' + (isBest && tier.color ? 'border-color:' + tier.color + '' : '') + '">' +
-      (isBest && tier ? '<div style="background:' + tier.color + ';color:#fff;font-size:10px;font-weight:800;text-align:center;padding:4px;letter-spacing:.5px">⭐ BEST PICK</div>' : '') +
+      (isBest && tier ? '<div style="background:' + tier.color + ';color:#fff;font-size:10px;font-weight:800;text-align:center;padding:4px;letter-spacing:.5px"><i data-lucide="star"></i> BEST PICK</div>' : '') +
       '<div class="car-card-img-wrap"><img src="' + car.images[0] + '" alt="' + car.brand + ' ' + car.model + '" loading="lazy">' +
       (car.badge ? '<span class="badge ' + (badgeMap[car.badge] || 'badge-pop') + '">' + (badgeLabelMap[car.badge] || '') + '</span>' : '') +
       '</div><div class="car-card-body">' +

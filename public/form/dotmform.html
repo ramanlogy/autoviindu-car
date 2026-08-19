@@ -1,471 +1,741 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/logo/favicon_io/favicon-16x16.png">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <title>Request a DOTM Service – AutoViindu</title>
+  <link rel="stylesheet" href="../assets/css/site-chrome.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Request a DOTM Service – AutoViindu</title>
+
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
+      --green:#1A6B2A; --green-d:#0F4A1C; --green-m:#2E8F45; --green-l:#EEF7F0; --green-l2:#E1F1E4;
+      --grad: linear-gradient(135deg,#1A6B2A,#2E8F45);
+      --grad-blue: linear-gradient(135deg,#2563EB,#3B82F6);
+      --grad-amber: linear-gradient(135deg,#B8720F,#D98A16);
+      --grad-pink: linear-gradient(135deg,#C23A6C,#E24E82);
+      --grad-teal: linear-gradient(135deg,#0E8E7C,#22B8A0);
+      --teal:#0E8E7C; --teal-l:#E4F8F4;
       --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
-      --border:#E4E8ED; --bg:#F5F7F9; --white:#ffffff;
-      --red:#C8271E;
-      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
-      --sh1:0 1px 4px rgba(0,0,0,.06); --sh2:0 4px 14px rgba(0,0,0,.08);
+      --border:#E4E8ED; --border-d:#D6DCE2; --bg:#F5F8F6; --bg2:#ECF3EE; --white:#ffffff;
+      --red:#C8271E; --red-l:#FFF0EF;
+      --blue:#3B82F6; --blue-l:#E9F1FF;
+      --amber:#D98A16; --amber-l:#FFF4E2;
+      --pink:#E24E82; --pink-l:#FFEDF3;
+      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r18:18px; --r20:20px; --r24:24px; --pill:999px;
+      --sh1:0 1px 4px rgba(11,42,18,.06); --sh2:0 6px 20px rgba(11,42,18,.08); --sh3:0 14px 40px rgba(11,42,18,.12);
       --ease:0.2s cubic-bezier(0.4,0,0.2,1);
-      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+      --font-d: 'Plus Jakarta Sans', system-ui, sans-serif; --font-b: 'Inter', system-ui, sans-serif;
     }
     html { scroll-behavior:smooth; }
-    body { font-family:var(--font-b); background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; min-height:100vh; }
-    ::selection { background:rgba(26,107,42,.12); }
+    body {
+      font-family:var(--font-b); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; min-height:100vh;
+      background:
+        radial-gradient(680px 420px at 92% -6%, rgba(46,143,69,.10), transparent 60%),
+        radial-gradient(520px 360px at -6% 18%, rgba(59,130,246,.07), transparent 55%),
+        radial-gradient(600px 420px at 100% 60%, rgba(226,78,130,.05), transparent 55%),
+        var(--bg);
+      background-attachment:fixed;
+    }
+    ::selection { background:rgba(26,107,42,.15); }
     :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
-    .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
-    @media(min-width:640px){ .wrap{ padding:0 32px; } }
-    @media(min-width:1024px){ .wrap{ padding:0 48px; } }
-
-    /* TOP BAR */
-    .topbar {
-      background: linear-gradient(145deg,#0B2A12 0%,#1A6B2A 100%);
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .topbar-inner {
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    }
-    .topbar-brand {
-      font-family: var(--font-d); font-size: 20px; font-weight: 800; color: #fff;
-      text-decoration: none; letter-spacing: -0.3px;
-    }
-    .topbar-brand em { font-style: italic; color: var(--green-m); }
-    .topbar-back {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 13px; font-weight: 600; color: rgba(255,255,255,.75);
-      text-decoration: none; transition: color var(--ease);
-    }
-    .topbar-back:hover { color: #fff; }
-    .topbar-back i { width: 14px; height: 14px; }
+    img, svg { display:block; }
+    @keyframes floatSlow { 0%,100%{ transform:translateY(0) rotate(0deg);} 50%{ transform:translateY(-8px) rotate(3deg);} }
+    @keyframes floatSlow2 { 0%,100%{ transform:translateY(0) scale(1);} 50%{ transform:translateY(6px) scale(1.08);} }
+    @keyframes popIn { 0%{ transform:scale(0); opacity:0;} 60%{ transform:scale(1.25); opacity:1;} 100%{ transform:scale(1);} }
+    @keyframes shine { 0%{ transform:translateX(-120%) skewX(-15deg);} 100%{ transform:translateX(220%) skewX(-15deg);} }
+    @keyframes drawCheck { to{ stroke-dashoffset:0; } }
+    @keyframes confettiFall { 0%{ transform:translateY(-8px) rotate(0deg); opacity:0;} 15%{ opacity:1;} 100%{ transform:translateY(70px) rotate(220deg); opacity:0;} }
+    @keyframes gentlePulse { 0%,100%{ box-shadow:0 0 0 0 rgba(26,107,42,.18);} 50%{ box-shadow:0 0 0 8px rgba(26,107,42,0);} }
+    .wrap { max-width:1180px; margin:0 auto; padding:0 16px; }
+    @media(min-width:640px){ .wrap{ padding:0 28px; } }
+    @media(min-width:1024px){ .wrap{ padding:0 40px; } }
 
     /* BREADCRUMB */
     .bc { background:var(--white); border-bottom:1px solid var(--border); padding:11px 0; }
-    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
+    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); flex-wrap:wrap; }
     .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
     .bc-inner a:hover { text-decoration:underline; }
     .bc-inner i { width:12px; height:12px; }
 
-    /* PAGE HEADER */
-    .page-header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 40px 0 36px;
-    }
-    .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
-    .eyebrow i { width:13px; height:13px; }
-    .page-header h1 { font-family:var(--font-d); font-size:clamp(26px,4vw,42px); font-weight:800; color:var(--ink); line-height:1.1; margin-bottom:10px; }
-    .page-header h1 em { font-style:italic; color:var(--green); }
-    .page-header p { font-size:14.5px; color:var(--ink4); max-width:520px; line-height:1.75; }
+    /* PAGE */
+    .page { padding:24px 0 64px; }
 
-    /* LAYOUT */
-    .page-body { padding: 40px 0 80px; }
-    .layout { display: grid; grid-template-columns: 1fr; gap: 28px; }
-    @media(min-width:900px) { .layout { grid-template-columns: 300px 1fr; align-items: start; } }
+    /* HERO STRIP */
+    .hero-strip { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:22px; }
+    .hero-left { display:flex; align-items:flex-start; gap:16px; }
+    .hero-avatar { width:64px; height:64px; border-radius:var(--r18); background:var(--grad); display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; box-shadow:0 10px 24px rgba(26,107,42,.28); animation:gentlePulse 3.2s ease-in-out infinite; }
+    .hero-avatar i { width:30px; height:30px; color:#fff; }
+    .hero-avatar::before, .hero-avatar::after { content:''; position:absolute; border-radius:50%; }
+    .hero-avatar::before { width:9px; height:9px; top:-6px; left:-8px; background:var(--amber); animation:floatSlow 3.6s ease-in-out infinite; }
+    .hero-avatar::after { width:13px; height:13px; top:14px; left:-18px; background:var(--blue); opacity:.55; animation:floatSlow2 4.2s ease-in-out infinite .3s; }
+    .hero-text h1 { font-family:var(--font-d); font-size:clamp(22px,3.4vw,32px); font-weight:800; color:var(--ink); line-height:1.18; }
+    .hero-text h1 span { display:block; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .hero-text p { font-size:14px; color:var(--ink4); margin-top:6px; max-width:440px; }
+    .safe-badge { display:flex; align-items:center; gap:10px; background:var(--white); border:1.5px solid var(--border); border-radius:14px; padding:12px 16px; max-width:260px; box-shadow:var(--sh1); transition:transform var(--ease), box-shadow var(--ease); }
+    .safe-badge:hover { transform:translateY(-2px); box-shadow:var(--sh2); }
+    .safe-badge .lock { width:32px; height:32px; border-radius:var(--r10); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .safe-badge .lock i { width:16px; height:16px; color:var(--green); }
+    .safe-badge strong { display:block; font-size:12.5px; font-weight:700; color:var(--ink2); }
+    .safe-badge span { font-size:11.5px; color:var(--ink4); line-height:1.4; }
 
-    /* SIDEBAR */
-    .sidebar { display: flex; flex-direction: column; gap: 14px; }
-    .sidebar-card {
-      background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r16);
-      padding: 20px; transition: border-color var(--ease);
-    }
-    .sidebar-card-title { font-size: 13px; font-weight: 800; color: var(--ink2); margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
-    .sidebar-card-title i { width: 14px; height: 14px; color: var(--green); }
-    .step-mini { display: flex; gap: 11px; margin-bottom: 10px; }
-    .step-mini:last-child { margin-bottom: 0; }
-    .step-mini-num { width: 22px; height: 22px; border-radius: 50%; background: var(--green-l); border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--green); flex-shrink: 0; }
-    .step-mini-text { font-size: 12.5px; color: var(--ink4); line-height: 1.5; padding-top: 2px; }
-    .step-mini-text strong { color: var(--ink2); display: block; font-size: 12px; font-weight: 700; }
-    .contact-item { display: flex; align-items: center; gap: 9px; font-size: 13px; color: var(--ink4); margin-bottom: 8px; }
-    .contact-item:last-child { margin-bottom: 0; }
-    .contact-item i { width: 14px; height: 14px; color: var(--green); flex-shrink: 0; }
-    .contact-item a { color: var(--green); text-decoration: none; font-weight: 600; }
-    .contact-item a:hover { text-decoration: underline; }
-    .notice-mini { display:flex; align-items:flex-start; gap:9px; padding:12px 14px; border-radius:var(--r10); background:var(--green-l); border:1.5px solid rgba(26,107,42,.15); }
-    .notice-mini i { width:14px; height:14px; color:var(--green); flex-shrink:0; margin-top:2px; }
-    .notice-mini p { font-size:12px; color:var(--ink3); line-height:1.55; }
+    /* MAIN LAYOUT */
+    .form-layout-inner { display:grid; grid-template-columns:1fr; gap:20px; align-items:start; }
+    @media(min-width:960px){ .form-layout-inner{ grid-template-columns:1fr 320px; gap:24px; } }
 
     /* FORM CARD */
-    .form-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); overflow:hidden; }
-    .form-header { background:linear-gradient(135deg,var(--green),var(--green-d)); padding:24px 28px 20px; }
-    .form-header h3 { font-family:var(--font-d); font-size:22px; font-weight:800; color:#fff; margin-bottom:4px; }
-    .form-header p { font-size:13px; color:rgba(255,255,255,.6); }
-    .form-body { padding:24px 28px 28px; }
+    .form-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); box-shadow:var(--sh2); padding:22px 18px 26px; }
+    @media(min-width:640px){ .form-wrap{ padding:30px 32px 32px; } }
+
+    .step { padding:22px 0; border-top:1px solid var(--border); opacity:0; transform:translateY(16px); transition:opacity .55s ease, transform .55s ease; }
+    .step:first-child { padding-top:0; border-top:none; }
+    .step.in-view { opacity:1; transform:translateY(0); }
+    .step-head { display:flex; align-items:flex-start; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+    .step-head-toggle { margin-left:auto; margin-top:2px; }
+    @media(max-width:480px){ .step-head-toggle{ margin-left:38px; margin-top:8px; } }
+    .step-num { width:26px; height:26px; border-radius:50%; background:var(--grad); color:#fff; font-family:var(--font-d); font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 3px 8px rgba(26,107,42,.3); transition:transform var(--ease); }
+    .step:hover .step-num { transform:scale(1.08) rotate(-4deg); }
+    .step-num.n2 { background:var(--grad-teal); box-shadow:0 3px 8px rgba(14,142,124,.3); }
+    .step-num.n3 { background:var(--grad-blue); box-shadow:0 3px 8px rgba(37,99,235,.3); }
+    .step-num.n4 { background:var(--grad-amber); box-shadow:0 3px 8px rgba(184,114,15,.3); }
+    .step-num.n5 { background:var(--grad-pink); box-shadow:0 3px 8px rgba(194,58,108,.3); }
+    .step-title { font-family:var(--font-d); font-size:16.5px; font-weight:800; color:var(--ink2); }
+    .step-sub { font-size:12.5px; color:var(--ink4); margin-top:2px; }
+    .step-body { padding-left:38px; }
+    @media(max-width:420px){ .step-body{ padding-left:0; } }
+
+    /* ICON CARD GRID */
+    .icon-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    @media(min-width:480px){ .icon-grid{ grid-template-columns:repeat(3,1fr); } }
+    .icon-grid.cols-2 { grid-template-columns:repeat(2,1fr); }
+    .icon-card { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; text-align:center; border:1.5px solid var(--border); border-radius:var(--r12); padding:16px 8px; cursor:pointer; transition:transform var(--ease), border-color var(--ease), box-shadow var(--ease), background var(--ease); background:var(--white); }
+    .icon-card input { position:absolute; opacity:0; pointer-events:none; }
+    .icon-card i.ico { width:22px; height:22px; color:var(--ink4); transition:color var(--ease), transform var(--ease); }
+    .icon-card span { font-size:12.5px; font-weight:700; color:var(--ink3); line-height:1.3; }
+    .icon-card:hover { border-color:var(--green-m); transform:translateY(-3px); box-shadow:var(--sh1); }
+    .icon-card:hover i.ico { transform:scale(1.12); }
+    .icon-card:active { transform:translateY(-1px) scale(.98); }
+    .icon-card:has(input:checked) { border-color:var(--green); background:var(--green-l); box-shadow:0 0 0 3px rgba(26,107,42,.08), var(--sh1); transform:translateY(-2px); }
+    .icon-card:has(input:checked) i.ico, .icon-card:has(input:checked) span { color:var(--green); }
+    .icon-card .check { position:absolute; top:7px; right:7px; width:16px; height:16px; border-radius:50%; background:var(--green); display:none; align-items:center; justify-content:center; }
+    .icon-card .check i { width:10px; height:10px; color:#fff; }
+    .icon-card:has(input:checked) .check { display:flex; animation:popIn .32s cubic-bezier(.34,1.56,.64,1); }
+
+    /* FORM FIELDS */
     .form-grid { display:grid; grid-template-columns:1fr; gap:14px; }
-    @media(min-width:560px){ .form-grid{ grid-template-columns:1fr 1fr; } }
-    .form-group { display:flex; flex-direction:column; gap:5px; }
+    @media(min-width:560px){ .form-grid.cols-3{ grid-template-columns:repeat(3,1fr); } .form-grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
+    .form-group { display:flex; flex-direction:column; gap:6px; }
     .form-group.full { grid-column:1/-1; }
-    .form-label { font-size:11.5px; font-weight:700; color:var(--ink3); text-transform:uppercase; letter-spacing:.45px; }
+    .form-label { font-size:12.5px; font-weight:700; color:var(--ink3); }
     .form-label span { color:var(--red); }
+    .input-icon { position:relative; }
+    .input-icon i { position:absolute; left:12px; top:50%; transform:translateY(-50%); width:15px; height:15px; color:var(--ink5); pointer-events:none; }
+    .input-icon .form-input, .input-icon .form-select { padding-left:36px; }
     .form-input, .form-select, .form-textarea {
-      width:100%; padding:10px 12px; border:1.5px solid var(--border); border-radius:var(--r8);
+      width:100%; padding:11px 13px; border:1.5px solid var(--border); border-radius:var(--r10);
       font-family:var(--font-b); font-size:14px; color:var(--ink); background:var(--white);
-      transition:border-color var(--ease); outline:none;
+      transition:border-color var(--ease), box-shadow var(--ease); outline:none;
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green); box-shadow: 0 0 0 3px rgba(26,107,42,.06); }
-    .form-textarea { resize:vertical; min-height:80px; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(26,107,42,.09); }
+    .form-input::placeholder, .form-textarea::placeholder { color:var(--ink5); }
+    .form-textarea { resize:vertical; min-height:96px; }
     .form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
-    .radio-group { display:flex; flex-wrap:wrap; gap:7px; }
-    .radio-option { display:flex; align-items:center; gap:7px; background:var(--bg); border:1.5px solid var(--border); border-radius:var(--r8); padding:8px 13px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:all var(--ease); }
-    .radio-option input { display:none; }
-    .radio-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); }
-    .form-sec-title { font-size:13px; font-weight:800; color:var(--ink2); padding:18px 0 4px; border-top:1px solid var(--border); margin-top:6px; display:flex; align-items:center; gap:8px; }
-    .form-sec-title:first-of-type { border-top:none; padding-top:0; margin-top:0; }
-    .form-sec-title i { width:14px; height:14px; color:var(--green); }
-    .form-submit { width:100%; padding:14px; background:var(--green); color:#fff; border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:background var(--ease); margin-top:10px; display:flex; align-items:center; justify-content:center; gap:8px; }
-    .form-submit:hover { background:var(--green-d); }
+
+    .pill-group { display:flex; flex-wrap:wrap; gap:8px; }
+    .pill-option { position:relative; display:flex; align-items:center; gap:7px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r10); padding:9px 14px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:transform var(--ease), border-color var(--ease), background var(--ease), box-shadow var(--ease); }
+    .pill-option input { position:absolute; opacity:0; pointer-events:none; }
+    .pill-option i { width:14px; height:14px; color:var(--ink5); transition:color var(--ease), transform var(--ease); }
+    .pill-option:hover { border-color:var(--green-m); transform:translateY(-2px); box-shadow:var(--sh1); }
+    .pill-option:hover i { transform:scale(1.15) rotate(-6deg); }
+    .pill-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); box-shadow:0 0 0 3px rgba(26,107,42,.08); }
+    .pill-option:has(input:checked) i { color:var(--green); }
+
+    .toggle-group { display:inline-flex; border:1.5px solid var(--border); border-radius:var(--r10); overflow:hidden; }
+    .toggle-option { position:relative; padding:9px 22px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; background:var(--white); border-right:1.5px solid var(--border); transition:background var(--ease), color var(--ease); }
+    .toggle-option:last-child { border-right:none; }
+    .toggle-option input { position:absolute; opacity:0; pointer-events:none; }
+    .toggle-option:hover { background:var(--bg2); }
+    .toggle-option:has(input:checked) { background:var(--green-l); color:var(--green); }
+
+    .field-hint { font-size:11.5px; color:var(--ink5); margin-top:8px; display:flex; align-items:flex-start; gap:6px; }
+    .field-hint i { width:13px; height:13px; color:var(--green-m); flex-shrink:0; margin-top:1px; }
+
+    /* PICKUP-STYLE CARDS (used for yes/no choices) */
+    .pickup-grid { display:grid; grid-template-columns:1fr; gap:10px; }
+    @media(min-width:520px){ .pickup-grid{ grid-template-columns:1fr 1fr; } }
+    .pickup-card { position:relative; display:flex; align-items:flex-start; gap:12px; border:1.5px solid var(--border); border-radius:var(--r12); padding:14px; cursor:pointer; transition:transform var(--ease), border-color var(--ease), background var(--ease), box-shadow var(--ease); }
+    .pickup-card input { position:absolute; opacity:0; pointer-events:none; }
+    .pickup-card .p-icon { width:42px; height:42px; border-radius:var(--r10); background:var(--bg2); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:transform var(--ease), background var(--ease); }
+    .pickup-card .p-icon i { width:20px; height:20px; color:var(--green); }
+    .pickup-card strong { display:block; font-size:13.5px; font-weight:700; color:var(--ink2); margin-bottom:2px; }
+    .pickup-card p { font-size:12px; color:var(--ink4); line-height:1.4; }
+    .pickup-card:hover { border-color:var(--green-m); transform:translateY(-3px); box-shadow:var(--sh2); }
+    .pickup-card:hover .p-icon { transform:scale(1.08) rotate(-4deg); background:var(--green-l); }
+    .pickup-card:has(input:checked) { border-color:var(--green); background:var(--green-l); box-shadow:0 0 0 3px rgba(26,107,42,.08), var(--sh1); transform:translateY(-2px); }
+    .pickup-card .p-check { position:absolute; top:10px; right:10px; width:18px; height:18px; border-radius:50%; background:var(--green); display:none; align-items:center; justify-content:center; }
+    .pickup-card .p-check i { width:11px; height:11px; color:#fff; }
+    .pickup-card:has(input:checked) .p-check { display:flex; animation:popIn .32s cubic-bezier(.34,1.56,.64,1); }
+
+    /* SUBMIT */
+    .agree-row { display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--ink4); cursor:pointer; margin-top:14px; }
+    .agree-row input { margin-top:2px; flex-shrink:0; accent-color:var(--green); width:15px; height:15px; }
+    .agree-row a { color:var(--green); font-weight:600; text-decoration:none; }
+    .agree-row a:hover { text-decoration:underline; }
+    .form-submit { position:relative; overflow:hidden; width:100%; padding:15px; background:var(--grad); color:#fff; border:none; border-radius:var(--pill); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:transform var(--ease), box-shadow var(--ease); margin-top:20px; display:flex; align-items:center; justify-content:center; gap:9px; box-shadow:0 8px 22px rgba(26,107,42,.28); }
+    .form-submit::after { content:''; position:absolute; top:0; left:0; width:40%; height:100%; background:linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent); transform:translateX(-120%) skewX(-15deg); }
+    .form-submit:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(26,107,42,.36); }
+    .form-submit:hover::after { animation:shine .9s ease; }
+    .form-submit:active { transform:translateY(0); }
     .form-submit i { width:16px; height:16px; }
-    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:10px; }
+    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:12px; display:flex; align-items:center; justify-content:center; gap:6px; }
+    .form-note i { width:12px; height:12px; color:var(--green-m); }
 
-    /* TABS */
-    .type-toggle { display:flex; gap:0; border:1.5px solid var(--border); border-radius:var(--r10); overflow:hidden; width:fit-content; margin-bottom:0; }
-    .type-btn { padding:10px 22px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; background:var(--white); border-right:1.5px solid var(--border); transition:all var(--ease); }
-    .type-btn:last-child { border-right:none; }
-    .type-btn.active { background:var(--green); color:#fff; border-color:var(--green); }
+    /* SIDEBAR */
+    .sidebar { display:flex; flex-direction:column; gap:16px; }
+    .side-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r16); overflow:hidden; box-shadow:var(--sh1); transition:transform var(--ease), box-shadow var(--ease); }
+    .side-card:hover { transform:translateY(-2px); box-shadow:var(--sh2); }
+    .side-card-head { padding:16px 18px 4px; }
+    .side-card-title { font-family:var(--font-d); font-size:15px; font-weight:800; color:var(--ink2); }
+    .side-card-body { padding:14px 18px 18px; }
+    .step-list { display:flex; flex-direction:column; }
+    .step-list-item { display:flex; align-items:center; gap:12px; padding:9px 0; }
+    .step-list-item { transition:transform var(--ease); }
+    .step-list-item:hover { transform:translateX(3px); }
+    .step-list-item .s-icon { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:transform var(--ease); }
+    .step-list-item:hover .s-icon { transform:scale(1.12) rotate(-6deg); }
+    .step-list-item .s-icon i { width:15px; height:15px; }
+    .step-list-item p { font-size:13px; color:var(--ink3); font-weight:500; line-height:1.4; }
+    .step-list-item p strong { display:block; font-size:13px; color:var(--ink2); font-weight:700; }
+    .s1 { background:var(--green-l); } .s1 i { color:var(--green); }
+    .s2 { background:var(--green-l2); } .s2 i { color:var(--green-m); }
+    .s3 { background:var(--blue-l); } .s3 i { color:var(--blue); }
+    .s4 { background:var(--amber-l); } .s4 i { color:var(--amber); }
+    .s5 { background:var(--pink-l); } .s5 i { color:var(--pink); }
 
-    /* SUCCESS */
-    .success-screen { display:none; flex-direction:column; align-items:center; text-align:center; padding:56px 28px; }
-    .success-icon { width:64px; height:64px; background:var(--green-l); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
-    .success-icon i { width:28px; height:28px; color:var(--green); }
-    .success-screen h3 { font-family:var(--font-d); font-size:24px; font-weight:800; color:var(--ink2); margin-bottom:8px; }
-    .success-screen p { font-size:14px; color:var(--ink4); line-height:1.7; max-width:340px; margin:0 auto 24px; }
-    .back-btn { display:inline-flex; align-items:center; gap:7px; padding:11px 22px; background:var(--green-l); border:1.5px solid var(--green); border-radius:var(--r10); font-size:13.5px; font-weight:700; color:var(--green); text-decoration:none; transition:all var(--ease); }
-    .back-btn:hover { background:var(--green); color:#fff; }
+    .contact-item { display:flex; align-items:center; gap:11px; padding:11px 0; border-bottom:1px solid var(--border); }
+    .contact-item:last-child { border-bottom:none; padding-bottom:0; }
+    .contact-item .c-icon { width:34px; height:34px; border-radius:var(--r10); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .contact-item .c-icon i { width:16px; height:16px; color:var(--green); }
+    .contact-item strong { display:block; font-size:11.5px; font-weight:700; color:var(--ink4); text-transform:uppercase; letter-spacing:.3px; margin-bottom:1px; }
+    .contact-item span { font-size:13.5px; color:var(--ink2); font-weight:600; }
+    .contact-item span a { color:var(--ink2); text-decoration:none; }
+    .contact-item span a:hover { color:var(--green); }
 
-    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
-    .fade-up { opacity:0; animation:fadeUp .45s ease forwards; }
-    .fade-up-delay { opacity:0; animation:fadeUp .45s ease 0.1s forwards; }
-    .fade-up-delay2 { opacity:0; animation:fadeUp .45s ease 0.2s forwards; }
+    .why-list { display:flex; flex-direction:column; gap:14px; }
+    .why-item { display:flex; align-items:flex-start; gap:11px; }
+    .why-item .w-icon { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .why-item .w-icon i { width:15px; height:15px; }
+    .why-item strong { display:block; font-size:13px; font-weight:700; color:var(--ink2); }
+    .why-item span { font-size:12px; color:var(--ink4); }
+    .side-card.why { background:var(--bg2); border-color:var(--border); }
+
+    /* SUCCESS STATE */
+    .success-state { display:none; text-align:center; padding:48px 20px; position:relative; }
+    .success-state.shown { display:flex; flex-direction:column; align-items:center; gap:16px; }
+    .success-icon { position:relative; width:72px; height:72px; background:var(--green-l); border-radius:50%; display:flex; align-items:center; justify-content:center; animation:popIn .5s cubic-bezier(.34,1.56,.64,1); }
+    .success-icon svg { width:36px; height:36px; }
+    .success-icon circle { fill:none; stroke:var(--green); stroke-width:2; stroke-dasharray:88; stroke-dashoffset:88; animation:drawCheck .6s ease .15s forwards; }
+    .success-icon path { fill:none; stroke:var(--green); stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:20; stroke-dashoffset:20; animation:drawCheck .35s ease .55s forwards; }
+    .confetti { position:absolute; top:20px; left:50%; width:0; height:0; }
+    .confetti i { position:absolute; width:6px; height:6px; border-radius:2px; opacity:0; animation:confettiFall 1.1s ease-out forwards; }
+    .confetti i:nth-child(1){ left:-70px; background:var(--green-m); animation-delay:.25s; }
+    .confetti i:nth-child(2){ left:-40px; background:var(--amber); animation-delay:.32s; top:-6px; }
+    .confetti i:nth-child(3){ left:-10px; background:var(--blue); animation-delay:.2s; }
+    .confetti i:nth-child(4){ left:20px; background:var(--pink); animation-delay:.38s; top:-4px; }
+    .confetti i:nth-child(5){ left:50px; background:var(--green); animation-delay:.28s; }
+    .confetti i:nth-child(6){ left:75px; background:var(--amber); animation-delay:.42s; top:-8px; }
+    .success-title { font-family:var(--font-d); font-size:26px; font-weight:800; color:var(--ink); }
+    .success-desc { font-size:14px; color:var(--ink4); max-width:380px; line-height:1.7; }
+    .success-back { position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:7px; padding:11px 22px; background:var(--grad); color:#fff; border-radius:var(--pill); font-size:13.5px; font-weight:700; text-decoration:none; transition:transform var(--ease), box-shadow var(--ease); margin-top:8px; box-shadow:0 8px 18px rgba(26,107,42,.24); }
+    .success-back:hover { transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,107,42,.3); }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { opacity:0; animation:fadeUp .5s ease forwards; }
+    .d1{animation-delay:.04s} .d2{animation-delay:.1s} .d3{animation-delay:.16s}
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { animation:none; opacity:1; }
+      .step { transition:none; opacity:1; transform:none; }
+      .hero-avatar, .hero-avatar::before, .hero-avatar::after { animation:none; }
+      .form-submit::after, .success-icon circle, .success-icon path, .confetti i { animation:none; }
+      html { scroll-behavior:auto; }
+    }
   </style>
 </head>
 <body>
-
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="wrap topbar-inner">
-      <a href="../index.html" class="topbar-brand">Auto<em>Viindu</em></a>
-      <a href="../dotm-services.html" class="topbar-back">
-        <i data-lucide="arrow-left"></i>
-        Back to DOTM Services
-      </a>
-    </div>
-  </div>
+  <script src="../assets/js/site-chrome.js"></script>
 
   <!-- BREADCRUMB -->
   <nav class="bc">
     <div class="wrap bc-inner">
-      <a href="../index.html">Home</a>
+      <a href="/">Home</a>
       <i data-lucide="chevron-right"></i>
-      <a href="../services.html">Services</a>
+      <a href="/services">Services</a>
       <i data-lucide="chevron-right"></i>
-      <a href="../dotm-services.html">DOTM Services</a>
+      <a href="/dotm-services">DOTM Services</a>
       <i data-lucide="chevron-right"></i>
       <span>Request a Service</span>
     </div>
   </nav>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <div class="wrap fade-up">
-      <div class="eyebrow"><i data-lucide="send"></i>Service Request</div>
-      <h1>Tell us what <em>you need</em></h1>
-      <p>Fill in your details below. We'll review your request and confirm next steps within one business day. No queues, no confusion.</p>
-    </div>
-  </div>
-
-  <!-- BODY -->
-  <div class="page-body">
+  <div class="page">
     <div class="wrap">
-      <div class="layout">
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar fade-up-delay">
-          <div class="sidebar-card">
-            <div class="sidebar-card-title"><i data-lucide="repeat-2"></i>How It Works</div>
-            <div class="step-mini">
-              <div class="step-mini-num">1</div>
-              <div class="step-mini-text"><strong>Submit this form</strong>Tell us what you need and your details.</div>
-            </div>
-            <div class="step-mini">
-              <div class="step-mini-num">2</div>
-              <div class="step-mini-text"><strong>We collect documents</strong>Our agent picks up paperwork from you.</div>
-            </div>
-            <div class="step-mini">
-              <div class="step-mini-num">3</div>
-              <div class="step-mini-text"><strong>We book your slot</strong>We secure DOTM appointments proactively.</div>
-            </div>
-            <div class="step-mini">
-              <div class="step-mini-num">4</div>
-              <div class="step-mini-text"><strong>Processing & updates</strong>SMS & email at every stage.</div>
-            </div>
-            <div class="step-mini">
-              <div class="step-mini-num">5</div>
-              <div class="step-mini-text"><strong>Documents returned</strong>We deliver completed docs back to you.</div>
-            </div>
+      <!-- HERO STRIP -->
+      <div class="hero-strip fade-up d1">
+        <div class="hero-left">
+          <div class="hero-avatar"><i data-lucide="file-text"></i></div>
+          <div class="hero-text">
+            <h1>Tell us what <span>you need</span></h1>
+            <p>Fill in your details below. We'll review your request and confirm next steps within one business day. No queues, no confusion.</p>
           </div>
+        </div>
+        <div class="safe-badge">
+          <div class="lock"><i data-lucide="shield-check"></i></div>
+          <div>
+            <strong>Your details are safe</strong>
+            <span>We only use this to process your DOTM request.</span>
+          </div>
+        </div>
+      </div>
 
-          <div class="sidebar-card">
-            <div class="sidebar-card-title"><i data-lucide="phone"></i>Need help?</div>
-            <div class="contact-item"><i data-lucide="phone-call"></i><span>Call us: <a href="tel:+977980000000">+977 98 0000000</a></span></div>
-            <div class="contact-item"><i data-lucide="mail"></i><span><a href="mailto:dotm@autoviindu.com">dotm@autoviindu.com</a></span></div>
-            <div class="contact-item"><i data-lucide="clock"></i><span>Mon–Sat · 9am–6pm NST</span></div>
-          </div>
-
-          <div class="notice-mini">
-            <i data-lucide="shield-check"></i>
-            <p>Your details are never shared with third parties. We only use your information to process your DOTM request.</p>
-          </div>
-        </aside>
+      <div class="form-layout-inner">
 
         <!-- FORM -->
-        <div class="form-wrap fade-up-delay2">
-          <div class="form-header">
-            <h3>DOTM Service Request</h3>
-            <p>Fields marked * are required. We respond within one business day.</p>
-          </div>
-          <div class="form-body">
-            <div id="form-area">
-              <form onsubmit="handleSubmit(event)" novalidate>
+        <div class="form-wrap fade-up d2">
+          <form id="dotm-form" onsubmit="handleSubmit(event)">
 
-                <!-- Type -->
-                <div class="form-sec-title"><i data-lucide="users"></i>Who is this for?</div>
-                <div style="margin-top:10px">
-                  <div class="form-label" style="margin-bottom:8px">Request Type <span>*</span></div>
-                  <div class="type-toggle">
-                    <div class="type-btn active" onclick="switchType('individual',this)">Individual</div>
-                    <div class="type-btn" onclick="switchType('corporate',this)">Corporate</div>
+            <!-- Step 1: Who is this for -->
+            <div class="step">
+              <div class="step-head">
+                <div class="step-num">1</div>
+                <div>
+                  <div class="step-title">Who is this for?</div>
+                  <div class="step-sub">Choose the request type that applies to you.</div>
+                </div>
+              </div>
+              <div class="step-body">
+                <div class="icon-grid cols-2">
+                  <label class="icon-card">
+                    <input type="radio" name="request_type" value="individual" checked onclick="switchType('individual')">
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="user" class="ico"></i>
+                    <span>Individual</span>
+                  </label>
+                  <label class="icon-card">
+                    <input type="radio" name="request_type" value="corporate" onclick="switchType('corporate')">
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="building-2" class="ico"></i>
+                    <span>Corporate</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Service required -->
+            <div class="step">
+              <div class="step-head">
+                <div class="step-num n2">2</div>
+                <div>
+                  <div class="step-title">Service required</div>
+                  <div class="step-sub">Choose a category and describe what you need.</div>
+                </div>
+              </div>
+              <div class="step-body">
+                <div class="icon-grid">
+                  <label class="icon-card">
+                    <input type="radio" name="category" value="registration" checked>
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="clipboard-list" class="ico"></i>
+                    <span>Vehicle Registration</span>
+                  </label>
+                  <label class="icon-card">
+                    <input type="radio" name="category" value="licensing">
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="id-card" class="ico"></i>
+                    <span>Licensing</span>
+                  </label>
+                  <label class="icon-card">
+                    <input type="radio" name="category" value="compliance">
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="file-check-2" class="ico"></i>
+                    <span>Documentation &amp; Compliance</span>
+                  </label>
+                  <label class="icon-card">
+                    <input type="radio" name="category" value="value-add">
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="star" class="ico"></i>
+                    <span>Value-Added Services</span>
+                  </label>
+                  <label class="icon-card">
+                    <input type="radio" name="category" value="other">
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="help-circle" class="ico"></i>
+                    <span>Other</span>
+                  </label>
+                </div>
+
+                <div class="form-group" style="margin-top:14px">
+                  <label class="form-label">Describe the specific service needed <span>*</span></label>
+                  <textarea class="form-textarea" name="service_description" placeholder="e.g. Bluebook renewal for my private vehicle, driving license upgrade from two-wheeler to four-wheeler, duplicate bluebook for lost certificate…" required></textarea>
+                  <div class="field-hint"><i data-lucide="sparkles"></i>The more detail you share, the faster we can confirm your request.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Vehicle details -->
+            <div class="step">
+              <div class="step-head">
+                <div class="step-num n3">3</div>
+                <div>
+                  <div class="step-title">Vehicle details</div>
+                  <div class="step-sub">If applicable to your request.</div>
+                </div>
+              </div>
+              <div class="step-body">
+                <div class="form-group" style="margin-bottom:14px">
+                  <label class="form-label">Vehicle type</label>
+                  <div class="pill-group">
+                    <label class="pill-option"><input type="radio" name="vtype" value="private" checked><i data-lucide="car"></i>Private</label>
+                    <label class="pill-option"><input type="radio" name="vtype" value="commercial"><i data-lucide="truck"></i>Commercial</label>
+                    <label class="pill-option"><input type="radio" name="vtype" value="government"><i data-lucide="landmark"></i>Government</label>
+                    <label class="pill-option"><input type="radio" name="vtype" value="rental"><i data-lucide="key"></i>Rental</label>
                   </div>
                 </div>
 
-                <!-- Service Category -->
-                <div class="form-sec-title"><i data-lucide="list"></i>Service Required</div>
-                <div class="form-grid" style="margin-top:10px">
-                  <div class="form-group full">
-                    <div class="form-label">Select Service Category <span>*</span></div>
-                    <div class="radio-group" style="margin-top:6px">
-                      <label class="radio-option"><input type="radio" name="category" value="registration" checked>Vehicle Registration</label>
-                      <label class="radio-option"><input type="radio" name="category" value="licensing">Licensing</label>
-                      <label class="radio-option"><input type="radio" name="category" value="compliance">Documentation &amp; Compliance</label>
-                      <label class="radio-option"><input type="radio" name="category" value="value-add">Value-Added Services</label>
-                      <label class="radio-option"><input type="radio" name="category" value="other">Other</label>
-                    </div>
-                  </div>
-                  <div class="form-group full">
-                    <label class="form-label">Describe the specific service needed <span>*</span></label>
-                    <textarea class="form-textarea" placeholder="e.g. Bluebook renewal for my private vehicle, driving license upgrade from two-wheeler to four-wheeler, duplicate bluebook for lost certificate…" required></textarea>
+                <div class="form-group" style="margin-bottom:16px">
+                  <label class="form-label">Fuel type</label>
+                  <div class="pill-group">
+                    <label class="pill-option"><input type="radio" name="fuel" value="petrol" checked><i data-lucide="droplet"></i>Petrol</label>
+                    <label class="pill-option"><input type="radio" name="fuel" value="diesel"><i data-lucide="fuel"></i>Diesel</label>
+                    <label class="pill-option"><input type="radio" name="fuel" value="ev"><i data-lucide="zap"></i>EV</label>
+                    <label class="pill-option"><input type="radio" name="fuel" value="hybrid"><i data-lucide="leaf"></i>Hybrid</label>
                   </div>
                 </div>
 
-                <!-- Vehicle Information -->
-                <div class="form-sec-title"><i data-lucide="car"></i>Vehicle Details <span style="font-size:11px;font-weight:500;color:var(--ink5)">(if applicable)</span></div>
-                <div class="form-grid" style="margin-top:10px">
-                  <div class="form-group">
-                    <label class="form-label">Vehicle Type</label>
-                    <div class="radio-group">
-                      <label class="radio-option"><input type="radio" name="vtype" value="private" checked>Private</label>
-                      <label class="radio-option"><input type="radio" name="vtype" value="commercial">Commercial</label>
-                      <label class="radio-option"><input type="radio" name="vtype" value="government">Government</label>
-                      <label class="radio-option"><input type="radio" name="vtype" value="rental">Rental</label>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label">Fuel Type</label>
-                    <div class="radio-group">
-                      <label class="radio-option"><input type="radio" name="fuel" value="petrol" checked>Petrol</label>
-                      <label class="radio-option"><input type="radio" name="fuel" value="diesel">Diesel</label>
-                      <label class="radio-option"><input type="radio" name="fuel" value="ev">EV</label>
-                      <label class="radio-option"><input type="radio" name="fuel" value="hybrid">Hybrid</label>
-                    </div>
-                  </div>
+                <div class="form-grid cols-3">
                   <div class="form-group">
                     <label class="form-label">Brand</label>
-                    <input class="form-input" type="text" placeholder="e.g. Toyota, Honda">
+                    <div class="input-icon">
+                      <i data-lucide="car"></i>
+                      <input class="form-input" type="text" name="brand" placeholder="e.g. Toyota, Honda">
+                    </div>
                   </div>
                   <div class="form-group">
                     <label class="form-label">Model</label>
-                    <input class="form-input" type="text" placeholder="e.g. Prius, City">
+                    <div class="input-icon">
+                      <i data-lucide="car"></i>
+                      <input class="form-input" type="text" name="model" placeholder="e.g. Prius, City">
+                    </div>
                   </div>
                   <div class="form-group">
-                    <label class="form-label">Manufacture Year</label>
-                    <select class="form-select">
-                      <option value="">Select Year</option>
-                      <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
-                      <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
-                      <option>2017</option><option>2016</option><option>2015</option><option>2014</option>
-                      <option>2013 or older</option>
-                    </select>
+                    <label class="form-label">Manufacture year</label>
+                    <div class="input-icon">
+                      <i data-lucide="calendar"></i>
+                      <select class="form-select" name="year">
+                        <option value="">Select year</option>
+                        <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+                        <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
+                        <option>2017</option><option>2016</option><option>2015</option><option>2014</option>
+                        <option>2013 or older</option>
+                      </select>
+                    </div>
                   </div>
                   <div class="form-group">
                     <label class="form-label">Displacement (cc / kW)</label>
-                    <input class="form-input" type="text" placeholder="e.g. 1500cc or 150kW">
+                    <input class="form-input" type="text" name="displacement" placeholder="e.g. 1500cc or 150kW">
                   </div>
                   <div class="form-group">
                     <label class="form-label">Variant</label>
-                    <input class="form-input" type="text" placeholder="e.g. VX, ZX, G">
+                    <input class="form-input" type="text" name="variant" placeholder="e.g. VX, ZX, G">
                   </div>
                   <div class="form-group">
-                    <label class="form-label">Vehicle Registration Number</label>
-                    <input class="form-input" type="text" placeholder="e.g. BA 1 PA 1234">
+                    <label class="form-label">Vehicle registration number</label>
+                    <div class="input-icon">
+                      <i data-lucide="hash"></i>
+                      <input class="form-input" type="text" name="reg_number" placeholder="e.g. BA 1 PA 1234">
+                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- Individual Details -->
+            <!-- Step 4: Your details (individual / corporate) -->
+            <div class="step">
+              <div class="step-head">
+                <div class="step-num n4">4</div>
+                <div>
+                  <div class="step-title" id="details-title">Your details</div>
+                  <div class="step-sub" id="details-sub">We'll only use this to process and confirm your request.</div>
+                </div>
+              </div>
+              <div class="step-body">
+
+                <!-- Individual pane -->
                 <div id="individual-pane">
-                  <div class="form-sec-title"><i data-lucide="user"></i>Personal Details</div>
-                  <div class="form-grid" style="margin-top:10px">
+                  <div class="form-grid cols-3">
                     <div class="form-group">
-                      <label class="form-label">Full Name <span>*</span></label>
-                      <input class="form-input" type="text" placeholder="Your full name" required>
+                      <label class="form-label">Full name <span>*</span></label>
+                      <div class="input-icon">
+                        <i data-lucide="user"></i>
+                        <input class="form-input" type="text" name="ind_full_name" placeholder="Your full name" required>
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Mobile Number <span>*</span></label>
-                      <input class="form-input" type="tel" placeholder="+977 98XXXXXXXX" required>
+                      <label class="form-label">Mobile number <span>*</span></label>
+                      <div class="input-icon">
+                        <i data-lucide="phone"></i>
+                        <input class="form-input" type="tel" name="ind_mobile" placeholder="+977 98XXXXXXXX" required>
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Alternative Number</label>
-                      <input class="form-input" type="tel" placeholder="Optional">
+                      <label class="form-label">Alternative number</label>
+                      <div class="input-icon">
+                        <i data-lucide="phone"></i>
+                        <input class="form-input" type="tel" name="ind_alt_mobile" placeholder="Optional">
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Email Address</label>
-                      <input class="form-input" type="email" placeholder="you@example.com">
+                      <label class="form-label">Email address</label>
+                      <div class="input-icon">
+                        <i data-lucide="mail"></i>
+                        <input class="form-input" type="email" name="ind_email" placeholder="you@example.com">
+                      </div>
                     </div>
                     <div class="form-group full">
-                      <label class="form-label">Full Address <span>*</span></label>
-                      <input class="form-input" type="text" placeholder="Full address" required>
+                      <label class="form-label">Full address <span>*</span></label>
+                      <div class="input-icon">
+                        <i data-lucide="map-pin"></i>
+                        <input class="form-input" type="text" name="ind_address" placeholder="Full address" required>
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Province / Municipality</label>
-                      <input class="form-input" type="text" placeholder="e.g. Bagmati / Kathmandu Metropolitan">
+                      <label class="form-label">Province / municipality</label>
+                      <input class="form-input" type="text" name="ind_province" placeholder="e.g. Bagmati / Kathmandu Metropolitan">
                     </div>
                   </div>
                 </div>
 
-                <!-- Corporate Details -->
+                <!-- Corporate pane -->
                 <div id="corporate-pane" style="display:none">
-                  <div class="form-sec-title"><i data-lucide="building-2"></i>Corporate Details</div>
-                  <div class="form-grid" style="margin-top:10px">
+                  <div class="form-grid cols-3">
                     <div class="form-group">
-                      <label class="form-label">Registered Company Name <span>*</span></label>
-                      <input class="form-input" type="text" placeholder="Legal registered name">
+                      <label class="form-label">Registered company name <span>*</span></label>
+                      <div class="input-icon">
+                        <i data-lucide="building-2"></i>
+                        <input class="form-input" type="text" name="corp_name" placeholder="Legal registered name">
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Trading Name (if different)</label>
-                      <input class="form-input" type="text" placeholder="Trading name">
+                      <label class="form-label">Trading name (if different)</label>
+                      <input class="form-input" type="text" name="corp_trading_name" placeholder="Trading name">
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Business Registration Number</label>
-                      <input class="form-input" type="text" placeholder="Registration no.">
+                      <label class="form-label">Business registration number</label>
+                      <input class="form-input" type="text" name="corp_reg_number" placeholder="Registration no.">
                     </div>
                     <div class="form-group">
-                      <label class="form-label">PAN / VAT Number <span>*</span></label>
-                      <input class="form-input" type="text" placeholder="PAN or VAT number">
+                      <label class="form-label">PAN / VAT number <span>*</span></label>
+                      <input class="form-input" type="text" name="corp_pan_vat" placeholder="PAN or VAT number">
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Date of Incorporation</label>
-                      <input class="form-input" type="date">
+                      <label class="form-label">Date of incorporation</label>
+                      <div class="input-icon">
+                        <i data-lucide="calendar"></i>
+                        <input class="form-input" type="date" name="corp_incorporation_date">
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Primary Contact Person <span>*</span></label>
-                      <input class="form-input" type="text" placeholder="Full name">
+                      <label class="form-label">Primary contact person <span>*</span></label>
+                      <div class="input-icon">
+                        <i data-lucide="user"></i>
+                        <input class="form-input" type="text" name="corp_contact_name" placeholder="Full name">
+                      </div>
                     </div>
                     <div class="form-group">
                       <label class="form-label">Designation</label>
-                      <input class="form-input" type="text" placeholder="e.g. Fleet Manager, Director">
+                      <input class="form-input" type="text" name="corp_designation" placeholder="e.g. Fleet Manager, Director">
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Official Number <span>*</span></label>
-                      <input class="form-input" type="tel" placeholder="+977 98XXXXXXXX">
+                      <label class="form-label">Official number <span>*</span></label>
+                      <div class="input-icon">
+                        <i data-lucide="phone"></i>
+                        <input class="form-input" type="tel" name="corp_official_number" placeholder="+977 98XXXXXXXX">
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Alternative Contact Number</label>
-                      <input class="form-input" type="tel" placeholder="Optional">
+                      <label class="form-label">Alternative contact number</label>
+                      <input class="form-input" type="tel" name="corp_alt_number" placeholder="Optional">
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Official Email Address</label>
-                      <input class="form-input" type="email" placeholder="office@company.com">
+                      <label class="form-label">Official email address</label>
+                      <div class="input-icon">
+                        <i data-lucide="mail"></i>
+                        <input class="form-input" type="email" name="corp_email" placeholder="office@company.com">
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Company Website</label>
-                      <input class="form-input" type="url" placeholder="https://company.com">
+                      <label class="form-label">Company website</label>
+                      <input class="form-input" type="url" name="corp_website" placeholder="https://company.com">
                     </div>
                     <div class="form-group full">
-                      <label class="form-label">Registered Office Address <span>*</span></label>
-                      <input class="form-input" type="text" placeholder="Full registered address">
+                      <label class="form-label">Registered office address <span>*</span></label>
+                      <div class="input-icon">
+                        <i data-lucide="map-pin"></i>
+                        <input class="form-input" type="text" name="corp_address" placeholder="Full registered address">
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Province / Municipality</label>
-                      <input class="form-input" type="text" placeholder="e.g. Bagmati / Kathmandu">
+                      <label class="form-label">Province / municipality</label>
+                      <input class="form-input" type="text" name="corp_province" placeholder="e.g. Bagmati / Kathmandu">
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Postal Code</label>
-                      <input class="form-input" type="text" placeholder="e.g. 44600">
+                      <label class="form-label">Postal code</label>
+                      <input class="form-input" type="text" name="corp_postal_code" placeholder="e.g. 44600">
                     </div>
                   </div>
                 </div>
 
-                <!-- Preferences -->
-                <div class="form-sec-title"><i data-lucide="settings-2"></i>Preferences</div>
-                <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
-                  <div>
-                    <div class="form-label" style="margin-bottom:6px">Do you need document pickup and delivery? <span>*</span></div>
-                    <div class="radio-group">
-                      <label class="radio-option"><input type="radio" name="pickup" value="yes" checked>Yes</label>
-                      <label class="radio-option"><input type="radio" name="pickup" value="no">No — I will deliver documents myself</label>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="form-label" style="margin-bottom:6px">Do you want appointment and slot assistance?</div>
-                    <div class="radio-group">
-                      <label class="radio-option"><input type="radio" name="appt" value="yes" checked>Yes</label>
-                      <label class="radio-option"><input type="radio" name="appt" value="no">No</label>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Confirm -->
-                <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
-                  <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer">
-                    <input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">
-                    I confirm the information provided is true and correct.
-                  </label>
-                  <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer">
-                    <input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">
-                    I agree to AutoViindu's service terms and conditions.
-                  </label>
-                </div>
-
-                <button class="form-submit" type="submit">
-                  <i data-lucide="send"></i>
-                  Submit Request
-                </button>
-                <div class="form-note">We will respond within one business day · Mon–Sat · 9am–6pm NST</div>
-              </form>
+              </div>
             </div>
 
-            <!-- SUCCESS STATE -->
-            <div class="success-screen" id="success-screen">
-              <div class="success-icon"><i data-lucide="check-circle-2"></i></div>
-              <h3>Request Submitted!</h3>
-              <p>Thank you. We have received your DOTM service request and will get back to you within one business day.</p>
-              <a href="../dotm-services.html" class="back-btn">
-                <i data-lucide="arrow-left" style="width:14px;height:14px"></i>
-                Back to DOTM Services
-              </a>
+            <!-- Step 5: Preferences -->
+            <div class="step">
+              <div class="step-head">
+                <div class="step-num n5">5</div>
+                <div>
+                  <div class="step-title">Preferences</div>
+                  <div class="step-sub">Tell us how you'd like this handled.</div>
+                </div>
+              </div>
+              <div class="step-body">
+
+                <div class="form-group" style="margin-bottom:16px">
+                  <label class="form-label">Do you need document pickup and delivery? <span>*</span></label>
+                  <div class="pickup-grid" style="margin-top:8px">
+                    <label class="pickup-card">
+                      <input type="radio" name="pickup" value="yes" checked>
+                      <div class="p-check"><i data-lucide="check"></i></div>
+                      <div class="p-icon"><i data-lucide="truck"></i></div>
+                      <div>
+                        <strong>Yes, pick up and deliver</strong>
+                        <p>Our agent collects and returns your documents.</p>
+                      </div>
+                    </label>
+                    <label class="pickup-card">
+                      <input type="radio" name="pickup" value="no">
+                      <div class="p-check"><i data-lucide="check"></i></div>
+                      <div class="p-icon"><i data-lucide="map-pin"></i></div>
+                      <div>
+                        <strong>No, I'll deliver myself</strong>
+                        <p>I'll bring and collect the documents directly.</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Do you want appointment and slot assistance?</label>
+                  <div class="toggle-group" style="margin-top:8px">
+                    <label class="toggle-option"><input type="radio" name="appt" value="yes" checked>Yes</label>
+                    <label class="toggle-option"><input type="radio" name="appt" value="no">No</label>
+                  </div>
+                </div>
+
+              </div>
             </div>
+
+            <label class="agree-row">
+              <input type="checkbox" required>
+              I confirm the information provided is true and correct.
+            </label>
+            <label class="agree-row">
+              <input type="checkbox" required>
+              I agree to AutoViindu's <a href="/about#terms">service terms and conditions</a>.
+            </label>
+
+            <button class="form-submit" type="submit">
+              <i data-lucide="send"></i>Submit Request
+            </button>
+            <div class="form-note"><i data-lucide="shield-check"></i>We'll respond within one business day.</div>
+          </form>
+
+          <!-- SUCCESS STATE -->
+          <div class="success-state" id="success-state">
+            <div class="success-icon">
+              <div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <svg viewBox="0 0 36 36" fill="none">
+                <circle cx="18" cy="18" r="14"></circle>
+                <path d="M11 18.5l4.5 4.5L25.5 12"></path>
+              </svg>
+            </div>
+            <div class="success-title">Request Submitted!</div>
+            <div class="success-desc">Thank you. We have received your DOTM service request and will get back to you within one business day (Mon–Sat, 9am–6pm NST).</div>
+            <a href="/dotm-services" class="success-back"><i data-lucide="arrow-left"></i>Back to DOTM Services</a>
           </div>
         </div>
 
+        <!-- SIDEBAR -->
+        <div class="sidebar fade-up d3">
+
+          <div class="side-card">
+            <div class="side-card-head"><div class="side-card-title">How it works</div></div>
+            <div class="side-card-body">
+              <div class="step-list">
+                <div class="step-list-item"><div class="s-icon s1"><i data-lucide="check-circle-2"></i></div><p><strong>Submit this form</strong>Tell us what you need and your details.</p></div>
+                <div class="step-list-item"><div class="s-icon s2"><i data-lucide="folder-open"></i></div><p><strong>We collect documents</strong>Our agent picks up paperwork from you.</p></div>
+                <div class="step-list-item"><div class="s-icon s3"><i data-lucide="calendar-check"></i></div><p><strong>We book your slot</strong>We secure DOTM appointments proactively.</p></div>
+                <div class="step-list-item"><div class="s-icon s4"><i data-lucide="loader"></i></div><p><strong>Processing &amp; updates</strong>SMS &amp; email at every stage.</p></div>
+                <div class="step-list-item"><div class="s-icon s5"><i data-lucide="smile"></i></div><p><strong>Documents returned</strong>We deliver completed docs back to you.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <div class="side-card-head"><div class="side-card-title">Need help?</div></div>
+            <div class="side-card-body">
+              <div class="contact-item">
+                <div class="c-icon"><i data-lucide="phone-call"></i></div>
+                <div><strong>Call us</strong><span><a href="tel:+9779828364940">+977 9828364940</a></span></div>
+              </div>
+              <div class="contact-item">
+                <div class="c-icon"><i data-lucide="mail"></i></div>
+                <div><strong>Email</strong><span><a href="mailto:info@autoviindu.com">info@autoviindu.com</a></span></div>
+              </div>
+              <div class="contact-item">
+                <div class="c-icon"><i data-lucide="clock"></i></div>
+                <div><strong>Hours</strong><span>Mon–Sat, 9am–6pm NST</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="side-card why">
+            <div class="side-card-head"><div class="side-card-title">Your privacy, protected</div></div>
+            <div class="side-card-body">
+              <div class="why-list">
+                <div class="why-item">
+                  <div class="w-icon s3" style="background:var(--blue-l)"><i data-lucide="shield-check" style="color:var(--blue)"></i></div>
+                  <div><strong>Never shared with third parties</strong><span>Your details stay with AutoViindu.</span></div>
+                </div>
+                <div class="why-item">
+                  <div class="w-icon s2" style="background:var(--green-l2)"><i data-lucide="file-lock-2" style="color:var(--green-m)"></i></div>
+                  <div><strong>Used only for this request</strong><span>Strictly to process your DOTM service.</span></div>
+                </div>
+                <div class="why-item">
+                  <div class="w-icon s4" style="background:var(--amber-l)"><i data-lucide="users" style="color:var(--amber)"></i></div>
+                  <div><strong>Trusted by individuals &amp; businesses</strong><span>across Nepal</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -473,51 +743,74 @@
   <script>
     lucide.createIcons();
 
-    function switchType(type, btn) {
-      document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('individual-pane').style.display = type === 'individual' ? '' : 'none';
-      document.getElementById('corporate-pane').style.display = type === 'corporate' ? '' : 'none';
+    // Reveal each step as it scrolls into view
+    if ('IntersectionObserver' in window) {
+      const stepObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            stepObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.step').forEach(step => stepObserver.observe(step));
+    } else {
+      document.querySelectorAll('.step').forEach(step => step.classList.add('in-view'));
+    }
+
+    function switchType(type) {
+      const isIndividual = type === 'individual';
+      document.getElementById('individual-pane').style.display = isIndividual ? '' : 'none';
+      document.getElementById('corporate-pane').style.display = isIndividual ? 'none' : '';
+      document.getElementById('details-title').textContent = isIndividual ? 'Your details' : 'Corporate details';
+      document.getElementById('details-sub').textContent = isIndividual
+        ? "We'll only use this to process and confirm your request."
+        : "Tell us about your company and primary contact.";
+
+      // toggle required attributes so hidden pane fields don't block submission
+      document.querySelectorAll('#individual-pane [required]').forEach(el => el.dataset.wasRequired = 'true');
+      document.querySelectorAll('#corporate-pane [required]').forEach(el => el.dataset.wasRequired = 'true');
+      document.querySelectorAll('#individual-pane input, #individual-pane select').forEach(el => {
+        if (el.dataset.wasRequired) el.required = isIndividual;
+      });
+      document.querySelectorAll('#corporate-pane input, #corporate-pane select').forEach(el => {
+        if (el.dataset.wasRequired) el.required = !isIndividual;
+      });
     }
 
     function handleSubmit(e) {
       e.preventDefault();
-    const form = e.target;
-    const type = arguments.length > 1 ? arguments[1] : null;
-    // Collect data automatically
-    const data = { formId: form.id || type || 'unknown' };
-    const elements = form.querySelectorAll('input, select, textarea');
-    elements.forEach((el, i) => {
-      let label = el.name || el.placeholder;
-      if (!label) {
-        const group = el.closest('.form-group') || el.closest('div');
-        if (group) {
-          const lblEl = group.querySelector('.form-label') || group.querySelector('label');
-          if (lblEl) label = lblEl.innerText.replace('*', '').trim();
+      const form = e.target;
+      const data = { formId: form.id || 'dotm-form' };
+      const elements = form.querySelectorAll('input, select, textarea');
+      elements.forEach((el, i) => {
+        let label = el.name || el.placeholder;
+        if (!label) {
+          const group = el.closest('.form-group') || el.closest('div');
+          if (group) {
+            const lblEl = group.querySelector('.form-label') || group.querySelector('label');
+            if (lblEl) label = lblEl.innerText.replace('*', '').trim();
+          }
         }
-      }
-      if (!label) label = 'field_' + i;
-      
-      if (el.type === 'radio' || el.type === 'checkbox') {
-        if (el.checked) data[label] = el.value || 'checked';
-      } else {
-        data[label] = el.value;
-      }
-    });
+        if (!label) label = 'field_' + i;
 
-    fetch('/api/forms/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    }).catch(err => console.error(err));
+        if (el.type === 'radio' || el.type === 'checkbox') {
+          if (el.checked) data[label] = el.value || 'checked';
+        } else {
+          data[label] = el.value;
+        }
+      });
 
-      document.getElementById('form-area').style.display = 'none';
-      const s = document.getElementById('success-screen');
-      s.style.display = 'flex';
-      lucide.createIcons();
-      s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      fetch('/api/forms/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).catch(err => console.error(err));
+
+      document.getElementById('dotm-form').style.display = 'none';
+      document.getElementById('success-state').classList.add('shown');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
-  <script src="../assets/js/components/av-footer.js"></script>
 </body>
 </html>

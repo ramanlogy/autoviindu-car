@@ -1,710 +1,1659 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <title>Videos &amp; News – AutoViindu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Videos & Guides – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
-      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
-      --border:#E4E8ED; --bg:#F5F7F9; --white:#ffffff;
-      --red:#C8271E;
-      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
-      --sh1:0 1px 4px rgba(0,0,0,.06); --sh2:0 4px 14px rgba(0,0,0,.08);
-      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
-      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    html { scroll-behavior:smooth; }
-    body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
-    ::selection { background:rgba(26,107,42,.12); }
-    :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
-    .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
-    @media(min-width:640px){ .wrap{ padding:0 32px; } }
-    @media(min-width:1024px){ .wrap{ padding:0 48px; } }
 
-    /* BREADCRUMB */
-    .bc { background:var(--bg); border-bottom:1px solid var(--border); padding:11px 0; }
-    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
-    .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
-    .bc-inner a:hover { text-decoration:underline; }
-    .bc-inner i { width:12px; height:12px; }
+        :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-b);
+      background: var(--white);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    ::selection {
+      background: rgba(26, 107, 42, .12);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    @media(min-width:640px) {
+      .wrap {
+        padding: 0 32px;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .wrap {
+        padding: 0 48px;
+      }
+    }
+
+    .bc {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 11px 0;
+    }
+
+    .bc-inner {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: var(--ink4);
+    }
+
+    .bc-inner a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .bc-inner a:hover {
+      text-decoration: underline;
+    }
+
+    .bc-inner i {
+      width: 12px;
+      height: 12px;
+    }
 
     /* HERO */
-    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:56px 0 0; position:relative; overflow:hidden; }
-    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
-    .hero-inner { position:relative; z-index:1; padding-bottom:56px; }
-    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
-    .hero-badge i { width:13px; height:13px; color:var(--green-m); }
-    .hero h1 { font-family:var(--font-d); font-size:clamp(30px,5vw,52px); font-weight:800; color:#fff; line-height:1.08; margin-bottom:14px; }
-    .hero h1 em { font-style:italic; color:var(--green-m); }
-    .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:500px; line-height:1.75; margin-bottom:32px; }
-    .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
-
-    /* SUBSCRIBE BUTTON */
-    .btn-subscribe {
-      display:inline-flex; align-items:center; gap:8px;
-      background:#FF0000; color:#fff;
-      border:none; border-radius:var(--r8);
-      padding:11px 20px; font-family:var(--font-b); font-size:14px; font-weight:700;
-      cursor:pointer; text-decoration:none;
-      transition:background var(--ease), transform var(--ease), box-shadow var(--ease);
-      box-shadow:0 2px 8px rgba(255,0,0,.35);
+    .hero {
+      background: linear-gradient(145deg, #0B2A12 0%, #1A6B2A 60%, #1f8535 100%);
+      padding: 52px 0 0;
+      position: relative;
+      overflow: hidden;
     }
-    .btn-subscribe:hover { background:#cc0000; transform:translateY(-1px); box-shadow:0 4px 16px rgba(255,0,0,.4); }
-    .btn-subscribe i { width:16px; height:16px; }
-    .sub-count { font-size:13px; color:rgba(255,255,255,.5); font-weight:600; }
 
-    /* FILTER TABS */
-    .filter-bar { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
-    .filter-inner { display:flex; align-items:center; gap:0; overflow-x:auto; scrollbar-width:none; }
-    .filter-inner::-webkit-scrollbar { display:none; }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: var(--pill);
+      padding: 5px 13px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .75);
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge i {
+      width: 13px;
+      height: 13px;
+      color: var(--green-m);
+    }
+
+    .hero h1 {
+      font-family: var(--font-d);
+      font-size: clamp(30px, 5vw, 50px);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--green-m);
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: rgba(255, 255, 255, .6);
+      max-width: 600px;
+      line-height: 1.75;
+      margin-bottom: 26px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat b {
+      display: block;
+      font-family: var(--font-d);
+      font-size: 22px;
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .hero-stat span {
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, .55);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+      font-weight: 700;
+    }
+
+    .hero-sub-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 11px 22px;
+      border-radius: var(--pill);
+      text-decoration: none;
+      margin-top: 4px;
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+
+    .hero-sub-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(200, 39, 30, .35);
+    }
+
+    .hero-sub-cta i {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* SEARCH + FILTER BAR */
+    .filter-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .filter-bar-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      position: relative;
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 260px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 9px 14px 9px 36px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--pill);
+      font-family: var(--font-b);
+      font-size: 13.5px;
+      color: var(--ink2);
+      transition: border-color var(--ease);
+    }
+
+    .search-box input:focus {
+      border-color: var(--green);
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      color: var(--ink5);
+    }
+
+    .tabs-scroll {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      flex: 1;
+    }
+
+    .tabs-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
     .filter-tab {
-      flex-shrink:0; padding:14px 18px; font-size:13px; font-weight:700; color:var(--ink4);
-      cursor:pointer; border-bottom:2.5px solid transparent; white-space:nowrap;
-      transition:color var(--ease), border-color var(--ease);
-      background:none; border-top:none; border-left:none; border-right:none;
-      font-family:var(--font-b);
+      flex-shrink: 0;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink4);
+      cursor: pointer;
+      border-radius: var(--pill);
+      white-space: nowrap;
+      border: 1.5px solid transparent;
+      transition: all var(--ease);
+      background: none;
+      font-family: var(--font-b);
     }
-    .filter-tab:hover { color:var(--ink2); }
-    .filter-tab.active { color:var(--green); border-bottom-color:var(--green); }
+
+    .filter-tab:hover {
+      color: var(--ink2);
+      background: var(--bg);
+    }
+
+    .filter-tab.active {
+      color: var(--white);
+      background: var(--green);
+    }
 
     /* SECTION */
-    .section { padding:56px 0; }
-    .section.alt { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-    .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
-    .eyebrow i { width:13px; height:13px; }
-    .sec-title { font-family:var(--font-d); font-size:clamp(22px,3.5vw,34px); font-weight:800; color:var(--ink); line-height:1.12; margin-bottom:8px; }
-    .sec-title em { font-style:italic; color:var(--green); }
-    .sec-sub { font-size:14.5px; color:var(--ink4); max-width:520px; line-height:1.75; margin-bottom:36px; }
-    .sec-header { display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:28px; }
-    .sec-header-text { }
-    .sec-header-text .sec-title { margin-bottom:4px; }
-    .view-all { display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:700; color:var(--green); text-decoration:none; white-space:nowrap; }
-    .view-all:hover { text-decoration:underline; }
-    .view-all i { width:13px; height:13px; }
+    .section {
+      padding: 52px 0;
+    }
 
-    /* VIDEO MODAL */
-    .modal-overlay {
-      display:none; position:fixed; inset:0; background:rgba(0,0,0,.85);
-      z-index:1000; align-items:center; justify-content:center; padding:20px;
+    .section.alt {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
-    .modal-overlay.open { display:flex; }
-    .modal-box {
-      background:#000; border-radius:var(--r12); overflow:hidden;
-      width:100%; max-width:900px; position:relative;
-      box-shadow:0 24px 80px rgba(0,0,0,.6);
-    }
-    .modal-close {
-      position:absolute; top:12px; right:12px; z-index:10;
-      background:rgba(0,0,0,.6); border:none; border-radius:50%;
-      width:36px; height:36px; display:flex; align-items:center; justify-content:center;
-      cursor:pointer; color:#fff; transition:background var(--ease);
-    }
-    .modal-close:hover { background:rgba(255,255,255,.2); }
-    .modal-close i { width:16px; height:16px; }
-    .modal-iframe-wrap { position:relative; padding-bottom:56.25%; height:0; }
-    .modal-iframe-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
-    .modal-info { padding:16px 20px; background:#111; }
-    .modal-title { font-size:15px; font-weight:700; color:#fff; margin-bottom:4px; line-height:1.4; }
-    .modal-meta { font-size:12px; color:#888; }
 
-    /* FEATURED VIDEO */
-    .featured-video { border-radius:var(--r16); overflow:hidden; border:1.5px solid var(--border); cursor:pointer; transition:box-shadow var(--ease), transform var(--ease); background:var(--white); }
-    .featured-video:hover { box-shadow:var(--sh2); transform:translateY(-2px); }
-    .featured-thumb { position:relative; aspect-ratio:16/9; overflow:hidden; background:#000; }
-    .featured-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; }
-    .featured-video:hover .featured-thumb img { transform:scale(1.02); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 10px;
+    }
+
+    .eyebrow i {
+      width: 13px;
+      height: 13px;
+    }
+
+    .sec-title {
+      font-family: var(--font-d);
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.12;
+      margin-bottom: 8px;
+    }
+
+    .sec-title em {
+      font-style: italic;
+      color: var(--green);
+    }
+
+    .sec-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .view-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .view-all:hover {
+      text-decoration: underline;
+    }
+
+    .sync-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink5);
+      margin-top: 6px;
+    }
+
+    .sync-status i {
+      width: 13px;
+      height: 13px;
+    }
+
+    .sync-status.error {
+      color: var(--red);
+    }
+
+    .sync-status .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-m);
+      flex-shrink: 0;
+    }
+
+    .setup-notice {
+      background: #FFF8E8;
+      border: 1.5px solid #F0DBA0;
+      border-radius: var(--r12);
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 13.5px;
+      color: #6B5215;
+      line-height: 1.6;
+    }
+
+    .setup-notice b {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .setup-notice code {
+      background: rgba(0, 0, 0, .06);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 12.5px;
+    }
+
+    .setup-notice a {
+      color: var(--green-d);
+      font-weight: 700;
+    }
+
+    /* FEATURED VIDEO BLOCK */
+    .featured-wrap {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 24px;
+    }
+
+    @media(max-width:900px) {
+      .featured-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .featured-player {
+      position: relative;
+      border-radius: var(--r16);
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      cursor: pointer;
+      background: #0e1a12;
+      isolation: isolate;
+    }
+
+    .featured-player .thumb-placeholder {
+      position: absolute;
+      inset: 0;
+    }
+
+    .featured-player>img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .featured-glow {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0, 0, 0, .75) 0%, rgba(0, 0, 0, .05) 45%, rgba(0, 0, 0, .15) 100%);
+    }
+
+    .featured-tag-row {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: flex;
+      gap: 8px;
+      z-index: 2;
+    }
+
+    .live-pill {
+      background: var(--red);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 5px 11px;
+      border-radius: var(--pill);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .live-pill::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      animation: pulse-dot 1.4s infinite;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .3;
+      }
+    }
+
     .featured-play-btn {
-      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-      width:64px; height:64px; background:rgba(0,0,0,.7); border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      transition:background var(--ease), transform var(--ease);
-      backdrop-filter:blur(4px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      background: rgba(255, 255, 255, .15);
+      backdrop-filter: blur(6px);
+      border: 1.5px solid rgba(255, 255, 255, .4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--ease);
+      z-index: 2;
     }
-    .featured-video:hover .featured-play-btn { background:var(--green); transform:translate(-50%,-50%) scale(1.08); }
-    .featured-play-btn i { width:28px; height:28px; color:#fff; margin-left:3px; }
-    .featured-badge { position:absolute; top:12px; left:12px; background:var(--green); color:#fff; font-size:11px; font-weight:800; padding:3px 10px; border-radius:var(--pill); letter-spacing:.3px; text-transform:uppercase; }
-    .featured-duration { position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,.8); color:#fff; font-size:11.5px; font-weight:700; padding:2px 8px; border-radius:4px; }
-    .featured-info { padding:18px 20px 20px; }
-    .featured-channel { display:flex; align-items:center; gap:8px; margin-bottom:10px; }
-    .channel-avatar { width:32px; height:32px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .channel-avatar i { width:16px; height:16px; color:#fff; }
-    .channel-name { font-size:12.5px; font-weight:700; color:var(--ink3); }
-    .featured-title { font-family:var(--font-d); font-size:clamp(18px,2.5vw,24px); font-weight:800; color:var(--ink); line-height:1.25; margin-bottom:8px; }
-    .featured-title em { font-style:italic; color:var(--green); }
-    .featured-desc { font-size:13.5px; color:var(--ink4); line-height:1.7; margin-bottom:14px; }
-    .video-meta-row { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
-    .video-meta-tag { display:inline-flex; align-items:center; gap:5px; font-size:12px; color:var(--ink5); font-weight:600; }
-    .video-meta-tag i { width:12px; height:12px; }
+
+    .featured-player:hover .featured-play-btn {
+      background: var(--green);
+      border-color: var(--green);
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    .featured-play-btn i {
+      width: 26px;
+      height: 26px;
+      color: #fff;
+      margin-left: 3px;
+    }
+
+    .featured-info {
+      position: absolute;
+      bottom: 18px;
+      left: 20px;
+      right: 20px;
+      z-index: 2;
+    }
+
+    .featured-info .card-tag {
+      margin-bottom: 8px;
+    }
+
+    .featured-info h3 {
+      font-family: var(--font-d);
+      font-size: clamp(18px, 2.4vw, 24px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .featured-meta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .featured-meta-row span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, .75);
+      font-weight: 600;
+    }
+
+    .featured-meta-row i {
+      width: 13px;
+      height: 13px;
+    }
+
+    .upnext {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .upnext-label {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--ink4);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 2px;
+    }
+
+    .upnext-item {
+      display: flex;
+      gap: 12px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: var(--r10);
+      transition: background var(--ease);
+      align-items: center;
+    }
+
+    .upnext-item:hover {
+      background: var(--bg);
+    }
+
+    .upnext-thumb {
+      width: 104px;
+      aspect-ratio: 16/9;
+      border-radius: var(--r8);
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .upnext-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .upnext-thumb .thumb-placeholder i {
+      width: 20px;
+      height: 20px;
+    }
+
+    .upnext-dur {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background: rgba(0, 0, 0, .8);
+      color: #fff;
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .upnext-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .upnext-text h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink2);
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 4px;
+    }
+
+    .upnext-text span {
+      font-size: 11px;
+      color: var(--ink5);
+      font-weight: 600;
+    }
+
+    /* VIDEO MODAL - theater mode with playlist */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 8, 6, .92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #0B0F0C;
+      border-radius: var(--r12);
+      overflow: hidden;
+      width: 100%;
+      max-width: 1080px;
+      max-height: 88vh;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .6);
+      display: grid;
+      grid-template-columns: 1.7fr 1fr;
+    }
+
+    @media(max-width:800px) {
+      .modal-box {
+        grid-template-columns: 1fr;
+        max-height: 92vh;
+        overflow-y: auto;
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 10;
+      background: rgba(255, 255, 255, .12);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #fff;
+      transition: background var(--ease);
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, .25);
+    }
+
+    .modal-main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-iframe-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      background: #000;
+    }
+
+    .modal-iframe-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .modal-info {
+      padding: 16px 20px 20px;
+      color: #fff;
+    }
+
+    .modal-info h3 {
+      font-family: var(--font-d);
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .modal-info .card-tag {
+      margin-bottom: 0;
+    }
+
+    .modal-info-meta {
+      display: flex;
+      gap: 14px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .modal-info-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, .55);
+      font-weight: 600;
+    }
+
+    .modal-info-meta i {
+      width: 13px;
+      height: 13px;
+    }
+
+    .modal-playlist {
+      background: #12160f;
+      border-left: 1px solid rgba(255, 255, 255, .08);
+      overflow-y: auto;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 100%;
+    }
+
+    @media(max-width:800px) {
+      .modal-playlist {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, .08);
+        max-height: none;
+      }
+    }
+
+    .modal-playlist-label {
+      font-size: 11px;
+      font-weight: 800;
+      color: rgba(255, 255, 255, .4);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      padding: 6px 8px 10px;
+    }
+
+    .playlist-item {
+      display: flex;
+      gap: 10px;
+      padding: 8px;
+      border-radius: var(--r8);
+      cursor: pointer;
+      transition: background var(--ease);
+      align-items: center;
+    }
+
+    .playlist-item:hover {
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .playlist-item.active {
+      background: rgba(76, 175, 106, .16);
+    }
+
+    .playlist-thumb {
+      width: 88px;
+      aspect-ratio: 16/9;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .playlist-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .playlist-thumb .thumb-placeholder i {
+      width: 16px;
+      height: 16px;
+    }
+
+    .playlist-dur {
+      position: absolute;
+      bottom: 3px;
+      right: 3px;
+      background: rgba(0, 0, 0, .8);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+
+    .playlist-text h5 {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 3px;
+    }
+
+    .playlist-text span {
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, .4);
+      font-weight: 600;
+    }
+
+    .playlist-item.active .playlist-text h5 {
+      color: var(--green-m);
+    }
 
     /* VIDEO GRID */
-    .video-grid { display:grid; grid-template-columns:1fr; gap:20px; }
-    @media(min-width:480px){ .video-grid{ grid-template-columns:repeat(2,1fr); } }
-    @media(min-width:900px){ .video-grid{ grid-template-columns:repeat(3,1fr); } }
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
 
-    /* VIDEO CARD */
-    .video-card { border-radius:var(--r12); overflow:hidden; border:1.5px solid var(--border); cursor:pointer; transition:box-shadow var(--ease), transform var(--ease), border-color var(--ease); background:var(--white); display:flex; flex-direction:column; }
-    .video-card:hover { box-shadow:var(--sh2); transform:translateY(-2px); border-color:var(--green); }
-    .card-thumb { position:relative; aspect-ratio:16/9; overflow:hidden; background:#111; }
-    .card-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; }
-    .video-card:hover .card-thumb img { transform:scale(1.04); }
+    @media(min-width:480px) {
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(min-width:900px) {
+      .video-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .video-card {
+      border-radius: var(--r12);
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      cursor: pointer;
+      transition: box-shadow var(--ease), transform var(--ease), border-color var(--ease);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card:hover {
+      box-shadow: var(--sh2);
+      transform: translateY(-2px);
+      border-color: var(--green);
+    }
+
+    .video-card.hidden-item {
+      display: none;
+    }
+
+    .card-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
     .card-play {
-      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-      width:44px; height:44px; background:rgba(0,0,0,.65); border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      opacity:0; transition:opacity var(--ease), background var(--ease);
-      backdrop-filter:blur(3px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(0, 0, 0, .65);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity var(--ease), background var(--ease);
+      backdrop-filter: blur(3px);
     }
-    .video-card:hover .card-play { opacity:1; background:var(--green); }
-    .card-play i { width:18px; height:18px; color:#fff; margin-left:2px; }
-    .card-duration { position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,.8); color:#fff; font-size:11px; font-weight:700; padding:2px 7px; border-radius:4px; }
-    .card-new { position:absolute; top:8px; left:8px; background:var(--red); color:#fff; font-size:10px; font-weight:800; padding:2px 8px; border-radius:var(--pill); text-transform:uppercase; letter-spacing:.3px; }
-    .card-info { padding:14px 15px 16px; flex:1; display:flex; flex-direction:column; gap:6px; }
-    .card-title { font-size:14px; font-weight:700; color:var(--ink2); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-    .card-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:auto; }
-    .card-meta-item { display:flex; align-items:center; gap:4px; font-size:11.5px; color:var(--ink5); font-weight:600; }
-    .card-meta-item i { width:11px; height:11px; }
-    .card-tag { display:inline-block; font-size:10.5px; font-weight:700; color:var(--green); background:var(--green-l); padding:2px 8px; border-radius:var(--pill); }
 
-    /* HORIZONTAL VIDEO LIST (Latest) */
-    .video-list { display:flex; flex-direction:column; gap:14px; }
-    .video-list-item { display:flex; gap:14px; cursor:pointer; padding:10px; border-radius:var(--r10); border:1.5px solid transparent; transition:border-color var(--ease), background var(--ease); }
-    .video-list-item:hover { border-color:var(--green); background:var(--green-l); }
-    .list-thumb { position:relative; width:140px; flex-shrink:0; aspect-ratio:16/9; border-radius:var(--r8); overflow:hidden; background:#111; }
-    @media(min-width:640px){ .list-thumb{ width:180px; } }
-    .list-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
-    .list-duration { position:absolute; bottom:5px; right:5px; background:rgba(0,0,0,.8); color:#fff; font-size:10px; font-weight:700; padding:1px 6px; border-radius:3px; }
-    .list-play {
-      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-      background:rgba(0,0,0,0); transition:background var(--ease);
+    .video-card:hover .card-play {
+      opacity: 1;
+      background: var(--green);
     }
-    .list-play i { width:22px; height:22px; color:#fff; opacity:0; transition:opacity var(--ease); margin-left:2px; }
-    .video-list-item:hover .list-play { background:rgba(26,107,42,.4); }
-    .video-list-item:hover .list-play i { opacity:1; }
-    .list-info { flex:1; min-width:0; display:flex; flex-direction:column; gap:4px; justify-content:center; }
-    .list-title { font-size:13.5px; font-weight:700; color:var(--ink2); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-    .list-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-    .list-meta-item { display:flex; align-items:center; gap:4px; font-size:11.5px; color:var(--ink5); font-weight:600; }
-    .list-meta-item i { width:11px; height:11px; }
-    .list-tag { font-size:10.5px; font-weight:700; color:var(--green); background:var(--green-l); padding:2px 8px; border-radius:var(--pill); display:inline-block; }
 
-    /* SUBSCRIBE SECTION */
-    .subscribe-section { padding:56px 0; background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); position:relative; overflow:hidden; }
-    .subscribe-section::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
-    .subscribe-inner { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px; }
-    .yt-logo { display:flex; align-items:center; gap:10px; margin-bottom:4px; }
-    .yt-icon { background:#FF0000; border-radius:10px; width:44px; height:30px; display:flex; align-items:center; justify-content:center; }
-    .yt-icon i { width:18px; height:18px; color:#fff; }
-    .yt-label { font-size:18px; font-weight:800; color:#fff; }
-    .subscribe-title { font-family:var(--font-d); font-size:clamp(22px,4vw,40px); font-weight:800; color:#fff; line-height:1.1; }
-    .subscribe-title em { font-style:italic; color:var(--green-m); }
-    .subscribe-desc { font-size:14.5px; color:rgba(255,255,255,.6); max-width:440px; line-height:1.7; }
-    .subscribe-stats { display:flex; align-items:center; gap:28px; flex-wrap:wrap; justify-content:center; }
-    .stat-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
-    .stat-num { font-family:var(--font-d); font-size:24px; font-weight:800; color:#fff; }
-    .stat-label { font-size:11.5px; color:rgba(255,255,255,.5); font-weight:600; text-transform:uppercase; letter-spacing:.4px; }
-    .stat-divider { width:1px; height:36px; background:rgba(255,255,255,.15); }
+    .card-play i {
+      width: 18px;
+      height: 18px;
+      color: #fff;
+      margin-left: 2px;
+    }
 
-    /* NEWS GRID */
-    .news-grid { display:grid; grid-template-columns:1fr; gap:20px; }
-    @media(min-width:640px){ .news-grid{ grid-template-columns:repeat(2,1fr); } }
-    @media(min-width:900px){ .news-grid{ grid-template-columns:repeat(3,1fr); } }
-    .news-card { border:1.5px solid var(--border); border-radius:var(--r12); background:var(--white); overflow:hidden; transition:box-shadow var(--ease), transform var(--ease), border-color var(--ease); display:flex; flex-direction:column; }
-    .news-card:hover { box-shadow:var(--sh2); transform:translateY(-2px); border-color:var(--green); }
-    .news-img { aspect-ratio:16/9; overflow:hidden; background:var(--bg); }
-    .news-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; }
-    .news-card:hover .news-img img { transform:scale(1.03); }
-    .news-body { padding:16px 18px 18px; flex:1; display:flex; flex-direction:column; gap:8px; }
-    .news-category { font-size:10.5px; font-weight:800; color:var(--green); text-transform:uppercase; letter-spacing:.5px; }
-    .news-title { font-size:15px; font-weight:700; color:var(--ink2); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-    .news-excerpt { font-size:13px; color:var(--ink4); line-height:1.65; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; flex:1; }
-    .news-footer { display:flex; align-items:center; gap:10px; margin-top:6px; flex-wrap:wrap; }
-    .news-date { font-size:11.5px; color:var(--ink5); font-weight:600; display:flex; align-items:center; gap:4px; }
-    .news-date i { width:11px; height:11px; }
-    .news-read { font-size:11.5px; color:var(--ink5); font-weight:600; display:flex; align-items:center; gap:4px; }
-    .news-read i { width:11px; height:11px; }
+    .card-duration {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, .8);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
 
-    /* PLACEHOLDER THUMB */
-    .thumb-placeholder { width:100%; height:100%; background:linear-gradient(135deg,#1a3a22,#2d6b3e); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
-    .thumb-placeholder i { width:32px; height:32px; color:rgba(255,255,255,.4); }
-    .thumb-placeholder span { font-size:11px; color:rgba(255,255,255,.3); font-weight:600; text-transform:uppercase; letter-spacing:.4px; }
+    .card-info {
+      padding: 14px 15px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
 
-    /* NEWS PLACEHOLDER */
-    .news-placeholder { width:100%; height:100%; background:linear-gradient(135deg,#f0f4f1,#e0ebe2); display:flex; align-items:center; justify-content:center; }
-    .news-placeholder i { width:28px; height:28px; color:rgba(26,107,42,.3); }
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink2);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
 
-    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
-    .fade-up { opacity:0; animation:fadeUp .45s ease forwards; }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
 
-    /* LOAD MORE */
-    .load-more-wrap { text-align:center; margin-top:36px; }
-    .btn-load-more { display:inline-flex; align-items:center; gap:8px; background:var(--white); border:1.5px solid var(--border); color:var(--ink2); font-family:var(--font-b); font-size:14px; font-weight:700; padding:11px 24px; border-radius:var(--r10); cursor:pointer; transition:all var(--ease); }
-    .btn-load-more:hover { border-color:var(--green); color:var(--green); background:var(--green-l); }
-    .btn-load-more i { width:15px; height:15px; }
+    .card-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11.5px;
+      color: var(--ink5);
+      font-weight: 600;
+    }
+
+    .card-meta-item i {
+      width: 11px;
+      height: 11px;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--green);
+      background: var(--green-l);
+      padding: 2px 8px;
+      border-radius: var(--pill);
+      width: fit-content;
+    }
+
+    .thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a3a22, #2d6b3e);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .thumb-placeholder i {
+      width: 32px;
+      height: 32px;
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .thumb-placeholder span {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .3);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    .load-more-wrap {
+      text-align: center;
+      margin-top: 36px;
+    }
+
+    .btn-load-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      color: var(--ink2);
+      font-family: var(--font-b);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 11px 24px;
+      border-radius: var(--r10);
+      cursor: pointer;
+      transition: all var(--ease);
+    }
+
+    .btn-load-more:hover {
+      border-color: var(--green);
+      color: var(--green);
+      background: var(--green-l);
+    }
+
+    .btn-load-more:disabled {
+      opacity: .4;
+      cursor: default;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--ink5);
+      font-size: 14px;
+      display: none;
+    }
+
+    .no-results.show {
+      display: block;
+    }
+
+    /* SUBSCRIBE BANNER */
+    .sub-banner {
+      background: linear-gradient(135deg, #0B2A12, #1A6B2A);
+      border-radius: var(--r16);
+      padding: 40px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sub-banner-text h3 {
+      font-family: var(--font-d);
+      font-size: clamp(20px, 3vw, 26px);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .sub-banner-text p {
+      color: rgba(255, 255, 255, .65);
+      font-size: 14px;
+      max-width: 420px;
+    }
+
+    .sub-banner-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 13px 26px;
+      border-radius: var(--pill);
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+
+    .sub-banner-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(200, 39, 30, .4);
+    }
+
+    .sub-banner-btn i {
+      width: 17px;
+      height: 17px;
+    }
   </style>
 </head>
+
 <body>
-  <script src="assets/js/components/av-nav.js"></script> 
-<!-- BREADCRUMB -->
-<nav class="bc">
-  <div class="wrap bc-inner">
-    <a href="index.html">Home</a>
-    <i data-lucide="chevron-right"></i>
-    <span>Videos &amp; News</span>
-  </div>
-</nav>
+  <script src="assets/js/site-chrome.js"></script>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-inner fade-up">
-      <div class="hero-badge"><i data-lucide="youtube"></i>AutoViindu Channel</div>
-      <h1>Videos &amp; <em>Latest News</em></h1>
-      <p class="hero-desc">Watch our latest car reviews, service tips, and automotive news from Nepal — all in one place.</p>
-      <div class="hero-actions">
-        <a class="btn-subscribe" href="https://www.youtube.com/@AutoViindu" target="_blank" rel="noopener">
-          <i data-lucide="youtube"></i>Subscribe on YouTube
-        </a>
-        <span class="sub-count">Stay updated · New videos every week</span>
+  <nav class="bc">
+    <div class="wrap bc-inner">
+      <a href="/">Home</a>
+      <i data-lucide="chevron-right"></i>
+      <a href="/hub">News, Reviews, Events &amp; Videos</a>
+      <i data-lucide="chevron-right"></i>
+      <span>Videos &amp; Guides</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-badge"><i data-lucide="youtube"></i>AutoViindu on YouTube</div>
+        <h1>Watch Every <em>Review &amp; Guide</em></h1>
+        <p class="hero-desc">Real reviews, honest buying advice, and maintenance tips filmed on Nepal's roads — play any
+          video right here without leaving the site.</p>
+
+        <a class="hero-sub-cta" href="https://www.youtube.com/@AutoViindu?sub_confirmation=1" target="_blank"
+          rel="noopener"><i data-lucide="youtube"></i>Subscribe on YouTube</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FILTER TABS -->
-<div class="filter-bar">
-  <div class="wrap" style="padding:0 20px">
-    <div class="filter-inner">
-      <button class="filter-tab active" onclick="filterTab(this,'all')">All</button>
-      <button class="filter-tab" onclick="filterTab(this,'reviews')">Car Reviews</button>
-      <button class="filter-tab" onclick="filterTab(this,'tips')">Service Tips</button>
-      <button class="filter-tab" onclick="filterTab(this,'news')">News</button>
-      <button class="filter-tab" onclick="filterTab(this,'ev')">EV &amp; Hybrid</button>
-      <button class="filter-tab" onclick="filterTab(this,'guides')">Buying Guides</button>
-    </div>
-  </div>
-</div>
-
-<section class="section" id="featured">
-  <div class="wrap">
-    <div class="sec-header">
-      <div class="sec-header-text">
-        <div class="eyebrow"><i data-lucide="star"></i>Featured</div>
-        <h2 class="sec-title">Latest <em>Upload</em></h2>
-      </div>
-    </div>
-    <div class="featured-video" onclick="openModal('r1PfU8DULME','Is BAW Brumpy the Perfect City Car for Nepal? — Full Comparison','Jan 11 2026 · 3:10 min')">
-      <div class="featured-thumb">
-        <img 
-          src="https://img.youtube.com/vi/r1PfU8DULME/maxresdefault.jpg" 
-          alt="Is BAW Brumpy the Perfect City Car for Nepal?"
-          onerror="this.src='https://img.youtube.com/vi/r1PfU8DULME/hqdefault.jpg'"
-        >
-        <div class="featured-badge">Latest</div>
-        <div class="featured-duration">3:10</div>
-        <div class="featured-play-btn"><i data-lucide="play"></i></div>
-      </div>
-      <div class="featured-info">
-        <div class="featured-channel">
-          <div class="channel-avatar"><i data-lucide="car"></i></div>
-          <span class="channel-name">AutoViindu</span>
+  <!-- SEARCH + FILTER -->
+  <div class="filter-bar">
+    <div class="wrap">
+      <div class="filter-bar-inner">
+        <div class="search-box">
+          <i data-lucide="search"></i>
+          <input type="text" id="videoSearch" placeholder="Search videos...">
         </div>
-        <h2 class="featured-title">Is BAW Brumpy the Perfect City Car for Nepal? — <em>Full Comparison</em></h2>
-        <p class="featured-desc">The BAW Brumby is a compact and practical city-focused vehicle designed for urban Nepal. In this video, we explore the design, features, driving experience, mileage, and overall practicality of the BAW Brumby in real Nepali road conditions.</p>
-        <div class="video-meta-row">
-          <span class="video-meta-tag"><i data-lucide="eye"></i>1.4K views</span>
-          <span class="video-meta-tag"><i data-lucide="calendar"></i>Jan 11 2026</span>
-          <span class="video-meta-tag"><i data-lucide="clock"></i>3:10 min</span>
-          <span class="card-tag">Car Reviews</span>
+        <div class="tabs-scroll" id="videoTabs">
+          <button class="filter-tab active" data-cat="all" onclick="setVideoFilter(this,'all')">All</button>
+
         </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- RECENT VIDEOS GRID -->
-<section class="section alt" id="videos">
-  <div class="wrap">
-    <div class="sec-header">
-      <div class="sec-header-text">
-        <div class="eyebrow"><i data-lucide="play-circle"></i>Recent Videos</div>
-        <h2 class="sec-title">Watch &amp; <em>Learn</em></h2>
+  <!-- FEATURED -->
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow"><i data-lucide="flame"></i>Just Uploaded</div>
+      <h2 class="sec-title" style="margin-bottom:6px;">Latest From The <em>Channel</em></h2>
+      <div class="sync-status" id="syncStatus"><span class="dot"></span><span id="syncStatusText">Connecting to
+          YouTube…</span></div>
+      <div class="featured-wrap" id="featuredWrap" style="margin-top:24px;">
+        <!-- populated by JS -->
       </div>
-      <a class="view-all" href="https://www.youtube.com/@AutoViindu" target="_blank" rel="noopener">View all on YouTube <i data-lucide="arrow-right"></i></a>
     </div>
-    <div class="video-grid">
+  </section>
 
-      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','How to Check a Used Car Before Buying — Nepal Edition','May 2025 · 12 min')">
-        <div class="card-thumb">
-          <div class="thumb-placeholder"><i data-lucide="search"></i><span>AutoViindu</span></div>
-          <div class="card-new">New</div>
-          <div class="card-duration">12:07</div>
-          <div class="card-play"><i data-lucide="play"></i></div>
+  <!-- FULL LIBRARY -->
+  <section class="section alt" id="library">
+    <div class="wrap">
+      <div id="setupNotice"></div>
+      <div class="sec-header">
+        <div>
+          <div class="eyebrow"><i data-lucide="layout-grid"></i>Video Library</div>
+          <h2 class="sec-title">All <em>Videos</em></h2>
         </div>
-        <div class="card-info">
-          <div class="card-tag">Buying Guide</div>
-          <div class="card-title">How to Check a Used Car Before Buying — Nepal Edition</div>
-          <div class="card-meta">
-            <span class="card-meta-item"><i data-lucide="eye"></i>8.1K</span>
-            <span class="card-meta-item"><i data-lucide="calendar"></i>May 2025</span>
-            <span class="card-meta-item"><i data-lucide="clock"></i>12 min</span>
-          </div>
-        </div>
+        <a class="view-all" href="https://www.youtube.com/@AutoViindu" target="_blank" rel="noopener">Visit our YouTube
+          channel <i data-lucide="arrow-right"></i></a>
       </div>
-
-      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','Tata Nexon EV — 6-Month Real-World Review from Kathmandu','May 2025 · 22 min')">
-        <div class="card-thumb">
-          <div class="thumb-placeholder"><i data-lucide="zap"></i><span>AutoViindu</span></div>
-          <div class="card-duration">22:15</div>
-          <div class="card-play"><i data-lucide="play"></i></div>
-        </div>
-        <div class="card-info">
-          <div class="card-tag">EV &amp; Hybrid</div>
-          <div class="card-title">Tata Nexon EV — 6-Month Real-World Review from Kathmandu</div>
-          <div class="card-meta">
-            <span class="card-meta-item"><i data-lucide="eye"></i>15.3K</span>
-            <span class="card-meta-item"><i data-lucide="calendar"></i>May 2025</span>
-            <span class="card-meta-item"><i data-lucide="clock"></i>22 min</span>
-          </div>
-        </div>
+      <div class="video-grid" id="videoGrid"><!-- populated by JS --></div>
+      <p class="no-results" id="videoNoResults">No videos match your search. Try a different keyword or category.</p>
+      <div class="load-more-wrap">
+        <button class="btn-load-more" id="videoLoadMore" onclick="loadMoreVideos()"><i data-lucide="refresh-cw"></i>Load
+          more videos</button>
       </div>
-
-      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','5 Things to Do After Every Service — Save Money on Repairs','Apr 2025 · 9 min')">
-        <div class="card-thumb">
-          <div class="thumb-placeholder"><i data-lucide="wrench"></i><span>AutoViindu</span></div>
-          <div class="card-duration">9:34</div>
-          <div class="card-play"><i data-lucide="play"></i></div>
-        </div>
-        <div class="card-info">
-          <div class="card-tag">Service Tips</div>
-          <div class="card-title">5 Things to Do After Every Service — Save Money on Repairs</div>
-          <div class="card-meta">
-            <span class="card-meta-item"><i data-lucide="eye"></i>6.8K</span>
-            <span class="card-meta-item"><i data-lucide="calendar"></i>Apr 2025</span>
-            <span class="card-meta-item"><i data-lucide="clock"></i>9 min</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','BYD Atto 3 vs MG ZS EV — Which Should You Buy in Nepal?','Apr 2025 · 19 min')">
-        <div class="card-thumb">
-          <div class="thumb-placeholder"><i data-lucide="car"></i><span>AutoViindu</span></div>
-          <div class="card-duration">19:08</div>
-          <div class="card-play"><i data-lucide="play"></i></div>
-        </div>
-        <div class="card-info">
-          <div class="card-tag">Car Reviews</div>
-          <div class="card-title">BYD Atto 3 vs MG ZS EV — Which Should You Buy in Nepal?</div>
-          <div class="card-meta">
-            <span class="card-meta-item"><i data-lucide="eye"></i>20.1K</span>
-            <span class="card-meta-item"><i data-lucide="calendar"></i>Apr 2025</span>
-            <span class="card-meta-item"><i data-lucide="clock"></i>19 min</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','Engine Oil — What Grade Should You Use in Nepal\'s Climate?','Mar 2025 · 8 min')">
-        <div class="card-thumb">
-          <div class="thumb-placeholder"><i data-lucide="droplets"></i><span>AutoViindu</span></div>
-          <div class="card-duration">8:22</div>
-          <div class="card-play"><i data-lucide="play"></i></div>
-        </div>
-        <div class="card-info">
-          <div class="card-tag">Service Tips</div>
-          <div class="card-title">Engine Oil — What Grade Should You Use in Nepal's Climate?</div>
-          <div class="card-meta">
-            <span class="card-meta-item"><i data-lucide="eye"></i>9.4K</span>
-            <span class="card-meta-item"><i data-lucide="calendar"></i>Mar 2025</span>
-            <span class="card-meta-item"><i data-lucide="clock"></i>8 min</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-card" onclick="openModal('dQw4w9WgXcQ','Toyota Fortuner Legender — Honest Review After 10,000 km','Mar 2025 · 25 min')">
-        <div class="card-thumb">
-          <div class="thumb-placeholder"><i data-lucide="shield"></i><span>AutoViindu</span></div>
-          <div class="card-duration">25:01</div>
-          <div class="card-play"><i data-lucide="play"></i></div>
-        </div>
-        <div class="card-info">
-          <div class="card-tag">Car Reviews</div>
-          <div class="card-title">Toyota Fortuner Legender — Honest Review After 10,000 km</div>
-          <div class="card-meta">
-            <span class="card-meta-item"><i data-lucide="eye"></i>31.7K</span>
-            <span class="card-meta-item"><i data-lucide="calendar"></i>Mar 2025</span>
-            <span class="card-meta-item"><i data-lucide="clock"></i>25 min</span>
-          </div>
-        </div>
-      </div>
-
     </div>
-    <div class="load-more-wrap">
-      <button class="btn-load-more"><i data-lucide="refresh-cw"></i>Load more videos</button>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sub-banner">
+        <div class="sub-banner-text">
+          <h3>Never miss a new upload</h3>
+          <p>Subscribe on YouTube for weekly reviews, honest buying advice, and Nepal's first look at every new launch.
+          </p>
+        </div>
+        <a class="sub-banner-btn" href="https://www.youtube.com/@AutoViindu?sub_confirmation=1" target="_blank"
+          rel="noopener"><i data-lucide="youtube"></i>Subscribe Free</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO MODAL: theater mode with playlist -->
+  <div class="modal-overlay" id="videoModal" onclick="closeModalOnOverlay(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()"><i data-lucide="x"></i></button>
+      <div class="modal-main">
+        <div class="modal-iframe-wrap">
+          <iframe id="modalIframe" src=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="modal-info">
+          <span class="card-tag" id="modalTag"
+            style="background:rgba(76,175,106,.18);color:var(--green-m);">Review</span>
+          <h3 id="modalTitle">Video title</h3>
+          <div class="modal-info-meta">
+            <span id="modalViews"><i data-lucide="eye"></i>—</span>
+            <span id="modalDate"><i data-lucide="calendar"></i>—</span>
+            <span id="modalLen"><i data-lucide="clock"></i>—</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-playlist" id="modalPlaylist">
+        <div class="modal-playlist-label">Up next</div>
+        <!-- populated by JS -->
+      </div>
     </div>
   </div>
-</section>
 
-<!-- SUBSCRIBE CTA -->
-<section class="subscribe-section">
-  <div class="wrap">
-    <div class="subscribe-inner">
-      <div class="yt-logo">
-        <div class="yt-icon"><i data-lucide="youtube"></i></div>
-        <span class="yt-label">AutoViindu on YouTube</span>
-      </div>
-      <h2 class="subscribe-title">Never miss a <em>new video</em></h2>
-      <p class="subscribe-desc">Car reviews, service guides, EV news, and buying tips — delivered straight to your feed every week.</p>
-     
-      </div>
-      <a class="btn-subscribe" href="https://www.youtube.com/@AutoViindu" target="_blank" rel="noopener" style="font-size:15px;padding:13px 28px;">
-        <i data-lucide="youtube"></i>Subscribe — It's Free
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- LATEST NEWS -->
-<section class="section" id="news">
-  <div class="wrap">
-    <div class="sec-header">
-      <div class="sec-header-text">
-        <div class="eyebrow"><i data-lucide="newspaper"></i>Latest News</div>
-        <h2 class="sec-title">Automotive <em>Updates</em></h2>
-      </div>
-    </div>
-    <div class="news-grid">
-
-      <div class="news-card">
-        <div class="news-img">
-          <div class="news-placeholder"><i data-lucide="zap"></i></div>
-        </div>
-        <div class="news-body">
-          <span class="news-category">EV &amp; Policy</span>
-          <h3 class="news-title">Nepal Government Extends EV Import Duty Waiver Through 2026</h3>
-          <p class="news-excerpt">The Ministry of Finance confirmed a two-year extension of the zero-customs duty on battery electric vehicles, offering continued relief to buyers and dealers.</p>
-          <div class="news-footer">
-            <span class="news-date"><i data-lucide="calendar"></i>Jun 2025</span>
-            <span class="news-read"><i data-lucide="clock"></i>3 min read</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card">
-        <div class="news-img">
-          <div class="news-placeholder"><i data-lucide="car"></i></div>
-        </div>
-        <div class="news-body">
-          <span class="news-category">New Launch</span>
-          <h3 class="news-title">BYD Seal Officially Launches in Kathmandu — Pricing and Range Details</h3>
-          <p class="news-excerpt">BYD's newest sedan arrives in Nepal with a claimed 570 km range and a starting price under NPR 70 lakh, targeting the premium sedan segment.</p>
-          <div class="news-footer">
-            <span class="news-date"><i data-lucide="calendar"></i>May 2025</span>
-            <span class="news-read"><i data-lucide="clock"></i>4 min read</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card">
-        <div class="news-img">
-          <div class="news-placeholder"><i data-lucide="fuel"></i></div>
-        </div>
-        <div class="news-body">
-          <span class="news-category">Market</span>
-          <h3 class="news-title">Petrol and Diesel Prices Revised — What It Means for Vehicle Running Costs</h3>
-          <p class="news-excerpt">NOC's latest revision pushes petrol to NPR 180 per litre. We break down how this affects monthly running costs for common vehicles in Nepal.</p>
-          <div class="news-footer">
-            <span class="news-date"><i data-lucide="calendar"></i>May 2025</span>
-            <span class="news-read"><i data-lucide="clock"></i>3 min read</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card">
-        <div class="news-img">
-          <div class="news-placeholder"><i data-lucide="shield-check"></i></div>
-        </div>
-        <div class="news-body">
-          <span class="news-category">Regulations</span>
-          <h3 class="news-title">DOTM Introduces Stricter Emission Standards for Vehicles Above 5 Years</h3>
-          <p class="news-excerpt">Starting mid-2025, vehicles older than five years must pass updated emission checks during bluebook renewal. Here's what you need to prepare.</p>
-          <div class="news-footer">
-            <span class="news-date"><i data-lucide="calendar"></i>Apr 2025</span>
-            <span class="news-read"><i data-lucide="clock"></i>5 min read</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card">
-        <div class="news-img">
-          <div class="news-placeholder"><i data-lucide="map-pin"></i></div>
-        </div>
-        <div class="news-body">
-          <span class="news-category">Infrastructure</span>
-          <h3 class="news-title">10 New EV Charging Stations Open Along Kathmandu–Pokhara Highway</h3>
-          <p class="news-excerpt">NEA and private partners have commissioned a new charging network along the Prithvi Highway, significantly reducing range anxiety for intercity EV travel.</p>
-          <div class="news-footer">
-            <span class="news-date"><i data-lucide="calendar"></i>Apr 2025</span>
-            <span class="news-read"><i data-lucide="clock"></i>3 min read</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card">
-        <div class="news-img">
-          <div class="news-placeholder"><i data-lucide="trending-up"></i></div>
-        </div>
-        <div class="news-body">
-          <span class="news-category">Market</span>
-          <h3 class="news-title">Used Car Market Grows 18% in Q1 2025 — SUVs and Hybrids Lead Demand</h3>
-          <p class="news-excerpt">NADA data shows a significant uptick in pre-owned vehicle transactions, with hybrid SUVs accounting for nearly a third of all deals closed this quarter.</p>
-          <div class="news-footer">
-            <span class="news-date"><i data-lucide="calendar"></i>Mar 2025</span>
-            <span class="news-read"><i data-lucide="clock"></i>4 min read</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="load-more-wrap">
-      <button class="btn-load-more"><i data-lucide="refresh-cw"></i>Load more news</button>
-    </div>
-  </div>
-</section>
-
-<!-- LATEST VIDEOS LIST (sidebar-style) -->
-<section class="section alt">
-  <div class="wrap">
-    <div class="sec-header">
-      <div class="sec-header-text">
-        <div class="eyebrow"><i data-lucide="clock"></i>Quick Watch</div>
-        <h2 class="sec-title">Short Clips &amp; <em>Tips</em></h2>
-      </div>
-      <a class="view-all" href="https://www.youtube.com/@AutoViindu" target="_blank" rel="noopener">All videos <i data-lucide="arrow-right"></i></a>
-    </div>
-    <div class="video-list">
-
-      <div class="video-list-item" onclick="openModal('dQw4w9WgXcQ','When to Change Your Brake Pads — 3 Easy Signs','Jun 2025 · 5 min')">
-        <div class="list-thumb">
-          <div class="thumb-placeholder"><i data-lucide="disc"></i><span>AutoViindu</span></div>
-          <div class="list-duration">5:12</div>
-          <div class="list-play"><i data-lucide="play"></i></div>
-        </div>
-        <div class="list-info">
-          <span class="list-tag">Service Tips</span>
-          <div class="list-title">When to Change Your Brake Pads — 3 Easy Signs</div>
-          <div class="list-meta">
-            <span class="list-meta-item"><i data-lucide="eye"></i>4.2K views</span>
-            <span class="list-meta-item"><i data-lucide="calendar"></i>Jun 2025</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-list-item" onclick="openModal('dQw4w9WgXcQ','How to Read Your Car\'s Dashboard Warning Lights','May 2025 · 7 min')">
-        <div class="list-thumb">
-          <div class="thumb-placeholder"><i data-lucide="gauge"></i><span>AutoViindu</span></div>
-          <div class="list-duration">7:05</div>
-          <div class="list-play"><i data-lucide="play"></i></div>
-        </div>
-        <div class="list-info">
-          <span class="list-tag">Service Tips</span>
-          <div class="list-title">How to Read Your Car's Dashboard Warning Lights</div>
-          <div class="list-meta">
-            <span class="list-meta-item"><i data-lucide="eye"></i>11.6K views</span>
-            <span class="list-meta-item"><i data-lucide="calendar"></i>May 2025</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-list-item" onclick="openModal('dQw4w9WgXcQ','Is GPS Tracking Worth It? — Real Owner Experience','Apr 2025 · 6 min')">
-        <div class="list-thumb">
-          <div class="thumb-placeholder"><i data-lucide="map-pin"></i><span>AutoViindu</span></div>
-          <div class="list-duration">6:48</div>
-          <div class="list-play"><i data-lucide="play"></i></div>
-        </div>
-        <div class="list-info">
-          <span class="list-tag">Guides</span>
-          <div class="list-title">Is GPS Tracking Worth It? — Real Owner Experience</div>
-          <div class="list-meta">
-            <span class="list-meta-item"><i data-lucide="eye"></i>5.9K views</span>
-            <span class="list-meta-item"><i data-lucide="calendar"></i>Apr 2025</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-list-item" onclick="openModal('dQw4w9WgXcQ','Ceramic Coating vs PPF — Which Protects Better?','Mar 2025 · 10 min')">
-        <div class="list-thumb">
-          <div class="thumb-placeholder"><i data-lucide="shield"></i><span>AutoViindu</span></div>
-          <div class="list-duration">10:20</div>
-          <div class="list-play"><i data-lucide="play"></i></div>
-        </div>
-        <div class="list-info">
-          <span class="list-tag">Car Care</span>
-          <div class="list-title">Ceramic Coating vs PPF — Which Protects Better?</div>
-          <div class="list-meta">
-            <span class="list-meta-item"><i data-lucide="eye"></i>7.3K views</span>
-            <span class="list-meta-item"><i data-lucide="calendar"></i>Mar 2025</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO MODAL -->
-<div class="modal-overlay" id="videoModal" onclick="closeModalOnOverlay(event)">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()"><i data-lucide="x"></i></button>
-    <div class="modal-iframe-wrap">
-      <iframe id="modalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="modal-info">
-      <div class="modal-title" id="modalTitle"></div>
-      <div class="modal-meta" id="modalMeta"></div>
-    </div>
-  </div>
-</div>
-
-<script>
-  lucide.createIcons();
-
-  function filterTab(el, filter) {
-    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
-  }
-
-  function openModal(videoId, title, meta) {
-    const modal = document.getElementById('videoModal');
-    const iframe = document.getElementById('modalIframe');
-    document.getElementById('modalTitle').textContent = title;
-    document.getElementById('modalMeta').textContent = meta;
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    const modal = document.getElementById('videoModal');
-    const iframe = document.getElementById('modalIframe');
-    iframe.src = '';
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  function closeModalOnOverlay(e) {
-    if (e.target === document.getElementById('videoModal')) closeModal();
-  }
-
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-</script>
   <div id="av-toast-wrap"></div>
-  <script src="assets/js/components/av-footer.js"></script>  <!-- ← before </body> -->
-  <script>lucide.createIcons();</script>
+
+  <script>
+    lucide.createIcons();
+
+    // ================= CONFIG =================
+    // 1. Google Cloud Console -> create/select a project -> enable "YouTube Data API v3"
+    // 2. Credentials -> Create Credentials -> API key
+    // 3. Click "Restrict key" -> HTTP referrers -> add your site's domain (e.g. autoviindu.com/*)
+    //    This stops anyone else from using your key even though it's visible in this file.
+    // 4. Paste the key below. That's it — everything else updates itself.
+    const YT_API_KEY = 'AIzaSyAYfYsKl0ewzTnqi-sJrIgfoQNL-gYxQ1w';
+    const YT_CHANNEL_HANDLE = '@AutoViindu'; // without the @
+    const MAX_VIDEOS = 50; // most recent uploads to pull each visit (50 = YouTube's per-call max)
+    // ============================================
+    const PINNED_VIDEO_IDS = [
+      // e.g. your big review
+      '1PfU8DULME&t'
+    ];
+    let VIDEOS = [];
+    let currentCat = 'all';
+    let currentQuery = '';
+    let visibleCount = 6;
+    const PAGE_SIZE = 6;
+
+    // ---------- Formatting helpers ----------
+    function formatViews(n) {
+      n = Number(n) || 0;
+      if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M views';
+      if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K views';
+      return n + ' views';
+    }
+
+    function formatRelativeDate(iso) {
+      const d = new Date(iso);
+      const days = Math.floor((Date.now() - d.getTime()) / 86400000);
+      if (days < 1) return 'Today';
+      if (days === 1) return '1 day ago';
+      if (days < 7) return days + ' days ago';
+      if (days < 30) { const w = Math.floor(days / 7); return w + (w === 1 ? ' week ago' : ' weeks ago'); }
+      if (days < 365) { const m = Math.floor(days / 30); return m + (m === 1 ? ' month ago' : ' months ago'); }
+      const y = Math.floor(days / 365); return y + (y === 1 ? ' year ago' : ' years ago');
+    }
+
+    function formatDuration(iso) {
+      const m = (iso || '').match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/) || [];
+      const h = parseInt(m[1] || 0, 10), min = parseInt(m[2] || 0, 10), s = parseInt(m[3] || 0, 10);
+      if (h > 0) return `${h}:${String(min).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      return `${min}:${String(s).padStart(2, '0')}`;
+    }
+
+    function parseDurationToSeconds(iso) {
+      const m = (iso || '').match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/) || [];
+      return parseInt(m[1] || 0, 10) * 3600 + parseInt(m[2] || 0, 10) * 60 + parseInt(m[3] || 0, 10);
+    }
+
+    function autoCategorize(title) {
+      const t = (title || '').toLowerCase();
+      if (/\bservice\b|maintenance|oil change|\brepair/.test(t)) return { cat: 'service', tag: 'Service Tips' };
+      if (/\bev\b|electric vehicle|hybrid/.test(t)) return { cat: 'ev', tag: 'EV & Hybrid' };
+      if (/\bvs\b|comparison|compared/.test(t)) return { cat: 'compare', tag: 'Comparison' };
+      if (/\bguide\b|how to|checklist|before buying|buying guide/.test(t)) return { cat: 'guide', tag: 'Buying Guide' };
+      if (/vlog|road trip|drive to|journey/.test(t)) return { cat: 'vlog', tag: 'Road Trip' };
+      return { cat: 'review', tag: 'Auto Review' };
+    }
+
+    function iconForCat(cat) {
+      return { review: 'car', guide: 'search', ev: 'zap', service: 'wrench', compare: 'scale', vlog: 'map' }[cat] || 'car';
+    }
+
+    function thumbImg(v, cls) {
+      if (!v.thumb) {
+        return `<div class="thumb-placeholder"><i data-lucide="${v.icon}"></i><span>AutoViindu</span></div>`;
+      }
+      return `<img class="${cls || ''}" src="${v.thumb}" alt="" loading="lazy"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="thumb-placeholder" style="display:none;"><i data-lucide="${v.icon}"></i><span>AutoViindu</span></div>`;
+    }
+
+    // ---------- Status UI ----------
+    function setSyncStatus(text) {
+      const el = document.getElementById('syncStatus');
+      el.classList.remove('error');
+      document.getElementById('syncStatusText').textContent = text;
+    }
+
+    function setSyncError(text) {
+      const el = document.getElementById('syncStatus');
+      el.classList.add('error');
+      document.getElementById('syncStatusText').textContent = text;
+    }
+
+    function showSetupNotice(msg) {
+      document.getElementById('setupNotice').innerHTML = `
+        <div class="setup-notice">
+          <b><i data-lucide="alert-triangle"></i> Live YouTube sync isn't active yet</b>
+          ${msg} Add a free key from
+          <a href="https://console.cloud.google.com/apis/library/youtube.googleapis.com" target="_blank" rel="noopener">Google Cloud Console</a>
+          (enable "YouTube Data API v3", create an API key, restrict it to this domain) and paste it into
+          <code>YT_API_KEY</code> near the top of this page's script. Once that's set, videos, thumbnails, view
+          counts and durations all pull live from <b>@${autoviindu}</b> automatically — nothing to update by hand.
+        </div>`;
+    }
+
+    // ---------- Fetch live data from YouTube ----------
+    async function fetchYouTubeVideos() {
+      if (!YT_API_KEY) {
+        setSyncError('Live sync not configured');
+        showSetupNotice('');
+        renderLoadingState(false);
+        return;
+      }
+
+      try {
+        setSyncStatus('Syncing with YouTube…');
+
+        // 1. Resolve the channel handle -> its "uploads" playlist id
+        const chRes = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forHandle=${encodeURIComponent(YT_CHANNEL_HANDLE)}&key=${YT_API_KEY}`);
+        const chData = await chRes.json();
+        if (chData.error) throw new Error(chData.error.message || 'API error');
+        if (!chData.items || !chData.items.length) throw new Error('Channel not found');
+        const uploadsId = chData.items[0].contentDetails.relatedPlaylists.uploads;
+
+        // 2. Pull the most recent uploads from that playlist (newest first)
+        const plRes = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${uploadsId}&maxResults=${MAX_VIDEOS}&key=${YT_API_KEY}`);
+        const plData = await plRes.json();
+        if (plData.error) throw new Error(plData.error.message || 'API error');
+        const items = (plData.items || []).filter(it => it.snippet && it.snippet.resourceId && it.snippet.resourceId.videoId);
+        const ids = items.map(it => it.snippet.resourceId.videoId);
+        if (!ids.length) throw new Error('No videos found on channel');
+
+        // 3. Get view counts + durations for those videos (batched, 50 ids per call)
+        const statsMap = {};
+        for (let i = 0; i < ids.length; i += 50) {
+          const batch = ids.slice(i, i + 50).join(',');
+          const vRes = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics,contentDetails&id=${batch}&key=${YT_API_KEY}`);
+          const vData = await vRes.json();
+          if (vData.error) throw new Error(vData.error.message || 'API error');
+          (vData.items || []).forEach(v => statsMap[v.id] = v);
+        }
+
+        // 4. Build the video list the rest of the page already knows how to render
+        //    Filter out reels/shorts (videos ≤ 100 seconds)
+        VIDEOS = items
+          .filter(it => {
+            const vid = it.snippet.resourceId.videoId;
+            const stats = statsMap[vid];
+            if (!stats) return true; // keep if no stats available
+            return parseDurationToSeconds(stats.contentDetails.duration) > 120;
+          })
+          .map(it => {
+            const vid = it.snippet.resourceId.videoId;
+            const stats = statsMap[vid];
+            const { cat, tag } = autoCategorize(it.snippet.title);
+            const thumbs = it.snippet.thumbnails || {};
+            return {
+              id: vid,
+              ytId: vid,
+              title: it.snippet.title,
+              cat, tag,
+              views: stats ? formatViews(stats.statistics.viewCount) : '—',
+              date: formatRelativeDate(it.snippet.publishedAt),
+              len: stats ? formatDuration(stats.contentDetails.duration) : '—',
+              icon: iconForCat(cat),
+              thumb: (thumbs.maxres || thumbs.high || thumbs.medium || thumbs.default || {}).url
+            };
+          });
+
+        VIDEOS.sort((a, b) => {
+          const ai = PINNED_VIDEO_IDS.indexOf(a.id);
+          const bi = PINNED_VIDEO_IDS.indexOf(b.id);
+          if (ai !== -1 && bi !== -1) return ai - bi;      // both pinned: keep your chosen order
+          if (ai !== -1) return -1;                         // a pinned, b not: a first
+          if (bi !== -1) return 1;                          // b pinned, a not: b first
+          return 0;                                          // neither pinned: keep upload-date order
+        });
+
+        document.getElementById('setupNotice').innerHTML = '';
+        renderFeatured();
+        renderVideos();
+        setSyncStatus('Synced with YouTube just now · ' + VIDEOS.length + ' videos');
+      } catch (err) {
+        console.error('YouTube sync failed:', err);
+        setSyncError('Couldn\u2019t reach YouTube — showing last known state');
+        showSetupNotice(`(${err.message || 'request failed'}).`);
+        renderLoadingState(false);
+      }
+    }
+
+    function renderLoadingState(isLoading) {
+      if (isLoading) {
+        document.getElementById('featuredWrap').innerHTML = `<p style="color:var(--ink5);font-size:14px;padding:20px;">Loading latest videos…</p>`;
+        document.getElementById('videoGrid').innerHTML = `<p style="color:var(--ink5);font-size:14px;grid-column:1/-1;">Loading videos…</p>`;
+      } else if (!VIDEOS.length) {
+        document.getElementById('featuredWrap').innerHTML = '';
+        document.getElementById('videoGrid').innerHTML = '';
+        document.getElementById('videoNoResults').classList.add('show');
+        document.getElementById('videoNoResults').textContent = 'Videos will appear here once YouTube sync is configured.';
+      }
+    }
+
+    // ---------- Featured + Up Next (built from live data) ----------
+    function renderFeatured() {
+      if (!VIDEOS.length) return;
+      const f = VIDEOS[0];
+      const rest = VIDEOS.slice(1, 4);
+
+      document.getElementById('featuredWrap').innerHTML = `
+        <div class="featured-player" onclick="openVideoModal('${f.id}')">
+          ${thumbImg(f)}
+          <div class="featured-glow"></div>
+          <div class="featured-tag-row"><span class="live-pill">New</span></div>
+          <div class="featured-play-btn"><i data-lucide="play"></i></div>
+          <div class="featured-info">
+            <span class="card-tag" style="background:rgba(255,255,255,.15);color:#fff;">${f.tag}</span>
+            <h3>${f.title}</h3>
+            <div class="featured-meta-row">
+              <span><i data-lucide="eye"></i>${f.views}</span>
+              <span><i data-lucide="calendar"></i>${f.date}</span>
+              <span><i data-lucide="clock"></i>${f.len}</span>
+            </div>
+          </div>
+        </div>
+        <div class="upnext">
+          <div class="upnext-label">Up Next</div>
+          ${rest.map(v => `
+            <div class="upnext-item" onclick="openVideoModal('${v.id}')">
+              <div class="upnext-thumb">
+                ${thumbImg(v)}
+                <div class="upnext-dur">${v.len}</div>
+              </div>
+              <div class="upnext-text">
+                <h4>${v.title}</h4><span>${v.views}</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>`;
+      lucide.createIcons();
+    }
+
+    // ---------- Grid rendering (search / filter / load more) ----------
+    function matches(v) {
+      const inCat = currentCat === 'all' || v.cat === currentCat;
+      const inQuery = !currentQuery || v.title.toLowerCase().includes(currentQuery) || v.tag.toLowerCase().includes(currentQuery);
+      return inCat && inQuery;
+    }
+
+    function renderVideos() {
+      if (!VIDEOS.length) return;
+      const grid = document.getElementById('videoGrid');
+      const filtered = VIDEOS.filter(matches);
+      const shown = filtered.slice(0, visibleCount);
+      grid.innerHTML = shown.map(v => `
+        <div class="video-card" onclick="openVideoModal('${v.id}')">
+          <div class="card-thumb">
+            ${thumbImg(v, '')}
+            <div class="card-duration">${v.len}</div>
+            <div class="card-play"><i data-lucide="play"></i></div>
+          </div>
+          <div class="card-info">
+            <div class="card-tag">${v.tag}</div>
+            <div class="card-title">${v.title}</div>
+            <div class="card-meta">
+              <span class="card-meta-item"><i data-lucide="eye"></i>${v.views}</span>
+              <span class="card-meta-item"><i data-lucide="calendar"></i>${v.date}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+
+      document.getElementById('videoNoResults').classList.toggle('show', filtered.length === 0);
+      if (filtered.length === 0) document.getElementById('videoNoResults').textContent = 'No videos match your search. Try a different keyword or category.';
+      const loadBtn = document.getElementById('videoLoadMore');
+      if (visibleCount >= filtered.length) {
+        loadBtn.style.display = filtered.length <= PAGE_SIZE ? 'none' : 'inline-flex';
+        loadBtn.disabled = true;
+        loadBtn.innerHTML = '<i data-lucide="check"></i>All videos loaded';
+      } else {
+        loadBtn.style.display = 'inline-flex';
+        loadBtn.disabled = false;
+        loadBtn.innerHTML = '<i data-lucide="refresh-cw"></i>Load more videos';
+      }
+      lucide.createIcons();
+    }
+
+    function setVideoFilter(el, cat) {
+      document.querySelectorAll('#videoTabs .filter-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      currentCat = cat;
+      visibleCount = PAGE_SIZE;
+      renderVideos();
+    }
+
+    function loadMoreVideos() {
+      visibleCount += PAGE_SIZE;
+      renderVideos();
+    }
+
+    document.getElementById('videoSearch').addEventListener('input', (e) => {
+      currentQuery = e.target.value.trim().toLowerCase();
+      visibleCount = PAGE_SIZE;
+      renderVideos();
+    });
+
+    // ---------- Modal / theater mode ----------
+    function renderPlaylist(activeId) {
+      const list = document.getElementById('modalPlaylist');
+      const items = VIDEOS.filter(v => v.id !== activeId).slice(0, 8);
+      list.innerHTML = '<div class="modal-playlist-label">Up next</div>' + items.map(v => `
+        <div class="playlist-item" onclick="openVideoModal('${v.id}')">
+          <div class="playlist-thumb">${thumbImg(v)}<div class="playlist-dur">${v.len}</div></div>
+          <div class="playlist-text"><h5>${v.title}</h5><span>${v.views}</span></div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function openVideoModal(id) {
+      const v = VIDEOS.find(x => x.id === id);
+      if (!v) return;
+      document.getElementById('modalIframe').src = `https://www.youtube.com/embed/${v.ytId}?autoplay=1&rel=0`;
+      document.getElementById('modalTitle').textContent = v.title;
+      document.getElementById('modalTag').textContent = v.tag;
+      document.getElementById('modalViews').innerHTML = `<i data-lucide="eye"></i>${v.views}`;
+      document.getElementById('modalDate').innerHTML = `<i data-lucide="calendar"></i>${v.date}`;
+      document.getElementById('modalLen').innerHTML = `<i data-lucide="clock"></i>${v.len}`;
+      renderPlaylist(id);
+      document.getElementById('videoModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      document.getElementById('modalIframe').src = '';
+      document.getElementById('videoModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function closeModalOnOverlay(e) { if (e.target === document.getElementById('videoModal')) closeModal(); }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // ---------- Boot ----------
+    renderLoadingState(true);
+    fetchYouTubeVideos();
+  </script>
 </body>
+
 </html>

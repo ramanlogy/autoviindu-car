@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>About AutoViindu — Core Values, Careers & Terms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+        :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-b);
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    ::selection {
+      background: rgba(26, 107, 42, .12);
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    @media(min-width:640px) {
+      .wrap {
+        padding: 0 32px;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .wrap {
+        padding: 0 48px;
+      }
+    }
+
+    /* BREADCRUMB */
+    .bc {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 11px 0;
+    }
+
+    .bc-inner {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: var(--ink4);
+    }
+
+    .bc-inner a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .bc-inner a:hover {
+      text-decoration: underline;
+    }
+
+    .bc-inner i {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(145deg, #0b1a0d 0%, #1A6B2A 60%, #22883a 100%);
+      padding: 68px 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: var(--pill);
+      padding: 5px 13px;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .8);
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge i {
+      width: 13px;
+      height: 13px;
+      color: var(--green-m);
+    }
+
+    .hero h1 {
+      font-family: var(--font-d);
+      font-size: clamp(32px, 5.5vw, 54px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--green-m);
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: rgba(255, 255, 255, .65);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* FLOATING NAV STRIP */
+    .nav-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      sticky: top;
+      position: relative;
+      top: 64px;
+      z-index: 100;
+      box-shadow: var(--sh1);
+    }
+
+    .nav-strip-inner {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-strip-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-tab-btn {
+      border: none;
+      background: transparent;
+      padding: 8px 18px;
+      font-family: var(--font-b);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink4);
+      border-radius: var(--pill);
+      cursor: pointer;
+      transition: all var(--ease);
+      white-space: nowrap;
+    }
+
+    .nav-tab-btn:hover {
+      color: var(--green);
+      background: var(--green-l);
+    }
+
+    .nav-tab-btn.active {
+      color: #fff;
+      background: var(--green);
+    }
+
+    /* SECTION */
+    .section {
+      padding: 80px 0;
+    }
+
+    .section.alt {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 52px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 10px;
+    }
+
+    .eyebrow i {
+      width: 13px;
+      height: 13px;
+    }
+
+    .sec-title {
+      font-family: var(--font-d);
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .sec-title em {
+      font-style: italic;
+      color: var(--green);
+    }
+
+    .sec-sub {
+      font-size: 15px;
+      color: var(--ink4);
+      line-height: 1.75;
+    }
+
+    /* PURPOSE CARD (CarMax Style Inspiration) */
+    .purpose-box {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r20);
+      padding: 40px;
+      margin-bottom: 56px;
+      box-shadow: var(--sh2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .purpose-box::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(26, 107, 42, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .purpose-eyebrow {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--green);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .purpose-title {
+      font-family: var(--font-d);
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 800;
+      color: var(--ink2);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .purpose-desc {
+      font-size: 15px;
+      color: var(--ink3);
+      line-height: 1.8;
+      max-width: 820px;
+    }
+
+    /* THREE COLUMN GRID */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media(min-width:640px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(min-width:960px) {
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* FEATURE CARD */
+    .feat-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r16);
+      padding: 28px;
+      transition: all var(--ease);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .feat-card:hover {
+      border-color: var(--green);
+      transform: translateY(-2px);
+      box-shadow: var(--sh2);
+    }
+
+    .feat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--r10);
+      background: var(--green-l);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feat-icon i {
+      width: 20px;
+      height: 20px;
+    }
+
+    .feat-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink2);
+    }
+
+    .feat-desc {
+      font-size: 13.5px;
+      color: var(--ink4);
+      line-height: 1.65;
+    }
+
+    /* CAREERS LISTING */
+    .job-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .job-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r16);
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: all var(--ease);
+    }
+
+    @media(min-width:768px) {
+      .job-card {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .job-card:hover {
+      border-color: var(--green);
+      box-shadow: var(--sh2);
+    }
+
+    .job-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .job-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .job-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12.5px;
+      color: var(--ink4);
+    }
+
+    .job-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .job-meta-item i {
+      width: 13px;
+      height: 13px;
+      color: var(--green);
+    }
+
+    .job-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: var(--r8);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all var(--ease);
+      cursor: pointer;
+    }
+
+    .job-btn-primary {
+      background: var(--green);
+      color: #fff;
+      border: none;
+    }
+
+    .job-btn-primary:hover {
+      background: var(--green-d);
+    }
+
+    /* TERMS & PRIVACY ACCORDION */
+    .legal-box {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .legal-item {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r12);
+      overflow: hidden;
+      transition: border-color var(--ease);
+    }
+
+    .legal-item.open {
+      border-color: var(--green);
+    }
+
+    .legal-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 24px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink2);
+      user-select: none;
+    }
+
+    .legal-q i {
+      width: 16px;
+      height: 16px;
+      color: var(--ink5);
+      flex-shrink: 0;
+      transition: transform var(--ease);
+    }
+
+    .legal-item.open .legal-q i {
+      transform: rotate(180deg);
+      color: var(--green);
+    }
+
+    .legal-a {
+      display: none;
+      padding: 18px 24px 22px;
+      font-size: 14px;
+      color: var(--ink3);
+      line-height: 1.75;
+      border-top: 1px solid var(--border);
+    }
+
+    .legal-item.open .legal-a {
+      display: block;
+    }
+
+    .legal-a p {
+      margin-bottom: 12px;
+    }
+
+    .legal-a p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-a ul {
+      margin-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .legal-a li {
+      margin-bottom: 6px;
+    }
+
+    /* CORE VALUES CROWN BLOCK */
+    .value-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--gold-l);
+      color: var(--gold);
+      border: 1px solid rgba(196, 154, 30, .2);
+      border-radius: var(--pill);
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    /* APPLICATION POPUP MODAL */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 16, 10, .6);
+      backdrop-filter: blur(8px);
+    }
+
+    .modal-content {
+      position: relative;
+      z-index: 1;
+      background: #fff;
+      border-radius: var(--r20);
+      max-width: 480px;
+      width: 100%;
+      padding: 32px;
+      box-shadow: var(--sh4);
+      animation: modalIn .25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: scale(0.92)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: var(--bg);
+      color: var(--ink3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--ease);
+    }
+
+    .modal-close:hover {
+      background: var(--green-l);
+      color: var(--green);
+    }
+
+    .modal-title {
+      font-family: var(--font-d);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .modal-sub {
+      font-size: 13.5px;
+      color: var(--ink4);
+      margin-bottom: 20px;
+    }
+
+    .modal-body {
+      font-size: 14px;
+      color: var(--ink3);
+      line-height: 1.65;
+    }
+
+    .modal-mail-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: var(--green-l);
+      color: var(--green);
+      border-radius: var(--r10);
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 16px;
+      font-size: 14px;
+      transition: background var(--ease);
+    }
+
+    .modal-mail-link:hover {
+      background: var(--green);
+      color: #fff;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp .45s ease forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="assets/js/site-chrome.js"></script>
+
+  <!-- BREADCRUMB -->
+  <nav class="bc">
+    <div class="wrap bc-inner">
+      <a href="/">Home</a>
+      <i data-lucide="chevron-right"></i>
+      <span>Company</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner fade-up">
+        <h1>A Transparent Platform for Nepali Car Buyers</h1>
+        <p class="hero-desc">We represent a new era of car search and service in Nepal—built entirely on transparency, certified inspection quality, and customer trust.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING STRIP -->
+  <div class="nav-strip">
+    <div class="wrap">
+      <div class="nav-strip-inner">
+        <button class="nav-tab-btn active" onclick="scrollToSec('about', this)">About Us</button>
+        <button class="nav-tab-btn" onclick="scrollToSec('values', this)">Our Values</button>
+        <button class="nav-tab-btn" onclick="scrollToSec('careers', this)">Careers</button>
+        <button class="nav-tab-btn" onclick="scrollToSec('terms', this)">Terms &amp; Privacy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT / WHAT WE DO SECTION -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="purpose-box fade-up">
+        <div class="purpose-eyebrow">Our Purpose</div>
+        <h2 class="purpose-title">To drive integrity by being honest &amp; transparent in every interaction.</h2>
+        <p class="purpose-desc">AutoViindu was founded to disrupt the traditional vehicle ecosystem in Nepal. By replacing high-pressure sales tactics and unverified listings with certified manual checks, data-backed vehicle histories, and upfront pricing, we put buyers and sellers in complete control of their journey.</p>
+      </div>
+
+      <div class="section-head" id="what-we-do">
+        <h2 class="sec-title">Connecting Nepal to Better Cars</h2>
+        <p class="sec-sub">We offer a complete suite of services designed to take the friction out of purchasing, selling, or maintaining your vehicle in Kathmandu and beyond.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="feat-card">
+          <div class="feat-icon"><i data-lucide="shield-check"></i></div>
+          <div class="feat-title">Verified Used Listings</div>
+          <div class="feat-desc">Every used vehicle listed on our platform undergoes a manual verification by our admin
+            team before it goes live. No duplicates, no spam, no fake pricing.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><i data-lucide="banknote"></i></div>
+          <div class="feat-title">Upfront Fair Pricing</div>
+          <div class="feat-desc">We offer data-backed market analysis, loan calculators, and direct bank financing
+            checks to ensure you get honest prices and clear EMI schedules.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><i data-lucide="clipboard-list"></i></div>
+          <div class="feat-title">DOTM Paperwork Runner</div>
+          <div class="feat-desc">We clear the queue for you. From vehicle registration and bluebook renewals to tax
+            payments, our couriers handle it directly from your doorstep.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES SECTION -->
+  <section class="section alt" id="values">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="sec-title">Value for Our Customers</h2>
+        <p class="sec-sub">We align our internal standards to create a hassle-free, empowering experience for every car owner and buyer in Nepal.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="feat-card">
+          <div class="feat-icon" style="background:var(--gold-l);color:var(--gold)"><i data-lucide="sparkles"></i></div>
+          <div class="feat-title">100% No-Pressure Policy</div>
+          <div class="feat-desc">We never push sales. Browse vehicles, compute EMI options, compare specifications, and request service booking at your own pace without annoying calls.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:var(--gold-l);color:var(--gold)"><i data-lucide="heart"></i></div>
+          <div class="feat-title">Honest Inspections</div>
+          <div class="feat-desc">When buying through AutoViindu, you receive detailed history status notes, structural checks, and verified ownership records. What you see is what you get.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:var(--gold-l);color:var(--gold)"><i data-lucide="users"></i></div>
+          <div class="feat-title">Seamless Hybrid Experience</div>
+          <div class="feat-desc">Shop online with advanced search filters, compare up to three models simultaneously, and book inspections or test drives with our network partners easily.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREERS SECTION -->
+  <section class="section" id="careers">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="sec-title">Drive the Future of Mobility</h2>
+        <p class="sec-sub">Join a high-growth, modern technology team based in Kathmandu. We are always looking for passionate individuals who value transparency and customer focus.</p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:48px">
+        <div class="feat-card">
+          <div class="feat-icon"><i data-lucide="gem"></i></div>
+          <div class="feat-title">Modern Perks</div>
+          <div class="feat-desc">Competitive salary packages, paid time off, medical coverage, and a continuous learning
+            budget to support your career growth.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><i data-lucide="coffee"></i></div>
+          <div class="feat-title">Vibrant Culture</div>
+          <div class="feat-desc">Enjoy a collaboration-first, open working environment in Nayabazar. We value results
+            over long hours and encourage innovative ideas.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><i data-lucide="trending-up"></i></div>
+          <div class="feat-title">Rapid Growth</div>
+          <div class="feat-desc">As AutoViindu expands its presence across Nepal's automotive sectors, you will have the
+            opportunity to take ownership and lead new projects.</div>
+        </div>
+      </div>
+
+      <h3
+        style="font-family:var(--font-d);font-size:22px;font-weight:800;color:var(--ink2);margin-bottom:20px;text-align:center">
+        Open Positions</h3>
+      <div class="job-list">
+
+        <div class="job-card">
+          <div class="job-info">
+            <div class="job-title">Automotive Inspection Specialist</div>
+            <div class="job-meta">
+              <span class="job-meta-item"><i data-lucide="map-pin"></i>Kathmandu (On-site)</span>
+              <span class="job-meta-item"><i data-lucide="clock"></i>Full-time</span>
+              <span class="job-meta-item"><i data-lucide="briefcase"></i>2+ Yrs Exp</span>
+            </div>
+          </div>
+          <button class="job-btn job-btn-primary" onclick="openJobModal('Automotive Inspection Specialist')">Apply Now
+            <i data-lucide="arrow-right"></i></button>
+        </div>
+
+        <div class="job-card">
+          <div class="job-info">
+            <div class="job-title">UI/UX Frontend Developer</div>
+            <div class="job-meta">
+              <span class="job-meta-item"><i data-lucide="map-pin"></i>Nayabazar / Hybrid</span>
+              <span class="job-meta-item"><i data-lucide="clock"></i>Full-time</span>
+              <span class="job-meta-item"><i data-lucide="briefcase"></i>1+ Yrs Exp</span>
+            </div>
+          </div>
+          <button class="job-btn job-btn-primary" onclick="openJobModal('UI/UX Frontend Developer')">Apply Now <i
+              data-lucide="arrow-right"></i></button>
+        </div>
+
+        <div class="job-card">
+          <div class="job-info">
+            <div class="job-title">Customer Success &amp; Support Associate</div>
+            <div class="job-meta">
+              <span class="job-meta-item"><i data-lucide="map-pin"></i>Kathmandu</span>
+              <span class="job-meta-item"><i data-lucide="clock"></i>Full-time</span>
+              <span class="job-meta-item"><i data-lucide="briefcase"></i>Freshers Welcome</span>
+            </div>
+          </div>
+          <button class="job-btn job-btn-primary" onclick="openJobModal('Customer Success & Support Associate')">Apply
+            Now <i data-lucide="arrow-right"></i></button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMS AND CONDITIONS / PRIVACY POLICY -->
+  <section class="section alt" id="terms">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow"><i data-lucide="file-lock-2"></i>Legal &amp; Compliance</div>
+        <h2 class="sec-title">Terms of Service &amp; <em>Privacy</em></h2>
+        <p class="sec-sub">Our clear, simple policies designed to protect our buyers, sellers, and platform integrity.
+        </p>
+      </div>
+
+      <div class="legal-box">
+
+        <div class="legal-item" id="terms-accordion">
+          <div class="legal-q" onclick="toggleLegal(this)">1. Terms and Conditions of Use <i
+              data-lucide="chevron-down"></i></div>
+          <div class="legal-a">
+            <p>Welcome to AutoViindu. By accessing our website, using our comparison tool, EMI calculators, or listing
+              cars for sale, you agree to comply with the following terms:</p>
+            <ul>
+              <li><strong>Listing Authenticity:</strong> Sellers must guarantee that vehicle details, manufactured
+                years, and number of owners submitted via the "Sell Your Car" form are accurate and match official DOTM
+                Bluebook records.</li>
+              <li><strong>Manually Verified listings:</strong> All listings undergo a manual 24-hour review before
+                publication. AutoViindu reserves the right to reject listings that contain misleading information.</li>
+              <li><strong>No Commercial Abuse:</strong> The platform is designed for private and authorized sellers.
+                Scraping database details, image assets, or technical data is strictly prohibited.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="legal-item" id="privacy">
+          <div class="legal-q" onclick="toggleLegal(this)">2. Privacy &amp; Data Protection Policy <i
+              data-lucide="chevron-down"></i></div>
+          <div class="legal-a">
+            <p>We respect your privacy. All user registration inputs, telephone numbers, and email addresses submitted
+              through our service booking forms are protected under the following guidelines:</p>
+            <ul>
+              <li><strong>Buyer Privacy:</strong> We only share a seller's phone number with verified, genuinely
+                interested buyers to prevent spam.</li>
+              <li><strong>No Third-Party Sharing:</strong> Your personal data is never sold or rented to third-party
+                advertising companies.</li>
+              <li><strong>Information Security:</strong> Financial calculator parameters and uploaded vehicle photos are
+                stored securely using standard encryption protocols.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="legal-item">
+          <div class="legal-q" onclick="toggleLegal(this)">3. Listing Guidelines &amp; Fees <i
+              data-lucide="chevron-down"></i></div>
+          <div class="legal-a">
+            <p>Listing your vehicle on AutoViindu is completely free. To maintain listing quality, please ensure:</p>
+            <ul>
+              <li>Upload up to 8 high-resolution photos showing clear exterior, interior, and odometer views.</li>
+              <li>Provide accurate details on number of owners, engine/fuel specs, and asking price in NPR.</li>
+              <li>Notify us or update your status once the vehicle is sold to remove it from our active database.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL FOR JOB APPLICATION -->
+  <div class="modal" id="job-modal">
+    <div class="modal-backdrop" onclick="closeJobModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeJobModal()"><i data-lucide="x"></i></button>
+      <div class="modal-title">Apply for Position</div>
+      <div class="modal-sub" id="modal-job-title">Job Title</div>
+      <div class="modal-body">
+        <p>To apply for this role, please email your updated CV, portfolio (if applicable), and a brief introduction to
+          our recruitment team. Please mention the job title in the subject line.</p>
+        <a href="mailto:careers@autoviindu.com" id="modal-mailto" class="modal-mail-link">
+          <i data-lucide="mail"></i>
+          Send CV to careers@autoviindu.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    /* Smooth Scroll and Nav highlight */
+    function scrollToSec(id, btn) {
+      document.querySelectorAll('.nav-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const el = document.getElementById(id);
+      if (el) {
+        window.scrollTo({
+          top: el.offsetTop - 120,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    /* Accordion Toggle */
+    function toggleLegal(el) {
+      const item = el.closest('.legal-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.legal-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    /* Careers Modal */
+    function openJobModal(title) {
+      document.getElementById('modal-job-title').textContent = title;
+      document.getElementById('modal-mailto').href = `mailto:careers@autoviindu.com?subject=Application%20for%20${encodeURIComponent(title)}`;
+      document.getElementById('job-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeJobModal() {
+      document.getElementById('job-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* Handle URL hashes on page load */
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash;
+      if (hash) {
+        setTimeout(() => {
+          const cleanHash = hash.replace('#', '');
+          const target = document.getElementById(cleanHash);
+          if (target) {
+            window.scrollTo({ top: target.offsetTop - 120, behavior: 'smooth' });
+
+            // Highlight active tab
+            const tabs = document.querySelectorAll('.nav-tab-btn');
+            tabs.forEach(tab => {
+              if (tab.textContent.toLowerCase().includes(cleanHash.substring(0, 4))) {
+                tabs.forEach(b => b.classList.remove('active'));
+                tab.classList.add('active');
+              }
+            });
+
+            // If inside accordion, auto-open it
+            if (target.classList.contains('legal-item')) {
+              target.classList.add('open');
+            }
+          }
+        }, 300);
+      }
+    });
+  </script>
+
+
+</body>
+
+</html>

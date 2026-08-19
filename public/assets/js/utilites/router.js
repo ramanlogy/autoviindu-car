@@ -15,6 +15,8 @@
     { test: /^#cars$/,         fn: function ()  { if (window.AV) window.AV.goTo('cars'); } },
     { test: /^#electric$/,     fn: function ()  { if (window.AV) window.AV.goTo('electric'); } },
     { test: /^#hybrid$/,       fn: function ()  { if (window.AV) window.AV.goTo('hybrid'); } },
+    { test: /^#upcoming$/,     fn: function ()  { if (window.AV) window.AV.goTo('upcoming'); } },
+    { test: /^#bestseller$/,   fn: function ()  { if (window.AV) window.AV.goTo('bestseller'); } },
     { test: /^#compare$/,      fn: function ()  { if (window.AV) window.AV.goTo('compare'); } },
     { test: /^#services$/,     fn: function ()  { if (window.AV) window.AV.goTo('services'); } },
     { test: /^#maintenance$/,  fn: function ()  { if (window.AV) window.AV.goTo('maintenance'); } },

@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
+    <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>News & Car Reviews – AutoViindu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/js/content-loader.js"></script>
+    <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+            :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
+    }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-b);
+            background: var(--white);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        ::selection {
+            background: rgba(26, 107, 42, .12);
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--green);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @media(min-width:640px) {
+            .wrap {
+                padding: 0 32px;
+            }
+        }
+
+        @media(min-width:1024px) {
+            .wrap {
+                padding: 0 48px;
+            }
+        }
+
+        .bc {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 11px 0;
+        }
+
+        .bc-inner {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            color: var(--ink4);
+        }
+
+        .bc-inner a {
+            color: var(--green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .bc-inner a:hover {
+            text-decoration: underline;
+        }
+
+        .bc-inner i {
+            width: 12px;
+            height: 12px;
+        }
+
+        /* PAGE HEAD (replaces old hero + featured/editorial pick) */
+        .page-head {
+            background: linear-gradient(145deg, #0B2A12 0%, #1A6B2A 60%, #1f8535 100%);
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-head::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .page-head-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+        }
+
+        .page-head-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: var(--pill);
+            padding: 5px 13px;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .75);
+            letter-spacing: .4px;
+            text-transform: uppercase;
+        }
+
+        .page-head-badge i {
+            width: 13px;
+            height: 13px;
+            color: var(--green-m);
+        }
+
+        .page-head h1 {
+            font-family: var(--font-d);
+            font-size: clamp(26px, 4.2vw, 40px);
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        .page-head h1 em {
+            font-style: italic;
+            color: var(--green-m);
+        }
+
+        .page-head p {
+            font-size: 14.5px;
+            color: rgba(255, 255, 255, .62);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        /* SEGMENTED TOGGLE */
+        .seg-toggle {
+            display: inline-flex;
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: var(--pill);
+            padding: 4px;
+            margin-top: 6px;
+        }
+
+        .seg-btn {
+            padding: 9px 22px;
+            border-radius: var(--pill);
+            font-size: 13.5px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .65);
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: var(--font-b);
+            transition: all var(--ease);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .seg-btn i {
+            width: 14px;
+            height: 14px;
+        }
+
+        .seg-btn.active {
+            background: #fff;
+            color: var(--green-d);
+        }
+
+        .filter-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: var(--nav);
+            z-index: 100;
+        }
+
+        .filter-bar-inner {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 0;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 260px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 9px 14px 9px 36px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--pill);
+            font-family: var(--font-b);
+            font-size: 13.5px;
+            color: var(--ink2);
+            transition: border-color var(--ease);
+        }
+
+        .search-box input:focus {
+            border-color: var(--green);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            color: var(--ink5);
+        }
+
+        .tabs-scroll {
+            display: flex;
+            gap: 4px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            flex: 1;
+        }
+
+        .tabs-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-tab {
+            flex-shrink: 0;
+            padding: 9px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ink4);
+            cursor: pointer;
+            border-radius: var(--pill);
+            white-space: nowrap;
+            border: 1.5px solid transparent;
+            transition: all var(--ease);
+            background: none;
+            font-family: var(--font-b);
+        }
+
+        .filter-tab:hover {
+            color: var(--ink2);
+            background: var(--bg);
+        }
+
+        .filter-tab.active {
+            color: var(--white);
+            background: var(--green);
+        }
+
+        .section {
+            padding: 44px 0 52px;
+        }
+
+        .section.alt {
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: .6px;
+            margin-bottom: 10px;
+        }
+
+        .eyebrow i {
+            width: 13px;
+            height: 13px;
+        }
+
+        .sec-title {
+            font-family: var(--font-d);
+            font-size: clamp(22px, 3.5vw, 32px);
+            font-weight: 800;
+            color: var(--ink);
+            line-height: 1.12;
+            margin-bottom: 20px;
+        }
+
+        .sec-title em {
+            font-style: italic;
+            color: var(--green);
+        }
+
+        .result-count {
+            font-size: 13px;
+            color: var(--ink5);
+            font-weight: 600;
+            margin: -10px 0 20px;
+        }
+
+        /* NEWS GRID */
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media(min-width:640px) {
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(min-width:900px) {
+            .news-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @keyframes cardIn {
+            from {
+                opacity: 0;
+                transform: translateY(14px) scale(.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .news-card {
+            border: 1.5px solid var(--border);
+            border-radius: var(--r12);
+            background: var(--white);
+            overflow: hidden;
+            transition: box-shadow var(--ease), transform var(--ease), border-color var(--ease);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            animation: cardIn .5s cubic-bezier(.4, 0, .2, 1) both;
+        }
+
+        .news-card:hover {
+            box-shadow: var(--sh2);
+            transform: translateY(-3px);
+            border-color: var(--green);
+        }
+
+        .news-card.hidden-item {
+            display: none;
+        }
+
+        .news-img {
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: var(--bg);
+            position: relative;
+        }
+
+        .news-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .5s var(--ease);
+        }
+
+        .news-card:hover .news-img img {
+            transform: scale(1.05);
+        }
+
+        .news-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f0f4f1, #e0ebe2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .news-placeholder i {
+            width: 28px;
+            height: 28px;
+            color: rgba(26, 107, 42, .3);
+        }
+
+        .rating-pill {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(11, 15, 20, .85);
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 9px;
+            border-radius: var(--pill);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .rating-pill i {
+            width: 12px;
+            height: 12px;
+        }
+
+        .cat-pill {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, .92);
+            color: var(--green-d);
+            font-size: 10.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .4px;
+            padding: 4px 10px;
+            border-radius: var(--pill);
+        }
+
+        .news-body {
+            padding: 16px 18px 18px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .news-category {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .news-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--ink2);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-excerpt {
+            font-size: 13px;
+            color: var(--ink4);
+            line-height: 1.65;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .news-footer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .news-date {
+            font-size: 11.5px;
+            color: var(--ink5);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 1px;
+        }
+
+        .stars i {
+            width: 13px;
+            height: 13px;
+            color: var(--gold);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--ink5);
+            font-size: 14px;
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+            animation: cardIn .4s var(--ease) both;
+        }
+
+        .load-more-wrap {
+            text-align: center;
+            margin-top: 36px;
+        }
+
+        .btn-load-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            color: var(--ink2);
+            font-family: var(--font-b);
+            font-size: 14px;
+            font-weight: 700;
+            padding: 11px 24px;
+            border-radius: var(--r10);
+            cursor: pointer;
+            transition: all var(--ease);
+        }
+
+        .btn-load-more:hover {
+            border-color: var(--green);
+            color: var(--green);
+            background: var(--green-l);
+        }
+
+        .btn-load-more:disabled {
+            opacity: .4;
+            cursor: default;
+        }
+
+        /* ARTICLE MODAL */
+        .article-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 15, 20, .6);
+            z-index: 1000;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 20px;
+            overflow-y: auto;
+        }
+
+        .article-modal-overlay.open {
+            display: flex;
+        }
+
+        .article-modal {
+            background: var(--white);
+            border-radius: var(--r16);
+            max-width: 720px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, .3);
+            margin-bottom: 40px;
+            animation: cardIn .35s var(--ease) both;
+        }
+
+        .article-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 10;
+            background: var(--bg);
+            border: none;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--ink2);
+            transition: background var(--ease);
+        }
+
+        .article-modal-close:hover {
+            background: var(--border);
+        }
+
+        .article-modal-img {
+            aspect-ratio: 16/8;
+            background: linear-gradient(135deg, #1a3a22, #2d6b3e);
+            border-radius: var(--r16) var(--r16) 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .article-modal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .article-modal-img i {
+            width: 40px;
+            height: 40px;
+            color: rgba(255, 255, 255, .35);
+        }
+
+        .article-modal-body {
+            padding: 32px 36px 40px;
+        }
+
+        .article-modal-body .news-category {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .article-modal-body h2 {
+            font-family: var(--font-d);
+            font-size: clamp(22px, 3.2vw, 30px);
+            font-weight: 800;
+            color: var(--ink);
+            line-height: 1.25;
+            margin-bottom: 14px;
+        }
+
+        .article-modal-meta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .article-modal-meta span {
+            font-size: 12.5px;
+            color: var(--ink5);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .article-modal-body p {
+            font-size: 14.5px;
+            color: var(--ink3);
+            line-height: 1.85;
+            margin-bottom: 16px;
+        }
+
+        /* footer nav injected by site-chrome.js — placeholder note removed for production */
+    </style>
+</head>
+
+<body>
+    <script src="assets/js/site-chrome.js"></script>
+
+    <nav class="bc">
+        <div class="wrap bc-inner">
+            <a href="/">Home</a>
+            <i data-lucide="chevron-right"></i>
+            <a href="/hub">News, Reviews, Events &amp; Videos</a>
+            <i data-lucide="chevron-right"></i>
+            <span>News &amp; Car Reviews</span>
+        </div>
+    </nav>
+
+
+
+    <!-- SEARCH + FILTER -->
+    <div class="filter-bar">
+        <div class="wrap">
+            <div class="filter-bar-inner">
+                <div class="search-box">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="articleSearch" placeholder="Search articles...">
+                </div>
+                <div class="tabs-scroll" id="categoryTabs"><!-- populated by JS --></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="wrap">
+            <h2 class="sec-title" id="gridHeading">Latest <em>News</em></h2>
+            <p class="result-count" id="resultCount"></p>
+            <div class="news-grid" id="articleGrid"><!-- populated by JS --></div>
+            <p class="no-results" id="articleNoResults">Nothing matches your search. Try another keyword or category.
+            </p>
+            <div class="load-more-wrap">
+                <button class="btn-load-more" id="articleLoadMore" onclick="loadMoreArticles()"><i
+                        data-lucide="refresh-cw"></i>Load more</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTICLE READ MODAL -->
+    <div class="article-modal-overlay" id="articleModal" onclick="closeArticleOnOverlay(event)">
+        <div class="article-modal">
+            <button class="article-modal-close" onclick="closeArticle()"><i data-lucide="x"></i></button>
+            <div class="article-modal-img"><img id="articleModalImg" alt=""></div>
+            <div class="article-modal-body">
+                <span class="news-category" id="articleModalCat">Category</span>
+                <h2 id="articleModalTitle">Title</h2>
+                <div class="article-modal-meta">
+                    <span id="articleModalDate"><i data-lucide="calendar"></i>—</span>
+                    <span id="articleModalRead"><i data-lucide="clock"></i>—</span>
+                    <span id="articleModalRatingWrap" style="display:none;"></span>
+                </div>
+                <div id="articleModalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="av-toast-wrap"></div>
+
+    <script>
+        lucide.createIcons();
+
+        const WM = f => `https://commons.wikimedia.org/wiki/Special:FilePath/${f}`;
+
+        let NEWS = [
+            {
+                id: 'n1', cat: 'Policy', catKey: 'policy', title: "Government Overhauls EV Tax Structure: Flat 20% Customs Duty Replaces Old Motor-Power System", excerpt: "In the FY 2083/84 budget, Finance Minister Swarnim Wagle scrapped the decade-old kW-based EV tax slabs for a single value-based rate — a change industry watchers are calling a game-changer for pricing transparency.", date: 'May 2026', read: '3 min read', icon: 'landmark',
+                img: WM('Charging_Station_in_Nepal.jpg'),
+                body: ["Presenting the new fiscal year's budget in late May, Finance Minister Dr. Swarnim Wagle announced that electric passenger cars will now be taxed on their CIF (cost, insurance, freight) value rather than their motor's power rating, ending a system that had quietly encouraged manufacturers to detune motors just to land in a cheaper tax bracket.", "Under the new structure, importers pay a flat 20 percent customs duty on a vehicle's declared value. The old excise duty has been scrapped entirely and replaced with a tiered \u201cClean Infrastructure Investment Fee\u201d that runs from around 2.5 percent on affordable EVs up to well over 100 percent on cars priced above roughly Rs 50 lakh.", "Dealers say the change removes a long-standing incentive to sell underpowered variants purely for tax reasons, though buyers eyeing vehicles in the Rs 20-30 lakh band are still waiting on the Finance Ministry to clarify how that slab will be treated once Parliament finalises the bill."]
+            },
+            {
+                id: 'n2', cat: 'New Launch', catKey: 'launch', title: "BYD Seal Arrives in Nepal: Flagship Electric Sedan Starts at Rs 1.10 Crore", excerpt: "Cimex Inc. has opened bookings for BYD's flagship sedan, promising up to 570 km of WLTP range, a five-star Euro NCAP rating and the brand's Blade Battery pack.", date: 'Jun 2026', read: '4 min read', icon: 'car',
+                img: WM('BYD_Seal_2023010703.jpg'),
+                body: ["BYD's authorised distributor in Nepal, Cimex Inc., has begun deliveries of the Seal, a battery-electric sedan built on the brand's e-Platform 3.0 and offered locally in Dynamic, Premium and Performance trims.", "Pricing spans roughly Rs 1.10 crore for the entry Dynamic variant to close to Rs 1.95 crore for the range-topping Performance model, which pairs a dual-motor all-wheel-drive setup with a claimed 3.8-second 0-100 km/h sprint. The mid-tier Premium trim is the range champion, rated for up to 570 km on the WLTP cycle from its 82.56 kWh Blade Battery pack.", "The Seal has already picked up a five-star Euro NCAP safety score, and Nepal-spec cars come with a panoramic glass roof, a rotating 15.6-inch touchscreen and a 360-degree camera as standard across the range."]
+            },
+            {
+                id: 'n3', cat: 'Market', catKey: 'market', title: "Fuel Prices Hold Steady After a Turbulent Spring of Back-to-Back Hikes", excerpt: "Petrol in Kathmandu sits at Rs 197 a litre and diesel at Rs 195 following NOC's latest revision — a relative calm after five increases in just over a month this spring.", date: 'Jul 2026', read: '3 min read', icon: 'fuel',
+                img: WM('Petrol_Pump.jpg'),
+                body: ["Nepal Oil Corporation's most recent price list, effective from 1 July, has petrol holding at Rs 197 per litre and diesel at Rs 195 per litre in the Kathmandu, Pokhara and Dipayal pricing zone, with slightly higher rates in the country's other depot regions.", "The relative calm follows a rough patch in April, when escalating tension in West Asia pushed international crude prices sharply higher and NOC raised diesel and kerosene rates five times in 31 days — at one point lifting them by Rs 30 a litre in a single revision.", "For an owner running a petrol sedan roughly 1,000 km a month, this year's swings have added real money to the monthly fuel bill, and showrooms say it's one more reason EV enquiries keep climbing even as sticker prices for electric cars stay well above their petrol equivalents."]
+            },
+            {
+                id: 'n4', cat: 'Infrastructure', catKey: 'infrastructure', title: "Fast-Charging Network Keeps Growing Along the Kathmandu–Pokhara Corridor", excerpt: "Nepal now counts well over a thousand public and private charging points nationwide, up from under 50 in 2020, with new fast chargers continuing to land on the busy Prithvi Highway route.", date: 'May 2026', read: '3 min read', icon: 'plug-zap',
+                img: WM('Nayabazar_Road_at_Prithvi_Chowk.jpg'),
+                body: ["Nepal's charging network has grown from a handful of pilot stations five years ago to more than a thousand public and private charge points today, according to industry trackers, spurred by the country's cheap hydropower tariffs and a wave of new EV registrations.", "The Nepal Electricity Authority alone now runs dozens of DC fast-charging hubs along major routes, and the Kathmandu–Pokhara corridor — one of the busiest and most EV-heavy stretches of road in the country — continues to add new sites roughly every 60 km, alongside chargers installed directly by BYD, MG, Tata and other brands at their showrooms.", "Range anxiety on long highway runs is easing as a result, though EV owners are still advised to check an app such as EV Nepal or the NEA charging app before setting off, since a handful of stations remain offline in areas affected by past landslides."]
+            },
+            {
+                id: 'n5', cat: 'New Launch', catKey: 'launch', title: "Hyundai Confirms Creta EV Is on Track for Nepal in Early 2026", excerpt: "Hyundai's best-selling SUV nameplate is going electric, and local distributors say Nepal bookings could open ahead of the model's showroom debut.", date: 'Apr 2026', read: '2 min read', icon: 'car',
+                img: WM('2024_Hyundai_Creta_Alpha.jpg'),
+                body: ["Hyundai has confirmed that an all-electric version of the Creta, one of the best-selling SUVs in South Asia, remains on track to reach the Nepali market, with distributors pointing to early 2026 for the formal launch.", "Nepal already sells the petrol Creta in its facelifted \u201cSU2\u201d form, which switched to a bolder, more upright face and a twin 10.25-inch dashboard layout when it was updated, so the electric version is expected to carry over much of that styling and cabin tech.", "Comparison platforms already list an estimated Creta EV price point sitting just below rivals like the BYD Atto 3, positioning it as a mainstream alternative for buyers who want a familiar badge paired with an electric drivetrain."]
+            },
+            {
+                id: 'n6', cat: 'New Launch', catKey: 'launch', title: "Six New Car Brands Set to Debut at NADA Auto Show 2026", excerpt: "BAIC, ARCFOX, Chery QQ and Changan's new Nevo marque are confirmed for Nepal's biggest auto show this August, with Jetour, Lepas and Hongqi said to be close behind.", date: 'Jun 2026', read: '3 min read', icon: 'store',
+                img: WM('2023_Deepal_S07.jpg'),
+                body: ["Nepal's automobile market is bracing for another wave of new entrants at the NAIMA Mobility Expo and NADA Auto Show 2026 this August, with around half a dozen new brands expected to make their local debut.", "Laxmi e-Mobility has already secured distribution rights for BAIC and ARCFOX, both part of China's state-owned BAIC Group, while Changan is preparing to introduce its Nevo sub-brand to Nepal through a compact SUV, the Nevo Q05. Several business groups are still competing for the rights to Jetour, Lepas and Hongqi.", "Most of the newcomers lean toward electric and hybrid powertrains, continuing a run of Chinese-brand launches that has reshaped Nepal's showroom floors over the past two years."]
+            },
+            {
+                id: 'n7', cat: 'Car Awards', catKey: 'car awards', title: "BMW iX3 Named 2026 World Car of the Year — and World Electric Vehicle", excerpt: "A 98-strong global jury handed BMW's first Neue Klasse model a rare double win at the New York International Auto Show, ending a four-year Korean winning streak.", date: 'Apr 2026', read: '3 min read', icon: 'award',
+                img: WM('2021_BMW_iX3_M_Sport_(Rear).jpg'),
+                body: ["At the New York International Auto Show in April, a jury of 98 automotive journalists from 33 countries voted the BMW iX3 both World Car of the Year and World Electric Vehicle, beating finalists that included the Hyundai Palisade and Nissan Leaf.", "It's BMW's first World Car of the Year win since the E90 3 Series took the inaugural-era title back in 2006, and it ends a run in which Korean brands had claimed the top prize four years running with the Kia EV9 and EV3. Every category winner this year — including the Hyundai Ioniq 6 N (Performance), Lucid Gravity (Luxury) and Nio Firefly (Urban Car) — was electric, a first in the awards' 22-year history.", "None of these cars are officially on sale in Nepal yet, but they're closely watched here anyway: BYD, Hyundai and Kia's Nepali distributors routinely reference World Car Award results in their own marketing, and the iX3's Neue Klasse platform is expected to filter down into more attainable BMW EVs over the next few years."]
+            },
+            {
+                id: 'n8', cat: 'Car Awards', catKey: 'car awards', title: "Maruti Suzuki Victoris Wins Indian Car of the Year 2026 — A Nameplate Nepali Buyers Are Watching Closely", excerpt: "The Victoris beat seven finalists including the Hyundai Creta Electric and Tata Harrier EV to take India's biggest automotive award, sponsored by JK Tyre since its inception.", date: 'Jan 2026', read: '3 min read', icon: 'award',
+                img: WM('2022_Maruti_Suzuki_Grand_Vitara_Alpha_Smart_Hybrid_(India)_front_view.png'),
+                body: ["A 19-member jury of Indian automotive journalists awarded the Maruti Suzuki Victoris the 2026 Indian Car of the Year (ICOTY) title at a ceremony in Delhi in December, scoring it well ahead of runner-up Skoda Kylaq. The Mahindra XEV 9e took Green Car of the Year, and the Volkswagen Golf GTI won Premium Car of the Year.", "The Victoris is a Grand-Vitara-sized SUV sold through Maruti's Arena dealerships, offered with a 1.5-litre mild-hybrid, a Toyota-sourced strong-hybrid option, and an unusual underbody-mounted CNG tank. It's built alongside the Grand Vitara, which is already a familiar sight on Nepali roads through CG Motors.", "Nepal doesn't have its own equivalent of ICOTY, so buyers here often use Indian and global awards as a proxy for how a car stacks up before it's even confirmed for local launch — and dealers have started citing the Victoris win in early conversations with customers cross-shopping the Creta and Seltos segment."]
+            },
+            {
+                id: 'n9', cat: 'Buying Tips', catKey: 'buying tips', title: "Car Loans in Nepal, Explained: Down Payments, Rates and the EV Discount", excerpt: "Most banks will finance up to 60 percent of a car's value under Nepal Rastra Bank's lending rules, with EV loans typically priced a few points cheaper than petrol and diesel.", date: 'Jul 2026', read: '4 min read', icon: 'credit-card',
+                img: WM('Nepal_Rastra_Bank_Pokhara.jpg'),
+                body: ["Under Nepal Rastra Bank's loan-to-value rule, banks can finance up to roughly 60 percent of a private vehicle's declared price, meaning buyers need to arrange at least 40 percent as a down payment themselves — a threshold that applies to both petrol/diesel cars and EVs.", "Rates vary widely by bank and scheme. Nabil Bank's fixed auto loan currently runs 9.99 percent for tenures up to five years and 10.49 percent beyond that, while several other lenders price standard hire-purchase loans anywhere from about 11 to 15 percent depending on the base rate and premium they add. EV loans, including dedicated \"Green Drive\" schemes at banks like Global IME, are consistently priced a few percentage points below conventional auto loans, reflecting Nepal Rastra Bank's push to encourage electric vehicle uptake.", "Tenures of up to seven years (and occasionally ten, for select schemes) are available, and lenders generally require the applicant to be a Nepali citizen over 21 with income at least double the proposed monthly instalment. Shopping around matters: the gap between the cheapest and most expensive fixed-rate offers on the market can run four to five percentage points, which adds up fast over a multi-year loan."]
+            },
+            {
+                id: 'n10', cat: 'Buying Tips', catKey: 'buying tips', title: "Buying a Car in 2026? Here's What to Know About Nepal's Embossed Number Plate Rules", excerpt: "New vehicles now require an RFID-embedded embossed plate at registration, while the rollout for older vehicles on the road remains on hold after public pushback.", date: 'Jun 2026', read: '3 min read', icon: 'id-card',
+                img: WM('Nepal_number_plate.jpg'),
+                body: ["Since September 2025, Nepal's Department of Transport Management has required newly purchased vehicles to be registered with an embossed number plate — an aluminium plate with raised, reflective characters and an embedded RFID chip that links the vehicle to a central database. For new buyers this is now simply part of the registration process alongside the bluebook.", "The plan originally called for every vehicle already on the road to be retrofitted too, but that mandate was pared back after public concern over cost, English-only lettering and processing delays; some transport offices were only managing around 100 plates a day against a vehicle fleet well past 5.5 million. For now, retrofitting remains optional for existing owners while the newly-bought mandate stays firmly in place.", "Practically, that means anyone collecting a new car this year should budget a bit of extra time at the Transport Management Office for biometric verification and plate issuance, and should keep the bluebook details on hand since the embossed-plate application form is filled out directly from it. RFID gate infrastructure for automated toll and enforcement reading is still being built out, so for now the chip mainly matters for record-keeping rather than any at-the-roadside functionality."]
+            },
+        ];
+
+        let REVIEWS = [
+            {
+                id: 'r1', cat: 'SUV', catKey: 'suv', title: "Hyundai Creta 2026 Review: Still the Benchmark Compact SUV?", excerpt: "We spent a week with the facelifted Creta in Kathmandu traffic and on a highway run to Bhaktapur to see if it still leads the compact SUV pack.", date: 'Jun 2026', read: '6 min read', icon: 'car', rating: 4.5,
+                img: WM('Hyundai_Creta.jpg'),
+                body: ["The updated Creta keeps everything that made the outgoing car popular — a commanding driving position, a solidly finished cabin, and a ride that shrugs off Kathmandu's rougher patches without much fuss.", "Out on the highway toward Bhaktapur, the 1.5-litre petrol felt composed at a cruise, with wind and road noise kept impressively low for the segment, and the twin 10.25-inch screens make the cabin feel a generation newer than the car it replaces.", "Rear legroom trails some newer rivals, and the options list still doesn't quite match the Seltos on features, but the Creta remains one of the safer recommendations in its class — and a strong electric version is reportedly only months away."]
+            },
+            {
+                id: 'r2', cat: 'EV', catKey: 'ev', title: "Deepal S07 vs BYD Atto 3: Two of Nepal's Favourite Electric SUVs, Compared", excerpt: "Both SUVs are everywhere on Kathmandu's roads. We put them back to back to see which one actually makes more sense for Nepali driving.", date: 'May 2026', read: '8 min read', icon: 'zap', rating: 4.2,
+                img: WM('BYD_Atto_3.jpg'),
+                body: ["On our mixed city-and-highway loop, the Deepal S07 edged ahead of the Atto 3 by roughly 18 km of real-world range, helped by a slightly larger battery and a more efficient motor.", "Cabin quality tilts toward the Atto 3, which still feels the more distinctive of the two inside, with marginally better rear-seat comfort for taller passengers and BYD's now-familiar rotating touchscreen.", "Where the Atto 3 wins outright is price — it undercuts the S07 by a useful margin at the showroom — which keeps it the safer pick for buyers who care more about value than the last few kilometres of range."]
+            },
+            {
+                id: 'r3', cat: 'Hatchback', catKey: 'hatchback', title: "Suzuki Swift 2026 Review: Still Nepal's Easiest First Car?", excerpt: "With sharper styling and a livelier engine tune, we test the latest Swift to see if it remains the default choice for new drivers.", date: 'Mar 2026', read: '5 min read', icon: 'car', rating: 4.0,
+                img: WM('Suzuki-Swift.jpg'),
+                body: ["The current Swift feels noticeably peppier around town thanks to a revised engine tune, and its tight turning circle continues to make it genuinely enjoyable to thread through narrow Kathmandu lanes.", "Fuel economy on our test loop came in at a real-world figure north of 18 km/l — among the best we have recorded in the segment this year, and a meaningful saving given how often fuel prices have moved in 2026.", "Boot space is still tight for a growing family, but as a first car built for city driving and low running costs, the Swift remains hard to beat."]
+            },
+            {
+                id: 'r4', cat: 'Sedan', catKey: 'sedan', title: "BYD Seal First Drive: A Genuinely Premium Electric Sedan for Nepal", excerpt: "We spent a day with BYD's flagship sedan on Kathmandu Valley roads to see how close it gets to its claimed range — and whether it feels worth the price jump.", date: 'Jun 2026', read: '7 min read', icon: 'car', rating: 4.6,
+                img: WM('2022_BYD_Seal.jpg'),
+                body: ["Straight-line performance is an instant highlight — the dual-motor Performance variant pulls away from traffic with an urgency that few sedans anywhere near this price can match.", "Our test loop returned a real-world range within about eight percent of BYD's claimed figure, one of the smaller gaps we've measured on any EV sold in Nepal, and the ride stayed composed even over some genuinely rough valley roads.", "Build quality and cabin tech feel a generation ahead of most rivals in this price band, though rear headroom is tighter than the car's length suggests, and the flagship Performance trim's price puts it firmly in luxury-sedan territory."]
+            },
+            {
+                id: 'r5', cat: 'SUV', catKey: 'suv', title: "Kia Seltos Review: Style Meets Substance in Nepal's Busiest SUV Segment", excerpt: "A close look at Kia's Seltos, from its bold face to how it actually rides on Nepali roads day to day.", date: 'Feb 2026', read: '6 min read', icon: 'car', rating: 4.3,
+                img: WM('Kia_Seltos_2024.jpg'),
+                body: ["The Seltos's bolder front fascia gives it a noticeably stronger road presence than before, and the redesigned dashboard layout inside feels a genuine step up in perceived quality.", "Ride quality strikes a good balance between comfort and control, soaking up potholes without ever feeling floaty through Kathmandu's roundabouts and speed bumps.", "Service costs remain a consideration outside the Valley, where Kia's dealer network is still thinner than some more established rivals, but as an all-rounder the Seltos continues to earn its strong sales numbers."]
+            },
+            {
+                id: 'r6', cat: 'EV', catKey: 'ev', title: "MG Comet EV Review: Still the Cheapest Way Into an Electric Car?", excerpt: "Is the tiny Comet EV a genuinely usable city runabout, or just a novelty? We spent a week finding out.", date: 'Jan 2026', read: '5 min read', icon: 'zap', rating: 3.8,
+                img: WM('MG_Comet_EV_side_view.jpg'),
+                body: ["The Comet's tiny footprint is a genuine asset for parking and squeezing through Kathmandu's narrower streets, in a way that makes far more expensive SUVs feel unwieldy by comparison.", "Real-world range settles around 180 km per charge — comfortable for most in-city commuting, but limiting if you regularly head out of the Valley on weekends.", "At its price point it still undercuts nearly every other EV on sale in Nepal, which keeps it a compelling pick for anyone shopping specifically for a dedicated second city car."]
+            },
+        ];
+
+        let currentTab = 'news';
+        let currentCat = 'all';
+        let currentQuery = '';
+        let visibleCount = 6;
+        const PAGE_SIZE = 6;
+
+        let CATS = {
+            news: [['all', 'All'], ['policy', 'Policy'], ['launch', 'New Launch'], ['market', 'Market'], ['infrastructure', 'Infrastructure'], ['car awards', 'Car Awards'], ['buying tips', 'Buying Tips']],
+            reviews: [['all', 'All'], ['suv', 'SUV'], ['ev', 'EV'], ['sedan', 'Sedan'], ['hatchback', 'Hatchback']]
+        };
+
+        function starIcons(rating) {
+            const full = Math.floor(rating);
+            const half = rating - full >= 0.5;
+            let html = '';
+            for (let i = 0; i < full; i++) html += '<i data-lucide="star" style="fill:var(--gold)"></i>';
+            if (half) html += '<i data-lucide="star-half"></i>';
+            return html;
+        }
+
+        function renderCategoryTabs() {
+            const el = document.getElementById('categoryTabs');
+            el.innerHTML = CATS[currentTab].map(([key, label], idx) => `<button class="filter-tab ${idx === 0 ? 'active' : ''}" onclick="setCategory(this,'${key}')">${label}</button>`).join('');
+        }
+
+        function setTab(tab) {
+            if (tab === currentTab) return;
+            currentTab = tab;
+            currentCat = 'all';
+            currentQuery = '';
+            visibleCount = PAGE_SIZE;
+            document.getElementById('articleSearch').value = '';
+            document.getElementById('tabNewsBtn').classList.toggle('active', tab === 'news');
+            document.getElementById('tabReviewsBtn').classList.toggle('active', tab === 'reviews');
+            document.getElementById('gridHeading').innerHTML = tab === 'news' ? 'Latest <em>News</em>' : 'All <em>Reviews</em>';
+            renderCategoryTabs();
+            renderArticles();
+            lucide.createIcons();
+        }
+
+        function setCategory(el, key) {
+            if (key === currentCat) return;
+            document.querySelectorAll('#categoryTabs .filter-tab').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            currentCat = key;
+            visibleCount = PAGE_SIZE;
+            renderArticles();
+        }
+
+        function dataset() { return currentTab === 'news' ? NEWS : REVIEWS; }
+
+        function matches(item) {
+            const inCat = currentCat === 'all' || item.catKey === currentCat;
+            const q = currentQuery;
+            const inQuery = !q || item.title.toLowerCase().includes(q) || item.excerpt.toLowerCase().includes(q) || item.cat.toLowerCase().includes(q);
+            return inCat && inQuery;
+        }
+
+        function renderArticles() {
+            const full = dataset().filter(matches);
+            const shown = full.slice(0, visibleCount);
+            const grid = document.getElementById('articleGrid');
+            // Animate the swap: fade the grid briefly, then rebuild with staggered card entrances
+            grid.style.transition = 'opacity .12s ease';
+            grid.style.opacity = '0';
+            setTimeout(() => {
+                grid.innerHTML = shown.map((item, idx) => `
+          <div class="news-card" style="animation-delay:${idx * 55}ms" onclick="openArticle('${item.id}')">
+            <div class="news-img">
+              <img src="${item.img}" alt="${item.title.replace(/"/g, '&quot;')}" loading="lazy"
+                   onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'news-placeholder',innerHTML:'<i data-lucide=&quot;${item.icon}&quot;></i>'}));lucide.createIcons();">
+              <span class="cat-pill">${item.cat}</span>
+              ${item.rating ? `<div class="rating-pill"><i data-lucide="star"></i>${item.rating}</div>` : ''}
+            </div>
+            <div class="news-body">
+              <span class="news-category">${item.cat}</span>
+              <h3 class="news-title">${item.title}</h3>
+              <p class="news-excerpt">${item.excerpt}</p>
+              <div class="news-footer">
+                <span class="news-date"><i data-lucide="calendar"></i>${item.date}</span>
+                <span class="news-date"><i data-lucide="clock"></i>${item.read}</span>
+              </div>
+            </div>
+          </div>
+        `).join('');
+                grid.style.opacity = '1';
+                lucide.createIcons();
+
+                document.getElementById('articleNoResults').classList.toggle('show', full.length === 0);
+                document.getElementById('resultCount').textContent = full.length ? `${full.length} ${full.length === 1 ? 'story' : 'stories'} found` : '';
+                const btn = document.getElementById('articleLoadMore');
+                if (visibleCount >= full.length) {
+                    btn.disabled = true;
+                    btn.innerHTML = '<i data-lucide="check"></i>All loaded';
+                    btn.style.display = full.length <= PAGE_SIZE ? 'none' : 'inline-flex';
+                } else {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i data-lucide="refresh-cw"></i>Load more';
+                    btn.style.display = 'inline-flex';
+                }
+                lucide.createIcons();
+            }, 120);
+        }
+
+        function loadMoreArticles() { visibleCount += PAGE_SIZE; renderArticles(); }
+
+        document.getElementById('articleSearch').addEventListener('input', e => {
+            currentQuery = e.target.value.trim().toLowerCase();
+            visibleCount = PAGE_SIZE;
+            renderArticles();
+        });
+
+        function openArticle(id) {
+            const item = [...NEWS, ...REVIEWS].find(x => x.id === id);
+            if (!item) return;
+            document.getElementById('articleModalImg').src = item.img;
+            document.getElementById('articleModalImg').alt = item.title;
+            document.getElementById('articleModalCat').textContent = item.cat;
+            document.getElementById('articleModalTitle').textContent = item.title;
+            document.getElementById('articleModalDate').innerHTML = `<i data-lucide="calendar"></i>${item.date}`;
+            document.getElementById('articleModalRead').innerHTML = `<i data-lucide="clock"></i>${item.read}`;
+            const ratingWrap = document.getElementById('articleModalRatingWrap');
+            if (item.rating) {
+                ratingWrap.style.display = 'flex';
+                ratingWrap.innerHTML = `<span class="stars">${starIcons(item.rating)}</span>&nbsp;${item.rating}/5`;
+            } else {
+                ratingWrap.style.display = 'none';
+            }
+            document.getElementById('articleModalBody').innerHTML = item.body.map(p => `<p>${p}</p>`).join('');
+            document.getElementById('articleModal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+        function closeArticle() {
+            document.getElementById('articleModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function closeArticleOnOverlay(e) { if (e.target === document.getElementById('articleModal')) closeArticle(); }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArticle(); });
+
+        // init — load live content from admin CMS, fallback to embedded data
+        async function boot() {
+            try {
+                const [n, r] = await Promise.all([AVContent.load('news'), AVContent.load('reviews')]);
+                if (n && n.items && n.items.length) {
+                    NEWS = AVContent.published(n.items);
+                    if (n.categories) CATS.news = n.categories;
+                }
+                if (r && r.items && r.items.length) {
+                    REVIEWS = AVContent.published(r.items);
+                    if (r.categories) CATS.reviews = r.categories;
+                }
+            } catch (_) {}
+            renderCategoryTabs();
+            renderArticles();
+        }
+        boot();
+    </script>
+</body>
+
+</html>

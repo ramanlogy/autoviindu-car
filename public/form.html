@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
 <meta charset="UTF-8">
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AutoViindu — Car Listing Form</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --g0:#f5faf6;--g1:#e8f5eb;--g2:#c3e6cb;--g3:#1A6B2A;--g4:#155422;--g5:#0e3b18;
   --gold:#c8a84b;--red:#e53e3e;--blue:#2b6cb0;--purple:#6b46c1;
-  --font-b:'Fraunces',Georgia,serif;--font-d:'DM Sans',system-ui,sans-serif;
+  --font-b: 'Inter', system-ui, sans-serif;--font-d: 'Plus Jakarta Sans', system-ui, sans-serif;
   --text:#1a1a1a;--text-2:#4a5568;--text-3:#718096;
   --border:#e2e8f0;--border-2:#cbd5e0;
   --surface:#ffffff;--surface-2:#f8fafc;--surface-3:#f1f5f9;
@@ -212,6 +219,7 @@ body{font-family:var(--font-d);background:var(--surface-3);color:var(--text);min
 </style>
 </head>
 <body>
+<script src="assets/js/site-chrome.js"></script>
 
 <!-- GATE -->
 <div id="gate">
@@ -227,26 +235,15 @@ body{font-family:var(--font-d);background:var(--surface-3);color:var(--text);min
   </div>
 </div>
 
-<!-- NAV -->
-<nav class="nav">
-  <a href="#" class="nav-logo">
-    <div class="nav-logo-mark">
-      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-    </div>
-    <span class="nav-logo-name">AutoViindu</span>
-    <span class="nav-logo-badge">Admin</span>
-  </a>
-  <div class="nav-right">
-    <span class="draft-badge" id="draft-status" style="display:none">
-      <span class="draft-dot"></span> Draft saved
-    </span>
-    <button class="btn-clear" onclick="clearDraft()">Clear Form</button>
-  </div>
-</nav>
-
 <!-- MAIN -->
 <main class="main">
   <div class="page-hdr">
+    <div class="nav-right" style="margin-left:auto;display:flex;align-items:center;gap:12px;margin-bottom:12px">
+      <span class="draft-badge" id="draft-status" style="display:none">
+        <span class="draft-dot"></span> Draft saved
+      </span>
+      <button class="btn-clear" onclick="clearDraft()">Clear Form</button>
+    </div>
     <h1>Add <span>New Listing</span></h1>
     <p>Fill in all relevant details. Responses are saved to Google Sheets and available as a copyable JS object for cars-db.js.</p>
   </div>
@@ -293,7 +290,7 @@ body{font-family:var(--font-d);background:var(--surface-3);color:var(--text);min
         </div>
         <div class="dv"></div>
         <div class="g3">
-          <div class="f"><label>Body Type <span class="req">*</span></label><select id="n-bodyType"><option value="">Select...</option><option>Hatchback</option><option>Sedan</option><option>SUV</option><option>Crossover</option><option>MPV</option><option>Pickup</option><option>Van</option><option>Coupe</option></select></div>
+          <div class="f"><label>Body Type <span class="req">*</span></label><select id="n-bodyType"><option value="">Select...</option><option>SUV</option><option>Crossover</option><option>Sedan</option><option>Hatchback</option><option>Coupe</option><option>MPV</option><option>Off-road</option><option>Pickup</option><option>Microcar</option><option>Wagon</option><option>Van</option></select></div>
           <div class="f"><label>Manufacture Year <span class="req">*</span></label><input id="n-year" type="number" placeholder="2024" min="2000" max="2030"></div>
           <div class="f"><label>Manufactured / Assembled By</label><input id="n-company" placeholder="e.g. BYD Auto Co., Ltd."></div>
         </div>
@@ -508,7 +505,7 @@ body{font-family:var(--font-d);background:var(--surface-3);color:var(--text);min
         <div class="dv"></div>
         <div class="sec-label">Body & Drivetrain</div>
         <div class="g3">
-          <div class="f"><label>Body Type <span class="req">*</span></label><select id="u-bodyType" onchange="updateProgress()"><option value="">Select...</option><option>Hatchback</option><option>Sedan</option><option>SUV</option><option>Crossover</option><option>MPV</option><option>Pickup</option><option>Van</option></select></div>
+          <div class="f"><label>Body Type <span class="req">*</span></label><select id="u-bodyType" onchange="updateProgress()"><option value="">Select...</option><option>SUV</option><option>Crossover</option><option>Sedan</option><option>Hatchback</option><option>Coupe</option><option>MPV</option><option>Off-road</option><option>Pickup</option><option>Microcar</option><option>Wagon</option><option>Van</option></select></div>
           <div class="f"><label>Powertrain <span class="req">*</span></label><select id="u-powertrain" onchange="updateProgress()"><option value="">Select...</option><option>ICE (Petrol)</option><option>ICE (Diesel)</option><option>EV</option><option>HEV</option><option>PHEV</option></select></div>
           <div class="f"><label>Fuel Type <span class="req">*</span></label><select id="u-fuel" onchange="updateProgress()"><option value="">Select...</option><option>Petrol</option><option>Diesel</option><option>Electric</option><option>Petrol + Electric</option><option>CNG</option></select></div>
         </div>
@@ -555,8 +552,11 @@ body{font-family:var(--font-d);background:var(--surface-3);color:var(--text);min
         <div class="g3">
           <div class="f"><label>Accident History <span class="req">*</span></label><select id="u-acc" onchange="updateProgress()"><option value="">Select...</option><option>No Accident</option><option>Minor (Repaired)</option><option>Moderate</option><option>Major Accident</option></select></div>
           <div class="f"><label>Accident Severity</label><select id="u-accSev"><option value="">N/A</option><option>Minor</option><option>Moderate</option><option>Major</option></select></div>
-          <div class="f"><label>Loan Status</label><select id="u-loan-status"><option value="">Select...</option><option>Clear / No Loan</option><option>Under Finance</option></select></div>
+          <div class="f"><label>Loan Status</label><select id="u-loan-status" onchange="toggleFormFinanceFields(this)"><option value="">Select...</option><option>Clear / No Loan</option><option>Under Finance</option></select></div>
         </div>
+        <div class="g2" id="u-finance-details-fields" style="display:none; margin-top:12px; background:#f0f7f2; border:1px solid #b2d8bc; border-radius:8px; padding:12px 12px 0px;">
+          <div class="f"><label>How many months left? <span class="req">*</span></label><input type="number" id="u-finance-months-left" placeholder="e.g. 24" min="1"></div>
+          <div class="f"><label>Amount yet to be paid (Rs.) <span class="req">*</span></label><input type="text" id="u-finance-amount-remaining" placeholder="e.g. 5,00,000"></div>
         <div class="g3" style="margin-top:12px">
           <div class="f"><label>Insurance Status <span class="req">*</span></label><select id="u-ins-status" onchange="updateProgress()"><option value="">Select...</option><option>Valid — Comprehensive</option><option>Valid — Third-Party</option><option>Expired</option></select></div>
           <div class="f"><label>Insurance Type</label><select id="u-ins-type"><option value="">Select...</option><option>Comprehensive</option><option>Third-Party</option></select></div>
@@ -592,9 +592,9 @@ body{font-family:var(--font-d);background:var(--surface-3);color:var(--text);min
         <div class="sec-label">Market Price Indicator</div>
         <div style="margin-bottom:12px">
           <div class="mpi-row" id="mpi-row">
-            <button class="mpi-btn" data-val="fair" onclick="setMPI('fair')">✓ Fair Price</button>
-            <button class="mpi-btn" data-val="good" onclick="setMPI('good')">⬇ Good Deal</button>
-            <button class="mpi-btn" data-val="high" onclick="setMPI('high')">⬆ High Price</button>
+            <button class="mpi-btn" data-val="fair" onclick="setMPI('fair')"><i data-lucide="check"></i> Fair Price</button>
+            <button class="mpi-btn" data-val="good" onclick="setMPI('good')"><i data-lucide="arrow-down"></i> Good Deal</button>
+            <button class="mpi-btn" data-val="high" onclick="setMPI('high')"><i data-lucide="arrow-up"></i> High Price</button>
           </div>
           <input type="hidden" id="u-mpi" value="">
           <div class="f-hint" style="margin-top:6px">Select the market position of this listing compared to similar vehicles</div>
@@ -725,8 +725,8 @@ body{font-family:var(--font-d);background:var(--surface-3);color:var(--text);min
           <div class="acs-info">
             <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.65;margin-bottom:6px">Inspection Badge</div>
             <div class="acs-badge-row">
-              <button class="acs-badge" data-badge="Verified" onclick="setACSBadge(this)">✓ Verified</button>
-              <button class="acs-badge" data-badge="Premium Verified" onclick="setACSBadge(this)">★ Premium Verified</button>
+              <button class="acs-badge" data-badge="Verified" onclick="setACSBadge(this)"><i data-lucide="check"></i> Verified</button>
+              <button class="acs-badge" data-badge="Premium Verified" onclick="setACSBadge(this)"><i data-lucide="star"></i> Premium Verified</button>
               <button class="acs-badge" data-badge="Standard" onclick="setACSBadge(this)">◎ Standard</button>
             </div>
             <input type="hidden" id="u-acs-badge" value="">
@@ -790,7 +790,7 @@ body{font-family:var(--font-d);background:var(--surface-3);color:var(--text);min
   <div class="modal">
     <div class="modal-hd">
       <h3 id="modal-title">JS Object</h3>
-      <button class="modal-close" onclick="closeModal()">✕</button>
+      <button class="modal-close" onclick="closeModal()"><i data-lucide="x"></i></button>
     </div>
     <div class="modal-body"><textarea id="modal-output" readonly></textarea></div>
     <div class="modal-ft">
@@ -836,7 +836,7 @@ function renderScores(items,containerId){
     <div class="score-item">
       <label>${s.label}</label>
       <div class="score-stars" id="stars-${s.id}">
-        ${[1,2,3,4,5].map(i=>`<button class="star-btn" onclick="setScore('${s.id}',${i})" title="${i} star">★</button>`).join('')}
+        ${[1,2,3,4,5].map(i=>`<button class="star-btn" onclick="setScore('${s.id}',${i})" title="${i} star"><i data-lucide="star"></i></button>`).join('')}
       </div>
       <div class="score-val" id="sval-${s.id}">Not rated</div>
     </div>`).join('');
@@ -945,6 +945,26 @@ function calcUsedEmi(){
     <div class="emi-bd-item"><div class="emi-bd-val">Rs. ${Math.round(total).toLocaleString('en-IN')}</div><div class="emi-bd-lbl">Total Payment</div></div>`;
 }
 
+function toggleFormFinanceFields(select) {
+  const isFinance = select.value === 'Under Finance';
+  const fieldsContainer = document.getElementById('u-finance-details-fields');
+  const monthsInput = document.getElementById('u-finance-months-left');
+  const amountInput = document.getElementById('u-finance-amount-remaining');
+  if (fieldsContainer && monthsInput && amountInput) {
+    if (isFinance) {
+      fieldsContainer.style.display = 'grid';
+      monthsInput.setAttribute('required', 'required');
+      amountInput.setAttribute('required', 'required');
+    } else {
+      fieldsContainer.style.display = 'none';
+      monthsInput.removeAttribute('required');
+      amountInput.removeAttribute('required');
+      monthsInput.value = '';
+      amountInput.value = '';
+    }
+  }
+}
+
 /* ── PROGRESS ── */
 const USED_REQUIRED=['u-brand','u-model','u-variant','u-color','u-bodyType','u-powertrain','u-fuel','u-trans','u-mfgY','u-regNo','u-odo','u-owners','u-svc','u-acc','u-ins-status','u-tax','u-price','u-neg','u-pay','u-loc','u-phone'];
 const SECTION_MAP={overview:['u-brand','u-model','u-bodyType','u-powertrain','u-fuel','u-mfgY','u-regNo'],condition:['u-odo','u-owners','u-svc','u-acc','u-ins-status','u-tax'],pricing:['u-price','u-neg','u-pay'],features:[],inspection:[],media:['u-photos'],contact:['u-loc','u-phone']};
@@ -959,7 +979,7 @@ function updateProgress(){
   dots.innerHTML=secs.map(s=>{
     const reqForSec=SECTION_MAP[s.key]||[];
     const allFilled=reqForSec.every(id=>{const el=document.getElementById(id);return el&&el.value.trim()!==''});
-    return `<span class="ps-dot ${allFilled&&reqForSec.length?'done':''}">${allFilled&&reqForSec.length?'✓ ':''} ${s.label}</span>`;
+    return `<span class="ps-dot ${allFilled&&reqForSec.length?'done':''}">${allFilled&&reqForSec.length?'<i data-lucide="check"></i> ':''} ${s.label}</span>`;
   }).join('');
 }
 
@@ -1023,7 +1043,10 @@ function collectUsed(){
       odometer:g('u-odo')?parseInt(g('u-odo')):null,noOfOwners:g('u-owners'),serviceHistory:g('u-svc'),
       lastServiceDate:g('u-lastSvc'),sunroof:g('u-sunroof'),
       accidentHistory:g('u-acc'),accidentSeverity:g('u-accSev'),
-      loanStatus:g('u-loan-status'),insuranceStatus:g('u-ins-status'),insuranceType:g('u-ins-type'),
+      loanStatus:g('u-loan-status'),
+      financeMonthsLeft: g('u-loan-status') === 'Under Finance' ? g('u-finance-months-left') : null,
+      financeAmountRemaining: g('u-loan-status') === 'Under Finance' ? g('u-finance-amount-remaining') : null,
+      insuranceStatus:g('u-ins-status'),insuranceType:g('u-ins-type'),
       insuranceValidity:g('u-ins'),roadTaxValidity:g('u-tax'),
       billbookAvailability:g('u-bill'),noc:g('u-noc'),documentationStatus:g('u-docStatus'),
       historyChecked:g('u-hist'),
@@ -1163,7 +1186,7 @@ function clearDraft(){
 
 /* ── TOAST ── */
 function toast(msg,type='ok'){
-  const icons={ok:'✓',error:'✗',warning:'!'};
+  const icons={ok:'<i data-lucide="check"></i>',error:'<i data-lucide="x"></i>',warning:'!'};
   const wrap=document.getElementById('toast-wrap');
   const t=document.createElement('div');
   t.className='toast'+(type!=='ok'?' '+type:'');

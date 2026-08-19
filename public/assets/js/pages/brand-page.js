@@ -16,7 +16,7 @@ window.renderBrandPage = function (slug) {
 
   var IC = window.AV_ICONS || {};
   var chevR = IC.chevR || '›';
-  var star = IC.star || '★';
+  var star = IC.star || '<i data-lucide="star"></i>';
 
   var badgeMap = { ev: 'badge-ev', hybrid: 'badge-hybrid', popular: 'badge-pop', new: 'badge-new' };
   var badgeLabelMap = { ev: 'Electric', hybrid: 'Hybrid', popular: 'Popular', new: 'New' };
@@ -87,7 +87,7 @@ window.renderBrandPage = function (slug) {
     '<p style="font-size:14px;line-height:1.7;color:var(--ink-2);margin:0 0 14px">' + brand.overview + '</p>' +
     '<div style="display:flex;flex-wrap:wrap;gap:8px">' +
     brand.strengths.map(function (s) {
-      return '<span style="font-size:11.5px;font-weight:700;padding:4px 10px;background:#fff;border:1px solid ' + brand.color + '33;border-radius:var(--pill);color:' + brand.color + '">✓ ' + s + '</span>';
+      return '<span style="font-size:11.5px;font-weight:700;padding:4px 10px;background:#fff;border:1px solid ' + brand.color + '33;border-radius:var(--pill);color:' + brand.color + '"><i data-lucide="check"></i> ' + s + '</span>';
     }).join('') +
     '</div></div>' +
 
@@ -157,7 +157,7 @@ window.AV.filterBrandCars = function (brandSlug, filter, btn) {
   var badgeMap = { ev: 'badge-ev', hybrid: 'badge-hybrid', popular: 'badge-pop', new: 'badge-new' };
   var badgeLabelMap = { ev: 'Electric', hybrid: 'Hybrid', popular: 'Popular', new: 'New' };
   var IC = window.AV_ICONS || {};
-  var star = IC.star || '★';
+  var star = IC.star || '<i data-lucide="star"></i>';
   grid.innerHTML = cars.map(function (car) {
     return '<div class="car-card" onclick="AV.openDetail(\'' + car.slug + '\')">' +
       '<div class="car-card-img-wrap">' +

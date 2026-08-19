@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <title>Car Servicing & Repairs – AutoViindu</title>
@@ -8,17 +11,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
-      --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
-      --border:#E4E8ED; --bg:#F5F7F9; --bg2:#ECEEF2; --white:#ffffff;
-      --red:#C8271E; --red-l:#FFF0EF;
-      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
-      --sh1:0 1px 4px rgba(0,0,0,.07); --sh2:0 4px 14px rgba(0,0,0,.09); --sh3:0 8px 28px rgba(0,0,0,.11);
-      --ease:0.2s cubic-bezier(0.4,0,0.2,1);
-      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+        :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
     }
     html { scroll-behavior:smooth; }
     body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
@@ -36,37 +59,41 @@
     .bc-inner i { width:12px; height:12px; }
 
     /* HERO */
-    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:52px 0 0; position:relative; overflow:hidden; }
-    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
-    .hero-inner { position:relative; z-index:1; padding-bottom:52px; }
-    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
-    .hero-badge i { width:13px; height:13px; color:var(--green-m); }
-    .hero h1 { font-family:var(--font-d); font-size:clamp(30px,5vw,50px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:14px; }
-    .hero h1 em { font-style:italic; color:var(--green-m); }
-    .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:520px; line-height:1.7; margin-bottom:30px; }
-    .hero-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px; }
-    .hero-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:var(--pill); padding:7px 14px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.8); }
-    .hero-pill i { width:13px; height:13px; color:var(--green-m); }
-    .hero-cta { display:inline-flex; align-items:center; gap:9px; background:#fff; color:var(--green); border-radius:var(--pill); padding:13px 26px; font-size:14.5px; font-weight:800; text-decoration:none; transition:all var(--ease); box-shadow:0 4px 18px rgba(0,0,0,.18); }
-    .hero-cta:hover { background:var(--green-l); transform:translateY(-1px); box-shadow:0 6px 24px rgba(0,0,0,.22); }
-    .hero-cta i { width:16px; height:16px; }
+    .hero {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 0 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--pill); padding: 5px 13px; font-size: 11px; font-weight: 600; color: var(--ink3); letter-spacing: .4px; text-transform: uppercase; margin-bottom: 18px; }
+    .hero-badge i { width: 13px; height: 13px; color: var(--ink3); }
+    .hero h1 { font-family: var(--font-d); font-size: clamp(30px, 4.5vw, 48px); font-weight: 800; color: var(--ink); line-height: 1.15; margin-bottom: 14px; }
+    .hero h1 em { font-style: italic; color: inherit; }
+    .hero-desc { font-size: 15px; color: var(--ink3); max-width: 520px; line-height: 1.75; margin-bottom: 30px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .hero-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--border); border-radius: var(--pill); padding: 7px 14px; font-size: 12px; font-weight: 500; color: var(--ink2); }
+    .hero-pill i { width: 13px; height: 13px; color: var(--g3); }
+    .hero-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--ink); color: #fff; border-radius: var(--r8); padding: 13px 26px; font-size: 14.5px; font-weight: 800; text-decoration: none; transition: all var(--ease); box-shadow: 0 4px 18px rgba(0,0,0,.08); }
+    .hero-cta:hover { background: var(--ink2); transform: translateY(-1px); }
+    .hero-cta i { width: 16px; height: 16px; }
 
-    /* SERVICES STRIP */
-    .services-strip { background:var(--white); border-bottom:1px solid var(--border); }
-    .services-strip-inner { display:grid; grid-template-columns:repeat(2,1fr); }
-    @media(min-width:640px){ .services-strip-inner{ grid-template-columns:repeat(4,1fr); } }
-    .svc-item { display:flex; flex-direction:column; gap:6px; padding:20px 16px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); text-decoration:none; color:inherit; }
-    .svc-item:last-child { border-right:none; }
-    @media(max-width:639px){ .svc-item:nth-child(2){ border-right:none; } .svc-item:nth-child(3){ border-right:1px solid var(--border); } }
-    .svc-item:hover { background:var(--green-l); }
-    .svc-item.cta-strip { background:var(--green-l); }
-    .svc-item.cta-strip:hover { background:#ddf0e1; }
-    .svc-item.cta-strip .svc-icon i { color:var(--green); }
-    .svc-item.cta-strip .svc-name { color:var(--green); }
-    .svc-icon { width:36px; height:36px; display:flex; align-items:center; justify-content:center; }
-    .svc-icon i { width:20px; height:20px; color:var(--ink4); }
-    .svc-name { font-size:12.5px; font-weight:800; color:var(--ink2); line-height:1.3; }
-    .svc-tag { font-size:11px; color:var(--ink5); }
+    /* NAV STRIP */
+    .nav-strip { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:var(--nav); z-index:100; }
+    .nav-strip-inner { display:grid; grid-template-columns:repeat(2,1fr); }
+    @media(min-width:640px){ .nav-strip-inner{ grid-template-columns:repeat(4,1fr); } }
+    .nav-item { display:flex; flex-direction:column; gap:4px; padding:10px 8px; border-right:1px solid var(--border); cursor:pointer; transition:background var(--ease); text-decoration:none; color:inherit; }
+    .nav-item:last-child { border-right:none; }
+    @media(max-width:639px){ .nav-item:nth-child(2){ border-right:none; } .nav-item:nth-child(3){ border-right:1px solid var(--border); } }
+    .nav-item:hover { background:var(--green-l); }
+    .nav-item.nav-cta { background:var(--green-l); }
+    .nav-item.nav-cta:hover { background:#ddf0e1; }
+    .nav-item.nav-cta i, .nav-item.nav-cta svg { color:var(--green); }
+    .nav-item.nav-cta .nav-item-name { color:var(--green); }
+    .nav-item i, .nav-item svg { width:16px; height:16px; color:var(--ink3); margin-bottom:4px; }
+    .nav-item-name { font-size:11px; font-weight:800; color:var(--ink2); line-height:1.3; }
+    .nav-item-sub { font-size:10px; color:var(--ink5); }
 
     /* SECTION */
     .section { padding:64px 0; }
@@ -91,17 +118,22 @@
 
     /* SERVICE CATEGORIES */
     .cat-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:32px; }
-    .cat-tab { padding:8px 16px; border:1.5px solid var(--border); border-radius:var(--pill); font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; transition:all var(--ease); background:var(--white); }
-    .cat-tab.active, .cat-tab:hover { border-color:var(--green); color:var(--green); background:var(--green-l); }
+    .cat-tab { padding:8px 16px; border:1.5px solid var(--border); border-radius:var(--pill); font-size:12px; font-weight:600; color:var(--ink3); cursor:pointer; transition:all var(--ease); background:var(--white); }
+    .cat-tab:hover { border-color:var(--ink4); color:var(--ink); background:var(--bg2); }
+    .cat-tab.active { border-color:var(--g3); color:#fff; background:var(--g3); }
 
     .services-grid { display:grid; grid-template-columns:1fr; gap:8px; }
     @media(min-width:480px){ .services-grid{ grid-template-columns:repeat(2,1fr); } }
     @media(min-width:900px){ .services-grid{ grid-template-columns:repeat(3,1fr); } }
 
     .service-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); padding:16px 16px; display:flex; align-items:flex-start; gap:12px; transition:all var(--ease); }
-    .service-card:hover { border-color:var(--green); box-shadow:var(--sh1); }
-    .service-card-icon { flex-shrink:0; margin-top:1px; }
-    .service-card-icon i { width:18px; height:18px; color:var(--ink5); }
+    .service-card:hover { border-color:var(--ink4); box-shadow:var(--sh1); }
+    .service-card-icon { flex-shrink:0; width:40px; height:40px; border-radius:var(--r10); background:var(--white); border:1.5px solid var(--border); box-shadow:var(--sh1); display:flex; align-items:center; justify-content:center; position:relative; }
+    .service-card-icon i { width:18px; height:18px; color:var(--ink3); }
+    .service-card-icon::after { content:''; position:absolute; bottom:-4px; right:-5px; width:13px; height:13px; border-radius:50%; background:var(--g3); box-shadow:0 0 0 2px var(--white); }
+    .service-card:nth-child(4n+2) .service-card-icon::after { background:var(--gold); }
+    .service-card:nth-child(4n+3) .service-card-icon::after { background:var(--blue); }
+    .service-card:nth-child(4n+4) .service-card-icon::after { background:var(--red); }
     .service-card-name { font-size:13.5px; font-weight:700; color:var(--ink2); margin-bottom:2px; }
     .service-card-desc { font-size:12px; color:var(--ink5); line-height:1.5; }
 
@@ -186,13 +218,13 @@
   </style>
 </head>
 <body>
- <script src="assets/js/components/av-nav.js"></script>
+ <script src="assets/js/site-chrome.js"></script>
 <!-- BREADCRUMB -->
 <nav class="bc">
   <div class="wrap bc-inner">
-    <a href="index.html">Home</a>
+    <a href="/">Home</a>
     <i data-lucide="chevron-right"></i>
-    <a href="services.html">Services</a>
+    <a href="/services">Services</a>
     <i data-lucide="chevron-right"></i>
     <span>Car Servicing &amp; Repairs</span>
   </div>
@@ -211,7 +243,7 @@
         <span class="hero-pill"><i data-lucide="check-circle-2"></i>Authorized &amp; independent garages</span>
         <span class="hero-pill"><i data-lucide="check-circle-2"></i>Transparent estimates before work begins</span>
       </div>
-      <a href="form/maintenanceform.html" class="hero-cta">
+      <a href="/form/maintenanceform" class="hero-cta">
         <i data-lucide="calendar-check"></i>Book a Service
       </a>
     </div>
@@ -219,28 +251,28 @@
 </section>
 
 <!-- STRIP -->
-<div class="services-strip">
+<div class="nav-strip">
   <div class="wrap" style="padding:0">
-    <div class="services-strip-inner">
-      <div class="svc-item" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">
-        <div class="svc-icon"><i data-lucide="repeat-2"></i></div>
-        <div class="svc-name">How It Works</div>
-        <div class="svc-tag">Collect · Fix · Return</div>
+    <div class="nav-strip-inner">
+      <div class="nav-item" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">
+        <i data-lucide="repeat-2"></i>
+        <div class="nav-item-name">How It Works</div>
+        <div class="nav-item-sub">Collect · Fix · Return</div>
       </div>
-      <div class="svc-item" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
-        <div class="svc-icon"><i data-lucide="list"></i></div>
-        <div class="svc-name">What We Service</div>
-        <div class="svc-tag">All job types</div>
+      <div class="nav-item" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+        <i data-lucide="list"></i>
+        <div class="nav-item-name">What We Service</div>
+        <div class="nav-item-sub">All job types</div>
       </div>
-      <div class="svc-item" onclick="document.getElementById('garages').scrollIntoView({behavior:'smooth'})">
-        <div class="svc-icon"><i data-lucide="building-2"></i></div>
-        <div class="svc-name">Workshop Types</div>
-        <div class="svc-tag">Authorized vs independent</div>
+      <div class="nav-item" onclick="document.getElementById('garages').scrollIntoView({behavior:'smooth'})">
+        <i data-lucide="building-2"></i>
+        <div class="nav-item-name">Workshop Types</div>
+        <div class="nav-item-sub">Authorized vs independent</div>
       </div>
-      <a class="svc-item cta-strip" href="form/maintenanceform.html">
-        <div class="svc-icon"><i data-lucide="calendar-check"></i></div>
-        <div class="svc-name">Book a Service</div>
-        <div class="svc-tag">Request pickup &amp; repair →</div>
+      <a class="nav-item nav-cta" href="/form/maintenanceform">
+        <i data-lucide="calendar-check"></i>
+        <div class="nav-item-name">Book a Service</div>
+        <div class="nav-item-sub">Request pickup &amp; repair →</div>
       </a>
     </div>
   </div>
@@ -561,7 +593,7 @@
       <h2>Get your car sorted,<br><em>stress-free</em></h2>
       <p>Tell us what your car needs. We handle pickup, repairs, and drop-off — from start to finish.</p>
       <div class="cta-btns">
-        <a href="book-service.html" class="btn-primary">
+        <a href="/book-service" class="btn-primary">
           <i data-lucide="calendar-check"></i>Book a Service Now
         </a>
         <a href="#how" class="btn-secondary">
@@ -605,7 +637,6 @@
 </script>
 
   <div id="av-toast-wrap"></div>
-  <script src="assets/js/components/av-footer.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

@@ -26,7 +26,7 @@ window.CompareTray = {
       return '<div class="cmp-slot">' +
         '<img src="' + c.images[0] + '" alt="' + c.brand + '">' +
         '<span>' + c.brand + ' ' + c.model + '</span>' +
-        '<span class="rm" onclick="AV.toggleCompare(\'' + slug + '\')">✕</span>' +
+        '<span class="rm" onclick="AV.toggleCompare(\'' + slug + '\')"><i data-lucide="x"></i></span>' +
       '</div>';
     }).join('');
 

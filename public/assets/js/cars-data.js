@@ -614,7 +614,7 @@ window.CARS_DB = [
 //  Source: CarDekho specs + Laxmi Hyundai Nepal pricing (Sept 2024)
 //  Nepal variants: Era | Magna | Sportz | Sportz AMT
 //  Nepal ex-showroom prices: Rs. 32.56L → Rs. 40.56L (Laxmi Intercontinental)
-//  ⚠️  variant.price fields use India ex-showroom (INR) for structural
+//  <i data-lucide="alert-triangle"></i>️  variant.price fields use India ex-showroom (INR) for structural
 //      consistency with existing Swift/other entries. Update to NPR when
 //      you have confirmed Laxmi showroom sheet.
 // ─────────────────────────────────────────────────────────────────────────────

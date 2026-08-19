@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Events & Campaigns – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/content-loader.js"></script>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+        :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-b);
+      background: var(--white);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    ::selection {
+      background: rgba(26, 107, 42, .12);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    @media(min-width:640px) {
+      .wrap {
+        padding: 0 32px;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .wrap {
+        padding: 0 48px;
+      }
+    }
+
+    .bc {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 11px 0;
+    }
+
+    .bc-inner {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: var(--ink4);
+    }
+
+    .bc-inner a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .bc-inner a:hover {
+      text-decoration: underline;
+    }
+
+    .bc-inner i {
+      width: 12px;
+      height: 12px;
+    }
+
+    .hero {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 40px 0 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: var(--pill);
+      padding: 5px 13px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ink3);
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero-badge i {
+      width: 13px;
+      height: 13px;
+      color: var(--ink3);
+    }
+
+    .hero h1 {
+      font-family: var(--font-d);
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: inherit;
+    }
+
+    .hero-desc {
+      font-size: 14.5px;
+      color: var(--ink3);
+      max-width: 560px;
+      line-height: 1.65;
+    }
+
+    /* SEGMENTED TOGGLE */
+    .seg-toggle {
+      display: inline-flex;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--pill);
+      padding: 4px;
+    }
+
+    .seg-btn {
+      padding: 8px 18px;
+      border-radius: var(--pill);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink4);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font-b);
+      transition: all var(--ease);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .seg-btn i {
+      width: 14px;
+      height: 14px;
+    }
+
+    .seg-btn.active {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .filter-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .filter-bar-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      position: relative;
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 260px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 9px 14px 9px 36px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--pill);
+      font-family: var(--font-b);
+      font-size: 13.5px;
+      color: var(--ink2);
+      transition: border-color var(--ease);
+    }
+
+    .search-box input:focus {
+      border-color: var(--green);
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      color: var(--ink5);
+    }
+
+    .tabs-scroll {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      flex: 1;
+    }
+
+    .tabs-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-tab {
+      flex-shrink: 0;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink4);
+      cursor: pointer;
+      border-radius: var(--pill);
+      white-space: nowrap;
+      border: 1.5px solid transparent;
+      transition: all var(--ease);
+      background: none;
+      font-family: var(--font-b);
+    }
+
+    .filter-tab:hover {
+      color: var(--ink2);
+      background: var(--bg);
+    }
+
+    .filter-tab.active {
+      color: var(--white);
+      background: var(--green);
+    }
+
+    .section {
+      padding: 52px 0;
+    }
+
+    .section.alt {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 10px;
+    }
+
+    .eyebrow i {
+      width: 13px;
+      height: 13px;
+    }
+
+    .sec-title {
+      font-family: var(--font-d);
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.12;
+      margin-bottom: 8px;
+    }
+
+    .sec-title em {
+      font-style: italic;
+      color: var(--green);
+    }
+
+    /* FEATURED EVENT */
+    .featured-story {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      border: 1.5px solid var(--border);
+      border-radius: var(--r16);
+      overflow: hidden;
+      background: var(--white);
+      cursor: pointer;
+      transition: box-shadow var(--ease), border-color var(--ease);
+      margin-bottom: 40px;
+    }
+
+    .featured-story:hover {
+      box-shadow: var(--sh2);
+      border-color: var(--green);
+    }
+
+    @media(max-width:800px) {
+      .featured-story {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .featured-story-img {
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, #1a3a22, #2d6b3e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .featured-story-img i {
+      width: 44px;
+      height: 44px;
+      color: rgba(255, 255, 255, .35);
+    }
+
+    .featured-story-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .date-block {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: #fff;
+      border-radius: var(--r10);
+      padding: 8px 12px;
+      text-align: center;
+      box-shadow: var(--sh2);
+      min-width: 58px;
+    }
+
+    .date-block .dnum {
+      font-family: var(--font-d);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .date-block .dmon {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    .featured-story-body {
+      padding: 28px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .featured-story-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--red);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 11px;
+      border-radius: var(--pill);
+      width: fit-content;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    .featured-story-badge.past {
+      background: var(--ink5);
+    }
+
+    .featured-story-body h3 {
+      font-family: var(--font-d);
+      font-size: clamp(19px, 2.6vw, 26px);
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .featured-story-body p {
+      font-size: 14px;
+      color: var(--ink4);
+      line-height: 1.7;
+    }
+
+    .featured-story-footer {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+
+    .featured-story-footer span {
+      font-size: 12px;
+      color: var(--ink5);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    /* EVENTS GRID */
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media(min-width:640px) {
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(min-width:900px) {
+      .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .news-card {
+      border: 1.5px solid var(--border);
+      border-radius: var(--r12);
+      background: var(--white);
+      overflow: hidden;
+      transition: box-shadow var(--ease), transform var(--ease), border-color var(--ease);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .news-card:hover {
+      box-shadow: var(--sh2);
+      transform: translateY(-2px);
+      border-color: var(--green);
+    }
+
+    .news-card.hidden-item {
+      display: none;
+    }
+
+    .news-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--bg);
+      position: relative;
+    }
+
+    .news-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #f0f4f1, #e0ebe2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .news-placeholder i {
+      width: 28px;
+      height: 28px;
+      color: rgba(26, 107, 42, .3);
+    }
+
+    .news-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .status-pill {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: var(--pill);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-transform: uppercase;
+      letter-spacing: .3px;
+    }
+
+    .status-pill.open {
+      background: rgba(26, 107, 42, .92);
+      color: #fff;
+    }
+
+    .status-pill.closing {
+      background: rgba(217, 164, 65, .95);
+      color: #2b2200;
+    }
+
+    .status-pill.done {
+      background: rgba(11, 15, 20, .75);
+      color: #fff;
+    }
+
+    .status-pill i {
+      width: 11px;
+      height: 11px;
+    }
+
+    .mini-date {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 5px 9px;
+      text-align: center;
+      box-shadow: var(--sh1);
+      min-width: 40px;
+    }
+
+    .mini-date .dnum {
+      font-family: var(--font-d);
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .mini-date .dmon {
+      font-size: 8.5px;
+      font-weight: 800;
+      color: var(--green);
+      text-transform: uppercase;
+    }
+
+    .news-body {
+      padding: 16px 18px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .news-category {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .news-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink2);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .news-excerpt {
+      font-size: 13px;
+      color: var(--ink4);
+      line-height: 1.65;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .news-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .news-date {
+      font-size: 11.5px;
+      color: var(--ink5);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--ink5);
+      font-size: 14px;
+      display: none;
+    }
+
+    .no-results.show {
+      display: block;
+    }
+
+    .load-more-wrap {
+      text-align: center;
+      margin-top: 36px;
+    }
+
+    .btn-load-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      color: var(--ink2);
+      font-family: var(--font-b);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 11px 24px;
+      border-radius: var(--r10);
+      cursor: pointer;
+      transition: all var(--ease);
+    }
+
+    .btn-load-more:hover {
+      border-color: var(--green);
+      color: var(--green);
+      background: var(--green-l);
+    }
+
+    .btn-load-more:disabled {
+      opacity: .4;
+      cursor: default;
+    }
+
+    /* ARTICLE MODAL */
+    .article-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 15, 20, .6);
+      z-index: 1000;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 20px;
+      overflow-y: auto;
+    }
+
+    .article-modal-overlay.open {
+      display: flex;
+    }
+
+    .article-modal {
+      background: var(--white);
+      border-radius: var(--r16);
+      max-width: 720px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .3);
+      margin-bottom: 40px;
+    }
+
+    .article-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 10;
+      background: var(--bg);
+      border: none;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--ink2);
+      transition: background var(--ease);
+    }
+
+    .article-modal-close:hover {
+      background: var(--border);
+    }
+
+    .article-modal-img {
+      aspect-ratio: 16/8;
+      background: linear-gradient(135deg, #1a3a22, #2d6b3e);
+      border-radius: var(--r16) var(--r16) 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .article-modal-img i {
+      width: 40px;
+      height: 40px;
+      color: rgba(255, 255, 255, .35);
+    }
+
+    .article-modal-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .article-modal-body {
+      padding: 32px 36px 40px;
+    }
+
+    .article-modal-body .news-category {
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .article-modal-body h2 {
+      font-family: var(--font-d);
+      font-size: clamp(22px, 3.2vw, 30px);
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .article-modal-meta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-modal-meta span {
+      font-size: 12.5px;
+      color: var(--ink5);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .article-modal-body p {
+      font-size: 14.5px;
+      color: var(--ink3);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .modal-cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .btn-register {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green);
+      color: #fff;
+      font-family: var(--font-b);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 22px;
+      border-radius: var(--r10);
+      border: none;
+      cursor: pointer;
+      transition: background var(--ease);
+    }
+
+    .btn-register:hover {
+      background: var(--green-d);
+    }
+
+    .btn-register:disabled {
+      background: var(--ink5);
+      cursor: default;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--ink2);
+      border: 1.5px solid var(--border);
+      font-family: var(--font-b);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 22px;
+      border-radius: var(--r10);
+      cursor: pointer;
+      transition: all var(--ease);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+  </style>
+</head>
+
+<body>
+  <script src="assets/js/site-chrome.js"></script>
+
+  <nav class="bc">
+    <div class="wrap bc-inner">
+      <a href="/">Home</a>
+      <i data-lucide="chevron-right"></i>
+      <a href="/hub">News, Reviews, Events &amp; Videos</a>
+      <i data-lucide="chevron-right"></i>
+      <span>Events &amp; Campaigns</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        
+        <h1>Events &amp; <em>Campaigns</em></h1>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow" id="featuredEyebrow"><i data-lucide="flame"></i>Happening Soon</div>
+      <div id="featuredStorySlot"><!-- populated by JS --></div>
+ <div class="filter-bar">
+    <div class="wrap">
+      <div class="filter-bar-inner">
+        <div class="seg-toggle">
+          <button class="seg-btn active" id="tabUpcomingBtn" onclick="setTab('upcoming')"><i
+              data-lucide="calendar-clock"></i>Upcoming</button>
+          <button class="seg-btn" id="tabPastBtn" onclick="setTab('past')"><i data-lucide="history"></i>Past
+            Events</button>
+        </div>
+        <div class="search-box">
+          <i data-lucide="search"></i>
+          <input type="text" id="articleSearch" placeholder="Search events...">
+        </div>
+        <div class="tabs-scroll" id="categoryTabs"><!-- populated by JS --></div>
+      </div>
+    </div>
+  </div>
+      <div class="sec-header" style="margin-top:44px;">
+        <div>
+          <h2 class="sec-title" id="gridHeading">All <em>Upcoming Events</em></h2>
+        </div>
+      </div>
+      <div class="news-grid" id="articleGrid"><!-- populated by JS --></div>
+      <p class="no-results" id="articleNoResults">No events match your search. Try another keyword or category.</p>
+      <div class="load-more-wrap">
+        <button class="btn-load-more" id="articleLoadMore" onclick="loadMoreArticles()"><i
+            data-lucide="refresh-cw"></i>Load more</button>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- EVENT DETAIL MODAL -->
+  <div class="article-modal-overlay" id="articleModal" onclick="closeArticleOnOverlay(event)">
+    <div class="article-modal">
+      <button class="article-modal-close" onclick="closeArticle()"><i data-lucide="x"></i></button>
+      <div class="article-modal-img" id="articleModalImgWrap"><i data-lucide="image" id="articleModalIcon"></i></div>
+      <div class="article-modal-body">
+        <span class="news-category" id="articleModalCat">Category</span>
+        <h2 id="articleModalTitle">Title</h2>
+        <div class="article-modal-meta">
+          <span id="articleModalDate"><i data-lucide="calendar"></i>—</span>
+          <span id="articleModalVenue"><i data-lucide="map-pin"></i>—</span>
+          <span id="articleModalTime"><i data-lucide="clock"></i>—</span>
+        </div>
+        <div id="articleModalBody"></div>
+        <div class="modal-cta-row" id="articleModalCtaRow"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="av-toast-wrap"></div>
+
+  <script>
+    lucide.createIcons();
+
+    const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+
+    let UPCOMING = [
+      {
+        id: 'e1', cat: 'Auto Expo', catKey: 'expo', title: "18th NADA Auto Show 2026 — The Golden Jubilee Edition", excerpt: "NADA's 50th-anniversary show takes over Bhrikutimandap for six days with 200+ stalls, 23 passenger-vehicle brands, and a new International Business Pavilion.", date: 'Aug 25–30, 2026', dnum: '25', dmon: 'AUG', venue: 'Bhrikutimandap Exhibition Hall, Kathmandu', time: 'Daily, see nada.org.np for hours', icon: 'calendar-days', status: 'open', img: '/assets/images/events/nadashow.jpg',
+        body: ["Nepal Automobiles Dealers' Association marks its 50th anniversary with the 18th NADA Auto Show, running six days at the Bhrikutimandap Exhibition Hall from August 25–30, 2026.", "Organisers expect around 200,000 visitors across the show, with more than 200 stalls covering passenger vehicles from 23 brands, light commercial vehicles from 17 brands, two-wheelers from 13 brands, and financing or insurance desks from 10 providers.", "This Golden Jubilee edition also introduces a new International Business Pavilion, giving overseas companies a dedicated space to connect with Nepali dealers and government stakeholders. Tickets are sold online through Khalti."]
+      },
+      {
+        id: 'e2', cat: 'EV Expo', catKey: 'expo', title: "EVTECH Nepal Expo 2026", excerpt: "A dedicated EV and battery-technology expo bringing manufacturers, charging-infrastructure companies, and policymakers together at Bhrikutimandap.", date: 'Nov 26–28, 2026', dnum: '26', dmon: 'NOV', venue: 'Bhrikutimandap Exhibition Hall, Kathmandu', time: 'Details TBA', icon: 'zap', status: 'open', img: '/assets/images/events/evtech.webp',
+        body: ["EVTECH Nepal Expo 2026 runs November 26–28 at the Bhrikutimandap Exhibition Hall, focused specifically on electric mobility rather than the general vehicle lineup of Nepal's bigger auto shows.", "The expo is built for EV manufacturers, battery-technology suppliers, and charging-infrastructure companies to showcase their latest products alongside policymakers and investors exploring Nepal's EV market.", "Full exhibitor lists and visitor timings had not been published at the time of writing — check back closer to the date for confirmed details."]
+      },
+    ];
+
+    let PAST = [
+      {
+        id: 'p1', cat: 'Auto Expo', catKey: 'expo', title: "NAIMA Nepal Mobility Expo 2026", excerpt: "A six-day mobility expo at Bhrikutimandap featuring 55+ brands, 51 stalls, and over 40 new vehicle launches — visitor numbers passed 150,000 by day five.", date: 'Aug 11–16, 2026', dnum: '11', dmon: 'AUG', venue: 'Bhrikutimandap Exhibition Hall, Kathmandu', time: 'Concluded', icon: 'zap', status: 'done',
+        body: ["NAIMA's second Nepal Mobility Expo ran six days at Bhrikutimandap from August 11–16, 2026, with 51 stalls hosting more than 55 automobile and mobility brands.", "Organisers reported over 40 new vehicle and product launches during the show, and visitor numbers passed 150,000 by the fifth day — ahead of the organisers' own targets.", "The expo positioned itself around a broader \"mobility ecosystem\" theme, covering EVs, hybrids, two-wheelers, and charging infrastructure rather than passenger cars alone."]
+      },
+      {
+        id: 'p2', cat: 'Auto Expo', catKey: 'expo', title: "Chitwan Auto Show 2026", excerpt: "Bharatpur's regional auto show ran five days with 75 stalls of cars, jeeps, motorcycles and scooters, reportedly closing over NPR 1 billion in business.", date: 'Apr 30 – May 4, 2026', dnum: '30', dmon: 'APR', venue: 'Chitwan Exhibition Centre, Bharatpur', time: 'Concluded', icon: 'calendar-days', status: 'done',
+        body: ["The Chitwan Automobile Dealers Association and Chitwan Automobiles Association jointly ran this year's Chitwan Auto Show from April 30 to May 4 at the Chitwan Exhibition Centre in Bharatpur.", "The five-day show hosted 75 stalls covering cars, jeeps, motorcycles, and scooters for the Chitwan and wider Terai market.", "Local coverage reported over NPR 1 billion in show-period transactions, making it one of the larger regional auto shows outside the Kathmandu Valley."]
+      },
+      {
+        id: 'p3', cat: 'Auto Expo', catKey: 'expo', title: "NADA Presents WADA Auto Show 2026", excerpt: "The second edition of Pokhara's own NADA-backed auto show ran at Lakeside, alongside a vintage car and robotics display.", date: 'Mar 25–29, 2026', dnum: '25', dmon: 'MAR', venue: 'Lakeside Chowk, Pokhara', time: 'Concluded', icon: 'calendar-days', status: 'done',
+        body: ["NADA's western-region show, WADA Auto Show, returned to Pokhara for its second edition from March 25–29, 2026, at a dedicated ground near Talbarahi Chowk, Lakeside.", "The show covered small, medium, and heavy vehicles alongside tyres, batteries, lubricants, and components from regional dealers.", "Organisers paired the vehicle lineup with a vintage car display and a robotics showcase as an added draw for Pokhara's festival-season foot traffic."]
+      },
+    ];
+
+    let currentTab = 'upcoming';
+    let currentCat = 'all';
+    let currentQuery = '';
+    let visibleCount = 6;
+    const PAGE_SIZE = 6;
+
+    let CATS = {
+      upcoming: [['all', 'All'], ['expo', 'Auto Expo'], ['launch', 'Launch Event'], ['community', 'Community Drive']],
+      past: [['all', 'All'], ['expo', 'Auto Expo'], ['launch', 'Launch Event'], ['community', 'Community Drive']]
+    };
+
+    function statusPill(item) {
+      if (item.status === 'done') return `<span class="status-pill done"><i data-lucide="check"></i>Concluded</span>`;
+      if (item.status === 'closing') return `<span class="status-pill closing"><i data-lucide="alarm-clock"></i>Filling fast</span>`;
+      return `<span class="status-pill open"><i data-lucide="circle-check"></i>Open</span>`;
+    }
+
+    function renderCategoryTabs() {
+      const el = document.getElementById('categoryTabs');
+      el.innerHTML = CATS[currentTab].map(([key, label], idx) => `<button class="filter-tab ${idx === 0 ? 'active' : ''}" onclick="setCategory(this,'${key}')">${label}</button>`).join('');
+    }
+
+    function setTab(tab) {
+      currentTab = tab;
+      currentCat = 'all';
+      currentQuery = '';
+      visibleCount = PAGE_SIZE;
+      document.getElementById('articleSearch').value = '';
+      document.getElementById('tabUpcomingBtn').classList.toggle('active', tab === 'upcoming');
+      document.getElementById('tabPastBtn').classList.toggle('active', tab === 'past');
+      document.getElementById('gridHeading').innerHTML = tab === 'upcoming' ? 'All <em>Upcoming Events</em>' : 'Event <em>Recaps</em>';
+      document.getElementById('featuredEyebrow').innerHTML = tab === 'upcoming' ? '<i data-lucide="flame"></i>Happening Soon' : '<i data-lucide="history"></i>Recently Concluded';
+      renderCategoryTabs();
+      renderFeatured();
+      renderArticles();
+      lucide.createIcons();
+    }
+
+    function setCategory(el, key) {
+      document.querySelectorAll('#categoryTabs .filter-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      currentCat = key;
+      visibleCount = PAGE_SIZE;
+      renderArticles();
+    }
+
+    function dataset() { return currentTab === 'upcoming' ? UPCOMING : PAST; }
+
+    function matches(item) {
+      const inCat = currentCat === 'all' || item.catKey === currentCat;
+      const q = currentQuery;
+      const inQuery = !q || item.title.toLowerCase().includes(q) || item.excerpt.toLowerCase().includes(q) || item.cat.toLowerCase().includes(q) || item.venue.toLowerCase().includes(q);
+      return inCat && inQuery;
+    }
+
+    function renderFeatured() {
+      const list = dataset();
+      const featured = list[0];
+      const slot = document.getElementById('featuredStorySlot');
+      slot.innerHTML = `
+        <div class="featured-story" onclick="openArticle('${featured.id}')">
+          <div class="featured-story-img">
+            ${featured.img ? `<img src="${featured.img}" alt="${featured.title}" loading="lazy">` : `<i data-lucide="${featured.icon}"></i>`}
+            <div class="date-block"><div class="dnum">${featured.dnum}</div><div class="dmon">${featured.dmon}</div></div>
+          </div>
+          <div class="featured-story-body">
+            <span class="featured-story-badge ${currentTab === 'past' ? 'past' : ''}">${currentTab === 'upcoming' ? 'Featured Event' : 'Recap'}</span>
+            <h3>${featured.title}</h3>
+            <p>${featured.excerpt}</p>
+            <div class="featured-story-footer">
+              <span><i data-lucide="calendar" style="width:13px;height:13px"></i>${featured.date}</span>
+              <span><i data-lucide="map-pin" style="width:13px;height:13px"></i>${featured.venue}</span>
+              <span class="read-link">${currentTab === 'upcoming' ? 'View details' : 'View recap'} <i data-lucide="arrow-right" style="width:13px;height:13px"></i></span>
+            </div>
+          </div>
+        </div>`;
+      lucide.createIcons();
+    }
+
+    function renderArticles() {
+      const list = dataset().slice(1).filter(matches);
+      const shown = list.slice(0, visibleCount);
+      const grid = document.getElementById('articleGrid');
+      grid.innerHTML = shown.map(item => `
+        <div class="news-card" onclick="openArticle('${item.id}')">
+          <div class="news-img">
+            ${item.img ? `<img src="${item.img}" alt="${item.title}" loading="lazy">` : `<div class="news-placeholder"><i data-lucide="${item.icon}"></i></div>`}
+            <div class="mini-date"><div class="dnum">${item.dnum}</div><div class="dmon">${item.dmon}</div></div>
+            ${statusPill(item)}
+          </div>
+          <div class="news-body">
+            <span class="news-category">${item.cat}</span>
+            <h3 class="news-title">${item.title}</h3>
+            <p class="news-excerpt">${item.excerpt}</p>
+            <div class="news-footer">
+              <span class="news-date"><i data-lucide="map-pin"></i>${item.venue.split(',')[0]}</span>
+              <span class="news-date"><i data-lucide="calendar"></i>${item.date}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+
+      document.getElementById('articleNoResults').classList.toggle('show', list.length === 0);
+      const btn = document.getElementById('articleLoadMore');
+      if (visibleCount >= list.length) {
+        btn.disabled = true;
+        btn.innerHTML = '<i data-lucide="check"></i>All loaded';
+        btn.style.display = list.length <= PAGE_SIZE ? 'none' : 'inline-flex';
+      } else {
+        btn.disabled = false;
+        btn.innerHTML = '<i data-lucide="refresh-cw"></i>Load more';
+        btn.style.display = 'inline-flex';
+      }
+      lucide.createIcons();
+    }
+
+    function loadMoreArticles() { visibleCount += PAGE_SIZE; renderArticles(); }
+
+    document.getElementById('articleSearch').addEventListener('input', e => {
+      currentQuery = e.target.value.trim().toLowerCase();
+      visibleCount = PAGE_SIZE;
+      renderArticles();
+    });
+
+    function openArticle(id) {
+      const item = [...UPCOMING, ...PAST].find(x => x.id === id);
+      if (!item) return;
+      document.getElementById('articleModalIcon').setAttribute('data-lucide', item.icon);
+      document.getElementById('articleModalCat').textContent = item.cat;
+      document.getElementById('articleModalTitle').textContent = item.title;
+      document.getElementById('articleModalDate').innerHTML = `<i data-lucide="calendar"></i>${item.date}`;
+      document.getElementById('articleModalVenue').innerHTML = `<i data-lucide="map-pin"></i>${item.venue}`;
+      document.getElementById('articleModalTime').innerHTML = `<i data-lucide="clock"></i>${item.time}`;
+      document.getElementById('articleModalBody').innerHTML = item.body.map(p => `<p>${p}</p>`).join('');
+
+      const ctaRow = document.getElementById('articleModalCtaRow');
+      if (item.status === 'done') {
+        ctaRow.innerHTML = `<button class="btn-register" disabled><i data-lucide="check"></i>Event concluded</button><button class="btn-secondary" onclick="showToast('Gallery coming soon')"><i data-lucide="image"></i>View photo recap</button>`;
+      } else {
+        ctaRow.innerHTML = `<button class="btn-register" onclick="showToast('Registered! We\\'ll send details by SMS and email.')"><i data-lucide="ticket"></i>${item.catKey === 'testdrive' ? 'Book a slot' : 'Register now'}</button><button class="btn-secondary" onclick="showToast('Added to your calendar')"><i data-lucide="calendar-plus"></i>Add to calendar</button>`;
+      }
+
+      document.getElementById('articleModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+    function closeArticle() {
+      document.getElementById('articleModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function closeArticleOnOverlay(e) { if (e.target === document.getElementById('articleModal')) closeArticle(); }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArticle(); });
+
+    function showToast(msg) {
+      const wrap = document.getElementById('av-toast-wrap');
+      const t = document.createElement('div');
+      t.textContent = msg;
+      t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 20px;border-radius:var(--pill);font-size:13.5px;font-weight:600;box-shadow:var(--sh2);z-index:2000;';
+      wrap.appendChild(t);
+      setTimeout(() => t.remove(), 2600);
+    }
+
+    async function boot() {
+      try {
+        const data = await AVContent.load('events');
+        if (data) {
+          if (data.upcoming && data.upcoming.length) UPCOMING = AVContent.published(data.upcoming);
+          if (data.past && data.past.length) PAST = AVContent.published(data.past);
+          if (data.categories) CATS = data.categories;
+        }
+      } catch (_) {}
+      renderCategoryTabs();
+      renderFeatured();
+      renderArticles();
+
+      const articleId = new URLSearchParams(window.location.search).get('article');
+      if (articleId) openArticle(articleId);
+    }
+    boot();
+  </script>
+</body>
+
+</html>

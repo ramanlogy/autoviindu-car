@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Browse Car Brands in Nepal — AutoViindu</title>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+        :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-b);
+      background-color: var(--bg);
+      color: var(--ink2);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding-top: 72px; /* Nav spacing */
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Page Hero — Clean, utility-focused light layout */
+    .page-hero {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      color: var(--ink);
+      padding: 56px 0 44px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--ink4);
+      margin-bottom: 12px;
+    }
+
+    .breadcrumb a {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color var(--ease);
+    }
+
+    .breadcrumb a:hover {
+      color: var(--ink);
+    }
+
+    .bc-sep {
+      opacity: 0.4;
+    }
+
+    .page-title {
+      font-family: var(--font-d);
+      font-size: clamp(28px, 4.5vw, 42px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--ink);
+    }
+
+    .page-subtitle {
+      font-size: 15px;
+      color: var(--ink3);
+      margin-top: 8px;
+      max-width: 600px;
+    }
+
+    /* Search Bar */
+    .search-section {
+      margin-bottom: 32px;
+    }
+
+    .search-wrapper {
+      position: relative;
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .search-wrapper i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink4);
+      pointer-events: none;
+    }
+
+    .brand-search {
+      width: 100%;
+      padding: 14px 16px 14px 48px;
+      font-size: 15px;
+      font-family: var(--font-b);
+      border: 1px solid var(--border);
+      border-radius: var(--r12);
+      background-color: var(--white);
+      color: var(--ink);
+      outline: none;
+      transition: all var(--ease);
+      box-shadow: var(--sh1);
+    }
+
+    .brand-search:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(26, 107, 42, 0.1), var(--sh2);
+    }
+
+    /* Brand Grid */
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+
+    .brand-card {
+      background-color: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r16);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--ease);
+      box-shadow: var(--sh1);
+      position: relative;
+    }
+
+    .brand-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sh3);
+      border-color: rgba(26, 107, 42, 0.2);
+    }
+
+    .brand-card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .brand-logo-container {
+      width: 64px;
+      height: 64px;
+      background-color: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: var(--r12);
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .brand-logo-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-title-wrap {
+      flex: 1;
+    }
+
+    .brand-name {
+      font-family: var(--font-d);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .brand-origin {
+      font-size: 13px;
+      color: var(--ink4);
+    }
+
+    .brand-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      font-size: 12px;
+      background-color: var(--bg);
+      border-radius: var(--r8);
+      padding: 10px 12px;
+      margin-bottom: 16px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-label {
+      color: var(--ink4);
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .meta-value {
+      font-weight: 600;
+      color: var(--ink2);
+    }
+
+    .brand-description {
+      font-size: 13.5px;
+      color: var(--ink3);
+      margin-bottom: 20px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand-action-btn {
+      width: 100%;
+      background-color: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--green);
+      font-family: var(--font-d);
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: var(--r10);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all var(--ease);
+    }
+
+    .brand-card:hover .brand-action-btn {
+      background-color: var(--green);
+      border-color: var(--green);
+      color: var(--white);
+    }
+
+    .brand-action-btn i {
+      transition: transform var(--ease);
+    }
+
+    .brand-action-btn:hover i {
+      transform: translateX(4px);
+    }
+
+    /* No results style */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 48px;
+      background-color: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r16);
+      color: var(--ink4);
+    }
+
+    .no-results i {
+      margin-bottom: 12px;
+      color: var(--ink5);
+    }
+
+    @media (max-width: 768px) {
+      .brands-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- SHARED HEADER NAV SCRIPTS -->
+  <script src="assets/js/site-chrome.js"></script>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a onclick="if(window.AV) AV.goTo('home')">Home</a>
+        <span class="bc-sep">/</span>
+        <span style="color: rgba(255,255,255,0.8)">Brands</span>
+      </div>
+      <h1 class="page-title">Browse by Brand</h1>
+      <p class="page-subtitle">Discover automobile companies in Nepal, their legacy, authorized importers, and explore their available model lineups.</p>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- Search -->
+    <div class="search-section">
+      <div class="search-wrapper">
+        <i data-lucide="search" size="18"></i>
+        <input type="text" id="brand-search-input" class="brand-search" placeholder="Search by brand name or importer..." oninput="filterBrands()">
+      </div>
+    </div>
+
+    <!-- Brands Grid -->
+    <div class="brands-grid" id="brands-grid">
+      <!-- Generated via JS for flexibility and consistency -->
+    </div>
+  </main>
+
+  <!-- SHARED FOOTER SCRIPT -->
+  <script src="assets/js/components/av-footer.js"></script>
+
+  <!-- BRANDS DATA & RENDER LOGIC -->
+  <script>
+    const LOGO_BASE = 'https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/';
+    
+    const BRANDS_LIST = [
+      {
+        name: 'Hyundai',
+        logo: LOGO_BASE + 'hyundai.png',
+        founded: 1967,
+        enteredNepal: 2009,
+        importer: 'Laxmi Intercontinental Pvt. Ltd.',
+        origin: 'South Korea',
+        overview: 'Hyundai is a dominant force in Nepal\'s passenger vehicle market, known for premium aesthetics and feature-rich layouts. Laxmi Intercontinental has set up local assembly plans and a strong network of over 25 service points.'
+      },
+      {
+        name: 'Suzuki',
+        logo: LOGO_BASE + 'suzuki.png',
+        founded: 1909,
+        enteredNepal: 1982,
+        importer: 'CG Motocorp',
+        origin: 'Japan',
+        overview: 'Suzuki represents affordable, high-efficiency, and reliable motoring in Nepal. CG Motocorp offers the widest service network reaching even remote areas, making it the highest volume brand for hatchbacks.'
+      },
+      {
+        name: 'Toyota',
+        logo: LOGO_BASE + 'toyota.png',
+        founded: 1937,
+        enteredNepal: 1967,
+        importer: 'United Traders Syndicate (UTS)',
+        origin: 'Japan',
+        overview: 'Toyota has a decades-long legacy in Nepal for unbeatable durability, rough-terrain performance, and excellent resale value. It remains the absolute premier choice for commercial fleets and SUV enthusiasts.'
+      },
+      {
+        name: 'BYD',
+        logo: LOGO_BASE + 'byd.png',
+        founded: 1995,
+        enteredNepal: 2007,
+        importer: 'Cimex Inc. Pvt. Ltd.',
+        origin: 'China',
+        overview: 'BYD is the absolute market leader in Nepal\'s premium EV segment. Supported by its revolutionary Blade Battery technology, it has expanded rapidly with the Atto 3 and Dolphin models.'
+      },
+      {
+        name: 'Kia',
+        logo: LOGO_BASE + 'kia.png',
+        founded: 1944,
+        enteredNepal: 1994,
+        importer: 'Continental Associates Pvt. Ltd.',
+        origin: 'South Korea',
+        overview: 'Kia delivers bold design, dynamic drivability, and exceptional build quality. The Seltos and Sportage models are among the top-selling premium compact SUVs on Nepal\'s roads.'
+      },
+      {
+        name: 'MG',
+        logo: LOGO_BASE + 'mg-motor.png',
+        founded: 1924,
+        enteredNepal: 2017,
+        importer: 'Paramount Motors Pvt. Ltd.',
+        origin: 'China (British heritage)',
+        overview: 'MG combines British heritage with modern smart capabilities. Offering value-driven pricing for highly optioned crossover SUVs and electric models, MG is highly popular in Kathmandu.'
+      },
+      {
+        name: 'Honda',
+        logo: LOGO_BASE + 'honda.png',
+        founded: 1948,
+        enteredNepal: 2002,
+        importer: 'Syakar Trading Company Pvt. Ltd.',
+        origin: 'Japan',
+        overview: 'Honda is synonymous with refined engineering, smooth i-VTEC engines, and solid brand equity. The City and Amaze models lead sales in the premium city sedan segment.'
+      },
+      {
+        name: 'Tata',
+        logo: LOGO_BASE + 'tata.png',
+        founded: 1945,
+        enteredNepal: 1982,
+        importer: 'Sipradi Trading Pvt. Ltd.',
+        origin: 'India',
+        overview: 'Tata Motors is a household name in Nepal, holding a massive share of the EV segment with Nexon EV and Tiago EV, as well as commercial trucks. Sipradi Trading provides unmatched service response.'
+      },
+      {
+        name: 'Deepal',
+        logo: LOGO_BASE + 'changan.png',
+        founded: 2008,
+        enteredNepal: 2023,
+        importer: 'MAW Vriddhi Autocorp',
+        origin: 'China',
+        overview: 'Deepal is a premium sub-brand of Changan Motors focused on high-tech smart EVs. Featuring cutting-edge cabin design and stylish sportbacks, it has gained quick traction in Nepal.'
+      },
+      {
+        name: 'Ford',
+        logo: LOGO_BASE + 'ford.png',
+        founded: 1903,
+        enteredNepal: 2010,
+        importer: 'GO Ford (Hansraj Hulaschand & Co.)',
+        origin: 'United States',
+        overview: 'Ford is highly regarded in Nepal for rugged build quality and driving dynamics, especially with the iconic Ranger pickup trucks and Everest off-roaders.'
+      },
+      {
+        name: 'Volkswagen',
+        logo: LOGO_BASE + 'volkswagen.png',
+        founded: 1937,
+        enteredNepal: 2010,
+        importer: 'Pooja International Nepal Pvt. Ltd.',
+        origin: 'Germany',
+        overview: 'Volkswagen brings German engineering standards, high safety ratings, and premium cabin refinement to Nepali drivers. The Polo and Taigun are core favorites.'
+      },
+      {
+        name: 'Mahindra',
+        logo: LOGO_BASE + 'mahindra.png',
+        founded: 1945,
+        enteredNepal: 1991,
+        importer: 'Agni Incorporated Pvt. Ltd.',
+        origin: 'India',
+        overview: 'Mahindra is the king of rugged off-roading in rural Nepal. The Scorpio and Bolero utility lines are crucial transportation pillars throughout the hilly terrains.'
+      },
+      {
+        name: 'Nissan',
+        logo: LOGO_BASE + 'nissan.png',
+        founded: 1933,
+        enteredNepal: 2009,
+        importer: 'Pioneer Moto Corp Pvt. Ltd.',
+        origin: 'Japan',
+        overview: 'Nissan delivers innovation that excites. Best known in Nepal for its SUVs, pickups, and the popular Magnite compact crossover which offers high ground clearance.'
+      },
+      {
+        name: 'Geely',
+        logo: LOGO_BASE + 'geely.png',
+        founded: 1986,
+        enteredNepal: 2022,
+        importer: 'CG Motors',
+        origin: 'China',
+        overview: 'Geely brings global-standard design, heavily influenced by its Volvo ownership. Under CG Motors, they focus on bringing modern, safe hybrid and electric crossovers.'
+      },
+      {
+        name: 'Chery',
+        logo: LOGO_BASE + 'chery.png',
+        founded: 1997,
+        enteredNepal: 2021,
+        importer: 'SPG Automobiles Pvt. Ltd.',
+        origin: 'China',
+        overview: 'Chery offers highly modern Tiggo series crossovers in Nepal, incorporating futuristic interiors, reliable warranty packages, and advanced driver assistance systems.'
+      },
+      {
+        name: 'Proton',
+        logo: LOGO_BASE + 'proton.png',
+        founded: 1983,
+        enteredNepal: 2020,
+        importer: 'Jagdamba Motors',
+        origin: 'Malaysia',
+        overview: 'Proton brings Malaysian engineering standard, backed by Geely design parameters. The Saga sedan and X70 SUV are their key models in Nepal.'
+      },
+      {
+        name: 'Omoda',
+        logo: LOGO_BASE + 'omoda.png',
+        founded: 2022,
+        enteredNepal: 2023,
+        importer: 'SPG Automobiles Pvt. Ltd.',
+        origin: 'China',
+        overview: 'Omoda, a stylish sub-brand of Chery, focuses on futuristic electric and hybrid crossover SUVs. The Omoda E5 is rapidly gaining popularity for its avant-garde design.'
+      },
+      {
+        name: 'Jeep',
+        logo: LOGO_BASE + 'jeep.png',
+        founded: 1941,
+        enteredNepal: 2018,
+        importer: 'MAW Life',
+        origin: 'United States',
+        overview: 'Jeep offers iconic 4x4 capability and rugged luxury. The Jeep Compass and Wrangler are highly desired lifestyle vehicles among Nepali off-road enthusiasts.'
+      },
+      {
+        name: 'GWM',
+        logo: LOGO_BASE + 'gwm.png',
+        founded: 1984,
+        enteredNepal: 2021,
+        importer: 'VG Impex Pvt. Ltd.',
+        origin: 'China',
+        overview: 'Great Wall Motors (GWM) brings robust SUVs and EVs under the Haval and ORA sub-brands. The Haval H6 and ORA Good Cat offer distinct styling and value.'
+      },
+      {
+        name: 'Renault',
+        logo: LOGO_BASE + 'renault.png',
+        founded: 1899,
+        enteredNepal: 2016,
+        importer: 'Advanced Automobiles Pvt. Ltd.',
+        origin: 'France',
+        overview: 'Renault provides European flair with practical and economical city cars. The Kwid and Kiger are major hits among budget-conscious first-time buyers.'
+      },
+      {
+        name: 'Skoda',
+        logo: LOGO_BASE + 'skoda.png',
+        founded: 1895,
+        enteredNepal: 2008,
+        importer: 'MAW Enterprises',
+        origin: 'Czech Republic',
+        overview: 'Skoda offers solid European build quality, spacious interiors, and driving dynamics. The Kushaq and Slavia models represent premium choices in their segments.'
+      },
+      {
+        name: 'Neta',
+        logo: LOGO_BASE + 'neta.png',
+        founded: 2014,
+        enteredNepal: 2022,
+        importer: 'CG Motors',
+        origin: 'China',
+        overview: 'Neta is a fast-growing pure EV brand offering smart, tech-forward urban mobility solutions. The Neta V has been particularly popular for budget-conscious electric driving.'
+      }
+    ];
+
+    function renderBrands(list) {
+      const container = document.getElementById('brands-grid');
+      if (!list.length) {
+        container.innerHTML = `
+          <div class="no-results">
+            <i data-lucide="alert-circle" size="32"></i>
+            <p style="font-weight:600; font-size:16px;">No brands found</p>
+            <p style="font-size:13px; margin-top:4px;">Try searching for a different name or importer.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      container.innerHTML = list.map(b => `
+        <div class="brand-card">
+          <div>
+            <div class="brand-card-header">
+              <div class="brand-logo-container">
+                <img src="${b.logo}" alt="${b.name} logo" onerror="this.src='assets/logo/favicon_io/favicon-32x32.png'">
+              </div>
+              <div class="brand-title-wrap">
+                <h3 class="brand-name">${b.name}</h3>
+                <span class="brand-origin">${b.origin}</span>
+              </div>
+            </div>
+
+            <div class="brand-meta">
+              <div class="meta-item">
+                <span class="meta-label">Founded</span>
+                <span class="meta-value">${b.founded}</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Entered Nepal</span>
+                <span class="meta-value">${b.enteredNepal}</span>
+              </div>
+            </div>
+
+            <p class="brand-description">${b.overview}</p>
+          </div>
+
+          <div>
+            <div style="margin-bottom: 12px; font-size: 12px; color: var(--ink4);">
+              <strong>Importer:</strong> <span style="color: var(--ink3);">${b.importer}</span>
+            </div>
+            <button class="brand-action-btn" onclick="exploreBrand('${b.name}')">
+              Explore ${b.name} Cars
+              <i data-lucide="arrow-right" size="14"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+      
+      lucide.createIcons();
+    }
+
+    function exploreBrand(name) {
+      if (window.AV && window.AV.goTo) {
+        window.AV.goTo('cars', { brand: name });
+      } else {
+        // Fallback if component is still booting
+        sessionStorage.setItem('av-nav-opts', JSON.stringify({ page: 'cars', opts: { brand: name } }));
+        window.location.href = 'index.html#cars';
+      }
+    }
+
+    function filterBrands() {
+      const q = document.getElementById('brand-search-input').value.toLowerCase().trim();
+      const filtered = BRANDS_LIST.filter(b => 
+        b.name.toLowerCase().includes(q) || 
+        b.importer.toLowerCase().includes(q) ||
+        b.origin.toLowerCase().includes(q)
+      );
+      renderBrands(filtered);
+    }
+
+    // Initial render
+    document.addEventListener('DOMContentLoaded', () => {
+      renderBrands(BRANDS_LIST);
+      lucide.createIcons();
+    });
+  </script>
+</body>
+
+</html>

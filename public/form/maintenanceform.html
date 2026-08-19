@@ -1,356 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/logo/favicon_io/favicon-16x16.png">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <title>Book a Service – AutoViindu</title>
+  <link rel="stylesheet" href="../assets/css/site-chrome.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Book a Service – AutoViindu</title>
+
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --green:#1A6B2A; --green-d:#145520; --green-l:#EEF7F0; --green-m:#4CAF6A;
+      --green:#1A6B2A; --green-d:#0F4A1C; --green-m:#2E8F45; --green-l:#EEF7F0; --green-l2:#E1F1E4;
+      --grad: linear-gradient(135deg,#1A6B2A,#2E8F45);
       --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
-      --border:#E4E8ED; --bg:#F5F7F9; --bg2:#ECEEF2; --white:#ffffff;
+      --border:#E4E8ED; --border-d:#D6DCE2; --bg:#F5F8F6; --bg2:#ECF3EE; --white:#ffffff;
       --red:#C8271E; --red-l:#FFF0EF;
-      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r20:20px; --pill:999px;
-      --sh1:0 1px 4px rgba(0,0,0,.07); --sh2:0 4px 14px rgba(0,0,0,.09); --sh3:0 8px 28px rgba(0,0,0,.11);
+      --blue:#3B82F6; --blue-l:#E9F1FF;
+      --amber:#D98A16; --amber-l:#FFF4E2;
+      --pink:#E24E82; --pink-l:#FFEDF3;
+      --r8:8px; --r10:10px; --r12:12px; --r16:16px; --r18:18px; --r20:20px; --r24:24px; --pill:999px;
+      --sh1:0 1px 4px rgba(11,42,18,.06); --sh2:0 6px 20px rgba(11,42,18,.08); --sh3:0 14px 40px rgba(11,42,18,.12);
       --ease:0.2s cubic-bezier(0.4,0,0.2,1);
-      --font-d:'Fraunces',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+      --font-d: 'Plus Jakarta Sans', system-ui, sans-serif; --font-b: 'Inter', system-ui, sans-serif;
     }
     html { scroll-behavior:smooth; }
     body { font-family:var(--font-b); background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; min-height:100vh; }
     ::selection { background:rgba(26,107,42,.15); }
     :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
-    .wrap { max-width:1120px; margin:0 auto; padding:0 18px; }
-    @media(min-width:640px){ .wrap{ padding:0 32px; } }
+    img, svg { display:block; }
+    .wrap { max-width:1180px; margin:0 auto; padding:0 16px; }
+    @media(min-width:640px){ .wrap{ padding:0 28px; } }
     @media(min-width:1024px){ .wrap{ padding:0 40px; } }
 
     /* BREADCRUMB */
     .bc { background:var(--white); border-bottom:1px solid var(--border); padding:11px 0; }
-    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
+    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); flex-wrap:wrap; }
     .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
     .bc-inner a:hover { text-decoration:underline; }
     .bc-inner i { width:12px; height:12px; }
 
-    /* PAGE HERO */
-    .page-hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:44px 0 40px; position:relative; overflow:hidden; }
-    .page-hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
-    .page-hero-inner { position:relative; z-index:1; }
-    .back-link { display:inline-flex; align-items:center; gap:7px; color:rgba(255,255,255,.6); font-size:13px; font-weight:600; text-decoration:none; margin-bottom:20px; transition:color var(--ease); }
-    .back-link:hover { color:#fff; }
-    .back-link i { width:14px; height:14px; }
-    .page-hero h1 { font-family:var(--font-d); font-size:clamp(26px,4vw,40px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:8px; }
-    .page-hero h1 em { font-style:italic; color:var(--green-m); }
-    .page-hero p { font-size:14.5px; color:rgba(255,255,255,.6); max-width:500px; line-height:1.7; }
+    /* PAGE */
+    .page { padding:24px 0 64px; }
 
-    /* TRUST BAR */
-    .trust-bar { background:var(--white); border-bottom:1px solid var(--border); }
-    .trust-bar-inner { display:flex; flex-wrap:wrap; gap:0; }
-    .trust-item { display:flex; align-items:center; gap:8px; padding:14px 20px; font-size:12.5px; font-weight:600; color:var(--ink3); border-right:1px solid var(--border); }
-    .trust-item:last-child { border-right:none; }
-    .trust-item i { width:14px; height:14px; color:var(--green); }
+    /* HERO STRIP */
+    .hero-strip { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:22px; }
+    .hero-left { display:flex; align-items:flex-start; gap:16px; }
+    .hero-avatar { width:64px; height:64px; border-radius:var(--r18); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; }
+    .hero-avatar i { width:32px; height:32px; color:var(--green); }
+    .hero-avatar::before, .hero-avatar::after { content:''; position:absolute; border-radius:50%; background:var(--green-m); opacity:.55; }
+    .hero-avatar::before { width:6px; height:6px; top:-4px; left:-6px; }
+    .hero-avatar::after { width:9px; height:9px; top:10px; left:-13px; opacity:.3; }
+    .hero-text h1 { font-family:var(--font-d); font-size:clamp(22px,3.4vw,32px); font-weight:800; color:var(--ink); line-height:1.18; }
+    .hero-text h1 span { display:block; color:var(--green); }
+    .hero-text p { font-size:14px; color:var(--ink4); margin-top:6px; }
+    .safe-badge { display:flex; align-items:center; gap:10px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r14,14px); padding:12px 16px; max-width:260px; box-shadow:var(--sh1); }
+    .safe-badge .lock { width:32px; height:32px; border-radius:var(--r10); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .safe-badge .lock i { width:16px; height:16px; color:var(--green); }
+    .safe-badge strong { display:block; font-size:12.5px; font-weight:700; color:var(--ink2); }
+    .safe-badge span { font-size:11.5px; color:var(--ink4); line-height:1.4; }
 
     /* MAIN LAYOUT */
-    .form-layout { padding:40px 0 72px; }
-    .form-layout-inner { display:grid; grid-template-columns:1fr; gap:28px; align-items:start; }
-    @media(min-width:900px){ .form-layout-inner{ grid-template-columns:1fr 340px; } }
+    .form-layout-inner { display:grid; grid-template-columns:1fr; gap:20px; align-items:start; }
+    @media(min-width:960px){ .form-layout-inner{ grid-template-columns:1fr 320px; gap:24px; } }
 
     /* FORM CARD */
-    .form-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); overflow:hidden; }
-    .form-header { background:linear-gradient(135deg,var(--green),#145520); padding:28px 28px 24px; }
-    .form-header h2 { font-family:var(--font-d); font-size:22px; font-weight:800; color:#fff; margin-bottom:6px; }
-    .form-header p { font-size:13px; color:rgba(255,255,255,.65); }
-    .form-body { padding:28px; }
-    .form-grid { display:grid; grid-template-columns:1fr; gap:16px; }
-    @media(min-width:540px){ .form-grid{ grid-template-columns:1fr 1fr; } }
+    .form-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); box-shadow:var(--sh2); padding:22px 18px 26px; }
+    @media(min-width:640px){ .form-wrap{ padding:30px 32px 32px; } }
+
+    .step { padding:22px 0; border-top:1px solid var(--border); }
+    .step:first-child { padding-top:0; border-top:none; }
+    .step-head { display:flex; align-items:flex-start; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+    .step-head-toggle { margin-left:auto; margin-top:2px; }
+    @media(max-width:480px){ .step-head-toggle{ margin-left:38px; margin-top:8px; } }
+    .step-num { width:26px; height:26px; border-radius:50%; background:var(--grad); color:#fff; font-family:var(--font-d); font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 3px 8px rgba(26,107,42,.3); }
+    .step-title { font-family:var(--font-d); font-size:16.5px; font-weight:800; color:var(--ink2); }
+    .step-sub { font-size:12.5px; color:var(--ink4); margin-top:2px; }
+    .step-body { padding-left:38px; }
+    @media(max-width:420px){ .step-body{ padding-left:0; } }
+
+    /* ICON CARD GRID (step 1) */
+    .icon-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    @media(min-width:480px){ .icon-grid{ grid-template-columns:repeat(3,1fr); } }
+    @media(min-width:960px) and (max-width:1180px){ .icon-grid{ grid-template-columns:repeat(3,1fr); } }
+    .icon-card { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; text-align:center; border:1.5px solid var(--border); border-radius:var(--r12); padding:16px 8px; cursor:pointer; transition:all var(--ease); background:var(--white); }
+    .icon-card input { position:absolute; opacity:0; pointer-events:none; }
+    .icon-card i.ico { width:22px; height:22px; color:var(--ink4); transition:color var(--ease); }
+    .icon-card span { font-size:12.5px; font-weight:700; color:var(--ink3); line-height:1.3; }
+    .icon-card:hover { border-color:var(--green-m); }
+    .icon-card:has(input:checked) { border-color:var(--green); background:var(--green-l); box-shadow:0 0 0 3px rgba(26,107,42,.08); }
+    .icon-card:has(input:checked) i.ico, .icon-card:has(input:checked) span { color:var(--green); }
+    .icon-card .check { position:absolute; top:7px; right:7px; width:16px; height:16px; border-radius:50%; background:var(--green); display:none; align-items:center; justify-content:center; }
+    .icon-card .check i { width:10px; height:10px; color:#fff; }
+    .icon-card:has(input:checked) .check { display:flex; }
+
+    /* FORM FIELDS */
+    .form-grid { display:grid; grid-template-columns:1fr; gap:14px; }
+    @media(min-width:560px){ .form-grid.cols-3{ grid-template-columns:repeat(3,1fr); } .form-grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
     .form-group { display:flex; flex-direction:column; gap:6px; }
     .form-group.full { grid-column:1/-1; }
-    .form-label { font-size:12px; font-weight:700; color:var(--ink3); text-transform:uppercase; letter-spacing:.4px; }
+    .form-label { font-size:12.5px; font-weight:700; color:var(--ink3); }
     .form-label span { color:var(--red); }
+    .input-icon { position:relative; }
+    .input-icon i { position:absolute; left:12px; top:50%; transform:translateY(-50%); width:15px; height:15px; color:var(--ink5); pointer-events:none; }
+    .input-icon .form-input, .input-icon .form-select { padding-left:36px; }
     .form-input, .form-select, .form-textarea {
-      width:100%; padding:11px 13px; border:1.5px solid var(--border); border-radius:var(--r8);
+      width:100%; padding:11px 13px; border:1.5px solid var(--border); border-radius:var(--r10);
       font-family:var(--font-b); font-size:14px; color:var(--ink); background:var(--white);
-      transition:border-color var(--ease); outline:none;
+      transition:border-color var(--ease), box-shadow var(--ease); outline:none;
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green); }
-    .form-textarea { resize:vertical; min-height:90px; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(26,107,42,.09); }
+    .form-input::placeholder, .form-textarea::placeholder { color:var(--ink5); }
+    .form-textarea { resize:vertical; min-height:96px; }
     .form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
-    .radio-group { display:flex; flex-wrap:wrap; gap:8px; }
-    .radio-option { display:flex; align-items:center; gap:7px; background:var(--bg); border:1.5px solid var(--border); border-radius:var(--r8); padding:9px 13px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:all var(--ease); }
-    .radio-option input { display:none; }
-    .radio-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); }
-    .form-sec-title { font-size:13px; font-weight:800; color:var(--ink2); padding:16px 0 4px; border-top:1px solid var(--border); margin-top:4px; display:flex; align-items:center; gap:8px; }
-    .form-sec-title i { width:15px; height:15px; color:var(--green); }
-    .form-sec-title.first { border-top:none; padding-top:0; margin-top:0; }
-    .form-submit { width:100%; padding:14px; background:var(--green); color:#fff; border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:background var(--ease); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:8px; }
-    .form-submit:hover { background:var(--green-d); }
+
+    .pill-group { display:flex; flex-wrap:wrap; gap:8px; }
+    .pill-option { position:relative; display:flex; align-items:center; gap:7px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r10); padding:9px 14px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:all var(--ease); }
+    .pill-option input { position:absolute; opacity:0; pointer-events:none; }
+    .pill-option i { width:14px; height:14px; color:var(--ink5); transition:color var(--ease); }
+    .pill-option:hover { border-color:var(--green-m); }
+    .pill-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); }
+    .pill-option:has(input:checked) i { color:var(--green); }
+
+    .toggle-group { display:inline-flex; border:1.5px solid var(--border); border-radius:var(--r10); overflow:hidden; }
+    .toggle-option { position:relative; padding:9px 22px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; background:var(--white); border-right:1.5px solid var(--border); transition:all var(--ease); }
+    .toggle-option:last-child { border-right:none; }
+    .toggle-option input { position:absolute; opacity:0; pointer-events:none; }
+    .toggle-option:has(input:checked) { background:var(--green-l); color:var(--green); }
+
+    .field-hint { font-size:11.5px; color:var(--ink5); margin-top:8px; display:flex; align-items:flex-start; gap:6px; }
+    .field-hint i { width:13px; height:13px; color:var(--green-m); flex-shrink:0; margin-top:1px; }
+    .char-count { text-align:right; font-size:11px; color:var(--ink5); margin-top:4px; }
+
+    /* PICKUP CARDS */
+    .pickup-grid { display:grid; grid-template-columns:1fr; gap:10px; margin-bottom:14px; }
+    @media(min-width:520px){ .pickup-grid{ grid-template-columns:1fr 1fr; } }
+    .pickup-card { position:relative; display:flex; align-items:flex-start; gap:12px; border:1.5px solid var(--border); border-radius:var(--r12); padding:14px; cursor:pointer; transition:all var(--ease); }
+    .pickup-card input { position:absolute; opacity:0; pointer-events:none; }
+    .pickup-card .p-icon { width:42px; height:42px; border-radius:var(--r10); background:var(--bg2); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .pickup-card .p-icon i { width:20px; height:20px; color:var(--green); }
+    .pickup-card strong { display:block; font-size:13.5px; font-weight:700; color:var(--ink2); margin-bottom:2px; }
+    .pickup-card p { font-size:12px; color:var(--ink4); line-height:1.4; }
+    .pickup-card:hover { border-color:var(--green-m); }
+    .pickup-card:has(input:checked) { border-color:var(--green); background:var(--green-l); box-shadow:0 0 0 3px rgba(26,107,42,.08); }
+    .pickup-card .p-check { position:absolute; top:10px; right:10px; width:18px; height:18px; border-radius:50%; background:var(--green); display:none; align-items:center; justify-content:center; }
+    .pickup-card .p-check i { width:11px; height:11px; color:#fff; }
+    .pickup-card:has(input:checked) .p-check { display:flex; }
+
+    /* UPLOAD */
+    .upload-box { display:flex; align-items:center; gap:12px; border:1.5px dashed var(--border-d); border-radius:var(--r12); padding:14px; background:var(--bg); }
+    .upload-box .u-icon { width:38px; height:38px; border-radius:var(--r10); background:var(--white); border:1.5px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .upload-box .u-icon i { width:18px; height:18px; color:var(--ink4); }
+    .upload-box .u-text { flex:1; min-width:0; }
+    .upload-box .u-text strong { display:block; font-size:13px; font-weight:700; color:var(--ink2); }
+    .upload-box .u-text span { font-size:11.5px; color:var(--ink4); }
+    .upload-btn { flex-shrink:0; display:inline-flex; align-items:center; gap:6px; padding:8px 14px; border:1.5px solid var(--green); color:var(--green); background:var(--white); border-radius:var(--pill); font-size:12.5px; font-weight:700; cursor:pointer; transition:all var(--ease); white-space:nowrap; }
+    .upload-btn:hover { background:var(--green-l); }
+    .upload-btn i { width:13px; height:13px; }
+    .upload-filename { font-size:11.5px; color:var(--green); font-weight:600; margin-top:6px; }
+
+    /* SUBMIT */
+    .agree-row { display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--ink4); cursor:pointer; margin-top:22px; }
+    .agree-row input { margin-top:2px; flex-shrink:0; accent-color:var(--green); width:15px; height:15px; }
+    .agree-row a { color:var(--green); font-weight:600; text-decoration:none; }
+    .agree-row a:hover { text-decoration:underline; }
+    .form-submit { width:100%; padding:15px; background:var(--grad); color:#fff; border:none; border-radius:var(--pill); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:transform var(--ease), box-shadow var(--ease); margin-top:20px; display:flex; align-items:center; justify-content:center; gap:9px; box-shadow:0 8px 22px rgba(26,107,42,.28); }
+    .form-submit:hover { transform:translateY(-1px); box-shadow:0 10px 26px rgba(26,107,42,.34); }
     .form-submit i { width:16px; height:16px; }
-    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:10px; }
+    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:12px; display:flex; align-items:center; justify-content:center; gap:6px; }
+    .form-note i { width:12px; height:12px; color:var(--green-m); }
 
     /* SIDEBAR */
     .sidebar { display:flex; flex-direction:column; gap:16px; }
-    .side-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r16); overflow:hidden; }
-    .side-card-head { padding:16px 18px 12px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:9px; }
-    .side-card-head i { width:15px; height:15px; color:var(--green); }
-    .side-card-title { font-size:13px; font-weight:800; color:var(--ink2); }
-    .side-card-body { padding:16px 18px; }
-    .side-list { display:flex; flex-direction:column; gap:8px; }
-    .side-row { display:flex; align-items:flex-start; gap:9px; font-size:13px; color:var(--ink3); line-height:1.5; }
-    .side-row i { width:14px; height:14px; color:var(--green); flex-shrink:0; margin-top:2px; }
-    .contact-item { display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--border); font-size:13px; color:var(--ink3); }
+    .side-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r16); overflow:hidden; box-shadow:var(--sh1); }
+    .side-card-head { padding:16px 18px 4px; }
+    .side-card-title { font-family:var(--font-d); font-size:15px; font-weight:800; color:var(--ink2); }
+    .side-card-body { padding:14px 18px 18px; }
+    .step-list { display:flex; flex-direction:column; }
+    .step-list-item { display:flex; align-items:center; gap:12px; padding:9px 0; }
+    .step-list-item .s-icon { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .step-list-item .s-icon i { width:15px; height:15px; }
+    .step-list-item p { font-size:13px; color:var(--ink3); font-weight:500; line-height:1.4; }
+    .s1 { background:var(--green-l); } .s1 i { color:var(--green); }
+    .s2 { background:var(--green-l2); } .s2 i { color:var(--green-m); }
+    .s3 { background:var(--blue-l); } .s3 i { color:var(--blue); }
+    .s4 { background:var(--amber-l); } .s4 i { color:var(--amber); }
+    .s5 { background:var(--pink-l); } .s5 i { color:var(--pink); }
+
+    .contact-item { display:flex; align-items:center; gap:11px; padding:11px 0; border-bottom:1px solid var(--border); }
     .contact-item:last-child { border-bottom:none; padding-bottom:0; }
-    .contact-item i { width:15px; height:15px; color:var(--green); flex-shrink:0; }
-    .contact-item strong { color:var(--ink2); display:block; font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.3px; margin-bottom:1px; }
+    .contact-item .c-icon { width:34px; height:34px; border-radius:var(--r10); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .contact-item .c-icon i { width:16px; height:16px; color:var(--green); }
+    .contact-item strong { display:block; font-size:11.5px; font-weight:700; color:var(--ink4); text-transform:uppercase; letter-spacing:.3px; margin-bottom:1px; }
+    .contact-item span { font-size:13.5px; color:var(--ink2); font-weight:600; }
+
+    .why-list { display:flex; flex-direction:column; gap:14px; }
+    .why-item { display:flex; align-items:flex-start; gap:11px; }
+    .why-item .w-icon { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .why-item .w-icon i { width:15px; height:15px; }
+    .why-item strong { display:block; font-size:13px; font-weight:700; color:var(--ink2); }
+    .why-item span { font-size:12px; color:var(--ink4); }
+    .side-card.why { background:var(--bg2); border-color:var(--border); }
 
     /* SUCCESS STATE */
-    .success-state { display:none; text-align:center; padding:48px 28px; }
+    .success-state { display:none; text-align:center; padding:48px 20px; }
     .success-state.shown { display:flex; flex-direction:column; align-items:center; gap:16px; }
     .success-icon { width:64px; height:64px; background:var(--green-l); border-radius:50%; display:flex; align-items:center; justify-content:center; }
     .success-icon i { width:32px; height:32px; color:var(--green); }
     .success-title { font-family:var(--font-d); font-size:26px; font-weight:800; color:var(--ink); }
     .success-desc { font-size:14px; color:var(--ink4); max-width:380px; line-height:1.7; }
-    .success-back { display:inline-flex; align-items:center; gap:7px; padding:11px 22px; background:var(--green); color:#fff; border-radius:var(--pill); font-size:13.5px; font-weight:700; text-decoration:none; transition:background var(--ease); margin-top:8px; }
-    .success-back:hover { background:var(--green-d); }
+    .success-back { display:inline-flex; align-items:center; gap:7px; padding:11px 22px; background:var(--grad); color:#fff; border-radius:var(--pill); font-size:13.5px; font-weight:700; text-decoration:none; transition:transform var(--ease); margin-top:8px; }
+    .success-back:hover { transform:translateY(-1px); }
 
     @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
     .fade-up { opacity:0; animation:fadeUp .5s ease forwards; }
-    .d1{animation-delay:.05s} .d2{animation-delay:.12s} .d3{animation-delay:.19s}
+    .d1{animation-delay:.04s} .d2{animation-delay:.1s} .d3{animation-delay:.16s}
+    @media (prefers-reduced-motion: reduce) { .fade-up { animation:none; opacity:1; } html { scroll-behavior:auto; } }
   </style>
 </head>
 <body>
-  <script src="../assets/js/components/av-nav.js"></script>
+  <script src="../assets/js/site-chrome.js"></script>
 
   <!-- BREADCRUMB -->
   <nav class="bc">
     <div class="wrap bc-inner">
-      <a href="../index.html">Home</a>
+      <a href="/">Home</a>
       <i data-lucide="chevron-right"></i>
-      <a href="../services.html">Services</a>
+      <a href="/services">Services</a>
       <i data-lucide="chevron-right"></i>
-      <a href="../maintenance-repairs.html">Car Servicing &amp; Repairs</a>
+      <a href="/maintenance-repairs">Car Servicing &amp; Repairs</a>
       <i data-lucide="chevron-right"></i>
       <span>Book a Service</span>
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="wrap page-hero-inner">
-      <a href="../maintenance-repairs.html" class="back-link fade-up d1">
-        <i data-lucide="arrow-left"></i>Back to Car Servicing &amp; Repairs
-      </a>
-      <h1 class="fade-up d2">Book a <em>Service</em></h1>
-      <p class="fade-up d3">Fill in your details and we will confirm your booking and pickup time within one business day.</p>
-    </div>
-  </section>
-
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="wrap" style="padding:0">
-      <div class="trust-bar-inner">
-        <div class="trust-item"><i data-lucide="clock"></i>Confirmed within 1 business day</div>
-        <div class="trust-item"><i data-lucide="shield-check"></i>Estimate before any work begins</div>
-        <div class="trust-item"><i data-lucide="truck"></i>Collect &amp; return service available</div>
-        <div class="trust-item"><i data-lucide="lock"></i>Your details are never shared</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MAIN CONTENT -->
-  <div class="form-layout">
+  <div class="page">
     <div class="wrap">
+
+      <!-- HERO STRIP -->
+      <div class="hero-strip fade-up d1">
+        <div class="hero-left">
+          <div class="hero-avatar"><i data-lucide="car"></i></div>
+          <div class="hero-text">
+            <h1>Let's get your car the <span>care it deserves</span></h1>
+            <p>Quick, easy and hassle-free service booking.</p>
+          </div>
+        </div>
+        <div class="safe-badge">
+          <div class="lock"><i data-lucide="lock"></i></div>
+          <div>
+            <strong>Your details are safe</strong>
+            <span>We only use this to arrange your service.</span>
+          </div>
+        </div>
+      </div>
+
       <div class="form-layout-inner">
 
         <!-- FORM -->
-        <div class="form-wrap fade-up d1">
-          <div class="form-header">
-            <h2>Service Booking Request</h2>
-            <p>All fields marked * are required. Your details are never shared with third parties.</p>
-          </div>
-          <div class="form-body">
-            <form id="booking-form" onsubmit="handleSubmit(event)">
+        <div class="form-wrap fade-up d2">
+          <form id="booking-form" onsubmit="handleSubmit(event)">
 
-              <!-- Workshop preference -->
-              <div class="form-sec-title first"><i data-lucide="building-2"></i>Workshop Preference</div>
-              <div style="margin-top:12px">
-                <div class="form-label">Type of Workshop <span>*</span></div>
-                <div class="radio-group" style="margin-top:6px">
-                  <label class="radio-option"><input type="radio" name="workshop" value="authorized" checked>Authorized Service Center</label>
-                  <label class="radio-option"><input type="radio" name="workshop" value="independent">Independent Garage</label>
-                  <label class="radio-option"><input type="radio" name="workshop" value="unsure">Not Sure — Advise Me</label>
+            <!-- Step 1: What can we help you with -->
+            <div class="step">
+              <div class="step-head">
+                <div class="step-num">1</div>
+                <div>
+                  <div class="step-title">What can we help you with?</div>
+                  <div class="step-sub">Choose the main issue or service you need.</div>
                 </div>
               </div>
-              <div style="margin-top:14px">
-                <div class="form-label">Service Category <span>*</span></div>
-                <div class="radio-group" style="margin-top:6px;flex-wrap:wrap">
-                  <label class="radio-option"><input type="radio" name="category" value="general" checked>General Servicing</label>
-                  <label class="radio-option"><input type="radio" name="category" value="mechanic">Mechanical Repairs</label>
-                  <label class="radio-option"><input type="radio" name="category" value="electrical">Electrical &amp; Battery</label>
-                  <label class="radio-option"><input type="radio" name="category" value="ac">AC &amp; Cooling</label>
-                  <label class="radio-option"><input type="radio" name="category" value="ev-hybrid">EV / Hybrid System</label>
+              <div class="step-body">
+                <div class="icon-grid">
+                  <label class="icon-card">
+                    <input type="radio" name="category" value="general" checked>
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="wrench" class="ico"></i>
+                    <span>General Service</span>
+                  </label>
+                  <label class="icon-card">
+                    <input type="radio" name="category" value="mechanical">
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="cog" class="ico"></i>
+                    <span>Mechanical</span>
+                  </label>
+                  <label class="icon-card">
+                    <input type="radio" name="category" value="electrical">
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="battery-charging" class="ico"></i>
+                    <span>Electrical / Battery</span>
+                  </label>
+                  <label class="icon-card">
+                    <input type="radio" name="category" value="ac">
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="snowflake" class="ico"></i>
+                    <span>AC / Cooling</span>
+                  </label>
+                  <label class="icon-card">
+                    <input type="radio" name="category" value="ev-hybrid">
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="zap" class="ico"></i>
+                    <span>EV / Hybrid</span>
+                  </label>
+                  <label class="icon-card">
+                    <input type="radio" name="category" value="unsure">
+                    <div class="check"><i data-lucide="check"></i></div>
+                    <i data-lucide="help-circle" class="ico"></i>
+                    <span>Not sure</span>
+                  </label>
                 </div>
               </div>
-
-              <!-- Vehicle details -->
-              <div class="form-sec-title" style="margin-top:20px"><i data-lucide="car"></i>Vehicle Details</div>
-              <div class="form-grid" style="margin-top:12px">
-                <div class="form-group">
-                  <label class="form-label">Brand <span>*</span></label>
-                  <input class="form-input" type="text" placeholder="e.g. Maruti Suzuki, MG, Toyota" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Model <span>*</span></label>
-                  <input class="form-input" type="text" placeholder="e.g. Baleno, ZS EV, Prius" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Year <span>*</span></label>
-                  <select class="form-select" required>
-                    <option value="">Select Year</option>
-                    <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
-                    <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
-                    <option>2017</option><option>2016</option><option>2015</option><option>2014</option>
-                    <option>2013 or older</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Fuel Type <span>*</span></label>
-                  <div class="radio-group">
-                    <label class="radio-option"><input type="radio" name="fuel" value="petrol" checked>Petrol</label>
-                    <label class="radio-option"><input type="radio" name="fuel" value="diesel">Diesel</label>
-                    <label class="radio-option"><input type="radio" name="fuel" value="ev">EV</label>
-                    <label class="radio-option"><input type="radio" name="fuel" value="hybrid">Hybrid</label>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Was this vehicle in a major accident?</label>
-                  <div class="radio-group">
-                    <label class="radio-option"><input type="radio" name="accident" value="no" checked>No</label>
-                    <label class="radio-option"><input type="radio" name="accident" value="yes">Yes</label>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Vehicle Photo (for accident cases)</label>
-                  <input class="form-input" type="file" accept="image/*,.pdf" style="padding:8px 13px;font-size:13px">
-                </div>
-              </div>
-
-              <!-- Personal details -->
-              <div class="form-sec-title" style="margin-top:20px"><i data-lucide="user"></i>Your Details</div>
-              <div class="form-grid" style="margin-top:12px">
-                <div class="form-group">
-                  <label class="form-label">Full Name <span>*</span></label>
-                  <input class="form-input" type="text" placeholder="Your full name" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Mobile Number <span>*</span></label>
-                  <input class="form-input" type="tel" placeholder="+977 98XXXXXXXX" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Alternative Number</label>
-                  <input class="form-input" type="tel" placeholder="Optional">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Email Address</label>
-                  <input class="form-input" type="email" placeholder="you@example.com">
-                </div>
-                <div class="form-group full">
-                  <label class="form-label">Your Address <span>*</span></label>
-                  <input class="form-input" type="text" placeholder="Full address for pickup / drop-off" required>
-                </div>
-                <div class="form-group full">
-                  <label class="form-label">What needs to be done? <span>*</span></label>
-                  <textarea class="form-textarea" placeholder="Describe the issue or service needed — symptoms, warning lights, sounds, or specific job requested" required></textarea>
-                </div>
-              </div>
-
-              <!-- Pickup -->
-              <div class="form-sec-title" style="margin-top:20px"><i data-lucide="truck"></i>Pickup &amp; Drop-off</div>
-              <div style="margin-top:12px">
-                <div class="form-label">Do you need pickup and drop-off service? <span>*</span></div>
-                <div class="radio-group" style="margin-top:6px">
-                  <label class="radio-option"><input type="radio" name="pickup" value="yes" checked>Yes — collect from my address</label>
-                  <label class="radio-option"><input type="radio" name="pickup" value="no">No — I will drop it off</label>
-                </div>
-              </div>
-
-              <!-- Agreement -->
-              <div style="margin-top:20px">
-                <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink4);cursor:pointer">
-                  <input type="checkbox" required style="margin-top:2px;flex-shrink:0;accent-color:var(--green)">
-                  I agree to partner with AutoViindu under the listed terms and conditions.
-                </label>
-              </div>
-
-              <button class="form-submit" type="submit">
-                <i data-lucide="calendar-check"></i>Submit Booking Request
-              </button>
-              <div class="form-note">We confirm within one business day. Mon–Sat · 9am–6pm NST</div>
-            </form>
-
-            <!-- SUCCESS STATE -->
-            <div class="success-state" id="success-state">
-              <div class="success-icon"><i data-lucide="check-circle-2"></i></div>
-              <div class="success-title">Booking Received!</div>
-              <div class="success-desc">Thank you. We will review your request and confirm your pickup time within one business day (Mon–Sat, 9am–6pm NST).</div>
-              <a href="../maintenance-repairs.html" class="success-back"><i data-lucide="arrow-left"></i>Back to Car Servicing</a>
             </div>
+
+            <!-- Step 2: Tell us about your car -->
+            <div class="step">
+              <div class="step-head">
+                <div class="step-num">2</div>
+                <div>
+                  <div class="step-title">Tell us about your car</div>
+                  <div class="step-sub">So we can provide the right help.</div>
+                </div>
+              </div>
+              <div class="step-body">
+                <div class="form-grid cols-3">
+                  <div class="form-group">
+                    <label class="form-label">Brand <span>*</span></label>
+                    <div class="input-icon">
+                      <i data-lucide="car"></i>
+                      <select class="form-select" name="brand" required>
+                        <option value="">Select brand</option>
+                        <option>Maruti Suzuki</option><option>Hyundai</option><option>Toyota</option>
+                        <option>MG</option><option>Kia</option><option>Honda</option><option>Skoda</option>
+                        <option>Tata</option><option>Mahindra</option><option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Model <span>*</span></label>
+                    <div class="input-icon">
+                      <i data-lucide="car"></i>
+                      <input class="form-input" style="padding-left:36px" type="text" name="model" placeholder="e.g. Baleno, ZS EV" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Year <span>*</span></label>
+                    <div class="input-icon">
+                      <i data-lucide="calendar"></i>
+                      <select class="form-select" name="year" required>
+                        <option value="">Select year</option>
+                        <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+                        <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
+                        <option>2017</option><option>2016</option><option>2015</option><option>2014</option>
+                        <option>2013 or older</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top:14px">
+                  <label class="form-label">Fuel type <span>*</span></label>
+                  <div class="pill-group">
+                    <label class="pill-option"><input type="radio" name="fuel" value="petrol" checked><i data-lucide="droplet"></i>Petrol</label>
+                    <label class="pill-option"><input type="radio" name="fuel" value="diesel"><i data-lucide="fuel"></i>Diesel</label>
+                    <label class="pill-option"><input type="radio" name="fuel" value="ev"><i data-lucide="zap"></i>EV</label>
+                    <label class="pill-option"><input type="radio" name="fuel" value="hybrid"><i data-lucide="leaf"></i>Hybrid</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: What's the problem -->
+            <div class="step">
+              <div class="step-head">
+                <div class="step-num">3</div>
+                <div>
+                  <div class="step-title">What's the problem?</div>
+                  <div class="step-sub">The more details you share, the better we can help.</div>
+                </div>
+              </div>
+              <div class="step-body">
+                <textarea class="form-textarea" id="issue-text" name="issue" maxlength="300" placeholder="Describe the issue or service you need…" required oninput="document.getElementById('char-count').textContent = this.value.length"></textarea>
+                <div class="char-count"><span id="char-count">0</span>/300</div>
+                <div class="field-hint"><i data-lucide="sparkles"></i>Examples: AC not cooling, strange noise, brake issue, service light is on…</div>
+              </div>
+            </div>
+
+            <!-- Step 4: Your details -->
+            <div class="step">
+              <div class="step-head">
+                <div class="step-num">4</div>
+                <div>
+                  <div class="step-title">Your details</div>
+                  <div class="step-sub">We'll only use this to contact you.</div>
+                </div>
+              </div>
+              <div class="step-body">
+                <div class="form-grid cols-3">
+                  <div class="form-group">
+                    <label class="form-label">Full name <span>*</span></label>
+                    <div class="input-icon">
+                      <i data-lucide="user"></i>
+                      <input class="form-input" type="text" name="full_name" placeholder="Your name" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Mobile number <span>*</span></label>
+                    <div class="input-icon">
+                      <i data-lucide="phone"></i>
+                      <input class="form-input" type="tel" name="mobile" placeholder="+977 98XXXXXXXX" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Email (optional)</label>
+                    <div class="input-icon">
+                      <i data-lucide="mail"></i>
+                      <input class="form-input" type="email" name="email" placeholder="you@example.com">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5: How should we get the car -->
+            <div class="step">
+              <div class="step-head">
+                <div class="step-num">5</div>
+                <div>
+                  <div class="step-title">How should we get the car?</div>
+                  <div class="step-sub">Choose what's most convenient for you.</div>
+                </div>
+              </div>
+              <div class="step-body">
+                <div class="pickup-grid">
+                  <label class="pickup-card">
+                    <input type="radio" name="pickup" value="pickup" checked onclick="toggleAddress(true)">
+                    <div class="p-check"><i data-lucide="check"></i></div>
+                    <div class="p-icon"><i data-lucide="truck"></i></div>
+                    <div>
+                      <strong>Pick it up from me</strong>
+                      <p>We'll collect the car from your location.</p>
+                    </div>
+                  </label>
+                  <label class="pickup-card">
+                    <input type="radio" name="pickup" value="dropoff" onclick="toggleAddress(false)">
+                    <div class="p-check"><i data-lucide="check"></i></div>
+                    <div class="p-icon"><i data-lucide="map-pin"></i></div>
+                    <div>
+                      <strong>I'll bring it to you</strong>
+                      <p>I'll drop the car at your workshop.</p>
+                    </div>
+                  </label>
+                </div>
+                <div class="form-group" id="address-group">
+                  <label class="form-label">Pickup address</label>
+                  <div class="input-icon">
+                    <i data-lucide="map-pin"></i>
+                    <input class="form-input" type="text" name="address" placeholder="Enter your pickup address">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 6: Accident -->
+            <div class="step">
+              <div class="step-head">
+                <div class="step-num">6</div>
+                <div>
+                  <div class="step-title">Is this related to an accident?</div>
+                </div>
+                <div class="step-head-toggle">
+                  <div class="toggle-group">
+                    <label class="toggle-option"><input type="radio" name="accident" value="no" checked>No</label>
+                    <label class="toggle-option"><input type="radio" name="accident" value="yes">Yes</label>
+                  </div>
+                </div>
+              </div>
+              <div class="step-body">
+                <div class="upload-box">
+                  <div class="u-icon"><i data-lucide="image"></i></div>
+                  <div class="u-text">
+                    <strong>Upload photos (optional)</strong>
+                    <span>Add photos of any damage or issue (if any)</span>
+                  </div>
+                  <label class="upload-btn">
+                    <i data-lucide="upload"></i>Upload
+                    <input type="file" name="photos" accept="image/*,.pdf" style="display:none" onchange="showFileName(this)">
+                  </label>
+                </div>
+                <div class="upload-filename" id="file-name"></div>
+              </div>
+            </div>
+
+            <label class="agree-row">
+              <input type="checkbox" required>
+              I agree to partner with AutoViindu under the <a href="/about#terms">listed terms and conditions</a>.
+            </label>
+
+            <button class="form-submit" type="submit">
+              <i data-lucide="send"></i>Submit Service Request
+            </button>
+            <div class="form-note"><i data-lucide="shield-check"></i>We'll contact you within one business day.</div>
+          </form>
+
+          <!-- SUCCESS STATE -->
+          <div class="success-state" id="success-state">
+            <div class="success-icon"><i data-lucide="check-circle-2"></i></div>
+            <div class="success-title">Booking Received!</div>
+            <div class="success-desc">Thank you. We will review your request and confirm your pickup time within one business day (Mon–Sat, 9am–6pm NST).</div>
+            <a href="/maintenance-repairs" class="success-back"><i data-lucide="arrow-left"></i>Back to Car Servicing</a>
           </div>
         </div>
 
         <!-- SIDEBAR -->
-        <div class="sidebar fade-up d2">
+        <div class="sidebar fade-up d3">
 
           <div class="side-card">
-            <div class="side-card-head">
-              <i data-lucide="repeat-2"></i>
-              <div class="side-card-title">What happens next?</div>
-            </div>
+            <div class="side-card-head"><div class="side-card-title">What happens next?</div></div>
             <div class="side-card-body">
-              <div class="side-list">
-                <div class="side-row"><i data-lucide="check-circle-2"></i>We review your booking request</div>
-                <div class="side-row"><i data-lucide="check-circle-2"></i>We confirm pickup time via call or WhatsApp</div>
-                <div class="side-row"><i data-lucide="check-circle-2"></i>Our driver collects your car</div>
-                <div class="side-row"><i data-lucide="check-circle-2"></i>You receive a cost estimate before work begins</div>
-                <div class="side-row"><i data-lucide="check-circle-2"></i>Car is returned once work is complete</div>
+              <div class="step-list">
+                <div class="step-list-item"><div class="s-icon s1"><i data-lucide="check-circle-2"></i></div><p>We review your request</p></div>
+                <div class="step-list-item"><div class="s-icon s2"><i data-lucide="phone-call"></i></div><p>We call or WhatsApp to confirm</p></div>
+                <div class="step-list-item"><div class="s-icon s3"><i data-lucide="car"></i></div><p>We arrange pickup or service</p></div>
+                <div class="step-list-item"><div class="s-icon s4"><i data-lucide="file-text"></i></div><p>You get an estimate before work</p></div>
+                <div class="step-list-item"><div class="s-icon s5"><i data-lucide="smile"></i></div><p>Your car is returned, you're happy!</p></div>
               </div>
             </div>
           </div>
 
           <div class="side-card">
-            <div class="side-card-head">
-              <i data-lucide="phone"></i>
-              <div class="side-card-title">Contact Us Directly</div>
-            </div>
+            <div class="side-card-head"><div class="side-card-title">Need help?</div></div>
             <div class="side-card-body">
               <div class="contact-item">
-                <i data-lucide="phone-call"></i>
-                <div><strong>Phone / WhatsApp</strong>+977 98XX-XXXXXX</div>
+                <div class="c-icon"><i data-lucide="phone"></i></div>
+                <div><strong>Call or WhatsApp</strong><span>+977 98XX-XXXXXX</span></div>
               </div>
               <div class="contact-item">
-                <i data-lucide="mail"></i>
-                <div><strong>Email</strong>service@autoviindu.com</div>
+                <div class="c-icon"><i data-lucide="mail"></i></div>
+                <div><strong>Email</strong><span>service@autoviindu.com</span></div>
               </div>
               <div class="contact-item">
-                <i data-lucide="clock"></i>
-                <div><strong>Hours</strong>Mon–Sat, 9am–6pm NST</div>
+                <div class="c-icon"><i data-lucide="clock"></i></div>
+                <div><strong>Hours</strong><span>Mon–Sat, 9am–6pm NST</span></div>
               </div>
             </div>
           </div>
 
-          <div class="side-card">
-            <div class="side-card-head">
-              <i data-lucide="clipboard-list"></i>
-              <div class="side-card-title">What to have ready</div>
-            </div>
+          <div class="side-card why">
+            <div class="side-card-head"><div class="side-card-title">Why choose AutoViindu?</div></div>
             <div class="side-card-body">
-              <div class="side-list">
-                <div class="side-row"><i data-lucide="file-text"></i>Vehicle Bluebook (registration certificate)</div>
-                <div class="side-row"><i data-lucide="smartphone"></i>Your mobile number for updates</div>
-                <div class="side-row"><i data-lucide="shield"></i>Warranty card (if applicable)</div>
-                <div class="side-row"><i data-lucide="camera"></i>Photos of damage (for accident cases)</div>
+              <div class="why-list">
+                <div class="why-item">
+                  <div class="w-icon s4" style="background:var(--amber-l)"><i data-lucide="users" style="color:var(--amber)"></i></div>
+                  <div><strong>Trusted by car owners</strong><span>across Nepal</span></div>
+                </div>
+                <div class="why-item">
+                  <div class="w-icon s2" style="background:var(--green-l2)"><i data-lucide="wrench" style="color:var(--green-m)"></i></div>
+                  <div><strong>Professional workshops</strong><span>and verified partners</span></div>
+                </div>
+                <div class="why-item">
+                  <div class="w-icon s3" style="background:var(--blue-l)"><i data-lucide="shield-check" style="color:var(--blue)"></i></div>
+                  <div><strong>Safe &amp; reliable service</strong><span>you can count on</span></div>
+                </div>
               </div>
             </div>
           </div>
@@ -360,40 +575,49 @@
     </div>
   </div>
 
-  <script src="../assets/js/components/av-footer.js"></script>
   <script>
     lucide.createIcons();
 
+    function toggleAddress(show) {
+      document.getElementById('address-group').style.display = show ? 'flex' : 'none';
+      document.querySelector('[name="address"]').required = show;
+    }
+
+    function showFileName(input) {
+      const el = document.getElementById('file-name');
+      el.textContent = input.files.length ? '✓ ' + input.files[0].name : '';
+    }
+
     function handleSubmit(e) {
       e.preventDefault();
-    const form = e.target;
-    const type = arguments.length > 1 ? arguments[1] : null;
-    // Collect data automatically
-    const data = { formId: form.id || type || 'unknown' };
-    const elements = form.querySelectorAll('input, select, textarea');
-    elements.forEach((el, i) => {
-      let label = el.name || el.placeholder;
-      if (!label) {
-        const group = el.closest('.form-group') || el.closest('div');
-        if (group) {
-          const lblEl = group.querySelector('.form-label') || group.querySelector('label');
-          if (lblEl) label = lblEl.innerText.replace('*', '').trim();
+      const form = e.target;
+      const data = { formId: form.id || 'booking-form' };
+      const elements = form.querySelectorAll('input, select, textarea');
+      elements.forEach((el, i) => {
+        let label = el.name || el.placeholder;
+        if (!label) {
+          const group = el.closest('.form-group') || el.closest('div');
+          if (group) {
+            const lblEl = group.querySelector('.form-label') || group.querySelector('label');
+            if (lblEl) label = lblEl.innerText.replace('*', '').trim();
+          }
         }
-      }
-      if (!label) label = 'field_' + i;
-      
-      if (el.type === 'radio' || el.type === 'checkbox') {
-        if (el.checked) data[label] = el.value || 'checked';
-      } else {
-        data[label] = el.value;
-      }
-    });
+        if (!label) label = 'field_' + i;
 
-    fetch('/api/forms/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    }).catch(err => console.error(err));
+        if (el.type === 'radio' || el.type === 'checkbox') {
+          if (el.checked) data[label] = el.value || 'checked';
+        } else if (el.type === 'file') {
+          data[label] = el.files.length ? el.files[0].name : '';
+        } else {
+          data[label] = el.value;
+        }
+      });
+
+      fetch('/api/forms/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).catch(err => console.error(err));
 
       document.getElementById('booking-form').style.display = 'none';
       document.getElementById('success-state').classList.add('shown');

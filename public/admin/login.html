@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-=======
-
->>>>>>> d8bfd5da6b0f94d2599d6898456e1d255e89380c
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/logo/favicon_io/favicon-16x16.png">
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Login – AutoViindu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<<<<<<< HEAD
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,700..900&display=swap" rel="stylesheet">
+  
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     :root {
       --g3: #1a6b2a; --g4: #22883a; --bg: #f6faf7; --white: #fff;
       --ink: #07100a; --ink3: #3d5445; --ink4: #7a9483;
       --border: #d6e6db; --r8: 8px; --r12: 12px; --r16: 16px;
-      --font-b: 'DM Sans', sans-serif; --font-d: 'Fraunces', serif;
+      --font-b: 'Inter', system-ui, sans-serif; --font-d: 'Plus Jakarta Sans', system-ui, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: var(--font-b); background: #111620; display: flex; align-items: center; justify-content: center; min-height: 100vh; color: var(--ink); padding: 20px; }
@@ -45,153 +46,6 @@
     <h1>Sign in</h1>
     <p>AutoViindu admin — manage cars, leads & team</p>
     
-=======
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,700..900&display=swap"
-    rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    :root {
-      --g3: #1a6b2a;
-      --g4: #22883a;
-      --bg: #f6faf7;
-      --white: #fff;
-      --ink: #07100a;
-      --ink3: #3d5445;
-      --ink4: #7a9483;
-      --border: #d6e6db;
-      --r8: 8px;
-      --r12: 12px;
-      --r16: 16px;
-      --font-b: 'DM Sans', sans-serif;
-      --font-d: 'Fraunces', serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: var(--font-b);
-      background: linear-gradient(135deg, #0a1a0d, #143018);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      color: var(--ink);
-    }
-
-    .login-card {
-      background: var(--white);
-      width: 100%;
-      max-width: 420px;
-      border-radius: var(--r16);
-      padding: 40px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      text-align: center;
-    }
-
-    .logo {
-      width: 56px;
-      height: 56px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--g3), var(--g4));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-    }
-
-    .logo i {
-      color: #fff;
-      width: 28px;
-      height: 28px;
-    }
-
-    h1 {
-      font-family: var(--font-d);
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    p {
-      color: var(--ink4);
-      font-size: 14px;
-      margin-bottom: 32px;
-    }
-
-    .input-group {
-      text-align: left;
-      margin-bottom: 20px;
-    }
-
-    .input-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--ink3);
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .input-group input {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1.5px solid var(--border);
-      border-radius: var(--r8);
-      font-family: var(--font-b);
-      font-size: 15px;
-      outline: none;
-      transition: 0.2s;
-    }
-
-    .input-group input:focus {
-      border-color: var(--g3);
-      box-shadow: 0 0 0 3px rgba(26, 107, 42, 0.1);
-    }
-
-    .btn {
-      width: 100%;
-      padding: 14px;
-      background: var(--g3);
-      color: #fff;
-      border: none;
-      border-radius: var(--r8);
-      font-size: 15px;
-      font-weight: 800;
-      font-family: var(--font-b);
-      cursor: pointer;
-      transition: 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .btn:hover {
-      background: var(--g4);
-    }
-
-    .error {
-      color: #d63031;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      display: none;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="login-card">
-    <div class="logo"><i data-lucide="shield-check"></i></div>
-    <h1>Admin Login</h1>
-    <p>Sign in to access AutoViindu dashboard</p>
-
->>>>>>> d8bfd5da6b0f94d2599d6898456e1d255e89380c
     <div class="error" id="errorMsg">Invalid credentials. Please try again.</div>
 
     <form id="loginForm">
@@ -209,17 +63,10 @@
 
   <script>
     lucide.createIcons();
-<<<<<<< HEAD
     
     // Redirect if already logged in
     if(localStorage.getItem('adminToken')) {
       window.location.href = '/dashboard';
-=======
-
-    // Redirect if already logged in
-    if (localStorage.getItem('adminToken')) {
-      window.location.href = 'dashboard';
->>>>>>> d8bfd5da6b0f94d2599d6898456e1d255e89380c
     }
 
     document.getElementById('loginForm').addEventListener('submit', async (e) => {
@@ -228,43 +75,26 @@
       const p = document.getElementById('password').value;
       const err = document.getElementById('errorMsg');
       const btn = document.getElementById('loginBtn');
-<<<<<<< HEAD
       
       btn.innerText = 'Signing in...';
       err.style.display = 'none';
       
-=======
-
-      btn.innerText = 'Signing in...';
-      err.style.display = 'none';
-
->>>>>>> d8bfd5da6b0f94d2599d6898456e1d255e89380c
       try {
         const res = await fetch('/api/admin/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username: u, password: p })
         });
-<<<<<<< HEAD
         
         const data = await res.json();
         if(res.ok && data.success) {
-=======
-
-        const data = await res.json();
-        if (res.ok && data.success) {
->>>>>>> d8bfd5da6b0f94d2599d6898456e1d255e89380c
           localStorage.setItem('adminToken', data.token);
           window.location.href = '/dashboard';
         } else {
           err.innerText = data.message || 'Login failed';
           err.style.display = 'block';
         }
-<<<<<<< HEAD
       } catch(e) {
-=======
-      } catch (e) {
->>>>>>> d8bfd5da6b0f94d2599d6898456e1d255e89380c
         err.innerText = 'Network error. Try again.';
         err.style.display = 'block';
       } finally {
@@ -273,9 +103,4 @@
     });
   </script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-
-</html>
->>>>>>> d8bfd5da6b0f94d2599d6898456e1d255e89380c

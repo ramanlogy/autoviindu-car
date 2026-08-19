@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>News, Reviews, Events &amp; Videos – AutoViindu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+      --green: var(--g3);
+      --green-d: var(--g2);
+      --green-l: var(--g-l);
+      --green-m: var(--g5);
+
+
+
+
+
+
+
+
+
+
+      --r8: 8px;
+      --r10: 8px;
+      --r12: 8px;
+      --r16: 8px;
+      --r20: 8px;
+      --r24: 8px;
+      --pill: 999px;
+
+
+
+
+
+
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-b); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; }
+    ::selection { background:rgba(26,107,42,.12); }
+    :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+    @media(min-width:640px){ .wrap{ padding:0 32px; } }
+    @media(min-width:1024px){ .wrap{ padding:0 48px; } }
+
+    /* BREADCRUMB */
+    .bc { background:var(--bg); border-bottom:1px solid var(--border); padding:11px 0; }
+    .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
+    .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
+    .bc-inner a:hover { text-decoration:underline; }
+    .bc-inner i { width:12px; height:12px; }
+
+    /* HERO */
+    .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:56px 0 0; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; padding-bottom:56px; text-align:center; display:flex; flex-direction:column; align-items:center;}
+    .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
+    .hero-badge i { width:13px; height:13px; color:var(--green-m); }
+    .hero h1 { font-family:var(--font-d); font-size:clamp(30px,5vw,52px); font-weight:800; color:#fff; line-height:1.08; margin-bottom:14px; }
+    .hero h1 em { font-style:italic; color:var(--green-m); }
+    .hero-desc { font-size:15px; color:rgba(255,255,255,.6); max-width:600px; line-height:1.75; margin-bottom:32px; }
+
+    /* FILTER TABS */
+    .filter-bar { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+    .filter-inner { display:flex; align-items:center; gap:0; overflow-x:auto; scrollbar-width:none; justify-content:center;}
+    .filter-inner::-webkit-scrollbar { display:none; }
+    .filter-tab {
+      flex-shrink:0; padding:14px 18px; font-size:13px; font-weight:700; color:var(--ink4);
+      cursor:pointer; border-bottom:2.5px solid transparent; white-space:nowrap;
+      transition:color var(--ease), border-color var(--ease);
+      background:none; border-top:none; border-left:none; border-right:none;
+      font-family:var(--font-b); text-decoration:none;
+    }
+    .filter-tab:hover { color:var(--ink2); }
+    .filter-tab.active { color:var(--green); border-bottom-color:var(--green); }
+
+    /* SECTION */
+    .section { padding:56px 0; }
+    .section.alt { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
+    .eyebrow i { width:13px; height:13px; }
+    .sec-title { font-family:var(--font-d); font-size:clamp(22px,3.5vw,34px); font-weight:800; color:var(--ink); line-height:1.12; margin-bottom:8px; }
+    .sec-title em { font-style:italic; color:var(--green); }
+    .sec-header { display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:28px; }
+    .sec-header-text { }
+    .sec-header-text .sec-title { margin-bottom:4px; }
+    .view-all { display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:700; color:var(--green); text-decoration:none; white-space:nowrap; }
+    .view-all:hover { text-decoration:underline; }
+
+    /* VIDEO MODAL */
+    .modal-overlay {
+      display:none; position:fixed; inset:0; background:rgba(0,0,0,.85);
+      z-index:1000; align-items:center; justify-content:center; padding:20px;
+    }
+    .modal-overlay.open { display:flex; }
+    .modal-box {
+      background:#000; border-radius:var(--r12); overflow:hidden;
+      width:100%; max-width:900px; position:relative;
+      box-shadow:0 24px 80px rgba(0,0,0,.6);
+    }
+    .modal-close {
+      position:absolute; top:12px; right:12px; z-index:10;
+      background:rgba(0,0,0,.6); border:none; border-radius:50%;
+      width:36px; height:36px; display:flex; align-items:center; justify-content:center;
+      cursor:pointer; color:#fff; transition:background var(--ease);
+    }
+    .modal-close:hover { background:rgba(255,255,255,.2); }
+    .modal-iframe-wrap { position:relative; padding-bottom:56.25%; height:0; }
+    .modal-iframe-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
+    
+    /* VIDEO GRID */
+    .video-grid { display:grid; grid-template-columns:1fr; gap:20px; }
+    @media(min-width:480px){ .video-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .video-grid{ grid-template-columns:repeat(3,1fr); } }
+
+    /* VIDEO CARD */
+    .video-card { border-radius:var(--r12); overflow:hidden; border:1.5px solid var(--border); cursor:pointer; transition:box-shadow var(--ease), transform var(--ease), border-color var(--ease); background:var(--white); display:flex; flex-direction:column; }
+    .video-card:hover { box-shadow:var(--sh2); transform:translateY(-2px); border-color:var(--green); }
+    .card-thumb { position:relative; aspect-ratio:16/9; overflow:hidden; background:#111; }
+    .card-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; }
+    .video-card:hover .card-thumb img { transform:scale(1.04); }
+    .card-play {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      width:44px; height:44px; background:rgba(0,0,0,.65); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      opacity:0; transition:opacity var(--ease), background var(--ease);
+      backdrop-filter:blur(3px);
+    }
+    .video-card:hover .card-play { opacity:1; background:var(--green); }
+    .card-play i { width:18px; height:18px; color:#fff; margin-left:2px; }
+    .card-duration { position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,.8); color:#fff; font-size:11px; font-weight:700; padding:2px 7px; border-radius:4px; }
+    .card-info { padding:14px 15px 16px; flex:1; display:flex; flex-direction:column; gap:6px; }
+    .card-title { font-size:14px; font-weight:700; color:var(--ink2); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .card-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:auto; }
+    .card-meta-item { display:flex; align-items:center; gap:4px; font-size:11.5px; color:var(--ink5); font-weight:600; }
+    .card-meta-item i { width:11px; height:11px; }
+    .card-tag { display:inline-block; font-size:10.5px; font-weight:700; color:var(--green); background:var(--green-l); padding:2px 8px; border-radius:var(--pill); }
+
+    /* NEWS GRID */
+    .news-grid { display:grid; grid-template-columns:1fr; gap:20px; }
+    @media(min-width:640px){ .news-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:900px){ .news-grid{ grid-template-columns:repeat(3,1fr); } }
+    .news-card { border:1.5px solid var(--border); border-radius:var(--r12); background:var(--white); overflow:hidden; transition:box-shadow var(--ease), transform var(--ease), border-color var(--ease); display:flex; flex-direction:column; }
+    .news-card:hover { box-shadow:var(--sh2); transform:translateY(-2px); border-color:var(--green); }
+    .news-img { aspect-ratio:16/9; overflow:hidden; background:var(--bg); }
+    .news-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; }
+    .news-card:hover .news-img img { transform:scale(1.03); }
+    .news-body { padding:16px 18px 18px; flex:1; display:flex; flex-direction:column; gap:8px; }
+    .news-category { font-size:10.5px; font-weight:800; color:var(--green); text-transform:uppercase; letter-spacing:.5px; }
+    .news-title { font-size:15px; font-weight:700; color:var(--ink2); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .news-excerpt { font-size:13px; color:var(--ink4); line-height:1.65; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; flex:1; }
+    .news-footer { display:flex; align-items:center; gap:10px; margin-top:6px; flex-wrap:wrap; }
+    .news-date { font-size:11.5px; color:var(--ink5); font-weight:600; display:flex; align-items:center; gap:4px; }
+    .news-read { font-size:11.5px; color:var(--ink5); font-weight:600; display:flex; align-items:center; gap:4px; }
+
+    /* PLACEHOLDERS */
+    .thumb-placeholder { width:100%; height:100%; background:linear-gradient(135deg,#1a3a22,#2d6b3e); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
+    .thumb-placeholder i { width:32px; height:32px; color:rgba(255,255,255,.4); }
+    .thumb-placeholder span { font-size:11px; color:rgba(255,255,255,.3); font-weight:600; text-transform:uppercase; letter-spacing:.4px; }
+    .news-placeholder { width:100%; height:100%; background:linear-gradient(135deg,#f0f4f1,#e0ebe2); display:flex; align-items:center; justify-content:center; }
+    .news-placeholder i { width:28px; height:28px; color:rgba(26,107,42,.3); }
+
+    /* LOAD MORE */
+    .load-more-wrap { text-align:center; margin-top:36px; }
+    .btn-load-more { display:inline-flex; align-items:center; gap:8px; background:var(--white); border:1.5px solid var(--border); color:var(--ink2); font-family:var(--font-b); font-size:14px; font-weight:700; padding:11px 24px; border-radius:var(--r10); cursor:pointer; transition:all var(--ease); }
+    .btn-load-more:hover { border-color:var(--green); color:var(--green); background:var(--green-l); }
+    
+    /* EVENTS SECTION */
+    .events-section-modern { background: var(--bg); padding: 80px 0; overflow: hidden; }
+    .ev-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; gap: 20px; flex-wrap: wrap; }
+    .ev-hd-left { max-width: 600px; }
+    .ev-eyebrow { font-size: 13px; font-weight: 800; color: var(--brand); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; display: inline-block; padding: 6px 12px; background: rgba(36, 160, 68, 0.1); border-radius: var(--pill); }
+    .ev-title { font-family: var(--font-h); font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: var(--ink); line-height: 1.1; margin-bottom: 12px; letter-spacing: -1px; }
+    .ev-sub { font-size: 16px; color: var(--ink3); line-height: 1.6; }
+    .ev-btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: var(--pill); border: 1.5px solid var(--border); background: var(--white); color: var(--ink); font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); text-decoration:none; }
+    .ev-btn-outline:hover { border-color: var(--brand); color: var(--brand); box-shadow: 0 4px 12px rgba(36, 160, 68, 0.1); transform: translateY(-2px); }
+    .ev-modern-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 992px) { .ev-modern-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .ev-modern-grid { grid-template-columns: 1fr; } }
+    .ev-modern-card { position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 4/5; cursor: pointer; isolation: isolate; }
+    .ev-modern-card.featured { grid-column: span 2; aspect-ratio: 2/1; }
+    @media (max-width: 992px) { .ev-modern-card.featured { grid-column: span 2; aspect-ratio: 16/9; } }
+    @media (max-width: 640px) { .ev-modern-card.featured { grid-column: span 1; aspect-ratio: 4/5; } .ev-modern-card { aspect-ratio: 4/5; } }
+    .ev-card-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1; }
+    .ev-card-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.9) 100%); z-index: 2; transition: background 0.4s ease; }
+    .ev-modern-card:hover .ev-card-bg { transform: scale(1.08); }
+    .ev-modern-card:hover .ev-card-overlay { background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.95) 100%); }
+    .ev-card-top { position: absolute; top: 20px; left: 20px; right: 20px; display: flex; justify-content: space-between; gap: 10px; z-index: 3; }
+    .ev-badge { padding: 6px 12px; border-radius: var(--pill); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px); color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); }
+    .ev-badge.live { background: var(--brand); border-color: var(--brand); }
+    .ev-badge.free { background: rgba(255, 255, 255, 0.9); color: var(--ink); border: none; }
+    .ev-card-content { position: absolute; bottom: 24px; left: 24px; right: 24px; z-index: 3; display: flex; gap: 16px; align-items: flex-end; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .ev-modern-card:hover .ev-card-content { transform: translateY(-20px); }
+    .ev-date-box { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 64px; flex-shrink: 0; }
+    .ev-day { font-family: var(--font-d); font-size: 26px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 2px; }
+    .ev-month { font-size: 12px; font-weight: 700; color: rgba(255, 255, 255, 0.8); letter-spacing: 1px; }
+    .ev-info { flex: 1; }
+    .ev-card-title { font-family: var(--font-h); font-size: 22px; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 10px; }
+    .ev-modern-card.featured .ev-card-title { font-size: 28px; }
+    .ev-card-meta { display: flex; flex-direction: column; gap: 6px; }
+    .ev-card-meta span { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255, 255, 255, 0.7); font-weight: 500; }
+    .ev-modern-card.featured .ev-card-meta { flex-direction: row; flex-wrap: wrap; gap: 16px; }
+
+  </style>
+</head>
+<body>
+  <script src="assets/js/site-chrome.js"></script> 
+  
+  <nav class="bc">
+    <div class="wrap bc-inner">
+      <a href="/">Home</a>
+      <i data-lucide="chevron-right"></i>
+      <span>News, Reviews, Events &amp; Videos</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner fade-up">
+        <div class="hero-badge"><i data-lucide="compass"></i>AutoViindu Hub</div>
+        <h1>News, Reviews &amp; <em>Events</em></h1>
+        <p class="hero-desc">Your ultimate hub for automotive news, expert car reviews, upcoming events, and informative guides tailored for Nepal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <div class="filter-bar">
+    <div class="wrap" style="padding:0 20px">
+      <div class="filter-inner">
+        <a href="#news" class="filter-tab active" onclick="filterTab(this)">Latest News</a>
+        <a href="#reviews" class="filter-tab" onclick="filterTab(this)">Car Reviews</a>
+        <a href="#events" class="filter-tab" onclick="filterTab(this)">Events & Campaigns</a>
+        <a href="#videos" class="filter-tab" onclick="filterTab(this)">Videos & Guides</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LATEST NEWS -->
+  <section class="section" id="news">
+    <div class="wrap">
+      <div class="sec-header">
+        <div class="sec-header-text">
+          <div class="eyebrow"><i data-lucide="newspaper"></i>Latest News</div>
+          <h2 class="sec-title">Automotive <em>Updates</em></h2>
+        </div>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-img"><div class="news-placeholder"><i data-lucide="zap"></i></div></div>
+          <div class="news-body">
+            <span class="news-category">EV &amp; Policy</span>
+            <h3 class="news-title">Nepal Government Extends EV Import Duty Waiver Through 2026</h3>
+            <p class="news-excerpt">The Ministry of Finance confirmed a two-year extension of the zero-customs duty on battery electric vehicles, offering continued relief to buyers and dealers.</p>
+            <div class="news-footer">
+              <span class="news-date"><i data-lucide="calendar"></i>Jun 2025</span>
+              <span class="news-read"><i data-lucide="clock"></i>3 min read</span>
+            </div>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-img"><div class="news-placeholder"><i data-lucide="car"></i></div></div>
+          <div class="news-body">
+            <span class="news-category">New Launch</span>
+            <h3 class="news-title">BYD Seal Officially Launches in Kathmandu — Pricing and Range Details</h3>
+            <p class="news-excerpt">BYD's newest sedan arrives in Nepal with a claimed 570 km range and a starting price under NPR 70 lakh, targeting the premium sedan segment.</p>
+            <div class="news-footer">
+              <span class="news-date"><i data-lucide="calendar"></i>May 2025</span>
+              <span class="news-read"><i data-lucide="clock"></i>4 min read</span>
+            </div>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-img"><div class="news-placeholder"><i data-lucide="fuel"></i></div></div>
+          <div class="news-body">
+            <span class="news-category">Market</span>
+            <h3 class="news-title">Petrol and Diesel Prices Revised — What It Means for Vehicle Running Costs</h3>
+            <p class="news-excerpt">NOC's latest revision pushes petrol to NPR 180 per litre. We break down how this affects monthly running costs for common vehicles in Nepal.</p>
+            <div class="news-footer">
+              <span class="news-date"><i data-lucide="calendar"></i>May 2025</span>
+              <span class="news-read"><i data-lucide="clock"></i>3 min read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="load-more-wrap">
+        <button class="btn-load-more"><i data-lucide="refresh-cw"></i>Load more news</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAR REVIEWS -->
+  <section class="section alt" id="reviews">
+    <div class="wrap">
+      <div class="sec-header">
+        <div class="sec-header-text">
+          <div class="eyebrow"><i data-lucide="star"></i>Car Reviews</div>
+          <h2 class="sec-title">Expert <em>Reviews</em></h2>
+        </div>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-img"><div class="news-placeholder"><i data-lucide="car"></i></div></div>
+          <div class="news-body">
+            <span class="news-category">SUV</span>
+            <h3 class="news-title">Hyundai Creta 2025 Review: Still the King of Compact SUVs?</h3>
+            <p class="news-excerpt">We put the facelifted Hyundai Creta through its paces in Kathmandu traffic and a quick highway run to see if it retains its crown.</p>
+            <div class="news-footer">
+              <span class="news-date"><i data-lucide="calendar"></i>May 2025</span>
+              <span class="news-read"><i data-lucide="clock"></i>6 min read</span>
+            </div>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-img"><div class="news-placeholder"><i data-lucide="zap"></i></div></div>
+          <div class="news-body">
+            <span class="news-category">EV</span>
+            <h3 class="news-title">Deepal S07 vs BYD Atto 3: The Ultimate Electric SUV Showdown</h3>
+            <p class="news-excerpt">Two of the most popular EVs in Nepal go head-to-head. Which one offers better range, comfort, and value for money?</p>
+            <div class="news-footer">
+              <span class="news-date"><i data-lucide="calendar"></i>Apr 2025</span>
+              <span class="news-read"><i data-lucide="clock"></i>8 min read</span>
+            </div>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-img"><div class="news-placeholder"><i data-lucide="shield-check"></i></div></div>
+          <div class="news-body">
+            <span class="news-category">Hatchback</span>
+            <h3 class="news-title">Suzuki Swift 2025: Is it the Best First Car for Nepal?</h3>
+            <p class="news-excerpt">With updated styling and a more efficient engine, we test the new Swift to see if it's the perfect starter car.</p>
+            <div class="news-footer">
+              <span class="news-date"><i data-lucide="calendar"></i>Mar 2025</span>
+              <span class="news-read"><i data-lucide="clock"></i>5 min read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="load-more-wrap">
+        <button class="btn-load-more"><i data-lucide="refresh-cw"></i>Load more reviews</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS & CAMPAIGNS -->
+  <section class="events-section-modern" id="events">
+    <div class="wrap">
+      <div class="ev-header">
+        <div class="ev-hd-left">
+          <span class="ev-eyebrow"><i data-lucide="calendar-days" style="width:14px;height:14px;display:inline-block;vertical-align:text-bottom;margin-right:4px;"></i>Auto culture</span>
+          <h2 class="ev-title">Events &amp; Campaigns</h2>
+          <p class="ev-sub">Shows, test drives, campaigns, and exclusive launches across Nepal.</p>
+        </div>
+        <a href="#" class="ev-btn-outline">All events →</a>
+      </div>
+      <div class="ev-modern-grid">
+        <div class="ev-modern-card featured">
+          <div class="ev-card-bg" style="background-image:url('/assets/images/events/autoexpo.jpg');background-color:#1A1A1A"></div>
+          <div class="ev-card-overlay"></div>
+          <div class="ev-card-top"><span class="ev-badge live">Featured</span><span class="ev-badge free">Tickets</span></div>
+          <div class="ev-card-content">
+            <div class="ev-date-box"><div class="ev-day">11-16</div><div class="ev-month">AUG</div></div>
+            <div class="ev-info">
+              <div class="ev-card-title">NAIMA Mobility Expo 2026</div>
+              <div class="ev-card-meta"><span><i data-lucide="info" style="width:14px;height:14px"></i>Nepal's Largest Auto Expo</span><span><i data-lucide="map-pin" style="width:14px;height:14px"></i>Bhrikutimandap, Kathmandu</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ev-modern-card">
+          <div class="ev-card-bg" style="background-image:url('/assets/images/events/test-drive.jpg');background-color:#2E4F8A"></div>
+          <div class="ev-card-overlay"></div>
+          <div class="ev-card-top"><span class="ev-badge">Test Drive</span></div>
+          <div class="ev-card-content">
+            <div class="ev-date-box"><div class="ev-day">22</div><div class="ev-month">APR</div></div>
+            <div class="ev-info">
+              <div class="ev-card-title">EV Test Drive Day</div>
+              <div class="ev-card-meta"><span><i data-lucide="map-pin" style="width:14px;height:14px"></i>Naxal, Kathmandu</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ev-modern-card">
+          <div class="ev-card-bg" style="background-image:url('/assets/images/events/launch.jpg');background-color:#1C1C1C"></div>
+          <div class="ev-card-overlay"></div>
+          <div class="ev-card-top"><span class="ev-badge">Launch</span></div>
+          <div class="ev-card-content">
+            <div class="ev-date-box"><div class="ev-day">05</div><div class="ev-month">MAY</div></div>
+            <div class="ev-info">
+              <div class="ev-card-title">Exclusive SUV Reveal</div>
+              <div class="ev-card-meta"><span><i data-lucide="map-pin" style="width:14px;height:14px"></i>Hotel Yak &amp; Yeti</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS & GUIDES -->
+  <section class="section alt" id="videos">
+    <div class="wrap">
+      <div class="sec-header">
+        <div class="sec-header-text">
+          <div class="eyebrow"><i data-lucide="youtube"></i>YouTube Channel</div>
+          <h2 class="sec-title">Videos &amp; <em>Guides</em></h2>
+        </div>
+        <a class="view-all" href="https://www.youtube.com/@AutoViindu" target="_blank" rel="noopener">View all on YouTube <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openModal('dQw4w9WgXcQ','How to Check a Used Car Before Buying — Nepal Edition')">
+          <div class="card-thumb">
+            <div class="thumb-placeholder"><i data-lucide="search"></i><span>AutoViindu</span></div>
+            <div class="card-duration">12:07</div>
+            <div class="card-play"><i data-lucide="play"></i></div>
+          </div>
+          <div class="card-info">
+            <div class="card-tag">Buying Guide</div>
+            <div class="card-title">How to Check a Used Car Before Buying — Nepal Edition</div>
+            <div class="card-meta">
+              <span class="card-meta-item"><i data-lucide="eye"></i>8.1K</span>
+              <span class="card-meta-item"><i data-lucide="calendar"></i>May 2025</span>
+              <span class="card-meta-item"><i data-lucide="clock"></i>12 min</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card" onclick="openModal('dQw4w9WgXcQ','Tata Nexon EV — 6-Month Real-World Review from Kathmandu')">
+          <div class="card-thumb">
+            <div class="thumb-placeholder"><i data-lucide="zap"></i><span>AutoViindu</span></div>
+            <div class="card-duration">22:15</div>
+            <div class="card-play"><i data-lucide="play"></i></div>
+          </div>
+          <div class="card-info">
+            <div class="card-tag">EV &amp; Hybrid</div>
+            <div class="card-title">Tata Nexon EV — 6-Month Real-World Review from Kathmandu</div>
+            <div class="card-meta">
+              <span class="card-meta-item"><i data-lucide="eye"></i>15.3K</span>
+              <span class="card-meta-item"><i data-lucide="calendar"></i>May 2025</span>
+              <span class="card-meta-item"><i data-lucide="clock"></i>22 min</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card" onclick="openModal('dQw4w9WgXcQ','5 Things to Do After Every Service — Save Money on Repairs')">
+          <div class="card-thumb">
+            <div class="thumb-placeholder"><i data-lucide="wrench"></i><span>AutoViindu</span></div>
+            <div class="card-duration">9:34</div>
+            <div class="card-play"><i data-lucide="play"></i></div>
+          </div>
+          <div class="card-info">
+            <div class="card-tag">Service Tips</div>
+            <div class="card-title">5 Things to Do After Every Service — Save Money on Repairs</div>
+            <div class="card-meta">
+              <span class="card-meta-item"><i data-lucide="eye"></i>6.8K</span>
+              <span class="card-meta-item"><i data-lucide="calendar"></i>Apr 2025</span>
+              <span class="card-meta-item"><i data-lucide="clock"></i>9 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="load-more-wrap">
+        <button class="btn-load-more"><i data-lucide="refresh-cw"></i>Load more videos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO MODAL -->
+  <div class="modal-overlay" id="videoModal" onclick="closeModalOnOverlay(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()"><i data-lucide="x"></i></button>
+      <div class="modal-iframe-wrap">
+        <iframe id="modalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function filterTab(el) {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function openModal(videoId, title) {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('modalIframe');
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('modalIframe');
+      iframe.src = '';
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeModalOnOverlay(e) {
+      if (e.target === document.getElementById('videoModal')) closeModal();
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+  <div id="av-toast-wrap"></div>
+</body>
+</html>

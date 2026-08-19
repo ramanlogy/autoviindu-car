@@ -28,6 +28,11 @@
   const $ = (id) => document.getElementById(id);
   const tok = () => localStorage.getItem('adminToken');
 
+  function getLeadKey(idx) {
+    const row = allData[idx];
+    return row && row.id ? row.id : String(idx);
+  }
+
   function toast(msg, type) {
     const wrap = $('toast-wrap') || (() => {
       const d = document.createElement('div');
@@ -150,7 +155,7 @@
   function updateStats() {
     const ins = allData.filter((d) => d.formId === 'ins').length;
     const fin = allData.filter((d) => d.formId === 'fin').length;
-    const svc = allData.filter((d) => !['ins', 'fin', 'partForm'].includes(d.formId)).length;
+    const svc = allData.filter((d) => !['ins', 'fin', 'partForm', 'sellCar'].includes(d.formId)).length;
     [['st-total', allData.length], ['st-ins', ins], ['st-fin', fin], ['st-svc', svc]].forEach(([id, v]) => {
       const el = $(id); if (el) el.textContent = v;
     });
@@ -160,12 +165,13 @@
 
   function updatePipeline() {
     const s = { new: 0, contacted: 0, qualified: 0, closed: 0 };
-    allData.forEach((_, i) => { const st = leadStatuses[i] || 'new'; s[st] = (s[st] || 0) + 1; });
+    allData.forEach((row, i) => { const st = leadStatuses[getLeadKey(i)] || 'new'; s[st] = (s[st] || 0) + 1; });
     Object.keys(s).forEach((k) => { const el = $('pp-' + k); if (el) el.textContent = s[k]; });
   }
 
   window.saveLeadStatus = function (idx, status) {
-    leadStatuses[idx] = status;
+    const key = getLeadKey(idx);
+    leadStatuses[key] = status;
     saveMeta();
     localStorage.setItem('av_ls', JSON.stringify(leadStatuses));
     updatePipeline();
@@ -176,7 +182,8 @@
   };
 
   window.toggleFlag = function (idx) {
-    leadFlags[idx] = !leadFlags[idx];
+    const key = getLeadKey(idx);
+    leadFlags[key] = !leadFlags[key];
     saveMeta();
     localStorage.setItem('av_lf', JSON.stringify(leadFlags));
     ['flag-', 'lflag-'].forEach((pfx) => {
@@ -195,6 +202,9 @@
     if (formId === 'ins') return '<span class="badge bg-b">Insurance</span>';
     if (formId === 'fin') return '<span class="badge bg-a">Finance</span>';
     if (formId === 'partForm') return '<span class="badge bg-g">Parts</span>';
+    if (formId === 'testDrive') return '<span class="badge" style="background:#e0a800;color:#fff">Test Drive</span>';
+    if (formId === 'requestInfo') return '<span class="badge bg-g">Req. Info</span>';
+    if (formId === 'sellCar') return '<span class="badge" style="background:var(--amber);color:#fff">Sell Car</span>';
     return '<span class="badge bg-p">Service</span>';
   }
 
@@ -210,7 +220,7 @@
       if (!v) return;
       if (name === '-' && kl.includes('name')) name = v;
       if (contact === '-' && (kl.includes('phone') || kl.includes('mobile') || kl.includes('email'))) contact = v;
-      if (main === '-' && (kl.includes('brand') || kl.includes('model') || kl.includes('service') || kl.includes('vehicle'))) main = v;
+      if (main === '-' && (kl === 'carmodel' || kl.includes('brand') || kl.includes('model') || kl.includes('service') || kl.includes('vehicle'))) main = v;
     });
     return { name, contact, main };
   }
@@ -219,7 +229,7 @@
     const filter = $('tf') ? $('tf').value : 'all';
     const srch = ($('srch') && $('srch').value || '').toLowerCase();
     let data = allData.filter((d) => {
-      if (filter === 'service') return !['ins', 'fin', 'partForm'].includes(d.formId);
+      if (filter === 'service') return !['ins', 'fin', 'partForm', 'testDrive', 'requestInfo', 'sellCar'].includes(d.formId);
       return filter === 'all' || d.formId === filter;
     });
     if (srch) data = data.filter((d) => {
@@ -235,8 +245,8 @@
       const ds = dt ? dt.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }) : '–';
       const ts = dt ? dt.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '';
       const { name, contact, main } = parseRow(row);
-      const st = leadStatuses[idx] || 'new';
-      const fl = leadFlags[idx] || false;
+      const st = leadStatuses[getLeadKey(idx)] || 'new';
+      const fl = leadFlags[getLeadKey(idx)] || false;
       const ms = main.length > 32 ? main.slice(0, 32) + '…' : main;
       return '<tr onclick="openModal(' + idx + ')">' +
         '<td><div class="c-mono">' + ds + '</div><div style="font-size:11px;color:var(--text-3)">' + ts + '</div></td>' +
@@ -260,7 +270,7 @@
   };
 
   function renderLeads() {
-    const data = allData.filter((_, i) => leadsFilter === 'all' || (leadStatuses[i] || 'new') === leadsFilter);
+    const data = allData.filter((_, i) => leadsFilter === 'all' || (leadStatuses[getLeadKey(i)] || 'new') === leadsFilter);
     const cnt = $('leads-cnt'); if (cnt) cnt.textContent = data.length + ' leads';
     const tbody = $('leads-body'); if (!tbody) return;
     if (!data.length) { tbody.innerHTML = '<tr><td colspan="8"><div class="empty">No leads in this stage.</div></td></tr>'; return; }
@@ -269,8 +279,8 @@
       const dt = row.timestamp ? new Date(row.timestamp) : null;
       const ds = dt ? dt.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }) : '–';
       const { name, contact, main } = parseRow(row);
-      const st = leadStatuses[idx] || 'new';
-      const fl = leadFlags[idx] || false;
+      const st = leadStatuses[getLeadKey(idx)] || 'new';
+      const fl = leadFlags[getLeadKey(idx)] || false;
       return '<tr onclick="openModal(' + idx + ')">' +
         '<td class="c-mono">' + ds + '</td>' +
         '<td><div style="display:flex;align-items:center;gap:7px"><div class="avatar">' + initials(name) + '</div><span class="c-bold">' + name + '</span></div></td>' +
@@ -293,7 +303,7 @@
     const skip = ['formId', 'timestamp'];
     const fields = Object.entries(row).filter(([k]) => !skip.includes(k))
       .map(([k, v]) => '<div class="kv"><div class="kv-k">' + k + '</div><div class="kv-v">' + (v || '–') + '</div></div>').join('');
-    const note = leadNotes[idx] || '';
+    const note = leadNotes[getLeadKey(idx)] || '';
     $('m-body').innerHTML = (fields || '<p class="empty">No fields.</p>') +
       '<div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border)">' +
       '<label class="form-lbl">Internal note</label>' +
@@ -302,7 +312,7 @@
     let foot = '';
     if (contact.match(/\d{7,}/)) foot += '<a href="tel:' + contact + '" class="btn btn-green" style="text-decoration:none">Call</a>';
     if (contact.includes('@')) foot += '<a href="mailto:' + contact + '" class="btn" style="text-decoration:none">Email</a>';
-    foot += '<button class="btn btn-red" onclick="deleteLead(' + idx + ')">Delete</button>';
+    foot += '<button class="btn btn-red" onclick="deleteLead(\'' + getLeadKey(idx).replace(/'/g, "\\'") + '\')">Delete</button>';
     $('m-foot').innerHTML = foot;
     $('m-detail').classList.add('on');
   };
@@ -509,13 +519,14 @@
     }).join('');
   }
 
-  window.delCar = function (idx, type) {
+  window.delCar = async function (idx, type) {
     if (!confirm('Delete ' + getDb(type)[idx].brand + ' ' + getDb(type)[idx].model + '?')) return;
     getDb(type).splice(idx, 1);
     markDirty(true);
     renderInv();
     renderInvStats();
-    toast('Car removed — publish to update site', 'ok');
+    await publishInv(type);
+    toast('Car deleted — site updated', 'ok');
   };
 
   window.openAddCar = function (type) {
@@ -580,7 +591,7 @@
     field('Slug (URL)', 'e-slug', car.slug) +
     field('Year', 'e-year', car.year, 'number') +
     selectField('Fuel type', 'e-type', car.type, ['Petrol', 'Diesel', 'Hybrid', 'Electric', 'CNG']) +
-    selectField('Body', 'e-body', car.body || car.bodyType, ['SUV', 'Sedan', 'Hatchback', 'MPV', 'Pickup', 'Coupe', 'Crossover']) +
+    selectField('Body', 'e-body', car.body || car.bodyType, ['SUV', 'Crossover', 'Sedan', 'Hatchback', 'Coupe', 'MPV', 'Off-road', 'Pickup', 'Microcar', 'Wagon', 'Van']) +
     field('Tagline', 'e-tagline', car.tagline) +
     field('Budget tier', 'e-tier', car.budgetTier) +
     '<div class="form-grid" style="margin-top:12px">' +
@@ -595,11 +606,15 @@
     '<button type="button" class="btn" style="margin-top:10px" onclick="addVariant()">+ Add variant</button></div>' +
 
     '<div class="editor-pane" data-pane="media">' +
-    '<div class="img-upload" onclick="document.getElementById(\'e-img-file\').click()">' +
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>' +
-    '<p>Click to upload image</p></div>' +
-    '<input type="file" id="e-img-file" accept="image/*" multiple style="display:none" onchange="uploadImages(this)">' +
-    '<div class="img-grid" id="e-img-grid">' + renderImgGrid(car.images || []) + '</div></div>' +
+    '<p class="section-hint" style="margin-bottom:10px">Upload exterior and interior photos separately. The first exterior image is used as the listing thumbnail.</p>' +
+    '<div class="photo-section"><div class="photo-section-head"><strong>Exterior photos</strong>' +
+    '<button type="button" class="btn" style="padding:4px 10px;font-size:11px" onclick="document.getElementById(\'e-img-ext\').click()">+ Upload</button></div>' +
+    '<input type="file" id="e-img-ext" accept="image/*" multiple style="display:none" onchange="uploadImages(this,\'exterior\')">' +
+    '<div class="img-grid" id="e-img-ext-grid">' + renderImgGrid(getExteriorImages(car)) + '</div></div>' +
+    '<div class="photo-section" style="margin-top:16px"><div class="photo-section-head"><strong>Interior photos</strong>' +
+    '<button type="button" class="btn" style="padding:4px 10px;font-size:11px" onclick="document.getElementById(\'e-img-int\').click()">+ Upload</button></div>' +
+    '<input type="file" id="e-img-int" accept="image/*" multiple style="display:none" onchange="uploadImages(this,\'interior\')">' +
+    '<div class="img-grid" id="e-img-int-grid">' + renderImgGrid(getInteriorImages(car)) + '</div></div></div>' +
 
     '<div class="editor-pane" data-pane="specs">' +
     field('Expert score (1–10)', 'e-score', car.expertScore, 'number') +
@@ -638,9 +653,10 @@
       '</div></div>' +
 
       '<div class="editor-pane" data-pane="media">' +
+      '<p class="section-hint" style="margin-bottom:10px">Add multiple photos of the used car. First photo is the main listing image.</p>' +
       '<div class="img-upload" onclick="document.getElementById(\'e-img-file\').click()">' +
-      '<p>Upload photos</p></div>' +
-      '<input type="file" id="e-img-file" accept="image/*" multiple style="display:none" onchange="uploadImages(this)">' +
+      '<p>Click to upload photos</p></div>' +
+      '<input type="file" id="e-img-file" accept="image/*" multiple style="display:none" onchange="uploadImages(this,\'exterior\')">' +
       '<div class="img-grid" id="e-img-grid">' + renderImgGrid(car.images || (car.img ? [car.img] : [])) + '</div></div>' +
 
       '<div class="editor-pane" data-pane="content">' +
@@ -702,25 +718,66 @@
     list.appendChild(div);
   };
 
-  function renderImgGrid(images) {
+  function getExteriorImages(car) {
+    if (car.exteriorImages && car.exteriorImages.length) return car.exteriorImages;
+    return (car.images || []).filter(function (u) { return !/\/interior\//i.test(u); });
+  }
+
+  function getInteriorImages(car) {
+    if (car.interiorImages && car.interiorImages.length) return car.interiorImages;
+    return (car.images || []).filter(function (u) { return /\/interior\//i.test(u); });
+  }
+
+  function syncCarImages(car) {
+    const ext = getExteriorImages(car);
+    const int = getInteriorImages(car);
+    car.exteriorImages = ext;
+    car.interiorImages = int;
+    car.images = ext.concat(int);
+    car.thumb = ext[0] || car.images[0] || car.thumb || '';
+  }
+
+  function renderImgGrid(images, category) {
+    category = category || 'exterior';
     return (images || []).map((url, i) =>
       '<div class="img-tile"><img src="' + (url.startsWith('/') ? url : '/' + url.replace(/^\//, '')) + '" alt="">' +
-      '<button type="button" class="img-tile-rm" onclick="removeImg(' + i + ')">×</button></div>'
+      '<button type="button" class="img-tile-rm" onclick="removeImg(' + i + ',\'' + category + '\')">×</button></div>'
     ).join('');
   }
 
-  window.removeImg = function (i) {
+  window.removeImg = function (i, category) {
     const car = getDb(editCtx.type)[editCtx.idx];
-    if (!car.images) car.images = [];
-    car.images.splice(i, 1);
+    category = category || 'exterior';
+    if (category === 'interior') {
+      if (!car.interiorImages) car.interiorImages = getInteriorImages(car);
+      car.interiorImages.splice(i, 1);
+    } else {
+      if (!car.exteriorImages) car.exteriorImages = getExteriorImages(car);
+      car.exteriorImages.splice(i, 1);
+    }
+    syncCarImages(car);
     if (editCtx.type === 'used') car.img = car.images[0] || '';
-    $('e-img-grid').innerHTML = renderImgGrid(car.images);
+    refreshImgGrids(car);
   };
 
-  window.uploadImages = async function (input) {
+  function refreshImgGrids(car) {
+    const ext = $('e-img-ext-grid');
+    const int = $('e-img-int-grid');
+    const all = $('e-img-grid');
+    if (ext) ext.innerHTML = renderImgGrid(getExteriorImages(car), 'exterior');
+    if (int) int.innerHTML = renderImgGrid(getInteriorImages(car), 'interior');
+    if (all) all.innerHTML = renderImgGrid(car.images || []);
+  }
+
+  window.uploadImages = async function (input, category) {
     if (!input.files.length) return;
     const car = getDb(editCtx.type)[editCtx.idx];
-    if (!car.images) car.images = [];
+    category = category || 'exterior';
+    if (category === 'interior') {
+      if (!car.interiorImages) car.interiorImages = getInteriorImages(car);
+    } else {
+      if (!car.exteriorImages) car.exteriorImages = getExteriorImages(car);
+    }
     for (const file of input.files) {
       const b64 = await new Promise((res) => { const r = new FileReader(); r.onload = () => res(r.result); r.readAsDataURL(file); });
       try {
@@ -732,16 +789,19 @@
             brandSlug: car.brandSlug || slugify(car.brand),
             modelSlug: car.slug || slugify(car.brand + '-' + car.model),
             carSlug: car.slug,
+            category: category,
           }),
         });
         if (up.ok) {
           const d = await up.json();
-          car.images.push(d.url);
+          if (category === 'interior') car.interiorImages.push(d.url);
+          else car.exteriorImages.push(d.url);
         }
       } catch (_) { toast('Upload failed', 'err'); }
     }
+    syncCarImages(car);
     if (editCtx.type === 'used') car.img = car.images[0] || '';
-    $('e-img-grid').innerHTML = renderImgGrid(car.images);
+    refreshImgGrids(car);
     input.value = '';
     markDirty(true);
   };
@@ -823,11 +883,15 @@
       car.highlights = hl ? hl.split('\n').map((s) => s.trim()).filter(Boolean) : [];
     }
 
+    const pubType = editCtx ? editCtx.type : 'all';
+    if (editCtx && editCtx.type === 'new') syncCarImages(car);
     markDirty(true);
     closeCarEditor();
     renderInv();
     renderInvStats();
-    toast('Saved locally — hit Publish to update the live site', 'ok');
+    publishInv(pubType).then(function () {
+      toast('Saved — live site updated', 'ok');
+    });
   };
 
   window.closeCarEditor = function () {
@@ -863,7 +927,7 @@
   window.renderLeads = renderLeads;
 
   window.AdminAPI = {
-    api, toast, $, saveMeta,
+    api, toast, $, saveMeta, getLeadKey,
     get leadNotes() { return leadNotes; },
     set leadNotes(v) { leadNotes = v; },
     get newCars() { return newCars; },

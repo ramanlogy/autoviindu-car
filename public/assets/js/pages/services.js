@@ -8,8 +8,8 @@ window.renderServices = function () {
 
   var IC = window.AV_ICONS || {};
   var chevR = IC.chevR || '›';
-  var phone = IC.phone || '📞';
-  var shield = IC.shield || '🛡';
+  var phone = IC.phone || '<i data-lucide="phone"></i>';
+  var shield = IC.shield || '<i data-lucide="shield"></i>';
 
   var services = [
     {
@@ -69,7 +69,7 @@ window.renderServices = function () {
   var cardsHtml = services.map(function (s) {
     var items = s.items.map(function (item) {
       return '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--bg-2)">' +
-        '<span style="color:' + s.color + ';flex-shrink:0">✓</span>' +
+        '<span style="color:' + s.color + ';flex-shrink:0"><i data-lucide="check"></i></span>' +
         '<span style="font-size:13px;color:var(--ink-2)">' + item + '</span>' +
         '</div>';
     }).join('');
@@ -84,7 +84,7 @@ window.renderServices = function () {
       items +
       '</div>' +
       '<div style="padding:14px 20px;border-top:1px solid var(--bg-2);margin-top:12px">' +
-      '<button onclick="' + (s.link ? 'AV.goTo(\'' + s.link + '\')' : 'alert(\'Call us: +977-9701076240\')') + '" ' +
+      '<button onclick="' + (s.link ? 'AV.goTo(\'' + s.link + '\')' : 'alert(\'Call us: +977-9828364940\')') + '" ' +
       'style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:' + s.color + ';color:#fff;border:none;border-radius:var(--r10);font-family:var(--font-body);font-size:13px;font-weight:700;cursor:pointer">' +
       s.linkLabel + '</button>' +
       '</div>' +
@@ -108,7 +108,7 @@ window.renderServices = function () {
     '<div style="background:var(--ink-2);border-radius:var(--r20);padding:32px;text-align:center">' +
     '<div style="font-family:var(--font-display);font-size:22px;font-weight:700;color:#fff;margin-bottom:8px">Need expert advice?</div>' +
     '<p style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:18px">Call our automotive specialists for a free consultation — Kathmandu based.</p>' +
-    '<a href="tel:+9779701076240" class="btn btn-primary">📞 Call +977-9701076240</a>' +
+    '<a href="tel:+9779828364940" class="btn btn-primary"><i data-lucide="phone"></i> Call +977-9828364940</a>' +
     '</div>' +
 
     '</div>';

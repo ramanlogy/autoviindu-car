@@ -1,992 +1,1034 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChargeNepal</title>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>EV Charge Nepal — Find a charging station</title>
+<meta name="description" content="Find EV charging stations across Nepal — NEA, BYD, Tata, CG Motors, Hyundai, ElectriVa, GadiCharge, Aircharge and more. Filter by brand, speed and plan a route.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Gotham:wght@300;400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/lucide@latest"></script>
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --black:   #171A20;
-  --black2:  #1B1F27;
-  --black3:  #222831;
-  --black4:  #2C3140;
-  --border:  rgba(255,255,255,0.08);
-  --border2: rgba(255,255,255,0.15);
-  --white:   #FFFFFF;
-  --white2:  #E8EAF0;
-  --white3:  #9DA3B4;
-  --white4:  #5E6478;
-  --red:     #CC0000;
-  --red2:    #E31937;
-  --green:   #3E9142;
-  --amber:   #D4860F;
-  --sidebar: 360px;
-}
-
-html, body {
-  height: 100%;
-  font-family: 'Barlow', sans-serif;
-  background: var(--black);
-  color: var(--white);
-  overflow: hidden;
-}
-
-/* NAV — Tesla style: black bar, centered logo, right actions */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  height: 52px;
-  background: var(--black);
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center;
-  padding: 0 24px;
-}
-
-.nav-wordmark {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--white);
-}
-
-.nav-wordmark span {
-  color: var(--red2);
-}
-
-.nav-links {
-  display: flex; gap: 0; margin-left: 40px;
-}
-
-.nav-link {
-  font-family: 'Barlow', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--white3);
-  padding: 0 16px;
-  height: 52px;
-  display: flex; align-items: center;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: color 0.15s, border-color 0.15s;
-  text-decoration: none;
-}
-.nav-link:hover { color: var(--white); }
-.nav-link.active { color: var(--white); border-bottom-color: var(--red2); }
-
-.nav-right {
-  margin-left: auto;
-  display: flex; align-items: center; gap: 8px;
-}
-
-.nav-pill {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.nav-pill-outline {
-  border: 1px solid var(--border2);
-  color: var(--white2);
-  background: transparent;
-}
-.nav-pill-outline:hover { background: var(--black3); }
-
-/* LAYOUT */
-.layout {
-  position: fixed; top: 52px; left: 0; right: 0; bottom: 0;
-  display: flex;
-}
-
-/* SIDEBAR */
-.sidebar {
-  width: var(--sidebar);
-  background: var(--black);
-  border-right: 1px solid var(--border);
-  display: flex; flex-direction: column;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-/* SEARCH */
-.search-section {
-  padding: 18px 20px 14px;
-  border-bottom: 1px solid var(--border);
-}
-
-.search-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--white4);
-  margin-bottom: 10px;
-}
-
-.search-row {
-  display: flex; gap: 8px;
-}
-
-.search-field {
-  flex: 1;
-  background: var(--black3);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  display: flex; align-items: center; gap: 10px;
-  padding: 9px 12px;
-  transition: border-color 0.15s;
-}
-.search-field:focus-within { border-color: var(--border2); }
-.search-field svg { width: 14px; height: 14px; stroke: var(--white4); flex-shrink: 0; }
-.search-field input {
-  background: none; border: none; outline: none;
-  font-family: 'Barlow', sans-serif;
-  font-size: 13px; color: var(--white); width: 100%;
-}
-.search-field input::placeholder { color: var(--white4); }
-
-/* FILTERS */
-.filter-section {
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--border);
-}
-
-.filter-row {
-  margin-bottom: 12px;
-}
-.filter-row:last-child { margin-bottom: 0; }
-
-.filter-title {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--white4);
-  margin-bottom: 8px;
-}
-
-.chips {
-  display: flex; flex-wrap: wrap; gap: 5px;
-}
-
-.chip {
-  padding: 4px 10px;
-  border-radius: 2px;
-  border: 1px solid var(--border);
-  font-family: 'Barlow', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--white4);
-  cursor: pointer;
-  transition: all 0.12s;
-  background: transparent;
-}
-.chip:hover { border-color: var(--border2); color: var(--white2); }
-.chip.active {
-  background: var(--red2);
-  border-color: var(--red2);
-  color: var(--white);
-}
-
-/* STATION COUNT */
-.count-bar {
-  padding: 10px 20px;
-  display: flex; align-items: center; justify-content: space-between;
-  border-bottom: 1px solid var(--border);
-}
-
-.count-text {
-  font-size: 11px;
-  color: var(--white4);
-  letter-spacing: 0.03em;
-}
-
-.count-text strong {
-  color: var(--white2);
-  font-weight: 600;
-}
-
-.status-dots {
-  display: flex; gap: 10px;
-}
-
-.sdot {
-  display: flex; align-items: center; gap: 5px;
-  font-size: 10px; color: var(--white4);
-  letter-spacing: 0.04em;
-}
-.sdot-circle {
-  width: 7px; height: 7px; border-radius: 50%;
-}
-.sdot-circle.av { background: var(--green); }
-.sdot-circle.bu { background: var(--amber); }
-.sdot-circle.of { background: var(--white4); }
-
-/* STATION LIST */
-.station-list {
-  flex: 1; overflow-y: auto;
-}
-.station-list::-webkit-scrollbar { width: 3px; }
-.station-list::-webkit-scrollbar-track { background: transparent; }
-.station-list::-webkit-scrollbar-thumb { background: var(--black4); }
-
-.station-item {
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--border);
-  cursor: pointer;
-  transition: background 0.12s;
-  position: relative;
-}
-.station-item:hover { background: var(--black2); }
-.station-item.selected {
-  background: var(--black2);
-}
-.station-item.selected::before {
-  content: '';
-  position: absolute; left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: var(--red2);
-}
-
-.si-top {
-  display: flex; align-items: flex-start; justify-content: space-between;
-  gap: 8px; margin-bottom: 6px;
-}
-
-.si-name {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--white);
-  line-height: 1.4;
-  flex: 1;
-}
-
-.si-status {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 2px 6px;
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-.si-status.av { color: var(--green); }
-.si-status.bu { color: var(--amber); }
-.si-status.of { color: var(--white4); }
-
-.si-meta {
-  display: flex; gap: 14px; align-items: center; margin-bottom: 6px;
-}
-
-.si-detail {
-  font-size: 11px;
-  color: var(--white4);
-  display: flex; align-items: center; gap: 4px;
-}
-.si-detail svg { width: 11px; height: 11px; stroke: currentColor; }
-
-.si-plugs {
-  display: flex; gap: 4px; flex-wrap: wrap;
-}
-
-.plug {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--white3);
-  padding: 1px 6px;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-}
-
-.si-op {
-  font-size: 10px;
-  color: var(--white4);
-  margin-top: 5px;
-  letter-spacing: 0.03em;
-}
-
-/* MAP */
-.map-wrap {
-  flex: 1; position: relative;
-}
-#map { width: 100%; height: 100%; }
-
-/* Leaflet tile treatment — Tesla uses clean map look */
-.leaflet-tile { filter: brightness(0.28) saturate(0.3) contrast(1.1); }
-.leaflet-control-zoom {
-  border: 1px solid var(--border2) !important;
-  border-radius: 3px !important;
-  overflow: hidden;
-}
-.leaflet-control-zoom a {
-  background: var(--black2) !important;
-  color: var(--white3) !important;
-  border-bottom: 1px solid var(--border) !important;
-  font-size: 18px !important;
-  line-height: 30px !important;
-  width: 32px !important;
-  height: 32px !important;
-}
-.leaflet-control-zoom a:hover {
-  background: var(--black3) !important;
-  color: var(--white) !important;
-}
-.leaflet-control-attribution {
-  background: rgba(23,26,32,0.7) !important;
-  color: var(--white4) !important;
-  font-size: 9px !important;
-}
-.leaflet-control-attribution a { color: var(--white4) !important; }
-
-/* MAP MARKERS */
-.ev-pin {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: #3E9142;
-  border: 2px solid rgba(255,255,255,0.25);
-  cursor: pointer;
-  transition: transform 0.15s;
-}
-.ev-pin.busy { background: #D4860F; }
-.ev-pin.offline { background: #5E6478; }
-.ev-pin.selected {
-  transform: scale(1.8);
-  border-color: rgba(255,255,255,0.6);
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.1);
-}
-
-/* MAP TOP BAR — Tesla trip overview style */
-.map-topbar {
-  position: absolute; top: 0; left: 0; right: 0;
-  background: rgba(23,26,32,0.92);
-  border-bottom: 1px solid var(--border);
-  padding: 10px 20px;
-  display: flex; align-items: center; gap: 0;
-  z-index: 800;
-  backdrop-filter: blur(8px);
-}
-
-.mt-stat {
-  padding: 0 20px;
-  border-right: 1px solid var(--border);
-  text-align: center;
-}
-.mt-stat:first-child { padding-left: 0; }
-.mt-stat:last-child { border-right: none; }
-
-.mt-val {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 2px;
-}
-
-.mt-val.green { color: #4EAD52; }
-.mt-val.amber { color: #E09B2A; }
-.mt-val.dim   { color: var(--white3); }
-
-.mt-lbl {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--white4);
-}
-
-/* DETAIL PANEL — Tesla card bottom right */
-.detail-panel {
-  position: absolute;
-  bottom: 0; right: 0;
-  width: 300px;
-  background: var(--black);
-  border-left: 1px solid var(--border);
-  border-top: 1px solid var(--border);
-  z-index: 800;
-  display: none;
-  animation: slideLeft 0.2s ease;
-}
-.detail-panel.open { display: block; }
-
-@keyframes slideLeft {
-  from { opacity: 0; transform: translateX(16px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
-.dp-header {
-  padding: 16px 20px 14px;
-  border-bottom: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: flex-start;
-}
-
-.dp-close {
-  width: 24px; height: 24px;
-  background: var(--black3);
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--white4); font-size: 12px;
-  transition: all 0.12s; flex-shrink: 0;
-  line-height: 1;
-}
-.dp-close:hover { background: var(--black4); color: var(--white); }
-
-.dp-op-badge {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--white4);
-  margin-bottom: 6px;
-}
-
-.dp-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--white);
-  line-height: 1.3;
-  padding-right: 12px;
-}
-
-.dp-addr {
-  font-size: 11px;
-  color: var(--white4);
-  padding: 10px 20px;
-  border-bottom: 1px solid var(--border);
-  line-height: 1.5;
-}
-
-/* Tesla-style data grid */
-.dp-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  border-bottom: 1px solid var(--border);
-}
-
-.dp-cell {
-  padding: 14px 16px;
-  border-right: 1px solid var(--border);
-}
-.dp-cell:last-child { border-right: none; }
-
-.dp-cell-val {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 3px;
-}
-
-.dp-cell-lbl {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--white4);
-}
-
-.dp-cell-unit {
-  font-size: 11px;
-  font-weight: 400;
-  color: var(--white4);
-}
-
-.dp-connectors {
-  padding: 12px 20px;
-  border-bottom: 1px solid var(--border);
-}
-
-.dp-conn-label {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--white4);
-  margin-bottom: 8px;
-}
-
-.dp-conn-list {
-  display: flex; gap: 5px; flex-wrap: wrap;
-}
-
-.dp-conn {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--white2);
-  padding: 4px 8px;
-  border: 1px solid var(--border2);
-  border-radius: 2px;
-  background: var(--black3);
-}
-
-.dp-hours-row {
-  padding: 10px 20px;
-  border-bottom: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: center;
-}
-
-.dp-hours-text {
-  font-size: 12px;
-  color: var(--white3);
-}
-
-.dp-open-tag {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #4EAD52;
-}
-
-.dp-status-row {
-  padding: 10px 20px;
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; gap: 8px;
-}
-
-.dp-status-dot {
-  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
-}
-
-.dp-status-text {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.dp-btn {
-  display: block; width: 100%;
-  padding: 14px 20px;
-  background: var(--red2);
-  color: var(--white);
-  font-family: 'Barlow', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-align: center;
-  text-decoration: none;
-  border: none; cursor: pointer;
-  transition: background 0.15s;
-}
-.dp-btn:hover { background: #B5001A; }
-
-/* LOADING */
-#loading {
-  position: fixed; inset: 0; z-index: 2000;
-  background: var(--black);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 24px;
-  transition: opacity 0.3s;
-}
-#loading.hide { opacity: 0; pointer-events: none; }
-
-.load-logo {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-.load-logo span { color: var(--red2); }
-
-.load-bar {
-  width: 160px; height: 1px;
-  background: var(--black3);
-}
-.load-fill {
-  height: 100%;
-  background: var(--white2);
-  animation: barFill 1.4s ease forwards;
-}
-@keyframes barFill { from { width: 0 } to { width: 100% } }
-
-.load-sub {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--white4);
-}
+/* ============ TOKENS ============ */
+:root{
+  --ink:#0D1210; --ink-2:#4A534E; --ink-3:#8B948E; --ink-4:#B7BEB9;
+  --line:#E4E8E4; --line-2:#EDF0ED;
+  --bg:#FFFFFF; --bg-soft:#F6F7F5; --bg-raise:#FFFFFF;
+  --accent:#0F5C33; --accent-ink:#FFFFFF; --accent-soft:#E7F2EB; --accent-dim:#12703F;
+  --amber:#A66A0E; --amber-soft:#FBF1E1;
+  --grey-soft:#EEF0EE;
+  --r-sm:8px; --r-md:12px; --r-lg:18px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(13,18,16,.06);
+  --sh-2:0 8px 28px rgba(13,18,16,.14);
+  --ease:cubic-bezier(.4,0,.2,1);
+  --header-h:60px;
+  --tabs-h:52px;
+  font-size:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--bg); color:var(--ink);
+  -webkit-font-smoothing:antialiased; line-height:1.5;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+::selection{background:var(--accent-soft);}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px;}
+button{font-family:inherit; cursor:pointer;}
+input,select{font-family:inherit;}
+a{color:inherit;}
+svg.icon{width:16px;height:16px;stroke-width:2;flex-shrink:0;}
+
+/* ============ APP SHELL ============ */
+.app{ height:calc(100vh - var(--nav, 70px)); min-height:550px; display:flex; flex-direction:column; }
+
+/* ---- Header ---- */
+.topbar{
+  height:var(--header-h); flex-shrink:0; display:flex; align-items:center; gap:14px;
+  padding:0 18px; border-bottom:1px solid var(--line); background:var(--bg);
+  z-index:50;
+}
+.brand{ display:flex; align-items:center; gap:9px; font-weight:800; font-size:15px; letter-spacing:-.01em; white-space:nowrap; }
+.brand .bolt{
+  width:26px; height:26px; border-radius:7px; background:var(--ink); color:#fff;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.brand .bolt svg{ width:15px; height:15px; }
+.brand span.sub{ display:none; color:var(--ink-3); font-weight:500; }
+.topbar-meta{
+  display:flex; align-items:center; gap:16px; margin-left:auto; margin-right:auto;
+  font-size:12.5px; color:var(--ink-3); font-weight:600; white-space:nowrap;
+}
+.topbar-meta b{ color:var(--ink); font-weight:800; }
+.topbar-meta .dot{ width:3px; height:3px; border-radius:50%; background:var(--ink-4); }
+@media(max-width:680px){ .topbar-meta{ display:none; } }
+
+.btn{
+  display:inline-flex; align-items:center; gap:7px; border:1px solid var(--line); background:var(--bg);
+  color:var(--ink); font-weight:700; font-size:13px; padding:9px 14px; border-radius:var(--r-pill);
+  transition:all .15s var(--ease); white-space:nowrap;
+}
+.btn:hover{ border-color:var(--ink-4); background:var(--bg-soft); }
+.btn.primary{ background:var(--ink); border-color:var(--ink); color:#fff; }
+.btn.primary:hover{ background:#000; }
+.btn.accent{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.btn.accent:hover{ background:var(--accent-dim); }
+.btn.active{ background:var(--accent-soft); border-color:var(--accent); color:var(--accent); }
+.btn.ghost{ border-color:transparent; background:transparent; }
+.btn.ghost:hover{ background:var(--bg-soft); }
+.btn.sm{ padding:7px 11px; font-size:12px; }
+.btn:disabled{ opacity:.45; cursor:not-allowed; }
+
+/* ---- Route bar (collapsible) ---- */
+.route-bar{
+  flex-shrink:0; overflow:hidden; max-height:0; transition:max-height .28s var(--ease), border-color .2s;
+  border-bottom:1px solid transparent; background:var(--bg-soft);
+}
+.route-bar.open{ max-height:160px; border-color:var(--line); }
+.route-bar-inner{ display:flex; align-items:flex-end; gap:10px; padding:14px 18px; flex-wrap:wrap; }
+.rfield{ display:flex; flex-direction:column; gap:5px; flex:1; min-width:150px; }
+.rfield label{ font-size:10.5px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; color:var(--ink-3); }
+.rfield .box{
+  display:flex; align-items:center; gap:8px; background:var(--bg); border:1.5px solid var(--line);
+  border-radius:var(--r-sm); padding:9px 12px; transition:border-color .15s;
+}
+.rfield .box:focus-within{ border-color:var(--accent); }
+.rfield .box svg{ color:var(--ink-3); flex-shrink:0; }
+.rfield input{ border:none; outline:none; background:none; font-size:13.5px; width:100%; color:var(--ink); }
+.rfield input::placeholder{ color:var(--ink-4); }
+.route-actions{ display:flex; gap:8px; }
+.route-status{ font-size:12px; color:var(--ink-2); font-weight:600; padding:0 18px 12px; display:none; }
+.route-status.show{ display:block; }
+.route-status a{ color:var(--accent); font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+
+/* ---- Mobile tabs ---- */
+.mtabs{ display:none; }
+@media(max-width:880px){
+  .mtabs{
+    display:flex; flex-shrink:0; height:var(--tabs-h); border-bottom:1px solid var(--line);
+    background:var(--bg); padding:8px 14px; gap:8px;
+  }
+  .mtabs button{
+    flex:1; border:none; background:var(--bg-soft); border-radius:var(--r-pill); font-weight:700;
+    font-size:13px; color:var(--ink-2); display:flex; align-items:center; justify-content:center; gap:6px;
+  }
+  .mtabs button.active{ background:var(--ink); color:#fff; }
+}
+
+/* ---- Workspace ---- */
+.workspace{ flex:1; display:flex; min-height:0; }
+.pane-list{ width:380px; flex-shrink:0; border-right:1px solid var(--line); display:flex; flex-direction:column; min-height:0; background:var(--bg); }
+.pane-map{ flex:1; position:relative; min-height:0; background:var(--bg-soft); }
+@media(max-width:880px){
+  .workspace{ position:relative; }
+  .pane-list, .pane-map{ width:100%; }
+  .pane-list.hide, .pane-map.hide{ display:none; }
+  .pane-list{ border-right:none; }
+}
+
+/* ---- Filters ---- */
+.filters{ flex-shrink:0; padding:14px 16px; border-bottom:1px solid var(--line); display:flex; flex-direction:column; gap:10px; }
+.search-box{
+  display:flex; align-items:center; gap:9px; background:var(--bg-soft); border:1.5px solid transparent;
+  border-radius:var(--r-pill); padding:10px 14px; transition:border-color .15s, background .15s;
+}
+.search-box:focus-within{ border-color:var(--accent); background:var(--bg); }
+.search-box svg{ color:var(--ink-3); flex-shrink:0; }
+.search-box input{ border:none; outline:none; background:none; font-size:13.5px; width:100%; color:var(--ink); }
+.search-box input::placeholder{ color:var(--ink-3); }
+.search-box .clear-x{ display:none; border:none; background:none; color:var(--ink-3); padding:2px; }
+.search-box .clear-x.show{ display:flex; }
+
+.seg{ display:flex; background:var(--bg-soft); border-radius:var(--r-pill); padding:3px; gap:2px; }
+.seg button{
+  flex:1; border:none; background:none; padding:8px 6px; border-radius:var(--r-pill);
+  font-size:12.5px; font-weight:700; color:var(--ink-2); transition:all .15s var(--ease);
+  display:flex; align-items:center; justify-content:center; gap:5px;
+}
+.seg button.active{ background:var(--ink); color:#fff; }
+.seg button .cdot{ width:6px; height:6px; border-radius:50%; }
+
+.filter-row{ display:flex; gap:8px; }
+.selectwrap{ position:relative; flex:1; }
+.selectwrap select{
+  width:100%; appearance:none; -webkit-appearance:none; background:var(--bg); border:1.5px solid var(--line);
+  border-radius:var(--r-sm); padding:9px 30px 9px 12px; font-size:12.5px; font-weight:700; color:var(--ink);
+  cursor:pointer; transition:border-color .15s;
+}
+.selectwrap select:hover{ border-color:var(--ink-4); }
+.selectwrap::after{
+  content:''; position:absolute; right:11px; top:50%; width:8px; height:8px;
+  border-right:1.6px solid var(--ink-3); border-bottom:1.6px solid var(--ink-3);
+  transform:translateY(-65%) rotate(45deg); pointer-events:none;
+}
+.clear-all{ font-size:11.5px; font-weight:700; color:var(--ink-3); background:none; border:none; align-self:flex-start; text-decoration:underline; text-underline-offset:2px; }
+.clear-all:hover{ color:var(--ink); }
+
+/* ---- Result count ---- */
+.result-bar{
+  flex-shrink:0; padding:10px 16px; display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid var(--line); font-size:12px; color:var(--ink-3); font-weight:700;
+}
+.result-bar b{ color:var(--ink); }
+.legend{ display:flex; gap:10px; }
+.legend span{ display:flex; align-items:center; gap:5px; }
+.legend i{ width:7px; height:7px; border-radius:50%; display:inline-block; }
+.legend .av{ background:var(--accent); } .legend .bu{ background:var(--amber); } .legend .of{ background:var(--ink-4); }
+
+/* ---- Station list ---- */
+.station-list{ flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+.station-list::-webkit-scrollbar{ width:6px; }
+.station-list::-webkit-scrollbar-thumb{ background:var(--line); border-radius:3px; }
+.empty{ padding:60px 24px; text-align:center; color:var(--ink-3); }
+.empty svg{ width:26px; height:26px; margin-bottom:10px; }
+.empty div{ font-size:13px; font-weight:600; }
+
+.s-card{ padding:14px 16px; border-bottom:1px solid var(--line-2); cursor:pointer; position:relative; transition:background .1s; }
+.s-card:hover{ background:var(--bg-soft); }
+.s-card.sel{ background:var(--accent-soft); }
+.s-card.sel::before{ content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--accent); }
+.s-top{ display:flex; align-items:flex-start; gap:8px; margin-bottom:6px; }
+.s-badge{ width:8px; height:8px; border-radius:50%; margin-top:5px; flex-shrink:0; }
+.s-badge.av{ background:var(--accent); } .s-badge.bu{ background:var(--amber); } .s-badge.of{ background:var(--ink-4); }
+.s-name{ font-size:13.5px; font-weight:700; line-height:1.35; flex:1; }
+.s-dist{ font-size:11px; font-weight:700; color:var(--ink-3); white-space:nowrap; }
+.s-sub{ font-size:11.5px; color:var(--ink-3); margin-bottom:8px; display:flex; align-items:center; gap:5px; }
+.s-tags{ display:flex; flex-wrap:wrap; gap:5px; }
+.s-tag{ font-size:10.5px; font-weight:700; padding:3px 8px; border-radius:6px; background:var(--grey-soft); color:var(--ink-2); }
+.s-tag.fast{ background:var(--accent-soft); color:var(--accent); }
+.s-tag.op{ background:transparent; border:1px solid var(--line); color:var(--ink-2); }
+
+/* ---- Map ---- */
+#map{ width:100%; height:100%; }
+.leaflet-container{ font-family:'Inter',sans-serif; background:var(--bg-soft); }
+.leaflet-control-attribution{ font-size:9px !important; }
+.leaflet-control-zoom{ border:1px solid var(--line) !important; border-radius:var(--r-sm) !important; box-shadow:var(--sh-1) !important; overflow:hidden; }
+.leaflet-control-zoom a{ background:#fff !important; color:var(--ink-2) !important; border-bottom:1px solid var(--line) !important; }
+.leaflet-control-zoom a:hover{ background:var(--bg-soft) !important; }
+
+.pin{ width:12px; height:12px; border-radius:50%; border:2.5px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,.35); background:var(--accent); }
+.pin.busy{ background:var(--amber); }
+.pin.offline{ background:var(--ink-4); }
+.pin.sel{ width:18px; height:18px; box-shadow:0 0 0 5px rgba(15,92,51,.16), 0 2px 6px rgba(0,0,0,.4); }
+.pin-wrap{ display:flex; align-items:center; justify-content:center; }
+
+.locate-btn{
+  position:absolute; bottom:16px; right:16px; z-index:410;
+  background:#fff; box-shadow:var(--sh-2);
+}
+@media(max-width:880px){ .locate-btn{ bottom:16px; } }
+
+.route-line-badge{
+  position:absolute; top:14px; left:14px; z-index:410; background:#fff; border:1px solid var(--line);
+  border-radius:var(--r-pill); padding:8px 14px; font-size:12px; font-weight:700; color:var(--ink);
+  box-shadow:var(--sh-1); display:none; align-items:center; gap:8px;
+}
+.route-line-badge.show{ display:flex; }
+.route-line-badge b{ color:var(--accent); }
+
+/* ---- Detail panel ---- */
+.detail{
+  position:absolute; z-index:500; background:#fff; box-shadow:var(--sh-2);
+  display:none; flex-direction:column;
+  top:0; right:0; bottom:0; width:340px; border-left:1px solid var(--line);
+}
+.detail.open{ display:flex; }
+@media(max-width:880px){
+  .detail{ top:auto; left:0; right:0; width:auto; border-left:none; border-top:1px solid var(--line);
+    border-radius:var(--r-lg) var(--r-lg) 0 0; max-height:72%; }
+  .detail.open{ animation:slideUp .22s var(--ease); }
+}
+@keyframes slideUp{ from{ transform:translateY(16px); opacity:.4; } to{ transform:translateY(0); opacity:1; } }
+
+.detail-scroll{ overflow-y:auto; flex:1; }
+.d-head{ padding:18px 18px 12px; border-bottom:1px solid var(--line); display:flex; gap:10px; }
+.d-head-txt{ flex:1; min-width:0; }
+.d-op{ font-size:10.5px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; color:var(--accent); margin-bottom:5px; }
+.d-name{ font-size:16px; font-weight:800; line-height:1.3; }
+.d-close{ width:28px; height:28px; border-radius:50%; border:1px solid var(--line); background:var(--bg-soft); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--ink-2); }
+.d-close:hover{ background:var(--grey-soft); }
+.d-addr{ padding:12px 18px; border-bottom:1px solid var(--line); font-size:12.5px; color:var(--ink-2); display:flex; gap:8px; }
+.d-addr svg{ color:var(--ink-3); flex-shrink:0; margin-top:2px; }
+.d-status{ padding:12px 18px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:8px; font-size:12px; font-weight:800; letter-spacing:.3px; text-transform:uppercase; }
+.d-status i{ width:8px; height:8px; border-radius:50%; }
+.d-grid{ display:grid; grid-template-columns:repeat(3,1fr); border-bottom:1px solid var(--line); }
+.d-cell{ padding:14px 10px; text-align:center; border-right:1px solid var(--line); }
+.d-cell:last-child{ border-right:none; }
+.d-val{ font-size:19px; font-weight:800; }
+.d-lbl{ font-size:9px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:var(--ink-3); margin-top:3px; }
+.d-conn{ padding:14px 18px; border-bottom:1px solid var(--line); }
+.d-conn-lbl{ font-size:10px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; color:var(--ink-3); margin-bottom:8px; }
+.d-conn-list{ display:flex; gap:6px; flex-wrap:wrap; }
+.d-conn-item{ font-size:11.5px; font-weight:700; color:var(--accent); padding:5px 10px; border-radius:7px; background:var(--accent-soft); }
+.d-hours{ padding:12px 18px; border-bottom:1px solid var(--line); font-size:12.5px; color:var(--ink-2); font-weight:600; display:flex; justify-content:space-between; }
+.d-foot{ padding:14px 18px; }
+.d-btn{ width:100%; display:flex; align-items:center; justify-content:center; gap:8px; background:var(--ink); color:#fff; border:none; padding:14px; border-radius:var(--r-sm); font-weight:800; font-size:13px; text-decoration:none; }
+.d-btn:hover{ background:#000; }
+
+/* ---- Toast ---- */
+.toast-wrap{ position:fixed; bottom:22px; left:50%; transform:translateX(-50%); z-index:2000; display:flex; flex-direction:column; gap:8px; align-items:center; }
+.toast{ background:var(--ink); color:#fff; padding:11px 18px; border-radius:var(--r-pill); font-size:12.5px; font-weight:600; box-shadow:var(--sh-2); animation:toastIn .2s var(--ease); }
+.toast.error{ background:#7A2020; }
+@keyframes toastIn{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:translateY(0); } }
 </style>
 </head>
 <body>
 
-<div id="loading">
-  <div class="load-logo">Charge<span>Nepal</span></div>
-  <div class="load-bar"><div class="load-fill"></div></div>
-  <div class="load-sub">Loading charging network</div>
-</div>
+<script src="assets/js/site-chrome.js"></script>
 
-<nav>
-  <div class="nav-wordmark">Charge<span>Nepal</span></div>
-  <div class="nav-links">
-    <a class="nav-link active">Map</a>
-    <a class="nav-link">Routes</a>
-    <a class="nav-link">Network</a>
-  </div>
-  <div class="nav-right">
-    <button class="nav-pill nav-pill-outline">Sign In</button>
-  </div>
-</nav>
+<div class="app">
 
-<div class="layout">
-  <div class="sidebar">
-
-    <div class="search-section">
-      <div class="search-label">Find Charging Station</div>
-      <div class="search-row">
-        <div class="search-field">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg>
-          <input type="text" id="searchInput" placeholder="City, station name, address…">
-        </div>
-      </div>
-    </div>
-
-    <div class="filter-section">
-      <div class="filter-row">
-        <div class="filter-title">Network</div>
-        <div class="chips" id="networkFilter">
-          <button class="chip active" data-filter="all">All</button>
-          <button class="chip" data-filter="NEA">NEA</button>
-          <button class="chip" data-filter="BYD">BYD</button>
-          <button class="chip" data-filter="CG Motors">CG Motors</button>
-          <button class="chip" data-filter="Tata">Tata</button>
-          <button class="chip" data-filter="MG">MG</button>
-          <button class="chip" data-filter="Hyundai">Hyundai</button>
-          <button class="chip" data-filter="ElectriVa">ElectriVa</button>
-        </div>
-      </div>
-      <div class="filter-row">
-        <div class="filter-title">Charger Type</div>
-        <div class="chips" id="typeFilter">
-          <button class="chip active" data-type="all">All</button>
-          <button class="chip" data-type="DC Fast">DC Fast</button>
-          <button class="chip" data-type="AC">AC Level 2</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="count-bar">
-      <div class="count-text"><strong id="countShown">50</strong> stations</div>
-      <div class="status-dots">
-        <div class="sdot"><div class="sdot-circle av"></div><span id="cAvail">0</span></div>
-        <div class="sdot"><div class="sdot-circle bu"></div><span id="cBusy">0</span></div>
-        <div class="sdot"><div class="sdot-circle of"></div><span id="cOff">0</span></div>
-      </div>
-    </div>
-
-    <div class="station-list" id="stationList"></div>
+  <!-- MOBILE TABS -->
+  <div class="mtabs">
+    <button class="active" id="tabList"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>List</button>
+    <button id="tabMap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>Map</button>
   </div>
 
-  <div class="map-wrap">
-    <div id="map"></div>
+  <!-- WORKSPACE -->
+  <div class="workspace">
 
-    <div class="map-topbar">
-      <div class="mt-stat">
-        <div class="mt-val green" id="statAvail">—</div>
-        <div class="mt-lbl">Available</div>
+    <aside class="pane-list" id="paneList">
+      <div class="filters">
+        <!-- PLAN A ROUTE ALWAYS SHOWN -->
+        <div class="sidebar-route" style="display:flex; flex-direction:column; gap:8px; padding:12px; background:var(--bg-soft); border-radius:var(--r-md); border:1.5px solid var(--line);">
+          <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--ink-3); display:flex; align-items:center; gap:6px;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width:14px; height:14px;"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/></svg>
+            Plan a Route
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <input type="text" id="routeFrom" placeholder="From (e.g. Kathmandu)" style="width:100%; padding:8px 10px; border:1.5px solid var(--line); border-radius:var(--r-sm); font-size:12px; outline:none; background:var(--bg); color:var(--ink);">
+            <input type="text" id="routeTo" placeholder="To (e.g. Pokhara)" style="width:100%; padding:8px 10px; border:1.5px solid var(--line); border-radius:var(--r-sm); font-size:12px; outline:none; background:var(--bg); color:var(--ink);">
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn accent sm" id="btnFindRoute" style="flex:1; justify-content:center; font-size:12px; padding:6px 10px;">Find Stations</button>
+            <button class="btn ghost sm" id="btnClearRoute" style="display:none; justify-content:center; border:1px solid var(--line); font-size:12px; padding:6px 10px;">Clear Route</button>
+          </div>
+          <div id="routeStatus" style="font-size:11px; color:var(--ink-2); display:none; line-height:1.4; margin-top:4px;"></div>
+        </div>
+
+        <div class="search-box">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="searchInput" placeholder="Search by name, city or address">
+          <button class="clear-x" id="searchClear"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <div class="seg" id="speedSeg">
+          <button class="active" data-speed="all">All speeds</button>
+          <button data-speed="DC Fast"><span class="cdot" style="background:#0F5C33"></span>Fast (DC)</button>
+          <button data-speed="AC"><span class="cdot" style="background:#8B948E"></span>Slow (AC)</button>
+        </div>
+        <div class="filter-row">
+          <div class="selectwrap">
+            <select id="brandFilter"><option value="all">All brands</option></select>
+          </div>
+          <div class="selectwrap">
+            <select id="provinceFilter"><option value="all">All provinces</option></select>
+          </div>
+        </div>
+        <button class="clear-all" id="clearAll">Clear filters</button>
       </div>
-      <div class="mt-stat">
-        <div class="mt-val amber" id="statBusy">—</div>
-        <div class="mt-lbl">In Use</div>
+
+      <div class="result-bar" style="display:flex; flex-direction:column; gap:4px; align-items:stretch;">
+        <div style="display:flex; justify-content:space-between; font-size:13px;">
+          <span><b id="countShown">0</b> stations shown</span>
+          <span style="color:var(--ink-3); font-weight:600;"><span id="mAvail">—</span> available</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--ink-3); border-top:1px solid var(--line-2); padding-top:4px;">
+          <span>Total: <b id="mTotal">—</b></span>
+          <span>Networks: <b id="mNetworks">—</b></span>
+        </div>
+        <div class="legend" style="margin-top:6px; border-top:1px solid var(--line-2); padding-top:6px;">
+          <span><i class="av"></i>Available</span>
+          <span><i class="bu"></i>In use</span>
+          <span><i class="of"></i>Offline</span>
+        </div>
       </div>
-      <div class="mt-stat">
-        <div class="mt-val dim" id="statOffline">—</div>
-        <div class="mt-lbl">Offline</div>
-      </div>
-      <div class="mt-stat">
-        <div class="mt-val" id="statTotal">—</div>
-        <div class="mt-lbl">Total Shown</div>
-      </div>
-      <div class="mt-stat">
-        <div class="mt-val">77</div>
-        <div class="mt-lbl">Districts</div>
-      </div>
-      <div class="mt-stat">
-        <div class="mt-val">CCS2 · GBT · AC</div>
-        <div class="mt-lbl">Connector Types</div>
+
+      <div class="station-list" id="stationList"></div>
+    </aside>
+
+    <div class="pane-map hide" id="paneMap">
+      <div id="map"></div>
+      <div class="route-line-badge" id="routeBadge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span id="routeBadgeTxt"></span></div>
+      <button class="btn sm locate-btn" id="locateBtn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><circle cx="12" cy="12" r="7"/></svg>Near me</button>
+
+      <div class="detail" id="detail">
+        <div class="detail-scroll">
+          <div class="d-head">
+            <div class="d-head-txt">
+              <div class="d-op" id="dOp"></div>
+              <div class="d-name" id="dName"></div>
+            </div>
+            <button class="d-close" id="dClose"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          </div>
+          <div class="d-addr"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span id="dAddr"></span></div>
+          <div class="d-status"><i id="dDot"></i><span id="dStatusTxt"></span></div>
+          <div class="d-grid">
+            <div class="d-cell"><div class="d-val" id="dPower"></div><div class="d-lbl">kW</div></div>
+            <div class="d-cell"><div class="d-val" id="dGuns"></div><div class="d-lbl">Chargers</div></div>
+            <div class="d-cell"><div class="d-val" id="dRate"></div><div class="d-lbl">NPR/kWh</div></div>
+          </div>
+          <div class="d-conn">
+            <div class="d-conn-lbl">Connectors</div>
+            <div class="d-conn-list" id="dConns"></div>
+          </div>
+          <div class="d-hours"><span id="dHours"></span><span id="dOpen" style="color:var(--accent);font-weight:800"></span></div>
+          <div class="d-foot">
+            <a class="d-btn" id="dDir" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Get directions</a>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="detail-panel" id="detailPanel">
-      <div class="dp-header">
-        <div>
-          <div class="dp-op-badge" id="dpOp"></div>
-          <div class="dp-name" id="dpName"></div>
-        </div>
-        <button class="dp-close" id="dpClose">✕</button>
-      </div>
-      <div class="dp-addr" id="dpAddr"></div>
-      <div class="dp-status-row" id="dpStatusRow">
-        <div class="dp-status-dot" id="dpStatusDot"></div>
-        <div class="dp-status-text" id="dpStatusText"></div>
-      </div>
-      <div class="dp-grid">
-        <div class="dp-cell">
-          <div class="dp-cell-val" id="dpPower"></div>
-          <div class="dp-cell-lbl">Power <span class="dp-cell-unit">kW</span></div>
-        </div>
-        <div class="dp-cell">
-          <div class="dp-cell-val" id="dpGuns"></div>
-          <div class="dp-cell-lbl">Chargers</div>
-        </div>
-        <div class="dp-cell">
-          <div class="dp-cell-val" id="dpRate"></div>
-          <div class="dp-cell-lbl">NPR <span class="dp-cell-unit">/kWh</span></div>
-        </div>
-      </div>
-      <div class="dp-connectors">
-        <div class="dp-conn-label">Connectors</div>
-        <div class="dp-conn-list" id="dpConns"></div>
-      </div>
-      <div class="dp-hours-row">
-        <div class="dp-hours-text" id="dpHours"></div>
-        <div class="dp-open-tag" id="dpOpenTag"></div>
-      </div>
-      <a class="dp-btn" id="dpDir" href="#" target="_blank">Get Directions</a>
-    </div>
   </div>
 </div>
+
+<div class="toast-wrap" id="toastWrap"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const STATIONS = [
-  { id:1,  name:"NEA Charging — Ratna Park",          operator:"NEA",       city:"Kathmandu", address:"Ratna Park Path, Kathmandu",              lat:27.7041, lng:85.3131, power:60, guns:3, plugs:["CCS2","AC Type 2"],          type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:2,  name:"NEA Charging — Kuleshwor",            operator:"NEA",       city:"Kathmandu", address:"Kuleshwor, Kathmandu",                    lat:27.6953, lng:85.2985, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:3,  name:"NEA Charging — Tinkune",              operator:"NEA",       city:"Kathmandu", address:"Tinkune, Koteshwor",                      lat:27.6839, lng:85.3500, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"busy",      hours:"00:00–24:00", rate:17 },
-  { id:4,  name:"NEA Charging — Baneshwor",            operator:"NEA",       city:"Kathmandu", address:"New Baneshwor, Kathmandu",                lat:27.6916, lng:85.3365, power:60, guns:2, plugs:["CCS2","AC Type 2"],          type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:5,  name:"NEA Charging — Sundhara",             operator:"NEA",       city:"Kathmandu", address:"Sundhara, Kathmandu",                     lat:27.7019, lng:85.3096, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:6,  name:"BYD — Eco Auto Trading, Naxal",       operator:"BYD",       city:"Kathmandu", address:"Naxal, Kathmandu",                        lat:27.7127, lng:85.3241, power:60, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
-  { id:7,  name:"Sipradi Tata — Naikap",               operator:"Tata",      city:"Kathmandu", address:"Naikap, Kathmandu",                       lat:27.7197, lng:85.2661, power:50, guns:2, plugs:["CCS2","AC Type 2"],          type:"DC Fast", status:"available", hours:"08:00–18:00", rate:18 },
-  { id:8,  name:"Sipradi Tata — Tripureshwor",         operator:"Tata",      city:"Kathmandu", address:"Tripureshwor, Kathmandu",                 lat:27.6975, lng:85.3054, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"busy",      hours:"08:00–18:00", rate:18 },
-  { id:9,  name:"CG Motors EV — Lazimpat",             operator:"CG Motors", city:"Kathmandu", address:"Lazimpat, Kathmandu",                     lat:27.7197, lng:85.3182, power:60, guns:4, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"06:00–22:00", rate:16 },
-  { id:10, name:"CG Motors EV — Sitapaila",            operator:"CG Motors", city:"Kathmandu", address:"Sitapaila, Kathmandu",                    lat:27.7245, lng:85.2712, power:30, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"06:00–22:00", rate:16 },
-  { id:11, name:"MG Motor Nepal — Dhumbarahi",         operator:"MG",        city:"Kathmandu", address:"Dhumbarahi, Kathmandu",                   lat:27.7286, lng:85.3295, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"available", hours:"09:00–19:00", rate:18 },
-  { id:12, name:"Hyundai Charging — Syuchatar",        operator:"Hyundai",   city:"Kathmandu", address:"Syuchatar, Kathmandu",                    lat:27.7079, lng:85.2877, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"offline",   hours:"09:00–18:00", rate:18 },
-  { id:13, name:"ElectriVa Hub — Balaju",              operator:"ElectriVa", city:"Kathmandu", address:"Balaju Industrial Area",                  lat:27.7361, lng:85.2981, power:60, guns:4, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"06:00–22:00", rate:15 },
-  { id:14, name:"NEA E-Bus Station — Koteshwor",       operator:"NEA",       city:"Kathmandu", address:"Koteshwor Bus Park",                      lat:27.6835, lng:85.3548, power:60, guns:6, plugs:["GBT","CCS2"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:15, name:"ElectriVa — Kalanki",                 operator:"ElectriVa", city:"Kathmandu", address:"Kalanki Chowk, Kathmandu",                lat:27.6964, lng:85.2836, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"busy",      hours:"06:00–22:00", rate:15 },
-  { id:16, name:"ElectriVa — Sanepa",                  operator:"ElectriVa", city:"Lalitpur",  address:"Sanepa, Lalitpur",                        lat:27.6745, lng:85.3147, power:22, guns:2, plugs:["AC Type 2"],                  type:"AC",      status:"available", hours:"00:00–24:00", rate:14 },
-  { id:17, name:"NEA Charging — Pulchowk",             operator:"NEA",       city:"Lalitpur",  address:"Pulchowk, Lalitpur",                      lat:27.6774, lng:85.3192, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:18, name:"CG Motors EV — Satdobato",            operator:"CG Motors", city:"Lalitpur",  address:"Satdobato, Lalitpur",                     lat:27.6541, lng:85.3194, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"06:00–20:00", rate:16 },
-  { id:19, name:"Sipradi Tata — Bhaktapur",            operator:"Tata",      city:"Bhaktapur", address:"Sipadol, Bhaktapur",                      lat:27.6741, lng:85.4298, power:50, guns:2, plugs:["CCS2","AC Type 2"],          type:"DC Fast", status:"available", hours:"08:00–18:00", rate:18 },
-  { id:20, name:"NEA Charging — Bhaktapur Bus Park",   operator:"NEA",       city:"Bhaktapur", address:"Bhaktapur Bus Park",                      lat:27.6715, lng:85.4282, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"busy",      hours:"00:00–24:00", rate:17 },
-  { id:21, name:"NEA Charging — Pokhara Airport",      operator:"NEA",       city:"Pokhara",   address:"Pokhara Regional Airport",               lat:28.2006, lng:83.9816, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:22, name:"ElectriVa — Lakeside Pokhara",        operator:"ElectriVa", city:"Pokhara",   address:"Lakeside, Pokhara",                       lat:28.2089, lng:83.9559, power:60, guns:4, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"07:00–22:00", rate:15 },
-  { id:23, name:"BYD — BKG Engineering, Pokhara",      operator:"BYD",       city:"Pokhara",   address:"Siddhartha Highway, Pokhara",             lat:28.2152, lng:83.9756, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"available", hours:"08:00–19:00", rate:18 },
-  { id:24, name:"CG Motors EV — Prithvi Chowk",        operator:"CG Motors", city:"Pokhara",   address:"Prithvi Chowk, Pokhara",                  lat:28.2082, lng:83.9904, power:30, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"busy",      hours:"07:00–21:00", rate:16 },
-  { id:25, name:"Hyundai Charging — Pokhara",          operator:"Hyundai",   city:"Pokhara",   address:"New Road, Pokhara",                       lat:28.2029, lng:83.9842, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
-  { id:26, name:"ElectriVa — Ashoka Resort, Bharatpur",operator:"ElectriVa", city:"Bharatpur", address:"Bharatpur, Chitwan",                      lat:27.6784, lng:84.4305, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
-  { id:27, name:"NEA Charging — Bharatpur Bus Park",   operator:"NEA",       city:"Bharatpur", address:"Bharatpur Bus Park, Chitwan",              lat:27.6829, lng:84.4237, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:28, name:"CG Motors EV — Narayanghat",          operator:"CG Motors", city:"Bharatpur", address:"Narayanghat, Chitwan",                    lat:27.7050, lng:84.4103, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"07:00–20:00", rate:16 },
-  { id:29, name:"BYD — Niraj Auto, Birgunj",           operator:"BYD",       city:"Birgunj",   address:"Bypass Road, Birgunj",                    lat:27.0069, lng:84.8804, power:60, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
-  { id:30, name:"NEA Charging — Birgunj",              operator:"NEA",       city:"Birgunj",   address:"Adarsh Nagar, Birgunj",                   lat:27.0122, lng:84.8751, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:31, name:"Sipradi Tata — Birgunj",              operator:"Tata",      city:"Birgunj",   address:"Ghantaghar, Birgunj",                     lat:26.9960, lng:84.8698, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"busy",      hours:"08:00–18:00", rate:18 },
-  { id:32, name:"NEA Charging — Biratnagar",           operator:"NEA",       city:"Biratnagar",address:"Traffic Chowk, Biratnagar",               lat:26.4679, lng:87.2704, power:60, guns:3, plugs:["GBT","CCS2","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:33, name:"CG Motors EV — Biratnagar",           operator:"CG Motors", city:"Biratnagar",address:"Golbazar Rd, Biratnagar",                 lat:26.4551, lng:87.2832, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"07:00–20:00", rate:16 },
-  { id:34, name:"ElectriVa — Maharaja Resort, Butwal", operator:"ElectriVa", city:"Butwal",    address:"Butwal, Rupandehi",                       lat:27.6990, lng:83.4573, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"07:00–22:00", rate:15 },
-  { id:35, name:"NEA Charging — Butwal Bus Park",      operator:"NEA",       city:"Butwal",    address:"Butwal Bus Park",                         lat:27.7079, lng:83.4634, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:36, name:"NEA Charging — Dharan",               operator:"NEA",       city:"Dharan",    address:"B.P. Highway, Dharan",                    lat:26.8150, lng:87.2840, power:60, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:37, name:"NEA E-Stop — Mugling",                operator:"NEA",       city:"Mugling",   address:"Mugling, Chitwan",                        lat:27.8665, lng:84.5225, power:60, guns:4, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:38, name:"ElectriVa — Gurkha Inn, Gorkha",      operator:"ElectriVa", city:"Gorkha",    address:"Gorkha Highway",                          lat:28.0028, lng:84.6313, power:60, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
-  { id:39, name:"Sipradi Tata — Dharke",               operator:"Tata",      city:"Dharke",    address:"Dharke, Nuwakot Highway",                 lat:27.8412, lng:85.0634, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"available", hours:"08:00–18:00", rate:18 },
-  { id:40, name:"ElectriVa — Energy Palace, Hetauda",  operator:"ElectriVa", city:"Hetauda",   address:"Mahendra Highway, Hetauda",               lat:27.4246, lng:85.0340, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"06:00–22:00", rate:15 },
-  { id:41, name:"NEA Charging — Hetauda",              operator:"NEA",       city:"Hetauda",   address:"Hetauda Municipality",                    lat:27.4149, lng:85.0298, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"busy",      hours:"00:00–24:00", rate:17 },
-  { id:42, name:"ElectriVa — Lekali Restaurant, Dhangadhi", operator:"ElectriVa", city:"Dhangadhi", address:"Uttarbehandi Road, Dhangadhi",      lat:28.6926, lng:80.5939, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"07:00–21:00", rate:15 },
-  { id:43, name:"NEA Charging — Dhangadhi",            operator:"NEA",       city:"Dhangadhi", address:"Seti Provincial Highway",                 lat:28.7024, lng:80.5862, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:44, name:"NEA Charging — Nepalgunj",            operator:"NEA",       city:"Nepalgunj", address:"Mahendra Highway, Nepalgunj",             lat:28.0455, lng:81.6154, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"],    type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:45, name:"CG Motors EV — Nepalgunj",            operator:"CG Motors", city:"Nepalgunj", address:"Birendra Chowk, Nepalgunj",               lat:28.0502, lng:81.6221, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"offline",   hours:"07:00–20:00", rate:16 },
-  { id:46, name:"NEA Charging — Janakpur",             operator:"NEA",       city:"Janakpur",  address:"Bhansar Chowk, Janakpur",                 lat:26.7276, lng:85.9259, power:60, guns:3, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:47, name:"Hyundai — Alaska Autos, Pokhara",     operator:"Hyundai",   city:"Pokhara",   address:"Siddhartha Highway, Pokhara entry",       lat:28.1863, lng:83.9672, power:50, guns:2, plugs:["CCS2"],                      type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
-  { id:48, name:"NEA E-Hub — Abukhaireni–Gorkha",      operator:"NEA",       city:"Gorkha",    address:"Abukhaireni–Gorkha Highway",              lat:28.1345, lng:84.6231, power:60, guns:4, plugs:["GBT","CCS2"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
-  { id:49, name:"ElectriVa — Hotel Makalu, Dhulikhel", operator:"ElectriVa", city:"Dhulikhel", address:"Dhulikhel, Kavrepalanchok",               lat:27.6222, lng:85.5482, power:60, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
-  { id:50, name:"NEA Charging — Bhojpur",              operator:"NEA",       city:"Bhojpur",   address:"Bhojpur Municipality",                    lat:27.1737, lng:87.0531, power:30, guns:2, plugs:["CCS2","GBT"],                type:"DC Fast", status:"offline",   hours:"06:00–20:00", rate:17 },
+lucide.createIcons();
+
+function toast(msg, type){
+  var wrap = document.getElementById('toastWrap');
+  var t = document.createElement('div');
+  t.className = 'toast' + (type === 'error' ? ' error' : '');
+  t.textContent = msg;
+  wrap.appendChild(t);
+  setTimeout(function(){ t.remove(); }, 3400);
+}
+
+// ============================================================
+// DATA — Nepal EV charging stations (verified operator listings)
+// ============================================================
+var STATIONS = [
+  { id:1, name:"NEA Charging — Ratna Park", operator:"NEA", province:undefined, city:"Kathmandu", address:"Ratna Park Path, Kathmandu", lat:27.7041, lng:85.3131, power:60, guns:3, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:2, name:"NEA Charging — Kuleshwor", operator:"NEA", province:undefined, city:"Kathmandu", address:"Kuleshwor, Kathmandu", lat:27.6953, lng:85.2985, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:3, name:"NEA Charging — Tinkune", operator:"NEA", province:undefined, city:"Kathmandu", address:"Tinkune, Koteshwor", lat:27.6839, lng:85.35, power:60, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"busy", hours:"00:00–24:00", rate:17 },
+  { id:4, name:"NEA Charging — Baneshwor", operator:"NEA", province:undefined, city:"Kathmandu", address:"New Baneshwor, Kathmandu", lat:27.6916, lng:85.3365, power:60, guns:2, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:5, name:"NEA Charging — Sundhara", operator:"NEA", province:undefined, city:"Kathmandu", address:"Sundhara, Kathmandu", lat:27.7019, lng:85.3096, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:6, name:"BYD — Eco Auto Trading, Naxal", operator:"BYD", province:undefined, city:"Kathmandu", address:"Naxal, Kathmandu", lat:27.7127, lng:85.3241, power:60, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
+  { id:7, name:"Sipradi Tata — Naikap", operator:"Tata", province:undefined, city:"Kathmandu", address:"Naikap, Kathmandu", lat:27.7197, lng:85.2661, power:50, guns:2, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"08:00–18:00", rate:18 },
+  { id:8, name:"Sipradi Tata — Tripureshwor", operator:"Tata", province:undefined, city:"Kathmandu", address:"Tripureshwor, Kathmandu", lat:27.6975, lng:85.3054, power:50, guns:2, plugs:["CCS2"], type:"DC Fast", status:"busy", hours:"08:00–18:00", rate:18 },
+  { id:9, name:"CG Motors EV — Lazimpat", operator:"CG Motors", province:undefined, city:"Kathmandu", address:"Lazimpat, Kathmandu", lat:27.7197, lng:85.3182, power:60, guns:4, plugs:["CCS2","GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"06:00–22:00", rate:16 },
+  { id:10, name:"CG Motors EV — Sitapaila", operator:"CG Motors", province:undefined, city:"Kathmandu", address:"Sitapaila, Kathmandu", lat:27.7245, lng:85.2712, power:30, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"06:00–22:00", rate:16 },
+  { id:11, name:"MG Motor Nepal — Dhumbarahi", operator:"MG", province:undefined, city:"Kathmandu", address:"Dhumbarahi, Kathmandu", lat:27.7286, lng:85.3295, power:50, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"09:00–19:00", rate:18 },
+  { id:12, name:"Hyundai Charging — Syuchatar", operator:"Hyundai", province:undefined, city:"Kathmandu", address:"Syuchatar, Kathmandu", lat:27.7079, lng:85.2877, power:50, guns:2, plugs:["CCS2"], type:"DC Fast", status:"offline", hours:"09:00–18:00", rate:18 },
+  { id:13, name:"ElectriVa Hub — Balaju", operator:"ElectriVa", province:undefined, city:"Kathmandu", address:"Balaju Industrial Area", lat:27.7361, lng:85.2981, power:60, guns:4, plugs:["CCS2","GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"06:00–22:00", rate:15 },
+  { id:14, name:"NEA E-Bus Station — Koteshwor", operator:"NEA", province:undefined, city:"Kathmandu", address:"Koteshwor Bus Park", lat:27.6835, lng:85.3548, power:60, guns:6, plugs:["GBT","CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:15, name:"ElectriVa — Kalanki", operator:"ElectriVa", province:undefined, city:"Kathmandu", address:"Kalanki Chowk, Kathmandu", lat:27.6964, lng:85.2836, power:60, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"busy", hours:"06:00–22:00", rate:15 },
+  { id:16, name:"ElectriVa — Sanepa", operator:"ElectriVa", province:undefined, city:"Lalitpur", address:"Sanepa, Lalitpur", lat:27.6745, lng:85.3147, power:22, guns:2, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:14 },
+  { id:17, name:"NEA Charging — Pulchowk", operator:"NEA", province:undefined, city:"Lalitpur", address:"Pulchowk, Lalitpur", lat:27.6774, lng:85.3192, power:60, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:18, name:"CG Motors EV — Satdobato", operator:"CG Motors", province:undefined, city:"Lalitpur", address:"Satdobato, Lalitpur", lat:27.6541, lng:85.3194, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"06:00–20:00", rate:16 },
+  { id:19, name:"Sipradi Tata — Bhaktapur", operator:"Tata", province:undefined, city:"Bhaktapur", address:"Sipadol, Bhaktapur", lat:27.6741, lng:85.4298, power:50, guns:2, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"08:00–18:00", rate:18 },
+  { id:20, name:"NEA Charging — Bhaktapur Bus Park", operator:"NEA", province:undefined, city:"Bhaktapur", address:"Bhaktapur Bus Park", lat:27.6715, lng:85.4282, power:60, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"busy", hours:"00:00–24:00", rate:17 },
+  { id:21, name:"NEA Charging — Pokhara Airport", operator:"NEA", province:undefined, city:"Pokhara", address:"Pokhara Regional Airport", lat:28.2006, lng:83.9816, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:22, name:"ElectriVa — Lakeside Pokhara", operator:"ElectriVa", province:undefined, city:"Pokhara", address:"Lakeside, Pokhara", lat:28.2089, lng:83.9559, power:60, guns:4, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"07:00–22:00", rate:15 },
+  { id:23, name:"BYD — BKG Engineering, Pokhara", operator:"BYD", province:undefined, city:"Pokhara", address:"Siddhartha Highway, Pokhara", lat:28.2152, lng:83.9756, power:50, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"08:00–19:00", rate:18 },
+  { id:24, name:"CG Motors EV — Prithvi Chowk", operator:"CG Motors", province:undefined, city:"Pokhara", address:"Prithvi Chowk, Pokhara", lat:28.2082, lng:83.9904, power:30, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"busy", hours:"07:00–21:00", rate:16 },
+  { id:25, name:"Hyundai Charging — Pokhara", operator:"Hyundai", province:undefined, city:"Pokhara", address:"New Road, Pokhara", lat:28.2029, lng:83.9842, power:50, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
+  { id:26, name:"ElectriVa — Ashoka Resort, Bharatpur", operator:"ElectriVa", province:undefined, city:"Bharatpur", address:"Bharatpur, Chitwan", lat:27.6784, lng:84.4305, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:27, name:"NEA Charging — Bharatpur Bus Park", operator:"NEA", province:undefined, city:"Bharatpur", address:"Bharatpur Bus Park, Chitwan", lat:27.6829, lng:84.4237, power:60, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:28, name:"CG Motors EV — Narayanghat", operator:"CG Motors", province:undefined, city:"Bharatpur", address:"Narayanghat, Chitwan", lat:27.705, lng:84.4103, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"07:00–20:00", rate:16 },
+  { id:29, name:"BYD — Niraj Auto, Birgunj", operator:"BYD", province:undefined, city:"Birgunj", address:"Bypass Road, Birgunj", lat:27.0069, lng:84.8804, power:60, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
+  { id:30, name:"NEA Charging — Birgunj", operator:"NEA", province:undefined, city:"Birgunj", address:"Adarsh Nagar, Birgunj", lat:27.0122, lng:84.8751, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:31, name:"Sipradi Tata — Birgunj", operator:"Tata", province:undefined, city:"Birgunj", address:"Ghantaghar, Birgunj", lat:26.996, lng:84.8698, power:50, guns:2, plugs:["CCS2"], type:"DC Fast", status:"busy", hours:"08:00–18:00", rate:18 },
+  { id:32, name:"NEA Charging — Biratnagar", operator:"NEA", province:undefined, city:"Biratnagar", address:"Traffic Chowk, Biratnagar", lat:26.4679, lng:87.2704, power:60, guns:3, plugs:["GBT","CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:33, name:"CG Motors EV — Biratnagar", operator:"CG Motors", province:undefined, city:"Biratnagar", address:"Golbazar Rd, Biratnagar", lat:26.4551, lng:87.2832, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"07:00–20:00", rate:16 },
+  { id:34, name:"ElectriVa — Maharaja Resort, Butwal", operator:"ElectriVa", province:undefined, city:"Butwal", address:"Butwal, Rupandehi", lat:27.699, lng:83.4573, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"07:00–22:00", rate:15 },
+  { id:35, name:"NEA Charging — Butwal Bus Park", operator:"NEA", province:undefined, city:"Butwal", address:"Butwal Bus Park", lat:27.7079, lng:83.4634, power:60, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:36, name:"NEA Charging — Dharan", operator:"NEA", province:undefined, city:"Dharan", address:"B.P. Highway, Dharan", lat:26.815, lng:87.284, power:60, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:37, name:"NEA E-Stop — Mugling", operator:"NEA", province:undefined, city:"Mugling", address:"Mugling, Chitwan", lat:27.8665, lng:84.5225, power:60, guns:4, plugs:["CCS2","GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:38, name:"ElectriVa — Gurkha Inn, Gorkha", operator:"ElectriVa", province:undefined, city:"Gorkha", address:"Gorkha Highway", lat:28.0028, lng:84.6313, power:60, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:39, name:"Sipradi Tata — Dharke", operator:"Tata", province:undefined, city:"Dharke", address:"Dharke, Nuwakot Highway", lat:27.8412, lng:85.0634, power:50, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"08:00–18:00", rate:18 },
+  { id:40, name:"ElectriVa — Energy Palace, Hetauda", operator:"ElectriVa", province:undefined, city:"Hetauda", address:"Mahendra Highway, Hetauda", lat:27.4246, lng:85.034, power:60, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"06:00–22:00", rate:15 },
+  { id:41, name:"NEA Charging — Hetauda", operator:"NEA", province:undefined, city:"Hetauda", address:"Hetauda Municipality", lat:27.4149, lng:85.0298, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"], type:"DC Fast", status:"busy", hours:"00:00–24:00", rate:17 },
+  { id:42, name:"ElectriVa — Lekali Restaurant, Dhangadhi", operator:"ElectriVa", province:undefined, city:"Dhangadhi", address:"Uttarbehandi Road, Dhangadhi", lat:28.6926, lng:80.5939, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"07:00–21:00", rate:15 },
+  { id:43, name:"NEA Charging — Dhangadhi", operator:"NEA", province:undefined, city:"Dhangadhi", address:"Seti Provincial Highway", lat:28.7024, lng:80.5862, power:60, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:44, name:"NEA Charging — Nepalgunj", operator:"NEA", province:undefined, city:"Nepalgunj", address:"Mahendra Highway, Nepalgunj", lat:28.0455, lng:81.6154, power:60, guns:3, plugs:["CCS2","GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:45, name:"CG Motors EV — Nepalgunj", operator:"CG Motors", province:undefined, city:"Nepalgunj", address:"Birendra Chowk, Nepalgunj", lat:28.0502, lng:81.6221, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"offline", hours:"07:00–20:00", rate:16 },
+  { id:46, name:"NEA Charging — Janakpur", operator:"NEA", province:undefined, city:"Janakpur", address:"Bhansar Chowk, Janakpur", lat:26.7276, lng:85.9259, power:60, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:47, name:"Hyundai — Alaska Autos, Pokhara", operator:"Hyundai", province:undefined, city:"Pokhara", address:"Siddhartha Highway, Pokhara entry", lat:28.1863, lng:83.9672, power:50, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"09:00–18:00", rate:18 },
+  { id:48, name:"NEA E-Hub — Abukhaireni–Gorkha", operator:"NEA", province:undefined, city:"Gorkha", address:"Abukhaireni–Gorkha Highway", lat:28.1345, lng:84.6231, power:60, guns:4, plugs:["GBT","CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:17 },
+  { id:49, name:"ElectriVa — Hotel Makalu, Dhulikhel", operator:"ElectriVa", province:undefined, city:"Dhulikhel", address:"Dhulikhel, Kavrepalanchok", lat:27.6222, lng:85.5482, power:60, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:50, name:"NEA Charging — Bhojpur", operator:"NEA", province:undefined, city:"Bhojpur", address:"Bhojpur Municipality", lat:27.1737, lng:87.0531, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"offline", hours:"06:00–20:00", rate:17 },
+  { id:51, name:"Hotel Barahi", operator:"Independent", province:"Bagmati", city:"Pokhara", address:"Lakeside Rd 6", lat:28.20833041093028, lng:83.95804772177283, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:52, name:"Hundai Service (L I Auto Service)", operator:"Independent", province:"Bagmati", city:"Kathmandu", address:"Hundai service, kupondole", lat:27.690739168677144, lng:85.31152580415048, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:53, name:"Hyundai Sales/Service Tinkune", operator:"Hyundai", province:"Bagmati", city:"Kathmandu", address:"Hyundai Sales/Service Tinkune", lat:27.69166081858411, lng:85.31175442397266, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:54, name:"Siddhartha Resort Chisapani - Hyundai", operator:"Hyundai", province:"Unknown", city:"Chisapani", address:"J7VJ+2H7, Chisapani 21800, Nepal", lat:28.6418987, lng:81.2101286, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:55, name:"Waterfront Resort, Hyundai AC Charger", operator:"Hyundai", province:"Unknown", city:"Pokhara", address:"Baidam Rd, Pokhara 33700, Nepal", lat:28.2168724, lng:83.9499755, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:56, name:"Hotel Landmark MG", operator:"MG", province:"Unknown", city:"Pokhara", address:"6X39+HRP, Pokhara 33700, Nepal", lat:28.206273, lng:83.8956421, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:57, name:"Nepal Electricity Authority BYD", operator:"NEA", province:"Unknown", city:"Pokhara", address:"6X39+HRP, Pokhara 33700, Nepal", lat:28.2097048, lng:83.9062398, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:58, name:"Pokhara Grande Hotel Hyundai AC charger", operator:"Hyundai", province:"Unknown", city:"Pokhara", address:"5XRF+X8V, Pokhara 33700, Nepal", lat:28.1899366, lng:83.9127872, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:59, name:"Barahi Service Center - Hyundai AC Charger", operator:"Hyundai", province:"Unknown", city:"Pokhara", address:"Pokhara-Baglung Hwy, Pokhara 33700, Nepal", lat:28.2293376, lng:83.9728405, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:60, name:"Ace Overseas - Kia", operator:"Kia", province:"Unknown", city:"Pokhara", address:"6X4V+QMX, Pokhara 33700, Nepal", lat:27.6697302, lng:85.3032801, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:61, name:"Sansar trading Pokhara", operator:"Independent", province:"Unknown", city:"Pokhara", address:"Chinedada Pokhara 14", lat:28.1810766, lng:83.9430331, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:62, name:"KOS Dumre 40kW AC Charger", operator:"Independent", province:"Unknown", city:"Thumka", address:"Thumka - Korikha - Bahunbhanjyan Rd, Bandipur 33914, Nepal", lat:27.9690242, lng:84.3920364, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:63, name:"Baba Dham Traders Thee-Go", operator:"Thee-Go", province:"Unknown", city:"Darechok", address:"Muktinath Pani Prashodhan, Prithvi Hwy, Darechok 44200, Nepal", lat:27.8702758, lng:84.5369453, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:64, name:"Riverside Spring Resort", operator:"Independent", province:"Unknown", city:"Darechok", address:"Riverside Spring Resort, Darechok, Nepal", lat:27.8751566, lng:84.6090905, power:7.2, guns:2, plugs:["AC Type 2","CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:65, name:"Siddhartha Riverside Resort TATA", operator:"Tata", province:"Unknown", city:"Darechok", address:"H04, Darechok", lat:27.795829, lng:84.9915063, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:66, name:"Hotel Royal Century MG ZS EV", operator:"MG", province:"Unknown", city:"Bharatpur", address:"E - W Hwy, Bharatpur 44207, Nepal", lat:27.4310334, lng:85.0230911, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:67, name:"Sajha Auto MG", operator:"MG", province:"Unknown", city:"Bharatpur", address:"Bypass Rd, Bharatpur 44207, Nepal", lat:27.6905723, lng:84.4315436, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:68, name:"Pinnacle Trading Hyundai AC Charger", operator:"Hyundai", province:"Unknown", city:"Bharatpur", address:"Balmandir Rd 10, Bharatpur 44207, Nepal", lat:27.675547, lng:84.4309073, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:69, name:"Landmark Forest Park MG AC CHARGER", operator:"MG", province:"Unknown", city:"Ratnanagar", address:"Baghmara Road 44200, Ratnanagar 00977, Nepal", lat:27.5906715, lng:84.4791823, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:70, name:"Hetauda Wheels Hyundai", operator:"Hyundai", province:"Unknown", city:"Hetauda", address:"E - W Hwy, Hetauda 44107, Nepal", lat:27.4310334, lng:85.0230911, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:71, name:"Hetauda Bus Park Charging Station (Coming Soon)", operator:"Independent", province:"Unknown", city:"Hetauda", address:"Bypass Road 10, Hetauda 44107, Nepal", lat:27.4301604, lng:85.0266609, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:72, name:"New MAMA'S CAFE (Coming Soon)", operator:"Independent", province:"Unknown", city:"Ugratara Janagal", address:"Araniko Highway, Ugratara Janagal 45210, Nepal", lat:27.677168, lng:85.3408604, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:73, name:"Akshit Resort and Rafting MG ZS EV", operator:"MG", province:"Unknown", city:"Mulkot", address:"Mulkot", lat:27.4181784, lng:85.8586478, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:74, name:"Taj Riverside Resort TATA Motors", operator:"Tata", province:"Unknown", city:"Purano Jhangajholi", address:"B.P Highway, Purano Jhangajholi", lat:27.4181784, lng:85.8586478, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:75, name:"Sindhuli Bus Park Charging Station (Coming Soon)", operator:"Independent", province:"Unknown", city:"Sindhuli Bus Park", address:"Sindhuli Bus Park, Kamalamai 45900, Nepal", lat:27.2105753, lng:85.8417259, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:76, name:"Komal Hotel", operator:"Independent", province:"Unknown", city:"Mithila", address:"E W, पूर्व पश्चिम राजमार्ग, मिथिला 45600, Nepal", lat:26.929392125865927, lng:85.95655890505292, power:7.2, guns:2, plugs:["AC Type 2","CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:77, name:"Lahan Bus Park Charging Station (Coming Soon)", operator:"Independent", province:"Unknown", city:"Lahan", address:"PF7C+F9P, Lahan 56500, Nepal", lat:26.7180708, lng:86.4075821, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:78, name:"Itahari -12 Khanar", operator:"Independent", province:"Unknown", city:"Itahari", address:"Koshi Rajmarg 12, Itahari 56705, Nepal", lat:26.6281281, lng:87.2031978, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:79, name:"Kesharichand Bhanwarlal Kia (Coming Soon)", operator:"NEA", province:"Unknown", city:"Bargachhi, Biratnagar", address:"Near Radharaman Temple, Bargachhi, बिराटनगर 56613, Nepal", lat:26.4452115, lng:87.2071775, power:7.2, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:80, name:"Makalu Television", operator:"Independent", province:"Unknown", city:"Biratnagar", address:"F73G+2HM, H08, Biratnagar 56613, Nepal", lat:26.4503092, lng:87.2058372, power:7.2, guns:2, plugs:["AC Type 2","Wall Plug"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:81, name:"Mahalaxmi International", operator:"Independent", province:"Unknown", city:"Birtamode", address:"E - W Hwy, Birtamode 57204, Nepal", lat:26.64090973303655, lng:87.95532421730184, power:7, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"9 am - 5 pm", rate:15 },
+  { id:82, name:"Thapathali EV Showroom", operator:"Independent", province:"Koshi", city:"Kathmandu", address:"Thapathali EV Showroom", lat:27.677497605840138, lng:85.31680342774558, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:83, name:"Labim Mall", operator:"Independent", province:"Bagmati", city:"Kathmandu", address:"Pulchowk Gabahal Rd, Lalitpur", lat:27.677488106320034, lng:85.31666395202585, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:84, name:"Hyundai Sales Naxal", operator:"Hyundai", province:"Bagmati", city:"Kathmandu", address:"Naxal, Kathmandu", lat:27.71556151510917, lng:85.33003106227773, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:85, name:"Trade Tower Thapathali", operator:"Independent", province:"Bagmati", city:"Kathmandu", address:"Thapathali, Kathmandu", lat:27.69459375947994, lng:85.31994729057585, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:86, name:"Bauwa Hotel And Guest House", operator:"Independent", province:"Madhesh", city:"Bardibas", address:"Bardibas", lat:26.980336417677353, lng:85.91898930493367, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:87, name:"BYD Park", operator:"BYD", province:"Bagmati", city:"Kathmandu", address:"Thirbam Road, BYD Park, Kathmandu", lat:27.72036580899628, lng:85.33131856411678, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:88, name:"Sajha Yatayat", operator:"Independent", province:"Bagmati", city:"Lalitpur", address:"Pulchowk, Lalitpur", lat:27.679479689424358, lng:85.31745039095695, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:89, name:"Hotel Landmark Pokhara", operator:"Independent", province:"Unknown", city:"Pokhara", address:"Lakeside, Pokhara", lat:28.20810501308324, lng:83.95761433286081, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:90, name:"Hotel Gunja Bardibas", operator:"Independent", province:"Madhesh", city:"Pokhara", address:"Bardibas", lat:26.999713853956326, lng:85.90329853345283, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:91, name:"Jagat Motors", operator:"Independent", province:"Unknown", city:"Bhairawaha", address:"Siddharthanagar, Bhairahawa", lat:27.50386430021768, lng:83.4561846502268, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:92, name:"Laxmi Dinesh 4 Wheelers", operator:"Independent", province:"Sudurpashchim", city:"Dhangadhi", address:"Main Road, Dhangadhi", lat:28.704641761732702, lng:80.56778570363397, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:93, name:"Siddhartha Resort Chisapani", operator:"Independent", province:"Unknown", city:"Chisapani", address:"Chisapani Chisapani", lat:28.643017036827, lng:81.28250618044632, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:94, name:"Waterfront Resort", operator:"Independent", province:"Unknown", city:"Pokhara", address:"Pokhara", lat:28.222093460066503, lng:83.95172023652376, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:95, name:"Avocado & Orchid Resort", operator:"Independent", province:"Unknown", city:"Hetauda", address:"Chaukitol -2, Hetauda Makawanpur Narayani Nepal, Tribhuvan Rajpath, Hetauda 44107", lat:27.43525489831263, lng:85.03541692000935, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:96, name:"Hetauda Wheels Pvt Ltd", operator:"Independent", province:"Unknown", city:"Hetauda", address:"Hetauda-10, Hetauda 44107", lat:27.42559215822066, lng:85.02998818755908, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:97, name:"Hotel The Kingsbury", operator:"Independent", province:"Koshi", city:"Birtamode", address:"E - W Hwy, Birtamode 57204", lat:26.639386515973417, lng:87.97778701782491, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:98, name:"Bodhi Redsun-Shinee Premiere", operator:"Independent", province:"Unknown", city:"Bhairahawa", address:"Basantapur 8, Siddharthanagar 32900", lat:27.51315408771957, lng:83.47641036438297, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:99, name:"Hotel Da Flamingo", operator:"Independent", province:"Unknown", city:"Butwal", address:"Butwal 32907", lat:27.669669310224027, lng:83.46251608871846, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:100, name:"Yatri Motorcycles Experience Center", operator:"Yatri Energy", province:"Unknown", city:"Kathmandu", address:"Thirbam Sadak, Kathmandu 44600", lat:27.730905482675592, lng:85.330016348947, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:101, name:"Team Eleven EV World- BYD SHOWROOM", operator:"BYD", province:"Unknown", city:"Nepalgunj", address:"Team Eleven EV World, Nepalgunj", lat:28.10955066224798, lng:81.65709268264737, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:102, name:"Metro Hospitality Dang", operator:"Independent", province:"Unknown", city:"Dang", address:"Tulsipur, Dang", lat:28.13355155137408, lng:82.28707513285744, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:103, name:"Hyundai Sales/Service Dang", operator:"Hyundai", province:"Unknown", city:"Dang", address:"Hira Bhawan, Rabbe Tole, Ghorahi Lamahi - Tulsipur Road, 22415, Nepal", lat:28.029439122261298, lng:82.49279660346103, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:104, name:"Ocean Auto AC Charger", operator:"Independent", province:"Unknown", city:"Butwal", address:"MFPG+4WH, Butwal 32907, Nepal", lat:27.68587931026063, lng:83.47720419304807, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:105, name:"Hyundai Sales/Service Butwal", operator:"Hyundai", province:"Unknown", city:"Butwal", address:"kalikanager, Butwal 32907, Nepal", lat:27.673458261688964, lng:83.46439075215936, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:106, name:"KOS Coffee & Restaurant", operator:"Independent", province:"Unknown", city:"Dumre", address:"Thumka - Korikha - Bahunbhanjyan Rd, Bandipur 33914", lat:27.966907044627355, lng:84.40475111763509, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:107, name:"Gokarna Forest Resort", operator:"Independent", province:"Unknown", city:"Kathmandu", address:"Nagpokhari Marg 390, Gokarneshwor 44600", lat:27.72962721027683, lng:85.39870581209675, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:108, name:"Taj Riverside Resort TATA Motors 25kW DC Fast Charger", operator:"Tata", province:"Madhesh", city:"Mulkot", address:"Sunkoshi Rural Municipality Mulkot-5, B.P Highway", lat:27.405068909370048, lng:85.92027607898733, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:109, name:"Akshit Resort and Rafting MG ZS EV 7KW AC CHARGER", operator:"MG", province:"Madhesh", city:"Mulkot", address:"Mulkot Bazaar, Purano Jhangajholi 45400", lat:27.402325665640042, lng:85.92322642403303, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:110, name:"Hyundai Sales/Service Him Auto", operator:"NEA", province:"Lumbini", city:"Nepalgunj", address:"Ratna Rajmarg, Near Nepalgunj Airport, Nepalgunj", lat:28.097939, lng:81.652359, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:111, name:"Siddhartha Hotel", operator:"Independent", province:"Lumbini", city:"Nepalgunj", address:"Ratna Rajmarg, Nepalgunj", lat:28.085212, lng:81.645616, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:112, name:"Sipradi Trading Pokhara", operator:"Independent", province:"Gandaki", city:"Pokhara", address:"Buddhachowk", lat:28.2063884735, lng:83.9941635132, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:113, name:"Quick20 Riverside Hotel", operator:"Independent", province:"Madhesh", city:"Amlekhganj", address:"E - W Hwy, Amlekhganj 44400", lat:27.295827287773257, lng:84.98970838885263, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:114, name:"Sipradi Trading Pvt.Ltd,Basamadi Hetauda", operator:"Independent", province:"Unknown", city:"Hetauda", address:"Hetauda 44100", lat:27.455518277977536, lng:84.9704420179544, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:115, name:"APF Kalika Fuel Station", operator:"Independent", province:"Unknown", city:"Pokhara", address:"Pokhara-Baglung Hwy, Pokhara 33700", lat:28.21884, lng:83.977621, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:116, name:"Club Denovo", operator:"Independent", province:"Unknown", city:"Butwal", address:"Kalika Nagar 11, Butwal 32907", lat:27.683822466853208, lng:83.46122966332723, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:117, name:"Akshit Resort & Rafting", operator:"Independent", province:"Unknown", city:"Mulkot", address:"Mulkot Bazaar, Purano Jhangajholi 45400", lat:27.402356765881613, lng:85.92334010648774, power:0, guns:1, plugs:["Unknown"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:118, name:"Superior Motors Pvt. Ltd", operator:"Independent", province:"Koshi", city:"Biratnagar", address:"H08 Airport Chowk, Biratnagar 56613", lat:26.479376852855083, lng:87.2764390888327, power:40, guns:1, plugs:["AC Type 2"], type:"AC", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:119, name:"Illam (Mahendra Chauhan)", operator:"Photex", province:"Koshi", city:"Illam", address:"Illam, Illam", lat:28.392832, lng:84.119058, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:120, name:"Hile (Milan Khadka)", operator:"Milan Khadka", province:"Koshi", city:"Hile", address:"Hile, Dhankuta", lat:28.392305, lng:84.12412, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:121, name:"Lahan (Parwananda Sah)", operator:"Future Motors", province:"Madhesh", city:"Lahan", address:"Lahan, Siraha", lat:28.392172, lng:84.1264, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:122, name:"Janakpur/Ramchowk (Future Motors)", operator:"Future Motors", province:"Madhesh", city:"Janakpur/Ramchowk", address:"Janakpur/Ramchowk, Dhanusha", lat:26.724845, lng:85.922233, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:123, name:"Gaighat (Jivan Pandey)", operator:"Future Motors", province:"Koshi", city:"Gaighat", address:"Gaighat, Udayapur", lat:28.393195, lng:84.128075, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:124, name:"Sindhuli (Tanka Karki)", operator:"Future Motors", province:"Bagmati", city:"Sindhuli", address:"Sindhuli, Sindhuli", lat:28.396778, lng:84.122525, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:125, name:"Malekhu Rajdhani Hotel (Surendra Shrestha)", operator:"Future Motors", province:"Bagmati", city:"Malekhu Rajdhani Hotel", address:"Malekhu Rajdhani Hotel, Dhading", lat:28.391689, lng:84.120039, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:126, name:"Sukute (Ram Khadka)", operator:"Future Motors", province:"Bagmati", city:"Sukute", address:"Sukute, Sindhupalchwok", lat:28.399196, lng:84.122882, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:127, name:"Jiri Road, Charikot (Bhuwan Pradhan)", operator:"Future Motors", province:"Bagmati", city:"Jiri Road, Charikot", address:"Jiri Road, Charikot, Dolakha", lat:28.392492, lng:84.128809, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:128, name:"Chautara (Hero Shrestha)", operator:"Future Motors", province:"Bagmati", city:"Chautara", address:"Chautara, Sindhupalchwok", lat:28.394494, lng:84.121633, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:129, name:"Trishuli (Prakash Joshi)", operator:"Future Motors", province:"Bagmati", city:"Trishuli", address:"Trishuli, Nuwakot", lat:28.392058, lng:84.128126, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:130, name:"Bhaktapur (Govinda Ghimire)", operator:"Future Motors", province:"Bagmati", city:"Bhaktapur", address:"Bhaktapur, Bhaktapur", lat:27.668962, lng:85.42644, power:30, guns:3, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:131, name:"Gangabu (Som Tulachan)", operator:"Som Tulachan", province:"Bagmati", city:"Gangabu", address:"Gangabu, Kathmandu", lat:28.392853, lng:84.125618, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:132, name:"Manthali (Pramod Shrestha)", operator:"Future Motors", province:"Bagmati", city:"Manthali", address:"Manthali, Ramechhap", lat:28.390234, lng:84.128064, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:133, name:"Nepalthok (Thakali Bhojanalaya)", operator:"Future Motors", province:"Bagmati", city:"Nepalthok", address:"Nepalthok, Kavre", lat:28.398516, lng:84.123071, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:134, name:"Bharatpur Milan chowk (Euro Motors)", operator:"Euro Motors", province:"Bagmati", city:"Bharatpur Milan chowk", address:"Bharatpur Milan chowk, Chitwan", lat:27.675572, lng:84.426195, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:135, name:"Bharatpur Milan chowk (Euro Motors)", operator:"Euro Motors", province:"Bagmati", city:"Bharatpur Milan chowk", address:"Bharatpur Milan chowk, Chitwan", lat:27.679706, lng:84.428128, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:136, name:"Hetauda (EV Cars and Motors Hub)", operator:"EV Cars and Motors Hub", province:"Bagmati", city:"Hetauda", address:"Hetauda, Hetauda", lat:27.420771, lng:85.030467, power:60, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:137, name:"Hetauda (EV Cars and Motors Hub)", operator:"EV Cars and Motors Hub", province:"Bagmati", city:"Hetauda", address:"Hetauda, Hetauda", lat:27.425238, lng:85.037925, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:138, name:"Jiri Road, Charikot (Bir Bahadur Tamang)", operator:"CG Motors", province:"Bagmati", city:"Jiri Road, Charikot", address:"Jiri Road, Charikot, Dolakha", lat:28.398215, lng:84.120165, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:139, name:"Mangaltar Roshi (Roshi Charging Station)", operator:"Siddha Baba", province:"Bagmati", city:"Mangaltar Roshi", address:"Mangaltar Roshi, Sindhuli", lat:28.395485, lng:84.125603, power:30, guns:3, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:140, name:"Medicity (Minolta Investment)", operator:"Minolta Investment", province:"Madhesh", city:"Medicity", address:"Medicity, Parsa", lat:28.392213, lng:84.127226, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:141, name:"Nalinchwok (Dil Kumar Hengaju)", operator:"CG Motors", province:"Bagmati", city:"Nalinchwok", address:"Nalinchwok, Bhaktapur", lat:28.398886, lng:84.120549, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:142, name:"Parwanipur (Minolta Investment)", operator:"Minolta Investment", province:"Madhesh", city:"Parwanipur", address:"Parwanipur, Bara", lat:28.396361, lng:84.128681, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:143, name:"Parwanipur (Minolta Investment)", operator:"Minolta Investment", province:"Madhesh", city:"Parwanipur", address:"Parwanipur, Bara", lat:28.398853, lng:84.120116, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:144, name:"Nepalgunj- Buspark (Kohalpur EV Group Pvt Ltd)", operator:"Kohalpur EV Group Pvt Ltd", province:"Lumbini", city:"Nepalgunj- Buspark", address:"Nepalgunj- Buspark, Banke", lat:28.042733, lng:81.613453, power:60, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:145, name:"Surkhet- Padamtar (Sajha Stores)", operator:"Sajha Stores", province:"Karnali", city:"Surkhet- Padamtar", address:"Surkhet- Padamtar, Surkhet", lat:28.39732, lng:84.123814, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:146, name:"Mahendranagar (Brahma Motors)", operator:"Brahma Motors", province:"Sudurpaschim", city:"Mahendranagar", address:"Mahendranagar, Kanchanpur", lat:28.395267, lng:84.127653, power:60, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:147, name:"Mahendranagar (Brahma Motors)", operator:"Brahma Motors", province:"Sudurpaschim", city:"Mahendranagar", address:"Mahendranagar, Kanchanpur", lat:28.396446, lng:84.120149, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:148, name:"Toofan Danda (Brahma Motors)", operator:"Brahma Motors", province:"Sudurpaschim", city:"Toofan Danda", address:"Toofan Danda, Dadeldhura", lat:28.389919, lng:84.123609, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:149, name:"Dhangadi Showroom (Brahma Motors)", operator:"Brahma Motors", province:"Sudurpaschim", city:"Dhangadi Showroom", address:"Dhangadi Showroom, Kailali", lat:28.687912, lng:80.588983, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:150, name:"Chisapani (Dev Yatayat Pvt Ltd)", operator:"Dev Yatayat Pvt Ltd", province:"Sudurpaschim", city:"Chisapani", address:"Chisapani, Kailali", lat:28.394971, lng:84.122971, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:151, name:"Harkapur, Ghurmi (Sangam Shree)", operator:"Sangam Shree", province:"Bagmati", city:"Harkapur, Ghurmi", address:"Harkapur, Ghurmi, Okhaldhunga", lat:28.394247, lng:84.127328, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:152, name:"Ramtar, Hamro Hotel (Sangam Shree)", operator:"Sangam Shree", province:"Bagmati", city:"Ramtar, Hamro Hotel", address:"Ramtar, Hamro Hotel, Sindhuli", lat:28.39209, lng:84.121865, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:153, name:"Pokhara (VAW- Pokhara)", operator:"VAW", province:"Gandaki", city:"Pokhara", address:"Pokhara, Kaski", lat:28.21045, lng:83.986169, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:154, name:"Pokhara (VAW- Pokhara)", operator:"VAW", province:"Gandaki", city:"Pokhara", address:"Pokhara, Kaski", lat:28.211294, lng:83.988154, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:155, name:"Dang SVC (New Dealer)", operator:"New Dealer", province:"Lumbini", city:"Dang SVC", address:"Dang SVC, Dang", lat:28.398009, lng:84.121209, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:156, name:"Butwal-Jitgadi (Shrestha Multi Trade)", operator:"Shrestha Multi Trade", province:"Lumbini", city:"Butwal-Jitgadi", address:"Butwal-Jitgadi, Rupandehi", lat:27.700349, lng:83.452637, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:157, name:"Argakhanchi (Shrestha Multi Trade)", operator:"Shrestha Multi Trade", province:"Lumbini", city:"Argakhanchi", address:"Argakhanchi, Argakhanchi", lat:28.39364, lng:84.121986, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:158, name:"Pokhara (CGM showroom)", operator:"CG Motors", province:"Gandaki", city:"Pokhara", address:"Pokhara, Kaski", lat:28.210915, lng:83.986152, power:60, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:159, name:"Naxal (CGM showroom)", operator:"CG Motors", province:"Bagmati", city:"Naxal", address:"Naxal, Kathmandu", lat:28.391617, lng:84.124843, power:60, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:160, name:"Hattiban (CGM Service Center)", operator:"CG Motors", province:"Bagmati", city:"Hattiban", address:"Hattiban, Lalitpur", lat:28.394681, lng:84.125619, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:161, name:"Hattiban (CGM Service Center)", operator:"CG Motors", province:"Bagmati", city:"Hattiban", address:"Hattiban, Lalitpur", lat:28.392356, lng:84.120796, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:162, name:"NEA-Matatirtha (Nepal Electricity Authority)", operator:"NEA", province:"Bagmati", city:"NEA-Matatirtha", address:"NEA-Matatirtha, Kathmandu", lat:28.396157, lng:84.128381, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:163, name:"Mudhe, Charikot (Sangam Shree)", operator:"Sangam Shree", province:"Bagmati", city:"Mudhe, Charikot", address:"Mudhe, Charikot, Dolakha", lat:28.395598, lng:84.120752, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:164, name:"Jiri Road, Charikot (CGM)", operator:"CG Motors", province:"Bagmati", city:"Jiri Road, Charikot", address:"Jiri Road, Charikot, Dolakha", lat:28.399697, lng:84.12459, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:165, name:"Syangha Rangkhola (Ashim Thapa)", operator:"Future Motors", province:"Gandaki", city:"Syangha Rangkhola", address:"Syangha Rangkhola, Syanjha", lat:28.399429, lng:84.125695, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:166, name:"Damak to be repalced (Photex)", operator:"Photex", province:"Koshi", city:"Damak to be repalced", address:"Damak to be repalced, Mechi", lat:28.395855, lng:84.119867, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:167, name:"Benighat (Peace Heaven)", operator:"CG Motors", province:"Bagmati", city:"Benighat", address:"Benighat, Dhading", lat:28.395558, lng:84.120089, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:168, name:"Photex Service Center (Photex)", operator:"Photex", province:"Koshi", city:"Photex Service Center", address:"Photex Service Center, Mechi", lat:28.397202, lng:84.120492, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:169, name:"Phoex Show room (Photex)", operator:"Photex", province:"Koshi", city:"Phoex Show room", address:"Phoex Show room, Jhapa", lat:28.391269, lng:84.119187, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:170, name:"Fidim (Photex)", operator:"Photex", province:"Koshi", city:"Fidim", address:"Fidim, Panchthar", lat:28.391384, lng:84.122572, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:171, name:"Future Service Center (Future Motors)", operator:"Future Motors", province:"Koshi", city:"Future Service Center", address:"Future Service Center, Itahari", lat:28.393729, lng:84.123172, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:172, name:"Rajbiraj (Future Motors)", operator:"Future Motors", province:"Madhesh", city:"Rajbiraj", address:"Rajbiraj, Saptari", lat:28.391415, lng:84.128915, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:173, name:"Itahari (Future Motors)", operator:"Future Motors", province:"Koshi", city:"Itahari", address:"Itahari, Itahari", lat:28.398265, lng:84.125565, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:174, name:"Lahan (Future Motors)", operator:"Future Motors", province:"Madhesh", city:"Lahan", address:"Lahan, Gaur", lat:28.398028, lng:84.125348, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:175, name:"Mangaltar Roshi (Siddha Baba)", operator:"Siddha Baba", province:"Bagmati", city:"Mangaltar Roshi", address:"Mangaltar Roshi, Sindhuli", lat:28.393738, lng:84.119225, power:60, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:176, name:"Dhankuta (Future Motors)", operator:"Future Motors", province:"Koshi", city:"Dhankuta", address:"Dhankuta, Dhankuta", lat:28.393148, lng:84.119972, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:177, name:"Viman (Nisahn Poudel)", operator:"Nisahn Poudel", province:"Gandaki", city:"Viman", address:"Viman, Tanahun", lat:28.392974, lng:84.128271, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:178, name:"Mangaltar Roshi (Roshi Charging Station)", operator:"Siddha Baba", province:"Bagmati", city:"Mangaltar Roshi", address:"Mangaltar Roshi, Sindhili", lat:28.394943, lng:84.119932, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:179, name:"Sindhuli Showroom (Siddha Baba)", operator:"Siddha Baba", province:"Bagmati", city:"Sindhuli Showroom", address:"Sindhuli Showroom, Sindhuli", lat:28.39945, lng:84.119156, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:180, name:"Gaighat (Future Motors)", operator:"Future Motors", province:"Koshi", city:"Gaighat", address:"Gaighat, Gaighat", lat:28.392821, lng:84.128984, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:181, name:"Chiyabari (Ram Thapa)", operator:"Siddha Baba", province:"Bagmati", city:"Chiyabari", address:"Chiyabari, Sindhuli", lat:28.391915, lng:84.12843, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:182, name:"Bhaktapur (Future Motors)", operator:"Future Motors", province:"Bagmati", city:"Bhaktapur", address:"Bhaktapur, Bhaktapur", lat:27.673083, lng:85.431443, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:183, name:"Khandbari (Future Motors)", operator:"Future Motors", province:"Koshi", city:"Khandbari", address:"Khandbari, Khandbari", lat:28.39158, lng:84.12599, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:184, name:"Charikot (Future Motors)", operator:"Future Motors", province:"Bagmati", city:"Charikot", address:"Charikot, Dolakha", lat:28.395072, lng:84.121785, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:185, name:"Bhiman (Neha's Café)", operator:"Neha's Café", province:"Bagmati", city:"Bhiman", address:"Bhiman, Sindhuli", lat:28.392944, lng:84.122453, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:186, name:"Sindhuli Showroom (Siddha Baba)", operator:"Siddha Baba", province:"Madhesh", city:"Sindhuli Showroom", address:"Sindhuli Showroom, Sindhuli", lat:28.394036, lng:84.126774, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:187, name:"Jhangajhuli (Sangam Shree)", operator:"Sangam Shree", province:"Bagmati", city:"Jhangajhuli", address:"Jhangajhuli, Sindhuli", lat:28.39886, lng:84.127436, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:188, name:"Mangaltar (Siddha Baba)", operator:"Siddha Baba", province:"Bagmati", city:"Mangaltar", address:"Mangaltar, Sindhuli", lat:28.391071, lng:84.125774, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:189, name:"Kawasoti (New dealer)", operator:"New dealer", province:"Gandaki", city:"Kawasoti", address:"Kawasoti, Kawasoti", lat:28.39053, lng:84.119999, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:190, name:"Dumre (VAW- Pokhara)", operator:"VAW", province:"Gandaki", city:"Dumre", address:"Dumre, Tanahun", lat:28.393493, lng:84.127931, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:191, name:"UCV (CGM)", operator:"CG Motors", province:"Gandaki", city:"UCV", address:"UCV, Nawalpur", lat:28.396404, lng:84.126363, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:192, name:"Besisahar (Euro Motors)", operator:"Euro Motors", province:"Gandaki", city:"Besisahar", address:"Besisahar, Lamjung", lat:28.39529, lng:84.124199, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:193, name:"Thakuwar (CGM)", operator:"CG Motors", province:"Lumbini", city:"Thakuwar", address:"Thakuwar, Banke", lat:28.390927, lng:84.121395, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:194, name:"Baglung (VAW- Pokhara)", operator:"VAW", province:"Gandaki", city:"Baglung", address:"Baglung, Baglung", lat:28.394484, lng:84.124694, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:195, name:"Hetauda (EV Cars and Motors Hub)", operator:"EV Cars and Motors Hub", province:"Bagmati", city:"Hetauda", address:"Hetauda, Hetauda", lat:27.42192, lng:85.037637, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:196, name:"BardhaGhat (Shrestha Multi Trade)", operator:"Shrestha Multi Trade", province:"Lumbini", city:"BardhaGhat", address:"BardhaGhat, Nawalparasi", lat:28.392277, lng:84.126072, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:197, name:"Gulmi (Shrestha Multi Trade)", operator:"Shrestha Multi Trade", province:"Lumbini", city:"Gulmi", address:"Gulmi, Gulmi", lat:28.392973, lng:84.126748, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:198, name:"Bharatpur Milan chowk (Euro Motors)", operator:"Euro Motors", province:"Bagmati", city:"Bharatpur Milan chowk", address:"Bharatpur Milan chowk, Chitwan", lat:27.68015, lng:84.430896, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:199, name:"Koteshwor (CGM)", operator:"CG Motors", province:"Bagmati", city:"Koteshwor", address:"Koteshwor, Kathmandu", lat:28.397322, lng:84.122815, power:30, guns:3, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:200, name:"Balaju SVC (CGM)", operator:"CG Motors", province:"Bagmati", city:"Balaju SVC", address:"Balaju SVC, Kthamandu", lat:28.393851, lng:84.127625, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:201, name:"Maharaj Gunj (CGM)", operator:"CG Motors", province:"Bagmati", city:"Maharaj Gunj", address:"Maharaj Gunj, Kathmandu", lat:28.399773, lng:84.128731, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:202, name:"UCV (CGM)", operator:"CG Motors", province:"Gandaki", city:"UCV", address:"UCV, Nawalpur", lat:28.393403, lng:84.126837, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:203, name:"Butwal ( )", operator:"", province:"Lumbini", city:"Butwal", address:"Butwal, Butwal", lat:27.702927, lng:83.445025, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:204, name:"Charikot (Operator)", operator:"Operator", province:"Bagmati", city:"Charikot", address:"Charikot, Dolakha", lat:28.393827, lng:84.121655, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:205, name:"Dang SVC (Dealer)", operator:"Dealer", province:"Lumbini", city:"Dang SVC", address:"Dang SVC, Dang", lat:28.391721, lng:84.125328, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:206, name:"CGIP (CGM)", operator:"CG Motors", province:"Gandaki", city:"CGIP", address:"CGIP, Nawalpur", lat:28.399014, lng:84.122357, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:207, name:"Devdaha (CGM)", operator:"CG Motors", province:"Gandaki", city:"Devdaha", address:"Devdaha, Nawalpur", lat:28.392767, lng:84.128873, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:208, name:"Benighat (Peace Heaven)", operator:"Peace Heaven", province:"Bagmati", city:"Benighat", address:"Benighat, Dhading", lat:28.397676, lng:84.123394, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:209, name:"Kohalpur (Dealer)", operator:"Dealer", province:"Sudurpaschim", city:"Kohalpur", address:"Kohalpur, Banke", lat:28.398454, lng:84.120042, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:210, name:"Dumre (CGM)", operator:"CG Motors", province:"Gandaki", city:"Dumre", address:"Dumre, Tanahun", lat:28.391913, lng:84.1204, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:211, name:"Budar (Brahma Motors)", operator:"Brahma Motors", province:"Sudurpaschim", city:"Budar", address:"Budar, Doti", lat:28.397563, lng:84.119559, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:212, name:"Waling (CGM)", operator:"CG Motors", province:"Gandaki", city:"Waling", address:"Waling, Syanja", lat:28.390191, lng:84.128865, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:213, name:"Kusma/ Beni (CGM)", operator:"CG Motors", province:"Gandaki", city:"Kusma/ Beni", address:"Kusma/ Beni, Parbat/ Magdyi", lat:28.398524, lng:84.124374, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:214, name:"Butwal (Dealer)", operator:"Dealer", province:"Lumbini", city:"Butwal", address:"Butwal, Rupandehi", lat:27.696195, lng:83.450332, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:215, name:"Sallibazar (Kohalpur EV Group Pvt Ltd)", operator:"Kohalpur EV Group Pvt Ltd", province:"Karnali", city:"Sallibazar", address:"Sallibazar, Salyan", lat:28.392165, lng:84.122142, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:216, name:"Katari/Bhiman (CGM)", operator:"CG Motors", province:"Koshi", city:"Katari/Bhiman", address:"Katari/Bhiman, Udayapur", lat:28.393574, lng:84.119914, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:217, name:"Devdaha (CGM)", operator:"CG Motors", province:"Lumbini", city:"Devdaha", address:"Devdaha, Rupandehi", lat:28.390096, lng:84.124262, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:218, name:"Halesi (Sangam Shree)", operator:"Sangam Shree", province:"Koshi", city:"Halesi", address:"Halesi, Kotang", lat:28.395623, lng:84.127679, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:219, name:"Gaighat (Sangam Shree)", operator:"Sangam Shree", province:"Koshi", city:"Gaighat", address:"Gaighat, Udayepur", lat:28.3909, lng:84.125003, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:220, name:"Rajapur (Kohalpur EV Group Pvt Ltd)", operator:"Kohalpur EV Group Pvt Ltd", province:"Lumbini", city:"Rajapur", address:"Rajapur, Bardiya", lat:28.393795, lng:84.123081, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:221, name:"Bhurigaun (Kohalpur EV Group Pvt Ltd)", operator:"Kohalpur EV Group Pvt Ltd", province:"Lumbini", city:"Bhurigaun", address:"Bhurigaun, Bardiya", lat:28.394297, lng:84.128861, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:222, name:"Nepalgunj- Buspark (Kohalpur EV Group Pvt Ltd)", operator:"Kohalpur EV Group Pvt Ltd", province:"Lumbini", city:"Nepalgunj- Buspark", address:"Nepalgunj- Buspark, Banke", lat:28.047866, lng:81.618098, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:223, name:"Chakchke (Shrestha Multi Trade)", operator:"Shrestha Multi Trade", province:"Lumbini", city:"Chakchke", address:"Chakchke, Pyuthan", lat:28.399077, lng:84.123597, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:224, name:"Bhalubang (Dealer)", operator:"Dealer", province:"Lumbini", city:"Bhalubang", address:"Bhalubang, Dang", lat:28.39853, lng:84.126994, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:225, name:"Bhairawa (Samriddhi Enterprises, Ghorahi Dang)", operator:"Samriddhi Enterprises, Ghorahi Dang", province:"Lumbini", city:"Bhairawa", address:"Bhairawa, Rupandehi", lat:28.391476, lng:84.123691, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:226, name:"Chapur (CGM)", operator:"CG Motors", province:"Madhesh", city:"Chapur", address:"Chapur, Rautahat", lat:28.398678, lng:84.127689, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:227, name:"Lahan (Future)", operator:"Future Motors", province:"Madhesh", city:"Lahan", address:"Lahan, Siraha", lat:28.394211, lng:84.121057, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:228, name:"Bhardaha (Sangam Shree)", operator:"Sangam Shree", province:"Madhesh", city:"Bhardaha", address:"Bhardaha, Saptari", lat:28.39173, lng:84.124107, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:229, name:"Mastar Dhading (Sangam Shree)", operator:"Sangam Shree", province:"Bagmati", city:"Mastar Dhading", address:"Mastar Dhading, Dhading", lat:28.397616, lng:84.119912, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:230, name:"Kapan (Sangam Shree)", operator:"Sangam Shree", province:"Bagmati", city:"Kapan", address:"Kapan, Kathmandu", lat:28.394739, lng:84.124489, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:231, name:"Charikot (Sangam Shree)", operator:"Sangam Shree", province:"Bagmati", city:"Charikot", address:"Charikot, Sindhupalchowk", lat:28.39674, lng:84.121065, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:232, name:"Ratamate Jhangholi (Sangam Shree)", operator:"Sangam Shree", province:"Bagmati", city:"Ratamate Jhangholi", address:"Ratamate Jhangholi, Sindhuli", lat:28.390582, lng:84.123268, power:80, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:233, name:"Kohalpur (Dealer)", operator:"Dealer", province:"Lumbini", city:"Kohalpur", address:"Kohalpur, Banke", lat:28.399727, lng:84.120343, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:234, name:"Surkhet (Sajha Stores)", operator:"Sajha Stores", province:"Karnali", city:"Surkhet", address:"Surkhet, Surkhet", lat:28.396438, lng:84.119554, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:235, name:"Attariya (Brahma Motors)", operator:"Brahma Motors", province:"Sudurpaschim", city:"Attariya", address:"Attariya, Kailali", lat:28.390014, lng:84.12228, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:236, name:"Pahelopul - Workshop (Sangam Shree)", operator:"Sangam Shree", province:"Bagmati", city:"Pahelopul - Workshop", address:"Pahelopul - Workshop, Kathmandu", lat:28.399277, lng:84.12195, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:237, name:"Sobhabhagwati (Ram Kumar Shrestha (Annapurna Yatayat))", operator:"Ram Kumar Shrestha (Annapurna Yatayat)", province:"Bagmati", city:"Sobhabhagwati", address:"Sobhabhagwati, Kathmandu", lat:28.39526, lng:84.124967, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:238, name:"Basundhara (Hemant Sherchan)", operator:"Hemant Sherchan", province:"Bagmati", city:"Basundhara", address:"Basundhara, Kathmandu", lat:28.396417, lng:84.122368, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:239, name:"Budar (Brahma Motors)", operator:"Brahma Motors", province:"Sudurpaschim", city:"Budar", address:"Budar, Doti", lat:28.399701, lng:84.123887, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:240, name:"Dhangadi Showroom (Brahma Motors)", operator:"Brahma Motors", province:"Sudurpaschim", city:"Dhangadi Showroom", address:"Dhangadi Showroom, Kailali", lat:28.69211, lng:80.590578, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:241, name:"Marine (Sidha Baba)", operator:"Siddha Baba", province:"Bagmati", city:"Marine", address:"Marine, Sindhuli", lat:28.398535, lng:84.124488, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:242, name:"Birgunj Bus Park (Minolta Investment)", operator:"Minolta Investment", province:"Madhesh", city:"Birgunj Bus Park", address:"Birgunj Bus Park, Birgunj", lat:27.016627, lng:84.876767, power:30, guns:3, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:243, name:"Pahelopul - Workshop (Sangam Shree)", operator:"Sangam Shree", province:"Bagmati", city:"Pahelopul - Workshop", address:"Pahelopul - Workshop, Kathmandu", lat:28.390277, lng:84.125555, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:244, name:"Bardibas (Planned)", operator:"Planned", province:"Madhesh", city:"Bardibas", address:"Bardibas, Dhanusha", lat:28.394019, lng:84.127685, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:245, name:"Gaighat (Planned)", operator:"Planned", province:"Koshi", city:"Gaighat", address:"Gaighat, Udaypur", lat:28.396725, lng:84.120407, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:246, name:"Chisapani (Dev Yatayat Pvt Ltd)", operator:"Dev Yatayat Pvt Ltd", province:"Sudurpaschim", city:"Chisapani", address:"Chisapani, Kailali", lat:28.395695, lng:84.128681, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:247, name:"Malekhu Rajdhani Hotel (Surendra Shrestha)", operator:"Surendra Shrestha", province:"Bagmati", city:"Malekhu Rajdhani Hotel", address:"Malekhu Rajdhani Hotel, Dhading", lat:28.398983, lng:84.124534, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:248, name:"Malekhu Rajdhani Hotel (Surendra Shrestha)", operator:"Surendra Shrestha", province:"Bagmati", city:"Malekhu Rajdhani Hotel", address:"Malekhu Rajdhani Hotel, Dhading", lat:28.393718, lng:84.128507, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:249, name:"Dumre (EV Cars and Motors Hub)", operator:"EV Cars and Motors Hub", province:"Bagmati", city:"Dumre", address:"Dumre, Hetauda", lat:28.393422, lng:84.121422, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:250, name:"Bhiman (Neha's Café)", operator:"Neha's Café", province:"Bagmati", city:"Bhiman", address:"Bhiman, Sindhuli", lat:28.397607, lng:84.128328, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:251, name:"Shambhu Shankar Ev Fast Charging and Cafe, Panchkhal", operator:"Independent", province:"Unknown", city:"Unknown", address:"Shambhu Shankar Ev Fast Charging and Cafe Private Limited, Araniko Highway, Panchkhal", lat:28.394939, lng:84.122086, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:252, name:"Panchkhal charging station, Panchkhal", operator:"Independent", province:"Unknown", city:"Unknown", address:"Panchkhal charging station & washing center, Panchkhal", lat:28.394938, lng:84.120798, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:253, name:"Nawalpur Charging Sation , Kawasoti", operator:"Independent", province:"Unknown", city:"Unknown", address:"J4P6+8CJ Kawaswati 33000", lat:28.398641, lng:84.126466, power:30, guns:6, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:254, name:"Gadi Charge - Nayathali Hotel, Kawosoti", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"Nayathali Hotel & Lodge (Pvt) Ltd, Kawasoti", lat:28.392413, lng:84.120646, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:255, name:"Gadi Charge - Amarapuri Resort, Gaidakot", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"Amarapuri, Gaindakot", lat:28.39866, lng:84.127497, power:30, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:256, name:"Hams Fast Gadicharge, Basundhara, Dhapasi Marg", operator:"GadiCharge", province:"Unknown", city:"Kathmandu", address:"P8WM+5V6 Kathmandu", lat:27.716859, lng:85.327274, power:30, guns:6, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:257, name:"NEA GBT Sajha Pulchowk-1", operator:"NEA", province:"Unknown", city:"Unknown", address:"Sajha Petrol Pump, Pulchowk, Pulchowk", lat:28.396218, lng:84.127014, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:258, name:"NEA CCS Thankot", operator:"NEA", province:"Unknown", city:"Kathmandu", address:"Thankot, Chandragiri-2, Kathmandu, Chandragiri", lat:27.716761, lng:85.327031, power:30, guns:3, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:259, name:"GBT Fast Charging Chitwan", operator:"Independent", province:"Unknown", city:"Unknown", address:"Aaptari Chowk", lat:28.393741, lng:84.125455, power:30, guns:6, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:260, name:"NEA GBT Kohalpur", operator:"NEA", province:"Unknown", city:"Unknown", address:"Kohalpur Buspark, Kohalpur", lat:28.390777, lng:84.128301, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:261, name:"NEA GBT Kendriya Bus Terminal-2", operator:"NEA", province:"Unknown", city:"Bharatpur", address:"Paras Buspark, Bharatpur, Bharatpur", lat:27.682221, lng:84.427046, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:262, name:"NEA GBT Bardibas", operator:"NEA", province:"Unknown", city:"Unknown", address:"Police Station, Bardibas, Bardibas", lat:28.394905, lng:84.128058, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:263, name:"MOWSIE CCS Biratnagar", operator:"MOWSIE", province:"Unknown", city:"Biratnagar", address:"Biratnagar, Biratnagar", lat:26.453816, lng:87.275459, power:30, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:264, name:"NEA CCS Nepal Police Club", operator:"NEA", province:"Unknown", city:"Kathmandu", address:"Mahendra Police Club, Kathmandu", lat:27.715935, lng:85.32267, power:30, guns:3, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:265, name:"NEA GBT Biratnagar", operator:"NEA", province:"Unknown", city:"Biratnagar", address:"Biratnagar Buspark, Biratnagar", lat:26.455152, lng:87.270866, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:266, name:"NEA GBT Lamki", operator:"NEA", province:"Unknown", city:"Unknown", address:"Lamki Buspark, Kailali 26.627287, Lamki", lat:28.390358, lng:84.119713, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:267, name:"NEA GBT Kendriya Bus Terminal-1", operator:"NEA", province:"Unknown", city:"Bharatpur", address:"Kendriya Bus Terminal, Bharatpur, Bharatpur", lat:27.681002, lng:84.431123, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:268, name:"NEA GBT Dharke", operator:"NEA", province:"Unknown", city:"Unknown", address:"Mahadevbesi, Dharke, Dharke", lat:28.393311, lng:84.122394, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:269, name:"NEA GBT Nuwakot Battar", operator:"NEA", province:"Unknown", city:"Unknown", address:"Battar Buspark, Nuwakot, Trishuli", lat:28.394721, lng:84.123188, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:270, name:"NEA CCS Samakhushi", operator:"NEA", province:"Unknown", city:"Kathmandu", address:"Police pump, Samakhushi, Kathmandu", lat:27.715676, lng:85.327508, power:30, guns:3, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:271, name:"NEA CCS Lamahi", operator:"NEA", province:"Unknown", city:"Unknown", address:"Dang Lamahi Buspark, Lamahi", lat:28.392062, lng:84.121598, power:30, guns:3, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:272, name:"NEA CCS Butwal", operator:"NEA", province:"Unknown", city:"Butwal", address:"Butwal Buspark, Butwal", lat:27.695778, lng:83.450238, power:30, guns:3, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:273, name:"NEA GBT Lamahi", operator:"NEA", province:"Unknown", city:"Unknown", address:"Dang Lamahi Buspark, Lamahi", lat:28.390012, lng:84.121779, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:274, name:"NEA GBT Butwal", operator:"NEA", province:"Unknown", city:"Butwal", address:"Butwal Buspark, Butwal", lat:27.701272, lng:83.452823, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:275, name:"NEA CCS Kharipati", operator:"NEA", province:"Unknown", city:"Unknown", address:"NEA Training Center, Kharipati, Suryabinayak", lat:28.391997, lng:84.121408, power:30, guns:3, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:276, name:"NEA CCS Birgunj", operator:"NEA", province:"Unknown", city:"Birgunj", address:"Birgunj, Kalaiya", lat:27.008435, lng:84.876658, power:30, guns:3, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:277, name:"NEA CCS Hetauda", operator:"NEA", province:"Unknown", city:"Hetauda", address:"Ratomate, Hetauda, Makwanpur, Hetauda", lat:27.420578, lng:85.036884, power:30, guns:3, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:278, name:"NEA GBT Birgunj", operator:"NEA", province:"Unknown", city:"Birgunj", address:"Birgunj, Kalaiya", lat:27.014742, lng:84.878216, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:279, name:"NEA GBT Hetauda", operator:"NEA", province:"Unknown", city:"Hetauda", address:"Ratomate, Hetauda, Makwanpur, Hetauda", lat:27.427924, lng:85.029588, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:280, name:"NEA GBT Samakhushi", operator:"NEA", province:"Unknown", city:"Kathmandu", address:"Police pump, Samakhushi, Kathmandu", lat:27.716778, lng:85.323077, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:281, name:"MOWSIE CCS Surunga", operator:"MOWSIE", province:"Unknown", city:"Unknown", address:"Surunga, Damak", lat:28.394022, lng:84.126029, power:30, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:282, name:"NEA GBT Birtamode", operator:"NEA", province:"Unknown", city:"Unknown", address:"Birtamode, Buspark, Birtamod", lat:28.394229, lng:84.126166, power:30, guns:3, plugs:["GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:283, name:"MOWSIE CCS Itahari", operator:"MOWSIE", province:"Unknown", city:"Unknown", address:"Itahari, Itahari", lat:28.396258, lng:84.124582, power:30, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:284, name:"Air Charge Gwarko , Gwarko, Lalitpur", operator:"Aircharge", province:"Unknown", city:"Lalitpur", address:"AirCharge चार्जिङ स्टेसन, Nagarkot Road, Patan Sundhara, Bhaktapur, Nepal", lat:27.659041, lng:85.322083, power:30, guns:10, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:285, name:"Air Charge EV Park Jamune Station, Pasaley, Tanhun", operator:"Aircharge", province:"Unknown", city:"Unknown", address:"EV Park Charging Station, Jamune Bhanjyang, Nepal", lat:28.396562, lng:84.125744, power:30, guns:10, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:286, name:"Air Charge CCS2 Express Satdobato Station ,Satdobato, Lalitpur", operator:"Aircharge", province:"Unknown", city:"Lalitpur", address:"AirCharge, Swimming Pool Marg, Satdobato, Lalitpur, Nepal", lat:27.663086, lng:85.320661, power:30, guns:6, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:287, name:"Green plug Charging station, Gopiskrishna , Kathmandu", operator:"Independent", province:"Unknown", city:"Kathmandu", address:"P8FW+C9, Budhanilkantha 44600, Nepal", lat:27.715902, lng:85.325938, power:30, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:288, name:"New star hotel and fast Charging station, bandipur", operator:"Independent", province:"Unknown", city:"Unknown", address:"OYO 401 New Star Hotel & Restaurant, New Star Hotel, पोखरा, Nepal", lat:28.390587, lng:84.128369, power:30, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:289, name:"E-Venture Charging Station, Baglung Highway, Pokhara", operator:"Independent", province:"Unknown", city:"Pokhara", address:"E-Venture Cafe Garden, Pokhara, Nepal", lat:28.207383, lng:83.987847, power:30, guns:4, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:290, name:"Ivan Charging Station, Zero K.M, Pokhara", operator:"Independent", province:"Unknown", city:"Pokhara", address:"Zero km pokhara, Zero km, Pokhara, Nepal", lat:28.207465, lng:83.980837, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:291, name:"Clean Energy Gadicharge , Simalhaur, Pokhara", operator:"GadiCharge", province:"Unknown", city:"Pokhara", address:"Clean energy Charging station pokhara, Pokhara, Nepal", lat:28.204816, lng:83.980704, power:30, guns:10, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:292, name:"Fast charging at Hotel nameste, Kawasoti", operator:"Independent", province:"Unknown", city:"Unknown", address:"J4M5+97J, Kawasoti 33000, Nepal", lat:28.391107, lng:84.124188, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:293, name:"RE-Lax Charging Station , dumre", operator:"Independent", province:"Unknown", city:"Unknown", address:"Bandipur Cottage and Restaurant, Ghansikuwa, Nepal", lat:28.393721, lng:84.125803, power:30, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:294, name:"Durga Mata Ev Charging Station , Bhaktapur", operator:"Independent", province:"Unknown", city:"Kathmandu", address:"FIRE FIGHTING-DIPESH (SUPER MEP ENTERPRISES), 10 New Baneshwor Rd, Kathmandu 44600, Nepal", lat:27.71862, lng:85.325018, power:30, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:295, name:"AK Ev Charging Station , Siddharthanagar", operator:"Independent", province:"Unknown", city:"Unknown", address:"GC7J+WQW Siddharthanagar, Nepal", lat:28.39538, lng:84.12164, power:30, guns:4, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:296, name:"Hamro Bhandari Charging Station, Baglung Hwy, Dhampus, Pokhara", operator:"Independent", province:"Unknown", city:"Pokhara", address:"Hamro Bhandari Restaurant & Khaja Ghar, Pokhara - Baglung Highway, Nepal", lat:28.208073, lng:83.982517, power:30, guns:4, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:297, name:"TaTa Fast Charging, Kapan", operator:"Tata", province:"Unknown", city:"Kathmandu", address:"Sipradi Kapan (Tata Motors Service Center), Kathmandu, Nepal", lat:27.712523, lng:85.327342, power:30, guns:6, plugs:["CCS2","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:298, name:"Fast Charging at Triple Crown Resort, Baireni, Galchi", operator:"Independent", province:"Unknown", city:"Unknown", address:"Triple Crown Resort, Baireni, Nepal", lat:28.396845, lng:84.124804, power:30, guns:4, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:299, name:"Thee GO NREP, Janakpur", operator:"Thee-Go", province:"Unknown", city:"Janakpur", address:"HOTEL SP AND GUEST HOUSE, Near bus park, Janakpur, Nepal", lat:26.725922, lng:85.928639, power:30, guns:5, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:300, name:"Vajra EV charge, Talchikhel, Lalitpur", operator:"Independent", province:"Unknown", city:"Lalitpur", address:"3718 ring road dakshin, Talchikhel Lalitpur", lat:27.657412, lng:85.321101, power:30, guns:7, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:301, name:"Tata Fast Charging, khadichaur", operator:"Tata", province:"Unknown", city:"Kathmandu", address:"QR2F+JC6, Araniko Highway, Kathmandu 45314, Nepal", lat:27.718111, lng:85.325698, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:302, name:"Sangham Charging Station, Charikot", operator:"Sangam Shree", province:"Unknown", city:"Unknown", address:"M2HC+FGC, Bhimeshwor Municipality 45500, Nepal", lat:28.395247, lng:84.124827, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:303, name:"Fast Charging at Sorgha Hotel, Charikot", operator:"Independent", province:"Unknown", city:"Unknown", address:"M2GG+XP Bhimeshwor Municipality, Nepal", lat:28.391369, lng:84.120083, power:30, guns:4, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:304, name:"Fast Charging at Hotel Trisakti, Lakuridada Dolakha", operator:"Independent", province:"Unknown", city:"Unknown", address:"MWMM+3X, Lakuridanda 45500, Nepal", lat:28.391766, lng:84.127869, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:305, name:"Supar Fast ev Charging Staion, Balefi, Khadichaur", operator:"Independent", province:"Unknown", city:"Unknown", address:"QR2C+87, Phulping Dandagaun 45314, Nepal", lat:28.399346, lng:84.121584, power:30, guns:4, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:306, name:"Bikalpa Charging Staion, Sukute", operator:"Independent", province:"Unknown", city:"Unknown", address:"PQ23+WR6, Araniko Highway, Kadambas 45314, Nepal", lat:28.393815, lng:84.127824, power:30, guns:2, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:307, name:"Fast Charging at Pathivara Hotel, Simle, Sindhupalchok", operator:"Independent", province:"Unknown", city:"Unknown", address:"MP7C+8GW, Sangachok, Nepal", lat:28.396888, lng:84.119549, power:30, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:308, name:"GadiCharge-AaRus Hospital, Pulchowk, Kathmandu", operator:"GadiCharge", province:"Unknown", city:"Kathmandu", address:"AáRūS Lifestyle Hospital Pvt. Ltd., Lalitpur, Nepal", lat:27.719342, lng:85.328787, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:309, name:"Air Charge Fast Charging , Bardibas", operator:"Aircharge", province:"Unknown", city:"Unknown", address:"Panchadhura car washing center, Bardibas, Nepal", lat:28.395188, lng:84.121008, power:30, guns:10, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:310, name:"GadiCharge Charging Station, Bardaghat", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"GadiCharge, Bardaghat, Nepal", lat:28.391578, lng:84.121488, power:30, guns:5, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:311, name:"Fast charging at foodland and guest house", operator:"Independent", province:"Unknown", city:"Unknown", address:"RX2F+87G, Baireni 45100, Nepal", lat:28.393973, lng:84.119331, power:30, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:312, name:"RE-Lax Charging, Kurintar Retreat,Kurintar-Darechowk", operator:"Independent", province:"Unknown", city:"Unknown", address:"Kurintar Retreat, Kurintar, Darechok, Nepal", lat:28.393191, lng:84.119717, power:30, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:313, name:"Air Charge Fast Charging, Gaidakot", operator:"Aircharge", province:"Unknown", city:"Unknown", address:"EV Charging Station, Gaidakot, Nepal", lat:28.392544, lng:84.125568, power:30, guns:14, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:314, name:"Air Charge Fast Charging, Malekhu", operator:"Aircharge", province:"Unknown", city:"Unknown", address:"Hotel Malekhu Bisauni, H04, Benighat, Nepal", lat:28.397641, lng:84.121689, power:30, guns:10, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:315, name:"Air Charge Fast Charging, Nuwakot", operator:"Aircharge", province:"Unknown", city:"Unknown", address:"Hotel Harati Crown, Pasang laahmu Highway, Bidur 44900, Nepal", lat:28.39529, lng:84.126186, power:30, guns:10, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:316, name:"Air Charge GBT Satdobato Station ,Satdobato, Lalitpur", operator:"Aircharge", province:"Unknown", city:"Lalitpur", address:"AirCharge, Swimming Pool Marg, Satdobato, Lalitpur, Nepal", lat:27.655639, lng:85.329676, power:30, guns:6, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:317, name:"Air Charge Fast Charging, Sallaghari, Bhaktapur", operator:"Aircharge", province:"Unknown", city:"Bhaktapur", address:"AirCharge, Nagarkot Road, Bhaktapur, Nepal", lat:27.673886, lng:85.428378, power:30, guns:10, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:318, name:"Air Charge ,Jorpati CCS2 Express , Jorpati, Kathmandu", operator:"Aircharge", province:"Unknown", city:"Kathmandu", address:"Shah washing Nepal, green bridge, Bagmati Corridor, Kathmandu, Nepal", lat:27.718367, lng:85.326612, power:30, guns:4, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:319, name:"Air Charge (CCS2) samakhushi, Kathmandu", operator:"Aircharge", province:"Unknown", city:"Kathmandu", address:"AirCharge चार्जिङ स्टेसन, Ring Road, Kathmandu, Nepal", lat:27.719221, lng:85.325657, power:30, guns:4, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:320, name:"Air Charge (GBT) samakhushi, Kathmandu", operator:"Aircharge", province:"Unknown", city:"Kathmandu", address:"AirCharge Charging Station, Ring Road, Kathmandu, Nepal", lat:27.713519, lng:85.32166, power:30, guns:6, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:321, name:"Manakamana EV charging station ,Aanbu Khaireni", operator:"Independent", province:"Unknown", city:"Unknown", address:"WG3M+RWH, Aanbu Khaireni, Nepal", lat:28.390987, lng:84.120411, power:30, guns:3, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:322, name:"ElectriVa Fast Charger ,Ghansikuwa,Damauli", operator:"ElectriVa", province:"Unknown", city:"Unknown", address:"X8P5+JV2 Ghansikuwa, Nepal", lat:28.399093, lng:84.126531, power:30, guns:4, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:323, name:"MG Fast Charging , Bhatganga, Gorkha", operator:"Independent", province:"Unknown", city:"Unknown", address:"Gorkha Daraudi yatayat pvt. office, Abukhaireni-Gorkha Highway, Gorkha, Nepal", lat:28.396054, lng:84.126557, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:324, name:"MAW Fast Charging,Nilkantha, Dhading", operator:"MAW", province:"Unknown", city:"Unknown", address:"Electric Vehicle Charging Station, Nilkantha, Nepal", lat:28.397952, lng:84.125785, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:325, name:"ElectriVa Fast Charger Chumglingtar", operator:"ElectriVa", province:"Unknown", city:"Unknown", address:"VJ5R+FR5 Darechokfb07", lat:28.396949, lng:84.126857, power:30, guns:6, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:326, name:"GBT Fast Charing at Hotel Jomsom Inn", operator:"Independent", province:"Unknown", city:"Unknown", address:"Electric Vehicle Charging Station, Jomsom, Nepal", lat:28.395187, lng:84.121798, power:30, guns:1, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:327, name:"MAW Fast Charging, Lumle", operator:"MAW", province:"Unknown", city:"Unknown", address:"Devkota Kirana, Lumle, Nepal", lat:28.39122, lng:84.120066, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:328, name:"Kavreko Ev Charging Station-GadiCharge, Vanepa", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"KavreKo EV, Banepa, Nepal", lat:28.397616, lng:84.121364, power:30, guns:2, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:329, name:"Shaileswari Group-GadiCharge, Silgadhi, Doti", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"7X87+HG3 Dipayal Silgadhi, Nepal", lat:28.393755, lng:84.122932, power:30, guns:4, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:330, name:"GadiCharge-Water Kingdom, Jhiljhile", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"Water Kingdom Park & Resort, Jhijhile, Nepal", lat:28.392955, lng:84.121699, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:331, name:"GadiCharge-CG, Bhaluwang", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"Our Choice Restaurant and Lodge, Mahendra Highway, Lalmatiya, Nepal", lat:28.39171, lng:84.120329, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:332, name:"Alliance Agro- GadiCharge, Pathari", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"GadiCharge Charging Station, Pathari Shanishchare, Morang, Nepal", lat:28.395831, lng:84.119816, power:30, guns:10, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:333, name:"GadiCharge-Siddhartha Vilasa, Siddharthanagar", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"Siddhartha Vilasa, Siddharthanagar, Nepal", lat:28.392496, lng:84.126675, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:334, name:"GadiCharge-Shubhayaan, Butwal", operator:"GadiCharge", province:"Unknown", city:"Butwal", address:"Electric Vehicle Charging Station, Mahendra Highway, Butwal, Nepal", lat:27.699173, lng:83.452508, power:30, guns:8, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:335, name:"GadiCharge-Maharaja Resort, Butwal", operator:"GadiCharge", province:"Unknown", city:"Butwal", address:"Maharaja Resort Pvt. Ltd, Butwal, Nepal", lat:27.700272, lng:83.450265, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:336, name:"GadiCharge-Citizen Bank ,Butwal", operator:"GadiCharge", province:"Unknown", city:"Butwal", address:"Citizens Bank International, Palparoad 4, Butwal, Nepal", lat:27.697404, lng:83.445265, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:337, name:"GadiCharge-kabilas Resort, Kabilas", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"Kabilas Resort & Funpark, Kabilas, Nepal", lat:28.390346, lng:84.126524, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:338, name:"GadiCharge-Swachchha Bhojangriha, Galchhi", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"Swachchha Bhojangriha, Prithvi Highway, Baireni, Nepal", lat:28.398747, lng:84.125536, power:30, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:339, name:"GadiCharge-DG, Dharke", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"Electric Vehicle Charging Station, Naubise, Nepal", lat:28.399286, lng:84.128706, power:30, guns:10, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:340, name:"GadiCharge-CG , Dharke", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"Electric Vehicle Charging Station, Prithvi Highway, Naubise, Nepal", lat:28.398792, lng:84.120059, power:30, guns:7, plugs:["GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:341, name:"GadiCharge-KIST Hospital , Imadol", operator:"GadiCharge", province:"Unknown", city:"Unknown", address:"KIST Medical College Teaching Hospital, Nepal", lat:28.398591, lng:84.128378, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:342, name:"Sankalpa Fast Charging Station , Lokanthali, Bhaktapur", operator:"Independent", province:"Unknown", city:"Bhaktapur", address:"Electric Vehicle Charging Station, Madhyapur Thimi, Nepal", lat:27.674744, lng:85.428418, power:30, guns:11, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:343, name:"GadiCharge-Citizen Bank , Kamaladi", operator:"GadiCharge", province:"Unknown", city:"Kathmandu", address:"GadiCharge Charging Station, Kathmandu, Nepal", lat:27.718394, lng:85.322287, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:344, name:"GadiCharge-Global IME-Kamaladi", operator:"GadiCharge", province:"Unknown", city:"Kathmandu", address:"GadiCharge Charging Station, Athak Marg, Kathmandu, Nepal", lat:27.715048, lng:85.323422, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:345, name:"GadiCharge-Citizen Bank , Durbarmarg", operator:"GadiCharge", province:"Unknown", city:"Kathmandu", address:"Electric Vehicle Charging Station, Durbar Marg, Kathmandu, Nepal", lat:27.717984, lng:85.328601, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:346, name:"MAW vriddhi Charging , Budhanilkantha, Nepal", operator:"MAW", province:"Unknown", city:"Unknown", address:"Narayani Tea & Coffee Shop, Budhanilkantha, Nepal", lat:28.391487, lng:84.119653, power:30, guns:1, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:347, name:"Sangam Shree Charging Station , Chabahil", operator:"Sangam Shree", province:"Unknown", city:"Kathmandu", address:"Sangam Shree, Chabahil, Kathmandu, Nepal", lat:27.720575, lng:85.324949, power:30, guns:10, plugs:["CCS2","GBT"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:348, name:"ElectriVa Arete International Showroom, Kathmandu", operator:"ElectriVa", province:"Unknown", city:"Kathmandu", address:"Arete International, Kathmandu, Nepal", lat:27.718036, lng:85.328462, power:30, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:349, name:"ElectriVa Fast charger at Marfa Car Wash, Ganeshwor, Kathmandu", operator:"ElectriVa", province:"Unknown", city:"Kathmandu", address:"Prabhu Bank Limited, ज्ञानेश्वर रोड, Dilli Bazaar, Kathmandu, Nepal", lat:27.717045, lng:85.320172, power:30, guns:2, plugs:["CCS2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
+  { id:350, name:"NEA Fast Charging Station , Hariyon", operator:"NEA", province:"Unknown", city:"Unknown", address:"Electric Vehicle Charging Station, Hariyon, Nepal", lat:28.396012, lng:84.121351, power:30, guns:6, plugs:["CCS2","GBT","AC Type 2"], type:"DC Fast", status:"available", hours:"00:00–24:00", rate:15 },
 ];
 
-const map = L.map('map', { center:[28.0, 84.2], zoom:7, zoomControl:false });
-L.control.zoom({ position:'bottomright' }).addTo(map);
+// Simplified Nepal national boundary — used to mask the map to Nepal only
+var NEPAL_BOUNDARY_COORDS = [[28.8856,80.0509],[28.8259,80.0753],[28.7555,80.2539],[28.6328,80.3612],[28.6288,80.4487],[28.5529,80.5148],[28.6641,80.5035],[28.6901,80.567],[28.4945,80.8446],[28.5114,80.8886],[28.4601,80.912],[28.4507,81.0172],[28.3974,81.037],[28.3581,81.213],[28.1339,81.3199],[28.1686,81.4363],[28.0788,81.4882],[27.856,81.8878],[27.9281,81.9722],[27.9228,82.069],[27.6793,82.4587],[27.7199,82.7102],[27.5042,82.7368],[27.4541,83.1879],[27.3331,83.3193],[27.4095,83.4073],[27.4777,83.3936],[27.4681,83.6179],[27.3479,83.8673],[27.3764,83.9081],[27.4329,83.8745],[27.433,84.0241],[27.5163,84.1503],[27.3838,84.2957],[27.336,84.6257],[27.2205,84.6926],[27.0441,84.6516],[26.9953,84.7958],[27.0216,84.839],[26.8882,85.0569],[26.8529,85.0344],[26.8678,85.1949],[26.7593,85.2172],[26.7445,85.3379],[26.8726,85.6333],[26.8148,85.7283],[26.6506,85.738],[26.6073,85.8542],[26.5691,85.8541],[26.6648,86.0248],[26.5915,86.2102],[26.6181,86.3369],[26.4231,86.7344],[26.4634,86.8955],[26.5863,87.063],[26.4451,87.0981],[26.3484,87.3435],[26.4206,87.3926],[26.4365,87.4889],[26.3803,87.6047],[26.4334,87.6829],[26.4099,87.7666],[26.4679,87.794],[26.4366,87.851],[26.4851,87.8947],[26.3611,88.02],[26.4361,88.1006],[26.73,88.1904],[26.9841,88.1348],[27.1126,87.9914],[27.334,88.0671],[27.4978,88.046],[27.8532,88.1938],[27.9499,87.8372],[27.8058,87.7259],[27.813,87.6115],[27.8683,87.5629],[27.8242,87.4515],[27.8603,87.4193],[27.824,87.1737],[27.9489,87.0395],[28.0377,86.7582],[28.1045,86.7397],[28.0732,86.6345],[28.1133,86.5788],[27.9569,86.5185],[27.9071,86.4123],[27.9775,86.229],[28.1721,86.1842],[28.0902,86.0809],[27.9315,86.1256],[27.9111,85.9961],[27.942,85.9446],[27.9933,85.9768],[28.1826,85.845],[28.2394,85.749],[28.3853,85.7112],[28.255,85.6083],[28.3055,85.5964],[28.3328,85.5086],[28.3269,85.4185],[28.2767,85.3773],[28.3372,85.117],[28.4535,85.0997],[28.5352,85.1864],[28.6432,85.1876],[28.6827,85.0599],[28.5962,84.9903],[28.5747,84.8562],[28.637,84.6989],[28.7352,84.6274],[28.7533,84.4618],[28.8589,84.3978],[28.8915,84.224],[29.0227,84.2543],[29.0476,84.1912],[29.1871,84.1668],[29.2416,84.2047],[29.2484,84.1164],[29.2939,84.0939],[29.3248,83.9042],[29.2429,83.7145],[29.1609,83.6442],[29.1777,83.5805],[29.2999,83.4455],[29.4218,83.4139],[29.5065,83.2688],[29.5668,83.2782],[29.6214,83.1516],[29.6034,83.0801],[29.7038,82.9346],[29.6879,82.8272],[29.7651,82.7537],[29.7627,82.6892],[29.8356,82.7256],[29.8384,82.6221],[29.8708,82.643],[29.9554,82.5619],[30.0764,82.2502],[30.0653,82.1757],[30.1531,82.2058],[30.2359,82.1019],[30.3025,82.1272],[30.3587,82.0857],[30.3198,81.9936],[30.4458,81.6243],[30.4261,81.562],[30.371,81.5542],[30.4192,81.4113],[30.2093,81.397],[30.1478,81.2575],[30.0693,81.2884],[30.0067,81.2224],[30.0537,81.0933],[30.2475,81.0305],[30.3232,80.8022],[30.4715,80.6066],[30.4492,80.5407],[30.4171,80.5367],[30.4439,80.6127],[30.1324,80.8791],[29.9587,80.6773],[29.9517,80.5936],[29.7958,80.494],[29.7494,80.3667],[29.5927,80.4098],[29.4511,80.3033],[29.4414,80.2427],[29.3117,80.3174],[29.1992,80.2965],[29.2189,80.25],[29.1423,80.2728],[29.0988,80.1448],[28.8856,80.0509]];
+
+// ============================================================
+// MAP SETUP — locked to Nepal only
+// ============================================================
+var NEPAL_BOUNDS = L.latLngBounds(L.latLng(26.35, 80.05), L.latLng(30.47, 88.20));
+
+var map = L.map('map', {
+  center:[28.35, 84.0], zoom:7, minZoom:6.6, maxZoom:18,
+  zoomControl:false, maxBounds:NEPAL_BOUNDS.pad(0.06), maxBoundsViscosity:1.0, worldCopyJump:false
+});
+L.control.zoom({ position:'bottomleft' }).addTo(map);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution:'© OpenStreetMap', maxZoom:19
+  attribution:'© OpenStreetMap', maxZoom:19, minZoom:6, noWrap:true
 }).addTo(map);
+map.fitBounds(NEPAL_BOUNDS, { padding:[6,6] });
 
-let markers = {};
-let activeNet = 'all';
-let activeType = 'all';
-let searchQ = '';
-let selectedId = null;
+var WORLD_RING = [[85,-360],[85,360],[-85,360],[-85,-360]];
+L.polygon([WORLD_RING, NEPAL_BOUNDARY_COORDS], { stroke:false, fillColor:'#F6F7F5', fillOpacity:.94, interactive:false }).addTo(map);
+L.polygon(NEPAL_BOUNDARY_COORDS, { color:'#0F5C33', weight:1.4, opacity:.4, fill:false, interactive:false }).addTo(map);
 
-function makeIcon(s) {
-  const cls = s.status === 'busy' ? 'busy' : s.status === 'offline' ? 'offline' : '';
-  const sel  = selectedId === s.id ? ' selected' : '';
-  return L.divIcon({
-    className: '',
-    html: `<div class="ev-pin ${cls}${sel}" id="pin-${s.id}"></div>`,
-    iconSize: [10,10], iconAnchor: [5,5]
+var markers = {};
+var activeNet = 'all', activeSpeed = 'all', activeProvince = 'all', searchQ = '';
+var selectedId = null, activeRouteCoords = null, routePolyline = null;
+
+function distanceKm(lat1, lon1, lat2, lon2){
+  var R = 6371, dLat = (lat2-lat1)*Math.PI/180, dLon = (lon2-lon1)*Math.PI/180;
+  var a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)**2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+function isNearRoute(s, coords, maxKm){
+  for (var i=0;i<coords.length;i+=2){ if (distanceKm(s.lat,s.lng,coords[i][1],coords[i][0]) <= maxKm) return true; }
+  return false;
+}
+
+function makeIcon(s){
+  var cls = s.status === 'busy' ? 'busy' : s.status === 'offline' ? 'offline' : '';
+  var sel = selectedId === s.id ? ' sel' : '';
+  return L.divIcon({ className:'pin-wrap', html:'<div class="pin '+cls+sel+'"></div>', iconSize:[14,14], iconAnchor:[7,7] });
+}
+function uniqueSorted(arr){ return Array.from(new Set(arr.filter(Boolean))).sort(); }
+
+function buildStaticFilters(){
+  var counts = {};
+  STATIONS.forEach(function(s){ counts[s.operator] = (counts[s.operator]||0)+1; });
+  var networks = Object.keys(counts).sort(function(a,b){ return counts[b]-counts[a]; });
+  var brandSel = document.getElementById('brandFilter');
+  brandSel.innerHTML = '<option value="all">All brands</option>' + networks.map(function(n){
+    return '<option value="'+n+'">'+(n||'Unlisted')+' ('+counts[n]+')</option>';
+  }).join('');
+
+  var provinces = uniqueSorted(STATIONS.map(function(s){ return s.province; }));
+  var provSel = document.getElementById('provinceFilter');
+  provSel.innerHTML = '<option value="all">All provinces</option>' + provinces.map(function(p){
+    return '<option value="'+p+'">'+p+'</option>';
+  }).join('');
+
+  document.getElementById('mTotal').textContent = STATIONS.length;
+  document.getElementById('mNetworks').textContent = networks.length;
+}
+
+function renderList(filtered){
+  var el = document.getElementById('stationList');
+  if (!filtered.length){
+    el.innerHTML = '<div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><div>No stations match your filters</div></div>';
+    return;
+  }
+  el.innerHTML = filtered.map(function(s){
+    var statusCls = s.status === 'available' ? 'av' : s.status === 'busy' ? 'bu' : 'of';
+    var speedTag = s.type === 'DC Fast' ? '<span class="s-tag fast">'+s.power+' kW · Fast</span>' : '<span class="s-tag">'+ (s.power ? s.power+' kW · Slow' : 'Slow') +'</span>';
+    var dist = activeRouteCoords ? '' : '';
+    return '<div class="s-card" data-id="'+s.id+'">'+
+      '<div class="s-top"><div class="s-badge '+statusCls+'"></div><div class="s-name">'+s.name+'</div></div>'+
+      '<div class="s-sub"><svg class="icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'+s.city+'</div>'+
+      '<div class="s-tags">'+speedTag+'<span class="s-tag op">'+(s.operator||'Unlisted')+'</span></div>'+
+    '</div>';
+  }).join('');
+  el.querySelectorAll('.s-card').forEach(function(item){
+    item.addEventListener('click', function(){
+      var s = STATIONS.find(function(x){ return x.id === Number(item.dataset.id); });
+      selectStation(s);
+    });
   });
 }
 
-function renderList(filtered) {
-  const el = document.getElementById('stationList');
-  el.innerHTML = '';
-  filtered.forEach(s => {
-    const statusCls = s.status === 'available' ? 'av' : s.status === 'busy' ? 'bu' : 'of';
-    const statusLabel = s.status === 'available' ? 'Available' : s.status === 'busy' ? 'In Use' : 'Offline';
-    const div = document.createElement('div');
-    div.className = 'station-item' + (selectedId === s.id ? ' selected' : '');
-    div.innerHTML = `
-      <div class="si-top">
-        <div class="si-name">${s.name}</div>
-        <div class="si-status ${statusCls}">${statusLabel}</div>
-      </div>
-      <div class="si-meta">
-        <div class="si-detail">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          ${s.city}
-        </div>
-        <div class="si-detail">${s.power} kW</div>
-        <div class="si-detail">${s.type}</div>
-      </div>
-      <div class="si-plugs">${s.plugs.map(p=>`<span class="plug">${p}</span>`).join('')}</div>
-      <div class="si-op">${s.operator} · NPR ${s.rate}/kWh · ${s.hours}</div>
-    `;
-    div.addEventListener('click', () => selectStation(s));
-    el.appendChild(div);
-  });
-}
-
-function updateStats(filtered) {
-  const av = filtered.filter(s=>s.status==='available').length;
-  const bu = filtered.filter(s=>s.status==='busy').length;
-  const of = filtered.filter(s=>s.status==='offline').length;
-  document.getElementById('statAvail').textContent = av;
-  document.getElementById('statBusy').textContent  = bu;
-  document.getElementById('statOffline').textContent = of;
-  document.getElementById('statTotal').textContent = filtered.length;
+function updateCounts(filtered){
+  var av = filtered.filter(function(s){ return s.status==='available'; }).length;
   document.getElementById('countShown').textContent = filtered.length;
-  document.getElementById('cAvail').textContent = av;
-  document.getElementById('cBusy').textContent  = bu;
-  document.getElementById('cOff').textContent   = of;
+  document.getElementById('mAvail').textContent = av;
 }
 
-function applyFilters() {
-  const filtered = STATIONS.filter(s => {
-    const netOk  = activeNet === 'all' || s.operator === activeNet;
-    const typeOk = activeType === 'all' || s.type === activeType;
-    const srchOk = !searchQ || s.name.toLowerCase().includes(searchQ)
-                             || s.city.toLowerCase().includes(searchQ)
-                             || s.address.toLowerCase().includes(searchQ);
-    return netOk && typeOk && srchOk;
+function applyFilters(){
+  var filtered = STATIONS.filter(function(s){
+    var netOk = activeNet === 'all' || s.operator === activeNet;
+    var speedOk = activeSpeed === 'all' || s.type === activeSpeed;
+    var provOk = activeProvince === 'all' || s.province === activeProvince;
+    var q = searchQ;
+    var srchOk = !q || s.name.toLowerCase().indexOf(q) > -1 || s.city.toLowerCase().indexOf(q) > -1 ||
+                 s.address.toLowerCase().indexOf(q) > -1 || (s.operator||'').toLowerCase().indexOf(q) > -1;
+    var routeOk = !activeRouteCoords || isNearRoute(s, activeRouteCoords, 15);
+    return netOk && speedOk && provOk && srchOk && routeOk;
   });
 
-  // Clear markers
-  Object.values(markers).forEach(m => map.removeLayer(m));
+  Object.keys(markers).forEach(function(k){ map.removeLayer(markers[k]); });
   markers = {};
-
-  filtered.forEach(s => {
-    const m = L.marker([s.lat, s.lng], { icon: makeIcon(s) }).addTo(map);
-    m.on('click', () => selectStation(s));
+  filtered.forEach(function(s){
+    var m = L.marker([s.lat, s.lng], { icon: makeIcon(s) }).addTo(map);
+    m.on('click', function(){ selectStation(s); });
     markers[s.id] = m;
   });
 
   renderList(filtered);
-  updateStats(filtered);
+  updateCounts(filtered);
 }
 
-function selectStation(s) {
+function selectStation(s){
   selectedId = s.id;
   applyFilters();
 
-  // Detail panel
-  document.getElementById('dpOp').textContent   = s.operator + ' Network';
-  document.getElementById('dpName').textContent = s.name;
-  document.getElementById('dpAddr').textContent = s.address + ', ' + s.city;
+  document.getElementById('dOp').textContent = (s.operator || 'Unlisted') + ' Network';
+  document.getElementById('dName').textContent = s.name;
+  document.getElementById('dAddr').textContent = s.address + ', ' + s.city;
 
-  const dot = document.getElementById('dpStatusDot');
-  const txt = document.getElementById('dpStatusText');
-  if (s.status === 'available') { dot.style.background = '#3E9142'; txt.style.color = '#4EAD52'; txt.textContent = 'Available'; }
-  else if (s.status === 'busy') { dot.style.background = '#D4860F'; txt.style.color = '#E09B2A'; txt.textContent = 'In Use'; }
-  else { dot.style.background = '#5E6478'; txt.style.color = '#9DA3B4'; txt.textContent = 'Offline'; }
+  var dot = document.getElementById('dDot'), txt = document.getElementById('dStatusTxt');
+  if (s.status === 'available'){ dot.style.background = '#0F5C33'; txt.style.color = '#0F5C33'; txt.textContent = 'Available now'; }
+  else if (s.status === 'busy'){ dot.style.background = '#A66A0E'; txt.style.color = '#A66A0E'; txt.textContent = 'In use'; }
+  else { dot.style.background = '#B7BEB9'; txt.style.color = '#8B948E'; txt.textContent = 'Offline'; }
 
-  document.getElementById('dpPower').textContent = s.power;
-  document.getElementById('dpGuns').textContent  = s.guns;
-  document.getElementById('dpRate').textContent  = s.rate;
+  document.getElementById('dPower').textContent = s.power || '—';
+  document.getElementById('dGuns').textContent = s.guns;
+  document.getElementById('dRate').textContent = s.rate;
+  document.getElementById('dConns').innerHTML = s.plugs.map(function(p){ return '<div class="d-conn-item">'+p+'</div>'; }).join('');
+  document.getElementById('dHours').textContent = s.hours;
+  document.getElementById('dOpen').textContent = s.hours === '00:00–24:00' ? '24/7' : '';
+  document.getElementById('dDir').href = 'https://www.google.com/maps/dir/?api=1&destination='+s.lat+','+s.lng+'&travelmode=driving';
 
-  document.getElementById('dpConns').innerHTML = s.plugs.map(p =>
-    `<div class="dp-conn">${p}</div>`
-  ).join('');
-
-  document.getElementById('dpHours').textContent = s.hours;
-  document.getElementById('dpOpenTag').textContent = s.hours === '00:00–24:00' ? '24/7' : '';
-  document.getElementById('dpDir').href = `https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}`;
-
-  document.getElementById('detailPanel').classList.add('open');
+  document.getElementById('detail').classList.add('open');
   map.setView([s.lat, s.lng], 14, { animate:true });
+
+  if (window.innerWidth <= 880) switchTab('map');
+}
+document.getElementById('dClose').addEventListener('click', function(){
+  document.getElementById('detail').classList.remove('open');
+  selectedId = null; applyFilters();
+});
+
+document.getElementById('brandFilter').addEventListener('change', function(e){ activeNet = e.target.value; applyFilters(); });
+document.getElementById('provinceFilter').addEventListener('change', function(e){ activeProvince = e.target.value; applyFilters(); });
+
+document.getElementById('speedSeg').addEventListener('click', function(e){
+  var btn = e.target.closest('button'); if (!btn) return;
+  activeSpeed = btn.dataset.speed;
+  document.querySelectorAll('#speedSeg button').forEach(function(b){ b.classList.toggle('active', b === btn); });
+  applyFilters();
+});
+
+var searchInput = document.getElementById('searchInput');
+var searchClear = document.getElementById('searchClear');
+searchInput.addEventListener('input', function(e){
+  searchQ = e.target.value.toLowerCase().trim();
+  searchClear.classList.toggle('show', !!searchQ);
+  applyFilters();
+});
+searchClear.addEventListener('click', function(){ searchInput.value=''; searchQ=''; searchClear.classList.remove('show'); applyFilters(); searchInput.focus(); });
+
+document.getElementById('clearAll').addEventListener('click', function(){
+  activeNet='all'; activeSpeed='all'; activeProvince='all'; searchQ='';
+  document.getElementById('brandFilter').value='all';
+  document.getElementById('provinceFilter').value='all';
+  document.querySelectorAll('#speedSeg button').forEach(function(b,i){ b.classList.toggle('active', i===0); });
+  searchInput.value=''; searchClear.classList.remove('show');
+  applyFilters();
+});
+
+// ---- Locate me ----
+document.getElementById('locateBtn').addEventListener('click', function(){
+  if (!navigator.geolocation) return toast('Location is not available on this device.', 'error');
+  var btn = this; var orig = btn.innerHTML;
+  btn.innerHTML = 'Locating…';
+  navigator.geolocation.getCurrentPosition(function(pos){
+    var latlng = [pos.coords.latitude, pos.coords.longitude];
+    if (NEPAL_BOUNDS.contains(latlng)) map.setView(latlng, 13); else map.fitBounds(NEPAL_BOUNDS);
+    btn.innerHTML = orig; lucide.createIcons();
+  }, function(){ toast('Could not get your location.', 'error'); btn.innerHTML = orig; lucide.createIcons(); });
+});
+
+// ---- Route planner ----
+
+async function geocode(query){
+  try{
+    var res = await fetch('https://nominatim.openstreetmap.org/search?format=json&countrycodes=np&limit=1&q='+encodeURIComponent(query));
+    var data = await res.json();
+    if (data && data.length) return [parseFloat(data[0].lon), parseFloat(data[0].lat)];
+  }catch(e){}
+  return null;
 }
 
-document.getElementById('dpClose').addEventListener('click', () => {
-  document.getElementById('detailPanel').classList.remove('open');
-  selectedId = null;
+document.getElementById('btnFindRoute').addEventListener('click', async function(){
+  var fromVal = document.getElementById('routeFrom').value.trim();
+  var toVal = document.getElementById('routeTo').value.trim();
+  var statusEl = document.getElementById('routeStatus');
+  if (!fromVal || !toVal){ toast('Enter both a starting point and a destination.', 'error'); return; }
+
+  var btn = this; var orig = btn.textContent;
+  btn.textContent = 'Finding route…'; btn.disabled = true;
+
+  var fromCoords = await geocode(fromVal);
+  var toCoords = await geocode(toVal);
+  if (!fromCoords || !toCoords){
+    toast('Could not find one of those places in Nepal.', 'error');
+    btn.textContent = orig; btn.disabled = false; return;
+  }
+
+  try{
+    var url = 'https://router.project-osrm.org/route/v1/driving/'+fromCoords[0]+','+fromCoords[1]+';'+toCoords[0]+','+toCoords[1]+'?overview=full&geometries=geojson';
+    var res = await fetch(url);
+    var data = await res.json();
+    if (data.routes && data.routes.length){
+      activeRouteCoords = data.routes[0].geometry.coordinates;
+      if (routePolyline) map.removeLayer(routePolyline);
+      var latlngs = activeRouteCoords.map(function(c){ return [c[1], c[0]]; });
+      routePolyline = L.polyline(latlngs, { color:'#0F5C33', weight:4, opacity:.85 }).addTo(map);
+      map.fitBounds(routePolyline.getBounds(), { padding:[30,30] });
+      applyFilters();
+      document.getElementById('btnClearRoute').style.display = 'inline-flex';
+      var km = (data.routes[0].distance/1000).toFixed(0);
+      statusEl.innerHTML = 'Route found — <b>'+km+' km</b>. Showing stations within 15 km of your path.';
+      statusEl.classList.add('show');
+      document.getElementById('routeBadge').classList.add('show');
+      document.getElementById('routeBadgeTxt').textContent = fromVal + ' → ' + toVal + ' · ' + km + ' km';
+      if (window.innerWidth <= 880) switchTab('map');
+    } else {
+      toast('Could not calculate a driving route between these places.', 'error');
+    }
+  }catch(e){ toast('Route lookup failed. Check your connection and try again.', 'error'); }
+
+  btn.textContent = orig; btn.disabled = false;
+});
+
+document.getElementById('btnClearRoute').addEventListener('click', function(){
+  activeRouteCoords = null;
+  document.getElementById('routeFrom').value = '';
+  document.getElementById('routeTo').value = '';
+  document.getElementById('routeStatus').classList.remove('show');
+  document.getElementById('routeBadge').classList.remove('show');
+  this.style.display = 'none';
+  if (routePolyline){ map.removeLayer(routePolyline); routePolyline = null; }
+  map.fitBounds(NEPAL_BOUNDS, { padding:[6,6] });
   applyFilters();
 });
 
-document.getElementById('networkFilter').addEventListener('click', e => {
-  const chip = e.target.closest('[data-filter]');
-  if (!chip) return;
-  activeNet = chip.dataset.filter;
-  document.querySelectorAll('#networkFilter .chip').forEach(c => c.classList.remove('active'));
-  chip.classList.add('active');
-  applyFilters();
-});
+// ---- Mobile tabs ----
+function switchTab(which){
+  var listOn = which === 'list';
+  document.getElementById('tabList').classList.toggle('active', listOn);
+  document.getElementById('tabMap').classList.toggle('active', !listOn);
+  document.getElementById('paneList').classList.toggle('hide', !listOn);
+  document.getElementById('paneMap').classList.toggle('hide', listOn);
+  if (!listOn) setTimeout(function(){ map.invalidateSize(); }, 150);
+}
+document.getElementById('tabList').addEventListener('click', function(){ switchTab('list'); });
+document.getElementById('tabMap').addEventListener('click', function(){ switchTab('map'); });
 
-document.getElementById('typeFilter').addEventListener('click', e => {
-  const chip = e.target.closest('[data-type]');
-  if (!chip) return;
-  activeType = chip.dataset.type;
-  document.querySelectorAll('#typeFilter .chip').forEach(c => c.classList.remove('active'));
-  chip.classList.add('active');
-  applyFilters();
-});
-
-document.getElementById('searchInput').addEventListener('input', e => {
-  searchQ = e.target.value.toLowerCase().trim();
-  applyFilters();
-});
-
-fetch('/api/site/charging-stations').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
-  if (d && d.stations && d.stations.length) { STATIONS = d.stations; applyFilters(); }
-}).catch(function(){});
-
+buildStaticFilters();
 applyFilters();
 
-setTimeout(() => {
-  document.getElementById('loading').classList.add('hide');
-  setTimeout(() => document.getElementById('loading').remove(), 350);
-}, 1400);
+window.addEventListener('resize', function(){ map.invalidateSize(); });
 </script>
 </body>
 </html>

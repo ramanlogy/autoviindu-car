@@ -2,7 +2,7 @@
    AUTOVIINDU — VIDEOS PAGE
    window.renderVideos() → renders #videos
 ═══════════════════════════════════════════════════════ */
-window.renderVideos = function () {
+window.renderVideos = async function () {
   document.title = 'Car Videos Nepal — Reviews & Comparisons | AutoViindu';
   if (window.AV && window.AV.setActiveNav) window.AV.setActiveNav('videos');
 
@@ -19,6 +19,14 @@ window.renderVideos = function () {
     { id:'dQw4w9WgXcQ', title:'Top 5 Budget Cars Under Rs. 25L in Nepal 2024', sub:'Best value cars for the money right now', brand:'AutoViindu', duration:'12:30', views:'71K', category:'Comparisons', thumb:'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=640&h=360&fit=crop' },
     { id:'dQw4w9WgXcQ', title:'Suzuki Grand Vitara — Off-Road & City Test', sub:'Hybrid SUV for Nepal\'s diverse terrain', brand:'Suzuki', duration:'19:05', views:'38K', category:'Road Tests', thumb:'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=640&h=360&fit=crop' },
   ];
+
+  try {
+    var r = await fetch('/api/site/videos', { cache: 'no-store' });
+    if (r.ok) {
+      var data = await r.json();
+      if (data.items && data.items.length) VIDEOS = data.items;
+    }
+  } catch (_) {}
 
   var cats = ['All','Reviews','Comparisons','EV Special','Road Tests'];
   var activeCat = 'All';
@@ -47,7 +55,7 @@ window.renderVideos = function () {
     '<h2 style="font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--ink);margin:8px 0 6px">' + featured.title + '</h2>' +
     '<p style="font-size:13px;color:var(--ink-4);line-height:1.6;margin-bottom:14px">' + featured.sub + '</p>' +
     '<div style="display:flex;gap:14px;font-size:12.5px;color:var(--ink-4)">' +
-    '<span>👁 ' + featured.views + ' views</span><span>⏱ ' + featured.duration + '</span>' +
+    '<span><i data-lucide="eye"></i> ' + featured.views + ' views</span><span><i data-lucide="timer"></i> ' + featured.duration + '</span>' +
     '</div>' +
     '<button onclick="window.open(\'https://youtube.com/watch?v=' + featured.id + '\',\'_blank\')" class="btn btn-primary" style="margin-top:16px">' + playIcon + ' Watch Now</button>' +
     '</div></div>';
@@ -69,8 +77,8 @@ window.renderVideos = function () {
       '<div style="font-size:14px;font-weight:700;color:var(--ink);margin:7px 0 4px;line-height:1.4">' + v.title + '</div>' +
       '<div style="font-size:12px;color:var(--ink-4);line-height:1.5">' + v.sub + '</div>' +
       '<div style="display:flex;justify-content:space-between;margin-top:10px">' +
-      '<span style="font-size:11.5px;color:var(--ink-4)">👁 ' + v.views + '</span>' +
-      '<span style="font-size:11.5px;color:var(--ink-4)">⏱ ' + v.duration + '</span>' +
+      '<span style="font-size:11.5px;color:var(--ink-4)"><i data-lucide="eye"></i> ' + v.views + '</span>' +
+      '<span style="font-size:11.5px;color:var(--ink-4)"><i data-lucide="timer"></i> ' + v.duration + '</span>' +
       '</div></div></div>';
   }).join('');
 
@@ -93,7 +101,7 @@ window.renderVideos = function () {
     '<div style="text-align:center;padding:28px;background:var(--bg);border-radius:var(--r20)">' +
     '<div style="font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:6px">More videos every week</div>' +
     '<p style="font-size:13px;color:var(--ink-4);margin-bottom:16px">Subscribe to our YouTube for weekly Nepal car reviews, comparisons and road tests</p>' +
-    '<button onclick="window.open(\'https://youtube.com/@autoviindu\',\'_blank\')" class="btn btn-primary">▶ Subscribe on YouTube</button>' +
+    '<button onclick="window.open(\'https://youtube.com/@autoviindu\',\'_blank\')" class="btn btn-primary"><i data-lucide="play"></i> Subscribe on YouTube</button>' +
     '</div>' +
 
     '</div>';
