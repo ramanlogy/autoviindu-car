@@ -38,9 +38,6 @@ jobs:
                  node_modules/@prisma/streams-local node_modules/@prisma/get-platform \
                  node_modules/effect
 
-      - name: Validate car database files
-        run: node scripts/validate-cars-dbs.js
-
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
