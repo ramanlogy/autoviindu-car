@@ -31,7 +31,8 @@ __pycache__/
 *.pyc
 
 # Temp / scratch / one-off scripts
-tmp/
+tmp/*
+!tmp/restart.txt
 scratch/
 car_images/
 
@@ -51,3 +52,7 @@ dev.db
 .claude/
 .agents/
 .windsurf/
+
+# Runtime uploads / test artifacts
+backend/uploads/
+.playwright-mcp/

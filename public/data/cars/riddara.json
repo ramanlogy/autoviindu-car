@@ -61,7 +61,7 @@
       {
         "name": "RD6 2WD (63 kWh)",
         "slug": "rd6-2wd-63kwh",
-        "price": 0,
+        "price": 6699000,
         "label": "2WD Base",
         "popular": false,
         "transmission": "Single Speed (EV)",
@@ -94,7 +94,7 @@
       {
         "name": "RD6 4WD (73 kWh)",
         "slug": "rd6-4wd-73kwh",
-        "price": 0,
+        "price": 7999000,
         "label": "4WD Top",
         "popular": true,
         "transmission": "Single Speed AWD (EV)",

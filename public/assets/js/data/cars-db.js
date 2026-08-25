@@ -640,7 +640,6 @@ window.CARS_DB = [
     "baseEMI": 35000,
     "overview": "The All-New Suzuki Alto K10 redefines the entry-level segment with a youthful honeycomb-grille design, 24.90 km/l fuel efficiency, and the Next Gen 1.0L K-Series Dual Jet Dual VVT engine with AGS technology. It packs a Smartplay Studio infotainment with Smartphone Navigation and 4 speakers — a first in its segment — alongside 15+ safety features including dual airbags, ABS with EBD, HEARTECT platform, and reverse parking sensors.",
     "images": [
-
       "/assets/images/car_images/suzuki/alto-k10/exterior/alto-k10-exterior-right-front-three-quarter-63.avif",
       "/assets/images/car_images/suzuki/alto-k10/interior/alto-k10-interior-dashboard-2.avif"
     ],
@@ -1221,13 +1220,34 @@ window.CARS_DB = [
       "/assets/images/car_images/suzuki/jimny/interior/seats.png"
     ],
     "colors": [
-      { "name": "Kinetic Yellow with Bluish Black Roof", "hex": "#D4DE28" },
-      { "name": "Sizzling Red with Bluish Black Roof", "hex": "#C0392B" },
-      { "name": "NEXA Blue", "hex": "#1A5276" },
-      { "name": "Bluish Black", "hex": "#1C2833" },
-      { "name": "Sizzling Red", "hex": "#C0392B" },
-      { "name": "Granite Gray", "hex": "#616A6B" },
-      { "name": "Pearl Arctic White", "hex": "#F2F3F4" }
+      {
+        "name": "Kinetic Yellow with Bluish Black Roof",
+        "hex": "#D4DE28"
+      },
+      {
+        "name": "Sizzling Red with Bluish Black Roof",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "NEXA Blue",
+        "hex": "#1A5276"
+      },
+      {
+        "name": "Bluish Black",
+        "hex": "#1C2833"
+      },
+      {
+        "name": "Sizzling Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Granite Gray",
+        "hex": "#616A6B"
+      },
+      {
+        "name": "Pearl Arctic White",
+        "hex": "#F2F3F4"
+      }
     ],
     "variants": [
       {
@@ -2098,7 +2118,7 @@ window.CARS_DB = [
       {
         "name": "Lxi",
         "slug": "lxi",
-        "price": 0,
+        "price": 5399000,
         "label": "Base",
         "popular": false,
         "transmission": "5MT / e-CVT (Strong Hybrid)",
@@ -2134,7 +2154,7 @@ window.CARS_DB = [
       {
         "name": "Vxi",
         "slug": "vxi",
-        "price": 0,
+        "price": 5899000,
         "label": "Mid",
         "popular": false,
         "transmission": "5MT / 6AT / e-CVT",
@@ -2165,7 +2185,7 @@ window.CARS_DB = [
       {
         "name": "Zxi / Zxi (O)",
         "slug": "zxi",
-        "price": 0,
+        "price": 6299000,
         "label": "Top",
         "popular": true,
         "transmission": "5MT / 6AT / AllGrip 6AT / e-CVT",
@@ -2196,7 +2216,7 @@ window.CARS_DB = [
       {
         "name": "Zxi+ / Zxi+ (O)",
         "slug": "zxi-plus",
-        "price": 0,
+        "price": 6799000,
         "label": "Flagship",
         "popular": false,
         "transmission": "6AT / AllGrip 6AT / e-CVT",
@@ -2331,7 +2351,7 @@ window.CARS_DB = [
       {
         "name": "RD6 2WD (63 kWh)",
         "slug": "rd6-2wd-63kwh",
-        "price": 0,
+        "price": 6699000,
         "label": "2WD Base",
         "popular": false,
         "transmission": "Single Speed (EV)",
@@ -2364,7 +2384,7 @@ window.CARS_DB = [
       {
         "name": "RD6 4WD (73 kWh)",
         "slug": "rd6-4wd-73kwh",
-        "price": 0,
+        "price": 7999000,
         "label": "4WD Top",
         "popular": true,
         "transmission": "Single Speed AWD (EV)",
@@ -5638,25 +5658,29 @@ window.CARS_DB = [
     "baseEMI": 56000,
     "overview": "The BYD Atto 1 (known as Seagull in China) is BYD's entry-level electric hatchback in Nepal. Built on e-Platform 3.0 with Blade Battery technology and V2L capability, it offers a surprising amount of kit for its price. The Premium variant adds range, extra airbags, and faster DC charging — making it the smarter buy between the two.",
     "images": [
+      "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-exterior-front-white-bg.webp",
       "/assets/images/car_images/byd/atto-1/exterior/byd-att0-1-exterior-front-white-bg.jpg",
       "/assets/images/car_images/byd/atto-1/exterior/byd-att0-1-exterior-top.png",
-      "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-exterior-front-white-bg.webp",
       "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-exterior-side-left-white-bg.jpg",
       "/assets/images/car_images/byd/atto-1/exterior/byd-atto-2-exterior-front.png",
       "/assets/images/car_images/byd/atto-1/interior/byd-att0-1-interior-seats-front.jpg"
     ],
     "colors": [
       {
-        "name": "White",
-        "hex": "#F5F5F5"
+        "name": "Sprout Green",
+        "hex": "#B4CC3D"
       },
       {
-        "name": "Black",
+        "name": "Apricity White",
+        "hex": "#F5F5F0"
+      },
+      {
+        "name": "Cosmos Black",
         "hex": "#1C1C1C"
       },
       {
-        "name": "Grey",
-        "hex": "#8A8E94"
+        "name": "Arctic Blue",
+        "hex": "#A9C4D6"
       }
     ],
     "variants": [
@@ -5673,7 +5697,7 @@ window.CARS_DB = [
           "230 km WLTP Range",
           "30 kW DC Fast Charging",
           "6.6 kW AC Charging (0–100% ~5 hrs)",
-          "2 Airbags",
+          "4 Airbags",
           "10.1\" Touchscreen",
           "Rear Camera",
           "ABS + EBD + EPB",
@@ -5687,7 +5711,18 @@ window.CARS_DB = [
           "torque": "135 Nm",
           "range": "230 km WLTP",
           "battery": "30.08 kWh",
-          "charging": "30 kW DC / 6.6 kW AC"
+          "charging": "30 kW DC / 6.6 kW AC",
+          "Battery Capacity (kWh)": "30.08 kWh",
+          "Certified Range (km)": "230 km WLTP",
+          "DC Fast Charging Max Rate (kW)": "30 kW",
+          "Kerb Weight (kg)": "1,225",
+          "Gross Vehicle Weight (GVW)": "1,635 kg",
+          "Total Airbag Count": "4",
+          "Airbag Positions": "Front (driver & passenger) + Curtain (front & rear)",
+          "Powered Driver Seat": "4-way manual",
+          "Steering Adjustments": "2-way manual tilt",
+          "Transmission": "Single-Speed Automatic",
+          "Power": "61 PS"
         }
       },
       {
@@ -5711,7 +5746,18 @@ window.CARS_DB = [
           "torque": "135 Nm",
           "range": "300 km WLTP",
           "battery": "38.88 kWh",
-          "charging": "40 kW DC / 6.6 kW AC"
+          "charging": "40 kW DC / 6.6 kW AC",
+          "Battery Capacity (kWh)": "38.88 kWh",
+          "Certified Range (km)": "300 km WLTP",
+          "DC Fast Charging Max Rate (kW)": "40 kW",
+          "Kerb Weight (kg)": "1,280",
+          "Gross Vehicle Weight (GVW)": "1,690 kg",
+          "Total Airbag Count": "6",
+          "Airbag Positions": "Front (driver & passenger) + Side (driver & passenger) + Curtain (front & rear)",
+          "Powered Driver Seat": "6-way power",
+          "Steering Adjustments": "4-way manual tilt & telescopic",
+          "Transmission": "Single-Speed Automatic",
+          "Power": "61 PS"
         }
       }
     ],
@@ -5723,7 +5769,6 @@ window.CARS_DB = [
       "Range": "230 km (Dynamic) / 300 km (Premium) WLTP",
       "DC Fast Charge": "30 kW (Dynamic) / 40 kW (Premium)",
       "AC Charge": "6.6 kW — ~5 hrs (D) / ~6.5 hrs (P) 0–100%",
-      "Drive": "FWD",
       "Transmission": "Single-Speed Automatic",
       "Seating": "5",
       "Boot Space": "Not specified",
@@ -5732,9 +5777,83 @@ window.CARS_DB = [
       "Height": "1,590 mm",
       "Wheelbase": "2,500 mm",
       "Ground Clearance": "175 mm",
-      "Airbags": "2 (Dynamic) / 6 (Premium)",
+      "Airbags": "4 (Dynamic) / 6 (Premium)",
       "Platform": "BYD e-Platform 3.0",
-      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+      "Warranty": "Battery & Motor: 10yr/200,000km | Vehicle: 5yr/125,000km",
+      "Motor Type": "Permanent Magnet Synchronous Motor (PMSM)",
+      "Motor Position": "Front-Mounted",
+      "Max Motor Power": "45 kW (61 PS)",
+      "Max Motor Torque": "135 N·m",
+      "Drive Type": "FWD",
+      "Top Speed (km/h)": "130",
+      "Transmission Type": "Single-Speed Automatic",
+      "Steering Type": "Electric Power Steering (C-EPS)",
+      "Battery Type": "LFP — BYD Blade Battery",
+      "Battery Capacity (kWh)": "30.08 kWh (Dynamic) / 38.88 kWh (Premium)",
+      "Certified Range (km)": "230 km WLTP (Dynamic) / 300 km WLTP (Premium)",
+      "AC Charging Max Rate (kW)": "6.6 kW",
+      "DC Fast Charging Max Rate (kW)": "30 kW (Dynamic) / 40 kW (Premium)",
+      "Vehicle-to-Load (V2L)": "Yes — up to 2.2 kW",
+      "Overall Length (mm)": "3,925",
+      "Overall Width (mm)": "1,720",
+      "Overall Height (mm)": "1,590",
+      "Wheelbase (mm)": "2,500",
+      "Turning Radius (m)": "4.95",
+      "Kerb Weight (kg)": "1,225 (Dynamic) / 1,280 (Premium)",
+      "Gross Vehicle Weight (GVW)": "1,635 kg (Dynamic) / 1,690 kg (Premium)",
+      "Seating Capacity": "5",
+      "Body Type": "Hatchback",
+      "Track Width Front/Rear (mm)": "1,500 / 1,485",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Torsion Beam",
+      "Front Brakes": "Ventilated Disc",
+      "Rear Brakes": "Disc",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Brake Assist (BA)": "Yes",
+      "Hill Start Assist (HSA)": "Yes",
+      "Tyre Size": "185/55 R16",
+      "Wheel Size (inches)": "16",
+      "Wheel Type": "Alloy",
+      "TPMS": "Yes",
+      "Spare Tyre": "Tyre Repair Kit (no spare wheel)",
+      "Total Airbag Count": "4 (Dynamic) / 6 (Premium)",
+      "Airbag Positions": "Front (both) + Curtain front & rear (both) + Side (Premium only)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Seat Belt Reminder": "Front & Rear",
+      "ISOFIX Child Seat Mounts": "Yes (outer rear seats)",
+      "Front/Rear Parking Sensors": "Rear 3-radar sensors + rear camera (no front sensors)",
+      "Auto Headlamps": "Yes, Automatic LED",
+      "Air Conditioning Type": "Manual AC",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Power Windows": "All 4, electric",
+      "Electric ORVM": "Electrically heated & adjustable",
+      "Powered Driver Seat": "4-way manual (Dynamic) / 6-way power (Premium)",
+      "Steering Adjustments": "2-way manual tilt (Dynamic) / 4-way manual tilt & telescopic (Premium)",
+      "Headlamp Type": "LED (Automatic)",
+      "Daytime Running Lights (DRLs)": "Yes, LED",
+      "Tail Lamp Type": "LED bar",
+      "Seat Upholstery": "Synthetic Leather",
+      "Digital Instrument Cluster": "7\" Digital Instrument Panel with TPMS display",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "10.1\"",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "2× (Type-A + Type-C)",
+      "Android Auto": "Wireless + USB",
+      "Apple CarPlay": "Wireless + USB",
+      "OTA Software Updates": "Yes",
+      "Connected Car Apps": "4G cloud services",
+      "Audio System Speaker Count": "4",
+      "Voice Commands/Assistant": "Yes — Dual-Zone intelligent voice control",
+      "Standard Vehicle Warranty": "5 years / 125,000 km",
+      "Battery Warranty": "10 years / 200,000 km",
+      "Extended Warranty Offer": "General parts: 7.5 years / 187,500 km",
+      "Total Number of Variants": "2",
+      "Variant Names": "Dynamic, Premium",
+      "Battery-based Variants": "Dynamic (30.08 kWh) / Premium (38.88 kWh)",
+      "Total Number of Colors": "4",
+      "Color Finish Type": "Solid / Metallic"
     },
     "pros": [
       "Cheapest BYD in Nepal — Rs. 28.95L start",
@@ -5837,9 +5956,8 @@ window.CARS_DB = [
       "Torque": "180 Nm",
       "Battery": "44.9 kWh LFP Blade Battery",
       "Range": "340 km WLTP",
-      "DC Fast Charge": "60 kW — 30–80% in ~30 min",
-      "AC Charge": "7 kW — 0–100% in ~7.15 hrs",
-      "Drive": "FWD",
+      "DC Fast Charge": "60 kW",
+      "AC Charge": "Type 2 (rate not disclosed by Cimex)",
       "Transmission": "Single-Speed Automatic",
       "Seating": "5",
       "Boot Space": "345 L (up to 1,310 L folded)",
@@ -5849,9 +5967,73 @@ window.CARS_DB = [
       "Wheelbase": "2,700 mm",
       "Ground Clearance": "175 mm",
       "Airbags": "6",
-      "Safety Rating": "5-Star Euro NCAP",
       "Platform": "BYD e-Platform 3.0",
-      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+      "Warranty": "Battery & Motor: 10yr/200,000km | Vehicle: 5yr/125,000km",
+      "Motor Type": "Permanent Magnet Synchronous Motor (PMSM)",
+      "Max Motor Power": "70 kW",
+      "Max Motor Torque": "180 N·m",
+      "Drive Type": "FWD",
+      "Acceleration 0–100 km/h": "12.3 sec",
+      "Transmission Type": "Single-Speed Automatic",
+      "Steering Type": "Electric Power Assisted Steering (EPAS)",
+      "Battery Type": "LFP — BYD Blade Battery",
+      "Battery Capacity (kWh)": "44.9 kWh",
+      "Certified Range (km)": "340 km WLTP",
+      "AC Charging Max Rate (kW)": "Type 2 port (rate not disclosed)",
+      "DC Fast Charging Max Rate (kW)": "60 kW (CCS2)",
+      "Vehicle-to-Load (V2L)": "Yes",
+      "Overall Length (mm)": "4,290",
+      "Overall Width (mm)": "1,770",
+      "Overall Height (mm)": "1,570",
+      "Wheelbase (mm)": "2,700",
+      "Track Width Front/Rear (mm)": "1,530 / 1,530",
+      "Seating Capacity": "5",
+      "Body Type": "Hatchback",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Torsion Beam",
+      "Front Brakes": "Ventilated Disc",
+      "Rear Brakes": "Disc",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Hill Start Assist (HSA)": "Yes (Auto Hold)",
+      "Tyre Size": "195/60 R16",
+      "Wheel Type": "Alloy",
+      "TPMS": "Yes",
+      "Spare Tyre": "Tyre Repair Kit (no spare wheel)",
+      "Total Airbag Count": "6",
+      "Airbag Positions": "Front (driver & passenger) + Side (driver & passenger) + Curtain (front & rear)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes (outer rear seats)",
+      "Adaptive Cruise Control (ACC)": "Yes",
+      "Auto Emergency Braking (AEB)": "Yes",
+      "Lane Departure Warning": "Yes",
+      "Lane Keep Assist": "Yes",
+      "Blind Spot Warning": "Yes",
+      "Rear Cross Traffic Warning": "Yes",
+      "High Beam Assist": "Yes (Follow Me Home)",
+      "360° Surround View Camera": "Yes",
+      "Radar Sensors": "2 front + 3 rear",
+      "Air Conditioning Type": "Automatic (single-zone)",
+      "Smart Entry (Keyless)": "Yes — NFC + Bluetooth key",
+      "Push Button Start": "Yes",
+      "Power Windows": "All 4, electric, one-touch driver window",
+      "Electric ORVM": "Electrically heated, adjustable & retractable",
+      "Powered Driver Seat": "No — 6-way manual",
+      "Headlamp Type": "LED",
+      "Daytime Running Lights (DRLs)": "Yes, LED",
+      "Tail Lamp Type": "LED bar",
+      "Seat Upholstery": "Synthetic (vegan) Leather",
+      "Digital Instrument Cluster": "5\" Digital",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "12.8\" (rotating)",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "4× (2 front + 2 rear, Type-A + Type-C)",
+      "Apple CarPlay": "Wired (USB) only",
+      "Audio System Speaker Count": "6",
+      "Standard Vehicle Warranty": "5 years / 125,000 km",
+      "Battery Warranty": "10 years / 200,000 km",
+      "Total Number of Variants": "1",
+      "Total Number of Colors": "3"
     },
     "pros": [
       "5-Star Euro NCAP — best-in-class safety",
@@ -5899,27 +6081,58 @@ window.CARS_DB = [
     ],
     "colors": [
       {
-        "name": "Hiking Green",
-        "hex": "#4E7B5E"
-      },
-      {
-        "name": "Climbing Grey",
-        "hex": "#6E7478"
-      },
-      {
-        "name": "Skiing White",
+        "name": "Ski White",
         "hex": "#F5F5F5"
+      },
+      {
+        "name": "Harbour Grey",
+        "hex": "#6E7478"
       },
       {
         "name": "Cosmos Black",
         "hex": "#1A1A1C"
+      },
+      {
+        "name": "Breeze Green",
+        "hex": "#4E7B5E"
       }
     ],
     "variants": [
       {
-        "name": "Standard",
+        "name": "Essential",
         "price": 4595000,
-        "label": "Rs. 44.99L",
+        "label": "Rs. 45.95L",
+        "popular": false,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "100 kW PMSM Motor (136 PS / 290 Nm)",
+          "45.12 kWh LFP Blade Battery",
+          "312 km WLTP Range",
+          "Cell-to-Body (CTB) Battery Integration",
+          "6 Airbags",
+          "360° Camera",
+          "12.8\" Rotating Touchscreen",
+          "NFC Keyless Entry + Bluetooth Key",
+          "Vegan Leather Seats",
+          "V2L (Vehicle-to-Load)",
+          "200mm Ground Clearance",
+          "17\" Alloys"
+        ],
+        "specs": {
+          "power": "136 PS",
+          "torque": "290 Nm",
+          "range": "312 km WLTP",
+          "battery": "45.12 kWh",
+          "charging": "not officially confirmed",
+          "Battery Capacity (kWh)": "45.12 kWh",
+          "Certified Range (km)": "312 km WLTP"
+        }
+      },
+      {
+        "name": "Premium",
+        "price": 4899000,
+        "label": "Rs. 48.99L",
         "popular": true,
         "transmission": "Automatic",
         "fuel": "Electric",
@@ -5927,22 +6140,21 @@ window.CARS_DB = [
           "100 kW PMSM Motor (136 PS / 290 Nm)",
           "51.13 kWh LFP Blade Battery",
           "345 km WLTP Range",
-          "65 kW DC Fast Charging (30–80% in 28 min)",
+          "82 kW DC Fast Charging",
           "7 kW AC Charging",
           "Cell-to-Body (CTB) Battery Integration",
           "6 Airbags",
-          "Full ADAS (AEB, ACC, LKA, BSD)",
+          "Full ADAS Suite (ACC, AEB, LDW, TSR)",
           "360° Camera",
           "12.8\" Rotating Touchscreen",
           "8.8\" Digital Instrument Cluster",
-          "Wireless CarPlay + Android Auto",
+          "Wireless + Wired CarPlay & Android Auto",
           "NFC Keyless Entry + Bluetooth Key",
           "Panoramic Sunroof",
           "Vegan Leather Seats",
-          "Power Front Seats (Ventilated + Heated)",
-          "Wireless Charging",
+          "Power Front Seats (Driver 6-way, Passenger 4-way) + Ventilated",
+          "50W Wireless Charging",
           "V2L (Vehicle-to-Load)",
-          "31-Colour Ambient Lighting",
           "200mm Ground Clearance",
           "17\" Alloys"
         ],
@@ -5951,7 +6163,10 @@ window.CARS_DB = [
           "torque": "290 Nm",
           "range": "345 km WLTP",
           "battery": "51.13 kWh",
-          "charging": "65 kW DC / 7 kW AC"
+          "charging": "82 kW DC / 7 kW AC",
+          "Battery Capacity (kWh)": "51.13 kWh",
+          "Certified Range (km)": "345 km WLTP",
+          "DC Fast Charging Max Rate (kW)": "82 kW"
         }
       }
     ],
@@ -5959,16 +6174,15 @@ window.CARS_DB = [
       "Motor": "100 kW Permanent Magnet Synchronous Motor",
       "Power": "136 PS",
       "Torque": "290 Nm",
-      "Battery": "51.13 kWh LFP Blade Battery (CTB)",
-      "Range": "345 km WLTP",
-      "DC Fast Charge": "65 kW — 30–80% in 28 min",
-      "AC Charge": "7 kW — 0–100% in ~8 hrs",
-      "Drive": "FWD",
+      "Battery": "45.12 kWh (Essential) / 51.13 kWh (Premium) LFP Blade Battery (CTB)",
+      "Range": "312 km (Essential) / 345 km (Premium) WLTP",
+      "DC Fast Charge": "82 kW (Premium; Essential rate not officially confirmed)",
+      "AC Charge": "Type 2, 7 kW",
       "Transmission": "Single-Speed Automatic",
-      "Top Speed": "160 km/h",
-      "0–100 km/h": "7.9 sec",
+      "Top Speed": "160 km/h (not officially confirmed)",
+      "0–100 km/h": "9.0 sec (official brochure figure)",
       "Seating": "5",
-      "Boot Space": "400 L (up to 1,430 L folded)",
+      "Boot Space": "380 L min / 1,320 L max (rows folded)",
       "Length": "4,310 mm",
       "Width": "1,830 mm",
       "Height": "1,675 mm",
@@ -5976,7 +6190,69 @@ window.CARS_DB = [
       "Ground Clearance": "200 mm",
       "Airbags": "6",
       "Platform": "BYD e-Platform 3.0 + CTB",
-      "Warranty": "Battery: 10yr/200,000km | Vehicle: 5yr/125,000km"
+      "Warranty": "Battery & Motor: 10yr/200,000km | Vehicle: 5yr/125,000km",
+      "Motor Type": "Permanent Magnet Synchronous Motor (PMSM)",
+      "Max Motor Power": "100 kW (136 PS)",
+      "Max Motor Torque": "290 N·m",
+      "Drive Type": "FWD",
+      "Acceleration 0–100 km/h": "9.0 sec",
+      "Transmission Type": "Single-Speed Automatic",
+      "Steering Type": "Electric Power Assisted Steering (EPAS)",
+      "Battery Type": "LFP — BYD Blade Battery (Cell-to-Body)",
+      "Vehicle-to-Load (V2L)": "Yes",
+      "Overall Length (mm)": "4,310",
+      "Overall Width (mm)": "1,830",
+      "Overall Height (mm)": "1,675",
+      "Wheelbase (mm)": "2,620",
+      "Track Width Front/Rear (mm)": "1,570 / 1,570",
+      "Ground Clearance (mm)": "200",
+      "Seating Capacity": "5",
+      "Body Type": "Compact SUV",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Torsion Beam",
+      "Front Brakes": "Ventilated Disc",
+      "Rear Brakes": "Disc",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Hill Start Assist (HSA)": "Yes (Hill Descent Control)",
+      "Tyre Size": "215/60 R17",
+      "Wheel Type": "Alloy",
+      "TPMS": "Yes",
+      "Spare Tyre": "Tyre Repair Kit (no spare wheel)",
+      "Total Airbag Count": "6",
+      "Airbag Positions": "Front (driver & passenger) + Side (driver & passenger) + Curtain (front & rear)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes (outer rear seats)",
+      "Adaptive Cruise Control (ACC)": "Yes (with Intelligent Cruise Control)",
+      "Auto Emergency Braking (AEB)": "Yes",
+      "Lane Departure Warning": "Yes",
+      "Traffic Sign Recognition": "Yes",
+      "360° Surround View Camera": "Yes",
+      "Radar Sensors": "2 front + 4 rear",
+      "Air Conditioning Type": "Automatic, PM2.5 filter",
+      "Smart Entry (Keyless)": "Yes — NFC + Bluetooth key",
+      "Push Button Start": "Yes",
+      "Power Windows": "All 4, electric, one-touch",
+      "Powered Driver Seat": "6-way power",
+      "Powered Passenger Seat": "4-way power",
+      "Headlamp Type": "LED",
+      "Daytime Running Lights (DRLs)": "Yes, LED",
+      "Tail Lamp Type": "LED bar",
+      "Seat Upholstery": "Synthetic (vegan) Leather",
+      "Digital Instrument Cluster": "8.8\" LCD",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "12.8\" (rotating)",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "4× (2 front + 2 rear, Type-A + Type-C)",
+      "Android Auto": "Wireless + wired",
+      "Apple CarPlay": "Wireless + wired",
+      "Audio System Speaker Count": "8",
+      "Standard Vehicle Warranty": "5 years / 125,000 km",
+      "Battery Warranty": "10 years / 200,000 km",
+      "Total Number of Variants": "2",
+      "Variant Names": "Essential, Premium",
+      "Battery-based Variants": "Essential (45.12 kWh) / Premium (51.13 kWh)",
+      "Total Number of Colors": "4"
     },
     "pros": [
       "200mm ground clearance — best in BYD Nepal lineup",
@@ -6015,10 +6291,10 @@ window.CARS_DB = [
     "baseEMI": 131000,
     "overview": "The BYD Atto 3 is Nepal's best-selling electric car, and the model that kickstarted the EV revolution here. The 2025 facelift brings Dragon Face 3.0 styling, a larger 15.6\" rotating touchscreen, refreshed interior, and new Cosmos Black color. Two Blade Battery variants offer 345 km and 420 km WLTP range, both powered by a 100 kW PMSM. 5-Star Euro NCAP rated.",
     "images": [
+      "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-exterior-front-white-bg.webp",
       "/assets/images/car_images/byd/atto-3/exterior/F08.webp",
       "/assets/images/car_images/byd/atto-3/exterior/Section02_MOB.webp",
       "/assets/images/car_images/byd/atto-3/exterior/Section15_MOB.webp",
-      "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-exterior-front-white-bg.webp",
       "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-exterior-rear.webp",
       "/assets/images/car_images/byd/atto-3/interior/F02-1-mob.webp"
     ],
@@ -6043,8 +6319,8 @@ window.CARS_DB = [
     "variants": [
       {
         "name": "Advanced",
-        "price": 5999000,
-        "label": "Rs. 56.90L",
+        "price": 6199000,
+        "label": "Rs. 61.99L",
         "popular": false,
         "transmission": "Automatic",
         "fuel": "Electric",
@@ -6052,29 +6328,38 @@ window.CARS_DB = [
           "100 kW PMSM Motor (135 PS / 310 Nm)",
           "49.92 kWh LFP Blade Battery",
           "345 km WLTP Range",
-          "80 kW DC Fast Charging (0–80% in 50 min)",
+          "70 kW DC Fast Charging",
           "7.2 kW AC Charging (0–100% in ~7.5 hrs)",
-          "7 Airbags — 5-Star Euro NCAP",
-          "L2+ ADAS (AEB, ACC-S&G, LKA, BSD, RCTA)",
-          "360° Camera",
+          "6 Airbags",
           "15.6\" Rotating Touchscreen (DiLink)",
-          "Wireless CarPlay + Android Auto",
+          "Wired Apple CarPlay + Wireless Android Auto",
+          "6-Speaker Audio",
           "Panoramic Sunroof",
           "Wireless Phone Charging",
           "Keyless Entry + Push-Start",
-          "Ventilated + Heated Front Seats",
-          "31-Colour Ambient Lighting",
-          "8-Speaker Dirac Audio",
+          "6-way Power Driver Seat",
           "PM 2.5 Air Filter",
           "V2L (Vehicle-to-Load)",
-          "18\" Diamond-Cut Alloys"
+          "17\" Alloys — 215/60 R17"
         ],
         "specs": {
           "power": "135 PS",
           "torque": "310 Nm",
           "range": "345 km WLTP",
           "battery": "49.92 kWh",
-          "charging": "80 kW DC / 7.2 kW AC"
+          "charging": "70 kW DC / 7.2 kW AC",
+          "Battery Capacity (kWh)": "49.92 kWh",
+          "Certified Range (km)": "345 km WLTP",
+          "DC Fast Charging Max Rate (kW)": "70 kW",
+          "Kerb Weight (kg)": "1,680",
+          "Gross Vehicle Weight (GVW)": "2,090 kg",
+          "Total Airbag Count": "6",
+          "Airbag Positions": "Front (driver & passenger) + Side (driver & passenger) + Curtain (front & rear)",
+          "Tyre Size": "215/60 R17",
+          "Audio System Speaker Count": "6",
+          "360° Surround View Camera": "Not equipped (Superior only)",
+          "Adaptive Cruise Control (ACC)": "Not equipped (Superior only)",
+          "Auto Emergency Braking (AEB)": "Not equipped (Superior only)"
         }
       },
       {
@@ -6087,8 +6372,18 @@ window.CARS_DB = [
         "features": [
           "60.48 kWh LFP Blade Battery",
           "420 km WLTP Range",
-          "0–80% in 50 min (DC Fast Charge)",
+          "80 kW DC Fast Charging",
           "0–100% in 9.1 hrs (7.2 kW AC)",
+          "7 Airbags (adds far-side driver airbag)",
+          "Full L2 ADAS Suite (ACC, AEB, LDW, LKA, BSD, RCTA)",
+          "360° Camera",
+          "Wireless Apple CarPlay + Android Auto",
+          "8-Speaker Dirac Audio",
+          "Heat Pump",
+          "4-way Power Passenger Seat",
+          "Portable Card Key",
+          "Adaptive Front Lighting (AFL)",
+          "18\" Alloys — 235/50 R18 Continental Tyres",
           "All Advanced features"
         ],
         "specs": {
@@ -6096,7 +6391,19 @@ window.CARS_DB = [
           "torque": "310 Nm",
           "range": "420 km WLTP",
           "battery": "60.48 kWh",
-          "charging": "80 kW DC / 7.2 kW AC"
+          "charging": "80 kW DC / 7.2 kW AC",
+          "Battery Capacity (kWh)": "60.48 kWh",
+          "Certified Range (km)": "420 km WLTP",
+          "DC Fast Charging Max Rate (kW)": "80 kW",
+          "Kerb Weight (kg)": "1,750",
+          "Gross Vehicle Weight (GVW)": "2,160 kg",
+          "Total Airbag Count": "7",
+          "Airbag Positions": "Front (driver & passenger) + Side (driver & passenger) + Curtain (front & rear) + Far-Side (driver)",
+          "Tyre Size": "235/50 R18",
+          "Audio System Speaker Count": "8 (Dirac HD Sound)",
+          "360° Surround View Camera": "Yes",
+          "Adaptive Cruise Control (ACC)": "Yes (Stop & Go)",
+          "Auto Emergency Braking (AEB)": "Yes"
         }
       }
     ],
@@ -6106,12 +6413,11 @@ window.CARS_DB = [
       "Torque": "310 Nm",
       "Battery": "49.92 kWh (Advanced) / 60.48 kWh (Superior) LFP Blade",
       "Range": "345 km (Advanced) / 420 km (Superior) WLTP",
-      "DC Fast Charge": "80 kW — 0–80% in 50 min",
+      "DC Fast Charge": "70 kW (Advanced) / 80 kW (Superior)",
       "AC Charge": "7.2 kW — 7.5 hrs (Adv) / 9.1 hrs (Sup)",
-      "Drive": "FWD",
       "Transmission": "Single-Speed Automatic",
-      "Top Speed": "160 km/h",
-      "0–100 km/h": "7.3 sec",
+      "Top Speed": "not officially disclosed",
+      "0–100 km/h": "10.1 sec (official brochure figure)",
       "Seating": "5",
       "Boot Space": "440 L (up to 1,340 L folded)",
       "Length": "4,455 mm",
@@ -6119,10 +6425,56 @@ window.CARS_DB = [
       "Height": "1,615 mm",
       "Wheelbase": "2,720 mm",
       "Ground Clearance": "175 mm",
-      "Airbags": "7",
-      "Safety Rating": "5-Star Euro NCAP",
+      "Airbags": "6 (Advanced) / 7 (Superior)",
       "Platform": "BYD e-Platform 3.0",
-      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+      "Warranty": "Battery & Motor: 10yr/200,000km | Vehicle: 5yr/125,000km",
+      "Motor Type": "Permanent Magnet Synchronous Motor (PMSM)",
+      "Max Motor Power": "100 kW (135 PS)",
+      "Max Motor Torque": "310 N·m",
+      "Drive Type": "FWD",
+      "Acceleration 0–100 km/h": "10.1 sec",
+      "Transmission Type": "Single-Speed Automatic",
+      "Steering Type": "Electric Power Assisted Steering (EPAS)",
+      "Battery Type": "LFP — BYD Blade Battery",
+      "Vehicle-to-Load (V2L)": "Yes",
+      "Overall Length (mm)": "4,455",
+      "Overall Width (mm)": "1,875",
+      "Overall Height (mm)": "1,615",
+      "Wheelbase (mm)": "2,720",
+      "Track Width Front/Rear (mm)": "1,575 / 1,580",
+      "Seating Capacity": "5",
+      "Body Type": "Compact SUV",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Multi-Link",
+      "Front Brakes": "Ventilated Disc",
+      "Rear Brakes": "Disc",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Hill Start Assist (HSA)": "Yes (Hill Descent Control)",
+      "Wheel Type": "Alloy",
+      "TPMS": "Yes",
+      "Spare Tyre": "Tyre Repair Kit (no spare wheel)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes (outer rear seats)",
+      "Radar Sensors": "2 front + 4 rear",
+      "Air Conditioning Type": "Automatic, PM2.5/CN95 filter",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Power Windows": "All 4, electric, one-touch",
+      "Headlamp Type": "LED (Dragon Design)",
+      "Daytime Running Lights (DRLs)": "Yes, LED",
+      "Tail Lamp Type": "LED, one-piece through strip",
+      "Seat Upholstery": "Synthetic Leather",
+      "Digital Instrument Cluster": "5\" Digital",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "15.6\" (rotating)",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "4× (2 front + 2 rear, Type-A + Type-C)",
+      "Standard Vehicle Warranty": "5 years / 125,000 km",
+      "Battery Warranty": "10 years / 200,000 km",
+      "Total Number of Variants": "2",
+      "Variant Names": "Advanced, Superior",
+      "Total Number of Colors": "4"
     },
     "pros": [
       "Nepal's proven #1 EV — massive owner community & service support",
@@ -6191,7 +6543,7 @@ window.CARS_DB = [
     ],
     "variants": [
       {
-        "name": "Standard",
+        "name": "Dynamic",
         "price": 5890000,
         "label": "Rs. 58.90L",
         "popular": true,
@@ -6201,22 +6553,22 @@ window.CARS_DB = [
           "100 kW PMSM Motor (136 PS / 250 Nm)",
           "71.8 kWh LFP Blade Battery",
           "440 km WLTP Range",
-          "115 kW DC Fast Charging (20–80% in ~40 min)",
-          "7.2 kW AC Charging (0–100% in ~11 hrs)",
-          "7 Seats (6/7 config)",
+          "115 kW DC Fast Charging",
+          "7 kW AC Charging",
+          "6-Seat Layout Standard (2+2+2 captain's chairs)",
           "6 Airbags",
-          "ADAS (AEB, ACC, LKA, BSD)",
+          "Full ADAS Suite",
           "360° Camera",
           "12.8\" Rotating Touchscreen",
-          "Wireless CarPlay + Android Auto",
+          "Apple CarPlay",
           "Panoramic Glass Roof",
           "Ventilated Front Seats",
-          "Power-Adjustable Front Seats",
+          "Power-Adjustable Front Seats (6-way driver / 4-way passenger)",
           "Wireless Charging (15W)",
-          "NFC Keyless Entry",
-          "Dragon Crystal LED Headlamps",
+          "Keyless Entry + Card Key",
+          "LED Headlamps",
           "Full-Width LED Taillights",
-          "17\" Multi-Spoke Alloys",
+          "17\" Alloys",
           "MacPherson Strut + Multi-Link Suspension",
           "PM 2.5 Air Filter",
           "V2L (Vehicle-to-Load)"
@@ -6226,7 +6578,33 @@ window.CARS_DB = [
           "torque": "250 Nm",
           "range": "440 km WLTP",
           "battery": "71.8 kWh",
-          "charging": "115 kW DC / 7.2 kW AC"
+          "charging": "115 kW DC / 7 kW AC",
+          "Kerb Weight (kg)": "1,895",
+          "Gross Vehicle Weight (GVW)": "2,394 kg",
+          "Seating Capacity": "6-seat standard (7-seat optional)"
+        }
+      },
+      {
+        "name": "Superior",
+        "price": 6090000,
+        "label": "Rs. 60.90L",
+        "popular": false,
+        "transmission": "Automatic",
+        "fuel": "Electric",
+        "features": [
+          "Same 100 kW PMSM Motor / 71.8 kWh Battery as Dynamic",
+          "7-Seat Layout Standard (2+3+2, 6/4 split-fold middle row)",
+          "All Dynamic features"
+        ],
+        "specs": {
+          "power": "136 PS",
+          "torque": "250 Nm",
+          "range": "440 km WLTP",
+          "battery": "71.8 kWh",
+          "charging": "115 kW DC / 7 kW AC",
+          "Kerb Weight (kg)": "1,915",
+          "Gross Vehicle Weight (GVW)": "2,489 kg",
+          "Seating Capacity": "7-seat standard (6-seat optional)"
         }
       }
     ],
@@ -6236,13 +6614,12 @@ window.CARS_DB = [
       "Torque": "250 Nm",
       "Battery": "71.8 kWh LFP Blade Battery",
       "Range": "440 km WLTP",
-      "DC Fast Charge": "115 kW — 20–80% in ~40 min",
-      "AC Charge": "7.2 kW — 0–100% in ~11 hrs",
-      "Drive": "FWD",
+      "DC Fast Charge": "115 kW",
+      "AC Charge": "7 kW",
       "Transmission": "Single-Speed Automatic",
-      "Top Speed": "160 km/h",
-      "0–100 km/h": "~9 sec",
-      "Seating": "7",
+      "Top Speed": "180 km/h",
+      "0–100 km/h": "11.9 sec",
+      "Seating": "6-seat (Dynamic) / 7-seat (Superior) — both offer opposite config as an option",
       "Boot Space": "180 L (up to 580 L with rows folded)",
       "Length": "4,710 mm",
       "Width": "1,810 mm",
@@ -6251,7 +6628,71 @@ window.CARS_DB = [
       "Ground Clearance": "175 mm",
       "Airbags": "6",
       "Platform": "BYD e-Platform 3.0",
-      "Warranty": "Battery: 10yr/200,000km | Vehicle: 5yr/125,000km"
+      "Warranty": "Battery & Motor: 10yr/200,000km | Vehicle: 5yr/125,000km",
+      "Motor Type": "AC Permanent Magnet Synchronous Motor",
+      "Max Motor Power": "100 kW (136 PS)",
+      "Max Motor Torque": "250 N·m",
+      "Drive Type": "FWD",
+      "Top Speed (km/h)": "180",
+      "Acceleration 0–100 km/h": "11.9 sec",
+      "Transmission Type": "Single-Speed Automatic",
+      "Steering Type": "Electric Power Assisted Steering (EPS)",
+      "Battery Type": "LFP — BYD Blade Battery",
+      "Battery Capacity (kWh)": "71.8 kWh",
+      "Certified Range (km)": "440 km WLTP",
+      "AC Charging Max Rate (kW)": "7 kW",
+      "DC Fast Charging Max Rate (kW)": "115 kW",
+      "Vehicle-to-Load (V2L)": "Yes",
+      "Overall Length (mm)": "4,710",
+      "Overall Width (mm)": "1,810",
+      "Overall Height (mm)": "1,690",
+      "Wheelbase (mm)": "2,800",
+      "Track Width Front/Rear (mm)": "1,540 / 1,530",
+      "Boot Space (litres)": "180 L min / 580 L max (rows folded)",
+      "Body Type": "MPV",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Multi-Link",
+      "Front Brakes": "Ventilated Disc",
+      "Rear Brakes": "Disc",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Hill Start Assist (HSA)": "Yes (Hill Hold Control)",
+      "Tyre Size": "225/55 R17",
+      "Wheel Type": "Alloy, 17\"",
+      "TPMS": "Yes",
+      "Spare Tyre": "Tyre Repair Kit (no spare wheel)",
+      "Total Airbag Count": "6",
+      "Airbag Positions": "Front (driver & passenger) + Side (driver & passenger) + Curtain (front & rear)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Adaptive Cruise Control (ACC)": "Yes",
+      "Auto Emergency Braking (AEB)": "Yes",
+      "Lane Departure Warning": "Yes (Lane Departure Assist)",
+      "Blind Spot Warning": "Yes",
+      "Rear Cross Traffic Warning": "Yes",
+      "360° Surround View Camera": "Yes",
+      "Radar Sensors": "Rear 4 radars",
+      "Air Conditioning Type": "Automatic",
+      "Smart Entry (Keyless)": "Yes — card key",
+      "Push Button Start": "Yes",
+      "Power Windows": "All 4, electric, one-touch",
+      "Powered Driver Seat": "6-way electric",
+      "Powered Passenger Seat": "4-way electric",
+      "Headlamp Type": "LED (Crystal Diamond Starlight)",
+      "Daytime Running Lights (DRLs)": "Yes, LED",
+      "Tail Lamp Type": "LED bar",
+      "Seat Upholstery": "Synthetic Leather",
+      "Digital Instrument Cluster": "5\" TFT Full LCD",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "12.8\" (rotating)",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "4× (2 front + 2 middle row, Type-A + Type-C)",
+      "Apple CarPlay": "Yes",
+      "Standard Vehicle Warranty": "5 years / 125,000 km",
+      "Battery Warranty": "10 years / 200,000 km",
+      "Total Number of Variants": "2",
+      "Variant Names": "Dynamic, Superior",
+      "Total Number of Colors": "4"
     },
     "pros": [
       "Nepal's only 7-seat electric MPV — no direct rival",
@@ -6284,12 +6725,12 @@ window.CARS_DB = [
     "type": "Electric",
     "body": "Mid-Size SUV",
     "badge": "premium",
-    "tagline": "BYD's flagship SUV for Nepal — Ocean aesthetics, 440 km, 11 airbags",
+    "tagline": "BYD's flagship SUV for Nepal — Ocean aesthetics, 520 km NEDC, 9 airbags",
     "rating": 4.4,
     "reviews": 490,
     "expertScore": 8.3,
     "baseEMI": 154000,
-    "overview": "The BYD Sealion 7 is BYD Nepal's premium mid-size SUV from the Ocean Series, positioned above the Atto 3. Built on e-Platform 3.0 with a 230 kW rear-wheel-drive motor, 71.8 kWh Blade Battery, 440 km WLTP range, 11 airbags, 15.6\" rotating screen, Dynaudio 12-speaker system, HUD, and panoramic sunroof — it's the most feature-complete BYD SUV you can buy in Nepal.",
+    "overview": "The BYD Sealion 7 is BYD Nepal's premium mid-size SUV from the Ocean Series, positioned above the Atto 3. Nepal gets a single rear-wheel-drive variant built on e-Platform 3.0 with a 100 kW motor, 71.8 kWh Blade Battery, 520 km NEDC range, 9 airbags, a full L2 ADAS suite, 15.6\" rotating screen, Dynaudio 12-speaker system, HUD, and panoramic sunroof. Note: this is a lower-power tune than the 230 kW global Sealion 7 sold in some other markets.",
     "images": [
       "/assets/images/car_images/byd/sealion-7/exterior/byd-sealion-7-exterior-front-white-bg.jpg",
       "/assets/images/car_images/byd/sealion-7/exterior/byd-sealion-7-exterior-rear-white-bg.jpg",
@@ -6318,94 +6759,154 @@ window.CARS_DB = [
     ],
     "variants": [
       {
-        "name": "Premium RWD",
+        "name": "Dynamic",
         "price": 7985000,
-        "label": "Rs. 79.99L",
+        "label": "Rs. 79.85L",
         "popular": true,
         "transmission": "Automatic",
         "fuel": "Electric",
         "features": [
-          "230 kW RWD PMSM Motor (312 PS / 380 Nm)",
+          "100 kW RWD PMSM Motor (135 PS / 380 Nm)",
           "71.8 kWh LFP Blade Battery",
-          "440 km WLTP Range",
-          "150 kW DC Fast Charging (30–80% in 24 min)",
-          "7 kW AC Charging (0–100% in ~7 hrs)",
-          "11 Airbags",
-          "iTAC (Intelligent Torque Adaptation Control)",
-          "L2+ ADAS (AEB, ACC, LKA, LCA, BSD, RCTA, TSR)",
+          "520 km NEDC Range",
+          "110 kW DC Fast Charging",
+          "7 kW AC Charging",
+          "9 Airbags",
+          "Full L2 ADAS Suite (ACC, AEB, LKA, BSD, RCTA)",
           "360° Camera + Front/Rear Parking Sensors",
           "Head-Up Display (HUD)",
           "15.6\" Rotating Touchscreen",
           "10.25\" Digital Instrument Cluster",
           "Dynaudio 12-Speaker Audio",
-          "Wireless CarPlay + Android Auto",
-          "Wireless Phone Charging (50W)",
-          "Panoramic Sunroof",
+          "Wireless Apple CarPlay + Wireless/Wired Android Auto",
+          "50W Wireless Phone Charging",
+          "Panoramic Glass Roof",
           "Nappa Leather Seats",
-          "Ventilated + Heated Front Seats",
-          "Heated Rear Seats",
+          "Ventilated Front Seats",
           "Dual-Zone Climate Control",
-          "Heat Pump (efficient in cold weather)",
-          "128-Colour Ambient Lighting",
           "Electric Tailgate (Foot-Gesture)",
-          "Rain-Sensing Wipers",
-          "V2L (Vehicle-to-Load)",
+          "V2L (Vehicle-to-Load, up to 3.3kW)",
           "58L Frunk",
-          "19\" Alloys"
+          "19\" Alloys — 235/50 R19 Front, 255/45 R19 Rear"
         ],
         "specs": {
-          "power": "312 PS",
+          "power": "135 PS",
           "torque": "380 Nm",
-          "range": "440 km WLTP",
+          "range": "520 km NEDC",
           "battery": "71.8 kWh",
-          "charging": "150 kW DC / 7 kW AC"
+          "charging": "110 kW DC / 7 kW AC"
         }
       }
     ],
     "specs": {
-      "Motor": "230 kW Permanent Magnet Synchronous Motor (RWD)",
-      "Power": "312.7 PS",
+      "Motor": "100 kW Permanent Magnet Synchronous Motor (RWD)",
+      "Power": "135 PS",
       "Torque": "380 Nm",
       "Battery": "71.8 kWh LFP Blade Battery",
-      "Range": "440 km WLTP",
-      "DC Fast Charge": "150 kW — 30–80% in 24 min",
-      "AC Charge": "7 kW — 0–100% in ~7 hrs",
-      "Drive": "RWD",
+      "Range": "520 km NEDC (WLTP figure not printed in official brochure)",
+      "DC Fast Charge": "110 kW (CCS2)",
+      "AC Charge": "7 kW (Type 2)",
       "Transmission": "Single-Speed Automatic",
-      "Top Speed": "215 km/h",
-      "0–100 km/h": "~5.4 sec",
+      "Top Speed": "160 km/h",
+      "0–100 km/h": "11.8 sec",
       "Seating": "5",
       "Boot Space": "500 L + 58 L Frunk",
       "Length": "4,830 mm",
       "Width": "1,925 mm",
       "Height": "1,620 mm",
-      "Wheelbase": "2,800 mm",
-      "Ground Clearance": "170 mm",
-      "Airbags": "11",
+      "Wheelbase": "2,930 mm",
+      "Airbags": "9",
       "Platform": "BYD e-Platform 3.0",
-      "Warranty": "Battery: 10yr/200,000km | Vehicle: 5yr/125,000km"
+      "Warranty": "Battery & Motor: 10yr/200,000km | Vehicle: 5yr/125,000km",
+      "Motor Type": "Permanent Magnet Synchronous Motor (PMSM), rear-mounted",
+      "Max Motor Power": "100 kW (135 PS)",
+      "Max Motor Torque": "380 N·m",
+      "Drive Type": "RWD",
+      "Top Speed (km/h)": "160",
+      "Acceleration 0–100 km/h": "11.8 sec",
+      "Transmission Type": "Single-Speed Automatic",
+      "Battery Type": "LFP — BYD Blade Battery",
+      "Battery Capacity (kWh)": "71.8 kWh",
+      "Certified Range (km)": "520 km NEDC",
+      "AC Charging Max Rate (kW)": "7 kW",
+      "DC Fast Charging Max Rate (kW)": "110 kW",
+      "Vehicle-to-Load (V2L)": "Yes — up to 3.3 kW",
+      "Overall Length (mm)": "4,830",
+      "Overall Width (mm)": "1,925",
+      "Overall Height (mm)": "1,620",
+      "Wheelbase (mm)": "2,930",
+      "Track Width Front/Rear (mm)": "1,660 / 1,660",
+      "Turning Radius (m)": "5.85",
+      "Kerb Weight (kg)": "2,160",
+      "Gross Vehicle Weight (GVW)": "2,700 kg",
+      "Frunk Capacity (litres)": "58",
+      "Seating Capacity": "5",
+      "Body Type": "Coupe-SUV",
+      "Front Suspension Type": "Double Wishbone",
+      "Rear Suspension Type": "Multi-Link",
+      "Front Brakes": "Ventilated & Drilled Disc",
+      "Rear Brakes": "Ventilated Disc",
+      "Tyre Size": "235/50 R19 (front) / 255/45 R19 (rear)",
+      "Wheel Type": "Alloy, 19\"",
+      "Spare Tyre": "Tyre Repair Kit (no spare wheel)",
+      "Total Airbag Count": "9",
+      "Airbag Positions": "Front (driver & passenger) + Side (driver & passenger, front) + Curtain (front & rear) + Far-Side (driver) + Side (rear)",
+      "EBD": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Adaptive Cruise Control (ACC)": "Yes",
+      "Auto Emergency Braking (AEB)": "Yes",
+      "Lane Departure Warning": "Yes",
+      "Lane Keep Assist": "Yes",
+      "Blind Spot Warning": "Yes",
+      "Rear Cross Traffic Warning": "Yes",
+      "Traffic Sign Recognition": "Yes",
+      "Head-Up Display (HUD)": "Yes",
+      "360° Surround View Camera": "Yes",
+      "Parking Sensors": "Front (2 zones) + Rear (4 zones)",
+      "Air Conditioning Type": "Automatic, dual-zone",
+      "Smart Entry (Keyless)": "Yes — NFC card + digital key",
+      "Push Button Start": "Yes",
+      "Powered Driver Seat": "8-way power, 4-way lumbar, memory",
+      "Powered Passenger Seat": "6-way power",
+      "Ventilated Seats": "Front seats",
+      "Headlamp Type": "LED (Starlit Ocean design)",
+      "Daytime Running Lights (DRLs)": "Yes, LED",
+      "Tail Lamp Type": "LED, full-width, sequential indicators",
+      "Seat Upholstery": "Genuine/Nappa Leather",
+      "Digital Instrument Cluster": "10.25\" LCD",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "15.6\" (rotating, Qualcomm 8155)",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "4× (2 front + 2 rear, Type-A + Type-C)",
+      "Android Auto": "Wireless + wired",
+      "Apple CarPlay": "Wireless",
+      "Premium Audio Brand": "Dynaudio, 12-speaker",
+      "Standard Vehicle Warranty": "5 years / 125,000 km",
+      "Battery Warranty": "10 years / 200,000 km",
+      "Total Number of Variants": "1",
+      "Total Number of Colors": "4"
     },
     "pros": [
-      "11 airbags — most in any Nepal-market EV",
-      "230 kW RWD — sporty and rear-wheel-drive dynamics",
-      "150 kW DC fast charge — 30-80% in just 24 min",
+      "9 airbags — comprehensive safety suite standard",
+      "520 km NEDC range — among the longest in BYD's Nepal lineup",
+      "110 kW DC fast charging",
       "Dynaudio 12-speaker + HUD — flagship interior",
       "58L frunk + 500L boot — superb practicality"
     ],
     "cons": [
-      "Nepal-spec detuned vs global Sealion 7 (which has 82 kWh battery, 482 km range)",
-      "No AWD in Nepal",
-      "170mm ground clearance — lower than competitors at this price",
-      "Rs. 79.99L is steep for FWD-only competition",
-      "International spec 5-Star NCAP not confirmed for Nepal variant"
+      "Nepal gets the 100 kW single-motor RWD tune, not the 230 kW version sold in some other markets",
+      "No AWD/dual-motor option in Nepal",
+      "Only one variant — no choice of range or trim",
+      "Price has moved multiple times since 2025 launch — confirm current figure with Cimex",
+      "International 5-Star NCAP rating not confirmed for the Nepal-spec car"
     ],
     "highlights": [
-      "11 Airbags",
-      "312 PS RWD",
-      "440 km WLTP",
-      "Rs. 79.99L"
+      "9 Airbags",
+      "100 kW RWD",
+      "520 km NEDC",
+      "Rs. 79.85L"
     ],
-    "thumb": "/assets/images/car_images/byd/seal/exterior/byd-seal-exterior-front-white-bg.webp"
+    "thumb": "/assets/images/car_images/byd/sealion-7/exterior/byd-sealion-7-exterior-front-white-bg.jpg"
   },
   {
     "id": 306,
@@ -6416,12 +6917,12 @@ window.CARS_DB = [
     "type": "Electric",
     "body": "Sedan",
     "badge": "flagship",
-    "tagline": "Nepal's performance EV king — 390 kW, 5-Star NCAP, supercar torque",
+    "tagline": "Nepal's performance EV king — 390 kW, 9 airbags, supercar torque",
     "rating": 4.7,
     "reviews": 390,
     "expertScore": 9,
     "baseEMI": 212000,
-    "overview": "The BYD Seal is BYD Nepal's flagship — a sleek performance sedan that stands alone in the Nepali market with no direct rival. Available in three variants spanning Rs. 1.10 Cr to Rs. 1.95 Cr, from a 150 kW RWD daily driver to a 390 kW AWD performance machine with 670 Nm system torque. All variants get 9 airbags, 5-Star Euro NCAP, 15.6\" rotating screen, HUD, and ocean-inspired design.",
+    "overview": "The BYD Seal is BYD Nepal's flagship — a sleek performance sedan that stands alone in the Nepali market with no direct rival. Available in three variants spanning Rs. 1.10 Cr to Rs. 1.95 Cr, from a 150 kW RWD daily driver to a 390 kW AWD performance machine with 670 Nm system torque. All variants get 9 airbags, 15.6\" rotating screen, HUD, and ocean-inspired design.",
     "images": [
       "/assets/images/car_images/byd/seal/exterior/byd-seal-exterior-front-white-bg.webp",
       "/assets/images/car_images/byd/seal/exterior/byd-seal-exterior-side-left-white-bg.webp",
@@ -6459,8 +6960,8 @@ window.CARS_DB = [
           "61.44 kWh LFP Blade Battery",
           "460 km WLTP Range",
           "150 kW DC Fast Charging",
-          "7 kW AC Charging",
-          "9 Airbags — 5-Star Euro NCAP",
+          "11 kW AC Charging",
+          "9 Airbags",
           "CTB (Cell-to-Body) Structure",
           "L2+ ADAS (Full Suite)",
           "360° Camera",
@@ -6480,7 +6981,10 @@ window.CARS_DB = [
           "torque": "310 Nm",
           "range": "460 km WLTP",
           "battery": "61.44 kWh",
-          "charging": "150 kW DC / 7 kW AC"
+          "charging": "150 kW DC / 11 kW AC",
+          "Battery Capacity (kWh)": "61.44 kWh",
+          "Certified Range (km)": "460 km WLTP",
+          "Acceleration 0–100 km/h": "7.5 sec"
         }
       },
       {
@@ -6501,7 +7005,10 @@ window.CARS_DB = [
           "torque": "360 Nm",
           "range": "570 km WLTP",
           "battery": "82.56 kWh",
-          "charging": "150 kW DC / 7 kW AC"
+          "charging": "150 kW DC / 11 kW AC",
+          "Battery Capacity (kWh)": "82.56 kWh",
+          "Certified Range (km)": "570 km WLTP",
+          "Acceleration 0–100 km/h": "5.9 sec"
         }
       },
       {
@@ -6524,7 +7031,11 @@ window.CARS_DB = [
           "torque": "670 Nm (system)",
           "range": "520 km WLTP",
           "battery": "82.56 kWh",
-          "charging": "150 kW DC / 7 kW AC"
+          "charging": "150 kW DC / 11 kW AC",
+          "Battery Capacity (kWh)": "82.56 kWh",
+          "Certified Range (km)": "520 km WLTP",
+          "Acceleration 0–100 km/h": "3.8 sec",
+          "Frunk Capacity (litres)": "53"
         }
       }
     ],
@@ -6535,28 +7046,86 @@ window.CARS_DB = [
       "Battery": "61.44 kWh (Dynamic) / 82.56 kWh (Premium & Performance) LFP Blade",
       "Range": "460 km (Dynamic) / 570 km (Premium) / 520 km (Performance) WLTP",
       "DC Fast Charge": "150 kW",
-      "AC Charge": "7 kW",
-      "Drive": "RWD (Dynamic/Premium) / AWD (Performance)",
+      "AC Charge": "11 kW",
       "Transmission": "Single-Speed Automatic",
-      "0–100 km/h": "5.9 sec (D) / 3.8 sec (Performance)",
-      "Top Speed": "180 km/h (D) / 200 km/h (P) / 215 km/h (Perf)",
+      "0–100 km/h": "7.5 sec (Dynamic) / 5.9 sec (Premium) / 3.8 sec (Performance)",
+      "Top Speed": "180 km/h (all variants)",
       "Seating": "5",
-      "Boot Space": "524 L",
+      "Boot Space": "400 L + 58 L Frunk (Dynamic/Premium) / 53 L Frunk (Performance)",
       "Length": "4,800 mm",
       "Width": "1,875 mm",
       "Height": "1,460 mm",
       "Wheelbase": "2,920 mm",
       "Ground Clearance": "145 mm",
       "Airbags": "9",
-      "Safety Rating": "5-Star Euro NCAP",
       "Platform": "BYD e-Platform 3.0 + CTB",
-      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+      "Warranty": "Battery & Motor: 10yr/200,000km | Vehicle: 5yr/125,000km",
+      "Motor Type": "Permanent Magnet Synchronous Motor (PMSM)",
+      "Max Motor Power": "150 kW / 230 kW / 390 kW (system)",
+      "Max Motor Torque": "310 Nm / 360 Nm / 670 Nm (system)",
+      "Drive Type": "RWD (Dynamic, Premium) / AWD Dual-Motor (Performance)",
+      "Top Speed (km/h)": "180",
+      "Transmission Type": "Single-Speed Automatic",
+      "Battery Type": "LFP — BYD Blade Battery (CTB)",
+      "AC Charging Max Rate (kW)": "11 kW",
+      "DC Fast Charging Max Rate (kW)": "150 kW",
+      "Vehicle-to-Load (V2L)": "Yes",
+      "Overall Length (mm)": "4,800",
+      "Overall Width (mm)": "1,875",
+      "Overall Height (mm)": "1,460",
+      "Wheelbase (mm)": "2,920",
+      "Turning Radius (m)": "5.7",
+      "Kerb Weight (kg)": "~2,150 kg (sources vary 2,150–2,185 kg)",
+      "Boot Space (litres)": "400 L rear",
+      "Frunk Capacity (litres)": "58 L (Dynamic/Premium) / 53 L (Performance)",
+      "Seating Capacity": "5",
+      "Body Type": "Sedan",
+      "Front Suspension Type": "Double Wishbone",
+      "Rear Suspension Type": "Multi-Link",
+      "Front Brakes": "Ventilated Disc",
+      "Rear Brakes": "Ventilated Disc",
+      "Tyre Size": "235/45 R19",
+      "Wheel Type": "Alloy",
+      "TPMS": "Yes",
+      "Spare Tyre": "Tyre Repair Kit (no spare wheel)",
+      "Total Airbag Count": "9",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Adaptive Cruise Control (ACC)": "Yes",
+      "Auto Emergency Braking (AEB)": "Yes",
+      "Lane Departure Warning": "Yes",
+      "Lane Keep Assist": "Yes",
+      "Blind Spot Warning": "Yes",
+      "Rear Cross Traffic Warning": "Yes",
+      "Head-Up Display (HUD)": "Yes",
+      "360° Surround View Camera": "Yes",
+      "Air Conditioning Type": "Automatic",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Powered Driver Seat": "8-way power",
+      "Powered Passenger Seat": "6-way power",
+      "Ventilated Seats": "Front seats",
+      "Headlamp Type": "LED",
+      "Seat Upholstery": "Leather",
+      "Digital Instrument Cluster": "10.25\" LCD",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "15.6\" (rotating)",
+      "Bluetooth Connectivity": "Yes",
+      "Android Auto": "Wireless",
+      "Apple CarPlay": "Wireless",
+      "Premium Audio Brand": "12-speaker system",
+      "Standard Vehicle Warranty": "5 years / 125,000 km",
+      "Battery Warranty": "10 years / 200,000 km",
+      "Total Number of Variants": "3",
+      "Variant Names": "Dynamic, Premium, Performance",
+      "Total Number of Colors": "4"
     },
     "pros": [
       "Only performance EV sedan available in Nepal — no rival",
       "Performance: 390 kW / 670 Nm — supercar numbers",
       "570 km WLTP range on Premium — class-leading",
-      "9 airbags + 5-Star Euro NCAP across all variants",
+      "9 airbags across all variants",
       "CTB structure + electronic door handles — head-turning design"
     ],
     "cons": [
@@ -8493,7 +9062,6 @@ window.CARS_DB = [
     ],
     "thumb": "/assets/images/car_images/mahindra/bolero-neo/exterior/mahindra-bolero-neo-exterior-rear-white-bg.jpg"
   },
-  
   {
     "id": 1001,
     "slug": "deepal-s07-2025",
@@ -8510,22 +9078,46 @@ window.CARS_DB = [
     "baseEMI": 62000,
     "overview": "The Deepal S07 is Nepal's most popular premium electric SUV. Built on Changan's EPA1 EV platform, it delivers up to 485km WLTP range, Zero Gravity seats, AR-HUD, and a premium Sony audio system — at one of the best value-per-feature ratios in the segment.",
     "images": [
-      "/assets/images/cars/deepal/s07/deepal-s07-exterior-front.jpg",
       "/assets/images/cars/deepal/s07/deepal-s07-exterior-side-left-white-bg.png",
+      "/assets/images/cars/deepal/s07/deepal-s07-exterior-front.jpg",
       "/assets/images/cars/deepal/s07/deepal-s07-exterior-rear.jpg",
       "/assets/images/cars/deepal/s07/deepal-s07-interior-dashboard.jpg",
       "/assets/images/cars/deepal/s07/S07_green.png"
     ],
     "colors": [
-      { "name": "Cosmic White", "hex": "#F0F0EC" },
-      { "name": "Nebula Green", "hex": "#2D5A2D" },
-      { "name": "Lunar Grey", "hex": "#8A8A8A" },
-      { "name": "Eclipse Black", "hex": "#1A1A1A" },
-      { "name": "Sunset Orange", "hex": "#CC5500" },
-      { "name": "Cosmic Yellow", "hex": "#D4AA00" },
-      { "name": "Nebula Blue", "hex": "#3B5E8C" }
+      {
+        "name": "Cosmic White",
+        "hex": "#F0F0EC"
+      },
+      {
+        "name": "Nebula Green",
+        "hex": "#2D5A2D"
+      },
+      {
+        "name": "Lunar Grey",
+        "hex": "#8A8A8A"
+      },
+      {
+        "name": "Eclipse Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Sunset Orange",
+        "hex": "#CC5500"
+      },
+      {
+        "name": "Cosmic Yellow",
+        "hex": "#D4AA00"
+      },
+      {
+        "name": "Nebula Blue",
+        "hex": "#3B5E8C"
+      }
     ],
-    "interiorColors": ["Orange", "Black"],
+    "interiorColors": [
+      "Orange",
+      "Black"
+    ],
     "variants": [
       {
         "name": "S07 Base",
@@ -8807,11 +9399,26 @@ window.CARS_DB = [
       "/assets/images/car_images/deepal/l07/interior/deepal-l07-interior-seats-front (1).jpg"
     ],
     "colors": [
-      { "name": "White", "hex": "#F5F5F5" },
-      { "name": "Green", "hex": "#2D6A4F" },
-      { "name": "Grey", "hex": "#8A8A8A" },
-      { "name": "Black", "hex": "#1A1A1A" },
-      { "name": "Blue", "hex": "#1B3A6B" }
+      {
+        "name": "White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Green",
+        "hex": "#2D6A4F"
+      },
+      {
+        "name": "Grey",
+        "hex": "#8A8A8A"
+      },
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Blue",
+        "hex": "#1B3A6B"
+      }
     ],
     "variants": [
       {
@@ -8954,7 +9561,7 @@ window.CARS_DB = [
     "reviews": 63,
     "expertScore": 7.6,
     "baseEMI": 58000,
-    "overview": "The Deepal S05 is Changan's entry-level EV SUV, positioned below the S07 with a 60kWh battery, 400km CLTC range, and a 12.8\" touchscreen. It offers excellent value in Nepal's growing EV market with solid build quality and Changan's proven EPA2.0 platform.",
+    "overview": "The Deepal S05 is Changan's entry-level EV SUV, positioned below the S07 with a 56.1kWh LFP battery, 405km WLTP range, and a 14.4\" touchscreen. Launched in Nepal by MAW Vriddhi AutoCorp, it offers strong value with Changan's EPA2.0 platform, RWD layout, and Level 2 ADAS on the top trim.",
     "images": [
       "/assets/images/car_images/deepal/s05/exterior/deepal-s05-exterior-front-white-bg.png",
       "/assets/images/car_images/deepal/s05/exterior/deepal-s05-exterior-rear.jpg",
@@ -8964,17 +9571,32 @@ window.CARS_DB = [
       "/assets/images/car_images/deepal/s05/interior/deepal-s05-interior-seats-rear.jpg"
     ],
     "colors": [
-      { "name": "Moonlight White", "hex": "#F5F5F5" },
-      { "name": "Ganymede Grey", "hex": "#8A8A8A" },
-      { "name": "Andromeda Blue", "hex": "#3B6FA0" },
-      { "name": "Deep Space Black", "hex": "#1A1A1A" },
-      { "name": "Mercury Silver", "hex": "#C0C0C0" }
+      {
+        "name": "Moonlight White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Ganymede Grey",
+        "hex": "#8A8A8A"
+      },
+      {
+        "name": "Andromeda Blue",
+        "hex": "#3B6FA0"
+      },
+      {
+        "name": "Deep Space Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Mercury Silver",
+        "hex": "#C0C0C0"
+      }
     ],
     "variants": [
       {
         "name": "S05 Plus",
         "slug": "s05-plus",
-        "price": 5099999,
+        "price": 5399000,
         "label": "Plus",
         "popular": false,
         "transmission": "Single-speed",
@@ -9034,7 +9656,7 @@ window.CARS_DB = [
       {
         "name": "S05 Max",
         "slug": "s05-max",
-        "price": 5799999,
+        "price": 6299000,
         "label": "Max",
         "popular": true,
         "transmission": "Single-speed",
@@ -15811,7 +16433,7 @@ window.CARS_DB = [
     "baseEMI": 38000,
     "overview": "The Maruti Suzuki Swift is Nepal's most beloved premium hatchback and one of the best-selling cars in the country. The new-generation Swift runs on the HEARTECT platform with a new 1.2L Z12E 3-cylinder engine offering improved performance and efficiency. Sporty design, class-leading safety (6 airbags on top trim), and a willing AMT option make it the go-to hatchback for Nepal's urban buyers.",
     "images": [
-      "/assets/images/car_images/suzuki/swift/exterior/MS1.jpg"
+      "/assets/images/car_images/marutisuzuki/swift/exterior/MS1.jpg"
     ],
     "colors": [
       {
@@ -20422,104 +21044,6 @@ window.CARS_DB = [
     ]
   },
   {
-    "id": 1201,
-    "slug": "jetour-t2-2025",
-    "brand": "Jetour",
-    "brandSlug": "jetour",
-    "model": "Traveller T2",
-    "year": 2026,
-    "type": "Petrol",
-    "bodyType": "suv",
-    "body": "SUV",
-    "badge": "new",
-    "budgetTier": "Under 55L",
-    "isEV": false,
-    "isNew": true,
-    "isFeatured": false,
-    "isBestSeller": false,
-    "tagline": "Hardcore Adventure Redefined",
-    "rating": 4.1,
-    "reviews": 20,
-    "expertScore": 7.9,
-    "baseEMI": 35000,
-    "overview": "The Jetour T2 is an adventure-ready body-on-frame SUV with a retro-inspired boxy design and robust off-road credentials. Distributed by CG Motors under the Chery Group umbrella. Pricing and variants are pending official Nepal launch confirmation.",
-    "images": [
-      "/assets/images/cars/jetour/t2/front.jpg"
-    ],
-    "colors": [
-      {
-        "name": "White",
-        "hex": "#F5F5F0"
-      },
-      {
-        "name": "Black",
-        "hex": "#1A1A1A"
-      },
-      {
-        "name": "Army Green",
-        "hex": "#4A5A2D"
-      },
-      {
-        "name": "Panda Edition (Black/White)",
-        "hex": "#F5F5F0"
-      }
-    ],
-    "variants": [
-      {
-        "name": "T2 Petrol 4WD",
-        "slug": "t2-petrol-4wd",
-        "price": 4200000,
-        "label": "Expected Base",
-        "popular": true,
-        "transmission": "DCT",
-        "fuel": "Petrol",
-        "features": [
-          "Retro Boxy Design",
-          "4WD Off-road",
-          "15.6-inch Touchscreen",
-          "360° Camera",
-          "LED Lights",
-          "Roof Rails",
-          "Off-road Modes",
-          "Traction Control"
-        ],
-        "specs": {
-          "power": "254 PS @ 5500 rpm",
-          "torque": "390 Nm @ 2000 rpm",
-          "efficiency": "~12.5 km/l",
-          "transmission": "7DCT"
-        }
-      }
-    ],
-    "specs": {
-      "Engine": "2.0L Turbo Petrol",
-      "Power": "254 PS",
-      "Torque": "390 Nm",
-      "Transmission": "7DCT",
-      "Drive": "4WD",
-      "Seating": "5",
-      "Ground Clearance": "220 mm",
-      "Note": "Price and specs pending official Nepal launch. Contact CG Motors for confirmation."
-    },
-    "pros": [
-      "Unique retro-boxy design stands out",
-      "Strong off-road credentials",
-      "Powerful 2.0T engine",
-      "Competitive pricing expected"
-    ],
-    "cons": [
-      "Not yet officially launched in Nepal (pending)",
-      "Limited after-sales data available",
-      "Brand new to Nepal market"
-    ],
-    "highlights": [
-      "Boxy Off-road Design",
-      "4WD",
-      "254PS Engine",
-      "Coming 2025"
-    ]
-  },
-  {
     "id": 1202,
     "slug": "jetour-x70-plus-2025",
     "brand": "Jetour",
@@ -20982,23 +21506,26 @@ window.CARS_DB = [
     "brandSlug": "baic",
     "model": "BJ30",
     "year": 2026,
-    "type": "Petrol",
+    "type": "Hybrid",
     "bodyType": "suv",
     "body": "SUV",
     "badge": "new",
-    "budgetTier": "Under 70L",
+    "budgetTier": "Above 1Cr",
     "isEV": false,
     "isNew": true,
     "isFeatured": false,
     "isBestSeller": false,
-    "tagline": "Born Tough. Built Smart.",
+    "tagline": "Born Tough. Built Smart. — Magic Core DHEV hybrid SUV launched at NAIMA 2026",
     "rating": 3.9,
     "reviews": 20,
     "expertScore": 7.5,
     "baseEMI": 55000,
-    "overview": "The BAIC BJ30 is a rugged compact SUV from Beijing Automotive, known for off-road capability and military-grade build quality. Expected to arrive in Nepal through official distributor channels with premium pricing reflecting its capability.",
+    "overview": "The BAIC BJ30e Hybrid is a rugged compact SUV from Beijing Automotive with a 1.5L turbo petrol engine paired with dual electric motors via BAIC's 'Magic Core' 2-speed DHT hybrid system. Launched in Nepal by Laxmi e-Mobility at NAIMA Nepal Mobility Expo 2026, the top AWD variant makes a combined 409 hp and 685 Nm, with genuine off-road hardware including 215mm ground clearance and dedicated Mud/Sand/Wading drive modes.",
     "images": [
-      "/assets/images/cars/baic/bj30/front.jpg"
+      "/assets/images/car_images/baic/bj30/exterior/baic.jpeg",
+      "/assets/images/car_images/baic/bj30/exterior/download.jpeg",
+      "/assets/images/car_images/baic/bj30/exterior/imgi_11_1_20241029181932A206_20260526102131A046.png",
+      "/assets/images/car_images/baic/bj30/interior/组合.jpg"
     ],
     "colors": [
       {
@@ -21016,57 +21543,66 @@ window.CARS_DB = [
     ],
     "variants": [
       {
-        "name": "BJ30 2.0T 4WD",
-        "slug": "bj30-2-0t-4wd",
-        "price": 6500000,
-        "label": "Expected",
+        "name": "BJ30e Hybrid AWD",
+        "slug": "bj30e-hybrid-awd",
+        "price": 11200000,
+        "label": "Top AWD",
         "popular": true,
-        "transmission": "AT",
-        "fuel": "Petrol",
+        "transmission": "2-Speed DHT",
+        "fuel": "Hybrid (Petrol + Dual Motor)",
         "features": [
-          "4WD Off-road Modes",
-          "12.3-inch Touchscreen",
-          "LED Lighting",
-          "Steel Body Protection",
-          "Hill Descent Control",
-          "6 Airbags",
-          "Off-road Differential"
+          "1.5L Turbo + Dual Electric Motor \"Magic Core\" DHEV",
+          "AWD with Mud/Sand/Wading/Snow Drive Modes",
+          "10.25\" Digital Instrument Cluster",
+          "14.6\" Infotainment (Qualcomm 8155)",
+          "Vehicle-to-Load (V2L)",
+          "300kg Roof Rack Capacity",
+          "215mm Ground Clearance"
         ],
         "specs": {
-          "power": "190 PS",
-          "torque": "340 Nm",
-          "efficiency": "~12 km/l",
-          "transmission": "8AT"
+          "power": "409 hp (combined)",
+          "torque": "685 Nm (combined)",
+          "efficiency": "Hybrid — official Nepal figure pending",
+          "transmission": "2-Speed DHT AWD"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L Turbo Petrol",
-      "Power": "190 PS",
-      "Torque": "340 Nm",
-      "Transmission": "8AT",
-      "Drive": "4WD",
+      "Engine": "1.5L Turbo Petrol + Dual Electric Motors",
+      "Hybrid System": "BAIC 'Magic Core' DHEV, 2-Speed DHT",
+      "Power": "409 hp (combined)",
+      "Power (combined)": "409 hp",
+      "Torque (combined)": "685 Nm",
+      "Drive": "AWD",
       "Seating": "5",
-      "Ground Clearance": "220 mm",
-      "Note": "Pricing and availability TBC — contact official BAIC Nepal distributor."
+      "Ground Clearance": "215 mm",
+      "Instrument Cluster": "10.25\" Digital",
+      "Infotainment": "14.6\" (Qualcomm 8155)",
+      "Roof Rack Capacity": "300 kg",
+      "Cargo Space (seats folded)": "1,902 mm",
+      "Drive Modes": "Comfort, Economy, Sport, Snow, Mud, Sand, Wading",
+      "Importer": "Laxmi e-Mobility",
+      "Note": "Launched at NAIMA Nepal Mobility Expo 2026 (Aug 2026)"
     },
     "pros": [
-      "Rugged military-inspired design",
-      "220mm ground clearance",
-      "Off-road capability",
-      "Strong 2.0T engine"
+      "Genuine off-road hardware — Mud/Sand/Wading modes, 215mm clearance",
+      "Strong 409hp/685Nm combined hybrid output",
+      "AWD standard on launch trim",
+      "V2L power-sharing capability"
     ],
     "cons": [
-      "Pricing not officially confirmed",
-      "Limited Nepal service data",
-      "Niche market appeal"
+      "Premium pricing at Rs. 1.12 Crore",
+      "Brand new to Nepal — limited service history",
+      "Only one AWD hybrid trim confirmed at launch",
+      "Official fuel efficiency figures not yet published for Nepal spec"
     ],
     "highlights": [
-      "Off-Road Design",
-      "220mm Clearance",
-      "4WD Modes",
-      "Military DNA"
-    ]
+      "409 hp Hybrid AWD",
+      "Magic Core DHT",
+      "215mm Clearance",
+      "NAIMA 2026 Launch"
+    ],
+    "thumb": "/assets/images/car_images/baic/bj30/exterior/baic.jpeg"
   },
   {
     "id": 1701,
@@ -24171,12 +24707,16 @@ window.CARS_DB = [
     "expertScore": 8,
     "baseEMI": 65000,
     "overview": "Omoda E5 is a futuristic electric crossover featuring advanced smart cabin features and a long-range battery suitable for Nepal's roads.",
-    "images": [
-      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
-    ],
+    "images": [],
     "colors": [
-      { "name": "Space Green", "hex": "#1A6B2A" },
-      { "name": "Phantom Grey", "hex": "#616A6B" }
+      {
+        "name": "Space Green",
+        "hex": "#1A6B2A"
+      },
+      {
+        "name": "Phantom Grey",
+        "hex": "#616A6B"
+      }
     ],
     "variants": [
       {
@@ -24185,8 +24725,16 @@ window.CARS_DB = [
         "price": 6199000,
         "transmission": "Single-Speed",
         "fuel": "Electric",
-        "features": ["ADAS Level 2", "12.3-inch Dual Screen", "Panoramic Sunroof"],
-        "specs": { "power": "204 PS", "torque": "340 Nm", "efficiency": "430 km range" }
+        "features": [
+          "ADAS Level 2",
+          "12.3-inch Dual Screen",
+          "Panoramic Sunroof"
+        ],
+        "specs": {
+          "power": "204 PS",
+          "torque": "340 Nm",
+          "efficiency": "430 km range"
+        }
       }
     ]
   },
@@ -24211,12 +24759,16 @@ window.CARS_DB = [
     "expertScore": 9,
     "baseEMI": 110000,
     "overview": "The Jeep Compass offers unparalleled off-road capability combined with premium styling and comfort for any terrain.",
-    "images": [
-      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
-    ],
+    "images": [],
     "colors": [
-      { "name": "Exotica Red", "hex": "#C0392B" },
-      { "name": "Minimal Grey", "hex": "#BFC9CA" }
+      {
+        "name": "Exotica Red",
+        "hex": "#C0392B"
+      },
+      {
+        "name": "Minimal Grey",
+        "hex": "#BFC9CA"
+      }
     ],
     "variants": [
       {
@@ -24225,8 +24777,16 @@ window.CARS_DB = [
         "price": 12490000,
         "transmission": "9AT",
         "fuel": "Diesel",
-        "features": ["Selec-Terrain 4WD System", "Panoramic Sunroof", "Ventilated Seats"],
-        "specs": { "power": "170 PS", "torque": "350 Nm", "efficiency": "14.5 km/l" }
+        "features": [
+          "Selec-Terrain 4WD System",
+          "Panoramic Sunroof",
+          "Ventilated Seats"
+        ],
+        "specs": {
+          "power": "170 PS",
+          "torque": "350 Nm",
+          "efficiency": "14.5 km/l"
+        }
       }
     ]
   },
@@ -24250,12 +24810,16 @@ window.CARS_DB = [
     "expertScore": 8,
     "baseEMI": 85000,
     "overview": "GWM Haval H6 represents advanced design, top-tier safety features, and a spacious interior ideal for families.",
-    "images": [
-      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
-    ],
+    "images": [],
     "colors": [
-      { "name": "Hamilton White", "hex": "#F2F3F4" },
-      { "name": "Ayers Grey", "hex": "#616A6B" }
+      {
+        "name": "Hamilton White",
+        "hex": "#F2F3F4"
+      },
+      {
+        "name": "Ayers Grey",
+        "hex": "#616A6B"
+      }
     ],
     "variants": [
       {
@@ -24264,8 +24828,16 @@ window.CARS_DB = [
         "price": 8499000,
         "transmission": "7DCT",
         "fuel": "Petrol",
-        "features": ["360 Camera", "Adaptive Cruise Control", "Wireless Charging"],
-        "specs": { "power": "201 PS", "torque": "320 Nm", "efficiency": "12.2 km/l" }
+        "features": [
+          "360 Camera",
+          "Adaptive Cruise Control",
+          "Wireless Charging"
+        ],
+        "specs": {
+          "power": "201 PS",
+          "torque": "320 Nm",
+          "efficiency": "12.2 km/l"
+        }
       }
     ]
   },
@@ -24289,12 +24861,16 @@ window.CARS_DB = [
     "expertScore": 7,
     "baseEMI": 42000,
     "overview": "Renault Kiger brings smart, sporty looks along with a highly efficient turbocharged engine perfect for city commutes.",
-    "images": [
-      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
-    ],
+    "images": [],
     "colors": [
-      { "name": "Caspian Blue", "hex": "#2471A3" },
-      { "name": "Moonlight Silver", "hex": "#BFC9CA" }
+      {
+        "name": "Caspian Blue",
+        "hex": "#2471A3"
+      },
+      {
+        "name": "Moonlight Silver",
+        "hex": "#BFC9CA"
+      }
     ],
     "variants": [
       {
@@ -24303,8 +24879,16 @@ window.CARS_DB = [
         "price": 4499000,
         "transmission": "CVT",
         "fuel": "Petrol",
-        "features": ["PM2.5 Clean Air Filter", "8-inch Touchscreen", "4 Airbags"],
-        "specs": { "power": "100 PS", "torque": "152 Nm", "efficiency": "18.5 km/l" }
+        "features": [
+          "PM2.5 Clean Air Filter",
+          "8-inch Touchscreen",
+          "4 Airbags"
+        ],
+        "specs": {
+          "power": "100 PS",
+          "torque": "152 Nm",
+          "efficiency": "18.5 km/l"
+        }
       }
     ]
   },
@@ -24328,12 +24912,16 @@ window.CARS_DB = [
     "expertScore": 8,
     "baseEMI": 58000,
     "overview": "Skoda Kushaq is engineered for solid stability, high-speed control, and comfortable cruising with premium fit and finish.",
-    "images": [
-      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
-    ],
+    "images": [],
     "colors": [
-      { "name": "Honey Orange", "hex": "#E67E22" },
-      { "name": "Tornado Red", "hex": "#C0392B" }
+      {
+        "name": "Honey Orange",
+        "hex": "#E67E22"
+      },
+      {
+        "name": "Tornado Red",
+        "hex": "#C0392B"
+      }
     ],
     "variants": [
       {
@@ -24342,8 +24930,16 @@ window.CARS_DB = [
         "price": 5490000,
         "transmission": "6MT",
         "fuel": "Petrol",
-        "features": ["Electronic Stability Control", "Ventilated Seats", "Electric Sunroof"],
-        "specs": { "power": "115 PS", "torque": "178 Nm", "efficiency": "17.8 km/l" }
+        "features": [
+          "Electronic Stability Control",
+          "Ventilated Seats",
+          "Electric Sunroof"
+        ],
+        "specs": {
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "efficiency": "17.8 km/l"
+        }
       }
     ]
   },
@@ -24367,12 +24963,16 @@ window.CARS_DB = [
     "expertScore": 7,
     "baseEMI": 36000,
     "overview": "Neta V offers a compact design coupled with smart technological inclusions, making it an excellent city commuter EV.",
-    "images": [
-      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
-    ],
+    "images": [],
     "colors": [
-      { "name": "Sky Blue", "hex": "#2471A3" },
-      { "name": "Sakura Pink", "hex": "#FADBD8" }
+      {
+        "name": "Sky Blue",
+        "hex": "#2471A3"
+      },
+      {
+        "name": "Sakura Pink",
+        "hex": "#FADBD8"
+      }
     ],
     "variants": [
       {
@@ -24381,9 +24981,733 @@ window.CARS_DB = [
         "price": 3899000,
         "transmission": "Single-Speed",
         "fuel": "Electric",
-        "features": ["14.6-inch Central Screen", "Keyless Entry", "Regenerative Braking"],
-        "specs": { "power": "95 PS", "torque": "150 Nm", "efficiency": "380 km range" }
+        "features": [
+          "14.6-inch Central Screen",
+          "Keyless Entry",
+          "Regenerative Braking"
+        ],
+        "specs": {
+          "power": "95 PS",
+          "torque": "150 Nm",
+          "efficiency": "380 km range"
+        }
       }
     ]
+  },
+  {
+    "id": 5007,
+    "slug": "proton-emas-7-2026",
+    "brand": "Proton",
+    "brandSlug": "proton",
+    "model": "e.MAS 7",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric SUV",
+    "badge": "new",
+    "budgetTier": "Under 70L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": false,
+    "tagline": "Proton's first EV in Nepal — 410km WLTP range with Level 2 ADAS",
+    "rating": 4,
+    "reviews": 18,
+    "expertScore": 7.7,
+    "baseEMI": 62000,
+    "overview": "The Proton e.MAS 7 is Proton's first fully-electric SUV for Nepal, launched by Jagadamba Motors. Built on Geely's GEA architecture, it offers a 218 PS / 320 Nm motor across both trims, with the Premium variant stepping up to a larger 60.22 kWh battery for 410 km WLTP range, a panoramic glass roof, and a head-up display.",
+    "images": [
+      "/assets/images/car_images/proton/emas 7/exterior/superbStyle-img1-1024x630.jpg",
+      "/assets/images/car_images/proton/emas 7/exterior/superbStyle-img3-1024x630.jpg",
+      "/assets/images/car_images/proton/emas 7/exterior/eMAS7_PREMIUM-400x155.png",
+      "/assets/images/car_images/proton/emas 7/interior/remarkable-comfort-img3-1024x630.jpg",
+      "/assets/images/car_images/proton/emas 7/interior/White-interior-1024x630.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Lithium White",
+        "hex": "#F2F2F2"
+      },
+      {
+        "name": "Turquoise Green",
+        "hex": "#1F6F5C"
+      },
+      {
+        "name": "Platinum Silver",
+        "hex": "#B9BCC0"
+      },
+      {
+        "name": "Quartz Rose",
+        "hex": "#C79098"
+      },
+      {
+        "name": "Silver Grey",
+        "hex": "#8A8D90"
+      },
+      {
+        "name": "Moyu Black",
+        "hex": "#141414"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Prime",
+        "slug": "prime",
+        "price": 5699000,
+        "label": "Base",
+        "popular": false,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "6 Airbags",
+          "Level 2 ADAS",
+          "15.4\" Touchscreen",
+          "10.2\" Digital Cluster",
+          "Wireless Charging",
+          "18\" Alloy Wheels",
+          "6-Speaker Audio",
+          "Rear Parking Sensors",
+          "461L Boot"
+        ],
+        "specs": {
+          "power": "218 PS",
+          "torque": "320 Nm",
+          "efficiency": "345 km WLTP range",
+          "transmission": "Single-Speed AT"
+        }
+      },
+      {
+        "name": "Premium",
+        "slug": "premium",
+        "price": 6799000,
+        "label": "Top",
+        "popular": true,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "60.22 kWh Battery — 410km WLTP",
+          "Panoramic Glass Roof",
+          "Head-Up Display",
+          "16-Speaker Audio",
+          "Electric Tailgate",
+          "Seat Ventilation & Memory",
+          "19\" Alloy Wheels",
+          "Front + Rear Parking Sensors",
+          "All Prime features+"
+        ],
+        "specs": {
+          "power": "218 PS",
+          "torque": "320 Nm",
+          "efficiency": "410 km WLTP range",
+          "transmission": "Single-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "Permanent Magnet Synchronous Motor",
+      "Power": "218 PS",
+      "Torque": "320 Nm",
+      "Battery (Prime)": "49.52 kWh",
+      "Battery (Premium)": "60.22 kWh",
+      "Range (Prime, WLTP)": "345 km",
+      "Range (Premium, WLTP)": "410 km",
+      "0-100 km/h": "6.9–7.1 sec",
+      "Top Speed": "175 km/h",
+      "DC Fast Charging": "60 kW, 30–80% in ~27–33 min",
+      "AC Charging": "7.2 kW, ~7–8.5 hrs",
+      "Seating": "5",
+      "Boot Space": "461 L",
+      "Importer": "Jagadamba Motors",
+      "Vehicle Warranty": "6 years / 150,000 km",
+      "Battery Warranty": "8 years / 160,000 km"
+    },
+    "pros": [
+      "Proton's first EV for Nepal with strong 6yr/150,000km warranty",
+      "410 km WLTP range on Premium trim",
+      "Level 2 ADAS standard across both trims",
+      "6 airbags standard"
+    ],
+    "cons": [
+      "New EV nameplate — limited Nepal resale data",
+      "Charging network still developing outside Kathmandu",
+      "Premium trim commands a large price step over Prime"
+    ],
+    "highlights": [
+      "410 km WLTP Range",
+      "Level 2 ADAS",
+      "218 PS Motor",
+      "8yr Battery Warranty"
+    ],
+    "thumb": "/assets/images/car_images/proton/emas 7/exterior/superbStyle-img1-1024x630.jpg"
+  },
+  {
+    "id": 5008,
+    "slug": "tata-tiago-ev-2026",
+    "brand": "Tata",
+    "brandSlug": "tata",
+    "model": "Tiago.ev Facelift",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "hatchback",
+    "body": "Electric Hatchback",
+    "badge": "new",
+    "budgetTier": "Under 30L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Nepal's cheapest new EV — Tata's facelifted Tiago.ev from Sipradi Trading",
+    "rating": 3.9,
+    "reviews": 11,
+    "expertScore": 7.2,
+    "baseEMI": 27000,
+    "overview": "The facelifted Tata Tiago.ev is the most affordable new electric car on sale in Nepal, launched by Sipradi Trading. It uses a 24 kWh lithium-ion battery for a 291 km ARAI range (real-world closer to 205 km), with the higher XZ+ Tech Lux trim adding a larger touchscreen, wireless connectivity, and cruise control.",
+    "images": [
+      "/assets/images/car_images/Tata/Tiago/exterior/front-grille-CRWynnAj.avif",
+      "/assets/images/car_images/Tata/Tiago/exterior/book-a-test-drive-7-DzZpf25J.avif",
+      "/assets/images/car_images/Tata/Tiago/interior/spacious-cabin-B7Uh541t.avif",
+      "/assets/images/car_images/Tata/Tiago/interior/boot-space-3-uK33Beze.avif"
+    ],
+    "colors": [
+      {
+        "name": "Chill Lime",
+        "hex": "#C6D94E"
+      },
+      {
+        "name": "Daytona Grey",
+        "hex": "#8A8D90"
+      },
+      {
+        "name": "Teal Blue",
+        "hex": "#1B6E77"
+      },
+      {
+        "name": "Arizona Blue",
+        "hex": "#3F7CAC"
+      },
+      {
+        "name": "Supernova Copper",
+        "hex": "#B5652E"
+      }
+    ],
+    "variants": [
+      {
+        "name": "XT",
+        "slug": "xt",
+        "price": 2749000,
+        "label": "Base",
+        "popular": true,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "7\" Touchscreen",
+          "Wired Android Auto/CarPlay",
+          "Fabric Upholstery",
+          "Digital Instrument Cluster"
+        ],
+        "specs": {
+          "power": "65.3 PS",
+          "torque": "114 Nm",
+          "efficiency": "291 km ARAI range",
+          "transmission": "Single-Speed AT"
+        }
+      },
+      {
+        "name": "XZ+ Tech Lux",
+        "slug": "xz-plus-tech-lux",
+        "price": 2999000,
+        "label": "Top",
+        "popular": false,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "10.2\" Touchscreen",
+          "Wireless Android Auto/CarPlay",
+          "Leatherette Steering Wheel",
+          "6-Way Adjustable Driver Seat",
+          "Cruise Control",
+          "Cooled Glove Box",
+          "All XT features+"
+        ],
+        "specs": {
+          "power": "65.3 PS",
+          "torque": "114 Nm",
+          "efficiency": "291 km ARAI range",
+          "transmission": "Single-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "48 kW Permanent Magnet Synchronous Motor",
+      "Power": "65.3 PS",
+      "Torque": "114 Nm",
+      "Battery": "24 kWh Lithium-ion",
+      "Range (ARAI)": "291 km",
+      "Range (real-world, C75)": "205 km",
+      "Seating": "5",
+      "Importer": "Sipradi Trading Pvt. Ltd.",
+      "Vehicle Warranty": "3 years / 125,000 km",
+      "Battery & Motor Warranty": "8 years / 160,000 km"
+    },
+    "pros": [
+      "Nepal's most affordable new EV",
+      "Strong 8-year battery & motor warranty",
+      "Sipradi Trading has an established Tata service network",
+      "City-friendly hatchback footprint"
+    ],
+    "cons": [
+      "Real-world range noticeably below ARAI figure",
+      "No fast-charging headline spec published",
+      "Modest 65.3 PS output",
+      "Base XT trim lacks wireless connectivity"
+    ],
+    "highlights": [
+      "Cheapest New EV in Nepal",
+      "291 km ARAI Range",
+      "8yr Battery Warranty",
+      "Sipradi Trading Backed"
+    ],
+    "thumb": "/assets/images/car_images/Tata/Tiago/exterior/front-grille-CRWynnAj.avif"
+  },
+  {
+    "id": 5009,
+    "slug": "tata-punch-ev-2026",
+    "brand": "Tata",
+    "brandSlug": "tata",
+    "model": "Punch.ev Facelift",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric Micro-SUV",
+    "badge": "new",
+    "budgetTier": "Under 40L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Facelifted Punch.ev with bigger batteries and a 360° camera, via Sipradi Trading",
+    "rating": 4,
+    "reviews": 14,
+    "expertScore": 7.4,
+    "baseEMI": 34000,
+    "overview": "The facelifted Tata Punch.ev brings larger 30 kWh and 40 kWh battery packs (up 5 kWh over the outgoing model), a 10.25\" touchscreen and digital cluster, and 65 kW DC fast charging. Launched in Nepal by Sipradi Trading, a 15-minute quick charge adds up to 135 km of range.",
+    "images": [
+      "/assets/images/car_images/Tata/punch/exterior/Punch.ev_1228x488.avif",
+      "/assets/images/car_images/Tata/punch/exterior/punch-exterior-right-front-three-quarter-250.avif",
+      "/assets/images/car_images/Tata/punch/exterior/punch-exterior-right-front-three-quarter-10.avif",
+      "/assets/images/car_images/Tata/punch/interior/6-airbags-4.webp"
+    ],
+    "colors": [
+      {
+        "name": "Pristine White",
+        "hex": "#F4F4F4"
+      },
+      {
+        "name": "Daytona Grey",
+        "hex": "#8A8D90"
+      },
+      {
+        "name": "Fearless Purple",
+        "hex": "#5B4E77"
+      },
+      {
+        "name": "Empowered Oxide",
+        "hex": "#7A4B32"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard (30 kWh)",
+        "slug": "standard-30kwh",
+        "price": 3399000,
+        "label": "Base",
+        "popular": true,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "10.25\" Touchscreen",
+          "10.25\" Digital Cluster",
+          "6 Airbags",
+          "Electronic Stability Control",
+          "Hill Hold Assist",
+          "TPMS",
+          "High-Beam Assist"
+        ],
+        "specs": {
+          "power": "N/A",
+          "torque": "N/A",
+          "efficiency": "30 kWh battery",
+          "transmission": "Single-Speed AT"
+        }
+      },
+      {
+        "name": "Long Range (40 kWh)",
+        "slug": "long-range-40kwh",
+        "price": 3799000,
+        "label": "Top",
+        "popular": false,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "Wireless Charging",
+          "Ventilated Seats",
+          "Ambient Lighting",
+          "Connected-Car Tech",
+          "360° Camera",
+          "65 kW DC Fast Charging",
+          "All Standard features+"
+        ],
+        "specs": {
+          "power": "N/A",
+          "torque": "N/A",
+          "efficiency": "40 kWh battery",
+          "transmission": "Single-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Battery (Standard)": "30 kWh",
+      "Battery (Long Range)": "40 kWh",
+      "DC Fast Charging": "65 kW, 20–80% in ~26 min",
+      "Quick Charge": "15 min adds up to 135 km range",
+      "Seating": "5",
+      "Airbags": "6",
+      "Importer": "Sipradi Trading Pvt. Ltd.",
+      "Note": "Exact motor power/torque figures not yet published for Nepal spec"
+    },
+    "pros": [
+      "Bigger batteries than outgoing Punch.ev (+5 kWh both packs)",
+      "Fast 65 kW DC charging with strong 15-min top-up range",
+      "6 airbags and 360° camera on Long Range trim",
+      "Sipradi Trading has an established Tata service network"
+    ],
+    "cons": [
+      "Official motor power/torque figures not yet published",
+      "Micro-SUV footprint means limited boot space",
+      "Long Range trim commands a meaningful price premium"
+    ],
+    "highlights": [
+      "40 kWh Long Range",
+      "65 kW DC Fast Charge",
+      "360° Camera",
+      "6 Airbags"
+    ],
+    "thumb": "/assets/images/car_images/Tata/punch/exterior/Punch.ev_1228x488.avif"
+  },
+  {
+    "id": 5010,
+    "slug": "leapmotor-a10-2026",
+    "brand": "Leapmotor",
+    "brandSlug": "leapmotor",
+    "model": "A10 (B03X)",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric Compact SUV",
+    "badge": "new",
+    "budgetTier": "Under 50L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Leapmotor's second Nepal model — sold locally as the B03X — via Shangrila Motors",
+    "rating": 3.9,
+    "reviews": 7,
+    "expertScore": 7.3,
+    "baseEMI": 42000,
+    "overview": "The Leapmotor A10, badged the B03X in Nepal, is a compact electric SUV distributed by Shangrila Motors alongside the existing Leapmotor C10. It pairs a 100 kW PMSM motor with an LFP battery good for roughly 500 km CLTC range, AI-driven infotainment, door-to-door ADAS, and a 360° camera with 6 airbags.",
+    "images": [
+      "/assets/images/car_images/leap motors/a10/exterior/download.jpeg",
+      "/assets/images/car_images/leap motors/a10/exterior/download (1).jpeg",
+      "/assets/images/car_images/leap motors/a10/exterior/download (2).jpeg",
+      "/assets/images/car_images/leap motors/a10/interior/13dbb4d1-dec0-4c2b-995c-13c5d471e219.webp",
+      "/assets/images/car_images/leap motors/a10/interior/859b3332-4fbf-467a-bf1d-435f466b3e46.webp"
+    ],
+    "colors": [
+      {
+        "name": "Brown",
+        "hex": "#6B4A32"
+      },
+      {
+        "name": "Beige",
+        "hex": "#D9CBB0"
+      },
+      {
+        "name": "Grey",
+        "hex": "#8A8D90"
+      },
+      {
+        "name": "Blue",
+        "hex": "#3B6FA0"
+      },
+      {
+        "name": "Silver",
+        "hex": "#C0C0C0"
+      },
+      {
+        "name": "Green",
+        "hex": "#2E6B4F"
+      }
+    ],
+    "variants": [
+      {
+        "name": "B03X Pro Max",
+        "slug": "b03x-pro-max",
+        "price": 4699000,
+        "label": "Launch Trim",
+        "popular": true,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "AI-Powered Infotainment Screen",
+          "Door-to-Door ADAS",
+          "6 Airbags",
+          "360° Camera",
+          "18\" Alloy Wheels",
+          "0.26 Drag Coefficient"
+        ],
+        "specs": {
+          "power": "136 PS",
+          "torque": "N/A",
+          "efficiency": "~500 km CLTC (est. ~410 km WLTP)",
+          "transmission": "Single-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "100 kW Permanent Magnet Synchronous Motor",
+      "Power": "136 PS",
+      "Battery": "LFP, ~50 kWh",
+      "Range (CLTC)": "~500 km",
+      "DC Fast Charging": "30–80% in ~16 min",
+      "Drag Coefficient": "0.26",
+      "Seating": "5",
+      "Importer": "Shangrila Motors",
+      "Note": "Nepal trim lineup and full torque figure pending official confirmation"
+    },
+    "pros": [
+      "Shangrila Motors already services the existing Leapmotor C10 in Nepal",
+      "Fast DC charging — 30-80% in ~16 minutes",
+      "6 airbags with 360° camera and door-to-door ADAS standard",
+      "Efficient 0.26 drag coefficient"
+    ],
+    "cons": [
+      "New nameplate — limited real-world Nepal data",
+      "CLTC range figure typically overstates real-world range",
+      "Full variant lineup and torque spec not yet finalized"
+    ],
+    "highlights": [
+      "~500 km CLTC Range",
+      "Door-to-Door ADAS",
+      "16-min Fast Charge",
+      "6 Airbags"
+    ],
+    "thumb": "/assets/images/car_images/leap motors/a10/exterior/download.jpeg"
+  },
+  {
+    "id": 5011,
+    "slug": "arcfox-t1-2026",
+    "brand": "Arcfox",
+    "brandSlug": "arcfox",
+    "model": "T1",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "hatchback",
+    "body": "Electric Hatchback",
+    "badge": "new",
+    "budgetTier": "Under 40L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Arcfox's Nepal debut — a compact city EV via Laxmi Motorhub",
+    "rating": 3.8,
+    "reviews": 5,
+    "expertScore": 7,
+    "baseEMI": 32000,
+    "overview": "The Arcfox T1 marks the brand's entry into Nepal via Laxmi Motorhub, launched at NAIMA Nepal Mobility Expo 2026. A compact electric hatchback with a 42.3 kWh LFP battery and 310 km WLTP range, it's aimed at city buyers with a 15.6\" touchscreen, four driving modes, and a full suite of driver-assist features across both trims.",
+    "images": [
+      "/assets/images/car_images/arcfox t1/exterior/part1_1-1.png",
+      "/assets/images/car_images/arcfox t1/exterior/part1_1-2.png"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "LV2",
+        "slug": "lv2",
+        "price": 3296000,
+        "label": "Base",
+        "popular": true,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "15.6\" HD Touchscreen",
+          "6-Speaker Audio",
+          "Voice Control",
+          "Apple CarPlay",
+          "Cruise Control",
+          "Automatic Parking",
+          "Lane Departure Warning",
+          "4 Airbags",
+          "ABS/EBD/ESP"
+        ],
+        "specs": {
+          "power": "70 kW",
+          "torque": "170 Nm",
+          "efficiency": "310 km WLTP range",
+          "transmission": "Single-Speed AT"
+        }
+      },
+      {
+        "name": "LV3",
+        "slug": "lv3",
+        "price": 3596000,
+        "label": "Top",
+        "popular": false,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "Heated & Ventilated Seats",
+          "All LV2 features+"
+        ],
+        "specs": {
+          "power": "70 kW",
+          "torque": "170 Nm",
+          "efficiency": "310 km WLTP range",
+          "transmission": "Single-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Motor": "70 kW Electric Motor",
+      "Power": "70 kW",
+      "Torque": "170 Nm",
+      "Battery": "42.3 kWh LFP",
+      "Range (WLTP)": "310 km",
+      "Top Speed": "140 km/h",
+      "DC Fast Charging": "30–80% in ~25 min",
+      "AC Charging": "7 kW, ~8 hrs full charge",
+      "Length": "4,337 mm",
+      "Width": "1,805 mm",
+      "Height": "1,573 mm",
+      "Wheelbase": "2,750 mm",
+      "Ground Clearance": "181 mm",
+      "Importer": "Laxmi Motorhub"
+    },
+    "pros": [
+      "Compact footprint suits Kathmandu streets",
+      "310 km WLTP range for city/commuter use",
+      "Heated & ventilated seats on LV3 — rare at this price",
+      "Full ADAS suite (lane warning, auto parking) on both trims"
+    ],
+    "cons": [
+      "Brand new to Nepal — no service track record yet",
+      "Modest 70 kW motor limits highway performance",
+      "Limited color/trim information published at launch"
+    ],
+    "highlights": [
+      "310 km WLTP Range",
+      "4 Airbags + ADAS",
+      "Heated/Ventilated Seats (LV3)",
+      "Laxmi Motorhub Backed"
+    ],
+    "thumb": "/assets/images/car_images/arcfox t1/exterior/part1_1-1.png"
+  },
+  {
+    "id": 5012,
+    "slug": "chery-q-2026",
+    "brand": "Chery",
+    "brandSlug": "chery",
+    "model": "Q (QQ3 EV)",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "hatchback",
+    "body": "Electric Hatchback",
+    "badge": "new",
+    "budgetTier": "Under 40L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Chery's retro-styled micro EV, launched in Nepal by SPG Automobiles",
+    "rating": 3.8,
+    "reviews": 6,
+    "expertScore": 6.9,
+    "baseEMI": 27000,
+    "overview": "The Chery Q, sold globally as the QQ3, is a retro-inspired electric hatchback launched in Nepal by SPG Automobiles at NAIMA Nepal Mobility Expo 2026. It uses an LFP battery with rear-wheel drive, V2L discharge, and a driver-assist package, positioned as an affordable, city-focused EV alongside Chery Group stablemates Omoda and Jaecoo.",
+    "images": [
+      "/assets/images/car_images/chery/qq3/exterior/2027-Cgery-QQ3-hatchback-purple-press-image-1490x790p-1.webp",
+      "/assets/images/car_images/chery/qq3/exterior/download.jpeg",
+      "/assets/images/car_images/chery/qq3/exterior/download (1).jpeg"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "Comfort",
+        "slug": "comfort",
+        "price": 3449000,
+        "label": "Base",
+        "popular": true,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "LFP Battery",
+          "RWD",
+          "Vehicle-to-Load (V2L)",
+          "Driver-Assist Package"
+        ],
+        "specs": {
+          "power": "N/A",
+          "torque": "N/A",
+          "efficiency": "LFP Battery, RWD",
+          "transmission": "Single-Speed AT"
+        }
+      },
+      {
+        "name": "Premium",
+        "slug": "premium",
+        "price": 3599000,
+        "label": "Top",
+        "popular": false,
+        "transmission": "Single-Speed AT",
+        "fuel": "Electric",
+        "features": [
+          "All Comfort features+",
+          "Additional trim/comfort upgrades — full spec sheet pending"
+        ],
+        "specs": {
+          "power": "N/A",
+          "torque": "N/A",
+          "efficiency": "LFP Battery, RWD",
+          "transmission": "Single-Speed AT"
+        }
+      }
+    ],
+    "specs": {
+      "Battery": "LFP",
+      "Drive": "RWD",
+      "V2L": "Yes",
+      "Seating": "4-5",
+      "Importer": "SPG Automobiles",
+      "Note": "Detailed battery kWh, motor power, and range figures not yet published for Nepal spec — confirm with SPG Automobiles before quoting exact numbers"
+    },
+    "pros": [
+      "Most affordable Chery Group EV launched at NAIMA 2026",
+      "V2L power-sharing capability",
+      "Backed by SPG Automobiles, also handling Omoda/Jaecoo in Nepal",
+      "Distinctive retro styling stands out in the segment"
+    ],
+    "cons": [
+      "Full technical spec sheet (battery kWh, range, motor output) not yet published",
+      "Brand new to Nepal — no service track record",
+      "RWD-only, no AWD option"
+    ],
+    "highlights": [
+      "LFP Battery",
+      "V2L Capable",
+      "RWD",
+      "NAIMA 2026 Launch"
+    ],
+    "thumb": "/assets/images/car_images/chery/qq3/exterior/2027-Cgery-QQ3-hatchback-purple-press-image-1490x790p-1.webp"
   }
 ];

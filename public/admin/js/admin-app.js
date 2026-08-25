@@ -19,6 +19,7 @@
   let teamData = { notices: [], todos: [] };
   let newCars = [];
   let usedCars = [];
+  let invDataLoaded = false;
   let dirty = false;
   let leadsFilter = 'all';
   let invView = 'grid';
@@ -84,7 +85,7 @@
     });
     $('tb-title').textContent = TITLES[tab];
     $('tb-crumb').textContent = CRUMBS[tab];
-    if (tab === 'inventory') renderInv();
+    if (tab === 'inventory' && invDataLoaded) renderInv();
     if (tab === 'workspace') renderWs();
     if (tab === 'leads') renderLeads();
     closeSb();
@@ -109,6 +110,8 @@
     window.CARS_DB = newCars;
     window.USED_CARS_DB = usedCars;
     markDirty(false);
+    invDataLoaded = true;
+    if ($('view-inventory') && $('view-inventory').style.display !== 'none') renderInv();
   }
 
   window.fetchData = async function () {
@@ -153,9 +156,9 @@
   };
 
   function updateStats() {
-    const ins = allData.filter((d) => d.formId === 'ins').length;
-    const fin = allData.filter((d) => d.formId === 'fin').length;
-    const svc = allData.filter((d) => !['ins', 'fin', 'partForm', 'sellCar'].includes(d.formId)).length;
+    const ins = allData.filter((d) => categoryOf(d) === 'insurance').length;
+    const fin = allData.filter((d) => categoryOf(d) === 'finance').length;
+    const svc = allData.filter((d) => !['insurance', 'finance', 'parts', 'sellCar'].includes(categoryOf(d))).length;
     [['st-total', allData.length], ['st-ins', ins], ['st-fin', fin], ['st-svc', svc]].forEach(([id, v]) => {
       const el = $(id); if (el) el.textContent = v;
     });
@@ -198,14 +201,47 @@
 
   window.toggleFlagL = function (idx) { window.toggleFlag(idx); renderLeads(); };
 
-  function badge(formId) {
-    if (formId === 'ins') return '<span class="badge bg-b">Insurance</span>';
-    if (formId === 'fin') return '<span class="badge bg-a">Finance</span>';
-    if (formId === 'partForm') return '<span class="badge bg-g">Parts</span>';
-    if (formId === 'testDrive') return '<span class="badge" style="background:#e0a800;color:#fff">Test Drive</span>';
-    if (formId === 'requestInfo') return '<span class="badge bg-g">Req. Info</span>';
-    if (formId === 'sellCar') return '<span class="badge" style="background:var(--amber);color:#fff">Sell Car</span>';
-    return '<span class="badge bg-p">Service</span>';
+  // Mirrors server.js normalizeFormType() — keep in sync so the dashboard's
+  // category badges/filters match what forms actually send as formId/formType.
+  function categoryOf(row) {
+    const raw = String(row.formType || row.formId || row.type || row.req_type || '').toLowerCase().trim();
+    if (!raw || raw === 'general' || raw === 'unknown') return 'general';
+    if (['booking-form', 'maintenance', 'repair', 'book service', 'bookservice'].some((k) => raw.includes(k))) return 'maintenance';
+    if (raw.includes('dotm')) return 'dotm';
+    if (raw === 'fin-form' || raw.includes('finance')) return 'finance';
+    if (['ins-form', 'insurance', 'insure'].some((k) => raw.includes(k))) return 'insurance';
+    if (['partform', 'partsandacc', 'parts', 'accessories'].some((k) => raw.includes(k))) return 'parts';
+    if (raw.includes('acs') || raw.includes('unlock')) return 'requestInfo';
+    if (['sellcar', 'sell'].some((k) => raw.includes(k))) return 'sellCar';
+    if (raw.includes('testdrive')) return 'testDrive';
+    if (raw.includes('brochure') || raw.includes('pdf') || raw.includes('pricerequest')) return 'brochure';
+    if (raw.includes('usedcar') || raw === 'used') return 'usedCarInquiry';
+    if (raw.includes('requestinfo') || raw.includes('cardetail') || raw.includes('pricedetail')) return 'requestInfo';
+    if (['requestform', 'otherservice', 'other', 'workshop', 'roadside', 'telematics', 'cosmetic'].some((k) => raw.includes(k))) return 'otherService';
+    return 'general';
+  }
+
+  const CATEGORY_LABELS = {
+    maintenance: ['Maintenance', 'bg-p'],
+    dotm: ['DOTM', 'bg-n'],
+    insurance: ['Insurance', 'bg-b'],
+    finance: ['Finance', 'bg-a'],
+    parts: ['Parts', 'bg-g'],
+    otherService: ['Other Service', 'bg-p'],
+    sellCar: ['Sell Car', null],
+    testDrive: ['Test Drive', null],
+    brochure: ['Brochure', 'bg-n'],
+    usedCarInquiry: ['Used Car', 'bg-g'],
+    requestInfo: ['Req. Info', 'bg-g'],
+    general: ['General', 'bg-n'],
+  };
+
+  function badge(row) {
+    const cat = categoryOf(row);
+    const [label, cls] = CATEGORY_LABELS[cat] || CATEGORY_LABELS.general;
+    if (cat === 'testDrive') return '<span class="badge" style="background:#e0a800;color:#fff">' + label + '</span>';
+    if (cat === 'sellCar') return '<span class="badge" style="background:var(--amber);color:#fff">' + label + '</span>';
+    return '<span class="badge ' + cls + '">' + label + '</span>';
   }
 
   function initials(name) {
@@ -228,10 +264,7 @@
   window.renderTable = function () {
     const filter = $('tf') ? $('tf').value : 'all';
     const srch = ($('srch') && $('srch').value || '').toLowerCase();
-    let data = allData.filter((d) => {
-      if (filter === 'service') return !['ins', 'fin', 'partForm', 'testDrive', 'requestInfo', 'sellCar'].includes(d.formId);
-      return filter === 'all' || d.formId === filter;
-    });
+    let data = allData.filter((d) => filter === 'all' || categoryOf(d) === filter);
     if (srch) data = data.filter((d) => {
       const p = parseRow(d);
       return p.name.toLowerCase().includes(srch) || p.contact.toLowerCase().includes(srch) || JSON.stringify(d).toLowerCase().includes(srch);
@@ -250,7 +283,7 @@
       const ms = main.length > 32 ? main.slice(0, 32) + '…' : main;
       return '<tr onclick="openModal(' + idx + ')">' +
         '<td><div class="c-mono">' + ds + '</div><div style="font-size:11px;color:var(--text-3)">' + ts + '</div></td>' +
-        '<td>' + badge(row.formId) + '</td>' +
+        '<td>' + badge(row) + '</td>' +
         '<td><div style="display:flex;align-items:center;gap:7px"><div class="avatar">' + initials(name) + '</div><span class="c-bold">' + name + '</span></div></td>' +
         '<td class="c-dim">' + contact + '</td>' +
         '<td class="c-dim" style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + ms + '</td>' +
@@ -286,7 +319,7 @@
         '<td><div style="display:flex;align-items:center;gap:7px"><div class="avatar">' + initials(name) + '</div><span class="c-bold">' + name + '</span></div></td>' +
         '<td class="c-dim">' + contact + '</td>' +
         '<td class="c-dim">' + main + '</td>' +
-        '<td>' + badge(row.formId) + '</td>' +
+        '<td>' + badge(row) + '</td>' +
         '<td onclick="event.stopPropagation()"><select id="lls-' + idx + '" class="ls s-' + st + '" onchange="saveLeadStatus(' + idx + ',this.value);renderLeads()">' +
         ['new', 'contacted', 'qualified', 'closed'].map((v) => '<option value="' + v + '"' + (st === v ? ' selected' : '') + '>' + v.charAt(0).toUpperCase() + v.slice(1) + '</option>').join('') +
         '</select></td>' +
@@ -295,14 +328,32 @@
     }).join('');
   }
 
+  function prettyLabel(k) {
+    return k
+      .replace(/^(ind|corp)_/, '')
+      .replace(/[_-]+/g, ' ')
+      .replace(/([a-z])([A-Z])/g, '$1 $2')
+      .replace(/\b\w/g, (c) => c.toUpperCase())
+      .trim();
+  }
+
   window.openModal = function (idx) {
     const row = allData[idx];
     const { name, contact } = parseRow(row);
     $('m-title').textContent = name !== '-' ? name : 'Submission';
-    $('m-sub').textContent = row.timestamp ? new Date(row.timestamp).toLocaleString() : 'Details';
-    const skip = ['formId', 'timestamp'];
-    const fields = Object.entries(row).filter(([k]) => !skip.includes(k))
-      .map(([k, v]) => '<div class="kv"><div class="kv-k">' + k + '</div><div class="kv-v">' + (v || '–') + '</div></div>').join('');
+    $('m-sub').textContent = (badge(row).replace(/<[^>]+>/g, '')) + ' · ' + (row.timestamp ? new Date(row.timestamp).toLocaleString() : 'Details');
+    const skip = ['id', 'formId', 'formType', 'type', 'timestamp'];
+    const fields = Object.entries(row).filter(([k, v]) => !skip.includes(k) && v !== '' && v != null)
+      .map(([k, v]) => {
+        if (k === 'photos' || (Array.isArray(v) && String(v[0] || '').startsWith('data:image'))) {
+          const photos = Array.isArray(v) ? v : [v];
+          return '<div class="kv"><div class="kv-k">Photos</div><div class="kv-v">' + photos.length + ' attached<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">' +
+            photos.slice(0, 12).map((p) => '<img src="' + esc(p) + '" style="width:64px;height:64px;object-fit:cover;border-radius:6px;border:1px solid var(--border)">').join('') +
+            '</div></div></div>';
+        }
+        const val = Array.isArray(v) ? v.join(', ') : (typeof v === 'object' ? JSON.stringify(v) : String(v));
+        return '<div class="kv"><div class="kv-k">' + esc(prettyLabel(k)) + '</div><div class="kv-v">' + (esc(val) || '–') + '</div></div>';
+      }).join('');
     const note = leadNotes[getLeadKey(idx)] || '';
     $('m-body').innerHTML = (fields || '<p class="empty">No fields.</p>') +
       '<div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border)">' +

@@ -1910,7 +1910,7 @@
       {
         "name": "Lxi",
         "slug": "lxi",
-        "price": 0,
+        "price": 5399000,
         "label": "Base",
         "popular": false,
         "transmission": "5MT / e-CVT (Strong Hybrid)",
@@ -1946,7 +1946,7 @@
       {
         "name": "Vxi",
         "slug": "vxi",
-        "price": 0,
+        "price": 5899000,
         "label": "Mid",
         "popular": false,
         "transmission": "5MT / 6AT / e-CVT",
@@ -1977,7 +1977,7 @@
       {
         "name": "Zxi / Zxi (O)",
         "slug": "zxi",
-        "price": 0,
+        "price": 6299000,
         "label": "Top",
         "popular": true,
         "transmission": "5MT / 6AT / AllGrip 6AT / e-CVT",
@@ -2008,7 +2008,7 @@
       {
         "name": "Zxi+ / Zxi+ (O)",
         "slug": "zxi-plus",
-        "price": 0,
+        "price": 6799000,
         "label": "Flagship",
         "popular": false,
         "transmission": "6AT / AllGrip 6AT / e-CVT",

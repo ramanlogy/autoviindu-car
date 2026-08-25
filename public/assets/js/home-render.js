@@ -3,6 +3,19 @@
  * Returns HTML string for #app-root
  */
 window.AV = window.AV || {};
+
+const eventMiniCard = ev => `<div class="event-mini-card" onclick="window.location.href='/events.html?article=${ev.id}'">
+    <div class="emc-top">
+      ${ev.img ? `<img src="${ev.img}" alt="${ev.title}" loading="lazy">` : `<div class="emc-icon"><i data-lucide="${ev.icon}"></i></div>`}
+      <div class="emc-date"><span class="emc-dnum">${ev.dnum}</span><span class="emc-dmon">${ev.dmon}</span></div>
+    </div>
+    <div class="emc-body">
+      <span class="emc-cat">${ev.cat}</span>
+      <div class="emc-title">${ev.title}</div>
+      <div class="emc-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>${ev.venue}</div>
+    </div>
+  </div>`;
+
 window.AV.scrollCarousel = function (id, direction) {
   const container = document.getElementById(id);
   if (container) {
@@ -153,7 +166,7 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
     
   ];
   const pill = c => `<button type="button" class="home-pill" onclick="AV.goTo('cars',{filter:'${c.filter}'})"><img src="${c.image}" alt="${c.label}" />${c.label}</button>`;
-  const brandCard = b => `<div class="brand-card" onclick="AV.goTo('cars',{brand:'${b.name}'})"><div class="brand-logo" style="background:#f7f9f7;padding:4px"><img src="${b.logo}" alt="${b.name}" loading="lazy" style="width:100%;height:100%;object-fit:contain" onerror="this.style.display='none'"></div><span class="brand-name">${b.name}</span></div>`;
+  const brandCard = b => `<div class="brand-card" onclick="AV.goTo('cars',{brand:'${b.name}'})"><div class="brand-logo" style="background:#f8faf9;padding:4px"><img src="${b.logo}" alt="${b.name}" loading="lazy" style="width:100%;height:100%;object-fit:contain" onerror="this.style.display='none'"></div><span class="brand-name">${b.name}</span></div>`;
   window.AV.brandCardTemplate = brandCard;
   window.AV.ALL_BRANDS = BRANDS;
 
@@ -271,27 +284,25 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
 
   const EVENTS_DATA = [
     { id: 'e1', cat: 'Auto Expo', icon: 'calendar-days', dnum: '25', dmon: 'AUG', title: "18th NADA Auto Show 2026 — Golden Jubilee Edition", venue: 'Bhrikutimandap, Kathmandu', img: '/assets/images/events/nadashow.jpg' },
-    { id: 'e2', cat: 'EV Expo', icon: 'zap', dnum: '26', dmon: 'NOV', title: "EVTECH Nepal Expo 2026", venue: 'Bhrikutimandap, Kathmandu', img: '/assets/images/events/evtech.webp' },
+    { id: 'e2', cat: 'EV Expo', icon: 'zap', dnum: '26', dmon: 'NOV', title: "EVTECH Nepal Expo 2026", venue: 'Bhrikutimandap, Kathmandu' },
   ];
-  const eventMiniCard = ev => `<div class="event-mini-card" onclick="window.location.href='/events.html?article=${ev.id}'">
-    <div class="emc-top">
-      ${ev.img ? `<img src="${ev.img}" alt="${ev.title}" loading="lazy">` : `<div class="emc-icon"><i data-lucide="${ev.icon}"></i></div>`}
-      <div class="emc-date"><span class="emc-dnum">${ev.dnum}</span><span class="emc-dmon">${ev.dmon}</span></div>
-    </div>
-    <div class="emc-body">
-      <span class="emc-cat">${ev.cat}</span>
-      <div class="emc-title">${ev.title}</div>
-      <div class="emc-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>${ev.venue}</div>
-    </div>
-  </div>`;
+
+  // Refresh the teaser with live data from the admin-managed events CMS once it's loaded,
+  // keeping EVENTS_DATA above only as the fallback when the API is empty/unreachable.
+  setTimeout(async function () {
+    if (!window.AVContent) return;
+    const grid = document.getElementById('events-grid');
+    if (!grid) return;
+    const data = await window.AVContent.load('events');
+    const upcoming = window.AVContent.published(data && data.upcoming).slice(0, 6);
+    if (upcoming.length) {
+      grid.innerHTML = upcoming.map(eventMiniCard).join('');
+      if (window.lucide) window.lucide.createIcons();
+    }
+  }, 0);
 
   return `
 <style>
-/* Keep every section heading on this page flush with the same left edge as .home-head (max-width:1200, centered) */
-.home-discover .wrap,
-.home-close .home-close__inner {
-  max-width: 1200px;
-}
 .hero { position: relative; overflow: hidden; background: #ffffff; }
 .hero-slides { display: flex; transition: transform 1s cubic-bezier(.77, 0, .175, 1); }
 .hero-slide { min-width: 100%; position: relative; height: 480px; display: flex; align-items: stretch; background: #ffffff; }
@@ -393,7 +404,7 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
   display: block;
 }
 .hero-glass-search .sw-select {
-  background: #f7f9f7;
+  background: #ffffff;
   border: 1px solid #cbd5e1;
   border-radius: 9px;
   padding: 9px 10px;
@@ -568,7 +579,7 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
   .hero-glass-search .sw-tab.active { color: var(--brand, #1a6b2a); border-bottom-color: var(--brand, #1a6b2a); }
   .hero-glass-search .sw-popular-label { color: #666; }
   .hero-glass-search .sw-pop-tag { color: #111; background: #f3f4f6; border-color: #e5e7eb; }
-  .hero-glass-search .sw-select { border: 1px solid #d1d5db; background: #f7f9f7; }
+  .hero-glass-search .sw-select { border: 1px solid #d1d5db; background: #fff; }
 }
 
 /* Upcoming Events — compact carousel cards */
@@ -593,7 +604,7 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
 .emc-top {
   position: relative;
   aspect-ratio: 16 / 9;
-  background: #f7f9f7;
+  background: linear-gradient(135deg, #f0f4f1, #e0ebe2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -641,204 +652,97 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
   text-overflow: ellipsis;
 }
 
-/* ── Trust band — split photo + stats, the one tinted section on the page ── */
-.trust-split {
+/* Promo cards — "Know your car's true worth" / "Find your perfect car" */
+.promo-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .promo-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+.promo-card {
+  display: flex;
   align-items: center;
-}
-@media (min-width: 860px) {
-  .trust-split {
-    grid-template-columns: 5fr 7fr;
-    gap: 56px;
-  }
-}
-.trust-split__media {
-  border-radius: var(--home-radius, 20px);
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-}
-.trust-split__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.trust-split__body .home-sub {
-  max-width: 60ch;
-  margin-top: 6px;
-}
-.trust-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px 28px;
-  margin-top: 28px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(17, 22, 18, .08);
-}
-@media (min-width: 560px) {
-  .trust-stats {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-.trust-stat-num {
-  font-family: var(--font-d);
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--g2, #0E5E26);
-  line-height: 1.1;
-}
-.trust-stat-label {
-  font-size: 12.5px;
-  color: var(--ink4, #6d7d72);
-  font-weight: 600;
-  margin-top: 4px;
-}
-
-/* ── Expert advice rail ── */
-.advice-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-@media (min-width: 700px) {
-  .advice-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-.advice-card {
-  display: block;
-  border-radius: var(--home-radius, 20px);
-  overflow: hidden;
+  gap: 18px;
+  background: #fff;
   border: 1px solid var(--border, #E2EAE4);
-  text-decoration: none;
-  color: inherit;
+  border-radius: 20px;
+  padding: 18px;
+  cursor: pointer;
   transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
 }
 @media (min-width: 768px) {
-  .advice-card:hover {
-    box-shadow: 0 10px 28px rgba(17,22,18,.08);
+  .promo-card:hover {
+    box-shadow: 0 10px 28px rgba(17,22,18,.07);
     transform: translateY(-2px);
     border-color: var(--border2, #ccd7cf);
   }
 }
-.advice-card__img {
-  aspect-ratio: 16 / 10;
-  background: var(--home-grey, #f7f9f7);
-}
-.advice-card__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.advice-card__body {
-  padding: 20px;
-}
-.advice-card__eyebrow {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--g3);
-}
-.advice-card__title {
-  font-family: var(--font-d);
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--ink, #111612);
-  margin: 8px 0 6px;
-  line-height: 1.3;
-}
-.advice-card__desc {
-  font-size: 13px;
-  color: var(--ink4, #6d7d72);
-  line-height: 1.55;
-}
-
-/* ── Closing section — sell / buy, two cards ── */
-.home-close {
-  padding: var(--section-y) 0;
-  background: var(--white, #fff);
-}
-.home-close__inner { width: 100%; }
-.home-close__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-@media (min-width: 720px) {
-  .home-close__grid { grid-template-columns: 1fr 1fr; }
-}
-.home-close-card {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 18px;
-  background: var(--white, #fff);
-  border: 1.5px solid var(--border, #e5e9e5);
-  border-radius: var(--home-radius, 20px);
-}
-.home-close-card__img-wrap {
-  position: relative;
-  flex-shrink: 0;
-  width: 128px;
-  height: 128px;
+.promo-card-img {
+  flex: 0 0 116px;
+  width: 116px;
+  height: 96px;
   border-radius: 14px;
   overflow: hidden;
-  background: var(--home-grey, #f7f9f7);
+  background: var(--g-ll, #eef6f1);
 }
-.home-close-card__img-wrap img {
+.promo-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-.home-close-card__badge {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background: var(--g3, #1a6b2a);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .02em;
-  padding: 3px 8px;
-  border-radius: var(--pill, 999px);
+.promo-card-body {
+  flex: 1;
+  min-width: 0;
 }
-.home-close-card__title {
-  font-family: var(--font-h);
-  font-size: 17px;
+.promo-card-title {
+  font-family: var(--font-d);
+  font-size: 19px;
   font-weight: 800;
-  color: var(--ink);
-  line-height: 1.25;
-  margin-bottom: 4px;
+  color: var(--ink, #111612);
+  margin: 0 0 4px;
+  line-height: 1.2;
 }
-.home-close-card__sub {
-  font-size: 12.5px;
-  color: var(--ink4);
+.promo-card-sub {
+  font-size: 13px;
+  color: var(--ink4, #6d7d72);
+  margin: 0 0 14px;
   line-height: 1.4;
-  margin-bottom: 12px;
 }
-.home-close-card__btn {
+.promo-card-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--g2, #0E5E26);
+  background: #fff;
+  color: var(--g2, #0E5E26);
+  font-size: 13.5px;
   font-weight: 700;
-  color: var(--g3);
-  background: var(--g-ll);
-  border: 1.5px solid rgba(26, 107, 42, .2);
-  border-radius: var(--pill, 999px);
-  padding: 8px 16px;
   cursor: pointer;
-  transition: all var(--ease);
+  transition: all .2s ease;
+  font-family: var(--font-b);
 }
-.home-close-card__btn:hover {
-  background: var(--g3);
+.promo-card-btn:hover {
+  background: var(--g2, #0E5E26);
   color: #fff;
-  border-color: var(--g3);
+}
+@media (max-width: 480px) {
+  .promo-card {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .promo-card-img {
+    width: 100%;
+    height: 140px;
+  }
 }
 </style>
 <div class="home-page">
@@ -1250,32 +1154,24 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
     </div>
   </section>
 
- 
- 
-  <!-- Closing moment — sell your car / buy a car -->
-  <section class="home-close">
-    <div class="wrap home-close__inner">
-      <div class="home-close__grid">
-        <div class="home-close-card">
-          <div class="home-close-card__img-wrap">
-            <span class="home-close-card__badge">Your offer</span>
-            <img src="/assets/images/hero_images/fortuner.jpg" alt="Sell your car" loading="lazy">
-          </div>
-          <div>
-            <div class="home-close-card__title">Wanna sell your car?</div>
-            <div class="home-close-card__sub">Get a free valuation in minutes — no paperwork hassle.</div>
-            <button type="button" class="home-close-card__btn" onclick="window.location.href='/sellyourcar'">Get my car's value ${IC.chevR || '→'}</button>
+  <!-- Promo cards -->
+  <section class="home-section home-section--white">
+    <div class="wrap home-section__inner">
+      <div class="promo-grid">
+        <div class="promo-card" onclick="window.location.href='/sellyourcar'">
+          <div class="promo-card-img"><img src="/assets/images/hero_images/fortuner.jpg" alt="Know your car's true worth" loading="lazy"></div>
+          <div class="promo-card-body">
+            <h3 class="promo-card-title">Wanna sell your car?</h3>
+            <p class="promo-card-sub">Get a free valuation of your car</p>
+            <button type="button" class="promo-card-btn" onclick="event.stopPropagation();window.location.href='/sellyourcar'">Get my offer ${IC.chevR || '→'}</button>
           </div>
         </div>
-        <div class="home-close-card">
-          <div class="home-close-card__img-wrap">
-            <span class="home-close-card__badge">500+ listings</span>
-            <img src="/assets/images/hero_images/couple.jpeg" alt="Buy a car" loading="lazy">
-          </div>
-          <div>
-            <div class="home-close-card__title">Looking to buy a car?</div>
-            <div class="home-close-card__sub">Browse 500+ verified listings built for Nepal's roads.</div>
-            <button type="button" class="home-close-card__btn" onclick="AV.goTo('cars')">Browse all cars ${IC.chevR || '→'}</button>
+        <div class="promo-card" onclick="AV.goTo('cars')">
+          <div class="promo-card-img"><img src="/assets/images/hero_images/Tata-Motors-Nexon-EV.jpg" alt="Find your perfect car in Nepal" loading="lazy"></div>
+          <div class="promo-card-body">
+            <h3 class="promo-card-title">Buy a new car</h3>
+            <p class="promo-card-sub">Find car you love at the best price</p>
+            <button type="button" class="promo-card-btn" onclick="event.stopPropagation();AV.goTo('cars')">Browse all cars ${IC.chevR || '→'}</button>
           </div>
         </div>
       </div>

@@ -180,13 +180,18 @@
           </div>
           <select class="f-sel" id="tf" onchange="renderTable()">
             <option value="all">All types</option>
-            <option value="ins">Insurance</option>
-            <option value="fin">Finance</option>
-            <option value="partForm">Parts</option>
-            <option value="service">Service</option>
             <option value="testDrive">Test Drive</option>
             <option value="requestInfo">Request Info</option>
+            <option value="usedCarInquiry">Used Car Inquiry</option>
+            <option value="brochure">Brochure Download</option>
             <option value="sellCar">Sell Car</option>
+            <option value="maintenance">Maintenance / Repair</option>
+            <option value="dotm">DOTM</option>
+            <option value="insurance">Insurance</option>
+            <option value="finance">Finance</option>
+            <option value="parts">Parts & Accessories</option>
+            <option value="otherService">Other Services</option>
+            <option value="general">General</option>
           </select>
         </div>
       </div>
@@ -271,7 +276,14 @@
       <span class="card-cnt" id="inv-cnt">0 cars</span>
     </div>
 
-    <div class="inv-grid" id="inv-grid"></div>
+    <div class="inv-grid" id="inv-grid">
+      <div class="inv-skel-card"><div class="skel-img skel-block"></div><div class="inv-card-body"><div class="skel-line skel-block w-70"></div><div class="skel-line skel-block w-45"></div><div class="skel-line skel-block w-35"></div></div></div>
+      <div class="inv-skel-card"><div class="skel-img skel-block"></div><div class="inv-card-body"><div class="skel-line skel-block w-70"></div><div class="skel-line skel-block w-45"></div><div class="skel-line skel-block w-35"></div></div></div>
+      <div class="inv-skel-card"><div class="skel-img skel-block"></div><div class="inv-card-body"><div class="skel-line skel-block w-70"></div><div class="skel-line skel-block w-45"></div><div class="skel-line skel-block w-35"></div></div></div>
+      <div class="inv-skel-card"><div class="skel-img skel-block"></div><div class="inv-card-body"><div class="skel-line skel-block w-70"></div><div class="skel-line skel-block w-45"></div><div class="skel-line skel-block w-35"></div></div></div>
+      <div class="inv-skel-card"><div class="skel-img skel-block"></div><div class="inv-card-body"><div class="skel-line skel-block w-70"></div><div class="skel-line skel-block w-45"></div><div class="skel-line skel-block w-35"></div></div></div>
+      <div class="inv-skel-card"><div class="skel-img skel-block"></div><div class="inv-card-body"><div class="skel-line skel-block w-70"></div><div class="skel-line skel-block w-45"></div><div class="skel-line skel-block w-35"></div></div></div>
+    </div>
 
     <div class="card" id="inv-table-wrap" style="display:none;margin-top:0">
       <div class="t-wrap">

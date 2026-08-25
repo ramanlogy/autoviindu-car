@@ -1013,12 +1013,12 @@
         let maxReached = 1;
 
         function renderStepper() {
-            stepperTitle.textContent = STEP_TITLES[currentStep];
-            stepperSub.textContent = `Step ${currentStep} of ${TOTAL_STEPS}`;
+            if (stepperTitle) stepperTitle.textContent = STEP_TITLES[currentStep];
+            if (stepperSub) stepperSub.textContent = `Step ${currentStep} of ${TOTAL_STEPS}`;
 
             const pct = ((currentStep - 1) / (TOTAL_STEPS - 1)) * 100;
-            stepperFill.style.width = pct + '%';
-            stepperCar.style.left = `calc(${pct}% )`;
+            if (stepperFill) stepperFill.style.width = pct + '%';
+            if (stepperCar) stepperCar.style.left = `calc(${pct}% )`;
 
             stepperNodes.forEach(node => {
                 const n = Number(node.dataset.node);

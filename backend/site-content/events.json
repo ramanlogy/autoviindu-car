@@ -1,6 +1,115 @@
 {
-  "upcoming": [],
-  "past": [],
+  "upcoming": [
+    {
+      "photos": [],
+      "published": true,
+      "id": "e1",
+      "cat": "Auto Expo",
+      "catKey": "expo",
+      "title": "18th NADA Auto Show 2026 — The Golden Jubilee Edition",
+      "excerpt": "NADA's 50th-anniversary show takes over Bhrikutimandap for six days with 200+ stalls, 23 passenger-vehicle brands, and a new International Business Pavilion.",
+      "date": "Aug 25–30, 2026",
+      "dnum": "25",
+      "dmon": "AUG",
+      "venue": "Bhrikutimandap Exhibition Hall, Kathmandu",
+      "time": "Daily, see nada.org.np for hours",
+      "icon": "calendar-days",
+      "status": "open",
+      "img": "/assets/images/events/nadashow.jpg",
+      "body": [
+        "Nepal Automobiles Dealers' Association marks its 50th anniversary with the 18th NADA Auto Show, running six days at the Bhrikutimandap Exhibition Hall from August 25–30, 2026.",
+        "Organisers expect around 200,000 visitors across the show, with more than 200 stalls covering passenger vehicles from 23 brands, light commercial vehicles from 17 brands, two-wheelers from 13 brands, and financing or insurance desks from 10 providers.",
+        "This Golden Jubilee edition also introduces a new International Business Pavilion, giving overseas companies a dedicated space to connect with Nepali dealers and government stakeholders. Tickets are sold online through Khalti."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "e2",
+      "cat": "EV Expo",
+      "catKey": "expo",
+      "title": "EVTECH Nepal Expo 2026",
+      "excerpt": "A dedicated EV and battery-technology expo bringing manufacturers, charging-infrastructure companies, and policymakers together at Bhrikutimandap.",
+      "date": "Nov 26–28, 2026",
+      "dnum": "26",
+      "dmon": "NOV",
+      "venue": "Bhrikutimandap Exhibition Hall, Kathmandu",
+      "time": "Details TBA",
+      "icon": "zap",
+      "status": "open",
+      "img": "/assets/images/events/evtech.webp",
+      "body": [
+        "EVTECH Nepal Expo 2026 runs November 26–28 at the Bhrikutimandap Exhibition Hall, focused specifically on electric mobility rather than the general vehicle lineup of Nepal's bigger auto shows.",
+        "The expo is built for EV manufacturers, battery-technology suppliers, and charging-infrastructure companies to showcase their latest products alongside policymakers and investors exploring Nepal's EV market.",
+        "Full exhibitor lists and visitor timings had not been published at the time of writing — check back closer to the date for confirmed details."
+      ]
+    }
+  ],
+  "past": [
+    {
+      "photos": [],
+      "published": true,
+      "id": "p1",
+      "cat": "Auto Expo",
+      "catKey": "expo",
+      "title": "NAIMA Nepal Mobility Expo 2026",
+      "excerpt": "A six-day mobility expo at Bhrikutimandap featuring 55+ brands, 51 stalls, and over 40 new vehicle launches — visitor numbers passed 150,000 by day five.",
+      "date": "Aug 11–16, 2026",
+      "dnum": "11",
+      "dmon": "AUG",
+      "venue": "Bhrikutimandap Exhibition Hall, Kathmandu",
+      "time": "Concluded",
+      "icon": "zap",
+      "status": "done",
+      "body": [
+        "NAIMA's second Nepal Mobility Expo ran six days at Bhrikutimandap from August 11–16, 2026, with 51 stalls hosting more than 55 automobile and mobility brands.",
+        "Organisers reported over 40 new vehicle and product launches during the show, and visitor numbers passed 150,000 by the fifth day — ahead of the organisers' own targets.",
+        "The expo positioned itself around a broader \"mobility ecosystem\" theme, covering EVs, hybrids, two-wheelers, and charging infrastructure rather than passenger cars alone."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "p2",
+      "cat": "Auto Expo",
+      "catKey": "expo",
+      "title": "Chitwan Auto Show 2026",
+      "excerpt": "Bharatpur's regional auto show ran five days with 75 stalls of cars, jeeps, motorcycles and scooters, reportedly closing over NPR 1 billion in business.",
+      "date": "Apr 30 – May 4, 2026",
+      "dnum": "30",
+      "dmon": "APR",
+      "venue": "Chitwan Exhibition Centre, Bharatpur",
+      "time": "Concluded",
+      "icon": "calendar-days",
+      "status": "done",
+      "body": [
+        "The Chitwan Automobile Dealers Association and Chitwan Automobiles Association jointly ran this year's Chitwan Auto Show from April 30 to May 4 at the Chitwan Exhibition Centre in Bharatpur.",
+        "The five-day show hosted 75 stalls covering cars, jeeps, motorcycles, and scooters for the Chitwan and wider Terai market.",
+        "Local coverage reported over NPR 1 billion in show-period transactions, making it one of the larger regional auto shows outside the Kathmandu Valley."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "p3",
+      "cat": "Auto Expo",
+      "catKey": "expo",
+      "title": "NADA Presents WADA Auto Show 2026",
+      "excerpt": "The second edition of Pokhara's own NADA-backed auto show ran at Lakeside, alongside a vintage car and robotics display.",
+      "date": "Mar 25–29, 2026",
+      "dnum": "25",
+      "dmon": "MAR",
+      "venue": "Lakeside Chowk, Pokhara",
+      "time": "Concluded",
+      "icon": "calendar-days",
+      "status": "done",
+      "body": [
+        "NADA's western-region show, WADA Auto Show, returned to Pokhara for its second edition from March 25–29, 2026, at a dedicated ground near Talbarahi Chowk, Lakeside.",
+        "The show covered small, medium, and heavy vehicles alongside tyres, batteries, lubricants, and components from regional dealers.",
+        "Organisers paired the vehicle lineup with a vintage car display and a robotics showcase as an added draw for Pokhara's festival-season foot traffic."
+      ]
+    }
+  ],
   "categories": {
     "upcoming": [
       [

@@ -5,10 +5,10 @@
     "brand": "Haval",
     "model": "Jolion",
     "year": 2025,
-    "type": "Petrol",
+    "type": "Petrol / Hybrid",
     "body": "Compact SUV",
     "badge": "popular",
-    "tagline": "GWM's sharp compact SUV with DHT hybrid and ADAS under Rs. 55L",
+    "tagline": "GWM's sharp compact SUV — now with a Hybrid HEV top trim, via VG Impex Nepal",
     "rating": 4.1,
     "reviews": 487,
     "expertScore": 7.8,
@@ -48,88 +48,83 @@
     ],
     "variants": [
       {
-        "name": "Comfort",
-        "price": 3990000,
-        "label": "Rs. 39.90L",
+        "name": "High (MT)",
+        "price": 5750000,
+        "label": "Rs. 57.50L",
         "popular": false,
-        "transmission": "DCT",
+        "transmission": "MT",
         "fuel": "Petrol Turbo",
         "features": [
           "6 Airbags",
           "10.25\" Touchscreen + CarPlay",
           "Rear Camera + Sensors",
           "Electric Sunroof",
-          "Auto Climate Control",
           "17\" Alloy Wheels"
         ],
         "specs": {
-          "power": "147 hp @ 5,500 rpm",
+          "power": "150 PS",
           "torque": "220 Nm",
           "efficiency": "15.9 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "6-Speed MT"
         }
       },
       {
-        "name": "Luxury",
-        "price": 4490000,
-        "label": "Rs. 44.90L",
+        "name": "Premium (DCT)",
+        "price": 6700000,
+        "label": "Rs. 67.00L",
         "popular": false,
         "transmission": "DCT",
         "fuel": "Petrol Turbo",
         "features": [
+          "7-Speed DCT",
           "360° Camera",
           "Wireless Charging",
-          "ADAS Level 1",
           "Panoramic Sunroof",
-          "Rear AC Vents",
-          "Comfort features+"
+          "High features+"
         ],
         "specs": {
-          "power": "147 hp @ 5,500 rpm",
+          "power": "150 PS",
           "torque": "220 Nm",
           "efficiency": "15.9 km/l",
           "transmission": "7-Speed DCT"
         }
       },
       {
-        "name": "Hybrid DHT",
-        "price": 5190000,
-        "label": "Rs. 51.90L",
+        "name": "Luxury (DCT)",
+        "price": 7200000,
+        "label": "Rs. 72.00L",
         "popular": true,
-        "transmission": "DHT",
-        "fuel": "Petrol Hybrid",
+        "transmission": "DCT",
+        "fuel": "Petrol Turbo",
         "features": [
-          "1.5L + DHT Hybrid System",
-          "43km/l NEDC efficiency",
-          "ADAS Level 2",
+          "ADAS Suite",
           "Ventilated Seats",
           "Ambient Lighting",
-          "Luxury features+"
+          "Premium features+"
         ],
         "specs": {
-          "power": "190 hp (system)",
-          "torque": "375 Nm (system)",
-          "efficiency": "22.1 km/l",
-          "transmission": "DHT Hybrid"
+          "power": "150 PS",
+          "torque": "220 Nm",
+          "efficiency": "15.9 km/l",
+          "transmission": "7-Speed DCT"
         }
       },
       {
-        "name": "Hybrid Premium",
-        "price": 5890000,
-        "label": "Rs. 58.90L",
+        "name": "Hybrid (HEV)",
+        "price": 8300000,
+        "label": "Rs. 83.00L",
         "popular": false,
         "transmission": "DHT",
         "fuel": "Petrol Hybrid",
         "features": [
+          "1.5L + DHT Hybrid System",
           "Nappa Leather",
           "Head-Up Display",
-          "10-Speaker Audio",
-          "Drive Modes (4)",
-          "Hybrid DHT features+"
+          "Luxury features+"
         ],
         "specs": {
-          "power": "190 hp (system)",
-          "torque": "375 Nm",
+          "power": "190 PS (system)",
+          "torque": "375 Nm (system)",
           "efficiency": "22.1 km/l",
           "transmission": "DHT Hybrid"
         }
@@ -151,7 +146,8 @@
       "Height": "1,628 mm",
       "Wheelbase": "2,700 mm",
       "Ground Clearance": "190 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Distributor": "VG Impex Pvt. Ltd. (Official GWM/Haval Nepal Distributor, Thapathali, Kathmandu)"
     },
     "pros": [
       "DHT hybrid at competitive price",
@@ -179,10 +175,10 @@
     "brand": "Haval",
     "model": "H6",
     "year": 2025,
-    "type": "Petrol Hybrid",
+    "type": "Petrol",
     "body": "Mid-size SUV",
     "badge": "new",
-    "tagline": "GWM's flagship mid-size hybrid SUV with AWD and 240hp system",
+    "tagline": "GWM's flagship mid-size SUV — 2.0T petrol, intelligent 4WD, via VG Impex Nepal",
     "rating": 4.2,
     "reviews": 213,
     "expertScore": 8,
@@ -219,11 +215,11 @@
     "variants": [
       {
         "name": "Luxury FWD",
-        "price": 6390000,
-        "label": "Rs. 63.90L",
+        "price": 9490000,
+        "label": "Rs. 94.90L",
         "popular": false,
         "transmission": "DHT",
-        "fuel": "Petrol Hybrid",
+        "fuel": "Petrol Turbo",
         "features": [
           "6 Airbags",
           "12.3\" Dual Screen",
@@ -242,11 +238,11 @@
       },
       {
         "name": "Premium AWD",
-        "price": 7490000,
-        "label": "Rs. 74.90L",
+        "price": 11700000,
+        "label": "Rs. 1.17 Cr",
         "popular": true,
         "transmission": "DHT",
-        "fuel": "Petrol Hybrid",
+        "fuel": "Petrol Turbo",
         "features": [
           "AWD + Rear Motor",
           "240hp Combined",
@@ -265,7 +261,7 @@
       }
     ],
     "specs": {
-      "Engine": "2.0L GDIT + DHT Hybrid",
+      "Engine": "2.0L GDIT Turbo Petrol (Intelligent 4WD)",
       "Displacement": "1,997 cc",
       "Power": "210–240 hp (system)",
       "Torque": "530–620 Nm (system)",
@@ -280,7 +276,8 @@
       "Height": "1,730 mm",
       "Wheelbase": "2,738 mm",
       "Ground Clearance": "200 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Distributor": "VG Impex Pvt. Ltd. (Official GWM/Haval Nepal Distributor, Thapathali, Kathmandu)"
     },
     "pros": [
       "240hp hybrid AWD system",
@@ -408,7 +405,8 @@
       "Wheelbase": "2,738 mm",
       "Ground Clearance": "224 mm",
       "Airbags": "6",
-      "Wading Depth": "600 mm"
+      "Wading Depth": "600 mm",
+      "Distributor": "UNCONFIRMED — no Nepal source found confirming official distribution of this model (see cons)"
     },
     "pros": [
       "224mm ground clearance",
@@ -421,7 +419,8 @@
       "2.0T thirstier in hills",
       "DCT not ideal for technical off-road",
       "No diesel option",
-      "GWM service centres limited"
+      "GWM service centres limited",
+      "UNVERIFIED FOR NEPAL: VG Impex (GWM/Haval's official Nepal distributor) has only publicly confirmed importing the 3rd-gen H6, Jolion (incl. Jolion Max EV), and the GWM Poer pickup as of 2026 — no Nepal source found confirming this model is officially sold here. Treat this entry's Nepal pricing/availability as unconfirmed."
     ],
     "highlights": [
       "224mm Clearance",
@@ -534,7 +533,8 @@
       "Wheelbase": "2,850 mm",
       "Ground Clearance": "224 mm",
       "Airbags": "6",
-      "Wading Depth": "700 mm"
+      "Wading Depth": "700 mm",
+      "Distributor": "UNCONFIRMED — no Nepal source found confirming official distribution of this model (see cons)"
     },
     "pros": [
       "224hp + 8AT — strongest petrol SUV in class",
@@ -547,7 +547,8 @@
       "Very high fuel consumption",
       "Huge size for Nepal cities",
       "Petrol only (no diesel)",
-      "Expensive for GWM brand"
+      "Expensive for GWM brand",
+      "UNVERIFIED FOR NEPAL: VG Impex (GWM/Haval's official Nepal distributor) has only publicly confirmed importing the 3rd-gen H6, Jolion (incl. Jolion Max EV), and the GWM Poer pickup as of 2026 — no Nepal source found confirming this model is officially sold here. Treat this entry's Nepal pricing/availability as unconfirmed."
     ],
     "highlights": [
       "224hp + 8AT",
@@ -558,14 +559,14 @@
   },
   {
     "id": 1005,
-    "slug": "haval-jolion-ev-2025",
+    "slug": "haval-jolion-max-ev-2025",
     "brand": "Haval",
-    "model": "Jolion EV",
+    "model": "Jolion Max EV",
     "year": 2025,
     "type": "Electric",
     "body": "Compact Electric SUV",
     "badge": "new",
-    "tagline": "Pure electric Jolion with 420km range for Nepal's urban EV buyers",
+    "tagline": "Pure electric Jolion Max — 420km+ WLTP range, via VG Impex Nepal",
     "rating": 4,
     "reviews": 58,
     "expertScore": 7.5,
@@ -597,88 +598,65 @@
     ],
     "variants": [
       {
-        "name": "Standard",
-        "price": 4990000,
-        "label": "Rs. 49.90L",
-        "popular": false,
-        "transmission": "Single Speed",
-        "fuel": "Electric",
-        "features": [
-          "50kWh Battery",
-          "350km CLTC Range",
-          "6 Airbags",
-          "10.25\" Touchscreen",
-          "Rear Camera",
-          "ADAS Level 1",
-          "17\" Alloy Wheels"
-        ],
-        "specs": {
-          "power": "201 hp",
-          "torque": "310 Nm",
-          "efficiency": "6.8 km/kWh",
-          "transmission": "Single Speed Reducer"
-        }
-      },
-      {
-        "name": "Premium",
-        "price": 5790000,
-        "label": "Rs. 57.90L",
+        "name": "Max",
+        "price": 5999000,
+        "label": "Rs. 59.99L (Launch Price)",
         "popular": true,
         "transmission": "Single Speed",
         "fuel": "Electric",
         "features": [
-          "60kWh Battery",
-          "420km CLTC Range",
-          "ADAS Level 2",
-          "360° Camera",
-          "Ventilated Seats",
-          "Wireless Charging",
-          "Standard features+"
+          "58.3 kWh Battery",
+          "420km+ WLTP Range",
+          "6 Airbags",
+          "10.25\" Touchscreen",
+          "Rear Camera",
+          "ADAS Suite",
+          "DC Fast Charging",
+          "6.6kW AC Charging"
         ],
         "specs": {
-          "power": "218 hp",
-          "torque": "340 Nm",
-          "efficiency": "6.8 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "power": "201 hp",
+          "torque": "310 Nm",
+          "range": "420+ km WLTP",
+          "battery": "58.3 kWh",
+          "charging": "DC Fast Charge / 6.6kW AC"
         }
       }
     ],
     "specs": {
-      "Battery": "50–60 kWh",
-      "Range": "350–420 km (CLTC)",
-      "Power": "201–218 hp",
-      "Torque": "310–340 Nm",
-      "Charging": "80 kW DC Fast Charge",
-      "Charge Time": "40 min (10–80%)",
+      "Battery": "58.3 kWh",
+      "Range": "420+ km WLTP",
+      "Charging (AC)": "6.6 kW",
+      "Charging (DC)": "Fast Charge (rate TBC)",
       "Transmission": "Single Speed",
-      "Drive": "RWD",
+      "Drive": "FWD",
       "Seating": "5",
       "Boot Space": "380 L",
       "Length": "4,472 mm",
       "Width": "1,841 mm",
       "Height": "1,628 mm",
       "Wheelbase": "2,700 mm",
-      "Ground Clearance": "180 mm",
-      "Airbags": "6"
+      "Ground Clearance": "190 mm",
+      "Airbags": "6",
+      "Distributor": "VG Impex Pvt. Ltd. (Official GWM/Haval Nepal Distributor — launched at NAIMA Nepal Mobility Expo 2026)"
     },
     "pros": [
-      "420km range on premium",
-      "ADAS Level 2 available",
-      "Same quality as petrol Jolion",
-      "Stylish coupe profile",
-      "Competitive Nepal price"
+      "420km+ WLTP range — strong for the segment",
+      "Rs. 59.99L launch price is aggressive for the segment",
+      "Officially imported by VG Impex, not grey market",
+      "Same coupe styling and features as petrol Jolion"
     ],
     "cons": [
-      "RWD only",
-      "80kW charging slower than rivals",
-      "CLTC range optimistic",
-      "Service for EV components uncertain"
+      "Launch price may rise after the introductory offer ends",
+      "FWD only",
+      "Charging network still developing in Nepal",
+      "New to Nepal — no long-term reliability data yet"
     ],
     "highlights": [
-      "420km Range",
-      "218hp Motor",
-      "ADAS Level 2",
-      "80kW Fast Charge"
+      "420km+ WLTP",
+      "Rs. 59.99L Launch Price",
+      "58.3 kWh Battery",
+      "VG Impex Official"
     ]
   }
 ]

@@ -15,6 +15,16 @@
 (function () {
   'use strict';
 
+  window.AV = window.AV || {};
+  window.AV.noImg = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">' +
+    '<path d="M8 40 L12 28 Q14 24 19 24 L45 24 Q50 24 52 28 L56 40" fill="none" stroke="#c3ccc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+    '<rect x="6" y="40" width="52" height="10" rx="3" fill="none" stroke="#c3ccc5" stroke-width="2.5"/>' +
+    '<circle cx="18" cy="50" r="5" fill="#f8f9fa" stroke="#c3ccc5" stroke-width="2.5"/>' +
+    '<circle cx="46" cy="50" r="5" fill="#f8f9fa" stroke="#c3ccc5" stroke-width="2.5"/>' +
+    '</svg>'
+  );
+
   function startApp() {
     let CARS_DB = window.CARS_DB || [];
     let USED = window.USED_CARS_DB || [];
@@ -91,6 +101,9 @@
         b.textContent = inList ? '<i data-lucide="check"></i> Added' : '+ Compare';
         b.classList.toggle('added', inList);
       });
+      document.querySelectorAll('[data-cmp-slug]').forEach(b => {
+        b.classList.toggle('added', compareList.includes(b.dataset.cmpSlug));
+      });
     }
 
     /* ─ WISHLIST ─ */
@@ -101,54 +114,64 @@
     }
 
     /* ─ CAR CARD ─ */
-    const badgeCls = { ev: 'badge-ev', hybrid: 'badge-hybrid', popular: 'badge-popular', bestseller: 'badge-bestseller', new: 'badge-new', trending: 'badge-trending' };
-    const badgeLbl = { ev: 'Electric', hybrid: 'Hybrid', popular: 'POPULAR', bestseller: 'BESTSELLER', new: 'NEW', trending: 'TRENDING' };
+    const ICON_VIEW_ARROW = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`;
+    const ICON_COMPARE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="M16 21l4-4-4-4"/><path d="M20 17H4"/></svg>`;
 
     function carCard(car) {
       const inCmp = compareList.includes(car.slug);
-      let badgeType = car.badge ? car.badge.toLowerCase() : 'popular';
-      if (badgeType === 'best seller') badgeType = 'bestseller';
-      const badgeText = badgeLbl[badgeType] || badgeType.toUpperCase();
-      const badgeClass = badgeCls[badgeType] || 'badge-popular';
-      const badge = `<span class="cc-badge ${badgeClass}">${badgeText}</span>`;
-      const isWished = wishlist.includes(car.slug);
       const imgSrc = (car.images && car.images.length && car.images[0]) ? car.images[0] : (car.thumb || car.img || '');
       const rawPrice = car.variants && car.variants[0] && car.variants[0].price;
       const priceDisplay = rawPrice ? (typeof rawPrice === 'number' ? window.Rs(rawPrice) : rawPrice) : (car.price || 'TBA');
-      const subtitle = [car.year || '2024', car.body || 'SUV', car.fuel || 'Petrol'].filter(Boolean).join(' &middot; ');
-      
-      const emiDisplay = car.baseEMI ? `Rs. ${car.baseEMI.toLocaleString()}/mo` : (rawPrice ? `Rs. ${Math.round(parseInt(rawPrice.toString().replace(/[^0-9]/g, '')) * 100000 * 0.01)}/mo` : 'TBA');
-
-      const iconHeart = `<svg viewBox="0 0 24 24" fill="${isWished ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>`;
-      const iconTag = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>`;
-      const iconScale = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 3v18M4 9l4-4 4 4M16 15l4 4 4-4"/></svg>`;
-      const iconArrowRight = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`;
+      const subtitle = [car.year || '', car.body || '', car.type || ''].filter(Boolean).join(' &middot; ');
+      const emiDisplay = car.baseEMI ? `Rs. ${car.baseEMI.toLocaleString()}/mo` : '';
 
       return `<div class="car-card" onclick="AV.openDetail('${car.slug}')">
-    <div class="cc-img-wrap">
-      <div class="cc-top-row">
-        ${badge}
-        <button class="cc-wish ${isWished ? 'active' : ''}" onclick="event.stopPropagation();AV.toggleWish('${car.slug}',this)">${iconHeart}</button>
-      </div>
-      <img src="${imgSrc}" alt="${car.brand} ${car.model}" loading="lazy" class="cc-img" onerror="this.onerror=null;this.src='assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg'">
+    <div class="cc-top">
+      <h3 class="cc-name">${car.brand} ${car.model}</h3>
+      <div class="cc-sub">${subtitle}</div>
     </div>
 
-    <div class="cc-body">
-      <h3 class="cc-name">${car.brand} ${car.model}</h3>
-      <div class="cc-variant">${subtitle}</div>
+    <div class="cc-img-wrap">
+      <button class="cc-cmp-btn${inCmp ? ' added' : ''}" data-cmp-slug="${car.slug}" onclick="event.stopPropagation();AV.toggleCompare('${car.slug}')" aria-label="${inCmp ? 'Remove from compare' : 'Add to compare'}" title="${inCmp ? 'Added to compare' : 'Add to compare'}">${ICON_COMPARE}</button>
+      <img src="${imgSrc}" alt="${car.brand} ${car.model}" loading="lazy" class="cc-img" onerror="this.onerror=null;this.src=window.AV.noImg;this.classList.add('cc-img--empty')">
+    </div>
 
+    <div class="cc-foot">
       <div class="cc-price-block">
         <div class="cc-price">${priceDisplay}</div>
-        <div class="cc-emi">from <span>${emiDisplay}</span></div>
+        ${emiDisplay ? `<div class="cc-emi">EMI from <span>${emiDisplay}</span></div>` : ''}
       </div>
+      <button class="cc-btn-view" onclick="event.stopPropagation();AV.openDetail('${car.slug}')">View Details ${ICON_VIEW_ARROW}</button>
+    </div>
+  </div>`;
+    }
 
-      <button class="cc-btn-view" onclick="event.stopPropagation();AV.openDetail('${car.slug}')">View Details ${iconArrowRight}</button>
-      
-      <div class="cc-footer">
-        <button class="cc-btn-offer" onclick="event.stopPropagation();AV.openRequestInfoModal('${car.slug}')">${iconTag} Get Offer</button>
-        <div class="cc-footer-sep"></div>
-        <button class="cc-btn-compare ${inCmp ? 'added' : ''}" onclick="event.stopPropagation();AV.toggleCompare('${car.slug}')">${iconScale} Compare</button>
+    /* ─ USED CAR CARD ─ */
+    function usedCard(car) {
+      const inUCmp = usedCompareList.includes(car.id);
+      const imgSrc = (car.images && car.images[0]) || car.img || '';
+      const subtitle = [car.year || '', car.body || '', car.type || ''].filter(Boolean).join(' &middot; ');
+      const emiDisplay = car.emiEst ? `Rs. ${Math.round(car.emiEst).toLocaleString()}/mo` : '';
+
+      return `<div class="car-card" onclick="AV.openUsedDetail('${car.id}')">
+    <div class="cc-top">
+      <h3 class="cc-name">${car.brand} ${car.model}</h3>
+      <div class="cc-sub">${subtitle}</div>
+    </div>
+
+    <div class="cc-img-wrap">
+      <button class="cc-cmp-btn${inUCmp ? ' added' : ''}" data-ucmp-id="${car.id}" onclick="event.stopPropagation();AV.usedToggleCompare('${car.id}')" aria-label="${inUCmp ? 'Remove from compare' : 'Add to compare'}" title="${inUCmp ? 'Added to compare' : 'Add to compare'}">${ICON_COMPARE}</button>
+      ${car.certified ? '<span class="cc-tag cc-tag-cert">Certified</span>' : ''}
+      ${car.km ? `<span class="cc-tag cc-tag-km">${car.km} km</span>` : ''}
+      <img src="${imgSrc}" alt="${car.brand} ${car.model}" loading="lazy" class="cc-img" onerror="this.onerror=null;this.src=window.AV.noImg;this.classList.add('cc-img--empty')">
+    </div>
+
+    <div class="cc-foot">
+      <div class="cc-price-block">
+        <div class="cc-price">${car.price}</div>
+        ${emiDisplay ? `<div class="cc-emi">EMI from <span>${emiDisplay}</span></div>` : ''}
       </div>
+      <button class="cc-btn-view" onclick="event.stopPropagation();AV.openUsedDetail('${car.id}')">View Details ${ICON_VIEW_ARROW}</button>
     </div>
   </div>`;
     }
@@ -218,7 +241,7 @@
         slug: 'toyota-prius'
       },
     ];
-    const BASE = 'https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/';
+    const BASE = 'assets/images/brands/';
 
     const BRANDS = [
       { name: 'Hyundai', count: '165 cars', logo: `${BASE}hyundai.png` },
@@ -1099,8 +1122,28 @@
         chk: `<polyline points="20 6 9 17 4 12"/>`,
         chev: `<polyline points="6 9 12 15 18 9"/>`,
         ph: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l1.84-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`,
+        shield: `<path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/>`,
+        batt: `<rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/>`,
+        gauge: `<path d="M4 12a8 8 0 0 1 16 0"/><path d="M12 12l4-4"/><circle cx="12" cy="12" r="1"/>`,
+        gear: `<circle cx="12" cy="12" r="3"/><path d="M12 5v2M12 17v2M5 12h2M17 12h2M7.05 7.05l1.41 1.41M15.54 15.54l1.41 1.41M7.05 16.95l1.41-1.41M15.54 8.46l1.41-1.41"/>`,
+        wrench: `<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>`,
       };
       const svgI = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${_P[k]}</svg>`;
+      const ICON_FOR_LABEL = {
+        'Ground Clearance': 'box', 'Kerb Weight': 'box',
+        'Range': 'gauge', 'Mileage': 'gauge',
+        'Power': 'pow', 'Engine (cc)': 'pow', 'Engine + Motor combo': 'pow',
+        'Battery (kWh)': 'batt', 'Charging Time': 'batt', 'Charging Time (N/A unless Plug-in)': 'batt',
+        'Torque': 'wrench',
+        'Suspension': 'gear', 'Steering': 'gear', 'Transmission': 'gear',
+        'Seating': 'sts',
+        'Fuel Type': 'fuel', 'Hybrid Type (Mild/Full/Plug-in)': 'fuel',
+      };
+      const iconForCell = lbl => {
+        if (lbl.startsWith('Warranty')) return svgI('shield');
+        if (lbl === 'Safety Rating') return IC.star;
+        return svgI(ICON_FOR_LABEL[lbl] || 'feat');
+      };
 
       /* ── Key info grid ── */
       function kiGrid(v) {
@@ -1194,15 +1237,18 @@
             ];
         }
 
-        const renderRow = (arr) => arr.filter(([, val]) => val).map(([l, val]) => `
-      <div class="dp-qs-cell">
-        <div class="dp-qs-val">${val}</div>
-        <div class="dp-qs-lbl">${l}</div>
+        const cells = [...row1, ...row2].filter(([, val]) => val).slice(0, 10);
+        const cellsHTML = cells.map(([l, val]) => `
+      <div class="dp-ki-cell">
+        <div class="dp-ki-icon">${iconForCell(l)}</div>
+        <div class="dp-ki-val">${val}</div>
+        <div class="dp-ki-lbl">${l}</div>
       </div>`).join('');
 
         return `
-          <div class="dp-qs-row">${renderRow(row1)}</div>
-          ${row2.filter(([, val]) => val).length ? `<div class="dp-qs-row">${renderRow(row2)}</div>` : ''}
+          
+          <div class="dp-ki-grid">${cellsHTML}</div>
+          <button class="dp-hl-btn" onclick="AV.switchDpTab('dp-tab-specs', document.getElementById('dp-tab-btn-specs'));document.getElementById('dp-tab-btn-specs').scrollIntoView({behavior:'smooth',block:'center'})">View all specs</button>
         `;
       }
 
@@ -1218,8 +1264,8 @@
 
       /* ── Spec table (merges car + variant specs) ── */
       const SPEC_SCHEMA = {
-        "1. Engine, Motor & Performance": ["Engine Type", "Engine Position", "Displacement (cc)", "Cylinder Configuration", "Valve Configuration", "Variable Valve Timing", "Bore x Stroke (mm)", "Compression Ratio", "Fuel System", "Aspiration", "Engine Cooling System", "Start-Stop System", "Max Engine Power", "Max Engine Torque", "Max RPM (Redline)", "Motor Type", "Motor Position", "Motor Cooling System", "Max Motor Power", "Max Motor Torque", "Combined System Output", "Drive Type", "Low Range 4WD", "Top Speed (km/h)", "Acceleration 0–100 km/h", "Power-to-Weight Ratio", "Drive Modes", "Regenerative Braking", "Boost / Overboost Function"],
-        "2. Transmission & Drivetrain": ["Transmission Type", "Number of Gears", "Shift-by-Wire", "Paddle Shifters", "Gear Shift Indicator", "Clutch Type", "Steering Type", "Steering Modes", "Variable Steering Ratio", "Differential Type", "Center Differential Lock", "Rear Differential Lock", "Transfer Case Type", "Torque Vectoring"],
+        "1. Engine, Motor & Performance": ["Engine Type", "Engine Position", "Displacement (cc)", "Cylinder Configuration", "Valve Configuration", "Variable Valve Timing", "Bore x Stroke (mm)", "Compression Ratio", "Fuel System", "Aspiration", "Engine Cooling System", "Start-Stop System", "Max Engine Power", "Max Engine Torque", "Max RPM (Redline)", "Motor Type", "Motor Position", "Motor Cooling System", "Max Motor Power", "Max Motor Torque", "Combined System Output", "Low Range 4WD", "Top Speed (km/h)", "Acceleration 0–100 km/h", "Power-to-Weight Ratio", "Drive Modes", "Regenerative Braking", "Boost / Overboost Function"],
+        "2. Transmission & Drivetrain": ["Transmission Type", "Drive Type", "Drivetrain", "Number of Gears", "Shift-by-Wire", "Paddle Shifters", "Gear Shift Indicator", "Clutch Type", "Steering Type", "Steering Modes", "Variable Steering Ratio", "Differential Type", "Center Differential Lock", "Rear Differential Lock", "Transfer Case Type", "Torque Vectoring"],
         "3. Battery & Range": ["Battery Type", "Battery Cell Format", "Battery Capacity (kWh)", "Usable Battery Capacity (kWh)", "Battery Voltage (V)", "Battery Cooling", "Battery Management System (BMS)", "State of Health (SoH) Monitoring", "Certified Range (km)", "Real-world Range (km)", "Electric-only Range (km)", "Energy Consumption (kWh/100km)", "AC Charging Max Rate (kW)", "DC Fast Charging Max Rate (kW)", "Normal Charging Time (AC)", "Fast Charging Time (DC)", "Charging Port Type", "Vehicle-to-Load (V2L)", "Vehicle-to-Grid (V2G)", "Vehicle-to-Home (V2H)"],
         "4. Fuel & Emission": ["Fuel Type", "Hybrid System Type", "Fuel Tank Capacity (L)", "Certified Fuel Efficiency (km/l)", "Real-World Mileage City (km/l)", "Real-World Mileage Highway (km/l)", "EV Mode Efficiency (km/kWh)", "Emission Standard", "CO2 Emissions (g/km)", "Emission Control Technology", "Driving Range on Full Tank (km)", "Combined Driving Range HEV (km)", "NOx Emissions (g/km)", "Particulate Emissions (mg/km)", "Fuel Grade Required"],
         "6. Dimensions & Weight": ["Overall Length (mm)", "Overall Width (mm)", "Overall Width with Mirrors (mm)", "Overall Height (mm)", "Wheelbase (mm)", "Wheelbase Type", "Ground Clearance (mm)", "Turning Radius (m)", "Kerb Weight (kg)", "Gross Vehicle Weight (GVW)", "Seating Capacity", "Boot Space (litres)", "Boot Space Seats Folded (litres)", "Low Boot Loading Lip Height (mm)", "Frunk Capacity (litres)", "Weight Distribution", "Drag Coefficient (Cd)", "Underbody Aerodynamic Paneling", "Active Aero Elements", "Front Overhang (mm)", "Rear Overhang (mm)", "Track Width Front/Rear (mm)", "Payload Capacity (kg)", "Towing Capacity (kg)", "Roof Load Capacity (kg)", "Number of Doors", "Body Type"],
@@ -1446,12 +1492,12 @@
         <div class="dp-cta-stack">
           
           <button class="dp-cta-gold" onclick="AV.openTestDriveModal('${slug}')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" style="margin-right:5px"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-            Book Test Drive
+          
+            Book a test drive
           </button>
           <button class="dp-cta-primary" onclick="AV.openRequestInfoModal('${slug}')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" style="margin-right:5px"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            Request Info
+          
+            Ask about this car
           </button>
           <button class="dp-cta-ghost" style="display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;border:1.5px solid var(--border);background:#fff;color:var(--ink);border-radius:10px;padding:10px 14px;font-size:13px;font-weight:700;font-family:var(--font-b);transition:all .18s;" onmouseover="this.style.borderColor='var(--g3)';this.style.color='var(--g3)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--ink)'" onclick="AV.openBrochureModal('${slug}')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
@@ -1609,8 +1655,8 @@
       <!-- Gallery -->
       <div class="dp-gallery-card"><div id="gal-wrap"></div></div>
 
-      <!-- Quick stats horizontal strip -->
-      <div class="dp-qs-strip" id="dp-qs">${qsStrip(v0)}</div>
+      <!-- Highlights -->
+      <div class="dp-hl-card" id="dp-qs">${qsStrip(v0)}</div>
 
       <!-- Mobile title (hidden on desktop) -->
       <div class="dp-mob-title">
@@ -1631,7 +1677,7 @@
       <div class="dp-tabs-nav">
         <button class="dp-tab-btn active" onclick="AV.switchDpTab('dp-tab-overview', this)">Overview</button>
         <button class="dp-tab-btn" onclick="AV.switchDpTab('dp-tab-features', this)">Features</button>
-        <button class="dp-tab-btn" onclick="AV.switchDpTab('dp-tab-specs', this)">Specifications</button>
+        <button class="dp-tab-btn" id="dp-tab-btn-specs" onclick="AV.switchDpTab('dp-tab-specs', this)">Specifications</button>
       </div>
 
       <!-- Tab: Overview -->
@@ -1808,75 +1854,56 @@
           tdWrap.innerHTML = `
 <div class="av-modal-overlay" id="av-td-overlay" onclick="if(event.target===this)AV.closeTDModal()">
   <div class="av-modal-box">
-    <button type="button" class="av-modal-close" onclick="AV.closeTDModal()">&times;</button>
-    <div class="av-modal-head cute-head">
-      <div class="cute-avatar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-      </div>
-      <div class="av-modal-title">Book a Test Drive</div>
-      <div class="av-modal-sub">Schedule your slot — we'll confirm within 2 hours</div>
-      <div class="av-modal-badge" id="td-car-badge">Loading...</div>
+    <div class="av-modal-head simple-head">
+      <button type="button" class="simple-head-back" onclick="AV.closeTDModal()" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="simple-head-title">Book a Test Drive</div>
+      <div class="simple-head-badge" id="td-car-badge">Loading...</div>
     </div>
-    <div class="av-modal-body" id="td-body-wrap" style="overflow-y:auto;max-height:62vh;padding:18px 20px 4px">
+    <div class="av-modal-body" id="td-body-wrap" style="overflow-y:auto;max-height:64vh;padding:22px 20px 4px">
       <form id="td-form" onsubmit="AV.submitTD(event)">
-        <div class="cute-input-group">
-          <label class="cute-label">Full Name <span>*</span></label>
-          <div class="cute-input-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <input type="text" class="cute-inp" id="td-name" placeholder="Your full name" required>
+        <div class="pill-group">
+          <input type="text" class="pill-inp" id="td-name" placeholder="Full name" required>
+        </div>
+        <div class="pill-row">
+          <div class="pill-group">
+            <input type="tel" class="pill-inp" id="td-phone" placeholder="Phone number" required>
+          </div>
+          <div class="pill-group">
+            <input type="email" class="pill-inp" id="td-email" placeholder="Email address" required>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div class="cute-input-group">
-            <label class="cute-label">Phone <span>*</span></label>
-            <div class="cute-input-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-.95a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              <input type="tel" class="cute-inp" id="td-phone" placeholder="98XXXXXXXX" required>
-            </div>
-          </div>
-          <div class="cute-input-group">
-            <label class="cute-label">Email <span>*</span></label>
-            <div class="cute-input-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <input type="email" class="cute-inp" id="td-email" placeholder="you@email.com" required>
-            </div>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div class="cute-input-group">
-            <label class="cute-label">City <span>*</span></label>
-            <select class="cute-inp cute-select" id="td-city" required>
-              <option value="">Select city</option>
+        <div class="pill-row">
+          <div class="pill-group">
+            <select class="pill-inp pill-select" id="td-city" required>
+              <option value="" disabled selected>City</option>
               <option>Kathmandu</option><option>Lalitpur</option><option>Bhaktapur</option>
               <option>Pokhara</option><option>Biratnagar</option><option>Birgunj</option>
               <option>Dharan</option><option>Butwal</option><option>Hetauda</option>
               <option>Chitwan</option><option>Nepalgunj</option><option>Other</option>
             </select>
           </div>
-          <div class="cute-input-group">
-            <label class="cute-label">Date <span>*</span></label>
-            <input type="date" class="cute-inp" id="td-date" required>
+          <div class="pill-group">
+            <input type="date" class="pill-inp" id="td-date" required>
           </div>
         </div>
-        <div class="cute-input-group">
-          <label class="cute-label">Preferred Time <span>*</span></label>
-          <div class="cute-time-grid">
-            <button type="button" class="cute-time-btn selected" onclick="AV.selectTDTime('10:00 AM',this)">10 AM</button>
-            <button type="button" class="cute-time-btn" onclick="AV.selectTDTime('11:00 AM',this)">11 AM</button>
-            <button type="button" class="cute-time-btn" onclick="AV.selectTDTime('12:00 PM',this)">12 PM</button>
-            <button type="button" class="cute-time-btn" onclick="AV.selectTDTime('2:00 PM',this)">2 PM</button>
-            <button type="button" class="cute-time-btn" onclick="AV.selectTDTime('3:00 PM',this)">3 PM</button>
-            <button type="button" class="cute-time-btn" onclick="AV.selectTDTime('4:00 PM',this)">4 PM</button>
-            <button type="button" class="cute-time-btn" onclick="AV.selectTDTime('5:00 PM',this)">5 PM</button>
-            <button type="button" class="cute-time-btn" onclick="AV.selectTDTime('6:00 PM',this)">6 PM</button>
+        <div class="pill-group">
+          <div class="pill-caption">Preferred time</div>
+          <div class="pill-time-grid">
+            <button type="button" class="pill-time-btn selected" onclick="AV.selectTDTime('10:00 AM',this)">10 AM</button>
+            <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('11:00 AM',this)">11 AM</button>
+            <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('12:00 PM',this)">12 PM</button>
+            <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('2:00 PM',this)">2 PM</button>
+            <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('3:00 PM',this)">3 PM</button>
+            <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('4:00 PM',this)">4 PM</button>
+            <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('5:00 PM',this)">5 PM</button>
+            <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('6:00 PM',this)">6 PM</button>
           </div>
           <input type="hidden" id="td-time-val" value="10:00 AM">
         </div>
-        <div style="margin:16px 0 20px">
-          <button type="submit" class="cute-submit" id="td-submit-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><polyline points="20 6 9 17 4 12"/></svg>
-            Confirm Test Drive Booking
-          </button>
+        <div style="margin:18px 0 20px">
+          <button type="submit" class="pill-submit" id="td-submit-btn">Confirm Test Drive Booking</button>
         </div>
       </form>
     </div>
@@ -1886,7 +1913,7 @@
       </div>
       <div class="av-success-title" style="font-size:17px;font-weight:800;color:var(--ink);margin-bottom:8px">Test Drive Booked! 🚗</div>
       <div class="av-success-sub" style="font-size:13px;color:var(--ink4);margin-bottom:16px">Our team will call you shortly to confirm your slot.</div>
-      <button type="button" class="cute-submit" onclick="AV.closeTDModal()" style="max-width:180px;margin:0 auto">Done</button>
+      <button type="button" class="pill-submit" onclick="AV.closeTDModal()" style="max-width:180px;margin:0 auto">Done</button>
     </div>
   </div>
 </div>`;
@@ -1898,59 +1925,40 @@
           riWrap.innerHTML = `
 <div class="av-modal-overlay" id="av-ri-overlay" onclick="if(event.target===this)AV.closeRIModal()">
   <div class="av-modal-box">
-    <button type="button" class="av-modal-close" onclick="AV.closeRIModal()">&times;</button>
-    <div class="av-modal-head cute-head">
-      <div class="cute-avatar" style="background:linear-gradient(135deg,#2563EB,#3B82F6);box-shadow:0 8px 20px rgba(37,99,235,.25)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      </div>
-      <div class="av-modal-title">Request Information</div>
-      <div class="av-modal-sub">Get pricing, specs &amp; offers delivered to you</div>
-      <div class="av-modal-badge" id="ri-car-badge" style="background:#eff6ff;color:#2563eb;border-color:#bfdbfe">Loading...</div>
+    <div class="av-modal-head simple-head">
+      <button type="button" class="simple-head-back" onclick="AV.closeRIModal()" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="simple-head-title">Request Information</div>
+      <div class="simple-head-badge" id="ri-car-badge">Loading...</div>
     </div>
-    <div class="av-modal-body" id="ri-body-wrap" style="overflow-y:auto;max-height:60vh;padding:18px 20px 4px">
+    <div class="av-modal-body" id="ri-body-wrap" style="overflow-y:auto;max-height:62vh;padding:22px 20px 4px">
       <form id="ri-form" onsubmit="AV.submitRI(event)">
-        <div class="cute-input-group">
-          <label class="cute-label">Full Name <span>*</span></label>
-          <div class="cute-input-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <input type="text" class="cute-inp" id="ri-name" placeholder="Your full name" required>
+        <div class="pill-group">
+          <input type="text" class="pill-inp" id="ri-name" placeholder="Full name" required>
+        </div>
+        <div class="pill-row">
+          <div class="pill-group">
+            <input type="tel" class="pill-inp" id="ri-phone" placeholder="Phone number" required>
+          </div>
+          <div class="pill-group">
+            <input type="email" class="pill-inp" id="ri-email" placeholder="Email address" required>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div class="cute-input-group">
-            <label class="cute-label">Phone <span>*</span></label>
-            <div class="cute-input-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-.95a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              <input type="tel" class="cute-inp" id="ri-phone" placeholder="98XXXXXXXX" required>
-            </div>
-          </div>
-          <div class="cute-input-group">
-            <label class="cute-label">Email <span>*</span></label>
-            <div class="cute-input-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <input type="email" class="cute-inp" id="ri-email" placeholder="you@email.com" required>
-            </div>
-          </div>
-        </div>
-        <div class="cute-input-group">
-          <label class="cute-label">City <span>*</span></label>
-          <select class="cute-inp cute-select" id="ri-city" required>
-            <option value="">Select your city</option>
+        <div class="pill-group">
+          <select class="pill-inp pill-select" id="ri-city" required>
+            <option value="" disabled selected>City</option>
             <option>Kathmandu</option><option>Lalitpur</option><option>Bhaktapur</option>
             <option>Pokhara</option><option>Biratnagar</option><option>Birgunj</option>
             <option>Dharan</option><option>Butwal</option><option>Chitwan</option>
             <option>Nepalgunj</option><option>Other</option>
           </select>
         </div>
-        <div class="cute-input-group">
-          <label class="cute-label">What do you need? <span>*</span></label>
-          <textarea class="cute-inp" id="ri-msg" style="resize:vertical;min-height:84px" placeholder="e.g. On-road price, financing, discount offers…" required></textarea>
+        <div class="pill-group">
+          <textarea class="pill-inp pill-textarea" id="ri-msg" placeholder="What do you need? e.g. On-road price, financing, discount offers…" required></textarea>
         </div>
-        <div style="margin:4px 0 20px">
-          <button type="submit" class="cute-submit" id="ri-submit-btn" style="background:linear-gradient(135deg,#2563EB,#3B82F6);box-shadow:0 4px 12px rgba(37,99,235,.25)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Send Information Request
-          </button>
+        <div style="margin:6px 0 20px">
+          <button type="submit" class="pill-submit" id="ri-submit-btn">Send Information Request</button>
         </div>
       </form>
     </div>
@@ -1960,7 +1968,7 @@
       </div>
       <div class="av-success-title" style="font-size:17px;font-weight:800;color:var(--ink);margin-bottom:8px">Request Sent! 📩</div>
       <div class="av-success-sub" style="font-size:13px;color:var(--ink4);margin-bottom:16px">Our team will reach you with all the details shortly.</div>
-      <button type="button" class="cute-submit" onclick="AV.closeRIModal()" style="max-width:160px;margin:0 auto;background:linear-gradient(135deg,#2563EB,#3B82F6)">Done</button>
+      <button type="button" class="pill-submit" onclick="AV.closeRIModal()" style="max-width:160px;margin:0 auto">Done</button>
     </div>
   </div>
 </div>`;
@@ -2469,94 +2477,6 @@ ${variants.length > 0 ? `
         }).catch(() => {
           if (btn) { btn.disabled = false; btn.textContent = 'Send Information Request'; }
           alert('Submission failed. Please call us directly: +977-9828364940');
-        });
-      };
-
-      /* ── Time slot picker ── */
-      AV.selectTime = function (btn, time) {
-        document.querySelectorAll('#td-time-grid .av-time-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const inp = document.getElementById('td-time');
-        if (inp) inp.value = time;
-      };
-
-      /* ── Submit Test Drive ── */
-      AV.submitTD = function (e) {
-        e.preventDefault();
-        const btn = document.getElementById('td-submit-btn');
-        const name = document.getElementById('td-name');
-        const phone = document.getElementById('td-phone');
-        const date = document.getElementById('td-date');
-        const time = document.getElementById('td-time');
-        const msg = document.getElementById('td-msg');
-        const city = document.getElementById('td-city');
-        if (!name.value.trim() || !phone.value.trim() || !date.value) return;
-        if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
-        fetch('/api/forms/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            formId: 'testDrive', type: 'testDrive',
-            name: name.value.trim(),
-            phone: phone.value.trim(),
-            city: city ? city.value : '',
-            preferredDate: date.value,
-            preferredTime: time ? time.value : '',
-            message: msg ? msg.value.trim() : '',
-            carModel: carLabel,
-            carSlug: slug,
-            timestamp: new Date().toISOString()
-          })
-        }).then(r => {
-          if (!r.ok) throw new Error('fail');
-          const fw = document.getElementById('av-td-form-wrap');
-          const ss = document.getElementById('av-td-success');
-          const ft = document.getElementById('av-td-foot');
-          if (fw) fw.style.display = 'none';
-          if (ft) ft.style.display = 'none';
-          if (ss) ss.style.display = 'flex';
-        }).catch(() => {
-          if (btn) { btn.disabled = false; btn.textContent = 'Confirm Booking'; }
-          alert('Could not submit. Please call +977-9828364940');
-        });
-      };
-
-      /* ── Submit Request Info ── */
-      AV.submitRI = function (e) {
-        e.preventDefault();
-        const btn = document.getElementById('ri-submit-btn');
-        const name = document.getElementById('ri-name');
-        const phone = document.getElementById('ri-phone');
-        const email = document.getElementById('ri-email');
-        const msg = document.getElementById('ri-msg');
-        const city = document.getElementById('ri-city');
-        if (!name.value.trim() || !phone.value.trim() || !msg.value.trim()) return;
-        if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-        fetch('/api/forms/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            formId: 'requestInfo', type: 'requestInfo',
-            name: name.value.trim(),
-            phone: phone.value.trim(),
-            email: email ? email.value.trim() : '',
-            city: city ? city.value : '',
-            message: msg.value.trim(),
-            carModel: carLabel,
-            carSlug: slug,
-            timestamp: new Date().toISOString()
-          })
-        }).then(r => {
-          if (!r.ok) throw new Error('fail');
-          const fw = document.getElementById('av-ri-form-wrap');
-          const ss = document.getElementById('av-ri-success');
-          const ft = document.getElementById('av-ri-foot');
-          if (fw) fw.style.display = 'none';
-          if (ft) ft.style.display = 'none';
-          if (ss) ss.style.display = 'flex';
-        }).catch(() => {
-          if (btn) { btn.disabled = false; btn.textContent = 'Send Request'; }
-          alert('Could not submit. Please call +977-9828364940');
         });
       };
 
@@ -4282,6 +4202,9 @@ ${variants.length > 0 ? `
       const idx = usedCompareList.indexOf(id);
       if (idx > -1) { usedCompareList.splice(idx, 1); toast(`${car.brand} ${car.model} removed`) }
       else { if (usedCompareList.length >= CMP_MAX) { toast(`Max ${CMP_MAX} cars`, 'error'); return } usedCompareList.push(id); toast(`${car.brand} ${car.model} added to compare`, 'success') }
+      document.querySelectorAll('[data-ucmp-id]').forEach(b => {
+        b.classList.toggle('added', usedCompareList.includes(b.dataset.ucmpId));
+      });
       if (location.hash === '#compare-used') renderCompareUsed();
     }
 
@@ -4760,10 +4683,10 @@ ${variants.length > 0 ? `
           <div style="font-size:13px;color:var(--ink3)">We'll call you within 2 hours to confirm.</div>
         </div>
         <form onsubmit="AV.submitForm(event,'${s.id}')" id="form-${s.id}" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--ink4)">Name *</label><input class="sw-input" type="text" placeholder="Full name" required style="padding:10px 12px"></div>
-          <div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--ink4)">Phone *</label><input class="sw-input" type="tel" placeholder="+977 98XXXXXXXX" required style="padding:10px 12px"></div>
-          <div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--ink4)">Vehicle Brand</label><select class="sw-select" style="padding:10px 28px 10px 12px"><option>Select brand</option>${['Toyota', 'Honda', 'Hyundai', 'Kia', 'Suzuki', 'MG', 'BYD', 'BMW', 'Other'].map(b => `<option>${b}</option>`).join('')}</select></div>
-          <div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--ink4)">Service</label><select class="sw-select" style="padding:10px 28px 10px 12px"><option>Select service</option>${s.items.map(i => `<option>${i}</option>`).join('')}</select></div>
+          <div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--ink4)">Name *</label><input class="sw-input" type="text" name="fullName" placeholder="Full name" required style="padding:10px 12px"></div>
+          <div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--ink4)">Phone *</label><input class="sw-input" type="tel" name="phone" placeholder="+977 98XXXXXXXX" required style="padding:10px 12px"></div>
+          <div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--ink4)">Vehicle Brand</label><select class="sw-select" name="brand" style="padding:10px 28px 10px 12px"><option value="">Select brand</option>${['Toyota', 'Honda', 'Hyundai', 'Kia', 'Suzuki', 'MG', 'BYD', 'BMW', 'Other'].map(b => `<option>${b}</option>`).join('')}</select></div>
+          <div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--ink4)">Service</label><select class="sw-select" name="service" style="padding:10px 28px 10px 12px"><option value="">Select service</option>${s.items.map(i => `<option>${i}</option>`).join('')}</select></div>
           <div style="grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:4px">
            <div style="font-size:11.5px;color:var(--ink4);display:flex;align-items:center;gap:4px;">
   <i data-lucide="lock" style="width:12px;height:12px;"></i>
@@ -4803,56 +4726,6 @@ ${variants.length > 0 ? `
 
 
     /* ─ USED ─ */
-
-
-
-
-    /* ── USED CARD helper ── */
-    function usedCard(car) {
-      const fuelBadge = `<span class="uc-badge uc-badge-fuel">${car.type}</span>`;
-      const certBadge = car.certified ? `<span class="uc-badge uc-badge-cert"><i data-lucide="check"></i> Certified</span>` : '';
-      const ownerBadge = car.owners === 1 ? `<span class="uc-badge uc-badge-owner">1 Owner</span>` : '';
-      const heartSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>`;
-      const starSVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="9" height="9"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
-      const imgSrc = (car.images && car.images[0]) || car.img || '';
-
-      return `<div class="used-card" onclick="AV.openUsedDetail('${car.id}')">
-    <div class="uc-img">
-      <div class="uc-badges">
-        ${certBadge} ${fuelBadge} ${ownerBadge}
-      </div>
-      <button class="uc-wish" onclick="event.stopPropagation();this.classList.toggle('active')">${heartSVG}</button>
-      <div class="uc-km">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="9" height="9"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        ${car.km} km
-      </div>
-      <img src="${imgSrc}" alt="${car.brand} ${car.model}" loading="lazy">
-    </div>
-
-    <div class="uc-body">
-      <div class="uc-meta-top">
-        ${car.rating ? `<span class="uc-rating">${starSVG} ${car.rating}</span>` : ''}
-        <span class="uc-year">${car.year} · ${car.transmission}</span>
-      </div>
-      <div class="uc-name">${car.brand} ${car.model}</div>
-      <div class="uc-variant">${car.variant || car.body || ''}</div>
-      <div class="uc-specs">
-        <span class="uc-spec-pill">${car.km} km</span>
-        <span class="uc-spec-pill">${car.type}</span>
-      </div>
-
-      <div class="uc-price-row">
-        <div class="uc-from">Asking Price</div>
-        <div class="uc-price">${car.price}</div>
-      
-        <div class="uc-actions">
-          <button class="uc-btn-f" onclick="event.stopPropagation();AV.openUsedDetail('${car.id}')">View Details</button>
-          <button class="uc-btn-o" onclick="event.stopPropagation();alert('Call: +977-9828364940')">Get Price</button>
-        </div>
-      </div>
-    </div>
-  </div>`;
-    }
 
     /* ── USED LISTING PAGE ── */
     function renderUsed(opts) {
@@ -5129,59 +5002,40 @@ ${variants.length > 0 ? `
       uiWrap.innerHTML = `
 <div class="av-modal-overlay" id="av-ui-overlay" onclick="if(event.target===this)AV.closeUsedInquiryModal()">
   <div class="av-modal-box">
-    <button type="button" class="av-modal-close" onclick="AV.closeUsedInquiryModal()">&times;</button>
-    <div class="av-modal-head cute-head" style="background:radial-gradient(120px 100px at 50% 0%, rgba(180,114,15,.08), transparent 70%), #fff">
-      <div class="cute-avatar" style="background:linear-gradient(135deg,#B8720F,#D98A16);box-shadow:0 8px 20px rgba(184,114,15,.28)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </div>
-      <div class="av-modal-title">Inquire About This Car</div>
-      <div class="av-modal-sub">Get pricing, availability &amp; inspection details</div>
-      <div class="av-modal-badge" id="ui-car-badge" style="background:#fff8ec;color:#B8720F;border-color:#fde68a">Loading...</div>
+    <div class="av-modal-head simple-head">
+      <button type="button" class="simple-head-back" onclick="AV.closeUsedInquiryModal()" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="simple-head-title">Inquire About This Car</div>
+      <div class="simple-head-badge" id="ui-car-badge" style="background:#fff8ec;color:#B8720F;border-color:#fde68a">Loading...</div>
     </div>
-    <div class="av-modal-body" id="ui-body-wrap" style="overflow-y:auto;max-height:60vh;padding:18px 20px 4px">
+    <div class="av-modal-body" id="ui-body-wrap" style="overflow-y:auto;max-height:62vh;padding:22px 20px 4px">
       <form id="ui-form" onsubmit="AV.submitUsedInquiry(event)">
-        <div class="cute-input-group">
-          <label class="cute-label">Full Name <span>*</span></label>
-          <div class="cute-input-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <input type="text" class="cute-inp" id="ui-name" placeholder="Your full name" required>
+        <div class="pill-group">
+          <input type="text" class="pill-inp" id="ui-name" placeholder="Full name" required>
+        </div>
+        <div class="pill-row">
+          <div class="pill-group">
+            <input type="tel" class="pill-inp" id="ui-phone" placeholder="Phone number" required>
+          </div>
+          <div class="pill-group">
+            <input type="email" class="pill-inp" id="ui-email" placeholder="Email address" required>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div class="cute-input-group">
-            <label class="cute-label">Phone <span>*</span></label>
-            <div class="cute-input-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-.95a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              <input type="tel" class="cute-inp" id="ui-phone" placeholder="98XXXXXXXX" required>
-            </div>
-          </div>
-          <div class="cute-input-group">
-            <label class="cute-label">Email <span>*</span></label>
-            <div class="cute-input-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <input type="email" class="cute-inp" id="ui-email" placeholder="you@email.com" required>
-            </div>
-          </div>
-        </div>
-        <div class="cute-input-group">
-          <label class="cute-label">City <span>*</span></label>
-          <select class="cute-inp cute-select" id="ui-city" required>
-            <option value="">Select your city</option>
+        <div class="pill-group">
+          <select class="pill-inp pill-select" id="ui-city" required>
+            <option value="" disabled selected>City</option>
             <option>Kathmandu</option><option>Lalitpur</option><option>Bhaktapur</option>
             <option>Pokhara</option><option>Biratnagar</option><option>Birgunj</option>
             <option>Dharan</option><option>Butwal</option><option>Chitwan</option>
             <option>Nepalgunj</option><option>Other</option>
           </select>
         </div>
-        <div class="cute-input-group">
-          <label class="cute-label">Your Questions <span>*</span></label>
-          <textarea class="cute-inp" id="ui-msg" style="resize:vertical;min-height:84px" placeholder="e.g. Is the price negotiable? Can I schedule an inspection?" required></textarea>
+        <div class="pill-group">
+          <textarea class="pill-inp pill-textarea" id="ui-msg" placeholder="e.g. Is the price negotiable? Can I schedule an inspection?" required></textarea>
         </div>
-        <div style="margin:4px 0 20px">
-          <button type="submit" class="cute-submit" id="ui-submit-btn" style="background:linear-gradient(135deg,#B8720F,#D98A16);box-shadow:0 4px 12px rgba(184,114,15,.25)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Send Inquiry
-          </button>
+        <div style="margin:6px 0 20px">
+          <button type="submit" class="pill-submit" id="ui-submit-btn" style="background:linear-gradient(135deg,#B8720F,#D98A16)">Send Inquiry</button>
         </div>
       </form>
     </div>
@@ -5191,7 +5045,7 @@ ${variants.length > 0 ? `
       </div>
       <div class="av-success-title" style="font-size:17px;font-weight:800;color:var(--ink);margin-bottom:8px">Inquiry Sent! 🚙</div>
       <div class="av-success-sub" style="font-size:13px;color:var(--ink4);margin-bottom:16px">Our team will get back to you shortly with all the details.</div>
-      <button type="button" class="cute-submit" onclick="AV.closeUsedInquiryModal()" style="max-width:160px;margin:0 auto;background:linear-gradient(135deg,#B8720F,#D98A16)">Done</button>
+      <button type="button" class="pill-submit" onclick="AV.closeUsedInquiryModal()" style="max-width:160px;margin:0 auto;background:linear-gradient(135deg,#B8720F,#D98A16)">Done</button>
     </div>
   </div>
 </div>`;
@@ -5345,27 +5199,34 @@ ${variants.length > 0 ? `
         chev: `<polyline points="6 9 12 15 18 9"/>`,
         ph: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l1.84-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`,
         calc: `<rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/>`,
+        gauge: `<path d="M4 12a8 8 0 0 1 16 0"/><path d="M12 12l4-4"/><circle cx="12" cy="12" r="1"/>`,
+        gear: `<circle cx="12" cy="12" r="3"/><path d="M12 5v2M12 17v2M5 12h2M17 12h2M7.05 7.05l1.41 1.41M15.54 15.54l1.41 1.41M7.05 16.95l1.41-1.41M15.54 8.46l1.41-1.41"/>`,
+        wrench: `<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>`,
+        shield: `<path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/>`,
       };
       const svgI = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${_P[k]}</svg>`;
 
-      function kiGrid() {
-        return [
-          { k: 'cal', val: car.year, lbl: 'Year' },
-          { k: 'fuel', val: car.type, lbl: 'Fuel' },
-          { k: 'body', val: car.km + ' km +', lbl: 'Odometer' },
-          { k: 'sts', val: car.owners, lbl: 'Owners' },
-          { k: 'list', val: car.transmission, lbl: 'Trans.' },
-        ].map(it => `
-      <div class="dp-ki-cell">
-        <div class="dp-ki-icon">${svgI(it.k)}</div>
-        <div class="dp-ki-val">${it.val}</div>
-        <div class="dp-ki-lbl">${it.lbl}</div>
-      </div>`).join('');
-      }
+      const ICON_FOR_UC_LABEL = {
+        'Body Type': 'body',
+        'Powertrain': 'pow',
+        'Ground Clearance': 'box',
+        'Mileage/Range (Real-World)': 'gauge',
+        'Odometer Reading (km)': 'gauge',
+        'Fuel Type': 'fuel',
+        'Transmission': 'gear',
+        'Drivetrain': 'gear',
+        'Seating Capacity': 'sts',
+        'Boot Space (Liters)': 'box',
+        'Service History': 'wrench',
+        'Number of Owners': 'sts',
+        'Accident History': 'shield',
+        'Condition Grade (A/B/C/D)': 'shield',
+      };
+      const iconForUcCell = lbl => lbl === 'Safety Rating' ? IC.star : svgI(ICON_FOR_UC_LABEL[lbl] || 'feat');
 
       function ucQsStrip() {
         const sp = car.specs || {};
-        
+
         const row1 = [
             ['Body Type', car.body],
             ['Powertrain', sp['Engine'] || sp['Motor'] || car.type],
@@ -5375,7 +5236,7 @@ ${variants.length > 0 ? `
             ['Condition Grade (A/B/C/D)', sp['Condition Grade'] || sp['Condition'] || car.condition],
             ['Safety Rating', car.rating ? car.rating + ' Star' : '']
         ];
-        
+
         const row2 = [
             ['Fuel Type', car.type || car.fuel],
             ['Transmission', car.transmission],
@@ -5387,15 +5248,17 @@ ${variants.length > 0 ? `
             ['Accident History', car.accidentHistory || sp['Accident History'] || 'None']
         ];
 
-        const renderRow = (arr) => arr.filter(([, val]) => val).map(([l, val]) => `
-      <div class="dp-qs-cell">
-        <div class="dp-qs-val">${val}</div>
-        <div class="dp-qs-lbl">${l}</div>
+        const cells = [...row1, ...row2].filter(([, val]) => val).slice(0, 10);
+        const cellsHTML = cells.map(([l, val]) => `
+      <div class="dp-ki-cell">
+        <div class="dp-ki-icon">${iconForUcCell(l)}</div>
+        <div class="dp-ki-val">${val}</div>
+        <div class="dp-ki-lbl">${l}</div>
       </div>`).join('');
 
         return `
-          <div class="dp-qs-row">${renderRow(row1)}</div>
-          <div class="dp-qs-row">${renderRow(row2)}</div>
+          <div class="dp-ki-grid">${cellsHTML}</div>
+          <button class="dp-hl-btn" onclick="AV.switchDpTab('dp-tab-featspecs', document.getElementById('dp-tab-btn-featspecs'));document.getElementById('dp-tab-btn-featspecs').scrollIntoView({behavior:'smooth',block:'center'})">View all specs</button>
         `;
       }
 
@@ -5984,7 +5847,7 @@ ${variants.length > 0 ? `
         <div class="dp-price-main">${car.price}</div>
         <div class="dp-price-note">${car.variant}</div>
         <div class="dp-cta-stack" style="margin-top:16px;">
-          <button class="dp-cta-primary" onclick="AV.openUsedInquiryModal('${car.id}')"><i data-lucide="mail"></i> Inquire Now</button>
+          <button class="dp-cta-primary" onclick="AV.openUsedInquiryModal('${car.id}')"><i data-lucide="mail" style="width:14px;height:14px;"></i> Inquire Now</button>
           <button class="dp-cta-ghost" style="margin-top:8px; display:flex; align-items:center; justify-content:center; gap:8px;" onclick="AV.playCarVideo('${car.video || ''}')"><svg viewBox="0 0 24 24" fill="red" width="18" height="18"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg> Watch Video</button>
         </div>
       </div>
@@ -6097,8 +5960,8 @@ ${variants.length > 0 ? `
         <div id="used-gallery-container"></div>
       </div>
 
-      <!-- Quick stats horizontal strip -->
-      <div class="dp-qs-strip" id="dp-qs">${ucQsStrip()}</div>
+      <!-- Highlights -->
+      <div class="dp-hl-card" id="dp-qs">${ucQsStrip()}</div>
 
       <!-- Mobile title (hidden on desktop) -->
       <div class="dp-mob-title">
@@ -6114,7 +5977,7 @@ ${variants.length > 0 ? `
       <div class="dp-tabs-nav">
         <button class="dp-tab-btn active" onclick="AV.switchDpTab('dp-tab-overview', this)">Overview</button>
         <button class="dp-tab-btn" onclick="AV.switchDpTab('dp-tab-condition', this)">Core Condition</button>
-        <button class="dp-tab-btn" onclick="AV.switchDpTab('dp-tab-featspecs', this)">Features &amp; Specifications</button>
+        <button class="dp-tab-btn" id="dp-tab-btn-featspecs" onclick="AV.switchDpTab('dp-tab-featspecs', this)">Features &amp; Specifications</button>
          <button class="dp-tab-btn" onclick="AV.switchDpTab('dp-tab-acs', this)">ACS Inspection &amp; Test Drive</button>
       </div>
 
@@ -6160,8 +6023,8 @@ ${variants.length > 0 ? `
       <div class="dp-mob-price-val">${car.price}</div>
     </div>
     <div class="dp-mob-btns">
-      <button class="dp-mob-btn-g" onclick="alert('Test drive: +977-9828364940')">Test Drive</button>
-      <button class="dp-mob-btn-p" onclick="alert('+977-9828364940')">Contact Seller</button>
+      <button class="dp-mob-btn-g" onclick="AV.openUsedInquiryModal('${car.id}')"><i data-lucide="mail" style="width:14px;height:14px;"></i> Inquire</button>
+      <button class="dp-mob-btn-p" onclick="AV.playCarVideo('${car.video || ''}')"><svg viewBox="0 0 24 24" fill="red" width="16" height="16" style="vertical-align:-3px;margin-right:2px"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>Watch Video</button>
     </div>
   </div>`;
 
@@ -6232,20 +6095,15 @@ ${variants.length > 0 ? `
     }
 
     /* ─ UPCOMING CARS ─ */
+    /* Note: NAIMA Nepal Mobility Expo 2026 (Aug 11–16) has already taken place. Proton e.MAS 7, Deepal S05,
+       Chery Q (QQ3), Leapmotor A10 (B03X), Tata Punch.ev/Tiago.ev facelifts, BAIC BJ30e Hybrid, and Arcfox T1
+       have all launched with confirmed Nepal pricing and now live in CARS_DB / Latest Arrivals instead. */
     const UPCOMING_DATA = [
-      { brand: 'Proton', model: 'e.MAS 7', slug: 'proton-emas-7', status: 'Launching Soon', statusCls: 'launch', price: 'Rs. 46.99L – 57.99L', body: 'SUV', fuel: 'Electric', img: 'assets/images/car_images/proton/emas 7/exterior/superbStyle-img1-1024x630.jpg', eta: 'Q3 2025' },
-      { brand: 'AION', model: 'UT', slug: 'aion-ut', status: 'Expected Soon', statusCls: 'expect', price: 'Expected Rs. 60L – 75L', body: 'Hatchback', fuel: 'Electric', img: 'assets/images/car_images/aion/ut/exterior/UT_EXT_GREEN-WHITE.webp', eta: 'Q4 2025' },
-      { brand: 'Deepal', model: 'S05', slug: 'deepal-s05', status: 'Launching Soon', statusCls: 'launch', price: 'Rs. 48.99L – 59.99L', body: 'SUV', fuel: 'Electric', img: 'assets/images/car_images/deepal/s05/exterior/deepal-s05-exterior-front-white-bg.png', eta: 'Q3 2025' },
-      { brand: 'Chery', model: 'QQ3', slug: 'chery-qq3', status: 'NAIMA Expo 2026', statusCls: 'expo', price: 'TBD', body: 'Hatchback', fuel: 'Electric', img: 'assets/images/car_images/chery/qq3/exterior/2027-Cgery-QQ3-hatchback-purple-press-image-1490x790p-1.webp', eta: '2026' },
-      { brand: 'Leapmotor', model: 'A10', slug: 'leapmotor-a10', status: 'Expected Soon', statusCls: 'expect', price: 'Expected under Rs. 45L', body: 'SUV', fuel: 'Electric', img: 'assets/images/car_images/deepal/s07/exterior/deepal-s07-exterior-front.jpg', eta: 'Q4 2025' },
-      { brand: 'Omoda', model: '4', slug: 'omoda-4', status: 'NAIMA Expo 2026', statusCls: 'expo', price: 'TBD', body: 'SUV', fuel: 'Petrol', img: 'assets/images/car_images/chery/omoda-4/exterior/download (1).jpeg', eta: '2026' },
-      { brand: 'Tata', model: 'Punch Facelift', slug: 'tata-punch-facelift', status: 'Expected Soon', statusCls: 'expect', price: 'Expected Rs. 40L – 45L', body: 'SUV', fuel: 'Petrol', img: 'assets/images/car_images/Tata/punch/exterior/punch-exterior-right-front-three-quarter-250.avif', eta: 'Q4 2025' },
-      { brand: 'Tata', model: 'Tiago Facelift', slug: 'tata-tiago-facelift', status: 'Expected Soon', statusCls: 'expect', price: 'Expected Rs. 28L – 36L', body: 'Hatchback', fuel: 'Petrol', img: 'assets/images/car_images/Tata/Tiago/exterior/front-grille-CRWynnAj.avif', eta: 'Q4 2025' },
-      { brand: 'Jetour', model: 'T2', slug: 'jetour-t2', status: 'Launching Soon', statusCls: 'launch', price: 'Expected Rs. 65L – 85L', body: 'SUV', fuel: 'Petrol', img: 'assets/images/car_images/jetour /t2/exterior/download.jpeg', eta: 'Q3 2025' },
-      { brand: 'BAIC', model: 'BJ30', slug: 'baic-bj30', status: 'Expected Soon', statusCls: 'expect', price: 'Expected Rs. 55L – 70L', body: 'SUV', fuel: 'Petrol', img: 'assets/images/car_images/baic/bj30/exterior/baic.jpeg', eta: '2026' },
-      { brand: 'Arcfox', model: 'Alpha', slug: 'arcfox-alpha', status: 'Expected Soon', statusCls: 'expect', price: 'Expected Rs. 45L – 55L', body: 'SUV', fuel: 'Electric', img: 'assets/images/car_images/arcfox t1/exterior/part1_1-1.png', eta: '2026' },
-      { brand: 'Toyota', model: 'RAV4 Hybrid', slug: 'toyota-rav4-hybrid', status: 'Launching Soon', statusCls: 'launch', price: 'Rs. 1.67Cr – 2.07Cr', body: 'SUV', fuel: 'Hybrid', img: 'assets/images/car_images/toyota/rav4/exterior/2026-toyota-rav4-limited-352-68f0e7f67ae2b.avif', eta: 'Q3 2025' },
-      { brand: 'Hongqi', model: 'E-HS9', slug: 'hongqi-e-hs9', status: 'Expected Soon', statusCls: 'expect', price: 'Expected Rs. 1.5Cr – 2Cr', body: 'SUV', fuel: 'Electric', img: 'assets/images/car_images/aion/v/exterior/download.jpeg', eta: '2026' },
+      { brand: 'AION', model: 'UT', slug: 'aion-ut', status: 'Expected Soon', statusCls: 'expect', price: 'Expected Rs. 60L – 75L', body: 'Hatchback', fuel: 'Electric', img: 'assets/images/car_images/aion/ut/exterior/UT_EXT_GREEN-WHITE.webp', eta: 'TBD' },
+      { brand: 'Omoda', model: '4', slug: 'omoda-4', status: 'Shown at NAIMA 2026', statusCls: 'expo', price: 'TBD', body: 'SUV', fuel: 'Electric', img: 'assets/images/car_images/chery/omoda-4/exterior/download (1).jpeg', eta: 'TBD' },
+      { brand: 'Jetour', model: 'T2', slug: 'jetour-t2', status: 'Expected Soon', statusCls: 'expect', price: 'TBD', body: 'SUV', fuel: 'Petrol', img: 'assets/images/car_images/jetour /t2/exterior/download.jpeg', eta: 'TBD' },
+      { brand: 'Toyota', model: 'RAV4 Hybrid', slug: 'toyota-rav4-hybrid', status: 'Launching Soon', statusCls: 'launch', price: 'Expected Rs. 2.07Cr – 2.2Cr', body: 'SUV', fuel: 'Hybrid', img: 'assets/images/car_images/toyota/rav4/exterior/2026-toyota-rav4-limited-352-68f0e7f67ae2b.avif', eta: 'Oct–Nov 2026' },
+      { brand: 'Hongqi', model: 'E-HS9', slug: 'hongqi-e-hs9', status: 'Expected Soon', statusCls: 'expect', price: 'TBD', body: 'SUV', fuel: 'Electric', img: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=400', eta: 'TBD' },
     ];
 
     function upcomingCard(u) {
@@ -6260,7 +6118,7 @@ ${variants.length > 0 ? `
             <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:99px;font-size:11px;font-weight:600;color:${col};background:${bg}">${u.status}</span>
             <span style="font-size:11px;color:rgba(255,255,255,.7);padding:3px 8px;background:rgba(0,0,0,.35);border-radius:99px;margin-left:auto">${u.eta}</span>
           </div>
-          <img src="${u.img}" alt="${u.brand} ${u.model}" loading="lazy" class="cc-img" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=400'">
+          <img src="${u.img}" alt="${u.brand} ${u.model}" loading="lazy" class="cc-img" onerror="this.onerror=null;this.src=window.AV.noImg;this.classList.add('cc-img--empty')">
         </div>
         <div class="cc-body">
           <div class="cc-name">${u.brand} ${u.model}</div>
@@ -6952,7 +6810,7 @@ ${variants.length > 0 ? `
         ifr.setAttribute('allowfullscreen', 'true');
         ifr.setAttribute('allow', 'autoplay; encrypted-media');
         
-        const gal = document.getElementById('ud-gal-main');
+        const gal = document.getElementById('gal-main');
         if(gal) {
           gal.innerHTML = '';
           gal.appendChild(ifr);

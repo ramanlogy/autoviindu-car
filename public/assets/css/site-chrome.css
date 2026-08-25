@@ -1079,3 +1079,77 @@
   --r10: 10px;
 }
 
+/* ══ SKELETON LOADERS (shimmer placeholders shown while content is fetching) ══ */
+@keyframes skel-shimmer {
+  0% { background-position: -150% 0; }
+  100% { background-position: 150% 0; }
+}
+
+.skel-block {
+  background: linear-gradient(100deg, var(--bg2) 30%, var(--bg3) 50%, var(--bg2) 70%);
+  background-size: 250% 100%;
+  animation: skel-shimmer 1.3s ease-in-out infinite;
+  border-radius: var(--r8, 8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skel-block { animation: none; }
+}
+
+/* New-car card skeleton — mirrors .car-card / .cc-* structure */
+.skel-car-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r16, 16px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.skel-car-card .skel-img { height: 150px; border-radius: 0; }
+
+@media (min-width: 480px) { .skel-car-card .skel-img { height: 165px; } }
+@media (min-width: 768px) { .skel-car-card .skel-img { height: 185px; } }
+
+.skel-car-card .skel-body {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.skel-car-card .skel-line { height: 11px; }
+.skel-car-card .skel-line.w-85 { width: 85%; }
+.skel-car-card .skel-line.w-60 { width: 60%; }
+.skel-car-card .skel-line.w-40 { height: 15px; width: 40%; margin-top: 2px; }
+.skel-car-card .skel-btn { height: 34px; border-radius: 10px; margin-top: 6px; }
+
+/* Used-car card skeleton — mirrors .used-card / .uc-* structure */
+.skel-used-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r16, 16px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.skel-used-card .skel-img { height: 160px; border-radius: 0; }
+
+@media (min-width: 480px) { .skel-used-card .skel-img { height: 178px; } }
+@media (min-width: 768px) { .skel-used-card .skel-img { height: 200px; } }
+
+.skel-used-card .skel-body {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.skel-used-card .skel-line { height: 11px; }
+.skel-used-card .skel-line.w-85 { width: 85%; }
+.skel-used-card .skel-line.w-50 { width: 50%; }
+.skel-used-card .skel-price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
+.skel-used-card .skel-line.w-30 { height: 16px; width: 30%; }
+.skel-used-card .skel-btn { height: 32px; width: 40%; border-radius: 10px; }
+

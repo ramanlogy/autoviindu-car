@@ -710,6 +710,21 @@
             margin-bottom: 16px;
         }
 
+        .article-modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .article-modal-gallery img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: var(--r8, 8px);
+            border: 1px solid var(--border);
+        }
+
         /* footer nav injected by site-chrome.js — placeholder note removed for production */
     </style>
 </head>
@@ -770,6 +785,7 @@
                     <span id="articleModalRatingWrap" style="display:none;"></span>
                 </div>
                 <div id="articleModalBody"></div>
+                <div id="articleModalGallery" class="article-modal-gallery" style="display:none;"></div>
             </div>
         </div>
     </div>
@@ -996,6 +1012,14 @@
                 ratingWrap.style.display = 'none';
             }
             document.getElementById('articleModalBody').innerHTML = item.body.map(p => `<p>${p}</p>`).join('');
+            const galleryWrap = document.getElementById('articleModalGallery');
+            if (item.photos && item.photos.length) {
+                galleryWrap.innerHTML = item.photos.map(p => `<img src="${p}" alt="${item.title.replace(/"/g, '&quot;')}" loading="lazy">`).join('');
+                galleryWrap.style.display = '';
+            } else {
+                galleryWrap.innerHTML = '';
+                galleryWrap.style.display = 'none';
+            }
             document.getElementById('articleModal').classList.add('open');
             document.body.style.overflow = 'hidden';
             lucide.createIcons();

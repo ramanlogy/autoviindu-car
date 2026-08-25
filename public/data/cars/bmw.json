@@ -303,9 +303,30 @@
         }
       },
       {
+        "name": "xDrive30d xLine",
+        "price": 38000000,
+        "label": "Rs. 3.80 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "xLine Exterior Pack",
+          "6 Airbags",
+          "12.3\" iDrive 7",
+          "xDrive AWD",
+          "xDrive30d Sport features+"
+        ],
+        "specs": {
+          "power": "286 hp @ 5,000 rpm",
+          "torque": "450 Nm",
+          "efficiency": "13.5 km/l",
+          "transmission": "8-Speed Steptronic"
+        }
+      },
+      {
         "name": "xDrive40i M Sport",
-        "price": 39996000,
-        "label": "Rs. 3.99 Cr",
+        "price": 40000000,
+        "label": "Rs. 4.00 Cr",
         "popular": false,
         "transmission": "AT",
         "fuel": "Petrol",
@@ -322,9 +343,9 @@
         }
       },
       {
-        "name": "xDrive45e M Sport (PHEV)",
-        "price": 49696000,
-        "label": "Rs. 4.96 Cr",
+        "name": "xDrive50e M Sport (PHEV)",
+        "price": 41600000,
+        "label": "Rs. 4.16 Cr",
         "popular": true,
         "transmission": "AT",
         "fuel": "Plug-in Hybrid",

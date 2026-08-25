@@ -131,7 +131,8 @@
       "Height": "1,615 mm",
       "Wheelbase": "2,630 mm",
       "Ground Clearance": "190 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)"
     },
     "pros": [
       "Panoramic sunroof at this price",
@@ -280,7 +281,8 @@
       "Height": "1,703 mm",
       "Wheelbase": "2,670 mm",
       "Ground Clearance": "197 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)"
     },
     "pros": [
       "540L boot — class leading",
@@ -425,7 +427,8 @@
       "Height": "1,770 mm",
       "Wheelbase": "2,820 mm",
       "Ground Clearance": "200 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)"
     },
     "pros": [
       "AWD available",
@@ -552,7 +555,8 @@
       "Height": "1,588 mm",
       "Wheelbase": "2,630 mm",
       "Ground Clearance": "188 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)"
     },
     "pros": [
       "Unique coupe-SUV style in Nepal",
@@ -583,7 +587,7 @@
     "type": "Electric",
     "body": "Electric Coupe SUV",
     "badge": "new",
-    "tagline": "Electric Omoda with 430km range — Nepal's most stylish EV SUV",
+    "tagline": "Electric Omoda with 430km WLTP range — Nepal's most stylish EV SUV",
     "rating": 4.1,
     "reviews": 89,
     "expertScore": 7.8,
@@ -615,68 +619,70 @@
     ],
     "variants": [
       {
-        "name": "Standard",
-        "price": 5990000,
-        "label": "Rs. 59.90L",
-        "popular": false,
-        "transmission": "Single Speed",
-        "fuel": "Electric",
-        "features": [
-          "61kWh Battery",
-          "430km CLTC Range",
-          "6 Airbags",
-          "10.25\" Touchscreen + CarPlay",
-          "Rear Camera",
-          "ADAS Level 1",
-          "18\" Alloy Wheels"
-        ],
-        "specs": {
-          "power": "201 hp",
-          "torque": "310 Nm",
-          "efficiency": "6.7 km/kWh",
-          "transmission": "Single Speed Reducer"
-        }
-      },
-      {
-        "name": "Premium",
-        "price": 6990000,
-        "label": "Rs. 69.90L",
+        "name": "Single Tone",
+        "price": 6199000,
+        "label": "Rs. 61.99L",
         "popular": true,
         "transmission": "Single Speed",
         "fuel": "Electric",
         "features": [
-          "ADAS Level 2",
+          "61 kWh Battery",
+          "430km WLTP Range",
+          "6 Airbags",
+          "24.6\" Dual-Screen Setup",
           "360° Camera",
-          "Ventilated Seats",
-          "Wireless Charging",
-          "Ambient Lighting",
-          "Standard features+"
+          "Ventilated Front Seats",
+          "ADAS Suite",
+          "DC Fast Charging",
+          "18\" Alloy Wheels"
         ],
         "specs": {
-          "power": "201 hp",
-          "torque": "310 Nm",
-          "efficiency": "6.7 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "power": "132 PS",
+          "torque": "340 Nm",
+          "range": "430 km WLTP",
+          "battery": "61 kWh",
+          "charging": "DC Fast Charge"
+        }
+      },
+      {
+        "name": "Dual Tone",
+        "price": 6249000,
+        "label": "Rs. 62.49L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "Dual-Tone Exterior Paint",
+          "All Single Tone features"
+        ],
+        "specs": {
+          "power": "132 PS",
+          "torque": "340 Nm",
+          "range": "430 km WLTP",
+          "battery": "61 kWh",
+          "charging": "DC Fast Charge"
         }
       }
     ],
     "specs": {
       "Battery": "61 kWh",
-      "Range": "430 km (CLTC)",
-      "Power": "201 hp",
-      "Torque": "310 Nm",
+      "Range": "430 km WLTP",
+      "Power": "132 PS",
+      "Torque": "340 Nm",
       "Charging": "150 kW DC Fast Charge",
       "Charge Time": "30 min (10–80%)",
       "Transmission": "Single Speed",
       "Drive": "RWD",
       "Seating": "5",
-      "Boot Space": "290 L",
-      "Length": "4,403 mm",
-      "Width": "1,825 mm",
-      "Height": "1,575 mm",
+      "Boot Space": "360 L",
+      "Length": "4,424 mm",
+      "Width": "1,830 mm",
+      "Height": "1,588 mm",
       "Wheelbase": "2,630 mm",
       "Ground Clearance": "180 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)",
+      "Warranty": "Battery & Motor: 8 Years"
     },
     "pros": [
       "430km range for city use",
@@ -803,7 +809,8 @@
       "Height": "1,570 mm",
       "Wheelbase": "2,480 mm",
       "Ground Clearance": "185 km",
-      "Airbags": "4–6"
+      "Airbags": "4–6",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)"
     },
     "pros": [
       "Most affordable turbo SUV in Nepal",

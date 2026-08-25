@@ -56,28 +56,53 @@
     .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); }
     .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
     .bc-inner a:hover { text-decoration:underline; }
-    .bc-inner i { width:12px; height:12px; }
+    .bc-inner i, .bc-inner svg { width:12px; height:12px; }
 
     /* HERO */
     .hero {
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding: 56px 0 44px;
+      background: linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%);
+      padding: 52px 0;
       position: relative;
       overflow: hidden;
     }
-    .hero-inner { position: relative; z-index: 1; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--pill); padding: 5px 13px; font-size: 11px; font-weight: 600; color: var(--ink3); letter-spacing: .4px; text-transform: uppercase; margin-bottom: 18px; }
-    .hero-badge i { width: 13px; height: 13px; color: var(--ink3); }
-    .hero h1 { font-family: var(--font-d); font-size: clamp(30px, 4.5vw, 48px); font-weight: 800; color: var(--ink); line-height: 1.15; margin-bottom: 14px; }
-    .hero h1 em { font-style: italic; color: inherit; }
-    .hero-desc { font-size: 15px; color: var(--ink3); max-width: 520px; line-height: 1.75; margin-bottom: 30px; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero-inner { position: relative; z-index: 1; display:grid; grid-template-columns:1fr; gap:32px; align-items:center; }
+    @media(min-width:820px){ .hero-inner{ grid-template-columns:1.15fr .85fr; gap:24px; } }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); border-radius: var(--pill); padding: 5px 13px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,.75); letter-spacing: .4px; text-transform: uppercase; margin-bottom: 18px; }
+    .hero-badge i, .hero-badge svg { width: 13px; height: 13px; color: var(--g5); }
+    .hero h1 { font-family: var(--font-d); font-size: clamp(30px, 4.5vw, 48px); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 14px; text-wrap: balance; }
+    .hero h1 em { font-style: italic; color: var(--g5); }
+    .hero-desc { font-size: 15px; color: rgba(255,255,255,.65); max-width: 460px; line-height: 1.75; margin-bottom: 28px; text-wrap: pretty; }
     .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-    .hero-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--border); border-radius: var(--pill); padding: 7px 14px; font-size: 12px; font-weight: 500; color: var(--ink2); }
-    .hero-pill i { width: 13px; height: 13px; color: var(--g3); }
-    .hero-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--ink); color: #fff; border-radius: var(--r8); padding: 13px 26px; font-size: 14.5px; font-weight: 800; text-decoration: none; transition: all var(--ease); box-shadow: 0 4px 18px rgba(0,0,0,.08); }
-    .hero-cta:hover { background: var(--ink2); transform: translateY(-1px); }
-    .hero-cta i { width: 16px; height: 16px; }
+    .hero-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: var(--pill); padding: 7px 14px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.85); }
+    .hero-pill i, .hero-pill svg { width: 13px; height: 13px; color: var(--g5); }
+    .hero-cta { display: inline-flex; align-items: center; gap: 9px; background: #fff; color: var(--green-d); border-radius: var(--r8); padding: 13px 26px; font-size: 14.5px; font-weight: 800; text-decoration: none; transition: all var(--ease); box-shadow: 0 4px 18px rgba(0,0,0,.18); }
+    .hero-cta:hover { background: var(--green-l); transform: translateY(-1px); }
+    .hero-cta:active { transform: translateY(0) scale(.98); }
+    .hero-cta i, .hero-cta svg { width: 16px; height: 16px; }
+
+    /* HERO VISUAL — the signature wrench mark, same asset used on the homepage service card */
+    .hero-visual { display:none; }
+    @media(min-width:820px){
+      .hero-visual { display:flex; align-items:center; justify-content:center; }
+    }
+    .hero-visual-plate {
+      position:relative; width:220px; height:220px; border-radius:28px;
+      background: linear-gradient(160deg, rgba(255,255,255,.14), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.16);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 24px 60px rgba(4,20,8,.35), inset 0 1px 0 rgba(255,255,255,.12);
+    }
+    .hero-visual-plate svg.hv-wrench { width:104px; height:104px; }
+    .hero-visual-chip {
+      position:absolute; display:flex; align-items:center; gap:7px;
+      background:#fff; border-radius:var(--r10); padding:9px 12px;
+      font-size:12px; font-weight:800; color:var(--ink2);
+      box-shadow:0 10px 28px rgba(4,20,8,.25);
+    }
+    .hero-visual-chip i, .hero-visual-chip svg { width:14px; height:14px; color:var(--g3); }
+    .hero-visual-chip.c1 { top:-14px; left:-30px; }
+    .hero-visual-chip.c2 { bottom:-10px; right:-38px; }
 
     /* NAV STRIP */
     .nav-strip { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:var(--nav); z-index:100; }
@@ -99,10 +124,10 @@
     .section { padding:64px 0; }
     .section.alt { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
     .eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; }
-    .eyebrow i { width:13px; height:13px; }
-    .sec-title { font-family:var(--font-d); font-size:clamp(22px,3.5vw,34px); font-weight:800; color:var(--ink); line-height:1.15; margin-bottom:6px; }
+    .eyebrow i, .eyebrow svg { width:13px; height:13px; }
+    .sec-title { font-family:var(--font-d); font-size:clamp(22px,3.5vw,34px); font-weight:800; color:var(--ink); line-height:1.15; margin-bottom:6px; text-wrap:balance; }
     .sec-title em { font-style:italic; color:var(--green); }
-    .sec-sub { font-size:14.5px; color:var(--ink4); max-width:540px; line-height:1.7; margin-bottom:40px; }
+    .sec-sub { font-size:14.5px; color:var(--ink4); max-width:540px; line-height:1.7; margin-bottom:40px; text-wrap:pretty; }
 
     /* HOW IT WORKS */
     .steps { display:flex; flex-direction:column; gap:0; }
@@ -117,30 +142,26 @@
     .step-desc { font-size:13px; color:var(--ink4); line-height:1.6; }
 
     /* SERVICE CATEGORIES */
-    .cat-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:32px; }
-    .cat-tab { padding:8px 16px; border:1.5px solid var(--border); border-radius:var(--pill); font-size:12px; font-weight:600; color:var(--ink3); cursor:pointer; transition:all var(--ease); background:var(--white); }
-    .cat-tab:hover { border-color:var(--ink4); color:var(--ink); background:var(--bg2); }
-    .cat-tab.active { border-color:var(--g3); color:#fff; background:var(--g3); }
-
     .services-grid { display:grid; grid-template-columns:1fr; gap:8px; }
     @media(min-width:480px){ .services-grid{ grid-template-columns:repeat(2,1fr); } }
     @media(min-width:900px){ .services-grid{ grid-template-columns:repeat(3,1fr); } }
 
     .service-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); padding:16px 16px; display:flex; align-items:flex-start; gap:12px; transition:all var(--ease); }
-    .service-card:hover { border-color:var(--ink4); box-shadow:var(--sh1); }
+    .service-card:hover { border-color:var(--tab-accent, var(--g3)); box-shadow:var(--sh1); }
     .service-card-icon { flex-shrink:0; width:40px; height:40px; border-radius:var(--r10); background:var(--white); border:1.5px solid var(--border); box-shadow:var(--sh1); display:flex; align-items:center; justify-content:center; position:relative; }
-    .service-card-icon i { width:18px; height:18px; color:var(--ink3); }
-    .service-card-icon::after { content:''; position:absolute; bottom:-4px; right:-5px; width:13px; height:13px; border-radius:50%; background:var(--g3); box-shadow:0 0 0 2px var(--white); }
-    .service-card:nth-child(4n+2) .service-card-icon::after { background:var(--gold); }
-    .service-card:nth-child(4n+3) .service-card-icon::after { background:var(--blue); }
-    .service-card:nth-child(4n+4) .service-card-icon::after { background:var(--red); }
+    .service-card-icon i, .service-card-icon svg { width:18px; height:18px; color:var(--tab-accent, var(--g3)); }
     .service-card-name { font-size:13.5px; font-weight:700; color:var(--ink2); margin-bottom:2px; }
     .service-card-desc { font-size:12px; color:var(--ink5); line-height:1.5; }
 
+    /* Icon accent is scoped per fuel type, not decorative — green for ICE, teal for EV, gold for hybrid */
+    #tab-ice { --tab-accent: var(--g3); }
+    #tab-ev { --tab-accent: var(--teal); }
+    #tab-hybrid { --tab-accent: var(--gold); }
+
     /* VEHICLE TABS */
     .vtab-wrap { margin-bottom:0; }
-    .vtabs { display:flex; gap:0; border:1.5px solid var(--border); border-radius:var(--r10); overflow:hidden; margin-bottom:28px; width:fit-content; }
-    .vtab { padding:9px 20px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; transition:all var(--ease); background:var(--white); border-right:1.5px solid var(--border); }
+    .vtabs { display:flex; gap:0; border:1.5px solid var(--border); border-radius:var(--r10); overflow-x:auto; margin-bottom:28px; width:fit-content; max-width:100%; -webkit-overflow-scrolling:touch; }
+    .vtab { padding:9px 20px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; transition:all var(--ease); background:var(--white); border-right:1.5px solid var(--border); min-height:44px; display:flex; align-items:center; }
     .vtab:last-child { border-right:none; }
     .vtab.active { background:var(--green); color:#fff; }
 
@@ -153,7 +174,7 @@
     @media(min-width:900px){ .diag-grid{ grid-template-columns:repeat(3,1fr); } }
     .diag-item { display:flex; align-items:flex-start; gap:10px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r10); padding:13px 14px; transition:border-color var(--ease); }
     .diag-item:hover { border-color:var(--green); }
-    .diag-item i { width:15px; height:15px; color:var(--ink5); flex-shrink:0; margin-top:2px; }
+    .diag-item i, .diag-item svg { width:15px; height:15px; color:var(--ink5); flex-shrink:0; margin-top:2px; }
     .diag-name { font-size:13px; font-weight:700; color:var(--ink2); }
 
     /* GARAGE TYPES */
@@ -163,21 +184,23 @@
     .garage-card:hover { box-shadow:var(--sh2); transform:translateY(-2px); }
     .garage-card.rec { border-color:var(--green); }
     .garage-head { padding:22px 22px 16px; border-bottom:1px solid var(--border); }
+    .garage-badge { display:inline-flex; align-items:center; gap:5px; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; padding:3px 9px; border-radius:var(--pill); margin-bottom:12px; }
+    .garage-badge i, .garage-badge svg { width:11px; height:11px; }
     .garage-label { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; color:var(--ink5); margin-bottom:8px; }
     .garage-title { font-family:var(--font-d); font-size:22px; font-weight:800; color:var(--ink); margin-bottom:6px; }
     .garage-desc { font-size:13.5px; color:var(--ink4); line-height:1.65; }
     .garage-body { padding:20px 22px; }
     .garage-list { display:flex; flex-direction:column; gap:7px; }
     .garage-row { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--ink3); }
-    .garage-row i { width:14px; height:14px; flex-shrink:0; margin-top:2px; color:var(--ink5); }
-    .garage-row.yes i { color:var(--green); }
+    .garage-row i, .garage-row svg { width:14px; height:14px; flex-shrink:0; margin-top:2px; color:var(--ink5); }
+    .garage-row.yes i, .garage-row.yes svg { color:var(--green); }
 
     /* NOTICE */
     .notice { display:flex; align-items:flex-start; gap:13px; padding:16px 18px; border-radius:var(--r12); margin-bottom:20px; background:var(--green-l); border:1.5px solid rgba(26,107,42,.15); color:var(--green); }
-    .notice i { width:17px; height:17px; flex-shrink:0; margin-top:1px; }
+    .notice i, .notice svg { width:17px; height:17px; flex-shrink:0; margin-top:1px; }
     .notice-title { font-size:13px; font-weight:800; margin-bottom:3px; }
     .notice-text { font-size:12.5px; line-height:1.6; color:var(--ink3); }
-    .notice.warn { background:#FFFBF0; border-color:rgba(180,130,0,.2); color:#7A5800; }
+    .notice.warn { background:var(--gold-l); border-color:rgba(179,123,18,.25); color:var(--gold); }
     .notice.warn .notice-text { color:var(--ink3); }
 
     /* FAQ */
@@ -185,8 +208,8 @@
     .faq-item { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r12); overflow:hidden; transition:border-color var(--ease); }
     .faq-item.open { border-color:var(--green); }
     .faq-q { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 18px; cursor:pointer; font-size:14px; font-weight:700; color:var(--ink2); user-select:none; }
-    .faq-q i { width:16px; height:16px; color:var(--ink5); flex-shrink:0; transition:transform var(--ease); }
-    .faq-item.open .faq-q i { transform:rotate(180deg); color:var(--green); }
+    .faq-q i, .faq-q svg { width:16px; height:16px; color:var(--ink5); flex-shrink:0; transition:transform var(--ease); }
+    .faq-item.open .faq-q i, .faq-item.open .faq-q svg { transform:rotate(180deg); color:var(--green); }
     .faq-a { display:none; padding:14px 18px 16px; font-size:13.5px; color:var(--ink4); line-height:1.7; border-top:1px solid var(--border); }
     .faq-item.open .faq-a { display:block; }
     .faq-cols { display:grid; grid-template-columns:1fr; gap:8px; }
@@ -197,20 +220,22 @@
     .cta-banner::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
     .cta-inner { position:relative; z-index:1; text-align:center; }
     .cta-eyebrow { display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 14px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.7); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
-    .cta-eyebrow i { width:13px; height:13px; color:var(--green-m); }
+    .cta-eyebrow i, .cta-eyebrow svg { width:13px; height:13px; color:var(--green-m); }
     .cta-banner h2 { font-family:var(--font-d); font-size:clamp(26px,4vw,42px); font-weight:800; color:#fff; line-height:1.12; margin-bottom:12px; }
     .cta-banner h2 em { font-style:italic; color:var(--green-m); }
     .cta-banner p { font-size:15px; color:rgba(255,255,255,.6); max-width:480px; margin:0 auto 32px; line-height:1.7; }
     .cta-btns { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
     .btn-primary { display:inline-flex; align-items:center; gap:9px; background:#fff; color:var(--green); border-radius:var(--pill); padding:14px 30px; font-size:15px; font-weight:800; text-decoration:none; transition:all var(--ease); box-shadow:0 4px 18px rgba(0,0,0,.2); }
     .btn-primary:hover { background:var(--green-l); transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,0,0,.25); }
-    .btn-primary i { width:17px; height:17px; }
+    .btn-primary:active { transform:translateY(0) scale(.98); }
+    .btn-primary i, .btn-primary svg { width:17px; height:17px; }
     .btn-secondary { display:inline-flex; align-items:center; gap:9px; background:rgba(255,255,255,.1); color:#fff; border:1.5px solid rgba(255,255,255,.2); border-radius:var(--pill); padding:13px 24px; font-size:14px; font-weight:700; text-decoration:none; transition:all var(--ease); }
     .btn-secondary:hover { background:rgba(255,255,255,.18); }
-    .btn-secondary i { width:15px; height:15px; }
+    .btn-secondary:active { transform:scale(.98); }
+    .btn-secondary i, .btn-secondary svg { width:15px; height:15px; }
     .cta-reassure { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:28px; }
     .cta-reassure-item { display:flex; align-items:center; gap:7px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.55); }
-    .cta-reassure-item i { width:13px; height:13px; color:var(--green-m); }
+    .cta-reassure-item i, .cta-reassure-item svg { width:13px; height:13px; color:var(--green-m); }
 
     @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
     .fade-up { opacity:0; animation:fadeUp .5s ease forwards; }
@@ -233,19 +258,41 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner fade-up">
-      <div class="hero-badge"><i data-lucide="wrench"></i>ICE · EV · Hybrid</div>
-      <h1>Car Servicing &amp;<br><em>Repairs</em></h1>
-      <p class="hero-desc">We collect your car, get it fixed at a trusted workshop, and return it to you — no chasing garages, no follow-up calls, no surprises on the bill.</p>
-      <div class="hero-pills">
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>We collect &amp; return</span>
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>ICE, EV &amp; Hybrid</span>
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Authorized &amp; independent garages</span>
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Transparent estimates before work begins</span>
+    <div class="hero-inner">
+      <div class="fade-up">
+        <div class="hero-badge"><i data-lucide="wrench"></i>Petrol · Diesel · EV · Hybrid</div>
+        <h1>Car servicing<br>and <em>repairs</em></h1>
+        <p class="hero-desc">Tell us what's wrong, we collect the car, get it fixed at a workshop we've vetted, and bring it back. You see the cost before anyone touches the car.</p>
+        <div class="hero-pills">
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i>We collect &amp; return</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i>Estimate before work starts</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i>Authorized &amp; independent garages</span>
+        </div>
+        <a href="/form/maintenanceform" class="hero-cta">
+          <i data-lucide="calendar-check"></i>Book a service
+        </a>
       </div>
-      <a href="/form/maintenanceform" class="hero-cta">
-        <i data-lucide="calendar-check"></i>Book a Service
-      </a>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual-plate">
+          <svg class="hv-wrench" viewBox="0 0 48 48">
+            <defs>
+              <linearGradient id="heroWrG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fbfbfa"/>
+                <stop offset="100%" stop-color="#c3c9c4"/>
+              </linearGradient>
+              <filter id="heroWrS" x="-60%" y="-30%" width="220%" height="200%">
+                <feDropShadow dx="0" dy="3" stdDeviation="2.4" flood-color="#0d140f" flood-opacity=".28"/>
+              </filter>
+            </defs>
+            <g filter="url(#heroWrS)">
+              <path d="M33 8.9a10 10 0 00-13.6 12L6.6 33.6a3.6 3.6 0 005 5L24.4 25.8a10 10 0 0012.4-13l-6 6a4 4 0 01-5.6-5.7l6-6z" fill="url(#heroWrG)"/>
+            </g>
+            <path d="M20.6 15.6a10 10 0 003.8 8.6l-1.7 1.7a10 10 0 01-3.8-8.6z" fill="#fff" opacity=".35"/>
+          </svg>
+          <span class="hero-visual-chip c1"><i data-lucide="clock"></i>Same-day oil service</span>
+          <span class="hero-visual-chip c2"><i data-lucide="shield-check"></i>Warranty follow-up</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -331,7 +378,7 @@
 <section class="section alt" id="services">
   <div class="wrap">
     <div class="eyebrow"><i data-lucide="settings"></i>Services</div>
-    <h2 class="sec-title">What We <em>Fix</em></h2>
+    <h2 class="sec-title">What we <em>fix</em></h2>
     <p class="sec-sub">All common maintenance and repair jobs, for petrol, diesel, electric, and hybrid vehicles.</p>
 
     <div class="vtab-wrap">
@@ -480,13 +527,13 @@
 <section class="section alt" id="garages">
   <div class="wrap">
     <div class="eyebrow"><i data-lucide="building-2"></i>Workshop Types</div>
-    <h2 class="sec-title">Authorized vs <em>Independent</em></h2>
+    <h2 class="sec-title">Authorized vs <em>independent</em></h2>
     <p class="sec-sub">Both have their place. We work with both types and help you choose the right one depending on your vehicle's age, warranty status, and the job.</p>
     <div class="garage-grid">
       <div class="garage-card">
         <div class="garage-head">
-          <div class="garage-label">Option A</div>
-          <div class="garage-title">Authorized Service Center</div>
+          <div class="garage-badge" style="background:var(--blue-l);color:var(--blue)"><i data-lucide="shield-check"></i>Best for warranty work</div>
+          <div class="garage-title">Authorized service center</div>
           <p class="garage-desc">Brand-official workshops with factory-trained technicians and genuine parts. The right choice for new or under-warranty vehicles.</p>
         </div>
         <div class="garage-body">
@@ -503,8 +550,8 @@
       </div>
       <div class="garage-card rec">
         <div class="garage-head">
-          <div class="garage-label">Option B</div>
-          <div class="garage-title">Independent Garage</div>
+          <div class="garage-badge" style="background:var(--green-l);color:var(--green)"><i data-lucide="check-circle-2"></i>Best for cost &amp; speed</div>
+          <div class="garage-title">Independent garage</div>
           <p class="garage-desc">Skilled mechanics not tied to one brand. Often faster, more flexible, and more affordable for routine servicing and out-of-warranty repairs.</p>
         </div>
         <div class="garage-body">
@@ -534,7 +581,7 @@
 <section class="section">
   <div class="wrap">
     <div class="eyebrow"><i data-lucide="circle-help"></i>FAQs</div>
-    <h2 class="sec-title">Common <em>Questions</em></h2>
+    <h2 class="sec-title">Common <em>questions</em></h2>
     <p class="sec-sub" style="margin-bottom:32px">Quick answers before you book.</p>
     <div class="faq-cols">
       <div class="faq-list">

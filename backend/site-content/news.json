@@ -1,5 +1,186 @@
 {
-  "items": [],
+  "items": [
+    {
+      "photos": [],
+      "published": true,
+      "id": "n1",
+      "cat": "Policy",
+      "catKey": "policy",
+      "title": "Government Overhauls EV Tax Structure: Flat 20% Customs Duty Replaces Old Motor-Power System",
+      "excerpt": "In the FY 2083/84 budget, Finance Minister Swarnim Wagle scrapped the decade-old kW-based EV tax slabs for a single value-based rate — a change industry watchers are calling a game-changer for pricing transparency.",
+      "date": "May 2026",
+      "read": "3 min read",
+      "icon": "landmark",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Charging_Station_in_Nepal.jpg",
+      "body": [
+        "Presenting the new fiscal year's budget in late May, Finance Minister Dr. Swarnim Wagle announced that electric passenger cars will now be taxed on their CIF (cost, insurance, freight) value rather than their motor's power rating, ending a system that had quietly encouraged manufacturers to detune motors just to land in a cheaper tax bracket.",
+        "Under the new structure, importers pay a flat 20 percent customs duty on a vehicle's declared value. The old excise duty has been scrapped entirely and replaced with a tiered “Clean Infrastructure Investment Fee” that runs from around 2.5 percent on affordable EVs up to well over 100 percent on cars priced above roughly Rs 50 lakh.",
+        "Dealers say the change removes a long-standing incentive to sell underpowered variants purely for tax reasons, though buyers eyeing vehicles in the Rs 20-30 lakh band are still waiting on the Finance Ministry to clarify how that slab will be treated once Parliament finalises the bill."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "n2",
+      "cat": "New Launch",
+      "catKey": "launch",
+      "title": "BYD Seal Arrives in Nepal: Flagship Electric Sedan Starts at Rs 1.10 Crore",
+      "excerpt": "Cimex Inc. has opened bookings for BYD's flagship sedan, promising up to 570 km of WLTP range, a five-star Euro NCAP rating and the brand's Blade Battery pack.",
+      "date": "Jun 2026",
+      "read": "4 min read",
+      "icon": "car",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/BYD_Seal_2023010703.jpg",
+      "body": [
+        "BYD's authorised distributor in Nepal, Cimex Inc., has begun deliveries of the Seal, a battery-electric sedan built on the brand's e-Platform 3.0 and offered locally in Dynamic, Premium and Performance trims.",
+        "Pricing spans roughly Rs 1.10 crore for the entry Dynamic variant to close to Rs 1.95 crore for the range-topping Performance model, which pairs a dual-motor all-wheel-drive setup with a claimed 3.8-second 0-100 km/h sprint. The mid-tier Premium trim is the range champion, rated for up to 570 km on the WLTP cycle from its 82.56 kWh Blade Battery pack.",
+        "The Seal has already picked up a five-star Euro NCAP safety score, and Nepal-spec cars come with a panoramic glass roof, a rotating 15.6-inch touchscreen and a 360-degree camera as standard across the range."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "n3",
+      "cat": "Market",
+      "catKey": "market",
+      "title": "Fuel Prices Hold Steady After a Turbulent Spring of Back-to-Back Hikes",
+      "excerpt": "Petrol in Kathmandu sits at Rs 197 a litre and diesel at Rs 195 following NOC's latest revision — a relative calm after five increases in just over a month this spring.",
+      "date": "Jul 2026",
+      "read": "3 min read",
+      "icon": "fuel",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Petrol_Pump.jpg",
+      "body": [
+        "Nepal Oil Corporation's most recent price list, effective from 1 July, has petrol holding at Rs 197 per litre and diesel at Rs 195 per litre in the Kathmandu, Pokhara and Dipayal pricing zone, with slightly higher rates in the country's other depot regions.",
+        "The relative calm follows a rough patch in April, when escalating tension in West Asia pushed international crude prices sharply higher and NOC raised diesel and kerosene rates five times in 31 days — at one point lifting them by Rs 30 a litre in a single revision.",
+        "For an owner running a petrol sedan roughly 1,000 km a month, this year's swings have added real money to the monthly fuel bill, and showrooms say it's one more reason EV enquiries keep climbing even as sticker prices for electric cars stay well above their petrol equivalents."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "n4",
+      "cat": "Infrastructure",
+      "catKey": "infrastructure",
+      "title": "Fast-Charging Network Keeps Growing Along the Kathmandu–Pokhara Corridor",
+      "excerpt": "Nepal now counts well over a thousand public and private charging points nationwide, up from under 50 in 2020, with new fast chargers continuing to land on the busy Prithvi Highway route.",
+      "date": "May 2026",
+      "read": "3 min read",
+      "icon": "plug-zap",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Nayabazar_Road_at_Prithvi_Chowk.jpg",
+      "body": [
+        "Nepal's charging network has grown from a handful of pilot stations five years ago to more than a thousand public and private charge points today, according to industry trackers, spurred by the country's cheap hydropower tariffs and a wave of new EV registrations.",
+        "The Nepal Electricity Authority alone now runs dozens of DC fast-charging hubs along major routes, and the Kathmandu–Pokhara corridor — one of the busiest and most EV-heavy stretches of road in the country — continues to add new sites roughly every 60 km, alongside chargers installed directly by BYD, MG, Tata and other brands at their showrooms.",
+        "Range anxiety on long highway runs is easing as a result, though EV owners are still advised to check an app such as EV Nepal or the NEA charging app before setting off, since a handful of stations remain offline in areas affected by past landslides."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "n5",
+      "cat": "New Launch",
+      "catKey": "launch",
+      "title": "Hyundai Confirms Creta EV Is on Track for Nepal in Early 2026",
+      "excerpt": "Hyundai's best-selling SUV nameplate is going electric, and local distributors say Nepal bookings could open ahead of the model's showroom debut.",
+      "date": "Apr 2026",
+      "read": "2 min read",
+      "icon": "car",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/2024_Hyundai_Creta_Alpha.jpg",
+      "body": [
+        "Hyundai has confirmed that an all-electric version of the Creta, one of the best-selling SUVs in South Asia, remains on track to reach the Nepali market, with distributors pointing to early 2026 for the formal launch.",
+        "Nepal already sells the petrol Creta in its facelifted “SU2” form, which switched to a bolder, more upright face and a twin 10.25-inch dashboard layout when it was updated, so the electric version is expected to carry over much of that styling and cabin tech.",
+        "Comparison platforms already list an estimated Creta EV price point sitting just below rivals like the BYD Atto 3, positioning it as a mainstream alternative for buyers who want a familiar badge paired with an electric drivetrain."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "n6",
+      "cat": "New Launch",
+      "catKey": "launch",
+      "title": "Six New Car Brands Set to Debut at NADA Auto Show 2026",
+      "excerpt": "BAIC, ARCFOX, Chery QQ and Changan's new Nevo marque are confirmed for Nepal's biggest auto show this August, with Jetour, Lepas and Hongqi said to be close behind.",
+      "date": "Jun 2026",
+      "read": "3 min read",
+      "icon": "store",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/2023_Deepal_S07.jpg",
+      "body": [
+        "Nepal's automobile market is bracing for another wave of new entrants at the NAIMA Mobility Expo and NADA Auto Show 2026 this August, with around half a dozen new brands expected to make their local debut.",
+        "Laxmi e-Mobility has already secured distribution rights for BAIC and ARCFOX, both part of China's state-owned BAIC Group, while Changan is preparing to introduce its Nevo sub-brand to Nepal through a compact SUV, the Nevo Q05. Several business groups are still competing for the rights to Jetour, Lepas and Hongqi.",
+        "Most of the newcomers lean toward electric and hybrid powertrains, continuing a run of Chinese-brand launches that has reshaped Nepal's showroom floors over the past two years."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "n7",
+      "cat": "Car Awards",
+      "catKey": "car awards",
+      "title": "BMW iX3 Named 2026 World Car of the Year — and World Electric Vehicle",
+      "excerpt": "A 98-strong global jury handed BMW's first Neue Klasse model a rare double win at the New York International Auto Show, ending a four-year Korean winning streak.",
+      "date": "Apr 2026",
+      "read": "3 min read",
+      "icon": "award",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/2021_BMW_iX3_M_Sport_(Rear).jpg",
+      "body": [
+        "At the New York International Auto Show in April, a jury of 98 automotive journalists from 33 countries voted the BMW iX3 both World Car of the Year and World Electric Vehicle, beating finalists that included the Hyundai Palisade and Nissan Leaf.",
+        "It's BMW's first World Car of the Year win since the E90 3 Series took the inaugural-era title back in 2006, and it ends a run in which Korean brands had claimed the top prize four years running with the Kia EV9 and EV3. Every category winner this year — including the Hyundai Ioniq 6 N (Performance), Lucid Gravity (Luxury) and Nio Firefly (Urban Car) — was electric, a first in the awards' 22-year history.",
+        "None of these cars are officially on sale in Nepal yet, but they're closely watched here anyway: BYD, Hyundai and Kia's Nepali distributors routinely reference World Car Award results in their own marketing, and the iX3's Neue Klasse platform is expected to filter down into more attainable BMW EVs over the next few years."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "n8",
+      "cat": "Car Awards",
+      "catKey": "car awards",
+      "title": "Maruti Suzuki Victoris Wins Indian Car of the Year 2026 — A Nameplate Nepali Buyers Are Watching Closely",
+      "excerpt": "The Victoris beat seven finalists including the Hyundai Creta Electric and Tata Harrier EV to take India's biggest automotive award, sponsored by JK Tyre since its inception.",
+      "date": "Jan 2026",
+      "read": "3 min read",
+      "icon": "award",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/2022_Maruti_Suzuki_Grand_Vitara_Alpha_Smart_Hybrid_(India)_front_view.png",
+      "body": [
+        "A 19-member jury of Indian automotive journalists awarded the Maruti Suzuki Victoris the 2026 Indian Car of the Year (ICOTY) title at a ceremony in Delhi in December, scoring it well ahead of runner-up Skoda Kylaq. The Mahindra XEV 9e took Green Car of the Year, and the Volkswagen Golf GTI won Premium Car of the Year.",
+        "The Victoris is a Grand-Vitara-sized SUV sold through Maruti's Arena dealerships, offered with a 1.5-litre mild-hybrid, a Toyota-sourced strong-hybrid option, and an unusual underbody-mounted CNG tank. It's built alongside the Grand Vitara, which is already a familiar sight on Nepali roads through CG Motors.",
+        "Nepal doesn't have its own equivalent of ICOTY, so buyers here often use Indian and global awards as a proxy for how a car stacks up before it's even confirmed for local launch — and dealers have started citing the Victoris win in early conversations with customers cross-shopping the Creta and Seltos segment."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "n9",
+      "cat": "Buying Tips",
+      "catKey": "buying tips",
+      "title": "Car Loans in Nepal, Explained: Down Payments, Rates and the EV Discount",
+      "excerpt": "Most banks will finance up to 60 percent of a car's value under Nepal Rastra Bank's lending rules, with EV loans typically priced a few points cheaper than petrol and diesel.",
+      "date": "Jul 2026",
+      "read": "4 min read",
+      "icon": "credit-card",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Nepal_Rastra_Bank_Pokhara.jpg",
+      "body": [
+        "Under Nepal Rastra Bank's loan-to-value rule, banks can finance up to roughly 60 percent of a private vehicle's declared price, meaning buyers need to arrange at least 40 percent as a down payment themselves — a threshold that applies to both petrol/diesel cars and EVs.",
+        "Rates vary widely by bank and scheme. Nabil Bank's fixed auto loan currently runs 9.99 percent for tenures up to five years and 10.49 percent beyond that, while several other lenders price standard hire-purchase loans anywhere from about 11 to 15 percent depending on the base rate and premium they add. EV loans, including dedicated \"Green Drive\" schemes at banks like Global IME, are consistently priced a few percentage points below conventional auto loans, reflecting Nepal Rastra Bank's push to encourage electric vehicle uptake.",
+        "Tenures of up to seven years (and occasionally ten, for select schemes) are available, and lenders generally require the applicant to be a Nepali citizen over 21 with income at least double the proposed monthly instalment. Shopping around matters: the gap between the cheapest and most expensive fixed-rate offers on the market can run four to five percentage points, which adds up fast over a multi-year loan."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "n10",
+      "cat": "Buying Tips",
+      "catKey": "buying tips",
+      "title": "Buying a Car in 2026? Here's What to Know About Nepal's Embossed Number Plate Rules",
+      "excerpt": "New vehicles now require an RFID-embedded embossed plate at registration, while the rollout for older vehicles on the road remains on hold after public pushback.",
+      "date": "Jun 2026",
+      "read": "3 min read",
+      "icon": "id-card",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Nepal_number_plate.jpg",
+      "body": [
+        "Since September 2025, Nepal's Department of Transport Management has required newly purchased vehicles to be registered with an embossed number plate — an aluminium plate with raised, reflective characters and an embedded RFID chip that links the vehicle to a central database. For new buyers this is now simply part of the registration process alongside the bluebook.",
+        "The plan originally called for every vehicle already on the road to be retrofitted too, but that mandate was pared back after public concern over cost, English-only lettering and processing delays; some transport offices were only managing around 100 plates a day against a vehicle fleet well past 5.5 million. For now, retrofitting remains optional for existing owners while the newly-bought mandate stays firmly in place.",
+        "Practically, that means anyone collecting a new car this year should budget a bit of extra time at the Transport Management Office for biometric verification and plate issuance, and should keep the bluebook details on hand since the embossed-plate application form is filled out directly from it. RFID gate infrastructure for automated toll and enforcement reading is still being built out, so for now the chip mainly matters for record-keeping rather than any at-the-roadside functionality."
+      ]
+    }
+  ],
   "categories": [
     [
       "all",

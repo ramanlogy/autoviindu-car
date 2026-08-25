@@ -22,16 +22,20 @@
     ],
     "colors": [
       {
-        "name": "White",
-        "hex": "#F5F5F5"
+        "name": "Apricity White",
+        "hex": "#F5F5F0"
       },
       {
-        "name": "Black",
+        "name": "Cosmos Black",
         "hex": "#1C1C1C"
       },
       {
-        "name": "Grey",
-        "hex": "#8A8E94"
+        "name": "Arctic Blue",
+        "hex": "#4A7FA8"
+      },
+      {
+        "name": "Sprout Green",
+        "hex": "#8BC34A"
       }
     ],
     "variants": [
@@ -101,15 +105,22 @@
       "Drive": "FWD",
       "Transmission": "Single-Speed Automatic",
       "Seating": "5",
-      "Boot Space": "Not specified",
+      "Boot Space": "345 L",
       "Length": "3,925 mm",
       "Width": "1,720 mm",
       "Height": "1,590 mm",
       "Wheelbase": "2,500 mm",
       "Ground Clearance": "175 mm",
+      "Kerb Weight": "1,225 kg (Dynamic) / 1,280 kg (Premium)",
+      "Top Speed": "130 km/h",
+      "Wheels & Tyres": "16\" Alloy — 185/55 R16",
+      "Turning Circle": "4.95 m",
       "Airbags": "2 (Dynamic) / 6 (Premium)",
-      "Platform": "BYD e-Platform 3.0",
-      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+      "Safety Suite": "ABS + EBD + ESC + TCS + TPMS + Hill-Start Assist + EPB with Auto Hold",
+      "Infotainment": "10.1\" Rotating Touchscreen, Wireless Apple CarPlay + Android Auto, OTA Updates",
+      "Platform": "BYD e-Platform 3.0 (Blade Battery, Cell-to-Body)",
+      "Warranty": "Battery & Motor: 10 Years / 200,000 km | Other Vehicle Parts: 7.5 Years / 187,500 km (Cimex extended warranty, since Apr 2025)",
+      "Distributor": "Cimex Inc. Pvt. Ltd. (Official BYD Nepal Distributor)"
     },
     "pros": [
       "Cheapest BYD in Nepal — Rs. 28.95L start",
@@ -221,10 +232,12 @@
       "Height": "1,570 mm",
       "Wheelbase": "2,700 mm",
       "Ground Clearance": "175 mm",
+      "Top Speed": "150 km/h",
       "Airbags": "6",
       "Safety Rating": "5-Star Euro NCAP",
       "Platform": "BYD e-Platform 3.0",
-      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+      "Warranty": "Battery & Motor: 10 Years / 200,000 km | Other Vehicle Parts: 7.5 Years / 187,500 km (Cimex extended warranty, since Apr 2025)",
+      "Distributor": "Cimex Inc. Pvt. Ltd. (Official BYD Nepal Distributor)"
     },
     "pros": [
       "5-Star Euro NCAP — best-in-class safety",
@@ -289,8 +302,8 @@
     "variants": [
       {
         "name": "Standard",
-        "price": 4499000,
-        "label": "Rs. 44.99L",
+        "price": 4899000,
+        "label": "Rs. 48.99L",
         "popular": true,
         "transmission": "Automatic",
         "fuel": "Electric",
@@ -347,7 +360,8 @@
       "Ground Clearance": "200 mm",
       "Airbags": "6",
       "Platform": "BYD e-Platform 3.0 + CTB",
-      "Warranty": "Battery: 10yr/200,000km | Vehicle: 5yr/125,000km"
+      "Warranty": "Battery & Motor: 10 Years / 200,000 km | Other Vehicle Parts: 7.5 Years / 187,500 km (Cimex extended warranty, since Apr 2025)",
+      "Distributor": "Cimex Inc. Pvt. Ltd. (Official BYD Nepal Distributor)"
     },
     "pros": [
       "200mm ground clearance — best in BYD Nepal lineup",
@@ -490,7 +504,8 @@
       "Airbags": "7",
       "Safety Rating": "5-Star Euro NCAP",
       "Platform": "BYD e-Platform 3.0",
-      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+      "Warranty": "Battery & Motor: 10 Years / 200,000 km | Other Vehicle Parts: 7.5 Years / 187,500 km (Cimex extended warranty, since Apr 2025)",
+      "Distributor": "Cimex Inc. Pvt. Ltd. (Official BYD Nepal Distributor)"
     },
     "pros": [
       "Nepal's proven #1 EV — massive owner community & service support",
@@ -611,10 +626,11 @@
       "Width": "1,810 mm",
       "Height": "1,690 mm",
       "Wheelbase": "2,800 mm",
-      "Ground Clearance": "175 mm",
+      "Ground Clearance": "170 mm (unladen) / 140 mm (laden)",
       "Airbags": "6",
       "Platform": "BYD e-Platform 3.0",
-      "Warranty": "Battery: 10yr/200,000km | Vehicle: 5yr/125,000km"
+      "Warranty": "Battery & Motor: 10 Years / 200,000 km | Other Vehicle Parts: 7.5 Years / 187,500 km (Cimex extended warranty, since Apr 2025)",
+      "Distributor": "Cimex Inc. Pvt. Ltd. (Official BYD Nepal Distributor)"
     },
     "pros": [
       "Nepal's only 7-seat electric MPV — no direct rival",
@@ -624,7 +640,7 @@
       "2,800mm wheelbase — genuinely roomy for all 7"
     ],
     "cons": [
-      "Ground clearance listed variably — 140–175mm; confirm with Cimex",
+      "Ground clearance drops to 140mm laden — verified low point for a family MPV",
       "Only 180L boot with all 7 seats up",
       "No AWD",
       "0–100 in 9s — not quick for its motor size",
@@ -733,7 +749,7 @@
       "Drive": "RWD",
       "Transmission": "Single-Speed Automatic",
       "Top Speed": "215 km/h",
-      "0–100 km/h": "~5.4 sec",
+      "0–100 km/h": "6.7 sec",
       "Seating": "5",
       "Boot Space": "500 L + 58 L Frunk",
       "Length": "4,830 mm",
@@ -742,8 +758,10 @@
       "Wheelbase": "2,800 mm",
       "Ground Clearance": "170 mm",
       "Airbags": "11",
+      "Safety Rating": "5-Star Euro NCAP",
       "Platform": "BYD e-Platform 3.0",
-      "Warranty": "Battery: 10yr/200,000km | Vehicle: 5yr/125,000km"
+      "Warranty": "Battery & Motor: 10 Years / 200,000 km | Other Vehicle Parts: 7.5 Years / 187,500 km (Cimex extended warranty, since Apr 2025)",
+      "Distributor": "Cimex Inc. Pvt. Ltd. (Official BYD Nepal Distributor)"
     },
     "pros": [
       "11 airbags — most in any Nepal-market EV",
@@ -909,7 +927,8 @@
       "Airbags": "9",
       "Safety Rating": "5-Star Euro NCAP",
       "Platform": "BYD e-Platform 3.0 + CTB",
-      "Warranty": "Battery: 8yr/160,000km | Vehicle: 8yr/160,000km"
+      "Warranty": "Battery & Motor: 10 Years / 200,000 km | Other Vehicle Parts: 7.5 Years / 187,500 km (Cimex extended warranty, since Apr 2025)",
+      "Distributor": "Cimex Inc. Pvt. Ltd. (Official BYD Nepal Distributor)"
     },
     "pros": [
       "Only performance EV sedan available in Nepal — no rival",

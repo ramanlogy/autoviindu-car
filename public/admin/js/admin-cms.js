@@ -188,6 +188,7 @@
       read: '3 min read',
       icon: 'file-text',
       img: '',
+      photos: [],
       body: [''],
       published: true,
     };
@@ -241,11 +242,21 @@
       field('Read time', 'a-read', item.read) +
       field('Icon name (Lucide)', 'a-icon', item.icon) +
       extra +
-      '<div class="form-field full"><label class="form-lbl">Featured image URL</label>' +
+      '<div class="form-field full"><label class="form-lbl">Featured image URL (thumbnail)</label>' +
       '<div style="display:flex;gap:8px"><input class="form-inp" id="a-img" value="' + esc(item.img) + '" style="flex:1">' +
       '<button type="button" class="btn" onclick="document.getElementById(\'a-img-file\').click()">Upload</button></div>' +
       '<input type="file" id="a-img-file" accept="image/*" style="display:none" onchange="uploadArticleImage(this)">' +
       (item.img ? '<img src="' + esc(item.img) + '" class="cms-preview-img" alt="">' : '') +
+      '</div>' +
+      '<div class="form-field full"><label class="form-lbl">Photo gallery (shown on the article page)</label>' +
+      '<div class="cms-gallery-grid">' +
+      (item.photos || []).map(function (url, i) {
+        return '<div class="cms-gallery-thumb"><img src="' + esc(url) + '" alt="">' +
+          '<button type="button" class="cms-gallery-del" title="Remove" onclick="removeArticlePhoto(' + i + ')">&times;</button></div>';
+      }).join('') +
+      '</div>' +
+      '<button type="button" class="btn" onclick="document.getElementById(\'a-photos-file\').click()">Add photos</button>' +
+      '<input type="file" id="a-photos-file" accept="image/*" multiple style="display:none" onchange="addArticlePhotos(this)">' +
       '</div>' +
       '<div class="form-field full"><label class="form-lbl">Short excerpt (shown on cards)</label>' +
       '<textarea class="form-ta" id="a-excerpt" rows="3">' + esc(item.excerpt) + '</textarea></div>' +
@@ -280,6 +291,31 @@
       }
     } catch (_) { toast('Upload failed', 'err'); }
     input.value = '';
+  };
+
+  window.addArticlePhotos = async function (input) {
+    if (!input.files.length || !editArticle) return;
+    const files = Array.prototype.slice.call(input.files);
+    for (const file of files) {
+      const b64 = await new Promise(function (res) { const r = new FileReader(); r.onload = function () { res(r.result); }; r.readAsDataURL(file); });
+      try {
+        const up = await api()('/api/admin/media/upload', { method: 'POST', body: JSON.stringify({ imageBase64: b64, filename: file.name }) });
+        if (up.ok) {
+          const d = await up.json();
+          if (!editArticle.item.photos) editArticle.item.photos = [];
+          editArticle.item.photos.push(d.url);
+        }
+      } catch (_) { toast('Upload failed: ' + file.name, 'err'); }
+    }
+    renderArticleDrawer();
+    toast('Photos uploaded', 'ok');
+    input.value = '';
+  };
+
+  window.removeArticlePhoto = function (idx) {
+    if (!editArticle || !editArticle.item.photos) return;
+    editArticle.item.photos.splice(idx, 1);
+    renderArticleDrawer();
   };
 
   window.saveArticleEditor = async function () {

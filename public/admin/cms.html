@@ -235,6 +235,14 @@
     .list-editor-row input { flex: 1; }
     .list-editor-row .color-preview { width: 38px; height: 38px; border-radius: var(--radius-sm); border: 1px solid var(--border); flex-shrink: 0; }
 
+    /* Photo gallery picker (news/events forms) */
+    .cms-gallery-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .cms-gallery-thumb { position: relative; width: 72px; height: 72px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); flex-shrink: 0; }
+    .cms-gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cms-gallery-del { position: absolute; top: 2px; right: 2px; width: 18px; height: 18px; line-height: 16px; text-align: center; border-radius: 50%; border: none; background: rgba(0,0,0,.6); color: #fff; font-size: 13px; cursor: pointer; padding: 0; }
+    .cms-gallery-del:hover { background: var(--red); }
+    .cover-preview-img { max-width: 160px; margin-top: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border); display: block; }
+
     /* Toast Notification */
     .toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; flex-direction: column; gap: 8px; }
     .toast {
@@ -1964,53 +1972,64 @@ function readBlogForm() {
   };
 }
 
-// ── News posts & Calendar Events ──────────────────────────────────────────────
-let allNews = [];
+// ── News posts (stored inside SiteContent, same data the public site & the
+// Dashboard → Articles editor read/write — see /api/admin/site/news) ─────────
+const NEWS_CATS = [['policy','Policy'],['launch','New Launch'],['market','Market'],['infrastructure','Infrastructure'],['car awards','Car Awards'],['buying tips','Buying Tips']];
+const NEWS_ICONS = { policy: 'landmark', launch: 'car', market: 'trending-up', infrastructure: 'plug-zap', 'car awards': 'award', 'buying tips': 'credit-card' };
+
+let newsData = { items: [], categories: [] };
 async function loadNews() {
-  allNews = await api('GET', '/api/admin/news');
+  newsData = await api('GET', '/api/admin/site/news') || { items: [], categories: [] };
+  const items = newsData.items || [];
   const tbody = document.getElementById('newsTableBody');
-  if (allNews.length === 0) {
+  if (items.length === 0) {
     tbody.innerHTML = '<tr><td colspan="5"><div class="empty-state"><div class="empty-icon">📰</div>No news posts yet.</div></td></tr>';
     return;
   }
-  tbody.innerHTML = allNews.map(n => `<tr>
+  tbody.innerHTML = items.map((n, idx) => `<tr>
     <td><div style="font-weight:700">${n.title}</div></td>
-    <td><span class="badge badge-purple">${n.category}</span></td>
+    <td><span class="badge badge-purple">${n.cat || 'General'}</span></td>
     <td>
-      <span class="badge ${n.isPublished?'badge-green':'badge-yellow'}">${n.isPublished?'Published':'Draft'}</span>
+      <span class="badge ${n.published!==false?'badge-green':'badge-yellow'}">${n.published!==false?'Published':'Draft'}</span>
     </td>
-    <td>${new Date(n.createdAt).toLocaleDateString()}</td>
+    <td>${n.date || ''}</td>
     <td style="display:flex;gap:6px;">
-      <button class="btn btn-ghost btn-sm" onclick="editNews(${n.id})"><i data-lucide="edit-3" style="width:12px;height:12px"></i> Edit</button>
-      <button class="btn btn-danger btn-sm" onclick="deleteNews(${n.id})"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
+      <button class="btn btn-ghost btn-sm" onclick="editNews(${idx})"><i data-lucide="edit-3" style="width:12px;height:12px"></i> Edit</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteNews(${idx})"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
     </td>
   </tr>`).join('');
   lucide.createIcons();
 }
 
 function openAddNews() {
-  openModal('Add News Update', newsForm({}), async () => {
-    const data = readNewsForm();
-    const res = await api('POST', '/api/admin/news', data);
-    if (res.id) { toast('News published!'); closeModal(); loadNews(); }
-    else toast(res.error || 'Server error', 'error');
+  openNewsEditor(-1);
+}
+
+function editNews(idx) {
+  openNewsEditor(idx);
+}
+
+function openNewsEditor(idx) {
+  const isNew = idx === -1;
+  const n = isNew ? {} : JSON.parse(JSON.stringify(newsData.items[idx]));
+  openModal(isNew ? 'Add News Post' : 'Edit News Post', newsForm(n), async () => {
+    const item = readNewsForm(n);
+    if (!item.title) { toast('Headline is required', 'error'); return; }
+    const items = (newsData.items || []).slice();
+    if (isNew) items.unshift(item); else items[idx] = item;
+    newsData.items = items;
+    const res = await api('POST', '/api/admin/site/news', newsData);
+    if (res.success) { toast('Published — live on website'); closeModal(); loadNews(); }
+    else toast('Failed to save', 'error');
   });
 }
 
-function editNews(id) {
-  const post = allNews.find(n => n.id === id);
-  if (!post) return;
-  openModal('Edit News Update', newsForm(post), async () => {
-    const data = readNewsForm();
-    const res = await api('PATCH', `/api/admin/news/${id}`, data);
-    if (res.id) { toast('News updated!'); closeModal(); loadNews(); }
-    else toast(res.error || 'Server error', 'error');
-  });
-}
-
-async function deleteNews(id) {
-  if (!confirm('Delete this news post?')) return;
-  await api('DELETE', `/api/admin/news/${id}`);
+async function deleteNews(idx) {
+  if (!confirm('Delete this news post? This cannot be undone.')) return;
+  const items = (newsData.items || []).slice();
+  items.splice(idx, 1);
+  newsData.items = items;
+  await api('POST', '/api/admin/site/news', newsData);
   toast('Post removed');
   loadNews();
 }
@@ -2019,44 +2038,97 @@ function newsForm(n = {}) {
   return `<div class="form-grid">
     <div class="form-group form-span-2"><label>Headline</label><input id="nf-title" type="text" value="${n.title||''}"></div>
     <div class="form-group"><label>News Category</label><select id="nf-category">
-      <option ${n.category==='launch'?'selected':''} value="launch">Automotive Launches</option>
-      <option ${n.category==='policy'?'selected':''} value="policy">Government Policy</option>
-      <option ${n.category==='market'?'selected':''} value="market">Market Trends</option>
-      <option ${n.category==='infrastructure'?'selected':''} value="infrastructure">Infrastructure</option>
-      <option ${n.category==='car awards'?'selected':''} value="car awards">Awards & Reviews</option>
-      <option ${n.category==='buying tips'?'selected':''} value="buying tips">Buying Tips</option>
+      ${NEWS_CATS.map(c => `<option value="${c[0]}" ${n.catKey===c[0]?'selected':''}>${c[1]}</option>`).join('')}
     </select></div>
-    <div class="form-group"><label>Reporter/Author</label><input id="nf-author" type="text" value="${n.author||''}"></div>
-    <div class="form-group form-span-2"><label>Cover Image URL</label><input id="nf-cover" type="text" value="${n.coverImage||''}"></div>
-    <div class="form-group form-span-2"><label>Short Excerpt</label><textarea id="nf-excerpt" rows="2">${n.excerpt||''}</textarea></div>
-    <div class="form-group form-span-2"><label>Full News Content</label><textarea id="nf-content" rows="6">${n.content||''}</textarea></div>
+    <div class="form-group"><label>Date shown (e.g. "Aug 2026")</label><input id="nf-date" type="text" value="${n.date || new Date().toLocaleDateString('en-GB',{month:'short',year:'numeric'})}"></div>
+  </div>
+  <div class="form-group form-span-2" style="margin-top:16px;">
+    <label>Thumbnail image (shown on the news list)</label>
+    <div style="display:flex;gap:8px;">
+      <input id="nf-cover" type="text" value="${n.img||''}" style="flex:1" placeholder="Paste an image URL, or upload below">
+      <button type="button" class="btn btn-secondary" onclick="document.getElementById('nf-cover-file').click()">Upload</button>
+    </div>
+    <input type="file" id="nf-cover-file" accept="image/*" style="display:none" onchange="uploadNewsCover(this)">
+    <img id="nf-cover-preview" class="cover-preview-img" src="${n.img||''}" style="${n.img?'':'display:none;'}">
+  </div>
+  <div class="form-group form-span-2" style="margin-top:16px;">
+    <label>Photo gallery (extra photos shown inside the article)</label>
+    <div class="cms-gallery-grid" id="nf-gallery-grid">${(n.photos||[]).map(u => newsGalleryThumb(u)).join('')}</div>
+    <button type="button" class="btn btn-secondary" onclick="document.getElementById('nf-gallery-file').click()">Add photos</button>
+    <input type="file" id="nf-gallery-file" accept="image/*" multiple style="display:none" onchange="addNewsPhotos(this)">
+  </div>
+  <div class="form-grid" style="margin-top:16px;">
+    <div class="form-group form-span-2"><label>Short Excerpt (shown on cards)</label><textarea id="nf-excerpt" rows="2">${n.excerpt||''}</textarea></div>
+    <div class="form-group form-span-2"><label>Full Article — one paragraph per line</label><textarea id="nf-content" rows="6">${(n.body||[]).join('\n')}</textarea></div>
   </div>
   <div style="margin-top:16px;">
-    <div class="switch-row" style="max-width:240px;"><span class="switch-label">Publish publicly</span><label class="toggle"><input type="checkbox" id="nf-pub" ${n.isPublished?'checked':''}><span class="toggle-slider"></span></label></div>
+    <div class="switch-row" style="max-width:240px;"><span class="switch-label">Publish publicly</span><label class="toggle"><input type="checkbox" id="nf-pub" ${n.published!==false?'checked':''}><span class="toggle-slider"></span></label></div>
   </div>`;
 }
 
-function readNewsForm() {
-  const title = document.getElementById('nf-title').value;
-  const isPub = document.getElementById('nf-pub').checked;
-  return {
-    title, category: document.getElementById('nf-category').value,
-    author: document.getElementById('nf-author').value,
-    coverImage: document.getElementById('nf-cover').value,
-    excerpt: document.getElementById('nf-excerpt').value,
-    content: document.getElementById('nf-content').value,
-    isPublished: isPub,
-    slug: slugify(title) + '-' + Date.now(),
-    publishedAt: isPub ? new Date().toISOString() : null
-  };
+function newsGalleryThumb(url) {
+  return `<div class="cms-gallery-thumb" data-url="${url}"><img src="${url}" alt=""><button type="button" class="cms-gallery-del" title="Remove" onclick="this.closest('.cms-gallery-thumb').remove()">&times;</button></div>`;
 }
 
-// ── Calendar Events List (Stored inside SiteContent) ──────────────────────────
+async function uploadImageFile(file) {
+  const b64 = await new Promise(res => { const r = new FileReader(); r.onload = () => res(r.result); r.readAsDataURL(file); });
+  const d = await api('POST', '/api/admin/media/upload', { imageBase64: b64, filename: file.name });
+  return d && d.url;
+}
+
+async function uploadNewsCover(input) {
+  if (!input.files.length) return;
+  const url = await uploadImageFile(input.files[0]);
+  if (url) {
+    document.getElementById('nf-cover').value = url;
+    const prev = document.getElementById('nf-cover-preview');
+    prev.src = url; prev.style.display = '';
+    toast('Image uploaded');
+  } else toast('Upload failed', 'error');
+  input.value = '';
+}
+
+async function addNewsPhotos(input) {
+  if (!input.files.length) return;
+  const grid = document.getElementById('nf-gallery-grid');
+  for (const file of Array.from(input.files)) {
+    const url = await uploadImageFile(file);
+    if (url) grid.insertAdjacentHTML('beforeend', newsGalleryThumb(url));
+  }
+  toast('Photos uploaded');
+  input.value = '';
+}
+
+function readNewsForm(existing) {
+  const catKey = document.getElementById('nf-category').value;
+  const cat = (NEWS_CATS.find(c => c[0] === catKey) || [catKey, catKey])[1];
+  const body = document.getElementById('nf-content').value.split('\n').map(s => s.trim()).filter(Boolean);
+  const words = body.join(' ').split(/\s+/).filter(Boolean).length;
+  const photos = Array.from(document.querySelectorAll('#nf-gallery-grid .cms-gallery-thumb')).map(el => el.dataset.url);
+  return Object.assign({}, existing, {
+    id: (existing && existing.id) || ('n' + Date.now()),
+    title: document.getElementById('nf-title').value.trim(),
+    cat, catKey,
+    icon: NEWS_ICONS[catKey] || 'file-text',
+    date: document.getElementById('nf-date').value.trim(),
+    read: Math.max(1, Math.round(words / 200)) + ' min read',
+    img: document.getElementById('nf-cover').value.trim(),
+    photos,
+    excerpt: document.getElementById('nf-excerpt').value.trim(),
+    body: body.length ? body : [''],
+    published: document.getElementById('nf-pub').checked,
+  });
+}
+
+// ── Calendar Events (Stored inside SiteContent) ────────────────────────────
+const EVENT_CATS = [['expo','Auto Expo'],['launch','Launch Event'],['community','Community Drive']];
+const EVENT_ICONS = { expo: 'calendar-days', launch: 'car', community: 'users' };
+
 let eventsData = { upcoming: [], past: [], categories: {} };
 async function loadEvents() {
   eventsData = await api('GET', '/api/admin/site/events') || { upcoming: [], past: [], categories: {} };
   const allEvents = [...(eventsData.upcoming||[]), ...(eventsData.past||[])];
-  
+
   const tbody = document.getElementById('eventsTableBody');
   if (allEvents.length === 0) {
     tbody.innerHTML = '<tr><td colspan="5"><div class="empty-state"><div class="empty-icon">📅</div>No events scheduled.</div></td></tr>';
@@ -2065,9 +2137,10 @@ async function loadEvents() {
   tbody.innerHTML = allEvents.map((e, idx) => `<tr>
     <td><div style="font-weight:700">${e.title}</div></td>
     <td>${e.date}</td>
-    <td>${e.location}</td>
-    <td><span class="badge badge-purple">${e.category || 'General'}</span></td>
-    <td>
+    <td>${e.venue || ''}</td>
+    <td><span class="badge badge-purple">${e.cat || 'General'}</span></td>
+    <td style="display:flex;gap:6px;">
+      <button class="btn btn-ghost btn-sm" onclick="editEvent(${idx})"><i data-lucide="edit-3" style="width:12px;height:12px"></i> Edit</button>
       <button class="btn btn-danger btn-sm" onclick="deleteEvent(${idx})"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
     </td>
   </tr>`).join('');
@@ -2075,23 +2148,125 @@ async function loadEvents() {
 }
 
 function openAddEvent() {
-  openModal('Schedule New Event', `<div class="form-grid">
-    <div class="form-group form-span-2"><label>Event Title</label><input id="ef-title" type="text" placeholder="e.g. EV Test Drive Expo 2026"></div>
-    <div class="form-group"><label>Event Date & Timing</label><input id="ef-date" type="text" placeholder="e.g. March 14, 2026 at 10 AM"></div>
-    <div class="form-group"><label>Venue / Location</label><input id="ef-location" type="text" placeholder="e.g. Bhrikutimandap, Kathmandu"></div>
-    <div class="form-group form-span-2"><label>Description Details</label><textarea id="ef-desc" rows="3"></textarea></div>
-  </div>`, async () => {
-    const ev = {
-      title: document.getElementById('ef-title').value,
-      date: document.getElementById('ef-date').value,
-      location: document.getElementById('ef-location').value,
-      description: document.getElementById('ef-desc').value,
-      category: 'launch', published: true
-    };
-    eventsData.upcoming = [...(eventsData.upcoming||[]), ev];
+  openEventEditor(-1);
+}
+
+function editEvent(idx) {
+  openEventEditor(idx);
+}
+
+function openEventEditor(idx) {
+  const isNew = idx === -1;
+  const allEvents = [...(eventsData.upcoming||[]), ...(eventsData.past||[])];
+  const ev = isNew ? {} : JSON.parse(JSON.stringify(allEvents[idx]));
+  openModal(isNew ? 'Schedule New Event' : 'Edit Event', eventForm(ev), async () => {
+    const item = readEventForm(ev);
+    if (!item.title) { toast('Event title is required', 'error'); return; }
+
+    const upcoming = (eventsData.upcoming || []).slice();
+    const past = (eventsData.past || []).slice();
+    if (isNew) {
+      (item.status === 'done' ? past : upcoming).unshift(item);
+    } else if (idx < (eventsData.upcoming||[]).length) {
+      if (item.status === 'done') { upcoming.splice(idx, 1); past.unshift(item); }
+      else upcoming[idx] = item;
+    } else {
+      const pastIdx = idx - (eventsData.upcoming||[]).length;
+      if (item.status !== 'done') { past.splice(pastIdx, 1); upcoming.unshift(item); }
+      else past[pastIdx] = item;
+    }
+    eventsData.upcoming = upcoming;
+    eventsData.past = past;
+
     const res = await api('POST', '/api/admin/site/events', eventsData);
-    if (res.success) { toast('Event added to calendar!'); closeModal(); loadEvents(); }
-    else toast('Failed to add event', 'error');
+    if (res.success) { toast('Published — live on website'); closeModal(); loadEvents(); }
+    else toast('Failed to save', 'error');
+  });
+}
+
+function eventForm(e = {}) {
+  return `<div class="form-grid">
+    <div class="form-group form-span-2"><label>Event Title</label><input id="ef-title" type="text" value="${e.title||''}" placeholder="e.g. EV Test Drive Expo 2026"></div>
+    <div class="form-group"><label>Event Category</label><select id="ef-category">
+      ${EVENT_CATS.map(c => `<option value="${c[0]}" ${e.catKey===c[0]?'selected':''}>${c[1]}</option>`).join('')}
+    </select></div>
+    <div class="form-group"><label>Status</label><select id="ef-status">
+      <option value="open" ${e.status==='open'?'selected':''}>Open / upcoming</option>
+      <option value="closing" ${e.status==='closing'?'selected':''}>Closing soon</option>
+      <option value="done" ${e.status==='done'?'selected':''}>Concluded (past event)</option>
+    </select></div>
+    <div class="form-group form-span-2"><label>Date shown (e.g. "Aug 25–30, 2026")</label><input id="ef-date" type="text" value="${e.date||''}" placeholder="e.g. March 14, 2026"></div>
+    <div class="form-group"><label>Day number (for the date badge)</label><input id="ef-dnum" type="text" value="${e.dnum||''}" placeholder="e.g. 14"></div>
+    <div class="form-group"><label>Month (for the date badge)</label><input id="ef-dmon" type="text" value="${e.dmon||''}" placeholder="e.g. MAR"></div>
+    <div class="form-group form-span-2"><label>Venue</label><input id="ef-venue" type="text" value="${e.venue||''}" placeholder="e.g. Bhrikutimandap Exhibition Hall, Kathmandu"></div>
+    <div class="form-group form-span-2"><label>Timing</label><input id="ef-time" type="text" value="${e.time||''}" placeholder="e.g. Daily, 10 AM – 6 PM"></div>
+  </div>
+  <div class="form-group form-span-2" style="margin-top:16px;">
+    <label>Thumbnail image</label>
+    <div style="display:flex;gap:8px;">
+      <input id="ef-cover" type="text" value="${e.img||''}" style="flex:1" placeholder="Paste an image URL, or upload below">
+      <button type="button" class="btn btn-secondary" onclick="document.getElementById('ef-cover-file').click()">Upload</button>
+    </div>
+    <input type="file" id="ef-cover-file" accept="image/*" style="display:none" onchange="uploadEventCover(this)">
+    <img id="ef-cover-preview" class="cover-preview-img" src="${e.img||''}" style="${e.img?'':'display:none;'}">
+  </div>
+  <div class="form-group form-span-2" style="margin-top:16px;">
+    <label>Photo gallery (extra photos shown inside the event page)</label>
+    <div class="cms-gallery-grid" id="ef-gallery-grid">${(e.photos||[]).map(u => newsGalleryThumb(u)).join('')}</div>
+    <button type="button" class="btn btn-secondary" onclick="document.getElementById('ef-gallery-file').click()">Add photos</button>
+    <input type="file" id="ef-gallery-file" accept="image/*" multiple style="display:none" onchange="addEventPhotos(this)">
+  </div>
+  <div class="form-group form-span-2" style="margin-top:16px;"><label>Description — one paragraph per line</label><textarea id="ef-desc" rows="4">${(e.body||[]).join('\n')}</textarea></div>
+  <div style="margin-top:16px;">
+    <div class="switch-row" style="max-width:240px;"><span class="switch-label">Publish publicly</span><label class="toggle"><input type="checkbox" id="ef-pub" ${e.published!==false?'checked':''}><span class="toggle-slider"></span></label></div>
+  </div>`;
+}
+
+async function uploadEventCover(input) {
+  if (!input.files.length) return;
+  const url = await uploadImageFile(input.files[0]);
+  if (url) {
+    document.getElementById('ef-cover').value = url;
+    const prev = document.getElementById('ef-cover-preview');
+    prev.src = url; prev.style.display = '';
+    toast('Image uploaded');
+  } else toast('Upload failed', 'error');
+  input.value = '';
+}
+
+async function addEventPhotos(input) {
+  if (!input.files.length) return;
+  const grid = document.getElementById('ef-gallery-grid');
+  for (const file of Array.from(input.files)) {
+    const url = await uploadImageFile(file);
+    if (url) grid.insertAdjacentHTML('beforeend', newsGalleryThumb(url));
+  }
+  toast('Photos uploaded');
+  input.value = '';
+}
+
+function readEventForm(existing) {
+  const catKey = document.getElementById('ef-category').value;
+  const cat = (EVENT_CATS.find(c => c[0] === catKey) || [catKey, catKey])[1];
+  const body = document.getElementById('ef-desc').value.split('\n').map(s => s.trim()).filter(Boolean);
+  const photos = Array.from(document.querySelectorAll('#ef-gallery-grid .cms-gallery-thumb')).map(el => el.dataset.url);
+  const excerpt = body[0] || '';
+  return Object.assign({}, existing, {
+    id: (existing && existing.id) || ('e' + Date.now()),
+    title: document.getElementById('ef-title').value.trim(),
+    cat, catKey,
+    icon: EVENT_ICONS[catKey] || 'calendar-days',
+    status: document.getElementById('ef-status').value,
+    date: document.getElementById('ef-date').value.trim(),
+    dnum: document.getElementById('ef-dnum').value.trim(),
+    dmon: document.getElementById('ef-dmon').value.trim().toUpperCase(),
+    venue: document.getElementById('ef-venue').value.trim(),
+    time: document.getElementById('ef-time').value.trim(),
+    img: document.getElementById('ef-cover').value.trim(),
+    photos,
+    excerpt,
+    body: body.length ? body : [''],
+    published: document.getElementById('ef-pub').checked,
   });
 }
 

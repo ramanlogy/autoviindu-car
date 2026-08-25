@@ -34,6 +34,11 @@ model Car {
   images       Json?
   colors       Json?
   variants     Json?
+  specs        Json?
+  pros         Json?
+  cons         Json?
+  highlights   Json?
+  thumb        String?
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
 }
@@ -53,6 +58,7 @@ model UsedCar {
   ownerCount   Int?
   images       Json?
   features     Json?
+  specs        Json?
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
 }

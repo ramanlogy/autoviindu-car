@@ -44,8 +44,8 @@
     "variants": [
       {
         "name": "XL 2.0 ST (Single-Turbo)",
-        "price": 10590000,
-        "label": "Rs. 1.05 Cr",
+        "price": 12099000,
+        "label": "Rs. 1.21 Cr",
         "popular": false,
         "transmission": "AT",
         "fuel": "Diesel",
@@ -66,8 +66,8 @@
       },
       {
         "name": "XLT 2.0 BT (Bi-Turbo)",
-        "price": 12500000,
-        "label": "Rs. 1.25 Cr",
+        "price": 13490000,
+        "label": "Rs. 1.35 Cr",
         "popular": false,
         "transmission": "AT",
         "fuel": "Diesel",
@@ -87,8 +87,8 @@
       },
       {
         "name": "Wildtrak 2.0 BT",
-        "price": 14500000,
-        "label": "Rs. 1.45 Cr",
+        "price": 16490000,
+        "label": "Rs. 1.65 Cr",
         "popular": true,
         "transmission": "AT",
         "fuel": "Diesel",
@@ -125,7 +125,8 @@
       "Wheelbase": "3,270 mm",
       "Ground Clearance": "235 mm",
       "Wading Depth": "800 mm",
-      "Airbags": "9"
+      "Airbags": "9",
+      "Distributor": "GO Automobiles Pvt. Ltd. (Official Ford Nepal Distributor)"
     },
     "pros": [
       "235 mm ground clearance for Nepal's terrain",
@@ -242,7 +243,8 @@
       "Wading Depth": "800 mm",
       "Airbags": "7",
       "Safety Rating": "5-Star ANCAP",
-      "Warranty": "3 Years / 60,000 km"
+      "Warranty": "3 Years / 60,000 km",
+      "Distributor": "GO Automobiles Pvt. Ltd. (Official Ford Nepal Distributor)"
     },
     "pros": [
       "225 mm ground clearance + 800 mm wading — true off-road capable",
@@ -308,8 +310,8 @@
     "variants": [
       {
         "name": "Raptor 3.0L V6 Bi-Turbo EcoBoost",
-        "price": 22900000,
-        "label": "Rs. 2.29 Cr",
+        "price": 25000000,
+        "label": "Rs. 2.50 Cr",
         "popular": true,
         "transmission": "AT",
         "fuel": "Petrol",
@@ -357,7 +359,8 @@
       "Wheelbase": "3,270 mm",
       "Ground Clearance": "272 mm",
       "Wading Depth": "850 mm",
-      "Airbags": "9"
+      "Airbags": "9",
+      "Distributor": "GO Automobiles Pvt. Ltd. (Official Ford Nepal Distributor)"
     },
     "pros": [
       "272 mm ground clearance — highest of any production vehicle in Nepal",
@@ -366,7 +369,7 @@
       "7 drive modes including dedicated Baja mode"
     ],
     "cons": [
-      "Most expensive pickup in Nepal at Rs. 2.29 Crore",
+      "Most expensive pickup in Nepal at Rs. 2.50 Crore",
       "Petrol V6 fuel economy is poor (~9.5 km/l) at Nepal fuel prices",
       "Very wide body (1,910 mm) in mountain passes",
       "Overkill for city use"

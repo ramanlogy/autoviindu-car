@@ -3,49 +3,31 @@
 :root {
   --brand: var(--g3, #1a6b2a);
   --font-h: var(--font-display);
-  --section-y: 80px;
+  --section-y: clamp(3rem, 6vw, 5rem);
   --section-gap: clamp(1.5rem, 3vw, 2.5rem);
   --home-radius: 20px;
-  --home-trust-tint: #eef3ee;
-  --home-grey: #f7f9f7;
 }
 
 .home-page {
-  background: var(--white, #fff);
+  background: var(--bg, #f6faf7);
 }
 
-/* ── Section rhythm — every section gets exactly --section-y, no exceptions ── */
+/* ── Section rhythm ── */
 .home-section {
   padding: var(--section-y) 0;
-  background: var(--white, #fff);
 }
 
 .home-section--white {
   background: var(--white, #fff);
 }
 
-/* Reserved for exactly one block per page: the trust/customer section.
-   Every other section stays white — see the home page design brief. */
-.home-section--trust {
-  background: var(--home-trust-tint);
+.home-section--muted {
+  background: var(--bg2, #eff6f2);
 }
 
 .home-section--dark {
   background: var(--g0, #0a1a0d);
   color: #fff;
-}
-
-/* Page container: wide rails, narrower reading measure for headers.
-   1440px page, headers/content settle to a 1200px column, and rail
-   grids (carousels, brand/tool/budget grids) run to the container edge. */
-.home-page .wrap {
-  max-width: 1440px;
-}
-
-.home-page .home-head {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
 }
 
 .home-section__inner {
@@ -381,8 +363,9 @@
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: var(--home-grey, #f7f9f7);
+  background: var(--white);
   border: 1px solid var(--border);
+  box-shadow: var(--sh1, 0 1px 4px rgba(0, 0, 0, .06));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -675,7 +658,7 @@
   width: 64px;
   height: 64px;
   border-radius: 18px;
-  background: var(--home-grey, #f7f9f7);
+  background: linear-gradient(160deg, #f4f6f4, #e9ece8);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6), 0 1px 3px rgba(17, 22, 18, .06);
   display: flex;
   align-items: center;

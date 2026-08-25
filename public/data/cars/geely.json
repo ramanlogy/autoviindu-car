@@ -127,7 +127,8 @@
       "Height": "1,609 mm",
       "Wheelbase": "2,600 mm",
       "Ground Clearance": "192 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Distributor": "UNCONFIRMED — no official Geely Nepal distributor found for this model (see cons)"
     },
     "pros": [
       "Volvo co-developed engine",
@@ -140,7 +141,8 @@
       "3-cylinder vibration at idle",
       "FWD only",
       "Sport variant pricier than rivals",
-      "Geely service centres growing"
+      "Geely service centres growing",
+      "UNVERIFIED FOR NEPAL: as of 2025–2026, Geely has no confirmed official distributor for this model in Nepal — Proton/Jagdamba Motors publicly denied selling Geely-branded vehicles (Aug 2025), and the only confirmed official Geely import is the EX5 via LRR Motors Ltd. Treat this entry's Nepal pricing/availability as unconfirmed pending direct verification."
     ],
     "highlights": [
       "Volvo BMA Platform",
@@ -252,7 +254,8 @@
       "Height": "1,650 mm",
       "Wheelbase": "2,777 mm",
       "Ground Clearance": "198 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Distributor": "UNCONFIRMED — no official Geely Nepal distributor found for this model (see cons)"
     },
     "pros": [
       "Volvo CMA platform (same as XC40)",
@@ -265,7 +268,8 @@
       "Mild hybrid — smaller fuel saving vs full hybrid",
       "Premium pricing",
       "Limited Nepal service",
-      "DCT hesitation possible"
+      "DCT hesitation possible",
+      "UNVERIFIED FOR NEPAL: as of 2025–2026, Geely has no confirmed official distributor for this model in Nepal — Proton/Jagdamba Motors publicly denied selling Geely-branded vehicles (Aug 2025), and the only confirmed official Geely import is the EX5 via LRR Motors Ltd. Treat this entry's Nepal pricing/availability as unconfirmed pending direct verification."
     ],
     "highlights": [
       "Volvo CMA Platform",
@@ -374,7 +378,8 @@
       "Height": "1,460 mm",
       "Wheelbase": "2,650 mm",
       "Ground Clearance": "155 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Distributor": "UNCONFIRMED — no official Geely Nepal distributor found for this model (see cons)"
     },
     "pros": [
       "6 airbags standard — best in class at price",
@@ -387,7 +392,8 @@
       "Low ground clearance for Nepal roads",
       "No ADAS",
       "Sedan not ideal for hilly terrain",
-      "Brand awareness lower than Toyota/Honda"
+      "Brand awareness lower than Toyota/Honda",
+      "UNVERIFIED FOR NEPAL: as of 2025–2026, Geely has no confirmed official distributor for this model in Nepal — Proton/Jagdamba Motors publicly denied selling Geely-branded vehicles (Aug 2025), and the only confirmed official Geely import is the EX5 via LRR Motors Ltd. Treat this entry's Nepal pricing/availability as unconfirmed pending direct verification."
     ],
     "highlights": [
       "6 Airbags Standard",
@@ -499,7 +505,8 @@
       "Height": "1,447 mm",
       "Wheelbase": "2,797 mm",
       "Ground Clearance": "150 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Distributor": "UNCONFIRMED — no official Geely Nepal distributor found for this model (see cons)"
     },
     "pros": [
       "Volvo CMA platform sedan",
@@ -512,7 +519,8 @@
       "Sedan low clearance for Nepal",
       "FWD only",
       "Mild hybrid — not full HEV savings",
-      "Niche positioning in Nepal"
+      "Niche positioning in Nepal",
+      "UNVERIFIED FOR NEPAL: as of 2025–2026, Geely has no confirmed official distributor for this model in Nepal — Proton/Jagdamba Motors publicly denied selling Geely-branded vehicles (Aug 2025), and the only confirmed official Geely import is the EX5 via LRR Motors Ltd. Treat this entry's Nepal pricing/availability as unconfirmed pending direct verification."
     ],
     "highlights": [
       "Volvo CMA Platform",
@@ -530,7 +538,7 @@
     "type": "Electric",
     "body": "Compact Electric SUV",
     "badge": "new",
-    "tagline": "Geely's newest compact EV SUV with 450km range for Nepal",
+    "tagline": "Geely's newest compact EV SUV — 425–430km WLTP range for Nepal",
     "rating": 4.1,
     "reviews": 47,
     "expertScore": 7.8,
@@ -562,88 +570,92 @@
     ],
     "variants": [
       {
-        "name": "Standard",
-        "price": 5390000,
-        "label": "Rs. 53.90L",
-        "popular": false,
-        "transmission": "Single Speed",
-        "fuel": "Electric",
-        "features": [
-          "52kWh Battery",
-          "360km CLTC Range",
-          "6 Airbags",
-          "12.3\" Touchscreen + CarPlay",
-          "Rear Camera",
-          "ADAS Level 1",
-          "18\" Alloy Wheels"
-        ],
-        "specs": {
-          "power": "201 hp",
-          "torque": "320 Nm",
-          "efficiency": "6.9 km/kWh",
-          "transmission": "Single Speed Reducer"
-        }
-      },
-      {
-        "name": "Premium",
-        "price": 6290000,
-        "label": "Rs. 62.90L",
+        "name": "Pro",
+        "price": 5799000,
+        "label": "Rs. 57.99L",
         "popular": true,
         "transmission": "Single Speed",
         "fuel": "Electric",
         "features": [
-          "65kWh Battery",
-          "450km CLTC Range",
-          "800V Fast Charging",
-          "ADAS Level 2",
-          "360° Camera",
-          "Ventilated Seats",
-          "Standard features+"
+          "60.22 kWh LFP Battery",
+          "425 km WLTP Range",
+          "218 PS PMSM Motor (320 Nm)",
+          "6 Airbags",
+          "12.3\" Touchscreen + CarPlay",
+          "Rear Camera",
+          "ADAS Suite",
+          "18\" Alloy Wheels"
         ],
         "specs": {
-          "power": "218 hp",
-          "torque": "340 Nm",
-          "efficiency": "6.9 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "power": "218 PS",
+          "torque": "320 Nm",
+          "range": "425 km WLTP",
+          "battery": "60.22 kWh",
+          "charging": "DC Fast Charge"
+        }
+      },
+      {
+        "name": "Max",
+        "price": 6799000,
+        "label": "Rs. 67.99L",
+        "popular": false,
+        "transmission": "Single Speed",
+        "fuel": "Electric",
+        "features": [
+          "60.22 kWh LFP Battery",
+          "430 km WLTP Range",
+          "Extended ADAS Package",
+          "360° Camera",
+          "All Pro features"
+        ],
+        "specs": {
+          "power": "218 PS",
+          "torque": "320 Nm",
+          "range": "430 km WLTP",
+          "battery": "60.22 kWh",
+          "charging": "DC Fast Charge"
         }
       }
     ],
     "specs": {
-      "Battery": "52–65 kWh",
-      "Range": "360–450 km (CLTC)",
-      "Power": "201–218 hp",
-      "Torque": "320–340 Nm",
-      "Charging": "800V / 100 kW DC Fast Charge",
-      "Charge Time": "25 min (10–80%)",
-      "Transmission": "Single Speed",
-      "Drive": "RWD",
+      "Motor": "160 kW Permanent Magnet Synchronous Motor (FWD)",
+      "Power": "218 PS",
+      "Torque": "320 Nm",
+      "Battery": "60.22 kWh Aegis Short Blade LFP",
+      "Range": "425 km (Pro) / 430 km (Max) WLTP",
+      "0–100 km/h": "6.9 sec",
+      "Top Speed": "175 km/h",
+      "Drive": "FWD",
+      "Transmission": "Single-Speed Automatic",
       "Seating": "5",
-      "Boot Space": "425 L + frunk",
+      "Boot Space": "508 L",
       "Length": "4,615 mm",
       "Width": "1,901 mm",
-      "Height": "1,648 mm",
+      "Height": "1,670 mm",
       "Wheelbase": "2,750 mm",
       "Ground Clearance": "180 mm",
-      "Airbags": "6"
+      "Airbags": "6",
+      "Warranty": "Battery: 8 Years / 160,000 km",
+      "Distributor": "LRR Motors Ltd. (Official Geely EX5 Nepal Distributor)"
     },
     "pros": [
-      "800V charging on premium",
-      "450km range",
+      "425–430km WLTP range — strong for the segment",
+      "Pro and Max share the same battery/motor — no performance penalty for the cheaper trim",
       "GEA EV platform purpose-built",
-      "ADAS Level 2",
-      "Strong power output"
+      "8-year/160,000km battery warranty",
+      "Officially imported — not a grey-market Geely"
     ],
     "cons": [
-      "RWD only",
-      "Brand new model — unproven reliability",
-      "CLTC range overstated",
-      "800V charging needs compatible charger"
+      "FWD only",
+      "Brand new model in Nepal — unproven long-term reliability",
+      "Only Geely model with confirmed official Nepal distribution (LRR Motors) — other Geely models are NOT officially sold in Nepal as of 2026",
+      "Service network still small (single distributor, limited outlets)"
     ],
     "highlights": [
-      "450km Range",
-      "800V Fast Charge",
-      "ADAS Level 2",
-      "GEA EV Platform"
+      "425–430km WLTP",
+      "60.22 kWh LFP",
+      "8yr Battery Warranty",
+      "Only Official Geely in Nepal"
     ]
   }
 ]

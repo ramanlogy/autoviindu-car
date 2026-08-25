@@ -1,5 +1,120 @@
 {
-  "items": [],
+  "items": [
+    {
+      "photos": [],
+      "published": true,
+      "id": "r1",
+      "cat": "SUV",
+      "catKey": "suv",
+      "title": "Hyundai Creta 2026 Review: Still the Benchmark Compact SUV?",
+      "excerpt": "We spent a week with the facelifted Creta in Kathmandu traffic and on a highway run to Bhaktapur to see if it still leads the compact SUV pack.",
+      "date": "Jun 2026",
+      "read": "6 min read",
+      "icon": "car",
+      "rating": 4.5,
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai_Creta.jpg",
+      "body": [
+        "The updated Creta keeps everything that made the outgoing car popular — a commanding driving position, a solidly finished cabin, and a ride that shrugs off Kathmandu's rougher patches without much fuss.",
+        "Out on the highway toward Bhaktapur, the 1.5-litre petrol felt composed at a cruise, with wind and road noise kept impressively low for the segment, and the twin 10.25-inch screens make the cabin feel a generation newer than the car it replaces.",
+        "Rear legroom trails some newer rivals, and the options list still doesn't quite match the Seltos on features, but the Creta remains one of the safer recommendations in its class — and a strong electric version is reportedly only months away."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "r2",
+      "cat": "EV",
+      "catKey": "ev",
+      "title": "Deepal S07 vs BYD Atto 3: Two of Nepal's Favourite Electric SUVs, Compared",
+      "excerpt": "Both SUVs are everywhere on Kathmandu's roads. We put them back to back to see which one actually makes more sense for Nepali driving.",
+      "date": "May 2026",
+      "read": "8 min read",
+      "icon": "zap",
+      "rating": 4.2,
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/BYD_Atto_3.jpg",
+      "body": [
+        "On our mixed city-and-highway loop, the Deepal S07 edged ahead of the Atto 3 by roughly 18 km of real-world range, helped by a slightly larger battery and a more efficient motor.",
+        "Cabin quality tilts toward the Atto 3, which still feels the more distinctive of the two inside, with marginally better rear-seat comfort for taller passengers and BYD's now-familiar rotating touchscreen.",
+        "Where the Atto 3 wins outright is price — it undercuts the S07 by a useful margin at the showroom — which keeps it the safer pick for buyers who care more about value than the last few kilometres of range."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "r3",
+      "cat": "Hatchback",
+      "catKey": "hatchback",
+      "title": "Suzuki Swift 2026 Review: Still Nepal's Easiest First Car?",
+      "excerpt": "With sharper styling and a livelier engine tune, we test the latest Swift to see if it remains the default choice for new drivers.",
+      "date": "Mar 2026",
+      "read": "5 min read",
+      "icon": "car",
+      "rating": 4,
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Suzuki-Swift.jpg",
+      "body": [
+        "The current Swift feels noticeably peppier around town thanks to a revised engine tune, and its tight turning circle continues to make it genuinely enjoyable to thread through narrow Kathmandu lanes.",
+        "Fuel economy on our test loop came in at a real-world figure north of 18 km/l — among the best we have recorded in the segment this year, and a meaningful saving given how often fuel prices have moved in 2026.",
+        "Boot space is still tight for a growing family, but as a first car built for city driving and low running costs, the Swift remains hard to beat."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "r4",
+      "cat": "Sedan",
+      "catKey": "sedan",
+      "title": "BYD Seal First Drive: A Genuinely Premium Electric Sedan for Nepal",
+      "excerpt": "We spent a day with BYD's flagship sedan on Kathmandu Valley roads to see how close it gets to its claimed range — and whether it feels worth the price jump.",
+      "date": "Jun 2026",
+      "read": "7 min read",
+      "icon": "car",
+      "rating": 4.6,
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/2022_BYD_Seal.jpg",
+      "body": [
+        "Straight-line performance is an instant highlight — the dual-motor Performance variant pulls away from traffic with an urgency that few sedans anywhere near this price can match.",
+        "Our test loop returned a real-world range within about eight percent of BYD's claimed figure, one of the smaller gaps we've measured on any EV sold in Nepal, and the ride stayed composed even over some genuinely rough valley roads.",
+        "Build quality and cabin tech feel a generation ahead of most rivals in this price band, though rear headroom is tighter than the car's length suggests, and the flagship Performance trim's price puts it firmly in luxury-sedan territory."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "r5",
+      "cat": "SUV",
+      "catKey": "suv",
+      "title": "Kia Seltos Review: Style Meets Substance in Nepal's Busiest SUV Segment",
+      "excerpt": "A close look at Kia's Seltos, from its bold face to how it actually rides on Nepali roads day to day.",
+      "date": "Feb 2026",
+      "read": "6 min read",
+      "icon": "car",
+      "rating": 4.3,
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Kia_Seltos_2024.jpg",
+      "body": [
+        "The Seltos's bolder front fascia gives it a noticeably stronger road presence than before, and the redesigned dashboard layout inside feels a genuine step up in perceived quality.",
+        "Ride quality strikes a good balance between comfort and control, soaking up potholes without ever feeling floaty through Kathmandu's roundabouts and speed bumps.",
+        "Service costs remain a consideration outside the Valley, where Kia's dealer network is still thinner than some more established rivals, but as an all-rounder the Seltos continues to earn its strong sales numbers."
+      ]
+    },
+    {
+      "photos": [],
+      "published": true,
+      "id": "r6",
+      "cat": "EV",
+      "catKey": "ev",
+      "title": "MG Comet EV Review: Still the Cheapest Way Into an Electric Car?",
+      "excerpt": "Is the tiny Comet EV a genuinely usable city runabout, or just a novelty? We spent a week finding out.",
+      "date": "Jan 2026",
+      "read": "5 min read",
+      "icon": "zap",
+      "rating": 3.8,
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/MG_Comet_EV_side_view.jpg",
+      "body": [
+        "The Comet's tiny footprint is a genuine asset for parking and squeezing through Kathmandu's narrower streets, in a way that makes far more expensive SUVs feel unwieldy by comparison.",
+        "Real-world range settles around 180 km per charge — comfortable for most in-city commuting, but limiting if you regularly head out of the Valley on weekends.",
+        "At its price point it still undercuts nearly every other EV on sale in Nepal, which keeps it a compelling pick for anyone shopping specifically for a dedicated second city car."
+      ]
+    }
+  ],
   "categories": [
     [
       "all",

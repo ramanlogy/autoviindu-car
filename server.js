@@ -144,6 +144,15 @@ app.use("/assets/images/cars", express.static(
 app.use(express.static(path.join(__dirname, "public"), { extensions: ["html"] }));
 app.use("/images", express.static(path.join(__dirname, "backend", "uploads")));
 
+// Missing static assets (images/css/js/fonts) must 404, not fall through to the SPA HTML page
+const STATIC_ASSET_EXT = /\.(?:jpg|jpeg|png|webp|avif|gif|svg|ico|css|js|mjs|json|woff2?|ttf|eot|map)$/i;
+app.use((req, res, next) => {
+  if (req.method === "GET" && STATIC_ASSET_EXT.test(req.path)) {
+    return res.status(404).end();
+  }
+  next();
+});
+
 // Convenient routes for admin
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/admin/login.html'));
@@ -168,20 +177,23 @@ app.get("/api/status", (req, res) => {
 // ── API: Form submissions ─────────────────────────────────────────────────────
 
 // Map raw form identifiers → clean CMS category labels
+// NOTE: `serviceType` is intentionally excluded from this lookup — several forms
+// (sellyourcar.html, book-service.html) use that key for an unrelated dropdown
+// value (e.g. "Authorized Service Center"), not a form/category identifier.
 function normalizeFormType(data) {
-  const raw = (data.formType || data.serviceType || data.formId || data.type || data.req_type || '').toLowerCase().trim();
-  if (!raw || raw === 'general') return 'general';
+  const raw = (data.formType || data.formId || data.type || data.req_type || '').toLowerCase().trim();
+  if (!raw || raw === 'general' || raw === 'unknown') return 'general';
 
   // Maintenance / Car Repair / Service Booking
   if (['booking-form', 'maintenance', 'repair', 'book service', 'bookservice'].some(k => raw.includes(k))) return 'maintenance';
   // DOTM
-  if (['dotm', 'dotm-form', 'dotmform', 'individual', 'corporate'].some(k => raw === k || raw.includes('dotm'))) return 'dotm';
+  if (raw.includes('dotm')) return 'dotm';
   // Insurance / Finance
   if (['ins-form', 'fin-form', 'insurance', 'finance', 'insure'].some(k => raw.includes(k))) return 'insurance';
   // Parts & Accessories
   if (['partform', 'partsandacc', 'parts', 'accessories'].some(k => raw.includes(k))) return 'parts';
-  // Other Services (detailing, tinting, bodywork)
-  if (['requestform', 'otherservice', 'other'].some(k => raw.includes(k))) return 'otherService';
+  // Report unlock (ACS accident/service check) — treat as an info request lead
+  if (raw.includes('acs') || raw.includes('unlock')) return 'requestInfo';
   // Sell Your Car
   if (['sellcar', 'sell'].some(k => raw.includes(k))) return 'sellCar';
   // Test Drive Booking
@@ -192,8 +204,10 @@ function normalizeFormType(data) {
   if (raw.includes('usedcar') || raw === 'used') return 'usedCarInquiry';
   // Request Info / Car Detail Request
   if (raw.includes('requestinfo') || raw.includes('cardetail') || raw.includes('pricedetail')) return 'requestInfo';
+  // Other Services (detailing, tinting, bodywork, workshop, roadside, telematics, cosmetic care)
+  if (['requestform', 'otherservice', 'other', 'workshop', 'roadside', 'telematics', 'cosmetic'].some(k => raw.includes(k))) return 'otherService';
 
-  return raw || 'general';
+  return 'general';
 }
 
 app.post("/api/forms/submit", async (req, res) => {
@@ -212,11 +226,15 @@ app.post("/api/forms/submit", async (req, res) => {
     // Normalize to clean category label
     const inquiryType = normalizeFormType(data);
 
-    const name = data.fullName || data.full_name || data.name || data['Your full name'] || data['Legal registered name'] || 'Unknown';
-    const email = data.email || data['you@example.com'] || data['office@company.com'] || '';
-    const phone = data.phone || data.mobile || data['+977 98XXXXXXXX'] || data['whatsapp'] || '';
-    const message = data.message || data.notes || data.query || data.description || data.issue || '';
-    const carInterest = data.carModel || data.car || data.interest || (data.brand && data.model ? `${data.brand} ${data.model}` : '') || '';
+    const name = data.fullName || data.full_name || data.name || data.ind_full_name || data.corp_contact_name || data.corp_name
+      || data['Your full name'] || data['Legal registered name'] || 'Unknown';
+    const email = data.email || data.ind_email || data.corp_email || data['you@example.com'] || data['office@company.com'] || '';
+    const phone = data.phone || data.mobile || data.ind_mobile || data.corp_official_number || data.corp_alt_number
+      || data['+977 98XXXXXXXX'] || data['whatsapp'] || '';
+    const message = data.message || data.notes || data.query || data.description || data.issue
+      || data.service_description || data.item_description || '';
+    const carInterest = data.carModel || data.car || data.interest
+      || (data.brand && data.model ? `${data.brand} ${data.model}` : '') || '';
 
     await prisma.lead.create({
       data: { name, email, phone, inquiryType, message, carInterest, rawData: data, status: "NEW" }

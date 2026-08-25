@@ -1,0 +1,5 @@
+{
+  "watch": ["server.js", ".env"],
+  "ignore": ["backend/**", "public/**", "dev.db*", "node_modules/**"],
+  "ext": "js,json"
+}
