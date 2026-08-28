@@ -34,7 +34,8 @@ __pycache__/
 tmp/*
 !tmp/restart.txt
 scratch/
-car_images/
+# Legacy top-level scratch folder only — NOT public/assets/images/car_images/
+/car_images/
 
 # Legacy dirs
 Frontend-main/

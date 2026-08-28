@@ -20,12 +20,11 @@ window.USED_CARS_DB = [
     "emiEst": 32739,
     "certified": false,
     "video": "https://youtu.be/31RPEh8KjeE?si=wpwmi5Z-EIu4jRm-",
-    "img": "assets/images/cars/used car/corollafront.webp",
+    "img": "/assets/photos/cars/used-cars/corolla_front.webp",
     "images": [
-      "assets/images/cars/used car/corollafront.webp",
-      "assets/images/cars/used car/corolla_back.webp",
-      "assets/images/cars/used car/corolla_side.webp",
-      "assets/images/cars/used car/interior-dummy.jpg"
+      "/assets/photos/cars/used-cars/corolla_front.webp",
+      "/assets/photos/cars/used-cars/corolla_side.webp",
+      "/assets/photos/cars/used-cars/corolla_back.webp"
     ],
     "overview": "Well-maintained Corolla with no accident history. Smooth driving experience and reliable engine. Suitable for daily use.",
     "highlights": [
