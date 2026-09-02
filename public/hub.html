@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon_io/favicon-16x16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>News, Reviews, Events &amp; Videos – AutoViindu</title>
+  <meta name="description" content="The AutoViindu hub — the latest car news from Nepal, expert reviews, upcoming auto events and campaigns, and video reviews, all in one place.">
+  <link rel="canonical" href="https://www.autoviindu.com/hub">
+  <meta property="og:title" content="News, Reviews, Events &amp; Videos – AutoViindu">
+  <meta property="og:description" content="The latest Nepal car news, expert reviews, events and video reviews — all in one place.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.autoviindu.com/hub">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/site-chrome.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--white); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+    @media (min-width: 1024px) { .wrap { padding: 0 40px; } }
+
+    /* hero */
+    .hub-hero { background: linear-gradient(145deg, #0B2A12 0%, #0E5E26 62%, #127a32 100%); color: #fff; padding: 54px 0 46px; position: relative; overflow: hidden; }
+    .hub-hero::before { content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.035'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
+    .hub-hero-inner { position: relative; z-index: 1; }
+    .hub-hero h1 { font-family: var(--font-d); font-weight: 800; font-size: clamp(28px, 5vw, 46px); letter-spacing: -.02em; line-height: 1.1; }
+    .hub-hero p { margin-top: 12px; font-size: 15.5px; color: rgba(255, 255, 255, .82); max-width: 620px; }
+
+    /* section */
+    .hub-sec { padding: 42px 0; border-bottom: 1px solid var(--border); }
+    .hub-sec:last-of-type { border-bottom: none; }
+    .hub-sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+    .hub-sec-head h2 { font-family: var(--font-d); font-weight: 800; font-size: clamp(20px, 3vw, 28px); letter-spacing: -.015em; color: var(--ink); }
+    .hub-sec-head h2 em { color: var(--green); font-style: normal; }
+    .hub-sec-head .sub { font-size: 13.5px; color: var(--ink4); margin-top: 3px; }
+    .view-all { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; font-weight: 700; font-size: 13.5px; color: var(--green); text-decoration: none; }
+    .view-all:hover { text-decoration: underline; }
+    .view-all i { width: 15px; height: 15px; }
+
+    /* carousel */
+    .carousel { position: relative; }
+    .carousel-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+      scroll-behavior: smooth; padding-bottom: 6px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-nav { position: absolute; top: 38%; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border2);
+      background: var(--white); color: var(--ink2); display: none; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--sh2); z-index: 2; }
+    .carousel-nav:hover { background: var(--g-l); color: var(--green); border-color: var(--green); }
+    .carousel-nav.prev { left: -18px; } .carousel-nav.next { right: -18px; }
+    .carousel-nav i { width: 18px; height: 18px; }
+    @media (min-width: 900px) { .carousel-nav { display: flex; } }
+
+    .card { scroll-snap-align: start; flex: 0 0 300px; max-width: 300px; background: var(--white); border: 1.5px solid var(--border);
+      border-radius: var(--r12); overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column;
+      transition: box-shadow var(--ease), transform var(--ease), border-color var(--ease); }
+    .card:hover { box-shadow: var(--sh2); transform: translateY(-3px); border-color: var(--green); }
+    .card-img { aspect-ratio: 16/9; background: var(--bg); position: relative; overflow: hidden; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .card-img .ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--ink5); }
+    .card-img .ph i { width: 34px; height: 34px; }
+    .pill { position: absolute; top: 10px; left: 10px; background: rgba(255, 255, 255, .95); color: var(--ink2);
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; padding: 4px 9px; border-radius: var(--pill); }
+    .pill.rating { left: auto; right: 10px; background: var(--ink); color: #fff; display: flex; align-items: center; gap: 3px; }
+    .pill.rating i { width: 11px; height: 11px; fill: currentColor; }
+    .pill.play { left: 50%; top: 50%; transform: translate(-50%, -50%); width: 46px; height: 46px; border-radius: 50%; padding: 0;
+      display: flex; align-items: center; justify-content: center; }
+    .pill.play i { width: 20px; height: 20px; fill: var(--green); color: var(--green); }
+    .pill.dur { top: auto; bottom: 10px; left: auto; right: 10px; background: rgba(0, 0, 0, .78); color: #fff; }
+    .card-body { padding: 14px 15px 16px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+    .card-cat { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--green); }
+    .card-title { font-family: var(--font-d); font-weight: 700; font-size: 15.5px; line-height: 1.34; color: var(--ink); }
+    .card-meta { margin-top: auto; display: flex; gap: 12px; font-size: 12px; color: var(--ink4); }
+    .card-meta span { display: inline-flex; align-items: center; gap: 4px; }
+    .card-meta i { width: 12px; height: 12px; }
+    .ev-date { flex: 0 0 300px; }
+    .ev-date .card-img { aspect-ratio: auto; height: 96px; background: linear-gradient(135deg, #0E5E26, #127a32); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .ev-date .dnum { font-family: var(--font-d); font-weight: 800; font-size: 30px; line-height: 1; }
+    .ev-date .dmon { font-size: 12px; font-weight: 700; letter-spacing: .12em; margin-top: 3px; }
+
+    .empty { flex: 1; padding: 30px 0; color: var(--ink4); font-size: 14px; }
+  </style>
+</head>
+
+<body>
+
+  <section class="hub-hero">
+    <div class="wrap hub-hero-inner">
+      <h1>News, Reviews, Events &amp; Videos</h1>
+      <p>Everything happening in Nepal's car world — the latest news, our expert reviews, upcoming events and campaigns, and video reviews.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <section class="hub-sec" id="sec-news">
+      <div class="hub-sec-head">
+        <div>
+          <h2>Latest <em>News</em></h2>
+          <div class="sub">Policy, launches, prices and infrastructure updates</div>
+        </div>
+        <a class="view-all" href="/newsandreviews">View all <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="carousel">
+        <button class="carousel-nav prev" aria-label="Scroll left"><i data-lucide="chevron-left"></i></button>
+        <div class="carousel-track" id="track-news"></div>
+        <button class="carousel-nav next" aria-label="Scroll right"><i data-lucide="chevron-right"></i></button>
+      </div>
+    </section>
+
+   
+
+    <section class="hub-sec" id="sec-events">
+      <div class="hub-sec-head">
+        <div>
+          <h2>Events &amp; <em>Campaigns</em></h2>
+          <div class="sub">Auto shows, launches and dealer campaigns</div>
+        </div>
+        <a class="view-all" href="/events">View all <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="carousel">
+        <button class="carousel-nav prev" aria-label="Scroll left"><i data-lucide="chevron-left"></i></button>
+        <div class="carousel-track" id="track-events"></div>
+        <button class="carousel-nav next" aria-label="Scroll right"><i data-lucide="chevron-right"></i></button>
+      </div>
+    </section>
+
+    <section class="hub-sec" id="sec-videos">
+      <div class="hub-sec-head">
+        <div>
+          <h2>Video <em>Reviews</em></h2>
+          <div class="sub">Watch our latest reviews and explainers</div>
+        </div>
+        <a class="view-all" href="/videos">View all <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="carousel">
+        <button class="carousel-nav prev" aria-label="Scroll left"><i data-lucide="chevron-left"></i></button>
+        <div class="carousel-track" id="track-videos"></div>
+        <button class="carousel-nav next" aria-label="Scroll right"><i data-lucide="chevron-right"></i></button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="assets/js/site-chrome.js"></script>
+  <script>
+    (function () {
+      function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+      function titleCase(s) { return String(s || '').replace(/\b\w/g, c => c.toUpperCase()); }
+
+      function fmtDate(p) {
+        if (p.displayDate) return p.displayDate;
+        var d = p.publishedAt || p.createdAt;
+        return d ? new Date(d).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }) : '';
+      }
+
+      function articleCard(p, seg) {
+        var img = p.coverImage
+          ? '<img src="' + esc(p.coverImage) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">'
+          : '<div class="ph"><i data-lucide="' + (seg === 'reviews' ? 'star' : 'newspaper') + '"></i></div>';
+        var rating = (seg === 'reviews' && p.rating != null)
+          ? '<span class="pill rating"><i data-lucide="star"></i>' + Number(p.rating).toFixed(1) + '</span>' : '';
+        return '<a class="card" href="/' + seg + '/' + encodeURIComponent(p.slug) + '">' +
+          '<div class="card-img">' + img +
+            '<span class="pill">' + esc(titleCase(p.category || (seg === 'reviews' ? 'Review' : 'News'))) + '</span>' + rating +
+          '</div>' +
+          '<div class="card-body">' +
+            '<div class="card-title">' + esc(p.title) + '</div>' +
+            '<div class="card-meta"><span><i data-lucide="calendar"></i>' + esc(fmtDate(p)) + '</span>' +
+              (p.readTime ? '<span><i data-lucide="clock"></i>' + esc(p.readTime) + '</span>' : '') + '</div>' +
+          '</div>' +
+        '</a>';
+      }
+
+      function eventCard(e) {
+        var img = e.img
+          ? '<img src="' + esc(e.img) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">'
+          : '<div class="ph"><i data-lucide="calendar-days"></i></div>';
+        return '<a class="card" href="/events?article=' + encodeURIComponent(e.id) + '">' +
+          '<div class="card-img">' + img + '<span class="pill">' + esc(e.cat || 'Event') + '</span></div>' +
+          '<div class="card-body">' +
+            '<div class="card-title">' + esc(e.title) + '</div>' +
+            '<div class="card-meta"><span><i data-lucide="calendar"></i>' + esc(e.date || '') + '</span>' +
+              (e.venue ? '<span><i data-lucide="map-pin"></i>' + esc(e.venue) + '</span>' : '') + '</div>' +
+          '</div>' +
+        '</a>';
+      }
+
+      function videoCard(v) {
+        var thumb = v.thumb || (v.id ? 'https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/hqdefault.jpg' : '');
+        var img = thumb
+          ? '<img src="' + esc(thumb) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">'
+          : '<div class="ph"><i data-lucide="youtube"></i></div>';
+        return '<a class="card" href="https://www.youtube.com/watch?v=' + encodeURIComponent(v.id) + '" target="_blank" rel="noopener">' +
+          '<div class="card-img">' + img +
+            '<span class="pill play"><i data-lucide="play"></i></span>' +
+            (v.duration ? '<span class="pill dur">' + esc(v.duration) + '</span>' : '') +
+          '</div>' +
+          '<div class="card-body">' +
+            '<div class="card-cat">' + esc(v.brand || v.category || 'Video') + '</div>' +
+            '<div class="card-title">' + esc(v.title) + '</div>' +
+            (v.views ? '<div class="card-meta"><span><i data-lucide="eye"></i>' + esc(v.views) + ' views</span></div>' : '') +
+          '</div>' +
+        '</a>';
+      }
+
+      // ---- Live YouTube feed (same channel/logic as videos.html) ----
+      var YT_API_KEY = 'AIzaSyAYfYsKl0ewzTnqi-sJrIgfoQNL-gYxQ1w';
+      var YT_CHANNEL_HANDLE = '@AutoViindu';
+      var YT_MAX = 50;
+
+      function ytDurationSeconds(iso) {
+        var m = (iso || '').match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/) || [];
+        return parseInt(m[1] || 0, 10) * 3600 + parseInt(m[2] || 0, 10) * 60 + parseInt(m[3] || 0, 10);
+      }
+      function ytDurationLabel(iso) {
+        var s = ytDurationSeconds(iso);
+        var h = Math.floor(s / 3600), min = Math.floor((s % 3600) / 60), sec = s % 60;
+        var mm = h > 0 ? String(min).padStart(2, '0') : String(min);
+        return (h > 0 ? h + ':' : '') + mm + ':' + String(sec).padStart(2, '0');
+      }
+      function ytViews(n) {
+        n = Number(n) || 0;
+        if (n >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M';
+        if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'K';
+        return String(n);
+      }
+
+      function loadVideos() {
+        fetchYouTubeVideos()
+          .then(function (list) {
+            if (list && list.length) {
+              fill('track-videos', list.slice(0, 12).map(videoCard).join(''));
+            } else {
+              return loadCmsVideos();
+            }
+          })
+          .catch(loadCmsVideos);
+      }
+
+      function loadCmsVideos() {
+        return J('/api/site/videos').then(function (data) {
+          var items = (data && data.items) || [];
+          fill('track-videos', items.slice(0, 12).map(videoCard).join(''));
+        });
+      }
+
+      function fetchYouTubeVideos() {
+        if (!YT_API_KEY) return Promise.resolve(null);
+        var base = 'https://www.googleapis.com/youtube/v3/';
+        return fetch(base + 'channels?part=contentDetails&forHandle=' + encodeURIComponent(YT_CHANNEL_HANDLE) + '&key=' + YT_API_KEY)
+          .then(function (r) { return r.json(); })
+          .then(function (ch) {
+            if (ch.error || !ch.items || !ch.items.length) throw new Error('channel');
+            var uploads = ch.items[0].contentDetails.relatedPlaylists.uploads;
+            return fetch(base + 'playlistItems?part=snippet&playlistId=' + uploads + '&maxResults=' + YT_MAX + '&key=' + YT_API_KEY).then(function (r) { return r.json(); });
+          })
+          .then(function (pl) {
+            if (pl.error) throw new Error('playlist');
+            var items = (pl.items || []).filter(function (it) { return it.snippet && it.snippet.resourceId && it.snippet.resourceId.videoId; });
+            var ids = items.map(function (it) { return it.snippet.resourceId.videoId; });
+            if (!ids.length) throw new Error('empty');
+            return fetch(base + 'videos?part=statistics,contentDetails&id=' + ids.slice(0, 50).join(',') + '&key=' + YT_API_KEY)
+              .then(function (r) { return r.json(); })
+              .then(function (vd) {
+                if (vd.error) throw new Error('videos');
+                var stats = {};
+                (vd.items || []).forEach(function (v) { stats[v.id] = v; });
+                return items
+                  .filter(function (it) {
+                    var s = stats[it.snippet.resourceId.videoId];
+                    // drop Shorts / reels — keep only real videos over 100 seconds
+                    return s && ytDurationSeconds(s.contentDetails.duration) > 100;
+                  })
+                  .map(function (it) {
+                    var vid = it.snippet.resourceId.videoId;
+                    var s = stats[vid];
+                    var t = it.snippet.thumbnails || {};
+                    return {
+                      id: vid,
+                      title: it.snippet.title,
+                      category: 'Video',
+                      duration: ytDurationLabel(s.contentDetails.duration),
+                      views: ytViews(s.statistics.viewCount),
+                      thumb: (t.maxres || t.high || t.medium || t.default || {}).url || ''
+                    };
+                  });
+              });
+          });
+      }
+
+      function fill(trackId, html) {
+        var track = document.getElementById(trackId);
+        track.innerHTML = html || '<div class="empty">Nothing to show yet — check back soon.</div>';
+        if (window.lucide) lucide.createIcons();
+      }
+
+      // wire up prev/next buttons
+      document.querySelectorAll('.carousel').forEach(function (c) {
+        var track = c.querySelector('.carousel-track');
+        c.querySelector('.prev').addEventListener('click', function () { track.scrollBy({ left: -track.clientWidth * 0.8, behavior: 'smooth' }); });
+        c.querySelector('.next').addEventListener('click', function () { track.scrollBy({ left: track.clientWidth * 0.8, behavior: 'smooth' }); });
+      });
+
+      var J = function (u) { return fetch(u, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
+
+      J('/api/news?kind=news').then(function (list) {
+        fill('track-news', (list || []).slice(0, 12).map(function (p) { return articleCard(p, 'news'); }).join(''));
+      });
+      J('/api/news?kind=review').then(function (list) {
+        fill('track-reviews', (list || []).slice(0, 12).map(function (p) { return articleCard(p, 'reviews'); }).join(''));
+      });
+      J('/api/site/events').then(function (data) {
+        var up = (data && data.upcoming) || [];
+        var published = up.filter(function (e) { return e.published !== false; });
+        fill('track-events', published.slice(0, 12).map(eventCard).join(''));
+      });
+      loadVideos();
+
+      if (window.lucide) lucide.createIcons();
+    })();
+  </script>
+</body>
+
+</html>

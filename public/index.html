@@ -74,6 +74,15 @@
       --sh4: 0 24px 64px rgba(0, 0, 0, .16);
       --ease: .22s cubic-bezier(.4, 0, .2, 1);
       --spring: .4s cubic-bezier(.34, 1.56, .64, 1);
+      /* Motion scale — mirrors assets/css/site-chrome.css.
+         --ease-out for enter/exit, --ease for hover/state. */
+      --ease-out: .22s cubic-bezier(.22, 1, .36, 1);
+      --ease-out-fast: .14s cubic-bezier(.22, 1, .36, 1);
+      --ease-in-out: .2s cubic-bezier(.4, 0, .2, 1);
+      --dur-1: .12s;
+      --dur-2: .2s;
+      --dur-3: .32s;
+      --lift: -2px;
       --font-d: 'Plus Jakarta Sans', system-ui, sans-serif;
       --font-b: 'Inter', system-ui, sans-serif;
       --font-i: 'Instrument Serif', serif;
@@ -2759,6 +2768,15 @@
       background: var(--red)
     }
 
+    /* exit — slide back out to the right + fade (added by app.js toast()) */
+    .toast--out {
+      animation: toastOut .2s cubic-bezier(.4, 0, 1, 1) forwards;
+    }
+
+    @keyframes toastOut {
+      to { transform: translateX(120%); opacity: 0; }
+    }
+
     /* ══ COMPARE TRAY ══ */
     .cmp-tray {
       position: fixed;
@@ -4304,19 +4322,28 @@
       inset: 0;
       top: var(--nav);
       z-index: 850;
-      display: none
+      /* stays mounted so the panel slides back up on close */
+      visibility: hidden;
+      pointer-events: none;
+      transition: visibility 0s linear .26s;
     }
 
     .mobile-menu.open {
-      display: block
+      visibility: visible;
+      pointer-events: auto;
+      transition: visibility 0s;
     }
 
     .mm-backdrop {
       position: absolute;
       inset: 0;
       background: rgba(7, 16, 10, .55);
-      backdrop-filter: blur(8px)
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      transition: opacity var(--dur-3) ease;
     }
+
+    .mobile-menu.open .mm-backdrop { opacity: 1; }
 
     .mm-panel {
       position: absolute;
@@ -4327,7 +4354,14 @@
       border-bottom: 1px solid var(--border);
       max-height: calc(100vh - var(--nav));
       overflow-y: auto;
-      animation: slideDown .22s ease
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: transform var(--ease-out), opacity var(--ease-out);
+    }
+
+    .mobile-menu.open .mm-panel {
+      transform: translateY(0);
+      opacity: 1;
     }
 
     .mm-search {
@@ -6868,8 +6902,8 @@
   <link rel="stylesheet" href="assets/css/compare.css">
   <script src="assets/js/cars-data-loader.js?v=2"></script>
   <script src="assets/js/content-loader.js"></script>
-  <script src="assets/js/home-render.js?v=3" defer></script>
-  <script src="assets/js/app.js?v=13" defer></script>
+  <script src="assets/js/home-render.js?v=4" defer></script>
+  <script src="assets/js/app.js?v=14" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2BCQWQPPZ"></script>
   <script>

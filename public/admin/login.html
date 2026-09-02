@@ -66,7 +66,7 @@
     
     // Redirect if already logged in
     if(localStorage.getItem('adminToken')) {
-      window.location.href = '/dashboard';
+      window.location.href = '/cms';
     }
 
     document.getElementById('loginForm').addEventListener('submit', async (e) => {
@@ -89,7 +89,7 @@
         const data = await res.json();
         if(res.ok && data.success) {
           localStorage.setItem('adminToken', data.token);
-          window.location.href = '/dashboard';
+          window.location.href = '/cms';
         } else {
           err.innerText = data.message || 'Login failed';
           err.style.display = 'block';

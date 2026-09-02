@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon_io/favicon-16x16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!--SEO-->
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="/assets/css/site-chrome.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--white); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    a { color: inherit; }
+
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+    .wrap-wide { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    /* breadcrumb */
+    .bc { background: var(--bg); border-bottom: 1px solid var(--border); padding: 11px 0; }
+    .bc-inner { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink4); flex-wrap: wrap; }
+    .bc-inner a { color: var(--g3); text-decoration: none; font-weight: 600; }
+    .bc-inner a:hover { text-decoration: underline; }
+    .bc-inner i { width: 12px; height: 12px; }
+    .bc-cur { color: var(--ink3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 46vw; }
+
+    /* article header */
+    .art-head { padding: 40px 0 20px; }
+    .cat-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--g-l); color: var(--g3);
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+      padding: 5px 12px; border-radius: var(--pill); }
+    h1.art-title { font-family: var(--font-d); font-weight: 800; font-size: clamp(26px, 4.5vw, 40px);
+      line-height: 1.18; letter-spacing: -.02em; margin: 16px 0 14px; color: var(--ink); }
+    .art-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13.5px; color: var(--ink4); }
+    .art-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .art-meta i { width: 14px; height: 14px; }
+    .art-rating { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--gold-t); }
+    .art-rating .stars i { width: 15px; height: 15px; fill: currentColor; }
+
+    /* cover */
+    .art-cover { margin: 26px 0 8px; border-radius: 14px; overflow: hidden; background: var(--bg); border: 1px solid var(--border); }
+    .art-cover img { display: block; width: 100%; height: auto; max-height: 460px; object-fit: cover; }
+
+    /* body */
+    .art-body { padding: 24px 0 8px; font-size: 17px; line-height: 1.75; color: var(--ink2); }
+    .art-body p { margin: 0 0 20px; }
+    .art-body p:first-child::first-letter { font-size: 1.05em; }
+
+    /* gallery */
+    .art-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; padding: 16px 0 8px; }
+    .art-gallery img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); cursor: zoom-in; }
+
+    /* share */
+    .art-share { display: flex; align-items: center; gap: 10px; padding: 22px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-top: 26px; }
+    .art-share span { font-size: 13px; font-weight: 700; color: var(--ink3); }
+    .art-share button, .art-share a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px;
+      border-radius: 50%; border: 1px solid var(--border2); background: var(--white); color: var(--ink3); cursor: pointer; text-decoration: none; }
+    .art-share button:hover, .art-share a:hover { background: var(--g-l); color: var(--g3); border-color: var(--g3); }
+    .art-share i { width: 16px; height: 16px; }
+
+    /* related */
+    .related { background: var(--bg); border-top: 1px solid var(--border); margin-top: 40px; padding: 40px 0 52px; }
+    .related h2 { font-family: var(--font-d); font-weight: 800; font-size: 22px; margin-bottom: 20px; color: var(--ink); }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+    .rc { display: block; background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; text-decoration: none; transition: box-shadow var(--ease), transform var(--ease); }
+    .rc:hover { box-shadow: var(--sh2); transform: translateY(-2px); }
+    .rc-img { height: 140px; background: var(--bg2); }
+    .rc-img img { width: 100%; height: 100%; object-fit: cover; }
+    .rc-body { padding: 14px 15px 16px; }
+    .rc-cat { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--g3); }
+    .rc-title { font-family: var(--font-d); font-weight: 700; font-size: 15px; line-height: 1.35; margin-top: 6px; color: var(--ink); }
+
+    .back-hub { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; font-weight: 700; font-size: 14px; color: var(--g3); text-decoration: none; }
+    .back-hub:hover { text-decoration: underline; }
+
+    .art-loading, .art-error { text-align: center; padding: 80px 20px; color: var(--ink4); }
+
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.88); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 30px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; }
+    .lightbox-close { position: absolute; top: 18px; right: 22px; background: none; border: none; color: #fff; cursor: pointer; }
+    .lightbox-close i { width: 30px; height: 30px; }
+  </style>
+</head>
+
+<body>
+
+  <nav class="bc">
+    <div class="wrap-wide bc-inner">
+      <a href="/">Home</a>
+      <i data-lucide="chevron-right"></i>
+      <a href="/hub">News &amp; Reviews</a>
+      <i data-lucide="chevron-right"></i>
+      <span class="bc-cur" id="bcTitle">Loading…</span>
+    </div>
+  </nav>
+
+  <main id="article">
+    <div class="art-loading">
+      <i data-lucide="loader" style="width:26px;height:26px"></i>
+      <p style="margin-top:10px">Loading story…</p>
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="this.classList.remove('open')">
+    <button class="lightbox-close" aria-label="Close"><i data-lucide="x"></i></button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script src="/assets/js/site-chrome.js"></script>
+  <script>
+    (function () {
+      var kind = location.pathname.indexOf('/reviews/') === 0 ? 'review' : 'news';
+      var slug = location.pathname.split('/').filter(Boolean).pop();
+
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+      var CAT_LABELS = {
+        policy: 'Policy', launch: 'New Launch', market: 'Market', infrastructure: 'Infrastructure',
+        'car awards': 'Car Awards', 'buying tips': 'Buying Tips',
+        suv: 'SUV', ev: 'EV', sedan: 'Sedan', hatchback: 'Hatchback', mpv: 'MPV', pickup: 'Pickup', luxury: 'Luxury'
+      };
+      function catLabel(key) {
+        var k = String(key || '').toLowerCase();
+        return CAT_LABELS[k] || k.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+      }
+      function stars(r) {
+        var out = '', full = Math.floor(r), half = (r - full) >= 0.5;
+        for (var i = 0; i < 5; i++) {
+          out += '<i data-lucide="' + (i < full ? 'star' : (i === full && half ? 'star-half' : 'star')) + '"' + (i < full || (i === full && half) ? '' : ' style="opacity:.28"') + '></i>';
+        }
+        return out;
+      }
+      function fmtDate(p) {
+        if (p.displayDate) return p.displayDate;
+        var d = p.publishedAt || p.createdAt;
+        return d ? new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+      }
+      function paras(content) {
+        return String(content || '').split(/\n\s*\n/).map(function (s) { return s.trim(); }).filter(Boolean);
+      }
+      function openLightbox(src) {
+        document.getElementById('lightboxImg').src = src;
+        document.getElementById('lightbox').classList.add('open');
+      }
+      window.__openLightbox = openLightbox;
+
+      function render(p) {
+        document.title = p.title + ' – AutoViindu';
+        document.getElementById('bcTitle').textContent = p.title;
+
+        var photos = Array.isArray(p.photos) ? p.photos : [];
+        var ratingHtml = (kind === 'review' && p.rating != null)
+          ? '<span class="art-rating"><span class="stars">' + stars(p.rating) + '</span>' + p.rating.toFixed(1) + ' / 5</span>'
+          : '';
+        var coverHtml = p.coverImage
+          ? '<div class="art-cover"><img src="' + esc(p.coverImage) + '" alt="' + esc(p.title) + '"></div>'
+          : '';
+        var galleryHtml = photos.length
+          ? '<div class="wrap"><div class="art-gallery">' + photos.map(function (u) {
+              return '<img src="' + esc(u) + '" alt="" loading="lazy" onclick="__openLightbox(this.src)">';
+            }).join('') + '</div></div>'
+          : '';
+
+        var shareUrl = encodeURIComponent(location.href);
+        var shareTitle = encodeURIComponent(p.title);
+
+        document.getElementById('article').innerHTML =
+          '<div class="wrap art-head">' +
+            '<span class="cat-pill"><i data-lucide="' + (kind === 'review' ? 'star' : 'newspaper') + '"></i>' + esc(p.category ? catLabel(p.category) : (kind === 'review' ? 'Review' : 'News')) + '</span>' +
+            '<h1 class="art-title">' + esc(p.title) + '</h1>' +
+            '<div class="art-meta">' +
+              '<span><i data-lucide="calendar"></i>' + esc(fmtDate(p)) + '</span>' +
+              (p.readTime ? '<span><i data-lucide="clock"></i>' + esc(p.readTime) + '</span>' : '') +
+              (p.author ? '<span><i data-lucide="user"></i>' + esc(p.author) + '</span>' : '') +
+              ratingHtml +
+            '</div>' +
+          '</div>' +
+          '<div class="wrap">' + coverHtml + '</div>' +
+          '<article class="wrap art-body">' +
+            (p.excerpt ? '<p><strong>' + esc(p.excerpt) + '</strong></p>' : '') +
+            paras(p.content).map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') +
+          '</article>' +
+          galleryHtml +
+          '<div class="wrap">' +
+            '<div class="art-share">' +
+              '<span>Share</span>' +
+              '<a href="https://www.facebook.com/sharer/sharer.php?u=' + shareUrl + '" target="_blank" rel="noopener" aria-label="Share on Facebook"><i data-lucide="share"></i></a>' +
+              '<a href="https://twitter.com/intent/tweet?url=' + shareUrl + '&text=' + shareTitle + '" target="_blank" rel="noopener" aria-label="Share on X"><i data-lucide="send"></i></a>' +
+              '<a href="https://api.whatsapp.com/send?text=' + shareTitle + '%20' + shareUrl + '" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i data-lucide="message-circle"></i></a>' +
+              '<button onclick="navigator.clipboard.writeText(location.href);this.innerHTML=\'<i data-lucide=&quot;check&quot;></i>\';lucide.createIcons();" aria-label="Copy link"><i data-lucide="copy"></i></button>' +
+            '</div>' +
+            '<a class="back-hub" href="/hub"><i data-lucide="arrow-left"></i>Back to News &amp; Reviews</a>' +
+          '</div>' +
+          '<section class="related"><div class="wrap-wide"><h2>' + (kind === 'review' ? 'More reviews' : 'More news') + '</h2><div class="related-grid" id="relatedGrid"></div></div></section>';
+
+        if (window.lucide) lucide.createIcons();
+        loadRelated(p.slug);
+      }
+
+      function loadRelated(currentSlug) {
+        fetch('/api/news?kind=' + kind, { cache: 'no-store' })
+          .then(function (r) { return r.json(); })
+          .then(function (list) {
+            var seg = kind === 'review' ? '/reviews/' : '/news/';
+            var items = (list || []).filter(function (x) { return x.slug !== currentSlug; }).slice(0, 3);
+            document.getElementById('relatedGrid').innerHTML = items.map(function (x) {
+              return '<a class="rc" href="' + seg + encodeURIComponent(x.slug) + '">' +
+                '<div class="rc-img">' + (x.coverImage ? '<img src="' + esc(x.coverImage) + '" alt="">' : '') + '</div>' +
+                '<div class="rc-body"><div class="rc-cat">' + esc(x.category || '') + '</div><div class="rc-title">' + esc(x.title) + '</div></div>' +
+              '</a>';
+            }).join('');
+            if (window.lucide) lucide.createIcons();
+          })
+          .catch(function () {});
+      }
+
+      fetch('/api/news/' + encodeURIComponent(slug), { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error('404'); return r.json(); })
+        .then(render)
+        .catch(function () {
+          document.getElementById('article').innerHTML =
+            '<div class="art-error"><h1 style="font-size:24px;color:var(--ink)">Story not found</h1>' +
+            '<p style="margin:10px 0 18px">It may have been unpublished or moved.</p>' +
+            '<a class="back-hub" href="/hub"><i data-lucide="arrow-left"></i>Back to News &amp; Reviews</a></div>';
+          if (window.lucide) lucide.createIcons();
+        });
+
+      if (window.lucide) lucide.createIcons();
+    })();
+  </script>
+</body>
+
+</html>

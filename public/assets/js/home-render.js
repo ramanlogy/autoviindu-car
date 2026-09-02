@@ -4,6 +4,26 @@
  */
 window.AV = window.AV || {};
 
+/**
+ * Canonical price formatter (Nepali numbering).
+ *   >= 1 Crore   -> "Rs. 1.4 Cr"   (max 2 decimals, trailing zeros trimmed)
+ *   1L - 99.99L  -> "Rs. 45L"      (max 2 decimals, trailing zeros trimmed)
+ *   < 1 Lakh     -> "Rs. 90,000"   (grouped)
+ * Defined here because home-render.js is the first deferred script; app.js reuses it.
+ */
+window.Rs = function (n) {
+  if (n === null || n === undefined || n === '' || isNaN(n)) return 'Price on Request';
+  n = Number(n);
+  if (n >= 100000) {
+    var cr = parseFloat((n / 10000000).toFixed(2));
+    if (cr >= 1) return 'Rs. ' + cr + ' Cr';
+    return 'Rs. ' + parseFloat((n / 100000).toFixed(2)) + 'L';
+  }
+  return 'Rs. ' + n.toLocaleString('en-IN');
+};
+/** Same, but the input is already expressed in Lakhs (used by the price-range sliders). */
+window.RsLakh = function (lakhs) { return window.Rs((Number(lakhs) || 0) * 100000); };
+
 const eventMiniCard = ev => `<div class="event-mini-card" onclick="window.location.href='/events.html?article=${ev.id}'">
     <div class="emc-top">
       ${ev.img ? `<img src="${ev.img}" alt="${ev.title}" loading="lazy">` : `<div class="emc-icon"><i data-lucide="${ev.icon}"></i></div>`}
@@ -46,9 +66,7 @@ window.AV.calcHomeBudgetPrice = function () {
 
   var priceEl = document.getElementById('bcalcPrice');
   if (priceEl) {
-    priceEl.textContent = price >= 10000000
-      ? 'Rs. ' + (price / 10000000).toFixed(2) + 'Cr'
-      : 'Rs. ' + (price / 100000).toFixed(1) + 'L';
+    priceEl.textContent = window.Rs(price);
   }
 
   var cars = (window.CARS_DB || []).filter(function (c) {
@@ -100,9 +118,7 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
     ? bcalcDefaults.monthly * (1 - Math.pow(1 + bcalcR, -bcalcDefaults.months)) / bcalcR
     : bcalcDefaults.monthly * bcalcDefaults.months;
   const bcalcPrice = bcalcDefaults.down + bcalcLoan;
-  const bcalcFmtPrice = bcalcPrice >= 10000000
-    ? 'Rs. ' + (bcalcPrice / 10000000).toFixed(2) + 'Cr'
-    : 'Rs. ' + (bcalcPrice / 100000).toFixed(1) + 'L';
+  const bcalcFmtPrice = window.Rs(bcalcPrice);
   const bcalcCarCount = db.filter(c => Math.min(...c.variants.map(v => v.price)) <= bcalcPrice).length;
 
   const categories = [
@@ -750,148 +766,51 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
   <!-- Hero -->
   <div class="hero" id="hero">
     <div class="hero-slides" id="hero-slides">
-      <!-- Slide 1 (Family) -->
-      <div class="hero-slide" data-idx="0">
+      ${(HERO_SLIDES || []).map((s, idx) => {
+        const hasPrice = s.currentPrice || s.originalPrice;
+        const hasColors = s.exteriorColorName || s.interiorColorName;
+        const specs = [
+          [s.spec1Label, s.spec1Value],
+          [s.spec2Label, s.spec2Value],
+          [s.spec3Label, s.spec3Value],
+        ].filter(([label, value]) => label && value);
+        return `
+      <div class="hero-slide" data-idx="${idx}">
         <div class="slide-left-bg"></div>
-        <div class="slide-bg" style="background-image:url('assets/images/hero_images/family.jpeg'); background-position: 25% center;">
-          <!-- Card action flairs -->
+        <div class="slide-bg" style="background-image:url('${s.bg || ''}');">
           <div style="position:absolute; bottom:20px; right:20px; display:flex; gap:10px; z-index:3;">
             <button class="slide-image-btn" onclick="window.location.href='/book-service'" style="background:rgba(255,255,255,0.9); color:#111; border:none; padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Book Service</button>
-            <button class="slide-image-btn" onclick="AV.goTo('cars')" style="background:rgba(15,22,18,0.75); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Explore Specs</button>
+            <button class="slide-image-btn" onclick="${s.slug ? `AV.openDetail('${s.slug}')` : `AV.goTo('cars')`}" style="background:rgba(15,22,18,0.75); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Explore Specs</button>
           </div>
         </div>
         <div class="wrap">
           <div class="slide-content">
-          <h2 class="slide-title">Hyundai Creta</h2>
-            <div class="slide-price"><del>Rs. 48,90,000</del><span class="slide-price-current">Rs. 46,90,000</span></div>
-          
+          <h2 class="slide-title">${s.title || ''}</h2>
+          ${hasPrice ? `
+            <div class="slide-price">${s.originalPrice ? `<del>${s.originalPrice}</del>` : ''}<span class="slide-price-current">${s.currentPrice || ''}</span></div>
+          ` : ''}
+          ${hasColors ? `
             <div class="slide-color-indicator">
-              <span style="display:flex; align-items:center;"><span class="slide-dot" style="background:#ffffff;"></span> White exterior</span>
-              <span style="display:flex; align-items:center;"><span class="slide-dot" style="background:#222222;"></span> Black interior</span>
+              ${s.exteriorColorName ? `<span style="display:flex; align-items:center;"><span class="slide-dot" style="background:${s.exteriorColorHex || '#ffffff'};"></span> ${s.exteriorColorName}</span>` : ''}
+              ${s.interiorColorName ? `<span style="display:flex; align-items:center;"><span class="slide-dot" style="background:${s.interiorColorHex || '#222222'};"></span> ${s.interiorColorName}</span>` : ''}
             </div>
+          ` : ''}
+          ${specs.length ? `
             <div class="slide-specs-grid">
-              <div class="slide-spec-item"><span class="slide-spec-label">Engine</span><span class="slide-spec-value">1.5L Petrol</span></div>
-              <div class="slide-spec-item"><span class="slide-spec-label">EMI</span><span class="slide-spec-value">Rs. 52k/mo</span></div>
-              <div class="slide-spec-item"><span class="slide-spec-label">Safety</span><span class="slide-spec-value">6 Airbags</span></div>
+              ${specs.map(([label, value]) => `<div class="slide-spec-item"><span class="slide-spec-label">${label}</span><span class="slide-spec-value">${value}</span></div>`).join('')}
             </div>
+          ` : ''}
           </div>
         </div>
-      </div>
-      <!-- Slide 2 (Couple) -->
-      <div class="hero-slide" data-idx="1">
-        <div class="slide-left-bg"></div>
-        <div class="slide-bg" style="background-image:url('assets/images/hero_images/couple.jpeg'); background-position: 30% center;">
-          <div style="position:absolute; bottom:20px; right:20px; display:flex; gap:10px; z-index:3;">
-            <button class="slide-image-btn" onclick="window.location.href='/book-service'" style="background:rgba(255,255,255,0.9); color:#111; border:none; padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Book Service</button>
-            <button class="slide-image-btn" onclick="AV.goTo('cars')" style="background:rgba(15,22,18,0.75); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Explore Specs</button>
-          </div>
-        </div>
-        <div class="wrap">
-          <div class="slide-content">
-          <h2 class="slide-title">BYD Atto 3</h2>
-            <div class="slide-price"><del>Rs. 66,90,000</del><span class="slide-price-current">Rs. 64,90,000</span></div>
-            
-            <div class="slide-color-indicator">
-              <span style="display:flex; align-items:center;"><span class="slide-dot" style="background:#e5e7eb;"></span> Grey exterior</span>
-              <span style="display:flex; align-items:center;"><span class="slide-dot" style="background:#1e293b;"></span> Blue interior</span>
-            </div>
-            <div class="slide-specs-grid">
-              <div class="slide-spec-item"><span class="slide-spec-label">Range</span><span class="slide-spec-value">420 km</span></div>
-              <div class="slide-spec-item"><span class="slide-spec-label">Battery</span><span class="slide-spec-value">60.5 kWh</span></div>
-              <div class="slide-spec-item"><span class="slide-spec-label">EMI</span><span class="slide-spec-value">Rs. 68k/mo</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Slide 3 (BYD Atto 3) -->
-      <div class="hero-slide" data-idx="2">
-        <div class="slide-left-bg"></div>
-        <div class="slide-bg" style="background-image:url('assets/images/hero_images/bydatto3.jpg'); background-position: 40% center;">
-          <div style="position:absolute; bottom:20px; right:20px; display:flex; gap:10px; z-index:3;">
-            <button class="slide-image-btn" onclick="window.location.href='/book-service'" style="background:rgba(255,255,255,0.9); color:#111; border:none; padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Book Service</button>
-            <button class="slide-image-btn" onclick="AV.goTo('cars')" style="background:rgba(15,22,18,0.75); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Explore Specs</button>
-          </div>
-        </div>
-        <div class="wrap">
-          <div class="slide-content">
-          <h2 class="slide-title">BYD Seal</h2>
-            <div class="slide-price"><del>Rs. 1,05,00,000</del><span class="slide-price-current">Rs. 99,90,000</span></div>
-           
-            <div class="slide-color-indicator">
-              <span style="display:flex; align-items:center;"><span class="slide-dot" style="background:#1e3a8a;"></span> Blue exterior</span>
-              <span style="display:flex; align-items:center;"><span class="slide-dot" style="background:#111111;"></span> Black interior</span>
-            </div>
-            <div class="slide-specs-grid">
-              <div class="slide-spec-item"><span class="slide-spec-label">Range</span><span class="slide-spec-value">570 km</span></div>
-              <div class="slide-spec-item"><span class="slide-spec-label">0-100 km/h</span><span class="slide-spec-value">3.8s</span></div>
-              <div class="slide-spec-item"><span class="slide-spec-label">EMI</span><span class="slide-spec-value">Rs. 110k/mo</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Slide 4 (Toyota Fortuner) -->
-      <div class="hero-slide" data-idx="3">
-        <div class="slide-left-bg"></div>
-        <div class="slide-bg" style="background-image:url('assets/images/hero_images/fortuner.jpg')">
-          <div style="position:absolute; bottom:20px; right:20px; display:flex; gap:10px; z-index:3;">
-            <button class="slide-image-btn" onclick="window.location.href='/book-service'" style="background:rgba(255,255,255,0.9); color:#111; border:none; padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Book Service</button>
-            <button class="slide-image-btn" onclick="AV.goTo('cars')" style="background:rgba(15,22,18,0.75); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Explore Specs</button>
-          </div>
-        </div>
-        <div class="wrap">
-          <div class="slide-content">
-          <h2 class="slide-title">Toyota Fortuner</h2>
-            <div class="slide-price"><del>Rs. 2,25,00,000</del><span class="slide-price-current">Rs. 2,15,00,000</span></div>
-          
-            <div class="slide-color-indicator">
-              <span style="display:flex; align-items:center;"><span class="slide-dot" style="background:#111111;"></span> Black exterior</span>
-              <span style="display:flex; align-items:center;"><span class="slide-dot" style="background:#92400e;"></span> Tan interior</span>
-            </div>
-            <div class="slide-specs-grid">
-              <div class="slide-spec-item"><span class="slide-spec-label">Clearance</span><span class="slide-spec-value">221 mm</span></div>
-              <div class="slide-spec-item"><span class="slide-spec-label">Engine</span><span class="slide-spec-value">2.8L Diesel</span></div>
-              <div class="slide-spec-item"><span class="slide-spec-label">Torque</span><span class="slide-spec-value">500 Nm</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Slide 5 (Tata Nexon EV) -->
-      <div class="hero-slide" data-idx="4">
-        <div class="slide-left-bg"></div>
-        <div class="slide-bg" style="background-image:url('assets/images/hero_images/Tata-Motors-Nexon-EV.jpg')">
-          <div style="position:absolute; bottom:20px; right:20px; display:flex; gap:10px; z-index:3;">
-            <button class="slide-image-btn" onclick="window.location.href='/book-service'" style="background:rgba(255,255,255,0.9); color:#111; border:none; padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Book Service</button>
-            <button class="slide-image-btn" onclick="AV.goTo('cars')" style="background:rgba(15,22,18,0.75); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Explore Specs</button>
-          </div>
-        </div>
-        <div class="wrap">
-          <div class="slide-content">
-          <h2 class="slide-title">Tata Nexon EV</h2>
-            <div class="slide-price"><del>Rs. 42,99,000</del><span class="slide-price-current">Rs. 39,99,000</span></div>
-           
-            <div class="slide-color-indicator">
-              <span style="display:flex; align-items:center;"><span class="slide-dot" style="background:#065f46;"></span> Green exterior</span>
-              <span style="display:flex; align-items:center;"><span class="slide-dot" style="background:#e2e8f0;"></span> White interior</span>
-            </div>
-            <div class="slide-specs-grid">
-              <div class="slide-spec-item"><span class="slide-spec-label">Range</span><span class="slide-spec-value">325 km</span></div>
-              <div class="slide-spec-item"><span class="slide-spec-label">Charging</span><span class="slide-spec-value">45m (80%)</span></div>
-              <div class="slide-spec-item"><span class="slide-spec-label">EMI</span><span class="slide-spec-value">Rs. 42k/mo</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div>`;
+      }).join('')}
     </div>
 
     <!-- Navigation Buttons -->
     <button class="hero-prev" onclick="AV.heroNav(-1)" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg></button>
     <button class="hero-next" onclick="AV.heroNav(1)" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><polyline points="9 18 15 12 9 6"/></svg></button>
     <div class="hero-dots" id="hero-dots">
-      <div class="hero-dot active" onclick="AV.heroGo(0)"></div>
-      <div class="hero-dot" onclick="AV.heroGo(1)"></div>
-      <div class="hero-dot" onclick="AV.heroGo(2)"></div>
-      <div class="hero-dot" onclick="AV.heroGo(3)"></div>
-      <div class="hero-dot" onclick="AV.heroGo(4)"></div>
+      ${(HERO_SLIDES || []).map((s, idx) => `<div class="hero-dot${idx === 0 ? ' active' : ''}" onclick="AV.heroGo(${idx})"></div>`).join('')}
     </div>
     <div class="hero-progress" id="hero-progress"></div>
     

@@ -37,15 +37,22 @@
     return window.AV_fetchCar(slug);
   };
 
+  window.HERO_SLIDES_LIVE = [];
+
   window.AV_DATA_READY = Promise.all([
     fetchJson('/api/cars?view=card'),
     fetchJson('/api/cars/used'),
+    fetchJson('/api/site/homepage').catch(function (err) {
+      console.warn('[AutoViindu] Hero slide prefetch failed:', err);
+      return null;
+    }),
   ]).then(function (results) {
     window.CARS_DB = results[0];
     // Only set from API if no static data loaded yet
     if (!window.USED_CARS_DB || window.USED_CARS_DB.length === 0) {
       window.USED_CARS_DB = results[1];
     }
+    window.HERO_SLIDES_LIVE = (results[2] && results[2].heroSlides) || [];
 
     Promise.all([
       fetchJson('/api/cars'),

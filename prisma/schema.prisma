@@ -108,9 +108,14 @@ model NewsPost {
   excerpt      String?
   content      String
   category     String    @default("launch")
+  kind         String    @default("news")   // "news" | "review"
   author       String?
   publishedAt  DateTime?
   coverImage   String?
+  photos       Json?                          // extra gallery image URLs
+  readTime     String?                        // e.g. "6 min read"
+  displayDate  String?                        // human label e.g. "Aug 2026"
+  rating       Float?                         // reviews only
   isPublished  Boolean   @default(false)
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
@@ -133,18 +138,30 @@ model Lead {
 }
 
 model HeroSlide {
-  id           Int       @id @default(autoincrement())
-  title        String
-  badge        String?
-  slug         String?
-  bg           String?
-  sub          String?
-  offerLabel   String?
-  offerVal     String?
-  sortOrder    Int       @default(0)
-  isActive     Boolean   @default(true)
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
+  id                Int       @id @default(autoincrement())
+  title             String
+  badge             String?
+  slug              String?
+  bg                String?
+  sub               String?
+  offerLabel        String?
+  offerVal          String?
+  originalPrice     String?
+  currentPrice      String?
+  exteriorColorName String?
+  exteriorColorHex  String?
+  interiorColorName String?
+  interiorColorHex  String?
+  spec1Label        String?
+  spec1Value        String?
+  spec2Label        String?
+  spec2Value        String?
+  spec3Label        String?
+  spec3Value        String?
+  sortOrder         Int       @default(0)
+  isActive          Boolean   @default(true)
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
 }
 
 model SiteSetting {

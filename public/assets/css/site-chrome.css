@@ -55,6 +55,18 @@
   --sh4: 0 20px 48px rgba(17,22,18,.15);
   --ease: .22s cubic-bezier(.4, 0, .2, 1);
   --spring: .4s cubic-bezier(.34, 1.56, .64, 1);
+  /* ── Motion scale (Emil Kowalski craft bar) ──────────────────────
+     Use --ease-out for anything ENTERING or EXITING the screen
+     (menus, toasts, cards, page swaps) — it decelerates into place
+     and feels responsive. Keep --ease / --ease-in-out for hover /
+     colour / state tweaks that stay on screen. */
+  --ease-out: .22s cubic-bezier(.22, 1, .36, 1);
+  --ease-out-fast: .14s cubic-bezier(.22, 1, .36, 1);
+  --ease-in-out: .2s cubic-bezier(.4, 0, .2, 1);
+  --dur-1: .12s;   /* micro: checkbox, chevron */
+  --dur-2: .2s;    /* standard UI: hover, dropdown */
+  --dur-3: .32s;   /* larger surfaces: sheet, page swap */
+  --lift: -2px;    /* shared hover-lift distance */
   --font-d: var(--font-display);
   --font-b: var(--font-body);
 }
@@ -374,6 +386,38 @@
   background: var(--g4)
 }
 
+/* ── Tactile press feedback ───────────────────────────────────────
+   Every shared chrome button dips slightly on press, like a native
+   control. Kept to the known inline-flex button classes so it can't
+   fight a positioning transform. Snappier curve on the way down. */
+.btn,
+.btn-primary,
+.btn-ghost,
+.btn-outline,
+.btn-sell,
+.btn-book,
+.icon-btn,
+.mm-cta,
+.header-nav .av-menu-cta {
+  transition: transform var(--ease-out-fast),
+              background-color var(--ease),
+              border-color var(--ease),
+              color var(--ease),
+              box-shadow var(--ease);
+}
+.btn:active,
+.btn-primary:active,
+.btn-ghost:active,
+.btn-outline:active,
+.btn-sell:active,
+.btn-book:active,
+.icon-btn:active,
+.mm-cta:active,
+.header-nav .av-menu-cta:active {
+  transform: scale(.96);
+  transition-duration: .04s;
+}
+
 .mob-icons {
   display: flex;
   align-items: center;
@@ -458,14 +502,27 @@
   border: 1px solid var(--border);
   border-radius: var(--r16);
   box-shadow: var(--sh3);
-  display: none;
   z-index: 800;
-  overflow: hidden
+  overflow: hidden;
+  /* closed state — kept in the DOM so it can animate both ways */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px) scale(.985);
+  transform-origin: top center;
+  pointer-events: none;
+  transition: opacity var(--ease-out-fast),
+              transform var(--ease-out-fast),
+              visibility 0s linear .16s;
 }
 
 .search-dd.open {
-  display: block;
-  animation: fadeIn .15s ease
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  transition: opacity var(--ease-out-fast),
+              transform var(--ease-out-fast),
+              visibility 0s;
 }
 
 /* mobile search — expand header search like desktop */
@@ -513,11 +570,16 @@
   inset: 0;
   top: var(--nav);
   z-index: 850;
-  display: none
+  /* closed — stays mounted so the panel can slide back up on close */
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0s linear .26s;
 }
 
 .mobile-menu.open {
-  display: block
+  visibility: visible;
+  pointer-events: auto;
+  transition: visibility 0s;
 }
 
 @media(min-width: 960px) {
@@ -530,8 +592,12 @@
   position: absolute;
   inset: 0;
   background: rgba(7, 16, 10, .55);
-  backdrop-filter: blur(8px)
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity var(--dur-3) ease;
 }
+
+.mobile-menu.open .mm-backdrop { opacity: 1; }
 
 .mm-panel {
   position: absolute;
@@ -542,7 +608,14 @@
   border-bottom: 1px solid var(--border);
   max-height: calc(100vh - var(--nav));
   overflow-y: auto;
-  animation: slideDown .22s ease
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: transform var(--ease-out), opacity var(--ease-out);
+}
+
+.mobile-menu.open .mm-panel {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .mm-panel .mm-btn {
@@ -710,21 +783,28 @@
   padding: 6px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(6px);
+  transform: translateY(-4px) scale(.97);
+  transform-origin: top left;   /* grows out of its trigger, not from centre */
   pointer-events: none;
-  transition: opacity .18s, transform .18s, visibility .18s;
+  transition: opacity var(--ease-out-fast),
+              transform var(--ease-out-fast),
+              visibility 0s linear .16s;
 }
 
 .header-nav .av-dd.av-dd--r {
   left: auto;
   right: 0;
+  transform-origin: top right;
 }
 
 .header-nav .av-item.open>.av-dd {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   pointer-events: auto;
+  transition: opacity var(--ease-out-fast),
+              transform var(--ease-out-fast),
+              visibility 0s;
 }
 
 .header-nav .av-acc {
@@ -1152,4 +1232,74 @@
 .skel-used-card .skel-price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
 .skel-used-card .skel-line.w-30 { height: 16px; width: 30%; }
 .skel-used-card .skel-btn { height: 32px; width: 40%; border-radius: 10px; }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   SHARED PAGE / VIEW TRANSITION
+   Applied to #app-root in the SPA (see app.js goTo) and usable on any
+   content container. Content fades up 8px on the responsive ease-out
+   curve — quick enough to feel instant, enough to read as "new page".
+═══════════════════════════════════════════════════════════════════ */
+@keyframes av-page-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.av-page-in {
+  animation: av-page-in .32s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   HOVER GATING  (touch devices)
+   On a phone/tablet there is no real hover — the browser fakes one on
+   tap and it stays stuck until you tap elsewhere. So on touch we keep
+   colour/shadow hover styling but cancel the movement (lift / zoom).
+   `html` prefix is only to out-rank the base rules in cars.css /
+   home-premium.css / compare.css, which load after this file.
+═══════════════════════════════════════════════════════════════════ */
+@media (hover: none) {
+  html .btn-primary:hover,
+  html .fsoc:hover,
+  html .footer-link:hover,
+  html .car-card:hover,
+  html .color-swatch:hover,
+  html .av-btn-submit:hover,
+  html .cute-submit:hover,
+  html .pill-submit:hover,
+  html .home-pill:hover img,
+  html .home-pill:hover svg,
+  html .brand-card:hover,
+  html .home-tool-card:hover,
+  html .bcalc-cta:hover,
+  html .svc-card:hover,
+  html .nav-arrow-btn:hover,
+  html .cmp-slot-card.filled:hover,
+  html .cmp-empty-cta:hover,
+  html .cmp-car-pick:hover {
+    transform: none;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   REDUCED MOTION  (accessibility — one global guard for every page)
+   Someone who sets "reduce motion" in their OS gets a calm site:
+   movement and looping animation are removed, but opacity / colour
+   fades stay so nothing snaps or disappears without a cue.
+═══════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* keep gentle opacity fades so state changes are still legible */
+  .av-page-in,
+  .search-dd.open,
+  .toast,
+  .mm-panel,
+  .mm-backdrop { animation: av-fade-only .12s linear !important; }
+}
+@keyframes av-fade-only { from { opacity: 0; } to { opacity: 1; } }
 

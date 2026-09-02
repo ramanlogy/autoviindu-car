@@ -67,6 +67,52 @@ app.use((req, res, next) => {
   next();
 });
 
+// Inject the shared site-nav / site-footer partials into a page's HTML string.
+// Used both by the static-page middleware below and by the dynamic /news/:slug route.
+function injectChrome(html, pathname) {
+  try {
+    const navPath = path.join(__dirname, 'public', 'assets', 'partials', 'site-nav.html');
+    const footerPath = path.join(__dirname, 'public', 'assets', 'partials', 'site-footer.html');
+    if (!fs.existsSync(navPath) || !fs.existsSync(footerPath)) return html;
+
+    let navHtml = fs.readFileSync(navPath, 'utf-8');
+    let footerHtml = fs.readFileSync(footerPath, 'utf-8');
+
+    const isNested = pathname.startsWith('/form/') || pathname.startsWith('/admin/');
+    if (isNested) {
+      // Fix relative asset paths in nav and footer templates for nested pages
+      navHtml = navHtml
+        .replace(/src="assets\//g, 'src="../assets/')
+        .replace(/src="\/assets\//g, 'src="../assets/')
+        .replace(/href="assets\//g, 'href="../assets/')
+        .replace(/href="\/assets\//g, 'href="../assets/');
+      footerHtml = footerHtml
+        .replace(/src="assets\//g, 'src="../assets/')
+        .replace(/src="\/assets\//g, 'src="../assets/')
+        .replace(/href="assets\//g, 'href="../assets/')
+        .replace(/href="\/assets\//g, 'href="../assets/');
+    }
+
+    // Inject navbar right after <body>
+    const bodyTag = '<body>';
+    const bodyIndex = html.indexOf(bodyTag);
+    if (bodyIndex !== -1) {
+      const insertPos = bodyIndex + bodyTag.length;
+      html = html.slice(0, insertPos) + '\n' + navHtml + html.slice(insertPos);
+    }
+
+    // Inject footer right before </body>
+    const closeBodyTag = '</body>';
+    const closeBodyIndex = html.lastIndexOf(closeBodyTag);
+    if (closeBodyIndex !== -1) {
+      html = html.slice(0, closeBodyIndex) + '\n' + footerHtml + '\n' + html.slice(closeBodyIndex);
+    }
+  } catch (e) {
+    console.error('[server] injectChrome error:', e);
+  }
+  return html;
+}
+
 // Middleware to inject site-nav and site-footer server-side into non-index HTML pages
 app.use((req, res, next) => {
   if (req.method !== 'GET') return next();
@@ -88,46 +134,8 @@ app.use((req, res, next) => {
   // If file exists, inject the shared nav/footer partials server-side
   if (fs.existsSync(fullPath) && fs.statSync(fullPath).isFile()) {
     try {
-      let html = fs.readFileSync(fullPath, 'utf-8');
-      const navPath = path.join(__dirname, 'public', 'assets', 'partials', 'site-nav.html');
-      const footerPath = path.join(__dirname, 'public', 'assets', 'partials', 'site-footer.html');
-
-      if (fs.existsSync(navPath) && fs.existsSync(footerPath)) {
-        let navHtml = fs.readFileSync(navPath, 'utf-8');
-        let footerHtml = fs.readFileSync(footerPath, 'utf-8');
-
-        const isNested = pathname.startsWith('/form/') || pathname.startsWith('/admin/');
-        if (isNested) {
-          // Fix relative asset paths in nav and footer templates for nested pages
-          navHtml = navHtml
-            .replace(/src="assets\//g, 'src="../assets/')
-            .replace(/src="\/assets\//g, 'src="../assets/')
-            .replace(/href="assets\//g, 'href="../assets/')
-            .replace(/href="\/assets\//g, 'href="../assets/');
-          footerHtml = footerHtml
-            .replace(/src="assets\//g, 'src="../assets/')
-            .replace(/src="\/assets\//g, 'src="../assets/')
-            .replace(/href="assets\//g, 'href="../assets/')
-            .replace(/href="\/assets\//g, 'href="../assets/');
-        }
-
-        // Inject navbar right after <body>
-        const bodyTag = '<body>';
-        const bodyIndex = html.indexOf(bodyTag);
-        if (bodyIndex !== -1) {
-          const insertPos = bodyIndex + bodyTag.length;
-          html = html.slice(0, insertPos) + '\n' + navHtml + html.slice(insertPos);
-        }
-
-        // Inject footer right before </body>
-        const closeBodyTag = '</body>';
-        const closeBodyIndex = html.lastIndexOf(closeBodyTag);
-        if (closeBodyIndex !== -1) {
-          html = html.slice(0, closeBodyIndex) + '\n' + footerHtml + '\n' + html.slice(closeBodyIndex);
-        }
-      }
-
-      res.type('html').send(html);
+      const raw = fs.readFileSync(fullPath, 'utf-8');
+      res.type('html').send(injectChrome(raw, pathname));
       return;
     } catch (e) {
       console.error('[server] injection error:', e);
@@ -159,7 +167,10 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/dashboard', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/admin/dashboard.html'));
+  // Legacy admin panel — superseded by /cms (single source of truth for inventory & content).
+  // Kept as a redirect so old bookmarks land in the right place instead of a second,
+  // out-of-sync admin surface.
+  res.redirect('/cms');
 });
 
 app.get('/cms', (req, res) => {
@@ -170,6 +181,98 @@ app.get('/cms', (req, res) => {
 function slugify(text) {
   return String(text || '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
+
+// ── Per-article SEO pages: /news/:slug and /reviews/:slug ─────────────────────
+// One template (public/news-article.html), one handler. The post is looked up in
+// the DB and its title/description/OG tags/JSON-LD are injected server-side so
+// crawlers and social scrapers see real content before any JS runs.
+const SITE_ORIGIN = 'https://www.autoviindu.com';
+
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function buildArticleHead(post, urlPath) {
+  const title = `${post.title} – AutoViindu`;
+  const desc = (post.excerpt || String(post.content || '').replace(/\s+/g, ' ').trim().slice(0, 160)).slice(0, 200);
+  const url = SITE_ORIGIN + urlPath;
+  const img = post.coverImage
+    ? (post.coverImage.startsWith('http') ? post.coverImage : SITE_ORIGIN + post.coverImage)
+    : SITE_ORIGIN + '/assets/images/og/home.jpg';
+  const published = post.publishedAt ? new Date(post.publishedAt).toISOString() : new Date(post.createdAt).toISOString();
+  const modified = post.updatedAt ? new Date(post.updatedAt).toISOString() : published;
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': post.kind === 'review' ? 'Review' : 'NewsArticle',
+    headline: post.title,
+    description: desc,
+    image: [img],
+    datePublished: published,
+    dateModified: modified,
+    author: { '@type': 'Organization', name: post.author || 'AutoViindu' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'AutoViindu',
+      logo: { '@type': 'ImageObject', url: SITE_ORIGIN + '/assets/images/cars/brands/logo.png' }
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url }
+  };
+  if (post.kind === 'review' && post.rating != null) {
+    ld.reviewRating = { '@type': 'Rating', ratingValue: post.rating, bestRating: 5 };
+  }
+  return [
+    `<title>${esc(title)}</title>`,
+    `<meta name="description" content="${esc(desc)}">`,
+    `<link rel="canonical" href="${esc(url)}">`,
+    `<meta property="og:type" content="article">`,
+    `<meta property="og:title" content="${esc(post.title)}">`,
+    `<meta property="og:description" content="${esc(desc)}">`,
+    `<meta property="og:url" content="${esc(url)}">`,
+    `<meta property="og:image" content="${esc(img)}">`,
+    `<meta property="og:site_name" content="AutoViindu">`,
+    `<meta name="twitter:card" content="summary_large_image">`,
+    `<meta name="twitter:title" content="${esc(post.title)}">`,
+    `<meta name="twitter:description" content="${esc(desc)}">`,
+    `<meta name="twitter:image" content="${esc(img)}">`,
+    `<meta property="article:published_time" content="${esc(published)}">`,
+    `<script type="application/ld+json">${JSON.stringify(ld)}</script>`
+  ].join('\n  ');
+}
+
+async function serveArticle(req, res, kind) {
+  try {
+    const slug = String(req.params.slug || '');
+    const post = await prisma.newsPost.findUnique({ where: { slug } });
+    if (!post || !post.isPublished || post.kind !== kind) {
+      res.status(404).type('html').send(
+        injectChrome(
+          '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Not found – AutoViindu</title>' +
+          '<link rel="stylesheet" href="/assets/css/site-chrome.css"></head><body>' +
+          '<main style="max-width:640px;margin:80px auto;padding:0 20px;text-align:center;font-family:system-ui,sans-serif">' +
+          '<h1 style="font-size:28px">Story not found</h1>' +
+          '<p style="color:#666">This article may have been unpublished or moved.</p>' +
+          '<p><a href="/hub" style="color:#0a58ca">← Back to the News &amp; Reviews hub</a></p>' +
+          '</main></body></html>',
+          req.path
+        )
+      );
+      return;
+    }
+    const tplPath = path.join(__dirname, 'public', 'news-article.html');
+    let html = fs.readFileSync(tplPath, 'utf-8');
+    html = html.replace('<!--SEO-->', buildArticleHead(post, req.path));
+    res.type('html').send(injectChrome(html, req.path));
+  } catch (e) {
+    console.error('[server] serveArticle error:', e);
+    res.status(500).send('Server error');
+  }
+}
+
+app.get('/news/:slug', (req, res) => serveArticle(req, res, 'news'));
+app.get('/reviews/:slug', (req, res) => serveArticle(req, res, 'review'));
+
 app.get("/api/status", (req, res) => {
   res.json({ status: "ok", site: "AutoViindu" });
 });
@@ -468,7 +571,17 @@ async function writeSiteDb(key, data) {
       await prisma.heroSlide.deleteMany({});
       for (let i = 0; i < data.heroSlides.length; i++) {
         const s = data.heroSlides[i];
-        await prisma.heroSlide.create({ data: { title: s.title || '', badge: s.badge, slug: s.slug, bg: s.bg, sub: s.sub, offerLabel: s.offerLabel, offerVal: s.offerVal, sortOrder: i, isActive: true } });
+        await prisma.heroSlide.create({ data: {
+          title: s.title || '', badge: s.badge, slug: s.slug, bg: s.bg, sub: s.sub,
+          offerLabel: s.offerLabel, offerVal: s.offerVal,
+          originalPrice: s.originalPrice, currentPrice: s.currentPrice,
+          exteriorColorName: s.exteriorColorName, exteriorColorHex: s.exteriorColorHex,
+          interiorColorName: s.interiorColorName, interiorColorHex: s.interiorColorHex,
+          spec1Label: s.spec1Label, spec1Value: s.spec1Value,
+          spec2Label: s.spec2Label, spec2Value: s.spec2Value,
+          spec3Label: s.spec3Label, spec3Value: s.spec3Value,
+          sortOrder: i, isActive: true
+        } });
       }
     }
     const extra = { popularSearches: data.popularSearches || [], events: data.events || [] };
@@ -649,6 +762,18 @@ app.post("/api/admin/sitemap/regenerate", apiAuth, async (req, res) => {
     cars.forEach((c) => {
       if (c.slug) urls.push("  <url><loc>" + base + "/#car/" + encodeURIComponent(c.slug) + "</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>");
     });
+    // News & review articles — each is a real indexable page
+    const posts = await prisma.newsPost.findMany({ where: { isPublished: true } });
+    posts.forEach((p) => {
+      if (!p.slug) return;
+      const seg = p.kind === "review" ? "/reviews/" : "/news/";
+      const lastmod = (p.updatedAt || p.publishedAt || p.createdAt);
+      urls.push(
+        "  <url><loc>" + base + seg + encodeURIComponent(p.slug) + "</loc>" +
+        (lastmod ? "<lastmod>" + new Date(lastmod).toISOString().slice(0, 10) + "</lastmod>" : "") +
+        "<changefreq>weekly</changefreq><priority>0.7</priority></url>"
+      );
+    });
     const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls.join("\n") + "\n</urlset>\n";
     fs.writeFileSync(path.join(__dirname, "public", "sitemap.xml"), xml, "utf-8");
     res.json({ success: true, urlCount: urls.length });
@@ -783,6 +908,7 @@ app.post('/api/admin/cars', apiAuth, async (req, res) => {
         badge: body.badge || null,
         budgetTier: body.budgetTier || null,
         isEV: !!body.isEV,
+        isNew: body.isNew !== undefined ? !!body.isNew : true,
         isFeatured: !!body.isFeatured,
         isBestSeller: !!body.isBestSeller,
         tagline: body.tagline || null,
@@ -790,9 +916,14 @@ app.post('/api/admin/cars', apiAuth, async (req, res) => {
         expertScore: body.expertScore ? parseFloat(body.expertScore) : null,
         baseEMI: body.baseEMI ? parseInt(body.baseEMI) : null,
         overview: body.overview || null,
+        thumb: body.thumb || null,
         images: body.images || [],
         colors: body.colors || [],
         variants: body.variants || [],
+        specs: body.specs || {},
+        pros: body.pros || [],
+        cons: body.cons || [],
+        highlights: body.highlights || [],
       }
     });
     res.json(car);
@@ -815,6 +946,7 @@ app.patch('/api/admin/cars/:id', apiAuth, async (req, res) => {
         ...(body.badge !== undefined && { badge: body.badge }),
         ...(body.budgetTier !== undefined && { budgetTier: body.budgetTier }),
         ...(body.isEV !== undefined && { isEV: !!body.isEV }),
+        ...(body.isNew !== undefined && { isNew: !!body.isNew }),
         ...(body.isFeatured !== undefined && { isFeatured: !!body.isFeatured }),
         ...(body.isBestSeller !== undefined && { isBestSeller: !!body.isBestSeller }),
         ...(body.tagline !== undefined && { tagline: body.tagline }),
@@ -822,9 +954,14 @@ app.patch('/api/admin/cars/:id', apiAuth, async (req, res) => {
         ...(body.expertScore !== undefined && { expertScore: body.expertScore ? parseFloat(body.expertScore) : null }),
         ...(body.baseEMI !== undefined && { baseEMI: body.baseEMI ? parseInt(body.baseEMI) : null }),
         ...(body.overview !== undefined && { overview: body.overview }),
+        ...(body.thumb !== undefined && { thumb: body.thumb }),
         ...(body.images && { images: body.images }),
         ...(body.colors && { colors: body.colors }),
         ...(body.variants && { variants: body.variants }),
+        ...(body.specs !== undefined && { specs: body.specs }),
+        ...(body.pros !== undefined && { pros: body.pros }),
+        ...(body.cons !== undefined && { cons: body.cons }),
+        ...(body.highlights !== undefined && { highlights: body.highlights }),
       }
     });
     res.json(car);
@@ -959,28 +1096,50 @@ app.get('/api/blogs', async (req, res) => {
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
-// ── News CRUD ─────────────────────────────────────────────────────────────────
+// ── News + Reviews CRUD (one table, `kind` = "news" | "review") ───────────────
 app.get('/api/admin/news', apiAuth, async (req, res) => {
   try {
-    const news = await prisma.newsPost.findMany({ orderBy: { createdAt: 'desc' } });
+    const where = {};
+    if (req.query.kind) where.kind = String(req.query.kind);
+    const news = await prisma.newsPost.findMany({ where, orderBy: { createdAt: 'desc' } });
     res.json(news);
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
+// Ensure a slug is unique, appending -2, -3, … if needed (ignoring one id).
+async function uniqueNewsSlug(base, ignoreId) {
+  let slug = slugify(base) || 'post';
+  let n = 1;
+  // eslint-disable-next-line no-constant-condition
+  while (true) {
+    const hit = await prisma.newsPost.findUnique({ where: { slug } });
+    if (!hit || hit.id === ignoreId) return slug;
+    n += 1;
+    slug = `${slugify(base) || 'post'}-${n}`;
+  }
+}
+
 app.post('/api/admin/news', apiAuth, async (req, res) => {
   try {
     const body = req.body;
+    const slug = await uniqueNewsSlug(body.slug || body.title || 'news');
+    const publishing = !!body.isPublished;
     const post = await prisma.newsPost.create({
       data: {
-        slug: body.slug || slugify(body.title || 'news') + '-' + Date.now(),
+        slug,
         title: body.title || 'Untitled',
         excerpt: body.excerpt || null,
         content: body.content || '',
         category: body.category || 'launch',
+        kind: body.kind === 'review' ? 'review' : 'news',
         author: body.author || null,
         coverImage: body.coverImage || null,
-        isPublished: !!body.isPublished,
-        publishedAt: body.publishedAt ? new Date(body.publishedAt) : null,
+        photos: Array.isArray(body.photos) ? body.photos : [],
+        readTime: body.readTime || null,
+        displayDate: body.displayDate || null,
+        rating: body.rating != null && body.rating !== '' ? parseFloat(body.rating) : null,
+        isPublished: publishing,
+        publishedAt: body.publishedAt ? new Date(body.publishedAt) : (publishing ? new Date() : null),
       }
     });
     res.json(post);
@@ -989,20 +1148,38 @@ app.post('/api/admin/news', apiAuth, async (req, res) => {
 
 app.patch('/api/admin/news/:id', apiAuth, async (req, res) => {
   try {
+    const id = parseInt(req.params.id);
     const body = req.body;
-    const post = await prisma.newsPost.update({
-      where: { id: parseInt(req.params.id) },
-      data: {
-        ...(body.title && { title: body.title }),
-        ...(body.excerpt !== undefined && { excerpt: body.excerpt }),
-        ...(body.content !== undefined && { content: body.content }),
-        ...(body.category && { category: body.category }),
-        ...(body.author !== undefined && { author: body.author }),
-        ...(body.coverImage !== undefined && { coverImage: body.coverImage }),
-        ...(body.isPublished !== undefined && { isPublished: !!body.isPublished }),
-        ...(body.publishedAt !== undefined && { publishedAt: body.publishedAt ? new Date(body.publishedAt) : null }),
+    const existing = await prisma.newsPost.findUnique({ where: { id } });
+    if (!existing) return res.status(404).json({ error: 'Not found' });
+
+    const data = {
+      ...(body.title && { title: body.title }),
+      ...(body.excerpt !== undefined && { excerpt: body.excerpt }),
+      ...(body.content !== undefined && { content: body.content }),
+      ...(body.category && { category: body.category }),
+      ...(body.kind && { kind: body.kind === 'review' ? 'review' : 'news' }),
+      ...(body.author !== undefined && { author: body.author }),
+      ...(body.coverImage !== undefined && { coverImage: body.coverImage }),
+      ...(body.photos !== undefined && { photos: Array.isArray(body.photos) ? body.photos : [] }),
+      ...(body.readTime !== undefined && { readTime: body.readTime || null }),
+      ...(body.displayDate !== undefined && { displayDate: body.displayDate || null }),
+      ...(body.rating !== undefined && { rating: body.rating != null && body.rating !== '' ? parseFloat(body.rating) : null }),
+    };
+    if (body.slug !== undefined && body.slug && slugify(body.slug) !== existing.slug) {
+      data.slug = await uniqueNewsSlug(body.slug, id);
+    }
+    if (body.isPublished !== undefined) {
+      data.isPublished = !!body.isPublished;
+      if (data.isPublished && !existing.publishedAt && body.publishedAt === undefined) {
+        data.publishedAt = new Date();
       }
-    });
+    }
+    if (body.publishedAt !== undefined) {
+      data.publishedAt = body.publishedAt ? new Date(body.publishedAt) : null;
+    }
+
+    const post = await prisma.newsPost.update({ where: { id }, data });
     res.json(post);
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
@@ -1014,11 +1191,22 @@ app.delete('/api/admin/news/:id', apiAuth, async (req, res) => {
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
-// Public news API
+// Public news/reviews API — list (optional ?kind=news|review)
 app.get('/api/news', async (req, res) => {
   try {
-    const news = await prisma.newsPost.findMany({ where: { isPublished: true }, orderBy: { publishedAt: 'desc' } });
+    const where = { isPublished: true };
+    if (req.query.kind) where.kind = String(req.query.kind);
+    const news = await prisma.newsPost.findMany({ where, orderBy: { publishedAt: 'desc' } });
     res.json(news);
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+// Public single post by slug (published only)
+app.get('/api/news/:slug', async (req, res) => {
+  try {
+    const post = await prisma.newsPost.findUnique({ where: { slug: String(req.params.slug) } });
+    if (!post || !post.isPublished) return res.status(404).json({ error: 'Not found' });
+    res.json(post);
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
@@ -1027,7 +1215,85 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// ── Boot-time DB upkeep ──────────────────────────────────────────────────────
+// Production (cPanel) has its own SQLite file and the deploy has no migration
+// step, so the server brings the schema + data up to date itself on startup.
 
-app.listen(PORT, () => {
-  console.log(`✅ AutoViindu server running → http://localhost:${PORT}`);
-});
+async function ensureNewsSchema() {
+  // Add the columns introduced for the News/Reviews hub. SQLite throws
+  // "duplicate column name" on re-run — that's expected, so we swallow it.
+  const stmts = [
+    `ALTER TABLE "NewsPost" ADD COLUMN "kind" TEXT NOT NULL DEFAULT 'news'`,
+    `ALTER TABLE "NewsPost" ADD COLUMN "photos" JSONB`,
+    `ALTER TABLE "NewsPost" ADD COLUMN "readTime" TEXT`,
+    `ALTER TABLE "NewsPost" ADD COLUMN "displayDate" TEXT`,
+    `ALTER TABLE "NewsPost" ADD COLUMN "rating" REAL`,
+  ];
+  for (const sql of stmts) {
+    try { await prisma.$executeRawUnsafe(sql); }
+    catch (e) { if (!/duplicate column/i.test(e.message)) console.warn('[schema]', e.message); }
+  }
+}
+
+function legacyItemToPost(item, kind) {
+  const idTail = String(item.id || '').replace(/[^a-z0-9]/gi, '').slice(-6);
+  const baseSlug = slugify(item.title || kind) || kind;
+  const bodyArr = Array.isArray(item.body) ? item.body : (item.body ? [String(item.body)] : []);
+  const published = item.published !== false;
+  return {
+    slug: idTail ? `${baseSlug}-${idTail}` : baseSlug,
+    title: item.title || 'Untitled',
+    excerpt: item.excerpt || null,
+    content: bodyArr.join('\n\n'),
+    category: item.catKey || item.cat || (kind === 'review' ? 'suv' : 'launch'),
+    kind,
+    coverImage: item.img || null,
+    photos: Array.isArray(item.photos) ? item.photos : [],
+    readTime: item.read || null,
+    displayDate: item.date || null,
+    rating: item.rating != null ? Number(item.rating) : null,
+    isPublished: published,
+    publishedAt: published ? new Date() : null,
+  };
+}
+
+async function migrateLegacyNewsOnce() {
+  const flagRow = await prisma.siteContent.findUnique({ where: { key: '_migrations' } });
+  const flags = (flagRow && flagRow.data) || {};
+  if (flags.newsToDb) return;
+
+  let migrated = 0;
+  for (const [key, kind] of [['news', 'news'], ['reviews', 'review']]) {
+    const rec = await prisma.siteContent.findUnique({ where: { key } });
+    const items = (rec && rec.data && rec.data.items) || [];
+    for (const item of items) {
+      const post = legacyItemToPost(item, kind);
+      try {
+        await prisma.newsPost.upsert({
+          where: { slug: post.slug },
+          update: {},               // don't clobber anything already edited in the CMS
+          create: post,
+        });
+        migrated += 1;
+      } catch (e) { console.warn('[migrate] skip', post.slug, e.message); }
+    }
+  }
+  await prisma.siteContent.upsert({
+    where: { key: '_migrations' },
+    update: { data: { ...flags, newsToDb: true } },
+    create: { key: '_migrations', data: { newsToDb: true } },
+  });
+  console.log(`[migrate] news/reviews → NewsPost table (${migrated} rows processed)`);
+}
+
+(async () => {
+  try {
+    await ensureNewsSchema();
+    await migrateLegacyNewsOnce();
+  } catch (e) {
+    console.error('[boot] DB upkeep failed:', e);
+  }
+  app.listen(PORT, () => {
+    console.log(`✅ AutoViindu server running → http://localhost:${PORT}`);
+  });
+})();

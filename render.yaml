@@ -1,0 +1,28 @@
+# Render staging deployment for AutoViindu (team review while DNS propagates).
+# This is a throwaway preview: SQLite (dev.db) ships in the repo on this branch,
+# and any writes on Render are wiped on each redeploy. Not for production.
+services:
+  - type: web
+    name: autoviindu-staging
+    runtime: node
+    plan: free
+    branch: staging
+    autoDeploy: true
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        value: file:./dev.db
+      - key: NODE_VERSION
+        value: "22.23.2"
+      - key: NODE_ENV
+        value: production
+      # Set these in the Render dashboard (Environment tab) so the admin CMS login works.
+      # Leave unset and the site still runs read-only for reviewers.
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_TOKEN_SECRET
+        sync: false

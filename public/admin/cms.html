@@ -878,15 +878,16 @@
     <div class="panel" id="panel-news">
       <div class="page-header">
         <div>
-          <div class="page-title">News Articles & Events</div>
-          <div class="page-sub">Publish news, automobile launches, events calendar, and policy alerts</div>
+          <div class="page-title">News, Reviews & Events</div>
+          <div class="page-sub">Publish news and reviews (each gets its own SEO page), plus the events calendar</div>
         </div>
         <div style="display:flex;gap:10px;">
           <button class="btn btn-secondary" id="news-tab-btn" onclick="switchNewsTab('news')">News Articles</button>
+          <button class="btn btn-ghost" id="reviews-tab-btn" onclick="switchNewsTab('reviews')">Reviews</button>
           <button class="btn btn-ghost" id="events-tab-btn" onclick="switchNewsTab('events')">Events Schedule</button>
         </div>
       </div>
-      
+
       <div id="news-tab">
         <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
           <button class="btn btn-primary" onclick="openAddNews()"><i data-lucide="plus"></i> Add News Post</button>
@@ -894,13 +895,27 @@
         <div class="card">
           <div style="overflow-x:auto;">
             <table>
-              <thead><tr><th>Headline</th><th>Category</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+              <thead><tr><th>Headline</th><th>Category</th><th>Status</th><th>Page URL</th><th>Actions</th></tr></thead>
               <tbody id="newsTableBody"></tbody>
             </table>
           </div>
         </div>
       </div>
-      
+
+      <div id="reviews-tab" style="display:none;">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
+          <button class="btn btn-primary" onclick="openAddReview()"><i data-lucide="plus"></i> Add Review</button>
+        </div>
+        <div class="card">
+          <div style="overflow-x:auto;">
+            <table>
+              <thead><tr><th>Headline</th><th>Category</th><th>Rating</th><th>Status</th><th>Page URL</th><th>Actions</th></tr></thead>
+              <tbody id="reviewsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
       <div id="events-tab" style="display:none;">
         <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
           <button class="btn btn-primary" onclick="openAddEvent()"><i data-lucide="plus"></i> Add Event</button>
@@ -991,16 +1006,31 @@
 <script>
 // ── Auth Validation ───────────────────────────────────────────────────────────
 const token = localStorage.getItem('adminToken');
-if (!token) { location.href = '/admin/login.html'; }
+if (!token) { location.href = '/login'; }
 
 const HEADERS = { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token };
 
+// Price formatter (Nepali numbering): >=1 Cr -> "Rs. 1.4 Cr", 1L-99.99L -> "Rs. 45L".
+function fmtPrice(n) {
+  if (n === null || n === undefined || n === '' || isNaN(n)) return '—';
+  n = Number(n);
+  if (n >= 100000) {
+    var cr = parseFloat((n / 10000000).toFixed(2));
+    if (cr >= 1) return 'Rs. ' + cr + ' Cr';
+    return 'Rs. ' + parseFloat((n / 100000).toFixed(2)) + 'L';
+  }
+  return 'Rs. ' + n.toLocaleString('en-IN');
+}
+
 async function api(method, path, body) {
-  const r = await fetch(path, { method, headers: HEADERS, body: body ? JSON.stringify(body) : undefined });
-  if (r.status === 401) { localStorage.removeItem('adminToken'); location.href = '/admin/login.html'; }
+  // cache: 'no-store' — the browser must never serve a stale GET (some API responses,
+  // like /api/cars, carry a 5-minute Cache-Control for the public site) or admin edits
+  // won't show up in the CMS's own tables until the cache expires.
+  const r = await fetch(path, { method, headers: HEADERS, body: body ? JSON.stringify(body) : undefined, cache: 'no-store' });
+  if (r.status === 401) { localStorage.removeItem('adminToken'); location.href = '/login'; }
   return r.json();
 }
-function logout() { localStorage.removeItem('adminToken'); location.href = '/admin/login.html'; }
+function logout() { localStorage.removeItem('adminToken'); location.href = '/login'; }
 
 // ── Toast Utility ─────────────────────────────────────────────────────────────
 function toast(msg, type = 'success') {
@@ -1042,11 +1072,17 @@ function go(panel) {
   }
   document.getElementById('topbarTitle').textContent = TITLES[panel] || panel;
   currentPanel = panel;
-  
+
   // Clear batch selection on change
   selectedIds = [];
   updateBatchBar();
-  
+
+  // Mark this category as seen so its notification badge clears
+  if (NOTIF_TYPES[panel]) {
+    setLastSeen(NOTIF_TYPES[panel].type, Date.now());
+    updateNotificationBadges();
+  }
+
   loadPanel(panel);
 }
 
@@ -1093,7 +1129,7 @@ function loadPanel(p) {
   else if (p === 'service-general') loadServiceLeads('general');
   else if (p === 'hero') loadHero();
   else if (p === 'blog') loadBlogs();
-  else if (p === 'news') { loadNews(); loadEvents(); }
+  else if (p === 'news') { loadNews(); loadReviews(); loadEvents(); }
   else if (p === 'services-config') loadServices();
   else if (p === 'videos') loadVideos();
   else if (p === 'settings') loadSettings();
@@ -1160,6 +1196,52 @@ async function triggerBatchAction(action) {
   loadPanel(currentPanel);
 }
 
+// ── Notification badges (red pills next to Sell Car / Test Drive / Brochure / Request Info / Used Car nav items) ──
+const NOTIF_TYPES = {
+  'sell-car-leads':  { badge: 'badge-sell-car',  type: 'sellcar' },
+  'leads-testdrive': { badge: 'badge-testdrive', type: 'testdrive' },
+  'leads-brochure':  { badge: 'badge-brochure',  type: 'brochure' },
+  'leads-requestinfo': { badge: 'badge-requestinfo', type: 'requestinfo' },
+  'leads-usedcar':   { badge: 'badge-usedcar',   type: 'usedcarinquiry' },
+};
+function getLastSeen(type) { return parseInt(localStorage.getItem('lastSeen_' + type) || '0', 10); }
+function setLastSeen(type, ts) { localStorage.setItem('lastSeen_' + type, String(ts)); }
+
+async function updateNotificationBadges() {
+  let leads;
+  try { leads = await api('GET', '/api/admin/leads'); } catch (e) { return; }
+  Object.values(NOTIF_TYPES).forEach(({ badge, type }) => {
+    const lastSeen = getLastSeen(type);
+    const count = leads.filter(l => (l.inquiryType || '').toLowerCase().trim() === type && new Date(l.createdAt).getTime() > lastSeen).length;
+    const el = document.getElementById(badge);
+    if (el) {
+      el.textContent = count;
+      el.style.display = count > 0 ? '' : 'none';
+    }
+  });
+}
+
+// ── Recent activity feed helpers ──────────────────────────────────────────────
+const INQUIRY_LABELS = {
+  sellcar: '💰 Sell Your Car', testdrive: '🚗 Test Drive', brochure: '📄 Brochure Request',
+  requestinfo: 'ℹ️ Car Detail Request', usedcarinquiry: '🔄 Used Car Inquiry',
+  maintenance: '🔧 Maintenance', dotm: '🛂 DOTM Service', insurance: '🛡️ Insurance',
+  parts: '⚙️ Parts & Accessories', otherservice: '📋 Other Service',
+};
+function inquiryLabel(type) {
+  return INQUIRY_LABELS[(type || '').toLowerCase().trim()] || (type || 'General Inquiry');
+}
+function timeAgo(dateStr) {
+  const mins = Math.floor((Date.now() - new Date(dateStr).getTime()) / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return mins + 'm ago';
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return hrs + 'h ago';
+  const days = Math.floor(hrs / 24);
+  if (days < 30) return days + 'd ago';
+  return new Date(dateStr).toLocaleDateString();
+}
+
 // ── Dashboard Overview ────────────────────────────────────────────────────────
 async function loadDashboard() {
   const data = await api('GET', '/api/admin/analytics');
@@ -1168,30 +1250,27 @@ async function loadDashboard() {
   document.getElementById('stat-ev').textContent = data.totalEV || 0;
   document.getElementById('stat-leads').textContent = data.totalLeads || 0;
   document.getElementById('stat-new-leads').textContent = `+${data.leadsLast7Days || 0} this wk`;
-  
+
   document.getElementById('sb-new-car-count').textContent = data.totalNew || 0;
   document.getElementById('sb-used-car-count').textContent = data.totalUsed || 0;
 
-  // Render recent submissions list
+  // Render recent submissions list — one line per form, most recent first
   const leads = await api('GET', '/api/admin/leads');
-  const sellCarCount = leads.filter(l => l.inquiryType === 'sellCar').length;
-  document.getElementById('badge-sell-car').textContent = sellCarCount;
-  
-  const recent = leads.slice(0, 5);
+  updateNotificationBadges();
+
+  const recent = leads.slice(0, 8);
   const container = document.getElementById('recentLeads');
   if (recent.length === 0) {
     container.innerHTML = '<div class="empty-state">No submissions yet.</div>';
   } else {
-    container.innerHTML = `<table style="width:100%">
-      <thead><tr><th>Submitter</th><th>Category</th><th>Status</th></tr></thead>
-      <tbody>
-        ${recent.map(l => `<tr>
-          <td><div style="font-weight:600">${l.name}</div><div style="color:var(--text-muted);font-size:11px">${l.phone}</div></td>
-          <td><span class="badge badge-purple">${l.inquiryType}</span></td>
-          <td><span class="badge ${l.status==='NEW'?'badge-blue':l.status==='CONTACTED'?'badge-yellow':'badge-green'}">${l.status}</span></td>
-        </tr>`).join('')}
-      </tbody>
-    </table>`;
+    container.innerHTML = recent.map(l => `
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #f1f5f9">
+        <div style="min-width:0">
+          <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${inquiryLabel(l.inquiryType)} — ${l.name}</div>
+          <div style="color:var(--text-muted);font-size:11px;margin-top:2px">${l.phone || l.email || ''} · ${timeAgo(l.createdAt)}</div>
+        </div>
+        <span class="badge ${l.status==='NEW'?'badge-blue':l.status==='CONTACTED'?'badge-yellow':'badge-green'}" style="flex-shrink:0">${l.status}</span>
+      </div>`).join('');
   }
 
   // Render brand distribution
@@ -1405,7 +1484,7 @@ function renderCars(cars) {
   tbody.innerHTML = cars.map(c => {
     const isChecked = selectedIds.includes(c.id) ? 'checked' : '';
     const imgUrl = c.images && c.images[0] ? c.images[0] : '';
-    const formattedPrice = c.variants && c.variants[0] ? 'Rs. ' + (c.variants[0].price / 100000).toFixed(1) + ' Lakhs' : '—';
+    const formattedPrice = c.variants && c.variants[0] ? fmtPrice(c.variants[0].price) : '—';
     return `<tr>
       <td><input type="checkbox" class="row-check table-checkbox" data-id="${c.id}" ${isChecked} onchange="updateRowSelection(this)"></td>
       <td>
@@ -1509,9 +1588,10 @@ function carFormTabs(c = {}) {
   const imagesList = c.images || [];
   const colorsList = c.colors || [];
   const variantsList = c.variants || [];
+  const specsList = c.specs && typeof c.specs === 'object' ? Object.entries(c.specs) : [];
 
   return {
-    tabs: ['Basic Specifications', 'Image URLs & Gallery', 'Price Variants', 'Color Options'],
+    tabs: ['Basic Specifications', 'Image URLs & Gallery', 'Price Variants', 'Color Options', 'Specs, Pros & Cons'],
     contents: [
       // Tab 1: Basics
       `<div class="form-grid">
@@ -1532,9 +1612,11 @@ function carFormTabs(c = {}) {
         <div class="form-group"><label>Expert Evaluation Score</label><input id="cf-expertScore" type="number" step="0.1" value="${c.expertScore||''}"></div>
         <div class="form-group form-span-2"><label>Catchy Marketing Tagline</label><input id="cf-tagline" type="text" value="${c.tagline||''}"></div>
         <div class="form-group form-span-2"><label>Car Overview Description</label><textarea id="cf-overview" rows="4">${c.overview||''}</textarea></div>
+        <div class="form-group form-span-2"><label>Thumbnail Image URL (used in listing cards)</label><input id="cf-thumb" type="text" value="${c.thumb||''}" placeholder="https://image-url.com/thumb.jpg"></div>
       </div>
-      <div style="margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div style="margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
         <div class="switch-row"><span class="switch-label">Is Electric (EV)</span><label class="toggle"><input type="checkbox" id="cf-isEV" ${c.isEV?'checked':''}><span class="toggle-slider"></span></label></div>
+        <div class="switch-row"><span class="switch-label">Brand New</span><label class="toggle"><input type="checkbox" id="cf-isNew" ${c.isNew!==false?'checked':''}><span class="toggle-slider"></span></label></div>
         <div class="switch-row"><span class="switch-label">Feature on Home</span><label class="toggle"><input type="checkbox" id="cf-isFeatured" ${c.isFeatured?'checked':''}><span class="toggle-slider"></span></label></div>
         <div class="switch-row"><span class="switch-label">Best Seller Banner</span><label class="toggle"><input type="checkbox" id="cf-isBestSeller" ${c.isBestSeller?'checked':''}><span class="toggle-slider"></span></label></div>
       </div>`,
@@ -1582,6 +1664,27 @@ function carFormTabs(c = {}) {
           `).join('')}
         </div>
         <button class="btn btn-secondary btn-sm" style="margin-top:10px" onclick="addCarColorRow()">+ Add Color</button>
+      </div>`,
+
+      // Tab 5: Specs, Pros & Cons
+      `<div>
+        <div class="detail-label" style="margin-bottom:12px;">Technical Specification Sheet (shown as a table on the car page)</div>
+        <div id="cf-specs-container">
+          ${specsList.map(([k, v], idx) => `
+            <div class="list-editor-row" id="spec-row-${idx}">
+              <input type="text" class="cf-spec-key" value="${k}" placeholder="Spec name (e.g. Engine Type)">
+              <input type="text" class="cf-spec-value" value="${v}" placeholder="Value (e.g. 1.5L Petrol)">
+              <button class="btn btn-danger btn-sm" onclick="document.getElementById('spec-row-${idx}').remove()">✕</button>
+            </div>
+          `).join('')}
+        </div>
+        <button class="btn btn-secondary btn-sm" style="margin-top:10px" onclick="addCarSpecRow()">+ Add Spec Row</button>
+
+        <div class="form-grid" style="margin-top:24px;">
+          <div class="form-group form-span-2"><label>Pros (one per line)</label><textarea id="cf-pros" rows="5">${(c.pros||[]).join('\n')}</textarea></div>
+          <div class="form-group form-span-2"><label>Cons (one per line)</label><textarea id="cf-cons" rows="5">${(c.cons||[]).join('\n')}</textarea></div>
+          <div class="form-group form-span-2"><label>Highlights (one per line)</label><textarea id="cf-highlights" rows="5">${(c.highlights||[]).join('\n')}</textarea></div>
+        </div>
       </div>`
     ]
   };
@@ -1621,6 +1724,75 @@ function addCarColorRow() {
       <button class="btn btn-danger btn-sm" onclick="document.getElementById('color-row-${idx}').remove()">✕</button>
     </div>
   `);
+}
+
+function addCarSpecRow() {
+  const container = document.getElementById('cf-specs-container');
+  const idx = container.children.length + '-' + Date.now();
+  container.insertAdjacentHTML('beforeend', `
+    <div class="list-editor-row" id="spec-row-${idx}">
+      <input type="text" class="cf-spec-key" placeholder="Spec name (e.g. Engine Type)">
+      <input type="text" class="cf-spec-value" placeholder="Value (e.g. 1.5L Petrol)">
+      <button class="btn btn-danger btn-sm" onclick="document.getElementById('spec-row-${idx}').remove()">✕</button>
+    </div>
+  `);
+}
+
+// Reads every field out of the multi-tab car editor (carFormTabs) into a plain object
+// ready to POST/PATCH to /api/admin/cars. Every field in the form must be read here —
+// anything left out silently fails to save even though the field is visible on screen.
+function readCarFormTabs() {
+  const val = id => { const el = document.getElementById(id); return el ? el.value : ''; };
+  const checked = id => { const el = document.getElementById(id); return el ? el.checked : false; };
+
+  const brand = val('cf-brand');
+  const model = val('cf-model');
+  const year = parseInt(val('cf-year')) || 2024;
+
+  const images = Array.from(document.querySelectorAll('#cf-images-container .cf-image-url'))
+    .map(i => i.value.trim()).filter(Boolean);
+
+  const variants = Array.from(document.querySelectorAll('#cf-variants-container .list-editor-row')).map(row => ({
+    name: row.querySelector('.cf-variant-name').value.trim(),
+    price: parseInt(row.querySelector('.cf-variant-price').value) || 0,
+  })).filter(v => v.name || v.price);
+
+  const colors = Array.from(document.querySelectorAll('#cf-colors-container .list-editor-row')).map(row => ({
+    name: row.querySelector('.cf-color-name').value.trim(),
+    hex: row.querySelector('.cf-color-hex').value,
+  })).filter(c => c.name);
+
+  const specs = {};
+  document.querySelectorAll('#cf-specs-container .list-editor-row').forEach(row => {
+    const k = row.querySelector('.cf-spec-key').value.trim();
+    const v = row.querySelector('.cf-spec-value').value.trim();
+    if (k) specs[k] = v;
+  });
+
+  const lines = txt => txt.split('\n').map(s => s.trim()).filter(Boolean);
+
+  return {
+    brand, model, year,
+    brandSlug: slugify(brand),
+    type: val('cf-type'),
+    bodyType: val('cf-bodyType'),
+    badge: val('cf-badge') || null,
+    baseEMI: val('cf-baseEMI') ? parseInt(val('cf-baseEMI')) : null,
+    budgetTier: val('cf-budgetTier') || null,
+    rating: val('cf-rating') ? parseFloat(val('cf-rating')) : null,
+    expertScore: val('cf-expertScore') ? parseFloat(val('cf-expertScore')) : null,
+    tagline: val('cf-tagline') || null,
+    overview: val('cf-overview') || null,
+    thumb: val('cf-thumb') || (images[0] || null),
+    isEV: checked('cf-isEV'),
+    isNew: checked('cf-isNew'),
+    isFeatured: checked('cf-isFeatured'),
+    isBestSeller: checked('cf-isBestSeller'),
+    images, variants, colors, specs,
+    pros: lines(val('cf-pros')),
+    cons: lines(val('cf-cons')),
+    highlights: lines(val('cf-highlights')),
+  };
 }
 
 // ── Used Cars Inventory ───────────────────────────────────────────────────────
@@ -1855,9 +2027,27 @@ function renderHeroSlides() {
           <div class="form-group"><label>Banner Main Title</label><input type="text" value="${s.title||''}" oninput="heroSlides[${idx}].title=this.value"></div>
           <div class="form-group"><label>Top Accent Badge</label><input type="text" value="${s.badge||''}" oninput="heroSlides[${idx}].badge=this.value"></div>
           <div class="form-group form-span-2"><label>Subtitle Caption</label><input type="text" value="${s.sub||''}" oninput="heroSlides[${idx}].sub=this.value"></div>
-          <div class="form-group form-span-2"><label>Background Image URL</label><input type="text" value="${s.bg||''}" oninput="heroSlides[${idx}].bg=this.value"></div>
-          <div class="form-group"><label>Offer Label (Optional)</label><input type="text" value="${s.offerLabel||''}" oninput="heroSlides[${idx}].offerLabel=this.value"></div>
-          <div class="form-group"><label>Offer Detail Text</label><input type="text" value="${s.offerVal||''}" oninput="heroSlides[${idx}].offerVal=this.value"></div>
+          <div class="form-group form-span-2">
+            <label>Background Image</label>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <input type="text" id="slide-bg-${idx}" value="${s.bg||''}" oninput="heroSlides[${idx}].bg=this.value" placeholder="https://image-url.com" style="flex:1">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('slide-bg-file-${idx}').click()">Upload</button>
+              <input type="file" id="slide-bg-file-${idx}" accept="image/*" style="display:none" onchange="uploadHeroSlideImage(${idx}, this)">
+            </div>
+            ${s.bg ? `<img src="${s.bg}" style="margin-top:8px;max-height:100px;border-radius:6px;border:1px solid var(--border)">` : ''}
+          </div>
+          <div class="form-group"><label>Was Price (crossed out)</label><input type="text" value="${s.originalPrice||''}" oninput="heroSlides[${idx}].originalPrice=this.value" placeholder="e.g. Rs. 48,90,000"></div>
+          <div class="form-group"><label>Current Price</label><input type="text" value="${s.currentPrice||''}" oninput="heroSlides[${idx}].currentPrice=this.value" placeholder="e.g. Rs. 46,90,000"></div>
+          <div class="form-group"><label>Exterior Color Name</label><input type="text" value="${s.exteriorColorName||''}" oninput="heroSlides[${idx}].exteriorColorName=this.value" placeholder="e.g. White exterior"></div>
+          <div class="form-group"><label>Exterior Color Swatch</label><input type="color" value="${s.exteriorColorHex||'#ffffff'}" oninput="heroSlides[${idx}].exteriorColorHex=this.value"></div>
+          <div class="form-group"><label>Interior Color Name</label><input type="text" value="${s.interiorColorName||''}" oninput="heroSlides[${idx}].interiorColorName=this.value" placeholder="e.g. Black interior"></div>
+          <div class="form-group"><label>Interior Color Swatch</label><input type="color" value="${s.interiorColorHex||'#222222'}" oninput="heroSlides[${idx}].interiorColorHex=this.value"></div>
+          <div class="form-group"><label>Spec 1 Label</label><input type="text" value="${s.spec1Label||''}" oninput="heroSlides[${idx}].spec1Label=this.value" placeholder="e.g. Engine"></div>
+          <div class="form-group"><label>Spec 1 Value</label><input type="text" value="${s.spec1Value||''}" oninput="heroSlides[${idx}].spec1Value=this.value" placeholder="e.g. 1.5L Petrol"></div>
+          <div class="form-group"><label>Spec 2 Label</label><input type="text" value="${s.spec2Label||''}" oninput="heroSlides[${idx}].spec2Label=this.value" placeholder="e.g. EMI"></div>
+          <div class="form-group"><label>Spec 2 Value</label><input type="text" value="${s.spec2Value||''}" oninput="heroSlides[${idx}].spec2Value=this.value" placeholder="e.g. Rs. 52k/mo"></div>
+          <div class="form-group"><label>Spec 3 Label</label><input type="text" value="${s.spec3Label||''}" oninput="heroSlides[${idx}].spec3Label=this.value" placeholder="e.g. Safety"></div>
+          <div class="form-group"><label>Spec 3 Value</label><input type="text" value="${s.spec3Value||''}" oninput="heroSlides[${idx}].spec3Value=this.value" placeholder="e.g. 6 Airbags"></div>
           <div class="form-group form-span-2"><label>Model Link Slug (on click)</label><input type="text" value="${s.slug||''}" oninput="heroSlides[${idx}].slug=this.value" placeholder="e.g. hyundai-creta"></div>
         </div>
       </div>
@@ -1866,8 +2056,21 @@ function renderHeroSlides() {
   lucide.createIcons();
 }
 
+async function uploadHeroSlideImage(idx, input) {
+  if (!input.files.length) return;
+  const url = await uploadImageFile(input.files[0]);
+  if (url) {
+    heroSlides[idx].bg = url;
+    renderHeroSlides();
+    toast('Image uploaded');
+  } else toast('Upload failed', 'error');
+}
+
 function addHeroSlide() {
-  heroSlides.push({ title: 'New Slide Banner', badge: '', sub: '', bg: '', offerLabel: '', offerVal: '', slug: '' });
+  heroSlides.push({ title: 'New Slide Banner', badge: '', sub: '', bg: '', offerLabel: '', offerVal: '', slug: '',
+    originalPrice: '', currentPrice: '', exteriorColorName: '', exteriorColorHex: '#ffffff',
+    interiorColorName: '', interiorColorHex: '#222222',
+    spec1Label: '', spec1Value: '', spec2Label: '', spec2Value: '', spec3Label: '', spec3Value: '' });
   renderHeroSlides();
 }
 
@@ -1972,84 +2175,123 @@ function readBlogForm() {
   };
 }
 
-// ── News posts (stored inside SiteContent, same data the public site & the
-// Dashboard → Articles editor read/write — see /api/admin/site/news) ─────────
+// ── News & Reviews (NewsPost DB table — each row is its own SEO page at
+// /news/<slug> or /reviews/<slug>. See /api/admin/news in server.js) ─────────
 const NEWS_CATS = [['policy','Policy'],['launch','New Launch'],['market','Market'],['infrastructure','Infrastructure'],['car awards','Car Awards'],['buying tips','Buying Tips']];
-const NEWS_ICONS = { policy: 'landmark', launch: 'car', market: 'trending-up', infrastructure: 'plug-zap', 'car awards': 'award', 'buying tips': 'credit-card' };
+const REVIEW_CATS = [['suv','SUV'],['ev','EV'],['sedan','Sedan'],['hatchback','Hatchback'],['mpv','MPV'],['pickup','Pickup'],['luxury','Luxury']];
+function catsFor(kind) { return kind === 'review' ? REVIEW_CATS : NEWS_CATS; }
+function catLabelCms(kind, key) {
+  const hit = catsFor(kind).find(c => c[0] === String(key || '').toLowerCase());
+  return hit ? hit[1] : String(key || '').replace(/\b\w/g, c => c.toUpperCase());
+}
 
-let newsData = { items: [], categories: [] };
-async function loadNews() {
-  newsData = await api('GET', '/api/admin/site/news') || { items: [], categories: [] };
-  const items = newsData.items || [];
-  const tbody = document.getElementById('newsTableBody');
-  if (items.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="5"><div class="empty-state"><div class="empty-icon">📰</div>No news posts yet.</div></td></tr>';
+// cache of the DB rows currently shown, keyed by kind, so the editor can look one up
+const postsByKind = { news: [], review: [] };
+
+async function loadPosts(kind) {
+  const rows = await api('GET', '/api/admin/news?kind=' + kind) || [];
+  postsByKind[kind] = Array.isArray(rows) ? rows : [];
+  const isReview = kind === 'review';
+  const tbody = document.getElementById(isReview ? 'reviewsTableBody' : 'newsTableBody');
+  const cols = isReview ? 6 : 5;
+  if (!postsByKind[kind].length) {
+    tbody.innerHTML = `<tr><td colspan="${cols}"><div class="empty-state"><div class="empty-icon">${isReview ? '⭐' : '📰'}</div>No ${isReview ? 'reviews' : 'news posts'} yet.</div></td></tr>`;
     return;
   }
-  tbody.innerHTML = items.map((n, idx) => `<tr>
-    <td><div style="font-weight:700">${n.title}</div></td>
-    <td><span class="badge badge-purple">${n.cat || 'General'}</span></td>
-    <td>
-      <span class="badge ${n.published!==false?'badge-green':'badge-yellow'}">${n.published!==false?'Published':'Draft'}</span>
-    </td>
-    <td>${n.date || ''}</td>
-    <td style="display:flex;gap:6px;">
-      <button class="btn btn-ghost btn-sm" onclick="editNews(${idx})"><i data-lucide="edit-3" style="width:12px;height:12px"></i> Edit</button>
-      <button class="btn btn-danger btn-sm" onclick="deleteNews(${idx})"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
-    </td>
-  </tr>`).join('');
+  tbody.innerHTML = postsByKind[kind].map(p => {
+    const seg = isReview ? '/reviews/' : '/news/';
+    const urlCell = p.isPublished
+      ? `<a href="${seg}${p.slug}" target="_blank" style="color:var(--accent,#2563eb);font-size:12px">${seg}${p.slug} ↗</a>`
+      : `<span style="color:var(--text-muted);font-size:12px">${seg}${p.slug}</span>`;
+    return `<tr>
+      <td><div style="font-weight:700">${p.title}</div></td>
+      <td><span class="badge badge-purple">${catLabelCms(kind, p.category)}</span></td>
+      ${isReview ? `<td>${p.rating != null ? '★ ' + p.rating : '—'}</td>` : ''}
+      <td><span class="badge ${p.isPublished ? 'badge-green' : 'badge-yellow'}">${p.isPublished ? 'Published' : 'Draft'}</span></td>
+      <td>${urlCell}</td>
+      <td style="display:flex;gap:6px;">
+        <button class="btn btn-ghost btn-sm" onclick="editPost('${kind}',${p.id})"><i data-lucide="edit-3" style="width:12px;height:12px"></i> Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deletePost('${kind}',${p.id})"><i data-lucide="trash-2" style="width:12px;height:12px"></i></button>
+      </td>
+    </tr>`;
+  }).join('');
   lucide.createIcons();
 }
+function loadNews() { return loadPosts('news'); }
+function loadReviews() { return loadPosts('review'); }
 
-function openAddNews() {
-  openNewsEditor(-1);
-}
+function openAddNews() { openPostEditor('news', null); }
+function openAddReview() { openPostEditor('review', null); }
+function editPost(kind, id) { openPostEditor(kind, id); }
 
-function editNews(idx) {
-  openNewsEditor(idx);
-}
-
-function openNewsEditor(idx) {
-  const isNew = idx === -1;
-  const n = isNew ? {} : JSON.parse(JSON.stringify(newsData.items[idx]));
-  openModal(isNew ? 'Add News Post' : 'Edit News Post', newsForm(n), async () => {
-    const item = readNewsForm(n);
-    if (!item.title) { toast('Headline is required', 'error'); return; }
-    const items = (newsData.items || []).slice();
-    if (isNew) items.unshift(item); else items[idx] = item;
-    newsData.items = items;
-    const res = await api('POST', '/api/admin/site/news', newsData);
-    if (res.success) { toast('Published — live on website'); closeModal(); loadNews(); }
-    else toast('Failed to save', 'error');
+function openPostEditor(kind, id) {
+  const isNew = id == null;
+  const p = isNew ? { kind } : JSON.parse(JSON.stringify((postsByKind[kind] || []).find(x => x.id === id) || { kind }));
+  const label = kind === 'review' ? 'Review' : 'News Post';
+  openModal(isNew ? 'Add ' + label : 'Edit ' + label, newsForm(p, kind), async () => {
+    const payload = readNewsForm(kind);
+    if (!payload.title) { toast('Headline is required', 'error'); return; }
+    const res = isNew
+      ? await api('POST', '/api/admin/news', payload)
+      : await api('PATCH', '/api/admin/news/' + id, payload);
+    if (res && res.id) {
+      toast(payload.isPublished ? 'Published — live at /' + (kind === 'review' ? 'reviews' : 'news') + '/' + res.slug : 'Saved as draft');
+      closeModal();
+      loadPosts(kind);
+    } else {
+      toast((res && res.error) || 'Failed to save', 'error');
+    }
   });
+  // live slug preview
+  const titleEl = document.getElementById('nf-title');
+  const slugEl = document.getElementById('nf-slug');
+  if (titleEl && slugEl) {
+    titleEl.addEventListener('input', () => {
+      if (!slugEl.dataset.touched) { slugEl.value = slugify(titleEl.value); updateSlugPreview(kind); }
+    });
+    slugEl.addEventListener('input', () => { slugEl.dataset.touched = '1'; updateSlugPreview(kind); });
+    updateSlugPreview(kind);
+  }
 }
 
-async function deleteNews(idx) {
-  if (!confirm('Delete this news post? This cannot be undone.')) return;
-  const items = (newsData.items || []).slice();
-  items.splice(idx, 1);
-  newsData.items = items;
-  await api('POST', '/api/admin/site/news', newsData);
-  toast('Post removed');
-  loadNews();
+function updateSlugPreview(kind) {
+  const slugEl = document.getElementById('nf-slug');
+  const prev = document.getElementById('nf-slug-preview');
+  if (slugEl && prev) prev.textContent = '/' + (kind === 'review' ? 'reviews' : 'news') + '/' + (slugify(slugEl.value) || '…');
 }
 
-function newsForm(n = {}) {
+async function deletePost(kind, id) {
+  if (!confirm('Delete this ' + (kind === 'review' ? 'review' : 'news post') + '? This cannot be undone.')) return;
+  const res = await api('DELETE', '/api/admin/news/' + id);
+  if (res && res.success) { toast('Removed'); loadPosts(kind); }
+  else toast('Failed to delete', 'error');
+}
+
+function newsForm(n = {}, kind = 'news') {
+  const isReview = kind === 'review';
+  const paras = String(n.content || '').split(/\n\s*\n/).map(s => s.trim()).filter(Boolean).join('\n');
   return `<div class="form-grid">
-    <div class="form-group form-span-2"><label>Headline</label><input id="nf-title" type="text" value="${n.title||''}"></div>
-    <div class="form-group"><label>News Category</label><select id="nf-category">
-      ${NEWS_CATS.map(c => `<option value="${c[0]}" ${n.catKey===c[0]?'selected':''}>${c[1]}</option>`).join('')}
+    <div class="form-group form-span-2"><label>Headline</label><input id="nf-title" type="text" value="${(n.title||'').replace(/"/g,'&quot;')}"></div>
+    <div class="form-group form-span-2"><label>URL slug</label>
+      <input id="nf-slug" type="text" value="${n.slug||''}" ${n.slug?'data-touched="1"':''} placeholder="auto from headline">
+      <div style="font-size:12px;color:var(--text-muted);margin-top:4px">Page address: <span id="nf-slug-preview"></span></div>
+    </div>
+    <div class="form-group"><label>${isReview ? 'Review' : 'News'} Category</label><select id="nf-category">
+      ${catsFor(kind).map(c => `<option value="${c[0]}" ${String(n.category).toLowerCase()===c[0]?'selected':''}>${c[1]}</option>`).join('')}
     </select></div>
-    <div class="form-group"><label>Date shown (e.g. "Aug 2026")</label><input id="nf-date" type="text" value="${n.date || new Date().toLocaleDateString('en-GB',{month:'short',year:'numeric'})}"></div>
+    <div class="form-group"><label>Date shown (e.g. "Aug 2026")</label><input id="nf-date" type="text" value="${n.displayDate || new Date().toLocaleDateString('en-GB',{month:'short',year:'numeric'})}"></div>
+    <div class="form-group"><label>Read time (e.g. "4 min read")</label><input id="nf-read" type="text" value="${n.readTime||''}" placeholder="auto if left blank"></div>
+    ${isReview ? `<div class="form-group"><label>Rating (0–5)</label><input id="nf-rating" type="number" min="0" max="5" step="0.1" value="${n.rating != null ? n.rating : ''}"></div>` : ''}
+    <div class="form-group"><label>Author (optional)</label><input id="nf-author" type="text" value="${n.author||''}"></div>
   </div>
   <div class="form-group form-span-2" style="margin-top:16px;">
-    <label>Thumbnail image (shown on the news list)</label>
+    <label>Cover image (shown on cards and at the top of the article)</label>
     <div style="display:flex;gap:8px;">
-      <input id="nf-cover" type="text" value="${n.img||''}" style="flex:1" placeholder="Paste an image URL, or upload below">
+      <input id="nf-cover" type="text" value="${n.coverImage||''}" style="flex:1" placeholder="Paste an image URL, or upload below">
       <button type="button" class="btn btn-secondary" onclick="document.getElementById('nf-cover-file').click()">Upload</button>
     </div>
     <input type="file" id="nf-cover-file" accept="image/*" style="display:none" onchange="uploadNewsCover(this)">
-    <img id="nf-cover-preview" class="cover-preview-img" src="${n.img||''}" style="${n.img?'':'display:none;'}">
+    <img id="nf-cover-preview" class="cover-preview-img" src="${n.coverImage||''}" style="${n.coverImage?'':'display:none;'}">
   </div>
   <div class="form-group form-span-2" style="margin-top:16px;">
     <label>Photo gallery (extra photos shown inside the article)</label>
@@ -2058,11 +2300,11 @@ function newsForm(n = {}) {
     <input type="file" id="nf-gallery-file" accept="image/*" multiple style="display:none" onchange="addNewsPhotos(this)">
   </div>
   <div class="form-grid" style="margin-top:16px;">
-    <div class="form-group form-span-2"><label>Short Excerpt (shown on cards)</label><textarea id="nf-excerpt" rows="2">${n.excerpt||''}</textarea></div>
-    <div class="form-group form-span-2"><label>Full Article — one paragraph per line</label><textarea id="nf-content" rows="6">${(n.body||[]).join('\n')}</textarea></div>
+    <div class="form-group form-span-2"><label>Short excerpt (shown on cards + used as the SEO description)</label><textarea id="nf-excerpt" rows="2">${n.excerpt||''}</textarea></div>
+    <div class="form-group form-span-2"><label>Full article — leave a blank line between paragraphs</label><textarea id="nf-content" rows="8">${paras}</textarea></div>
   </div>
   <div style="margin-top:16px;">
-    <div class="switch-row" style="max-width:240px;"><span class="switch-label">Publish publicly</span><label class="toggle"><input type="checkbox" id="nf-pub" ${n.published!==false?'checked':''}><span class="toggle-slider"></span></label></div>
+    <div class="switch-row" style="max-width:240px;"><span class="switch-label">Publish publicly</span><label class="toggle"><input type="checkbox" id="nf-pub" ${n.isPublished ? 'checked' : ''}><span class="toggle-slider"></span></label></div>
   </div>`;
 }
 
@@ -2099,25 +2341,27 @@ async function addNewsPhotos(input) {
   input.value = '';
 }
 
-function readNewsForm(existing) {
-  const catKey = document.getElementById('nf-category').value;
-  const cat = (NEWS_CATS.find(c => c[0] === catKey) || [catKey, catKey])[1];
-  const body = document.getElementById('nf-content').value.split('\n').map(s => s.trim()).filter(Boolean);
-  const words = body.join(' ').split(/\s+/).filter(Boolean).length;
+function readNewsForm(kind) {
+  const val = id => (document.getElementById(id) ? document.getElementById(id).value.trim() : '');
+  const paras = document.getElementById('nf-content').value.split(/\n\s*\n/).map(s => s.trim().replace(/\n/g, ' ')).filter(Boolean);
+  const words = paras.join(' ').split(/\s+/).filter(Boolean).length;
   const photos = Array.from(document.querySelectorAll('#nf-gallery-grid .cms-gallery-thumb')).map(el => el.dataset.url);
-  return Object.assign({}, existing, {
-    id: (existing && existing.id) || ('n' + Date.now()),
-    title: document.getElementById('nf-title').value.trim(),
-    cat, catKey,
-    icon: NEWS_ICONS[catKey] || 'file-text',
-    date: document.getElementById('nf-date').value.trim(),
-    read: Math.max(1, Math.round(words / 200)) + ' min read',
-    img: document.getElementById('nf-cover').value.trim(),
+  const ratingEl = document.getElementById('nf-rating');
+  return {
+    kind: kind === 'review' ? 'review' : 'news',
+    title: val('nf-title'),
+    slug: slugify(val('nf-slug') || val('nf-title')),
+    category: document.getElementById('nf-category').value,
+    displayDate: val('nf-date'),
+    readTime: val('nf-read') || (Math.max(1, Math.round(words / 200)) + ' min read'),
+    rating: ratingEl && ratingEl.value !== '' ? parseFloat(ratingEl.value) : null,
+    author: val('nf-author'),
+    coverImage: val('nf-cover'),
     photos,
-    excerpt: document.getElementById('nf-excerpt').value.trim(),
-    body: body.length ? body : [''],
-    published: document.getElementById('nf-pub').checked,
-  });
+    excerpt: val('nf-excerpt'),
+    content: paras.join('\n\n'),
+    isPublished: document.getElementById('nf-pub').checked,
+  };
 }
 
 // ── Calendar Events (Stored inside SiteContent) ────────────────────────────
@@ -2286,10 +2530,10 @@ async function deleteEvent(idx) {
 }
 
 function switchNewsTab(tab) {
-  document.getElementById('news-tab').style.display = tab === 'news' ? '' : 'none';
-  document.getElementById('events-tab').style.display = tab === 'events' ? '' : 'none';
-  document.getElementById('news-tab-btn').className = 'btn ' + (tab === 'news' ? 'btn-primary' : 'btn-ghost');
-  document.getElementById('events-tab-btn').className = 'btn ' + (tab === 'events' ? 'btn-primary' : 'btn-ghost');
+  ['news', 'reviews', 'events'].forEach(t => {
+    document.getElementById(t + '-tab').style.display = t === tab ? '' : 'none';
+    document.getElementById(t + '-tab-btn').className = 'btn ' + (t === tab ? 'btn-primary' : 'btn-ghost');
+  });
 }
 
 // ── Site Services configurations ──────────────────────────────────────────────

@@ -726,6 +726,13 @@
         }
 
         /* footer nav injected by site-chrome.js — placeholder note removed for production */
+
+        .nr-tabs-bar { border-bottom: 1px solid var(--border); background: var(--white); }
+        .nr-tabs { display: flex; gap: 4px; padding: 10px 0; }
+        .nr-tab { appearance: none; border: none; background: transparent; font-family: var(--font-b);
+            font-size: 14px; font-weight: 700; color: var(--ink4); padding: 8px 16px; border-radius: var(--pill); cursor: pointer; }
+        .nr-tab.active { background: var(--g-l); color: var(--green); }
+        a.news-card { text-decoration: none; color: inherit; }
     </style>
 </head>
 
@@ -742,7 +749,14 @@
         </div>
     </nav>
 
-
+    <div class="nr-tabs-bar">
+        <div class="wrap">
+            <div class="nr-tabs">
+                <button id="tabNewsBtn" class="nr-tab active" onclick="setTab('news')">News</button>
+                <button id="tabReviewsBtn" class="nr-tab" onclick="setTab('reviews')">Reviews</button>
+            </div>
+        </div>
+    </div>
 
     <!-- SEARCH + FILTER -->
     <div class="filter-bar">
@@ -950,7 +964,7 @@
             grid.style.opacity = '0';
             setTimeout(() => {
                 grid.innerHTML = shown.map((item, idx) => `
-          <div class="news-card" style="animation-delay:${idx * 55}ms" onclick="openArticle('${item.id}')">
+          <a class="news-card" style="animation-delay:${idx * 55}ms" href="${item._url}">
             <div class="news-img">
               <img src="${item.img}" alt="${item.title.replace(/"/g, '&quot;')}" loading="lazy"
                    onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'news-placeholder',innerHTML:'<i data-lucide=&quot;${item.icon}&quot;></i>'}));lucide.createIcons();">
@@ -963,10 +977,10 @@
               <p class="news-excerpt">${item.excerpt}</p>
               <div class="news-footer">
                 <span class="news-date"><i data-lucide="calendar"></i>${item.date}</span>
-                <span class="news-date"><i data-lucide="clock"></i>${item.read}</span>
+                ${item.read ? `<span class="news-date"><i data-lucide="clock"></i>${item.read}</span>` : ''}
               </div>
             </div>
-          </div>
+          </a>
         `).join('');
                 grid.style.opacity = '1';
                 lucide.createIcons();
@@ -1031,19 +1045,50 @@
         function closeArticleOnOverlay(e) { if (e.target === document.getElementById('articleModal')) closeArticle(); }
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArticle(); });
 
-        // init — load live content from admin CMS, fallback to embedded data
+        // ── Map a NewsPost DB row → the shape the card/list renderer expects ──
+        function catLabel(kind, key) {
+            const list = CATS[kind === 'review' ? 'reviews' : 'news'] || [];
+            const hit = list.find(c => c[0] === String(key || '').toLowerCase());
+            if (hit) return hit[1];
+            return String(key || '').replace(/\b\w/g, c => c.toUpperCase()) || (kind === 'review' ? 'Review' : 'News');
+        }
+        function mapPost(p) {
+            const isReview = p.kind === 'review';
+            return {
+                id: p.slug,
+                slug: p.slug,
+                kind: p.kind,
+                _url: (isReview ? '/reviews/' : '/news/') + encodeURIComponent(p.slug),
+                cat: catLabel(p.kind, p.category),
+                catKey: String(p.category || '').toLowerCase(),
+                title: p.title || '',
+                excerpt: p.excerpt || '',
+                date: p.displayDate || (p.publishedAt ? new Date(p.publishedAt).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }) : ''),
+                read: p.readTime || '',
+                icon: isReview ? 'star' : 'newspaper',
+                img: p.coverImage || '',
+                rating: isReview ? (p.rating || null) : null,
+                photos: Array.isArray(p.photos) ? p.photos : [],
+                body: String(p.content || '').split(/\n\s*\n/).map(s => s.trim()).filter(Boolean),
+            };
+        }
+
+        // init — load published news + reviews from the database
         async function boot() {
             try {
-                const [n, r] = await Promise.all([AVContent.load('news'), AVContent.load('reviews')]);
-                if (n && n.items && n.items.length) {
-                    NEWS = AVContent.published(n.items);
-                    if (n.categories) CATS.news = n.categories;
-                }
-                if (r && r.items && r.items.length) {
-                    REVIEWS = AVContent.published(r.items);
-                    if (r.categories) CATS.reviews = r.categories;
-                }
+                const rows = await fetch('/api/news', { cache: 'no-store' }).then(r => r.ok ? r.json() : []);
+                const mapped = (rows || []).map(mapPost);
+                const news = mapped.filter(x => x.kind !== 'review');
+                const reviews = mapped.filter(x => x.kind === 'review');
+                if (news.length) NEWS = news;
+                if (reviews.length) REVIEWS = reviews;
             } catch (_) {}
+            if (location.hash === '#reviews') {
+                currentTab = 'reviews';
+                document.getElementById('tabNewsBtn').classList.remove('active');
+                document.getElementById('tabReviewsBtn').classList.add('active');
+                document.getElementById('gridHeading').innerHTML = 'All <em>Reviews</em>';
+            }
             renderCategoryTabs();
             renderArticles();
         }

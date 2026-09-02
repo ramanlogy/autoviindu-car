@@ -16,6 +16,12 @@
   'use strict';
 
   window.AV = window.AV || {};
+
+  // Shared form-field validators (used by Test Drive / Request Info / Used Car Inquiry forms)
+  window.AV.isValidPhone = function (v) { return /^\d{10}$/.test(String(v || '').trim()); };
+  window.AV.isValidEmail = function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v || '').trim()); };
+  window.AV.isValidName = function (v) { return /^[A-Za-z\s.'-]+$/.test(String(v || '').trim()); };
+
   window.AV.noImg = 'data:image/svg+xml;utf8,' + encodeURIComponent(
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">' +
     '<path d="M8 40 L12 28 Q14 24 19 24 L45 24 Q50 24 52 28 L56 40" fill="none" stroke="#c3ccc5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' +
@@ -33,7 +39,8 @@
       CARS_DB = window.CARS_DB || [];
     });
 
-    const Rs = n => n >= 100000 ? `Rs. ${(n / 100000).toFixed(2)}L` : `Rs. ${n.toLocaleString()}`;
+    // Canonical formatter lives in home-render.js (loaded first); fall back if missing.
+    const Rs = window.Rs || (n => n >= 10000000 ? `Rs. ${parseFloat((n / 10000000).toFixed(2))} Cr` : n >= 100000 ? `Rs. ${parseFloat((n / 100000).toFixed(2))}L` : `Rs. ${Number(n).toLocaleString('en-IN')}`);
     window.Rs = Rs;
     const calcEMI = (p, ar, m) => { const r = ar / 12 / 100; return r === 0 ? p / m : p * (r * Math.pow(1 + r, m)) / (Math.pow(1 + r, m) - 1) };
     const carBySlug = s => CARS_DB.find(c => c.slug === s || String(c.id) === String(s)) || USED.find(c => String(c.id) === String(s) || c.slug === s);
@@ -69,7 +76,12 @@
       t.className = `toast ${type}`;
       t.innerHTML = `<span>${type === 'success' ? '<i data-lucide="check"></i>' : '<i data-lucide="info"></i>'}</span>${msg}`;
       wrap.appendChild(t);
-      setTimeout(() => t.remove(), 3000);
+      // animate out before removing, instead of vanishing
+      setTimeout(() => {
+        t.classList.add('toast--out');
+        t.addEventListener('animationend', () => t.remove(), { once: true });
+        setTimeout(() => t.remove(), 400); // fallback if animationend never fires
+      }, 3000);
     }
 
     /* ─ COMPARE ─ */
@@ -181,67 +193,63 @@
 
     /* ─ HOME ─ */
 
-    const HERO_SLIDES = [
+    // Fallback slides used only if the CMS has no hero slides saved yet (or the fetch failed).
+    const HERO_SLIDES_FALLBACK = [
       {
-        bg: 'assets/images/car_images/hyundai/ioniq-5/exterior/ioniq-5-exterior-left-side-view.avif',
-        badge: 'New Arrival',
-        title: 'Hyundai<br><em>IONIQ 5</em>',
-        sub: '481 km range · 800V ultra-fast charging.',
-        offer: {
-          icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-        <path d="M14.615 1.595a.75.75 0 0 1 .36.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143z"/>
-      </svg>`,
-          label: 'EV Offer', val: 'Zero road tax'
-        },
-        slug: 'hyundai-ioniq5'
-      },
-      {
-        bg: 'assets/images/car_images/maruti-suzuki/grand-vitara/exterior/maruti-suzuki-grand-vitara-exterior-front-white-bg.jpg',
-        badge: 'Best Seller',
-        title: 'Hyundai<br><em>Creta</em>',
-        sub: 'Dual 10.25" screens · Level 2 ADAS.',
-        offer: {
-          icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20 12v10H4V12"/>
-        <path d="M22 7H2v5h20V7z"/>
-        <path d="M12 22V7"/>
-        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
-        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-      </svg>`,
-          label: 'Offer', val: 'Rs. 2L cashback'
-        },
+        title: 'Hyundai Creta', bg: 'assets/images/hero_images/family.jpeg',
+        originalPrice: 'Rs. 48,90,000', currentPrice: 'Rs. 46,90,000',
+        exteriorColorName: 'White exterior', exteriorColorHex: '#ffffff',
+        interiorColorName: 'Black interior', interiorColorHex: '#222222',
+        spec1Label: 'Engine', spec1Value: '1.5L Petrol',
+        spec2Label: 'EMI', spec2Value: 'Rs. 52k/mo',
+        spec3Label: 'Safety', spec3Value: '6 Airbags',
         slug: 'hyundai-creta'
       },
       {
-        bg: 'assets/images/car_images/byd/atto-2/exterior/byd-atto-2-exterior-side-left-white-bg.png',
-        badge: 'Hill Conqueror',
-        title: 'Toyota<br><em>Fortuner</em>',
-        sub: '221mm ground clearance · 500 Nm torque.',
-        offer: {
-          icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 20 L8.5 8 L12 13 L15.5 7 L21 20 Z"/>
-        <path d="M1 20h22"/>
-      </svg>`,
-          label: 'Nepal Special', val: '5-year warranty'
-        },
+        title: 'BYD Atto 3', bg: 'assets/images/hero_images/couple.jpeg',
+        originalPrice: 'Rs. 66,90,000', currentPrice: 'Rs. 64,90,000',
+        exteriorColorName: 'Grey exterior', exteriorColorHex: '#e5e7eb',
+        interiorColorName: 'Blue interior', interiorColorHex: '#1e293b',
+        spec1Label: 'Range', spec1Value: '420 km',
+        spec2Label: 'Battery', spec2Value: '60.5 kWh',
+        spec3Label: 'EMI', spec3Value: 'Rs. 68k/mo',
+        slug: 'byd-atto-3'
+      },
+      {
+        title: 'BYD Seal', bg: 'assets/images/hero_images/bydatto3.jpg',
+        originalPrice: 'Rs. 1,05,00,000', currentPrice: 'Rs. 99,90,000',
+        exteriorColorName: 'Blue exterior', exteriorColorHex: '#1e3a8a',
+        interiorColorName: 'Black interior', interiorColorHex: '#111111',
+        spec1Label: 'Range', spec1Value: '570 km',
+        spec2Label: '0-100 km/h', spec2Value: '3.8s',
+        spec3Label: 'EMI', spec3Value: 'Rs. 110k/mo',
+        slug: 'byd-seal'
+      },
+      {
+        title: 'Toyota Fortuner', bg: 'assets/images/hero_images/fortuner.jpg',
+        originalPrice: 'Rs. 2,25,00,000', currentPrice: 'Rs. 2,15,00,000',
+        exteriorColorName: 'Black exterior', exteriorColorHex: '#111111',
+        interiorColorName: 'Tan interior', interiorColorHex: '#92400e',
+        spec1Label: 'Clearance', spec1Value: '221 mm',
+        spec2Label: 'Engine', spec2Value: '2.8L Diesel',
+        spec3Label: 'Torque', spec3Value: '500 Nm',
         slug: 'toyota-fortuner'
       },
       {
-        bg: 'assets/images/car_images/toyota/land-cruiser-250/exterior/image-6.jpg',
-        badge: 'Fuel Champion',
-        title: 'Toyota<br><em>Prius PHEV</em>',
-        sub: '40+ km/l · 26 km pure EV range.',
-        offer: {
-          icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="4"/>
-        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
-      </svg>`,
-          label: 'Green Deal', val: 'Free solar install'
-        },
-        slug: 'toyota-prius'
+        title: 'Tata Nexon EV', bg: 'assets/images/hero_images/Tata-Motors-Nexon-EV.jpg',
+        originalPrice: 'Rs. 42,99,000', currentPrice: 'Rs. 39,99,000',
+        exteriorColorName: 'Green exterior', exteriorColorHex: '#065f46',
+        interiorColorName: 'White interior', interiorColorHex: '#e2e8f0',
+        spec1Label: 'Range', spec1Value: '325 km',
+        spec2Label: 'Charging', spec2Value: '45m (80%)',
+        spec3Label: 'EMI', spec3Value: 'Rs. 42k/mo',
+        slug: 'tata-nexon-ev'
       },
     ];
     const BASE = 'assets/images/brands/';
+    function getHeroSlides() {
+      return (window.HERO_SLIDES_LIVE && window.HERO_SLIDES_LIVE.length) ? window.HERO_SLIDES_LIVE : HERO_SLIDES_FALLBACK;
+    }
 
     const BRANDS = [
       { name: 'Hyundai', count: '165 cars', logo: `${BASE}hyundai.png` },
@@ -430,7 +438,7 @@
       const db = CARS_DB;
       const evCars = db.filter(c => c.type === 'Electric');
       document.getElementById('app-root').innerHTML = window.buildHomePageHTML({
-        db, evCars, carCard, BRANDS, BUDGETS, HERO_SLIDES, IC, UPCOMING_DATA, upcomingCard
+        db, evCars, carCard, BRANDS, BUDGETS, HERO_SLIDES: getHeroSlides(), IC, UPCOMING_DATA, upcomingCard
       });
       updateCompareTray();
       updateCmpBtns();
@@ -1868,7 +1876,7 @@
         </div>
         <div class="pill-row">
           <div class="pill-group">
-            <input type="tel" class="pill-inp" id="td-phone" placeholder="Phone number" required>
+            <input type="tel" class="pill-inp" id="td-phone" placeholder="Phone number" inputmode="numeric" maxlength="10" required>
           </div>
           <div class="pill-group">
             <input type="email" class="pill-inp" id="td-email" placeholder="Email address" required>
@@ -1897,8 +1905,6 @@
             <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('2:00 PM',this)">2 PM</button>
             <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('3:00 PM',this)">3 PM</button>
             <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('4:00 PM',this)">4 PM</button>
-            <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('5:00 PM',this)">5 PM</button>
-            <button type="button" class="pill-time-btn" onclick="AV.selectTDTime('6:00 PM',this)">6 PM</button>
           </div>
           <input type="hidden" id="td-time-val" value="10:00 AM">
         </div>
@@ -1939,7 +1945,7 @@
         </div>
         <div class="pill-row">
           <div class="pill-group">
-            <input type="tel" class="pill-inp" id="ri-phone" placeholder="Phone number" required>
+            <input type="tel" class="pill-inp" id="ri-phone" placeholder="Phone number" inputmode="numeric" maxlength="10" required>
           </div>
           <div class="pill-group">
             <input type="email" class="pill-inp" id="ri-email" placeholder="Email address" required>
@@ -2107,8 +2113,11 @@
         const city = document.getElementById('td-city');
 
         if (!name || !name.value.trim()) { name && name.focus(); alert('Please enter your full name.'); return; }
+        if (!AV.isValidName(name.value)) { name.focus(); alert('Name should not contain numbers.'); return; }
         if (!phone || !phone.value.trim()) { phone && phone.focus(); alert('Please enter your phone number.'); return; }
+        if (!AV.isValidPhone(phone.value)) { phone.focus(); alert('Phone number must be exactly 10 digits.'); return; }
         if (!email || !email.value.trim()) { email && email.focus(); alert('Please enter your email address.'); return; }
+        if (!AV.isValidEmail(email.value)) { email.focus(); alert('Please enter a valid email address.'); return; }
         if (!date || !date.value) { date && date.focus(); alert('Please choose a preferred date.'); return; }
 
         const btn = document.getElementById('td-submit-btn');
@@ -2446,8 +2455,11 @@ ${variants.length > 0 ? `
         const city = document.getElementById('ri-city');
 
         if (!name || !name.value.trim()) { name && name.focus(); alert('Please enter your full name.'); return; }
+        if (!AV.isValidName(name.value)) { name.focus(); alert('Name should not contain numbers.'); return; }
         if (!phone || !phone.value.trim()) { phone && phone.focus(); alert('Please enter your phone number.'); return; }
+        if (!AV.isValidPhone(phone.value)) { phone.focus(); alert('Phone number must be exactly 10 digits.'); return; }
         if (!email || !email.value.trim()) { email && email.focus(); alert('Please enter your email address.'); return; }
+        if (!AV.isValidEmail(email.value)) { email.focus(); alert('Please enter a valid email address.'); return; }
         if (!msg || !msg.value.trim()) { msg && msg.focus(); alert('Please enter what information you need.'); return; }
 
         const btn = document.getElementById('ri-submit-btn');
@@ -2651,7 +2663,7 @@ ${variants.length > 0 ? `
       if (sf.certified) add('Certified only', 'certified', '1');
       if (sf.owners === 1) add('1 Owner', 'owners', '1');
       if (sf.terrain) add(sf.terrain === 'mountain' ? 'Mountain / High GC' : 'City Commute', 'terrain', sf.terrain);
-      if ((sf.minP > 0 || sf.maxP < sf._maxSlider) && !sf.budget) add(`Rs ${sf.minP}L – ${sf.maxP}L`, 'price', 'range');
+      if ((sf.minP > 0 || sf.maxP < sf._maxSlider) && !sf.budget) add(`${window.RsLakh(sf.minP)} – ${window.RsLakh(sf.maxP)}`, 'price', 'range');
       el.innerHTML = tags.map(t => `<button type="button" class="lf-active-tag" data-tag-type="${t.type}" data-tag-val="${t.val}">${t.label}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>`).join('');
       el.style.display = tags.length ? 'flex' : 'none';
       el.querySelectorAll('.lf-active-tag').forEach(btn => {
@@ -3008,7 +3020,7 @@ ${variants.length > 0 ? `
       _syncCbUI('sf', sf);
       _renderActiveTags(sf, 'lf-active-tags', 'sf', (type, val) => {
         if (type === 'budget') { sf.budget = ''; document.querySelectorAll('.sf-budget-btn').forEach(b => b.classList.remove('active')); }
-        else if (type === 'price') { sf.minP = 0; sf.maxP = sf._maxSlider; const lo = document.getElementById('lf-price-lo'), hi = document.getElementById('lf-price-hi'); if (lo) lo.value = 0; if (hi) hi.value = sf._maxSlider; const loV = document.getElementById('lf-lo-val'), hiV = document.getElementById('lf-hi-val'); if (loV) loV.textContent = 'Rs. 0L'; if (hiV) hiV.textContent = 'Rs. ' + sf._maxSlider + 'L'; }
+        else if (type === 'price') { sf.minP = 0; sf.maxP = sf._maxSlider; const lo = document.getElementById('lf-price-lo'), hi = document.getElementById('lf-price-hi'); if (lo) lo.value = 0; if (hi) hi.value = sf._maxSlider; const loV = document.getElementById('lf-lo-val'), hiV = document.getElementById('lf-hi-val'); if (loV) loV.textContent = 'Rs. 0L'; if (hiV) hiV.textContent = window.RsLakh(sf._maxSlider); }
         else if (type === 'years') { const i = sf.years.indexOf(+val); if (i > -1) sf.years.splice(i, 1); }
         else if (type === 'terrain') { sf.terrain = ''; }
         else if (Array.isArray(sf[type])) { const i = sf[type].indexOf(val); if (i > -1) sf[type].splice(i, 1); }
@@ -3176,7 +3188,7 @@ ${variants.length > 0 ? `
       _syncCbUI('uf', uf);
       _renderActiveTags(uf, 'uf-active-tags', 'uf', (type, val) => {
         if (type === 'budget') { uf.budget = ''; document.querySelectorAll('.uf-budget-btn').forEach(b => b.classList.remove('active')); }
-        else if (type === 'price') { uf.minP = 0; uf.maxP = uf._maxSlider; const lo = document.getElementById('uf-price-lo'), hi = document.getElementById('uf-price-hi'); if (lo) lo.value = 0; if (hi) hi.value = uf._maxSlider; const loV = document.getElementById('uf-lo-val'), hiV = document.getElementById('uf-hi-val'); if (loV) loV.textContent = 'Rs. 0L'; if (hiV) hiV.textContent = 'Rs. ' + uf._maxSlider + 'L'; }
+        else if (type === 'price') { uf.minP = 0; uf.maxP = uf._maxSlider; const lo = document.getElementById('uf-price-lo'), hi = document.getElementById('uf-price-hi'); if (lo) lo.value = 0; if (hi) hi.value = uf._maxSlider; const loV = document.getElementById('uf-lo-val'), hiV = document.getElementById('uf-hi-val'); if (loV) loV.textContent = 'Rs. 0L'; if (hiV) hiV.textContent = window.RsLakh(uf._maxSlider); }
         else if (type === 'owners') uf.owners = [];
         else if (type === 'mileage') uf.mileage = [];
         else if (type === 'years') { const i = uf.years.indexOf(+val); if (i > -1) uf.years.splice(i, 1); }
@@ -3491,7 +3503,7 @@ ${variants.length > 0 ? `
           <button class="lf-clear-btn" type="button" onclick="AV.sfClear()">Clear all</button>
         </div>
         ${acc('Price Range', `
-          <div class="lf-price-vals"><span id="lf-lo-val">Rs. ${initMinP}L</span><span id="lf-hi-val">Rs. ${initMaxP}L</span></div>
+          <div class="lf-price-vals"><span id="lf-lo-val">${window.RsLakh(initMinP)}</span><span id="lf-hi-val">${window.RsLakh(initMaxP)}</span></div>
           <div class="lf-price-track">
             <input type="range" id="lf-price-lo" class="lf-range" min="0" max="${maxSlider}" step="5" value="${initMinP}" oninput="AV.sfPrice()">
             <input type="range" id="lf-price-hi" class="lf-range" min="0" max="${maxSlider}" step="5" value="${initMaxP}" oninput="AV.sfPrice()">
@@ -4868,7 +4880,7 @@ ${variants.length > 0 ? `
       <div class="lf-sidebar-inner">
         <div class="lf-sf-hd"><span>Filters</span><button class="lf-clear-btn" type="button" onclick="AV.ufClear()">Clear all</button></div>
         ${acc('Price Range', `
-          <div class="lf-price-vals"><span id="uf-lo-val">Rs. 0L</span><span id="uf-hi-val">Rs. ${maxSlider}L</span></div>
+          <div class="lf-price-vals"><span id="uf-lo-val">Rs. 0L</span><span id="uf-hi-val">${window.RsLakh(maxSlider)}</span></div>
           <div class="lf-price-track">
             <input type="range" id="uf-price-lo" class="lf-range" min="0" max="${maxSlider}" step="1" value="0" oninput="AV.ufPrice()">
             <input type="range" id="uf-price-hi" class="lf-range" min="0" max="${maxSlider}" step="1" value="${maxSlider}" oninput="AV.ufPrice()">
@@ -5016,7 +5028,7 @@ ${variants.length > 0 ? `
         </div>
         <div class="pill-row">
           <div class="pill-group">
-            <input type="tel" class="pill-inp" id="ui-phone" placeholder="Phone number" required>
+            <input type="tel" class="pill-inp" id="ui-phone" placeholder="Phone number" inputmode="numeric" maxlength="10" required>
           </div>
           <div class="pill-group">
             <input type="email" class="pill-inp" id="ui-email" placeholder="Email address" required>
@@ -5102,8 +5114,11 @@ ${variants.length > 0 ? `
       const msg = document.getElementById('ui-msg');
 
       if (!name || !name.value.trim()) { name && name.focus(); alert('Please enter your full name.'); return; }
+      if (!AV.isValidName(name.value)) { name.focus(); alert('Name should not contain numbers.'); return; }
       if (!phone || !phone.value.trim()) { phone && phone.focus(); alert('Please enter your phone number.'); return; }
+      if (!AV.isValidPhone(phone.value)) { phone.focus(); alert('Phone number must be exactly 10 digits.'); return; }
       if (!email || !email.value.trim()) { email && email.focus(); alert('Please enter your email address.'); return; }
+      if (!AV.isValidEmail(email.value)) { email.focus(); alert('Please enter a valid email address.'); return; }
       if (!city || !city.value) { city && city.focus(); alert('Please select your city.'); return; }
       if (!msg || !msg.value.trim()) { msg && msg.focus(); alert('Please enter your message.'); return; }
 
@@ -5175,7 +5190,7 @@ ${variants.length > 0 ? `
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setNav('used');
 
-      const Rs = n => n >= 100000 ? `Rs. ${(n / 100000).toFixed(2)}L` : `Rs. ${n.toLocaleString()}`;
+      const Rs = window.Rs || (n => n >= 10000000 ? `Rs. ${parseFloat((n / 10000000).toFixed(2))} Cr` : n >= 100000 ? `Rs. ${parseFloat((n / 100000).toFixed(2))}L` : `Rs. ${Number(n).toLocaleString('en-IN')}`);
       window.Rs = Rs;
       const calcEMI = (p, ar, m) => { const r = ar / 12 / 100; return r === 0 ? p / m : p * (r * Math.pow(1 + r, m)) / (Math.pow(1 + r, m) - 1) };
       const checkIcon = (ok) => ok
@@ -6616,6 +6631,35 @@ ${variants.length > 0 ? `
       else renderHome();
     });
 
+    /* ─ PAGE TRANSITION ────────────────────────────────────────────────
+       Every full view swap replaces the children of <main id="app-root">.
+       Watch for that and replay the shared `av-page-in` animation
+       (defined in site-chrome.css: fade + 8px rise on the ease-out
+       curve). One observer covers goTo(), openDetail(), popstate and the
+       initial render — no need to touch each render function. Honours
+       reduced-motion via the CSS guard, and skips here too to avoid
+       needless class churn. */
+    (function () {
+      var root = document.getElementById('app-root');
+      if (!root || typeof MutationObserver === 'undefined') return;
+      var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+      var raf = 0;
+      new MutationObserver(function () {
+        if (rm && rm.matches) return;
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function () {
+          root.classList.remove('av-page-in');
+          void root.offsetWidth;               /* restart the animation */
+          root.classList.add('av-page-in');
+        });
+      }).observe(root, { childList: true });
+      root.addEventListener('animationend', function (e) {
+        if (e.target === root && e.animationName === 'av-page-in') {
+          root.classList.remove('av-page-in');
+        }
+      });
+    })();
+
     /* ─ PUBLIC API ─ */
     window.AV = Object.assign(window.AV || {}, {
       carCard, goTo, openDetail, toggleCompare, toggleWish, clearCompare, cmpTab, cmpMode, cmpSearch, cmpFilterCondition, usedCmpSearch, usedToggleCompare, renderCompareUsed, toggleOverviewSpecs,
@@ -6668,8 +6712,8 @@ ${variants.length > 0 ? `
         if (lo) window._sf.minP = +lo.value;
         if (hi) window._sf.maxP = +hi.value;
         const loV = document.getElementById('lf-lo-val'), hiV = document.getElementById('lf-hi-val');
-        if (loV) loV.textContent = 'Rs. ' + window._sf.minP + 'L';
-        if (hiV) hiV.textContent = 'Rs. ' + window._sf.maxP + 'L';
+        if (loV) loV.textContent = window.RsLakh(window._sf.minP);
+        if (hiV) hiV.textContent = window.RsLakh(window._sf.maxP);
         _sfApply();
       },
       sfClear() {
@@ -6681,7 +6725,7 @@ ${variants.length > 0 ? `
         if (hi) hi.value = max;
         const loV = document.getElementById('lf-lo-val'), hiV = document.getElementById('lf-hi-val');
         if (loV) loV.textContent = 'Rs. 0L';
-        if (hiV) hiV.textContent = 'Rs. ' + max + 'L';
+        if (hiV) hiV.textContent = window.RsLakh(max);
         const s = document.getElementById('lf-search');
         if (s) s.value = '';
         const sort = document.getElementById('lf-sort');
@@ -6764,8 +6808,8 @@ ${variants.length > 0 ? `
         if (lo) window._uf.minP = +lo.value;
         if (hi) window._uf.maxP = +hi.value;
         const loV = document.getElementById('uf-lo-val'), hiV = document.getElementById('uf-hi-val');
-        if (loV) loV.textContent = 'Rs. ' + window._uf.minP + 'L';
-        if (hiV) hiV.textContent = 'Rs. ' + window._uf.maxP + 'L';
+        if (loV) loV.textContent = window.RsLakh(window._uf.minP);
+        if (hiV) hiV.textContent = window.RsLakh(window._uf.maxP);
         _ufApply();
       },
       ufClear() {
@@ -6777,7 +6821,7 @@ ${variants.length > 0 ? `
         if (hi) hi.value = max;
         const loV = document.getElementById('uf-lo-val'), hiV = document.getElementById('uf-hi-val');
         if (loV) loV.textContent = 'Rs. 0L';
-        if (hiV) hiV.textContent = 'Rs. ' + max + 'L';
+        if (hiV) hiV.textContent = window.RsLakh(max);
         const s = document.getElementById('uf-search');
         if (s) s.value = '';
         const sort = document.getElementById('uf-sort');
