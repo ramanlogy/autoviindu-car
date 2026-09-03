@@ -27,7 +27,7 @@ git fetch origin
 git reset --hard origin/main      # discards local edits — back up first (see below)
 
 # 3. Install dependencies (skip lifecycle scripts — see note)
-npm install --no-audit --no-fund --ignore-scripts
+npm install --no-audit --no-fund
 
 # 4. Generate the Prisma client (MUST be run from this folder)
 npm run generate
@@ -57,12 +57,17 @@ git, restore it after step 4:
 cp ~/backups/dev.db.<timestamp> dev.db
 ```
 
-## Why `--ignore-scripts` / `npm run generate` is separate
+## Why `npm run generate` is a separate step
 
 CloudLinux's Node Selector runs npm lifecycle scripts (`postinstall`) from the
 virtualenv's `lib/` folder, not the app folder. `prisma generate` there can't
 see `prisma/schema.prisma` and fails, which makes "Run NPM Install" report an
-error. Running `npm run generate` yourself from the app folder works fine.
+error. So `postinstall` was removed; run `npm run generate` yourself from the
+app folder after `npm install`.
+
+Do **not** pass `--ignore-scripts` to `npm install` — this host has no C
+compiler, so `better-sqlite3` relies on its `install` script downloading a
+prebuilt binary. `--ignore-scripts` skips that and the app can't open the DB.
 
 ## Schema changes
 
