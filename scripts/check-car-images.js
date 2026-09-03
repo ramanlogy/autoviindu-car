@@ -2,17 +2,21 @@
 /*
  * Checks every image path referenced by a Car row in dev.db against the actual
  * files in public/. Case-sensitive (matches the Linux server), so it catches
- * the "works on my Mac, 404s in production" class of bug.
+ * image paths that resolve on a case-insensitive dev machine but 404 in
+ * production.
  *
  *   node scripts/check-car-images.js            # summary + first 60 broken refs
  *   node scripts/check-car-images.js --all      # every broken ref
  *   node scripts/check-car-images.js --fix-case # rewrite DB paths to match a
  *                                               # real file that differs only
  *                                               # in capitalisation
+ *
+ * Uses the `sqlite3` CLI (present on the server and most dev machines) so it
+ * needs no native npm module.
  */
 const path = require('path');
 const fs = require('fs');
-const Database = require('better-sqlite3');
+const { execFileSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
 const PUBLIC = path.join(ROOT, 'public');
@@ -20,7 +24,9 @@ const DB = process.env.DEV_DB || path.join(ROOT, 'dev.db');
 const ALL = process.argv.includes('--all');
 const FIX_CASE = process.argv.includes('--fix-case');
 
-const db = new Database(DB);
+function sqlite(sql, extraArgs = []) {
+  return execFileSync('sqlite3', [...extraArgs, DB, sql], { maxBuffer: 64 * 1024 * 1024 }).toString();
+}
 
 // Build a lowercase -> real-relative-path index of everything under public/
 const realByLower = new Map();
@@ -35,8 +41,7 @@ const realByLower = new Map();
   }
 })(PUBLIC);
 
-const IMG_COLS = ['images', 'colors', 'variants']; // JSON columns that may hold URLs
-const cars = db.prepare('SELECT id, slug, images FROM Car').all();
+const cars = JSON.parse(sqlite('SELECT id, slug, images FROM Car', ['-json']) || '[]');
 
 let total = 0;
 let broken = 0;
@@ -71,17 +76,19 @@ for (const car of cars) {
     }
   }
 
-  if (changed) patches.push({ id: car.id, slug: car.slug, images: JSON.stringify(fixed) });
+  if (changed) patches.push({ id: car.id, images: JSON.stringify(fixed) });
 }
 
 console.log(`\nCars: ${cars.length}   image refs: ${total}   broken: ${broken}   (${caseFixable} are case-only, auto-fixable)\n`);
 console.log((ALL ? report : report.slice(0, 60)).join('\n'));
 if (!ALL && report.length > 60) console.log(`\n… ${report.length - 60} more (run with --all)`);
 
-if (FIX_CASE) {
-  const upd = db.prepare('UPDATE Car SET images = ? WHERE id = ?');
-  const tx = db.transaction((rows) => rows.forEach((r) => upd.run(r.images, r.id)));
-  tx(patches);
+if (FIX_CASE && patches.length) {
+  const esc = (s) => s.replace(/'/g, "''");
+  const sql = 'BEGIN;\n' +
+    patches.map((p) => `UPDATE Car SET images='${esc(p.images)}' WHERE id=${p.id};`).join('\n') +
+    '\nCOMMIT;\n';
+  execFileSync('sqlite3', [DB], { input: sql });
   console.log(`\n✔ Rewrote images JSON for ${patches.length} cars (case fixes only).`);
-  console.log('  Review with `git diff`, commit dev.db, push, then pull + restart on the server.');
+  console.log('  Review with `git diff --stat`, commit dev.db, push, then pull + restart on the server.');
 }

@@ -7,11 +7,13 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 
 const { PrismaClient } = require('@prisma/client');
-const { PrismaBetterSqlite3 } = require('@prisma/adapter-better-sqlite3');
+const { PrismaLibSql } = require('@prisma/adapter-libsql');
+// libsql, not better-sqlite3: the cPanel host (AlmaLinux 8, glibc 2.28) has no
+// C compiler and better-sqlite3's prebuilt binary needs glibc 2.29+.
 // Resolve the SQLite file relative to this file, not the process CWD — under
 // Passenger/cPanel the CWD isn't guaranteed to be the app root.
 const _dbUrl = process.env.DATABASE_URL || `file:${path.join(__dirname, 'dev.db')}`;
-const _prismaAdapter = new PrismaBetterSqlite3({ url: _dbUrl });
+const _prismaAdapter = new PrismaLibSql({ url: _dbUrl });
 const prisma = new PrismaClient({ adapter: _prismaAdapter });
 
 const app = express();
