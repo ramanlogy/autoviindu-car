@@ -322,8 +322,8 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
 .hero { position: relative; overflow: hidden; background: #ffffff; }
 .hero-slides { display: flex; transition: transform 1s cubic-bezier(.77, 0, .175, 1); }
 .hero-slide { min-width: 100%; position: relative; height: 480px; display: flex; align-items: stretch; background: #ffffff; }
-.slide-left-bg { position: absolute; top: 0; left: 0; width: 44vw; height: 100%; background: #ffffff; z-index: 1; }
-.slide-bg { position: absolute; top: 0; right: 0; width: 60vw; height: 100%; background-size: cover; background-position: center; z-index: 2; clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%); }
+.slide-left-bg { position: absolute; top: 0; left: 0; width: 40vw; height: 100%; background: #ffffff; z-index: 1; }
+.slide-bg { position: absolute; top: 0; right: 0; width: 64vw; height: 100%; background-size: cover; background-position: center; z-index: 2; clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%); }
 .hero-slide .wrap { position: relative; z-index: 3; width: 100%; display: flex; align-items: center; justify-content: flex-start; pointer-events: none; }
 .slide-content { max-width: 440px; text-align: left; color: #f1f1f1ff; pointer-events: auto; display: flex; flex-direction: column; justify-content: center; }
 .slide-badge { display: inline-block; font-size: 11px; font-weight: 800; color: #1a6b2a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
@@ -349,6 +349,24 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
 .hero-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0, 0, 0, 0.15); cursor: pointer; transition: all 0.2s ease; }
 .hero-dot.active { background: #1a6b2a; width: 24px; border-radius: 99px; }
 .hero-progress { position: absolute; bottom: 0; left: 0; height: 3px; background: #1a6b2a; transition: width 0s linear; z-index: 10; }
+
+/* premium "view this car" CTA sitting on the slide image */
+.slide-hero-cta { position: absolute; left: 24px; bottom: 22px; z-index: 4; display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px; font-size: 12.5px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, #1f7d33, #0f4d1c); border: 1px solid rgba(255,255,255,.28); box-shadow: 0 10px 26px rgba(15,77,28,.38); cursor: pointer; transition: transform .18s ease, box-shadow .18s ease; }
+.slide-hero-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(15,77,28,.48); }
+.slide-hero-cta svg { width: 16px; height: 16px; }
+.slide-img-mini { background: rgba(255,255,255,.92); color: #111; border: none; padding: 10px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,.12); }
+
+/* wider hero image / less side whitespace on large desktops */
+@media (min-width: 1440px) {
+  .hero-slide { height: 540px; }
+  .slide-bg { width: 70vw; }
+  .slide-left-bg { width: 34vw; }
+}
+@media (min-width: 1920px) {
+  .hero-slide { height: 600px; }
+  .slide-bg { width: 75vw; }
+  .slide-left-bg { width: 28vw; }
+}
 
 .hero-search-overlay {
   position: absolute;
@@ -778,9 +796,12 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
       <div class="hero-slide" data-idx="${idx}">
         <div class="slide-left-bg"></div>
         <div class="slide-bg" style="background-image:url('${s.bg || ''}');">
-          <div style="position:absolute; bottom:20px; right:20px; display:flex; gap:10px; z-index:3;">
-            <button class="slide-image-btn" onclick="window.location.href='/book-service'" style="background:rgba(255,255,255,0.9); color:#111; border:none; padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Book Service</button>
-            <button class="slide-image-btn" onclick="${s.slug ? `AV.openDetail('${s.slug}')` : `AV.goTo('cars')`}" style="background:rgba(15,22,18,0.75); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Explore Specs</button>
+          <button class="slide-hero-cta" onclick="${s.slug ? `AV.openDetail('${s.slug}')` : `AV.goTo('cars')`}">
+            ${s.slug ? 'View This Car' : 'Browse Cars'}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <div style="position:absolute; bottom:22px; right:24px; display:flex; gap:10px; z-index:4;">
+            <button class="slide-img-mini" onclick="window.location.href='/book-service'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Book Service</button>
           </div>
         </div>
         <div class="wrap">
