@@ -57,3 +57,6 @@ dev.db
 # Runtime uploads / test artifacts
 backend/uploads/
 .playwright-mcp/
+
+# Runtime data — lives only on the server, never deployed
+backend/form-submissions.json
