@@ -8,7 +8,10 @@ const rateLimit = require("express-rate-limit");
 
 const { PrismaClient } = require('@prisma/client');
 const { PrismaBetterSqlite3 } = require('@prisma/adapter-better-sqlite3');
-const _prismaAdapter = new PrismaBetterSqlite3({ url: process.env.DATABASE_URL || 'file:./dev.db' });
+// Resolve the SQLite file relative to this file, not the process CWD — under
+// Passenger/cPanel the CWD isn't guaranteed to be the app root.
+const _dbUrl = process.env.DATABASE_URL || `file:${path.join(__dirname, 'dev.db')}`;
+const _prismaAdapter = new PrismaBetterSqlite3({ url: _dbUrl });
 const prisma = new PrismaClient({ adapter: _prismaAdapter });
 
 const app = express();

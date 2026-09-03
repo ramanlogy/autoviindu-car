@@ -1,9 +1,13 @@
 name: Publish website to cPanel
 
+# Disabled as an automatic trigger: the live site runs as a cPanel Node.js app
+# from ~/repositories/autoviindu-car (pulled via git), NOT from the FTP'd copy in
+# /public_html/. Auto-FTP on every push overwrote the Passenger .htaccess and
+# shipped a Linux-built better-sqlite3 binary that won't run on the host.
+# Deploy is now: git pull + npm install + npm run generate on the server.
+# Left here as a manual-only fallback.
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   ftp-deploy:
