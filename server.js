@@ -344,11 +344,14 @@ app.post("/api/forms/submit", async (req, res) => {
     const carInterest = data.carModel || data.car || data.interest
       || (data.brand && data.model ? `${data.brand} ${data.model}` : '') || '';
 
-    await prisma.lead.create({
-      data: { name, email, phone, inquiryType, message, carInterest, rawData: data, status: "NEW" }
-    });
-
+    // Respond right away — the submission is already persisted to disk above.
+    // The DB write can finish in the background so the visitor isn't left
+    // watching a spinner while libsql commits.
     res.json({ success: true, message: "Form submitted successfully" });
+
+    prisma.lead.create({
+      data: { name, email, phone, inquiryType, message, carInterest, rawData: data, status: "NEW" }
+    }).catch((e) => console.error("lead.create failed:", e.message));
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -522,7 +525,7 @@ app.post("/api/admin/meta", apiAuth, (req, res) => {
 });
 
 // ── Site content (DB-backed) ──
-const SITE_KEYS = ['settings','homepage','videos','services','charging-stations','brands','budget-tiers','news','reviews','events','blogs'];
+const SITE_KEYS = ['settings','homepage','videos','services','charging-stations','brands','budget-tiers','news','reviews','events','blogs','curated-sections'];
 
 async function readSiteDb(key) {
   // Special case: brands come from Brand table, settings from SiteSetting, homepage from HeroSlide
@@ -922,6 +925,7 @@ app.post('/api/admin/cars', apiAuth, async (req, res) => {
         baseEMI: body.baseEMI ? parseInt(body.baseEMI) : null,
         overview: body.overview || null,
         thumb: body.thumb || null,
+        brochureUrl: body.brochureUrl || null,
         images: body.images || [],
         colors: body.colors || [],
         variants: body.variants || [],
@@ -960,6 +964,7 @@ app.patch('/api/admin/cars/:id', apiAuth, async (req, res) => {
         ...(body.baseEMI !== undefined && { baseEMI: body.baseEMI ? parseInt(body.baseEMI) : null }),
         ...(body.overview !== undefined && { overview: body.overview }),
         ...(body.thumb !== undefined && { thumb: body.thumb }),
+        ...(body.brochureUrl !== undefined && { brochureUrl: body.brochureUrl || null }),
         ...(body.images && { images: body.images }),
         ...(body.colors && { colors: body.colors }),
         ...(body.variants && { variants: body.variants }),
@@ -1233,11 +1238,41 @@ async function ensureNewsSchema() {
     `ALTER TABLE "NewsPost" ADD COLUMN "readTime" TEXT`,
     `ALTER TABLE "NewsPost" ADD COLUMN "displayDate" TEXT`,
     `ALTER TABLE "NewsPost" ADD COLUMN "rating" REAL`,
+    // Official manufacturer brochure PDF link per car (News/Reviews-era addition).
+    `ALTER TABLE "Car" ADD COLUMN "brochureUrl" TEXT`,
   ];
   for (const sql of stmts) {
     try { await prisma.$executeRawUnsafe(sql); }
     catch (e) { if (!/duplicate column/i.test(e.message)) console.warn('[schema]', e.message); }
   }
+}
+
+// Seed official brochure links from scripts/brochure-urls.json. Production's
+// dev.db is server-owned and never receives our local data via git, so the
+// server fills in any car that still has no brochureUrl on boot. Admin edits
+// win — an existing value is left alone unless BROCHURE_RESYNC=1 forces it.
+async function syncBrochureUrls() {
+  const mapPath = path.join(__dirname, 'scripts', 'brochure-urls.json');
+  if (!fs.existsSync(mapPath)) return;
+  let map;
+  try { map = JSON.parse(fs.readFileSync(mapPath, 'utf-8')); }
+  catch (e) { console.warn('[brochure] bad json:', e.message); return; }
+
+  const force = process.env.BROCHURE_RESYNC === '1';
+  const entries = Object.entries(map).filter(([k, v]) => !k.startsWith('_') && /^https?:\/\//i.test(v));
+  const cars = await prisma.car.findMany({ select: { id: true, slug: true, brochureUrl: true } });
+  const bySlug = new Map(cars.map((c) => [c.slug, c]));
+
+  let set = 0;
+  for (const [slug, url] of entries) {
+    const car = bySlug.get(slug);
+    if (!car) continue;
+    if (car.brochureUrl === url) continue;
+    if (car.brochureUrl && !force) continue; // keep manual/admin value
+    try { await prisma.car.update({ where: { id: car.id }, data: { brochureUrl: url } }); set++; }
+    catch (e) { console.warn('[brochure] update failed for', slug, e.message); }
+  }
+  if (set) console.log(`[brochure] linked ${set} car${set === 1 ? '' : 's'} to official brochure pages`);
 }
 
 function legacyItemToPost(item, kind) {
@@ -1291,10 +1326,26 @@ async function migrateLegacyNewsOnce() {
   console.log(`[migrate] news/reviews → NewsPost table (${migrated} rows processed)`);
 }
 
+async function seedCuratedSections() {
+  const existing = await prisma.siteContent.findUnique({ where: { key: 'curated-sections' } });
+  if (existing) return;
+  let defaults;
+  try {
+    defaults = JSON.parse(fs.readFileSync(path.join(__dirname, 'scripts', 'curated-defaults.json'), 'utf-8'));
+  } catch (e) {
+    console.warn('[curated] defaults file missing/invalid, skipping seed:', e.message);
+    return;
+  }
+  await prisma.siteContent.create({ data: { key: 'curated-sections', data: defaults } });
+  console.log('[curated] seeded curated-sections from scripts/curated-defaults.json');
+}
+
 (async () => {
   try {
     await ensureNewsSchema();
     await migrateLegacyNewsOnce();
+    await seedCuratedSections();
+    await syncBrochureUrls();
   } catch (e) {
     console.error('[boot] DB upkeep failed:', e);
   }

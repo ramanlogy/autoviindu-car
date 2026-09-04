@@ -1233,6 +1233,291 @@
 .skel-used-card .skel-line.w-30 { height: 16px; width: 30%; }
 .skel-used-card .skel-btn { height: 32px; width: 40%; border-radius: 10px; }
 
+/* Detail-page skeleton — mirrors .dp-layout (gallery + thumbs + highlights +
+   variant tabs + spec accordions on the left, price sidebar on the right).
+   Shown on a slow connection / deep-link refresh before the car loads. */
+.dp-skel-hero {
+  background: linear-gradient(160deg, var(--g0, #0d1b2a), var(--g1, #16324f));
+  padding: 16px 0 18px;
+}
+.dp-skel-bc { height: 11px; width: 210px; max-width: 55%; opacity: .35; }
+.dp-skel-htitle { height: 22px; width: 300px; max-width: 70%; margin-top: 12px; opacity: .35; }
+@media (max-width: 899px) { .dp-skel-htitle { display: none; } }
+
+.dp-skel-body { padding-top: 16px; padding-bottom: 48px; }
+
+.dp-skel-gallery { width: 100%; aspect-ratio: 16 / 10; border-radius: 0; }
+@media (min-width: 900px) { .dp-skel-gallery { aspect-ratio: 16 / 9; border-radius: var(--r16, 16px); } }
+
+.dp-skel-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 12px 0; }
+.dp-skel-thumbs > div { height: 54px; border-radius: 8px; }
+.dp-skel-hl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 16px 12px 0; }
+.dp-skel-hl > div { height: 58px; border-radius: 12px; }
+.dp-skel-title { display: flex; flex-direction: column; gap: 10px; margin: 18px 12px 0; }
+.dp-skel-title .skel-line { height: 20px; }
+
+/* width helpers, scoped so they don't collide with the card skeletons */
+.dp-skel .w-85 { width: 85%; }
+.dp-skel .w-60 { width: 60%; }
+.dp-skel .w-50 { width: 50%; }
+.dp-skel .w-40 { width: 40%; }
+.dp-skel-tabs { display: flex; gap: 10px; margin: 18px 12px 0; }
+.dp-skel-tabs > div { flex: 1; height: 44px; border-radius: 10px; }
+.dp-skel-accord { display: flex; flex-direction: column; gap: 10px; margin: 18px 12px 0; }
+.dp-skel-accord > div { height: 52px; border-radius: 12px; }
+
+.dp-skel-side { display: flex; flex-direction: column; gap: 14px; margin: 18px 12px 0; }
+.dp-skel-card {
+  background: var(--white, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--r16, 16px);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dp-skel-card .skel-line { height: 12px; }
+.dp-skel-price { height: 26px !important; width: 62%; }
+.dp-skel-btn { height: 42px; border-radius: 10px; }
+
+@media (min-width: 900px) {
+  .dp-skel-thumbs, .dp-skel-hl, .dp-skel-title, .dp-skel-tabs, .dp-skel-accord, .dp-skel-side {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Homepage skeleton — mirrors the real hero + body-type pill strip + section
+   carousels (see window.AV_homeSkeleton). Reuses .hero / .home-discover /
+   .home-section / .home-carousel for positioning; only the placeholder
+   shapes are defined here. */
+.skh-hero {
+  position: relative;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 768px) { .skh-hero { height: 580px; } }
+@media (min-width: 1100px) { .skh-hero { height: 640px; } }
+
+/* Lighter placeholders on the dark hero */
+.skh-hero .skel-block {
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.14) 50%, rgba(255, 255, 255, 0.06) 70%);
+  background-size: 250% 100%;
+}
+
+.skh-hero-inner { display: flex; flex-direction: column; gap: 14px; }
+.skh-hero-eyebrow { height: 12px; width: 150px; }
+.skh-hero-title { height: 30px; width: 55%; max-width: 460px; }
+@media (min-width: 768px) { .skh-hero-title { height: 42px; } }
+.skh-hero-title.skh-w70 { width: 38%; max-width: 340px; }
+.skh-hero-specs { display: flex; gap: 12px; margin-top: 10px; }
+.skh-hero-specs > div { height: 46px; width: 92px; border-radius: 10px; }
+
+.skh-search { position: absolute; left: 0; right: 0; bottom: 24px; }
+.skh-search-bar { width: 100%; height: 64px; border-radius: 14px; }
+@media (min-width: 900px) { .skh-search-bar { height: 88px; } }
+
+.skh-discover { padding: 16px 0; }
+.skh-pill { flex-shrink: 0; width: 132px; height: 66px; border-radius: 10px; }
+
+.skh .home-head__left { width: 100%; max-width: 560px; }
+.skh-eyebrow { height: 10px; width: 110px; }
+.skh-title { height: 26px; width: 240px; margin-top: 6px; }
+.skh-link { height: 40px; width: 116px; border-radius: 999px; flex-shrink: 0; }
+.skh-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.skh-chip { height: 32px; width: 72px; border-radius: 999px; }
+.skh-card { flex: 0 0 280px; }
+
+
+/* ══ "Try these next" — quick-link strip at the foot of landing pages ══ */
+.try-next {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.try-next-hd {
+  font-family: var(--font-d, inherit);
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 800;
+  color: var(--ink1, #0a1f44);
+  line-height: 1.1;
+  margin: 0;
+  flex-shrink: 0;
+}
+.try-next-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+  gap: 12px;
+  flex: 1 1 300px;
+  min-width: 0;
+}
+.try-next-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  background: var(--white, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 16px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  width: 100%;
+  transition: box-shadow .2s, transform .2s, border-color .2s;
+}
+.try-next-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .09);
+  transform: translateY(-2px);
+  border-color: var(--g3, #0E5E26);
+}
+.try-next-ico {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(14, 94, 38, .10);
+  color: var(--g3, #0E5E26);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.try-next-ico i,
+.try-next-ico svg {
+  width: 20px;
+  height: 20px;
+}
+/* photo variant — a real car image in place of the icon */
+.try-next-media {
+  width: 58px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg2, #eef2f7);
+}
+.try-next-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.try-next-media.is-empty {
+  background: linear-gradient(135deg, var(--bg2, #eef2f7), var(--bg3, #e2e8f0));
+}
+.try-next-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+.try-next-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink1, #0a1f44);
+  line-height: 1.25;
+}
+.try-next-sub {
+  font-size: 12px;
+  color: var(--ink4, #94a3b8);
+  font-weight: 500;
+}
+.try-next-arr {
+  color: var(--ink4, #94a3b8);
+  flex-shrink: 0;
+  transition: transform .2s, color .2s;
+}
+.try-next-card:hover .try-next-arr {
+  color: var(--g3, #0E5E26);
+  transform: translateX(3px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .try-next-card,
+  .try-next-arr { transition: none; }
+  .try-next-card:hover { transform: none; }
+  .try-next-card:hover .try-next-arr { transform: none; }
+}
+
+
+/* ══ Chip box — bold heading + a wrap of question pills (used-car sell CTA) ══ */
+.uc-chipbox { margin-top: 36px; }
+.chipbox {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  background: var(--white, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 24px;
+  padding: 24px 30px;
+}
+.chipbox-hd {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+.chipbox-spark {
+  color: var(--g3, #0E5E26);
+  display: flex;
+  flex-shrink: 0;
+}
+.chipbox-spark i,
+.chipbox-spark svg { width: 28px; height: 28px; }
+.chipbox-title {
+  font-family: var(--font-d, inherit);
+  font-size: clamp(21px, 2.8vw, 29px);
+  font-weight: 800;
+  color: var(--ink1, #0a1f44);
+  line-height: 1.12;
+  margin: 0;
+}
+.chipbox-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+.chipbox-chip {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--g3, #0E5E26);
+  background: rgba(14, 94, 38, .07);
+  border: 1px solid rgba(14, 94, 38, .18);
+  border-radius: 999px;
+  padding: 9px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .18s, border-color .18s, transform .18s;
+}
+.chipbox-chip:hover {
+  background: rgba(14, 94, 38, .13);
+  border-color: rgba(14, 94, 38, .34);
+  transform: translateY(-1px);
+}
+@media (max-width: 760px) {
+  .chipbox {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 18px;
+    border-radius: 20px;
+  }
+  .chipbox-chips { width: 100%; flex: none; }
+}
+@media (max-width: 400px) {
+  .chipbox-chip { white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chipbox-chip { transition: none; }
+  .chipbox-chip:hover { transform: none; }
+}
+
 
 /* ═══════════════════════════════════════════════════════════════════
    SHARED PAGE / VIEW TRANSITION

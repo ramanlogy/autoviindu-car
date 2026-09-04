@@ -1,0 +1,53 @@
+{
+  "bestsellers": {
+    "title": "Best Sellers in Nepal — 2025 YTD",
+    "sub": "Nepal's top-selling new cars, ranked by 2025 year-to-date registrations. Electric models now dominate the top of the chart.",
+    "rows": [
+      { "slug": "byd-atto-2-2025", "brand": "BYD", "model": "Atto 2", "units": 2264, "tag": "#1 Overall", "why": "Nepal's best-selling new car of 2025 — compact electric SUV with Cell-to-Body battery tech" },
+      { "slug": "byd-atto-1-2025", "brand": "BYD", "model": "Atto 1", "units": 1299, "tag": "#1 City EV", "why": "Affordable entry-level EV; the value pick for first-time electric buyers" },
+      { "slug": "tata-tigor-ev-2025", "brand": "Tata", "model": "Tigor EV", "units": 1002, "tag": "Fleet Favourite", "why": "Compact electric sedan; a staple of Kathmandu ride-hailing and office fleets" },
+      { "slug": "hyundai-creta-fl-2024", "brand": "Hyundai", "model": "Creta", "units": 793, "tag": "#1 Petrol/ICE", "why": "The top-selling non-EV in Nepal; locally assembled mid-size SUV" },
+      { "slug": "deepal-s05-2025", "brand": "Deepal", "model": "S05", "units": 785, "tag": "Rising Star", "why": "Feature-loaded electric SUV from Changan's Deepal brand" },
+      { "slug": "dongfeng-nammi-vigo-2025", "brand": "Dongfeng", "model": "Nammi Vigo", "units": 687, "tag": "Value EV SUV", "why": "350 km range, 12.8\" screen and a 360° camera at a sharp price point" },
+      { "slug": "tata-punch-ev-2026", "brand": "Tata", "model": "Punch EV", "units": 516, "tag": "Micro-SUV EV", "why": "Tata's sub-compact electric SUV — an easy, high-riding city runabout" },
+      { "slug": "icaur-v23-2025", "brand": "iCAUR", "model": "V23", "units": 512, "tag": "Boxy Lifestyle", "why": "Retro-boxy electric SUV from Chery's iCAUR sub-brand" },
+      { "slug": "kia-sonet-2025", "brand": "Kia", "model": "Sonet", "units": 473, "tag": "Top Sub-4m SUV", "why": "Petrol/diesel sub-compact SUV with a long, loaded feature list" },
+      { "slug": "byd-sealion-7-2025", "brand": "BYD", "model": "Sealion 7", "units": 446, "tag": "Premium EV SUV", "why": "Performance-oriented mid-size electric SUV" },
+      { "slug": "omoda-e5-ev", "brand": "Omoda", "model": "E5", "units": 294, "tag": "Style Pick", "why": "Coupe-styled electric SUV from Chery's Omoda brand" },
+      { "slug": "kia-seltos-2025", "brand": "Kia", "model": "Seltos", "units": 291, "tag": "Compact SUV", "why": "Long-running compact SUV; petrol, diesel and turbo options" },
+      { "slug": "byd-atto-3-2025", "brand": "BYD", "model": "Atto 3", "units": 257, "tag": "EV Pioneer", "why": "The car that kick-started Nepal's EV boom" },
+      { "slug": "dongfeng-nammi-01-2025", "brand": "Dongfeng", "model": "Nammi 01", "units": 250, "tag": "City EV", "why": "Compact electric hatchback built for tight city streets" },
+      { "slug": "jaecoo-j5-2025", "brand": "Jaecoo", "model": "J5", "units": 212, "tag": "Premium EV", "why": "Upmarket electric SUV with up to 461 km of claimed range" },
+      { "slug": "jaecoo-j6-2025", "brand": "Jaecoo", "model": "J6", "units": 189, "tag": "Boxy Premium EV", "why": "Squared-off electric SUV with rugged, off-road-inspired styling" },
+      { "slug": "tata-nexon-k3-ev-2026", "brand": "Tata", "model": "Nexon EV", "units": 174, "tag": "Established EV", "why": "Facelifted Nexon.ev — one of Nepal's most familiar EV names" },
+      { "slug": "mg-s5-ev-2025", "brand": "MG", "model": "S5 EV", "units": 140, "tag": "RWD EV SUV", "why": "Rear-wheel-drive electric SUV on MG's Modular Scalable Platform" },
+      { "slug": "leapmotor-b10-2025", "brand": "Leapmotor", "model": "B10", "units": 137, "tag": "New Entry", "why": "Tech-loaded compact electric SUV — Leapmotor's volume model" }
+    ]
+  },
+  "popularSidebar": { "mode": "auto", "slugs": [] },
+  "upcoming": {
+    "title": "Upcoming Cars in Nepal 2025–26",
+    "sub": "Expected launches, NAIMA Expo debuts & pre-launch pricing. Be the first to know before they hit showrooms.",
+    "rows": [
+      { "brand": "AION", "model": "UT", "slug": "aion-ut", "status": "Expected Soon", "statusCls": "expect", "price": "Expected Rs. 60L – 75L", "body": "Hatchback", "fuel": "Electric", "img": "assets/images/car_images/aion/ut/exterior/UT_EXT_GREEN-WHITE.webp", "eta": "TBD" },
+      { "brand": "Omoda", "model": "4", "slug": "omoda-4", "status": "Shown at NAIMA 2026", "statusCls": "expo", "price": "TBD", "body": "SUV", "fuel": "Electric", "img": "assets/images/car_images/chery/omoda-4/exterior/download (1).jpeg", "eta": "TBD" },
+      { "brand": "Jetour", "model": "T2", "slug": "jetour-t2", "status": "Expected Soon", "statusCls": "expect", "price": "TBD", "body": "SUV", "fuel": "Petrol", "img": "assets/images/car_images/jetour /t2/exterior/download.jpeg", "eta": "TBD" },
+      { "brand": "Toyota", "model": "RAV4 Hybrid", "slug": "toyota-rav4-hybrid", "status": "Launching Soon", "statusCls": "launch", "price": "Expected Rs. 2.07Cr – 2.2Cr", "body": "SUV", "fuel": "Hybrid", "img": "assets/images/car_images/toyota/rav4/exterior/2026-toyota-rav4-limited-352-68f0e7f67ae2b.avif", "eta": "Oct–Nov 2026" },
+      { "brand": "Hongqi", "model": "E-HS9", "slug": "hongqi-e-hs9", "status": "Expected Soon", "statusCls": "expect", "price": "TBD", "body": "SUV", "fuel": "Electric", "img": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=400", "eta": "TBD" }
+    ]
+  },
+  "home": {
+    "newCars": { "title": "You might like", "eyebrow": "", "sub": "", "mode": "auto", "slugs": [] },
+    "peopleBuying": { "title": "New cars people are buying", "eyebrow": "READY IN KATHMANDU", "sub": "", "mode": "auto", "slugs": [] }
+  },
+  "explore": [
+    { "id": "trending", "title": "Trending Cars", "eyebrow": "Hot right now", "sub": "The most viewed and researched cars this week.", "mode": "auto", "slugs": [], "enabled": true },
+    { "id": "budget", "title": "Budget Friendly", "eyebrow": "Value for money", "sub": "Great cars under Rs. 40 Lakhs.", "mode": "auto", "slugs": [], "enabled": true },
+    { "id": "hatchback", "title": "Popular Hatchbacks", "eyebrow": "City smart", "sub": "Compact, efficient, and easy to park.", "mode": "auto", "slugs": [], "enabled": true },
+    { "id": "suv", "title": "Top SUVs", "eyebrow": "Family adventures", "sub": "Spacious, high ground clearance SUVs.", "mode": "auto", "slugs": [], "enabled": true },
+    { "id": "luxury", "title": "Luxury & Premium", "eyebrow": "Premium segment", "sub": "The finest vehicles available above Rs. 80 Lakhs.", "mode": "auto", "slugs": [], "enabled": true },
+    { "id": "electric", "title": "Electric Vehicles", "eyebrow": "Zero emissions", "sub": "Future-ready EVs with great range for Nepal.", "mode": "auto", "slugs": [], "enabled": true },
+    { "id": "hybrid", "title": "Hybrid Cars", "eyebrow": "Best of both", "sub": "Excellent mileage without range anxiety.", "mode": "auto", "slugs": [], "enabled": true },
+    { "id": "upcoming", "type": "upcoming", "title": "Upcoming Cars", "eyebrow": "Coming soon", "sub": "Expected launches, NAIMA debuts & pre-launch pricing.", "mode": "auto", "slugs": [], "enabled": true }
+  ]
+}

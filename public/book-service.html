@@ -1373,6 +1373,7 @@
 
       // Disable button
       const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
       btn.style.opacity = '.7';
       btn.style.pointerEvents = 'none';
       document.getElementById('submit-label').textContent = 'Submitting…';
@@ -1390,6 +1391,7 @@
         console.error('Server submission error:', e);
         alert('There was a problem submitting your request. Please try again or call us directly.');
         // Re-enable button
+        btn.disabled = false;
         btn.style.opacity = '';
         btn.style.pointerEvents = '';
         document.getElementById('submit-label').textContent = 'Submit Request';
@@ -1418,6 +1420,7 @@
       document.querySelectorAll('.form-select').forEach(s => s.selectedIndex = 0);
       document.querySelectorAll('.err').forEach(e => e.style.display = 'none');
       const btn = document.getElementById('submit-btn');
+      btn.disabled = false;
       btn.style.opacity = '';
       btn.style.pointerEvents = '';
       document.getElementById('submit-label').textContent = 'Submit Request';

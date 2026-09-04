@@ -99,6 +99,12 @@ window.AV.toggleAllBrands = function () {
 };
 window.buildHomePageHTML = function buildHomePageHTML(ctx) {
   const { db, evCars, carCard, BRANDS, BUDGETS, HERO_SLIDES, IC, UPCOMING_DATA, upcomingCard } = ctx;
+  // Admin-managed overrides for the two homepage car rows (Admin → Sections → Homepage).
+  const CURATED = ctx.CURATED || {};
+  const homeCfg = CURATED.home || {};
+  const pickBySlugs = (slugs) => (Array.isArray(slugs) ? slugs : [])
+    .map(sl => db.find(c => c.slug === sl)).filter(Boolean);
+
   // Filter for featured, best sellers, or specific priority brands like Deepal and BYD
   let featured = [...db].filter(c => c.isFeatured || c.isBestSeller || c.brand === 'Deepal' || c.brand === 'BYD');
 
@@ -106,9 +112,15 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
   featured = featured.sort(() => 0.5 - Math.random());
 
   // Take up to 8 random featured cars, or just 8 random cars if not enough featured
-  const gridCars = featured.length >= 4 ? featured.slice(0, 8) : [...db].sort(() => 0.5 - Math.random()).slice(0, 8);
+  const newCarsCfg = homeCfg.newCars || {};
+  const gridCars = (newCarsCfg.mode === 'manual' && Array.isArray(newCarsCfg.slugs) && newCarsCfg.slugs.length)
+    ? pickBySlugs(newCarsCfg.slugs).slice(0, 8)
+    : (featured.length >= 4 ? featured.slice(0, 8) : [...db].sort(() => 0.5 - Math.random()).slice(0, 8));
 
-  const trending = [...db].sort((a, b) => (b.reviews || 0) - (a.reviews || 0)).slice(0, 10);
+  const buyingCfg = homeCfg.peopleBuying || {};
+  const trending = (buyingCfg.mode === 'manual' && Array.isArray(buyingCfg.slugs) && buyingCfg.slugs.length)
+    ? pickBySlugs(buyingCfg.slugs).slice(0, 10)
+    : [...db].sort((a, b) => (b.reviews || 0) - (a.reviews || 0)).slice(0, 10);
   const brands = BRANDS.slice(0, 12);
 
   // Budget calculator — default figures (Rs. 40,000/mo, Rs. 5L down, 60mo, 11.5% p.a.)
@@ -322,8 +334,8 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
 .hero { position: relative; overflow: hidden; background: #ffffff; }
 .hero-slides { display: flex; transition: transform 1s cubic-bezier(.77, 0, .175, 1); }
 .hero-slide { min-width: 100%; position: relative; height: 480px; display: flex; align-items: stretch; background: #ffffff; }
-.slide-left-bg { position: absolute; top: 0; left: 0; width: 40vw; height: 100%; background: #ffffff; z-index: 1; }
-.slide-bg { position: absolute; top: 0; right: 0; width: 64vw; height: 100%; background-size: cover; background-position: center; z-index: 2; clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%); }
+.slide-left-bg { position: absolute; top: 0; left: 0; width: 44vw; height: 100%; background: #ffffff; z-index: 1; }
+.slide-bg { position: absolute; top: 0; right: 0; width: 60vw; height: 100%; background-size: cover; background-position: center; z-index: 2; clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%); }
 .hero-slide .wrap { position: relative; z-index: 3; width: 100%; display: flex; align-items: center; justify-content: flex-start; pointer-events: none; }
 .slide-content { max-width: 440px; text-align: left; color: #f1f1f1ff; pointer-events: auto; display: flex; flex-direction: column; justify-content: center; }
 .slide-badge { display: inline-block; font-size: 11px; font-weight: 800; color: #1a6b2a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
@@ -350,24 +362,6 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
 .hero-dot.active { background: #1a6b2a; width: 24px; border-radius: 99px; }
 .hero-progress { position: absolute; bottom: 0; left: 0; height: 3px; background: #1a6b2a; transition: width 0s linear; z-index: 10; }
 
-/* premium "view this car" CTA sitting on the slide image */
-.slide-hero-cta { position: absolute; left: 24px; bottom: 22px; z-index: 4; display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px; font-size: 12.5px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, #1f7d33, #0f4d1c); border: 1px solid rgba(255,255,255,.28); box-shadow: 0 10px 26px rgba(15,77,28,.38); cursor: pointer; transition: transform .18s ease, box-shadow .18s ease; }
-.slide-hero-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(15,77,28,.48); }
-.slide-hero-cta svg { width: 16px; height: 16px; }
-.slide-img-mini { background: rgba(255,255,255,.92); color: #111; border: none; padding: 10px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,.12); }
-
-/* wider hero image / less side whitespace on large desktops */
-@media (min-width: 1440px) {
-  .hero-slide { height: 540px; }
-  .slide-bg { width: 70vw; }
-  .slide-left-bg { width: 34vw; }
-}
-@media (min-width: 1920px) {
-  .hero-slide { height: 600px; }
-  .slide-bg { width: 75vw; }
-  .slide-left-bg { width: 28vw; }
-}
-
 .hero-search-overlay {
   position: absolute;
   inset: 0;
@@ -388,8 +382,8 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
   border-radius: 16px;
   padding: 18px;
   width: 100%;
-  max-width: 300px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  max-width: 330px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;
@@ -430,7 +424,7 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
 
 .hero-glass-search label {
   color: #475569;
-  font-size: 9.5px;
+  font-size: 10px;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -441,10 +435,10 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
   background: #ffffff;
   border: 1px solid #cbd5e1;
   border-radius: 9px;
-  padding: 9px 10px;
+  padding: 10px 24px 10px 10px;
   width: 100%;
   font-weight: 600;
-  font-size: 9.5px;
+  font-size: 12px;
   color: #1e293b;
   appearance: none;
   -webkit-appearance: none;
@@ -478,8 +472,7 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   padding-top: 10px;
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  flex-wrap: wrap;
   align-items: center;
   gap: 6px;
   scrollbar-width: none;
@@ -512,19 +505,23 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
 @media (max-width: 900px) {
   .hero-slide { height: auto; flex-direction: column; align-items: stretch; background: #ffffff; }
   .slide-left-bg { display: none; }
-  .slide-bg { position: relative; width: 100%; height: 260px; clip-path: none; order: 1; }
-  .hero-slide .wrap { order: 2; padding: 24px 20px 80px; }
-  .slide-content { max-width: 100%; text-align: left; }
-  .slide-title { font-size: 1.8rem; }
+  .slide-bg { position: relative; left: 0; right: 0; width: 100%; height: 260px; clip-path: none; order: 1; }
+  .hero-slide .wrap { order: 2; max-width: none; margin: 0; padding: 24px 20px 20px; }
+  .slide-content { max-width: 100%; text-align: left; color: #5b6660; }
+  .slide-title { font-size: 1.8rem; color: #111612; }
+  .slide-price { color: #8a6d12; }
+  .slide-sub { color: #5b6660; }
+  .slide-spec-value { color: #1f2721; }
   .slide-price-current { font-size: 20px; }
   .hero-prev, .hero-next { display: none; }
-  .hero-dots { left: 50%; transform: translateX(-50%); bottom: 15px; }
+  .hero-dots { left: 50%; transform: translateX(-50%); bottom: auto; top: 230px; }
+  .hero-progress { top: 257px; bottom: auto; }
   .hero .wrap { flex-direction: column; }
   
   .hero-search-overlay {
-    position: absolute;
-    inset: auto 0 0 0;
-    padding: 0 16px 16px;
+    position: static;
+    inset: auto;
+    padding: 12px 16px 4px;
     justify-content: center;
     z-index: 10;
   }
@@ -609,8 +606,8 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
   .hero-glass-search label { font-size: 11px; margin-bottom: 8px; color: #555; }
   .hero-glass-search .sw-grid { gap: 16px; grid-template-columns: 1fr; }
   .hero-glass-search .sw-field:nth-child(3) { grid-column: auto; }
-  .hero-glass-search .sw-tab { font-size: 14px; padding-bottom: 12px; color: #666; }
-  .hero-glass-search .sw-tab.active { color: var(--brand, #1a6b2a); border-bottom-color: var(--brand, #1a6b2a); }
+  .hero-glass-search .sw-tab { font-size: 14px; color: #666; }
+  .hero-glass-search .sw-tab.active { color: #fff; background: var(--brand, #1a6b2a); }
   .hero-glass-search .sw-popular-label { color: #666; }
   .hero-glass-search .sw-pop-tag { color: #111; background: #f3f4f6; border-color: #e5e7eb; }
   .hero-glass-search .sw-select { border: 1px solid #d1d5db; background: #fff; }
@@ -796,12 +793,9 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
       <div class="hero-slide" data-idx="${idx}">
         <div class="slide-left-bg"></div>
         <div class="slide-bg" style="background-image:url('${s.bg || ''}');">
-          <button class="slide-hero-cta" onclick="${s.slug ? `AV.openDetail('${s.slug}')` : `AV.goTo('cars')`}">
-            ${s.slug ? 'View This Car' : 'Browse Cars'}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
-          <div style="position:absolute; bottom:22px; right:24px; display:flex; gap:10px; z-index:4;">
-            <button class="slide-img-mini" onclick="window.location.href='/book-service'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Book Service</button>
+          <div style="position:absolute; bottom:20px; right:20px; display:flex; gap:10px; z-index:3;">
+            <button class="slide-image-btn" onclick="window.location.href='/book-service'" style="background:rgba(255,255,255,0.9); color:#111; border:none; padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Book Service</button>
+            <button class="slide-image-btn" onclick="${s.slug ? `AV.openDetail('${s.slug}')` : `AV.goTo('cars')`}" style="background:rgba(15,22,18,0.75); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Explore Specs</button>
           </div>
         </div>
         <div class="wrap">
@@ -886,9 +880,9 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
     <div class="wrap home-section__inner">
       <div class="home-head">
         <div class="home-head__left">
-          
-          <h2 class="home-title">You might like</h2>
-         
+          ${newCarsCfg.eyebrow ? `<span class="home-eyebrow">${newCarsCfg.eyebrow}</span>` : ''}
+          <h2 class="home-title">${newCarsCfg.title || 'You might like'}</h2>
+          ${newCarsCfg.sub ? `<p class="home-sub">${newCarsCfg.sub}</p>` : ''}
         </div>
         <div style="display:flex;align-items:center;gap:12px">
           <button type="button" class="home-link" onclick="AV.goTo('cars')">Show more ${IC.chevR || '→'}</button>
@@ -909,9 +903,9 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
     <div class="wrap home-section__inner">
       <div class="home-head">
         <div class="home-head__left">
-          <span class="home-eyebrow">READY IN KATHMANDU</span>
-          <h2 class="home-title">New cars people are buying</h2>
-         
+          <span class="home-eyebrow">${buyingCfg.eyebrow || 'READY IN KATHMANDU'}</span>
+          <h2 class="home-title">${buyingCfg.title || 'New cars people are buying'}</h2>
+          ${buyingCfg.sub ? `<p class="home-sub">${buyingCfg.sub}</p>` : ''}
         </div>
         <div style="display:flex;align-items:center;gap:12px">
           <button type="button" class="home-link" onclick="AV.goTo('cars')">Show more ${IC.chevR || '→'}</button>

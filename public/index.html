@@ -23,7 +23,7 @@
     })(window, document, 'script', 'dataLayer', 'GTM-K29LVM8H');</script>
   <!-- End Google Tag Manager -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="assets/css/site-chrome.css?v=2">
+  <link rel="stylesheet" href="assets/css/site-chrome.css?v=8">
   <link rel="stylesheet" href="assets/css/cars.css">
 
   
@@ -6900,10 +6900,10 @@
 
   <link rel="stylesheet" href="assets/css/home-premium.css?v=2">
   <link rel="stylesheet" href="assets/css/compare.css">
-  <script src="assets/js/cars-data-loader.js?v=2"></script>
+  <script src="assets/js/cars-data-loader.js?v=5"></script>
   <script src="assets/js/content-loader.js"></script>
-  <script src="assets/js/home-render.js?v=4" defer></script>
-  <script src="assets/js/app.js?v=14" defer></script>
+  <script src="assets/js/home-render.js?v=5" defer></script>
+  <script src="assets/js/app.js?v=22" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2BCQWQPPZ"></script>
   <script>
@@ -6952,7 +6952,20 @@
 
   <script>
     (function () {
-      var isUsed = location.hash === '#used';
+      var hash = location.hash || '';
+      // Deep-linked car detail page (refresh / shared link): show a skeleton
+      // shaped like the detail page, not a grid of card skeletons.
+      if ((hash.indexOf('#car/') === 0 || hash.indexOf('#used/') === 0) && window.AV_detailSkeleton) {
+        document.getElementById('app-root').innerHTML = window.AV_detailSkeleton();
+        return;
+      }
+      // Homepage: show a skeleton shaped like the real home layout (hero +
+      // pill strip + section carousels), not a bare grid of card boxes.
+      if ((hash === '' || hash === '#' || hash === '#home') && window.AV_homeSkeleton) {
+        document.getElementById('app-root').innerHTML = window.AV_homeSkeleton();
+        return;
+      }
+      var isUsed = hash === '#used';
       var cardClass = isUsed ? 'skel-used-card' : 'skel-car-card';
       var card = isUsed
         ? '<div class="' + cardClass + '"><div class="skel-img skel-block"></div><div class="skel-body">' +

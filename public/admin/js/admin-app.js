@@ -675,7 +675,8 @@
     '<button type="button" class="btn" style="margin-top:8px" onclick="addSpecRow()">+ Add spec</button></div></div>' +
 
     '<div class="editor-pane" data-pane="content">' +
-    '<div class="form-field"><label class="form-lbl">Overview</label><textarea class="form-ta" id="e-overview" rows="5">' + esc(car.overview || '') + '</textarea></div>' +
+    '<div class="form-field"><label class="form-lbl">Official brochure PDF URL</label><input class="form-inp" id="e-brochure" type="url" value="' + esc(car.brochureUrl || '') + '" placeholder="https://…/brochure.pdf — leave blank to auto-generate a spec sheet"></div>' +
+    '<div class="form-field" style="margin-top:12px"><label class="form-lbl">Overview</label><textarea class="form-ta" id="e-overview" rows="5">' + esc(car.overview || '') + '</textarea></div>' +
     '<div class="form-field" style="margin-top:12px"><label class="form-lbl">Pros (one per line)</label><textarea class="form-ta" id="e-pros" rows="3">' + esc((car.pros || []).join('\n')) + '</textarea></div>' +
     '<div class="form-field" style="margin-top:12px"><label class="form-lbl">Cons (one per line)</label><textarea class="form-ta" id="e-cons" rows="3">' + esc((car.cons || []).join('\n')) + '</textarea></div></div>';
   }
@@ -882,6 +883,7 @@
       car.reviews = parseInt(g('e-reviews')) || 0;
       const ov = $('e-overview');
       car.overview = ov ? ov.value : '';
+      car.brochureUrl = g('e-brochure').trim();
 
       const pros = g('e-pros');
       const cons = g('e-cons');

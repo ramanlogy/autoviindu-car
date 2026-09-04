@@ -34,6 +34,10 @@
   function startApp() {
     let CARS_DB = window.CARS_DB || [];
     let USED = window.USED_CARS_DB || [];
+    // Admin-managed curated sections (Best Sellers, Upcoming, homepage & New Cars
+    // carousels). Populated by cars-data-loader.js before startApp runs; falls
+    // back to the hardcoded *_DEFAULTS below when absent.
+    const CURATED = window.CURATED || {};
     document.addEventListener('av:cars-updated', function() {
       USED = window.USED_CARS_DB || [];
       CARS_DB = window.CARS_DB || [];
@@ -438,7 +442,7 @@
       const db = CARS_DB;
       const evCars = db.filter(c => c.type === 'Electric');
       document.getElementById('app-root').innerHTML = window.buildHomePageHTML({
-        db, evCars, carCard, BRANDS, BUDGETS, HERO_SLIDES: getHeroSlides(), IC, UPCOMING_DATA, upcomingCard
+        db, evCars, carCard, BRANDS, BUDGETS, HERO_SLIDES: getHeroSlides(), IC, UPCOMING_DATA, upcomingCard, CURATED
       });
       updateCompareTray();
       updateCmpBtns();
@@ -1117,10 +1121,11 @@
       /* ── SVG icon paths (inner content only, wrapped by svgI()) ── */
       const _P = {
         cal: `<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>`,
-        fuel: `<path d="M3 22V6l4-4h6l4 4v16"/><path d="M9 22V12h6v10"/><rect x="17" y="10" width="4" height="4"/>`,
+        fuel: `<path d="M5 9.5A1.5 1.5 0 0 1 6.5 8h7A1.5 1.5 0 0 1 15 9.5v9A1.5 1.5 0 0 1 13.5 20h-7A1.5 1.5 0 0 1 5 18.5z"/><path d="M7 8V6.5A1.5 1.5 0 0 1 8.5 5h1A1.5 1.5 0 0 1 11 6.5V8"/><path d="M15 11h3l1.5 1.5V16"/><path d="M17 9.5h3"/><path d="M8 12.5h4"/>`,
         pow: `<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>`,
-        body: `<path d="M5 17H3v-5l2-5h14l2 5v5h-2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/><line x1="5" y1="12" x2="19" y2="12"/>`,
-        sts: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+        body: `<rect x="2" y="4.5" width="20" height="15" rx="4"/><path d="M5.5 15l1.5-3.5A2 2 0 0 1 8.9 10.2h6.2a2 2 0 0 1 1.9 1.3L18.5 15"/><path d="M4.5 15h15"/><circle cx="8" cy="15" r="1.1"/><circle cx="16" cy="15" r="1.1"/>`,
+        sts: `<path d="M7 20V9.5A4.5 4.5 0 0 1 11.5 5H12a2 2 0 0 1 2 2v6"/><path d="M7 13h9a2 2 0 0 1 2 2 2 2 0 0 1-2 2H7"/><path d="M7 20h11"/><path d="M10 5.5 15.5 18"/>`,
+        people: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
         box: `<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>`,
         list: `<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>`,
         feat: `<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>`,
@@ -1132,8 +1137,12 @@
         ph: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l1.84-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`,
         shield: `<path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/>`,
         batt: `<rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/>`,
-        gauge: `<path d="M4 12a8 8 0 0 1 16 0"/><path d="M12 12l4-4"/><circle cx="12" cy="12" r="1"/>`,
+        gauge: `<path d="M4 20V6.5A2.5 2.5 0 0 1 6.5 4h4A2.5 2.5 0 0 1 13 6.5V20"/><path d="M3 20h11"/><path d="M6.5 16.5v-2.5"/><path d="M9 16.5v-5"/><path d="M11 16.5v-3.5"/><path d="M13 8.5h2.2A1.8 1.8 0 0 1 17 10.3V15a1.5 1.5 0 0 0 3 0V9.5L18 7.5"/>`,
         gear: `<circle cx="12" cy="12" r="3"/><path d="M12 5v2M12 17v2M5 12h2M17 12h2M7.05 7.05l1.41 1.41M15.54 15.54l1.41 1.41M7.05 16.95l1.41-1.41M15.54 8.46l1.41-1.41"/>`,
+        steer: `<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.6"/><path d="M12 9.4V3.2"/><path d="M9.7 13.4 4.7 16.8"/><path d="M14.3 13.4 19.3 16.8"/>`,
+        chassis: `<circle cx="5.5" cy="6.5" r="1.6"/><circle cx="18.5" cy="6.5" r="1.6"/><circle cx="5.5" cy="17.5" r="1.6"/><circle cx="18.5" cy="17.5" r="1.6"/><path d="M7 6.5h10M7 17.5h10"/><path d="M12 6.5v11"/><circle cx="12" cy="12" r="2"/>`,
+        clipcar: `<rect x="4.5" y="4" width="15" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="3" rx="1"/><path d="M8 9.5l1 1 1.6-1.6"/><path d="M12.5 9.5h4"/><path d="M8 13l1 1 1.6-1.6"/><path d="M12.5 13h4"/><path d="M7.5 18.6l.9-1.7a1 1 0 0 1 .9-.6h5.4a1 1 0 0 1 .9.6l.9 1.7"/><path d="M7 18.6h10"/>`,
+        warntri: `<circle cx="12" cy="12" r="9"/><path d="M12 7.3l4.4 7.6a1 1 0 0 1-.9 1.5H8.5a1 1 0 0 1-.9-1.5z"/><path d="M12 10.8v2.2"/><path d="M12 15.2h.01"/>`,
         wrench: `<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>`,
       };
       const svgI = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${_P[k]}</svg>`;
@@ -1143,7 +1152,7 @@
         'Power': 'pow', 'Engine (cc)': 'pow', 'Engine + Motor combo': 'pow',
         'Battery (kWh)': 'batt', 'Charging Time': 'batt', 'Charging Time (N/A unless Plug-in)': 'batt',
         'Torque': 'wrench',
-        'Suspension': 'gear', 'Steering': 'gear', 'Transmission': 'gear',
+        'Suspension': 'gear', 'Steering': 'steer', 'Transmission': 'gear',
         'Seating': 'sts',
         'Fuel Type': 'fuel', 'Hybrid Type (Mild/Full/Plug-in)': 'fuel',
       };
@@ -1531,17 +1540,33 @@
     </div>
 
     <div style="margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;">
-      <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink4);margin-bottom:14px;">Popular Cars</div>
-      ${CARS_DB.filter(c => c.slug && c.slug !== slug).slice(0, 5).map(c => `
+      <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink4);margin-bottom:2px;">Popular Cars</div>
+      <div style="font-size:11px;color:var(--ink4);margin-bottom:12px;">Best-sellers in Nepal · 2025 YTD units</div>
+      ${(() => {
+        const cfg = CURATED.popularSidebar || {};
+        let rows;
+        if (cfg.mode === 'manual' && Array.isArray(cfg.slugs) && cfg.slugs.length) {
+          rows = cfg.slugs
+            .map((sl, i) => ({ b: { rank: i + 1, units: null }, c: CARS_DB.find(c => c.slug === sl) }));
+        } else {
+          rows = BESTSELLER_DATA.map(b => ({ b, c: b.slug ? CARS_DB.find(c => c.slug === b.slug) : null }));
+        }
+        return rows
+          .filter(x => x.c && x.c.slug !== slug)
+          .slice(0, 6)
+          .map(({ b, c }) => `
         <a href="#car/${c.slug}" style="display:flex;gap:12px;padding:8px 0;text-decoration:none;border-bottom:1px solid #f5f5f5;transition:background .15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
-          <img src="${(c.images && c.images[0]) || ''}" style="width:64px;height:44px;object-fit:cover;border-radius:6px;flex-shrink:0;">
+          <div style="flex-shrink:0;">
+            <img src="${(c.images && c.images[0]) || ''}" style="width:64px;height:44px;object-fit:cover;border-radius:6px;display:block;">
+          </div>
           <div style="display:flex;flex-direction:column;justify-content:center;min-width:0;">
             <div style="font-size:12.5px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${c.brand} ${c.model}</div>
-            <div style="font-size:12px;color:var(--g3);font-weight:600;">${window.Rs(c.variants?.[0]?.price || c.price)}</div>
+            <div style="font-size:11.5px;color:var(--ink4);font-weight:600;">${b.units != null ? b.units.toLocaleString('en-IN') + ' units · 2025 YTD' : 'Best-seller'}</div>
           </div>
         </a>
-      `).join('')}
-      <a href="#cars" style="display:block;text-align:center;font-size:12px;font-weight:700;color:var(--g3);text-decoration:none;margin-top:12px;padding-top:10px;border-top:1px solid #eee;">View All Cars &rarr;</a>
+      `).join('');
+      })()}
+      <a href="#bestseller" style="display:block;text-align:center;font-size:12px;font-weight:700;color:var(--g3);text-decoration:none;margin-top:12px;padding-top:10px;border-top:1px solid #eee;">View Full Best-Sellers List &rarr;</a>
     </div>`;
       }
 
@@ -1917,7 +1942,7 @@
       <div class="success-icon-pop">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
-      <div class="av-success-title" style="font-size:17px;font-weight:800;color:var(--ink);margin-bottom:8px">Test Drive Booked! 🚗</div>
+      <div class="av-success-title" style="font-size:17px;font-weight:800;color:var(--ink);margin-bottom:8px">Test Drive Booked! </div>
       <div class="av-success-sub" style="font-size:13px;color:var(--ink4);margin-bottom:16px">Our team will call you shortly to confirm your slot.</div>
       <button type="button" class="pill-submit" onclick="AV.closeTDModal()" style="max-width:180px;margin:0 auto">Done</button>
     </div>
@@ -2043,7 +2068,8 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       </div>
       <div class="av-success-title" style="font-size:17px;font-weight:800;color:var(--ink);margin-bottom:8px">Brochure Ready! 📄</div>
-      <div class="av-success-sub" style="font-size:13px;color:var(--ink4);margin-bottom:16px">Opening in a new tab. Use browser Print → Save as PDF.</div>
+      <div class="av-success-sub" id="br-success-sub" style="font-size:13px;color:var(--ink4);margin-bottom:16px">Opening in a new tab. Use browser Print → Save as PDF.</div>
+      <a id="br-manual-link" href="#" target="_blank" rel="noopener" style="display:none;font-size:13px;font-weight:700;color:var(--g3);margin-bottom:14px">Tap here if it didn't open ↗</a>
       <button type="button" class="cute-submit" onclick="AV.closeBrochureModal()" style="max-width:160px;margin:0 auto">Done</button>
     </div>
   </div>
@@ -2054,8 +2080,11 @@
 
       /* ── MODAL ACTION METHODS ── */
       AV.selectTDTime = function (timeStr, btn) {
-        document.querySelectorAll('#av-td-overlay .cute-time-btn').forEach(b => b.classList.remove('selected'));
-        if (btn) btn.classList.add('selected');
+        document.querySelectorAll('#av-td-overlay .pill-time-btn').forEach(b => {
+          b.classList.remove('selected');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        if (btn) { btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true'); }
         const inp = document.getElementById('td-time-val');
         if (inp) inp.value = timeStr;
       };
@@ -2082,6 +2111,15 @@
         /* Reset form & view */
         const form = document.getElementById('td-form');
         if (form) form.reset();
+        AV._tdDone = false;
+        const tdBtns = document.querySelectorAll('#av-td-overlay .pill-time-btn');
+        tdBtns.forEach((b, i) => {
+          b.classList.toggle('selected', i === 0);
+          b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+        });
+        const timeVal = document.getElementById('td-time-val'); if (timeVal) timeVal.value = '10:00 AM';
+        const sbtn = document.getElementById('td-submit-btn');
+        if (sbtn) { sbtn.disabled = false; sbtn.textContent = 'Confirm Test Drive Booking'; }
         const bw = document.getElementById('td-body-wrap'); if (bw) bw.style.display = 'block';
         const sw = document.getElementById('td-success-wrap'); if (sw) sw.style.display = 'none';
 
@@ -2121,35 +2159,46 @@
         if (!date || !date.value) { date && date.focus(); alert('Please choose a preferred date.'); return; }
 
         const btn = document.getElementById('td-submit-btn');
-        if (btn) { btn.disabled = true; btn.textContent = 'Submitting...'; }
+        if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
 
         const car = AV._targetModalCar;
         const carName = car ? (car.brand + ' ' + car.model + (car.year ? ' ' + car.year : '')) : (AV._targetModalSlug || 'Vehicle Test Drive');
 
-        fetch('/api/forms/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            type: 'testDrive',
-            formId: 'testDrive',
-            carModel: carName,
-            carSlug: AV._targetModalSlug,
-            name: name.value.trim(),
-            phone: phone.value.trim(),
-            email: email.value.trim(),
-            city: city ? city.value : '',
-            date: date.value,
-            time: time ? time.value : '9:00 AM',
-            message: msg ? msg.value.trim() : '',
-            timestamp: new Date().toISOString()
-          })
-        }).then(() => {
+        const showSuccess = function () {
+          if (AV._tdDone) return;
+          AV._tdDone = true;
           const bw = document.getElementById('td-body-wrap'); if (bw) bw.style.display = 'none';
           const sw = document.getElementById('td-success-wrap'); if (sw) sw.style.display = 'block';
-        }).catch(() => {
-          if (btn) { btn.disabled = false; btn.textContent = 'Confirm Test Drive Booking'; }
-          alert('Submission failed. Please call us directly: +977-9828364940');
-        });
+        };
+        AV._tdDone = false;
+
+        // Fire-and-forget: send it anyhow (keepalive lets it finish even if the
+        // page moves on). We never block the visitor or show an error — the
+        // spinner just runs briefly so the request has time to reach the server.
+        try {
+          fetch('/api/forms/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            keepalive: true,
+            body: JSON.stringify({
+              type: 'testDrive',
+              formId: 'testDrive',
+              carModel: carName,
+              carSlug: AV._targetModalSlug,
+              name: name.value.trim(),
+              phone: phone.value.trim(),
+              email: email.value.trim(),
+              city: city ? city.value : '',
+              date: date.value,
+              time: time ? time.value : '9:00 AM',
+              message: msg ? msg.value.trim() : '',
+              timestamp: new Date().toISOString()
+            })
+          }).catch(() => {});
+        } catch (err) { /* ignore */ }
+
+        // Keep the spinner up ~1.4s, then always confirm.
+        setTimeout(showSuccess, 1400);
       };
 
       AV.openBrochureModal = function (slug) {
@@ -2158,6 +2207,23 @@
         const car = (window.CARS_DB || []).find(x => x.slug === targetSlug);
         AV._brochureSlug = targetSlug;
         AV._brochureCar = car;
+
+        // Pull the full record (card-view entries lack brochureUrl) before we decide copy.
+        if (car && car.brochureUrl === undefined && window.AV_fetchCar) {
+          window.AV_fetchCar(targetSlug).then(function (full) {
+            if (full && AV._brochureSlug === targetSlug) { AV._brochureCar = full; applyBrochureCopy(full); }
+          }).catch(function () {});
+        }
+
+        function applyBrochureCopy(c) {
+          const sub = document.querySelector('#av-brochure-overlay .av-modal-sub');
+          if (!sub) return;
+          const hasOfficial = c && typeof c.brochureUrl === 'string' && /^https?:\/\//i.test(c.brochureUrl);
+          sub.textContent = hasOfficial
+            ? 'Opens the official manufacturer brochure — full specs, features & pricing'
+            : 'Full specs, features & pricing — free PDF';
+        }
+        applyBrochureCopy(car);
 
         const badge = document.getElementById('br-car-badge');
         if (badge) {
@@ -2203,6 +2269,7 @@
 
         const car = AV._brochureCar;
         const carName = car ? (car.brand + ' ' + car.model + (car.year ? ' ' + car.year : '')) : (AV._brochureSlug || 'Vehicle');
+        const officialUrl = (car && typeof car.brochureUrl === 'string' && /^https?:\/\//i.test(car.brochureUrl)) ? car.brochureUrl : '';
 
         // Log download to admin panel
         fetch('/api/forms/submit', {
@@ -2213,6 +2280,7 @@
             type: 'brochureDownload',
             carModel: carName,
             carSlug: AV._brochureSlug,
+            brochureSource: officialUrl ? 'official' : 'generated',
             name: name.value.trim(),
             email: email.value.trim(),
             phone: phone.value.trim(),
@@ -2221,8 +2289,20 @@
           })
         }).catch(() => {}); // fire-and-forget
 
-        // Generate and open the brochure
-        AV._generateBrochure(car, { name: name.value.trim(), email: email.value.trim(), phone: phone.value.trim() });
+        const successSub = document.getElementById('br-success-sub');
+        const manualLink = document.getElementById('br-manual-link');
+
+        if (officialUrl) {
+          // Real manufacturer brochure — open the PDF directly.
+          window.open(officialUrl, '_blank', 'noopener');
+          if (successSub) successSub.textContent = 'The official manufacturer brochure is opening in a new tab. If prompted, choose the ' + carName + ' model.';
+          if (manualLink) { manualLink.href = officialUrl; manualLink.style.display = 'inline-block'; }
+        } else {
+          // No official PDF on file — fall back to the generated spec sheet.
+          AV._generateBrochure(car, { name: name.value.trim(), email: email.value.trim(), phone: phone.value.trim() });
+          if (successSub) successSub.textContent = 'Opening in a new tab. Use browser Print → Save as PDF.';
+          if (manualLink) manualLink.style.display = 'none';
+        }
 
         const bw = document.getElementById('br-body-wrap'); if (bw) bw.style.display = 'none';
         const sw = document.getElementById('br-success-wrap'); if (sw) sw.style.display = 'block';
@@ -3235,63 +3315,72 @@ ${variants.length > 0 ? `
         });
       }
 
-      const rawSections = [
-        {
-          eyebrow: 'Hot right now', title: 'Trending Cars', sub: 'The most viewed and researched cars this week.',
-          filterOpts: { sort: 'rating', explore: false },
-          navTarget: 'cars',
-          cars: [...CARS_DB].sort((a, b) => (b.reviews || 0) - (a.reviews || 0)).slice(0, 12)
-        },
-        {
-          eyebrow: 'Value for money', title: 'Budget Friendly', sub: 'Great cars under Rs. 40 Lakhs.',
-          filterOpts: { budget: '40', explore: false },
-          navTarget: 'cars',
-          cars: CARS_DB.filter(c => c.variants && c.variants[0] && c.variants[0].price <= 4000000).slice(0, 12)
-        },
-        {
-          eyebrow: 'City smart', title: 'Popular Hatchbacks', sub: 'Compact, efficient, and easy to park.',
-          filterOpts: { filter: 'hatchback', explore: false },
-          navTarget: 'cars',
-          cars: CARS_DB.filter(c => c.body === 'Hatchback' || c.bodyType === 'hatchback').slice(0, 12)
-        },
-        {
-          eyebrow: 'Family adventures', title: 'Top SUVs', sub: 'Spacious, high ground clearance SUVs.',
-          filterOpts: { filter: 'suv', explore: false },
-          navTarget: 'cars',
-          cars: CARS_DB.filter(c => c.body === 'SUV' || c.bodyType === 'suv').slice(0, 12)
-        },
-        {
-          eyebrow: 'Premium segment', title: 'Luxury & Premium', sub: 'The finest vehicles available above Rs. 80 Lakhs.',
-          filterOpts: { budget: '80+', explore: false },
-          navTarget: 'cars',
-          cars: CARS_DB.filter(c => c.variants && c.variants[0] && c.variants[0].price >= 8000000).slice(0, 12)
-        },
-        {
-          eyebrow: 'Zero emissions', title: 'Electric Vehicles', sub: 'Future-ready EVs with great range for Nepal.',
-          filterOpts: { filter: 'electric', explore: false },
-          navTarget: 'cars',
-          cars: CARS_DB.filter(c => c.type === 'Electric').slice(0, 12)
-        },
-        {
-          eyebrow: 'Best of both', title: 'Hybrid Cars', sub: 'Excellent mileage without range anxiety.',
-          filterOpts: { filter: 'hybrid', explore: false },
-          navTarget: 'cars',
-          cars: CARS_DB.filter(c => c.type === 'Hybrid').slice(0, 12)
-        },
-        {
-          eyebrow: 'Coming soon', title: 'Upcoming Cars', sub: 'Expected launches, NAIMA debuts & pre-launch pricing.',
-          filterOpts: null,
-          navTarget: 'upcoming',
-          cars: null,
-          upcoming: UPCOMING_DATA.slice(0, 12)
-        }
-      ];
+      // Per-category defaults + the automatic car-selection rule for each id.
+      // Admins override title/eyebrow/sub, disable a category, or switch it to
+      // "manual" (a hand-picked slug list) from Admin → Sections. See CURATED.explore.
+      const EXPLORE_REGISTRY = {
+        trending:  { eyebrow: 'Hot right now', title: 'Trending Cars', sub: 'The most viewed and researched cars this week.',
+                     filterOpts: { sort: 'rating', explore: false },
+                     auto: db => [...db].sort((a, b) => (b.reviews || 0) - (a.reviews || 0)).slice(0, 12) },
+        budget:    { eyebrow: 'Value for money', title: 'Budget Friendly', sub: 'Great cars under Rs. 40 Lakhs.',
+                     filterOpts: { budget: '40', explore: false },
+                     auto: db => db.filter(c => c.variants && c.variants[0] && c.variants[0].price <= 4000000).slice(0, 12) },
+        hatchback: { eyebrow: 'City smart', title: 'Popular Hatchbacks', sub: 'Compact, efficient, and easy to park.',
+                     filterOpts: { filter: 'hatchback', explore: false },
+                     auto: db => db.filter(c => c.body === 'Hatchback' || c.bodyType === 'hatchback').slice(0, 12) },
+        suv:       { eyebrow: 'Family adventures', title: 'Top SUVs', sub: 'Spacious, high ground clearance SUVs.',
+                     filterOpts: { filter: 'suv', explore: false },
+                     auto: db => db.filter(c => c.body === 'SUV' || c.bodyType === 'suv').slice(0, 12) },
+        luxury:    { eyebrow: 'Premium segment', title: 'Luxury & Premium', sub: 'The finest vehicles available above Rs. 80 Lakhs.',
+                     filterOpts: { budget: '80+', explore: false },
+                     auto: db => db.filter(c => c.variants && c.variants[0] && c.variants[0].price >= 8000000).slice(0, 12) },
+        electric:  { eyebrow: 'Zero emissions', title: 'Electric Vehicles', sub: 'Future-ready EVs with great range for Nepal.',
+                     filterOpts: { filter: 'electric', explore: false },
+                     auto: db => db.filter(c => c.type === 'Electric').slice(0, 12) },
+        hybrid:    { eyebrow: 'Best of both', title: 'Hybrid Cars', sub: 'Excellent mileage without range anxiety.',
+                     filterOpts: { filter: 'hybrid', explore: false },
+                     auto: db => db.filter(c => c.type === 'Hybrid').slice(0, 12) },
+      };
+      const EXPLORE_DEFAULT_ORDER = ['trending', 'budget', 'hatchback', 'suv', 'luxury', 'electric', 'hybrid', 'upcoming'];
+      const exploreCfg = (CURATED.explore && Array.isArray(CURATED.explore) && CURATED.explore.length)
+        ? CURATED.explore
+        : EXPLORE_DEFAULT_ORDER.map(id => ({ id, mode: 'auto', enabled: true, type: id === 'upcoming' ? 'upcoming' : undefined }));
 
-      // Apply deduplication only to CARS_DB sections (not upcoming)
+      const rawSections = exploreCfg
+        .filter(cfg => cfg && cfg.enabled !== false && (EXPLORE_REGISTRY[cfg.id] || cfg.type === 'upcoming'))
+        .map(cfg => {
+          const reg = EXPLORE_REGISTRY[cfg.id] || {};
+          if (cfg.type === 'upcoming') {
+            return {
+              eyebrow: cfg.eyebrow || 'Coming soon',
+              title: cfg.title || 'Upcoming Cars',
+              sub: cfg.sub || 'Expected launches, NAIMA debuts & pre-launch pricing.',
+              filterOpts: null, navTarget: 'upcoming', cars: null,
+              upcoming: UPCOMING_DATA.slice(0, 12)
+            };
+          }
+          const isManual = cfg.mode === 'manual' && Array.isArray(cfg.slugs) && cfg.slugs.length;
+          const cars = isManual
+            ? cfg.slugs.map(sl => CARS_DB.find(c => c.slug === sl)).filter(Boolean).slice(0, 12)
+            : (reg.auto ? reg.auto(CARS_DB) : []);
+          return {
+            eyebrow: cfg.eyebrow || reg.eyebrow || '',
+            title: cfg.title || reg.title || '',
+            sub: cfg.sub || reg.sub || '',
+            filterOpts: reg.filterOpts || { explore: false },
+            navTarget: 'cars',
+            noDedupe: isManual,   // hand-picked lists are shown exactly as chosen
+            cars
+          };
+        });
+
+      // De-duplicate across the automatic sections so a car doesn't repeat down
+      // the page. Hand-picked ("manual") sections are left exactly as the admin set them.
       const sections = rawSections.map(s => {
-        if (s.cars !== null) {
+        if (s.cars !== null && !s.noDedupe) {
           return { ...s, cars: dedupe(s.cars) };
         }
+        if (s.cars !== null) { s.cars.forEach(c => seenSlugs.add(c.slug)); }
         return s;
       }).filter(s => s.cars === null ? (s.upcoming && s.upcoming.length > 0) : s.cars.length > 0);
 
@@ -3585,7 +3674,10 @@ ${variants.length > 0 ? `
         <button type="button" onclick="AV.sfClear()" class="btn btn-primary">Clear Filters</button>
       </div>
     </div>
-  </div>`;
+  </div>
+  ${(!filter || filter === 'Latest Arrivals')
+      ? tryNextStrip(tryNextDefaults(filter === 'Latest Arrivals' ? 'latest' : 'cars'), { pad: '8px 0 56px', bg: 'border-top:1px solid var(--border)' })
+      : ''}`;
       _bindFilterSidebar('sf', _sfApply);
       _sfApply();
       updateCompareTray();
@@ -4991,16 +5083,7 @@ ${variants.length > 0 ? `
         <div class="lf-empty-sub">Try widening price range or year</div>
         <button type="button" onclick="AV.ufClear()" class="btn btn-primary">Clear Filters</button>
       </div>
-      <div class="uc-sell-cta">
-        <div class="uc-sell-cta-in">
-          <div>
-            <div class="uc-sell-eyebrow">Sell your car</div>
-            <div class="uc-sell-title">Know your car's true worth</div>
-            <div class="uc-sell-sub">Free valuation \u00b7 Physical Inspection \u00b7 End to End Hassle-free process</div>
-          </div>
-          <button type="button" onclick="window.location.href='/sellyourcar'" class="btn btn-primary">Get Started  →</button>
-        </div>
-      </div>
+      ${chipBox({ title: 'How can we<br>help you?', chips: siteServiceChips() })}
     </div>
   </div>`;
       _bindFilterSidebar('uf', _ufApply);
@@ -5203,10 +5286,11 @@ ${variants.length > 0 ? `
       /* ── SVG icon paths ── */
       const _P = {
         cal: `<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>`,
-        fuel: `<path d="M3 22V6l4-4h6l4 4v16"/><path d="M9 22V12h6v10"/><rect x="17" y="10" width="4" height="4"/>`,
+        fuel: `<path d="M5 9.5A1.5 1.5 0 0 1 6.5 8h7A1.5 1.5 0 0 1 15 9.5v9A1.5 1.5 0 0 1 13.5 20h-7A1.5 1.5 0 0 1 5 18.5z"/><path d="M7 8V6.5A1.5 1.5 0 0 1 8.5 5h1A1.5 1.5 0 0 1 11 6.5V8"/><path d="M15 11h3l1.5 1.5V16"/><path d="M17 9.5h3"/><path d="M8 12.5h4"/>`,
         pow: `<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>`,
-        body: `<path d="M5 17H3v-5l2-5h14l2 5v5h-2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/><line x1="5" y1="12" x2="19" y2="12"/>`,
-        sts: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+        body: `<rect x="2" y="4.5" width="20" height="15" rx="4"/><path d="M5.5 15l1.5-3.5A2 2 0 0 1 8.9 10.2h6.2a2 2 0 0 1 1.9 1.3L18.5 15"/><path d="M4.5 15h15"/><circle cx="8" cy="15" r="1.1"/><circle cx="16" cy="15" r="1.1"/>`,
+        sts: `<path d="M7 20V9.5A4.5 4.5 0 0 1 11.5 5H12a2 2 0 0 1 2 2v6"/><path d="M7 13h9a2 2 0 0 1 2 2 2 2 0 0 1-2 2H7"/><path d="M7 20h11"/><path d="M10 5.5 15.5 18"/>`,
+        people: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
         box: `<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>`,
         list: `<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>`,
         feat: `<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>`,
@@ -5214,8 +5298,12 @@ ${variants.length > 0 ? `
         chev: `<polyline points="6 9 12 15 18 9"/>`,
         ph: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l1.84-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`,
         calc: `<rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/>`,
-        gauge: `<path d="M4 12a8 8 0 0 1 16 0"/><path d="M12 12l4-4"/><circle cx="12" cy="12" r="1"/>`,
+        gauge: `<path d="M4 20V6.5A2.5 2.5 0 0 1 6.5 4h4A2.5 2.5 0 0 1 13 6.5V20"/><path d="M3 20h11"/><path d="M6.5 16.5v-2.5"/><path d="M9 16.5v-5"/><path d="M11 16.5v-3.5"/><path d="M13 8.5h2.2A1.8 1.8 0 0 1 17 10.3V15a1.5 1.5 0 0 0 3 0V9.5L18 7.5"/>`,
         gear: `<circle cx="12" cy="12" r="3"/><path d="M12 5v2M12 17v2M5 12h2M17 12h2M7.05 7.05l1.41 1.41M15.54 15.54l1.41 1.41M7.05 16.95l1.41-1.41M15.54 8.46l1.41-1.41"/>`,
+        steer: `<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.6"/><path d="M12 9.4V3.2"/><path d="M9.7 13.4 4.7 16.8"/><path d="M14.3 13.4 19.3 16.8"/>`,
+        chassis: `<circle cx="5.5" cy="6.5" r="1.6"/><circle cx="18.5" cy="6.5" r="1.6"/><circle cx="5.5" cy="17.5" r="1.6"/><circle cx="18.5" cy="17.5" r="1.6"/><path d="M7 6.5h10M7 17.5h10"/><path d="M12 6.5v11"/><circle cx="12" cy="12" r="2"/>`,
+        clipcar: `<rect x="4.5" y="4" width="15" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="3" rx="1"/><path d="M8 9.5l1 1 1.6-1.6"/><path d="M12.5 9.5h4"/><path d="M8 13l1 1 1.6-1.6"/><path d="M12.5 13h4"/><path d="M7.5 18.6l.9-1.7a1 1 0 0 1 .9-.6h5.4a1 1 0 0 1 .9.6l.9 1.7"/><path d="M7 18.6h10"/>`,
+        warntri: `<circle cx="12" cy="12" r="9"/><path d="M12 7.3l4.4 7.6a1 1 0 0 1-.9 1.5H8.5a1 1 0 0 1-.9-1.5z"/><path d="M12 10.8v2.2"/><path d="M12 15.2h.01"/>`,
         wrench: `<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>`,
         shield: `<path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/>`,
       };
@@ -5223,18 +5311,18 @@ ${variants.length > 0 ? `
 
       const ICON_FOR_UC_LABEL = {
         'Body Type': 'body',
-        'Powertrain': 'pow',
+        'Powertrain': 'chassis',
         'Ground Clearance': 'box',
         'Mileage/Range (Real-World)': 'gauge',
         'Odometer Reading (km)': 'gauge',
         'Fuel Type': 'fuel',
         'Transmission': 'gear',
-        'Drivetrain': 'gear',
+        'Drivetrain': 'chassis',
         'Seating Capacity': 'sts',
         'Boot Space (Liters)': 'box',
-        'Service History': 'wrench',
-        'Number of Owners': 'sts',
-        'Accident History': 'shield',
+        'Service History': 'clipcar',
+        'Number of Owners': 'people',
+        'Accident History': 'warntri',
         'Condition Grade (A/B/C/D)': 'shield',
       };
       const iconForUcCell = lbl => lbl === 'Safety Rating' ? IC.star : svgI(ICON_FOR_UC_LABEL[lbl] || 'feat');
@@ -6113,13 +6201,16 @@ ${variants.length > 0 ? `
     /* Note: NAIMA Nepal Mobility Expo 2026 (Aug 11–16) has already taken place. Proton e.MAS 7, Deepal S05,
        Chery Q (QQ3), Leapmotor A10 (B03X), Tata Punch.ev/Tiago.ev facelifts, BAIC BJ30e Hybrid, and Arcfox T1
        have all launched with confirmed Nepal pricing and now live in CARS_DB / Latest Arrivals instead. */
-    const UPCOMING_DATA = [
+    const UPCOMING_DEFAULTS = [
       { brand: 'AION', model: 'UT', slug: 'aion-ut', status: 'Expected Soon', statusCls: 'expect', price: 'Expected Rs. 60L – 75L', body: 'Hatchback', fuel: 'Electric', img: 'assets/images/car_images/aion/ut/exterior/UT_EXT_GREEN-WHITE.webp', eta: 'TBD' },
       { brand: 'Omoda', model: '4', slug: 'omoda-4', status: 'Shown at NAIMA 2026', statusCls: 'expo', price: 'TBD', body: 'SUV', fuel: 'Electric', img: 'assets/images/car_images/chery/omoda-4/exterior/download (1).jpeg', eta: 'TBD' },
       { brand: 'Jetour', model: 'T2', slug: 'jetour-t2', status: 'Expected Soon', statusCls: 'expect', price: 'TBD', body: 'SUV', fuel: 'Petrol', img: 'assets/images/car_images/jetour /t2/exterior/download.jpeg', eta: 'TBD' },
       { brand: 'Toyota', model: 'RAV4 Hybrid', slug: 'toyota-rav4-hybrid', status: 'Launching Soon', statusCls: 'launch', price: 'Expected Rs. 2.07Cr – 2.2Cr', body: 'SUV', fuel: 'Hybrid', img: 'assets/images/car_images/toyota/rav4/exterior/2026-toyota-rav4-limited-352-68f0e7f67ae2b.avif', eta: 'Oct–Nov 2026' },
       { brand: 'Hongqi', model: 'E-HS9', slug: 'hongqi-e-hs9', status: 'Expected Soon', statusCls: 'expect', price: 'TBD', body: 'SUV', fuel: 'Electric', img: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=400', eta: 'TBD' },
     ];
+    const UPCOMING_DATA = (CURATED.upcoming && Array.isArray(CURATED.upcoming.rows) && CURATED.upcoming.rows.length)
+      ? CURATED.upcoming.rows
+      : UPCOMING_DEFAULTS;
 
     function upcomingCard(u) {
       const dbCar = CARS_DB.find(c => c.slug === u.slug);
@@ -6158,13 +6249,16 @@ ${variants.length > 0 ? `
       const launchingSoon = UPCOMING_DATA.filter(u => u.statusCls === 'launch');
       const expected = UPCOMING_DATA.filter(u => u.statusCls === 'expect');
       const expo = UPCOMING_DATA.filter(u => u.statusCls === 'expo');
+      const upCfg = CURATED.upcoming || {};
+      const upTitle = upCfg.title || 'Upcoming Cars in Nepal 2025–26';
+      const upSub = upCfg.sub || 'Expected launches, NAIMA Expo debuts & pre-launch pricing. Be the first to know before they hit showrooms.';
 
       document.getElementById('app-root').innerHTML = `
       <div class="page-hero">
         <div class="wrap">
           <div class="breadcrumb"><a onclick="AV.goTo('home')">Home</a><span class="bc-sep">/</span><span style="color:var(--ink3)">Upcoming Cars</span></div>
-          <h1 style="font-family:var(--font-d);font-size:clamp(22px,4vw,34px);color:var(--ink);font-weight:700;margin-bottom:6px">Upcoming Cars in Nepal 2025–26</h1>
-          <p style="font-size:14px;color:var(--ink3);max-width:560px">Expected launches, NAIMA Expo debuts & pre-launch pricing. Be the first to know before they hit showrooms.</p>
+          <h1 style="font-family:var(--font-d);font-size:clamp(22px,4vw,34px);color:var(--ink);font-weight:700;margin-bottom:6px">${upTitle}</h1>
+          <p style="font-size:14px;color:var(--ink3);max-width:560px">${upSub}</p>
         </div>
       </div>
       <div class="wrap" style="padding-top:32px;padding-bottom:48px">
@@ -6174,49 +6268,148 @@ ${variants.length > 0 ? `
     }
 
 
-    /* ─ BEST SELLERS ─ */
-    const BESTSELLER_DATA = [
-      // Real Nepal market bestsellers — slugs match actual cars.json entries
-      { slug: 'suzuki-swift-2025', rank: 1, units: '4,200+', share: '8.1%', tag: '#1 Hatchback', why: 'Nepal\'s most iconic & trusted city car since 2007' },
-      { slug: 'hyundai-creta-fl-2024', rank: 2, units: '3,800+', share: '7.3%', tag: '#1 Mid-SUV', why: 'Nepal\'s best-selling mid-size SUV for 5 consecutive years' },
-      { slug: 'suzuki-grand-vitara-2025', rank: 3, units: '3,400+', share: '6.5%', tag: 'Top Hybrid SUV', why: 'Most popular hybrid SUV; strong resale value' },
-      { slug: 'toyota-fortuner-2024', rank: 4, units: '2,900+', share: '5.6%', tag: 'Prestige SUV', why: 'Premium hilly-road SUV; top fleet & business choice' },
-      { slug: 'hyundai-grand-i10-nios-fl-2024', rank: 5, units: '2,700+', share: '5.2%', tag: 'Budget Fav', why: 'Most affordable Hyundai; top Kathmandu taxi & family choice' },
-      { slug: 'suzuki-wagon-r-2025', rank: 6, units: '2,500+', share: '4.8%', tag: 'Family Compact', why: 'Tallboy design loved by Nepalese families for urban travel' },
-      { slug: 'byd-atto-3-2025', rank: 7, units: '2,200+', share: '4.2%', tag: '#1 EV SUV', why: 'Best-selling electric SUV; pioneer of Nepal EV boom' },
-      { slug: 'toyota-hilux-2024', rank: 8, units: '2,100+', share: '4.0%', tag: '#1 Pickup', why: 'Unmatched for Nepal\'s mountain roads; commercial staple' },
-      { slug: 'kia-seltos-2025', rank: 9, units: '1,900+', share: '3.7%', tag: 'Top Compact SUV', why: 'Premium features at mid-range price; youth favourite' },
-      { slug: 'hyundai-ioniq-5-2024', rank: 10, units: '1,600+', share: '3.1%', tag: 'Top EV', why: 'Nepal\'s most awarded EV; 800V fast charge + V2L' },
-      { slug: 'suzuki-swift-epic-2024', rank: 11, units: '1,500+', share: '2.9%', tag: 'City Staple', why: 'Most fuel-efficient petrol hatchback in its class' },
-      { slug: 'suzuki-jimny-2025', rank: 12, units: '1,400+', share: '2.7%', tag: 'Cult Off-Road', why: 'Most sought-after lifestyle off-roader; strong resale' },
-      { slug: 'byd-dolphin-2025', rank: 13, units: '1,300+', share: '2.5%', tag: 'City EV', why: 'Most affordable city EV with impressive 340 km range' },
-      { slug: 'toyota-land-cruiser-prado-250-2024', rank: 14, units: '1,100+', share: '2.1%', tag: 'Luxury GC', why: 'Premium Prado; preferred by government & executives' },
-      { slug: 'mahindra-scorpio-n-2025', rank: 15, units: '1,000+', share: '1.9%', tag: 'Value SUV', why: 'Body-on-frame SUV at an accessible price point' },
+    /* ─ BEST SELLERS ─ Nepal 2025 year-to-date registrations (units).
+       `slug` links to the catalogue detail page; `null` = model not yet in
+       the catalogue (rendered as a non-clickable row until it is added). */
+    const BESTSELLER_DEFAULTS = [
+      { rank: 1,  slug: 'byd-atto-2-2025',       brand: 'BYD',       model: 'Atto 2',     units: 2264, tag: '#1 Overall',      why: "Nepal's best-selling new car of 2025 — compact electric SUV with Cell-to-Body battery tech" },
+      { rank: 2,  slug: 'byd-atto-1-2025',       brand: 'BYD',       model: 'Atto 1',     units: 1299, tag: '#1 City EV',      why: 'Affordable entry-level EV; the value pick for first-time electric buyers' },
+      { rank: 3,  slug: 'tata-tigor-ev-2025',    brand: 'Tata',      model: 'Tigor EV',   units: 1002, tag: 'Fleet Favourite', why: 'Compact electric sedan; a staple of Kathmandu ride-hailing and office fleets' },
+      { rank: 4,  slug: 'hyundai-creta-fl-2024', brand: 'Hyundai',   model: 'Creta',      units: 793,  tag: '#1 Petrol/ICE',  why: 'The top-selling non-EV in Nepal; locally assembled mid-size SUV' },
+      { rank: 5,  slug: 'deepal-s05-2025',       brand: 'Deepal',    model: 'S05',        units: 785,  tag: 'Rising Star',     why: "Feature-loaded electric SUV from Changan's Deepal brand" },
+      { rank: 6,  slug: 'dongfeng-nammi-vigo-2025', brand: 'Dongfeng', model: 'Nammi Vigo', units: 687, tag: 'Value EV SUV',  why: '350 km range, 12.8" screen and a 360° camera at a sharp price point' },
+      { rank: 7,  slug: 'tata-punch-ev-2026',    brand: 'Tata',      model: 'Punch EV',   units: 516,  tag: 'Micro-SUV EV',    why: "Tata's sub-compact electric SUV — an easy, high-riding city runabout" },
+      { rank: 8,  slug: 'icaur-v23-2025',        brand: 'iCAUR',     model: 'V23',        units: 512,  tag: 'Boxy Lifestyle',  why: "Retro-boxy electric SUV from Chery's iCAUR sub-brand" },
+      { rank: 9,  slug: 'kia-sonet-2025',        brand: 'Kia',       model: 'Sonet',      units: 473,  tag: 'Top Sub-4m SUV',  why: 'Petrol/diesel sub-compact SUV with a long, loaded feature list' },
+      { rank: 10, slug: 'byd-sealion-7-2025',    brand: 'BYD',       model: 'Sealion 7',  units: 446,  tag: 'Premium EV SUV',  why: 'Performance-oriented mid-size electric SUV' },
+      { rank: 11, slug: 'omoda-e5-ev',           brand: 'Omoda',     model: 'E5',         units: 294,  tag: 'Style Pick',      why: "Coupe-styled electric SUV from Chery's Omoda brand" },
+      { rank: 12, slug: 'kia-seltos-2025',       brand: 'Kia',       model: 'Seltos',     units: 291,  tag: 'Compact SUV',     why: 'Long-running compact SUV; petrol, diesel and turbo options' },
+      { rank: 13, slug: 'byd-atto-3-2025',       brand: 'BYD',       model: 'Atto 3',     units: 257,  tag: 'EV Pioneer',      why: "The car that kick-started Nepal's EV boom" },
+      { rank: 14, slug: 'dongfeng-nammi-01-2025', brand: 'Dongfeng', model: 'Nammi 01',   units: 250,  tag: 'City EV',         why: 'Compact electric hatchback built for tight city streets' },
+      { rank: 15, slug: 'jaecoo-j5-2025',        brand: 'Jaecoo',    model: 'J5',         units: 212,  tag: 'Premium EV',      why: 'Upmarket electric SUV with up to 461 km of claimed range' },
+      { rank: 16, slug: 'jaecoo-j6-2025',        brand: 'Jaecoo',    model: 'J6',         units: 189,  tag: 'Boxy Premium EV', why: 'Squared-off electric SUV with rugged, off-road-inspired styling' },
+      { rank: 17, slug: 'tata-nexon-k3-ev-2026', brand: 'Tata',      model: 'Nexon EV',   units: 174,  tag: 'Established EV',   why: "Facelifted Nexon.ev — one of Nepal's most familiar EV names" },
+      { rank: 18, slug: 'mg-s5-ev-2025',         brand: 'MG',        model: 'S5 EV',      units: 140,  tag: 'RWD EV SUV',      why: "Rear-wheel-drive electric SUV on MG's Modular Scalable Platform" },
+      { rank: 19, slug: 'leapmotor-b10-2025',    brand: 'Leapmotor', model: 'B10',        units: 137,  tag: 'New Entry',       why: "Tech-loaded compact electric SUV — Leapmotor's volume model" },
     ];
+    const BESTSELLER_DATA = ((CURATED.bestsellers && Array.isArray(CURATED.bestsellers.rows) && CURATED.bestsellers.rows.length)
+      ? CURATED.bestsellers.rows
+      : BESTSELLER_DEFAULTS).map((r, i) => Object.assign({}, r, { rank: r.rank || i + 1 }));
 
     function bestsellerCard(item, idx) {
-      const car = CARS_DB.find(c => c.slug === item.slug);
-      if (!car) return '';
-      const img = car.images && car.images[0] ? car.images[0] : '';
-      const price = car.variants && car.variants[0] ? window.Rs(car.variants[0].price) : 'On Request';
+      const car = item.slug ? CARS_DB.find(c => c.slug === item.slug) : null;
+      const img = car && car.images && car.images[0] ? car.images[0] : '';
+      const price = car && car.variants && car.variants[0] ? window.Rs(car.variants[0].price) : '';
       const rankColors = ['#f59e0b', '#94a3b8', '#cd7c3a'];
       const rankColor = idx < 3 ? rankColors[idx] : 'var(--ink4)';
+      const brand = car ? car.brand : item.brand;
+      const model = car ? car.model : item.model;
+      const clickable = !!car;
+      const units = (item.units != null && item.units !== '') ? Number(item.units).toLocaleString('en-IN') : '';
       return `
-      <div style="display:flex;gap:16px;align-items:flex-start;padding:18px;background:var(--bg);border:1px solid var(--border);border-radius:16px;cursor:pointer;transition:box-shadow .2s,transform .2s" onclick="AV.openDetail('${car.slug}')" onmouseenter="this.style.boxShadow='0 8px 28px rgba(0,0,0,.10)';this.style.transform='translateY(-2px)'" onmouseleave="this.style.boxShadow='none';this.style.transform='none'">
+      <div style="display:flex;gap:16px;align-items:flex-start;padding:18px;background:var(--bg);border:1px solid var(--border);border-radius:16px;transition:box-shadow .2s,transform .2s${clickable ? ';cursor:pointer' : ''}"${clickable ? ` onclick="AV.openDetail('${car.slug}')" onmouseenter="this.style.boxShadow='0 8px 28px rgba(0,0,0,.10)';this.style.transform='translateY(-2px)'" onmouseleave="this.style.boxShadow='none';this.style.transform='none'"` : ''}>
         <div style="font-size:28px;font-weight:800;color:${rankColor};min-width:40px;text-align:center;line-height:1">#${item.rank}</div>
-        <img src="${img}" alt="${car.brand} ${car.model}" style="width:100px;height:70px;object-fit:cover;border-radius:10px;flex-shrink:0" loading="lazy">
+        ${img
+          ? `<img src="${img}" alt="${brand} ${model}" style="width:100px;height:70px;object-fit:cover;border-radius:10px;flex-shrink:0" loading="lazy">`
+          : `<div style="width:100px;height:70px;border-radius:10px;flex-shrink:0;background:var(--white);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;color:var(--ink4);font-size:10px;font-weight:600;text-align:center;line-height:1.3">Detail<br>page soon</div>`}
         <div style="flex:1;min-width:0">
           <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px">
-            <div style="font-size:15px;font-weight:700;color:var(--ink1)">${car.brand} ${car.model}</div>
+            <div style="font-size:15px;font-weight:700;color:var(--ink1)">${brand} ${model}</div>
             <span style="font-size:10px;font-weight:700;padding:2px 8px;background:rgba(99,102,241,.12);color:#6366f1;border-radius:99px">${item.tag}</span>
           </div>
           <div style="font-size:12px;color:var(--ink3);margin-bottom:6px">${item.why}</div>
-          <div style="display:flex;gap:16px;flex-wrap:wrap">
-            <span style="font-size:12px;font-weight:600;color:var(--brand)">${price}</span>
-            <span style="font-size:12px;color:var(--ink4)">~${item.units} units/yr · ${item.share} market share</span>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:baseline">
+            ${units ? `<span style="font-size:13px;font-weight:800;color:var(--ink1)">${units} <span style="font-size:11px;font-weight:600;color:var(--ink4)">units · 2025 YTD</span></span>` : ''}
+            ${price ? `<span style="font-size:12px;font-weight:600;color:var(--brand)">${price}</span>` : ''}
           </div>
         </div>
       </div>`;
+    }
+
+    /* ─ "Try these next" — a compact row of quick links to other useful
+       pages / filtered views, shown at the foot of landing-style pages.
+       `items`: [{ icon | img, tint, title, sub, action }].
+       When `img` is set the card shows a real car photo instead of an icon. */
+    function tryNextStrip(items, opts) {
+      opts = opts || {};
+      return `
+      <section style="padding:${opts.pad || '44px 0 8px'};${opts.bg || ''}">
+        <div class="wrap">
+          <div class="try-next">
+            <h2 class="try-next-hd">${opts.heading || 'Try these next'}</h2>
+            <div class="try-next-cards">
+              ${items.map(it => `
+              <button type="button" class="try-next-card" onclick="${it.action}">
+                ${it.img
+                  ? `<span class="try-next-media"><img src="${it.img}" alt="${it.title}" loading="lazy" onerror="this.closest('.try-next-media').classList.add('is-empty');this.remove()"></span>`
+                  : `<span class="try-next-ico"><i data-lucide="${it.icon}"></i></span>`}
+                <span class="try-next-txt">
+                  <span class="try-next-title">${it.title}</span>
+                  ${it.sub ? `<span class="try-next-sub">${it.sub}</span>` : ''}
+                </span>
+                <svg class="try-next-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>`).join('')}
+            </div>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    /* Default link set for the "Try these next" strip. `exclude` skips the
+       entry whose key matches the current page so it never links to itself. */
+    function tryNextDefaults(exclude) {
+      const evList = (CARS_DB || []).filter(c => c.type === 'Electric');
+      const up = (typeof UPCOMING_DATA !== 'undefined' ? UPCOMING_DATA : []);
+      const firstImg = list => {
+        const hit = (list || []).find(c => (c.images && c.images[0]) || c.img || c.thumb);
+        return hit ? ((hit.images && hit.images[0]) || hit.img || hit.thumb) : '';
+      };
+      const latestList = [...(CARS_DB || [])]
+        .filter(c => c.year >= 2024)
+        .sort((a, b) => (b.year || 0) - (a.year || 0) || (b.reviews || 0) - (a.reviews || 0));
+
+      const all = [
+        { key: 'latest',     img: firstImg(latestList), icon: 'sparkles',          title: 'Latest Arrivals',  sub: 'Just-landed models', action: "AV.goTo('latest')" },
+        { key: 'bestseller', icon: 'trophy',                                       title: 'Best Sellers',     sub: 'Ranked by 2025 sales', action: "AV.goTo('bestseller')" },
+        { key: 'electric',   img: firstImg(evList),  icon: 'zap',                  title: 'Electric Cars',    sub: evList.length ? evList.length + ' EV models' : 'Browse all EVs', action: "AV.goTo('cars',{filter:'electric'})" },
+        { key: 'upcoming',   img: firstImg(up),      icon: 'calendar-clock',       title: 'Upcoming Cars',    sub: up.length ? up.length + ' launching soon' : 'Expected launches', action: "AV.goTo('upcoming')" },
+        { key: 'cars',       icon: 'sliders-horizontal',                           title: 'Browse All Cars',  sub: 'Filter by budget & more', action: "AV.goTo('cars',{explore:true})" },
+        { key: 'compare',    icon: 'git-compare',                                  title: 'Compare Cars',     sub: 'Side-by-side specs', action: "AV.goTo('compare')" },
+      ];
+      return all.filter(it => it.key !== exclude).slice(0, 4);
+    }
+
+    /* ─ Chip box — bold heading + a wrap of navigation pills that jump to
+       different sections of the site. `chips`: [{ label, href } | { label, onclick }] */
+    function chipBox(opts) {
+      opts = opts || {};
+      const chips = (opts.chips || []).map(c => {
+        const handler = c.onclick || `window.location.href='${c.href}'`;
+        return `<button type="button" class="chipbox-chip" onclick="${handler}">${c.label}</button>`;
+      }).join('');
+      return `
+      <div class="uc-chipbox">
+        <div class="chipbox">
+          <div class="chipbox-hd">
+            <span class="chipbox-spark"><i data-lucide="${opts.icon || 'sparkles'}"></i></span>
+            <h2 class="chipbox-title">${opts.title || 'How can we help?'}</h2>
+          </div>
+          <div class="chipbox-chips">${chips}</div>
+        </div>
+      </div>`;
+    }
+
+    /* Site-wide service / action shortcuts used by the used-cars chip box. */
+    function siteServiceChips() {
+      return [
+        { label: 'Sell or trade your car', href: '/sellyourcar' },
+        { label: 'Insurance & financing',  href: '/insurance-finance' },
+        { label: 'Maintenance & repairs',  href: '/maintenance-repairs' },
+        { label: 'Parts & accessories',    href: '/parts-accessories' },
+        { label: 'DOTM & registration',    href: '/dotm-services' },
+        { label: 'Book a service',         href: '/book-service' },
+        { label: 'EMI calculator',         href: '/caremi' },
+      ];
     }
 
     /* ─ NEW CARS LANDING PAGE ─ */
@@ -6373,38 +6566,41 @@ ${variants.length > 0 ? `
     }
 
     function renderBestSeller() {
-      document.title = 'Best Sellers in Nepal 2025 — AutoViindu';
+      document.title = 'Best Sellers in Nepal 2025 (YTD) — AutoViindu';
       setNav('bestseller');
+
+      const bsTotal = BESTSELLER_DATA.reduce((s, b) => s + (Number(b.units) || 0), 0);
+      const bsIceModels = ['Creta', 'Sonet', 'Seltos'];
+      const bsEvUnits = BESTSELLER_DATA.filter(b => !bsIceModels.includes(b.model)).reduce((s, b) => s + (Number(b.units) || 0), 0);
+      const bsEvPct = bsTotal ? Math.round((bsEvUnits / bsTotal) * 100) : 0;
+      const bsTop = BESTSELLER_DATA[0] || { brand: '', model: '' };
 
       document.getElementById('app-root').innerHTML = `
       <div class="page-hero">
         <div class="wrap">
           <div class="breadcrumb"><a onclick="AV.goTo('home')">Home</a><span class="bc-sep">/</span><span style="color:var(--ink-3)">Best Sellers</span></div>
-          <h1 style="font-family:var(--font-d);font-size:clamp(22px,4vw,34px);color:var(--ink);font-weight:700;margin-bottom:6px">Best Sellers in Nepal 2025</h1>
-          <p style="font-size:14px;color:var(--ink-3);max-width:560px">Nepal's most loved & trusted cars ranked by sales volume, market share, and owner satisfaction. Updated 2025.</p>
+          <h1 style="font-family:var(--font-d);font-size:clamp(22px,4vw,34px);color:var(--ink);font-weight:700;margin-bottom:6px">${(CURATED.bestsellers && CURATED.bestsellers.title) || 'Best Sellers in Nepal — 2025 YTD'}</h1>
+          <p style="font-size:14px;color:var(--ink-3);max-width:560px">${(CURATED.bestsellers && CURATED.bestsellers.sub) || "Nepal's top-selling new cars, ranked by 2025 year-to-date registrations. Electric models now dominate the top of the chart."}</p>
           <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:18px">
-            <div style="text-align:center"><div style="font-size:24px;font-weight:800;color:#f59e0b">52,000+</div><div style="font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.5px">New Cars Sold (2024)</div></div>
+            <div style="text-align:center"><div style="font-size:24px;font-weight:800;color:#f59e0b">${bsTotal.toLocaleString('en-IN')}</div><div style="font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.5px">Units — Top 19 (2025 YTD)</div></div>
             <div style="width:1px;background:rgba(255,255,255,.15)"></div>
-            <div style="text-align:center"><div style="font-size:24px;font-weight:800;color:#10b981">38%</div><div style="font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.5px">SUV Market Share</div></div>
+            <div style="text-align:center"><div style="font-size:24px;font-weight:800;color:#10b981">${bsEvPct}%</div><div style="font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.5px">EVs in the Top 19</div></div>
             <div style="width:1px;background:rgba(255,255,255,.15)"></div>
-            <div style="text-align:center"><div style="font-size:24px;font-weight:800;color:#6366f1">12%</div><div style="font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.5px">EV Growth YoY</div></div>
+            <div style="text-align:center"><div style="font-size:24px;font-weight:800;color:#6366f1">${bsTop.brand} ${bsTop.model}</div><div style="font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.5px">Best-seller of 2025</div></div>
           </div>
         </div>
       </div>
       <div class="wrap" style="padding-top:32px;padding-bottom:48px">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px">
           <span style="width:4px;height:28px;background:var(--brand);border-radius:2px;display:block"></span>
-          <div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--brand)">Ranked by sales</div><div style="font-size:20px;font-weight:700;color:var(--ink1)">Top 15 Cars — Nepal 2025</div></div>
+          <div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--brand)">Ranked by registrations</div><div style="font-size:20px;font-weight:700;color:var(--ink1)">Top 19 Cars — Nepal 2025 YTD</div></div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:40px">
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px">
           ${BESTSELLER_DATA.map((item, i) => bestsellerCard(item, i)).join('')}
         </div>
-        <div style="background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:20px;padding:28px 24px">
-          <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px"><i data-lucide="trophy"></i> Want to browse all cars?</div>
-          <div style="font-size:13px;color:var(--ink-3);margin-bottom:16px">Filter by body type, budget, fuel type and more</div>
-          <button class="btn btn-primary" onclick="AV.goTo('cars')" style="border-radius:99px;padding:10px 24px">Browse All New Cars →</button>
-        </div>
+        <p style="font-size:11.5px;color:var(--ink4);margin-bottom:8px;line-height:1.6">Figures are unit registrations for 2025 to date, compiled from distributor and market reports. Models marked "detail page soon" are on the chart but not yet in the AutoViindu catalogue.</p>
       </div>
+      ${tryNextStrip(tryNextDefaults('bestseller'), { pad: '24px 0 56px', bg: 'border-top:1px solid var(--border)' })}
     `;
       updateCmpBtns();
     }
@@ -6467,6 +6663,16 @@ ${variants.length > 0 ? `
       }
       else renderHome();
       history.pushState({ page: p, opts }, '', `#${p}`);
+      // Persist the opts so a page refresh on a filtered view (e.g. Quick Find
+      // links) can restore the same filters instead of a bare listing.
+      try {
+        if (opts && Object.keys(opts).length) {
+          const storedPage = (p === 'electric' || p === 'hybrid' || p === 'petrol' || p === 'diesel') ? 'cars' : p;
+          sessionStorage.setItem('av-nav-opts', JSON.stringify({ page: storedPage, opts }));
+        } else {
+          sessionStorage.removeItem('av-nav-opts');
+        }
+      } catch (_) {}
     }
     function openDetail(slug, opts) {
       opts = opts || {};
@@ -6475,7 +6681,8 @@ ${variants.length > 0 ? `
       const needsFetch = car && !car.overview && window.AV_ensureCar;
       const root = document.getElementById('app-root');
       if (needsFetch && root) {
-        root.innerHTML = '<div style="padding:64px 24px;text-align:center;color:var(--ink3)">Loading car details\u2026</div>';
+        root.innerHTML = (window.AV_detailSkeleton && window.AV_detailSkeleton())
+          || '<div style="padding:64px 24px;text-align:center;color:var(--ink3)">Loading car details\u2026</div>';
       }
       // Save current filter/search state into the current history entry so Back restores it
       if (!opts.skipHistory && window._sf) {
@@ -6605,30 +6812,47 @@ ${variants.length > 0 ? `
       closeSD();
     });
 
-    /* ─ POPSTATE ─ */
-    window.addEventListener('popstate', e => {
-      const hash = location.hash;
-      const state = e.state || {};
-      if (!hash || hash === '#home') renderHome();
-      else if (hash.startsWith('#car/')) openDetail(hash.replace('#car/', ''), { skipHistory: true });
-      else if (hash.startsWith('#used/')) renderUsedDetail(hash.replace('#used/', ''));
-      else if (hash === '#cars' || hash === '#electric' || hash === '#hybrid' || hash === '#petrol' || hash === '#diesel') {
-        // Restore the saved filter/search opts so Back returns to the same filtered view
+    /* ─ SHARED HASH DISPATCH ─────────────────────────────────────────────
+       One place that maps a URL hash to the view that should render.
+       Used by both the initial page load (init) and browser back/forward
+       (popstate) so that refreshing on any deep-linked view — #bestseller,
+       #upcoming, #latest, #hybrid, etc. — restores that view instead of
+       silently falling back to the homepage. Keep in sync with goTo(). */
+    function renderForHash(hash, state) {
+      hash = hash || '';
+      state = state || {};
+
+      if (!hash || hash === '#home') { renderHome(); return; }
+      if (hash.startsWith('#car/')) { openDetail(hash.replace('#car/', ''), { skipHistory: true }); return; }
+      if (hash.startsWith('#used/')) { renderUsedDetail(hash.replace('#used/', '')); return; }
+
+      if (hash === '#cars' || hash === '#electric' || hash === '#hybrid' || hash === '#petrol' || hash === '#diesel') {
         const navOpts = getNavOpts('cars');
         const savedOpts = (state.opts && Object.keys(state.opts).length) ? state.opts : navOpts;
-        const savedFilter = state.filter || null;
+        let savedFilter = state.filter || null;
+        if (!savedFilter && hash !== '#cars') savedFilter = hash.slice(1); // electric / hybrid / petrol / diesel
         renderCars(savedFilter, savedOpts);
-        // Restore search box value if there was a query
         if (savedOpts.q) {
           const lf = document.getElementById('lf-search');
-          if (lf) { lf.value = savedOpts.q; }
+          if (lf) lf.value = savedOpts.q;
         }
+        return;
       }
-      else if (hash === '#compare') renderCompare();
-      else if (hash === '#compare-used') renderCompareUsed();
-      else if (hash === '#services') renderServices();
-      else if (hash === '#used') renderUsed(getNavOpts('used'));
-      else renderHome();
+
+      if (hash === '#upcoming') { renderUpcomingCars(); return; }
+      if (hash === '#latest') { renderLatestArrivals(); return; }
+      if (hash === '#bestseller') { renderBestSeller(); return; }
+      if (hash === '#compare') { renderCompare(); return; }
+      if (hash === '#compare-used') { renderCompareUsed(); return; }
+      if (hash === '#services') { renderServices(); return; }
+      if (hash === '#used') { renderUsed(getNavOpts('used')); return; }
+
+      renderHome();
+    }
+
+    /* ─ POPSTATE ─ */
+    window.addEventListener('popstate', e => {
+      renderForHash(location.hash, e.state || {});
     });
 
     /* ─ PAGE TRANSITION ────────────────────────────────────────────────
@@ -6916,16 +7140,8 @@ ${variants.length > 0 ? `
 
     /* ─ INIT ─ */
     function init() {
-      const hash = location.hash;
-      if (hash.startsWith('#car/')) openDetail(hash.replace('#car/', ''));
-      else if (hash.startsWith('#used/')) renderUsedDetail(hash.replace('#used/', ''));
-      else if (hash === '#cars') { const navOpts = getNavOpts('cars'); renderCars(null, navOpts); }
-      else if (hash === '#electric') renderCars('electric');
-      else if (hash === '#compare') renderCompare();
-      else if (hash === '#compare-used') renderCompareUsed();
-      else if (hash === '#services') renderServices();
-      else if (hash === '#used') renderUsed(getNavOpts('used'));
-      else renderHome();
+      // Restore whatever view the URL hash points at (covers refresh + deep links).
+      renderForHash(location.hash, history.state || {});
       lucide.createIcons();
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
