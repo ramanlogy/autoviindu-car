@@ -1,6 +1,7 @@
+/* AutoViindu Auto-Generated Cars DB — regenerated from dev.db, do not hand-edit */
 window.CARS_DB = [
   {
-    "id": 8,
+    "id": 1,
     "slug": "suzuki-swift-epic-2024",
     "brand": "Suzuki",
     "brandSlug": "suzuki",
@@ -22,223 +23,91 @@ window.CARS_DB = [
     "baseEMI": 47000,
     "overview": "The Epic New Suzuki Swift arrives with the all-new 1.2L Z-Series engine delivering best-in-segment fuel efficiency of 25.75 km/l (AMT). It raises the safety bar by making 6 airbags standard across every variant, paired with ESP and Hill Hold Assist as standard. Sporty all-black interiors, a SmartPlay Pro+ infotainment system, and Suzuki Connect telematics make it the most feature-rich Swift yet.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/swift/side-studio-360.png",
+      "/assets/images/car_images/maruti-suzuki/swift/rear-34-studio-360.png",
+      "/assets/images/car_images/maruti-suzuki/swift/front-studio-360.png",
       "/assets/images/car_images/suzuki/swift/exterior/MS1.jpg"
     ],
     "colors": [
       {
         "name": "Sizzling Red",
-        "hex": "#C0392B"
+        "hex": "#c0392b"
       },
       {
         "name": "Luster Blue",
-        "hex": "#2471A3"
+        "hex": "#2471a3"
       },
       {
         "name": "Novel Orange",
-        "hex": "#E67E22"
+        "hex": "#e67e22"
       },
       {
         "name": "Magma Grey",
-        "hex": "#616A6B"
+        "hex": "#616a6b"
       },
       {
         "name": "Splendid Silver",
-        "hex": "#BFC9CA"
+        "hex": "#bfc9ca"
       },
       {
         "name": "Pearl Arctic White",
-        "hex": "#F2F3F4"
+        "hex": "#f2f3f4"
       },
       {
         "name": "Sizzling Red / Midnight Black Roof",
-        "hex": "#C0392B"
+        "hex": "#c0392b"
       },
       {
         "name": "Luster Blue / Midnight Black Roof",
-        "hex": "#2471A3"
+        "hex": "#2471a3"
       },
       {
         "name": "Pearl Arctic White / Midnight Black Roof",
-        "hex": "#F2F3F4"
+        "hex": "#f2f3f4"
       }
     ],
     "variants": [
       {
         "name": "Lxi",
-        "slug": "lxi",
-        "price": 3895000,
-        "label": "Base",
-        "popular": false,
-        "transmission": "MT",
-        "fuel": "Petrol",
-        "features": [
-          "6 Airbags Standard",
-          "ABS with EBD",
-          "Electronic Stability Program",
-          "Hill Hold Assist",
-          "Reverse Parking Sensors",
-          "LED Rear Combination Lamps",
-          "Steel Wheels (165/80 R14)"
-        ],
-        "specs": {
-          "power": "81.58 PS @ 5,700 rpm",
-          "torque": "111.7 Nm @ 4,300 rpm",
-          "efficiency": "24.80 km/l",
-          "transmission": "5MT"
-        }
+        "price": 3895000
       },
       {
         "name": "Vxi",
-        "slug": "vxi",
-        "price": 4249000,
-        "label": "Mid",
-        "popular": false,
-        "transmission": "MT/AMT",
-        "fuel": "Petrol",
-        "features": [
-          "SmartPlay Pro 17.78 cm Touch Screen",
-          "FM/AM, USB, Bluetooth",
-          "4 Speakers",
-          "Keyless Entry System",
-          "Security Alarm System",
-          "Side Turn Indicators on ORVMs",
-          "Body Coloured ORVMs",
-          "Rear Wiper & Washer",
-          "Rear Defogger",
-          "Tilt Steering",
-          "Tachometer"
-        ],
-        "specs": {
-          "power": "81.58 PS @ 5,700 rpm",
-          "torque": "111.7 Nm @ 4,300 rpm",
-          "efficiency": "24.80 km/l (MT) / 25.75 km/l (AMT)",
-          "transmission": "5MT / 5AMT"
-        }
+        "price": 4249000
       },
       {
         "name": "Vxi (O)",
-        "slug": "vxi-o",
-        "price": 4449000,
-        "label": "Mid+",
-        "popular": false,
-        "transmission": "MT/AMT",
-        "fuel": "Petrol",
-        "features": [
-          "SmartPlay Pro 17.78 cm Touch Screen",
-          "Onboard Voice Assistant (\"Hi Suzuki\")",
-          "OTA System Upgrades",
-          "Wireless Android Auto & Apple CarPlay",
-          "Steering Mounted Audio & Calling Controls",
-          "Wide-angle Rear Parking Camera",
-          "Security Alarm System with Shock Sensor"
-        ],
-        "specs": {
-          "power": "81.58 PS @ 5,700 rpm",
-          "torque": "111.7 Nm @ 4,300 rpm",
-          "efficiency": "24.80 km/l (MT) / 25.75 km/l (AMT)",
-          "transmission": "5MT / 5AMT"
-        }
+        "price": 4449000
       },
       {
         "name": "Zxi",
-        "slug": "zxi",
-        "price": 4649000,
-        "label": "Top",
-        "popular": true,
-        "transmission": "MT/AMT",
-        "fuel": "Petrol",
-        "features": [
-          "LED Projector Headlamps",
-          "Painted Alloy Wheels (185/65 R15)",
-          "SmartPlay Pro+ 22.86 cm Touch Screen",
-          "Surround Sense Powered by ARKAMYS",
-          "Cruise Control",
-          "Rear AC Vent",
-          "Driver Seat Height Adjuster",
-          "Auto AC (Digital)",
-          "60:40 Split Rear Seat",
-          "Leather-Wrapped Steering Wheel with Stitching",
-          "Auto Headlamps (Lead Me / Follow Me Home)"
-        ],
-        "specs": {
-          "power": "81.58 PS @ 5,700 rpm",
-          "torque": "111.7 Nm @ 4,300 rpm",
-          "efficiency": "24.80 km/l (MT) / 25.75 km/l (AMT)",
-          "transmission": "5MT / 5AMT"
-        }
+        "price": 4649000
       },
       {
         "name": "Zxi+",
-        "slug": "zxi-plus",
-        "price": 5229000,
-        "label": "Top+",
-        "popular": false,
-        "transmission": "MT/AMT",
-        "fuel": "Petrol",
-        "features": [
-          "Precision Cut Dual-Tone Alloy Wheels (185/65 R15)",
-          "Wireless Charger",
-          "Engine Push Start-Stop with Smart Key",
-          "Electrically Foldable ORVMs (Auto)",
-          "2 Tweeters (total 6 speakers)",
-          "Rear USB Ports (Type A & C)",
-          "Front LED Fog Lamps",
-          "Coloured Multi-Information Display",
-          "All Zxi features +"
-        ],
-        "specs": {
-          "power": "81.58 PS @ 5,700 rpm",
-          "torque": "111.7 Nm @ 4,300 rpm",
-          "efficiency": "24.80 km/l (MT) / 25.75 km/l (AMT)",
-          "transmission": "5MT / 5AMT"
-        }
+        "price": 5229000
       }
     ],
     "specs": {
-      "Engine": "1.2L Z12E, 3-Cylinder",
-      "Power": "81.58 PS (60 kW) @ 5,700 rpm",
-      "Torque": "111.7 Nm @ 4,300 rpm",
-      "Fuel Efficiency": "24.80 km/l (MT) / 25.75 km/l (AMT)",
-      "Fuel Tank": "37 L",
-      "Transmission": "5MT / 5AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Z-Series Petrol",
+      "Displacement (cc)": "1,197",
+      "Transmission Type": "MT / AGS",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Note": "DUPLICATE ENTRY: this appears to duplicate the 'Maruti Suzuki Swift (suzuki-swift-2025)' entry in the 'Maruti Suzuki' brand (which has real NPR pricing); this 'Suzuki' brand entry uses placeholder Base/Mid/Top variant labels with no real prices. Recommend consolidating into a single brand ('Maruti Suzuki' or 'Suzuki') to avoid duplicate listings.",
+      "Transmission": "MT / AGS",
       "Seating": "5",
-      "Length": "3,860 mm",
-      "Width": "1,735 mm",
-      "Height": "1,520 mm",
-      "Wheelbase": "2,450 mm",
-      "Ground Clearance": "163 mm",
-      "Min Turning Radius": "4.8 m",
-      "Kerb Weight": "920 kg (MT) / 925 kg (AMT)",
-      "Front Brakes": "Ventilated Disc",
-      "Rear Brakes": "Drum",
-      "Front Suspension": "MacPherson Strut",
-      "Rear Suspension": "Torsion Beam",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol",
+      "Body Type": "Hatchback"
     },
-    "pros": [
-      "6 Airbags standard across ALL variants — class-leading safety",
-      "Best-in-segment fuel efficiency: 25.75 km/l (AMT)",
-      "ESP + Hill Hold Assist standard across all trims",
-      "Sporty all-black interior with futuristic centre console",
-      "SmartPlay Pro+ with Surround Sense audio on Zxi+",
-      "Wireless Android Auto & Apple CarPlay on Vxi(O) and above"
-    ],
-    "cons": [
-      "No cruise control on Lxi or Vxi",
-      "AMT (5AMT) gearbox can feel jerky in slow city traffic",
-      "No alloy wheels on base Lxi & Vxi"
-    ],
-    "highlights": [
-      "6 Airbags Standard",
-      "25.75 km/l AMT",
-      "ESP + Hill Hold",
-      "SmartPlay Pro+"
-    ],
-    "thumb": "/assets/images/car_images/suzuki/swift/exterior/MS1.jpg"
+    "pros": [],
+    "cons": [],
+    "highlights": [],
+    "thumb": "/assets/images/car_images/maruti-suzuki/swift/front-34-currentgen-epicswift-studio.jpg"
   },
   {
-    "id": 9,
+    "id": 2,
     "slug": "suzuki-celerio-2024",
     "brand": "Suzuki",
     "brandSlug": "suzuki",
@@ -260,6 +129,10 @@ window.CARS_DB = [
     "baseEMI": 37000,
     "overview": "The All-New Suzuki Celerio is designed as the perfect family companion. Powered by the Next Gen K10C engine with Idle Start-Stop technology, it delivers best fuel efficiency at 26.68 km/l while offering a 3D Organic Sculpted Design, Smartplay Studio infotainment, and the segment-first Hill Hold Assist. The HEARTECT platform ensures a solid safety foundation.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/celerio/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/celerio/front-grille-detail.jpg",
+      "/assets/images/car_images/maruti-suzuki/celerio/interior-dashboard.jpg",
+      "/assets/images/car_images/maruti-suzuki/celerio/front-lifestyle.jpeg",
       "/assets/images/car_images/suzuki/celerio/exterior/suzuki-celerio-exterior-side-left-white-bg.jpg",
       "/assets/images/car_images/suzuki/celerio/interior/suzuki-celerio-interior-dashboard.jpg",
       "/assets/images/car_images/suzuki/celerio/interior/suzuki-celerio-interior-seats-front.jpg"
@@ -318,7 +191,9 @@ window.CARS_DB = [
           "power": "67 PS @ 5,500 rpm",
           "torque": "89 Nm @ 3,500 rpm",
           "efficiency": "25.24 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "67 PS @ 5,500 rpm",
+          "Torque": "89 Nm @ 3,500 rpm"
         }
       },
       {
@@ -344,7 +219,9 @@ window.CARS_DB = [
           "power": "67 PS @ 5,500 rpm",
           "torque": "89 Nm @ 3,500 rpm",
           "efficiency": "24.97 km/l (MT) / 26.00 km/l (AGS)",
-          "transmission": "5MT / AGS"
+          "transmission": "5MT / AGS",
+          "Power": "67 PS @ 5,500 rpm",
+          "Torque": "89 Nm @ 3,500 rpm"
         }
       },
       {
@@ -368,56 +245,32 @@ window.CARS_DB = [
           "power": "67 PS @ 5,500 rpm",
           "torque": "89 Nm @ 3,500 rpm",
           "efficiency": "26.68 km/l (AGS)",
-          "transmission": "5MT / AGS"
+          "transmission": "5MT / AGS",
+          "Power": "67 PS @ 5,500 rpm",
+          "Torque": "89 Nm @ 3,500 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.0L K10C Next Gen K-Series Dual Jet, Dual VVT with ISS",
-      "Displacement": "998 cc, 3-Cylinder",
-      "Power": "67 PS @ 5,500 rpm",
-      "Torque": "89 Nm @ 3,500 rpm",
-      "Fuel Efficiency": "26.68 km/l (AGS)",
-      "Fuel Tank": "32 L",
-      "Transmission": "5MT / AGS",
-      "Drive": "FWD",
+      "Engine Type": "1.0L K10C Petrol",
+      "Displacement (cc)": "998",
+      "Transmission Type": "MT / AGS",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Note": "DUPLICATE ENTRY: this appears to duplicate the 'Maruti Suzuki Celerio (suzuki-celerio-2025)' entry in the 'Maruti Suzuki' brand (which has real NPR pricing); this 'Suzuki' brand entry uses placeholder Base/Mid/Top variant labels with no real prices. Recommend consolidating into a single brand ('Maruti Suzuki' or 'Suzuki') to avoid duplicate listings.",
+      "Transmission": "MT / AGS",
       "Seating": "5",
-      "Boot Space": "313 L",
-      "Length": "3,695 mm",
-      "Width": "1,655 mm",
-      "Height": "1,555 mm",
-      "Wheelbase": "2,435 mm",
-      "Kerb Weight": "825 kg",
-      "Front Brakes": "Disc",
-      "Rear Brakes": "Drum",
-      "Front Suspension": "MacPherson Strut with Coil Springs",
-      "Rear Suspension": "Torsion Beam with Coil Springs",
-      "Tyre Size": "165/70 R14 / 175/60 R15 (Zxi+)",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol",
+      "Body Type": "Hatchback"
     },
-    "pros": [
-      "26.68 km/l — best fuel efficiency in its segment",
-      "Segment-first Hill Hold Assist",
-      "HEARTECT platform for enhanced safety",
-      "313L boot — good for a subcompact hatchback",
-      "AGS (Auto Gear Shift) available on Zxi and Zxi+"
-    ],
-    "cons": [
-      "Only 2 airbags even on top trim",
-      "Smaller 1.0L engine — limited for highway overtakes",
-      "No wireless charging or Android Auto/Apple CarPlay",
-      "No rear AC vent"
-    ],
-    "highlights": [
-      "26.68 km/l",
-      "313L Boot",
-      "HEARTECT Platform",
-      "AGS Available"
-    ],
-    "thumb": "/assets/images/car_images/suzuki/celerio/exterior/suzuki-celerio-exterior-side-left-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/celerio/front-34-studio.png"
   },
   {
-    "id": 10,
+    "id": 3,
     "slug": "suzuki-wagon-r-brochure",
     "brand": "Suzuki",
     "brandSlug": "suzuki",
@@ -439,6 +292,10 @@ window.CARS_DB = [
     "baseEMI": 40000,
     "overview": "The Suzuki Wagon R is Nepal's #1 selling car, combining a robust design with a wide stance and a class-leading spacious cabin. Two engine options — the 1.0L and 1.2L Advanced K-Series Dual Jet with Idle Start-Stop — deliver up to 25.19 km/l. The available AGS, Smartplay Studio with Smartphone Navigation, Hill Hold Assist, and ESP make it the complete city car package.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/wagon-r/front-34-studio-360.png",
+      "/assets/images/car_images/maruti-suzuki/wagon-r/side-studio-360.png",
+      "/assets/images/car_images/maruti-suzuki/wagon-r/rear-studio-360.png",
+      "/assets/images/car_images/maruti-suzuki/wagon-r/interior-dashboard.png",
       "/assets/images/car_images/suzuki/wagon-r/exterior/suzuki-wagon-r-exterior-front-white-bg.jpg",
       "/assets/images/car_images/suzuki/wagon-r/exterior/wagon-r-2022-exterior-rear-view.avif",
       "/assets/images/car_images/suzuki/wagon-r/exterior/wagon-r-exterior-right-front-three-quarter-6.avif"
@@ -501,7 +358,9 @@ window.CARS_DB = [
           "power": "66.63 PS @ 6,000 rpm",
           "torque": "89 Nm @ 3,500 rpm",
           "efficiency": "24.35 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "66.63 PS @ 6,000 rpm",
+          "Torque": "89 Nm @ 3,500 rpm"
         }
       },
       {
@@ -523,7 +382,9 @@ window.CARS_DB = [
           "power": "66.63 PS @ 6,000 rpm",
           "torque": "89 Nm @ 3,500 rpm",
           "efficiency": "25.19 km/l (AGS)",
-          "transmission": "AGS"
+          "transmission": "AGS",
+          "Power": "66.63 PS @ 6,000 rpm",
+          "Torque": "89 Nm @ 3,500 rpm"
         }
       },
       {
@@ -545,7 +406,9 @@ window.CARS_DB = [
           "power": "89.7 PS @ 6,000 rpm",
           "torque": "113 Nm @ 4,400 rpm",
           "efficiency": "24.43 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "89.7 PS @ 6,000 rpm",
+          "Torque": "113 Nm @ 4,400 rpm"
         }
       },
       {
@@ -567,58 +430,32 @@ window.CARS_DB = [
           "power": "89.7 PS @ 6,000 rpm",
           "torque": "113 Nm @ 4,400 rpm",
           "efficiency": "24.43 km/l",
-          "transmission": "5MT / AGS"
+          "transmission": "5MT / AGS",
+          "Power": "89.7 PS @ 6,000 rpm",
+          "Torque": "113 Nm @ 4,400 rpm"
         }
       }
     ],
     "specs": {
-      "Engine (1.0L)": "1.0L Next-Gen K-Series Dual Jet, Dual VVT with ISS",
-      "Engine (1.2L)": "1.2L Advanced K-Series Dual Jet, Dual VVT with ISS",
-      "Power (1.0L)": "66.63 PS @ 6,000 rpm",
-      "Power (1.2L)": "89.7 PS @ 6,000 rpm",
-      "Torque (1.0L)": "89 Nm @ 3,500 rpm",
-      "Torque (1.2L)": "113 Nm @ 4,400 rpm",
-      "Fuel Efficiency": "25.19 km/l max (VXI AGS 1.0L)",
-      "Fuel Tank": "32 L",
-      "Transmission": "5MT / AGS",
-      "Drive": "FWD",
+      "Engine Type": "1.0L / 1.2L K-Series Petrol",
+      "Displacement (cc)": "998 / 1,197",
+      "Transmission Type": "MT / AGS",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Note": "DUPLICATE ENTRY: this appears to duplicate the 'Maruti Suzuki WagonR (suzuki-wagon-r-2025)' entry in the 'Maruti Suzuki' brand (which has real NPR pricing); this 'Suzuki' brand entry uses placeholder Base/Mid/Top variant labels with no real prices. Recommend consolidating into a single brand ('Maruti Suzuki' or 'Suzuki') to avoid duplicate listings.",
+      "Transmission": "MT / AGS",
       "Seating": "5",
-      "Boot Space": "341 L",
-      "Length": "3,655 mm",
-      "Width": "1,620 mm",
-      "Height": "1,695 mm",
-      "Wheelbase": "2,435 mm",
-      "Ground Clearance": "165 mm",
-      "Kerb Weight": "810–850 kg",
-      "Front Brakes": "Disc",
-      "Rear Brakes": "Drum",
-      "Front Suspension": "MacPherson Strut",
-      "Rear Suspension": "Torsion Beam",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol",
+      "Body Type": "Hatchback"
     },
-    "pros": [
-      "Nepal's #1 selling car — proven reliability",
-      "Best-in-class fuel efficiency up to 25.19 km/l",
-      "Spacious 341L boot space for its segment",
-      "HEARTECT platform — strong safety foundation",
-      "12+ safety features including Hill Hold & ESP",
-      "Smartplay Studio with Smartphone Navigation"
-    ],
-    "cons": [
-      "AGS can feel jerky compared to a traditional automatic",
-      "Only Dual Front Airbags (no side/curtain airbags)",
-      "Limited premium features vs segment rivals"
-    ],
-    "highlights": [
-      "341L Boot",
-      "25.19 km/l",
-      "HEARTECT Platform",
-      "Nepal #1 Seller"
-    ],
-    "thumb": "/assets/images/car_images/suzuki/wagon-r/exterior/suzuki-wagon-r-exterior-front-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/wagon-r/front-34-studio-360.png"
   },
   {
-    "id": 11,
+    "id": 4,
     "slug": "suzuki-alto-k10-2024",
     "brand": "Suzuki",
     "brandSlug": "suzuki",
@@ -640,6 +477,9 @@ window.CARS_DB = [
     "baseEMI": 35000,
     "overview": "The All-New Suzuki Alto K10 redefines the entry-level segment with a youthful honeycomb-grille design, 24.90 km/l fuel efficiency, and the Next Gen 1.0L K-Series Dual Jet Dual VVT engine with AGS technology. It packs a Smartplay Studio infotainment with Smartphone Navigation and 4 speakers — a first in its segment — alongside 15+ safety features including dual airbags, ABS with EBD, HEARTECT platform, and reverse parking sensors.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/alto/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/alto/front-34-lifestyle-cgmotocorp.png",
+      "/assets/images/car_images/maruti-suzuki/alto/interior-seats.png",
       "/assets/images/car_images/suzuki/alto-k10/exterior/alto-k10-exterior-right-front-three-quarter-63.avif",
       "/assets/images/car_images/suzuki/alto-k10/interior/alto-k10-interior-dashboard-2.avif"
     ],
@@ -700,7 +540,9 @@ window.CARS_DB = [
           "power": "49 kW (66.7 PS) @ 5,500 rpm",
           "torque": "89 Nm @ 3,500 rpm",
           "efficiency": "24.39 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "49 kW (66.7 PS) @ 5,500 rpm",
+          "Torque": "89 Nm @ 3,500 rpm"
         }
       },
       {
@@ -724,7 +566,9 @@ window.CARS_DB = [
           "power": "49 kW (66.7 PS) @ 5,500 rpm",
           "torque": "89 Nm @ 3,500 rpm",
           "efficiency": "24.39 km/l (MT) / 24.90 km/l (AGS)",
-          "transmission": "5MT / AGS"
+          "transmission": "5MT / AGS",
+          "Power": "49 kW (66.7 PS) @ 5,500 rpm",
+          "Torque": "89 Nm @ 3,500 rpm"
         }
       },
       {
@@ -748,57 +592,32 @@ window.CARS_DB = [
           "power": "49 kW (66.7 PS) @ 5,500 rpm",
           "torque": "89 Nm @ 3,500 rpm",
           "efficiency": "24.39 km/l (MT) / 24.90 km/l (AGS)",
-          "transmission": "5MT / AGS"
+          "transmission": "5MT / AGS",
+          "Power": "49 kW (66.7 PS) @ 5,500 rpm",
+          "Torque": "89 Nm @ 3,500 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.0L K10C Next Gen K-Series Dual Jet, Dual VVT",
-      "Displacement": "998 cc, 3-Cylinder",
-      "Power": "49 kW (≈66.7 PS) @ 5,500 rpm",
-      "Torque": "89 Nm @ 3,500 rpm",
-      "Fuel Efficiency": "24.39 km/l (MT) / 24.90 km/l (AGS)",
-      "Fuel Tank": "27 L",
-      "Transmission": "5MT / AGS",
-      "Drive": "FWD",
+      "Engine Type": "1.0L K10C Petrol",
+      "Displacement (cc)": "998",
+      "Transmission Type": "MT / AGS",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Note": "DUPLICATE ENTRY: this appears to duplicate the 'Maruti Suzuki Alto (suzuki-alto-2025)' entry in the 'Maruti Suzuki' brand (which has real NPR pricing); this 'Suzuki' brand entry uses placeholder Base/Mid/Top variant labels with no real prices. Recommend consolidating into a single brand ('Maruti Suzuki' or 'Suzuki') to avoid duplicate listings.",
+      "Transmission": "MT / AGS",
       "Seating": "5",
-      "Boot Space": "214 L",
-      "Length": "3,530 mm",
-      "Width": "1,490 mm",
-      "Height": "1,520 mm",
-      "Wheelbase": "2,380 mm",
-      "Min Turning Radius": "4.5 m",
-      "Front Brakes": "Disc",
-      "Rear Brakes": "Drum",
-      "Front Suspension": "MacPherson Strut with Coil Spring",
-      "Rear Suspension": "Torsion Beam with Coil Spring",
-      "Tyre Size": "145/80 R13",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol",
+      "Body Type": "Hatchback"
     },
-    "pros": [
-      "Most affordable Suzuki entry point in Nepal — starts at NPR 28.9L",
-      "24.90 km/l — strong fuel efficiency for category",
-      "Smartplay Studio with 4 speakers — 1st in segment on Vxi+",
-      "HEARTECT platform & 15+ safety features",
-      "Compact 3,530 mm body — ideal for tight city roads",
-      "AGS option removes clutch fatigue in city traffic"
-    ],
-    "cons": [
-      "Small 214L boot — limited luggage capacity",
-      "Only 2 airbags even on top Vxi+ trim",
-      "No Hill Hold Assist on any variant",
-      "Smallest Suzuki — limited power for mountain/highway driving"
-    ],
-    "highlights": [
-      "From NPR 28.9L",
-      "24.90 km/l AGS",
-      "Smartplay Studio",
-      "15+ Safety Feats"
-    ],
-    "thumb": "/assets/images/car_images/suzuki/alto-k10/exterior/-.png"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/alto/front-34-studio.png"
   },
   {
-    "id": 12,
+    "id": 5,
     "slug": "suzuki-eeco-cargo-2024",
     "brand": "Suzuki",
     "brandSlug": "suzuki",
@@ -820,6 +639,8 @@ window.CARS_DB = [
     "baseEMI": 24000,
     "overview": "The Suzuki Eeco Cargo is Nepal's go-to commercial van, built for businesses that need maximum cargo capacity and reliability. Powered by the proven 1.2L Advanced K-Series Dual Jet Dual VVT engine (also available in CNG), it offers increased cargo space, Digital Instrument Cluster, Engine Immobiliser, and 8+ safety features including 4 Reverse Parking Sensors. Available through 42 sales outlets and 54 service centres across 35 cities in Nepal.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/eeco-cargo/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/eeco-cargo/front-rear-combo.png",
       "/assets/images/car_images/suzuki/eeco-cargo/exterior/eeco-exterior-right-front-three-quarter-3.avif",
       "/assets/images/car_images/suzuki/eeco-cargo/exterior/eeco-exterior-right-side-view.avif",
       "/assets/images/car_images/suzuki/eeco-cargo/interior/eeco-interior-rear-seats-8.avif"
@@ -865,7 +686,9 @@ window.CARS_DB = [
           "power": "59.4 kW (≈80.8 PS) @ 6,000 rpm",
           "torque": "104.4 Nm @ 3,000 rpm",
           "efficiency": "Commercial Use",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "59.4 kW (≈80.8 PS) @ 6,000 rpm",
+          "Torque": "104.4 Nm @ 3,000 rpm"
         }
       },
       {
@@ -885,55 +708,32 @@ window.CARS_DB = [
           "power": "59.4 kW (≈80.8 PS) @ 6,000 rpm",
           "torque": "104.4 Nm @ 3,000 rpm",
           "efficiency": "Lower running cost on CNG",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "59.4 kW (≈80.8 PS) @ 6,000 rpm",
+          "Torque": "104.4 Nm @ 3,000 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L K12N Advanced K-Series Dual Jet, Dual VVT",
-      "Displacement": "1,197 cc",
-      "Power": "59.4 kW (≈80.8 PS) @ 6,000 rpm",
-      "Torque": "104.4 Nm @ 3,000 rpm",
-      "Fuel Type": "Petrol / CNG",
-      "Fuel Tank (Petrol)": "32 L",
-      "CNG Cylinder": "65 L (water equivalent)",
-      "Transmission": "5MT",
-      "Seating": "2 (Commercial)",
-      "Length": "3,675 mm",
-      "Width": "1,475 mm",
-      "Height": "1,825 mm",
-      "Wheelbase": "2,350 mm",
-      "Min Turning Radius": "4.5 m",
-      "Kerb Weight (Petrol)": "915 kg",
-      "GVW": "1,540 kg",
-      "Max Speed": "80 km/h (Speed Limiter)",
-      "Tyre Size": "155/R13C 8PR"
+      "Engine Type": "1.2L G12B Petrol / CNG",
+      "Displacement (cc)": "1,196",
+      "Transmission Type": "MT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "2 (cargo)",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Note": "DUPLICATE ENTRY: this appears to duplicate the 'Maruti Suzuki Eeco (suzuki-eeco-2025)' entry in the 'Maruti Suzuki' brand (which has real NPR pricing); this 'Suzuki' brand entry uses placeholder Base/Mid/Top variant labels with no real prices. Recommend consolidating into a single brand ('Maruti Suzuki' or 'Suzuki') to avoid duplicate listings.",
+      "Transmission": "MT",
+      "Seating": "2 (cargo)",
+      "Fuel Type": "Petrol",
+      "Body Type": "Van"
     },
-    "pros": [
-      "Most affordable Suzuki in Nepal — starts at NPR 19.59L",
-      "CNG variant lowers fuel running costs significantly",
-      "Widest service coverage: 54 centres across 35 cities",
-      "Digital Instrument Cluster & Engine Immobiliser",
-      "4 Reverse Parking Sensors — safety for commercial use",
-      "Flat cargo bed — easy loading"
-    ],
-    "cons": [
-      "Only 2-seater — no passenger carrying",
-      "Manual steering — heavy in urban loading bays",
-      "Speed-limited to 80 km/h by hardware",
-      "No air conditioning",
-      "Very basic interior — purely utilitarian"
-    ],
-    "highlights": [
-      "From NPR 19.59L",
-      "Max Cargo Space",
-      "Petrol + CNG",
-      "54 Service Centres"
-    ],
-    "thumb": "/assets/images/car_images/suzuki/eeco-cargo/exterior/eeco-exterior-right-front-three-quarter-3.avif"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/eeco-cargo/front-34-studio.png"
   },
   {
-    "id": 13,
+    "id": 6,
     "slug": "suzuki-grand-vitara-2024",
     "brand": "Suzuki",
     "brandSlug": "suzuki",
@@ -955,6 +755,9 @@ window.CARS_DB = [
     "baseEMI": 64000,
     "overview": "The Advanced Grand Vitara features NEXA's Crafted Futurism Design Language with two powertrains: Smart Hybrid (1.5L K-Series) and Intelligent Electric Hybrid (strong hybrid) that delivers up to 27.97 km/l. AllGrip Select AWD, panoramic sunroof, Head Up Display, 360 View Camera, ventilated seats, and 6 airbags standard make it a class-leading SUV.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/grand-vitara/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/grand-vitara/front-34-studio-small.png",
+      "/assets/images/car_images/maruti-suzuki/grand-vitara/interior-infotainment-detail.png",
       "/assets/images/car_images/suzuki/grand-vitara/exterior/suzuki-grand-vitara-exterior-rear-white-bg.jpg"
     ],
     "colors": [
@@ -1021,7 +824,9 @@ window.CARS_DB = [
           "power": "75.8 kW (103.06 PS) @ 6,000 rpm",
           "torque": "136.8 Nm @ 4,400 rpm",
           "efficiency": "21.11 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "75.8 kW (103.06 PS) @ 6,000 rpm",
+          "Torque": "136.8 Nm @ 4,400 rpm"
         }
       },
       {
@@ -1043,7 +848,9 @@ window.CARS_DB = [
           "power": "75.8 kW (103.06 PS) @ 6,000 rpm",
           "torque": "136.8 Nm @ 4,400 rpm",
           "efficiency": "21.11 km/l (MT) / 20.58 km/l (AT)",
-          "transmission": "5MT / 6AT"
+          "transmission": "5MT / 6AT",
+          "Power": "75.8 kW (103.06 PS) @ 6,000 rpm",
+          "Torque": "136.8 Nm @ 4,400 rpm"
         }
       },
       {
@@ -1068,7 +875,9 @@ window.CARS_DB = [
           "power": "75.8 kW / 68 kW (Intelligent Hybrid)",
           "torque": "136.8 Nm / 122 Nm (Intelligent Hybrid)",
           "efficiency": "20.58 km/l (AT) / 27.97 km/l (e-CVT)",
-          "transmission": "5MT / 6AT / e-CVT"
+          "transmission": "5MT / 6AT / e-CVT",
+          "Power": "75.8 kW / 68 kW (Intelligent Hybrid)",
+          "Torque": "136.8 Nm / 122 Nm (Intelligent Hybrid)"
         }
       },
       {
@@ -1096,7 +905,9 @@ window.CARS_DB = [
           "power": "75.8 kW / 85 kW total (Intelligent Hybrid)",
           "torque": "136.8 Nm / 141 Nm motor",
           "efficiency": "19.38 km/l (AllGrip MT) / 27.97 km/l (e-CVT)",
-          "transmission": "5MT AllGrip / 6AT / e-CVT"
+          "transmission": "5MT AllGrip / 6AT / e-CVT",
+          "Power": "75.8 kW / 85 kW total (Intelligent Hybrid)",
+          "Torque": "136.8 Nm / 141 Nm motor"
         }
       },
       {
@@ -1119,7 +930,9 @@ window.CARS_DB = [
           "power": "75.8 kW (103.06 PS) @ 6,000 rpm",
           "torque": "136.8 Nm @ 4,400 rpm",
           "efficiency": "21.11 km/l (MT) / 20.58 km/l (AT)",
-          "transmission": "5MT / 6AT"
+          "transmission": "5MT / 6AT",
+          "Power": "75.8 kW (103.06 PS) @ 6,000 rpm",
+          "Torque": "136.8 Nm @ 4,400 rpm"
         }
       },
       {
@@ -1141,56 +954,32 @@ window.CARS_DB = [
           "power": "85 kW total system",
           "torque": "141 Nm motor @ 0–3,995 rpm",
           "efficiency": "27.97 km/l (e-CVT)",
-          "transmission": "6AT / e-CVT"
+          "transmission": "6AT / e-CVT",
+          "Power": "85 kW total system",
+          "Torque": "141 Nm motor @ 0–3,995 rpm"
         }
       }
     ],
     "specs": {
-      "Engine (Smart Hybrid)": "1.5L K15C, 4-Cylinder, Smart Hybrid (ISG)",
-      "Engine (Intelligent Hybrid)": "1.5L M15D + AC Synchronous Motor, Strong Hybrid",
-      "Power (Petrol)": "75.8 kW (103.06 PS) @ 6,000 rpm",
-      "Power (Intelligent Hybrid)": "68 kW petrol + 59 kW motor = 85 kW total",
-      "Torque (Petrol)": "136.8 Nm @ 4,400 rpm",
-      "Torque (Motor)": "141 Nm @ 0–3,995 rpm",
-      "Battery": "177.6 V Lithium-ion",
-      "Fuel Efficiency": "Up to 27.97 km/l (Intelligent Hybrid e-CVT)",
-      "Fuel Tank": "45 L",
-      "Transmission": "5MT / 6AT / AllGrip 5MT / e-CVT",
-      "Drive": "2WD / AllGrip AWD",
+      "Engine Type": "1.5L Strong/Smart Hybrid",
+      "Displacement (cc)": "1,490 / 1,462",
+      "Transmission Type": "MT / AT / e-CVT",
+      "Drive Type": "FWD / AllGrip AWD",
+      "Seating Capacity": "5",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Note": "DUPLICATE ENTRY: this appears to duplicate the 'Maruti Suzuki Grand Vitara (suzuki-grand-vitara-2025)' entry in the 'Maruti Suzuki' brand (which has real NPR pricing); this 'Suzuki' brand entry uses placeholder Base/Mid/Top variant labels with no real prices. Recommend consolidating into a single brand ('Maruti Suzuki' or 'Suzuki') to avoid duplicate listings.",
+      "Transmission": "MT / AT / e-CVT",
       "Seating": "5",
-      "Length": "4,345 mm",
-      "Width": "1,795 mm",
-      "Height": "1,645 mm",
-      "Wheelbase": "2,600 mm",
-      "Min Turning Radius": "5.4 m",
-      "Front Brakes": "Ventilated Disc",
-      "Rear Brakes": "Solid Disc",
-      "Tyre Size": "215/60 R17",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol / Hybrid",
+      "Body Type": "SUV"
     },
-    "pros": [
-      "Intelligent Electric Hybrid delivers up to 27.97 km/l",
-      "Strong hybrid can drive on pure EV mode",
-      "AllGrip Select AWD with 4 terrain modes",
-      "6 airbags standard on Zeta and above",
-      "Panoramic Sunroof, HUD, 360 Camera, Ventilated Seats"
-    ],
-    "cons": [
-      "Intelligent Hybrid and AllGrip variants are significantly pricier",
-      "e-CVT only with Intelligent Hybrid",
-      "Boot space not published in brochure",
-      "No diesel option"
-    ],
-    "highlights": [
-      "27.97 km/l Hybrid",
-      "AllGrip AWD",
-      "6 Airbags",
-      "Panoramic Sunroof"
-    ],
-    "thumb": "/assets/images/car_images/suzuki/grand-vitara/exterior/suzuki-grand-vitara-exterior-rear-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/grand-vitara/front-34-studio.png"
   },
   {
-    "id": 14,
+    "id": 7,
     "slug": "suzuki-jimny-5door-2024",
     "brand": "Suzuki",
     "brandSlug": "suzuki",
@@ -1212,6 +1001,9 @@ window.CARS_DB = [
     "baseEMI": 84000,
     "overview": "The all-new 5-door Suzuki Jimny carries over 50 years of off-road heritage. Built on a Ladder Frame chassis with 3-Link Rigid Axle Suspension, the Jimny conquers the toughest terrain with ALLGRIP PRO 4WD (with Low Range Transfer Gear), 210 mm ground clearance, 47° approach angle, and 36° departure angle. Safety includes 6 airbags standard across all variants, Hill Descent Control, Hill Hold Assist, and Brake LSD.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/jimny/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/jimny/front-lifestyle-offroad.png",
+      "/assets/images/car_images/maruti-suzuki/jimny/interior-dashboard.png",
       "/assets/images/car_images/suzuki/jimny/exterior/anfles.png",
       "/assets/images/car_images/suzuki/jimny/exterior/bumpers.png",
       "/assets/images/car_images/suzuki/jimny/exterior/front-grille.png",
@@ -1307,7 +1099,9 @@ window.CARS_DB = [
           "transmission": "5-Speed Manual",
           "Wheel Type": "Steel",
           "Kerb Weight (kg)": "1200",
-          "Total Number of Colors": "5"
+          "Total Number of Colors": "5",
+          "Power": "77.1 kW @ 6000 rpm [104.8 PS @ 6000 rpm]",
+          "Torque": "134.2 Nm @ 4000 rpm"
         }
       },
       {
@@ -1367,7 +1161,9 @@ window.CARS_DB = [
           "transmission": "4-Speed Automatic",
           "Wheel Type": "Steel",
           "Kerb Weight (kg)": "1210",
-          "Total Number of Colors": "5"
+          "Total Number of Colors": "5",
+          "Power": "77.1 kW @ 6000 rpm [104.8 PS @ 6000 rpm]",
+          "Torque": "134.2 Nm @ 4000 rpm"
         }
       },
       {
@@ -1438,7 +1234,9 @@ window.CARS_DB = [
           "transmission": "5-Speed Manual",
           "Wheel Type": "Alloy",
           "Kerb Weight (kg)": "1195",
-          "Total Number of Colors": "6"
+          "Total Number of Colors": "6",
+          "Power": "77.1 kW @ 6000 rpm [104.8 PS @ 6000 rpm]",
+          "Torque": "134.2 Nm @ 4000 rpm"
         }
       },
       {
@@ -1509,84 +1307,32 @@ window.CARS_DB = [
           "transmission": "4-Speed Automatic",
           "Wheel Type": "Alloy",
           "Kerb Weight (kg)": "1205",
-          "Total Number of Colors": "6"
+          "Total Number of Colors": "6",
+          "Power": "77.1 kW @ 6000 rpm [104.8 PS @ 6000 rpm]",
+          "Torque": "134.2 Nm @ 4000 rpm"
         }
       }
     ],
     "specs": {
-      "Engine Type": "K15B with Idle Start Stop",
-      "Displacement (cc)": "1462",
-      "Cylinder Configuration": "4 Cylinders",
-      "Bore x Stroke (mm)": "74.0 x 85.0",
-      "Fuel System": "Multipoint Injection",
-      "Start-Stop System": "Yes",
-      "Max Engine Power": "77.1 kW @ 6000 rpm [104.8 PS @ 6000 rpm]",
-      "Max Engine Torque": "134.2 Nm @ 4000 rpm",
-      "Drive Type": "ALLGRIP PRO (4WD)",
-      "Low Range 4WD": "Yes (4L Mode via Low Range Transfer Gear, shiftable 2H-4H on the fly)",
-      "Top Speed (km/h)": "~140-155",
-      "Acceleration 0-100 km/h": "~12.7-14.5 sec",
-      "Transmission Type": "5MT / 4AT",
-      "Steering Type": "Electric Power Steering",
-      "Transfer Case Type": "ALLGRIP PRO with Low Range Transfer Gear",
-      "Differential Type": "Brake Limited Slip Differential",
+      "Engine Type": "1.5L K15B Petrol",
+      "Displacement (cc)": "1,462",
+      "Transmission Type": "MT / 4AT",
+      "Drive Type": "4WD (AllGrip Pro)",
+      "Seating Capacity": "5",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Note": "DUPLICATE ENTRY: this appears to duplicate the 'Maruti Suzuki Jimny (suzuki-jimny-2025)' entry in the 'Maruti Suzuki' brand (which has real NPR pricing); this 'Suzuki' brand entry uses placeholder Base/Mid/Top variant labels with no real prices. Recommend consolidating into a single brand ('Maruti Suzuki' or 'Suzuki') to avoid duplicate listings.",
+      "Transmission": "MT / 4AT",
+      "Seating": "5",
       "Fuel Type": "Petrol",
-      "Fuel Tank Capacity (L)": "40",
-      "Certified Fuel Efficiency (km/l)": "MT: 16.94, AT: 16.39",
-      "Overall Length (mm)": "3985 (with spare wheel cover)",
-      "Overall Width (mm)": "1645",
-      "Overall Height (mm)": "1720",
-      "Wheelbase (mm)": "2590",
-      "Ground Clearance (mm)": "210 (unladen)",
-      "Turning Radius (m)": "5.7",
-      "Gross Vehicle Weight (GVW)": "1545",
-      "Seating Capacity": "4",
-      "Boot Space (litres)": "219 (seatback raised, 1st position) / 211 (2nd position)",
-      "Boot Space Seats Folded (litres)": "332",
-      "Track Width Front/Rear (mm)": "1395 / 1405",
-      "Number of Doors": "5",
-      "Body Type": "Off-Road SUV",
-      "Front Suspension Type": "3-Link Rigid Axle with Coil Spring",
-      "Rear Suspension Type": "3-Link Rigid Axle with Coil Spring",
-      "Front Brakes": "Disc",
-      "Rear Brakes": "Drum",
-      "Tyre Size": "195/80 R15",
-      "Wheel Size (inches)": "15",
-      "Spare Tyre": "Tailgate Mounted, Steel, 195/80 R15",
-      "Chassis Type": "Ladder Frame",
-      "Approach Angle": "36°",
-      "Departure Angle": "46°",
-      "Ramp Breakover Angle": "24°",
-      "Standard Vehicle Warranty": "3 years / 100,000 km standard",
-      "Importer": "CG MotoCorp (Chaudhary Group)",
-      "Dealer": "CG MotoCorp dealer network",
-      "Network": "Nationwide CG MotoCorp dealer/sub-dealer/outlet network across Nepal",
-      "Service Center": "Multiple authorized service centers across Nepal (contact toll-free 9801571571)",
-      "Safety Rating": "Euro NCAP 3 stars (2018) — Adult 73%, Child 84%, Pedestrian 52%, Safety Assist 50%"
+      "Body Type": "Off-Road SUV"
     },
-    "pros": [
-      "True off-road 4WD with ALLGRIP PRO and Low Range Transfer Gear",
-      "6 airbags standard across ALL variants",
-      "Ladder Frame + 3-Link Rigid Axle — unmatched off-road articulation",
-      "210 mm ground clearance — handles Nepal mountain terrain",
-      "5-door body adds genuine rear passenger practicality"
-    ],
-    "cons": [
-      "Only 4-seater",
-      "Fuel efficiency of ~16 km/l is lower than modern crossovers",
-      "Only 4-speed AT",
-      "5.7 m turning radius — large for its size"
-    ],
-    "highlights": [
-      "ALLGRIP PRO 4WD",
-      "210mm Ground Clearance",
-      "6 Airbags Standard",
-      "Ladder Frame"
-    ],
-    "thumb": "/assets/images/car_images/suzuki/jimny/exterior/anfles.png"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/jimny/front-34-studio.png"
   },
   {
-    "id": 15,
+    "id": 8,
     "slug": "suzuki-fronx-2024",
     "brand": "Suzuki",
     "brandSlug": "suzuki",
@@ -1608,6 +1354,9 @@ window.CARS_DB = [
     "baseEMI": 50000,
     "overview": "The Suzuki Fronx is a futuristic sporty compact SUV on the HEARTECT platform. It comes with a 1.2L K-Series Dual Jet Dual VVT (with AMT) and the powerful 1.0L Turbo Boosterjet engine with Smart Hybrid Technology that sprints 0–60 km/h in just 5.3 seconds. Top variants feature SmartPlay Pro+ 9\", 360 View Camera, Wireless Charging, HUD, and Next-Gen Suzuki Connect. Safety includes 6 airbags, standard ESP, and Hill Hold Assist.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/fronx/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/fronx/interior-dashboard.png",
+      "/assets/images/car_images/maruti-suzuki/fronx/front-lifestyle.png",
       "/assets/images/car_images/suzuki/fronx/exterior/1689073784combination-lamp.png",
       "/assets/images/car_images/suzuki/fronx/exterior/image-1.jpg",
       "/assets/images/car_images/suzuki/fronx/exterior/image-2.jpg",
@@ -1680,7 +1429,9 @@ window.CARS_DB = [
           "power": "66 kW (89.73 PS) @ 6,000 rpm",
           "torque": "113 Nm @ 4,400 rpm",
           "efficiency": "21.0 km/l (MT) / 22.89 km/l (AMT)",
-          "transmission": "5MT / 5AMT"
+          "transmission": "5MT / 5AMT",
+          "Power": "66 kW (89.73 PS) @ 6,000 rpm",
+          "Torque": "113 Nm @ 4,400 rpm"
         }
       },
       {
@@ -1700,7 +1451,9 @@ window.CARS_DB = [
           "power": "66 kW (1.2L) / 73.6 kW (1.0T)",
           "torque": "113 Nm (1.2L) / 147.6 Nm (1.0T)",
           "efficiency": "21.0 km/l (1.2L MT) / 21.5 km/l (1.0T MT)",
-          "transmission": "5MT / 5AMT (1.2L) | 5MT (1.0T)"
+          "transmission": "5MT / 5AMT (1.2L) | 5MT (1.0T)",
+          "Power": "66 kW (1.2L) / 73.6 kW (1.0T)",
+          "Torque": "113 Nm (1.2L) / 147.6 Nm (1.0T)"
         }
       },
       {
@@ -1728,7 +1481,9 @@ window.CARS_DB = [
           "power": "73.6 kW (100.06 PS) @ 5,500 rpm",
           "torque": "147.6 Nm @ 2,000–4,500 rpm",
           "efficiency": "21.5 km/l (MT) / 20.0 km/l (AT)",
-          "transmission": "5MT / 6AT"
+          "transmission": "5MT / 6AT",
+          "Power": "73.6 kW (100.06 PS) @ 5,500 rpm",
+          "Torque": "147.6 Nm @ 2,000–4,500 rpm"
         }
       },
       {
@@ -1758,54 +1513,32 @@ window.CARS_DB = [
           "power": "73.6 kW (100.06 PS) @ 5,500 rpm",
           "torque": "147.6 Nm @ 2,000–4,500 rpm",
           "efficiency": "21.5 km/l (MT) / 20.0 km/l (AT)",
-          "transmission": "5MT / 6AT"
+          "transmission": "5MT / 6AT",
+          "Power": "73.6 kW (100.06 PS) @ 5,500 rpm",
+          "Torque": "147.6 Nm @ 2,000–4,500 rpm"
         }
       }
     ],
     "specs": {
-      "Engine (1.2L)": "1.2L Dual Jet, Dual VVT, K-Series",
-      "Engine (1.0T)": "1.0L Turbo Boosterjet with Smart Hybrid",
-      "Power (1.2L)": "66 kW (89.73 PS) @ 6,000 rpm",
-      "Power (1.0T)": "73.6 kW (100.06 PS) @ 5,500 rpm",
-      "Torque (1.2L)": "113 Nm @ 4,400 rpm",
-      "Torque (1.0T)": "147.6 Nm @ 2,000–4,500 rpm",
-      "Fuel Efficiency": "Up to 22.89 km/l (1.2L AMT) / 21.5 km/l (1.0T MT)",
-      "Fuel Tank": "37 L",
-      "Transmission": "5MT / 5AMT (1.2L) | 5MT / 6AT (1.0T)",
-      "Drive": "FWD",
+      "Engine Type": "1.2L K-Series / 1.0L Turbo Boosterjet",
+      "Displacement (cc)": "1,197 / 998",
+      "Transmission Type": "MT / AMT / 6AT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Note": "DUPLICATE ENTRY: this appears to duplicate the 'Maruti Suzuki Fronx (suzuki-fronx-2025)' entry in the 'Maruti Suzuki' brand (which has real NPR pricing); this 'Suzuki' brand entry uses placeholder Base/Mid/Top variant labels with no real prices. Recommend consolidating into a single brand ('Maruti Suzuki' or 'Suzuki') to avoid duplicate listings.",
+      "Transmission": "MT / AMT / 6AT",
       "Seating": "5",
-      "Boot Space": "308 L",
-      "Length": "3,995 mm",
-      "Width": "1,765 mm",
-      "Height": "1,550 mm",
-      "Wheelbase": "2,520 mm",
-      "Min Turning Radius": "4.9 m",
-      "Platform": "HEARTECT",
-      "Tyre Size": "195/60 R16",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol / Turbo Petrol",
+      "Body Type": "Compact SUV (Crossover)"
     },
-    "pros": [
-      "1.0T Turbo Boosterjet — 0 to 60 in 5.3s with 147.6 Nm torque",
-      "6 airbags + ESP + Hill Hold on Alpha",
-      "SmartPlay Pro+ 9\" with 360 Camera, HUD, Wireless Charging on Alpha",
-      "HEARTECT platform",
-      "308L boot space"
-    ],
-    "cons": [
-      "No AWD option",
-      "HUD and 360 Camera only on Alpha",
-      "37L fuel tank is smaller than rivals"
-    ],
-    "highlights": [
-      "1.0T Boosterjet",
-      "6 Airbags",
-      "308L Boot",
-      "SmartPlay Pro+ 9\""
-    ],
-    "thumb": "/assets/images/car_images/suzuki/fronx/exterior/1689073784combination-lamp.png"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/fronx/front-34-studio.png"
   },
   {
-    "id": 16,
+    "id": 9,
     "slug": "suzuki-brezza-2024",
     "brand": "Suzuki",
     "brandSlug": "suzuki",
@@ -1827,6 +1560,8 @@ window.CARS_DB = [
     "baseEMI": 60000,
     "overview": "The Suzuki Brezza is a smart and powerful sporty urban vehicle powered by the 1.5L K15C engine with Smart Hybrid (AT). It delivers up to 19.80 km/l on the automatic. Top variants feature SmartPlay Pro+ 22.86 cm, electric sunroof, wireless charging dock, rear fast USB, cruise control, dual LED headlamps, and 360 View Camera.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/brezza/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/brezza/front-34-lifestyle-cgmotocorp.jpg",
       "/assets/images/car_images/suzuki/brezza/exterior/suzuki-brezza-exterior-side-left-white-bg.jpg",
       "/assets/images/car_images/suzuki/brezza/interior/suzuki-brezza-interior-seats-rear.jpg"
     ],
@@ -1899,7 +1634,9 @@ window.CARS_DB = [
           "power": "75.8 kW (103.1 PS) @ 6,000 rpm",
           "torque": "136.8 Nm @ 4,400 rpm",
           "efficiency": "17.38 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "75.8 kW (103.1 PS) @ 6,000 rpm",
+          "Torque": "136.8 Nm @ 4,400 rpm"
         }
       },
       {
@@ -1923,7 +1660,9 @@ window.CARS_DB = [
           "power": "75.8 kW (103.1 PS) @ 6,000 rpm",
           "torque": "136.8 Nm @ 4,400 rpm",
           "efficiency": "17.38 km/l (MT) / 19.80 km/l (AT)",
-          "transmission": "5MT / 6AT"
+          "transmission": "5MT / 6AT",
+          "Power": "75.8 kW (103.1 PS) @ 6,000 rpm",
+          "Torque": "136.8 Nm @ 4,400 rpm"
         }
       },
       {
@@ -1952,7 +1691,9 @@ window.CARS_DB = [
           "power": "75.8 kW (103.1 PS) @ 6,000 rpm",
           "torque": "136.8 Nm @ 4,400 rpm",
           "efficiency": "17.38 km/l (MT) / 19.80 km/l (AT)",
-          "transmission": "5MT / 6AT"
+          "transmission": "5MT / 6AT",
+          "Power": "75.8 kW (103.1 PS) @ 6,000 rpm",
+          "Torque": "136.8 Nm @ 4,400 rpm"
         }
       },
       {
@@ -1981,7 +1722,9 @@ window.CARS_DB = [
           "power": "75.8 kW (103.1 PS) @ 6,000 rpm",
           "torque": "136.8 Nm @ 4,400 rpm",
           "efficiency": "17.38 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "75.8 kW (103.1 PS) @ 6,000 rpm",
+          "Torque": "136.8 Nm @ 4,400 rpm"
         }
       },
       {
@@ -2001,54 +1744,32 @@ window.CARS_DB = [
           "power": "75.8 kW (103.1 PS) @ 6,000 rpm",
           "torque": "136.8 Nm @ 4,400 rpm",
           "efficiency": "19.80 km/l",
-          "transmission": "6AT"
+          "transmission": "6AT",
+          "Power": "75.8 kW (103.1 PS) @ 6,000 rpm",
+          "Torque": "136.8 Nm @ 4,400 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L K15C, 4-Cylinder",
-      "Engine Type": "K15C (MT) / K15C Smart Hybrid (AT)",
-      "Displacement": "1,462 cc",
-      "Power": "75.8 kW (103.1 PS) @ 6,000 rpm",
-      "Torque": "136.8 Nm @ 4,400 rpm",
-      "Fuel Efficiency": "17.38 km/l (MT) / 19.80 km/l (AT)",
-      "Fuel Tank": "48 L",
-      "Transmission": "5MT / 6AT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L K15C Petrol / Smart Hybrid",
+      "Displacement (cc)": "1,462",
+      "Transmission Type": "MT / AT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Note": "DUPLICATE ENTRY: this appears to duplicate the 'Maruti Suzuki Vitara Brezza (suzuki-vitara-brezza-2025)' entry in the 'Maruti Suzuki' brand (which has real NPR pricing); this 'Suzuki' brand entry uses placeholder Base/Mid/Top variant labels with no real prices. Recommend consolidating into a single brand ('Maruti Suzuki' or 'Suzuki') to avoid duplicate listings.",
+      "Transmission": "MT / AT",
       "Seating": "5",
-      "Boot Space": "328 L (VDA Method)",
-      "Length": "3,995 mm",
-      "Width": "1,790 mm",
-      "Height": "1,685 mm",
-      "Wheelbase": "2,500 mm",
-      "Front Brakes": "Ventilated Disc",
-      "Rear Brakes": "Drum",
-      "Tyre Size": "215/60 R16",
-      "Platform": "TECT (Suzuki)",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol",
+      "Body Type": "Compact SUV"
     },
-    "pros": [
-      "19.80 km/l with Smart Hybrid AT",
-      "Large 48L fuel tank",
-      "328L boot",
-      "Electric sunroof, wireless charging, 360 camera on ZXi+",
-      "Suzuki Connect telematics"
-    ],
-    "cons": [
-      "Smart Hybrid only with AT, not MT",
-      "Only 2 airbags standard",
-      "No HUD on any variant"
-    ],
-    "highlights": [
-      "19.80 km/l AT",
-      "328L Boot",
-      "48L Tank",
-      "SmartPlay Pro+ 9\""
-    ],
-    "thumb": "/assets/images/car_images/suzuki/brezza/exterior/suzuki-brezza-exterior-side-left-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/brezza/front-34-studio.png"
   },
   {
-    "id": 17,
+    "id": 10,
     "slug": "suzuki-victoris-2024",
     "brand": "Suzuki",
     "brandSlug": "suzuki",
@@ -2070,6 +1791,8 @@ window.CARS_DB = [
     "baseEMI": 0,
     "overview": "The Suzuki Victoris is the most feature-loaded SUV in Suzuki's lineup. Available in Smart Hybrid (5MT/6AT), AllGrip AWD, Strong Hybrid (e-CVT), and S-CNG. Key highlights include Level 2 ADAS, 6 airbags, 360° HD Camera with 11 views, Electronic Parking Brake, 8-way powered driver seat, ventilated seats, Smart Powered Tailgate with gesture control, panoramic sunroof, SmartPlay Pro X 10.1\" HD, Dolby Atmos via 8 Infinity by Harman speakers, Alexa Auto, 64-colour ambient lighting, and auto purify with PM2.5 display.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/victoris/front-34-lifestyle.jpeg",
+      "/assets/images/car_images/maruti-suzuki/victoris/interior-drivemode-detail.jpg",
       "/assets/images/car_images/suzuki/victoris/exterior/suzuki-victoris-exterior-side-left-white-bg.jpg"
     ],
     "colors": [
@@ -2148,7 +1871,9 @@ window.CARS_DB = [
           "power": "75.8 kW (103.06 PS) @ 6,000 rpm / 85 kW total (Hybrid)",
           "torque": "139 Nm @ 4,300 rpm (Petrol)",
           "efficiency": "21.18 km/l (MT) / 28.65 km/l (Strong Hybrid e-CVT)",
-          "transmission": "5MT / e-CVT"
+          "transmission": "5MT / e-CVT",
+          "Power": "75.8 kW (103.06 PS) @ 6,000 rpm / 85 kW total (Hybrid)",
+          "Torque": "139 Nm @ 4,300 rpm (Petrol)"
         }
       },
       {
@@ -2179,7 +1904,9 @@ window.CARS_DB = [
           "power": "75.8 kW (103.06 PS) @ 6,000 rpm",
           "torque": "139 Nm @ 4,300 rpm",
           "efficiency": "21.18 km/l (MT) / 21.06 km/l (AT) / 28.65 km/l (Strong Hybrid)",
-          "transmission": "5MT / 6AT / e-CVT"
+          "transmission": "5MT / 6AT / e-CVT",
+          "Power": "75.8 kW (103.06 PS) @ 6,000 rpm",
+          "Torque": "139 Nm @ 4,300 rpm"
         }
       },
       {
@@ -2210,7 +1937,9 @@ window.CARS_DB = [
           "power": "75.8 kW (103.06 PS) / 85 kW total (Strong Hybrid)",
           "torque": "139 Nm / 141 Nm motor (Strong Hybrid)",
           "efficiency": "21.06 km/l (AT) / 19.07 km/l (AllGrip AT) / 28.65 km/l (Hybrid)",
-          "transmission": "5MT / 6AT / AllGrip 6AT / e-CVT"
+          "transmission": "5MT / 6AT / AllGrip 6AT / e-CVT",
+          "Power": "75.8 kW (103.06 PS) / 85 kW total (Strong Hybrid)",
+          "Torque": "139 Nm / 141 Nm motor (Strong Hybrid)"
         }
       },
       {
@@ -2235,60 +1964,38 @@ window.CARS_DB = [
           "power": "75.8 kW / 85 kW total (Strong Hybrid)",
           "torque": "139 Nm / 141 Nm motor",
           "efficiency": "21.06 km/l (AT) / 19.07 km/l (AllGrip AT) / 28.65 km/l (Hybrid)",
-          "transmission": "6AT / AllGrip 6AT / e-CVT"
+          "transmission": "6AT / AllGrip 6AT / e-CVT",
+          "Power": "75.8 kW / 85 kW total (Strong Hybrid)",
+          "Torque": "139 Nm / 141 Nm motor"
         }
       }
     ],
     "specs": {
-      "Engine (Petrol)": "1.5L K15C Smart Hybrid",
-      "Engine (Strong Hybrid)": "1.5L M15D + AC Synchronous Motor",
-      "Displacement": "1,462 cc (Petrol) / 1,490 cc (Strong Hybrid)",
-      "Power (Petrol)": "75.8 kW (103.06 PS) @ 6,000 rpm",
-      "Power (Strong Hybrid)": "68 kW petrol + 59 kW motor = 85 kW total",
-      "Torque (Petrol)": "139 Nm @ 4,300 rpm",
-      "Torque (Motor)": "141 Nm @ 0–3,995 rpm",
-      "Battery": "177.6 V Lithium-ion",
-      "Fuel Efficiency": "21.18 km/l (MT) / 21.06 km/l (AT) / 19.07 km/l (AllGrip) / 28.65 km/l (Hybrid)",
-      "Fuel Tank": "45 L",
-      "Transmission": "5MT / 6AT / AllGrip 6AT / e-CVT",
-      "Drive": "2WD / AllGrip AWD",
+      "Engine Type": "1.5L Petrol / 1.5L Strong Hybrid",
+      "Displacement (cc)": "1,462 (Petrol) / 1,490 (Strong Hybrid)",
+      "Max Engine Power": "102 bhp (Petrol) / 91 bhp + electric motor (Strong Hybrid)",
+      "Max Engine Torque": "139 Nm (Petrol) / 122 Nm (Strong Hybrid)",
+      "Transmission Type": "MT / AT / e-CVT (Strong Hybrid)",
+      "Drive Type": "FWD / AllGrip AWD (top trims)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Mid-size SUV",
+      "Variant Names": "32 variants across Petrol Mild-Hybrid and Strong Hybrid lines (VXI, ZXI, ZXI Dual Tone, ZXI+ up to fully-loaded ZXI Plus Optional Dual Tone)",
+      "Price Range (NPR)": "Rs. 53.99L (regular start; Rs. 50.99L intro offer to first 50 buyers) up to ~Rs. 97.29L (top Strong Hybrid trim)",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "102 bhp (Petrol) / 91 bhp + electric motor (Strong Hybrid)",
+      "Torque": "139 Nm (Petrol) / 122 Nm (Strong Hybrid)",
+      "Transmission": "MT / AT / e-CVT (Strong Hybrid)",
       "Seating": "5",
-      "Length": "4,360 mm",
-      "Width": "1,795 mm",
-      "Height": "1,655 mm",
-      "Wheelbase": "2,600 mm",
-      "Min Turning Radius": "5.4 m",
-      "Front Brakes": "Disc",
-      "Rear Brakes": "Disc",
-      "Tyre Size": "215/60 R17",
-      "Platform": "TECT (Suzuki)",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol / Hybrid / CNG"
     },
-    "pros": [
-      "Level 2 ADAS on Zxi+ 6AT — most advanced Suzuki in Nepal",
-      "28.65 km/l on Strong Hybrid",
-      "Dolby Atmos via 8 Infinity by Harman speakers",
-      "Smart Powered Tailgate with gesture control",
-      "64-color ambient lighting, panoramic sunroof, ventilated seats",
-      "AllGrip AWD available",
-      "Auto Purify with PM2.5 — ideal for Kathmandu"
-    ],
-    "cons": [
-      "Level 2 ADAS only on Zxi+ 6AT",
-      "AllGrip AWD only on Zxi+",
-      "Strong Hybrid commands significant premium",
-      "Boot space not published"
-    ],
-    "highlights": [
-      "Level 2 ADAS",
-      "28.65 km/l Hybrid",
-      "Dolby Atmos 8 Speakers",
-      "AllGrip AWD"
-    ],
-    "thumb": "/assets/images/car_images/suzuki/victoris/exterior/suzuki-victoris-exterior-side-left-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/victoris/front-34-lifestyle.jpeg"
   },
   {
-    "id": 18,
+    "id": 11,
     "slug": "riddara-rd6-2024",
     "brand": "Riddara",
     "brandSlug": "riddara",
@@ -2378,7 +2085,9 @@ window.CARS_DB = [
           "torque": "385 Nm",
           "range": "373 km (NEDC)",
           "acceleration": "0–100 km/h: 7.3s",
-          "charging": "DC 90kW / 30–80% in 32 min | AC 6.6kW / 7.8 hrs"
+          "charging": "DC 90kW / 30–80% in 32 min | AC 6.6kW / 7.8 hrs",
+          "Power": "200 kW",
+          "Torque": "385 Nm"
         }
       },
       {
@@ -2414,82 +2123,130 @@ window.CARS_DB = [
           "torque": "595 Nm",
           "range": "424 km (NEDC)",
           "acceleration": "0–100 km/h: 4.5s",
-          "charging": "DC 110kW / 30–80% in 30 min | AC 6.6kW / 9.3 hrs"
+          "charging": "DC 110kW / 30–80% in 30 min | AC 6.6kW / 9.3 hrs",
+          "Power": "315 kW",
+          "Torque": "595 Nm"
         }
       }
     ],
     "specs": {
-      "Battery (2WD)": "63 kWh Lithium Iron Phosphate",
-      "Battery (4WD)": "73 kWh Lithium Iron Phosphate",
-      "Drivetrain (2WD)": "2WD Rear-Wheel Drive",
-      "Drivetrain (4WD)": "4WD",
-      "Motor Type": "Permanent Magnet Synchronous Motor",
-      "Max Power (2WD)": "200 kW",
-      "Max Power (4WD)": "315 kW",
-      "Max Torque (2WD)": "385 Nm",
-      "Max Torque (4WD)": "595 Nm",
-      "Range (2WD NEDC)": "373 km",
-      "Range (4WD NEDC)": "424 km",
-      "Max Speed (2WD)": "185 km/h",
-      "Max Speed (4WD)": "190 km/h",
-      "0–100 km/h (2WD)": "7.3 seconds",
-      "0–100 km/h (4WD)": "4.5 seconds",
-      "DC Fast Charging (2WD)": "90 kW / 30–80% in 32 min",
-      "DC Fast Charging (4WD)": "110 kW / 30–80% in 30 min",
-      "AC Charging": "6.6 kW (220V/240V)",
-      "Cargo Capacity": "1,030 kg",
-      "Towing Capacity (2WD)": "2,500 kg",
-      "Towing Capacity (4WD)": "3,000 kg",
-      "Wading Depth (2WD)": "500 mm",
-      "Wading Depth (4WD)": "815 mm",
-      "Cargo Bed Volume": "1,200 L (1,525 × 1,450 × 540 mm)",
-      "Front Trunk": "70 L",
-      "Under-Seat Storage": "48 L",
-      "Length": "5,260 mm",
-      "Width": "1,900 mm",
-      "Height": "1,880 mm",
-      "Wheelbase": "3,120 mm",
-      "Ground Clearance": "225 mm",
+      "Engine Type": "2.0L Turbo Diesel/Petrol (Riddara RD6, global spec)",
+      "Drive Type": "RWD (2WD variant) / Dual-Motor AWD (4WD variant, front+rear motor, smart torque distribution)",
+      "Body Type": "Electric Pickup Truck (Double Cab)",
+      "Note": "No official Nepal distributor could be independently confirmed in current research — verify current official availability and pricing before quoting.",
+      "Fuel Type": "Electric",
+      "Motor Type": "Permanent Magnet Synchronous",
+      "Motor Position": "Rear axle, transverse (2WD/RWD) — Front axle + Rear axle, transverse, dual-motor (4WD/AWD)",
+      "Max Motor Power": "200 kW (2WD, single motor) / 315 kW combined (4WD, dual motor)",
+      "Max Motor Torque": "385 Nm (2WD) / 595 Nm combined (4WD)",
+      "Top Speed (km/h)": "185 (2WD) / 190 (4WD)",
+      "Acceleration 0–100 km/h": "7.3 sec (2WD) / 4.5 sec (4WD)",
+      "Drive Modes": "Economy / Comfort / Sport (2WD); adds Sand / Mud / Off-Road / Wading on 4WD (7 total)",
+      "Regenerative Braking": "3-level adjustable",
+      "Transmission Type": "Single-speed reduction gear",
+      "Drivetrain": "RWD / AWD",
+      "Battery Type": "Lithium Iron Phosphate (LFP)",
+      "Battery Capacity (kWh)": "63 (2WD) / 73 (4WD)",
+      "Battery Cooling": "Liquid-cooled (under-floor pack)",
+      "Certified Range (km)": "373–377 km NEDC (2WD) / 424 km NEDC (4WD)",
+      "AC Charging Max Rate (kW)": "6.6",
+      "DC Fast Charging Max Rate (kW)": "90 (2WD) / 110 (4WD)",
+      "Normal Charging Time (AC)": "7.8 hrs (2WD) / 9.3 hrs (4WD)",
+      "Fast Charging Time (DC)": "30–80% in ~32 min (2WD) / ~30 min (4WD)",
+      "Vehicle-to-Load (V2L)": "6 kW output; 5 discharge points (front trunk, cabin, exterior side, rear cargo bed) with driving/parking/locked/simultaneous charge-discharge modes",
+      "Overall Length (mm)": "5,260",
+      "Overall Width (mm)": "1,900",
+      "Overall Height (mm)": "1,865–1,880 (minor variance across sources)",
+      "Wheelbase (mm)": "3,120",
+      "Ground Clearance (mm)": "220–230",
+      "Kerb Weight (kg)": "2,170 (4WD)",
+      "Gross Vehicle Weight (GVW)": "3,220 kg (4WD)",
+      "Payload Capacity (kg)": "1,050 (4WD max load)",
+      "Towing Capacity (kg)": "3,000 (per Nepal-market listing for the 4WD variant; one international source cites 2,500 kg for an RWD trim — see notes)",
+      "Seating Capacity": "5",
+      "Number of Doors": "4",
+      "Boot Space (litres)": "1,200 (rear cargo bed)",
+      "Frunk Capacity (litres)": "70",
+      "Drag Coefficient (Cd)": "0.326",
+      "Front Suspension Type": "Independent MacPherson Strut with coil spring and anti-roll bar",
+      "Rear Suspension Type": "Independent multi-link with anti-roll bar",
+      "Front Brakes": "Ventilated Disc",
+      "Rear Brakes": "Ventilated Disc",
+      "Electronic Parking Brake (EPB)": "Yes (with Auto Hold)",
+      "Steering Type": "Rack and Pinion, Electric Power Steering",
       "Tyre Size": "235/60 R18",
-      "Front Suspension": "MacPherson Strut (Independent)",
-      "Rear Suspension": "Multi-link Independent",
-      "Brakes": "Ventilated Disc (All 4 Wheels)",
-      "Body Strength": "High Intensity Steel (30,300 Nm/deg)",
-      "V2L Discharge": "6 kW European-Standard Rear Port"
+      "Wheel Size (inches)": "18",
+      "Total Airbag Count": "4 (2WD: front + side) / 6 (4WD: front + side + curtain)",
+      "Hill Start Assist (HSA)": "Yes (HHC)",
+      "Hill Descent Control (HDC)": "Yes",
+      "Brake Assist (BA)": "Yes (emergency brake assist)",
+      "Adaptive Cruise Control (ACC)": "Yes (4WD variant only, listed as ICC/ACC)",
+      "Auto Emergency Braking (AEB)": "Yes (4WD variant only)",
+      "Forward Collision Warning": "Yes (4WD variant only)",
+      "Lane Departure Warning": "Yes (4WD variant only)",
+      "Lane Keep Assist": "Yes (4WD variant only, LKA/ELKA)",
+      "Blind Spot Warning": "Yes (4WD variant only, BSD)",
+      "Rear Cross Traffic Warning": "Yes (4WD variant only, RCTA + RCTB)",
+      "360° Surround View Camera": "Yes — 540° surround view with underbody view (4WD); high-resolution rear camera only (2WD)",
+      "Front/Rear Cameras": "Yes",
+      "TPMS": "Yes (4WD)",
+      "Air Conditioning Type": "Dual-Zone Automatic",
+      "Air Quality Control / PM2.5 Filter": "Yes (CN95 + PM2.5 filtration)",
+      "Smart Entry (Keyless)": "Yes (Smart Key)",
+      "Powered Driver Seat": "6-way power adjustable (2WD); front seats recline 180° (4WD)",
+      "Ventilated Seats": "Front & rear (4WD variant)",
+      "Electric ORVM": "Power-folding with defrosting (4WD)",
+      "Seat Upholstery": "Synthetic leather",
+      "Roof Rails": "Aluminum (4WD)",
+      "Headlamp Type": "LED, ADB Matrix LED (per manufacturer)",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Tail Lamp Type": "LED bar-style",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "12.3-inch (2WD) / 14.6-inch HD (4WD)",
+      "Audio System Speaker Count": "6 (2WD) / 8 (4WD)",
+      "Voice Commands/Assistant": "Yes (intelligent voice interaction system)",
+      "Connected Car Apps": "Yes (CarbitLink app)",
+      "Wi-Fi Hotspot": "50W wireless phone charging (4WD) — note: this is wireless charging, not confirmed as Wi-Fi hotspot",
+      "Total Number of Variants": "2 (2WD 63kWh, 4WD 73kWh)",
+      "Battery-based Variants": "63 kWh (2WD) and 73 kWh (4WD)",
+      "Motor/Drive-based Variants": "Single-motor RWD (2WD) and dual-motor AWD (4WD)"
     },
     "pros": [
-      "Nepal's first 100% pure EV pickup — zero fuel cost",
-      "4WD: 0–100 in 4.5s with 595 Nm — supercar performance",
-      "424 km NEDC range",
-      "6 kW V2L port powers appliances off the truck bed",
-      "14 ADAS features on 4WD — most comprehensive in Nepal",
-      "815 mm wading depth + 95% gradeability",
-      "1,200L cargo bed + 3,000 kg towing (4WD)",
-      "540° camera with under-vehicle view"
+      "Nepal's first dedicated pure-EV pickup platform, with genuinely capable off-road specs (815mm wading depth, 95% max gradeability) on the 4WD variant",
+      "Strong dual-motor performance on the 4WD (315kW, 595Nm, 0-100 in 4.5s) rivaling much pricier EV trucks",
+      "Full ADAS suite (adaptive cruise, AEB, lane keep, blind-spot, rear cross-traffic) on the 4WD variant is very rare in the pickup segment in Nepal",
+      "6kW V2L capability with 5 discharge points is genuinely useful for worksite/outdoor power use"
     ],
     "cons": [
-      "Large 5,260 mm length — challenging in Kathmandu narrow streets",
-      "Fast DC charging infrastructure still limited in Nepal",
-      "NEDC range; real-world with load/mountains will be lower",
-      "Need 4WD for 6 airbags, ADAS, and TPMS"
+      "Entry 2WD variant has a noticeably thinner safety kit (4 airbags, no ADAS suite) compared to the 4WD",
+      "Riddara is a very new brand in Nepal with limited track record — CG Motors' service/parts network is still being built out",
+      "Real-world range will likely be meaningfully below the NEDC-rated 373-424km figures, as NEDC is an optimistic test cycle versus WLTP/real-world",
+      "Warranty terms specific to the Nepal market could not be independently confirmed"
     ],
     "highlights": [
-      "424 km Range (4WD)",
-      "4.5s 0-100 (4WD)",
-      "14 ADAS Features",
-      "6kW V2L Discharge"
+      "63kWh (2WD, 373-377km NEDC) or 73kWh (4WD, 424km NEDC) LFP battery options",
+      "4WD variant: 315kW / 595Nm dual-motor, 0-100km/h in 4.5s, 815mm wading depth, full ADAS suite",
+      "1,200L cargo bed, 70L frunk, 6kW V2L output with 5 discharge points",
+      "Nepal's first 100% pure-EV pickup platform, distributed by CG Motors"
     ],
     "thumb": "/assets/images/car_images/riddara/rd6/exterior/Front-Styling-in-Riddara-RD6-4WD.png"
   },
   {
-    "id": 101,
+    "id": 12,
     "slug": "hyundai-grand-i10-nios-fl-2024",
     "brand": "Hyundai",
+    "brandSlug": "hyundai",
     "model": "Grand i10 Nios FL",
     "year": 2024,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Hatchback",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's safest city hatch — 6 airbags at an honest price",
     "rating": 4.2,
     "reviews": 3627,
@@ -2556,7 +2313,9 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "18 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       },
       {
@@ -2576,7 +2335,9 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "18 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       },
       {
@@ -2599,7 +2360,9 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "18 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       },
       {
@@ -2624,7 +2387,9 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "18 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       },
       {
@@ -2643,57 +2408,52 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "17.2 km/l",
-          "transmission": "AMT"
+          "transmission": "AMT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L Kappa Dual VTVT (BS6)",
-      "Displacement": "1,197 cc",
-      "Power": "82 hp @ 6,000 rpm",
-      "Torque": "113.8 Nm @ 4,000 rpm",
-      "Efficiency": "18 km/l (MT) / 17.2 km/l (AMT)",
-      "Fuel Tank": "37 L",
-      "Transmission": "5-Speed MT / AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Kappa Petrol",
+      "Displacement (cc)": "1,197",
+      "Max Engine Power": "83 PS",
+      "Max Engine Torque": "114 Nm",
+      "Transmission Type": "MT / AMT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "260",
+      "Total Airbag Count": "2–6 depending on trim",
+      "Body Type": "Hatchback",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
+      "Power": "83 PS",
+      "Torque": "114 Nm",
+      "Transmission": "MT / AMT",
+      "Boot Space": "260",
       "Seating": "5",
-      "Boot Space": "260 L",
-      "Length": "3,815 mm",
-      "Width": "1,680 mm",
-      "Wheelbase": "2,450 mm",
-      "Ground Clearance": "165 mm",
-      "Airbags": "2 (Era/Magna) / 6 (Sportz)"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "6 airbags on Sportz — best in class",
-      "Refined quiet 1.2L engine",
-      "Excellent fit & finish",
-      "Wide Laxmi service network",
-      "Wireless CarPlay"
-    ],
-    "cons": [
-      "Small 260L boot",
-      "No sunroof",
-      "AMT can be jerky",
-      "Bouncy at highway speeds"
-    ],
-    "highlights": [
-      "6 Airbags (Sportz)",
-      "Rs. 33.56L Start",
-      "18 km/l",
-      "Wireless CarPlay"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/hyundai/grand-i10-nios/interior/hyundai-grand-i10-nios-interior-seats-front.jpg"
   },
   {
-    "id": 102,
+    "id": 13,
     "slug": "hyundai-exter-2025",
     "brand": "Hyundai",
+    "brandSlug": "hyundai",
     "model": "Exter",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Micro SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's first sub-4m SUV with 6 airbags & sunroof standard",
     "rating": 4.3,
     "reviews": 1842,
@@ -2753,7 +2513,9 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "19.4 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       },
       {
@@ -2776,7 +2538,9 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "19.4 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       },
       {
@@ -2799,58 +2563,52 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "19.4 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L Kappa Dual VTVT Petrol",
-      "Displacement": "1,197 cc",
-      "Power": "82 hp @ 6,000 rpm",
-      "Torque": "113.8 Nm",
-      "Efficiency": "19.4 km/l",
-      "Fuel Tank": "37 L",
-      "Transmission": "5-Speed MT / AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Kappa Petrol",
+      "Displacement (cc)": "1,197",
+      "Max Engine Power": "83 PS",
+      "Max Engine Torque": "114 Nm",
+      "Transmission Type": "MT / AMT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Ground Clearance (mm)": "185",
+      "Total Airbag Count": "6 (top trim)",
+      "Body Type": "Micro SUV",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
+      "Power": "83 PS",
+      "Torque": "114 Nm",
+      "Transmission": "MT / AMT",
       "Seating": "5",
-      "Boot Space": "391 L",
-      "Length": "3,815 mm",
-      "Width": "1,710 mm",
-      "Height": "1,631 mm",
-      "Wheelbase": "2,450 mm",
-      "Ground Clearance": "185 mm",
-      "Airbags": "6 (Standard — all variants)"
+      "Fuel Type": "Petrol",
+      "Ground Clearance": "185"
     },
-    "pros": [
-      "6 airbags standard on ALL variants",
-      "Best-in-class 185mm ground clearance",
-      "391L boot — massive for class",
-      "Electric sunroof + dual dashcam",
-      "SUV height for Nepal terrain"
-    ],
-    "cons": [
-      "No turbo or AMT in Nepal spec",
-      "EX/S have steel wheels",
-      "Shares engine with Grand i10 Nios",
-      "Pricier than i10 Nios for same power"
-    ],
-    "highlights": [
-      "6 Airbags (All)",
-      "185mm Ground Clearance",
-      "391L Boot",
-      "Electric Sunroof (S+)"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/hyundai/exter/exterior/084003793Hyundai_Exter_ev_3_Price_in_Nepal.jpg"
   },
   {
-    "id": 103,
+    "id": 14,
     "slug": "hyundai-venue-fl-2024",
     "brand": "Hyundai",
+    "brandSlug": "hyundai",
     "model": "Venue FL",
     "year": 2024,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's best-selling compact SUV — refined, feature-rich, city-ready",
     "rating": 4.3,
     "reviews": 5214,
@@ -2915,7 +2673,9 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "17.5 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       },
       {
@@ -2940,7 +2700,9 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "17.5 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       },
       {
@@ -2964,7 +2726,9 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "17.5 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       },
       {
@@ -2985,56 +2749,53 @@ window.CARS_DB = [
           "power": "120 hp @ 6,000 rpm",
           "torque": "172 Nm @ 1,500 rpm",
           "efficiency": "17.8 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "120 hp @ 6,000 rpm",
+          "Torque": "172 Nm @ 1,500 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L Kappa / 1.0L T-GDi",
-      "Power": "82 hp / 120 hp",
-      "Torque": "113.8 Nm / 172 Nm",
-      "Efficiency": "17.5 km/l (1.2L MT)",
-      "Fuel Tank": "45 L",
-      "Transmission": "5-Speed MT / 7-Speed DCT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Petrol / 1.0L Turbo GDI Petrol",
+      "Displacement (cc)": "1,197 / 998",
+      "Max Engine Power": "83–120 PS",
+      "Max Engine Torque": "114–172 Nm",
+      "Transmission Type": "MT / IVT / DCT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Ground Clearance (mm)": "195",
+      "Total Airbag Count": "6",
+      "Body Type": "Compact SUV",
+      "ADAS Suite": "Level 1 (top trim)",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
+      "Power": "83–120 PS",
+      "Torque": "114–172 Nm",
+      "Transmission": "MT / IVT / DCT",
       "Seating": "5",
-      "Boot Space": "350 L",
-      "Length": "3,995 mm",
-      "Width": "1,770 mm",
-      "Wheelbase": "2,500 mm",
-      "Ground Clearance": "195 mm",
-      "Airbags": "4 (E) / 6 (S+)"
+      "Fuel Type": "Petrol",
+      "Ground Clearance": "195"
     },
-    "pros": [
-      "Best-selling compact SUV in Nepal",
-      "195mm ground clearance for Nepal terrain",
-      "Turbo DCT option for performance",
-      "Bose sound system on SX",
-      "Strong resale value"
-    ],
-    "cons": [
-      "1.2L underpowered for highways",
-      "No diesel option",
-      "350L boot smaller than rivals",
-      "SX lacks ADAS without DCT upgrade"
-    ],
-    "highlights": [
-      "120hp Turbo (S(O) DCT)",
-      "Rs. 41.96L Start",
-      "195mm Clearance",
-      "Bose 7-Speaker (SX)"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/hyundai/venue/exterior/hyundai-venue-exterior-rear-white-bg.jpg"
   },
   {
-    "id": 104,
+    "id": 15,
     "slug": "hyundai-i20-2024",
     "brand": "Hyundai",
+    "brandSlug": "hyundai",
     "model": "i20",
     "year": 2024,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Hatchback",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "The premium hatchback — sporty, refined, and tech-loaded",
     "rating": 4.1,
     "reviews": 2103,
@@ -3103,7 +2864,9 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "20.35 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       },
       {
@@ -3128,57 +2891,52 @@ window.CARS_DB = [
           "power": "82 hp @ 6,000 rpm",
           "torque": "113.8 Nm",
           "efficiency": "20.35 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 hp @ 6,000 rpm",
+          "Torque": "113.8 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L Kappa Dual VTVT Petrol",
-      "Displacement": "1,197 cc",
-      "Power": "82 hp @ 6,000 rpm",
-      "Torque": "113.8 Nm",
-      "Efficiency": "20.35 km/l",
-      "Fuel Tank": "37 L",
-      "Transmission": "5-Speed MT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Kappa Petrol",
+      "Displacement (cc)": "1,197",
+      "Max Engine Power": "83 PS",
+      "Max Engine Torque": "114.7 Nm",
+      "Transmission Type": "MT / IVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "311",
+      "Total Airbag Count": "6",
+      "Body Type": "Premium Hatchback",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
+      "Power": "83 PS",
+      "Torque": "114.7 Nm",
+      "Transmission": "MT / IVT",
+      "Boot Space": "311",
       "Seating": "5",
-      "Boot Space": "311 L",
-      "Length": "3,995 mm",
-      "Width": "1,775 mm",
-      "Wheelbase": "2,580 mm",
-      "Ground Clearance": "170 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Best fuel efficiency Hyundai Nepal (20.35 km/l)",
-      "6 airbags standard on both variants",
-      "Premium interior quality",
-      "Bose audio on Sportz",
-      "Sporty European design"
-    ],
-    "cons": [
-      "Only 2 variants in Nepal",
-      "No turbo option",
-      "311L boot",
-      "170mm clearance — low for Nepal"
-    ],
-    "highlights": [
-      "20.35 km/l Efficiency",
-      "Bose 7-Speaker",
-      "Rs. 39.96L Start",
-      "6 Airbags"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/hyundai/i20/exterior/i20-exterior-right-front-three-quarter-13.avif"
   },
   {
-    "id": 105,
+    "id": 16,
     "slug": "hyundai-creta-fl-2024",
     "brand": "Hyundai",
+    "brandSlug": "hyundai",
     "model": "All New Creta FL",
     "year": 2024,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Mid-Size SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's #1 SUV — dual panoramic screens, ADAS & Made-in-Nepal option",
     "rating": 4.5,
     "reviews": 8941,
@@ -3245,7 +3003,9 @@ window.CARS_DB = [
           "power": "115 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "115 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -3265,7 +3025,9 @@ window.CARS_DB = [
           "power": "115 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "115 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -3283,7 +3045,9 @@ window.CARS_DB = [
           "power": "115 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "115 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -3306,7 +3070,9 @@ window.CARS_DB = [
           "power": "115 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "115 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -3328,7 +3094,9 @@ window.CARS_DB = [
           "power": "115 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "115 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -3347,7 +3115,9 @@ window.CARS_DB = [
           "power": "115 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "17.4 km/l",
-          "transmission": "IVT (CVT)"
+          "transmission": "IVT (CVT)",
+          "Power": "115 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -3365,7 +3135,9 @@ window.CARS_DB = [
           "power": "115 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "115 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -3383,7 +3155,9 @@ window.CARS_DB = [
           "power": "115 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "115 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -3401,7 +3175,9 @@ window.CARS_DB = [
           "power": "115 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "17.4 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "115 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -3425,7 +3201,9 @@ window.CARS_DB = [
           "power": "115 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "17.4 km/l",
-          "transmission": "IVT"
+          "transmission": "IVT",
+          "Power": "115 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -3444,59 +3222,55 @@ window.CARS_DB = [
           "power": "115 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "17.4 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "115 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L MPi Petrol (Smartstream)",
-      "Displacement": "1,497 cc",
-      "Power": "115 hp @ 6,300 rpm",
-      "Torque": "144 Nm @ 4,500 rpm",
-      "Efficiency": "16.8 km/l (MT) / 17.4 km/l (IVT)",
-      "Fuel Tank": "50 L",
-      "Transmission": "6-Speed MT / IVT / CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L Petrol / 1.5L Turbo Petrol / 1.5L Diesel",
+      "Displacement (cc)": "1,497",
+      "Max Engine Power": "115–160 PS",
+      "Max Engine Torque": "144–253 Nm",
+      "Transmission Type": "MT / IVT / 7-DCT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "433",
+      "Ground Clearance (mm)": "190",
+      "Total Airbag Count": "6",
+      "ADAS Suite": "Level 2 (top trims)",
+      "Body Type": "Mid-size SUV",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
+      "Power": "115–160 PS",
+      "Torque": "144–253 Nm",
+      "Transmission": "MT / IVT / 7-DCT",
+      "Boot Space": "433",
       "Seating": "5",
-      "Boot Space": "433 L",
-      "Length": "4,330 mm",
-      "Width": "1,790 mm",
-      "Wheelbase": "2,610 mm",
-      "Ground Clearance": "190 mm",
-      "Airbags": "6",
-      "ADAS": "Level 2 (S(O)+)"
+      "Fuel Type": "Petrol",
+      "Ground Clearance": "190"
     },
-    "pros": [
-      "Nepal's #1 mid-size SUV",
-      "Made-in-Nepal option reduces cost",
-      "Dual 10.25\" panoramic screens",
-      "Level 2 ADAS available",
-      "433L class-leading boot",
-      "190mm ground clearance"
-    ],
-    "cons": [
-      "No diesel in new FL",
-      "Top variants near Kona EV pricing",
-      "Base E lacks premium features",
-      "IVT not available on all variants"
-    ],
-    "highlights": [
-      "Rs. 55.56L Start (MiN)",
-      "Dual 10.25\" Screens",
-      "Level 2 ADAS",
-      "433L Boot"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/hyundai/creta/exterior/092828684Hyundai_Creta_FL_1_Price_in_Nepal.jpg"
   },
   {
-    "id": 106,
+    "id": 17,
     "slug": "hyundai-creta-electric-2024",
     "brand": "Hyundai",
+    "brandSlug": "hyundai",
     "model": "Creta Electric",
     "year": 2024,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Electric Mid-Size SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's most affordable long-range electric SUV — 473 km, V2L, ADAS",
     "rating": 4.6,
     "reviews": 612,
@@ -3557,7 +3331,9 @@ window.CARS_DB = [
           "power": "134 hp (99 kW)",
           "torque": "255 Nm",
           "efficiency": "390 km range",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "134 hp (99 kW)",
+          "Torque": "255 Nm"
         }
       },
       {
@@ -3581,7 +3357,9 @@ window.CARS_DB = [
           "power": "134 hp (99 kW)",
           "torque": "255 Nm",
           "efficiency": "390 km range",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "134 hp (99 kW)",
+          "Torque": "255 Nm"
         }
       },
       {
@@ -3604,7 +3382,9 @@ window.CARS_DB = [
           "power": "134 hp (99 kW)",
           "torque": "255 Nm",
           "efficiency": "390 km range",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "134 hp (99 kW)",
+          "Torque": "255 Nm"
         }
       },
       {
@@ -3624,7 +3404,9 @@ window.CARS_DB = [
           "power": "171 hp (126 kW)",
           "torque": "255 Nm",
           "efficiency": "473 km range",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "171 hp (126 kW)",
+          "Torque": "255 Nm"
         }
       },
       {
@@ -3648,60 +3430,49 @@ window.CARS_DB = [
           "power": "171 hp (126 kW)",
           "torque": "255 Nm",
           "efficiency": "473 km range",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "171 hp (126 kW)",
+          "Torque": "255 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Battery (SR)": "42 kWh",
-      "Battery (LR)": "51.4 kWh",
-      "Power (99kW)": "134 hp",
-      "Power (126kW)": "171 hp",
-      "Torque": "255 Nm",
-      "Range (SR)": "390 km (ARAI)",
-      "Range (LR)": "473 km (ARAI)",
-      "Fast Charge (DC)": "0-80% in ~45 min",
-      "AC Charge": "0-100% in ~10 hrs (11kW)",
-      "V2L": "Yes (3.6 kW)",
-      "Drive": "FWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "Lithium-ion",
+      "Battery Capacity (kWh)": "42 (Executive) / 51.4 (Excellence)",
+      "Certified Range (km)": "390 (42kWh) / 473 (51.4kWh), per Hyundai claims",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Ground Clearance (mm)": "190",
+      "Total Airbag Count": "6",
+      "Body Type": "Mid-size Electric SUV",
+      "Variant Names": "Executive, Excellence, Excellence Long Range",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
       "Seating": "5",
-      "Boot Space": "433 L",
-      "Wheelbase": "2,610 mm",
-      "Ground Clearance": "190 mm",
-      "Airbags": "6"
+      "Fuel Type": "Electric",
+      "Ground Clearance": "190"
     },
-    "pros": [
-      "Most affordable electric SUV in Nepal",
-      "Up to 473km range (LR)",
-      "V2L — powers appliances from car",
-      "Proven Creta platform",
-      "DC fast charging",
-      "Level 2 ADAS"
-    ],
-    "cons": [
-      "No AWD option",
-      "SR range (390km) limited for long highway trips",
-      "Charging infra limited outside KTM",
-      "Top variants approach Ioniq 5 pricing"
-    ],
-    "highlights": [
-      "473 km Range (LR)",
-      "Rs. 51.96L Start",
-      "V2L Support",
-      "Level 2 ADAS"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/hyundai/creta/exterior/092828684Hyundai_Creta_FL_1_Price_in_Nepal.jpg"
   },
   {
-    "id": 107,
+    "id": 18,
     "slug": "hyundai-ioniq-5-2024",
     "brand": "Hyundai",
+    "brandSlug": "hyundai",
     "model": "Ioniq 5",
     "year": 2024,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Electric SUV",
     "badge": "top-rated",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "The benchmark EV — 800V ultra-fast charging, futuristic design, V2G",
     "rating": 4.7,
     "reviews": 284,
@@ -3768,7 +3539,9 @@ window.CARS_DB = [
           "power": "136 hp (100 kW)",
           "torque": "350 Nm",
           "efficiency": "~385 km range",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "136 hp (100 kW)",
+          "Torque": "350 Nm"
         }
       },
       {
@@ -3791,63 +3564,48 @@ window.CARS_DB = [
           "power": "170 hp (124.9 kW)",
           "torque": "350 Nm",
           "efficiency": "~480 km range",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "170 hp (124.9 kW)",
+          "Torque": "350 Nm"
         }
       }
     ],
     "specs": {
-      "Platform": "E-GMP (800V Architecture)",
-      "Battery (100kW)": "58 kWh",
-      "Battery (124.9kW)": "72.6 kWh",
-      "Power": "136 hp / 170 hp",
-      "Torque": "350 Nm",
-      "Range (100kW)": "~385 km WLTP",
-      "Range (124.9kW)": "~480 km WLTP",
-      "Fast Charge (DC)": "10-80% in 18-25 min (350kW DC)",
-      "AC Charge": "11 kW (~8 hrs)",
-      "V2L": "Yes (3.6 kW)",
-      "V2G": "Yes (LR model)",
-      "Drive": "RWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "Lithium-ion",
+      "Battery Capacity (kWh)": "58 (per Nepal launch spec)",
+      "Certified Range (km)": "384 (WLTP, Nepal spec)",
+      "Charging Port Type": "CCS2, 800V architecture",
+      "Drive Type": "RWD (single-motor Nepal spec)",
+      "Seating Capacity": "5",
+      "Body Type": "Electric Crossover",
+      "Total Airbag Count": "6",
+      "Digital Instrument Cluster": "12.3\" Dual Display",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
       "Seating": "5",
-      "Boot Space": "527 L + 24L frunk",
-      "Length": "4,635 mm",
-      "Width": "1,890 mm",
-      "Wheelbase": "2,900 mm",
-      "Ground Clearance": "160 mm",
-      "Airbags": "7",
-      "ADAS": "Level 2+"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "800V ultra-fast charging — 18 min 10-80%",
-      "2,900mm wheelbase — limo-class rear legroom",
-      "527L boot + 24L frunk",
-      "V2L + V2G capability",
-      "OTA software updates",
-      "Unique design on Nepal roads"
-    ],
-    "cons": [
-      "Rs. 92.96L base — premium pricing",
-      "160mm clearance — low for Nepal hills",
-      "Limited 800V fast chargers in Nepal",
-      "RWD only in Nepal spec"
-    ],
-    "highlights": [
-      "18 min Fast Charge (800V)",
-      "480 km Range (LR)",
-      "2,900mm Wheelbase",
-      "V2L + V2G"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/hyundai/ioniq-5/exterior/ioniq-5-exterior-left-rear-three-quarter-27.avif"
   },
   {
-    "id": 108,
+    "id": 19,
     "slug": "hyundai-kona-electric-2024",
     "brand": "Hyundai",
+    "brandSlug": "hyundai",
     "model": "Kona Electric",
     "year": 2024,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Compact Electric SUV",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Proven compact EV — reliable, practical, and spirited to drive",
     "rating": 4.2,
     "reviews": 431,
@@ -3906,7 +3664,9 @@ window.CARS_DB = [
           "power": "134 hp (100 kW)",
           "torque": "395 Nm",
           "efficiency": "305 km range",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "134 hp (100 kW)",
+          "Torque": "395 Nm"
         }
       },
       {
@@ -3930,57 +3690,46 @@ window.CARS_DB = [
           "power": "134 hp (100 kW)",
           "torque": "395 Nm",
           "efficiency": "305 km range",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "134 hp (100 kW)",
+          "Torque": "395 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Battery": "39.2 kWh",
-      "Power": "134 hp (100 kW)",
-      "Torque": "395 Nm",
-      "Range": "305 km (ARAI)",
-      "Fast Charge (DC)": "0-80% in ~57 min",
-      "AC Charge": "0-100% in 8-10 hrs",
-      "Drive": "FWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "Lithium-ion",
+      "Battery Capacity (kWh)": "48.4 / 65.4",
+      "Certified Range (km)": "~305 / ~417 WLTP depending on battery",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Body Type": "Compact Electric SUV",
+      "Total Airbag Count": "6",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
       "Seating": "5",
-      "Boot Space": "332 L",
-      "Length": "4,180 mm",
-      "Width": "1,800 mm",
-      "Wheelbase": "2,600 mm",
-      "Ground Clearance": "165 mm",
-      "Airbags": "6"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Proven reliable EV platform",
-      "Strong 395 Nm instant torque",
-      "Compact — easy Kathmandu driving",
-      "DC fast charge supported",
-      "Panoramic sunroof on GLS"
-    ],
-    "cons": [
-      "305km lower range vs Creta Electric",
-      "332L boot — smaller than rivals",
-      "165mm GC can scrape on bad roads",
-      "Older platform vs newer EVs"
-    ],
-    "highlights": [
-      "305 km Range",
-      "395 Nm Torque",
-      "Rs. 59.96L Start",
-      "DC Fast Charge"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/hyundai/kona-electric/exterior/090508599Hyundai_Kona_ev_1_Price_in_Nepal.jpg"
   },
   {
-    "id": 109,
+    "id": 20,
     "slug": "hyundai-tucson-2024",
     "brand": "Hyundai",
+    "brandSlug": "hyundai",
     "model": "Tucson",
     "year": 2024,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Large SUV",
     "badge": "top-rated",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Premium large SUV — 4WD diesel, panoramic sunroof, BOSE audio",
     "rating": 4.4,
     "reviews": 923,
@@ -4041,7 +3790,9 @@ window.CARS_DB = [
           "power": "156 PS @ 6,200 rpm",
           "torque": "192 Nm @ 4,000 rpm",
           "efficiency": "11.61 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "156 PS @ 6,200 rpm",
+          "Torque": "192 Nm @ 4,000 rpm"
         }
       },
       {
@@ -4066,7 +3817,9 @@ window.CARS_DB = [
           "power": "156 PS @ 6,200 rpm",
           "torque": "192 Nm @ 4,000 rpm",
           "efficiency": "11.2 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "156 PS @ 6,200 rpm",
+          "Torque": "192 Nm @ 4,000 rpm"
         }
       },
       {
@@ -4087,7 +3840,9 @@ window.CARS_DB = [
           "power": "156 PS @ 6,200 rpm",
           "torque": "192 Nm @ 4,000 rpm",
           "efficiency": "11.2 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "156 PS @ 6,200 rpm",
+          "Torque": "192 Nm @ 4,000 rpm"
         }
       },
       {
@@ -4109,7 +3864,9 @@ window.CARS_DB = [
           "power": "186 PS @ 4,000 rpm",
           "torque": "417 Nm @ 1,750–2,750 rpm",
           "efficiency": "14.2 km/l",
-          "transmission": "8-Speed AT"
+          "transmission": "8-Speed AT",
+          "Power": "186 PS @ 4,000 rpm",
+          "Torque": "417 Nm @ 1,750–2,750 rpm"
         }
       },
       {
@@ -4130,58 +3887,51 @@ window.CARS_DB = [
           "power": "180 PS @ 5,500 rpm",
           "torque": "265 Nm @ 1,500–4,500 rpm",
           "efficiency": "12.8 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "180 PS @ 5,500 rpm",
+          "Torque": "265 Nm @ 1,500–4,500 rpm"
         }
       }
     ],
     "specs": {
-      "Engine (2.0 Petrol)": "2.0L MPi GDi",
-      "Engine (Diesel)": "2.0L CRDi",
-      "Engine (1.6T Petrol)": "1.6L T-GDi",
+      "Engine Type": "2.0L Petrol / 2.0L Diesel",
+      "Displacement (cc)": "1,999",
+      "Max Engine Power": "156–186 PS",
+      "Max Engine Torque": "192–416 Nm",
+      "Transmission Type": "6AT / 8AT",
+      "Drive Type": "FWD / AWD (top trims)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6–7",
+      "ADAS Suite": "Level 2 (top trims)",
+      "Body Type": "Mid-size SUV",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
       "Power": "156–186 PS",
-      "Torque (Diesel)": "417 Nm",
-      "Efficiency": "11.2–14.2 km/l",
-      "Fuel Tank": "62 L",
-      "Transmission": "6MT / 6AT / 7DCT / 8AT",
-      "Drive": "FWD / HTRAC 4WD",
+      "Torque": "192–416 Nm",
+      "Transmission": "6AT / 8AT",
       "Seating": "5",
-      "Boot Space": "620 L",
-      "Length": "4,630 mm",
-      "Width": "1,865 mm",
-      "Wheelbase": "2,670 mm",
-      "Ground Clearance": "172 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "620L class-leading boot space",
-      "4WD diesel for Nepal mountain roads",
-      "BOSE premium audio",
-      "Full ADAS available",
-      "Strong resale value in Nepal"
-    ],
-    "cons": [
-      "Rs. 1.08 Cr base — premium pricing",
-      "172mm GC modest for 4WD positioning",
-      "2.0L petrol MT underpowered",
-      "Modest fuel economy on petrol"
-    ],
-    "highlights": [
-      "417 Nm Diesel 4WD",
-      "620L Boot",
-      "BOSE Audio",
-      "Rs. 1.08 Cr Start"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/hyundai/tucson/exterior/091659788Hyundai_Tucson_1_Price_in_Nepal.jpg"
   },
   {
-    "id": 110,
+    "id": 21,
     "slug": "hyundai-santa-fe-2024",
     "brand": "Hyundai",
+    "brandSlug": "hyundai",
     "model": "Santa Fe",
     "year": 2024,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "7-Seater SUV",
     "badge": "top-rated",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "3-row 4WD luxury — commanding, comfortable, built for Nepal families",
     "rating": 4.5,
     "reviews": 318,
@@ -4241,59 +3991,50 @@ window.CARS_DB = [
           "power": "198 PS @ 6,100 rpm",
           "torque": "232 Nm @ 4,000 rpm",
           "efficiency": "11.0 km/l",
-          "transmission": "8-Speed AT"
+          "transmission": "8-Speed AT",
+          "Power": "198 PS @ 6,100 rpm",
+          "Torque": "232 Nm @ 4,000 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.5L GDi MPi Petrol",
-      "Power": "198 PS @ 6,100 rpm",
-      "Torque": "232 Nm @ 4,000 rpm",
-      "Efficiency": "11.0 km/l",
-      "Fuel Tank": "67 L",
-      "Transmission": "8-Speed AT",
-      "Drive": "4WD HTRAC",
-      "Seating": "7",
-      "Boot Space": "628 L (3rd row folded)",
-      "Length": "4,830 mm",
-      "Width": "1,900 mm",
-      "Height": "1,720 mm",
-      "Wheelbase": "2,815 mm",
-      "Ground Clearance": "184 mm",
-      "Airbags": "6+",
-      "ADAS": "Level 2+"
+      "Engine Type": "2.5L Petrol / 2.2L Diesel",
+      "Displacement (cc)": "2,497 / 2,151",
+      "Max Engine Power": "198–202 PS",
+      "Max Engine Torque": "247–441 Nm",
+      "Transmission Type": "8AT",
+      "Drive Type": "AWD (HTRAC)",
+      "Seating Capacity": "6/7",
+      "Total Airbag Count": "7+",
+      "Body Type": "Full-size SUV",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
+      "Power": "198–202 PS",
+      "Torque": "247–441 Nm",
+      "Transmission": "8AT",
+      "Seating": "6/7",
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "True 7-seater with usable 3rd row",
-      "4WD HTRAC with 4 terrain modes",
-      "BOSE 12-speaker premium audio",
-      "V2L capability",
-      "Full ADAS Level 2+",
-      "184mm clearance for varied terrain"
-    ],
-    "cons": [
-      "Rs. 1.90 Cr — ultra-premium pricing",
-      "Only 1 variant available in Nepal",
-      "2.5L petrol returns modest 11 km/l",
-      "Very large dimensions for Kathmandu streets"
-    ],
-    "highlights": [
-      "7 Seats + HTRAC 4WD",
-      "198 PS Engine",
-      "BOSE 12-Speaker",
-      "Rs. 1.90 Cr"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/hyundai/santa-fe/exterior/085125312Hyundai_Santa-Fe_1_Price_in_Nepal.jpg"
   },
   {
-    "id": 111,
+    "id": 22,
     "slug": "hyundai-palisade-2024",
     "brand": "Hyundai",
+    "brandSlug": "hyundai",
     "model": "Palisade",
     "year": 2024,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "Full-Size SUV",
     "badge": "top-rated",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Hyundai's flagship 8-seater — first class in every dimension",
     "rating": 4.6,
     "reviews": 142,
@@ -4355,59 +4096,50 @@ window.CARS_DB = [
           "power": "202 PS @ 3,800 rpm",
           "torque": "440 Nm @ 1,750–2,750 rpm",
           "efficiency": "12.6 km/l",
-          "transmission": "8-Speed AT"
+          "transmission": "8-Speed AT",
+          "Power": "202 PS @ 3,800 rpm",
+          "Torque": "440 Nm @ 1,750–2,750 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.2L R-Series CRDi Diesel",
-      "Power": "202 PS @ 3,800 rpm",
-      "Torque": "440 Nm @ 1,750–2,750 rpm",
-      "Efficiency": "12.6 km/l",
-      "Fuel Tank": "72 L",
-      "Transmission": "8-Speed AT",
-      "Drive": "4WD HTRAC",
-      "Seating": "8 (or 7 captain config)",
-      "Boot Space": "510 L (3rd row folded) / 160 L all up",
-      "Length": "4,995 mm",
-      "Width": "1,975 mm",
-      "Height": "1,750 mm",
-      "Wheelbase": "2,955 mm",
-      "Ground Clearance": "185 mm",
-      "Airbags": "6+",
-      "ADAS": "Level 2+ (Highway Driving Assist)"
+      "Engine Type": "2.2L CRDi Diesel",
+      "Displacement (cc)": "2,199",
+      "Max Engine Power": "202 PS",
+      "Max Engine Torque": "441 Nm",
+      "Transmission Type": "8AT",
+      "Drive Type": "AWD (HTRAC)",
+      "Seating Capacity": "7/8",
+      "Total Airbag Count": "7+",
+      "Body Type": "Full-size Flagship SUV",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
+      "Power": "202 PS",
+      "Torque": "441 Nm",
+      "Transmission": "8AT",
+      "Seating": "7/8",
+      "Fuel Type": "Diesel"
     },
-    "pros": [
-      "440 Nm — effortless for 8 passengers",
-      "Harman Kardon 12-speaker audio",
-      "Massage seats in 2nd row",
-      "Highway Driving Assist ADAS",
-      "2,955mm WB — limo-class legroom",
-      "185mm clearance for Nepal terrain"
-    ],
-    "cons": [
-      "Rs. 2.36 Cr — Nepal's priciest Hyundai",
-      "Very large — challenging in Kathmandu",
-      "12.6 km/l loaded is modest",
-      "One variant only in Nepal"
-    ],
-    "highlights": [
-      "440 Nm Diesel 4WD",
-      "8 Seats",
-      "Harman Kardon Audio",
-      "Rs. 2.36 Cr"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/hyundai/palisade/exterior/085721320Hyundai_palisade_1_Price_in_Nepal.jpg"
   },
   {
-    "id": 200,
+    "id": 23,
     "slug": "toyota-raize-2024",
     "brand": "Toyota",
+    "brandSlug": "toyota",
     "model": "Raize",
     "year": 2024,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's most affordable Toyota SUV — bold stance, nimble city soul",
     "rating": 4.1,
     "reviews": 1842,
@@ -4474,7 +4206,9 @@ window.CARS_DB = [
           "power": "88 hp @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "16 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "88 hp @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       },
       {
@@ -4495,7 +4229,9 @@ window.CARS_DB = [
           "power": "88 hp @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "15.5 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "88 hp @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       },
       {
@@ -4520,57 +4256,48 @@ window.CARS_DB = [
           "power": "98 hp @ 6,000 rpm",
           "torque": "140 Nm @ 2,400 rpm",
           "efficiency": "14.5 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "98 hp @ 6,000 rpm",
+          "Torque": "140 Nm @ 2,400 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L 3-cyl NA / 1.0L 3-cyl Turbo Petrol",
-      "Displacement": "1,198 cc / 996 cc",
-      "Power": "88 hp / 98 hp",
-      "Torque": "113 Nm / 140 Nm",
-      "Efficiency": "16 km/l (1.2 MT) / 14.5 km/l (Turbo CVT)",
-      "Fuel Tank": "36 L",
-      "Transmission": "5-Speed MT / CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.0L Turbo Petrol / 1.2L Petrol",
+      "Displacement (cc)": "996 / 1,196",
+      "Max Engine Power": "98–100 PS",
+      "Transmission Type": "CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Compact SUV",
+      "Distributor": "United Traders Syndicate Pvt. Ltd. (Official Toyota Nepal Distributor)",
+      "Power": "98–100 PS",
+      "Transmission": "CVT",
       "Seating": "5",
-      "Boot Space": "369 L",
-      "Length": "3,995 mm",
-      "Width": "1,695 mm",
-      "Wheelbase": "2,525 mm",
-      "Ground Clearance": "200 mm",
-      "Airbags": "2 (1.2G) / 6 (Turbo)"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Most affordable Toyota SUV in Nepal",
-      "200mm ground clearance — great for Nepali roads",
-      "369L boot — class-leading",
-      "Peppy 1.0L turbo option",
-      "DNGA platform — excellent ride quality"
-    ],
-    "cons": [
-      "1.2L base is underpowered for mountain passes",
-      "No 4WD option",
-      "Turbo variant is expensive for its size",
-      "Small fuel tank (36L)"
-    ],
-    "highlights": [
-      "Rs. 66L Start",
-      "200mm Clearance",
-      "369L Boot",
-      "Turbo Option"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/toyota/raize/interior/toyota-raize-interior-dashboard.jpg"
   },
   {
-    "id": 201,
+    "id": 24,
     "slug": "toyota-rush-2024",
     "brand": "Toyota",
+    "brandSlug": "toyota",
     "model": "Rush",
     "year": 2024,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "7-Seat SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "7-seat family adventure — high clearance, Toyota reliability",
     "rating": 4.2,
     "reviews": 2415,
@@ -4633,7 +4360,9 @@ window.CARS_DB = [
           "power": "104 hp @ 6,000 rpm",
           "torque": "136 Nm",
           "efficiency": "14 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "104 hp @ 6,000 rpm",
+          "Torque": "136 Nm"
         }
       },
       {
@@ -4655,57 +4384,52 @@ window.CARS_DB = [
           "power": "104 hp @ 6,000 rpm",
           "torque": "136 Nm",
           "efficiency": "13 km/l",
-          "transmission": "4-Speed AT"
+          "transmission": "4-Speed AT",
+          "Power": "104 hp @ 6,000 rpm",
+          "Torque": "136 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L 2NR-VE Inline-4 Petrol",
-      "Displacement": "1,496 cc",
-      "Power": "104 hp @ 6,000 rpm",
-      "Torque": "136 Nm @ 4,200 rpm",
-      "Efficiency": "14 km/l (MT) / 13 km/l (AT)",
-      "Fuel Tank": "45 L",
-      "Transmission": "5-Speed MT / 4-Speed AT",
-      "Drive": "RWD",
+      "Engine Type": "1.5L Dual VVT-i Petrol",
+      "Displacement (cc)": "1,496",
+      "Max Engine Power": "104 PS",
+      "Max Engine Torque": "136 Nm",
+      "Transmission Type": "5MT / 4AT",
+      "Drive Type": "RWD",
+      "Seating Capacity": "7",
+      "Ground Clearance (mm)": "220",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Compact SUV",
+      "Distributor": "United Traders Syndicate Pvt. Ltd. (Official Toyota Nepal Distributor)",
+      "Power": "104 PS",
+      "Torque": "136 Nm",
+      "Transmission": "5MT / 4AT",
       "Seating": "7",
-      "Boot Space": "390 L (3rd row folded)",
-      "Length": "4,435 mm",
-      "Width": "1,695 mm",
-      "Wheelbase": "2,685 mm",
-      "Ground Clearance": "220 mm",
-      "Airbags": "2"
+      "Fuel Type": "Petrol",
+      "Ground Clearance": "220"
     },
-    "pros": [
-      "Genuine 7-seat capacity",
-      "220mm ground clearance — impressive for Nepal",
-      "RWD — great off-road capability",
-      "LED headlamps standard on all variants",
-      "Practical cargo space"
-    ],
-    "cons": [
-      "Only 2 airbags across all variants",
-      "4-speed AT feels dated",
-      "1.5L engine feels strained with 7 passengers",
-      "Interior quality below segment leaders"
-    ],
-    "highlights": [
-      "7 Seats",
-      "220mm Clearance",
-      "RWD",
-      "Rs. 86.5L Start"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/toyota/rush/exterior/rush-exterior-left-front-three-quarter.avif"
   },
   {
-    "id": 202,
+    "id": 25,
     "slug": "toyota-corolla-cross-2024",
     "brand": "Toyota",
+    "brandSlug": "toyota",
     "model": "Corolla Cross",
     "year": 2024,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Crossover SUV",
     "badge": "recommended",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Premium crossover pedigree — Corolla DNA in a bold SUV shell",
     "rating": 4.4,
     "reviews": 1654,
@@ -4772,7 +4496,9 @@ window.CARS_DB = [
           "power": "140 hp @ 6,400 rpm",
           "torque": "172 Nm @ 4,000 rpm",
           "efficiency": "15 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "140 hp @ 6,400 rpm",
+          "Torque": "172 Nm @ 4,000 rpm"
         }
       },
       {
@@ -4796,57 +4522,49 @@ window.CARS_DB = [
           "power": "140 hp @ 6,400 rpm",
           "torque": "172 Nm @ 4,000 rpm",
           "efficiency": "14.5 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "140 hp @ 6,400 rpm",
+          "Torque": "172 Nm @ 4,000 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.8L 2ZR-FBE DOHC VVT-i Petrol",
-      "Displacement": "1,798 cc",
-      "Power": "140 hp @ 6,400 rpm",
-      "Torque": "172 Nm @ 4,000 rpm",
-      "Efficiency": "15 km/l (approx.)",
-      "Fuel Tank": "50 L",
+      "Engine Type": "1.8L Petrol / 1.8L Hybrid",
+      "Displacement (cc)": "1,798",
+      "Max Engine Power": "98–122 PS (+ electric motor on Hybrid)",
+      "Transmission Type": "CVT",
+      "Drive Type": "FWD / AWD (top trim)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6–7",
+      "ADAS Suite": "Toyota Safety Sense (top trims)",
+      "Body Type": "Compact SUV",
+      "Distributor": "United Traders Syndicate Pvt. Ltd. (Official Toyota Nepal Distributor)",
+      "Power": "98–122 PS (+ electric motor on Hybrid)",
       "Transmission": "CVT",
-      "Drive": "FWD",
       "Seating": "5",
-      "Boot Space": "440 L",
-      "Length": "4,460 mm",
-      "Width": "1,825 mm",
-      "Wheelbase": "2,640 mm",
-      "Ground Clearance": "160 mm",
-      "Airbags": "7"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "7 airbags as standard",
-      "TNGA platform — excellent ride & handling",
-      "Toyota Safety Sense on top trim",
-      "Panoramic sunroof (High)",
-      "Premium JBL audio system"
-    ],
-    "cons": [
-      "No hybrid variant in Nepal market",
-      "160mm ground clearance — lower than rivals",
-      "Expensive vs. segment",
-      "Only 2 variants — no mid-spec option"
-    ],
-    "highlights": [
-      "7 Airbags Standard",
-      "Rs. 1.165 Cr Start",
-      "TNGA Platform",
-      "360° Camera (High)"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/toyota/corolla-cross/interior/toyota-corolla-cross-interior-seats-front.jpg"
   },
   {
-    "id": 203,
+    "id": 26,
     "slug": "toyota-hilux-2024",
     "brand": "Toyota",
+    "brandSlug": "toyota",
     "model": "Hilux",
     "year": 2024,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "Pickup Truck",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's most trusted workhorse — indestructible, go-anywhere pickup",
     "rating": 4.6,
     "reviews": 4203,
@@ -4910,7 +4628,9 @@ window.CARS_DB = [
           "power": "149 hp @ 3,400 rpm",
           "torque": "400 Nm @ 1,600 rpm",
           "efficiency": "11 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "149 hp @ 3,400 rpm",
+          "Torque": "400 Nm @ 1,600 rpm"
         }
       },
       {
@@ -4935,57 +4655,50 @@ window.CARS_DB = [
           "power": "204 hp @ 3,400 rpm",
           "torque": "500 Nm @ 1,600 rpm",
           "efficiency": "10 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "204 hp @ 3,400 rpm",
+          "Torque": "500 Nm @ 1,600 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.4L 2GD-FTV / 2.8L 1GD-FTV Turbodiesel",
-      "Displacement": "2,393 cc / 2,755 cc",
-      "Power": "149 hp / 204 hp",
-      "Torque": "400 Nm / 500 Nm",
-      "Efficiency": "11 km/l / 10 km/l (approx.)",
-      "Fuel Tank": "80 L",
-      "Transmission": "6-Speed MT / 6-Speed AT",
-      "Drive": "4WD (Permanent)",
-      "Seating": "5 (Double Cab)",
-      "Payload": "970 kg",
-      "Length": "5,325 mm",
-      "Width": "1,855 mm",
-      "Wheelbase": "3,085 mm",
-      "Ground Clearance": "279 mm",
-      "Airbags": "2 (2.4L) / 6 (2.8L)"
+      "Engine Type": "2.4L / 2.8L Diesel",
+      "Displacement (cc)": "2,393 / 2,755",
+      "Max Engine Power": "150–204 PS",
+      "Max Engine Torque": "400–500 Nm",
+      "Transmission Type": "MT / 6AT",
+      "Drive Type": "4x2 / 4x4",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "3–7",
+      "Body Type": "Pickup Truck",
+      "Distributor": "United Traders Syndicate Pvt. Ltd. (Official Toyota Nepal Distributor)",
+      "Power": "150–204 PS",
+      "Torque": "400–500 Nm",
+      "Transmission": "MT / 6AT",
+      "Seating": "5",
+      "Fuel Type": "Diesel"
     },
-    "pros": [
-      "Legendary reliability — near-indestructible",
-      "279mm ground clearance — Nepal's best",
-      "500Nm torque on 2.8L — effortless towing",
-      "80L tank — long range between fill-ups",
-      "Massive resale value retention"
-    ],
-    "cons": [
-      "Thirsty in city — 8-10 km/l urban",
-      "No petrol option",
-      "Large turning radius — tricky in Kathmandu lanes",
-      "High price for a pickup"
-    ],
-    "highlights": [
-      "279mm Clearance",
-      "500 Nm Torque",
-      "4WD Standard",
-      "Rs. 96L Start"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/toyota/hilux/interior/hilux-interior-dashboard-31.avif"
   },
   {
-    "id": 204,
+    "id": 27,
     "slug": "toyota-fortuner-2024",
     "brand": "Toyota",
+    "brandSlug": "toyota",
     "model": "Fortuner",
     "year": 2024,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "7-Seat SUV",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's premier status SUV — dominate every terrain in 7-seat comfort",
     "rating": 4.7,
     "reviews": 3180,
@@ -5050,7 +4763,9 @@ window.CARS_DB = [
           "power": "163 hp @ 5,200 rpm",
           "torque": "246 Nm @ 3,800 rpm",
           "efficiency": "10 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "163 hp @ 5,200 rpm",
+          "Torque": "246 Nm @ 3,800 rpm"
         }
       },
       {
@@ -5075,64 +4790,62 @@ window.CARS_DB = [
           "power": "204 hp @ 3,400 rpm",
           "torque": "500 Nm @ 1,600 rpm",
           "efficiency": "9 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "204 hp @ 3,400 rpm",
+          "Torque": "500 Nm @ 1,600 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.7L Petrol / 2.8L Turbodiesel",
-      "Displacement": "2,694 cc / 2,755 cc",
-      "Power": "163 hp / 204 hp",
-      "Torque": "246 Nm / 500 Nm",
-      "Efficiency": "10 km/l / 9 km/l (approx.)",
-      "Fuel Tank": "80 L",
-      "Transmission": "5-Speed MT / 6-Speed AT",
-      "Drive": "4WD",
+      "Engine Type": "2.8L Diesel",
+      "Displacement (cc)": "2,755",
+      "Max Engine Power": "204 PS",
+      "Max Engine Torque": "500–420 Nm",
+      "Transmission Type": "6AT",
+      "Drive Type": "4x2 / 4x4",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "7",
+      "Body Type": "Full-size SUV",
+      "Distributor": "United Traders Syndicate Pvt. Ltd. (Official Toyota Nepal Distributor)",
+      "Power": "204 PS",
+      "Torque": "500–420 Nm",
+      "Transmission": "6AT",
       "Seating": "7",
-      "Boot Space": "620 L (3rd row folded)",
-      "Length": "4,795 mm",
-      "Width": "1,855 mm",
-      "Wheelbase": "2,745 mm",
-      "Ground Clearance": "279 mm",
-      "Airbags": "7"
+      "Fuel Type": "Diesel"
     },
-    "pros": [
-      "Unrivalled resale value in Nepal",
-      "Commanding road presence",
-      "500Nm diesel torque — effortless everywhere",
-      "620L boot with row 3 folded",
-      "Benchmark after-sales support from UTS"
-    ],
-    "cons": [
-      "Thirsty — 8-10 km/l in Kathmandu",
-      "Dated AT gearbox (6-speed vs 8-speed rivals)",
-      "Large body — challenging in tight Kathmandu lanes",
-      "High asking price"
-    ],
-    "highlights": [
-      "7 Seats",
-      "279mm Clearance",
-      "500 Nm Diesel",
-      "Rs. 2.10 Cr Start"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/toyota/fortuner/exterior/toyota-fortuner-exterior-rear-white-bg.jpg"
   },
   {
-    "id": 205,
+    "id": 28,
     "slug": "toyota-rav4-2024",
     "brand": "Toyota",
+    "brandSlug": "toyota",
     "model": "RAV4",
     "year": 2024,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Crossover SUV",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Global crossover icon — TNGA-built with AWD and a sophisticated interior",
     "rating": 4.5,
     "reviews": 782,
     "expertScore": 8.4,
     "baseEMI": 138000,
     "overview": "The Toyota RAV4 is Nepal's global-spec crossover choice, built on the TNGA-K platform with FWD and AWD options. It offers a 2.5L naturally aspirated petrol, a panoramic moonroof, Toyota Safety Sense, and an upmarket cabin experience that blends everyday practicality with highway excellence.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/toyota/rav4/exterior/2026-toyota-rav4-limited-352-68f0e7f67ae2b.avif",
+      "/assets/images/car_images/toyota/rav4/exterior/ext-1-37a98d1d25.jpg",
+      "/assets/images/car_images/toyota/rav4/exterior/ext-2-81f6f6da60.jpg",
+      "/assets/images/car_images/toyota/rav4/interior/int-1-d3bafad046.jpg"
+    ],
     "colors": [
       {
         "name": "Blizzard Pearl White",
@@ -5187,7 +4900,9 @@ window.CARS_DB = [
           "power": "203 hp @ 6,600 rpm",
           "torque": "243 Nm @ 4,400 rpm",
           "efficiency": "14 km/l",
-          "transmission": "MT"
+          "transmission": "MT",
+          "Power": "203 hp @ 6,600 rpm",
+          "Torque": "243 Nm @ 4,400 rpm"
         }
       },
       {
@@ -5209,7 +4924,9 @@ window.CARS_DB = [
           "power": "203 hp @ 6,600 rpm",
           "torque": "243 Nm @ 4,400 rpm",
           "efficiency": "13.5 km/l",
-          "transmission": "8-Speed AT"
+          "transmission": "8-Speed AT",
+          "Power": "203 hp @ 6,600 rpm",
+          "Torque": "243 Nm @ 4,400 rpm"
         }
       },
       {
@@ -5231,56 +4948,49 @@ window.CARS_DB = [
           "power": "203 hp @ 6,600 rpm",
           "torque": "243 Nm @ 4,400 rpm",
           "efficiency": "12 km/l",
-          "transmission": "8-Speed AT"
+          "transmission": "8-Speed AT",
+          "Power": "203 hp @ 6,600 rpm",
+          "Torque": "243 Nm @ 4,400 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.5L A25A-FKS DOHC VVT-iE/VVT-i Petrol",
-      "Displacement": "2,487 cc",
-      "Power": "203 hp @ 6,600 rpm",
-      "Torque": "243 Nm @ 4,400 rpm",
-      "Efficiency": "14 km/l (MT) / 12 km/l (AWD)",
-      "Fuel Tank": "55 L",
-      "Transmission": "MT / 8-Speed AT",
-      "Drive": "FWD / AWD",
+      "Engine Type": "2.5L Petrol / 2.5L Hybrid",
+      "Displacement (cc)": "2,487",
+      "Max Engine Power": "203–219 PS (Hybrid system)",
+      "Transmission Type": "CVT / e-CVT (Hybrid)",
+      "Drive Type": "AWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7",
+      "ADAS Suite": "Toyota Safety Sense",
+      "Body Type": "Mid-size SUV",
+      "Distributor": "United Traders Syndicate Pvt. Ltd. (Official Toyota Nepal Distributor)",
+      "Power": "203–219 PS (Hybrid system)",
+      "Transmission": "CVT / e-CVT (Hybrid)",
       "Seating": "5",
-      "Boot Space": "580 L",
-      "Length": "4,600 mm",
-      "Width": "1,855 mm",
-      "Wheelbase": "2,690 mm",
-      "Ground Clearance": "203 mm",
-      "Airbags": "7"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "203hp — one of the most powerful in class",
-      "AWD with terrain modes",
-      "Panoramic moonroof",
-      "580L boot space",
-      "8-speed AT — smooth and refined"
-    ],
-    "cons": [
-      "No hybrid variant in Nepal",
-      "Pricey for a petrol-only line-up",
-      "Heavy at 1,580 kg",
-      "160mm less ground clearance than Fortuner"
-    ],
-    "highlights": [
-      "AWD Option",
-      "203 hp",
-      "Rs. 1.56 Cr Start",
-      "580L Boot"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/toyota/rav4/exterior/2026-toyota-rav4-limited-352-68f0e7f67ae2b.avif"
   },
   {
-    "id": 206,
+    "id": 29,
     "slug": "toyota-camry-hybrid-2024",
     "brand": "Toyota",
+    "brandSlug": "toyota",
     "model": "Camry Hybrid",
     "year": 2024,
     "type": "Hybrid",
+    "bodyType": "Unknown",
     "body": "Sedan",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's benchmark executive hybrid — refined, efficient, and prestigious",
     "rating": 4.6,
     "reviews": 542,
@@ -5348,65 +5058,61 @@ window.CARS_DB = [
           "power": "218 hp (combined)",
           "torque": "221 Nm (petrol) + 202 Nm (motor)",
           "efficiency": "23 km/l",
-          "transmission": "e-CVT"
+          "transmission": "e-CVT",
+          "Power": "218 hp (combined)",
+          "Torque": "221 Nm (petrol) + 202 Nm (motor)"
         }
       }
     ],
     "specs": {
-      "Engine": "2.5L A25A-FXS + Electric Motor (Hybrid)",
-      "Displacement": "2,487 cc",
-      "System Power": "218 hp (combined)",
-      "Petrol Torque": "221 Nm",
-      "Motor Torque": "202 Nm",
-      "Efficiency": "~23 km/l",
-      "Fuel Tank": "50 L",
+      "Engine Type": "2.5L Hybrid (Petrol + Electric Motor)",
+      "Displacement (cc)": "2,487",
+      "Max Engine Power": "~218 PS (system)",
+      "Transmission Type": "e-CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "9",
+      "ADAS Suite": "Toyota Safety Sense",
+      "Body Type": "Executive Sedan",
+      "Distributor": "United Traders Syndicate Pvt. Ltd. (Official Toyota Nepal Distributor)",
+      "Power": "~218 PS (system)",
       "Transmission": "e-CVT",
-      "Drive": "FWD",
       "Seating": "5",
-      "Boot Space": "524 L",
-      "Length": "4,885 mm",
-      "Width": "1,840 mm",
-      "Wheelbase": "2,825 mm",
-      "Ground Clearance": "155 mm",
-      "Airbags": "9"
+      "Fuel Type": "Hybrid"
     },
-    "pros": [
-      "23 km/l — exceptional efficiency for Nepal's fuel prices",
-      "9 airbags — class leader in safety",
-      "HUD, JBL, ventilated seats — full luxury spec",
-      "Whisper-quiet EV mode in city",
-      "Strongest resale value among sedans in Nepal"
-    ],
-    "cons": [
-      "Only one variant — no choice",
-      "155mm clearance — low for Nepali roads",
-      "High price",
-      "Battery replacement cost is a future concern"
-    ],
-    "highlights": [
-      "23 km/l Hybrid",
-      "9 Airbags",
-      "218 hp System",
-      "Rs. 1.85 Cr"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/toyota/camry-hybrid/exterior/toyota-camry-hybrid-exterior-side-left-white-bg.jpg"
   },
   {
-    "id": 207,
+    "id": 30,
     "slug": "toyota-land-cruiser-70-2024",
     "brand": "Toyota",
+    "brandSlug": "toyota",
     "model": "Land Cruiser 70",
     "year": 2024,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "Off-Road SUV",
     "badge": "iconic",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "The original legend — battle-tested for Nepal's most unforgiving roads",
     "rating": 4.8,
     "reviews": 1980,
     "expertScore": 9.2,
     "baseEMI": 220000,
     "overview": "The Toyota Land Cruiser 70 Series is a living legend in Nepal — the go-to vehicle for government agencies, NGOs, trekking operators, and hill district duty. Powered by a 4.0L V6 petrol or 2.8L diesel with a ladder frame, solid axles, and a locking centre diff, it remains the most capable production vehicle available through UTS Nepal.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/toyota/land-cruiser-70/exterior/4e9-beige.webp",
+      "/assets/images/car_images/toyota/land-cruiser-70/exterior/toyota-lc70-feature-2-mounted-snorkel.jpg",
+      "/assets/images/car_images/toyota/land-cruiser-70/exterior/toyota-lc70-masthead-m.webp",
+      "/assets/images/car_images/toyota/land-cruiser-70/interior/toyota-lc70-feature-3-collapsible-steering-column.webp"
+    ],
     "colors": [
       {
         "name": "White",
@@ -5453,57 +5159,50 @@ window.CARS_DB = [
           "power": "228 hp (V6) / 163 hp (2.8 Diesel)",
           "torque": "381 Nm / 420 Nm",
           "efficiency": "8 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "228 hp (V6) / 163 hp (2.8 Diesel)",
+          "Torque": "381 Nm / 420 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "4.0L 1GR-FE V6 Petrol / 2.8L Diesel",
-      "Displacement": "3,956 cc / 2,755 cc",
-      "Power": "228 hp (V6) / 163 hp (Diesel)",
-      "Torque": "381 Nm / 420 Nm",
-      "Efficiency": "8 km/l (approx.)",
-      "Fuel Tank": "87 L",
-      "Transmission": "5-Speed MT",
-      "Drive": "4WD (Part-Time)",
-      "Seating": "7–9",
-      "Body": "Wagon / Pickup",
-      "Length": "4,890 mm",
-      "Width": "1,870 mm",
-      "Wheelbase": "2,730 mm",
-      "Ground Clearance": "285 mm",
-      "Airbags": "2"
+      "Engine Type": "2.8L Diesel",
+      "Displacement (cc)": "2,755",
+      "Max Engine Power": "204 PS",
+      "Max Engine Torque": "500 Nm",
+      "Transmission Type": "6MT",
+      "Drive Type": "4WD (part-time, low range)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–3",
+      "Body Type": "Heavy-Duty Off-Roader",
+      "Distributor": "United Traders Syndicate Pvt. Ltd. (Official Toyota Nepal Distributor)",
+      "Power": "204 PS",
+      "Torque": "500 Nm",
+      "Transmission": "6MT",
+      "Seating": "5",
+      "Fuel Type": "Diesel"
     },
-    "pros": [
-      "285mm ground clearance — highest in Nepal market",
-      "Bulletproof solid-axle reliability",
-      "87L tank — exceptional range on mountain roads",
-      "Universally serviced across Nepal",
-      "Legendary resale value"
-    ],
-    "cons": [
-      "Very thirsty — 7-8 km/l",
-      "Utilitarian interior — no luxury",
-      "Only 2 airbags",
-      "No modern safety tech (TSS)",
-      "High price for basic spec"
-    ],
-    "highlights": [
-      "285mm Clearance",
-      "Solid Axles",
-      "Rs. 2.50 Cr",
-      "87L Tank"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/toyota/land-cruiser-70/exterior/4e9-beige.webp"
   },
   {
-    "id": 208,
+    "id": 31,
     "slug": "toyota-land-cruiser-prado-250-2024",
     "brand": "Toyota",
+    "brandSlug": "toyota",
     "model": "Land Cruiser Prado",
     "year": 2024,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "Luxury SUV",
     "badge": "luxury",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Command every terrain in refined luxury — the Prado defines prestige in Nepal",
     "rating": 4.8,
     "reviews": 820,
@@ -5577,7 +5276,9 @@ window.CARS_DB = [
           "power": "204 hp @ 3,400 rpm",
           "torque": "500 Nm @ 1,600 rpm",
           "efficiency": "10 km/l",
-          "transmission": "8-Speed AT"
+          "transmission": "8-Speed AT",
+          "Power": "204 hp @ 3,400 rpm",
+          "Torque": "500 Nm @ 1,600 rpm"
         }
       },
       {
@@ -5600,57 +5301,49 @@ window.CARS_DB = [
           "power": "204 hp @ 3,400 rpm",
           "torque": "500 Nm @ 1,600 rpm",
           "efficiency": "9.5 km/l",
-          "transmission": "8-Speed AT"
+          "transmission": "8-Speed AT",
+          "Power": "204 hp @ 3,400 rpm",
+          "Torque": "500 Nm @ 1,600 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.8L 1GD-FTV DOHC Turbodiesel",
-      "Displacement": "2,755 cc",
-      "Power": "204 hp @ 3,400 rpm",
-      "Torque": "500 Nm @ 1,600–2,800 rpm",
-      "Efficiency": "10 km/l (approx.)",
-      "Fuel Tank": "87 L",
-      "Transmission": "8-Speed Automatic",
-      "Drive": "4WD (Permanent)",
+      "Engine Type": "2.8L Diesel / 2.4L Turbo Petrol Hybrid",
+      "Displacement (cc)": "2,755 / 2,393",
+      "Max Engine Power": "204–250 PS",
+      "Transmission Type": "6AT / 8AT",
+      "Drive Type": "Full-Time 4WD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "9–10",
+      "ADAS Suite": "Toyota Safety Sense",
+      "Body Type": "Full-size SUV",
+      "Distributor": "United Traders Syndicate Pvt. Ltd. (Official Toyota Nepal Distributor)",
+      "Power": "204–250 PS",
+      "Transmission": "6AT / 8AT",
       "Seating": "7",
-      "Boot Space": "570 L (3rd row folded)",
-      "Length": "4,920 mm",
-      "Width": "1,980 mm",
-      "Wheelbase": "2,850 mm",
-      "Ground Clearance": "222 mm",
-      "Airbags": "8"
+      "Fuel Type": "Diesel"
     },
-    "pros": [
-      "New-gen 250 Series — massively upgraded vs old Prado",
-      "8 airbags + full TSS",
-      "e-KDSS on VXR — best off-road suspension",
-      "12.3\" screen + HUD",
-      "500Nm torque — effortless at altitude"
-    ],
-    "cons": [
-      "Very expensive — Rs. 2.83–3.30 Cr",
-      "Fuel thirsty at city speeds",
-      "Huge dimensions challenging in Kathmandu",
-      "No petrol/hybrid option in Nepal"
-    ],
-    "highlights": [
-      "8 Airbags",
-      "500 Nm Diesel",
-      "e-KDSS (VXR)",
-      "Rs. 2.83 Cr Start"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/toyota/land-cruiser-prado/exterior/toyota-land-cruiser-prado-exterior-side-left-white-bg.jpg"
   },
   {
-    "id": 300,
+    "id": 32,
     "slug": "byd-atto-1-2025",
     "brand": "BYD",
+    "brandSlug": "byd",
     "model": "Atto 1",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Hatchback",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's most affordable BYD — city-smart, surprisingly premium",
     "rating": 4,
     "reviews": 610,
@@ -5658,9 +5351,15 @@ window.CARS_DB = [
     "baseEMI": 56000,
     "overview": "The BYD Atto 1 (known as Seagull in China) is BYD's entry-level electric hatchback in Nepal. Built on e-Platform 3.0 with Blade Battery technology and V2L capability, it offers a surprising amount of kit for its price. The Premium variant adds range, extra airbags, and faster DC charging — making it the smarter buy between the two.",
     "images": [
-      "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-exterior-front-white-bg.webp",
+      "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-exterior-front-cimex.webp",
+      "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-exterior-side-cimex.webp",
+      "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-color-sprout-green-cimex.webp",
+      "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-color-artic-blue-cimex.webp",
+      "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-color-cosmos-black-cimex.webp",
+      "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-color-apricity-white-cimex.webp",
       "/assets/images/car_images/byd/atto-1/exterior/byd-att0-1-exterior-front-white-bg.jpg",
       "/assets/images/car_images/byd/atto-1/exterior/byd-att0-1-exterior-top.png",
+      "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-exterior-front-white-bg.webp",
       "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-exterior-side-left-white-bg.jpg",
       "/assets/images/car_images/byd/atto-1/exterior/byd-atto-2-exterior-front.png",
       "/assets/images/car_images/byd/atto-1/interior/byd-att0-1-interior-seats-front.jpg"
@@ -5722,7 +5421,8 @@ window.CARS_DB = [
           "Powered Driver Seat": "4-way manual",
           "Steering Adjustments": "2-way manual tilt",
           "Transmission": "Single-Speed Automatic",
-          "Power": "61 PS"
+          "Power": "61 PS",
+          "Torque": "135 Nm"
         }
       },
       {
@@ -5757,7 +5457,8 @@ window.CARS_DB = [
           "Powered Driver Seat": "6-way power",
           "Steering Adjustments": "4-way manual tilt & telescopic",
           "Transmission": "Single-Speed Automatic",
-          "Power": "61 PS"
+          "Power": "61 PS",
+          "Torque": "135 Nm"
         }
       }
     ],
@@ -5853,7 +5554,9 @@ window.CARS_DB = [
       "Variant Names": "Dynamic, Premium",
       "Battery-based Variants": "Dynamic (30.08 kWh) / Premium (38.88 kWh)",
       "Total Number of Colors": "4",
-      "Color Finish Type": "Solid / Metallic"
+      "Color Finish Type": "Solid / Metallic",
+      "Fuel Type": "Electric",
+      "Kerb Weight": "1,225 (Dynamic) / 1,280 (Premium)"
     },
     "pros": [
       "Cheapest BYD in Nepal — Rs. 28.95L start",
@@ -5875,17 +5578,24 @@ window.CARS_DB = [
       "V2L Capable",
       "Blade Battery"
     ],
-    "thumb": "/assets/images/car_images/byd/atto-1/exterior/byd-att0-1-exterior-front-white-bg.jpg"
+    "thumb": "/assets/images/car_images/byd/atto-1/exterior/byd-atto-1-exterior-front-cimex.webp"
   },
   {
-    "id": 301,
+    "id": 33,
     "slug": "byd-dolphin-2025",
     "brand": "BYD",
+    "brandSlug": "byd",
     "model": "Dolphin",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Hatchback",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's favourite family EV — 2500+ homes, 340 km, 5-star safe",
     "rating": 4.4,
     "reviews": 2780,
@@ -5893,6 +5603,7 @@ window.CARS_DB = [
     "baseEMI": 79500,
     "overview": "The BYD Dolphin is Nepal's best-selling hatchback EV with over 2,500 units on the road. Powered by a 70 kW motor, 44.9 kWh Blade Battery, and rated 5-star by Euro NCAP, it delivers 340 km WLTP range, 6 airbags, 360° camera, and full ADAS. The 2025 update adds NFC, a Bluetooth key, stiffer suspension, and a new Atlantis Grey color.",
     "images": [
+      "/assets/images/car_images/byd/dolphin/exterior/byd-dolphin-exterior-front-cimex.webp",
       "/assets/images/car_images/byd/dolphin/exterior/byd-dolphin-exterior-front-white-bg.webp",
       "/assets/images/car_images/byd/dolphin/exterior/byd-dolphin-exterior-front.webp",
       "/assets/images/car_images/byd/dolphin/interior/byd-dolphin-interior-dashboard.webp",
@@ -5946,7 +5657,9 @@ window.CARS_DB = [
           "torque": "180 Nm",
           "range": "340 km WLTP",
           "battery": "44.9 kWh",
-          "charging": "60 kW DC / 7 kW AC"
+          "charging": "60 kW DC / 7 kW AC",
+          "Power": "95 PS",
+          "Torque": "180 Nm"
         }
       }
     ],
@@ -6033,7 +5746,8 @@ window.CARS_DB = [
       "Standard Vehicle Warranty": "5 years / 125,000 km",
       "Battery Warranty": "10 years / 200,000 km",
       "Total Number of Variants": "1",
-      "Total Number of Colors": "3"
+      "Total Number of Colors": "3",
+      "Fuel Type": "Electric"
     },
     "pros": [
       "5-Star Euro NCAP — best-in-class safety",
@@ -6055,17 +5769,24 @@ window.CARS_DB = [
       "6 Airbags",
       "Rs. 41.15L"
     ],
-    "thumb": "/assets/images/car_images/byd/dolphin/exterior/byd-dolphin-exterior-front-white-bg.webp"
+    "thumb": "/assets/images/car_images/byd/dolphin/exterior/byd-dolphin-exterior-front-cimex.webp"
   },
   {
-    "id": 302,
+    "id": 34,
     "slug": "byd-atto-2-2025",
     "brand": "BYD",
+    "brandSlug": "byd",
     "model": "Atto 2",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "recommended",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "B-segment game-changer — SUV body, 345 km, Cell-to-Body tech",
     "rating": 4.3,
     "reviews": 1280,
@@ -6073,6 +5794,11 @@ window.CARS_DB = [
     "baseEMI": 86000,
     "overview": "The BYD Atto 2 is the newest compact SUV in Nepal's BYD lineup, built on e-Platform 3.0 with the world-first Cell-to-Body (CTB) battery integration. It slots between the Dolphin and Atto 3 with a 100 kW motor, 51 kWh Blade Battery, 345 km range, 200mm ground clearance, panoramic sunroof, vegan leather, 12.8\" rotating screen, and full ADAS — all for Rs. 44.99L.",
     "images": [
+      "/assets/images/car_images/byd/atto-2/exterior/byd-atto-2-exterior-front-cimex.webp",
+      "/assets/images/car_images/byd/atto-2/exterior/byd-atto-2-exterior-side-cimex.webp",
+      "/assets/images/car_images/byd/atto-2/exterior/byd-atto-2-color-ski-white-cimex.webp",
+      "/assets/images/car_images/byd/atto-2/exterior/byd-atto-2-color-sailor-blue-cimex.webp",
+      "/assets/images/car_images/byd/atto-2/exterior/byd-atto-2-color-breeze-green-cimex.webp",
       "/assets/images/car_images/byd/atto-2/exterior/byd-atto-2-exterior-front.png",
       "/assets/images/car_images/byd/atto-2/exterior/byd-atto-2-exterior-side-left-white-bg.png",
       "/assets/images/car_images/byd/atto-2/interior/byd-atto-2-interior-dashboard.jpg",
@@ -6126,7 +5852,9 @@ window.CARS_DB = [
           "battery": "45.12 kWh",
           "charging": "not officially confirmed",
           "Battery Capacity (kWh)": "45.12 kWh",
-          "Certified Range (km)": "312 km WLTP"
+          "Certified Range (km)": "312 km WLTP",
+          "Power": "136 PS",
+          "Torque": "290 Nm"
         }
       },
       {
@@ -6166,7 +5894,9 @@ window.CARS_DB = [
           "charging": "82 kW DC / 7 kW AC",
           "Battery Capacity (kWh)": "51.13 kWh",
           "Certified Range (km)": "345 km WLTP",
-          "DC Fast Charging Max Rate (kW)": "82 kW"
+          "DC Fast Charging Max Rate (kW)": "82 kW",
+          "Power": "136 PS",
+          "Torque": "290 Nm"
         }
       }
     ],
@@ -6252,7 +5982,8 @@ window.CARS_DB = [
       "Total Number of Variants": "2",
       "Variant Names": "Essential, Premium",
       "Battery-based Variants": "Essential (45.12 kWh) / Premium (51.13 kWh)",
-      "Total Number of Colors": "4"
+      "Total Number of Colors": "4",
+      "Fuel Type": "Electric"
     },
     "pros": [
       "200mm ground clearance — best in BYD Nepal lineup",
@@ -6273,17 +6004,24 @@ window.CARS_DB = [
       "345 km WLTP",
       "Rs. 44.99L"
     ],
-    "thumb": "/assets/images/car_images/byd/atto-2/exterior/byd-atto-2-exterior-front.png"
+    "thumb": "/assets/images/car_images/byd/atto-2/exterior/byd-atto-2-exterior-front-cimex.webp"
   },
   {
-    "id": 303,
+    "id": 35,
     "slug": "byd-atto-3-2025",
     "brand": "BYD",
+    "brandSlug": "byd",
     "model": "Atto 3",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "bestseller",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's #1 selling EV — Dragon Face 3.0, 420 km, 7 airbags",
     "rating": 4.5,
     "reviews": 4820,
@@ -6291,10 +6029,15 @@ window.CARS_DB = [
     "baseEMI": 131000,
     "overview": "The BYD Atto 3 is Nepal's best-selling electric car, and the model that kickstarted the EV revolution here. The 2025 facelift brings Dragon Face 3.0 styling, a larger 15.6\" rotating touchscreen, refreshed interior, and new Cosmos Black color. Two Blade Battery variants offer 345 km and 420 km WLTP range, both powered by a 100 kW PMSM. 5-Star Euro NCAP rated.",
     "images": [
-      "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-exterior-front-white-bg.webp",
+      "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-exterior-front-cimex.webp",
+      "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-exterior-side-cimex.webp",
+      "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-exterior-rear-cimex.webp",
+      "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-color-parkour-red-cimex.webp",
+      "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-color-cosmos-black-cimex.webp",
       "/assets/images/car_images/byd/atto-3/exterior/F08.webp",
       "/assets/images/car_images/byd/atto-3/exterior/Section02_MOB.webp",
       "/assets/images/car_images/byd/atto-3/exterior/Section15_MOB.webp",
+      "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-exterior-front-white-bg.webp",
       "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-exterior-rear.webp",
       "/assets/images/car_images/byd/atto-3/interior/F02-1-mob.webp"
     ],
@@ -6359,7 +6102,9 @@ window.CARS_DB = [
           "Audio System Speaker Count": "6",
           "360° Surround View Camera": "Not equipped (Superior only)",
           "Adaptive Cruise Control (ACC)": "Not equipped (Superior only)",
-          "Auto Emergency Braking (AEB)": "Not equipped (Superior only)"
+          "Auto Emergency Braking (AEB)": "Not equipped (Superior only)",
+          "Power": "135 PS",
+          "Torque": "310 Nm"
         }
       },
       {
@@ -6403,7 +6148,9 @@ window.CARS_DB = [
           "Audio System Speaker Count": "8 (Dirac HD Sound)",
           "360° Surround View Camera": "Yes",
           "Adaptive Cruise Control (ACC)": "Yes (Stop & Go)",
-          "Auto Emergency Braking (AEB)": "Yes"
+          "Auto Emergency Braking (AEB)": "Yes",
+          "Power": "135 PS",
+          "Torque": "310 Nm"
         }
       }
     ],
@@ -6474,7 +6221,8 @@ window.CARS_DB = [
       "Battery Warranty": "10 years / 200,000 km",
       "Total Number of Variants": "2",
       "Variant Names": "Advanced, Superior",
-      "Total Number of Colors": "4"
+      "Total Number of Colors": "4",
+      "Fuel Type": "Electric"
     },
     "pros": [
       "Nepal's proven #1 EV — massive owner community & service support",
@@ -6496,17 +6244,24 @@ window.CARS_DB = [
       "Nepal's #1 EV",
       "Rs. 56.90L Start"
     ],
-    "thumb": "/assets/images/car_images/byd/atto-3/exterior/F08.webp"
+    "thumb": "/assets/images/car_images/byd/atto-3/exterior/byd-atto-3-exterior-front-cimex.webp"
   },
   {
-    "id": 304,
+    "id": 36,
     "slug": "byd-m6-2025",
     "brand": "BYD",
+    "brandSlug": "byd",
     "model": "M6",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "MPV",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's only electric 7-seater MPV — 440 km, family-first",
     "rating": 4.2,
     "reviews": 720,
@@ -6514,6 +6269,7 @@ window.CARS_DB = [
     "baseEMI": 113000,
     "overview": "The BYD M6 is Nepal's first and only premium 7-seat electric MPV, launched at the International Balloon Festival in Pokhara. Successor to the BYD E6, it packs a 71.8 kWh Blade Battery with 440 km WLTP range, 115 kW DC fast charging, Dragon Face 3.0 design, 12.8\" rotating screen, panoramic sunroof, and ventilated seats — all for under Rs. 59L.",
     "images": [
+      "/assets/images/car_images/byd/m6/exterior/byd-m6-exterior-front-cimex.webp",
       "/assets/images/car_images/byd/m6/exterior/202412181521-45角度pc.jpg",
       "/assets/images/car_images/byd/m6/exterior/byd-m6-exterior-front.webp",
       "/assets/images/car_images/byd/m6/exterior/车顶pc.jpg",
@@ -6581,7 +6337,10 @@ window.CARS_DB = [
           "charging": "115 kW DC / 7 kW AC",
           "Kerb Weight (kg)": "1,895",
           "Gross Vehicle Weight (GVW)": "2,394 kg",
-          "Seating Capacity": "6-seat standard (7-seat optional)"
+          "Seating Capacity": "6-seat standard (7-seat optional)",
+          "Power": "136 PS",
+          "Torque": "250 Nm",
+          "Seating": "6-seat standard (7-seat optional)"
         }
       },
       {
@@ -6604,7 +6363,10 @@ window.CARS_DB = [
           "charging": "115 kW DC / 7 kW AC",
           "Kerb Weight (kg)": "1,915",
           "Gross Vehicle Weight (GVW)": "2,489 kg",
-          "Seating Capacity": "7-seat standard (6-seat optional)"
+          "Seating Capacity": "7-seat standard (6-seat optional)",
+          "Power": "136 PS",
+          "Torque": "250 Nm",
+          "Seating": "7-seat standard (6-seat optional)"
         }
       }
     ],
@@ -6692,7 +6454,8 @@ window.CARS_DB = [
       "Battery Warranty": "10 years / 200,000 km",
       "Total Number of Variants": "2",
       "Variant Names": "Dynamic, Superior",
-      "Total Number of Colors": "4"
+      "Total Number of Colors": "4",
+      "Fuel Type": "Electric"
     },
     "pros": [
       "Nepal's only 7-seat electric MPV — no direct rival",
@@ -6714,17 +6477,24 @@ window.CARS_DB = [
       "115 kW DC Charge",
       "Rs. 58.90L"
     ],
-    "thumb": "/assets/images/car_images/byd/m6/exterior/202412181521-45角度pc.jpg"
+    "thumb": "/assets/images/car_images/byd/m6/exterior/byd-m6-exterior-front-cimex.webp"
   },
   {
-    "id": 305,
+    "id": 37,
     "slug": "byd-sealion-7-2025",
     "brand": "BYD",
+    "brandSlug": "byd",
     "model": "Sealion 7",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Mid-Size SUV",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "BYD's flagship SUV for Nepal — Ocean aesthetics, 520 km NEDC, 9 airbags",
     "rating": 4.4,
     "reviews": 490,
@@ -6794,7 +6564,9 @@ window.CARS_DB = [
           "torque": "380 Nm",
           "range": "520 km NEDC",
           "battery": "71.8 kWh",
-          "charging": "110 kW DC / 7 kW AC"
+          "charging": "110 kW DC / 7 kW AC",
+          "Power": "135 PS",
+          "Torque": "380 Nm"
         }
       }
     ],
@@ -6884,7 +6656,9 @@ window.CARS_DB = [
       "Standard Vehicle Warranty": "5 years / 125,000 km",
       "Battery Warranty": "10 years / 200,000 km",
       "Total Number of Variants": "1",
-      "Total Number of Colors": "4"
+      "Total Number of Colors": "4",
+      "Fuel Type": "Electric",
+      "Kerb Weight": "2,160"
     },
     "pros": [
       "9 airbags — comprehensive safety suite standard",
@@ -6909,14 +6683,21 @@ window.CARS_DB = [
     "thumb": "/assets/images/car_images/byd/sealion-7/exterior/byd-sealion-7-exterior-front-white-bg.jpg"
   },
   {
-    "id": 306,
+    "id": 38,
     "slug": "byd-seal-2024",
     "brand": "BYD",
+    "brandSlug": "byd",
     "model": "Seal",
     "year": 2024,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Sedan",
     "badge": "flagship",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's performance EV king — 390 kW, 9 airbags, supercar torque",
     "rating": 4.7,
     "reviews": 390,
@@ -6924,6 +6705,8 @@ window.CARS_DB = [
     "baseEMI": 212000,
     "overview": "The BYD Seal is BYD Nepal's flagship — a sleek performance sedan that stands alone in the Nepali market with no direct rival. Available in three variants spanning Rs. 1.10 Cr to Rs. 1.95 Cr, from a 150 kW RWD daily driver to a 390 kW AWD performance machine with 670 Nm system torque. All variants get 9 airbags, 15.6\" rotating screen, HUD, and ocean-inspired design.",
     "images": [
+      "/assets/images/car_images/byd/seal/exterior/byd-seal-exterior-front-cimex.webp",
+      "/assets/images/car_images/byd/seal/exterior/byd-seal-exterior-siderear-cimex.webp",
       "/assets/images/car_images/byd/seal/exterior/byd-seal-exterior-front-white-bg.webp",
       "/assets/images/car_images/byd/seal/exterior/byd-seal-exterior-side-left-white-bg.webp",
       "/assets/images/car_images/byd/seal/interior/byd-seal-interior-dashboard.webp",
@@ -6984,7 +6767,9 @@ window.CARS_DB = [
           "charging": "150 kW DC / 11 kW AC",
           "Battery Capacity (kWh)": "61.44 kWh",
           "Certified Range (km)": "460 km WLTP",
-          "Acceleration 0–100 km/h": "7.5 sec"
+          "Acceleration 0–100 km/h": "7.5 sec",
+          "Power": "204 PS",
+          "Torque": "310 Nm"
         }
       },
       {
@@ -7008,7 +6793,9 @@ window.CARS_DB = [
           "charging": "150 kW DC / 11 kW AC",
           "Battery Capacity (kWh)": "82.56 kWh",
           "Certified Range (km)": "570 km WLTP",
-          "Acceleration 0–100 km/h": "5.9 sec"
+          "Acceleration 0–100 km/h": "5.9 sec",
+          "Power": "313 PS",
+          "Torque": "360 Nm"
         }
       },
       {
@@ -7035,7 +6822,9 @@ window.CARS_DB = [
           "Battery Capacity (kWh)": "82.56 kWh",
           "Certified Range (km)": "520 km WLTP",
           "Acceleration 0–100 km/h": "3.8 sec",
-          "Frunk Capacity (litres)": "53"
+          "Frunk Capacity (litres)": "53",
+          "Power": "530 PS (system)",
+          "Torque": "670 Nm (system)"
         }
       }
     ],
@@ -7119,7 +6908,9 @@ window.CARS_DB = [
       "Battery Warranty": "10 years / 200,000 km",
       "Total Number of Variants": "3",
       "Variant Names": "Dynamic, Premium, Performance",
-      "Total Number of Colors": "4"
+      "Total Number of Colors": "4",
+      "Fuel Type": "Electric",
+      "Kerb Weight": "~2,150 kg (sources vary 2,150–2,185 kg)"
     },
     "pros": [
       "Only performance EV sedan available in Nepal — no rival",
@@ -7140,17 +6931,24 @@ window.CARS_DB = [
       "390 kW AWD Available",
       "Rs. 1.10 Cr Start"
     ],
-    "thumb": "/assets/images/car_images/byd/seal/exterior/byd-seal-exterior-front-white-bg.webp"
+    "thumb": "/assets/images/car_images/byd/seal/exterior/byd-seal-exterior-front-cimex.webp"
   },
   {
-    "id": 401,
+    "id": 39,
     "slug": "kia-sonet-2025",
     "brand": "Kia",
+    "brandSlug": "kia",
     "model": "Sonet",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Feature-loaded compact SUV with ADAS and panoramic sunroof",
     "rating": 4.4,
     "reviews": 2103,
@@ -7158,6 +6956,7 @@ window.CARS_DB = [
     "baseEMI": 42000,
     "overview": "The Kia Sonet is Nepal's best-selling compact SUV, offering ADAS Level 1 safety, a 10.25\" touchscreen, ventilated seats, and a 1.5L petrol engine. Available in MT and IVT, it punches well above its price in features and build quality.",
     "images": [
+      "/assets/images/car_images/kia/kia-sonet-2025/front.jpg",
       "/assets/images/car_images/kia/sonet/exterior/kia-sonet-exterior-front-white-bg.png",
       "/assets/images/car_images/kia/sonet/exterior/sonet-exterior-right-front-three-quarter-12.avif",
       "/assets/images/car_images/kia/sonet/interior/sonet-interior-dashboard.avif",
@@ -7210,7 +7009,9 @@ window.CARS_DB = [
           "power": "113 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "113 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -7232,7 +7033,9 @@ window.CARS_DB = [
           "power": "113 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "113 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -7254,7 +7057,9 @@ window.CARS_DB = [
           "power": "113 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "113 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -7276,7 +7081,9 @@ window.CARS_DB = [
           "power": "113 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.1 km/l",
-          "transmission": "IVT"
+          "transmission": "IVT",
+          "Power": "113 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -7298,58 +7105,57 @@ window.CARS_DB = [
           "power": "113 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.1 km/l",
-          "transmission": "IVT"
+          "transmission": "IVT",
+          "Power": "113 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L MPi Petrol",
-      "Displacement": "1,497 cc",
+      "Engine Type": "1.5L MPi Petrol",
+      "Displacement (cc)": "1,497",
+      "Max Engine Power": "113 hp @ 6,300 rpm",
+      "Max Engine Torque": "144 Nm",
+      "Fuel Efficiency": "16.1–16.8 km/l",
+      "Transmission Type": "6-Speed MT / IVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "392",
+      "Ground Clearance (mm)": "211",
+      "Total Airbag Count": "6",
+      "ADAS Suite": "Level 1 (top trims)",
+      "Body Type": "Compact SUV",
+      "Note": "One source lists a diesel HTX/GTX Plus trim line for Nepal — not corroborated elsewhere; this entry assumes petrol-only, verify diesel availability with Continental Trading Enterprises",
+      "Distributor": "Continental Trading Enterprises Pvt. Ltd. (Official Kia Nepal Distributor)",
       "Power": "113 hp @ 6,300 rpm",
       "Torque": "144 Nm",
-      "Efficiency": "16.8 km/l",
-      "Fuel Tank": "45 L",
       "Transmission": "6-Speed MT / IVT",
-      "Drive": "FWD",
+      "Boot Space": "392",
       "Seating": "5",
-      "Boot Space": "392 L",
-      "Length": "4,120 mm",
-      "Width": "1,790 mm",
-      "Height": "1,642 mm",
-      "Wheelbase": "2,500 mm",
-      "Ground Clearance": "211 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol",
+      "Ground Clearance": "211"
     },
-    "pros": [
-      "211mm ground clearance — best in class",
-      "ADAS on top variants",
-      "Bose sound system",
-      "10.25\" cluster + screen combo",
-      "Strong resale value in Nepal"
-    ],
-    "cons": [
-      "No diesel in Nepal spec",
-      "IVT only on top 2 variants",
-      "Pricier than Creta for same power",
-      "No AWD option"
-    ],
-    "highlights": [
-      "211mm Ground Clearance",
-      "ADAS Level 1",
-      "Panoramic Sunroof",
-      "Bose 7-Speaker"
-    ],
-    "thumb": "/assets/images/car_images/kia/sonet/exterior/kia-sonet-exterior-front-white-bg.png"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/kia/kia-sonet-2025/front.jpg"
   },
   {
-    "id": 402,
+    "id": 40,
     "slug": "kia-seltos-2025",
     "brand": "Kia",
+    "brandSlug": "kia",
     "model": "Seltos",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Bold design meets premium tech in Nepal's mid-size SUV leader",
     "rating": 4.5,
     "reviews": 3241,
@@ -7357,6 +7163,7 @@ window.CARS_DB = [
     "baseEMI": 58000,
     "overview": "The Kia Seltos remains Nepal's premium compact SUV benchmark with a 10.25\" dual screen setup, ADAS, Bose sound, and a powerful 1.5L turbo petrol. Available in multiple powertrain options with class-leading feature density.",
     "images": [
+      "/assets/images/car_images/kia/kia-seltos-2025/front.png",
       "/assets/images/car_images/kia/seltos/exterior/KIA-Seltos-GT-Line-Nepal-Image1.jpg",
       "/assets/images/car_images/kia/seltos/exterior/kia-seltos-exterior-front-white-bg.jpg",
       "/assets/images/car_images/kia/seltos/exterior/kia-seltos-exterior-front-white-bg.png",
@@ -7410,7 +7217,9 @@ window.CARS_DB = [
           "power": "113 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.5 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "113 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -7432,7 +7241,9 @@ window.CARS_DB = [
           "power": "113 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.5 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "113 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -7454,7 +7265,9 @@ window.CARS_DB = [
           "power": "158 hp @ 5,500 rpm",
           "torque": "253 Nm",
           "efficiency": "15.3 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "158 hp @ 5,500 rpm",
+          "Torque": "253 Nm"
         }
       },
       {
@@ -7475,58 +7288,52 @@ window.CARS_DB = [
           "power": "158 hp @ 5,500 rpm",
           "torque": "253 Nm",
           "efficiency": "15.3 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "158 hp @ 5,500 rpm",
+          "Torque": "253 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L MPi / 1.5L Turbo GDi",
-      "Displacement": "1,497 cc",
-      "Power": "113–158 hp",
+      "Engine Type": "1.5L Petrol / 1.5L Turbo (GT Line)",
+      "Displacement (cc)": "1,497",
+      "Max Engine Power": "115–160 PS",
+      "Max Engine Torque": "144–253 Nm",
+      "Transmission Type": "MT / IVT / 7-DCT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "ADAS Suite": "Level 2 (top trims)",
+      "Body Type": "Compact SUV",
+      "Note": "A next-generation 'K3 Seltos' was officially launched in Nepal in June 2026 — confirm whether this entry reflects outgoing or new generation",
+      "Distributor": "Continental Trading Enterprises Pvt. Ltd. (Official Kia Nepal Distributor)",
+      "Power": "115–160 PS",
       "Torque": "144–253 Nm",
-      "Efficiency": "15.3–16.5 km/l",
-      "Fuel Tank": "50 L",
-      "Transmission": "6MT / 7DCT",
-      "Drive": "FWD",
+      "Transmission": "MT / IVT / 7-DCT",
       "Seating": "5",
-      "Boot Space": "433 L",
-      "Length": "4,370 mm",
-      "Width": "1,825 mm",
-      "Height": "1,650 mm",
-      "Wheelbase": "2,610 mm",
-      "Ground Clearance": "190 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "158hp turbo on top variants",
-      "Head-Up Display on HTX+",
-      "433L boot space",
-      "Bose 8-speaker system",
-      "Strong brand value in Nepal"
-    ],
-    "cons": [
-      "No diesel variant in Nepal",
-      "DCT only on turbo variants",
-      "Pricier segment",
-      "No AWD in Nepal spec"
-    ],
-    "highlights": [
-      "158hp Turbo",
-      "Head-Up Display",
-      "433L Boot",
-      "ADAS Level 1"
-    ],
-    "thumb": "/assets/images/car_images/kia/seltos/exterior/KIA-Seltos-GT-Line-Nepal-Image1.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/kia/kia-seltos-2025/front.png"
   },
   {
-    "id": 403,
+    "id": 41,
     "slug": "kia-carens-2025",
     "brand": "Kia",
+    "brandSlug": "kia",
     "model": "Carens",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "MPV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "6/7-seat family MPV with SUV looks and premium features",
     "rating": 4.2,
     "reviews": 876,
@@ -7534,6 +7341,7 @@ window.CARS_DB = [
     "baseEMI": 52000,
     "overview": "The Kia Carens redefines the MPV segment in Nepal with SUV-inspired styling, a 10.25\" touchscreen, 6 airbags standard, and flexible 6 or 7-seat configurations. Ideal for Nepali families needing space and safety without compromise.",
     "images": [
+      "/assets/images/car_images/kia/kia-carens-2025/front.webp",
       "/assets/images/car_images/kia/carens/exterior/kia-caren-exterior-front-white-bg.png"
     ],
     "colors": [
@@ -7579,7 +7387,9 @@ window.CARS_DB = [
           "power": "113 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.5 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "113 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -7601,7 +7411,9 @@ window.CARS_DB = [
           "power": "113 hp @ 6,300 rpm",
           "torque": "144 Nm",
           "efficiency": "16.5 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "113 hp @ 6,300 rpm",
+          "Torque": "144 Nm"
         }
       },
       {
@@ -7622,58 +7434,50 @@ window.CARS_DB = [
           "power": "158 hp @ 5,500 rpm",
           "torque": "253 Nm",
           "efficiency": "15.2 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "158 hp @ 5,500 rpm",
+          "Torque": "253 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L MPi / 1.5L Turbo GDi",
-      "Displacement": "1,497 cc",
-      "Power": "113–158 hp",
-      "Torque": "144–253 Nm",
-      "Efficiency": "15.2–16.5 km/l",
-      "Fuel Tank": "45 L",
-      "Transmission": "6MT / 7DCT",
-      "Drive": "FWD",
-      "Seating": "6 or 7",
-      "Boot Space": "216 L (7-seat) / 549 L (6-seat)",
-      "Length": "4,540 mm",
-      "Width": "1,800 mm",
-      "Height": "1,708 mm",
-      "Wheelbase": "2,780 mm",
-      "Ground Clearance": "195 mm",
-      "Airbags": "6 (Standard)"
+      "Engine Type": "1.5L Petrol",
+      "Displacement (cc)": "1,497",
+      "Max Engine Power": "115 PS",
+      "Max Engine Torque": "144 Nm",
+      "Transmission Type": "MT / IVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "6/7",
+      "Total Airbag Count": "6",
+      "Body Type": "MPV",
+      "Distributor": "Continental Trading Enterprises Pvt. Ltd. (Official Kia Nepal Distributor)",
+      "Power": "115 PS",
+      "Torque": "144 Nm",
+      "Transmission": "MT / IVT",
+      "Seating": "6/7",
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "6/7-seat flexibility",
-      "Captain chairs in Prestige",
-      "6 airbags standard",
-      "Best MPV interior quality",
-      "Turbo option available"
-    ],
-    "cons": [
-      "Boot small in 7-seat mode",
-      "No diesel in Nepal",
-      "Heavier than rivals",
-      "Fewer service centers than Hyundai"
-    ],
-    "highlights": [
-      "6 or 7 Seats",
-      "Captain Chairs",
-      "Turbo Option",
-      "6 Airbags Standard"
-    ],
-    "thumb": "/assets/images/car_images/kia/carens/exterior/kia-caren-exterior-front-white-bg.png"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/kia/kia-carens-2025/front.webp"
   },
   {
-    "id": 404,
+    "id": 42,
     "slug": "kia-ev6-2025",
     "brand": "Kia",
+    "brandSlug": "kia",
     "model": "EV6",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Electric Crossover",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "800V ultra-fast charging electric crossover for Nepal's EV pioneers",
     "rating": 4.6,
     "reviews": 312,
@@ -7681,6 +7485,7 @@ window.CARS_DB = [
     "baseEMI": 128000,
     "overview": "The Kia EV6 is Nepal's most technologically advanced EV, featuring 800V ultra-fast charging, a 77.4 kWh battery, 510km WLTP range, and a stunning interior with dual 12\" curved screens. Available in RWD and AWD GT-Line.",
     "images": [
+      "/assets/images/car_images/kia/kia-ev6-2025/front.jpg",
       "/assets/images/car_images/kia/ev6/exterior/ev6-exterior-left-side-view.avif",
       "/assets/images/car_images/kia/ev6/exterior/kia-ev6-exterior-front-white-bg.png",
       "/assets/images/car_images/kia/ev6/interior/ev6-interior-dashboard.avif"
@@ -7729,7 +7534,9 @@ window.CARS_DB = [
           "power": "226 hp",
           "torque": "350 Nm",
           "efficiency": "5.9 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "transmission": "Single Speed Reducer",
+          "Power": "226 hp",
+          "Torque": "350 Nm"
         }
       },
       {
@@ -7750,58 +7557,48 @@ window.CARS_DB = [
           "power": "320 hp",
           "torque": "605 Nm",
           "efficiency": "5.1 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "transmission": "Single Speed Reducer",
+          "Power": "320 hp",
+          "Torque": "605 Nm"
         }
       }
     ],
     "specs": {
-      "Battery": "77.4 kWh",
-      "Range": "510 km (WLTP)",
-      "Power": "226–320 hp",
-      "Torque": "350–605 Nm",
-      "Charging": "800V / 233 kW DC Fast Charge",
-      "Charge Time": "18 min (10–80%)",
-      "Transmission": "Single Speed",
-      "Drive": "RWD / AWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "Lithium-ion",
+      "Battery Capacity (kWh)": "77.4",
+      "Certified Range (km)": "~480–528 WLTP depending on drivetrain",
+      "Charging Port Type": "CCS2, 800V architecture (ultra-fast DC)",
+      "Drive Type": "RWD / AWD (GT-Line)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7",
+      "Body Type": "Electric Crossover",
+      "Variant Names": "Standard, GT-Line AWD",
+      "Distributor": "Continental Trading Enterprises Pvt. Ltd. (Official Kia Nepal Distributor)",
       "Seating": "5",
-      "Boot Space": "490 L + 52 L frunk",
-      "Length": "4,680 mm",
-      "Width": "1,880 mm",
-      "Height": "1,550 mm",
-      "Wheelbase": "2,900 mm",
-      "Ground Clearance": "160 mm",
-      "Airbags": "7"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "800V charging — fastest in Nepal",
-      "510km real-world range",
-      "V2L powers appliances",
-      "ADAS Level 2",
-      "Stunning interior quality"
-    ],
-    "cons": [
-      "Very high price",
-      "Charging infra limited in Nepal",
-      "Low ground clearance for rough roads",
-      "No spare tyre"
-    ],
-    "highlights": [
-      "510km Range",
-      "800V Fast Charge",
-      "V2L Technology",
-      "ADAS Level 2"
-    ],
-    "thumb": "/assets/images/car_images/kia/ev6/exterior/ev6-exterior-left-side-view.avif"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/kia/kia-ev6-2025/front.jpg"
   },
   {
-    "id": 501,
+    "id": 43,
     "slug": "nissan-magnite-2025",
     "brand": "Nissan",
+    "brandSlug": "nissan",
     "model": "Magnite",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Sub-4m SUV with turbo punch and 205mm clearance for Nepal roads",
     "rating": 4.1,
     "reviews": 1543,
@@ -7858,7 +7655,9 @@ window.CARS_DB = [
           "power": "72 hp @ 6,250 rpm",
           "torque": "96 Nm",
           "efficiency": "17.7 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "72 hp @ 6,250 rpm",
+          "Torque": "96 Nm"
         }
       },
       {
@@ -7880,7 +7679,9 @@ window.CARS_DB = [
           "power": "100 hp @ 5,000 rpm",
           "torque": "160 Nm",
           "efficiency": "17.4 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "100 hp @ 5,000 rpm",
+          "Torque": "160 Nm"
         }
       },
       {
@@ -7902,7 +7703,9 @@ window.CARS_DB = [
           "power": "100 hp @ 5,000 rpm",
           "torque": "160 Nm",
           "efficiency": "17.0 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "100 hp @ 5,000 rpm",
+          "Torque": "160 Nm"
         }
       },
       {
@@ -7923,58 +7726,50 @@ window.CARS_DB = [
           "power": "100 hp @ 5,000 rpm",
           "torque": "160 Nm",
           "efficiency": "17.0 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "100 hp @ 5,000 rpm",
+          "Torque": "160 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.0L NA / 1.0L Turbo Petrol",
-      "Displacement": "999 cc",
-      "Power": "72–100 hp",
-      "Torque": "96–160 Nm",
-      "Efficiency": "17.0–17.7 km/l",
-      "Fuel Tank": "40 L",
-      "Transmission": "5MT / CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.0L Turbo Petrol",
+      "Displacement (cc)": "999",
+      "Max Engine Power": "100 PS",
+      "Max Engine Torque": "152 Nm",
+      "Transmission Type": "MT / CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Compact SUV",
+      "Distributor": "Pioneer Motocorp Pvt. Ltd. (Official Nissan Nepal Distributor)",
+      "Power": "100 PS",
+      "Torque": "152 Nm",
+      "Transmission": "MT / CVT",
       "Seating": "5",
-      "Boot Space": "336 L",
-      "Length": "3,994 mm",
-      "Width": "1,758 mm",
-      "Height": "1,572 mm",
-      "Wheelbase": "2,500 mm",
-      "Ground Clearance": "205 mm",
-      "Airbags": "4–6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "205mm ground clearance",
-      "Turbo available from XL",
-      "Affordable entry price",
-      "360° camera on XV",
-      "Good fuel efficiency"
-    ],
-    "cons": [
-      "Only 4 airbags on XE",
-      "No ADAS",
-      "Smaller boot than rivals",
-      "CVT only on top 2 variants"
-    ],
-    "highlights": [
-      "205mm Ground Clearance",
-      "100hp Turbo",
-      "360° Camera",
-      "Wireless CarPlay"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/nissan/magnite/exterior/magnite-exterior-right-front-three-quarter-27.avif"
   },
   {
-    "id": 502,
+    "id": 44,
     "slug": "nissan-x-trail-2025",
     "brand": "Nissan",
+    "brandSlug": "nissan",
     "model": "X-Trail",
     "year": 2026,
     "type": "Petrol Hybrid",
+    "bodyType": "Unknown",
     "body": "Mid-size SUV",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "E-Power hybrid tech meets 7-seat SUV capability for Nepal highways",
     "rating": 4.4,
     "reviews": 621,
@@ -8034,7 +7829,9 @@ window.CARS_DB = [
           "power": "204 hp (motor)",
           "torque": "300 Nm",
           "efficiency": "18.4 km/l",
-          "transmission": "Single Speed"
+          "transmission": "Single Speed",
+          "Power": "204 hp (motor)",
+          "Torque": "300 Nm"
         }
       },
       {
@@ -8056,57 +7853,48 @@ window.CARS_DB = [
           "power": "306 hp (dual motor)",
           "torque": "600 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "Single Speed"
+          "transmission": "Single Speed",
+          "Power": "306 hp (dual motor)",
+          "Torque": "600 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L VC-Turbo + e-POWER",
-      "System Power": "204–306 hp",
-      "Torque": "300–600 Nm",
-      "Efficiency": "16.8–18.4 km/l",
-      "Fuel Tank": "55 L",
-      "Transmission": "Single Speed Electric",
-      "Drive": "FWD / e-4ORCE AWD",
-      "Seating": "7",
-      "Boot Space": "565 L (5-seat mode)",
-      "Length": "4,640 mm",
-      "Width": "1,840 mm",
-      "Height": "1,720 mm",
-      "Wheelbase": "2,705 mm",
-      "Ground Clearance": "210 mm",
-      "Airbags": "6"
+      "Engine Type": "1.5L VC-Turbo / e-Power Hybrid",
+      "Displacement (cc)": "1,497",
+      "Max Engine Power": "163–204 PS (system)",
+      "Transmission Type": "CVT / e-Power",
+      "Drive Type": "FWD / AWD",
+      "Seating Capacity": "5/7",
+      "Total Airbag Count": "6",
+      "Body Type": "Mid-size SUV",
+      "Distributor": "Pioneer Motocorp Pvt. Ltd. (Official Nissan Nepal Distributor)",
+      "Power": "163–204 PS (system)",
+      "Transmission": "CVT / e-Power",
+      "Seating": "5/7",
+      "Fuel Type": "Petrol Hybrid"
     },
-    "pros": [
-      "e-POWER = EV driving feel",
-      "e-4ORCE AWD on top variant",
-      "18.4 km/l hybrid efficiency",
-      "ProPILOT ADAS",
-      "7-seat with huge boot"
-    ],
-    "cons": [
-      "Very high price",
-      "Petrol-only (no plug-in)",
-      "Heavier than rivals",
-      "Limited Nepal service experience"
-    ],
-    "highlights": [
-      "e-POWER Hybrid",
-      "e-4ORCE AWD",
-      "ProPILOT ADAS",
-      "18.4 km/l"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/nissan/x-trail/exterior/22TDIEULHD_XT_TEKNA_PS_001_pace016-d.jpg.ximg_.l_12_h.smart_.jpg"
   },
   {
-    "id": 503,
+    "id": 45,
     "slug": "nissan-kicks-2025",
     "brand": "Nissan",
+    "brandSlug": "nissan",
     "model": "Kicks",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Bold urban SUV with class-leading 209mm clearance and turbo power",
     "rating": 4.2,
     "reviews": 489,
@@ -8159,7 +7947,9 @@ window.CARS_DB = [
           "power": "114 hp @ 5,000 rpm",
           "torque": "190 Nm",
           "efficiency": "17.2 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "114 hp @ 5,000 rpm",
+          "Torque": "190 Nm"
         }
       },
       {
@@ -8181,58 +7971,48 @@ window.CARS_DB = [
           "power": "114 hp @ 5,000 rpm",
           "torque": "190 Nm",
           "efficiency": "17.2 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "114 hp @ 5,000 rpm",
+          "Torque": "190 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L Turbo Petrol",
-      "Displacement": "1,199 cc",
-      "Power": "114 hp @ 5,000 rpm",
-      "Torque": "190 Nm",
-      "Efficiency": "17.2 km/l",
-      "Fuel Tank": "41 L",
-      "Transmission": "CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L Petrol / e-Power Hybrid",
+      "Displacement (cc)": "1,498",
+      "Max Engine Power": "106–190 PS (system, e-Power)",
+      "Transmission Type": "CVT / e-Power",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Compact SUV",
+      "Distributor": "Pioneer Motocorp Pvt. Ltd. (Official Nissan Nepal Distributor)",
+      "Power": "106–190 PS (system, e-Power)",
+      "Transmission": "CVT / e-Power",
       "Seating": "5",
-      "Boot Space": "345 L",
-      "Length": "4,192 mm",
-      "Width": "1,760 mm",
-      "Height": "1,588 mm",
-      "Wheelbase": "2,620 mm",
-      "Ground Clearance": "209 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "209mm ground clearance",
-      "1.2 Turbo in both variants",
-      "10.67\" large screen",
-      "Distinctive styling",
-      "Good torque for Nepal hills"
-    ],
-    "cons": [
-      "CVT only — no MT option",
-      "No ADAS",
-      "New model — less resale data",
-      "Limited boot vs Seltos"
-    ],
-    "highlights": [
-      "209mm Ground Clearance",
-      "114hp Turbo",
-      "10.67\" Screen",
-      "360° Camera"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/nissan/kicks/exterior/nissan-kicks-exterior-side-left-white-bg.jpg"
   },
   {
-    "id": 601,
+    "id": 46,
     "slug": "mahindra-thar-roxx-2025",
     "brand": "Mahindra",
+    "brandSlug": "mahindra",
     "model": "Thar Roxx",
     "year": 2026,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "Off-Road SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "4-door Thar with off-road DNA meets premium SUV comfort for Nepal",
     "rating": 4.6,
     "reviews": 987,
@@ -8293,7 +8073,9 @@ window.CARS_DB = [
           "power": "152 hp @ 3,500 rpm",
           "torque": "330 Nm",
           "efficiency": "15.2 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "152 hp @ 3,500 rpm",
+          "Torque": "330 Nm"
         }
       },
       {
@@ -8315,7 +8097,9 @@ window.CARS_DB = [
           "power": "152 hp @ 3,500 rpm",
           "torque": "330 Nm",
           "efficiency": "15.2 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "152 hp @ 3,500 rpm",
+          "Torque": "330 Nm"
         }
       },
       {
@@ -8337,7 +8121,9 @@ window.CARS_DB = [
           "power": "152 hp @ 3,500 rpm",
           "torque": "330 Nm",
           "efficiency": "14.8 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "152 hp @ 3,500 rpm",
+          "Torque": "330 Nm"
         }
       },
       {
@@ -8358,59 +8144,46 @@ window.CARS_DB = [
           "power": "152 hp @ 3,500 rpm",
           "torque": "330 Nm",
           "efficiency": "14.8 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "152 hp @ 3,500 rpm",
+          "Torque": "330 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.2L mHawk Diesel",
-      "Displacement": "2,184 cc",
-      "Power": "152 hp @ 3,500 rpm",
-      "Torque": "330 Nm",
-      "Efficiency": "14.8–15.2 km/l",
-      "Fuel Tank": "57 L",
-      "Transmission": "6MT / 6AT",
-      "Drive": "4XPLOR AWD",
+      "Engine Type": "2.0L Turbo Petrol / 2.2L Diesel",
+      "Transmission Type": "MT / AT",
+      "Drive Type": "4x2 / 4x4",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Distributor": "Agni Group (Official Mahindra Nepal Distributor)",
+      "Note": "Some 2026 Nepal price listings quote a lower Rs. 56.95L (4x2) – 68.95L (4x4) headline range vs this entry's 64.90–89.90L 4-tier structure — confirm exact current trim-wise pricing with Agni Group before quoting",
+      "Transmission": "MT / AT",
       "Seating": "5",
-      "Boot Space": "428 L",
-      "Length": "4,428 mm",
-      "Width": "1,870 mm",
-      "Height": "1,935 mm",
-      "Wheelbase": "2,850 mm",
-      "Ground Clearance": "226 mm",
-      "Airbags": "6",
-      "Wading Depth": "650 mm"
+      "Fuel Type": "Diesel",
+      "Body Type": "Off-Road SUV"
     },
-    "pros": [
-      "226mm ground clearance — best in class",
-      "Rear locking differential",
-      "Sony 12-speaker roof audio",
-      "Genuine off-road 4WD",
-      "Massive 57L fuel tank"
-    ],
-    "cons": [
-      "Diesel only in Nepal",
-      "Tall height in city parking",
-      "AT only on top 2 variants",
-      "Premium pricing vs rivals"
-    ],
-    "highlights": [
-      "226mm Clearance",
-      "4XPLOR AWD + Lock Diff",
-      "Sony 12-Speaker",
-      "Terrain Modes"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/mahindra/thar-roxx/exterior/thar-roxx-exterior-left-front-three-quarter-3.avif"
   },
   {
-    "id": 602,
+    "id": 47,
     "slug": "mahindra-xuv-3xo-2025",
     "brand": "Mahindra",
+    "brandSlug": "mahindra",
     "model": "XUV 3XO",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Panoramic sunroof and Level 2 ADAS in Nepal's most feature-rich compact SUV",
     "rating": 4.3,
     "reviews": 743,
@@ -8418,6 +8191,13 @@ window.CARS_DB = [
     "baseEMI": 44000,
     "overview": "The Mahindra XUV 3XO (formerly XUV300) arrives with a complete overhaul — stunning new design, Level 2 ADAS, a massive panoramic sunroof, and a 10.25\" dual-screen setup. It packs class-leading 6 airbags and the most features per rupee in Nepal's compact SUV segment.",
     "images": [
+      "/assets/images/car_images/mahindra/mahindra-xuv-3xo-2025/front.jpg",
+      "/assets/images/car_images/mahindra/mahindra-xuv-3xo-2025/interior.jpg",
+      "/assets/images/car_images/mahindra/mahindra-xuv-3xo-2025/colors/color-white.jpg",
+      "/assets/images/car_images/mahindra/mahindra-xuv-3xo-2025/colors/color-grey.jpg",
+      "/assets/images/car_images/mahindra/mahindra-xuv-3xo-2025/colors/color-dark-green.jpg",
+      "/assets/images/car_images/mahindra/mahindra-xuv-3xo-2025/colors/color-beige.jpg",
+      "/assets/images/car_images/mahindra/mahindra-xuv-3xo-2025/colors/color-navy-blue.jpg",
       "/assets/images/car_images/mahindra/xuv-3xo/exterior/mahindra-xuv-3xo-exterior-rear-white-bg.jpg"
     ],
     "colors": [
@@ -8466,7 +8246,9 @@ window.CARS_DB = [
           "power": "108 hp @ 5,000 rpm",
           "torque": "200 Nm",
           "efficiency": "17.2 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "108 hp @ 5,000 rpm",
+          "Torque": "200 Nm"
         }
       },
       {
@@ -8488,7 +8270,9 @@ window.CARS_DB = [
           "power": "108 hp @ 5,000 rpm",
           "torque": "200 Nm",
           "efficiency": "17.2 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "108 hp @ 5,000 rpm",
+          "Torque": "200 Nm"
         }
       },
       {
@@ -8510,7 +8294,9 @@ window.CARS_DB = [
           "power": "108 hp @ 5,000 rpm",
           "torque": "200 Nm",
           "efficiency": "16.8 km/l",
-          "transmission": "6-Speed AMT"
+          "transmission": "6-Speed AMT",
+          "Power": "108 hp @ 5,000 rpm",
+          "Torque": "200 Nm"
         }
       },
       {
@@ -8532,58 +8318,46 @@ window.CARS_DB = [
           "power": "130 hp @ 5,000 rpm",
           "torque": "230 Nm",
           "efficiency": "16.1 km/l",
-          "transmission": "6-Speed AMT"
+          "transmission": "6-Speed AMT",
+          "Power": "130 hp @ 5,000 rpm",
+          "Torque": "230 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L mStallion Turbo / NA",
-      "Displacement": "1,197 cc",
-      "Power": "108–130 hp",
-      "Torque": "200–230 Nm",
-      "Efficiency": "16.1–17.2 km/l",
-      "Fuel Tank": "40 L",
-      "Transmission": "6MT / 6AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Turbo Petrol",
+      "Transmission Type": "MT / AMT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "ADAS Suite": "Level 2 (top trim)",
+      "Distributor": "Agni Group (Official Mahindra Nepal Distributor)",
+      "Transmission": "MT / AMT",
       "Seating": "5",
-      "Boot Space": "364 L",
-      "Length": "3,990 mm",
-      "Width": "1,821 mm",
-      "Height": "1,647 mm",
-      "Wheelbase": "2,600 mm",
-      "Ground Clearance": "201 mm",
-      "Airbags": "6 (Standard — all variants)"
+      "Fuel Type": "Petrol",
+      "Body Type": "Compact SUV"
     },
-    "pros": [
-      "ADAS Level 2 available",
-      "Panoramic sunroof in class",
-      "6 airbags standard across all",
-      "Best-in-class safety score",
-      "Turbo option on top variant"
-    ],
-    "cons": [
-      "AMT not as smooth as DCT",
-      "Boot smaller than rivals",
-      "Turbo only on top trim",
-      "Less brand trust vs Hyundai/Kia in Nepal"
-    ],
-    "highlights": [
-      "ADAS Level 2",
-      "Panoramic Sunroof",
-      "6 Airbags Standard",
-      "201mm Clearance"
-    ],
-    "thumb": "/assets/images/car_images/mahindra/xuv-3xo/exterior/mahindra-xuv-3xo-exterior-rear-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/mahindra/mahindra-xuv-3xo-2025/front.jpg"
   },
   {
-    "id": 603,
+    "id": 48,
     "slug": "mahindra-xuv700-2025",
     "brand": "Mahindra",
+    "brandSlug": "mahindra",
     "model": "XUV700",
     "year": 2026,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "Mid-size SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "ADAS Level 2 + 7 seats + 200hp diesel — Nepal's full-size family SUV",
     "rating": 4.5,
     "reviews": 1876,
@@ -8591,6 +8365,11 @@ window.CARS_DB = [
     "baseEMI": 82000,
     "overview": "The Mahindra XUV700 is Nepal's most feature-rich 7-seater, with AdrenoX ADAS (Level 2), a stunning 10.25\" dual-screen cockpit, Harman Kardon audio, Sony 360° sound, and a 200hp diesel engine. AWD available on top variants for Nepal's demanding terrain.",
     "images": [
+      "/assets/images/car_images/mahindra/mahindra-xuv700-2025/front.jpg",
+      "/assets/images/car_images/mahindra/mahindra-xuv700-2025/colors/color-blue.jpg",
+      "/assets/images/car_images/mahindra/mahindra-xuv700-2025/colors/color-navy.jpg",
+      "/assets/images/car_images/mahindra/mahindra-xuv700-2025/colors/color-red.jpg",
+      "/assets/images/car_images/mahindra/mahindra-xuv700-2025/colors/color-silver.jpg",
       "/assets/images/car_images/mahindra/xuv700/exterior/mahindra-xuv700-exterior-rear-white-bg.jpg",
       "/assets/images/car_images/mahindra/xuv700/interior/mahindra-xuv700-interior-dashboard.jpg",
       "/assets/images/car_images/mahindra/xuv700/interior/mahindra-xuv700-interior-seats-front.jpg",
@@ -8642,7 +8421,9 @@ window.CARS_DB = [
           "power": "155 hp @ 3,500 rpm",
           "torque": "360 Nm",
           "efficiency": "15.1 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "155 hp @ 3,500 rpm",
+          "Torque": "360 Nm"
         }
       },
       {
@@ -8664,7 +8445,9 @@ window.CARS_DB = [
           "power": "155 hp @ 3,500 rpm",
           "torque": "360 Nm",
           "efficiency": "15.1 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "155 hp @ 3,500 rpm",
+          "Torque": "360 Nm"
         }
       },
       {
@@ -8686,7 +8469,9 @@ window.CARS_DB = [
           "power": "200 hp @ 3,500 rpm",
           "torque": "450 Nm",
           "efficiency": "14.6 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "200 hp @ 3,500 rpm",
+          "Torque": "450 Nm"
         }
       },
       {
@@ -8708,58 +8493,47 @@ window.CARS_DB = [
           "power": "200 hp @ 3,500 rpm",
           "torque": "450 Nm",
           "efficiency": "14.2 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "200 hp @ 3,500 rpm",
+          "Torque": "450 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.2L mHawk Diesel",
-      "Displacement": "2,184 cc",
-      "Power": "155–200 hp",
-      "Torque": "360–450 Nm",
-      "Efficiency": "14.2–15.1 km/l",
-      "Fuel Tank": "60 L",
-      "Transmission": "6MT / 6AT",
-      "Drive": "FWD / AWD",
+      "Engine Type": "2.2L mHawk Diesel",
+      "Transmission Type": "MT / AT",
+      "Drive Type": "FWD / AWD (top trim)",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "7",
+      "ADAS Suite": "Level 2 (top trims)",
+      "Distributor": "Agni Group (Official Mahindra Nepal Distributor)",
+      "Note": "Nepal 2026 price range reported ~Rs. 74–1.10 Cr by one source, broadly consistent with this entry's 79.90L–1.14Cr range",
+      "Transmission": "MT / AT",
       "Seating": "7",
-      "Boot Space": "620 L (5-seat) / 209 L (7-seat)",
-      "Length": "4,695 mm",
-      "Width": "1,890 mm",
-      "Height": "1,755 mm",
-      "Wheelbase": "2,750 mm",
-      "Ground Clearance": "200 mm",
-      "Airbags": "7"
+      "Fuel Type": "Diesel",
+      "Body Type": "Mid-size SUV"
     },
-    "pros": [
-      "200hp diesel is class-leading",
-      "AdrenoX ADAS Level 2",
-      "AWD available",
-      "620L boot in 5-seat mode",
-      "Head-Up Display on AX7"
-    ],
-    "cons": [
-      "AT only from AX5 onwards",
-      "Fuel economy drops with 200hp",
-      "Large size for Kathmandu streets",
-      "Higher maintenance cost"
-    ],
-    "highlights": [
-      "200hp Diesel",
-      "AWD Available",
-      "ADAS Level 2",
-      "620L Boot"
-    ],
-    "thumb": "/assets/images/car_images/mahindra/xuv700/exterior/mahindra-xuv700-exterior-rear-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/mahindra/mahindra-xuv700-2025/front.jpg"
   },
   {
-    "id": 604,
+    "id": 49,
     "slug": "mahindra-scorpio-n-2025",
     "brand": "Mahindra",
+    "brandSlug": "mahindra",
     "model": "Scorpio N",
     "year": 2026,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "Body-on-Frame SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "True body-on-frame SUV with 4WD for Nepal's toughest mountain roads",
     "rating": 4.4,
     "reviews": 2341,
@@ -8767,6 +8541,9 @@ window.CARS_DB = [
     "baseEMI": 72000,
     "overview": "The Mahindra Scorpio N is Nepal's most capable body-on-frame SUV, combining authentic 4WD with a 200hp diesel, 12-speaker Sony audio, and a premium interior. Ideal for both Kathmandu commuting and Himalayan trail driving.",
     "images": [
+      "/assets/images/car_images/mahindra/mahindra-scorpio-n-2025/front.jpg",
+      "/assets/images/car_images/mahindra/mahindra-scorpio-n-2025/side.jpeg",
+      "/assets/images/car_images/mahindra/mahindra-scorpio-n-2025/interior.jpg",
       "/assets/images/car_images/mahindra/scorpio-n/interior/mahindra-scorpio-n-interior-dashboard.jpg",
       "/assets/images/car_images/mahindra/scorpio-n/interior/mahindra-scorpio-n-interior-seats-front.jpg",
       "/assets/images/car_images/mahindra/scorpio-n/interior/mahindra-scorpio-n-interior-seats-rear.jpg"
@@ -8813,7 +8590,9 @@ window.CARS_DB = [
           "power": "132 hp @ 3,750 rpm",
           "torque": "300 Nm",
           "efficiency": "14.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "132 hp @ 3,750 rpm",
+          "Torque": "300 Nm"
         }
       },
       {
@@ -8834,7 +8613,9 @@ window.CARS_DB = [
           "power": "132 hp @ 3,750 rpm",
           "torque": "300 Nm",
           "efficiency": "14.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "132 hp @ 3,750 rpm",
+          "Torque": "300 Nm"
         }
       },
       {
@@ -8856,7 +8637,9 @@ window.CARS_DB = [
           "power": "200 hp @ 3,500 rpm",
           "torque": "450 Nm",
           "efficiency": "14.2 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "200 hp @ 3,500 rpm",
+          "Torque": "450 Nm"
         }
       },
       {
@@ -8878,59 +8661,45 @@ window.CARS_DB = [
           "power": "200 hp @ 3,500 rpm",
           "torque": "450 Nm",
           "efficiency": "13.8 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "200 hp @ 3,500 rpm",
+          "Torque": "450 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.2L mHawk Diesel",
-      "Displacement": "2,184 cc",
-      "Power": "132–200 hp",
-      "Torque": "300–450 Nm",
-      "Efficiency": "13.8–14.8 km/l",
-      "Fuel Tank": "57.5 L",
-      "Transmission": "6MT / 6AT",
-      "Drive": "RWD / 4WD",
-      "Seating": "6 or 7",
-      "Boot Space": "428 L",
-      "Length": "4,662 mm",
-      "Width": "1,917 mm",
-      "Height": "1,857 mm",
-      "Wheelbase": "2,750 mm",
-      "Ground Clearance": "200 mm",
-      "Airbags": "6",
-      "Wading Depth": "550 mm"
+      "Engine Type": "2.2L mHawk Diesel",
+      "Transmission Type": "MT / AT",
+      "Drive Type": "RWD / 4WD (top trim)",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "6",
+      "Distributor": "Agni Group (Official Mahindra Nepal Distributor)",
+      "Transmission": "MT / AT",
+      "Seating": "7",
+      "Fuel Type": "Diesel",
+      "Body Type": "Body-on-Frame SUV"
     },
-    "pros": [
-      "Real 4WD with low range",
-      "200hp diesel",
-      "Body-on-frame — most durable",
-      "Sony 12-speaker audio",
-      "Locking differential"
-    ],
-    "cons": [
-      "Fuel economy lower than monocoques",
-      "Ride quality stiffer",
-      "Wide body in Kathmandu",
-      "AT only from Z6 upward"
-    ],
-    "highlights": [
-      "200hp Diesel",
-      "Real 4WD + Low Range",
-      "Lock Diff",
-      "Sony 12-Speaker"
-    ],
-    "thumb": "/assets/images/car_images/mahindra/scorpio-n/interior/mahindra-scorpio-n-interior-dashboard.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/mahindra/mahindra-scorpio-n-2025/front.jpg"
   },
   {
-    "id": 605,
+    "id": 50,
     "slug": "mahindra-bolero-neo-2025",
     "brand": "Mahindra",
+    "brandSlug": "mahindra",
     "model": "Bolero Neo",
     "year": 2026,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Rugged 7-seater diesel workhorse built for Nepal's rural terrain",
     "rating": 3.9,
     "reviews": 1123,
@@ -8938,6 +8707,13 @@ window.CARS_DB = [
     "baseEMI": 38000,
     "overview": "The Mahindra Bolero Neo is Nepal's most trusted rural-duty SUV, combining a proven mHawk diesel engine, 7-seat layout, and genuine off-road ability at an affordable price. Preferred by businesses, government fleets, and families in hilly regions.",
     "images": [
+      "/assets/images/car_images/mahindra/mahindra-bolero-neo-2025/front.png",
+      "/assets/images/car_images/mahindra/mahindra-bolero-neo-2025/interior.webp",
+      "/assets/images/car_images/mahindra/mahindra-bolero-neo-2025/colors/color-stealth-black.png",
+      "/assets/images/car_images/mahindra/mahindra-bolero-neo-2025/colors/color-jeans-blue.png",
+      "/assets/images/car_images/mahindra/mahindra-bolero-neo-2025/colors/color-concrete-grey.png",
+      "/assets/images/car_images/mahindra/mahindra-bolero-neo-2025/colors/color-everest-white.png",
+      "/assets/images/car_images/mahindra/mahindra-bolero-neo-2025/colors/color-rocky-beige.png",
       "/assets/images/car_images/mahindra/bolero-neo/exterior/mahindra-bolero-neo-exterior-rear-white-bg.jpg",
       "/assets/images/car_images/mahindra/bolero-neo/interior/mahindra-bolero-neo-interior-seats-front.jpg",
       "/assets/images/car_images/mahindra/bolero-neo/interior/mahindra-bolero-neo-interior-seats-rear.jpg"
@@ -8976,7 +8752,9 @@ window.CARS_DB = [
           "power": "100 hp @ 3,750 rpm",
           "torque": "260 Nm",
           "efficiency": "16.4 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "100 hp @ 3,750 rpm",
+          "Torque": "260 Nm"
         }
       },
       {
@@ -8998,7 +8776,9 @@ window.CARS_DB = [
           "power": "100 hp @ 3,750 rpm",
           "torque": "260 Nm",
           "efficiency": "16.4 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "100 hp @ 3,750 rpm",
+          "Torque": "260 Nm"
         }
       },
       {
@@ -9019,58 +8799,45 @@ window.CARS_DB = [
           "power": "100 hp @ 3,750 rpm",
           "torque": "260 Nm",
           "efficiency": "16.4 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "100 hp @ 3,750 rpm",
+          "Torque": "260 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L mHawk100 Diesel",
-      "Displacement": "1,497 cc",
-      "Power": "100 hp @ 3,750 rpm",
-      "Torque": "260 Nm",
-      "Efficiency": "16.4 km/l",
-      "Fuel Tank": "40 L",
-      "Transmission": "5-Speed MT",
-      "Drive": "RWD",
+      "Engine Type": "1.5L mHawk75 Diesel",
+      "Transmission Type": "MT",
+      "Drive Type": "RWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "2",
+      "Distributor": "Agni Group (Official Mahindra Nepal Distributor)",
+      "Transmission": "MT",
       "Seating": "7",
-      "Boot Space": "280 L",
-      "Length": "4,038 mm",
-      "Width": "1,795 mm",
-      "Height": "1,877 mm",
-      "Wheelbase": "2,680 mm",
-      "Ground Clearance": "180 mm",
-      "Airbags": "2–4"
+      "Fuel Type": "Diesel",
+      "Body Type": "Compact SUV"
     },
-    "pros": [
-      "Most affordable 7-seater diesel",
-      "Proven reliability in Nepal",
-      "High ground clearance for body-on-frame",
-      "Government fleet trusted",
-      "Easy rural serviceability"
-    ],
-    "cons": [
-      "Only 2 airbags on base",
-      "Basic interior",
-      "No AMT or AT",
-      "Dated platform vs rivals"
-    ],
-    "highlights": [
-      "7 Seats",
-      "Diesel Only",
-      "16.4 km/l",
-      "Proven Rural Reliability"
-    ],
-    "thumb": "/assets/images/car_images/mahindra/bolero-neo/exterior/mahindra-bolero-neo-exterior-rear-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/mahindra/mahindra-bolero-neo-2025/front.png"
   },
   {
-    "id": 1001,
+    "id": 51,
     "slug": "deepal-s07-2025",
     "brand": "Changan",
+    "brandSlug": "changan",
     "model": "Deepal S07",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "suv",
     "body": "SUV",
     "badge": "bestseller",
+    "budgetTier": "Under 90L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": true,
     "tagline": "Intelligence in Motion",
     "rating": 4.5,
     "reviews": 280,
@@ -9078,8 +8845,16 @@ window.CARS_DB = [
     "baseEMI": 62000,
     "overview": "The Deepal S07 is Nepal's most popular premium electric SUV. Built on Changan's EPA1 EV platform, it delivers up to 485km WLTP range, Zero Gravity seats, AR-HUD, and a premium Sony audio system — at one of the best value-per-feature ratios in the segment.",
     "images": [
-      "/assets/images/cars/deepal/s07/deepal-s07-exterior-side-left-white-bg.png",
+      "/assets/images/car_images/changan-deepal/s07/front.jpg",
+      "/assets/images/car_images/changan-deepal/s07/side.png",
+      "/assets/images/car_images/changan-deepal/s07/rear.jpg",
+      "/assets/images/car_images/changan-deepal/s07/interior.jpg",
+      "/assets/images/car_images/changan-deepal/s07/colors/navy.png",
+      "/assets/images/car_images/changan-deepal/s07/colors/white.png",
+      "/assets/images/car_images/changan-deepal/s07/colors/lime.png",
+      "/assets/images/car_images/changan-deepal/s07/colors/dark-grey.png",
       "/assets/images/cars/deepal/s07/deepal-s07-exterior-front.jpg",
+      "/assets/images/cars/deepal/s07/deepal-s07-exterior-side-left-white-bg.png",
       "/assets/images/cars/deepal/s07/deepal-s07-exterior-rear.jpg",
       "/assets/images/cars/deepal/s07/deepal-s07-interior-dashboard.jpg",
       "/assets/images/cars/deepal/s07/S07_green.png"
@@ -9113,10 +8888,6 @@ window.CARS_DB = [
         "name": "Nebula Blue",
         "hex": "#3B5E8C"
       }
-    ],
-    "interiorColors": [
-      "Orange",
-      "Black"
     ],
     "variants": [
       {
@@ -9184,7 +8955,11 @@ window.CARS_DB = [
           "Total Number of Variants": "3",
           "Battery-based Variants": "Yes",
           "EV Charging Setup Assistance": "5-year free charging cost coverage (unconfirmed for Base)",
-          "Total Number of Colors": "6"
+          "Total Number of Colors": "6",
+          "Power": "99 kW (134 PS)",
+          "Torque": "320 Nm",
+          "Boot Space": "445",
+          "Ground Clearance": "175 (unladen)"
         }
       },
       {
@@ -9252,7 +9027,11 @@ window.CARS_DB = [
           "Total Number of Colors": "7",
           "EV Charging Setup Assistance": "5-year free charging cost coverage",
           "In-Built Navigation": "Augmented Reality Navigation",
-          "Connected Car Apps": "Deepal App integration + eSIM (4G/5G)"
+          "Connected Car Apps": "Deepal App integration + eSIM (4G/5G)",
+          "Power": "99 kW (134 PS)",
+          "Torque": "320 Nm",
+          "Boot Space": "475",
+          "Ground Clearance": "175"
         }
       },
       {
@@ -9313,76 +9092,164 @@ window.CARS_DB = [
           "Fast Charging Time (DC)": "35 minutes (30% to 80%)",
           "Ground Clearance (mm)": "175",
           "Frunk Capacity (litres)": "125",
-          "Boot Space (litres)": "445"
+          "Boot Space (litres)": "445",
+          "Power": "160 kW (218 PS)",
+          "Torque": "320 Nm",
+          "Boot Space": "445",
+          "Ground Clearance": "175"
         }
       }
     ],
     "specs": {
-      "Motor Position": "Rear-mounted",
-      "Drive Type": "RWD (Rear-Wheel Drive)",
-      "Top Speed (km/h)": "185",
-      "Drive Modes": "Eco, Comfort, Sports, Customize",
-      "Regenerative Braking": "Yes",
-      "Transmission Type": "Single-speed Automatic",
-      "Overall Length (mm)": "4750",
-      "Overall Width (mm)": "1930",
-      "Overall Height (mm)": "1625",
-      "Wheelbase (mm)": "2900",
+      "Note": "This entry is filed under brand 'Changan' but is the same Deepal S07 model — duplicates/overlaps with the properly-researched 'Deepal' brand's S07 handling. Recommend re-filing this under brand='Deepal' to match the rest of the Deepal lineup (S05, S07L, L07) and avoid a split listing.",
+      "Distributor": "MAW Vriddhi AutoCorp (Official Changan/Deepal Nepal Distributor)",
+      "Fuel Type": "Electric",
+      "Body Type": "SUV",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Max Motor Power": "99 kW / 134 PS (Base/ICA) — 160 kW / 218 PS (S07 L)",
+      "Drive Type": "RWD",
+      "Battery Type": "NMC 'Ternary Lithium' (Base) / LFP CATL (ICA) / NMC (S07 L, larger pack)",
+      "Certified Range (km)": "410 WLTP (Base/ICA) / 485 WLTP (S07 L)",
       "Seating Capacity": "5",
-      "Body Type": "Mid-size Crossover SUV, 5-door",
-      "Number of Doors": "5 (frameless doors)",
+      "Seating": "5",
+      "Power": "218 PS (S07 L top variant)",
+      "Boot Space": "520 L + 72 L Frunk",
+      "Transmission": "Single-Speed Automatic",
+      "Total Airbag Count": "6-7 (6 per Nepal/Base listing; ANCAP global-spec tested with 7 incl. centre airbag)",
+      "Motor Position": "Rear-mounted",
+      "Max Motor Torque": "320 Nm (all variants)",
+      "Top Speed (km/h)": "175 (approx., global-spec)",
+      "Regenerative Braking": "Yes, adjustable",
+      "Drive Modes": "Eco, Comfort/Normal, Sport (plus Cabin Scenario Modes: Camping, Car Wash, Smoking, Nap)",
+      "Transmission Type": "Single-Speed Automatic",
+      "Steering Type": "Electric Power (Rack & Pinion)",
+      "Battery Capacity (kWh)": "66.8 (Base) / 68.8 (ICA) / 79.97 (S07 L)",
+      "AC Charging Max Rate (kW)": "7 - 7.2",
+      "Normal Charging Time (AC)": "~9-12 hours depending on variant",
+      "DC Fast Charging Max Rate (kW)": "~87 (Base)",
+      "Fast Charging Time (DC)": "35 minutes (30% to 80%)",
+      "Charging Port Type": "CCS2 (Thailand/global-spec)",
+      "Overall Length (mm)": "4,750",
+      "Overall Width (mm)": "1,930",
+      "Overall Height (mm)": "1,625",
+      "Wheelbase (mm)": "2,900",
+      "Ground Clearance (mm)": "165-175 (source variance; unladen)",
+      "Track Width Front/Rear (mm)": "1,640 / 1,650",
+      "Turning Radius (m)": "5.75",
+      "Kerb Weight (kg)": "1,895 - 2,035 depending on variant",
+      "Number of Doors": "5",
+      "Boot Space (litres)": "445 (Base/S07 L) / 475 (ICA)",
+      "Frunk Capacity (litres)": "125",
+      "Drag Coefficient (Cd)": "0.258",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Multi-Link (H-Arm)",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Discs",
+      "Electronic Parking Brake (EPB)": "Yes, with Auto Hold",
+      "Hill Start Assist (HSA)": "Yes",
+      "Hill Descent Control (HDC)": "Yes",
+      "Wheel Size (inches)": "20 (redesigned alloy design on ICA)",
       "Tyre Size": "255/45 R20",
-      "Wheel Size (inches)": "20",
-      "Wheel Type": "Alloy",
-      "Front Brakes": "Disc",
-      "Rear Brakes": "Disc",
       "TPMS": "Yes",
-      "Standard Vehicle Warranty": "3 years / 120,000 km",
-      "Battery Warranty": "8 years / 150,000 km",
-      "Charging System Warranty": "1 year (Charger)",
-      "Importer": "MAW Vriddhi AutoCorp",
-      "Dealer": "Changan/Deepal Showroom, Naxal, Kathmandu",
-      "Safety Rating": "5-star ANCAP rating (unverified for Nepal spec)"
+      "Run-Flat Tyres": "No",
+      "Airbag Positions": "Driver, Passenger, Front Side, Curtain, (Centre airbag on global-spec)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Safety Rating": "5-star ANCAP (2025 protocols)",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Seat Belt Reminder": "Yes, all seats",
+      "Auto Headlamps": "Yes",
+      "Rain-Sensing Wipers": "Yes",
+      "Cruise Control": "Yes (Adaptive)",
+      "Front/Rear Parking Sensors": "Yes",
+      "Adaptive Cruise Control (ACC)": "Yes",
+      "Forward Collision Warning": "Yes",
+      "Auto Emergency Braking (AEB)": "Yes (Car-to-Car, Vulnerable Road User, Junction & Crossing, Backover, Head-On per ANCAP)",
+      "Lane Departure Warning": "Yes",
+      "Lane Keep Assist": "Yes",
+      "Auto Lane Change": "Yes",
+      "Blind Spot Warning": "Yes",
+      "Rear Cross Traffic Warning": "Yes",
+      "Traffic Jam Assist": "Yes",
+      "High Beam Assist": "Yes",
+      "Driver Attention Monitoring": "Yes",
+      "360° Surround View Camera": "Yes",
+      "Front/Rear Cameras": "Yes",
+      "Parking Sensors": "Yes, front and rear",
+      "Proactive Safety System": "Yes (branded Driver Assistance System / 'ADAS')",
+      "Air Conditioning Type": "Automatic Climate Control",
+      "AC Zones": "3-Zone",
+      "Rear AC Vents": "Yes",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Power Windows": "Front & Rear",
+      "Electric ORVM": "Yes, power-folding",
+      "Rear Defogger": "Yes",
+      "Powered Driver Seat": "6-way with 4-way Lumbar Support",
+      "Powered Passenger Seat": "4-way Power Adjustment",
+      "Memory Seat Function": "Yes",
+      "Ventilated Seats": "Yes, front",
+      "Massage Function": "Yes, front seats",
+      "Standard / Panoramic Sunroof": "Panoramic Glass Roof (1.9 sq.m 'Starry' roof)",
+      "Wireless Charger": "Yes",
+      "Headlamp Type": "LED with 'Intelligent Interactive' lighting",
+      "Daytime Running Lights (DRLs)": "Yes, LED",
+      "Tail Lamp Type": "Starflame through-type LED with illuminating logo",
+      "Door Handles": "Flush-fitting, hidden/electric",
+      "Seat Upholstery": "Perforated Leatherette",
+      "Ambient Lighting": "64-colour wraparound mood lighting",
+      "Panoramic Glass Roof": "Yes",
+      "Touchscreen Display": "15.6-inch (15-degree tilt)",
+      "Head-Up Display (HUD)": "Yes, Augmented Reality HUD",
+      "In-Built Navigation": "Yes, Augmented Reality Navigation",
+      "Wi-Fi Hotspot": "Yes (eSIM 4G/5G on ICA)",
+      "Gesture Control": "Yes",
+      "Voice Commands/Assistant": "Yes",
+      "Apple CarPlay": "Yes, wireless",
+      "Android Auto": "Not confirmed",
+      "Premium Audio Brand": "Sony",
+      "Audio System Speaker Count": "14",
+      "Connected Car Apps": "Deepal App integration",
+      "OTA Software Updates": "Not confirmed",
+      "Drive Mode-Based UI Themes": "Yes, Cabin Scenario Modes",
+      "Standard Vehicle Warranty": "5 years / 120,000 km (Thailand-spec) — up to 7 years/160,000 km in some markets (e.g. Australia)",
+      "Battery Warranty": "8 years / 160,000 km (Thailand/Malaysia-spec) — 8 years/240,000 km in Australia-spec",
+      "Total Number of Variants": "3 (Base, ICA, S07 L / Long Range)",
+      "Total Number of Colors": "6 (Base) / 7 (ICA)"
     },
     "pros": [
-      "Best WLTP range in its price segment (up to 485km)",
-      "Stunning cabin with AR-HUD and 53-inch virtual display",
-      "5-year free charging offer on ICA variant",
-      "5-Star Euro NCAP safety",
-      "Premium Sony 14-speaker system",
-      "Level 2 ADAS suite with 360° camera and transparent chassis view",
-      "Panoramic glass roof and cabin scenario modes (camping, nap, car wash, etc.)"
+      "Up to 485km WLTP range on the S07 L with fast 35-minute DC top-up (30-80%)",
+      "5-star ANCAP safety rating with a full ADAS suite (AEB, ACC, lane keep, auto lane change, 360° camera) standard",
+      "Premium cabin touches for the price: AR-HUD, panoramic glass roof, Sony 14-speaker audio, massage/ventilated front seats"
     ],
     "cons": [
-      "175mm ground clearance — moderate for Nepal roads",
-      "Only RWD (no AWD option)",
-      "Changan service network still expanding"
+      "8-year/160,000km battery warranty (Thailand/Malaysia-spec) is shorter than some rivals' 8-year/240,000km terms",
+      "Nepal-specific warranty and service-network terms not yet independently confirmed",
+      "Rear suspension is a multi-link setup but ground clearance (165-175mm) is on the lower side for Nepal's roads"
     ],
     "highlights": [
-      "485km WLTP (L)",
-      "AR-HUD",
-      "5-Star NCAP",
-      "Zero Gravity Seats",
-      "360° Camera with Transparent Chassis",
-      "Cabin Intelligent Scenario Modes"
+      "Built on Changan's dedicated EPA1 EV platform",
+      "Three variants spanning 66.8-79.97 kWh battery packs",
+      "Cabin 'Scenario Modes' (Camping, Car Wash, Smoking, Nap) unique to the segment"
     ],
-    "brandSlug": "changan",
-    "bodyType": "suv",
-    "budgetTier": "Under 90L",
-    "isEV": true,
-    "isNew": true,
-    "isFeatured": true,
-    "isBestSeller": true
+    "thumb": "/assets/images/car_images/changan-deepal/s07/front.jpg"
   },
   {
-    "id": 702,
+    "id": 52,
     "slug": "deepal-l07-2025",
     "brand": "Deepal",
+    "brandSlug": "deepal",
     "model": "L07",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Liftback",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Deepal's premium electric liftback — AR-HUD, 14-speaker Sony audio & 540km NEDC range",
     "rating": 4.2,
     "reviews": 94,
@@ -9390,6 +9257,13 @@ window.CARS_DB = [
     "baseEMI": 58000,
     "overview": "The Deepal L07 is a premium all-electric 5-door liftback (fastback) — its sleek sedan styling conceals a continuous rear cabin and boot compartment. Powered by a 99kW PMSM motor and 66.8kWh NMC battery, it delivers 540km NEDC range (≈400km real-world), with a 15.6\" rotating Sunflower touchscreen, AR-HUD, 14-speaker audio, and Deepal's ADAS 2.5 driver-assist suite.",
     "images": [
+      "/assets/images/car_images/changan-deepal/l07/front.jpg",
+      "/assets/images/car_images/changan-deepal/l07/side.png",
+      "/assets/images/car_images/changan-deepal/l07/rear.jpg",
+      "/assets/images/car_images/changan-deepal/l07/interior.jpg",
+      "/assets/images/car_images/changan-deepal/l07/colors/blue.png",
+      "/assets/images/car_images/changan-deepal/l07/colors/dark-grey.png",
+      "/assets/images/car_images/changan-deepal/l07/colors/teal-grey.png",
       "/assets/images/car_images/deepal/l07/exterior/L07_green.png",
       "/assets/images/car_images/deepal/l07/exterior/deepal-l07-exterior-front-white-bg.jpg",
       "/assets/images/car_images/deepal/l07/exterior/deepal-l07-exterior-side-left-white-bg.jpg",
@@ -9484,78 +9358,112 @@ window.CARS_DB = [
           "Total Number of Colors": "5",
           "Importer": "MAW Vriddhi AutoCorp",
           "Dealer": "Changan/Deepal Showroom, Naxal, Kathmandu",
-          "Standard Vehicle Warranty": "3 years / 120,000 km (inferred from Deepal Nepal policy)"
+          "Standard Vehicle Warranty": "3 years / 120,000 km (inferred from Deepal Nepal policy)",
+          "Power": "99 kW (134 PS)",
+          "Torque": "320 Nm",
+          "Boot Space": "473-475",
+          "Ground Clearance": "160"
         }
       }
     ],
     "specs": {
+      "Engine Type": "N/A (Pure EV)",
       "Motor Type": "Permanent Magnet Synchronous Motor (PMSM)",
+      "Motor Position": "Rear-Mounted",
       "Max Motor Power": "99 kW (134 PS)",
       "Max Motor Torque": "320 Nm",
-      "Drive Type": "RWD (Rear-Wheel Drive)",
-      "Transmission Type": "Single-speed Automatic",
-      "Battery Type": "NMC (Nickel Manganese Cobalt / Ternary)",
+      "Drive Type": "RWD",
+      "Top Speed (km/h)": "160 (some sources cite 165)",
+      "Acceleration 0-100 km/h": "6.7 sec (claimed, unverified)",
+      "Transmission Type": "Single-Speed Automatic",
+      "Battery Type": "Nickel Manganese Cobalt (NMC)",
       "Battery Capacity (kWh)": "66.8",
       "Certified Range (km)": "540 (NEDC)",
-      "Real-world Range (km)": "~400",
+      "Real-World Range (km)": "~400 (est.)",
       "AC Charging Max Rate (kW)": "7",
-      "Normal Charging Time (AC)": "~10 hours (0-100%) via 7kW; ~24 hours via 3kW",
-      "Fast Charging Time (DC)": "35 minutes (30% to 80%)",
-      "Top Speed (km/h)": "160",
-      "Overall Length (mm)": "4820",
-      "Overall Width (mm)": "1890",
-      "Overall Height (mm)": "1480",
-      "Wheelbase (mm)": "2900",
+      "Normal Charging Time (AC)": "~10 hrs (0-100%)",
+      "DC Fast Charging Max Rate (kW)": "Not officially disclosed",
+      "Fast Charging Time (DC)": "35 min (30–80%)",
+      "Charging Port Type": "CCS2",
+      "Overall Length (mm)": "4,820",
+      "Overall Width (mm)": "1,890",
+      "Overall Height (mm)": "1,480",
+      "Wheelbase (mm)": "2,900",
       "Ground Clearance (mm)": "160",
-      "Kerb Weight (kg)": "2035",
+      "Kerb Weight (kg)": "2,035",
       "Seating Capacity": "5",
-      "Body Type": "5-door Liftback (fastback EV sedan styling)",
-      "Number of Doors": "5 (frameless doors)",
-      "Frunk Capacity (litres)": "70",
-      "Boot Space (litres)": "473-475",
+      "Body Type": "Liftback/Sedan",
+      "Boot Space (litres)": "473–475 rear + 70 frunk",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "H-Arm Multi-Link Independent",
       "Tyre Size": "245/45 R19",
       "Wheel Size (inches)": "19",
       "Wheel Type": "Alloy",
-      "Front Brakes": "Disc",
-      "Rear Brakes": "Disc",
-      "Front Suspension Type": "McPherson Strut",
-      "Rear Suspension Type": "H-Arm Multi-Link Independent",
+      "Spare Tyre": "No (repair kit only)",
       "Total Airbag Count": "6",
-      "Standard Vehicle Warranty": "3 years / 120,000 km (inferred)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Hill Start Assist (HSA)": "Yes",
+      "Auto Hold": "Yes",
+      "360° Camera": "Yes (with 'Transparent Chassis' view)",
+      "Parking Sensors": "4 Rear + 2 Front",
+      "ADAS Suite": "ADAS 2.5 (adaptive cruise, lane keep, blind spot, AEB)",
+      "Crash Notification System": "Yes (auto door unlock on collision)",
+      "Headlamp Type": "LED Projector",
+      "Daytime Running Lights (DRLs)": "Yes, LED",
+      "Tail Lamp Type": "Tri-Arrow LED with illuminating dash line",
+      "Door Handles": "Frameless doors, electric flush handles",
+      "Sunroof Type": "Panoramic Glass Roof (heat-resistant)",
+      "Seat Upholstery": "Perforated Synthetic Leather",
+      "Powered Driver Seat": "8-way power",
+      "Powered Passenger Seat": "4-way power",
+      "AC Zones": "Dual-Zone with rear vents",
+      "Air Quality / PM2.5 Filter": "Yes",
+      "Touchscreen Display": "15.6\" Rotating 'Sunflower' Touchscreen",
+      "Digital Instrument Cluster": "10.2\" LCD",
+      "Head-Up Display": "Yes, Augmented Reality HUD",
+      "Voice Assistant": "Yes",
+      "Gesture Control": "Yes",
+      "Remote App Control": "Yes",
+      "Premium Audio": "14-Speaker System",
+      "Wireless Charging": "40W",
+      "Total Number of Variants": "1",
+      "Total Number of Colors": "5",
+      "Standard Vehicle Warranty": "3 Years / 120,000 km (Deepal Nepal standard policy, unconfirmed for this specific model)",
       "Importer": "MAW Vriddhi AutoCorp",
-      "Dealer": "Changan/Deepal Showroom, Naxal, Kathmandu"
+      "Dealer/Showroom": "Naxal, Kathmandu",
+      "Power": "99 kW (134 PS)",
+      "Torque": "320 Nm",
+      "Transmission": "Single-Speed Automatic",
+      "Boot Space": "473–475 rear + 70 frunk",
+      "Seating": "5",
+      "Fuel Type": "Electric",
+      "Ground Clearance": "160",
+      "Warranty": "3 Years / 120,000 km (Deepal Nepal standard policy, unconfirmed for this specific model)",
+      "Kerb Weight": "2,035"
     },
-    "pros": [
-      "540km NEDC range (≈400km real-world)",
-      "Premium 15.6\" rotating Sunflower touchscreen",
-      "AR-HUD and 14-speaker audio system",
-      "ADAS 2.5 driver-assist suite",
-      "Spacious liftback body — practical rear access",
-      "Frameless electric flush door handles"
-    ],
-    "cons": [
-      "160mm ground clearance — low for Nepal roads",
-      "Only one variant/trim available",
-      "Brand service network still expanding",
-      "NEDC range figure overstates real-world performance"
-    ],
-    "highlights": [
-      "540km NEDC Range",
-      "ADAS 2.5",
-      "AR-HUD",
-      "14-Speaker Audio"
-    ],
-    "thumb": "/assets/images/car_images/deepal/l07/exterior/L07_green.png"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/changan-deepal/l07/front.jpg"
   },
   {
-    "id": 703,
+    "id": 53,
     "slug": "deepal-s05-2025",
     "brand": "Deepal",
+    "brandSlug": "deepal",
     "model": "S05",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Compact Electric SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Affordable Changan EV SUV with 400km range for Nepal's city drivers",
     "rating": 4.1,
     "reviews": 63,
@@ -9780,14 +9688,21 @@ window.CARS_DB = [
     "thumb": "/assets/images/car_images/deepal/s05/exterior/deepal-s05-exterior-front-white-bg.png"
   },
   {
-    "id": 801,
+    "id": 54,
     "slug": "chery-tiggo-4-pro-2025",
     "brand": "Chery",
+    "brandSlug": "chery",
     "model": "Tiggo 4 Pro",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Feature-rich compact SUV with panoramic sunroof under Rs. 50L",
     "rating": 4,
     "reviews": 512,
@@ -9795,6 +9710,7 @@ window.CARS_DB = [
     "baseEMI": 38000,
     "overview": "The Chery Tiggo 4 Pro delivers exceptional value in Nepal's compact SUV space with a panoramic sunroof, 10.25\" touchscreen, 6 airbags, and a 1.5L turbo engine. With eye-catching design and generous standard equipment, it challenges Hyundai Venue and Kia Sonet on features per rupee.",
     "images": [
+      "/assets/images/car_images/chery/tiggo4-pro/side.png",
       "/assets/images/car_images/chery/tiggo-4-pro/exterior/Tiggo-Alloy-1024x682.jpg",
       "/assets/images/car_images/chery/tiggo-4-pro/exterior/Tiggo-front-1024x681.jpg",
       "/assets/images/car_images/chery/tiggo-4-pro/exterior/modelImage-1768317901623-736560131.webp",
@@ -9850,7 +9766,9 @@ window.CARS_DB = [
           "power": "113 hp @ 5,500 rpm",
           "torque": "170 Nm",
           "efficiency": "16.5 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "113 hp @ 5,500 rpm",
+          "Torque": "170 Nm"
         }
       },
       {
@@ -9872,7 +9790,9 @@ window.CARS_DB = [
           "power": "113 hp @ 5,500 rpm",
           "torque": "170 Nm",
           "efficiency": "15.9 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "113 hp @ 5,500 rpm",
+          "Torque": "170 Nm"
         }
       },
       {
@@ -9894,58 +9814,49 @@ window.CARS_DB = [
           "power": "113 hp @ 5,500 rpm",
           "torque": "170 Nm",
           "efficiency": "15.9 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "113 hp @ 5,500 rpm",
+          "Torque": "170 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L TGDI Turbo Petrol",
-      "Displacement": "1,497 cc",
-      "Power": "113 hp @ 5,500 rpm",
-      "Torque": "170 Nm",
-      "Efficiency": "15.9–16.5 km/l",
-      "Fuel Tank": "48 L",
-      "Transmission": "5MT / CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L Turbo Petrol",
+      "Fuel Efficiency": "Not independently confirmed",
+      "Transmission Type": "MT / CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Sunroof Type": "Electric",
+      "Touchscreen Display": "10.25\" + CarPlay",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)",
+      "Note": "Nepal pricing/variant count for this model conflicts across sources (Rs. 46.20L–59.99L, 3 variants per one source) — reconfirm exact current trims with SPG Automobiles",
+      "Transmission": "MT / CVT",
       "Seating": "5",
-      "Boot Space": "352 L",
-      "Length": "4,318 mm",
-      "Width": "1,818 mm",
-      "Height": "1,615 mm",
-      "Wheelbase": "2,630 mm",
-      "Ground Clearance": "190 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol",
+      "Body Type": "Compact SUV"
     },
-    "pros": [
-      "Panoramic sunroof at this price",
-      "6 airbags standard",
-      "Good interior quality for price",
-      "360° camera on premium",
-      "Stylish exterior design"
-    ],
-    "cons": [
-      "Chery service centres limited",
-      "CVT only from Luxury upward",
-      "Resale value unproven",
-      "Brand trust lower than Korean rivals"
-    ],
-    "highlights": [
-      "Panoramic Sunroof",
-      "6 Airbags Standard",
-      "360° Camera",
-      "CVT Available"
-    ],
-    "thumb": "/assets/images/car_images/chery/tiggo-4-pro/exterior/Tiggo-Alloy-1024x682.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/chery/tiggo4-pro/side.png"
   },
   {
-    "id": 802,
+    "id": 55,
     "slug": "chery-tiggo-7-pro-2025",
     "brand": "Chery",
+    "brandSlug": "chery",
     "model": "Tiggo 7 Pro",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Mid-size SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Mid-size turbo SUV with ADAS and 540L boot challenging Korean rivals",
     "rating": 4.1,
     "reviews": 378,
@@ -9953,6 +9864,7 @@ window.CARS_DB = [
     "baseEMI": 52000,
     "overview": "The Chery Tiggo 7 Pro steps up to the mid-size SUV class with a 1.6L turbo engine, 197mm ground clearance, dual 12.3\" screens, ADAS safety suite, and a best-in-class 540L boot. It undercuts Hyundai Tucson and Kia Sportage on price while matching them on features.",
     "images": [
+      "/assets/images/car_images/chery/tiggo7-pro/side.png",
       "/assets/images/car_images/chery/tiggo-7-pro/exterior/Chery-Tiggo-7-Pro-Nepal-Price-Features-Image5.jpg"
     ],
     "colors": [
@@ -9998,7 +9910,9 @@ window.CARS_DB = [
           "power": "145 hp @ 5,500 rpm",
           "torque": "230 Nm",
           "efficiency": "15.4 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "145 hp @ 5,500 rpm",
+          "Torque": "230 Nm"
         }
       },
       {
@@ -10020,7 +9934,9 @@ window.CARS_DB = [
           "power": "145 hp @ 5,500 rpm",
           "torque": "230 Nm",
           "efficiency": "15.4 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "145 hp @ 5,500 rpm",
+          "Torque": "230 Nm"
         }
       },
       {
@@ -10041,58 +9957,52 @@ window.CARS_DB = [
           "power": "145 hp @ 5,500 rpm",
           "torque": "230 Nm",
           "efficiency": "15.4 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "145 hp @ 5,500 rpm",
+          "Torque": "230 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.6L TGDI Turbo Petrol",
-      "Displacement": "1,598 cc",
-      "Power": "145 hp @ 5,500 rpm",
-      "Torque": "230 Nm",
-      "Efficiency": "15.4 km/l",
-      "Fuel Tank": "53 L",
-      "Transmission": "7-Speed DCT",
-      "Drive": "FWD",
+      "Engine Type": "1.6L Turbo Petrol",
+      "Transmission Type": "DCT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "540",
+      "Ground Clearance (mm)": "197",
+      "Total Airbag Count": "6",
+      "Digital Instrument Cluster": "12.3\" Dual Screen",
+      "ADAS Suite": "Yes",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)",
+      "Note": "At least two independent Nepal sources (b360nepal, nepaldrives) state Tiggo 7 Pro launched as a SINGLE variant at Rs. 74.99L — conflicts with this entry's 3-tier 51.90–65.90L structure. Reconfirm with SPG Automobiles.",
+      "Transmission": "DCT",
+      "Boot Space": "540",
       "Seating": "5",
-      "Boot Space": "540 L",
-      "Length": "4,515 mm",
-      "Width": "1,862 mm",
-      "Height": "1,703 mm",
-      "Wheelbase": "2,670 mm",
-      "Ground Clearance": "197 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol",
+      "Body Type": "Mid-size SUV",
+      "Ground Clearance": "197"
     },
-    "pros": [
-      "540L boot — class leading",
-      "Dual 12.3\" screens standard",
-      "ADAS on Premium+",
-      "7DCT for sporty driving",
-      "Strong value vs Tucson/Sportage"
-    ],
-    "cons": [
-      "FWD only — no AWD",
-      "DCT can jerk in slow traffic",
-      "Service network thin in Nepal",
-      "Unproven long-term reliability"
-    ],
-    "highlights": [
-      "540L Boot",
-      "Dual 12.3\" Screens",
-      "ADAS Suite",
-      "7-Speed DCT"
-    ],
-    "thumb": "/assets/images/car_images/chery/tiggo-7-pro/exterior/Chery-Tiggo-7-Pro-Nepal-Price-Features-Image5.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/chery/tiggo7-pro/side.png"
   },
   {
-    "id": 803,
+    "id": 56,
     "slug": "chery-tiggo-8-pro-2025",
     "brand": "Chery",
+    "brandSlug": "chery",
     "model": "Tiggo 8 Pro",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Large SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "6/7-seat large SUV with 2.0T engine and ADAS under Rs. 85L",
     "rating": 4.2,
     "reviews": 214,
@@ -10100,6 +10010,7 @@ window.CARS_DB = [
     "baseEMI": 68000,
     "overview": "The Chery Tiggo 8 Pro is a full-size 7-seater with a powerful 2.0L turbo engine, panoramic sunroof, 12.3\" dual screens, ADAS Level 2, and third-row seating — all at a significantly lower price than equivalent Toyota Fortuner or Hyundai Tucson. Ideal for large families needing versatility.",
     "images": [
+      "/assets/images/car_images/chery/tiggo8-pro/side.png",
       "/assets/images/car_images/chery/tiggo-8-pro/interior/chery-tiggo-8-pro-interior-seats-rear.jpg"
     ],
     "colors": [
@@ -10141,7 +10052,9 @@ window.CARS_DB = [
           "power": "187 hp @ 5,500 rpm",
           "torque": "300 Nm",
           "efficiency": "14.1 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "187 hp @ 5,500 rpm",
+          "Torque": "300 Nm"
         }
       },
       {
@@ -10163,7 +10076,9 @@ window.CARS_DB = [
           "power": "187 hp @ 5,500 rpm",
           "torque": "300 Nm",
           "efficiency": "14.1 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "187 hp @ 5,500 rpm",
+          "Torque": "300 Nm"
         }
       },
       {
@@ -10184,58 +10099,53 @@ window.CARS_DB = [
           "power": "197 hp @ 5,500 rpm",
           "torque": "320 Nm",
           "efficiency": "13.6 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "197 hp @ 5,500 rpm",
+          "Torque": "320 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L TGDI Turbo Petrol",
-      "Displacement": "1,997 cc",
-      "Power": "187–197 hp",
-      "Torque": "300–320 Nm",
-      "Efficiency": "13.6–14.1 km/l",
-      "Fuel Tank": "57 L",
+      "Engine Type": "2.0L Turbo Petrol / 1.6L TGDi (per some listings)",
+      "Transmission Type": "7-Speed DCT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "6/7",
+      "Overall Length (mm)": "4,722",
+      "Overall Width (mm)": "1,860",
+      "Overall Height (mm)": "1,745",
+      "Wheelbase (mm)": "2,710",
+      "Total Airbag Count": "6",
+      "Sunroof Type": "Panoramic",
+      "Digital Instrument Cluster": "12.3\" Dual Screen",
+      "ADAS Suite": "ADAS Level 1/2",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)",
+      "Note": "Nepal pricing for this model is unclear — one source (dated but repeatedly resurfaced) states a single 'Premium' variant at Rs. 99.50L, conflicting with this entry's 3-tier 69.90–86.90L structure. Reconfirm current trims/pricing with SPG Automobiles before quoting.",
       "Transmission": "7-Speed DCT",
-      "Drive": "FWD / AWD",
-      "Seating": "6 or 7",
-      "Boot Space": "193 L (7-seat) / 745 L (5-seat)",
-      "Length": "4,722 mm",
-      "Width": "1,932 mm",
-      "Height": "1,770 mm",
-      "Wheelbase": "2,820 mm",
-      "Ground Clearance": "200 mm",
-      "Airbags": "6"
+      "Seating": "6/7",
+      "Fuel Type": "Petrol",
+      "Body Type": "Large SUV"
     },
-    "pros": [
-      "AWD available",
-      "745L boot in 5-seat mode",
-      "2.0T engine strong power",
-      "7-seat with captain chairs",
-      "Much cheaper than Fortuner"
-    ],
-    "cons": [
-      "Fuel economy drops with 2.0T",
-      "Service sparse in Nepal",
-      "AWD only on top trim",
-      "Brand credibility vs Toyota/Hyundai"
-    ],
-    "highlights": [
-      "6 or 7 Seats",
-      "2.0T Turbo",
-      "AWD Available",
-      "745L Boot"
-    ],
-    "thumb": "/assets/images/car_images/chery/tiggo-8-pro/interior/chery-tiggo-8-pro-interior-seats-rear.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/chery/tiggo8-pro/side.png"
   },
   {
-    "id": 804,
+    "id": 57,
     "slug": "chery-omoda-5-2025",
     "brand": "Chery",
+    "brandSlug": "chery",
     "model": "Omoda 5",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Coupe SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Striking coupe-SUV design with turbo punch for Nepal's urban youth",
     "rating": 4,
     "reviews": 143,
@@ -10243,6 +10153,15 @@ window.CARS_DB = [
     "baseEMI": 42000,
     "overview": "The Chery Omoda 5 brings European-inspired coupe-SUV design to Nepal with a 1.6T engine, 10.25\" floating touchscreen, 8-speaker audio, and a sportback silhouette rarely seen at this price. A bold alternative to the Kia Sonet and Hyundai Venue for style-first buyers.",
     "images": [
+      "/assets/images/car_images/chery/omoda-e5/front.png",
+      "/assets/images/car_images/chery/omoda-e5/side.webp",
+      "/assets/images/car_images/chery/omoda-e5/interior.jpg",
+      "/assets/images/car_images/chery/omoda-e5/colors/red.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/blue.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/black.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/white.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/grey.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/silver.png",
       "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-front.jpg",
       "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
     ],
@@ -10288,7 +10207,9 @@ window.CARS_DB = [
           "power": "145 hp @ 5,500 rpm",
           "torque": "210 Nm",
           "efficiency": "16.1 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "145 hp @ 5,500 rpm",
+          "Torque": "210 Nm"
         }
       },
       {
@@ -10310,58 +10231,48 @@ window.CARS_DB = [
           "power": "145 hp @ 5,500 rpm",
           "torque": "210 Nm",
           "efficiency": "15.6 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "145 hp @ 5,500 rpm",
+          "Torque": "210 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.6L TGDI Turbo Petrol",
-      "Displacement": "1,598 cc",
-      "Power": "145 hp @ 5,500 rpm",
-      "Torque": "210 Nm",
-      "Efficiency": "15.6–16.1 km/l",
-      "Fuel Tank": "48 L",
-      "Transmission": "CVT / 7DCT",
-      "Drive": "FWD",
+      "Engine Type": "1.6L Turbo Petrol",
+      "Transmission Type": "CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Sunroof Type": "Electric",
+      "Touchscreen Display": "10.25\" + CarPlay",
+      "Audio System": "8-Speaker",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)",
+      "Transmission": "CVT",
       "Seating": "5",
-      "Boot Space": "310 L",
-      "Length": "4,403 mm",
-      "Width": "1,825 mm",
-      "Height": "1,588 mm",
-      "Wheelbase": "2,630 mm",
-      "Ground Clearance": "188 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol",
+      "Body Type": "Coupe SUV"
     },
-    "pros": [
-      "Unique coupe-SUV style in Nepal",
-      "145hp turbo from base",
-      "7DCT on premium",
-      "Strong tech for price",
-      "Youth-oriented design"
-    ],
-    "cons": [
-      "310L boot — smaller due to coupe roofline",
-      "FWD only",
-      "Coupe height limits headroom",
-      "Service network very limited"
-    ],
-    "highlights": [
-      "Coupe-SUV Design",
-      "145hp Turbo",
-      "7-Speed DCT",
-      "360° Camera"
-    ],
-    "thumb": "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-front.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/chery/omoda-e5/front.png"
   },
   {
-    "id": 805,
+    "id": 58,
     "slug": "chery-omoda-e5-2025",
     "brand": "Chery",
+    "brandSlug": "chery",
     "model": "Omoda E5",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Electric Coupe SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Electric Omoda with 430km range — Nepal's most stylish EV SUV",
     "rating": 4.1,
     "reviews": 89,
@@ -10369,6 +10280,15 @@ window.CARS_DB = [
     "baseEMI": 62000,
     "overview": "The Chery Omoda E5 is the electric version of the Omoda 5, sharing its striking coupe silhouette but powered by a 61kWh battery delivering 430km CLTC range. With ADAS, 360° camera, and 150kW fast charging, it offers premium EV features at a competitive Nepal price point.",
     "images": [
+      "/assets/images/car_images/chery/omoda-e5/front.png",
+      "/assets/images/car_images/chery/omoda-e5/side.webp",
+      "/assets/images/car_images/chery/omoda-e5/interior.jpg",
+      "/assets/images/car_images/chery/omoda-e5/colors/red.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/blue.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/black.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/white.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/grey.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/silver.png",
       "/assets/images/car_images/chery/omoda-e5/exterior/omoda-e5-pro-nepal-1780243619.jpg"
     ],
     "colors": [
@@ -10410,7 +10330,9 @@ window.CARS_DB = [
           "power": "201 hp",
           "torque": "310 Nm",
           "efficiency": "6.7 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "transmission": "Single Speed Reducer",
+          "Power": "201 hp",
+          "Torque": "310 Nm"
         }
       },
       {
@@ -10432,65 +10354,77 @@ window.CARS_DB = [
           "power": "201 hp",
           "torque": "310 Nm",
           "efficiency": "6.7 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "transmission": "Single Speed Reducer",
+          "Power": "201 hp",
+          "Torque": "310 Nm"
         }
       }
     ],
     "specs": {
-      "Battery": "61 kWh",
-      "Range": "430 km (CLTC)",
-      "Power": "201 hp",
-      "Torque": "310 Nm",
-      "Charging": "150 kW DC Fast Charge",
-      "Charge Time": "30 min (10–80%)",
-      "Transmission": "Single Speed",
-      "Drive": "RWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Max Motor Power": "132 PS",
+      "Max Motor Torque": "340 Nm",
+      "Battery Type": "Lithium-ion",
+      "Battery Capacity (kWh)": "61",
+      "Certified Range (km)": "430 (WLTP)",
+      "DC Fast Charging": "Yes",
+      "Drive Type": "RWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "360",
+      "Overall Length (mm)": "4,424",
+      "Overall Width (mm)": "1,830",
+      "Overall Height (mm)": "1,588",
+      "Wheelbase (mm)": "2,630",
+      "Ground Clearance (mm)": "180",
+      "Total Airbag Count": "6",
+      "Touchscreen Display": "24.6\" Dual-Screen Setup",
+      "360° Camera": "Yes",
+      "Ventilated Seats": "Front",
+      "ADAS Suite": "Yes",
+      "Battery & Motor Warranty": "8 Years",
+      "Variant Names": "Single Tone (Rs. 61.99L), Dual Tone (Rs. 62.49L)",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)",
+      "Power": "132 PS",
+      "Torque": "340 Nm",
+      "Boot Space": "360",
       "Seating": "5",
-      "Boot Space": "290 L",
-      "Length": "4,403 mm",
-      "Width": "1,825 mm",
-      "Height": "1,575 mm",
-      "Wheelbase": "2,630 mm",
-      "Ground Clearance": "180 mm",
-      "Airbags": "6"
+      "Fuel Type": "Electric",
+      "Body Type": "Electric Coupe SUV",
+      "Ground Clearance": "180",
+      "Warranty": "8 Years"
     },
-    "pros": [
-      "430km range for city use",
-      "Stylish coupe EV design",
-      "150kW fast charging",
-      "ADAS Level 2 on premium",
-      "Competitive Nepal pricing"
-    ],
-    "cons": [
-      "290L boot very small",
-      "RWD only",
-      "CLTC range optimistic",
-      "Charging infra thin outside KTM"
-    ],
-    "highlights": [
-      "430km Range",
-      "150kW Fast Charge",
-      "Coupe EV Design",
-      "ADAS Level 2"
-    ],
-    "thumb": "/assets/images/car_images/chery/omoda-e5/exterior/omoda-e5-pro-nepal-1780243619.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/chery/omoda-e5/front.png"
   },
   {
-    "id": 806,
+    "id": 59,
     "slug": "chery-tiggo-2-pro-2025",
     "brand": "Chery",
+    "brandSlug": "chery",
     "model": "Tiggo 2 Pro",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Subcompact SUV",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's most affordable Chery SUV with turbo and sunroof",
     "rating": 3.9,
     "reviews": 267,
     "expertScore": 7.1,
     "baseEMI": 28000,
     "overview": "The Chery Tiggo 2 Pro is the entry point of the Chery SUV lineup in Nepal, offering a 1.5L turbo engine, electric sunroof, 10.25\" touchscreen, and 6 airbags in a sub-4m body. Best value-for-money proposition for first-time SUV buyers in Nepal.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/chery/tiggo-2-pro/exterior/pic01.jpg",
+      "/assets/images/car_images/chery/tiggo-2-pro/exterior/pic01_03.jpg",
+      "/assets/images/car_images/chery/tiggo-2-pro/interior/pic01_04.jpg"
+    ],
     "colors": [
       {
         "name": "Polar White",
@@ -10533,7 +10467,9 @@ window.CARS_DB = [
           "power": "108 hp @ 5,500 rpm",
           "torque": "160 Nm",
           "efficiency": "17.5 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "108 hp @ 5,500 rpm",
+          "Torque": "160 Nm"
         }
       },
       {
@@ -10555,57 +10491,47 @@ window.CARS_DB = [
           "power": "108 hp @ 5,500 rpm",
           "torque": "160 Nm",
           "efficiency": "16.9 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "108 hp @ 5,500 rpm",
+          "Torque": "160 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L TGDI Turbo Petrol",
-      "Displacement": "1,497 cc",
-      "Power": "108 hp @ 5,500 rpm",
-      "Torque": "160 Nm",
-      "Efficiency": "16.9–17.5 km/l",
-      "Fuel Tank": "40 L",
-      "Transmission": "5MT / CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L Turbo Petrol",
+      "Transmission Type": "MT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "4",
+      "Sunroof Type": "Electric",
+      "Touchscreen Display": "10.25\" + CarPlay",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery Nepal Distributor, Thapathali, Kathmandu)",
+      "Transmission": "MT",
       "Seating": "5",
-      "Boot Space": "298 L",
-      "Length": "3,995 mm",
-      "Width": "1,760 mm",
-      "Height": "1,570 mm",
-      "Wheelbase": "2,480 mm",
-      "Ground Clearance": "185 km",
-      "Airbags": "4–6"
+      "Fuel Type": "Petrol",
+      "Body Type": "Subcompact SUV"
     },
-    "pros": [
-      "Most affordable turbo SUV in Nepal",
-      "Sunroof standard even on base",
-      "CVT on Luxury variant",
-      "Compact for city parking",
-      "Good fuel economy"
-    ],
-    "cons": [
-      "Only 4 airbags on base",
-      "Small 298L boot",
-      "No ADAS at all",
-      "Unproven Nepal resale value"
-    ],
-    "highlights": [
-      "Sunroof Standard",
-      "108hp Turbo",
-      "CVT Available",
-      "Sub-4m Body"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/chery/tiggo-2-pro/exterior/pic01.jpg"
   },
   {
-    "id": 901,
+    "id": 60,
     "slug": "proton-x50-2025",
     "brand": "Proton",
+    "brandSlug": "proton",
     "model": "X50",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Geely-based compact SUV with ADAS and 360° camera under Rs. 55L",
     "rating": 4.1,
     "reviews": 634,
@@ -10659,7 +10585,9 @@ window.CARS_DB = [
           "power": "150 hp @ 5,500 rpm",
           "torque": "226 Nm",
           "efficiency": "16.4 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "150 hp @ 5,500 rpm",
+          "Torque": "226 Nm"
         }
       },
       {
@@ -10680,7 +10608,9 @@ window.CARS_DB = [
           "power": "150 hp @ 5,500 rpm",
           "torque": "226 Nm",
           "efficiency": "16.4 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "150 hp @ 5,500 rpm",
+          "Torque": "226 Nm"
         }
       },
       {
@@ -10702,58 +10632,47 @@ window.CARS_DB = [
           "power": "150 hp @ 5,500 rpm",
           "torque": "226 Nm",
           "efficiency": "16.4 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "150 hp @ 5,500 rpm",
+          "Torque": "226 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L TGDi 3-Cylinder Turbo",
-      "Displacement": "1,497 cc",
-      "Power": "150 hp @ 5,500 rpm",
-      "Torque": "226 Nm",
-      "Efficiency": "16.4 km/l",
-      "Fuel Tank": "45 L",
+      "Engine Type": "1.5L TGDi Turbo Petrol",
+      "Displacement (cc)": "1,499",
+      "Max Engine Power": "177 PS",
+      "Transmission Type": "7-Speed DCT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Body Type": "Compact SUV",
+      "Note": "No official Proton Nepal distributor could be independently confirmed in current research — verify current official availability before quoting pricing.",
+      "Power": "177 PS",
       "Transmission": "7-Speed DCT",
-      "Drive": "FWD",
       "Seating": "5",
-      "Boot Space": "395 L",
-      "Length": "4,162 mm",
-      "Width": "1,760 mm",
-      "Height": "1,609 mm",
-      "Wheelbase": "2,550 mm",
-      "Ground Clearance": "195 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Geely BMA platform — European DNA",
-      "150hp from 1.5T 3-cylinder",
-      "ADAS Level 2 on Flagship",
-      "7DCT standard across all",
-      "Better QC than pure Chinese brands"
-    ],
-    "cons": [
-      "3-cylinder can vibrate at idle",
-      "7DCT clunky in stop-go",
-      "Limited Nepal service centres",
-      "No AWD option"
-    ],
-    "highlights": [
-      "Geely BMA Platform",
-      "150hp Turbo",
-      "ADAS Level 2",
-      "7-Speed DCT"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/proton/x50/exterior/proton-x50-exterior-side-left-white-bg.jpg"
   },
   {
-    "id": 902,
+    "id": 61,
     "slug": "proton-x70-2025",
     "brand": "Proton",
+    "brandSlug": "proton",
     "model": "X70",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Mid-size SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "7-seat Geely-based SUV with 184hp and AWD for Nepal highways",
     "rating": 4.2,
     "reviews": 421,
@@ -10807,7 +10726,9 @@ window.CARS_DB = [
           "power": "184 hp @ 5,500 rpm",
           "torque": "300 Nm",
           "efficiency": "14.9 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "184 hp @ 5,500 rpm",
+          "Torque": "300 Nm"
         }
       },
       {
@@ -10829,7 +10750,9 @@ window.CARS_DB = [
           "power": "184 hp @ 5,500 rpm",
           "torque": "300 Nm",
           "efficiency": "14.9 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "184 hp @ 5,500 rpm",
+          "Torque": "300 Nm"
         }
       },
       {
@@ -10851,58 +10774,47 @@ window.CARS_DB = [
           "power": "184 hp @ 5,500 rpm",
           "torque": "300 Nm",
           "efficiency": "14.2 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "184 hp @ 5,500 rpm",
+          "Torque": "300 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.8L TGDi Turbo Petrol",
-      "Displacement": "1,799 cc",
-      "Power": "184 hp @ 5,500 rpm",
-      "Torque": "300 Nm",
-      "Efficiency": "14.2–14.9 km/l",
-      "Fuel Tank": "55 L",
+      "Engine Type": "1.5L TGDi Turbo Petrol",
+      "Displacement (cc)": "1,499",
+      "Max Engine Power": "177 PS",
+      "Transmission Type": "7-Speed DCT",
+      "Drive Type": "FWD / AWD",
+      "Seating Capacity": "5",
+      "Body Type": "Mid-size SUV",
+      "Note": "No official Proton Nepal distributor could be independently confirmed in current research — verify current official availability before quoting pricing.",
+      "Power": "177 PS",
       "Transmission": "7-Speed DCT",
-      "Drive": "FWD / AWD",
-      "Seating": "7",
-      "Boot Space": "550 L (5-seat)",
-      "Length": "4,585 mm",
-      "Width": "1,900 mm",
-      "Height": "1,745 mm",
-      "Wheelbase": "2,670 mm",
-      "Ground Clearance": "200 mm",
-      "Airbags": "6"
+      "Seating": "5",
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "184hp — strongest in class at price",
-      "AWD available on flagship",
-      "Bose audio on Executive+",
-      "7-seat with 550L boot",
-      "ADAS Level 2 on AWD"
-    ],
-    "cons": [
-      "DCT can hesitate in city",
-      "No diesel option",
-      "Brand service limited in Nepal",
-      "AWD only on most expensive trim"
-    ],
-    "highlights": [
-      "184hp 1.8T",
-      "AWD Available",
-      "Bose 9-Speaker",
-      "7 Seats"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/proton/x70/exterior/proton-x70-exterior-front-white-bg.jpg"
   },
   {
-    "id": 903,
+    "id": 62,
     "slug": "proton-saga-2025",
     "brand": "Proton",
+    "brandSlug": "proton",
     "model": "Saga",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Sedan",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Most affordable Proton in Nepal — proven sedan for budget buyers",
     "rating": 3.8,
     "reviews": 312,
@@ -10949,7 +10861,9 @@ window.CARS_DB = [
           "power": "95 hp @ 6,000 rpm",
           "torque": "120 Nm",
           "efficiency": "18.9 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "95 hp @ 6,000 rpm",
+          "Torque": "120 Nm"
         }
       },
       {
@@ -10971,58 +10885,47 @@ window.CARS_DB = [
           "power": "95 hp @ 6,000 rpm",
           "torque": "120 Nm",
           "efficiency": "18.2 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "95 hp @ 6,000 rpm",
+          "Torque": "120 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.3L VVT Petrol",
-      "Displacement": "1,332 cc",
-      "Power": "95 hp @ 6,000 rpm",
-      "Torque": "120 Nm",
-      "Efficiency": "18.2–18.9 km/l",
-      "Fuel Tank": "40 L",
-      "Transmission": "5MT / CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.3L VVT Petrol",
+      "Displacement (cc)": "1,332",
+      "Max Engine Power": "95 PS",
+      "Transmission Type": "MT / CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Body Type": "Sedan",
+      "Note": "No official Proton Nepal distributor could be independently confirmed in current research — verify current official availability before quoting pricing.",
+      "Power": "95 PS",
+      "Transmission": "MT / CVT",
       "Seating": "5",
-      "Boot Space": "440 L",
-      "Length": "4,400 mm",
-      "Width": "1,713 mm",
-      "Height": "1,477 mm",
-      "Wheelbase": "2,525 mm",
-      "Ground Clearance": "160 mm",
-      "Airbags": "2–4"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Most affordable CVT sedan in Nepal",
-      "18.9 km/l excellent efficiency",
-      "440L big boot for price",
-      "Proven Southeast Asian reliability",
-      "Low maintenance cost"
-    ],
-    "cons": [
-      "Only 2 airbags on base",
-      "Low ground clearance for Nepal roads",
-      "No ADAS",
-      "Dated interior design"
-    ],
-    "highlights": [
-      "18.9 km/l",
-      "440L Boot",
-      "CVT Available",
-      "Most Affordable Proton"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/proton/saga/exterior/1.webp"
   },
   {
-    "id": 904,
+    "id": 63,
     "slug": "proton-x90-2025",
     "brand": "Proton",
+    "brandSlug": "proton",
     "model": "X90",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Large SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Proton's flagship 6-seat large SUV with 204hp and ADAS Level 2",
     "rating": 4.2,
     "reviews": 98,
@@ -11071,7 +10974,9 @@ window.CARS_DB = [
           "power": "204 hp @ 5,500 rpm",
           "torque": "318 Nm",
           "efficiency": "13.9 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "204 hp @ 5,500 rpm",
+          "Torque": "318 Nm"
         }
       },
       {
@@ -11094,58 +10999,47 @@ window.CARS_DB = [
           "power": "204 hp @ 5,500 rpm",
           "torque": "318 Nm",
           "efficiency": "13.9 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "204 hp @ 5,500 rpm",
+          "Torque": "318 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L TGDi Turbo Petrol",
-      "Displacement": "1,997 cc",
-      "Power": "204 hp @ 5,500 rpm",
-      "Torque": "318 Nm",
-      "Efficiency": "13.9 km/l",
-      "Fuel Tank": "58 L",
+      "Engine Type": "1.5L TGDi Turbo Petrol",
+      "Displacement (cc)": "1,499",
+      "Max Engine Power": "190 PS",
+      "Transmission Type": "7-Speed DCT",
+      "Drive Type": "FWD / AWD",
+      "Seating Capacity": "7",
+      "Body Type": "Full-size SUV",
+      "Note": "No official Proton Nepal distributor could be independently confirmed in current research — verify current official availability before quoting pricing.",
+      "Power": "190 PS",
       "Transmission": "7-Speed DCT",
-      "Drive": "FWD",
-      "Seating": "6",
-      "Boot Space": "308 L (6-seat) / 680 L (4-seat)",
-      "Length": "4,869 mm",
-      "Width": "1,934 mm",
-      "Height": "1,780 mm",
-      "Wheelbase": "2,919 mm",
-      "Ground Clearance": "205 mm",
-      "Airbags": "6"
+      "Seating": "7",
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "204hp 2.0T engine",
-      "Captain chairs standard",
-      "Harman/Kardon on flagship",
-      "ADAS Level 2",
-      "Geely platform quality"
-    ],
-    "cons": [
-      "FWD only — no AWD",
-      "Expensive for Proton brand",
-      "Fuel economy modest",
-      "Large size for Kathmandu"
-    ],
-    "highlights": [
-      "204hp 2.0T",
-      "Captain Chairs",
-      "Harman/Kardon",
-      "ADAS Level 2"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/proton/x90/exterior/product-6683d71b0ecc0x70.webp"
   },
   {
-    "id": 1001,
+    "id": 64,
     "slug": "haval-jolion-2025",
     "brand": "Haval",
+    "brandSlug": "haval",
     "model": "Jolion",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "GWM's sharp compact SUV with DHT hybrid and ADAS under Rs. 55L",
     "rating": 4.1,
     "reviews": 487,
@@ -11153,6 +11047,9 @@ window.CARS_DB = [
     "baseEMI": 40000,
     "overview": "The Haval Jolion is Great Wall Motor's compact SUV flagship in Nepal, available in standard 1.5T petrol and DHT (Dedicated Hybrid Transmission) hybrid variants. It stands out with its coupe-inspired styling, 10.25\" floating touchscreen, 6 airbags standard, and ADAS on top trims.",
     "images": [
+      "/assets/images/car_images/haval/jolion/front.jpg",
+      "/assets/images/car_images/haval/jolion/side.jpg",
+      "/assets/images/car_images/haval/jolion/interior.jpg",
       "/assets/images/car_images/haval/jolion/exterior/1 (1).jpg",
       "/assets/images/car_images/haval/jolion/exterior/56.jpg",
       "/assets/images/car_images/haval/jolion/exterior/haval-jolion-exterior-side-left-white-bg.jpg",
@@ -11206,7 +11103,9 @@ window.CARS_DB = [
           "power": "147 hp @ 5,500 rpm",
           "torque": "220 Nm",
           "efficiency": "15.9 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "147 hp @ 5,500 rpm",
+          "Torque": "220 Nm"
         }
       },
       {
@@ -11228,7 +11127,9 @@ window.CARS_DB = [
           "power": "147 hp @ 5,500 rpm",
           "torque": "220 Nm",
           "efficiency": "15.9 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "147 hp @ 5,500 rpm",
+          "Torque": "220 Nm"
         }
       },
       {
@@ -11250,7 +11151,9 @@ window.CARS_DB = [
           "power": "190 hp (system)",
           "torque": "375 Nm (system)",
           "efficiency": "22.1 km/l",
-          "transmission": "DHT Hybrid"
+          "transmission": "DHT Hybrid",
+          "Power": "190 hp (system)",
+          "Torque": "375 Nm (system)"
         }
       },
       {
@@ -11271,58 +11174,60 @@ window.CARS_DB = [
           "power": "190 hp (system)",
           "torque": "375 Nm",
           "efficiency": "22.1 km/l",
-          "transmission": "DHT Hybrid"
+          "transmission": "DHT Hybrid",
+          "Power": "190 hp (system)",
+          "Torque": "375 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L GDIT Turbo / 1.5T + DHT Hybrid",
-      "Displacement": "1,497 cc",
-      "Power": "147–190 hp",
-      "Torque": "220–375 Nm",
-      "Efficiency": "15.9–22.1 km/l",
-      "Fuel Tank": "50 L",
-      "Transmission": "7DCT / DHT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L GDIT Turbo Petrol / 1.5T + DHT Hybrid",
+      "Displacement (cc)": "1,497",
+      "Max Engine Power": "150 PS / 190 hp (system, Hybrid)",
+      "Max Engine Torque": "210–375 Nm",
+      "Transmission Type": "6-Speed MT / 7-Speed DCT / DHT (Hybrid)",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "390",
+      "Overall Length (mm)": "4,472",
+      "Overall Width (mm)": "1,841",
+      "Overall Height (mm)": "1,628",
+      "Wheelbase (mm)": "2,700",
+      "Ground Clearance (mm)": "190",
+      "Total Airbag Count": "6",
+      "Touchscreen Display": "10.25\" Floating",
+      "Variant Names": "High (MT), Premium (DCT), Luxury (DCT), Hybrid (HEV)",
+      "Distributor": "VG Impex Pvt. Ltd. (Official GWM/Haval Nepal Distributor, Thapathali, Kathmandu)",
+      "Power": "150 PS / 190 hp (system, Hybrid)",
+      "Torque": "210–375 Nm",
+      "Transmission": "6-Speed MT / 7-Speed DCT / DHT (Hybrid)",
+      "Boot Space": "390",
       "Seating": "5",
-      "Boot Space": "390 L",
-      "Length": "4,472 mm",
-      "Width": "1,841 mm",
-      "Height": "1,628 mm",
-      "Wheelbase": "2,700 mm",
-      "Ground Clearance": "190 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol",
+      "Body Type": "Compact SUV",
+      "Ground Clearance": "190"
     },
-    "pros": [
-      "DHT hybrid at competitive price",
-      "22.1 km/l hybrid efficiency",
-      "190hp system output",
-      "ADAS Level 2 on hybrid",
-      "Sporty coupe styling"
-    ],
-    "cons": [
-      "FWD only",
-      "Hybrid parts servicing uncertain in Nepal",
-      "DCT clunky in city (petrol)",
-      "Brand trust building stage in Nepal"
-    ],
-    "highlights": [
-      "DHT Hybrid Available",
-      "22.1 km/l",
-      "190hp System",
-      "ADAS Level 2"
-    ],
-    "thumb": "/assets/images/car_images/haval/jolion/exterior/1 (1).jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/haval/jolion/front.jpg"
   },
   {
-    "id": 1002,
+    "id": 65,
     "slug": "haval-h6-2025",
     "brand": "Haval",
+    "brandSlug": "haval",
     "model": "H6",
     "year": 2026,
     "type": "Petrol Hybrid",
+    "bodyType": "Unknown",
     "body": "Mid-size SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "GWM's flagship mid-size hybrid SUV with AWD and 240hp system",
     "rating": 4.2,
     "reviews": 213,
@@ -11330,6 +11235,10 @@ window.CARS_DB = [
     "baseEMI": 65000,
     "overview": "The Haval H6 is Great Wall Motor's best-selling global SUV, arriving in Nepal with a DHT plug-in hybrid system, 240hp combined output, AWD option, and a premium interior with 12.3\" dual screens, Harman audio, and Level 2 ADAS. It challenges the Kia Seltos and Hyundai Tucson at a lower price.",
     "images": [
+      "/assets/images/car_images/haval/h6/front.jpg",
+      "/assets/images/car_images/haval/h6/front-hero.jpg",
+      "/assets/images/car_images/haval/h6/rear.jpg",
+      "/assets/images/car_images/haval/h6/interior.jpg",
       "/assets/images/car_images/haval/h6/exterior/1.jpg",
       "/assets/images/car_images/haval/h6/exterior/hot03_pc.jpg",
       "/assets/images/car_images/haval/h6/exterior/hot05_pc.jpg",
@@ -11378,7 +11287,9 @@ window.CARS_DB = [
           "power": "210 hp (system)",
           "torque": "530 Nm (system)",
           "efficiency": "19.7 km/l",
-          "transmission": "DHT"
+          "transmission": "DHT",
+          "Power": "210 hp (system)",
+          "Torque": "530 Nm (system)"
         }
       },
       {
@@ -11401,58 +11312,57 @@ window.CARS_DB = [
           "power": "240 hp (system)",
           "torque": "620 Nm (system)",
           "efficiency": "17.9 km/l",
-          "transmission": "DHT AWD"
+          "transmission": "DHT AWD",
+          "Power": "240 hp (system)",
+          "Torque": "620 Nm (system)"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L GDIT + DHT Hybrid",
-      "Displacement": "1,997 cc",
-      "Power": "210–240 hp (system)",
-      "Torque": "530–620 Nm (system)",
-      "Efficiency": "17.9–19.7 km/l",
-      "Fuel Tank": "55 L",
-      "Transmission": "DHT / DHT AWD",
-      "Drive": "FWD / AWD",
+      "Engine Type": "2.0L GDIT Turbo Petrol (Nepal spec — no hybrid confirmed)",
+      "Displacement (cc)": "1,996",
+      "Max Engine Power": "204 PS @ 6,000–6,300 rpm",
+      "Max Engine Torque": "320 Nm",
+      "Fuel Efficiency": "14.70 km/l",
+      "Fuel Tank Capacity (L)": "60",
+      "Transmission Type": "7-Speed DCT",
+      "Drive Type": "Intelligent 4WD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "600",
+      "Ground Clearance (mm)": "172",
+      "Total Airbag Count": "6",
+      "Color Options": "White, Grey, Blue",
+      "Distributor": "VG Impex Pvt. Ltd. (Official GWM/Haval Nepal Distributor, Thapathali, Kathmandu)",
+      "Power": "204 PS @ 6,000–6,300 rpm",
+      "Torque": "320 Nm",
+      "Transmission": "7-Speed DCT",
+      "Boot Space": "600",
       "Seating": "5",
-      "Boot Space": "530 L",
-      "Length": "4,653 mm",
-      "Width": "1,886 mm",
-      "Height": "1,730 mm",
-      "Wheelbase": "2,738 mm",
-      "Ground Clearance": "200 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol Hybrid",
+      "Body Type": "Mid-size SUV",
+      "Ground Clearance": "172"
     },
-    "pros": [
-      "240hp hybrid AWD system",
-      "530L boot space",
-      "Harman audio on AWD",
-      "620Nm system torque",
-      "ADAS Level 2"
-    ],
-    "cons": [
-      "PHEV parts servicing in Nepal",
-      "Brand premium perception vs Korean",
-      "Large size for KTM parking",
-      "Hybrid complexity in hill roads"
-    ],
-    "highlights": [
-      "240hp AWD Hybrid",
-      "620Nm Torque",
-      "530L Boot",
-      "Harman Audio"
-    ],
-    "thumb": "/assets/images/car_images/haval/h6/exterior/1.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/haval/h6/front.jpg"
   },
   {
-    "id": 1003,
+    "id": 66,
     "slug": "haval-dargo-2025",
     "brand": "Haval",
+    "brandSlug": "haval",
     "model": "Dargo",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Off-Road SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Tank-inspired off-roader with 2.0T and Terrain Control for Nepal trails",
     "rating": 4,
     "reviews": 134,
@@ -11507,7 +11417,9 @@ window.CARS_DB = [
           "power": "190 hp @ 5,500 rpm",
           "torque": "340 Nm",
           "efficiency": "14.2 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "190 hp @ 5,500 rpm",
+          "Torque": "340 Nm"
         }
       },
       {
@@ -11528,59 +11440,39 @@ window.CARS_DB = [
           "power": "190 hp @ 5,500 rpm",
           "torque": "340 Nm",
           "efficiency": "13.6 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "190 hp @ 5,500 rpm",
+          "Torque": "340 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L GDIT Turbo Petrol",
-      "Displacement": "1,997 cc",
-      "Power": "190 hp @ 5,500 rpm",
-      "Torque": "340 Nm",
-      "Efficiency": "13.6–14.2 km/l",
-      "Fuel Tank": "58 L",
-      "Transmission": "7-Speed DCT",
-      "Drive": "FWD / AWD",
-      "Seating": "5",
-      "Boot Space": "450 L",
-      "Length": "4,725 mm",
-      "Width": "1,926 mm",
-      "Height": "1,780 mm",
-      "Wheelbase": "2,738 mm",
-      "Ground Clearance": "224 mm",
-      "Airbags": "6",
-      "Wading Depth": "600 mm"
+      "Note": "UNVERIFIED FOR NEPAL: VG Impex (GWM/Haval's official Nepal distributor) has only publicly confirmed importing the 3rd-gen H6, Jolion (incl. Jolion Max EV), and the GWM Poer pickup as of 2026 — no Nepal source found confirming this model is officially sold here.",
+      "Distributor": "UNCONFIRMED — see note",
+      "Fuel Type": "Petrol",
+      "Body Type": "Off-Road SUV"
     },
-    "pros": [
-      "224mm ground clearance",
-      "AWD with terrain modes",
-      "Military-inspired design",
-      "Rear diff lock on base",
-      "600mm wading depth"
-    ],
-    "cons": [
-      "2.0T thirstier in hills",
-      "DCT not ideal for technical off-road",
-      "No diesel option",
-      "GWM service centres limited"
-    ],
-    "highlights": [
-      "224mm Clearance",
-      "AWD + Terrain Modes",
-      "600mm Wading",
-      "Rear Diff Lock"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/haval/dargo/exterior/haval-dargo-exterior-rear-white-bg.jpg"
   },
   {
-    "id": 1004,
+    "id": 67,
     "slug": "haval-h9-2025",
     "brand": "Haval",
+    "brandSlug": "haval",
     "model": "H9",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Full-Size Body-on-Frame SUV",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Haval's premium body-on-frame 7-seater to rival Fortuner",
     "rating": 4.1,
     "reviews": 76,
@@ -11629,7 +11521,9 @@ window.CARS_DB = [
           "power": "224 hp @ 5,500 rpm",
           "torque": "340 Nm",
           "efficiency": "13.2 km/l",
-          "transmission": "8-Speed AT"
+          "transmission": "8-Speed AT",
+          "Power": "224 hp @ 5,500 rpm",
+          "Torque": "340 Nm"
         }
       },
       {
@@ -11652,59 +11546,39 @@ window.CARS_DB = [
           "power": "224 hp @ 5,500 rpm",
           "torque": "340 Nm",
           "efficiency": "13.2 km/l",
-          "transmission": "8-Speed AT"
+          "transmission": "8-Speed AT",
+          "Power": "224 hp @ 5,500 rpm",
+          "Torque": "340 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L GDIT Turbo Petrol",
-      "Displacement": "1,997 cc",
-      "Power": "224 hp @ 5,500 rpm",
-      "Torque": "340 Nm",
-      "Efficiency": "13.2 km/l",
-      "Fuel Tank": "70 L",
-      "Transmission": "8-Speed AT",
-      "Drive": "4WD + Low Range",
-      "Seating": "7",
-      "Boot Space": "340 L (7-seat) / 810 L (5-seat)",
-      "Length": "4,920 mm",
-      "Width": "1,926 mm",
-      "Height": "1,875 mm",
-      "Wheelbase": "2,850 mm",
-      "Ground Clearance": "224 mm",
-      "Airbags": "6",
-      "Wading Depth": "700 mm"
+      "Note": "UNVERIFIED FOR NEPAL: VG Impex (GWM/Haval's official Nepal distributor) has only publicly confirmed importing the 3rd-gen H6, Jolion (incl. Jolion Max EV), and the GWM Poer pickup as of 2026 — no Nepal source found confirming this model is officially sold here.",
+      "Distributor": "UNCONFIRMED — see note",
+      "Fuel Type": "Petrol",
+      "Body Type": "Full-Size Body-on-Frame SUV"
     },
-    "pros": [
-      "224hp + 8AT — strongest petrol SUV in class",
-      "4WD with low range",
-      "Harman/Kardon + Nappa leather",
-      "810L boot in 5-seat",
-      "700mm wading depth"
-    ],
-    "cons": [
-      "Very high fuel consumption",
-      "Huge size for Nepal cities",
-      "Petrol only (no diesel)",
-      "Expensive for GWM brand"
-    ],
-    "highlights": [
-      "224hp + 8AT",
-      "4WD Low Range",
-      "700mm Wading",
-      "Harman/Kardon"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/haval/h9/exterior/haval-h9-exterior-side-left-white-bg.jpg"
   },
   {
-    "id": 1005,
+    "id": 68,
     "slug": "haval-jolion-ev-2025",
     "brand": "Haval",
+    "brandSlug": "haval",
     "model": "Jolion EV",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Compact Electric SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Pure electric Jolion with 420km range for Nepal's urban EV buyers",
     "rating": 4,
     "reviews": 58,
@@ -11758,7 +11632,9 @@ window.CARS_DB = [
           "power": "201 hp",
           "torque": "310 Nm",
           "efficiency": "6.8 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "transmission": "Single Speed Reducer",
+          "Power": "201 hp",
+          "Torque": "310 Nm"
         }
       },
       {
@@ -11781,58 +11657,54 @@ window.CARS_DB = [
           "power": "218 hp",
           "torque": "340 Nm",
           "efficiency": "6.8 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "transmission": "Single Speed Reducer",
+          "Power": "218 hp",
+          "Torque": "340 Nm"
         }
       }
     ],
     "specs": {
-      "Battery": "50–60 kWh",
-      "Range": "350–420 km (CLTC)",
-      "Power": "201–218 hp",
-      "Torque": "310–340 Nm",
-      "Charging": "80 kW DC Fast Charge",
-      "Charge Time": "40 min (10–80%)",
-      "Transmission": "Single Speed",
-      "Drive": "RWD",
+      "Note": "This model is called 'Jolion Max EV' in current Nepal marketing (launched at NAIMA Nepal Mobility Expo 2026 at a Rs. 59.99L launch price)",
+      "Battery Type": "Lithium-ion",
+      "Battery Capacity (kWh)": "58.3",
+      "Certified Range (km)": "420+ (WLTP)",
+      "AC Charging Max Rate (kW)": "6.6",
+      "DC Fast Charging": "Yes",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Overall Length (mm)": "4,472",
+      "Overall Width (mm)": "1,841",
+      "Overall Height (mm)": "1,628",
+      "Wheelbase (mm)": "2,700",
+      "Ground Clearance (mm)": "190",
+      "Total Airbag Count": "6",
+      "Distributor": "VG Impex Pvt. Ltd. (Official GWM/Haval Nepal Distributor, Thapathali, Kathmandu) — launched at NAIMA Nepal Mobility Expo 2026",
       "Seating": "5",
-      "Boot Space": "380 L",
-      "Length": "4,472 mm",
-      "Width": "1,841 mm",
-      "Height": "1,628 mm",
-      "Wheelbase": "2,700 mm",
-      "Ground Clearance": "180 mm",
-      "Airbags": "6"
+      "Fuel Type": "Electric",
+      "Body Type": "Compact Electric SUV",
+      "Ground Clearance": "190"
     },
-    "pros": [
-      "420km range on premium",
-      "ADAS Level 2 available",
-      "Same quality as petrol Jolion",
-      "Stylish coupe profile",
-      "Competitive Nepal price"
-    ],
-    "cons": [
-      "RWD only",
-      "80kW charging slower than rivals",
-      "CLTC range optimistic",
-      "Service for EV components uncertain"
-    ],
-    "highlights": [
-      "420km Range",
-      "218hp Motor",
-      "ADAS Level 2",
-      "80kW Fast Charge"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/haval/jolion/exterior/1 (1).jpg"
   },
   {
-    "id": 1101,
+    "id": 69,
     "slug": "geely-coolray-2025",
     "brand": "Geely",
+    "brandSlug": "geely",
     "model": "Coolray",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "European-engineered compact SUV with 1.5T and 7DCT for Nepal",
     "rating": 4.1,
     "reviews": 689,
@@ -11885,7 +11757,9 @@ window.CARS_DB = [
           "power": "177 hp @ 5,500 rpm",
           "torque": "255 Nm",
           "efficiency": "15.9 km/l",
-          "transmission": "7-Speed Wet DCT"
+          "transmission": "7-Speed Wet DCT",
+          "Power": "177 hp @ 5,500 rpm",
+          "Torque": "255 Nm"
         }
       },
       {
@@ -11907,7 +11781,9 @@ window.CARS_DB = [
           "power": "177 hp @ 5,500 rpm",
           "torque": "255 Nm",
           "efficiency": "15.9 km/l",
-          "transmission": "7-Speed Wet DCT"
+          "transmission": "7-Speed Wet DCT",
+          "Power": "177 hp @ 5,500 rpm",
+          "Torque": "255 Nm"
         }
       },
       {
@@ -11929,65 +11805,51 @@ window.CARS_DB = [
           "power": "177 hp @ 5,500 rpm",
           "torque": "255 Nm",
           "efficiency": "15.9 km/l",
-          "transmission": "7-Speed Wet DCT"
+          "transmission": "7-Speed Wet DCT",
+          "Power": "177 hp @ 5,500 rpm",
+          "Torque": "255 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L TD 3-Cylinder Turbo (Volvo co-dev)",
-      "Displacement": "1,497 cc",
-      "Power": "177 hp @ 5,500 rpm",
-      "Torque": "255 Nm",
-      "Efficiency": "15.9 km/l",
-      "Fuel Tank": "48 L",
-      "Transmission": "7-Speed Wet DCT",
-      "Drive": "FWD",
-      "Seating": "5",
-      "Boot Space": "395 L",
-      "Length": "4,330 mm",
-      "Width": "1,800 mm",
-      "Height": "1,609 mm",
-      "Wheelbase": "2,600 mm",
-      "Ground Clearance": "192 mm",
-      "Airbags": "6"
+      "Note": "UNVERIFIED FOR NEPAL: Geely has no confirmed official distributor for this model in Nepal — Proton/Jagdamba Motors publicly denied selling Geely-branded vehicles (Aug 2025), and the only confirmed official Geely import is the EX5 via LRR Motors Ltd. Treat this entry's Nepal pricing/availability as unconfirmed.",
+      "Distributor": "UNCONFIRMED — see note",
+      "Fuel Type": "Petrol",
+      "Body Type": "Compact SUV"
     },
-    "pros": [
-      "Volvo co-developed engine",
-      "177hp — strong for class",
-      "7-speed wet DCT reliable",
-      "Volvo BMA platform safety",
-      "ADAS Level 2 on Sport"
-    ],
-    "cons": [
-      "3-cylinder vibration at idle",
-      "FWD only",
-      "Sport variant pricier than rivals",
-      "Geely service centres growing"
-    ],
-    "highlights": [
-      "Volvo BMA Platform",
-      "177hp Turbo",
-      "ADAS Level 2",
-      "7-Speed Wet DCT"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/geely/coolray/exterior/geely-coolray-exterior-front-white-bg.jpg"
   },
   {
-    "id": 1102,
+    "id": 70,
     "slug": "geely-azkarra-2025",
     "brand": "Geely",
+    "brandSlug": "geely",
     "model": "Azkarra",
     "year": 2026,
     "type": "Petrol Hybrid",
+    "bodyType": "Unknown",
     "body": "Mid-size SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Geely's MHEV mild-hybrid mid-size SUV with AWD and 197hp",
     "rating": 4.2,
     "reviews": 187,
     "expertScore": 8,
     "baseEMI": 62000,
     "overview": "The Geely Azkarra is a mid-size SUV with Geely's 48V mild hybrid system, 197hp 2.0T engine, AWD, and a stunning interior featuring a 12.3\" curved screen, Bose audio, and full ADAS Level 2. On the CMA platform shared with Volvo XC40, it brings near-premium quality at a mid-tier price.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/geely/azkarra/exterior/ext-1-ea30a9fbb2.png",
+      "/assets/images/car_images/geely/azkarra/exterior/ext-2-5ed0d1350f.png",
+      "/assets/images/car_images/geely/azkarra/interior/int-1-05f4d1832c.jpg",
+      "/assets/images/car_images/geely/azkarra/interior/int-2-57c0d68bfc.jpg"
+    ],
     "colors": [
       {
         "name": "Moonlight White",
@@ -12027,7 +11889,9 @@ window.CARS_DB = [
           "power": "197 hp @ 5,500 rpm",
           "torque": "300 Nm",
           "efficiency": "17.2 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "197 hp @ 5,500 rpm",
+          "Torque": "300 Nm"
         }
       },
       {
@@ -12050,57 +11914,39 @@ window.CARS_DB = [
           "power": "197 hp @ 5,500 rpm",
           "torque": "300 Nm",
           "efficiency": "16.1 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "197 hp @ 5,500 rpm",
+          "Torque": "300 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0T + 48V Mild Hybrid (Volvo CMA)",
-      "Displacement": "1,997 cc",
-      "Power": "197 hp @ 5,500 rpm",
-      "Torque": "300 Nm",
-      "Efficiency": "16.1–17.2 km/l",
-      "Fuel Tank": "55 L",
-      "Transmission": "7-Speed DCT",
-      "Drive": "FWD / AWD",
-      "Seating": "5",
-      "Boot Space": "490 L",
-      "Length": "4,554 mm",
-      "Width": "1,878 mm",
-      "Height": "1,650 mm",
-      "Wheelbase": "2,777 mm",
-      "Ground Clearance": "198 mm",
-      "Airbags": "6"
+      "Note": "UNVERIFIED FOR NEPAL: Geely has no confirmed official distributor for this model in Nepal — Proton/Jagdamba Motors publicly denied selling Geely-branded vehicles (Aug 2025), and the only confirmed official Geely import is the EX5 via LRR Motors Ltd. Treat this entry's Nepal pricing/availability as unconfirmed.",
+      "Distributor": "UNCONFIRMED — see note",
+      "Fuel Type": "Petrol Hybrid",
+      "Body Type": "Mid-size SUV"
     },
-    "pros": [
-      "Volvo CMA platform (same as XC40)",
-      "197hp + mild hybrid",
-      "AWD available",
-      "Bose audio on Elite",
-      "ADAS Level 2"
-    ],
-    "cons": [
-      "Mild hybrid — smaller fuel saving vs full hybrid",
-      "Premium pricing",
-      "Limited Nepal service",
-      "DCT hesitation possible"
-    ],
-    "highlights": [
-      "Volvo CMA Platform",
-      "197hp Mild Hybrid",
-      "AWD Available",
-      "Bose 9-Speaker"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/geely/azkarra/exterior/ext-1-ea30a9fbb2.png"
   },
   {
-    "id": 1103,
+    "id": 71,
     "slug": "geely-emgrand-2025",
     "brand": "Geely",
+    "brandSlug": "geely",
     "model": "Emgrand",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Sedan",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Geely's global best-selling sedan — reliable and spacious for Nepal",
     "rating": 3.9,
     "reviews": 412,
@@ -12150,7 +11996,9 @@ window.CARS_DB = [
           "power": "100 hp @ 6,000 rpm",
           "torque": "142 Nm",
           "efficiency": "17.8 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "100 hp @ 6,000 rpm",
+          "Torque": "142 Nm"
         }
       },
       {
@@ -12172,58 +12020,39 @@ window.CARS_DB = [
           "power": "100 hp @ 6,000 rpm",
           "torque": "142 Nm",
           "efficiency": "17.2 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "100 hp @ 6,000 rpm",
+          "Torque": "142 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L VVT Petrol",
-      "Displacement": "1,497 cc",
-      "Power": "100 hp @ 6,000 rpm",
-      "Torque": "142 Nm",
-      "Efficiency": "17.2–17.8 km/l",
-      "Fuel Tank": "45 L",
-      "Transmission": "5MT / CVT",
-      "Drive": "FWD",
-      "Seating": "5",
-      "Boot Space": "450 L",
-      "Length": "4,638 mm",
-      "Width": "1,802 mm",
-      "Height": "1,460 mm",
-      "Wheelbase": "2,650 mm",
-      "Ground Clearance": "155 mm",
-      "Airbags": "6"
+      "Note": "UNVERIFIED FOR NEPAL: Geely has no confirmed official distributor for this model in Nepal — Proton/Jagdamba Motors publicly denied selling Geely-branded vehicles (Aug 2025), and the only confirmed official Geely import is the EX5 via LRR Motors Ltd. Treat this entry's Nepal pricing/availability as unconfirmed.",
+      "Distributor": "UNCONFIRMED — see note",
+      "Fuel Type": "Petrol",
+      "Body Type": "Sedan"
     },
-    "pros": [
-      "6 airbags standard — best in class at price",
-      "450L huge boot",
-      "17.8 km/l excellent economy",
-      "Globally proven reliability",
-      "CVT available"
-    ],
-    "cons": [
-      "Low ground clearance for Nepal roads",
-      "No ADAS",
-      "Sedan not ideal for hilly terrain",
-      "Brand awareness lower than Toyota/Honda"
-    ],
-    "highlights": [
-      "6 Airbags Standard",
-      "450L Boot",
-      "17.8 km/l",
-      "CVT Available"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/geely/emgrand/exterior/geely-emgrand-exterior-rear-white-bg.jpg"
   },
   {
-    "id": 1104,
+    "id": 72,
     "slug": "geely-preface-2025",
     "brand": "Geely",
+    "brandSlug": "geely",
     "model": "Preface",
     "year": 2026,
     "type": "Petrol Hybrid",
+    "bodyType": "Unknown",
     "body": "Mid-size Sedan",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Premium hybrid sedan with Volvo DNA and 197hp on Geely's CMA platform",
     "rating": 4.2,
     "reviews": 94,
@@ -12273,7 +12102,9 @@ window.CARS_DB = [
           "power": "197 hp @ 5,500 rpm",
           "torque": "300 Nm",
           "efficiency": "18.1 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "197 hp @ 5,500 rpm",
+          "Torque": "300 Nm"
         }
       },
       {
@@ -12296,58 +12127,39 @@ window.CARS_DB = [
           "power": "197 hp @ 5,500 rpm",
           "torque": "300 Nm",
           "efficiency": "18.1 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "197 hp @ 5,500 rpm",
+          "Torque": "300 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0T + 48V Mild Hybrid (Volvo CMA)",
-      "Displacement": "1,997 cc",
-      "Power": "197 hp @ 5,500 rpm",
-      "Torque": "300 Nm",
-      "Efficiency": "18.1 km/l",
-      "Fuel Tank": "55 L",
-      "Transmission": "7-Speed DCT",
-      "Drive": "FWD",
-      "Seating": "5",
-      "Boot Space": "460 L",
-      "Length": "4,752 mm",
-      "Width": "1,869 mm",
-      "Height": "1,447 mm",
-      "Wheelbase": "2,797 mm",
-      "Ground Clearance": "150 mm",
-      "Airbags": "6"
+      "Note": "UNVERIFIED FOR NEPAL: Geely has no confirmed official distributor for this model in Nepal — Proton/Jagdamba Motors publicly denied selling Geely-branded vehicles (Aug 2025), and the only confirmed official Geely import is the EX5 via LRR Motors Ltd. Treat this entry's Nepal pricing/availability as unconfirmed.",
+      "Distributor": "UNCONFIRMED — see note",
+      "Fuel Type": "Petrol Hybrid",
+      "Body Type": "Mid-size Sedan"
     },
-    "pros": [
-      "Volvo CMA platform sedan",
-      "18.1 km/l with mild hybrid",
-      "Bose 9-speaker on Elite",
-      "ADAS Level 2",
-      "197hp — most powerful at price"
-    ],
-    "cons": [
-      "Sedan low clearance for Nepal",
-      "FWD only",
-      "Mild hybrid — not full HEV savings",
-      "Niche positioning in Nepal"
-    ],
-    "highlights": [
-      "Volvo CMA Platform",
-      "197hp Mild Hybrid",
-      "18.1 km/l",
-      "Bose Audio"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/geely/preface/exterior/geely-preface-exterior-rear-white-bg.jpg"
   },
   {
-    "id": 1105,
+    "id": 73,
     "slug": "geely-ex5-2025",
     "brand": "Geely",
+    "brandSlug": "geely",
     "model": "EX5",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Compact Electric SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Geely's newest compact EV SUV with 450km range for Nepal",
     "rating": 4.1,
     "reviews": 47,
@@ -12355,6 +12167,20 @@ window.CARS_DB = [
     "baseEMI": 56000,
     "overview": "The Geely EX5 is a purpose-built compact electric SUV on Geely's GEA electric platform, with a 65kWh battery delivering 450km CLTC range, 800V fast charging architecture, and ADAS Level 2. One of the most technically advanced compact EVs available in Nepal.",
     "images": [
+      "/assets/images/car_images/geely/ex5/front.jpg",
+      "/assets/images/car_images/geely/ex5/rear-3q.webp",
+      "/assets/images/car_images/geely/ex5/rear-tailgate-open.jpg",
+      "/assets/images/car_images/geely/ex5/interior.webp",
+      "/assets/images/car_images/geely/ex5/interior-seats.webp",
+      "/assets/images/car_images/geely/ex5/feature-sunroof.webp",
+      "/assets/images/car_images/geely/ex5/feature-wheels.jpg",
+      "/assets/images/car_images/geely/ex5/feature-headlights.jpg",
+      "/assets/images/car_images/geely/ex5/feature-taillights.webp",
+      "/assets/images/car_images/geely/ex5/colors/arctic-white.jpg",
+      "/assets/images/car_images/geely/ex5/colors/shadow-black.jpg",
+      "/assets/images/car_images/geely/ex5/colors/turquoise-green.jpg",
+      "/assets/images/car_images/geely/ex5/colors/volcanic-grey.jpg",
+      "/assets/images/car_images/geely/ex5/colors/moonlit-silver.webp",
       "/assets/images/car_images/geely/ex5/exterior/Geely-EX5-1.jpeg"
     ],
     "colors": [
@@ -12396,7 +12222,9 @@ window.CARS_DB = [
           "power": "201 hp",
           "torque": "320 Nm",
           "efficiency": "6.9 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "transmission": "Single Speed Reducer",
+          "Power": "201 hp",
+          "Torque": "320 Nm"
         }
       },
       {
@@ -12419,58 +12247,63 @@ window.CARS_DB = [
           "power": "218 hp",
           "torque": "340 Nm",
           "efficiency": "6.9 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "transmission": "Single Speed Reducer",
+          "Power": "218 hp",
+          "Torque": "340 Nm"
         }
       }
     ],
     "specs": {
-      "Battery": "52–65 kWh",
-      "Range": "360–450 km (CLTC)",
-      "Power": "201–218 hp",
-      "Torque": "320–340 Nm",
-      "Charging": "800V / 100 kW DC Fast Charge",
-      "Charge Time": "25 min (10–80%)",
-      "Transmission": "Single Speed",
-      "Drive": "RWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor (FWD)",
+      "Max Motor Power": "160 kW (218 PS)",
+      "Max Motor Torque": "320 Nm",
+      "Acceleration 0-100 km/h": "6.9 sec",
+      "Top Speed (km/h)": "175",
+      "Battery Type": "Aegis Short Blade LFP",
+      "Battery Capacity (kWh)": "60.22",
+      "Certified Range (km)": "425 (Pro) / 430 (Max), WLTP",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "508",
+      "Overall Length (mm)": "4,615",
+      "Overall Width (mm)": "1,901",
+      "Overall Height (mm)": "1,670",
+      "Wheelbase (mm)": "2,750",
+      "Ground Clearance (mm)": "180",
+      "Total Airbag Count": "6",
+      "Battery Warranty": "8 Years / 160,000 km",
+      "Variant Names": "Pro (Rs. 57.99L), Max (Rs. 67.99L)",
+      "Distributor": "LRR Motors Ltd. (Official Geely EX5 Nepal Distributor) — Geely's only confirmed officially-distributed model in Nepal",
+      "Power": "160 kW (218 PS)",
+      "Torque": "320 Nm",
+      "Boot Space": "508",
       "Seating": "5",
-      "Boot Space": "425 L + frunk",
-      "Length": "4,615 mm",
-      "Width": "1,901 mm",
-      "Height": "1,648 mm",
-      "Wheelbase": "2,750 mm",
-      "Ground Clearance": "180 mm",
-      "Airbags": "6"
+      "Fuel Type": "Electric",
+      "Body Type": "Compact Electric SUV",
+      "Ground Clearance": "180",
+      "Warranty": "8 Years / 160,000 km"
     },
-    "pros": [
-      "800V charging on premium",
-      "450km range",
-      "GEA EV platform purpose-built",
-      "ADAS Level 2",
-      "Strong power output"
-    ],
-    "cons": [
-      "RWD only",
-      "Brand new model — unproven reliability",
-      "CLTC range overstated",
-      "800V charging needs compatible charger"
-    ],
-    "highlights": [
-      "450km Range",
-      "800V Fast Charge",
-      "ADAS Level 2",
-      "GEA EV Platform"
-    ],
-    "thumb": "/assets/images/car_images/geely/ex5/exterior/Geely-EX5-1.jpeg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/geely/ex5/front.jpg"
   },
   {
-    "id": 1201,
+    "id": 74,
     "slug": "maxus-t60-2025",
     "brand": "Maxus",
+    "brandSlug": "maxus",
     "model": "T60",
     "year": 2026,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "Pickup Truck",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "SAIC's double-cab pickup with 1T payload and 4WD for Nepal's workhorse buyers",
     "rating": 4,
     "reviews": 534,
@@ -12524,7 +12357,9 @@ window.CARS_DB = [
           "power": "150 hp @ 3,600 rpm",
           "torque": "360 Nm",
           "efficiency": "14.8 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "150 hp @ 3,600 rpm",
+          "Torque": "360 Nm"
         }
       },
       {
@@ -12546,7 +12381,9 @@ window.CARS_DB = [
           "power": "150 hp @ 3,600 rpm",
           "torque": "360 Nm",
           "efficiency": "14.2 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "150 hp @ 3,600 rpm",
+          "Torque": "360 Nm"
         }
       },
       {
@@ -12569,67 +12406,63 @@ window.CARS_DB = [
           "power": "150 hp @ 3,600 rpm",
           "torque": "360 Nm",
           "efficiency": "13.8 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "150 hp @ 3,600 rpm",
+          "Torque": "360 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L Diesel Turbo",
-      "Displacement": "1,997 cc",
-      "Power": "150 hp @ 3,600 rpm",
-      "Torque": "360 Nm",
-      "Efficiency": "13.8–14.8 km/l",
-      "Fuel Tank": "76 L",
-      "Transmission": "6MT / 6AT",
-      "Drive": "2WD / 4WD",
+      "Engine Type": "2.0L Turbo Diesel",
+      "Displacement (cc)": "1,996",
+      "Max Engine Power": "163 PS",
+      "Max Engine Torque": "375–480 Nm",
+      "Transmission Type": "MT / AT",
+      "Drive Type": "4x2 / 4x4",
+      "Seating Capacity": "5",
+      "Body Type": "Pickup Truck",
+      "Distributor": "Paramount Motors Pvt. Ltd. (Official Maxus Nepal Distributor)",
+      "Note": "2023 launch pricing found (~Rs. 77.99L) may be outdated for 2026 — reconfirm current price with Paramount Motors.",
+      "Power": "163 PS",
+      "Torque": "375–480 Nm",
+      "Transmission": "MT / AT",
       "Seating": "5",
-      "Payload": "1,000 kg",
-      "Tow Rating": "2,500 kg",
-      "Bed Length": "1,520 mm",
-      "Length": "5,330 mm",
-      "Width": "1,900 mm",
-      "Height": "1,810 mm",
-      "Wheelbase": "3,150 mm",
-      "Ground Clearance": "218 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Diesel"
     },
-    "pros": [
-      "1T payload for commercial use",
-      "218mm ground clearance",
-      "76L large fuel tank",
-      "Rear diff lock on 4WD",
-      "Much cheaper than Hilux"
-    ],
-    "cons": [
-      "Only 2 airbags on base",
-      "Pickup not for city use",
-      "Maxus service centres growing",
-      "Resale below Hilux/Ranger"
-    ],
-    "highlights": [
-      "4WD + Low Range",
-      "1T Payload",
-      "218mm Clearance",
-      "Hilux Alternative"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/maxus/t60/exterior/maxus-t60-exterior-front-white-bg.jpg"
   },
   {
-    "id": 1202,
+    "id": 75,
     "slug": "maxus-d60-2025",
     "brand": "Maxus",
+    "brandSlug": "maxus",
     "model": "D60",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Mid-size SUV",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "SAIC's mid-size SUV with 190hp turbo and panoramic sunroof under Rs. 65L",
     "rating": 3.9,
     "reviews": 214,
     "expertScore": 7.3,
     "baseEMI": 50000,
     "overview": "The Maxus D60 is SAIC's mid-size SUV offering in Nepal, featuring a 1.5T or 2.0T petrol engine, panoramic sunroof, 10.25\" touchscreen, 6 airbags, and a spacious 5-seat interior — all at a price significantly below comparable Korean and Japanese rivals.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/maxus/d60/exterior/ext-1-cd8596f85d.jpg",
+      "/assets/images/car_images/maxus/d60/exterior/ext-2-f0eb28b51d.jpg",
+      "/assets/images/car_images/maxus/d60/exterior/ext-3-150004503d.jpg",
+      "/assets/images/car_images/maxus/d60/interior/int-1-a23d484ba6.jpg",
+      "/assets/images/car_images/maxus/d60/interior/int-2-d960dd0710.jpg"
+    ],
     "colors": [
       {
         "name": "Pearl White",
@@ -12672,7 +12505,9 @@ window.CARS_DB = [
           "power": "143 hp @ 5,500 rpm",
           "torque": "220 Nm",
           "efficiency": "15.6 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "143 hp @ 5,500 rpm",
+          "Torque": "220 Nm"
         }
       },
       {
@@ -12695,7 +12530,9 @@ window.CARS_DB = [
           "power": "190 hp @ 5,500 rpm",
           "torque": "300 Nm",
           "efficiency": "14.8 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "190 hp @ 5,500 rpm",
+          "Torque": "300 Nm"
         }
       },
       {
@@ -12716,57 +12553,43 @@ window.CARS_DB = [
           "power": "190 hp @ 5,500 rpm",
           "torque": "300 Nm",
           "efficiency": "14.1 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "190 hp @ 5,500 rpm",
+          "Torque": "300 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5T / 2.0T Petrol Turbo",
-      "Displacement": "1,497–1,997 cc",
-      "Power": "143–190 hp",
-      "Torque": "220–300 Nm",
-      "Efficiency": "14.1–15.6 km/l",
-      "Fuel Tank": "55 L",
-      "Transmission": "7-Speed DCT",
-      "Drive": "FWD / AWD",
+      "Engine Type": "2.0L Turbo Diesel/Petrol (global spec)",
+      "Drive Type": "FWD / AWD",
+      "Seating Capacity": "5",
+      "Body Type": "Mid-size Crossover SUV",
+      "Distributor": "Paramount Motors Pvt. Ltd. (Official Maxus Nepal Distributor)",
+      "Note": "Current 2026 Nepal pricing not independently confirmed in this research pass — verify with Paramount Motors.",
       "Seating": "5",
-      "Boot Space": "510 L",
-      "Length": "4,710 mm",
-      "Width": "1,876 mm",
-      "Height": "1,690 mm",
-      "Wheelbase": "2,800 mm",
-      "Ground Clearance": "195 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "AWD available on premium",
-      "510L boot space",
-      "190hp 2.0T on Luxury+",
-      "Panoramic sunroof standard",
-      "ADAS Level 2 on AWD"
-    ],
-    "cons": [
-      "Maxus brand very new in Nepal",
-      "Service centres limited",
-      "Resale uncertain",
-      "7DCT may hesitate in city"
-    ],
-    "highlights": [
-      "510L Boot",
-      "AWD Available",
-      "190hp 2.0T",
-      "Panoramic Sunroof"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maxus/d60/exterior/ext-1-cd8596f85d.jpg"
   },
   {
-    "id": 1203,
+    "id": 76,
     "slug": "maxus-euniq-6-2025",
     "brand": "Maxus",
+    "brandSlug": "maxus",
     "model": "Euniq 6",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Electric MPV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's only electric MPV with 520km range for eco-conscious families",
     "rating": 4,
     "reviews": 67,
@@ -12815,7 +12638,9 @@ window.CARS_DB = [
           "power": "177 hp",
           "torque": "310 Nm",
           "efficiency": "6.0 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "transmission": "Single Speed Reducer",
+          "Power": "177 hp",
+          "Torque": "310 Nm"
         }
       },
       {
@@ -12839,58 +12664,43 @@ window.CARS_DB = [
           "power": "201 hp",
           "torque": "350 Nm",
           "efficiency": "5.8 km/kWh",
-          "transmission": "Single Speed Reducer"
+          "transmission": "Single Speed Reducer",
+          "Power": "201 hp",
+          "Torque": "350 Nm"
         }
       }
     ],
     "specs": {
-      "Battery": "70–90 kWh",
-      "Range": "420–520 km (CLTC)",
-      "Power": "177–201 hp",
-      "Torque": "310–350 Nm",
-      "Charging": "90 kW DC Fast Charge",
-      "Charge Time": "45 min (10–80%)",
-      "Transmission": "Single Speed",
-      "Drive": "FWD",
-      "Seating": "6",
-      "Boot Space": "480 L (with 3rd row folded)",
-      "Length": "4,890 mm",
-      "Width": "1,880 mm",
-      "Height": "1,740 mm",
-      "Wheelbase": "3,000 mm",
-      "Ground Clearance": "175 mm",
-      "Airbags": "6"
+      "Motor Type": "Permanent Magnet Synchronous Motor (Euniq 6 is Maxus's electric/PHEV variant of the D60)",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Body Type": "Electric/PHEV Crossover SUV",
+      "Distributor": "Paramount Motors Pvt. Ltd. (Official Maxus Nepal Distributor)",
+      "Note": "Current 2026 Nepal pricing not independently confirmed in this research pass — verify with Paramount Motors.",
+      "Seating": "5",
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Nepal's only electric MPV",
-      "520km range on premium",
-      "Captain chairs in row 2",
-      "3,000mm wheelbase — very spacious",
-      "ADAS Level 2"
-    ],
-    "cons": [
-      "Low ground clearance for Nepal roads",
-      "FWD only",
-      "Charging infra outside KTM limited",
-      "SAIC/Maxus EV service unproven"
-    ],
-    "highlights": [
-      "Nepal's Only EV MPV",
-      "520km Range",
-      "6-Seat Captain Chairs",
-      "ADAS Level 2"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/maxus/euniq-6/interior/maxus-euniq-6-interior-seats-rear.jpg"
   },
   {
-    "id": 701,
+    "id": 77,
     "slug": "audi-q3-2025",
     "brand": "Audi",
+    "brandSlug": "audi",
     "model": "Q3",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact Luxury SUV",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Entry-luxury German SUV with quattro AWD for Kathmandu and beyond",
     "rating": 4.1,
     "reviews": 312,
@@ -12941,7 +12751,9 @@ window.CARS_DB = [
           "power": "150 hp @ 5,000 rpm",
           "torque": "250 Nm",
           "efficiency": "15.0 km/l",
-          "transmission": "7-Speed S-Tronic"
+          "transmission": "7-Speed S-Tronic",
+          "Power": "150 hp @ 5,000 rpm",
+          "Torque": "250 Nm"
         }
       },
       {
@@ -12963,57 +12775,65 @@ window.CARS_DB = [
           "power": "190 hp @ 4,200 rpm",
           "torque": "320 Nm",
           "efficiency": "13.5 km/l",
-          "transmission": "7-Speed S-Tronic"
+          "transmission": "7-Speed S-Tronic",
+          "Power": "190 hp @ 4,200 rpm",
+          "Torque": "320 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L TFSI Turbo Petrol",
-      "Displacement": "1,984 cc",
+      "Engine Type": "2.0L TFSI Turbo Petrol",
+      "Displacement (cc)": "1,984",
+      "Max Engine Power": "150–190 hp",
+      "Max Engine Torque": "250–320 Nm",
+      "Fuel Efficiency": "13.5–15.0 km/l",
+      "Fuel Tank Capacity (L)": "60",
+      "Transmission Type": "7-Speed S-Tronic DCT",
+      "Drive Type": "FWD (35 TFSI) / quattro AWD (40 TFSI)",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "460",
+      "Overall Length (mm)": "4,484",
+      "Overall Width (mm)": "1,856",
+      "Overall Height (mm)": "1,585",
+      "Wheelbase (mm)": "2,680",
+      "Ground Clearance (mm)": "175",
+      "Total Airbag Count": "2 (35 TFSI) / 6 (40 TFSI quattro)",
+      "Touchscreen Display": "8.8\" MMI",
+      "Digital Instrument Cluster": "Audi Virtual Cockpit (40 TFSI)",
+      "Sunroof Type": "Panoramic (40 TFSI)",
+      "AC Zones": "Dual-Zone Auto",
+      "Wheel Size (inches)": "17",
+      "Distributor": "No single official Audi ICE distributor in Nepal — pricing is grey/parallel-import and varies between showrooms, unlike Audi's official EV import via Kaeros International",
       "Power": "150–190 hp",
       "Torque": "250–320 Nm",
-      "Efficiency": "13.5–15.0 km/l",
-      "Fuel Tank": "60 L",
       "Transmission": "7-Speed S-Tronic DCT",
-      "Drive": "FWD / quattro AWD",
+      "Boot Space": "460",
       "Seating": "5",
-      "Boot Space": "460 L",
-      "Length": "4,484 mm",
-      "Width": "1,856 mm",
-      "Height": "1,585 mm",
-      "Wheelbase": "2,680 mm",
-      "Ground Clearance": "175 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Petrol",
+      "Body Type": "Compact Luxury SUV",
+      "Ground Clearance": "175"
     },
-    "pros": [
-      "Entry to Audi luxury at relatively lower cost",
-      "Audi Virtual Cockpit standard on higher trim",
-      "Compact size suits Kathmandu streets",
-      "Available with quattro AWD"
-    ],
-    "cons": [
-      "High import duty inflates price",
-      "No diesel option in Nepal",
-      "Limited after-sales network",
-      "Smaller than rivals at this price"
-    ],
-    "highlights": [
-      "Compact Luxury SUV",
-      "quattro AWD",
-      "Audi Virtual Cockpit",
-      "German Engineering"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/audi/q3/exterior/audi-q3-exterior-front-white-bg.jpg"
   },
   {
-    "id": 702,
+    "id": 78,
     "slug": "audi-q4-etron-2025",
     "brand": "Audi",
+    "brandSlug": "audi",
     "model": "Q4 35 e-tron",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Compact Electric SUV",
     "badge": "electric",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Audi's most affordable EV — 349 km range, German luxury, zero emissions",
     "rating": 4.3,
     "reviews": 87,
@@ -13062,7 +12882,9 @@ window.CARS_DB = [
           "torque": "310 Nm",
           "range": "349 km",
           "efficiency": "N/A",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "170 PS",
+          "Torque": "310 Nm"
         }
       },
       {
@@ -13083,59 +12905,65 @@ window.CARS_DB = [
           "torque": "310 Nm",
           "range": "349 km",
           "efficiency": "N/A",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "170 PS",
+          "Torque": "310 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Rear Permanently Excited Synchronous Motor",
+      "Motor Type": "Permanent Excited Synchronous Motor (rear-mounted)",
+      "Max Motor Power": "125 kW (170 PS)",
+      "Max Motor Torque": "310 Nm",
+      "Drive Type": "RWD",
+      "Top Speed (km/h)": "160",
+      "Acceleration 0-100 km/h": "8.5 sec",
+      "Battery Type": "Lithium-ion",
+      "Battery Capacity (kWh)": "55",
+      "Certified Range (km)": "349 (WLTP)",
+      "AC Charging Max Rate (kW)": "11",
+      "DC Fast Charging Max Rate (kW)": "100",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "520",
+      "Overall Length (mm)": "4,588",
+      "Overall Width (mm)": "1,865",
+      "Overall Height (mm)": "1,632",
+      "Wheelbase (mm)": "2,764",
+      "Ground Clearance (mm)": "180",
+      "Total Airbag Count": "6",
+      "Touchscreen Display": "10.1\" MMI",
+      "Digital Instrument Cluster": "Audi Virtual Cockpit",
+      "Body Style Options": "SUV (35 e-tron) / Sportback coupe roofline (Sportback variant)",
+      "Importer": "Kaeros International (Official Audi EV Nepal Distributor)",
       "Power": "125 kW (170 PS)",
       "Torque": "310 Nm",
-      "Battery": "55 kWh Lithium-ion",
-      "Range (WLTP)": "349 km",
-      "Charging (AC)": "11 kW onboard",
-      "Charging (DC)": "100 kW fast charge",
-      "0–100 km/h": "8.5 sec",
-      "Top Speed": "160 km/h",
-      "Drive": "RWD",
+      "Boot Space": "520",
       "Seating": "5",
-      "Boot Space": "520 L",
-      "Length": "4,588 mm",
-      "Width": "1,865 mm",
-      "Height": "1,632 mm",
-      "Wheelbase": "2,764 mm",
-      "Ground Clearance": "180 mm",
-      "Airbags": "6"
+      "Fuel Type": "Electric",
+      "Body Type": "Compact Electric SUV",
+      "Ground Clearance": "180"
     },
-    "pros": [
-      "Zero emission luxury EV in Nepal",
-      "349 km real-world range suitable for Nepal",
-      "Premium Audi interior quality",
-      "Exclusive Kaeros International dealership"
-    ],
-    "cons": [
-      "Very high price for a compact SUV",
-      "Charging infrastructure limited in Nepal",
-      "RWD only — no AWD in Nepal spec",
-      "Limited service centres outside Kathmandu"
-    ],
-    "highlights": [
-      "Electric Only",
-      "349 km Range",
-      "Audi Virtual Cockpit",
-      "Zero Emissions"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/audi/q4-e-tron/exterior/audi-q4-e-tron-exterior-rear-white-bg.jpg"
   },
   {
-    "id": 703,
+    "id": 79,
     "slug": "audi-q5-2025",
     "brand": "Audi",
+    "brandSlug": "audi",
     "model": "Q5",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Mid-size Luxury SUV",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "The benchmark mid-size luxury SUV with quattro performance",
     "rating": 4.2,
     "reviews": 198,
@@ -13185,7 +13013,9 @@ window.CARS_DB = [
           "power": "204 hp @ 4,500 rpm",
           "torque": "320 Nm",
           "efficiency": "13.0 km/l",
-          "transmission": "7-Speed S-Tronic"
+          "transmission": "7-Speed S-Tronic",
+          "Power": "204 hp @ 4,500 rpm",
+          "Torque": "320 Nm"
         }
       },
       {
@@ -13206,57 +13036,65 @@ window.CARS_DB = [
           "power": "245 hp @ 5,000 rpm",
           "torque": "370 Nm",
           "efficiency": "12.5 km/l",
-          "transmission": "7-Speed S-Tronic"
+          "transmission": "7-Speed S-Tronic",
+          "Power": "245 hp @ 5,000 rpm",
+          "Torque": "370 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L TFSI Turbo Petrol",
-      "Displacement": "1,984 cc",
+      "Engine Type": "2.0L TFSI Turbo Petrol",
+      "Displacement (cc)": "1,984",
+      "Max Engine Power": "204–245 hp",
+      "Max Engine Torque": "320–370 Nm",
+      "Fuel Efficiency": "12.5–13.0 km/l",
+      "Fuel Tank Capacity (L)": "65",
+      "Transmission Type": "7-Speed S-Tronic",
+      "Drive Type": "quattro AWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "520",
+      "Overall Length (mm)": "4,663",
+      "Overall Width (mm)": "1,893",
+      "Overall Height (mm)": "1,659",
+      "Wheelbase (mm)": "2,820",
+      "Ground Clearance (mm)": "200",
+      "Total Airbag Count": "6",
+      "Digital Instrument Cluster": "7\" Audi Virtual Cockpit",
+      "Touchscreen Display": "10.1\" MMI",
+      "Headlamp Type": "LED (Matrix LED on S-Line)",
+      "Sunroof Type": "Panoramic",
+      "ADAS Suite": "Adaptive Cruise Control, 360° Camera (S-Line)",
+      "Distributor": "No single official Audi ICE distributor in Nepal — pricing is grey/parallel-import and varies between showrooms, unlike Audi's official EV import via Kaeros International",
       "Power": "204–245 hp",
       "Torque": "320–370 Nm",
-      "Efficiency": "12.5–13.0 km/l",
-      "Fuel Tank": "65 L",
       "Transmission": "7-Speed S-Tronic",
-      "Drive": "quattro AWD",
+      "Boot Space": "520",
       "Seating": "5",
-      "Boot Space": "520 L",
-      "Length": "4,663 mm",
-      "Width": "1,893 mm",
-      "Height": "1,659 mm",
-      "Wheelbase": "2,820 mm",
-      "Ground Clearance": "200 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol",
+      "Body Type": "Mid-size Luxury SUV",
+      "Ground Clearance": "200"
     },
-    "pros": [
-      "quattro AWD enhances Nepal hill-driving confidence",
-      "Spacious 520 L boot",
-      "Strong residual value",
-      "Balanced performance and luxury"
-    ],
-    "cons": [
-      "Expensive parts and maintenance in Nepal",
-      "Petrol-only in Nepal spec",
-      "Fewer service centres outside Kathmandu",
-      "Heavy import taxes push price over Rs. 1 Crore"
-    ],
-    "highlights": [
-      "quattro AWD",
-      "520 L Boot",
-      "Panoramic Sunroof",
-      "Matrix LED"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/audi/q5/exterior/2021472c-5087-43e0-9155-6cc6221539ce.avif"
   },
   {
-    "id": 704,
+    "id": 80,
     "slug": "audi-q7-2025",
     "brand": "Audi",
+    "brandSlug": "audi",
     "model": "Q7",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Full-size Luxury SUV",
     "badge": "flagship",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's entry flagship Audi — 7-seat quattro luxury SUV",
     "rating": 4.4,
     "reviews": 143,
@@ -13304,7 +13142,9 @@ window.CARS_DB = [
           "power": "231 hp @ 3,250 rpm",
           "torque": "500 Nm",
           "efficiency": "14.0 km/l",
-          "transmission": "8-Speed Tiptronic"
+          "transmission": "8-Speed Tiptronic",
+          "Power": "231 hp @ 3,250 rpm",
+          "Torque": "500 Nm"
         }
       },
       {
@@ -13326,57 +13166,65 @@ window.CARS_DB = [
           "power": "340 hp @ 5,500 rpm",
           "torque": "500 Nm",
           "efficiency": "11.5 km/l",
-          "transmission": "8-Speed Tiptronic"
+          "transmission": "8-Speed Tiptronic",
+          "Power": "340 hp @ 5,500 rpm",
+          "Torque": "500 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "3.0L V6 Diesel / 3.0L V6 TFSI Petrol",
-      "Displacement": "2,967 cc / 2,994 cc",
+      "Engine Type": "3.0L V6 Diesel (45 TDI) / 3.0L V6 TFSI Petrol (55 TFSI)",
+      "Displacement (cc)": "2,967 / 2,994",
+      "Max Engine Power": "231–340 hp",
+      "Max Engine Torque": "500 Nm",
+      "Fuel Efficiency": "11.5–14.0 km/l",
+      "Fuel Tank Capacity (L)": "85",
+      "Transmission Type": "8-Speed Tiptronic",
+      "Drive Type": "quattro AWD",
+      "Seating Capacity": "7",
+      "Boot Space (litres)": "295 (all seats up)",
+      "Overall Length (mm)": "5,063",
+      "Overall Width (mm)": "1,970",
+      "Overall Height (mm)": "1,741",
+      "Wheelbase (mm)": "2,994",
+      "Ground Clearance (mm)": "198 (variable, air suspension)",
+      "Total Airbag Count": "6",
+      "Suspension Type": "Adaptive Air Suspension",
+      "Headlamp Type": "LED (Matrix LED on 55 TFSI)",
+      "Digital Instrument Cluster": "Audi Virtual Cockpit Plus (55 TFSI)",
+      "Head-Up Display": "Yes (55 TFSI)",
+      "AC Zones": "4-Zone (55 TFSI)",
+      "Distributor": "No single official Audi ICE distributor in Nepal — pricing is grey/parallel-import and varies between showrooms, unlike Audi's official EV import via Kaeros International",
       "Power": "231–340 hp",
       "Torque": "500 Nm",
-      "Efficiency": "11.5–14.0 km/l",
-      "Fuel Tank": "85 L",
       "Transmission": "8-Speed Tiptronic",
-      "Drive": "quattro AWD",
+      "Boot Space": "295 (all seats up)",
       "Seating": "7",
-      "Boot Space": "295 L (all seats up)",
-      "Length": "5,063 mm",
-      "Width": "1,970 mm",
-      "Height": "1,741 mm",
-      "Wheelbase": "2,994 mm",
-      "Ground Clearance": "198 mm (air suspension variable)",
-      "Airbags": "6"
+      "Fuel Type": "Petrol",
+      "Body Type": "Full-size Luxury SUV",
+      "Ground Clearance": "198 (variable, air suspension)"
     },
-    "pros": [
-      "7-seat flagship luxury in Nepal",
-      "Air suspension suits rough Nepali roads",
-      "Diesel variant available at lower cost",
-      "Excellent brand prestige"
-    ],
-    "cons": [
-      "Very expensive on petrol variant",
-      "Large size challenging in narrow Kathmandu streets",
-      "High maintenance costs",
-      "Diesel Nepal grey-import prices vary widely"
-    ],
-    "highlights": [
-      "7 Seats",
-      "Air Suspension",
-      "quattro AWD",
-      "V6 Power"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/audi/q7/exterior/audi-q7-exterior-side-left-white-bg.jpg"
   },
   {
-    "id": 705,
+    "id": 81,
     "slug": "audi-a4-2025",
     "brand": "Audi",
+    "brandSlug": "audi",
     "model": "A4",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Executive Sedan",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Audi's iconic executive sedan — quattro precision meets Nepali roads",
     "rating": 4,
     "reviews": 156,
@@ -13425,7 +13273,9 @@ window.CARS_DB = [
           "power": "190 hp @ 4,200 rpm",
           "torque": "320 Nm",
           "efficiency": "14.5 km/l",
-          "transmission": "7-Speed S-Tronic"
+          "transmission": "7-Speed S-Tronic",
+          "Power": "190 hp @ 4,200 rpm",
+          "Torque": "320 Nm"
         }
       },
       {
@@ -13447,57 +13297,65 @@ window.CARS_DB = [
           "power": "190 hp @ 4,200 rpm",
           "torque": "320 Nm",
           "efficiency": "13.8 km/l",
-          "transmission": "7-Speed S-Tronic"
+          "transmission": "7-Speed S-Tronic",
+          "Power": "190 hp @ 4,200 rpm",
+          "Torque": "320 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L TFSI Turbo Petrol",
-      "Displacement": "1,984 cc",
+      "Engine Type": "2.0L TFSI Turbo Petrol",
+      "Displacement (cc)": "1,984",
+      "Max Engine Power": "190 hp @ 4,200 rpm",
+      "Max Engine Torque": "320 Nm",
+      "Fuel Efficiency": "13.8–14.5 km/l",
+      "Fuel Tank Capacity (L)": "54",
+      "Transmission Type": "7-Speed S-Tronic",
+      "Drive Type": "FWD / quattro AWD (Premium Plus)",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "460",
+      "Overall Length (mm)": "4,762",
+      "Overall Width (mm)": "1,847",
+      "Overall Height (mm)": "1,427",
+      "Wheelbase (mm)": "2,820",
+      "Ground Clearance (mm)": "140",
+      "Total Airbag Count": "6",
+      "Touchscreen Display": "10.1\" MMI",
+      "Digital Instrument Cluster": "Audi Virtual Cockpit",
+      "Headlamp Type": "LED (Matrix LED on quattro Premium Plus)",
+      "Head-Up Display": "Yes (quattro Premium Plus)",
+      "ADAS Suite": "Adaptive Cruise Control (quattro Premium Plus)",
+      "Distributor": "No single official Audi ICE distributor in Nepal — pricing is grey/parallel-import and varies between showrooms, unlike Audi's official EV import via Kaeros International",
       "Power": "190 hp @ 4,200 rpm",
       "Torque": "320 Nm",
-      "Efficiency": "13.8–14.5 km/l",
-      "Fuel Tank": "54 L",
       "Transmission": "7-Speed S-Tronic",
-      "Drive": "FWD / quattro AWD",
+      "Boot Space": "460",
       "Seating": "5",
-      "Boot Space": "460 L",
-      "Length": "4,762 mm",
-      "Width": "1,847 mm",
-      "Height": "1,427 mm",
-      "Wheelbase": "2,820 mm",
-      "Ground Clearance": "140 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol",
+      "Body Type": "Executive Sedan",
+      "Ground Clearance": "140"
     },
-    "pros": [
-      "Sporty sedan handling",
-      "Available with quattro AWD",
-      "Excellent build quality",
-      "Strong residual value in Nepal"
-    ],
-    "cons": [
-      "Low ground clearance for rural Nepal roads",
-      "Very expensive after duties",
-      "Maintenance costs are high",
-      "Sedan body less practical than SUV for Nepal"
-    ],
-    "highlights": [
-      "Executive Sedan",
-      "190 hp TFSI",
-      "Virtual Cockpit",
-      "quattro AWD"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/audi/a4/exterior/A213085_web_480.jpg"
   },
   {
-    "id": 801,
+    "id": 82,
     "slug": "bmw-x1-2025",
     "brand": "BMW",
+    "brandSlug": "bmw",
     "model": "X1",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact Luxury SAV",
     "badge": "entry-luxury",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Entry-level BMW SAV — the most accessible way into the BMW SUV family",
     "rating": 4.1,
     "reviews": 289,
@@ -13552,7 +13410,9 @@ window.CARS_DB = [
           "power": "140 hp @ 6,000 rpm",
           "torque": "220 Nm",
           "efficiency": "16 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "140 hp @ 6,000 rpm",
+          "Torque": "220 Nm"
         }
       },
       {
@@ -13574,57 +13434,63 @@ window.CARS_DB = [
           "power": "192 hp @ 5,000 rpm",
           "torque": "280 Nm",
           "efficiency": "14.5 km/l",
-          "transmission": "7-Speed DCT"
+          "transmission": "7-Speed DCT",
+          "Power": "192 hp @ 5,000 rpm",
+          "Torque": "280 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L / 2.0L TwinPower Turbo Petrol",
-      "Displacement": "1,499 / 1,998 cc",
+      "Engine Type": "1.5L / 2.0L TwinPower Turbo Petrol",
+      "Displacement (cc)": "1,499 / 1,998",
+      "Max Engine Power": "140–192 hp",
+      "Max Engine Torque": "220–280 Nm",
+      "Fuel Efficiency": "14.5–16 km/l",
+      "Fuel Tank Capacity (L)": "54",
+      "Transmission Type": "7-Speed DCT",
+      "Drive Type": "sDrive FWD / xDrive AWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "505",
+      "Overall Length (mm)": "4,500",
+      "Overall Width (mm)": "1,845",
+      "Overall Height (mm)": "1,642",
+      "Wheelbase (mm)": "2,692",
+      "Ground Clearance (mm)": "183",
+      "Total Airbag Count": "2 (sDrive18i) / 8 (xDrive20i M Sport)",
+      "Touchscreen Display": "8.8\" iDrive",
+      "Sunroof Type": "Panoramic (M Sport)",
+      "Wheel Size (inches)": "17",
+      "Distributor": "Laxmi Premium Motors (Official BMW Nepal Distributor, Tinkune, Kathmandu)",
       "Power": "140–192 hp",
       "Torque": "220–280 Nm",
-      "Efficiency": "14.5–16 km/l",
-      "Fuel Tank": "54 L",
       "Transmission": "7-Speed DCT",
-      "Drive": "sDrive FWD / xDrive AWD",
+      "Boot Space": "505",
       "Seating": "5",
-      "Boot Space": "505 L",
-      "Length": "4,500 mm",
-      "Width": "1,845 mm",
-      "Height": "1,642 mm",
-      "Wheelbase": "2,692 mm",
-      "Ground Clearance": "183 mm",
-      "Airbags": "2–8"
+      "Fuel Type": "Petrol",
+      "Body Type": "Compact Luxury SAV",
+      "Ground Clearance": "183"
     },
-    "pros": [
-      "Most affordable BMW in Nepal",
-      "Compact yet practical for Kathmandu",
-      "Optional xDrive AWD",
-      "Strong brand prestige and resale value"
-    ],
-    "cons": [
-      "Base variant has only 2 airbags",
-      "Very expensive vs rivals at same price",
-      "Low production numbers in Nepal",
-      "Petrol-only in Nepal spec"
-    ],
-    "highlights": [
-      "Entry BMW",
-      "xDrive AWD",
-      "183 mm Clearance",
-      "iDrive System"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/bmw/x1/exterior/Group-25.jpg"
   },
   {
-    "id": 802,
+    "id": 83,
     "slug": "bmw-x3-2025",
     "brand": "BMW",
+    "brandSlug": "bmw",
     "model": "X3",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Mid-size Luxury SAV",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "The sweet spot of the BMW X range — performance, space, and prestige",
     "rating": 4.3,
     "reviews": 201,
@@ -13672,7 +13538,9 @@ window.CARS_DB = [
           "power": "190 hp @ 4,000 rpm",
           "torque": "400 Nm",
           "efficiency": "18.56 km/l",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "190 hp @ 4,000 rpm",
+          "Torque": "400 Nm"
         }
       },
       {
@@ -13694,57 +13562,64 @@ window.CARS_DB = [
           "power": "252 hp combined",
           "torque": "420 Nm",
           "efficiency": "N/A (PHEV)",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "252 hp combined",
+          "Torque": "420 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L TwinPower Turbo Diesel / PHEV",
-      "Displacement": "1,995 cc",
+      "Engine Type": "2.0L TwinPower Turbo Diesel / PHEV Petrol",
+      "Displacement (cc)": "1,995",
+      "Max Engine Power": "190–252 hp",
+      "Max Engine Torque": "400–420 Nm",
+      "Fuel Efficiency": "14.0–18.56 km/l",
+      "Fuel Tank Capacity (L)": "65 (diesel) / 46 (PHEV)",
+      "Transmission Type": "8-Speed Steptronic",
+      "Drive Type": "xDrive AWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "485",
+      "Overall Length (mm)": "4,734",
+      "Overall Width (mm)": "1,891",
+      "Overall Height (mm)": "1,676",
+      "Wheelbase (mm)": "2,864",
+      "Ground Clearance (mm)": "204",
+      "Total Airbag Count": "6",
+      "Touchscreen Display": "10.25\" iDrive",
+      "Sunroof Type": "Panoramic (M Sport PHEV)",
+      "Premium Audio": "Harman Kardon (M Sport PHEV)",
+      "ADAS Suite": "Adaptive Cruise Control (M Sport PHEV)",
+      "Distributor": "Laxmi Premium Motors (Official BMW Nepal Distributor, Tinkune, Kathmandu)",
       "Power": "190–252 hp",
       "Torque": "400–420 Nm",
-      "Efficiency": "14.0–18.56 km/l",
-      "Fuel Tank": "65 L (diesel) / 46 L (PHEV)",
       "Transmission": "8-Speed Steptronic",
-      "Drive": "xDrive AWD",
+      "Boot Space": "485",
       "Seating": "5",
-      "Boot Space": "485 L",
-      "Length": "4,734 mm",
-      "Width": "1,891 mm",
-      "Height": "1,676 mm",
-      "Wheelbase": "2,864 mm",
-      "Ground Clearance": "204 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol",
+      "Body Type": "Mid-size Luxury SAV",
+      "Ground Clearance": "204"
     },
-    "pros": [
-      "Best-selling BMW model in Nepal",
-      "High 204 mm ground clearance",
-      "Diesel variant excellent fuel efficiency",
-      "PHEV option lowers running costs"
-    ],
-    "cons": [
-      "Very expensive in Nepal",
-      "PHEV charging infrastructure limited",
-      "Large size in Kathmandu traffic",
-      "Spare parts can be costly"
-    ],
-    "highlights": [
-      "xDrive AWD",
-      "204 mm Clearance",
-      "PHEV Option",
-      "Premium Cabin"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/bmw/x3/interior/bmw-x3-interior-seats-front.jpg"
   },
   {
-    "id": 803,
+    "id": 84,
     "slug": "bmw-x5-2025",
     "brand": "BMW",
+    "brandSlug": "bmw",
     "model": "X5",
     "year": 2026,
     "type": "Hybrid",
+    "bodyType": "Unknown",
     "body": "Full-size Luxury SAV",
     "badge": "flagship",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "BMW's full-size flagship SAV — executive luxury meets serious performance",
     "rating": 4.5,
     "reviews": 134,
@@ -13794,7 +13669,9 @@ window.CARS_DB = [
           "power": "286 hp @ 5,000 rpm",
           "torque": "450 Nm",
           "efficiency": "13.5 km/l",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "286 hp @ 5,000 rpm",
+          "Torque": "450 Nm"
         }
       },
       {
@@ -13813,7 +13690,9 @@ window.CARS_DB = [
           "power": "340 hp @ 6,500 rpm",
           "torque": "450 Nm",
           "efficiency": "11.5 km/l",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "340 hp @ 6,500 rpm",
+          "Torque": "450 Nm"
         }
       },
       {
@@ -13834,57 +13713,66 @@ window.CARS_DB = [
           "power": "394 hp combined",
           "torque": "600 Nm",
           "efficiency": "N/A (PHEV)",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "394 hp combined",
+          "Torque": "600 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "3.0L TwinPower Turbo Diesel / Petrol / PHEV",
-      "Displacement": "2,998 cc",
+      "Engine Type": "3.0L TwinPower Turbo Diesel / Petrol / PHEV",
+      "Displacement (cc)": "2,998",
+      "Max Engine Power": "286–394 hp",
+      "Max Engine Torque": "450–600 Nm",
+      "Fuel Efficiency": "11–14 km/l",
+      "Fuel Tank Capacity (L)": "83",
+      "Transmission Type": "8-Speed Steptronic",
+      "Drive Type": "xDrive AWD",
+      "Seating Capacity": "5 (7 optional)",
+      "Boot Space (litres)": "500",
+      "Overall Length (mm)": "4,922",
+      "Overall Width (mm)": "2,004",
+      "Overall Height (mm)": "1,745",
+      "Wheelbase (mm)": "2,975",
+      "Ground Clearance (mm)": "214",
+      "Total Airbag Count": "6",
+      "Digital Instrument Cluster": "12.3\" iDrive 7",
+      "Sunroof Type": "Panoramic",
+      "Premium Audio": "Bowers & Wilkins (40i/50e)",
+      "Suspension Type": "Air Suspension (50e PHEV)",
+      "PHEV EV-only Range": "~50 km (xDrive50e)",
+      "Variant Names": "xDrive30d Sport, xDrive30d xLine, xDrive40i M Sport, xDrive50e M Sport (PHEV)",
+      "Distributor": "Laxmi Premium Motors (Official BMW Nepal Distributor, Tinkune, Kathmandu)",
       "Power": "286–394 hp",
       "Torque": "450–600 Nm",
-      "Efficiency": "11–14 km/l",
-      "Fuel Tank": "83 L",
       "Transmission": "8-Speed Steptronic",
-      "Drive": "xDrive AWD",
-      "Seating": "5 (optional 7)",
-      "Boot Space": "500 L",
-      "Length": "4,922 mm",
-      "Width": "2,004 mm",
-      "Height": "1,745 mm",
-      "Wheelbase": "2,975 mm",
-      "Ground Clearance": "214 mm",
-      "Airbags": "6"
+      "Boot Space": "500",
+      "Seating": "5 (7 optional)",
+      "Fuel Type": "Hybrid",
+      "Body Type": "Full-size Luxury SAV",
+      "Ground Clearance": "214"
     },
-    "pros": [
-      "Highest ground clearance of any BMW in Nepal (214 mm)",
-      "PHEV variant reduces running costs",
-      "Executive-class cabin quality",
-      "Optional 7-seat configuration"
-    ],
-    "cons": [
-      "Among the most expensive cars in Nepal",
-      "Fuel costs for petrol variant very high",
-      "Massive size limits urban maneuverability",
-      "Limited supply from Laxmi Premium Motors"
-    ],
-    "highlights": [
-      "214 mm Ground Clearance",
-      "PHEV Available",
-      "xDrive AWD",
-      "Executive Cabin"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/bmw/x5/exterior/2024-bmw-x5-m60i-130-6602d48f34705.avif"
   },
   {
-    "id": 804,
+    "id": 85,
     "slug": "bmw-3-series-2025",
     "brand": "BMW",
+    "brandSlug": "bmw",
     "model": "3 Series",
     "year": 2026,
     "type": "Petrol / Hybrid",
+    "bodyType": "Unknown",
     "body": "Executive Sedan",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "The Ultimate Driving Machine — BMW's sporty executive sedan in Nepal",
     "rating": 4.2,
     "reviews": 176,
@@ -13932,7 +13820,9 @@ window.CARS_DB = [
           "power": "190 hp @ 4,000 rpm",
           "torque": "400 Nm",
           "efficiency": "20 km/l",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "190 hp @ 4,000 rpm",
+          "Torque": "400 Nm"
         }
       },
       {
@@ -13954,57 +13844,64 @@ window.CARS_DB = [
           "power": "252 hp combined",
           "torque": "420 Nm",
           "efficiency": "N/A (PHEV)",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "252 hp combined",
+          "Torque": "420 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L TwinPower Diesel / PHEV Petrol",
-      "Displacement": "1,998 cc",
+      "Engine Type": "2.0L TwinPower Diesel / PHEV Petrol",
+      "Displacement (cc)": "1,998",
+      "Max Engine Power": "190–252 hp",
+      "Max Engine Torque": "400–420 Nm",
+      "Fuel Efficiency": "15–20 km/l",
+      "Fuel Tank Capacity (L)": "59",
+      "Transmission Type": "8-Speed Steptronic",
+      "Drive Type": "RWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "480",
+      "Overall Length (mm)": "4,709",
+      "Overall Width (mm)": "1,827",
+      "Overall Height (mm)": "1,435",
+      "Wheelbase (mm)": "2,851",
+      "Ground Clearance (mm)": "140",
+      "Total Airbag Count": "6",
+      "Touchscreen Display": "10.25\" iDrive",
+      "Premium Audio": "Harman Kardon (330e M Sport)",
+      "Head-Up Display": "Yes (330e M Sport)",
+      "Suspension Type": "Adaptive Suspension (330e M Sport)",
+      "Distributor": "Laxmi Premium Motors (Official BMW Nepal Distributor, Tinkune, Kathmandu)",
       "Power": "190–252 hp",
       "Torque": "400–420 Nm",
-      "Efficiency": "15–20 km/l",
-      "Fuel Tank": "59 L",
       "Transmission": "8-Speed Steptronic",
-      "Drive": "RWD",
+      "Boot Space": "480",
       "Seating": "5",
-      "Boot Space": "480 L",
-      "Length": "4,709 mm",
-      "Width": "1,827 mm",
-      "Height": "1,435 mm",
-      "Wheelbase": "2,851 mm",
-      "Ground Clearance": "140 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol / Hybrid",
+      "Body Type": "Executive Sedan",
+      "Ground Clearance": "140"
     },
-    "pros": [
-      "Best driving dynamics of any BMW in Nepal",
-      "PHEV reduces fuel cost",
-      "Diesel 320d is fuel efficient",
-      "Iconic BMW brand prestige"
-    ],
-    "cons": [
-      "Low 140 mm clearance limits use on rural Nepali roads",
-      "RWD limits traction in monsoon",
-      "Very high price for a sedan",
-      "Sedan body less versatile than SUV for Nepal"
-    ],
-    "highlights": [
-      "RWD Dynamics",
-      "PHEV Option",
-      "20 km/l Diesel",
-      "M Sport Pack"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/bmw/3-series/interior/bmw-3-series-interior-dashboard.jpg"
   },
   {
-    "id": 805,
+    "id": 86,
     "slug": "bmw-5-series-2025",
     "brand": "BMW",
+    "brandSlug": "bmw",
     "model": "5 Series",
     "year": 2026,
     "type": "Hybrid",
+    "bodyType": "Unknown",
     "body": "Business Sedan",
     "badge": "flagship",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "BMW's premium business sedan — executive comfort with PHEV efficiency",
     "rating": 4.4,
     "reviews": 98,
@@ -14053,7 +13950,9 @@ window.CARS_DB = [
           "power": "252 hp @ 5,200 rpm",
           "torque": "350 Nm",
           "efficiency": "14.0 km/l",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "252 hp @ 5,200 rpm",
+          "Torque": "350 Nm"
         }
       },
       {
@@ -14074,57 +13973,64 @@ window.CARS_DB = [
           "power": "252 hp combined",
           "torque": "420 Nm",
           "efficiency": "N/A (PHEV)",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "252 hp combined",
+          "Torque": "420 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L TwinPower Turbo / PHEV",
-      "Displacement": "1,998 cc",
+      "Engine Type": "2.0L TwinPower Turbo / PHEV",
+      "Displacement (cc)": "1,998",
+      "Max Engine Power": "252 hp",
+      "Max Engine Torque": "350–420 Nm",
+      "Fuel Efficiency": "12–14 km/l",
+      "Fuel Tank Capacity (L)": "59",
+      "Transmission Type": "8-Speed Steptronic",
+      "Drive Type": "RWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "410",
+      "Overall Length (mm)": "4,963",
+      "Overall Width (mm)": "1,868",
+      "Overall Height (mm)": "1,479",
+      "Wheelbase (mm)": "2,966",
+      "Ground Clearance (mm)": "140",
+      "Total Airbag Count": "6",
+      "Digital Instrument Cluster": "12.3\" iDrive",
+      "Sunroof Type": "Panoramic",
+      "Premium Audio": "Bowers & Wilkins (530e M Sport)",
+      "PHEV EV-only Range": "57 km (530e)",
+      "Distributor": "Laxmi Premium Motors (Official BMW Nepal Distributor, Tinkune, Kathmandu)",
       "Power": "252 hp",
       "Torque": "350–420 Nm",
-      "Efficiency": "12–14 km/l",
-      "Fuel Tank": "59 L",
       "Transmission": "8-Speed Steptronic",
-      "Drive": "RWD",
+      "Boot Space": "410",
       "Seating": "5",
-      "Boot Space": "410 L",
-      "Length": "4,963 mm",
-      "Width": "1,868 mm",
-      "Height": "1,479 mm",
-      "Wheelbase": "2,966 mm",
-      "Ground Clearance": "140 mm",
-      "Airbags": "6"
+      "Fuel Type": "Hybrid",
+      "Body Type": "Business Sedan",
+      "Ground Clearance": "140"
     },
-    "pros": [
-      "PHEV delivers 57 km EV-only range",
-      "Business-class interior comfort",
-      "Bowers & Wilkins audio available",
-      "Long wheelbase rear passenger space"
-    ],
-    "cons": [
-      "Low ground clearance",
-      "Very expensive in Nepal after duties",
-      "RWD limits monsoon traction",
-      "Limited charging infrastructure"
-    ],
-    "highlights": [
-      "PHEV 57 km EV Range",
-      "Business Class",
-      "Bowers & Wilkins",
-      "M Sport Pack"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/bmw/5-series/exterior/2024-bmw-530i-xdrive-125-65808a4f6c53c.avif"
   },
   {
-    "id": 806,
+    "id": 87,
     "slug": "bmw-ix3-2025",
     "brand": "BMW",
+    "brandSlug": "bmw",
     "model": "iX3",
     "year": 2026,
     "type": "Electric",
+    "bodyType": "Unknown",
     "body": "Mid-size Electric SAV",
     "badge": "electric",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's first premium BMW EV — 460 km range, M Sport electric SAV",
     "rating": 4.5,
     "reviews": 62,
@@ -14180,60 +14086,65 @@ window.CARS_DB = [
           "torque": "400 Nm",
           "range": "460 km",
           "efficiency": "N/A",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "286 PS (210 kW)",
+          "Torque": "400 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "BMW eDrive 210 kW Rear Motor",
-      "Power": "286 PS (210 kW)",
+      "Motor Type": "eDrive Permanent Magnet Synchronous (rear-mounted)",
+      "Max Motor Power": "210 kW (286 PS)",
+      "Max Motor Torque": "400 Nm",
+      "Drive Type": "RWD",
+      "Top Speed (km/h)": "180",
+      "Acceleration 0-100 km/h": "6.8 sec",
+      "Battery Type": "High-Voltage Lithium-ion",
+      "Battery Capacity (kWh)": "80",
+      "Certified Range (km)": "460 (WLTP)",
+      "AC Charging Max Rate (kW)": "11 (7.5 hr full charge)",
+      "DC Fast Charging Max Rate (kW)": "150 (0–80% in 34 min)",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "510 (1,560 folded)",
+      "Overall Length (mm)": "4,734",
+      "Overall Width (mm)": "1,891",
+      "Overall Height (mm)": "1,668",
+      "Wheelbase (mm)": "2,864",
+      "Ground Clearance (mm)": "190",
+      "Total Airbag Count": "6",
+      "Battery & Motor Warranty": "8 Years / 160,000 km",
+      "Digital Instrument Cluster": "10.25\" iDrive 7",
+      "Distributor": "Laxmi Premium Motors (Official BMW Nepal Distributor, Tinkune, Kathmandu)",
+      "Power": "210 kW (286 PS)",
       "Torque": "400 Nm",
-      "Battery": "80 kWh High-Voltage",
-      "Range (WLTP)": "460 km",
-      "Charging (AC)": "11 kW onboard (7.5 hr full)",
-      "Charging (DC)": "150 kW fast charge (0–80% in 34 min)",
-      "0–100 km/h": "6.8 sec",
-      "Top Speed": "180 km/h",
-      "Drive": "RWD",
+      "Boot Space": "510 (1,560 folded)",
       "Seating": "5",
-      "Boot Space": "510 L (1,560 L folded)",
-      "Length": "4,734 mm",
-      "Width": "1,891 mm",
-      "Height": "1,668 mm",
-      "Wheelbase": "2,864 mm",
-      "Ground Clearance": "190 mm",
-      "Airbags": "6",
-      "Battery Warranty": "8 Years / 160,000 km"
+      "Fuel Type": "Electric",
+      "Body Type": "Mid-size Electric SAV",
+      "Ground Clearance": "190",
+      "Warranty": "8 Years / 160,000 km"
     },
-    "pros": [
-      "Nepal's first premium BMW EV",
-      "460 km range — strong for Nepal charging landscape",
-      "150 kW DC fast charge available",
-      "8-year battery warranty from Laxmi Premium Motors"
-    ],
-    "cons": [
-      "Very expensive at Rs. 2.29 Crore",
-      "RWD only — no all-wheel drive",
-      "DC fast charging infrastructure is still growing in Nepal",
-      "Single variant — no choice of spec level"
-    ],
-    "highlights": [
-      "460 km Range",
-      "150 kW DC Charging",
-      "286 PS Electric",
-      "8-Year Battery Warranty"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/bmw/ix3/exterior/bmw-ix3-exterior-front-white-bg.jpg"
   },
   {
-    "id": 807,
+    "id": 88,
     "slug": "bmw-7-series-2025",
     "brand": "BMW",
+    "brandSlug": "bmw",
     "model": "7 Series",
     "year": 2026,
     "type": "Hybrid",
+    "bodyType": "Unknown",
     "body": "Ultra-Luxury Sedan",
     "badge": "ultra-luxury",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "BMW's ultimate flagship sedan — Nepal's most premium German luxury car",
     "rating": 4.7,
     "reviews": 45,
@@ -14281,7 +14192,9 @@ window.CARS_DB = [
           "power": "286 hp @ 4,000 rpm",
           "torque": "650 Nm",
           "efficiency": "15 km/l",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "286 hp @ 4,000 rpm",
+          "Torque": "650 Nm"
         }
       },
       {
@@ -14300,7 +14213,9 @@ window.CARS_DB = [
           "power": "333 hp @ 5,000 rpm",
           "torque": "450 Nm",
           "efficiency": "13 km/l",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "333 hp @ 5,000 rpm",
+          "Torque": "450 Nm"
         }
       },
       {
@@ -14322,57 +14237,63 @@ window.CARS_DB = [
           "power": "394 hp combined",
           "torque": "600 Nm",
           "efficiency": "N/A (PHEV)",
-          "transmission": "8-Speed Steptronic"
+          "transmission": "8-Speed Steptronic",
+          "Power": "394 hp combined",
+          "Torque": "600 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "3.0L I6 TwinPower Diesel / Petrol / PHEV",
-      "Displacement": "2,998 cc",
+      "Engine Type": "3.0L I6 TwinPower Diesel / Petrol / PHEV",
+      "Displacement (cc)": "2,998",
+      "Max Engine Power": "286–394 hp",
+      "Max Engine Torque": "450–650 Nm",
+      "Fuel Efficiency": "13–15 km/l",
+      "Fuel Tank Capacity (L)": "68",
+      "Transmission Type": "8-Speed Steptronic",
+      "Drive Type": "RWD / xDrive AWD (745Le)",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "510",
+      "Overall Length (mm)": "5,391",
+      "Overall Width (mm)": "1,950",
+      "Overall Height (mm)": "1,468",
+      "Wheelbase (mm)": "3,215",
+      "Ground Clearance (mm)": "135",
+      "Total Airbag Count": "6+",
+      "Touchscreen Display": "14.9\" + Executive Theater Screen (745Le)",
+      "Premium Audio": "Bowers & Wilkins 20-Speaker (740Li/745Le)",
+      "ADAS Suite": "Level 3 ADAS (745Le)",
+      "Distributor": "Laxmi Premium Motors (Official BMW Nepal Distributor, Tinkune, Kathmandu)",
       "Power": "286–394 hp",
       "Torque": "450–650 Nm",
-      "Efficiency": "13–15 km/l",
-      "Fuel Tank": "68 L",
       "Transmission": "8-Speed Steptronic",
-      "Drive": "RWD / xDrive AWD",
+      "Boot Space": "510",
       "Seating": "5",
-      "Boot Space": "510 L",
-      "Length": "5,391 mm",
-      "Width": "1,950 mm",
-      "Height": "1,468 mm",
-      "Wheelbase": "3,215 mm",
-      "Ground Clearance": "135 mm",
-      "Airbags": "6+"
+      "Fuel Type": "Hybrid",
+      "Body Type": "Ultra-Luxury Sedan",
+      "Ground Clearance": "135"
     },
-    "pros": [
-      "Nepal's most luxurious German car",
-      "PHEV reduces operating costs",
-      "xDrive AWD on top variant",
-      "Level 3 ADAS technology"
-    ],
-    "cons": [
-      "Nepal's most expensive BMW at Rs. 6.25 Crore",
-      "Very low ground clearance (135 mm) limits rural use",
-      "Extremely large — challenging in Kathmandu",
-      "Tiny production numbers imported to Nepal"
-    ],
-    "highlights": [
-      "Ultra-Luxury Flagship",
-      "394 hp PHEV",
-      "Level 3 ADAS",
-      "Executive Theater"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/bmw/7-series/interior/bmw-7-series-interior-dashboard.jpg"
   },
   {
-    "id": 901,
+    "id": 89,
     "slug": "volkswagen-polo-2025",
     "brand": "Volkswagen",
+    "brandSlug": "volkswagen",
     "model": "Polo",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Premium Hatchback",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "German-engineered city hatchback — the most affordable VW in Nepal",
     "rating": 3.9,
     "reviews": 876,
@@ -14421,7 +14342,9 @@ window.CARS_DB = [
           "power": "76 PS @ 6,200 rpm",
           "torque": "95 Nm",
           "efficiency": "18.78 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "76 PS @ 6,200 rpm",
+          "Torque": "95 Nm"
         }
       },
       {
@@ -14441,7 +14364,9 @@ window.CARS_DB = [
           "power": "76 PS @ 6,200 rpm",
           "torque": "95 Nm",
           "efficiency": "18.78 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "76 PS @ 6,200 rpm",
+          "Torque": "95 Nm"
         }
       },
       {
@@ -14461,7 +14386,9 @@ window.CARS_DB = [
           "power": "76 PS @ 6,200 rpm",
           "torque": "95 Nm",
           "efficiency": "18.78 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "76 PS @ 6,200 rpm",
+          "Torque": "95 Nm"
         }
       },
       {
@@ -14480,57 +14407,51 @@ window.CARS_DB = [
           "power": "105 PS @ 5,250 rpm",
           "torque": "153 Nm",
           "efficiency": "15.96 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "105 PS @ 5,250 rpm",
+          "Torque": "153 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.0L MPI / 1.6L MPI Petrol",
-      "Displacement": "999 / 1,598 cc",
-      "Power": "76–105 PS",
-      "Torque": "95–153 Nm",
-      "Efficiency": "15.96–18.78 km/l",
-      "Fuel Tank": "45 L",
-      "Transmission": "5-Speed MT",
-      "Drive": "FWD",
+      "Engine Type": "1.0L TSI Turbo Petrol",
+      "Displacement (cc)": "999",
+      "Max Engine Power": "110 PS",
+      "Max Engine Torque": "175 Nm",
+      "Transmission Type": "MT / AT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Hatchback",
+      "Note": "Per a 2026 Nepal distributor statement, VW Nepal's currently active lineup is limited to Taigun and Virtus — Polo is described as sold 'in the past' and may be discontinued in Nepal. Confirm current availability with Pooja International before quoting.",
+      "Distributor": "Pooja International Nepal (Official Volkswagen Nepal Distributor, Balaju, Kathmandu)",
+      "Power": "110 PS",
+      "Torque": "175 Nm",
+      "Transmission": "MT / AT",
       "Seating": "5",
-      "Boot Space": "294 L",
-      "Length": "4,053 mm",
-      "Width": "1,751 mm",
-      "Height": "1,461 mm",
-      "Wheelbase": "2,564 mm",
-      "Ground Clearance": "172 mm",
-      "Airbags": "2"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Most affordable Volkswagen in Nepal",
-      "Excellent German build quality for price",
-      "18.78 km/l fuel efficiency on 1.0L",
-      "Small size ideal for Kathmandu city driving"
-    ],
-    "cons": [
-      "Only 2 airbags on all variants",
-      "No automatic option in Nepal",
-      "Small 294 L boot",
-      "No TSI engine option currently"
-    ],
-    "highlights": [
-      "18.78 km/l",
-      "German Build Quality",
-      "Compact City Car",
-      "5 Seats"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/volkswagen/polo/exterior/volkswagen-polo-exterior-front-white-bg.jpg"
   },
   {
-    "id": 902,
+    "id": 90,
     "slug": "volkswagen-taigun-2025",
     "brand": "Volkswagen",
+    "brandSlug": "volkswagen",
     "model": "Taigun",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's safest compact SUV — 5-star NCAP with German TSI precision",
     "rating": 4.2,
     "reviews": 634,
@@ -14584,7 +14505,9 @@ window.CARS_DB = [
           "power": "115 PS @ 5,000 rpm",
           "torque": "178 Nm",
           "efficiency": "18.1 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "115 PS @ 5,000 rpm",
+          "Torque": "178 Nm"
         }
       },
       {
@@ -14605,7 +14528,9 @@ window.CARS_DB = [
           "power": "115 PS @ 5,000 rpm",
           "torque": "178 Nm",
           "efficiency": "16.44 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "115 PS @ 5,000 rpm",
+          "Torque": "178 Nm"
         }
       },
       {
@@ -14625,7 +14550,9 @@ window.CARS_DB = [
           "power": "115 PS @ 5,000 rpm",
           "torque": "178 Nm",
           "efficiency": "16.44 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "115 PS @ 5,000 rpm",
+          "Torque": "178 Nm"
         }
       },
       {
@@ -14646,57 +14573,51 @@ window.CARS_DB = [
           "power": "150 PS @ 5,000 rpm",
           "torque": "250 Nm",
           "efficiency": "17.5 km/l",
-          "transmission": "7-Speed DSG"
+          "transmission": "7-Speed DSG",
+          "Power": "150 PS @ 5,000 rpm",
+          "Torque": "250 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.0L TSI / 1.5L TSI EVO Petrol",
-      "Displacement": "999 / 1,498 cc",
+      "Engine Type": "1.0L TSI / 1.5L TSI EVO Turbo Petrol",
+      "Displacement (cc)": "999 / 1,498",
+      "Max Engine Power": "115–150 PS",
+      "Max Engine Torque": "178–250 Nm",
+      "Transmission Type": "6MT / 6AT / 7-DSG",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Safety Rating": "5-Star Global NCAP",
+      "Body Type": "Compact SUV",
+      "Distributor": "Pooja International Nepal (Official Volkswagen Nepal Distributor, Balaju, Kathmandu)",
       "Power": "115–150 PS",
       "Torque": "178–250 Nm",
-      "Efficiency": "16.44–18.1 km/l",
-      "Fuel Tank": "50 L",
-      "Transmission": "6-Speed MT / AT / 7-Speed DSG",
-      "Drive": "FWD",
+      "Transmission": "6MT / 6AT / 7-DSG",
       "Seating": "5",
-      "Boot Space": "385 L",
-      "Length": "4,221 mm",
-      "Width": "1,760 mm",
-      "Height": "1,612 mm",
-      "Wheelbase": "2,651 mm",
-      "Ground Clearance": "188 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "5-star Global NCAP — safest in segment",
-      "Available with powerful 1.5L DSG",
-      "Solid German MQB platform",
-      "Wide variant range from budget to performance"
-    ],
-    "cons": [
-      "FWD only — no AWD option",
-      "Base variant has only 2 airbags",
-      "Smaller boot vs rivals",
-      "Relatively expensive vs Korean/Japanese rivals"
-    ],
-    "highlights": [
-      "5-Star Global NCAP",
-      "1.5L TSI 150 PS GT Plus",
-      "7-Speed DSG",
-      "German MQB Platform"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/volkswagen/taigun/exterior/volkswagen-taigun-exterior-front-white-bg.webp"
   },
   {
-    "id": 903,
+    "id": 91,
     "slug": "volkswagen-virtus-2025",
     "brand": "Volkswagen",
+    "brandSlug": "volkswagen",
     "model": "Virtus",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact Sedan",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Newly launched VW sedan in Nepal — 5-star safety meets German style",
     "rating": 4.1,
     "reviews": 112,
@@ -14704,8 +14625,8 @@ window.CARS_DB = [
     "baseEMI": 58000,
     "overview": "The Volkswagen Virtus is the newest sedan addition to VW Nepal's lineup, officially launched at the NAIMA Nepal Mobility Expo 2025. Built on the same MQB A0 IN platform as the Taigun, it carries a 5-star Global NCAP safety rating and offers a choice of 1.0L TSI and 1.5L TSI EVO engines with both manual and automatic options.",
     "images": [
-      "/assets/images/car_images/volkswagen/virtus/exterior/volkswagen-virtus-exterior-front-white-bg.jpg",
       "/assets/images/car_images/volkswagen/virtus/interior/volkswagen-virtus-interior-dashboard.jpg",
+      "/assets/images/car_images/volkswagen/virtus/exterior/virtus-white.png",
       "/assets/images/car_images/volkswagen/virtus/interior/volkswagen-virtus-interior-seats-rear.jpg"
     ],
     "colors": [
@@ -14746,7 +14667,9 @@ window.CARS_DB = [
           "power": "115 PS @ 5,000 rpm",
           "torque": "178 Nm",
           "efficiency": "18.7 km/l",
-          "transmission": "6-Speed MT"
+          "transmission": "6-Speed MT",
+          "Power": "115 PS @ 5,000 rpm",
+          "Torque": "178 Nm"
         }
       },
       {
@@ -14767,7 +14690,9 @@ window.CARS_DB = [
           "power": "115 PS @ 5,000 rpm",
           "torque": "178 Nm",
           "efficiency": "17.0 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "115 PS @ 5,000 rpm",
+          "Torque": "178 Nm"
         }
       },
       {
@@ -14787,7 +14712,9 @@ window.CARS_DB = [
           "power": "115 PS @ 5,000 rpm",
           "torque": "178 Nm",
           "efficiency": "17.0 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "115 PS @ 5,000 rpm",
+          "Torque": "178 Nm"
         }
       },
       {
@@ -14808,57 +14735,52 @@ window.CARS_DB = [
           "power": "150 PS @ 5,000 rpm",
           "torque": "250 Nm",
           "efficiency": "18.0 km/l",
-          "transmission": "7-Speed DSG"
+          "transmission": "7-Speed DSG",
+          "Power": "150 PS @ 5,000 rpm",
+          "Torque": "250 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.0L TSI / 1.5L TSI EVO Petrol",
-      "Displacement": "999 / 1,498 cc",
+      "Engine Type": "1.0L TSI / 1.5L TSI EVO Turbo Petrol",
+      "Displacement (cc)": "999 / 1,498",
+      "Max Engine Power": "115–150 PS",
+      "Max Engine Torque": "178–250 Nm",
+      "Transmission Type": "6MT / 6AT / 7-DSG",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "521",
+      "Total Airbag Count": "6",
+      "Body Type": "Sedan",
+      "Distributor": "Pooja International Nepal (Official Volkswagen Nepal Distributor, Balaju, Kathmandu)",
       "Power": "115–150 PS",
       "Torque": "178–250 Nm",
-      "Efficiency": "17.0–18.7 km/l",
-      "Fuel Tank": "47 L",
-      "Transmission": "6-Speed MT / AT / 7-Speed DSG",
-      "Drive": "FWD",
+      "Transmission": "6MT / 6AT / 7-DSG",
+      "Boot Space": "521",
       "Seating": "5",
-      "Boot Space": "521 L",
-      "Length": "4,561 mm",
-      "Width": "1,752 mm",
-      "Height": "1,507 mm",
-      "Wheelbase": "2,651 mm",
-      "Ground Clearance": "179 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "5-star Global NCAP safety rating",
-      "Large 521 L boot for a compact sedan",
-      "1.5L DSG GT Plus offers thrilling performance",
-      "Newest model in VW Nepal's lineup"
-    ],
-    "cons": [
-      "Sedan body less popular than SUV in Nepal",
-      "Base only has 2 airbags",
-      "FWD only",
-      "No diesel option"
-    ],
-    "highlights": [
-      "5-Star NCAP",
-      "521 L Boot",
-      "1.5L DSG 150 PS",
-      "New 2025 Launch"
-    ],
-    "thumb": "/assets/images/car_images/volkswagen/virtus/exterior/volkswagen-virtus-exterior-front-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/volkswagen/virtus/interior/volkswagen-virtus-interior-dashboard.jpg"
   },
   {
-    "id": 904,
+    "id": 92,
     "slug": "volkswagen-tayron-2025",
     "brand": "Volkswagen",
+    "brandSlug": "volkswagen",
     "model": "Tayron",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Mid-size 7-Seat SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "VW Nepal's newest 3-row flagship SUV — Tiguan Allspace successor",
     "rating": 4.3,
     "reviews": 48,
@@ -14910,57 +14832,49 @@ window.CARS_DB = [
           "power": "204 PS @ 4,500 rpm",
           "torque": "320 Nm",
           "efficiency": "14.5 km/l",
-          "transmission": "7-Speed DSG"
+          "transmission": "7-Speed DSG",
+          "Power": "204 PS @ 4,500 rpm",
+          "Torque": "320 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L TSI EVO Petrol",
-      "Displacement": "1,984 cc",
-      "Power": "204 PS",
-      "Torque": "320 Nm",
-      "Efficiency": "~14.5 km/l",
-      "Fuel Tank": "60 L",
-      "Transmission": "7-Speed DSG",
-      "Drive": "4MOTION AWD",
-      "Seating": "7",
-      "Boot Space": "345 L (all seats up) / 1,905 L folded",
-      "Length": "4,792 mm",
-      "Width": "1,866 mm",
-      "Height": "1,661 mm",
-      "Wheelbase": "2,894 mm",
-      "Ground Clearance": "180 mm",
-      "Airbags": "9"
+      "Engine Type": "1.5L / 2.0L TSI Turbo Petrol",
+      "Displacement (cc)": "1,498 / 1,984",
+      "Max Engine Power": "150–204 PS",
+      "Transmission Type": "7-DSG",
+      "Drive Type": "FWD / 4MOTION AWD",
+      "Seating Capacity": "5/7",
+      "Total Airbag Count": "6",
+      "Body Type": "Mid-size SUV",
+      "Note": "As of 2026, Nepal sources describe the Tayron as an UPCOMING model, not yet officially launched/on sale — confirm launch status and pricing with Pooja International before quoting.",
+      "Distributor": "Pooja International Nepal (Official Volkswagen Nepal Distributor, Balaju, Kathmandu)",
+      "Power": "150–204 PS",
+      "Transmission": "7-DSG",
+      "Seating": "5/7",
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "7-seat flexibility for Nepali families",
-      "4MOTION AWD for mountain roads",
-      "9 airbags — safest in class",
-      "Replaces Tiguan Allspace at similar or better value"
-    ],
-    "cons": [
-      "Single R-Line variant only in Nepal",
-      "Relatively lower ground clearance for AWD SUV (180 mm)",
-      "Price approaching Rs. 1.5 Crore",
-      "New model — limited service data in Nepal"
-    ],
-    "highlights": [
-      "7 Seats",
-      "4MOTION AWD",
-      "9 Airbags",
-      "2.0L TSI 204 PS"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/volkswagen/tayron/exterior/volkswagen-tayron-exterior-side-left-white-bg.jpg"
   },
   {
-    "id": 905,
+    "id": 93,
     "slug": "volkswagen-tiguan-allspace-2025",
     "brand": "Volkswagen",
+    "brandSlug": "volkswagen",
     "model": "Tiguan Allspace",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Mid-size 7-Seat SUV",
     "badge": "established",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "VW's proven 7-seat mid-size SUV — spacious, safe, and AWD-capable",
     "rating": 4.1,
     "reviews": 287,
@@ -15009,7 +14923,9 @@ window.CARS_DB = [
           "power": "177 PS @ 3,940 rpm",
           "torque": "320 Nm",
           "efficiency": "14.5 km/l",
-          "transmission": "7-Speed DSG"
+          "transmission": "7-Speed DSG",
+          "Power": "177 PS @ 3,940 rpm",
+          "Torque": "320 Nm"
         }
       },
       {
@@ -15030,57 +14946,51 @@ window.CARS_DB = [
           "power": "177 PS @ 3,940 rpm",
           "torque": "320 Nm",
           "efficiency": "14.0 km/l",
-          "transmission": "7-Speed DSG"
+          "transmission": "7-Speed DSG",
+          "Power": "177 PS @ 3,940 rpm",
+          "Torque": "320 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L TSI Turbo Petrol",
-      "Displacement": "1,984 cc",
-      "Power": "177 PS @ 3,940 rpm",
+      "Engine Type": "2.0L TSI Turbo Petrol",
+      "Displacement (cc)": "1,984",
+      "Max Engine Power": "190 PS",
+      "Max Engine Torque": "320 Nm",
+      "Transmission Type": "7-DSG",
+      "Drive Type": "4MOTION AWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "6",
+      "Body Type": "Mid-size SUV",
+      "Note": "Per a 2026 Nepal distributor statement, VW Nepal's currently active lineup is limited to Taigun and Virtus — Tiguan is described as sold 'in the past' and may be discontinued in Nepal. Confirm current availability with Pooja International before quoting.",
+      "Distributor": "Pooja International Nepal (Official Volkswagen Nepal Distributor, Balaju, Kathmandu)",
+      "Power": "190 PS",
       "Torque": "320 Nm",
-      "Efficiency": "14.0–14.5 km/l",
-      "Fuel Tank": "60 L",
-      "Transmission": "7-Speed DSG",
-      "Drive": "4MOTION AWD",
+      "Transmission": "7-DSG",
       "Seating": "7",
-      "Boot Space": "230 L (3 rows) / 700 L (2 rows)",
-      "Length": "4,701 mm",
-      "Width": "1,839 mm",
-      "Height": "1,674 mm",
-      "Wheelbase": "2,787 mm",
-      "Ground Clearance": "177 mm",
-      "Airbags": "6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Proven reliability in Nepal",
-      "7-seat 4MOTION AWD versatility",
-      "Solid VW build quality",
-      "Good parts availability vs Tayron"
-    ],
-    "cons": [
-      "Being gradually replaced by the Tayron",
-      "Lower spec than Tayron at similar price",
-      "177 mm clearance adequate but not class-leading",
-      "Petrol-only in Nepal"
-    ],
-    "highlights": [
-      "7 Seats",
-      "4MOTION AWD",
-      "177 PS TSI",
-      "German Engineering"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/volkswagen/tiguan-allspace/interior/volkswagen-tiguan-allspace-interior-dashboard.jpg"
   },
   {
-    "id": 906,
+    "id": 94,
     "slug": "volkswagen-touareg-2025",
     "brand": "Volkswagen",
+    "brandSlug": "volkswagen",
     "model": "Touareg",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Full-size Luxury SUV",
     "badge": "flagship",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "VW Nepal's flagship — full-size V6 luxury SUV at the top of the range",
     "rating": 4.4,
     "reviews": 72,
@@ -15129,57 +15039,51 @@ window.CARS_DB = [
           "power": "340 PS @ 6,500 rpm",
           "torque": "450 Nm",
           "efficiency": "11.0 km/l",
-          "transmission": "8-Speed Tiptronic AT"
+          "transmission": "8-Speed Tiptronic AT",
+          "Power": "340 PS @ 6,500 rpm",
+          "Torque": "450 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "3.0L V6 TSI Turbo Petrol",
-      "Displacement": "2,995 cc",
-      "Power": "340 PS @ 6,500 rpm",
-      "Torque": "450 Nm",
-      "Efficiency": "11.0 km/l",
-      "Fuel Tank": "85 L",
+      "Engine Type": "3.0L V6 TDI Diesel / 3.0L V6 TSI Petrol",
+      "Displacement (cc)": "2,967",
+      "Max Engine Power": "231–340 PS",
+      "Max Engine Torque": "500 Nm",
+      "Transmission Type": "8-Speed Tiptronic",
+      "Drive Type": "4MOTION AWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7",
+      "Body Type": "Full-size Luxury SUV",
+      "Note": "Per a 2026 Nepal distributor statement, VW Nepal's currently active lineup is limited to Taigun and Virtus — Touareg is described as sold 'in the past' and may be discontinued/grey-import only in Nepal. Confirm current availability with Pooja International before quoting.",
+      "Distributor": "Pooja International Nepal (Official Volkswagen Nepal Distributor, Balaju, Kathmandu)",
+      "Power": "231–340 PS",
+      "Torque": "500 Nm",
       "Transmission": "8-Speed Tiptronic",
-      "Drive": "4MOTION AWD",
       "Seating": "5",
-      "Boot Space": "810 L",
-      "Length": "4,878 mm",
-      "Width": "1,984 mm",
-      "Height": "1,717 mm",
-      "Wheelbase": "2,904 mm",
-      "Ground Clearance": "210 mm (air suspension)",
-      "Airbags": "7"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "810 L boot — largest in class",
-      "Air suspension adjusts for Nepal's diverse terrain",
-      "340 PS V6 — most powerful VW in Nepal",
-      "15-inch Innovision Cockpit flagship technology"
-    ],
-    "cons": [
-      "Most expensive VW in Nepal at Rs. 3.25 Crore",
-      "11 km/l fuel efficiency on V6 petrol",
-      "Only single variant available",
-      "Very large — difficult in narrow Nepali streets"
-    ],
-    "highlights": [
-      "340 PS V6",
-      "810 L Boot",
-      "Air Suspension",
-      "4MOTION AWD"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/volkswagen/touareg/interior/volkswagen-touareg-interior-seats-front.jpg"
   },
   {
-    "id": 1300,
+    "id": 95,
     "slug": "ford-ranger-next-gen-2025",
     "brand": "Ford",
+    "brandSlug": "ford",
     "model": "Next-Gen Ranger",
     "year": 2026,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "Mid-size Pickup Truck",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's toughest lifestyle pickup — rugged 4WD diesel workhorse from Thailand",
     "rating": 4.3,
     "reviews": 512,
@@ -15233,7 +15137,9 @@ window.CARS_DB = [
           "power": "170 PS @ 3,500 rpm",
           "torque": "405 Nm",
           "efficiency": "12.5 km/l",
-          "transmission": "6-Speed SelectShift AT"
+          "transmission": "6-Speed SelectShift AT",
+          "Power": "170 PS @ 3,500 rpm",
+          "Torque": "405 Nm"
         }
       },
       {
@@ -15254,7 +15160,9 @@ window.CARS_DB = [
           "power": "210 PS @ 3,750 rpm",
           "torque": "500 Nm",
           "efficiency": "11.5 km/l",
-          "transmission": "10-Speed SelectShift AT"
+          "transmission": "10-Speed SelectShift AT",
+          "Power": "210 PS @ 3,750 rpm",
+          "Torque": "500 Nm"
         }
       },
       {
@@ -15276,58 +15184,61 @@ window.CARS_DB = [
           "power": "210 PS @ 3,750 rpm",
           "torque": "500 Nm",
           "efficiency": "11.5 km/l",
-          "transmission": "10-Speed SelectShift AT"
+          "transmission": "10-Speed SelectShift AT",
+          "Power": "210 PS @ 3,750 rpm",
+          "Torque": "500 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L EcoBlue CRTC Single/Bi-Turbo Diesel",
-      "Displacement": "1,996 cc",
+      "Engine Type": "2.0L EcoBlue CRTC Single/Bi-Turbo Diesel",
+      "Displacement (cc)": "1,996",
+      "Max Engine Power": "170–210 PS",
+      "Max Engine Torque": "405–500 Nm",
+      "Fuel Tank Capacity (L)": "80",
+      "Transmission Type": "6-Speed / 10-Speed SelectShift AT",
+      "Drive Type": "4WD",
+      "Seating Capacity": "5",
+      "Payload (kg)": "1,005",
+      "Overall Length (mm)": "5,360",
+      "Overall Width (mm)": "1,910",
+      "Overall Height (mm)": "1,886",
+      "Wheelbase (mm)": "3,270",
+      "Ground Clearance (mm)": "235",
+      "Wading Depth (mm)": "800",
+      "Total Airbag Count": "9",
+      "Touchscreen Display": "10.1\"/12.1\" SYNC4",
+      "Variant Names": "XL A/T, XLT A/T, Wildtrak A/T",
+      "Distributor": "GO Automobiles Pvt. Ltd. (Official Ford Nepal Distributor)",
       "Power": "170–210 PS",
       "Torque": "405–500 Nm",
-      "Efficiency": "11.5–12.5 km/l",
-      "Fuel Tank": "80 L",
       "Transmission": "6-Speed / 10-Speed SelectShift AT",
-      "Drive": "4WD",
       "Seating": "5",
-      "Payload": "1,005 kg",
-      "Length": "5,360 mm",
-      "Width": "1,910 mm",
-      "Height": "1,886 mm",
-      "Wheelbase": "3,270 mm",
-      "Ground Clearance": "235 mm",
-      "Wading Depth": "800 mm",
-      "Airbags": "9"
+      "Fuel Type": "Diesel",
+      "Body Type": "Mid-size Pickup Truck",
+      "Ground Clearance": "235"
     },
-    "pros": [
-      "235 mm ground clearance for Nepal's terrain",
-      "800 mm wading depth for river crossings",
-      "12-inch SYNC4 is class-leading infotainment",
-      "9 airbags — best-in-class safety"
-    ],
-    "cons": [
-      "Very high price after Nepal import duties",
-      "Discontinued Indian-market small cars mean no budget Ford alternative",
-      "Large size in Kathmandu city traffic",
-      "Fuel economy modest for long hauls"
-    ],
-    "highlights": [
-      "235 mm Clearance",
-      "800 mm Wading",
-      "9 Airbags",
-      "Euro 6 Diesel"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/ford/ranger/exterior/2024-ford-ranger-front-pr-101-68d1794a84960.avif"
   },
   {
-    "id": 1301,
+    "id": 96,
     "slug": "ford-everest-next-gen-2025",
     "brand": "Ford",
+    "brandSlug": "ford",
     "model": "Next-Gen Everest",
     "year": 2026,
     "type": "Diesel",
+    "bodyType": "Unknown",
     "body": "Full-size 7-Seat SUV",
     "badge": "flagship",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's ultimate adventure SUV — 7 seats, 4WD, and 800mm wading depth",
     "rating": 4.5,
     "reviews": 287,
@@ -15392,60 +15303,67 @@ window.CARS_DB = [
           "power": "210 PS @ 3,750 rpm",
           "torque": "500 Nm",
           "efficiency": "10 km/l",
-          "transmission": "10-Speed SelectShift AT"
+          "transmission": "10-Speed SelectShift AT",
+          "Power": "210 PS @ 3,750 rpm",
+          "Torque": "500 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L 4-Cyl Bi-Turbo Intercooler Diesel",
-      "Displacement": "1,996 cc",
-      "Power": "210 PS @ 3,750 rpm",
-      "Torque": "500 Nm @ 1,750 rpm",
-      "Efficiency": "~10 km/l",
-      "Fuel Tank": "80 L",
-      "Transmission": "10-Speed SelectShift AT",
-      "Drive": "4WD (ESOF)",
-      "Seating": "7",
-      "Boot Space": "194 L (3 rows) / 810 L (2 rows)",
-      "Length": "4,914 mm",
-      "Width": "1,923 mm",
-      "Height": "1,842 mm",
-      "Wheelbase": "2,900 mm",
-      "Ground Clearance": "225–227 mm",
-      "Wading Depth": "800 mm",
-      "Airbags": "7",
+      "Engine Type": "2.0L 4-Cyl Bi-Turbo Intercooler Diesel",
+      "Displacement (cc)": "2,993 (per some sources) / 1,996 (per Ford Nepal spec sheet)",
+      "Max Engine Power": "247 bhp (184 kW) / 210 PS depending on source",
+      "Max Engine Torque": "600 Nm",
+      "Transmission Type": "10-Speed SelectShift AT",
+      "Drive Type": "4WD (ESOF, Permanent 4WD w/ Terrain Management)",
+      "Seating Capacity": "7",
+      "Boot Space (litres)": "194 (3 rows) / 810 (2 rows)",
+      "Overall Length (mm)": "4,914",
+      "Overall Width (mm)": "1,923",
+      "Overall Height (mm)": "1,842",
+      "Wheelbase (mm)": "2,900",
+      "Ground Clearance (mm)": "225–227",
+      "Wading Depth (mm)": "800",
+      "Total Airbag Count": "7",
       "Safety Rating": "5-Star ANCAP",
+      "Touchscreen Display": "12\" SYNC4A Portrait",
+      "Digital Instrument Cluster": "12.4\"",
+      "Sunroof Type": "Panoramic Moonroof",
+      "Standard Vehicle Warranty": "3 Years / 60,000 km",
+      "Color Options": "Grey, Aluminium, Black, Bronze, White, Orange",
+      "Variant Names": "Titanium (single variant in Nepal)",
+      "Distributor": "GO Automobiles Pvt. Ltd. (Official Ford Nepal Distributor)",
+      "Power": "247 bhp (184 kW) / 210 PS depending on source",
+      "Torque": "600 Nm",
+      "Transmission": "10-Speed SelectShift AT",
+      "Boot Space": "194 (3 rows) / 810 (2 rows)",
+      "Seating": "7",
+      "Fuel Type": "Diesel",
+      "Body Type": "Full-size 7-Seat SUV",
+      "Ground Clearance": "225–227",
       "Warranty": "3 Years / 60,000 km"
     },
-    "pros": [
-      "225 mm ground clearance + 800 mm wading — true off-road capable",
-      "5-star ANCAP safety rating",
-      "7-seat flexible family layout",
-      "12-inch SYNC4A portrait screen is class-leading"
-    ],
-    "cons": [
-      "Single Titanium variant only in Nepal — no lower-priced option",
-      "10 km/l real-world fuel economy is expensive to run",
-      "Very large size (4,914 mm) in tight Nepali roads",
-      "Expensive parts if Ford's India exit affects Nepal support"
-    ],
-    "highlights": [
-      "5-Star ANCAP",
-      "800 mm Wading",
-      "7 Seats",
-      "225 mm Clearance"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/ford/everest/exterior/084609325Ford_Everest_1_price_Nepal.jpg"
   },
   {
-    "id": 1302,
+    "id": 97,
     "slug": "ford-ranger-raptor-next-gen-2025",
     "brand": "Ford",
+    "brandSlug": "ford",
     "model": "Next-Gen Ranger Raptor",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "High-Performance Pickup",
     "badge": "performance",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's most extreme performance pickup — 392 hp V6 Baja-ready beast",
     "rating": 4.6,
     "reviews": 198,
@@ -15509,59 +15427,61 @@ window.CARS_DB = [
           "power": "392 hp @ 5,650 rpm",
           "torque": "583 Nm @ 3,500 rpm",
           "efficiency": "9.5 km/l",
-          "transmission": "10-Speed SelectShift AT"
+          "transmission": "10-Speed SelectShift AT",
+          "Power": "392 hp @ 5,650 rpm",
+          "Torque": "583 Nm @ 3,500 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "3.0L V6 Twin-Turbo EcoBoost Petrol",
-      "Displacement": "2,994 cc",
+      "Engine Type": "3.0L V6 Twin-Turbo EcoBoost Petrol",
+      "Displacement (cc)": "2,994",
+      "Max Engine Power": "392 hp (397 PS) @ 5,650 rpm",
+      "Max Engine Torque": "583 Nm @ 3,500 rpm",
+      "Acceleration 0-100 km/h": "~5.4 sec",
+      "Transmission Type": "10-Speed SelectShift AT",
+      "Drive Type": "4WD (Electromechanical transfer case)",
+      "Seating Capacity": "5",
+      "Payload (kg)": "900",
+      "Overall Length (mm)": "5,360",
+      "Overall Width (mm)": "1,910",
+      "Overall Height (mm)": "1,960",
+      "Wheelbase (mm)": "3,270",
+      "Ground Clearance (mm)": "272",
+      "Wading Depth (mm)": "800–850",
+      "Total Airbag Count": "9",
+      "Suspension Type": "FOX 2.5\" Live Valve Internal Bypass Shocks",
+      "Drive Modes": "7 (incl. Baja & Rock Crawl)",
+      "Distributor": "GO Automobiles Pvt. Ltd. (Official Ford Nepal Distributor)",
       "Power": "392 hp (397 PS) @ 5,650 rpm",
       "Torque": "583 Nm @ 3,500 rpm",
-      "0–100 km/h": "~5.4 sec",
-      "Efficiency": "~9.5 km/l",
-      "Fuel Tank": "80 L",
       "Transmission": "10-Speed SelectShift AT",
-      "Drive": "4WD (EM transfer case)",
       "Seating": "5",
-      "Payload": "900 kg",
-      "Length": "5,360 mm",
-      "Width": "1,910 mm",
-      "Height": "1,960 mm",
-      "Wheelbase": "3,270 mm",
-      "Ground Clearance": "272 mm",
-      "Wading Depth": "850 mm",
-      "Airbags": "9"
+      "Fuel Type": "Petrol",
+      "Body Type": "High-Performance Pickup",
+      "Ground Clearance": "272"
     },
-    "pros": [
-      "272 mm ground clearance — highest of any production vehicle in Nepal",
-      "392 hp V6 for blistering performance",
-      "FOX shocks handle Nepal's worst roads with ease",
-      "7 drive modes including dedicated Baja mode"
-    ],
-    "cons": [
-      "Most expensive pickup in Nepal at Rs. 2.29 Crore",
-      "Petrol V6 fuel economy is poor (~9.5 km/l) at Nepal fuel prices",
-      "Very wide body (1,910 mm) in mountain passes",
-      "Overkill for city use"
-    ],
-    "highlights": [
-      "392 hp V6",
-      "272 mm Clearance",
-      "850 mm Wading",
-      "FOX Live Valve Shocks"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/ford/ranger/exterior/2024-ford-ranger-front-pr-101-68d1794a84960.avif"
   },
   {
-    "id": 1303,
+    "id": 98,
     "slug": "renault-kwid-2025",
     "brand": "Renault",
+    "brandSlug": "renault",
     "model": "Kwid",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Micro Hatchback",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "France's most affordable hatchback for Nepal — SUV styling on a city budget",
     "rating": 3.8,
     "reviews": 1204,
@@ -15610,7 +15530,9 @@ window.CARS_DB = [
           "power": "54 PS @ 5,678 rpm",
           "torque": "72 Nm",
           "efficiency": "22.30 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "54 PS @ 5,678 rpm",
+          "Torque": "72 Nm"
         }
       },
       {
@@ -15630,7 +15552,9 @@ window.CARS_DB = [
           "power": "68 PS @ 5,500 rpm",
           "torque": "91 Nm",
           "efficiency": "22.0 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "68 PS @ 5,500 rpm",
+          "Torque": "91 Nm"
         }
       },
       {
@@ -15648,57 +15572,50 @@ window.CARS_DB = [
           "power": "68 PS @ 5,500 rpm",
           "torque": "91 Nm",
           "efficiency": "21.5 km/l",
-          "transmission": "5-Speed AMT"
+          "transmission": "5-Speed AMT",
+          "Power": "68 PS @ 5,500 rpm",
+          "Torque": "91 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "0.8L SCe / 1.0L SCe Petrol",
-      "Displacement": "799 / 999 cc",
-      "Power": "54–68 PS",
-      "Torque": "72–91 Nm",
-      "Efficiency": "21.5–22.30 km/l",
-      "Fuel Tank": "28 L",
-      "Transmission": "5-Speed MT / AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.0L Petrol",
+      "Displacement (cc)": "999",
+      "Max Engine Power": "68 PS",
+      "Max Engine Torque": "91 Nm",
+      "Transmission Type": "MT / AMT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2",
+      "Body Type": "Hatchback",
+      "Distributor": "Advanced Automobiles Pvt. Ltd. (Official Renault Nepal Distributor)",
+      "Power": "68 PS",
+      "Torque": "91 Nm",
+      "Transmission": "MT / AMT",
       "Seating": "5",
-      "Boot Space": "279 L",
-      "Length": "3,679 mm",
-      "Width": "1,579 mm",
-      "Height": "1,478 mm",
-      "Wheelbase": "2,422 mm",
-      "Ground Clearance": "184 mm",
-      "Airbags": "2"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Nepal's most affordable Renault",
-      "22+ km/l fuel efficiency",
-      "184 mm clearance — high for its class",
-      "AMT option for easy city driving"
-    ],
-    "cons": [
-      "Only 2 airbags",
-      "Tiny 279 L boot",
-      "0.8L engine feels underpowered with passengers",
-      "No ESP on base variant"
-    ],
-    "highlights": [
-      "22.30 km/l",
-      "184 mm Clearance",
-      "AMT Option",
-      "French Styling"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/renault/kwid/exterior/Renault_Kwid_Photo_1.webp"
   },
   {
-    "id": 1304,
+    "id": 99,
     "slug": "renault-triber-2025",
     "brand": "Renault",
+    "brandSlug": "renault",
     "model": "Triber",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact 7-Seat MPV",
     "badge": "family",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "7-seat family MPV under Rs. 35L — the smartest space solution in Nepal",
     "rating": 4,
     "reviews": 743,
@@ -15746,7 +15663,9 @@ window.CARS_DB = [
           "power": "72 PS @ 6,250 rpm",
           "torque": "96 Nm",
           "efficiency": "18.12 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "72 PS @ 6,250 rpm",
+          "Torque": "96 Nm"
         }
       },
       {
@@ -15766,7 +15685,9 @@ window.CARS_DB = [
           "power": "72 PS @ 6,250 rpm",
           "torque": "96 Nm",
           "efficiency": "18.12 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "72 PS @ 6,250 rpm",
+          "Torque": "96 Nm"
         }
       },
       {
@@ -15784,7 +15705,9 @@ window.CARS_DB = [
           "power": "72 PS @ 6,250 rpm",
           "torque": "96 Nm",
           "efficiency": "17.5 km/l",
-          "transmission": "5-Speed AMT"
+          "transmission": "5-Speed AMT",
+          "Power": "72 PS @ 6,250 rpm",
+          "Torque": "96 Nm"
         }
       },
       {
@@ -15805,57 +15728,50 @@ window.CARS_DB = [
           "power": "72 PS @ 6,250 rpm",
           "torque": "96 Nm",
           "efficiency": "17.5 km/l",
-          "transmission": "5-Speed AMT"
+          "transmission": "5-Speed AMT",
+          "Power": "72 PS @ 6,250 rpm",
+          "Torque": "96 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.0L Energy SCe Petrol",
-      "Displacement": "999 cc",
-      "Power": "72 PS @ 6,250 rpm",
-      "Torque": "96 Nm @ 3,500 rpm",
-      "Efficiency": "17.5–18.12 km/l",
-      "Fuel Tank": "40 L",
-      "Transmission": "5-Speed MT / AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.0L Petrol",
+      "Displacement (cc)": "999",
+      "Max Engine Power": "72 PS",
+      "Max Engine Torque": "96 Nm",
+      "Transmission Type": "MT / AMT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "2",
+      "Body Type": "MPV",
+      "Distributor": "Advanced Automobiles Pvt. Ltd. (Official Renault Nepal Distributor)",
+      "Power": "72 PS",
+      "Torque": "96 Nm",
+      "Transmission": "MT / AMT",
       "Seating": "7",
-      "Boot Space": "84 L (all 7 up) / 625 L (row 3 down)",
-      "Length": "3,990 mm",
-      "Width": "1,739 mm",
-      "Height": "1,643 mm",
-      "Wheelbase": "2,636 mm",
-      "Ground Clearance": "182 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Nepal's most affordable 7-seater at under Rs. 35L",
-      "Modular seating flexibility for families",
-      "Optional sunroof on top RXZ trim",
-      "6 airbags on top variant"
-    ],
-    "cons": [
-      "Underpowered 72 PS for 7 passengers on hills",
-      "Tiny 84 L boot with all seats up",
-      "FWD only — no AWD option",
-      "No turbo engine"
-    ],
-    "highlights": [
-      "7 Seats Under Rs. 35L",
-      "Sunroof on RXZ",
-      "18 km/l",
-      "Modular Seating"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/renault/triber/interior/renault-triber-interior-seats-rear.jpg"
   },
   {
-    "id": 1305,
+    "id": 100,
     "slug": "renault-kiger-2025",
     "brand": "Renault",
+    "brandSlug": "renault",
     "model": "Kiger",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Subcompact SUV",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "French style meets SUV practicality — Nepal's stylish sub-compact SUV",
     "rating": 4.1,
     "reviews": 456,
@@ -15908,7 +15824,9 @@ window.CARS_DB = [
           "power": "72 PS @ 6,250 rpm",
           "torque": "96 Nm",
           "efficiency": "20.1 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "72 PS @ 6,250 rpm",
+          "Torque": "96 Nm"
         }
       },
       {
@@ -15929,7 +15847,9 @@ window.CARS_DB = [
           "power": "100 PS @ 5,000 rpm",
           "torque": "160 Nm",
           "efficiency": "18.5 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "100 PS @ 5,000 rpm",
+          "Torque": "160 Nm"
         }
       },
       {
@@ -15949,57 +15869,51 @@ window.CARS_DB = [
           "power": "100 PS @ 5,000 rpm",
           "torque": "152 Nm (CVT)",
           "efficiency": "17.4 km/l",
-          "transmission": "X-Tronic CVT"
+          "transmission": "X-Tronic CVT",
+          "Power": "100 PS @ 5,000 rpm",
+          "Torque": "152 Nm (CVT)"
         }
       }
     ],
     "specs": {
-      "Engine": "1.0L Energy / 1.0L Turbo Petrol",
-      "Displacement": "999 cc",
-      "Power": "72–100 PS",
-      "Torque": "96–160 Nm",
-      "Efficiency": "17.4–20.1 km/l",
-      "Fuel Tank": "40 L",
-      "Transmission": "5-Speed MT / CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.0L Petrol",
+      "Displacement (cc)": "999",
+      "Max Engine Power": "72 PS",
+      "Max Engine Torque": "96 Nm",
+      "Transmission Type": "MT / AMT / CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Compact SUV",
+      "Distributor": "Advanced Automobiles Pvt. Ltd. (Official Renault Nepal Distributor)",
+      "Note": "Renault's officially confirmed Nepal lineup (per Advanced Automobiles) lists Kwid, Triber, Duster, Captur, Lodgy — Kiger was not mentioned; confirm current Nepal availability of Kiger with the distributor.",
+      "Power": "72 PS",
+      "Torque": "96 Nm",
+      "Transmission": "MT / AMT / CVT",
       "Seating": "5",
-      "Boot Space": "405 L",
-      "Length": "3,991 mm",
-      "Width": "1,750 mm",
-      "Height": "1,605 mm",
-      "Wheelbase": "2,500 mm",
-      "Ground Clearance": "205 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "205 mm ground clearance for Nepal's rough roads",
-      "100 PS turbo CVT is fun to drive",
-      "405 L boot — largest in class",
-      "Bold Tri-Octa LED headlamp design"
-    ],
-    "cons": [
-      "FWD only — no AWD",
-      "Base only has 2 airbags",
-      "Turbo CVT feels rubbery under hard acceleration",
-      "Limited showroom network vs Suzuki"
-    ],
-    "highlights": [
-      "205 mm Clearance",
-      "100 PS Turbo",
-      "405 L Boot",
-      "5-Star GNCAP Compatible Design"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/renault/kiger/interior/renault-kiger-interior-dashboard.jpg"
   },
   {
-    "id": 1306,
+    "id": 101,
     "slug": "suzuki-alto-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Alto",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Micro Hatchback",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's iconic entry-level city car — affordable, reliable, everywhere",
     "rating": 3.7,
     "reviews": 3842,
@@ -16007,7 +15921,10 @@ window.CARS_DB = [
     "baseEMI": 25000,
     "overview": "The Maruti Suzuki Alto is Nepal's most iconic entry-level car, historically the best-selling Suzuki model in the country and widely used as a taxi. With a tiny 796 cc engine, 22+ km/l fuel efficiency, and ultra-low maintenance costs via CG Motocorp's extensive service network, it remains the first-choice car for budget buyers and commercial users across Nepal.",
     "images": [
-      "/assets/images/car_images/maruti-suzuki/alto/interior/maruti-suzuki-alto-interior-seats-front.jpg"
+      "/assets/images/car_images/maruti-suzuki/alto/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/alto/front-34-lifestyle-cgmotocorp.png",
+      "/assets/images/car_images/maruti-suzuki/alto/interior-seats.png",
+      "/assets/images/car_images/maruti-suzuki/alto/interior/maruti-suzuki-alto-interior-seats-front.png"
     ],
     "colors": [
       {
@@ -16046,7 +15963,9 @@ window.CARS_DB = [
           "power": "47.5 PS @ 6,000 rpm",
           "torque": "69 Nm",
           "efficiency": "22.05 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "47.5 PS @ 6,000 rpm",
+          "Torque": "69 Nm"
         }
       },
       {
@@ -16066,7 +15985,9 @@ window.CARS_DB = [
           "power": "47.5 PS @ 6,000 rpm",
           "torque": "69 Nm",
           "efficiency": "22.05 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "47.5 PS @ 6,000 rpm",
+          "Torque": "69 Nm"
         }
       },
       {
@@ -16086,64 +16007,62 @@ window.CARS_DB = [
           "power": "47.5 PS @ 6,000 rpm",
           "torque": "69 Nm",
           "efficiency": "22.05 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "47.5 PS @ 6,000 rpm",
+          "Torque": "69 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "796 cc F8D Petrol",
-      "Displacement": "796 cc",
-      "Power": "47.5 PS @ 6,000 rpm",
-      "Torque": "69 Nm @ 3,500 rpm",
-      "Efficiency": "22.05 km/l",
-      "Fuel Tank": "27 L",
-      "Transmission": "5-Speed MT",
-      "Drive": "FWD",
+      "Engine Type": "1.0L K10C Petrol",
+      "Displacement (cc)": "998",
+      "Max Engine Power": "67 PS",
+      "Max Engine Torque": "89 Nm",
+      "Transmission Type": "MT / AGS",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2",
+      "Body Type": "Hatchback",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "67 PS",
+      "Torque": "89 Nm",
+      "Transmission": "MT / AGS",
       "Seating": "5",
-      "Boot Space": "177 L",
-      "Length": "3,445 mm",
-      "Width": "1,515 mm",
-      "Height": "1,475 mm",
-      "Wheelbase": "2,360 mm",
-      "Ground Clearance": "160 mm",
-      "Airbags": "2"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Nepal's most affordable new car",
-      "22 km/l — best efficiency in its class",
-      "Widest CG Motocorp service network in Nepal",
-      "Very low spare parts cost"
-    ],
-    "cons": [
-      "Only 2 airbags",
-      "Tiny 177 L boot",
-      "796 cc struggles on Nepali hills",
-      "No AMT option"
-    ],
-    "highlights": [
-      "22.05 km/l",
-      "Most Affordable",
-      "Taxi Proven",
-      "Widest Service Network"
-    ],
-    "thumb": "/assets/images/car_images/maruti-suzuki/alto/interior/maruti-suzuki-alto-interior-seats-front.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/alto/front-34-studio.png"
   },
   {
-    "id": 1307,
+    "id": 102,
     "slug": "suzuki-wagon-r-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "WagonR",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Tall Hatchback",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's most space-efficient hatchback — tall, roomy, fuel-efficient",
     "rating": 4,
     "reviews": 2103,
     "expertScore": 7.2,
     "baseEMI": 30000,
     "overview": "The Maruti Suzuki WagonR is one of Nepal's most popular family hatchbacks, offering a tall-boy design that maximizes interior space for 5 passengers. Available in 1.0L and 1.2L engines with AMT option, it is popular with families and taxi operators needing maximum capacity in a small footprint. CG Motocorp offers it across all Suzuki showrooms in Nepal.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/maruti-suzuki/wagon-r/front-34-studio-360.png",
+      "/assets/images/car_images/maruti-suzuki/wagon-r/side-studio-360.png",
+      "/assets/images/car_images/maruti-suzuki/wagon-r/rear-studio-360.png",
+      "/assets/images/car_images/maruti-suzuki/wagon-r/interior-dashboard.png"
+    ],
     "colors": [
       {
         "name": "Solid White",
@@ -16181,7 +16100,9 @@ window.CARS_DB = [
           "power": "68 PS @ 6,000 rpm",
           "torque": "90 Nm",
           "efficiency": "21.79 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "68 PS @ 6,000 rpm",
+          "Torque": "90 Nm"
         }
       },
       {
@@ -16201,7 +16122,9 @@ window.CARS_DB = [
           "power": "68 PS @ 6,000 rpm",
           "torque": "90 Nm",
           "efficiency": "21.79 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "68 PS @ 6,000 rpm",
+          "Torque": "90 Nm"
         }
       },
       {
@@ -16220,7 +16143,9 @@ window.CARS_DB = [
           "power": "83 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "20.52 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "83 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       },
       {
@@ -16240,56 +16165,50 @@ window.CARS_DB = [
           "power": "83 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "20.27 km/l",
-          "transmission": "5-Speed AMT"
+          "transmission": "5-Speed AMT",
+          "Power": "83 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.0L / 1.2L VVT K-Series Petrol",
-      "Displacement": "998 / 1,197 cc",
-      "Power": "68–83 PS",
-      "Torque": "90–113 Nm",
-      "Efficiency": "20.27–21.79 km/l",
-      "Fuel Tank": "32 L",
-      "Transmission": "5-Speed MT / AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.0L / 1.2L K-Series Petrol",
+      "Displacement (cc)": "998 / 1,197",
+      "Max Engine Power": "67–83 PS",
+      "Max Engine Torque": "89–113 Nm",
+      "Transmission Type": "MT / AGS",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Tall-Boy Hatchback",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "67–83 PS",
+      "Torque": "89–113 Nm",
+      "Transmission": "MT / AGS",
       "Seating": "5",
-      "Boot Space": "341 L",
-      "Length": "3,655 mm",
-      "Width": "1,620 mm",
-      "Height": "1,675 mm",
-      "Wheelbase": "2,435 mm",
-      "Ground Clearance": "170 mm",
-      "Airbags": "2"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Excellent headroom and interior space for size",
-      "AMT available for city ease",
-      "21+ km/l very fuel efficient",
-      "Huge CG Motocorp network"
-    ],
-    "cons": [
-      "Tall-boy design catches crosswind on mountain passes",
-      "Only 2 airbags",
-      "170 mm clearance average for Nepal",
-      "Basic interior"
-    ],
-    "highlights": [
-      "21.79 km/l",
-      "Tall-Boy Space",
-      "AMT Available",
-      "Family Favourite"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/wagon-r/front-34-studio-360.png"
   },
   {
-    "id": 1308,
+    "id": 103,
     "slug": "suzuki-celerio-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Celerio",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "City Hatchback",
     "badge": "value",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Lightweight, fuel-efficient city hatchback with AMT convenience",
     "rating": 3.9,
     "reviews": 867,
@@ -16297,6 +16216,10 @@ window.CARS_DB = [
     "baseEMI": 28000,
     "overview": "The Suzuki Celerio is Nepal's most fuel-efficient petrol hatchback, claiming 26.68 km/l on the 1.0L engine — the highest of any petrol car in Nepal. With its lightweight HEARTECT platform, smart AMT transmission option, and attractive price under Rs. 30 Lakhs, it is an ideal city runabout for Kathmandu's congested streets.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/celerio/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/celerio/front-grille-detail.jpg",
+      "/assets/images/car_images/maruti-suzuki/celerio/interior-dashboard.jpg",
+      "/assets/images/car_images/maruti-suzuki/celerio/front-lifestyle.jpeg",
       "/assets/images/car_images/maruti-suzuki/celerio/interior/maruti-suzuki-celerio-interior-seats-rear.jpg"
     ],
     "colors": [
@@ -16336,7 +16259,9 @@ window.CARS_DB = [
           "power": "67 PS @ 6,000 rpm",
           "torque": "89 Nm",
           "efficiency": "26.68 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "67 PS @ 6,000 rpm",
+          "Torque": "89 Nm"
         }
       },
       {
@@ -16356,7 +16281,9 @@ window.CARS_DB = [
           "power": "67 PS @ 6,000 rpm",
           "torque": "89 Nm",
           "efficiency": "26.68 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "67 PS @ 6,000 rpm",
+          "Torque": "89 Nm"
         }
       },
       {
@@ -16375,57 +16302,50 @@ window.CARS_DB = [
           "power": "67 PS @ 6,000 rpm",
           "torque": "89 Nm",
           "efficiency": "26.68 km/l",
-          "transmission": "5-Speed AMT"
+          "transmission": "5-Speed AMT",
+          "Power": "67 PS @ 6,000 rpm",
+          "Torque": "89 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.0L K10C DualJet Petrol",
-      "Displacement": "998 cc",
-      "Power": "67 PS @ 6,000 rpm",
-      "Torque": "89 Nm @ 3,500 rpm",
-      "Efficiency": "26.68 km/l (ARAI)",
-      "Fuel Tank": "32 L",
-      "Transmission": "5-Speed MT / AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.0L K10C Petrol",
+      "Displacement (cc)": "998",
+      "Max Engine Power": "67 PS",
+      "Max Engine Torque": "89 Nm",
+      "Transmission Type": "MT / AGS",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Hatchback",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "67 PS",
+      "Torque": "89 Nm",
+      "Transmission": "MT / AGS",
       "Seating": "5",
-      "Boot Space": "313 L",
-      "Length": "3,695 mm",
-      "Width": "1,655 mm",
-      "Height": "1,555 mm",
-      "Wheelbase": "2,425 mm",
-      "Ground Clearance": "165 mm",
-      "Airbags": "2"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "26.68 km/l — Nepal's most fuel-efficient petrol car",
-      "Lightweight HEARTECT platform",
-      "AMT option for city ease",
-      "Very affordable under Rs. 35L"
-    ],
-    "cons": [
-      "Only 2 airbags",
-      "165 mm clearance is low for rural Nepal",
-      "No Android Auto on base",
-      "Small 313 L boot"
-    ],
-    "highlights": [
-      "26.68 km/l",
-      "Lightest Platform",
-      "AMT Option",
-      "Best City Mileage"
-    ],
-    "thumb": "/assets/images/car_images/maruti-suzuki/celerio/interior/maruti-suzuki-celerio-interior-seats-rear.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/celerio/front-34-studio.png"
   },
   {
-    "id": 1309,
+    "id": 104,
     "slug": "suzuki-swift-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Swift",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Premium Hatchback",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's favourite sporty hatchback — the perennial bestseller reborn",
     "rating": 4.3,
     "reviews": 2876,
@@ -16433,7 +16353,11 @@ window.CARS_DB = [
     "baseEMI": 38000,
     "overview": "The Maruti Suzuki Swift is Nepal's most beloved premium hatchback and one of the best-selling cars in the country. The new-generation Swift runs on the HEARTECT platform with a new 1.2L Z12E 3-cylinder engine offering improved performance and efficiency. Sporty design, class-leading safety (6 airbags on top trim), and a willing AMT option make it the go-to hatchback for Nepal's urban buyers.",
     "images": [
-      "/assets/images/car_images/marutisuzuki/swift/exterior/MS1.jpg"
+      "/assets/images/car_images/maruti-suzuki/swift/front-studio-360.png",
+      "/assets/images/car_images/maruti-suzuki/swift/side-studio-360.png",
+      "/assets/images/car_images/maruti-suzuki/swift/rear-34-studio-360.png",
+      "/assets/images/car_images/maruti-suzuki/swift/front-34-currentgen-epicswift-studio.jpg",
+      "/assets/images/car_images/suzuki/swift/exterior/MS1.jpg"
     ],
     "colors": [
       {
@@ -16477,7 +16401,9 @@ window.CARS_DB = [
           "power": "82 PS @ 5,700 rpm",
           "torque": "112 Nm",
           "efficiency": "23.76 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 PS @ 5,700 rpm",
+          "Torque": "112 Nm"
         }
       },
       {
@@ -16498,7 +16424,9 @@ window.CARS_DB = [
           "power": "82 PS @ 5,700 rpm",
           "torque": "112 Nm",
           "efficiency": "23.76 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "82 PS @ 5,700 rpm",
+          "Torque": "112 Nm"
         }
       },
       {
@@ -16519,56 +16447,52 @@ window.CARS_DB = [
           "power": "82 PS @ 5,700 rpm",
           "torque": "112 Nm",
           "efficiency": "23.76 km/l",
-          "transmission": "5-Speed AMT"
+          "transmission": "5-Speed AMT",
+          "Power": "82 PS @ 5,700 rpm",
+          "Torque": "112 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L Z12E 3-Cyl DualJet Petrol",
-      "Displacement": "1,197 cc",
-      "Power": "82 PS @ 5,700 rpm",
-      "Torque": "112 Nm @ 4,300 rpm",
-      "Efficiency": "23.76 km/l",
-      "Fuel Tank": "37 L",
-      "Transmission": "5-Speed MT / AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Z-Series Petrol",
+      "Displacement (cc)": "1,197",
+      "Max Engine Power": "82 PS",
+      "Max Engine Torque": "112 Nm",
+      "Transmission Type": "MT / AGS",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "265",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Hatchback",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "82 PS",
+      "Torque": "112 Nm",
+      "Transmission": "MT / AGS",
+      "Boot Space": "265",
       "Seating": "5",
-      "Boot Space": "265 L",
-      "Length": "3,860 mm",
-      "Width": "1,735 mm",
-      "Height": "1,520 mm",
-      "Wheelbase": "2,450 mm",
-      "Ground Clearance": "163 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "23.76 km/l ARAI — outstanding efficiency",
-      "6 airbags on top trim",
-      "Head-Up Display available in Nepal",
-      "Sporty design with wide colour choices"
-    ],
-    "cons": [
-      "163 mm clearance lowest in its segment",
-      "Boot is a small 265 L",
-      "3-cylinder can feel buzzy at high revs",
-      "No AWD option"
-    ],
-    "highlights": [
-      "23.76 km/l",
-      "6 Airbags",
-      "Head-Up Display",
-      "Nepal's Best-Seller"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/swift/front-studio-360.png"
   },
   {
-    "id": 1310,
+    "id": 105,
     "slug": "suzuki-dzire-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Dzire",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact Sedan",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's most fuel-efficient compact sedan — practical, refined, value",
     "rating": 4.1,
     "reviews": 1453,
@@ -16576,7 +16500,9 @@ window.CARS_DB = [
     "baseEMI": 40000,
     "overview": "The Maruti Suzuki Dzire is Nepal's most popular compact sedan, combining the Swift's proven 1.2L engine with a 378 L boot in a 3-box sedan body. With CNG-ready variants in India (not yet in Nepal) and the HEARTECT platform, the Dzire offers one of the best overall value propositions in Nepal's sedan segment, priced between the WagonR and Baleno.",
     "images": [
-      "/assets/images/car_images/maruti-suzuki/DZIRE/exteriror/front-left-side-47.avif"
+      "/assets/images/car_images/maruti-suzuki/dzire/front-lifestyle.png",
+      "/assets/images/car_images/maruti-suzuki/dzire/interior-dashboard.png",
+      "/assets/images/car_images/maruti-suzuki/dzire/exterior/maruti-suzuki-dzire-exterior-front-left-side.png"
     ],
     "colors": [
       {
@@ -16615,7 +16541,9 @@ window.CARS_DB = [
           "power": "90 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "24.12 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "90 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       },
       {
@@ -16635,7 +16563,9 @@ window.CARS_DB = [
           "power": "90 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "24.12 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "90 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       },
       {
@@ -16656,57 +16586,52 @@ window.CARS_DB = [
           "power": "90 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "24.12 km/l",
-          "transmission": "5-Speed AMT"
+          "transmission": "5-Speed AMT",
+          "Power": "90 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L Z12E DualJet Petrol",
-      "Displacement": "1,197 cc",
-      "Power": "90 PS @ 6,000 rpm",
-      "Torque": "113 Nm @ 4,400 rpm",
-      "Efficiency": "24.12 km/l",
-      "Fuel Tank": "37 L",
-      "Transmission": "5-Speed MT / AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Z-Series Petrol",
+      "Displacement (cc)": "1,197",
+      "Max Engine Power": "82 PS",
+      "Max Engine Torque": "112 Nm",
+      "Transmission Type": "MT / AGS",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "378",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Sedan",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "82 PS",
+      "Torque": "112 Nm",
+      "Transmission": "MT / AGS",
+      "Boot Space": "378",
       "Seating": "5",
-      "Boot Space": "378 L",
-      "Length": "3,995 mm",
-      "Width": "1,735 mm",
-      "Height": "1,515 mm",
-      "Wheelbase": "2,450 mm",
-      "Ground Clearance": "163 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "24.12 km/l — most fuel-efficient sedan in Nepal",
-      "Practical 378 L sedan boot",
-      "6 airbags on ZXI+",
-      "Best residual value in its segment"
-    ],
-    "cons": [
-      "163 mm clearance — low for Nepal's roads",
-      "No turbo or performance variant",
-      "Sedan body less popular than SUV",
-      "No AWD"
-    ],
-    "highlights": [
-      "24.12 km/l",
-      "378 L Boot",
-      "6 Airbags",
-      "Best-Value Sedan"
-    ],
-    "thumb": "/assets/images/car_images/maruti-suzuki/DZIRE/exteriror/front-left-side-47.avif"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/dzire/front-lifestyle.png"
   },
   {
-    "id": 1311,
+    "id": 106,
     "slug": "suzuki-baleno-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Baleno",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Premium Hatchback",
     "badge": "popular",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Smart, spacious premium hatchback — Nepal's feature-packed NEXA offering",
     "rating": 4.2,
     "reviews": 1678,
@@ -16714,7 +16639,9 @@ window.CARS_DB = [
     "baseEMI": 42000,
     "overview": "The Suzuki Baleno is a premium hatchback in Nepal, sitting a step above the Swift in the CG Motocorp lineup. Built on the HEARTECT platform with a 1.2L DualJet engine, it delivers 22.35 km/l and a surprisingly roomy interior with 318 L boot. Available in both MT and CVT, the top ZXI+ trim packs 6 airbags, a HUD, and Head-Up Display into an accessible price point.",
     "images": [
-      "/assets/images/car_images/maruti-suzuki/baleno/interior/maruti-suzuki-baleno-interior-dashboard.jpg"
+      "/assets/images/car_images/maruti-suzuki/baleno/exterior/ext-1-577cea5b2a.jpg",
+      "/assets/images/car_images/maruti-suzuki/baleno/exterior/ext-2-958c984d36.jpg",
+      "/assets/images/car_images/maruti-suzuki/baleno/interior/int-1-1b5477ba2b.jpg"
     ],
     "colors": [
       {
@@ -16757,7 +16684,9 @@ window.CARS_DB = [
           "power": "90 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "22.35 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "90 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       },
       {
@@ -16777,7 +16706,9 @@ window.CARS_DB = [
           "power": "90 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "22.35 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "90 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       },
       {
@@ -16798,57 +16729,52 @@ window.CARS_DB = [
           "power": "90 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "22.94 km/l (CVT)",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "90 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L DualJet K12N Petrol",
-      "Displacement": "1,197 cc",
-      "Power": "90 PS @ 6,000 rpm",
-      "Torque": "113 Nm @ 4,200 rpm",
-      "Efficiency": "22.35–22.94 km/l",
-      "Fuel Tank": "37 L",
-      "Transmission": "5-Speed MT / CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L K-Series Petrol / Smart Hybrid",
+      "Displacement (cc)": "1,197",
+      "Max Engine Power": "90 PS",
+      "Max Engine Torque": "113 Nm",
+      "Transmission Type": "MT / CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "318",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Premium Hatchback",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "90 PS",
+      "Torque": "113 Nm",
+      "Transmission": "MT / CVT",
+      "Boot Space": "318",
       "Seating": "5",
-      "Boot Space": "318 L",
-      "Length": "3,990 mm",
-      "Width": "1,745 mm",
-      "Height": "1,500 mm",
-      "Wheelbase": "2,520 mm",
-      "Ground Clearance": "170 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "CVT auto option for urban ease",
-      "6 airbags and HUD on top trim",
-      "22+ km/l impressive efficiency",
-      "Spacious premium cabin"
-    ],
-    "cons": [
-      "170 mm clearance is modest",
-      "265 L boot smaller than rivals",
-      "No turbo variant in Nepal",
-      "Hatchback may be less desirable than SUV body"
-    ],
-    "highlights": [
-      "22.94 km/l CVT",
-      "6 Airbags",
-      "Head-Up Display",
-      "Premium Hatchback"
-    ],
-    "thumb": "/assets/images/car_images/maruti-suzuki/baleno/interior/maruti-suzuki-baleno-interior-dashboard.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/baleno/exterior/ext-1-577cea5b2a.jpg"
   },
   {
-    "id": 1312,
+    "id": 107,
     "slug": "suzuki-ignis-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Ignis",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Micro Urban SUV",
     "badge": "niche",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Funky micro-SUV for Nepal's urban millennials — quirky, compact, capable",
     "rating": 3.9,
     "reviews": 432,
@@ -16856,8 +16782,11 @@ window.CARS_DB = [
     "baseEMI": 38000,
     "overview": "The Suzuki Ignis is the quirkiest car in Nepal's Suzuki lineup — a true micro-SUV with an elevated stance (163 mm clearance), boxy crossover styling, and a willing 1.2L petrol engine. It targets Nepal's younger urban buyers who want SUV styling in a compact, affordable package. Available in MT and AMT.",
     "images": [
-      "/assets/images/car_images/maruti-suzuki/ignis/exterior/maruti-suzuki-ignis-exterior-rear-white-bg.jpg",
-      "/assets/images/car_images/maruti-suzuki/ignis/exterior/maruti-suzuki-ignis-exterior-side-left-white-bg.jpg"
+      "/assets/images/car_images/maruti-suzuki/ignis/front-lifestyle.png",
+      "/assets/images/car_images/maruti-suzuki/ignis/side-34-lifestyle.jpg",
+      "/assets/images/car_images/maruti-suzuki/ignis/interior-cabin-wide.jpg",
+      "/assets/images/car_images/maruti-suzuki/ignis/exterior/maruti-suzuki-ignis-exterior-rear.png",
+      "/assets/images/car_images/maruti-suzuki/ignis/exterior/maruti-suzuki-ignis-exterior-side-left.png"
     ],
     "colors": [
       {
@@ -16896,7 +16825,9 @@ window.CARS_DB = [
           "power": "83 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "20.89 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "83 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       },
       {
@@ -16917,7 +16848,9 @@ window.CARS_DB = [
           "power": "83 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "20.89 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "83 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       },
       {
@@ -16935,57 +16868,52 @@ window.CARS_DB = [
           "power": "83 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "20.89 km/l",
-          "transmission": "5-Speed AMT"
+          "transmission": "5-Speed AMT",
+          "Power": "83 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L K12B VVT Petrol",
-      "Displacement": "1,197 cc",
-      "Power": "83 PS @ 6,000 rpm",
-      "Torque": "113 Nm @ 4,200 rpm",
-      "Efficiency": "20.89 km/l",
-      "Fuel Tank": "32 L",
-      "Transmission": "5-Speed MT / AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L K-Series Petrol",
+      "Displacement (cc)": "1,197",
+      "Max Engine Power": "83 PS",
+      "Max Engine Torque": "113 Nm",
+      "Transmission Type": "MT / AMT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Ground Clearance (mm)": "180",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Crossover Hatchback",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "83 PS",
+      "Torque": "113 Nm",
+      "Transmission": "MT / AMT",
       "Seating": "5",
-      "Boot Space": "260 L",
-      "Length": "3,700 mm",
-      "Width": "1,690 mm",
-      "Height": "1,595 mm",
-      "Wheelbase": "2,435 mm",
-      "Ground Clearance": "175 mm",
-      "Airbags": "2–4"
+      "Fuel Type": "Petrol",
+      "Ground Clearance": "180"
     },
-    "pros": [
-      "Unique micro-SUV design stands out in Nepal",
-      "AMT option for city ease",
-      "20.89 km/l very efficient",
-      "Compact size ideal for Kathmandu"
-    ],
-    "cons": [
-      "175 mm clearance modest for micro-SUV claim",
-      "Only 260 L boot",
-      "No turbo variant",
-      "Niche appeal limits resale"
-    ],
-    "highlights": [
-      "Micro-SUV Design",
-      "20.89 km/l",
-      "AMT Option",
-      "Unique Styling"
-    ],
-    "thumb": "/assets/images/car_images/maruti-suzuki/ignis/exterior/maruti-suzuki-ignis-exterior-rear-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/ignis/front-lifestyle.png"
   },
   {
-    "id": 1313,
+    "id": 108,
     "slug": "suzuki-vitara-brezza-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Vitara Brezza",
     "year": 2026,
     "type": "Petrol / Smart Hybrid",
+    "bodyType": "Unknown",
     "body": "Compact SUV",
     "badge": "bestseller",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's #1 compact SUV — Suzuki's flagship sub-4m SUV with smart hybrid",
     "rating": 4.4,
     "reviews": 2341,
@@ -16993,8 +16921,10 @@ window.CARS_DB = [
     "baseEMI": 48000,
     "overview": "The Suzuki Vitara Brezza is Nepal's best-selling compact SUV and the flagship of CG Motocorp's passenger car lineup. Now equipped with a Smart Hybrid system on top variants, it combines a 1.5L K15B engine with a lithium-ion battery to improve city efficiency. With 210 mm ground clearance, a panoramic sunroof, and up to 6 airbags, it competes directly with the Hyundai Venue and Kia Sonet in Nepal's hottest car segment.",
     "images": [
+      "/assets/images/car_images/maruti-suzuki/brezza/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/brezza/front-34-lifestyle-cgmotocorp.jpg",
       "/assets/images/car_images/maruti-suzuki/vitara-brezza/exterior/maruti-suzuki-vitara-brezza-exterior-front-white-bg.jpg",
-      "/assets/images/car_images/maruti-suzuki/vitara-brezza/exterior/maruti-suzuki-vitara-brezza-exterior-rear-white-bg.jpg"
+      "/assets/images/car_images/maruti-suzuki/vitara-brezza/exterior/maruti-suzuki-vitara-brezza-exterior-rear.jpg"
     ],
     "colors": [
       {
@@ -17037,7 +16967,9 @@ window.CARS_DB = [
           "power": "103 PS @ 6,000 rpm",
           "torque": "138 Nm",
           "efficiency": "17.03 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "103 PS @ 6,000 rpm",
+          "Torque": "138 Nm"
         }
       },
       {
@@ -17058,7 +16990,9 @@ window.CARS_DB = [
           "power": "103 PS @ 6,000 rpm",
           "torque": "138 Nm",
           "efficiency": "17.03 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "103 PS @ 6,000 rpm",
+          "Torque": "138 Nm"
         }
       },
       {
@@ -17079,7 +17013,9 @@ window.CARS_DB = [
           "power": "103 PS + 13.6 PS (hybrid)",
           "torque": "138 Nm",
           "efficiency": "19.80 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "103 PS + 13.6 PS (hybrid)",
+          "Torque": "138 Nm"
         }
       },
       {
@@ -17098,57 +17034,53 @@ window.CARS_DB = [
           "power": "103 PS + 13.6 PS (hybrid)",
           "torque": "138 Nm",
           "efficiency": "19.80 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "103 PS + 13.6 PS (hybrid)",
+          "Torque": "138 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L K15B Smart Hybrid Petrol",
-      "Displacement": "1,462 cc",
-      "Power": "103 PS + 13.6 PS (Smart Hybrid)",
-      "Torque": "138 Nm",
-      "Efficiency": "17.03–19.80 km/l",
-      "Fuel Tank": "40 L",
-      "Transmission": "5-Speed MT / 6-Speed AT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L K15C Petrol / Smart Hybrid",
+      "Displacement (cc)": "1,462",
+      "Max Engine Power": "103 PS",
+      "Max Engine Torque": "137 Nm",
+      "Transmission Type": "MT / AT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Ground Clearance (mm)": "198",
+      "Total Airbag Count": "6",
+      "ADAS Suite": "Level 2 (top trim)",
+      "Body Type": "Compact SUV",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "103 PS",
+      "Torque": "137 Nm",
+      "Transmission": "MT / AT",
       "Seating": "5",
-      "Boot Space": "328 L",
-      "Length": "3,995 mm",
-      "Width": "1,790 mm",
-      "Height": "1,640 mm",
-      "Wheelbase": "2,500 mm",
-      "Ground Clearance": "210 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Petrol / Smart Hybrid",
+      "Ground Clearance": "198"
     },
-    "pros": [
-      "Nepal's #1 compact SUV by sales",
-      "210 mm ground clearance for Nepali terrain",
-      "Smart Hybrid boosts city efficiency to ~20 km/l",
-      "Panoramic sunroof on top trim"
-    ],
-    "cons": [
-      "FWD only — no AWD on Smart Hybrid",
-      "328 L boot smaller than rivals",
-      "Smart Hybrid AT is significantly more expensive",
-      "No diesel option"
-    ],
-    "highlights": [
-      "210 mm Clearance",
-      "Smart Hybrid",
-      "Panoramic Sunroof",
-      "Nepal's #1 SUV"
-    ],
-    "thumb": "/assets/images/car_images/maruti-suzuki/vitara-brezza/exterior/maruti-suzuki-vitara-brezza-exterior-front-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/brezza/front-34-studio.png"
   },
   {
-    "id": 1314,
+    "id": 109,
     "slug": "suzuki-ertiga-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Ertiga",
     "year": 2026,
     "type": "Petrol / Smart Hybrid",
+    "bodyType": "Unknown",
     "body": "Compact MPV",
     "badge": "family",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's best-value 7-seat family MPV — practical, efficient, spacious",
     "rating": 4.2,
     "reviews": 1987,
@@ -17156,8 +17088,10 @@ window.CARS_DB = [
     "baseEMI": 52000,
     "overview": "The Suzuki Ertiga is Nepal's most popular 7-seat MPV for family use, combining a spacious 3-row cabin, 1.5L Smart Hybrid engine, and CG Motocorp's unbeatable after-sales support. With 19.01 km/l ARAI efficiency, dual sliding doors, and class-leading 803 L boot (all seats folded), the Ertiga is the top family MPV choice for tour operators and large families across Nepal.",
     "images": [
-      "/assets/images/car_images/maruti-suzuki/ertiga/exterior/maruti-suzuki-ertiga-exterior-front-white-bg.jpg",
-      "/assets/images/car_images/maruti-suzuki/ertiga/interior/maruti-suzuki-ertiga-interior-seats-front.jpg"
+      "/assets/images/car_images/maruti-suzuki/ertiga/front-lifestyle.png",
+      "/assets/images/car_images/maruti-suzuki/ertiga/interior-dashboard.png",
+      "/assets/images/car_images/maruti-suzuki/ertiga/interior-3row-seats.png",
+      "/assets/images/car_images/maruti-suzuki/ertiga/exterior/maruti-suzuki-ertiga-exterior-front-white-bg.jpg"
     ],
     "colors": [
       {
@@ -17197,7 +17131,9 @@ window.CARS_DB = [
           "power": "103 PS @ 6,000 rpm",
           "torque": "138 Nm",
           "efficiency": "19.01 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "103 PS @ 6,000 rpm",
+          "Torque": "138 Nm"
         }
       },
       {
@@ -17218,7 +17154,9 @@ window.CARS_DB = [
           "power": "103 PS @ 6,000 rpm",
           "torque": "138 Nm",
           "efficiency": "19.01 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "103 PS @ 6,000 rpm",
+          "Torque": "138 Nm"
         }
       },
       {
@@ -17239,57 +17177,50 @@ window.CARS_DB = [
           "power": "103 PS + Smart Hybrid",
           "torque": "138 Nm",
           "efficiency": "19.38 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "103 PS + Smart Hybrid",
+          "Torque": "138 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L K15B Smart Hybrid Petrol",
-      "Displacement": "1,462 cc",
-      "Power": "103 PS @ 6,000 rpm",
-      "Torque": "138 Nm",
-      "Efficiency": "19.01–19.38 km/l",
-      "Fuel Tank": "45 L",
-      "Transmission": "5-Speed MT / 6-Speed AT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L K15C Petrol / Smart Hybrid",
+      "Displacement (cc)": "1,462",
+      "Max Engine Power": "103 PS",
+      "Max Engine Torque": "137 Nm",
+      "Transmission Type": "MT / AT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "2–6",
+      "Body Type": "MPV",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "103 PS",
+      "Torque": "137 Nm",
+      "Transmission": "MT / AT",
       "Seating": "7",
-      "Boot Space": "209 L (7up) / 803 L (all folded)",
-      "Length": "4,395 mm",
-      "Width": "1,735 mm",
-      "Height": "1,690 mm",
-      "Wheelbase": "2,740 mm",
-      "Ground Clearance": "185 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Petrol / Smart Hybrid"
     },
-    "pros": [
-      "Nepal's best-selling 7-seater MPV for good reason",
-      "19.38 km/l on Smart Hybrid",
-      "803 L boot capacity with seats folded",
-      "Dual sliding rear doors for easy entry"
-    ],
-    "cons": [
-      "FWD only",
-      "2 airbags on base variant",
-      "185 mm clearance modest for 7-seat use",
-      "Third row best for children"
-    ],
-    "highlights": [
-      "7 Seats",
-      "19.38 km/l Hybrid",
-      "803 L Boot Capacity",
-      "Dual Sliding Doors"
-    ],
-    "thumb": "/assets/images/car_images/maruti-suzuki/ertiga/exterior/maruti-suzuki-ertiga-exterior-front-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/ertiga/front-lifestyle.png"
   },
   {
-    "id": 1315,
+    "id": 110,
     "slug": "suzuki-grand-vitara-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Grand Vitara",
     "year": 2026,
     "type": "Strong Hybrid / Petrol",
+    "bodyType": "Unknown",
     "body": "Mid-size SUV",
     "badge": "premium",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Suzuki's premium mid-size SUV — strong hybrid and All-Grip AWD for Nepal",
     "rating": 4.4,
     "reviews": 876,
@@ -17297,7 +17228,10 @@ window.CARS_DB = [
     "baseEMI": 75000,
     "overview": "The Suzuki Grand Vitara is the most premium and technically advanced Maruti Suzuki in Nepal, jointly developed with Toyota (sharing platform with the Toyota Urban Cruiser Hyryder). The Strong Hybrid variant uses a 1.5L 3-cylinder petrol engine with Toyota's proven strong hybrid system for 27.97 km/l, while a mild-hybrid 1.5L variant with AllGrip AWD caters to those who want off-road capability.",
     "images": [
-      "/assets/images/car_images/maruti-suzuki/grand-vitara/exterior/maruti-suzuki-grand-vitara-exterior-front-white-bg.jpg"
+      "/assets/images/car_images/maruti-suzuki/grand-vitara/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/grand-vitara/front-34-studio-small.png",
+      "/assets/images/car_images/maruti-suzuki/grand-vitara/interior-infotainment-detail.png",
+      "/assets/images/car_images/maruti-suzuki/grand-vitara/exterior/maruti-suzuki-grand-vitara-exterior-front.png"
     ],
     "colors": [
       {
@@ -17336,7 +17270,9 @@ window.CARS_DB = [
           "power": "103 PS",
           "torque": "137 Nm",
           "efficiency": "20.58 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "103 PS",
+          "Torque": "137 Nm"
         }
       },
       {
@@ -17358,7 +17294,9 @@ window.CARS_DB = [
           "power": "103 PS",
           "torque": "137 Nm",
           "efficiency": "19.38 km/l",
-          "transmission": "6-Speed AT"
+          "transmission": "6-Speed AT",
+          "Power": "103 PS",
+          "Torque": "137 Nm"
         }
       },
       {
@@ -17391,57 +17329,50 @@ window.CARS_DB = [
           "power": "116 PS combined",
           "torque": "122 Nm + Motor assist",
           "efficiency": "27.97 km/l",
-          "transmission": "e-CVT"
+          "transmission": "e-CVT",
+          "Power": "116 PS combined",
+          "Torque": "122 Nm + Motor assist"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L K15C Mild Hybrid / 1.5L Strong Hybrid",
-      "Displacement": "1,490 cc",
-      "Power": "103 PS (mild) / 116 PS combined (strong hybrid)",
+      "Engine Type": "1.5L Strong Hybrid / 1.5L Smart Hybrid / 1.5L Petrol (AllGrip AWD)",
+      "Displacement (cc)": "1,490 / 1,462",
+      "Max Engine Power": "91–103 PS (+ electric motor on Strong Hybrid)",
+      "Max Engine Torque": "122–137 Nm",
+      "Transmission Type": "MT / AT / e-CVT (Strong Hybrid)",
+      "Drive Type": "FWD / AllGrip AWD (top trim)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Mid-size SUV",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "91–103 PS (+ electric motor on Strong Hybrid)",
       "Torque": "122–137 Nm",
-      "Efficiency": "19.38–27.97 km/l",
-      "Fuel Tank": "45 L",
-      "Transmission": "5-Speed MT / 6-Speed AT / e-CVT",
-      "Drive": "FWD / AllGrip AWD",
+      "Transmission": "MT / AT / e-CVT (Strong Hybrid)",
       "Seating": "5",
-      "Boot Space": "373 L",
-      "Length": "4,345 mm",
-      "Width": "1,795 mm",
-      "Height": "1,645 mm",
-      "Wheelbase": "2,600 mm",
-      "Ground Clearance": "210 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Strong Hybrid / Petrol"
     },
-    "pros": [
-      "27.97 km/l on Strong Hybrid — best efficiency of any SUV in Nepal",
-      "AllGrip AWD for mountain and off-road use",
-      "Toyota-sourced hybrid system for proven reliability",
-      "210 mm ground clearance"
-    ],
-    "cons": [
-      "Most expensive Suzuki in Nepal at Rs. 97.29L",
-      "AllGrip AWD not available on Strong Hybrid variant",
-      "e-CVT can feel uninspiring for spirited driving",
-      "Relatively small 373 L boot for mid-size class"
-    ],
-    "highlights": [
-      "27.97 km/l Strong Hybrid",
-      "AllGrip AWD",
-      "Toyota-Sourced Hybrid",
-      "210 mm Clearance"
-    ],
-    "thumb": "/assets/images/car_images/maruti-suzuki/grand-vitara/exterior/maruti-suzuki-grand-vitara-exterior-front-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/grand-vitara/front-34-studio.png"
   },
   {
-    "id": 1316,
+    "id": 111,
     "slug": "suzuki-fronx-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Fronx",
     "year": 2026,
     "type": "Petrol / Smart Hybrid",
+    "bodyType": "Unknown",
     "body": "Urban Crossover SUV",
     "badge": "new",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's newest Suzuki — sporty Baleno-based crossover SUV",
     "rating": 4.2,
     "reviews": 423,
@@ -17449,7 +17380,10 @@ window.CARS_DB = [
     "baseEMI": 50000,
     "overview": "The Suzuki Fronx is the newest addition to CG Motocorp's Nepal lineup, a Baleno-based coupe-style crossover SUV offering the best of both worlds: the hatchback's efficiency with an elevated crossover stance. Available with a 1.0L turbo engine for those who want spirited performance, or a 1.2L mild hybrid for efficiency, the Fronx targets Nepal's style-conscious younger buyers.",
     "images": [
-      "/assets/images/car_images/maruti-suzuki/fronx/exterior/maruti-suzuki-fronx-exterior-side-left-white-bg.jpg"
+      "/assets/images/car_images/maruti-suzuki/fronx/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/fronx/interior-dashboard.png",
+      "/assets/images/car_images/maruti-suzuki/fronx/front-lifestyle.png",
+      "/assets/images/car_images/maruti-suzuki/fronx/exterior/maruti-suzuki-fronx-exterior-side-left.png"
     ],
     "colors": [
       {
@@ -17492,7 +17426,9 @@ window.CARS_DB = [
           "power": "90 PS @ 6,000 rpm",
           "torque": "113 Nm",
           "efficiency": "21.79 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "90 PS @ 6,000 rpm",
+          "Torque": "113 Nm"
         }
       },
       {
@@ -17512,7 +17448,9 @@ window.CARS_DB = [
           "power": "100 PS @ 5,500 rpm",
           "torque": "148 Nm",
           "efficiency": "20.01 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "100 PS @ 5,500 rpm",
+          "Torque": "148 Nm"
         }
       },
       {
@@ -17534,57 +17472,52 @@ window.CARS_DB = [
           "power": "100 PS @ 5,500 rpm",
           "torque": "148 Nm",
           "efficiency": "20.01 km/l",
-          "transmission": "AMT"
+          "transmission": "AMT",
+          "Power": "100 PS @ 5,500 rpm",
+          "Torque": "148 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L / 1.0L Turbo Boosterjet Petrol",
-      "Displacement": "1,197 / 998 cc",
+      "Engine Type": "1.2L K-Series Petrol / 1.0L Turbo Boosterjet",
+      "Displacement (cc)": "1,197 / 998",
+      "Max Engine Power": "90–100 PS",
+      "Max Engine Torque": "113–148 Nm",
+      "Transmission Type": "MT / AMT / 6AT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "308",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Crossover SUV",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
       "Power": "90–100 PS",
       "Torque": "113–148 Nm",
-      "Efficiency": "20.01–21.79 km/l",
-      "Fuel Tank": "37 L",
-      "Transmission": "5-Speed MT / AMT",
-      "Drive": "FWD",
+      "Transmission": "MT / AMT / 6AT",
+      "Boot Space": "308",
       "Seating": "5",
-      "Boot Space": "308 L",
-      "Length": "3,990 mm",
-      "Width": "1,765 mm",
-      "Height": "1,550 mm",
-      "Wheelbase": "2,520 mm",
-      "Ground Clearance": "175 mm",
-      "Airbags": "2–6"
+      "Fuel Type": "Petrol / Smart Hybrid"
     },
-    "pros": [
-      "Turbo engine adds fun performance not found in most Suzukis",
-      "Coupe-SUV styling is unique in Nepal",
-      "6 airbags and HUD on top trim",
-      "Newer than Baleno in Nepal's lineup"
-    ],
-    "cons": [
-      "175 mm clearance modest for a crossover",
-      "No AWD available",
-      "Small 308 L boot",
-      "AMT is only automatic option (no CVT/AT)"
-    ],
-    "highlights": [
-      "100 PS Turbo",
-      "Coupe-SUV Style",
-      "6 Airbags + HUD",
-      "Newest Suzuki in Nepal"
-    ],
-    "thumb": "/assets/images/car_images/maruti-suzuki/fronx/exterior/maruti-suzuki-fronx-exterior-side-left-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/fronx/front-34-studio.png"
   },
   {
-    "id": 1317,
+    "id": 112,
     "slug": "suzuki-jimny-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Jimny",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact Off-Road SUV",
     "badge": "iconic",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "The legend returns — Nepal's most capable compact off-roader from Suzuki",
     "rating": 4.5,
     "reviews": 543,
@@ -17592,7 +17525,10 @@ window.CARS_DB = [
     "baseEMI": 63000,
     "overview": "The Suzuki Jimny is the most iconic off-road vehicle in Nepal's compact SUV segment, relaunched by CG Motocorp as Nepal's most expensive Suzuki at Rs. 62.99 Lakhs. With a genuine ladder-frame chassis, 4WD with low-range gearbox, 210 mm ground clearance, and approach/departure angles that rival much larger 4x4s, the Jimny is Nepal's purest off-road compact. It is available in the 5-door body style in Nepal.",
     "images": [
-      "/assets/images/car_images/maruti-suzuki/jimny/exterior/maruti-suzuki-jimny-exterior-front-white-bg.jpg"
+      "/assets/images/car_images/maruti-suzuki/jimny/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/jimny/front-lifestyle-offroad.png",
+      "/assets/images/car_images/maruti-suzuki/jimny/interior-dashboard.png",
+      "/assets/images/car_images/maruti-suzuki/jimny/exterior/maruti-suzuki-jimny-exterior-front.png"
     ],
     "colors": [
       {
@@ -17635,7 +17571,9 @@ window.CARS_DB = [
           "power": "103 PS @ 6,000 rpm",
           "torque": "134 Nm",
           "efficiency": "16.39 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "103 PS @ 6,000 rpm",
+          "Torque": "134 Nm"
         }
       },
       {
@@ -17656,7 +17594,9 @@ window.CARS_DB = [
           "power": "103 PS @ 6,000 rpm",
           "torque": "134 Nm",
           "efficiency": "16.39 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "103 PS @ 6,000 rpm",
+          "Torque": "134 Nm"
         }
       },
       {
@@ -17674,66 +17614,63 @@ window.CARS_DB = [
           "power": "103 PS @ 6,000 rpm",
           "torque": "134 Nm",
           "efficiency": "16.39 km/l",
-          "transmission": "4-Speed AT"
+          "transmission": "4-Speed AT",
+          "Power": "103 PS @ 6,000 rpm",
+          "Torque": "134 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L K15B VVT Petrol",
-      "Displacement": "1,462 cc",
-      "Power": "103 PS @ 6,000 rpm",
-      "Torque": "134 Nm @ 4,000 rpm",
-      "Efficiency": "16.39 km/l",
-      "Fuel Tank": "40 L",
-      "Transmission": "5-Speed MT / 4-Speed AT",
-      "Drive": "4WD (Part-Time with Low Range)",
+      "Engine Type": "1.5L K15B Petrol",
+      "Displacement (cc)": "1,462",
+      "Max Engine Power": "105 PS",
+      "Max Engine Torque": "134 Nm",
+      "Transmission Type": "MT / 4AT",
+      "Drive Type": "4WD (AllGrip Pro, low range)",
+      "Seating Capacity": "5 (5-door)",
+      "Ground Clearance (mm)": "210",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Off-Road SUV",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "105 PS",
+      "Torque": "134 Nm",
+      "Transmission": "MT / 4AT",
       "Seating": "5 (5-door)",
-      "Boot Space": "208 L",
-      "Length": "3,985 mm",
-      "Width": "1,645 mm",
-      "Height": "1,720 mm",
-      "Wheelbase": "2,590 mm",
-      "Ground Clearance": "210 mm",
-      "Approach Angle": "37°",
-      "Departure Angle": "49°",
-      "Airbags": "4–6"
+      "Fuel Type": "Petrol",
+      "Ground Clearance": "210"
     },
-    "pros": [
-      "Genuine ladder-frame with low-range 4WD for serious off-roading",
-      "210 mm clearance + best approach/departure angles in Nepal's compact class",
-      "Most capable Suzuki ever brought to Nepal",
-      "Iconic design with devoted fan following"
-    ],
-    "cons": [
-      "Most expensive Suzuki in Nepal at Rs. 62.99L",
-      "Only 208 L boot — very small for a 5-door",
-      "4-speed AT is outdated for the price",
-      "Smaller on-road refinement vs car-based SUVs"
-    ],
-    "highlights": [
-      "Ladder Frame 4WD",
-      "Low Range Gearbox",
-      "210 mm Clearance",
-      "Nepal's Iconic Off-Roader"
-    ],
-    "thumb": "/assets/images/car_images/maruti-suzuki/jimny/exterior/maruti-suzuki-jimny-exterior-front-white-bg.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/jimny/front-34-studio.png"
   },
   {
-    "id": 1318,
+    "id": 113,
     "slug": "suzuki-eeco-2025",
     "brand": "Maruti Suzuki",
+    "brandSlug": "maruti suzuki",
     "model": "Eeco",
     "year": 2026,
     "type": "Petrol",
+    "bodyType": "Unknown",
     "body": "Compact Van / MPV",
     "badge": "commercial",
+    "budgetTier": null,
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Nepal's most affordable family van — spacious, economical, versatile",
     "rating": 3.7,
     "reviews": 1102,
     "expertScore": 6.3,
     "baseEMI": 19000,
     "overview": "The Suzuki Eeco is Nepal's most affordable and popular compact van, widely used as a family MPV, small business vehicle, and taxi/shared transport. With a 1.2L petrol engine, the Eeco can seat up to 7 passengers in its standard form and offers a large flat-floor loading area. CG Motocorp prices it from Rs. 18.99 Lakhs, making it Nepal's cheapest 7-seat vehicle.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/maruti-suzuki/eeco/front-34-studio.png",
+      "/assets/images/car_images/maruti-suzuki/eeco/interior-seats.png",
+      "/assets/images/car_images/maruti-suzuki/eeco/front-lifestyle.png"
+    ],
     "colors": [
       {
         "name": "Silky Silver",
@@ -17767,7 +17704,9 @@ window.CARS_DB = [
           "power": "73 PS @ 6,000 rpm",
           "torque": "104 Nm",
           "efficiency": "16.11 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "73 PS @ 6,000 rpm",
+          "Torque": "104 Nm"
         }
       },
       {
@@ -17786,49 +17725,36 @@ window.CARS_DB = [
           "power": "73 PS @ 6,000 rpm",
           "torque": "104 Nm",
           "efficiency": "16.11 km/l",
-          "transmission": "5-Speed MT"
+          "transmission": "5-Speed MT",
+          "Power": "73 PS @ 6,000 rpm",
+          "Torque": "104 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L G12B Petrol",
-      "Displacement": "1,196 cc",
-      "Power": "73 PS @ 6,000 rpm",
-      "Torque": "104 Nm @ 3,000 rpm",
-      "Efficiency": "16.11 km/l",
-      "Fuel Tank": "35 L",
-      "Transmission": "5-Speed MT",
-      "Drive": "RWD",
-      "Seating": "5 or 7",
-      "Boot Space": "Long load floor",
-      "Length": "3,675 mm",
-      "Width": "1,475 mm",
-      "Height": "1,825 mm",
-      "Wheelbase": "2,350 mm",
-      "Ground Clearance": "170 mm",
-      "Airbags": "0"
+      "Engine Type": "1.2L G12B Petrol",
+      "Displacement (cc)": "1,196",
+      "Max Engine Power": "73 PS",
+      "Max Engine Torque": "101 Nm",
+      "Transmission Type": "MT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5/7",
+      "Total Airbag Count": "0–2",
+      "Body Type": "Van/MPV",
+      "Distributor": "CG Motocorp (Official Maruti Suzuki Nepal Distributor)",
+      "Power": "73 PS",
+      "Torque": "101 Nm",
+      "Transmission": "MT",
+      "Seating": "5/7",
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Nepal's cheapest 7-seat vehicle at Rs. 18.99L",
-      "Practical flat-floor commercial space",
-      "Proven reliability and low maintenance cost",
-      "Widest CG service network"
-    ],
-    "cons": [
-      "No airbags on standard variant",
-      "RWD only",
-      "Basic interior",
-      "High roof tall profile"
-    ],
-    "highlights": [
-      "7 Seats from Rs. 18.99L",
-      "Commercial Versatility",
-      "Budget Family Van",
-      "Nepal's Most Affordable 7-Seater"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/maruti-suzuki/eeco/front-34-studio.png"
   },
   {
-    "id": 101,
+    "id": 114,
     "slug": "honda-amaze-2024",
     "brand": "Honda",
     "brandSlug": "honda",
@@ -17850,6 +17776,13 @@ window.CARS_DB = [
     "baseEMI": 38000,
     "overview": "The Honda Amaze BS6 is a compact sedan delivering proven i-VTEC reliability, refined cabin quality, and Honda safety credentials. Available in both manual and CVT automatic, it is the most accessible Honda in Nepal.",
     "images": [
+      "/assets/images/car_images/honda/honda-amaze-2024/front.png",
+      "/assets/images/car_images/honda/honda-amaze-2024/interior.jpg",
+      "/assets/images/car_images/honda/honda-amaze-2024/colors/color-silver.png",
+      "/assets/images/car_images/honda/honda-amaze-2024/colors/color-brown-metallic.png",
+      "/assets/images/car_images/honda/honda-amaze-2024/colors/color-modern-steel.png",
+      "/assets/images/car_images/honda/honda-amaze-2024/colors/color-white.png",
+      "/assets/images/car_images/honda/honda-amaze-2024/colors/color-red.png",
       "/assets/images/car_images/honda/amaze/exterior/1-3.jpg",
       "/assets/images/car_images/honda/amaze/exterior/specs.png",
       "/assets/images/car_images/honda/amaze/interior/7.jpg"
@@ -17896,7 +17829,9 @@ window.CARS_DB = [
           "power": "90 PS @ 6000 rpm",
           "torque": "110 Nm @ 4800 rpm",
           "efficiency": "18.6 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "90 PS @ 6000 rpm",
+          "Torque": "110 Nm @ 4800 rpm"
         }
       },
       {
@@ -17917,7 +17852,9 @@ window.CARS_DB = [
           "power": "90 PS @ 6000 rpm",
           "torque": "110 Nm @ 4800 rpm",
           "efficiency": "19.0 km/l (CVT)",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "90 PS @ 6000 rpm",
+          "Torque": "110 Nm @ 4800 rpm"
         }
       },
       {
@@ -17939,7 +17876,9 @@ window.CARS_DB = [
           "power": "90 PS @ 6000 rpm",
           "torque": "110 Nm @ 4800 rpm",
           "efficiency": "18.6 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "90 PS @ 6000 rpm",
+          "Torque": "110 Nm @ 4800 rpm"
         }
       },
       {
@@ -17961,50 +17900,36 @@ window.CARS_DB = [
           "power": "90 PS @ 6000 rpm",
           "torque": "110 Nm @ 4800 rpm",
           "efficiency": "19.0 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "90 PS @ 6000 rpm",
+          "Torque": "110 Nm @ 4800 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L i-VTEC SOHC, 4-Cylinder",
-      "Power": "90 PS @ 6000 rpm",
-      "Torque": "110 Nm @ 4800 rpm",
-      "Fuel Efficiency": "18.6–19.0 km/l",
-      "Fuel Tank": "35 L",
-      "Transmission": "5MT / CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L i-VTEC Petrol",
+      "Displacement (cc)": "1,199",
+      "Max Engine Power": "90 PS",
+      "Max Engine Torque": "110 Nm",
+      "Transmission Type": "MT / CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Sedan",
+      "Distributor": "Syakar Trading Company Pvt. Ltd. (Official Honda Nepal Distributor)",
+      "Power": "90 PS",
+      "Torque": "110 Nm",
+      "Transmission": "MT / CVT",
       "Seating": "5",
-      "Length": "3,995 mm",
-      "Width": "1,695 mm",
-      "Height": "1,500 mm",
-      "Wheelbase": "2,470 mm",
-      "Ground Clearance": "165 mm",
-      "Boot Space": "420 L",
-      "Front Brakes": "Disc",
-      "Rear Brakes": "Drum",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Honda badge reliability and resale value",
-      "Spacious 420L boot for a compact sedan",
-      "Smooth CVT on top variants",
-      "Well-proven i-VTEC engine"
-    ],
-    "cons": [
-      "No sunroof on any variant",
-      "Rear seat not ideal for tall passengers",
-      "Base variant lacks touchscreen"
-    ],
-    "highlights": [
-      "Honda Reliability",
-      "Best-in-class Boot",
-      "CVT Available",
-      "BS6 Compliant"
-    ],
-    "thumb": "/assets/images/car_images/honda/amaze/exterior/1-3.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/honda/honda-amaze-2024/front.png"
   },
   {
-    "id": 102,
+    "id": 115,
     "slug": "honda-city-5thgen",
     "brand": "Honda",
     "brandSlug": "honda",
@@ -18026,6 +17951,15 @@ window.CARS_DB = [
     "baseEMI": 55000,
     "overview": "The Honda City 5th Generation remains Nepal's most respected mid-size sedan with a 1.5L petrol engine, sharp KODO-inspired styling, and a wide variant lineup spanning MT to CVT. The hybrid e:HEV variant targets eco-conscious buyers.",
     "images": [
+      "/assets/images/car_images/honda/honda-city-5thgen/front.png",
+      "/assets/images/car_images/honda/honda-city-5thgen/side.jpg",
+      "/assets/images/car_images/honda/honda-city-5thgen/rear.png",
+      "/assets/images/car_images/honda/honda-city-5thgen/interior.png",
+      "/assets/images/car_images/honda/honda-city-5thgen/colors/color-golden-brown-metallic.png",
+      "/assets/images/car_images/honda/honda-city-5thgen/colors/color-lunar-silver-metallic.png",
+      "/assets/images/car_images/honda/honda-city-5thgen/colors/color-modern-steel-metallic.png",
+      "/assets/images/car_images/honda/honda-city-5thgen/colors/color-radiant-red-metallic.png",
+      "/assets/images/car_images/honda/honda-city-5thgen/colors/color-white-orchid-pearl.png",
       "/assets/images/car_images/honda/city/exterior/city72.jpg",
       "/assets/images/car_images/honda/city/exterior/image.webp"
     ],
@@ -18075,7 +18009,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "17.8 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18097,7 +18033,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "17.8 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18117,7 +18055,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "18.4 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18140,7 +18080,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "17.8 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18161,7 +18103,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "18.4 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18183,7 +18127,9 @@ window.CARS_DB = [
           "power": "126 PS combined",
           "torque": "253 Nm (motor)",
           "efficiency": "26.5 km/l (claimed)",
-          "transmission": "e-CVT"
+          "transmission": "e-CVT",
+          "Power": "126 PS combined",
+          "Torque": "253 Nm (motor)"
         }
       },
       {
@@ -18205,48 +18151,34 @@ window.CARS_DB = [
           "power": "126 PS combined",
           "torque": "253 Nm (motor)",
           "efficiency": "26.5 km/l (claimed)",
-          "transmission": "e-CVT"
+          "transmission": "e-CVT",
+          "Power": "126 PS combined",
+          "Torque": "253 Nm (motor)"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L DOHC i-VTEC (ICE) / 1.5L Atkinson Hybrid",
-      "Power": "121 PS (ICE) / 126 PS (Hybrid)",
-      "Torque": "145 Nm (ICE) / 253 Nm (Hybrid Motor)",
-      "Fuel Efficiency": "17.8–18.4 km/l (ICE) / 26.5 km/l (Hybrid)",
-      "Fuel Tank": "40 L",
-      "Transmission": "6MT / CVT / e-CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L i-VTEC Petrol / e:HEV Hybrid",
+      "Displacement (cc)": "1,498",
+      "Max Engine Power": "121 PS (Petrol) / ~126 PS system (Hybrid)",
+      "Transmission Type": "CVT / e-CVT (Hybrid)",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Sedan",
+      "Distributor": "Syakar Trading Company Pvt. Ltd. (Official Honda Nepal Distributor)",
+      "Power": "121 PS (Petrol) / ~126 PS system (Hybrid)",
+      "Transmission": "CVT / e-CVT (Hybrid)",
       "Seating": "5",
-      "Length": "4,553 mm",
-      "Width": "1,748 mm",
-      "Height": "1,467 mm",
-      "Wheelbase": "2,600 mm",
-      "Ground Clearance": "121 mm",
-      "Boot Space": "506 L",
-      "Emission": "BS VI / Euro 6"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Class-leading boot space (506L)",
-      "Honda SENSING ADAS as standard on higher trims",
-      "Hybrid variant offers excellent fuel economy",
-      "Premium cabin quality for the segment"
-    ],
-    "cons": [
-      "Ground clearance (121mm) is low for rough roads",
-      "Hybrid variants are pricey",
-      "No diesel option"
-    ],
-    "highlights": [
-      "506L Boot",
-      "Hybrid Available",
-      "Honda SENSING",
-      "Wide Variant Range"
-    ],
-    "thumb": "/assets/images/car_images/honda/city/exterior/city72.jpg"
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/honda/honda-city-5thgen/front.png"
   },
   {
-    "id": 103,
+    "id": 116,
     "slug": "honda-elevate-2024",
     "brand": "Honda",
     "brandSlug": "honda",
@@ -18268,7 +18200,15 @@ window.CARS_DB = [
     "baseEMI": 52000,
     "overview": "The Honda Elevate is Honda Nepal's flagship SUV offering a 1.5L i-VTEC engine, 209mm ground clearance suited for Nepalese roads, ADAS safety suite, a 10.25-inch infotainment, and optional dual-tone finishes.",
     "images": [
-      "/assets/images/cars/honda/elevate/front.jpg"
+      "/assets/images/car_images/honda/honda-elevate-2024/front.png",
+      "/assets/images/car_images/honda/honda-elevate-2024/interior.jpg",
+      "/assets/images/car_images/honda/honda-elevate-2024/colors/color-blue.png",
+      "/assets/images/car_images/honda/honda-elevate-2024/colors/color-brown.png",
+      "/assets/images/car_images/honda/honda-elevate-2024/colors/color-orange.png",
+      "/assets/images/car_images/honda/honda-elevate-2024/colors/color-red.png",
+      "/assets/images/car_images/honda/honda-elevate-2024/colors/color-silver.png",
+      "/assets/images/car_images/honda/honda-elevate-2024/colors/color-white.png",
+      "/assets/images/cars/honda/elevate/front.png"
     ],
     "colors": [
       {
@@ -18312,7 +18252,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "15.3 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18334,7 +18276,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "15.3 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18355,7 +18299,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "16.9 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18377,7 +18323,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "15.3 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18398,7 +18346,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "16.9 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18420,7 +18370,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "15.3 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18439,7 +18391,9 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "16.9 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       },
       {
@@ -18459,47 +18413,37 @@ window.CARS_DB = [
           "power": "121 PS @ 6600 rpm",
           "torque": "145 Nm @ 4300 rpm",
           "efficiency": "16.9 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "121 PS @ 6600 rpm",
+          "Torque": "145 Nm @ 4300 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L DOHC i-VTEC, 4-Cylinder",
-      "Power": "121 PS @ 6600 rpm",
-      "Torque": "145 Nm @ 4300 rpm",
-      "Fuel Efficiency": "15.3 km/l (MT) / 16.9 km/l (CVT)",
-      "Fuel Tank": "40 L",
-      "Transmission": "6MT / CVT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L i-VTEC Petrol",
+      "Displacement (cc)": "1,498",
+      "Max Engine Power": "121 PS",
+      "Max Engine Torque": "145 Nm",
+      "Transmission Type": "MT / CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "ADAS Suite": "Honda Sensing (top trim)",
+      "Body Type": "Compact SUV",
+      "Distributor": "Syakar Trading Company Pvt. Ltd. (Official Honda Nepal Distributor)",
+      "Power": "121 PS",
+      "Torque": "145 Nm",
+      "Transmission": "MT / CVT",
       "Seating": "5",
-      "Length": "4,312 mm",
-      "Width": "1,790 mm",
-      "Height": "1,650 mm",
-      "Wheelbase": "2,650 mm",
-      "Ground Clearance": "209 mm",
-      "Boot Space": "458 L",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "High 209mm ground clearance ideal for Nepal roads",
-      "Honda SENSING ADAS standard from VX",
-      "Wide variant range covering all budgets",
-      "10.25-inch infotainment with wireless CarPlay"
-    ],
-    "cons": [
-      "Only FWD (no 4WD option)",
-      "No diesel variant",
-      "Rear seat could be roomier"
-    ],
-    "highlights": [
-      "209mm Clearance",
-      "Honda SENSING",
-      "ADAS",
-      "10.25\" Touchscreen"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/honda/honda-elevate-2024/front.png"
   },
   {
-    "id": 201,
+    "id": 117,
     "slug": "mitsubishi-eclipse-cross-2024",
     "brand": "Mitsubishi",
     "brandSlug": "mitsubishi",
@@ -18568,47 +18512,124 @@ window.CARS_DB = [
           "power": "163 PS @ 5500 rpm",
           "torque": "250 Nm @ 2000-3500 rpm",
           "efficiency": "14.3 km/l",
-          "transmission": "INVECS-III CVT with 8-Speed Sport Mode"
+          "transmission": "INVECS-III CVT with 8-Speed Sport Mode",
+          "Power": "163 PS @ 5500 rpm",
+          "Torque": "250 Nm @ 2000-3500 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L MIVEC Turbo, 4-Cylinder",
-      "Power": "163 PS @ 5500 rpm",
-      "Torque": "250 Nm @ 2000–3500 rpm",
-      "Fuel Efficiency": "14.3 km/l",
-      "Fuel Tank": "50 L",
-      "Transmission": "INVECS-III CVT",
-      "Drive": "S-AWC (4WD)",
+      "Engine Type": "1.5L Turbo MIVEC Petrol (4B40)",
+      "Displacement (cc)": "1,499",
+      "Max Engine Power": "163 PS (120 kW) @ 5,500 rpm",
+      "Max Engine Torque": "250 Nm @ 2,000-3,500 rpm",
+      "Transmission Type": "INVECS-III CVT with 8-Step Sports Mode",
+      "Drive Type": "AWD (S-AWC) — GLS S-AWC is the sole Nepal variant; FWD offered in other markets",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7",
+      "Body Type": "Coupe-SUV",
+      "Distributor": "Leon Motors Pvt. Ltd. (Official Mitsubishi Nepal Distributor)",
+      "Power": "163 PS",
+      "Torque": "250 Nm",
+      "Transmission": "CVT",
       "Seating": "5",
-      "Length": "4,405 mm",
-      "Width": "1,805 mm",
-      "Height": "1,685 mm",
-      "Wheelbase": "2,670 mm",
-      "Ground Clearance": "185 mm",
-      "Emission": "Euro 5"
+      "Fuel Type": "Petrol",
+      "Engine Position": "Front, transverse",
+      "Cylinder Configuration": "Inline-4",
+      "Valve Configuration": "DOHC, 16-valve",
+      "Variable Valve Timing": "MIVEC",
+      "Fuel System": "Multi-point injection, turbocharged",
+      "Aspiration": "Turbocharged, intercooled",
+      "Compression Ratio": "10.0:1",
+      "Drivetrain": "Super All-Wheel Control (S-AWC)",
+      "Steering Type": "Electric Power Steering, rack & pinion",
+      "Overall Length (mm)": "4,405",
+      "Overall Width (mm)": "1,805",
+      "Overall Height (mm)": "1,685",
+      "Wheelbase (mm)": "2,670",
+      "Ground Clearance (mm)": "175",
+      "Kerb Weight (kg)": "1,490",
+      "Gross Vehicle Weight (GVW)": "2,100 kg",
+      "Boot Space (litres)": "341",
+      "Number of Doors": "5",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Multi-Link with coil springs",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Solid Discs",
+      "Wheel Size (inches)": "18",
+      "Wheel Type": "Alloy",
+      "Tyre Size": "225/55 R18",
+      "Spare Tyre": "Space-saver / temporary spare",
+      "Fuel Tank Capacity (L)": "63",
+      "Certified Fuel Efficiency (km/l)": "14.3",
+      "Emission Standard": "Euro 5 (Thailand-spec)",
+      "Adaptive Cruise Control (ACC)": "Yes",
+      "Lane Departure Warning": "Yes",
+      "Blind Spot Warning": "Yes",
+      "Rear Cross Traffic Warning": "Yes",
+      "Auto Emergency Braking (AEB)": "Yes (Forward Collision Mitigation)",
+      "High Beam Assist": "Yes (Automatic High Beam)",
+      "360° Surround View Camera": "Yes (Multi-Around Monitor)",
+      "Front/Rear Cameras": "Rear camera standard, 360° multi-around monitor",
+      "Parking Sensors": "Rear parking sensors",
+      "Airbag Positions": "Driver, front passenger, front side, curtain (front & rear), driver knee",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Brake Assist (BA)": "Yes",
+      "Hill Start Assist (HSA)": "Yes",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes",
+      "Child Safety Rear Door Lock": "Yes",
+      "Seat Belt Reminder": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Auto Headlamps": "Yes",
+      "Cruise Control": "Yes (Adaptive)",
+      "Front/Rear Parking Sensors": "Rear",
+      "Air Conditioning Type": "Automatic Climate Control",
+      "Rear AC Vents": "Yes",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Power Windows": "Front and rear, one-touch driver window",
+      "Electric ORVM": "Yes, power-folding",
+      "Rear Defogger": "Yes",
+      "Standard / Panoramic Sunroof": "Standard sunroof",
+      "Steering Adjustments": "Tilt & telescopic, leather-wrapped with paddle shifters",
+      "Headlamp Type": "LED",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Front Fog Lamps": "Yes",
+      "Tail Lamp Type": "LED",
+      "Seat Upholstery": "Leather (GLS S-AWC)",
+      "Leather Wrapped Steering": "Yes",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "8-inch",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Yes",
+      "Standard Vehicle Warranty": "5 years / 100,000 km (Mitsubishi Diamond Warranty, Thailand-spec)",
+      "Roadside Assistance (RSA)": "Included with Diamond Warranty (Thailand-spec)",
+      "Total Number of Variants": "1 (Nepal: GLS S-AWC)",
+      "Variant Names": "GLS S-AWC"
     },
     "pros": [
-      "S-AWC system for all-wheel intelligent control",
-      "Coupe-style styling sets it apart",
-      "Comprehensive safety suite",
-      "Premium cabin with leather"
+      "Standard S-AWC all-wheel drive with genuine off-tarmac capability for a compact crossover",
+      "Strong 163 PS turbo engine with 250 Nm torque, punchy for its class",
+      "Comprehensive safety kit (7 airbags, ACC, blind spot warning, 360° camera) as standard on the single Nepal variant"
     ],
     "cons": [
-      "Single variant limits choice",
-      "CVT can feel slow off the mark",
-      "Price is premium for the segment"
+      "Only one variant offered in Nepal, so no lower-price entry option",
+      "CVT transmission response can feel less engaging than a torque-converter automatic",
+      "Rear seat and boot space are tight compared to conventional (non-coupe) compact SUVs"
     ],
     "highlights": [
-      "S-AWC 4WD",
-      "8 Airbags",
-      "360° Camera",
-      "Adaptive Cruise"
+      "1.5L Turbo MIVEC engine (163 PS/250 Nm) paired exclusively with S-AWC all-wheel drive in Nepal",
+      "7 airbags plus a full ADAS suite (adaptive cruise control, blind spot warning, rear cross-traffic alert) standard",
+      "Distinctive coupe-SUV styling with LED lighting and an 8-inch touchscreen with Apple CarPlay/Android Auto"
     ],
     "thumb": "/assets/images/car_images/mitsubishi/eclipse cross/exterior/2025-2026-mitsubishi-eclipse-cross-es-red-diamond-side-profile.webp"
   },
   {
-    "id": 202,
+    "id": 118,
     "slug": "mitsubishi-xpander-2024",
     "brand": "Mitsubishi",
     "brandSlug": "mitsubishi",
@@ -18630,7 +18651,9 @@ window.CARS_DB = [
     "baseEMI": 91000,
     "overview": "The Mitsubishi Xpander is a versatile 7-seater MPV offering generous cabin space, flexible seating, and smooth 1.5L MIVEC petrol power. Perfect for large Nepali families needing practicality and style.",
     "images": [
-      "/assets/images/cars/mitsubishi/xpander/front.jpg"
+      "/assets/images/car_images/mitsubishi/xpander/exterior/ext-1-40af51efb3.jpg",
+      "/assets/images/car_images/mitsubishi/xpander/exterior/ext-2-b666281d8c.jpg",
+      "/assets/images/car_images/mitsubishi/xpander/interior/int-1-70b7a331c4.jpg"
     ],
     "colors": [
       {
@@ -18674,46 +18697,36 @@ window.CARS_DB = [
           "power": "105 PS @ 6000 rpm",
           "torque": "141 Nm @ 4000 rpm",
           "efficiency": "14.3 km/l",
-          "transmission": "4-Speed AT"
+          "transmission": "4-Speed AT",
+          "Power": "105 PS @ 6000 rpm",
+          "Torque": "141 Nm @ 4000 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L MIVEC DOHC, 4-Cylinder",
-      "Power": "105 PS @ 6000 rpm",
-      "Torque": "141 Nm @ 4000 rpm",
-      "Fuel Efficiency": "14.3 km/l",
-      "Fuel Tank": "45 L",
-      "Transmission": "4-Speed AT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L MIVEC Petrol",
+      "Displacement (cc)": "1,499",
+      "Max Engine Power": "105 PS",
+      "Max Engine Torque": "141 Nm",
+      "Transmission Type": "MT / CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "2–7",
+      "Body Type": "MPV",
+      "Distributor": "Leon Motors Pvt. Ltd. (Official Mitsubishi Nepal Distributor)",
+      "Power": "105 PS",
+      "Torque": "141 Nm",
+      "Transmission": "MT / CVT",
       "Seating": "7",
-      "Length": "4,475 mm",
-      "Width": "1,750 mm",
-      "Height": "1,730 mm",
-      "Wheelbase": "2,775 mm",
-      "Ground Clearance": "215 mm",
-      "Emission": "Euro 5"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "215mm ground clearance — excellent for Nepal",
-      "7-seater with flexible seating",
-      "Spacious and practical cabin",
-      "Mitsubishi reliability"
-    ],
-    "cons": [
-      "Only 4-speed AT (older unit)",
-      "FWD only (no 4WD)",
-      "Limited tech features vs rivals"
-    ],
-    "highlights": [
-      "215mm Clearance",
-      "7-Seater",
-      "Flexible Seating",
-      "Mitsubishi Reliability"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/mitsubishi/xpander/exterior/ext-1-40af51efb3.jpg"
   },
   {
-    "id": 203,
+    "id": 119,
     "slug": "mitsubishi-outlander-2024",
     "brand": "Mitsubishi",
     "brandSlug": "mitsubishi",
@@ -18780,7 +18793,9 @@ window.CARS_DB = [
           "power": "181 PS @ 6000 rpm",
           "torque": "245 Nm @ 3600 rpm",
           "efficiency": "12.5 km/l",
-          "transmission": "CVT"
+          "transmission": "CVT",
+          "Power": "181 PS @ 6000 rpm",
+          "Torque": "245 Nm @ 3600 rpm"
         }
       },
       {
@@ -18805,47 +18820,141 @@ window.CARS_DB = [
           "power": "188 PS combined",
           "torque": "350 Nm combined",
           "efficiency": "22 km/l (hybrid cycle)",
-          "transmission": "Single-Speed Auto"
+          "transmission": "Single-Speed Auto",
+          "Power": "188 PS combined",
+          "Torque": "350 Nm combined"
         }
       }
     ],
     "specs": {
-      "Engine": "2.4L MIVEC (Petrol) / 2.0L PHEV Twin Motor",
-      "Power": "181 PS (Petrol) / 188 PS (PHEV)",
-      "Torque": "245 Nm (Petrol) / 350 Nm (PHEV)",
-      "Fuel Efficiency": "12.5 km/l / 22 km/l (PHEV)",
-      "Fuel Tank": "56 L",
-      "Transmission": "CVT / Auto",
-      "Drive": "S-AWC (4WD)",
+      "Engine Type": "2.5L MIVEC DOHC Petrol (4B40) — non-hybrid variant; 2.4L Atkinson-cycle petrol used as the engine component in the PHEV variant",
+      "Displacement (cc)": "2,360",
+      "Max Engine Power": "181 PS @ 6,000 rpm (Petrol) / 128 PS (94 kW) engine-only output (PHEV)",
+      "Transmission Type": "CVT (Petrol) / Single-speed reduction-gear e-CVT (PHEV)",
+      "Drive Type": "AWD (S-AWC)",
+      "Seating Capacity": "7 (5-seat layout offered on some lower/PHEV trims)",
+      "Total Airbag Count": "7",
+      "Body Type": "Mid-size SUV",
+      "Distributor": "Leon Motors Pvt. Ltd. (Official Mitsubishi Nepal Distributor)",
+      "Power": "181 PS (+ electric motors on PHEV)",
+      "Transmission": "CVT / e-CVT (PHEV)",
       "Seating": "7",
-      "Length": "4,710 mm",
-      "Width": "1,862 mm",
-      "Height": "1,745 mm",
-      "Wheelbase": "2,705 mm",
-      "Ground Clearance": "210 mm",
-      "Emission": "Euro 5"
+      "Fuel Type": "Petrol / Plug-in Hybrid (PHEV variant)",
+      "Cylinder Configuration": "Inline-4",
+      "Valve Configuration": "DOHC, 16-valve",
+      "Variable Valve Timing": "MIVEC",
+      "Fuel System": "Direct injection",
+      "Aspiration": "Naturally Aspirated",
+      "Max Engine Torque": "245 Nm @ 3,600 rpm (Petrol) / 199 Nm (PHEV engine)",
+      "Motor Type": "Front and rear permanent-magnet synchronous electric motors (PHEV only)",
+      "Motor Position": "Front axle and rear axle (twin-motor)",
+      "Max Motor Power": "Front ~85 kW (114 hp) / Rear ~100 kW (134 hp) (PHEV)",
+      "Max Motor Torque": "Front ~255 Nm / Rear ~195 Nm (PHEV)",
+      "Combined System Output": "248 PS (185 kW) combined (PHEV)",
+      "Regenerative Braking": "Yes (PHEV, with selectable paddle-adjustable regen levels)",
+      "Drivetrain": "Super All-Wheel Control (S-AWC) with selectable drive modes (Normal/Eco/Gravel/Snow/Mud, plus EV/Series/Parallel modes on PHEV)",
+      "Steering Type": "Electric Power Steering, rack & pinion",
+      "Battery Type": "Lithium-ion (PHEV only)",
+      "Battery Capacity (kWh)": "20 (PHEV)",
+      "Battery Voltage (V)": "350 (PHEV)",
+      "Certified Range (km)": "Not applicable (PHEV runs on fuel + electric, not pure EV)",
+      "Electric-only Range (km)": "Approx. 84 km WLTP (approx. 61 km / 38 mi EPA, lower due to stricter test cycle) (PHEV)",
+      "AC Charging Max Rate (kW)": "3.7 (PHEV, standard onboard charger)",
+      "Normal Charging Time (AC)": "Approx. 6.5 hours on a 240V/level-2 supply (PHEV)",
+      "Charging Port Type": "Type 1/Type 2 AC + CHAdeMO DC fast charging port (PHEV, market dependent)",
+      "Overall Length (mm)": "4,710",
+      "Overall Width (mm)": "1,862",
+      "Overall Height (mm)": "1,740",
+      "Wheelbase (mm)": "2,706",
+      "Boot Space (litres)": "478 (7-seat, 3rd row folded) / 163 (3rd row in use)",
+      "Boot Space Seats Folded (litres)": "1,461-1,822 (all rear rows folded)",
+      "Number of Doors": "5",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Multi-Link",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Solid Discs",
+      "Wheel Size (inches)": "18-20 (trim dependent)",
+      "Wheel Type": "Alloy",
+      "Fuel Tank Capacity (L)": "55 (Petrol) / 45 (PHEV, reduced for battery packaging)",
+      "Adaptive Cruise Control (ACC)": "Yes (MI-PILOT Assist)",
+      "Lane Keep Assist": "Yes (part of MI-PILOT Assist)",
+      "Lane Departure Warning": "Yes (Lane Departure Warning & Prevention)",
+      "Traffic Sign Recognition": "Yes",
+      "Driver Attention Monitoring": "Yes (Driver Attention Alert)",
+      "Blind Spot Warning": "Yes",
+      "Rear Cross Traffic Warning": "Yes (Rear Cross Traffic Alert)",
+      "Auto Emergency Braking (AEB)": "Yes, front and rear (Forward Collision Mitigation + Rear AEB)",
+      "Traffic Jam Assist": "Yes (low-speed function of MI-PILOT Assist)",
+      "High Beam Assist": "Yes (Automatic High Beam)",
+      "Hill Descent Control (HDC)": "Yes",
+      "360° Surround View Camera": "Yes (Multi-Around Monitor, upper trims)",
+      "Front/Rear Cameras": "Yes",
+      "Parking Sensors": "Front and rear",
+      "Airbag Positions": "Driver, front passenger, front side, curtain (front & rear), driver knee, front-centre airbag",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Brake Assist (BA)": "Yes",
+      "Hill Start Assist (HSA)": "Yes",
+      "Auto Hold": "Yes (Automatic Brake Hold)",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes",
+      "Child Safety Rear Door Lock": "Yes",
+      "Seat Belt Reminder": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Auto Headlamps": "Yes",
+      "Cruise Control": "Yes (Adaptive)",
+      "Air Conditioning Type": "Automatic Climate Control (Tri-zone on upper trims)",
+      "AC Zones": "Tri-zone (upper trims)",
+      "Rear AC Vents": "Yes",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Powered Tailgate (Hands-Free)": "Yes (upper trims)",
+      "Power Windows": "Front and rear",
+      "Electric ORVM": "Yes, power-folding, heated",
+      "Rear Defogger": "Yes",
+      "Powered Driver Seat": "Yes",
+      "Heated Seats": "Yes (front, upper trims)",
+      "Standard / Panoramic Sunroof": "Panoramic sunroof (upper trims)",
+      "Headlamp Type": "LED",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Front Fog Lamps": "Yes",
+      "Seat Upholstery": "Leather (upper trims), fabric (base)",
+      "Leather Wrapped Steering": "Yes",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "9-inch to 12.3-inch (trim dependent)",
+      "Premium Audio Brand": "BOSE 9-speaker system (upper trims)",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Yes",
+      "In-Built Navigation": "Yes (upper trims)",
+      "Standard Vehicle Warranty": "5 years / 100,000 km (Mitsubishi Diamond Warranty)",
+      "Battery Warranty": "8 years / 160,000 km on the PHEV traction battery (typical Mitsubishi global PHEV coverage)",
+      "Roadside Assistance (RSA)": "Included with Diamond Warranty",
+      "Total Number of Variants": "2 (Nepal: GLS S-AWC Petrol, PHEV S-AWC)",
+      "Battery-based Variants": "PHEV S-AWC (plug-in hybrid)",
+      "Motor/Drive-based Variants": "GLS S-AWC (petrol AWD), PHEV S-AWC (twin-motor plug-in hybrid AWD)"
     },
     "pros": [
-      "PHEV variant offers superb fuel efficiency",
-      "S-AWC intelligent 4WD for all terrain",
-      "Premium BOSE audio system",
-      "Solar panel roof on PHEV"
+      "Only 7-seat SUV in the Mitsubishi Nepal lineup, with a genuine plug-in hybrid option for very low running costs on short commutes",
+      "PHEV variant offers a real-world EV-only range around 60-84 km plus S-AWC AWD security",
+      "Comprehensive MI-PILOT Assist ADAS suite (adaptive cruise, lane centering, blind spot, rear AEB) available"
     ],
     "cons": [
-      "PHEV price is very high for Nepal market",
-      "Fuel Petrol-only ICE is large-engined",
-      "No diesel option"
+      "Third-row seating is tight and best suited to children on both petrol and PHEV variants",
+      "PHEV commands a large price premium over the petrol S-AWC variant",
+      "Petrol-only variant lacks some of the higher ADAS/comfort features reserved for PHEV/top trims"
     ],
     "highlights": [
-      "S-AWC 4WD",
-      "PHEV Available",
-      "87km EV Range",
-      "7-Seater"
+      "Two distinct powertrains: 2.5L MIVEC petrol AWD (181 PS) and a 248 PS combined twin-motor PHEV with ~20 kWh battery",
+      "Mitsubishi's S-AWC all-wheel control standard across the range, with selectable terrain drive modes",
+      "MI-PILOT Assist Level-2 driver assistance including adaptive cruise control and lane centering"
     ],
     "thumb": "/assets/images/car_images/mitsubishi/outlander/exterior/2026-mitsubishi-outlander-specs.webp"
   },
   {
-    "id": 204,
+    "id": 120,
     "slug": "mitsubishi-pajero-sport-2024",
     "brand": "Mitsubishi",
     "brandSlug": "mitsubishi",
@@ -18867,7 +18976,9 @@ window.CARS_DB = [
     "baseEMI": 178000,
     "overview": "The Mitsubishi Pajero Sport is the legendary body-on-frame diesel SUV preferred for serious off-roading and comfortable long-distance travel. It features Super Select 4WD-II and a 2.4L diesel engine.",
     "images": [
-      "/assets/images/cars/mitsubishi/pajero-sport/front.jpg"
+      "/assets/images/car_images/mitsubishi/pajero-sport/exterior/ext-1-55e7a5ca70.jpg",
+      "/assets/images/car_images/mitsubishi/pajero-sport/exterior/ext-2-ebb3d6e4e7.jpg",
+      "/assets/images/car_images/mitsubishi/pajero-sport/interior/int-1-8d7fd0b78f.jpg"
     ],
     "colors": [
       {
@@ -18915,47 +19026,139 @@ window.CARS_DB = [
           "power": "181 PS @ 3500 rpm",
           "torque": "430 Nm @ 2500 rpm",
           "efficiency": "11.8 km/l",
-          "transmission": "8-Speed AT"
+          "transmission": "8-Speed AT",
+          "Power": "181 PS @ 3500 rpm",
+          "Torque": "430 Nm @ 2500 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.4L MIVEC Diesel Turbo, 4-Cylinder",
-      "Power": "181 PS @ 3500 rpm",
-      "Torque": "430 Nm @ 2500 rpm",
-      "Fuel Efficiency": "11.8 km/l",
-      "Fuel Tank": "68 L",
-      "Transmission": "8-Speed AT",
-      "Drive": "Super Select 4WD-II",
+      "Engine Type": "2.4L Turbo Diesel MIVEC (4N16, \"Clean Diesel Hyper Power\", VGT)",
+      "Displacement (cc)": "2,442",
+      "Max Engine Power": "184 PS @ 3,500 rpm (2024 facelift; pre-facelift Pajero Sport rated 178-181 PS)",
+      "Max Engine Torque": "430 Nm @ 2,250-2,500 rpm",
+      "Transmission Type": "6-speed Automatic (2024 facelift, down from the previous 8-speed automatic)",
+      "Drive Type": "Rear-Wheel Drive (2WD) / Part-time 4WD (Super Select 4WD-II)",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "7",
+      "Body Type": "Body-on-frame Full-size SUV",
+      "Distributor": "Leon Motors Pvt. Ltd. (Official Mitsubishi Nepal Distributor)",
+      "Power": "181 PS",
+      "Torque": "430 Nm",
+      "Transmission": "8AT",
       "Seating": "7",
-      "Length": "4,785 mm",
-      "Width": "1,815 mm",
-      "Height": "1,835 mm",
-      "Wheelbase": "2,800 mm",
-      "Ground Clearance": "218 mm",
-      "Body Construction": "Body-on-Frame",
-      "Emission": "Euro 5"
+      "Fuel Type": "Diesel",
+      "Engine Position": "Front, longitudinal",
+      "Cylinder Configuration": "Inline-4",
+      "Valve Configuration": "DOHC, 16-valve",
+      "Variable Valve Timing": "MIVEC",
+      "Fuel System": "Common-rail direct injection (CRDi)",
+      "Aspiration": "Turbocharged with Variable Geometry Turbo (VGT) and intercooler",
+      "Compression Ratio": "15.5:1",
+      "Drivetrain": "Super Select 4WD-II: 2H, 4H (full-time on-road AWD), 4HLc, 4LLc (low range)",
+      "Low Range 4WD": "Yes (4LLc)",
+      "Transfer Case Type": "Electronically controlled, Super Select 4WD-II",
+      "Drive Modes": "Normal, Gravel, Mud/Snow, Sand, Rock (terrain selection)",
+      "Steering Type": "Power, rack & pinion",
+      "Steering Adjustments": "Tilt & telescopic, multi-function leather steering wheel with paddle shift",
+      "Overall Length (mm)": "4,825",
+      "Overall Width (mm)": "1,815",
+      "Overall Height (mm)": "1,835",
+      "Wheelbase (mm)": "2,800",
+      "Ground Clearance (mm)": "222 (2024 facelift, +5mm over pre-facelift 218mm)",
+      "Turning Radius (m)": "5.6",
+      "Kerb Weight (kg)": "2,075",
+      "Number of Doors": "5",
+      "Front Suspension Type": "Double Wishbone with coil springs",
+      "Rear Suspension Type": "Multi-Link with coil springs",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Discs (upgraded from drum on earlier pre-facelift base grades)",
+      "Wheel Size (inches)": "18",
+      "Wheel Type": "Alloy (black monotone on facelift)",
+      "Tyre Size": "265/60 R18",
+      "Fuel Tank Capacity (L)": "68",
+      "Certified Fuel Efficiency (km/l)": "11.8",
+      "Emission Standard": "Euro 5 (Thailand-spec Clean Diesel)",
+      "Adaptive Cruise Control (ACC)": "Yes (Diamond Sense ACC)",
+      "Blind Spot Warning": "Yes (with Lane Change Assist)",
+      "Rear Cross Traffic Warning": "Yes (Rear Cross Traffic Alert)",
+      "Auto Emergency Braking (AEB)": "Yes (Forward Collision Mitigation, FCM)",
+      "360° Surround View Camera": "Yes (Multi Around Monitor, MAM)",
+      "Front/Rear Cameras": "Yes",
+      "Parking Sensors": "Front and rear",
+      "Radar Sensors": "Yes (front radar for ACC/FCM)",
+      "Airbag Positions": "Driver, front passenger, front side, curtain (front & rear), driver knee",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Brake Assist (BA)": "Yes",
+      "Hill Start Assist (HSA)": "Yes",
+      "Hill Descent Control (HDC)": "Yes",
+      "Auto Hold": "Yes (Brake Auto Hold)",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "TPMS": "Yes (Tire Pressure Monitoring System)",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes",
+      "Child Safety Rear Door Lock": "Yes",
+      "Seat Belt Reminder": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Auto Headlamps": "Yes",
+      "High Speed Alert System": "Yes (Emergency Stop Signal, ESS)",
+      "Cruise Control": "Yes (Adaptive)",
+      "Air Conditioning Type": "Automatic Climate Control",
+      "AC Zones": "Tri-zone",
+      "Rear AC Vents": "Yes",
+      "Air Quality Control / PM2.5 Filter": "Yes (NanoeX air purification)",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Powered Tailgate (Hands-Free)": "Yes",
+      "Power Windows": "Front and rear",
+      "Electric ORVM": "Yes, power-folding",
+      "Powered Driver Seat": "Yes, 8-way with power lumbar",
+      "Heated Seats": "No",
+      "Headlamp Type": "LED",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Front Fog Lamps": "Yes",
+      "Roof Rails": "Yes",
+      "Skid Plates": "Yes",
+      "Seat Upholstery": "Leather with \"diamond-pattern\" quilting and Heat Guard thermal fabric",
+      "Leather Wrapped Steering": "Yes",
+      "Digital Instrument Cluster": "8-inch full digital driver display (Elite/GT trims)",
+      "Touchscreen Display": "Yes (Smartphone-Link Display Audio, SDA)",
+      "Touchscreen Size": "8-inch",
+      "Audio System Speaker Count": "8 speakers with amplifier",
+      "Rear Seat Entertainment System": "12.1-inch roof-mounted monitor (upper trims)",
+      "Bluetooth Connectivity": "Yes, hands-free with voice control",
+      "USB Ports": "Yes",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Yes",
+      "Remote App Control": "Yes (Mitsubishi Remote Control app, iOS/Android)",
+      "Voice Commands/Assistant": "Yes",
+      "Standard Vehicle Warranty": "5 years / 100,000 km (Mitsubishi Diamond Warranty, Thailand-spec)",
+      "Roadside Assistance (RSA)": "Included with Diamond Warranty (Thailand-spec)",
+      "Total Number of Variants": "4 (Thailand: Prime 2WD, Ultra 2WD, Elite 2WD, Elite 4WD; Nepal: single GLX AT 4WD import)",
+      "Variant Names": "Prime, Ultra, Elite (2WD/4WD) — Thailand; Nepal sold as GLX AT 4WD",
+      "Transmission-based Variants": "6-speed automatic across the facelifted range",
+      "Motor/Drive-based Variants": "2WD and 4WD (Super Select 4WD-II) variants"
     },
     "pros": [
-      "218mm ground clearance + Super Select 4WD-II",
-      "Huge 430Nm diesel torque",
-      "Excellent towing capability",
-      "Premium cabin with tri-zone AC"
+      "Genuine body-on-frame 4WD SUV with low-range gearing and multiple terrain modes for serious off-roading",
+      "Strong 430 Nm torque diesel with 7-seat practicality and a comprehensive Diamond Sense ADAS suite",
+      "Facelifted 2024 model adds more power (184 PS), more ground clearance, and updated interior tech"
     ],
     "cons": [
-      "Premium price point",
-      "Fuel economy could be better",
-      "Large footprint for city driving"
+      "2024 facelift drops to a 6-speed automatic from the previous 8-speed, which may affect refinement/cruising rpm",
+      "Body-on-frame chassis means a firmer ride and more body roll than crossover-based 7-seat rivals",
+      "Rear seat still uses drums-to-discs transition depending on grade, and heated seats are not offered even on top trim"
     ],
     "highlights": [
-      "Super Select 4WD",
-      "430Nm Torque",
-      "218mm Clearance",
-      "7-Seater"
-    ]
+      "2.4L MIVEC Clean Diesel Hyper Power engine now making 184 PS/430 Nm in the 2024 facelift",
+      "Super Select 4WD-II with 2H/4H/4HLc/4LLc modes plus Gravel/Mud-Snow/Sand/Rock terrain settings",
+      "Diamond Sense safety suite: adaptive cruise control, forward collision mitigation, blind spot warning, rear cross-traffic alert, and a 360° Multi Around Monitor"
+    ],
+    "thumb": "/assets/images/car_images/mitsubishi/pajero-sport/exterior/ext-1-55e7a5ca70.jpg"
   },
   {
-    "id": 301,
+    "id": 121,
     "slug": "tata-tiago-2024",
     "brand": "Tata",
     "brandSlug": "tata",
@@ -18977,6 +19180,12 @@ window.CARS_DB = [
     "baseEMI": 23000,
     "overview": "The Tata Tiago is Nepal's most accessible Tata hatchback with proven 1.2L Revotron BS6 engine, modern design, and 5-star Global NCAP safety credentials at an entry-level price.",
     "images": [
+      "/assets/images/car_images/tata/tata-tiago-2024/front.jpg",
+      "/assets/images/car_images/tata/tata-tiago-2024/front.jpg",
+      "/assets/images/car_images/tata/tata-tiago-2024/colors/color-daytona-grey.jpg",
+      "/assets/images/car_images/tata/tata-tiago-2024/colors/color-arizona-blue.jpg",
+      "/assets/images/car_images/tata/tata-tiago-2024/colors/color-supernova-copper.jpg",
+      "/assets/images/car_images/tata/tata-tiago-2024/colors/color-ocean-blue.jpg",
       "/assets/images/car_images/Tata/Tiago/exterior/book-a-test-drive-7-DzZpf25J.avif",
       "/assets/images/car_images/Tata/Tiago/exterior/download.jpeg",
       "/assets/images/car_images/Tata/Tiago/exterior/front-grille-CRWynnAj.avif",
@@ -19021,7 +19230,9 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "23.84 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       },
       {
@@ -19043,7 +19254,9 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "23.84 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       },
       {
@@ -19065,7 +19278,9 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "23.84 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       },
       {
@@ -19086,7 +19301,9 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "23.84 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       },
       {
@@ -19107,48 +19324,129 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "23.84 km/l",
-          "transmission": "5AMT"
+          "transmission": "5AMT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L Revotron 3-Cylinder BS6",
-      "Power": "86 PS @ 6000 rpm",
-      "Torque": "113 Nm @ 3300 rpm",
-      "Fuel Efficiency": "23.84 km/l (MT)",
-      "Fuel Tank": "35 L",
-      "Transmission": "5MT / 5AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Naturally Aspirated Revotron Petrol / 1.2L iCNG",
+      "Displacement (cc)": "1,199",
+      "Max Engine Power": "86 PS @ 6,000 rpm (Petrol); ~73 PS (iCNG mode, detuned)",
+      "Max Engine Torque": "113 Nm @ 3,300 rpm (Petrol); ~95-97 Nm (iCNG mode)",
+      "Transmission Type": "5-Speed MT / 5-Speed AMT (with paddle shifters and Creep function on AMT variants)",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2 (XE/XT base-mid variants) / 6 (XZ/XZ+ top variants)",
+      "Safety Rating": "4-Star Global NCAP for Adult Occupant Protection, 3-Star for Child Occupant Protection (2023 Global NCAP re-test of Tiago/Tigor under stricter post-2022 protocol; scored 12.52/17 AOP, 34.15/49 COP)",
+      "Body Type": "Hatchback",
+      "Distributor": "Sipradi Trading Pvt. Ltd. (Official Tata Nepal Distributor since 1982)",
+      "Power": "86 PS",
+      "Torque": "113 Nm",
+      "Transmission": "MT / AMT",
       "Seating": "5",
-      "Length": "3,765 mm",
-      "Width": "1,677 mm",
-      "Height": "1,535 mm",
-      "Wheelbase": "2,400 mm",
-      "Ground Clearance": "170 mm",
-      "Boot Space": "242 L",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol / iCNG",
+      "Engine Position": "Front, Transverse",
+      "Cylinder Configuration": "In-line 3-cylinder",
+      "Valve Configuration": "DOHC, 4 valves/cylinder",
+      "Fuel System": "Multi-Point Fuel Injection (Petrol); Twin-cylinder iCNG",
+      "Aspiration": "Naturally Aspirated",
+      "Start-Stop System": "Yes (Idle Start-Stop, select variants)",
+      "Steering Type": "Electric Power Steering, Rack & Pinion",
+      "Fuel Tank Capacity (L)": "35 (Petrol); dual iCNG cylinders on CNG variant",
+      "Certified Fuel Efficiency (km/l)": "23.84 (Petrol MT/AMT, ARAI)",
+      "Emission Standard": "BS VI (Stage 2 / OBD-2B)",
+      "Overall Length (mm)": "3,813",
+      "Overall Width (mm)": "1,677",
+      "Overall Height (mm)": "1,535",
+      "Wheelbase (mm)": "2,400",
+      "Ground Clearance (mm)": "170 (unladen)",
+      "Turning Radius (m)": "5.3",
+      "Kerb Weight (kg)": "935-1,030 (variant dependent)",
+      "Boot Space (litres)": "242",
+      "Number of Doors": "5",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Twist Beam (rear)",
+      "Front Brakes": "Disc",
+      "Rear Brakes": "Drum",
+      "Hill Start Assist (HSA)": "Yes (Hill Hold, select top variants)",
+      "Tyre Size": "175/65 R14",
+      "Wheel Size (inches)": "14 (steel with covers, base) / 15 (diamond-cut alloy, top Creative/XZ+ variants)",
+      "Wheel Type": "Steel with covers (base) / Alloy (top variants)",
+      "TPMS": "Yes (top variants)",
+      "Front/Rear Cameras": "Rear camera with guidelines (mid-top variants); 360° camera on top variant",
+      "Parking Sensors": "Rear (standard on most variants)",
+      "Airbag Positions": "Driver, Front Passenger standard; + 2 Side (front) + 2 Curtain on 6-airbag top variants",
+      "ABS": "Yes, standard",
+      "EBD": "Yes, standard",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes (mid-top variants)",
+      "Child Safety Rear Door Lock": "Yes",
+      "Seat Belt Reminder": "Yes (driver and front passenger)",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Auto Headlamps": "Yes (top variant, 'Follow Me Home' function)",
+      "Rain-Sensing Wipers": "Yes (top variant)",
+      "Auto-Dimming IRVM": "Yes (Day-Night IRVM, mid-top variants)",
+      "Cruise Control": "Yes (top variants)",
+      "Front/Rear Parking Sensors": "Rear standard on most variants",
+      "SOS Emergency Call System": "Yes (Tata iRA, top variants)",
+      "Air Conditioning Type": "Manual (base) / Automatic Climate Control (top variants)",
+      "Rear AC Vents": "Yes (top variants)",
+      "Smart Entry (Keyless)": "Yes (top variant)",
+      "Push Button Start": "Yes (top variant)",
+      "Power Windows": "Front and rear",
+      "Electric ORVM": "Yes, foldable (mid-top variants)",
+      "Rear Defogger": "Yes (mid-top variants)",
+      "Steering Adjustments": "Tilt",
+      "Headlamp Type": "Projector (halogen/LED depending on variant); full-LED on top Creative+ variant",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Front Fog Lamps": "Yes (mid-top variants)",
+      "Tail Lamp Type": "LED (top variants)",
+      "Leather Wrapped Steering": "Yes (top variants)",
+      "Digital Instrument Cluster": "7-inch semi-digital (top variants)",
+      "Touchscreen Display": "Yes (mid-top variants)",
+      "Touchscreen Size": "7-inch (XT/XZ) / 10.25-inch (Creative+ top variant)",
+      "Audio System Speaker Count": "4 speakers (2 speakers + 2 tweeters, Harman on higher variants)",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes, front (and rear on top variants)",
+      "Android Auto": "Yes (wireless on top variant)",
+      "Apple CarPlay": "Yes (wireless on top variant)",
+      "Remote App Control": "Yes (Tata iRA, top variant)",
+      "Vehicle Health Monitoring App": "Yes (Tata iRA)",
+      "Connected Car Apps": "Tata iRA (live location, remote status check, OTA updates, valet mode, smartwatch app — top variant)",
+      "OTA Software Updates": "Yes (Tata iRA)",
+      "Voice Commands/Assistant": "Yes (via iRA, top variant)",
+      "Standard Vehicle Warranty": "3 years / 1,00,000 km (Tata Motors India standard, post-2023 revision)",
+      "Extended Warranty Offer": "Available up to 5 years / 1,50,000 km",
+      "Corrosion / Rust Warranty": "6 years (typical Tata coverage)",
+      "Roadside Assistance (RSA)": "Available (Tata Motors RSA / Sipradi Nepal service network)",
+      "Total Number of Variants": "~20 across trims and fuel types in India (XE, XT, XZ, XZ+ and AMT/CNG equivalents; also sold as Tiago NRG crossover-styled variant in some markets)",
+      "Total Number of Colors": "6+ monotone and dual-tone options",
+      "Dual-Tone Available": "Yes (Pristine White, Pure Grey, Daytona Grey dual-tone options)"
     },
     "pros": [
-      "Most affordable entry to the Tata family",
-      "5-star Global NCAP safety rating",
-      "Good fuel efficiency for the class",
-      "AMT option for city comfort"
+      "Sipradi/Tata's most affordable model in Nepal with strong fuel efficiency (23.84 km/l ARAI)",
+      "Petrol, AMT, and iCNG powertrain choices",
+      "Modern 10.25-inch touchscreen and Tata iRA connected features on top variant",
+      "Low running/maintenance costs typical of Tata's Revotron petrol engine"
     ],
     "cons": [
-      "Only 242L boot space",
-      "No sunroof on any variant",
-      "Limited space for rear passengers"
+      "Only 4-Star Global NCAP rating (2023 re-test), lower than segment-mates Nexon/Punch — base and mid variants get only 2 airbags",
+      "Rear drum brakes on all variants",
+      "No ADAS features, unlike the Nexon",
+      "Modest 170mm ground clearance and 86 PS output"
     ],
     "highlights": [
-      "5-Star NCAP",
-      "BS6 Engine",
-      "AMT Available",
-      "Best Value"
+      "23.84 km/l ARAI-certified fuel efficiency",
+      "Available with Petrol, AMT, and iCNG powertrains",
+      "10.25-inch touchscreen and Tata iRA connected car tech on top Creative+ variant",
+      "3-year/1,00,000km standard warranty from Tata Motors"
     ],
-    "thumb": "/assets/images/car_images/Tata/Tiago/exterior/book-a-test-drive-7-DzZpf25J.avif"
+    "thumb": "/assets/images/car_images/tata/tata-tiago-2024/front.jpg"
   },
   {
-    "id": 302,
+    "id": 122,
     "slug": "tata-nexon-2024",
     "brand": "Tata",
     "brandSlug": "tata",
@@ -19170,6 +19468,13 @@ window.CARS_DB = [
     "baseEMI": 33000,
     "overview": "The Tata Nexon is Nepal's go-to compact SUV combining the highest 5-star Global NCAP rating, 209mm ground clearance, a punchy 1.2L turbo petrol engine, and modern tech including ADAS on top variants.",
     "images": [
+      "/assets/images/car_images/tata/tata-nexon-2024/front.jpg",
+      "/assets/images/car_images/tata/tata-nexon-2024/front.jpg",
+      "/assets/images/car_images/tata/tata-nexon-2024/colors/color-daytona-grey.jpg",
+      "/assets/images/car_images/tata/tata-nexon-2024/colors/color-grassland-beige.jpg",
+      "/assets/images/car_images/tata/tata-nexon-2024/colors/color-pure-grey.jpg",
+      "/assets/images/car_images/tata/tata-nexon-2024/colors/color-ocean-blue.jpg",
+      "/assets/images/car_images/tata/tata-nexon-2024/colors/color-royal-blue.jpg",
       "/assets/images/cars/tata/nexon/front.jpg"
     ],
     "colors": [
@@ -19214,7 +19519,9 @@ window.CARS_DB = [
           "power": "120 PS @ 5000 rpm",
           "torque": "170 Nm @ 1750 rpm",
           "efficiency": "17.01 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "120 PS @ 5000 rpm",
+          "Torque": "170 Nm @ 1750 rpm"
         }
       },
       {
@@ -19235,7 +19542,9 @@ window.CARS_DB = [
           "power": "120 PS @ 5000 rpm",
           "torque": "170 Nm @ 1750 rpm",
           "efficiency": "17.01 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "120 PS @ 5000 rpm",
+          "Torque": "170 Nm @ 1750 rpm"
         }
       },
       {
@@ -19256,7 +19565,9 @@ window.CARS_DB = [
           "power": "120 PS @ 5000 rpm",
           "torque": "170 Nm @ 1750 rpm",
           "efficiency": "17.01 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "120 PS @ 5000 rpm",
+          "Torque": "170 Nm @ 1750 rpm"
         }
       },
       {
@@ -19278,7 +19589,9 @@ window.CARS_DB = [
           "power": "120 PS @ 5000 rpm",
           "torque": "170 Nm @ 1750 rpm",
           "efficiency": "17.01 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "120 PS @ 5000 rpm",
+          "Torque": "170 Nm @ 1750 rpm"
         }
       },
       {
@@ -19297,7 +19610,9 @@ window.CARS_DB = [
           "power": "120 PS @ 5000 rpm",
           "torque": "170 Nm @ 1750 rpm",
           "efficiency": "17.41 km/l",
-          "transmission": "6AMT"
+          "transmission": "6AMT",
+          "Power": "120 PS @ 5000 rpm",
+          "Torque": "170 Nm @ 1750 rpm"
         }
       },
       {
@@ -19316,7 +19631,9 @@ window.CARS_DB = [
           "power": "120 PS @ 5000 rpm",
           "torque": "170 Nm @ 1750 rpm",
           "efficiency": "17.01 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "120 PS @ 5000 rpm",
+          "Torque": "170 Nm @ 1750 rpm"
         }
       },
       {
@@ -19335,47 +19652,153 @@ window.CARS_DB = [
           "power": "120 PS @ 5000 rpm",
           "torque": "170 Nm @ 1750 rpm",
           "efficiency": "17.41 km/l",
-          "transmission": "6AMT"
+          "transmission": "6AMT",
+          "Power": "120 PS @ 5000 rpm",
+          "Torque": "170 Nm @ 1750 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L Revotron Turbo BS6, 3-Cylinder",
-      "Power": "120 PS @ 5000 rpm",
-      "Torque": "170 Nm @ 1750 rpm",
-      "Fuel Efficiency": "17.01 km/l (MT)",
-      "Fuel Tank": "44 L",
-      "Transmission": "6MT / 6AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Turbocharged Revotron Petrol / 1.5L Turbocharged Revotorq Diesel / 1.2L Turbo iCNG",
+      "Displacement (cc)": "1,199 (Petrol/iCNG) / 1,497 (Diesel)",
+      "Max Engine Power": "120 PS @ 5,500 rpm (Petrol/iCNG) / 113 PS @ 3,750 rpm (Diesel)",
+      "Transmission Type": "5-Speed MT (entry Petrol) / 6-Speed MT (Petrol, Diesel) / 6-Speed AMT (Petrol, Diesel) / 7-Speed DCT (Petrol, top trims)",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6 (standard across all variants, post-2023 facelift)",
+      "Safety Rating": "5-Star Global NCAP (2024 test under revised, stricter 2022+ protocol) — 32.22/34 Adult Occupant Protection, 44.52/49 Child Occupant Protection; also 5-Star Bharat NCAP",
+      "Body Type": "Compact SUV",
+      "Distributor": "Sipradi Trading Pvt. Ltd. (Official Tata Nepal Distributor since 1982)",
+      "Power": "120–170 PS",
+      "Transmission": "MT / AMT / DCT",
       "Seating": "5",
-      "Length": "3,993 mm",
-      "Width": "1,811 mm",
-      "Height": "1,606 mm",
-      "Wheelbase": "2,498 mm",
-      "Ground Clearance": "209 mm",
-      "Boot Space": "350 L",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol / Diesel / iCNG",
+      "Engine Position": "Front, Transverse",
+      "Cylinder Configuration": "In-line 3-cylinder (Petrol/iCNG) / In-line 4-cylinder (Diesel)",
+      "Valve Configuration": "DOHC, 4 valves/cylinder",
+      "Fuel System": "Turbocharged Direct Injection (Petrol); Common Rail Direct Injection (Diesel); Twin-cylinder iCNG",
+      "Aspiration": "Turbocharged",
+      "Start-Stop System": "Yes (Idle Start-Stop, MT/AMT variants)",
+      "Max Engine Torque": "170 Nm @ 1,750-4,000 rpm (Petrol) / 260 Nm @ 1,500-2,750 rpm (Diesel) / 170 Nm (iCNG)",
+      "Top Speed (km/h)": "~180 (Petrol)",
+      "Steering Type": "Electric Power Steering, Rack & Pinion",
+      "Fuel Tank Capacity (L)": "44 (Petrol/Diesel); dual iCNG cylinders under boot floor",
+      "Certified Fuel Efficiency (km/l)": "17.44 (Petrol MT), 17.01-17.41 (Petrol variants), 24.08 (Diesel MT), 17.44 km/kg (iCNG)",
+      "Emission Standard": "BS VI (Stage 2 / OBD-2B)",
+      "Overall Length (mm)": "3,995",
+      "Overall Width (mm)": "1,804",
+      "Overall Height (mm)": "1,620",
+      "Wheelbase (mm)": "2,498",
+      "Ground Clearance (mm)": "208-209 (unladen)",
+      "Turning Radius (m)": "5.1",
+      "Kerb Weight (kg)": "1,240 (iCNG) - 1,346 (Petrol/Diesel), variant dependent",
+      "Boot Space (litres)": "382 (Petrol/Diesel) / 321 (iCNG, reduced for CNG cylinders)",
+      "Number of Doors": "5",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Twist Beam (rear)",
+      "Front Brakes": "Disc",
+      "Rear Brakes": "Drum (Disc on select top variants)",
+      "Electronic Parking Brake (EPB)": "No (conventional handbrake)",
+      "Hill Start Assist (HSA)": "Yes (Hill Hold Control)",
+      "Hill Descent Control (HDC)": "Yes (select variants)",
+      "Tyre Size": "215/60 R16",
+      "Wheel Size (inches)": "16 (Steel/Alloy, variant dependent)",
+      "Wheel Type": "Steel with covers (base) / Alloy (mid-top trims)",
+      "TPMS": "Yes",
+      "Spare Tyre": "Yes (steel, full-size on most variants)",
+      "Lane Departure Warning": "Yes (top variant, Level-1 ADAS)",
+      "Forward Collision Warning": "Yes (top variant)",
+      "Blind Spot Warning": "Yes (Blind Spot Collision Avoidance, top variant)",
+      "Rear Cross Traffic Warning": "Yes (top variant)",
+      "Traffic Sign Recognition": "Yes (top variant)",
+      "High Beam Assist": "Yes (Adaptive High Beam Assist, top variant)",
+      "Lane Keep Assist": "Yes (top variant)",
+      "Auto Emergency Braking (AEB)": "Yes (top variant)",
+      "Blind Spot Collision Avoidance": "Yes (top variant)",
+      "360° Surround View Camera": "Yes (top variants)",
+      "Front/Rear Cameras": "Rear camera with guidelines standard; 360° camera on top trims",
+      "Parking Sensors": "Front and rear (variant dependent)",
+      "Airbag Positions": "Driver, Front Passenger, 2 Side (front), 2 Curtain",
+      "ABS": "Yes, standard",
+      "EBD": "Yes, standard",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes",
+      "Speed Sensing Auto Door Lock": "Yes",
+      "Child Safety Rear Door Lock": "Yes",
+      "Seat Belt Reminder": "Yes (all seats)",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Auto Headlamps": "Yes (mid-top variants)",
+      "Rain-Sensing Wipers": "Yes (top variants)",
+      "Auto-Dimming IRVM": "Yes (top variants)",
+      "Cruise Control": "Yes (Adaptive-style basic cruise on mid+ variants)",
+      "Front/Rear Parking Sensors": "Yes",
+      "SOS Emergency Call System": "Yes (iRA connected app - E-Call/I-Call)",
+      "Air Conditioning Type": "Automatic Climate Control (mid-top), Manual (base)",
+      "AC Zones": "Single-zone",
+      "Rear AC Vents": "Yes",
+      "Smart Entry (Keyless)": "Yes (top variants)",
+      "Push Button Start": "Yes (mid-top variants)",
+      "Power Windows": "Front and rear",
+      "Electric ORVM": "Yes, foldable",
+      "Rear Defogger": "Yes",
+      "Ventilated Seats": "Yes, front (top variant)",
+      "Standard / Panoramic Sunroof": "Electric sunroof (single-pane, select variants)",
+      "Rear Sunshades": "Manual sunblinds, select variants",
+      "Cooled Glovebox": "Yes (top variants)",
+      "Steering Adjustments": "Tilt",
+      "Headlamp Type": "Full-LED (projector)",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Front Fog Lamps": "LED",
+      "Tail Lamp Type": "LED",
+      "Roof Rails": "Yes",
+      "Digital Instrument Cluster": "10.25-inch fully digital",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "10.25-inch",
+      "Digital Dials / Virtual Cockpit": "10.25-inch digital instrument cluster",
+      "Audio System Speaker Count": "4 speakers + 4 tweeters + subwoofer (Harman system, top variants)",
+      "Amplifier & Subwoofer": "Yes (top variants, Harman)",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes, front and rear",
+      "Wi-Fi Hotspot": "Yes, via connected app",
+      "Android Auto": "Yes, wireless",
+      "Apple CarPlay": "Yes, wireless",
+      "Remote App Control": "Yes (Tata iRA - remote AC, lock/unlock, ignition start/stop)",
+      "Vehicle Health Monitoring App": "Yes (Tata iRA)",
+      "In-Built Navigation": "Yes, with live traffic (connected nav)",
+      "Connected Car Apps": "Tata iRA (live location, geofencing, OTA updates, e-Call/i-Call, remote commands)",
+      "OTA Software Updates": "Yes (Tata iRA)",
+      "Voice Commands/Assistant": "Yes (voice assistant, Alexa/Google integration via iRA)",
+      "Standard Vehicle Warranty": "3 years / 1,00,000 km (Tata Motors India standard, post-2023 revision)",
+      "Extended Warranty Offer": "Available up to 5 years / 1,50,000 km",
+      "Corrosion / Rust Warranty": "6 years (typical Tata coverage)",
+      "Roadside Assistance (RSA)": "Available (Tata Motors RSA / Sipradi Nepal service network)",
+      "Total Number of Variants": "~10 (Smart, Smart+, Pure, Pure S, Creative, Creative+, Creative+ S, Fearless, Fearless+, Fearless+ S — post-2023 facelift naming; older XE/XM/XT/XZ/XZ+ naming used pre-facelift)",
+      "Total Number of Colors": "Approx. 8-9 monotone and dual-tone options (incl. Fearless Purple, Daytona Grey, Flame Red, Pristine White, Ocean Blue, Calgary White, Pure Grey)",
+      "Dual-Tone Available": "Yes (black or white roof on select colors)"
     },
     "pros": [
-      "5-star Global NCAP — safest in segment",
-      "6 Airbags standard even on base",
-      "ADAS Level 2 on top variants",
-      "High 209mm ground clearance"
+      "5-Star Global NCAP rating (2024, stricter protocol) with 6 airbags standard across all variants",
+      "Petrol, Diesel, and iCNG powertrain choices — rare in the segment",
+      "10.25-inch touchscreen with wireless Android Auto/Apple CarPlay and Tata iRA connected tech",
+      "Segment-leading 208mm ground clearance, well suited to Nepal's roads",
+      "Level-1 ADAS suite (AEB, lane keep assist, forward collision warning) on top variant"
     ],
     "cons": [
-      "No diesel option anymore",
-      "AMT can feel jerky in stop-go traffic",
-      "Boot space average for segment"
+      "Rear drum brakes on most variants, disc only on select top trims",
+      "No electronic parking brake — uses a conventional handbrake",
+      "iCNG variant loses boot space (321L vs 382L) for cylinder placement",
+      "ADAS features limited to the range-topping variant only"
     ],
     "highlights": [
-      "5-Star NCAP",
-      "6 Airbags Standard",
-      "ADAS Level 2",
-      "209mm Clearance"
-    ]
+      "5-Star Global NCAP (2024 stricter protocol)",
+      "Petrol / Diesel / iCNG powertrain options",
+      "208mm ground clearance",
+      "10.25-inch touchscreen with Tata iRA"
+    ],
+    "thumb": "/assets/images/car_images/tata/tata-nexon-2024/front.jpg"
   },
   {
-    "id": 303,
+    "id": 123,
     "slug": "tata-altroz-2024",
     "brand": "Tata",
     "brandSlug": "tata",
@@ -19397,6 +19820,12 @@ window.CARS_DB = [
     "baseEMI": 26000,
     "overview": "The Tata Altroz is a premium B-segment hatchback with a 5-star Global NCAP safety rating. It offers a premium cabin, a turbocharged i-Turbo engine option, and modern design that stands out in the segment.",
     "images": [
+      "/assets/images/car_images/tata/tata-altroz-2024/front.jpg",
+      "/assets/images/car_images/tata/tata-altroz-2024/side.jpg",
+      "/assets/images/car_images/tata/tata-altroz-2024/front.jpg",
+      "/assets/images/car_images/tata/tata-altroz-2024/colors/color-midtown-grey.jpg",
+      "/assets/images/car_images/tata/tata-altroz-2024/colors/color-downtown-red.jpg",
+      "/assets/images/car_images/tata/tata-altroz-2024/colors/color-harbour-blue.jpg",
       "/assets/images/cars/tata/altroz/front.jpg"
     ],
     "colors": [
@@ -19437,7 +19866,9 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "19.06 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       },
       {
@@ -19458,7 +19889,9 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "19.06 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       },
       {
@@ -19481,47 +19914,35 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "19.06 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L Revotron BS6 / 1.2L i-Turbo (optional)",
-      "Power": "86 PS (NA) / 110 PS (Turbo)",
-      "Torque": "113 Nm (NA) / 140 Nm (Turbo)",
-      "Fuel Efficiency": "19.06 km/l (NA)",
-      "Fuel Tank": "37 L",
-      "Transmission": "5MT / 6MT (Turbo)",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Petrol / 1.5L Diesel",
+      "Displacement (cc)": "1,199 / 1,497",
+      "Max Engine Power": "86–90 PS",
+      "Transmission Type": "MT / AMT / DCT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–6",
+      "Safety Rating": "5-Star Global NCAP",
+      "Body Type": "Premium Hatchback",
+      "Distributor": "Sipradi Trading Pvt. Ltd. (Official Tata Nepal Distributor since 1982)",
+      "Power": "86–90 PS",
+      "Transmission": "MT / AMT / DCT",
       "Seating": "5",
-      "Length": "3,990 mm",
-      "Width": "1,755 mm",
-      "Height": "1,523 mm",
-      "Wheelbase": "2,501 mm",
-      "Ground Clearance": "165 mm",
-      "Boot Space": "345 L",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "5-star Global NCAP safety",
-      "Premium cabin quality for price",
-      "Sunroof on top variant",
-      "Turbo variant available for performance"
-    ],
-    "cons": [
-      "Ground clearance (165mm) is low",
-      "No AMT option",
-      "Diesel discontinued"
-    ],
-    "highlights": [
-      "5-Star NCAP",
-      "Sunroof Available",
-      "Premium Cabin",
-      "Turbo Option"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/tata/tata-altroz-2024/front.jpg"
   },
   {
-    "id": 304,
+    "id": 124,
     "slug": "tata-punch-2024",
     "brand": "Tata",
     "brandSlug": "tata",
@@ -19543,6 +19964,10 @@ window.CARS_DB = [
     "baseEMI": 29000,
     "overview": "The Tata Punch is the compact micro-SUV that punches well above its weight with 5-star Global NCAP safety, 187mm ground clearance, and modern design features at an accessible price point.",
     "images": [
+      "/assets/images/car_images/tata/tata-punch-2024/front.jpg",
+      "/assets/images/car_images/tata/tata-punch-2024/front.jpg",
+      "/assets/images/car_images/tata/tata-punch-2024/colors/color-daytona-grey.jpg",
+      "/assets/images/car_images/tata/tata-punch-2024/colors/color-calypso-red.jpg",
       "/assets/images/cars/tata/punch/front.jpg"
     ],
     "colors": [
@@ -19587,7 +20012,9 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "18.82 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       },
       {
@@ -19609,7 +20036,9 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "18.82 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       },
       {
@@ -19631,7 +20060,9 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "18.82 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       },
       {
@@ -19652,47 +20083,137 @@ window.CARS_DB = [
           "power": "86 PS @ 6000 rpm",
           "torque": "113 Nm @ 3300 rpm",
           "efficiency": "19.18 km/l",
-          "transmission": "5AMT"
+          "transmission": "5AMT",
+          "Power": "86 PS @ 6000 rpm",
+          "Torque": "113 Nm @ 3300 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.2L Revotron BS6, 3-Cylinder",
-      "Power": "86 PS @ 6000 rpm",
-      "Torque": "113 Nm @ 3300 rpm",
-      "Fuel Efficiency": "18.82 km/l (MT)",
-      "Fuel Tank": "35 L",
-      "Transmission": "5MT / 5AMT",
-      "Drive": "FWD",
+      "Engine Type": "1.2L Naturally Aspirated Revotron Petrol / 1.2L iCNG",
+      "Displacement (cc)": "1,199",
+      "Max Engine Power": "86 PS @ 6,000 rpm (Petrol); 72-73 PS (iCNG mode, detuned)",
+      "Max Engine Torque": "113 Nm @ 3,300 rpm (Petrol); ~103 Nm (iCNG mode)",
+      "Transmission Type": "5-Speed MT / 5-Speed AMT (with paddle shifters on AMT top variants)",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Ground Clearance (mm)": "187 (unladen, per Tata's own claim of highest-in-segment 187mm)",
+      "Total Airbag Count": "2 (base Pure variant) / 6 (Adventure and above)",
+      "Safety Rating": "5-Star Global NCAP (2021, tested in base safety spec with 2 airbags/ABS/ISOFIX) — 16.45/17 Adult Occupant Protection, 4-Star Child Occupant Protection (40.89/49); also 5-Star Bharat NCAP for current lineup",
+      "Body Type": "Micro SUV",
+      "Distributor": "Sipradi Trading Pvt. Ltd. (Official Tata Nepal Distributor since 1982)",
+      "Power": "86 PS",
+      "Torque": "113 Nm",
+      "Transmission": "MT / AMT",
       "Seating": "5",
-      "Length": "3,827 mm",
-      "Width": "1,742 mm",
-      "Height": "1,615 mm",
-      "Wheelbase": "2,445 mm",
-      "Ground Clearance": "187 mm",
-      "Boot Space": "366 L",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol / iCNG",
+      "Ground Clearance": "187",
+      "Engine Position": "Front, Transverse",
+      "Cylinder Configuration": "In-line 3-cylinder",
+      "Valve Configuration": "DOHC, 4 valves/cylinder",
+      "Fuel System": "Multi-Point Fuel Injection (Petrol); Twin-cylinder iCNG",
+      "Aspiration": "Naturally Aspirated",
+      "Start-Stop System": "Yes (Idle Start-Stop)",
+      "Drive Modes": "2 (City/Sport style Eco-City drive modes)",
+      "Steering Type": "Electric Power Steering, Rack & Pinion",
+      "Fuel Tank Capacity (L)": "37 (Petrol) / dual iCNG cylinders, combined effective ~60L equivalent capacity",
+      "Certified Fuel Efficiency (km/l)": "18.82 (MT), 19.18 (AMT), ~26.2 km/kg (iCNG)",
+      "Emission Standard": "BS VI (Stage 2 / OBD-2B)",
+      "Overall Length (mm)": "3,876",
+      "Overall Width (mm)": "1,742",
+      "Overall Height (mm)": "1,615",
+      "Wheelbase (mm)": "2,445",
+      "Kerb Weight (kg)": "1,030-1,143 (variant/transmission dependent)",
+      "Boot Space (litres)": "366 (revised figure per Tata) / earlier-cited 210L for base config",
+      "Number of Doors": "5",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Twist Beam (rear)",
+      "Front Brakes": "Disc",
+      "Rear Brakes": "Drum",
+      "Hill Start Assist (HSA)": "Yes (Hill Hold Control, top variants)",
+      "Hill Descent Control (HDC)": "No",
+      "Tyre Size": "185/70 R15 (lower variants) / 195/60 R16 (higher variants)",
+      "Wheel Size (inches)": "15 (steel, base) / 16 (alloy, top variants)",
+      "Wheel Type": "Steel with covers (base) / Alloy (top variants)",
+      "TPMS": "Yes (top variants)",
+      "Blind Spot Warning": "Blind Spot Monitor available on select higher variants (camera-assist, not full radar ADAS)",
+      "360° Surround View Camera": "Yes (top variants)",
+      "Front/Rear Cameras": "Rear camera with guidelines standard on most variants; 360° camera on top trim",
+      "Parking Sensors": "Rear (standard); front on select top variants",
+      "Airbag Positions": "Driver, Front Passenger standard; + 2 Side (front) + 2 Curtain on 6-airbag variants",
+      "ABS": "Yes, standard",
+      "EBD": "Yes, standard",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes",
+      "Child Safety Rear Door Lock": "Yes",
+      "Seat Belt Reminder": "Yes (driver and front passenger, all variants)",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Auto Headlamps": "Yes (top variants)",
+      "Rain-Sensing Wipers": "Yes (top variants)",
+      "Auto-Dimming IRVM": "Yes (top variants)",
+      "Cruise Control": "Yes (mid-top variants)",
+      "Front/Rear Parking Sensors": "Rear standard; front on top variant",
+      "SOS Emergency Call System": "Yes (Tata iRA connected app)",
+      "Air Conditioning Type": "Manual (base) / Automatic Climate Control (top variants)",
+      "AC Zones": "Single-zone",
+      "Rear AC Vents": "Yes (top variants)",
+      "Smart Entry (Keyless)": "Yes (top variants)",
+      "Push Button Start": "Yes (mid-top variants)",
+      "Power Windows": "Front and rear",
+      "Electric ORVM": "Yes, foldable (top variants)",
+      "Rear Defogger": "Yes",
+      "Standard / Panoramic Sunroof": "Single-pane electric sunroof (voice-assisted on top variants)",
+      "Cooled Glovebox": "Yes (top variants)",
+      "Steering Adjustments": "Tilt",
+      "Headlamp Type": "LED (projector on top variants)",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Front Fog Lamps": "LED (with cornering function on top variants)",
+      "Tail Lamp Type": "LED",
+      "Roof Rails": "Yes (top variants)",
+      "Digital Instrument Cluster": "7-inch semi-digital (top variants); analogue with MID on base",
+      "Touchscreen Display": "Yes (mid-top variants)",
+      "Touchscreen Size": "7-inch / 10.25-inch (Creative/top variants)",
+      "Audio System Speaker Count": "4 speakers + 4 tweeters (top variants)",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes, front and rear",
+      "Android Auto": "Yes, wireless on top variants",
+      "Apple CarPlay": "Yes, wireless on top variants",
+      "Remote App Control": "Yes (Tata iRA - remote AC, lock/unlock, ignition start/stop)",
+      "Vehicle Health Monitoring App": "Yes (Tata iRA)",
+      "In-Built Navigation": "Yes, with live traffic (connected nav, top variants)",
+      "Connected Car Apps": "Tata iRA (live location, geofencing, OTA updates, e-Call/i-Call, remote commands, PUC expiry alert)",
+      "OTA Software Updates": "Yes (Tata iRA)",
+      "Voice Commands/Assistant": "Yes (via iRA / Google/Alexa integration)",
+      "Standard Vehicle Warranty": "3 years / 1,00,000 km (Tata Motors India standard, post-2023 revision)",
+      "Extended Warranty Offer": "Available up to 5 years / 1,50,000 km",
+      "Corrosion / Rust Warranty": "6 years (typical Tata coverage)",
+      "Roadside Assistance (RSA)": "Available (Tata Motors RSA / Sipradi Nepal service network)",
+      "Total Number of Variants": "~10 in current India lineup (Pure, Pure (O), Adventure, Adventure Rhythm, Adventure Sunroof, Adventure+ Sunroof, Accomplished+, Accomplished+ Sunroof, Creative+, Creative+ Sunroof)",
+      "Total Number of Colors": "Approx. 6-8 monotone and dual-tone options",
+      "Dual-Tone Available": "Yes"
     },
     "pros": [
-      "5-star Global NCAP — best in micro-SUV class",
-      "High 187mm ground clearance vs rivals",
-      "Terrain Response modes on top AMT",
-      "6 Airbags as standard"
+      "5-Star Global NCAP safety rating with 6 airbags on higher trims",
+      "Best-in-segment 187mm ground clearance, confident on Nepal's rough roads",
+      "Distinctive SUV-styled micro-SUV design and compact footprint for city use",
+      "Tata iRA connected car tech and 10.25-inch touchscreen on top variants"
     ],
     "cons": [
-      "No diesel option",
-      "Engine is shared with Tiago (identical spec)",
-      "Only FWD"
+      "Base 'Pure' variant gets only 2 airbags and no touchscreen",
+      "No diesel or ADAS option available",
+      "Rear drum brakes even on top variants",
+      "Naturally aspirated engine feels underpowered on highways compared to Nexon's turbo unit"
     ],
     "highlights": [
-      "5-Star NCAP",
-      "6 Airbags",
-      "187mm Clearance",
-      "Terrain Modes"
-    ]
+      "5-Star Global NCAP rated micro-SUV",
+      "187mm ground clearance — highest in its class",
+      "Tata iRA connected car technology with OTA updates",
+      "Available in Petrol MT/AMT and iCNG powertrains"
+    ],
+    "thumb": "/assets/images/car_images/tata/tata-punch-2024/front.jpg"
   },
   {
-    "id": 401,
+    "id": 125,
     "slug": "subaru-forester-2024",
     "brand": "Subaru",
     "brandSlug": "subaru",
@@ -19714,7 +20235,10 @@ window.CARS_DB = [
     "baseEMI": 129000,
     "overview": "The Subaru Forester is a mid-size SUV built for Nepal's varied terrain, featuring Subaru's unique Symmetrical AWD and Boxer engine. EyeSight ADAS is standard on top trims.",
     "images": [
-      "/assets/images/cars/subaru/forester/front.jpg"
+      "/assets/images/car_images/subaru/forester/exterior/0e80932df044f4bbb9c93edfd7b931.jpg",
+      "/assets/images/car_images/subaru/forester/exterior/c56850838d41afbf780c11cbf2c0a5.png",
+      "/assets/images/car_images/subaru/forester/exterior/ext-1-598b7bdff7.jpg",
+      "/assets/images/car_images/subaru/forester/interior/int-1-446d03c360.jpg"
     ],
     "colors": [
       {
@@ -19759,7 +20283,9 @@ window.CARS_DB = [
           "power": "150 PS @ 6000 rpm",
           "torque": "194 Nm @ 4000 rpm",
           "efficiency": "13.6 km/l",
-          "transmission": "Lineartronic CVT"
+          "transmission": "Lineartronic CVT",
+          "Power": "150 PS @ 6000 rpm",
+          "Torque": "194 Nm @ 4000 rpm"
         }
       },
       {
@@ -19785,48 +20311,114 @@ window.CARS_DB = [
           "power": "150 PS @ 6000 rpm",
           "torque": "194 Nm @ 4000 rpm",
           "efficiency": "13.6 km/l",
-          "transmission": "Lineartronic CVT"
+          "transmission": "Lineartronic CVT",
+          "Power": "150 PS @ 6000 rpm",
+          "Torque": "194 Nm @ 4000 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L DOHC 4-Cylinder Boxer, Direct Injection",
-      "Power": "150 PS @ 6000 rpm",
-      "Torque": "194 Nm @ 4000 rpm",
-      "Fuel Efficiency": "13.6 km/l",
-      "Fuel Tank": "63 L",
+      "Engine Type": "2.0L Boxer (Horizontally-Opposed) Petrol, FB20 (naturally aspirated); e-Boxer mild-hybrid offered in other markets, not confirmed for Nepal",
+      "Displacement (cc)": "1,995",
+      "Max Engine Power": "150-156 PS @ 6,000 rpm",
+      "Transmission Type": "Lineartronic CVT (with 7 manual-shift steps, SI-Drive)",
+      "Drive Type": "Symmetrical All-Wheel Drive (AWD) — standard, no FWD option",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7 (Driver knee airbag + dual front + front side + curtain)",
+      "Body Type": "Mid-size SUV",
+      "Distributor": "Authorized Subaru Nepal dealer network (subaru.com.np) — specific distributor entity not independently confirmed",
+      "Power": "150 PS",
       "Transmission": "Lineartronic CVT",
-      "Drive": "Symmetrical AWD",
       "Seating": "5",
-      "Length": "4,625 mm",
-      "Width": "1,815 mm",
-      "Height": "1,730 mm",
-      "Wheelbase": "2,670 mm",
-      "Ground Clearance": "220 mm",
-      "Boot Space": "520 L",
-      "Emission": "Euro 6"
+      "Fuel Type": "Petrol",
+      "Engine Position": "Front, Longitudinal, Flat/Boxer",
+      "Cylinder Configuration": "Horizontally-Opposed 4 (Boxer)",
+      "Valve Configuration": "DOHC, 16-valve, Dual AVCS",
+      "Fuel System": "Direct/Multi-Point Injection",
+      "Aspiration": "Naturally Aspirated",
+      "Engine Cooling System": "Water-cooled",
+      "Max Engine Torque": "194-196 Nm @ 4,000 rpm",
+      "Drivetrain": "AWD",
+      "Drive Modes": "SI-DRIVE (Intelligent/Sport), X-MODE (Normal / Deep Snow & Mud)",
+      "Paddle Shifters": "No (manual mode via gear lever)",
+      "Steering Type": "Electric Power Steering, Rack & Pinion",
+      "Fuel Tank Capacity (L)": "63",
+      "Certified Fuel Efficiency (km/l)": "13.6 (brand-claimed)",
+      "Emission Standard": "Euro 5 equivalent (Thai-spec)",
+      "Lane Departure Warning": "Yes (part of EyeSight, top variant)",
+      "Forward Collision Warning": "Yes (Pre-Collision Braking system)",
+      "Driver Attention Monitoring": "Yes (Driver Monitoring System, top variant with interior camera)",
+      "Adaptive Cruise Control (ACC)": "Yes (EyeSight, top variant only)",
+      "Lane Keep Assist": "Yes (Lane Centering, EyeSight top variant)",
+      "Auto Emergency Braking (AEB)": "Yes (Pre-Collision Braking, EyeSight top variant)",
+      "Front/Rear Cameras": "Rear camera standard; Multi-View Camera on higher GT-tier variants",
+      "Parking Sensors": "Yes (rear, top variant)",
+      "Overall Length (mm)": "4,625",
+      "Overall Width (mm)": "1,815",
+      "Overall Height (mm)": "1,730",
+      "Wheelbase (mm)": "2,670",
+      "Ground Clearance (mm)": "220",
+      "Kerb Weight (kg)": "1,538",
+      "Number of Doors": "5",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Double Wishbone",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Solid Discs",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Auto Hold": "Yes (Automatic Brake Hold)",
+      "Brake Assist (BA)": "Yes",
+      "Hill Start Assist (HSA)": "Yes",
+      "Hill Descent Control (HDC)": "Via X-MODE Hill Descent function",
+      "Tyre Size": "225/60 R17",
+      "Wheel Size (inches)": "17 (base) / 18 (top variant)",
+      "Wheel Type": "Alloy",
+      "TPMS": "Yes",
+      "Airbag Positions": "Driver, Passenger, Driver Knee, Front Side, Curtain",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes",
+      "Child Safety Rear Door Lock": "Yes",
+      "Seat Belt Reminder": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Auto Headlamps": "Yes",
+      "Rain-Sensing Wipers": "Yes",
+      "Cruise Control": "Yes (standard, ACC on EyeSight top variant)",
+      "Safety Rating": "5-Star Euro NCAP (2019) / 5-Star ANCAP / IIHS Top Safety Pick+ (global platform rating)",
+      "Air Conditioning Type": "Automatic Climate Control",
+      "Rear AC Vents": "Yes",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Power Windows": "Front & Rear",
+      "Electric ORVM": "Yes, power-folding",
+      "Rear Defogger": "Yes",
+      "Powered Driver Seat": "Power adjustable (top variant)",
+      "Heated Seats": "Yes (top variant)",
+      "Standard / Panoramic Sunroof": "Yes (2.0i-S variant only, dual sunroof)",
+      "Powered Tailgate (Hands-Free)": "Yes (Power Rear Gate, top variant)",
+      "Headlamp Type": "LED",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Front Fog Lamps": "Yes",
+      "Roof Rails": "Yes",
+      "Seat Upholstery": "Leather (2.0i-S top variant), fabric (base)",
+      "Leather Wrapped Steering": "Yes",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "8-inch",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Yes",
+      "Standard Vehicle Warranty": "3 years / 100,000 km (typical Subaru Nepal / Vijay Motors coverage)",
+      "Total Number of Variants": "2 in Nepal lineup: 2.0i-L CVT (base), 2.0i-S CVT (top, with EyeSight)",
+      "Variant Names": "2.0i-L CVT, 2.0i-S CVT"
     },
-    "pros": [
-      "5-star ANCAP safety",
-      "220mm ground clearance — excellent for Nepal",
-      "Symmetrical AWD standard on all variants",
-      "EyeSight ADAS on top variant",
-      "Spacious 520L boot"
-    ],
-    "cons": [
-      "High price point",
-      "Fuel economy could be better",
-      "Limited service network vs mainstream brands"
-    ],
-    "highlights": [
-      "5-Star ANCAP",
-      "Symmetrical AWD",
-      "220mm Clearance",
-      "EyeSight ADAS"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/subaru/forester/exterior/0e80932df044f4bbb9c93edfd7b931.jpg"
   },
   {
-    "id": 402,
+    "id": 126,
     "slug": "subaru-outback-2024",
     "brand": "Subaru",
     "brandSlug": "subaru",
@@ -19893,7 +20485,9 @@ window.CARS_DB = [
           "power": "169 PS @ 5800 rpm",
           "torque": "235 Nm @ 4400 rpm",
           "efficiency": "12.5 km/l",
-          "transmission": "Lineartronic CVT"
+          "transmission": "Lineartronic CVT",
+          "Power": "169 PS @ 5800 rpm",
+          "Torque": "235 Nm @ 4400 rpm"
         }
       },
       {
@@ -19914,49 +20508,114 @@ window.CARS_DB = [
           "power": "169 PS @ 5800 rpm",
           "torque": "235 Nm @ 4400 rpm",
           "efficiency": "12.5 km/l",
-          "transmission": "Lineartronic CVT"
+          "transmission": "Lineartronic CVT",
+          "Power": "169 PS @ 5800 rpm",
+          "Torque": "235 Nm @ 4400 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.5L DOHC 4-Cylinder Boxer",
-      "Power": "169 PS @ 5800 rpm",
-      "Torque": "235 Nm @ 4400 rpm",
-      "Fuel Efficiency": "12.5 km/l",
-      "Fuel Tank": "63 L",
+      "Engine Type": "2.5L Boxer (Horizontally-Opposed) Petrol, FB25 naturally aspirated",
+      "Displacement (cc)": "2,498",
+      "Max Engine Power": "169-185 PS @ 5,800 rpm",
+      "Max Engine Torque": "235-247 Nm @ 4,400 rpm",
+      "Transmission Type": "Lineartronic CVT (with manual-shift mode)",
+      "Drive Type": "Symmetrical All-Wheel Drive (AWD) — standard, no FWD option",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7 (dual front, driver knee, front side, curtain)",
+      "Body Type": "Crossover Wagon (raised SUV-height estate)",
+      "Distributor": "Authorized Subaru Nepal dealer network (subaru.com.np) — specific distributor entity not independently confirmed",
+      "Power": "169 PS",
+      "Torque": "247 Nm",
       "Transmission": "Lineartronic CVT",
-      "Drive": "Symmetrical AWD",
       "Seating": "5",
-      "Length": "4,870 mm",
-      "Width": "1,875 mm",
-      "Height": "1,675 mm",
-      "Wheelbase": "2,745 mm",
-      "Ground Clearance": "213 mm",
-      "Towing": "2,000 kg",
-      "Emission": "Euro 6"
+      "Fuel Type": "Petrol",
+      "Engine Position": "Front, Longitudinal, Flat/Boxer",
+      "Cylinder Configuration": "Horizontally-Opposed 4 (Boxer)",
+      "Valve Configuration": "DOHC, 16-valve, Dual AVCS",
+      "Fuel System": "Direct Injection",
+      "Aspiration": "Naturally Aspirated",
+      "Engine Cooling System": "Water-cooled",
+      "Drivetrain": "AWD",
+      "Drive Modes": "X-MODE with Dual Function (Normal / Deep Snow & Mud)",
+      "Steering Type": "Electric Power Steering, Rack & Pinion",
+      "Fuel Tank Capacity (L)": "63",
+      "Certified Fuel Efficiency (km/l)": "12.5 (brand-claimed)",
+      "Emission Standard": "Euro 5 equivalent",
+      "Lane Departure Warning": "Yes (EyeSight)",
+      "Forward Collision Warning": "Yes (Pre-Collision Braking)",
+      "Driver Attention Monitoring": "Yes (Driver Monitoring System / Lead Vehicle Start Alert)",
+      "Adaptive Cruise Control (ACC)": "Yes (EyeSight, standard)",
+      "Lane Keep Assist": "Yes (Lane Centering Function)",
+      "Auto Emergency Braking (AEB)": "Yes (Pre-Collision Braking + Pre-Collision Throttle Management)",
+      "Front/Rear Cameras": "Yes (stereo cameras for EyeSight + rear reverse camera)",
+      "Parking Sensors": "Yes",
+      "Overall Length (mm)": "4,870",
+      "Overall Width (mm)": "1,875",
+      "Overall Height (mm)": "1,675",
+      "Wheelbase (mm)": "2,745",
+      "Ground Clearance (mm)": "213",
+      "Number of Doors": "5",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Double Wishbone",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Solid Discs",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Auto Hold": "Yes",
+      "Brake Assist (BA)": "Yes",
+      "Hill Start Assist (HSA)": "Yes",
+      "Hill Descent Control (HDC)": "Via X-MODE",
+      "Airbag Positions": "Driver, Passenger, Driver Knee, Front Side, Curtain",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes",
+      "Child Safety Rear Door Lock": "Yes",
+      "Seat Belt Reminder": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Auto Headlamps": "Yes",
+      "Rain-Sensing Wipers": "Yes",
+      "Cruise Control": "Yes (Adaptive, standard via EyeSight)",
+      "Safety Rating": "5-Star Euro NCAP / IIHS Top Safety Pick (global Outback platform rating)",
+      "Air Conditioning Type": "Dual-Zone Automatic Climate Control",
+      "Rear AC Vents": "Yes",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Power Windows": "Front & Rear",
+      "Electric ORVM": "Yes, power-folding, heated",
+      "Rear Defogger": "Yes",
+      "Powered Driver Seat": "Yes, power adjustable with memory",
+      "Powered Passenger Seat": "Yes, power adjustable",
+      "Heated Seats": "Yes (front, and rear on some markets)",
+      "Standard / Panoramic Sunroof": "Yes (Dual/Panoramic Sunroof)",
+      "Powered Tailgate (Hands-Free)": "Yes, hands-free power liftgate",
+      "Towing Capacity (kg)": "2,000",
+      "Headlamp Type": "Full LED, Steering-Responsive",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Front Fog Lamps": "Yes",
+      "Roof Rails": "Yes, integrated crossbars",
+      "Seat Upholstery": "Leather",
+      "Leather Wrapped Steering": "Yes",
+      "Digital Instrument Cluster": "Partial digital MID + analogue dials",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "11.6-inch vertical (STARLINK)",
+      "Premium Audio Brand": "Harman Kardon (top variant)",
+      "Amplifier & Subwoofer": "Yes (Harman Kardon system, top variant)",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Yes",
+      "Standard Vehicle Warranty": "3 years / 100,000 km (typical Subaru Nepal / Vijay Motors coverage)",
+      "Total Number of Variants": "2 in Nepal lineup (2024 model, 2025 model — same 2.5i Lineartronic CVT spec, updated EyeSight generation)",
+      "Variant Names": "2.5i Lineartronic CVT (2024), 2.5i Lineartronic CVT (2025, 4th-gen EyeSight)"
     },
-    "pros": [
-      "213mm ground clearance with X-MODE",
-      "Class-leading 2,000kg towing capacity",
-      "EyeSight ADAS 4th Gen",
-      "Premium 11.6-inch vertical screen",
-      "Spacious wagon body"
-    ],
-    "cons": [
-      "Very high price — niche market in Nepal",
-      "Fuel economy average for size",
-      "Limited body style (wagon may not appeal to all)"
-    ],
-    "highlights": [
-      "Symmetrical AWD",
-      "213mm Clearance",
-      "2000kg Towing",
-      "EyeSight 4th Gen"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/subaru/outback/exterior/94ae0573ce4c87bf4cd2bac77b1a32.jpg"
   },
   {
-    "id": 501,
+    "id": 127,
     "slug": "isuzu-dmax-vcross-3-0",
     "brand": "Isuzu",
     "brandSlug": "isuzu",
@@ -19978,7 +20637,12 @@ window.CARS_DB = [
     "baseEMI": 72000,
     "overview": "The Isuzu D-Max V-Cross 3.0 is Nepal's premium Japanese diesel pickup truck combining proven 3.0L turbo diesel reliability, 4WD capability, and lifestyle SUV features. Loved by adventure seekers and work-hardy buyers alike.",
     "images": [
-      "/assets/images/cars/isuzu/dmax-vcross/front.jpg"
+      "/assets/images/car_images/isuzu/d-max vcross/exterior/18-Inch Alloy Wheels.jpg",
+      "/assets/images/car_images/isuzu/d-max vcross/exterior/Sporty New Black Grill Surrounds.jpg",
+      "/assets/images/car_images/isuzu/d-max vcross/exterior/download (1).jpeg",
+      "/assets/images/car_images/isuzu/d-max vcross/exterior/download.jpeg",
+      "/assets/images/car_images/isuzu/d-max vcross/interior/Improved-Rear-Seat.jpg",
+      "/assets/images/car_images/isuzu/d-max vcross/interior/VCross_Red_Interior_1e.jpg"
     ],
     "colors": [
       {
@@ -20017,7 +20681,9 @@ window.CARS_DB = [
           "power": "130 PS @ 3600 rpm",
           "torque": "280 Nm @ 1800 rpm",
           "efficiency": "12.0 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "130 PS @ 3600 rpm",
+          "Torque": "280 Nm @ 1800 rpm"
         }
       },
       {
@@ -20038,7 +20704,9 @@ window.CARS_DB = [
           "power": "130 PS @ 3600 rpm",
           "torque": "280 Nm @ 1800 rpm",
           "efficiency": "12.0 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "130 PS @ 3600 rpm",
+          "Torque": "280 Nm @ 1800 rpm"
         }
       },
       {
@@ -20061,7 +20729,9 @@ window.CARS_DB = [
           "power": "163 PS @ 3600 rpm",
           "torque": "360 Nm @ 1600 rpm",
           "efficiency": "11.8 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "163 PS @ 3600 rpm",
+          "Torque": "360 Nm @ 1600 rpm"
         }
       },
       {
@@ -20085,44 +20755,130 @@ window.CARS_DB = [
           "power": "190 PS @ 3600 rpm",
           "torque": "450 Nm @ 1600 rpm",
           "efficiency": "11.5 km/l",
-          "transmission": "6AT"
+          "transmission": "6AT",
+          "Power": "190 PS @ 3600 rpm",
+          "Torque": "450 Nm @ 1600 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "3.0L 4JJ3-TCX Turbo Diesel, 4-Cylinder",
-      "Power": "190 PS @ 3600 rpm",
-      "Torque": "450 Nm @ 1600 rpm",
-      "Fuel Efficiency": "11.5 km/l",
-      "Fuel Tank": "76 L",
-      "Transmission": "6MT / 6AT",
-      "Drive": "4WD with Low Range",
+      "Engine Type": "3.0L Turbo Diesel (4JJ3-TCX)",
+      "Displacement (cc)": "2,999",
+      "Max Engine Power": "190 PS (188 hp) @ 3,600 rpm",
+      "Max Engine Torque": "450 Nm @ 1,600-2,600 rpm",
+      "Transmission Type": "6-Speed Automatic (Aisin) — 6MT also offered on lower variants",
+      "Drive Type": "Part-time 4WD (Terrain Command shift-on-the-fly, 2H/4H/4L) — 4x4 on V-Cross",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6-7 (dual front, front side, curtain — top variant)",
+      "Body Type": "Double Cab Pickup Truck",
+      "Distributor": "Continental Trading Enterprises Pvt. Ltd. (Official Isuzu Nepal Distributor)",
+      "Power": "177 PS",
+      "Torque": "366 Nm",
+      "Transmission": "6AT",
       "Seating": "5",
-      "Ground Clearance": "225 mm",
-      "Payload": "800–1000 kg",
-      "Towing": "3,500 kg",
-      "Emission": "Euro 5"
+      "Fuel Type": "Diesel",
+      "Engine Position": "Front, Longitudinal",
+      "Cylinder Configuration": "Inline-4",
+      "Valve Configuration": "DOHC, 16-valve (4 valves/cylinder)",
+      "Bore x Stroke (mm)": "95.4 x 104.9",
+      "Compression Ratio": "16.3:1",
+      "Fuel System": "Common Rail Direct Injection (CRDi)",
+      "Aspiration": "Turbocharged (VGS turbo with intercooler)",
+      "Engine Cooling System": "Water-cooled",
+      "Start-Stop System": "No",
+      "Top Speed (km/h)": "180",
+      "Acceleration 0-100 km/h": "10.2 seconds",
+      "Drivetrain": "4x4",
+      "Number of Gears": "6",
+      "Paddle Shifters": "Yes (AT variant)",
+      "Steering Type": "Electric Power Steering (EPS)",
+      "Differential Type": "Open front / limited-slip or locking rear (variant dependent)",
+      "Transfer Case Type": "Electronic shift-on-the-fly, 2-speed (High/Low range)",
+      "Fuel Tank Capacity (L)": "76",
+      "Certified Fuel Efficiency (km/l)": "11.5 (V-Cross 3.0 AT, brand-claimed)",
+      "Emission Standard": "Euro 5 / BS6 equivalent (Thai-spec)",
+      "Lane Departure Warning": "Yes (top variant, Advanced Driver Assistance System)",
+      "Forward Collision Warning": "Yes",
+      "Blind Spot Warning": "Yes (Blind Spot Monitoring - BSM)",
+      "Rear Cross Traffic Warning": "Yes (RCTA)",
+      "Driver Attention Monitoring": "Yes",
+      "Adaptive Cruise Control (ACC)": "Yes (top AT variant, Auto Cruise)",
+      "Auto Emergency Braking (AEB)": "Yes (Forward Automatic Emergency Braking)",
+      "360° Surround View Camera": "Yes (Multi-View Camera System on top variant)",
+      "Front/Rear Cameras": "Yes",
+      "Parking Sensors": "Front & Rear",
+      "Overall Length (mm)": "5,280",
+      "Overall Width (mm)": "1,870",
+      "Overall Height (mm)": "1,810",
+      "Wheelbase (mm)": "3,125",
+      "Ground Clearance (mm)": "235-240",
+      "Turning Radius (m)": "6.1",
+      "Kerb Weight (kg)": "1,750-2,015 (variant dependent)",
+      "Track Width Front/Rear (mm)": "1,570 / 1,570",
+      "Payload Capacity (kg)": "Approx. 1,000-1,040",
+      "Towing Capacity (kg)": "3,500 (braked)",
+      "Number of Doors": "4",
+      "Front Suspension Type": "Double Wishbone with Torsion Bar",
+      "Rear Suspension Type": "Semi-Elliptic Leaf Spring, Rigid Axle",
+      "Suspension Damper Type": "Gas-filled shock absorbers",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Drum (leaf-spring rigid axle)",
+      "Electronic Parking Brake (EPB)": "No (conventional handbrake)",
+      "Brake Assist (BA)": "Yes",
+      "Hill Start Assist (HSA)": "Yes",
+      "Hill Descent Control (HDC)": "Yes",
+      "Tyre Size": "265/60 R18",
+      "Wheel Size (inches)": "18",
+      "Wheel Type": "Alloy",
+      "TPMS": "Yes",
+      "Airbag Positions": "Driver, Passenger, Front Side, Curtain",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes",
+      "Speed Sensing Auto Door Lock": "Yes (Walk Away Auto Lock)",
+      "Child Safety Rear Door Lock": "Yes",
+      "Seat Belt Reminder": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Auto Headlamps": "Yes",
+      "Rain-Sensing Wipers": "Yes",
+      "Cruise Control": "Yes",
+      "Front/Rear Parking Sensors": "Yes",
+      "Safety Rating": "5-Star ASEAN NCAP (2020 assessment, same-generation D-Max)",
+      "Air Conditioning Type": "Dual-Zone Automatic Climate Control",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Power Windows": "Front & Rear",
+      "Electric ORVM": "Yes, power-folding",
+      "Rear Defogger": "Yes",
+      "Powered Driver Seat": "8-way power adjustable",
+      "Standard / Panoramic Sunroof": "No",
+      "Headlamp Type": "Bi-LED Projector",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Front Fog Lamps": "LED",
+      "Roof Rails": "Yes",
+      "Seat Upholstery": "Leather (top variant)",
+      "Leather Wrapped Steering": "Yes, multi-function, tilt & telescopic",
+      "Digital Instrument Cluster": "7-inch multi-info display (analogue dials + digital MID)",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "9-inch (top V-Cross 3.0), 7-inch (lower variants)",
+      "Audio System Speaker Count": "8",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes (front & rear, USB-C on latest models)",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Yes",
+      "In-Built Navigation": "Yes",
+      "Standard Vehicle Warranty": "3 years / 100,000 km (typical Isuzu Nepal coverage)",
+      "Total Number of Variants": "4 (Single Cab, S-Cab, V-Cross 2.5 4WD MT, V-Cross 3.0 4WD AT) in Nepal lineup",
+      "Variant Names": "Single Cab, S-Cab, V-Cross 2.5 4WD, V-Cross 3.0 4WD AT"
     },
-    "pros": [
-      "Legendary Isuzu diesel reliability",
-      "450Nm torque for heavy-duty use",
-      "3500kg towing capacity",
-      "4WD with low range for serious terrain"
-    ],
-    "cons": [
-      "V-Cross 3.0 price is very high",
-      "Ride comfort is truck-like (body-on-frame)",
-      "Fuel economy below average"
-    ],
-    "highlights": [
-      "450Nm Diesel",
-      "3500kg Towing",
-      "4WD Low Range",
-      "Isuzu Reliability"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/isuzu/d-max vcross/exterior/18-Inch Alloy Wheels.jpg"
   },
   {
-    "id": 502,
+    "id": 128,
     "slug": "isuzu-mux-2024",
     "brand": "Isuzu",
     "brandSlug": "isuzu",
@@ -20144,7 +20900,9 @@ window.CARS_DB = [
     "baseEMI": 120000,
     "overview": "The Isuzu MU-X is a 7-seater body-on-frame diesel SUV built on the D-Max platform. It delivers SUV premium comfort with Isuzu's rugged diesel reliability and genuine off-road 4WD capability.",
     "images": [
-      "/assets/images/cars/isuzu/mux/front.jpg"
+      "/assets/images/car_images/isuzu/mu-x/exterior/ext-1-d8a979c564.jpg",
+      "/assets/images/car_images/isuzu/mu-x/exterior/ext-2-438b123bd3.jpg",
+      "/assets/images/car_images/isuzu/mu-x/interior/int-1-9a0939a169.jpg"
     ],
     "colors": [
       {
@@ -20191,43 +20949,127 @@ window.CARS_DB = [
           "power": "190 PS @ 3600 rpm",
           "torque": "450 Nm @ 1600 rpm",
           "efficiency": "11.2 km/l",
-          "transmission": "6AT"
+          "transmission": "6AT",
+          "Power": "190 PS @ 3600 rpm",
+          "Torque": "450 Nm @ 1600 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "3.0L 4JJ3-TCX Turbo Diesel, 4-Cylinder",
-      "Power": "190 PS @ 3600 rpm",
-      "Torque": "450 Nm @ 1600 rpm",
-      "Fuel Efficiency": "11.2 km/l",
-      "Fuel Tank": "73 L",
+      "Engine Type": "3.0L Turbo Diesel (4JJ3-TCX)",
+      "Displacement (cc)": "2,999",
+      "Max Engine Power": "190 PS (188 hp) @ 3,600 rpm",
+      "Transmission Type": "6-Speed Automatic",
+      "Drive Type": "4x4 (Terrain Command 2H/4H/4L) / 4x2 also offered globally",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "6-7",
+      "Body Type": "Full-size body-on-frame SUV (D-Max platform)",
+      "Distributor": "Continental Trading Enterprises Pvt. Ltd. (Official Isuzu Nepal Distributor)",
+      "Power": "150–177 PS",
       "Transmission": "6AT",
-      "Drive": "Terrain Command 4WD",
       "Seating": "7",
-      "Ground Clearance": "230 mm",
-      "Towing": "3,200 kg",
-      "Emission": "Euro 5"
+      "Fuel Type": "Diesel",
+      "Engine Position": "Front, Longitudinal",
+      "Cylinder Configuration": "Inline-4",
+      "Valve Configuration": "DOHC, 16-valve",
+      "Bore x Stroke (mm)": "95.4 x 104.9",
+      "Compression Ratio": "16.3:1",
+      "Fuel System": "Common Rail Direct Injection (CRDi)",
+      "Aspiration": "Turbocharged with intercooler",
+      "Engine Cooling System": "Water-cooled",
+      "Max Engine Torque": "450 Nm @ 1,600-2,600 rpm",
+      "Drivetrain": "4x4",
+      "Number of Gears": "6",
+      "Paddle Shifters": "Yes",
+      "Steering Type": "Electric Power Steering",
+      "Transfer Case Type": "Electronic shift-on-the-fly, 2-speed",
+      "Fuel Tank Capacity (L)": "80",
+      "Certified Fuel Efficiency (km/l)": "11.2 (brand-claimed, 3.0 4WD AT)",
+      "Emission Standard": "Euro 5 equivalent (Thai-spec)",
+      "Lane Departure Warning": "Yes",
+      "Forward Collision Warning": "Yes",
+      "Blind Spot Warning": "Yes (BSM)",
+      "Rear Cross Traffic Warning": "Yes (RCTA)",
+      "Driver Attention Monitoring": "Yes",
+      "Adaptive Cruise Control (ACC)": "Yes (Auto Cruise)",
+      "Auto Emergency Braking (AEB)": "Yes",
+      "360° Surround View Camera": "Yes",
+      "Front/Rear Cameras": "Yes",
+      "Parking Sensors": "Front & Rear",
+      "Overall Length (mm)": "4,860",
+      "Overall Width (mm)": "1,885",
+      "Overall Height (mm)": "1,875",
+      "Wheelbase (mm)": "2,855",
+      "Ground Clearance (mm)": "235",
+      "Turning Radius (m)": "5.6",
+      "Track Width Front/Rear (mm)": "1,570 / 1,570",
+      "Gross Vehicle Weight (GVW)": "Approx. 2,700-2,800 kg (4x2/4x4)",
+      "Towing Capacity (kg)": "3,500 (braked)",
+      "Number of Doors": "5",
+      "Front Suspension Type": "Double Wishbone",
+      "Rear Suspension Type": "5-Link Coil Spring (rigid axle)",
+      "Suspension Damper Type": "Gas-filled, Stiff Flex shock absorbers",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Ventilated Discs",
+      "Brake Assist (BA)": "Yes",
+      "Hill Start Assist (HSA)": "Yes",
+      "Hill Descent Control (HDC)": "Yes",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Auto Hold": "Yes (Automatic Brake Hold)",
+      "Tyre Size": "265/50 R20",
+      "Wheel Size (inches)": "20",
+      "Wheel Type": "Alloy",
+      "TPMS": "Yes",
+      "Airbag Positions": "Driver, Passenger, Front Side, Curtain",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes",
+      "Speed Sensing Auto Door Lock": "Yes (Walk Away Auto Lock)",
+      "Child Safety Rear Door Lock": "Yes",
+      "Seat Belt Reminder": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Auto Headlamps": "Yes",
+      "Rain-Sensing Wipers": "Yes",
+      "Cruise Control": "Yes",
+      "Front/Rear Parking Sensors": "Yes",
+      "Safety Rating": "5-Star ASEAN NCAP (2021 assessment)",
+      "Air Conditioning Type": "Tri-Zone/Dual-Zone Automatic Climate Control",
+      "Rear AC Vents": "Yes",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Power Windows": "Front & Rear",
+      "Electric ORVM": "Yes, power-folding",
+      "Rear Defogger": "Yes",
+      "Powered Driver Seat": "8-way power adjustable",
+      "Powered Passenger Seat": "4-way power adjustable",
+      "Standard / Panoramic Sunroof": "Yes (top RS/Nepal-spec variant)",
+      "Powered Tailgate (Hands-Free)": "Yes (Power Tailgate)",
+      "Headlamp Type": "Bi-LED Projector",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Front Fog Lamps": "LED",
+      "Roof Rails": "Yes",
+      "Seat Upholstery": "Leather",
+      "Leather Wrapped Steering": "Yes, multi-function, tilt & telescopic",
+      "Digital Instrument Cluster": "Multi-info display + analogue dials",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "9-inch",
+      "Audio System Speaker Count": "8",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes, front & rear",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Yes, wireless",
+      "In-Built Navigation": "Yes",
+      "Standard Vehicle Warranty": "3 years / 100,000 km (typical Isuzu Nepal coverage)",
+      "Total Number of Variants": "1 (3.0 4WD AT) in current Nepal lineup"
     },
-    "pros": [
-      "230mm ground clearance — very capable",
-      "7-seater with genuine 4WD",
-      "Premium SUV cabin on truck platform",
-      "Strong Isuzu diesel warranty"
-    ],
-    "cons": [
-      "Truck-like ride quality",
-      "High price vs SUV rivals",
-      "Large turning radius"
-    ],
-    "highlights": [
-      "230mm Clearance",
-      "4WD Terrain Command",
-      "7-Seater",
-      "450Nm Diesel"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/isuzu/mu-x/exterior/ext-1-d8a979c564.jpg"
   },
   {
-    "id": 601,
+    "id": 129,
     "slug": "jeep-compass-2024",
     "brand": "Jeep",
     "brandSlug": "jeep",
@@ -20249,7 +21091,8 @@ window.CARS_DB = [
     "baseEMI": 87000,
     "overview": "The Jeep Compass brings iconic Jeep DNA to the compact SUV segment. Available in petrol and diesel with FWD and 4WD options, it offers premium features including ventilated leather seats, panoramic sunroof, and 60+ safety features.",
     "images": [
-      "/assets/images/cars/jeep/compass/front.jpg"
+      "/assets/images/car_images/jeep/compass/exterior/ext-1-ac8213f994.jpg",
+      "/assets/images/car_images/jeep/compass/interior/int-1-d965bec823.jpg"
     ],
     "colors": [
       {
@@ -20303,7 +21146,9 @@ window.CARS_DB = [
           "power": "163 PS @ 5500 rpm",
           "torque": "250 Nm @ 2500 rpm",
           "efficiency": "14.7 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "163 PS @ 5500 rpm",
+          "Torque": "250 Nm @ 2500 rpm"
         }
       },
       {
@@ -20326,7 +21171,9 @@ window.CARS_DB = [
           "power": "170 PS @ 3750 rpm",
           "torque": "350 Nm @ 1750 rpm",
           "efficiency": "17.1 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "170 PS @ 3750 rpm",
+          "Torque": "350 Nm @ 1750 rpm"
         }
       },
       {
@@ -20348,7 +21195,9 @@ window.CARS_DB = [
           "power": "170 PS @ 3750 rpm",
           "torque": "350 Nm @ 1750 rpm",
           "efficiency": "17.1 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "170 PS @ 3750 rpm",
+          "Torque": "350 Nm @ 1750 rpm"
         }
       },
       {
@@ -20371,47 +21220,34 @@ window.CARS_DB = [
           "power": "170 PS @ 3750 rpm",
           "torque": "350 Nm @ 1750 rpm",
           "efficiency": "16.3 km/l",
-          "transmission": "9AT"
+          "transmission": "9AT",
+          "Power": "170 PS @ 3750 rpm",
+          "Torque": "350 Nm @ 1750 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.4L Multiair Turbo Petrol / 2.0L Multijet Diesel",
-      "Power": "163 PS (Petrol) / 170 PS (Diesel)",
-      "Torque": "250 Nm (Petrol) / 350 Nm (Diesel)",
-      "Fuel Efficiency": "14.7 km/l (Petrol) / 17.1 km/l (Diesel)",
-      "Fuel Tank": "60 L",
-      "Transmission": "6MT / 9AT / 7-Speed DCT",
-      "Drive": "FWD / 4WD",
+      "Engine Type": "2.0L Multijet Diesel / 1.4L Turbo Petrol",
+      "Displacement (cc)": "1,956 / 1,368",
+      "Max Engine Power": "170 PS (Diesel) / 163 PS (Petrol)",
+      "Transmission Type": "MT / AT",
+      "Drive Type": "FWD / 4WD (top trim)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Compact SUV",
+      "Distributor": "MAW Life (Official Jeep Nepal Distributor)",
+      "Power": "170 PS (Diesel) / 163 PS (Petrol)",
+      "Transmission": "MT / AT",
       "Seating": "5",
-      "Length": "4,405 mm",
-      "Width": "1,818 mm",
-      "Height": "1,640 mm",
-      "Wheelbase": "2,636 mm",
-      "Ground Clearance": "178 mm",
-      "Boot Space": "432 L",
-      "Emission": "BS VI"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Iconic Jeep brand with premium badge value",
-      "60+ safety features on top variants",
-      "4WD with terrain modes on top diesel",
-      "Panoramic sunroof and ventilated seats"
-    ],
-    "cons": [
-      "178mm ground clearance moderate vs rivals",
-      "Price premium for the category",
-      "After-sales network limited vs mainstream brands"
-    ],
-    "highlights": [
-      "4WD Terrain Modes",
-      "60+ Safety Features",
-      "Jeep DNA",
-      "Diesel Available"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/jeep/compass/exterior/ext-1-ac8213f994.jpg"
   },
   {
-    "id": 701,
+    "id": 130,
     "slug": "mazda-cx-5-2024",
     "brand": "Mazda",
     "brandSlug": "mazda",
@@ -20433,7 +21269,9 @@ window.CARS_DB = [
     "baseEMI": 104000,
     "overview": "The Mazda CX-5 is the benchmark premium compact SUV in Nepal, renowned for its KODO design philosophy, SKYACTIV engines, and Mazda's G-Vectoring Control Plus. Available in 2.0L FWD and 2.5L AWD options.",
     "images": [
-      "/assets/images/cars/mazda/cx5/front.jpg"
+      "/assets/images/car_images/mazda/cx-5/exterior/ext-1-c7d7a1d8cf.jpg",
+      "/assets/images/car_images/mazda/cx-5/exterior/ext-2-f46071280f.jpg",
+      "/assets/images/car_images/mazda/cx-5/interior/int-1-1691fbe2f7.jpg"
     ],
     "colors": [
       {
@@ -20489,7 +21327,9 @@ window.CARS_DB = [
           "power": "156 PS @ 6000 rpm",
           "torque": "200 Nm @ 4000 rpm",
           "efficiency": "15.6 km/l",
-          "transmission": "6AT"
+          "transmission": "6AT",
+          "Power": "156 PS @ 6000 rpm",
+          "Torque": "200 Nm @ 4000 rpm"
         }
       },
       {
@@ -20514,47 +21354,128 @@ window.CARS_DB = [
           "power": "190 PS @ 6000 rpm",
           "torque": "252 Nm @ 4000 rpm",
           "efficiency": "14.2 km/l",
-          "transmission": "6AT"
+          "transmission": "6AT",
+          "Power": "190 PS @ 6000 rpm",
+          "Torque": "252 Nm @ 4000 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L SKYACTIV-G (FWD) / 2.5L SKYACTIV-G (AWD)",
-      "Power": "156 PS / 190 PS",
-      "Torque": "200 Nm / 252 Nm",
-      "Fuel Efficiency": "15.6 km/l / 14.2 km/l",
-      "Fuel Tank": "56–58 L",
+      "Engine Type": "2.0L SKYACTIV-G Petrol (PE-VPS) / 2.5L SKYACTIV-G Petrol (PY-VPS)",
+      "Displacement (cc)": "1,998 (2.0L) / 2,488 (2.5L)",
+      "Max Engine Power": "156-165 PS @ 6,000 rpm (2.0L) / 190-194 PS @ 6,000 rpm (2.5L)",
+      "Transmission Type": "6-Speed SKYACTIV-Drive Automatic (torque converter, with Sport mode)",
+      "Drive Type": "FWD (2.0L) / AWD, i-ACTIV AWD (2.5L)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Mid-size Crossover SUV",
+      "Note": "As of the latest available information, Mazda was reported to be seeking a NEW distributor for Nepal — current official distribution status is uncertain. Verify before quoting price/availability.",
+      "Power": "165–194 PS",
       "Transmission": "6AT",
-      "Drive": "FWD / i-ACTIV AWD",
       "Seating": "5",
-      "Length": "4,575 mm",
-      "Width": "1,844 mm",
-      "Height": "1,690 mm",
-      "Wheelbase": "2,700 mm",
-      "Ground Clearance": "200 mm",
-      "Boot Space": "442 L",
-      "Emission": "Euro 6"
+      "Fuel Type": "Petrol",
+      "Engine Position": "Front, Transverse",
+      "Cylinder Configuration": "Inline-4",
+      "Valve Configuration": "DOHC, 16-valve",
+      "Fuel System": "Direct Injection (SKYACTIV-G, high 13:1-14:1 compression)",
+      "Aspiration": "Naturally Aspirated",
+      "Engine Cooling System": "Water-cooled",
+      "Start-Stop System": "Yes (i-stop)",
+      "Max Engine Torque": "200-210 Nm @ 4,000 rpm (2.0L) / 252 Nm @ 4,000 rpm (2.5L)",
+      "Drivetrain": "FWD / AWD (variant dependent)",
+      "Number of Gears": "6",
+      "Paddle Shifters": "Yes (AWD/top variant)",
+      "Steering Type": "Electric Power Steering, Rack & Pinion",
+      "Turning Radius (m)": "5.5",
+      "Fuel Tank Capacity (L)": "56",
+      "Certified Fuel Efficiency (km/l)": "15.6 (2.0L FWD) / 14.2 (2.5L AWD), brand-claimed",
+      "Emission Standard": "Euro 5/6 equivalent",
+      "Lane Departure Warning": "Yes (Lane Departure Warning System)",
+      "Forward Collision Warning": "Yes (Smart Brake Support)",
+      "Blind Spot Warning": "Yes (Blind Spot Monitoring)",
+      "Rear Cross Traffic Warning": "Yes (Rear Cross Traffic Alert)",
+      "Traffic Sign Recognition": "Yes (Traffic Sign Recognition System, higher grades)",
+      "Driver Attention Monitoring": "Yes (Driver Attention Alert)",
+      "High Beam Assist": "Yes (Adaptive LED Headlights / High Beam Control)",
+      "Adaptive Cruise Control (ACC)": "Yes (Mazda Radar Cruise Control, full-range)",
+      "Lane Keep Assist": "Yes",
+      "Auto Emergency Braking (AEB)": "Yes (Smart Brake Support, front & reverse)",
+      "360° Surround View Camera": "Yes (360° View Monitor, top AWD variant)",
+      "Front/Rear Cameras": "Yes",
+      "Parking Sensors": "Front & Rear",
+      "Head-Up Display (HUD)": "Yes (Active Driving Display, top variant)",
+      "Overall Length (mm)": "4,550-4,575",
+      "Overall Width (mm)": "1,840-1,845",
+      "Overall Height (mm)": "1,675-1,690",
+      "Wheelbase (mm)": "2,700",
+      "Ground Clearance (mm)": "185-193",
+      "Kerb Weight (kg)": "1,550-1,650",
+      "Boot Space (litres)": "442",
+      "Track Width Front/Rear (mm)": "1,595 / 1,595",
+      "Number of Doors": "5",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Multi-link",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Solid/Ventilated Discs",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Auto Hold": "Yes",
+      "Brake Assist (BA)": "Yes",
+      "Hill Start Assist (HSA)": "Yes (Hill Launch Assist)",
+      "Hill Descent Control (HDC)": "Yes (AWD variant)",
+      "Tyre Size": "225/65 R17 (2.0L) / 225/55 R19 (2.5L AWD top variant)",
+      "Wheel Size (inches)": "17 (2.0L) / 19 (2.5L AWD)",
+      "Wheel Type": "Alloy",
+      "TPMS": "Yes",
+      "Airbag Positions": "Driver, Passenger, Front Side, Curtain",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes",
+      "Child Safety Rear Door Lock": "Yes",
+      "Seat Belt Reminder": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Auto Headlamps": "Yes",
+      "Rain-Sensing Wipers": "Yes",
+      "Auto-Dimming IRVM": "Yes",
+      "Cruise Control": "Yes",
+      "Front/Rear Parking Sensors": "Yes",
+      "Safety Rating": "5-Star ANCAP/Euro NCAP (pre-2024 testing cycle; lost 5-star post-Jan 2024 due to updated criteria, not a safety regression)",
+      "Air Conditioning Type": "Dual-Zone Automatic Climate Control",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Power Windows": "Front & Rear",
+      "Electric ORVM": "Yes, power-folding",
+      "Rear Defogger": "Yes",
+      "Powered Driver Seat": "Yes, electric with memory (top variant)",
+      "Powered Passenger Seat": "Yes, electric (top variant)",
+      "Ventilated Seats": "Yes (top AWD variant, Nappa Leather)",
+      "Standard / Panoramic Sunroof": "Yes (standard sunroof, top variant)",
+      "Powered Tailgate (Hands-Free)": "Yes (Power Liftgate, top AWD variant)",
+      "Headlamp Type": "Full LED, Adaptive LED (top variant)",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Front Fog Lamps": "LED",
+      "Roof Rails": "Yes",
+      "Seat Upholstery": "Fabric (base) / Nappa Leather (top)",
+      "Leather Wrapped Steering": "Yes",
+      "Digital Instrument Cluster": "Active Driver Display / part-digital MID",
+      "Touchscreen Display": "Yes (Mazda Connect)",
+      "Touchscreen Size": "10.25-inch",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Yes",
+      "In-Built Navigation": "Yes",
+      "Standard Vehicle Warranty": "3-5 years (varies by Nepal distributor policy; verify with Paramount Motors)",
+      "Total Number of Variants": "2 (High 2.0L FWD, High+ 2.5L AWD) in Nepal lineup",
+      "Variant Names": "High 2.0L FWD, High+ 2.5L AWD"
     },
-    "pros": [
-      "Best-in-class interior quality and design",
-      "G-Vectoring Control Plus for smooth handling",
-      "SKYACTIV engines are efficient and smooth",
-      "AWD variant for all-terrain capability"
-    ],
-    "cons": [
-      "No sunroof standard (trim-dependent)",
-      "Limited Nepal service network vs Honda/Toyota",
-      "Higher price vs Hyundai Tucson"
-    ],
-    "highlights": [
-      "KODO Design",
-      "SKYACTIV Engine",
-      "AWD Available",
-      "Premium Interior"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/mazda/cx-5/exterior/ext-1-c7d7a1d8cf.jpg"
   },
   {
-    "id": 801,
+    "id": 131,
     "slug": "ssangyong-rexton-2024",
     "brand": "SsangYong",
     "brandSlug": "ssangyong",
@@ -20576,7 +21497,9 @@ window.CARS_DB = [
     "baseEMI": 92000,
     "overview": "The SsangYong Rexton is a body-on-frame 7-seater diesel SUV that delivers genuine off-road capability combined with a spacious premium cabin. Known for strong 4WD performance and solid build quality at a competitive price vs European rivals.",
     "images": [
-      "/assets/images/cars/ssangyong/rexton/front.jpg"
+      "/assets/images/car_images/ssangyong/rexton/exterior/ext-1-d1e24b080e.jpg",
+      "/assets/images/car_images/ssangyong/rexton/exterior/ext-2-5eaed0aa64.jpg",
+      "/assets/images/car_images/ssangyong/rexton/interior/int-1-f32f6f9095.jpg"
     ],
     "colors": [
       {
@@ -20621,47 +21544,36 @@ window.CARS_DB = [
           "power": "202 PS @ 3800 rpm",
           "torque": "450 Nm @ 1400 rpm",
           "efficiency": "11.5 km/l",
-          "transmission": "7AT"
+          "transmission": "7AT",
+          "Power": "202 PS @ 3800 rpm",
+          "Torque": "450 Nm @ 1400 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.2L e-XDi220 Diesel Turbo",
-      "Power": "202 PS @ 3800 rpm",
-      "Torque": "450 Nm @ 1400 rpm",
-      "Fuel Efficiency": "11.5 km/l",
-      "Fuel Tank": "71 L",
-      "Transmission": "7AT",
-      "Drive": "Part-time 4WD with Low Range",
+      "Engine Type": "2.2L e-XDi Diesel",
+      "Displacement (cc)": "2,157",
+      "Max Engine Power": "202 PS",
+      "Max Engine Torque": "441 Nm",
+      "Transmission Type": "8AT",
+      "Drive Type": "4WD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "7",
+      "Body Type": "Full-size SUV",
+      "Distributor": "IMS Motors (subsidiary of IMS Group) — Official SsangYong Nepal Distributor",
+      "Power": "202 PS",
+      "Torque": "441 Nm",
+      "Transmission": "8AT",
       "Seating": "7",
-      "Length": "4,850 mm",
-      "Width": "1,960 mm",
-      "Height": "1,790 mm",
-      "Wheelbase": "2,865 mm",
-      "Ground Clearance": "216 mm",
-      "Towing": "3,500 kg",
-      "Emission": "Euro 5"
+      "Fuel Type": "Diesel"
     },
-    "pros": [
-      "7-seater with genuine 4WD low range",
-      "450Nm diesel torque",
-      "216mm ground clearance",
-      "Value vs Mitsubishi Pajero Sport"
-    ],
-    "cons": [
-      "Brand recognition limited in Nepal",
-      "Fuel economy could be better",
-      "Limited SsangYong service network"
-    ],
-    "highlights": [
-      "4WD Low Range",
-      "450Nm Torque",
-      "7-Seater",
-      "216mm Clearance"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/ssangyong/rexton/exterior/ext-1-d1e24b080e.jpg"
   },
   {
-    "id": 901,
+    "id": 132,
     "slug": "gwm-haval-jolion-2024",
     "brand": "GWM",
     "brandSlug": "gwm",
@@ -20683,6 +21595,9 @@ window.CARS_DB = [
     "baseEMI": 50000,
     "overview": "The Haval Jolion is the youth-focused turbocharged SUV from GWM with aggressive styling, a premium tech cabin, and Euro5-compliant 1.5L turbo engine. Available in MT and DCT variants.",
     "images": [
+      "/assets/images/car_images/haval/jolion/front.jpg",
+      "/assets/images/car_images/haval/jolion/side.jpg",
+      "/assets/images/car_images/haval/jolion/interior.jpg",
       "/assets/images/cars/gwm/haval-jolion/front.jpg"
     ],
     "colors": [
@@ -20729,7 +21644,9 @@ window.CARS_DB = [
           "power": "150 PS @ 5600 rpm",
           "torque": "210 Nm @ 2000 rpm",
           "efficiency": "14.8 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "150 PS @ 5600 rpm",
+          "Torque": "210 Nm @ 2000 rpm"
         }
       },
       {
@@ -20752,7 +21669,9 @@ window.CARS_DB = [
           "power": "150 PS @ 5600 rpm",
           "torque": "210 Nm @ 2000 rpm",
           "efficiency": "14.8 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "150 PS @ 5600 rpm",
+          "Torque": "210 Nm @ 2000 rpm"
         }
       },
       {
@@ -20773,7 +21692,9 @@ window.CARS_DB = [
           "power": "150 PS @ 5600 rpm",
           "torque": "210 Nm @ 2000 rpm",
           "efficiency": "15.6 km/l",
-          "transmission": "7DCT"
+          "transmission": "7DCT",
+          "Power": "150 PS @ 5600 rpm",
+          "Torque": "210 Nm @ 2000 rpm"
         }
       },
       {
@@ -20795,47 +21716,103 @@ window.CARS_DB = [
           "power": "150 PS @ 5600 rpm",
           "torque": "210 Nm @ 2000 rpm",
           "efficiency": "15.6 km/l",
-          "transmission": "7DCT"
+          "transmission": "7DCT",
+          "Power": "150 PS @ 5600 rpm",
+          "Torque": "210 Nm @ 2000 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L 4G15TDB Turbo, 4-Cylinder",
-      "Power": "150 PS @ 5600 rpm",
-      "Torque": "210 Nm @ 2000 rpm",
-      "Fuel Efficiency": "14.8 km/l (MT) / 15.6 km/l (DCT)",
-      "Fuel Tank": "55 L",
-      "Transmission": "6MT / 7DCT",
-      "Drive": "FWD",
-      "Seating": "5",
-      "Length": "4,472 mm",
-      "Width": "1,841 mm",
-      "Height": "1,628 mm",
-      "Wheelbase": "2,700 mm",
-      "Ground Clearance": "180 mm",
-      "Boot Space": "400 L",
-      "Emission": "Euro 5+"
+      "Note": "DUPLICATE: This entry duplicates a model already researched under the 'Haval' brand (haval-jolion-2025 / haval-h6-2025), which is GWM's SUV sub-brand as officially sold in Nepal via VG Impex Pvt. Ltd. Recommend removing/merging these 'GWM'-branded duplicates to avoid split, inconsistent listings for the same real vehicle.",
+      "Distributor": "VG Impex Pvt. Ltd. (Official GWM/Haval Nepal Distributor)",
+      "Fuel Type": "Petrol",
+      "Body Type": "SUV",
+      "Engine Type": "1.5L Turbocharged Petrol (MPFI)",
+      "Displacement (cc)": "1,497",
+      "Cylinder Configuration": "Inline-4",
+      "Aspiration": "Turbocharged",
+      "Max Engine Power": "150 PS @ 5,600–6,000 rpm",
+      "Max Engine Torque": "210 Nm @ 2,000–4,400 rpm",
+      "Drive Modes": "Standard / Eco / Sport / Snow",
+      "Transmission Type": "6-Speed Manual (Low/Premium MT) or 7-Speed Wet Dual-Clutch (Premium/Ultra DCT)",
+      "Number of Gears": "6 (MT) / 7 (DCT)",
+      "Paddle Shifters": "Yes (DCT variants)",
+      "Drive Type": "Front-Wheel Drive",
+      "Drivetrain": "FWD",
+      "Fuel Tank Capacity (L)": "55",
+      "Certified Fuel Efficiency (km/l)": "14.8 (6MT) / 15.6 (7DCT) per Nepal spec sheet (a separate source cites a lower combined 12.34 km/l figure — likely a different test cycle)",
+      "Emission Standard": "Euro 5",
+      "Overall Length (mm)": "4,472",
+      "Overall Width (mm)": "1,841",
+      "Overall Height (mm)": "1,619",
+      "Wheelbase (mm)": "2,700",
+      "Ground Clearance (mm)": "168",
+      "Kerb Weight (kg)": "1,345–1,370 (varies by variant)",
+      "Boot Space (litres)": "393",
+      "Seating Capacity": "5",
+      "Number of Doors": "5",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Torsion Beam",
+      "Front Brakes": "Disc",
+      "Rear Brakes": "Disc",
+      "Tyre Size": "215/60 R17 (Low/Premium) or 225/55 R18 (Ultra)",
+      "Wheel Size (inches)": "17 (Low/Premium) / 18 (Ultra)",
+      "Spare Tyre": "Tubeless",
+      "Total Airbag Count": "6 (per Nepal-market variant sheet; one third-party spec source cites 8 — unresolved discrepancy, see notes)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "High Speed Alert System": "Yes (ESP-linked)",
+      "Hill Start Assist (HSA)": "Yes (Hill Hold)",
+      "Driver Attention Monitoring": "Yes (Drowsiness Detection, per spec listing)",
+      "Auto Headlamps": "Yes",
+      "Adaptive Cruise Control (ACC)": "Yes (Ultra DCT)",
+      "Lane Keep Assist": "Yes (\"Active Lane Assist\", Ultra DCT)",
+      "Blind Spot Warning": "Yes (\"Blind Spot Monitor\", Ultra DCT)",
+      "360° Surround View Camera": "Yes (Premium DCT and above)",
+      "Front/Rear Cameras": "Yes",
+      "Head-Up Display (HUD)": "Yes (Ultra DCT)",
+      "Air Conditioning Type": "Dual-Zone Automatic",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Powered Driver Seat": "Yes (Premium MT and above, electric seat adjustment)",
+      "Heated Seats": "Yes (Premium MT and above)",
+      "Ventilated Seats": "Yes (Ultra DCT)",
+      "Standard / Panoramic Sunroof": "Panoramic Sunroof (all variants)",
+      "Seat Upholstery": "Leather (Premium/Ultra)",
+      "Headlamp Type": "Multi-LED projector",
+      "Daytime Running Lights (DRLs)": "Extended LED DRL strip",
+      "Tail Lamp Type": "LED",
+      "Leather Wrapped Steering": "Yes (3-spoke sporty design)",
+      "Digital Instrument Cluster": "7-inch colour display",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "10.25-inch",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Yes",
+      "Bluetooth Connectivity": "Yes",
+      "Standard Vehicle Warranty": "4 years / 150,000 km (GWM Nepal general vehicle warranty via VG Impex)",
+      "Total Number of Variants": "4 (Low MT, Premium MT, Premium DCT, Ultra DCT)",
+      "Variant Names": "Low MT, Premium MT, Premium DCT, Ultra DCT",
+      "Transmission-based Variants": "Yes — MT (Low/Premium) vs DCT (Premium/Ultra)"
     },
     "pros": [
-      "Aggressive youth-oriented design",
-      "Panoramic sunroof on all variants",
-      "Feature-rich cabin at competitive price",
-      "DCT available for performance-oriented buyers"
+      "Well-equipped even at lower trims — panoramic sunroof and 6 airbags standard from the base Low MT",
+      "ADAS (adaptive cruise control, lane assist, blind-spot monitor) available on top Ultra DCT trim, uncommon in this segment/price range",
+      "Wide variant spread (4 trims, MT and DCT) gives buyers price flexibility from ~NPR 60 lakh to ~83 lakh"
     ],
     "cons": [
-      "FWD only (no AWD)",
-      "Limited GWM after-sales vs mainstream brands",
-      "DCT can be sensitive in heavy traffic"
+      "Fuel efficiency figures are inconsistent across sources, making real-world mileage expectations uncertain",
+      "168mm ground clearance is modest for Nepal's rougher roads",
+      "FWD-only — no 4WD/AWD option unlike its H6 sibling"
     ],
     "highlights": [
-      "1.5T Turbo",
-      "Panoramic Sunroof",
-      "ADAS Level 2",
-      "7DCT Available"
-    ]
+      "1.5L turbo petrol, 150 PS / 210 Nm, available with 6MT or 7-speed wet DCT",
+      "4 variants spanning Low MT to range-topping Ultra DCT with ADAS Level 2",
+      "10.25-inch touchscreen, panoramic sunroof standard across the range, wireless charging on higher trims"
+    ],
+    "thumb": "/assets/images/car_images/haval/jolion/front.jpg"
   },
   {
-    "id": 902,
+    "id": 133,
     "slug": "gwm-haval-h6-2024",
     "brand": "GWM",
     "brandSlug": "gwm",
@@ -20857,6 +21834,10 @@ window.CARS_DB = [
     "baseEMI": 91000,
     "overview": "The Haval H6 is GWM's premium SUV offering elegant styling over the sporty Jolion, powered by a 2.0L turbocharged engine with 4WD and a comprehensive ADAS safety suite.",
     "images": [
+      "/assets/images/car_images/haval/h6/front.jpg",
+      "/assets/images/car_images/haval/h6/front-hero.jpg",
+      "/assets/images/car_images/haval/h6/rear.jpg",
+      "/assets/images/car_images/haval/h6/interior.jpg",
       "/assets/images/cars/gwm/haval-h6/front.jpg"
     ],
     "colors": [
@@ -20900,53 +21881,110 @@ window.CARS_DB = [
           "power": "204 PS @ 6000 rpm",
           "torque": "320 Nm @ 1500 rpm",
           "efficiency": "13.8 km/l",
-          "transmission": "7DCT"
+          "transmission": "7DCT",
+          "Power": "204 PS @ 6000 rpm",
+          "Torque": "320 Nm @ 1500 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L Turbo, 4-Cylinder",
-      "Power": "204 PS @ 6000 rpm",
-      "Torque": "320 Nm @ 1500 rpm",
-      "Fuel Efficiency": "13.8 km/l",
-      "Fuel Tank": "65 L",
-      "Transmission": "7DCT",
-      "Drive": "4WD (Drive Modes)",
-      "Seating": "5",
-      "Length": "4,653 mm",
-      "Width": "1,886 mm",
-      "Height": "1,730 mm",
-      "Wheelbase": "2,738 mm",
-      "Ground Clearance": "190 mm",
-      "Boot Space": "723 L",
-      "Emission": "Euro 5+"
+      "Note": "DUPLICATE: This entry duplicates a model already researched under the 'Haval' brand (haval-jolion-2025 / haval-h6-2025), which is GWM's SUV sub-brand as officially sold in Nepal via VG Impex Pvt. Ltd. Recommend removing/merging these 'GWM'-branded duplicates to avoid split, inconsistent listings for the same real vehicle.",
+      "Distributor": "VG Impex Pvt. Ltd. (Official GWM/Haval Nepal Distributor)",
+      "Fuel Type": "Petrol",
+      "Body Type": "SUV",
+      "Engine Type": "2.0L Turbocharged Petrol (GDIT, Miller Cycle)",
+      "Displacement (cc)": "1,996",
+      "Cylinder Configuration": "Inline-4",
+      "Fuel System": "Gasoline Direct + Port Injection (GDIT)",
+      "Aspiration": "Turbocharged",
+      "Compression Ratio": "12:1",
+      "Max Engine Power": "204 PS (201 bhp) @ 6,000–6,300 rpm",
+      "Max Engine Torque": "320 Nm @ 1,500–4,000 rpm",
+      "Drive Modes": "Standard / Eco / Sport / Snow",
+      "Transmission Type": "7-Speed Wet Dual-Clutch (7DCT)",
+      "Number of Gears": "7",
+      "Drive Type": "Intelligent 4WD (electronically controlled, selectable)",
+      "Drivetrain": "4WD",
+      "Fuel Tank Capacity (L)": "60",
+      "Certified Fuel Efficiency (km/l)": "14.70",
+      "Emission Standard": "Euro 5",
+      "Overall Length (mm)": "4,653 (some listings cite 4,657)",
+      "Overall Width (mm)": "1,886",
+      "Overall Height (mm)": "1,724",
+      "Wheelbase (mm)": "2,738",
+      "Ground Clearance (mm)": "172",
+      "Kerb Weight (kg)": "1,700",
+      "Seating Capacity": "5",
+      "Boot Space (litres)": "600",
+      "Number of Doors": "5",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Multi-link (Double Wishbone)",
+      "Front Brakes": "Disc",
+      "Rear Brakes": "Disc",
+      "Tyre Size": "235/55 R19",
+      "Wheel Size (inches)": "19",
+      "Spare Tyre": "Tubeless",
+      "Total Airbag Count": "6",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Hill Start Assist (HSA)": "Yes (HAC)",
+      "Cruise Control": "Adaptive Cruise Control (ACC)",
+      "Front/Rear Parking Sensors": "Yes (rear)",
+      "Auto Headlamps": "Yes",
+      "Adaptive Cruise Control (ACC)": "Yes",
+      "360° Surround View Camera": "Yes (Around View Monitor)",
+      "Traffic Sign Recognition": "Yes (Traffic Signal Recognition)",
+      "Auto Emergency Braking (AEB)": "Yes (Forward Collision Mechanism)",
+      "Blind Spot Warning": "Yes (Blind Spot Monitor)",
+      "Rear Cross Traffic Warning": "Yes (Rear Cross Traffic Alert)",
+      "Head-Up Display (HUD)": "Yes",
+      "Front/Rear Cameras": "Yes",
+      "Air Conditioning Type": "Dual-Zone Automatic Climate Control",
+      "Air Quality Control / PM2.5 Filter": "Yes (N95-grade cabin filter)",
+      "Standard / Panoramic Sunroof": "Panoramic Sunroof",
+      "Powered Driver Seat": "Yes",
+      "Heated Seats": "Yes",
+      "Ventilated Seats": "Yes",
+      "Seat Upholstery": "Leather",
+      "Steering Adjustments": "Tilt & Telescopic",
+      "Headlamp Type": "LED (\"Rising Flame\" LED projector)",
+      "Daytime Running Lights (DRLs)": "LED",
+      "Tail Lamp Type": "LED (\"Horizon\" LED taillight)",
+      "Dashboard Material": "Dual-tone premium cockpit with chrome accents",
+      "Leather Wrapped Steering": "Yes (3-spoke sporty steering wheel)",
+      "Digital Instrument Cluster": "7-inch full-colour digital display",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "12.3-inch",
+      "Android Auto": "Yes (wireless)",
+      "Apple CarPlay": "Yes (wireless)",
+      "Bluetooth Connectivity": "Yes",
+      "Standard Vehicle Warranty": "4 years / 150,000 km (GWM Nepal general vehicle warranty via VG Impex; battery/EV-specific 8yr terms do not apply to this ICE model)"
     },
     "pros": [
-      "204PS 2.0L turbo with 4WD modes",
-      "723L boot space — class-leading",
-      "Comprehensive ADAS safety suite",
-      "Premium cabin with ventilated seats"
+      "Strong 204 PS 2.0L turbo engine with genuine 4WD and selectable drive modes",
+      "Comprehensive Level-2 ADAS suite (ACC, AEB, blind-spot, rear cross-traffic, 360° camera) rare at this price in Nepal",
+      "Feature-rich cabin: panoramic sunroof, HUD, wireless charging, ventilated/heated leather seats"
     ],
     "cons": [
-      "Single variant limits customisation",
-      "Brand after-sales still limited",
-      "No diesel option"
+      "Single fully-loaded variant only in Nepal — no lower-cost trim choice",
+      "172mm ground clearance and 19-inch wheels are less ideal for rough Nepali roads/off-tarmac use",
+      "GWM's after-sales/service network in Nepal is newer and smaller than established Japanese/Korean brands"
     ],
     "highlights": [
-      "2.0T 4WD",
-      "723L Boot",
-      "ADAS Suite",
-      "360° Camera"
-    ]
+      "2.0L Turbo GDIT engine, 204 PS / 320 Nm, 7-speed wet DCT, Intelligent 4WD",
+      "6 airbags, ADAS Level 2 with adaptive cruise control and 360° camera",
+      "12.3-inch touchscreen, wireless Apple CarPlay/Android Auto, panoramic sunroof"
+    ],
+    "thumb": "/assets/images/car_images/haval/h6/front.jpg"
   },
   {
-    "id": 1101,
+    "id": 134,
     "slug": "jac-t8-2024",
     "brand": "JAC Motors",
     "brandSlug": "jac",
     "model": "T8",
     "year": 2024,
-    "type": "Petrol",
+    "type": "Diesel",
     "bodyType": "pickup",
     "body": "Pickup Truck",
     "badge": "new",
@@ -20962,7 +22000,10 @@ window.CARS_DB = [
     "baseEMI": 49000,
     "overview": "The JAC T8 is the newest Japanese-platform pickup truck in Nepal built on JAC's 8th Generation International platform. It features a 2.0L turbo petrol engine with 4WD traction control and hill climb assist.",
     "images": [
-      "/assets/images/cars/jac/t8/front.jpg"
+      "/assets/images/car_images/jac/t8/exterior/ext-1-069bb8b1e4.jpg",
+      "/assets/images/car_images/jac/t8/exterior/ext-2-054b289c54.jpg",
+      "/assets/images/car_images/jac/t8/interior/int-1-aab7bd3ded.jpg",
+      "/assets/images/car_images/jac/t8/interior/int-2-a346224e36.jpg"
     ],
     "colors": [
       {
@@ -21008,43 +22049,96 @@ window.CARS_DB = [
           "power": "137 PS @ 5500 rpm",
           "torque": "320 Nm @ 1800 rpm",
           "efficiency": "12.0 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "137 PS @ 5500 rpm",
+          "Torque": "320 Nm @ 1800 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L 4G20D Turbo Petrol",
-      "Power": "137 PS @ 5500 rpm",
-      "Torque": "320 Nm @ 1800 rpm",
-      "Fuel Efficiency": "~12 km/l",
-      "Fuel Tank": "76 L",
-      "Transmission": "6MT",
-      "Drive": "4WD (High/Low)",
-      "Seating": "5",
-      "Ground Clearance": "210 mm",
-      "Payload": "~800 kg",
-      "Towing": "~2,500 kg"
+      "Engine Type": "2.0L Turbo-Diesel, Common Rail (developed with FEV, Germany)",
+      "Drive Type": "4WD — BorgWarner ESOF electronically-controlled time-sharing 4x4 system",
+      "Body Type": "Double-Cab Pickup Truck",
+      "Note": "No official Nepal distributor could be independently confirmed in current research — verify current official availability and pricing before quoting.",
+      "Fuel Type": "Diesel",
+      "Engine Position": "Front, Longitudinal",
+      "Displacement (cc)": "1,994",
+      "Cylinder Configuration": "Inline-4",
+      "Fuel System": "Common Rail Direct Injection",
+      "Aspiration": "Turbocharged with Electrical Variable Geometry Turbo (EVGT) + Intercooler",
+      "Max Engine Power": "137 PS @ 3,600 rpm",
+      "Max Engine Torque": "320 Nm @ 1,600–2,600 rpm",
+      "Top Speed (km/h)": "160",
+      "Transmission Type": "6-Speed Manual",
+      "Number of Gears": "6",
+      "Drivetrain": "4x4 (part-time, electronically shift-on-the-fly)",
+      "Fuel Tank Capacity (L)": "76",
+      "Certified Fuel Efficiency (km/l)": "11",
+      "Emission Standard": "Euro 4",
+      "Overall Length (mm)": "5,325",
+      "Overall Width (mm)": "1,880",
+      "Overall Height (mm)": "1,830",
+      "Wheelbase (mm)": "3,090",
+      "Ground Clearance (mm)": "220",
+      "Kerb Weight (kg)": "1,880",
+      "Payload Capacity (kg)": "990",
+      "Seating Capacity": "5",
+      "Number of Doors": "4",
+      "Front Suspension Type": "Double Wishbone",
+      "Rear Suspension Type": "Leaf Spring",
+      "Front Brakes": "Disc",
+      "Rear Brakes": "Disc",
+      "Tyre Size": "265/60 R18",
+      "Wheel Size (inches)": "18",
+      "Wheel Type": "Dual-tone diamond-cut alloy",
+      "Spare Tyre": "Tubeless",
+      "TPMS": "Yes",
+      "Total Airbag Count": "2 (Driver & Passenger)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Brake Assist (BA)": "Yes (Brake Override System / Hydraulic Brake Assist)",
+      "Hill Start Assist (HSA)": "Yes (Hill-start Hold Control)",
+      "Central Locking": "Yes",
+      "Remote Central Locking": "Yes",
+      "Speed Sensing Auto Door Lock": "Yes (auto door locks)",
+      "Cruise Control": "Yes",
+      "Front/Rear Parking Sensors": "Rear parking sensors",
+      "Front/Rear Cameras": "Reverse camera",
+      "Air Conditioning Type": "Manual",
+      "Power Windows": "Yes (electric windows)",
+      "Seat Upholstery": "Leather",
+      "Steering Adjustments": "Tilt (adjustable steering column), multi-function steering wheel",
+      "Headlamp Type": "Xenon",
+      "Daytime Running Lights (DRLs)": "Yes",
+      "Front Fog Lamps": "Yes",
+      "Tail Lamp Type": "LED (\"Double C\" design)",
+      "Digital Instrument Cluster": "Yes (on-board computer/trip display)",
+      "Touchscreen Display": "Yes",
+      "Touchscreen Size": "7-inch",
+      "Bluetooth Connectivity": "Yes",
+      "Total Number of Variants": "1 (single fully-loaded 4WD MT variant in Nepal)",
+      "Exterior Paint Options": "Blue, Red"
     },
     "pros": [
-      "Competitive price vs Isuzu D-Max",
-      "4WD with low range capability",
-      "Modern 8-inch infotainment",
-      "6 Airbags standard"
+      "Genuine 4WD pickup with proper low-range-style BorgWarner ESOF system and 990kg payload at a competitive ~NPR 57 lakh price",
+      "Well-equipped for its segment: leather seats, 18-inch alloys, reverse camera, cruise control, touchscreen infotainment",
+      "Strong low-end torque (320 Nm from 1,600 rpm) suited to loaded/off-road use"
     ],
     "cons": [
-      "Manual only (no AT option)",
-      "Newer brand — limited service history in Nepal",
-      "Brand recognition still building"
+      "Only 2 airbags (driver & passenger) — no side/curtain airbags, behind newer rivals in passive safety",
+      "No modern ADAS features (no AEB, lane-keep assist, blind-spot monitoring)",
+      "6-speed manual only — no automatic transmission option currently offered in Nepal",
+      "Euro 4 emission compliance is dated versus Euro 5/6 diesel pickups from other brands"
     ],
     "highlights": [
-      "4WD Low Range",
-      "320Nm Torque",
-      "210mm Clearance",
-      "Affordable Price"
-    ]
+      "2.0L turbo-diesel co-developed with Germany's FEV, 137 PS / 320 Nm",
+      "BorgWarner ESOF electronic 4WD system, 990 kg payload, 76L fuel tank",
+      "Single well-loaded variant priced from ~NPR 56.99 lakh via Shangrila Motors"
+    ],
+    "thumb": "/assets/images/car_images/jac/t8/exterior/ext-1-069bb8b1e4.jpg"
   },
   {
-    "id": 1202,
+    "id": 136,
     "slug": "jetour-x70-plus-2025",
     "brand": "Jetour",
     "brandSlug": "jetour",
@@ -21066,7 +22160,9 @@ window.CARS_DB = [
     "baseEMI": 37000,
     "overview": "The Jetour X70 Plus is a 5/7-seat mid-size SUV from Chery's Jetour sub-brand. CG Motors is expected to launch it in Nepal alongside the T2 as part of Jetour's first official Nepali lineup.",
     "images": [
-      "/assets/images/cars/jetour/x70-plus/front.jpg"
+      "/assets/images/car_images/jetour/x70-plus/exterior/ext-1-7b24093816.jpg",
+      "/assets/images/car_images/jetour/x70-plus/exterior/ext-2-db6d41c890.jpg",
+      "/assets/images/car_images/jetour/x70-plus/interior/int-1-e5e6145722.jpg"
     ],
     "colors": [
       {
@@ -21109,40 +22205,28 @@ window.CARS_DB = [
           "power": "156 PS",
           "torque": "230 Nm",
           "efficiency": "~13.5 km/l",
-          "transmission": "6DCT"
+          "transmission": "6DCT",
+          "Power": "156 PS",
+          "Torque": "230 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L Turbo",
-      "Power": "156 PS",
-      "Torque": "230 Nm",
-      "Transmission": "6DCT",
-      "Drive": "FWD",
-      "Seating": "5/7",
-      "Ground Clearance": "190 mm",
-      "Note": "Price and specs pending official Nepal launch. Contact CG Motors for confirmation."
+      "Engine Type": "1.5L / 2.0L Turbo Petrol",
+      "Drive Type": "FWD",
+      "Seating Capacity": "7",
+      "Body Type": "Mid-size SUV",
+      "Distributor": "Laxmi Group (Official Jetour Nepal Distributor)",
+      "Seating": "7",
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "7-seat option at competitive price",
-      "Panoramic sunroof expected",
-      "Strong Chery Group backing",
-      "Modern design language"
-    ],
-    "cons": [
-      "Not yet officially launched in Nepal",
-      "Service network TBD",
-      "Pricing not officially confirmed"
-    ],
-    "highlights": [
-      "7-Seat Option",
-      "Panoramic Sunroof",
-      "1.5T Engine",
-      "Coming 2025"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/jetour/x70-plus/exterior/ext-1-7b24093816.jpg"
   },
   {
-    "id": 1203,
+    "id": 137,
     "slug": "jetour-dashing-2025",
     "brand": "Jetour",
     "brandSlug": "jetour",
@@ -21164,7 +22248,9 @@ window.CARS_DB = [
     "baseEMI": 33000,
     "overview": "The Jetour Dashing is a compact sporty SUV with futuristic styling aimed at young urban buyers. Powered by a 1.5T engine with a 7-speed DCT, it is expected to compete directly with MG ZS and Haval Jolion in Nepal.",
     "images": [
-      "/assets/images/cars/jetour/dashing/front.jpg"
+      "/assets/images/car_images/jetour/dashing/exterior/ext-1-2652bd7010.jpg",
+      "/assets/images/car_images/jetour/dashing/exterior/ext-2-6183d528f6.jpg",
+      "/assets/images/car_images/jetour/dashing/interior/int-1-ff2c4ad405.png"
     ],
     "colors": [
       {
@@ -21206,40 +22292,28 @@ window.CARS_DB = [
           "power": "197 PS",
           "torque": "290 Nm",
           "efficiency": "~13.8 km/l",
-          "transmission": "7DCT"
+          "transmission": "7DCT",
+          "Power": "197 PS",
+          "Torque": "290 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.5L Turbo",
-      "Power": "197 PS",
-      "Torque": "290 Nm",
-      "Transmission": "7DCT",
-      "Drive": "FWD",
+      "Engine Type": "1.5L Turbo Petrol / PHEV",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Body Type": "Coupe SUV",
+      "Distributor": "Laxmi Group (Official Jetour Nepal Distributor)",
       "Seating": "5",
-      "Ground Clearance": "185 mm",
-      "Note": "Expected pricing — to be confirmed on official Nepal launch via CG Motors."
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Powerful 197PS engine for a compact SUV",
-      "Futuristic design targeting young buyers",
-      "Competitive price expected",
-      "Strong 7DCT performance"
-    ],
-    "cons": [
-      "Not yet officially launched in Nepal",
-      "FWD only",
-      "Brand new to Nepal market"
-    ],
-    "highlights": [
-      "197PS Turbo",
-      "7DCT",
-      "Sporty Design",
-      "Coming 2025"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/jetour/dashing/exterior/ext-1-2652bd7010.jpg"
   },
   {
-    "id": 1301,
+    "id": 138,
     "slug": "dongfeng-nammi-box-ev",
     "brand": "Dongfeng",
     "brandSlug": "dongfeng",
@@ -21261,7 +22335,10 @@ window.CARS_DB = [
     "baseEMI": 25000,
     "overview": "The Dongfeng Nammi Box EV is one of the most affordable electric cars in Nepal, offering a practical urban hatchback with decent range and modern connectivity features at a price point that disrupts the EV market.",
     "images": [
-      "/assets/images/cars/dongfeng/nammi-box/front.jpg"
+      "/assets/images/car_images/dongfeng/nammi-box-ev/exterior/ext-1-169688ef63.jpg",
+      "/assets/images/car_images/dongfeng/nammi-box-ev/exterior/ext-2-74b3ec18b5.jpg",
+      "/assets/images/car_images/dongfeng/nammi-box-ev/interior/int-1-0fb56b7ce4.jpg",
+      "/assets/images/car_images/dongfeng/nammi-box-ev/interior/int-2-c783e3acf4.jpg"
     ],
     "colors": [
       {
@@ -21303,7 +22380,9 @@ window.CARS_DB = [
           "power": "70 kW (95 PS)",
           "torque": "160 Nm",
           "efficiency": "237 km CLTC",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "70 kW (95 PS)",
+          "Torque": "160 Nm"
         }
       },
       {
@@ -21325,44 +22404,29 @@ window.CARS_DB = [
           "power": "70 kW (95 PS)",
           "torque": "160 Nm",
           "efficiency": "330 km CLTC",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "70 kW (95 PS)",
+          "Torque": "160 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "70 kW (95 PS)",
-      "Torque": "160 Nm",
-      "Battery": "31.4 kWh / 38.6 kWh (LFP)",
-      "Range (CLTC)": "237 km / 330 km",
-      "Drive": "FWD",
-      "Seating": "5",
-      "Length": "4,030 mm",
-      "Width": "1,810 mm",
-      "Height": "1,570 mm",
-      "Ground Clearance": "160 mm"
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "LFP",
+      "Drive Type": "FWD",
+      "Seating Capacity": "4/5",
+      "Body Type": "Micro Electric Box/Van",
+      "Note": "Dongfeng Nammi is reported as an active, well-performing EV brand in Nepal per multiple 2026 market roundups, but a specific named distributor entity was not independently confirmed in this research pass.",
+      "Seating": "4/5",
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Most affordable new EV in Nepal",
-      "LFP battery for long cycle life",
-      "Practical hatchback body",
-      "Modern tech on a budget"
-    ],
-    "cons": [
-      "Low ground clearance (160mm)",
-      "Only 2 airbags on base",
-      "CLTC range — real-world will be lower",
-      "Brand new service network in Nepal"
-    ],
-    "highlights": [
-      "Lowest EV Price",
-      "LFP Battery",
-      "330km Range (E2)",
-      "Affordable EV"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/dongfeng/nammi-box-ev/exterior/ext-1-169688ef63.jpg"
   },
   {
-    "id": 1302,
+    "id": 139,
     "slug": "forthing-friday-ev-2025",
     "brand": "Dongfeng",
     "brandSlug": "dongfeng",
@@ -21384,7 +22448,10 @@ window.CARS_DB = [
     "baseEMI": 47000,
     "overview": "The Forthing Friday EV is a premium compact electric SUV designed by former GM and Mercedes-Benz designer Henning, offering 400km WLTP range, 99kW motor, and a tech-rich cabin with dual 10.25-inch screens. Distributed by Laxmi E-Mobility.",
     "images": [
-      "/assets/images/cars/dongfeng/forthing-friday/front.jpg"
+      "/assets/images/car_images/dongfeng/forthing-friday-ev/exterior/ext-1-9b5584ea02.jpg",
+      "/assets/images/car_images/dongfeng/forthing-friday-ev/exterior/ext-2-3736a25b97.jpg",
+      "/assets/images/car_images/dongfeng/forthing-friday-ev/interior/int-1-f1df49fef0.jpg",
+      "/assets/images/car_images/dongfeng/forthing-friday-ev/interior/int-2-bb5e89611a.jpg"
     ],
     "colors": [
       {
@@ -21434,7 +22501,9 @@ window.CARS_DB = [
           "power": "134 PS",
           "torque": "340 Nm",
           "efficiency": "400 km WLTP",
-          "transmission": "Single-Speed RWD"
+          "transmission": "Single-Speed RWD",
+          "Power": "134 PS",
+          "Torque": "340 Nm"
         }
       },
       {
@@ -21459,48 +22528,120 @@ window.CARS_DB = [
           "power": "134 PS",
           "torque": "340 Nm",
           "efficiency": "400 km WLTP",
-          "transmission": "Single-Speed RWD"
+          "transmission": "Single-Speed RWD",
+          "Power": "134 PS",
+          "Torque": "340 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "99 kW (134 PS)",
-      "Torque": "340 Nm",
-      "Battery": "44.4 kWh LFP",
-      "WLTP Range": "400 km",
-      "Charging (AC)": "0–100% in ~5.5 hrs (11kW)",
-      "Charging (DC)": "30%–80% in ~35 min (120kW)",
-      "Top Speed": "180 km/h",
-      "Drive": "RWD",
-      "Seating": "5",
-      "Length": "4,600 mm",
-      "Width": "1,860 mm",
-      "Height": "1,680 mm",
-      "Wheelbase": "2,715 mm",
-      "Ground Clearance": "185 mm",
-      "Safety": "6 Airbags, ABS, EBD, ESP, Bosch AEB"
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Drive Type": "FWD",
+      "Seating Capacity": "4/5 (5-seat SUV; 4-seat configuration may apply to a specific trim)",
+      "Body Type": "Compact Electric SUV",
+      "Note": "Forthing (Dongfeng's sub-brand) — Nepal distributor not independently confirmed in this research pass. Verify before quoting.",
+      "Seating": "4/5",
+      "Fuel Type": "Electric",
+      "Motor Position": "Front-mounted",
+      "Max Motor Power": "150 kW / 201 PS / 201 hp",
+      "Max Motor Torque": "340 Nm",
+      "Regenerative Braking": "Yes",
+      "Drive Modes": "Eco, Normal, Sport",
+      "Transmission Type": "Single-Speed Automatic",
+      "Steering Type": "Electric Power (Rack & Pinion)",
+      "Battery Type": "Lithium Iron Phosphate (LFP)",
+      "Battery Capacity (kWh)": "57.8 (430km variant) / 64.4 (EU-spec) / 85.9 (630km variant)",
+      "Certified Range (km)": "400-440 WLTP (57.8/64.4 kWh variants) / ~630 (85.9 kWh variant, likely CLTC)",
+      "AC Charging Max Rate (kW)": "6.6",
+      "Normal Charging Time (AC)": "8-12 hours (0-100%)",
+      "DC Fast Charging Max Rate (kW)": "Not confirmed (fast-charge time known)",
+      "Fast Charging Time (DC)": "35-45 minutes (30% to 80%)",
+      "Overall Length (mm)": "4,600",
+      "Overall Width (mm)": "1,860",
+      "Overall Height (mm)": "1,680",
+      "Wheelbase (mm)": "2,715",
+      "Kerb Weight (kg)": "1,820",
+      "Number of Doors": "5",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Multi-Link",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Discs",
+      "Electronic Parking Brake (EPB)": "Yes",
+      "Hill Start Assist (HSA)": "Yes",
+      "Hill Descent Control (HDC)": "Yes (Downhill Assist Control)",
+      "Wheel Size (inches)": "19-20 (19-inch confirmed on some variants)",
+      "Tyre Size": "235/55 R19",
+      "TPMS": "Yes",
+      "Total Airbag Count": "6 (Driver, Passenger, Front Side, Curtain)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Safety Rating": "5-star ASEAN NCAP (2025 debut test, BEV and REEV both scored 5-star; ~87.18 points)",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Seat Belt Reminder": "Yes, front and rear",
+      "Auto Headlamps": "Yes, with follow-me-home function",
+      "Auto-Dimming IRVM": "Yes",
+      "Cruise Control": "Yes (Adaptive)",
+      "Front/Rear Parking Sensors": "Yes",
+      "Adaptive Cruise Control (ACC)": "Yes (top variant / Exclusive trim)",
+      "Forward Collision Warning": "Yes (top variant)",
+      "Lane Departure Warning": "Yes (top variant)",
+      "Blind Spot Warning": "Yes (Blind Spot Detection, top variant)",
+      "Rear Cross Traffic Warning": "Yes",
+      "360° Surround View Camera": "Yes",
+      "Front/Rear Cameras": "Yes",
+      "Air Conditioning Type": "Automatic, Dual-Zone Climate Control",
+      "AC Zones": "3-Zone (per existing Nepal-spec DB entry) / Dual-Zone per regional-market spec sheet — likely trim-dependent",
+      "Rear AC Vents": "Yes",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Powered Tailgate (Hands-Free)": "Electric Tailgate (top variant)",
+      "Power Windows": "Front & Rear",
+      "Electric ORVM": "Yes, power-folding",
+      "Rear Defogger": "Yes",
+      "Powered Driver Seat": "8-way",
+      "Powered Passenger Seat": "4-way",
+      "Ventilated Seats": "Yes, front (630km variant)",
+      "Heated Seats": "Yes, front (630km variant)",
+      "Standard / Panoramic Sunroof": "Panoramic Sunroof",
+      "Wireless Charger": "Yes",
+      "Headlamp Type": "LED",
+      "Daytime Running Lights (DRLs)": "Yes, LED",
+      "Tail Lamp Type": "LED",
+      "Dashboard Material": "Not confirmed",
+      "Seat Upholstery": "Leather",
+      "Leather Wrapped Steering": "Yes",
+      "Digital Instrument Cluster": "10.25-inch digital cluster",
+      "Touchscreen Display": "Dual 10.25-inch screens (regional-spec sheet) — existing Nepal DB notes list a single larger display; likely trim/market variant",
+      "Audio System Speaker Count": "6",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Yes",
+      "In-Built Navigation": "Yes",
+      "Voice Commands/Assistant": "Yes",
+      "Standard Vehicle Warranty": "5 years / 150,000 km",
+      "Battery Warranty": "8 years / 160,000 km",
+      "Total Number of Variants": "2-3 (Luxury/Exclusive per Nepal listing; 430km/630km/630km-Euro per regional lineups)"
     },
     "pros": [
-      "400km WLTP range — realistic claim",
-      "6 Airbags + Bosch safety suite",
-      "Premium designer exterior",
-      "Competitive price for features offered"
+      "Long-range top variant claims up to ~630km on its larger 85.9 kWh pack",
+      "5-star ASEAN NCAP rating on both BEV and REEV powertrains — a strong result for a newer, less-known brand",
+      "Well-equipped for the price: panoramic sunroof, leather seats, wireless charging, dual-zone climate control"
     ],
     "cons": [
-      "Brand (Forthing) is new to Nepal",
-      "RWD only",
-      "Service infrastructure still developing"
+      "Least documented model in this batch — no official global spec sheet found; figures pieced together from regional (Philippines/Malaysia/EU) sources and may not exactly match Nepal-spec",
+      "ADAS (adaptive cruise, AEB-adjacent features, lane warnings) appears reserved for the higher 'Exclusive' trim, not standard across the range",
+      "Nepal distributor for this brand is not yet independently confirmed"
     ],
     "highlights": [
-      "400km WLTP",
-      "99kW Motor",
-      "Bosch Safety",
-      "Designer Exterior"
-    ]
+      "Designed by a former GM/Mercedes-Benz stylist",
+      "Two battery options spanning roughly 400-630km of range depending on market/spec",
+      "5-star ASEAN NCAP safety debut for the Forthing sub-brand"
+    ],
+    "thumb": "/assets/images/car_images/dongfeng/forthing-friday-ev/exterior/ext-1-9b5584ea02.jpg"
   },
   {
-    "id": 1401,
+    "id": 140,
     "slug": "baic-bj30-2025",
     "brand": "BAIC",
     "brandSlug": "baic",
@@ -21605,7 +22746,7 @@ window.CARS_DB = [
     "thumb": "/assets/images/car_images/baic/bj30/exterior/baic.jpeg"
   },
   {
-    "id": 1701,
+    "id": 141,
     "slug": "gac-aion-y-2024",
     "brand": "GAC Aion",
     "brandSlug": "gac-aion",
@@ -21627,7 +22768,9 @@ window.CARS_DB = [
     "baseEMI": 47000,
     "overview": "The GAC Aion Y is an entry-level electric SUV from China's GAC Group, distributed by CG Motors. It provides a practical and affordable EV option for daily urban commuting in Nepal with a modern design.",
     "images": [
-      "/assets/images/cars/gac-aion/aion-y/front.jpg"
+      "/assets/images/car_images/gac-aion/aion-y/exterior/ext-1-d15d123963.jpg",
+      "/assets/images/car_images/gac-aion/aion-y/exterior/ext-1-ee5003b7ae.jpg",
+      "/assets/images/car_images/gac-aion/aion-y/interior/int-1-d46fcb0c96.jpg"
     ],
     "colors": [
       {
@@ -21674,41 +22817,29 @@ window.CARS_DB = [
           "power": "100 kW (136 PS)",
           "torque": "225 Nm",
           "efficiency": "~400 km NEDC",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "100 kW (136 PS)",
+          "Torque": "225 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "100 kW (136 PS)",
-      "Torque": "225 Nm",
-      "Battery": "~41 kWh LFP",
-      "Range (NEDC)": "~400 km",
-      "Drive": "FWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "LFP",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Body Type": "Compact Electric MPV/SUV",
+      "Distributor": "CG Motors (Official GAC Aion Nepal Distributor)",
       "Seating": "5",
-      "Length": "4,400 mm",
-      "Ground Clearance": "180 mm"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Competitive entry-level EV pricing",
-      "Modern design for daily use",
-      "CG Motors backing",
-      "Good urban range"
-    ],
-    "cons": [
-      "NEDC claims overstate real-world range",
-      "Limited service history in Nepal",
-      "Smaller battery vs rivals"
-    ],
-    "highlights": [
-      "Entry EV Price",
-      "CG Motors Network",
-      "400km NEDC",
-      "Modern Design"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/gac-aion/aion-y/exterior/ext-1-d15d123963.jpg"
   },
   {
-    "id": 1702,
+    "id": 142,
     "slug": "gac-aion-v-2024",
     "brand": "GAC Aion",
     "brandSlug": "gac-aion",
@@ -21730,7 +22861,9 @@ window.CARS_DB = [
     "baseEMI": 53000,
     "overview": "The GAC Aion V is GAC's flagship EV SUV in Nepal offering two battery options with up to 650km NEDC range. Positioned to compete with the Leapmotor C10 and Deepal S07 at similar pricing.",
     "images": [
-      "/assets/images/cars/gac-aion/aion-v/front.jpg"
+      "/assets/images/car_images/gac-aion/aion-v/exterior/ext-1-d0dc8bf316.jpg",
+      "/assets/images/car_images/gac-aion/aion-v/exterior/ext-2-308a89b649.jpg",
+      "/assets/images/car_images/gac-aion/aion-v/interior/int-1-5fd6f41c10.jpg"
     ],
     "colors": [
       {
@@ -21772,7 +22905,9 @@ window.CARS_DB = [
           "power": "135 kW (184 PS)",
           "torque": "350 Nm",
           "efficiency": "520 km NEDC",
-          "transmission": "Single-Speed RWD"
+          "transmission": "Single-Speed RWD",
+          "Power": "135 kW (184 PS)",
+          "Torque": "350 Nm"
         }
       },
       {
@@ -21795,43 +22930,107 @@ window.CARS_DB = [
           "power": "135 kW (184 PS)",
           "torque": "350 Nm",
           "efficiency": "650 km NEDC",
-          "transmission": "Single-Speed RWD"
+          "transmission": "Single-Speed RWD",
+          "Power": "135 kW (184 PS)",
+          "Torque": "350 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "135 kW (184 PS)",
-      "Torque": "350 Nm",
-      "Battery": "62.7 kWh / 75.3 kWh",
-      "Range (NEDC)": "520 km / 650 km",
-      "Drive": "RWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "LFP",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Body Type": "Compact Electric SUV",
+      "Distributor": "CG Motors (Official GAC Aion Nepal Distributor)",
       "Seating": "5",
-      "Length": "4,586 mm",
-      "Width": "1,920 mm",
-      "Height": "1,726 mm",
-      "Ground Clearance": "195 mm"
+      "Fuel Type": "Electric",
+      "Motor Position": "Front-mounted",
+      "Max Motor Power": "135 kW / 184 PS (Standard 62.7kWh) — 150 kW / 201 PS (Luxury/Premium 75-84.2kWh)",
+      "Max Motor Torque": "350 Nm (Standard variant) / 240 Nm (per one regional-market listing — figures conflict, see notes)",
+      "Top Speed (km/h)": "160",
+      "Regenerative Braking": "Yes",
+      "Transmission Type": "Single-Speed Automatic",
+      "Steering Type": "Electric Power, 4-way adjustable column",
+      "Battery Capacity (kWh)": "62.7 (Standard) / 75.3-84.2 (Luxury/Long Range, source variance)",
+      "Certified Range (km)": "520 NEDC (Standard 62.7kWh) / 650 NEDC (Luxury 75.3kWh) / 530 km on newer 84.2kWh pack per one market listing",
+      "Overall Length (mm)": "4,605",
+      "Overall Width (mm)": "1,854-1,876 (source variance)",
+      "Overall Height (mm)": "1,686",
+      "Wheelbase (mm)": "2,775",
+      "Ground Clearance (mm)": "171",
+      "Kerb Weight (kg)": "1,780-1,920 (source variance by variant)",
+      "Number of Doors": "5 (listed as 4 in one source, likely counting front doors only — SUV body confirmed 5-door)",
+      "Boot Space (litres)": "427",
+      "Front Suspension Type": "MacPherson Strut (Independent)",
+      "Rear Suspension Type": "Torsion Beam (non-independent)",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Discs",
+      "Hill Descent Control (HDC)": "Yes (Hill-Descent Assist)",
+      "Wheel Size (inches)": "19",
+      "Tyre Size": "225/45 R19",
+      "TPMS": "Yes (implied by ADAS suite; not separately itemized in source)",
+      "Total Airbag Count": "6-7 (Driver, Passenger, Curtain — exact count varies by source)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Safety Rating": "5-star ANCAP (debut rating, Sept 2025 build onward, valid to Dec 2031) — 88% Adult Occupant Protection, 87% Child Occupant Protection",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Seat Belt Reminder": "Yes, height-adjustable front belts with reminder",
+      "Central Locking": "Yes",
+      "SOS Emergency Call System": "Yes (E-call)",
+      "Front/Rear Parking Sensors": "Yes",
+      "Adaptive Cruise Control (ACC)": "Yes",
+      "Auto Emergency Braking (AEB)": "Yes",
+      "Forward Collision Warning": "Yes",
+      "Lane Departure Warning": "Yes",
+      "Lane Keep Assist": "Yes",
+      "Blind Spot Warning": "Yes",
+      "Rear Cross Traffic Warning": "Yes",
+      "High Beam Assist": "Yes (Intelligent High Beam)",
+      "360° Surround View Camera": "Yes",
+      "Front/Rear Cameras": "Yes",
+      "Air Conditioning Type": "Automatic",
+      "Rear AC Vents": "Yes",
+      "Cooled Glovebox": "Yes",
+      "Powered Driver Seat": "Yes",
+      "Memory Seat Function": "Yes",
+      "Ventilated Seats": "Yes",
+      "Massage Function": "Yes",
+      "Standard / Panoramic Sunroof": "Sunroof (panoramic on higher trims)",
+      "Wireless Charger": "Yes",
+      "Electric ORVM": "Yes, heated wing mirrors",
+      "Headlamp Type": "LED",
+      "Daytime Running Lights (DRLs)": "Yes, LED",
+      "Powered Tailgate (Hands-Free)": "Power boot",
+      "Touchscreen Display": "14.6-inch",
+      "Audio System Speaker Count": "9",
+      "Bluetooth Connectivity": "Yes",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Not explicitly confirmed",
+      "In-Built Navigation": "Yes",
+      "Voice Commands/Assistant": "Yes",
+      "Battery Warranty": "8 years (Premium/Luxury trims with 84.2kWh pack, per Australia-market listing)",
+      "Total Number of Variants": "2 (Standard 62.7kWh / Luxury 75.3kWh per Nepal-spec listing)"
     },
     "pros": [
-      "650km NEDC range on top variant",
-      "Competitive pricing vs Deepal S07",
-      "Panoramic sunroof standard",
-      "ADAS Level 2 included"
+      "Long-range Luxury variant offers up to 650km NEDC range, among the highest in its price bracket",
+      "5-star ANCAP debut rating with strong 88% adult / 87% child occupant protection scores",
+      "Well-rounded ADAS suite (ACC, AEB, lane keep, blind spot, 360° camera) plus comfort touches like massage and ventilated seats"
     ],
     "cons": [
-      "NEDC range overstates real-world by ~30%",
-      "Brand not yet mainstream in Nepal",
-      "After-sales support still building"
+      "Rear suspension is a torsion-beam setup rather than independent multi-link, unusual for the segment",
+      "Motor torque and battery-capacity figures conflict across regional sources — exact Nepal-spec numbers need dealer confirmation",
+      "Standard (non-battery) vehicle warranty term could not be verified"
     ],
     "highlights": [
-      "650km NEDC (Luxury)",
-      "ADAS Level 2",
-      "Panoramic Sunroof",
-      "Competitive Price"
-    ]
+      "GAC's flagship EV SUV in the Nepal lineup",
+      "Two battery choices (62.7 kWh / 75.3+ kWh) giving a wide range spread",
+      "5-star ANCAP safety rating on its 2025-onward global debut"
+    ],
+    "thumb": "/assets/images/car_images/gac-aion/aion-v/exterior/ext-1-d0dc8bf316.jpg"
   },
   {
-    "id": 1801,
+    "id": 143,
     "slug": "neta-v-2024",
     "brand": "Neta",
     "brandSlug": "neta",
@@ -21903,44 +23102,29 @@ window.CARS_DB = [
           "power": "95 kW (129 PS)",
           "torque": "150 Nm",
           "efficiency": "~380 km NEDC",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "95 kW (129 PS)",
+          "Torque": "150 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "95 kW (129 PS)",
-      "Torque": "150 Nm",
-      "Battery": "~40.7 kWh",
-      "Range (NEDC)": "~380 km",
-      "Drive": "FWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "LFP",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Body Type": "Compact Electric Hatchback",
+      "Distributor": "Chaudhary Group (Official Neta/Xpeng Nepal Dealership)",
       "Seating": "5",
-      "Length": "4,070 mm",
-      "Width": "1,750 mm",
-      "Height": "1,628 mm",
-      "Ground Clearance": "165 mm"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Sub-40L price point very attractive",
-      "Large 14.6-inch touchscreen surprises",
-      "CG Motors national network",
-      "Compact size easy for city driving"
-    ],
-    "cons": [
-      "Only 2 airbags — safety concern",
-      "Low 165mm ground clearance",
-      "NEDC range overstated"
-    ],
-    "highlights": [
-      "Budget EV Price",
-      "14.6-inch Screen",
-      "CG Motors",
-      "Compact Urban"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/Neta/Neta-v/exterior/ext1.jpg"
   },
   {
-    "id": 1802,
+    "id": 144,
     "slug": "neta-x-2024",
     "brand": "Neta",
     "brandSlug": "neta",
@@ -22003,7 +23187,9 @@ window.CARS_DB = [
           "power": "120 kW (163 PS)",
           "torque": "210 Nm",
           "efficiency": "400 km NEDC",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "120 kW (163 PS)",
+          "Torque": "210 Nm"
         }
       },
       {
@@ -22025,7 +23211,9 @@ window.CARS_DB = [
           "power": "120 kW (163 PS)",
           "torque": "210 Nm",
           "efficiency": "500 km NEDC",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "120 kW (163 PS)",
+          "Torque": "210 Nm"
         }
       },
       {
@@ -22048,45 +23236,127 @@ window.CARS_DB = [
           "power": "120 kW (163 PS)",
           "torque": "210 Nm",
           "efficiency": "500 km NEDC",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "120 kW (163 PS)",
+          "Torque": "210 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "120 kW (163 PS)",
-      "Torque": "210 Nm",
-      "Battery": "52 kWh / 62 kWh",
-      "Range (NEDC)": "400 km / 500 km",
-      "Drive": "FWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "Lithium Iron Phosphate (LFP)",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Body Type": "Compact Electric SUV",
+      "Distributor": "Chaudhary Group (Official Neta/Xpeng Nepal Dealership)",
       "Seating": "5",
-      "Length": "4,619 mm",
-      "Width": "1,860 mm",
-      "Height": "1,628 mm",
-      "Wheelbase": "2,770 mm",
-      "Ground Clearance": "185 mm"
+      "Fuel Type": "Electric",
+      "Motor Position": "Front-mounted",
+      "Max Motor Power": "120 kW / 163 PS / 161 hp",
+      "Max Motor Torque": "210 Nm",
+      "Acceleration 0–100 km/h": "9.5 seconds",
+      "Top Speed (km/h)": "150",
+      "Regenerative Braking": "Yes",
+      "Drive Modes": "Eco, Comfort, Sport",
+      "Transmission Type": "Single-Speed Automatic",
+      "Steering Type": "Electric Power (Rack & Pinion), Tilt & Telescopic column",
+      "Battery Capacity (kWh)": "51.8 (Comfort/base Luxury, '400' variants) / 62 (Long Range/Luxury, '500' variant)",
+      "Certified Range (km)": "401 NEDC (51.8 kWh) / 480-500 NEDC (62 kWh)",
+      "AC Charging Max Rate (kW)": "6.6",
+      "Normal Charging Time (AC)": "9-11 hours (0-100%)",
+      "DC Fast Charging Max Rate (kW)": "65",
+      "Fast Charging Time (DC)": "30 minutes (30% to 80%)",
+      "Vehicle-to-Load (V2L)": "Yes, 3.3 kW output",
+      "Overall Length (mm)": "4,619",
+      "Overall Width (mm)": "1,860",
+      "Overall Height (mm)": "1,628",
+      "Wheelbase (mm)": "2,770",
+      "Ground Clearance (mm)": "156",
+      "Number of Doors": "5",
+      "Boot Space (litres)": "508",
+      "Front Suspension Type": "MacPherson Strut",
+      "Rear Suspension Type": "Multi-Link",
+      "Front Brakes": "Ventilated Discs",
+      "Rear Brakes": "Discs (solid)",
+      "Electronic Parking Brake (EPB)": "Yes, with Auto Hold",
+      "Wheel Size (inches)": "18",
+      "Tyre Size": "225/60 R18",
+      "Wheel Type": "Alloy",
+      "TPMS": "Yes",
+      "Total Airbag Count": "6 (Driver, Passenger, Front Side, Curtain)",
+      "ABS": "Yes",
+      "EBD": "Yes",
+      "Central Locking": "Yes",
+      "Speed Sensing Auto Door Lock": "Yes",
+      "Child Safety Rear Door Lock": "Yes",
+      "ISOFIX Child Seat Mounts": "Yes",
+      "Seat Belt Reminder": "Yes, front and rear, height-adjustable front belts",
+      "Auto-Dimming IRVM": "Day/Night rear-view mirror",
+      "Cruise Control": "Yes (passive on base; adaptive on Luxury trims)",
+      "Front/Rear Parking Sensors": "Rear standard; front on higher trims",
+      "Adaptive Cruise Control (ACC)": "Luxury trims only (400 Luxury, 500 Luxury) — not on 400 Comfort base",
+      "Forward Collision Warning": "Luxury trims only",
+      "Auto Emergency Braking (AEB)": "Luxury trims only",
+      "Lane Departure Warning": "Luxury trims only",
+      "Lane Keep Assist": "Luxury trims only",
+      "Blind Spot Warning": "Luxury trims only (with Lane Change Assist)",
+      "Rear Cross Traffic Warning": "Luxury trims only",
+      "Traffic Sign Recognition": "Luxury trims only",
+      "Traffic Jam Assist": "Luxury trims only",
+      "High Beam Assist": "Luxury trims only",
+      "Front/Rear Cameras": "Rear camera standard; 360° camera not confirmed",
+      "Hill Start Assist (HSA)": "Yes",
+      "Air Conditioning Type": "Automatic Climate Control",
+      "Rear AC Vents": "Yes",
+      "Smart Entry (Keyless)": "Yes",
+      "Push Button Start": "Yes",
+      "Power Windows": "Front & Rear",
+      "Electric ORVM": "Yes, power-folding",
+      "Rear Defogger": "Yes",
+      "Powered Driver Seat": "Height-adjustable",
+      "Memory Seat Function": "Luxury trims only",
+      "Ventilated Seats": "Luxury trims only",
+      "Standard / Panoramic Sunroof": "Panoramic Sunroof",
+      "Roof Rails": "Yes",
+      "Wireless Charger": "Luxury trims only",
+      "Headlamp Type": "LED",
+      "Daytime Running Lights (DRLs)": "Yes, LED",
+      "Tail Lamp Type": "LED",
+      "Seat Upholstery": "Leather",
+      "Leather Wrapped Steering": "Yes",
+      "Touchscreen Display": "15.6-inch (Nepal-spec DB says 12.3-inch — likely a model-year/facelift difference; higher figure per Malaysia 2026-spec)",
+      "Audio System Speaker Count": "8",
+      "Bluetooth Connectivity": "Yes",
+      "USB Ports": "Yes",
+      "Android Auto": "Yes",
+      "Apple CarPlay": "Yes",
+      "In-Built Navigation": "Yes",
+      "Voice Commands/Assistant": "Yes",
+      "Powered Tailgate (Hands-Free)": "Remote trunk opener on Luxury trims",
+      "Standard Vehicle Warranty": "5 years / 150,000 km",
+      "Battery Warranty": "8 years / 180,000 km",
+      "Total Number of Variants": "3 (Comfort 52kWh / Long Range 62kWh / Luxury 62kWh per Nepal-spec listing; equivalently 400 Comfort / 400 Luxury / 500 Luxury in Malaysia)",
+      "Total Number of Colors": "5 (Pearl White, Sky Grey, Jet Black, Glacier Blue, Amber Brown — Malaysia-market palette, not confirmed identical for Nepal)"
     },
     "pros": [
-      "Ultra-long 2,770mm wheelbase for rear legroom",
-      "500km NEDC on Long Range",
-      "Panoramic sunroof standard",
-      "ADAS Level 2 on Long Range"
+      "8-year/180,000km battery warranty and 5-year/150,000km vehicle warranty are competitive for the segment",
+      "Spacious cabin for the class with a 2,770mm wheelbase and 508L boot",
+      "Vehicle-to-Load (V2L) output lets the car power external devices/appliances"
     ],
     "cons": [
-      "NEDC claims — real-world ~35% lower",
-      "FWD only",
-      "Neta brand still establishing in Nepal"
+      "Full ADAS suite (ACC, AEB, lane keep, blind spot monitoring) is reserved for Luxury trims only — the base Comfort variant has no ADAS beyond basic safety systems",
+      "No independently verified NCAP crash-test rating specific to the Neta X (a widely reported 0-star ASEAN NCAP result belongs to the smaller, unrelated Neta V and should not be confused with this model)",
+      "Touchscreen size and equipment reported differently across model years/markets — confirm current Nepal-spec configuration"
     ],
     "highlights": [
-      "500km NEDC",
-      "2770mm Wheelbase",
-      "Panoramic Sunroof",
-      "ADAS L2"
+      "Neta's premium SUV offering, sold via Chaudhary Group in Nepal",
+      "Three variants spanning 51.8-62 kWh battery packs with up to ~500km NEDC range",
+      "Fast DC charging (30-80% in 30 minutes) at a 65kW rate"
     ],
     "thumb": "/assets/images/car_images/Neta/Neta-x/exterior/netavx_1701343017.png"
   },
   {
-    "id": 1901,
+    "id": 145,
     "slug": "leapmotor-c10-2025",
     "brand": "Leapmotor",
     "brandSlug": "leapmotor",
@@ -22162,52 +23432,31 @@ window.CARS_DB = [
           "power": "160 kW (218 PS)",
           "torque": "320 Nm",
           "efficiency": "420 km WLTP",
-          "transmission": "Single-Speed RWD"
+          "transmission": "Single-Speed RWD",
+          "Power": "160 kW (218 PS)",
+          "Torque": "320 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "160 kW (218 PS)",
-      "Torque": "320 Nm",
-      "Battery": "69.9 kWh LFP (Cell-to-Chassis)",
-      "WLTP Range": "420 km",
-      "Charging (AC)": "0–80% in ~10 hrs",
-      "Charging (DC)": "30%–80% in ~30 min",
-      "0–100 km/h": "7.68 seconds",
-      "Top Speed": "170 km/h",
-      "Drive": "RWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "LFP",
+      "Battery Capacity (kWh)": "69.9 (global spec)",
+      "Certified Range (km)": "~420 CLTC (global spec, Nepal figure unconfirmed)",
+      "Drive Type": "RWD",
+      "Seating Capacity": "5",
+      "Body Type": "Mid-size Electric SUV",
+      "Distributor": "Shangrila Motors (Official Leapmotor Nepal Distributor)",
       "Seating": "5",
-      "Length": "4,739 mm",
-      "Width": "1,900 mm",
-      "Height": "1,680 mm",
-      "Wheelbase": "2,823 mm",
-      "Ground Clearance": "190 mm",
-      "Boot Space": "435 L (1,205 L max)",
-      "Safety Rating": "5 Star Euro NCAP"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "5-Star Euro NCAP — safest EV at this price in Nepal",
-      "Lidar-based L2 autonomous driving",
-      "Cell-to-Chassis battery for better structural integrity",
-      "Best-in-class boot expandability (1,205L)",
-      "WLTP range — more realistic than NEDC"
-    ],
-    "cons": [
-      "Single variant — no range option",
-      "RWD only",
-      "Newcomer Leapmotor still building service network"
-    ],
-    "highlights": [
-      "5-Star NCAP",
-      "420km WLTP",
-      "Lidar ADAS",
-      "CTC Battery"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/leap motors/c10/exterior/C10-Tundra_Grey-01_dmhinp (1).webp"
   },
   {
-    "id": 2001,
+    "id": 146,
     "slug": "xpeng-g6-2024",
     "brand": "Xpeng",
     "brandSlug": "xpeng",
@@ -22229,7 +23478,10 @@ window.CARS_DB = [
     "baseEMI": 70000,
     "overview": "The XPeng G6 is a premium electric SUV built on SEPA 2.0 with 800V ultra-fast charging. It earned 5-Star Euro NCAP and delivers 435km WLTP range with advanced autonomous driving tech from XPeng's XNGP platform.",
     "images": [
-      "/assets/images/cars/xpeng/g6/front.jpg"
+      "/assets/images/car_images/xpeng/g6/exterior/ext-1-76fc530399.jpg",
+      "/assets/images/car_images/xpeng/g6/exterior/ext-2-bcfb4679ca.jpg",
+      "/assets/images/car_images/xpeng/g6/interior/int-1-fc0668c3ed.jpg",
+      "/assets/images/car_images/xpeng/g6/interior/int-2-9d66f204a2.jpg"
     ],
     "colors": [
       {
@@ -22278,49 +23530,29 @@ window.CARS_DB = [
           "power": "190 kW (258 PS)",
           "torque": "440 Nm",
           "efficiency": "435 km WLTP",
-          "transmission": "Single-Speed RWD"
+          "transmission": "Single-Speed RWD",
+          "Power": "190 kW (258 PS)",
+          "Torque": "440 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "190 kW (258 PS)",
-      "Torque": "440 Nm",
-      "Battery": "66 kWh LFP",
-      "WLTP Range": "435 km",
-      "Charging (800V DC)": "0–80% in ~30 min",
-      "0–100 km/h": "6.7 seconds",
-      "Drive": "RWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "LFP/NMC (variant dependent)",
+      "Drive Type": "RWD / AWD (Performance)",
+      "Seating Capacity": "5",
+      "Body Type": "Mid-size Electric SUV",
+      "Distributor": "Chaudhary Group (Official Neta/Xpeng Nepal Dealership)",
       "Seating": "5",
-      "Length": "4,753 mm",
-      "Width": "1,920 mm",
-      "Height": "1,650 mm",
-      "Wheelbase": "2,890 mm",
-      "Ground Clearance": "175 mm",
-      "Boot Space": "571 L",
-      "Safety Rating": "5 Star Euro NCAP"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "800V ultra-fast charging — fastest in segment",
-      "5-Star Euro NCAP",
-      "XPeng XNGP advanced ADAS",
-      "Spacious 571L boot",
-      "Sleek premium exterior design"
-    ],
-    "cons": [
-      "175mm clearance is low",
-      "Single variant available",
-      "XPeng brand still new in Nepal"
-    ],
-    "highlights": [
-      "800V Fast Charging",
-      "5-Star NCAP",
-      "XNGP ADAS",
-      "258PS Motor"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/xpeng/g6/exterior/ext-1-76fc530399.jpg"
   },
   {
-    "id": 2101,
+    "id": 147,
     "slug": "zeekr-x-2024",
     "brand": "Zeekr",
     "brandSlug": "zeekr",
@@ -22342,7 +23574,9 @@ window.CARS_DB = [
     "baseEMI": 58000,
     "overview": "The Zeekr X is Geely's premium electric compact SUV in Nepal, featuring a slidable 14.6-inch central screen, Yamaha 13-speaker audio, AR Head-Up Display, and frameless doors. Available in RWD (440km) and AWD (400km) variants.",
     "images": [
-      "/assets/images/cars/zeekr/zeekr-x/front.jpg"
+      "/assets/images/car_images/zeekr/x/exterior/ext-1-ad1e1966c6.jpg",
+      "/assets/images/car_images/zeekr/x/exterior/ext-2-8a128fe9e5.jpg",
+      "/assets/images/car_images/zeekr/x/interior/int-1-caf871ad89.jpg"
     ],
     "colors": [
       {
@@ -22389,7 +23623,9 @@ window.CARS_DB = [
           "power": "200 kW (272 PS)",
           "torque": "343 Nm",
           "efficiency": "440 km WLTP",
-          "transmission": "Single-Speed RWD"
+          "transmission": "Single-Speed RWD",
+          "Power": "200 kW (272 PS)",
+          "Torque": "343 Nm"
         }
       },
       {
@@ -22411,48 +23647,29 @@ window.CARS_DB = [
           "power": "315 kW (428 PS)",
           "torque": "543 Nm",
           "efficiency": "400 km WLTP",
-          "transmission": "Dual Motor AWD"
+          "transmission": "Dual Motor AWD",
+          "Power": "315 kW (428 PS)",
+          "Torque": "543 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "200 kW (RWD) / 315 kW (AWD)",
-      "Torque": "343 Nm / 543 Nm",
-      "Battery": "66 kWh Ternary Lithium",
-      "WLTP Range": "440 km (RWD) / 400 km (AWD)",
-      "Drive": "RWD / AWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "NMC",
+      "Drive Type": "RWD / AWD",
+      "Seating Capacity": "5",
+      "Body Type": "Compact Electric SUV",
+      "Distributor": "Sharda Group (Official Zeekr Nepal Distributor)",
       "Seating": "5",
-      "Length": "4,432 mm",
-      "Width": "1,836 mm",
-      "Height": "1,566 mm",
-      "Wheelbase": "2,750 mm",
-      "Ground Clearance": "191 mm",
-      "Boot Space": "362 L",
-      "Battery Warranty": "8 years / 160,000 km",
-      "Safety Rating": "5 Star ANCAP"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "5-star ANCAP — premium safety",
-      "Slidable 14.6-inch screen is unique feature",
-      "Yamaha 13-speaker premium audio",
-      "AWD option for performance buyers",
-      "8-year battery warranty"
-    ],
-    "cons": [
-      "AWD priced at Rs. 1.54Cr — very premium",
-      "Small 362L boot for size",
-      "Limited Zeekr service network in Nepal"
-    ],
-    "highlights": [
-      "Slidable Screen",
-      "AR-HUD",
-      "Yamaha Audio",
-      "5-Star ANCAP"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/zeekr/x/exterior/ext-1-ad1e1966c6.jpg"
   },
   {
-    "id": 2201,
+    "id": 148,
     "slug": "avatr-11-2024",
     "brand": "Avatr",
     "brandSlug": "avatr",
@@ -22524,7 +23741,9 @@ window.CARS_DB = [
           "power": "425 kW (578 PS) dual motor",
           "torque": "720 Nm",
           "efficiency": "575 km CLTC",
-          "transmission": "Dual-Motor AWD"
+          "transmission": "Dual-Motor AWD",
+          "Power": "425 kW (578 PS) dual motor",
+          "Torque": "720 Nm"
         }
       },
       {
@@ -22546,47 +23765,31 @@ window.CARS_DB = [
           "power": "425 kW (578 PS) dual motor",
           "torque": "720 Nm",
           "efficiency": "680 km CLTC",
-          "transmission": "Dual-Motor AWD"
+          "transmission": "Dual-Motor AWD",
+          "Power": "425 kW (578 PS) dual motor",
+          "Torque": "720 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "HUAWEI DRIVEONE Dual Motor AWD",
-      "Power": "425 kW (578 PS)",
-      "Torque": "720 Nm",
-      "Battery": "90 kWh / 116 kWh (CATL Blade)",
-      "Range (CLTC)": "575 km / 680 km",
-      "Drive": "AWD",
+      "Motor Type": "Dual Permanent Magnet Synchronous Motors (AWD)",
+      "Battery Type": "Ternary Lithium (NMC)",
+      "Battery Capacity (kWh)": "90 (approx, global spec)",
+      "Certified Range (km)": "~555 CLTC (global spec, Nepal figure unconfirmed)",
+      "Drive Type": "AWD",
+      "Seating Capacity": "5",
+      "Body Type": "Electric Coupe SUV",
+      "Note": "Avatr 11 reportedly launched in Nepal around August 2024 via a dealer sometimes cited as 'Alattiya' — distributor name not independently confirmed with high confidence. Verify before quoting.",
       "Seating": "5",
-      "Length": "4,880 mm",
-      "Width": "1,970 mm",
-      "Height": "1,601 mm",
-      "Wheelbase": "2,975 mm",
-      "Ground Clearance": "180 mm",
-      "Warranty": "8 years / 150,000 km (Battery)"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Huawei HarmonyOS cockpit — state of the art",
-      "680km CLTC range on top variant",
-      "578PS dual motor AWD",
-      "L3 ADAS ready for future OTA upgrade",
-      "9 airbags — class-leading safety"
-    ],
-    "cons": [
-      "Rs. 1.45–1.65Cr price range limits audience",
-      "CLTC claims overstated vs real-world",
-      "Huawei tech not familiar to all Nepal buyers"
-    ],
-    "highlights": [
-      "Huawei HarmonyOS",
-      "680km Range",
-      "578PS AWD",
-      "L3 ADAS Ready"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/avatr/avatr 11/exterior/car-color_07.jpg"
   },
   {
-    "id": 2301,
+    "id": 149,
     "slug": "im-im6-2025",
     "brand": "IM",
     "brandSlug": "im",
@@ -22608,7 +23811,9 @@ window.CARS_DB = [
     "baseEMI": 62000,
     "overview": "The IM6 (IM LS6 rebranded for Nepal) by SAIC Motor's IM division is a premium intelligent SUV distributed by Paramount Motors. It features a 75 kWh LFP battery, 295PS motor, 26.3-inch mega-screen, four-wheel steering, and 450km WLTP range.",
     "images": [
-      "/assets/images/cars/im/im6/front.jpg"
+      "/assets/images/car_images/im/im6/exterior/ext-1-4d10ddd03f.jpg",
+      "/assets/images/car_images/im/im6/exterior/ext-2-24941a8dbc.jpg",
+      "/assets/images/car_images/im/im6/interior/int-1-59544ef370.jpg"
     ],
     "colors": [
       {
@@ -22655,48 +23860,29 @@ window.CARS_DB = [
           "power": "218 kW (295 PS)",
           "torque": "450 Nm",
           "efficiency": "450 km WLTP",
-          "transmission": "Single-Speed RWD"
+          "transmission": "Single-Speed RWD",
+          "Power": "218 kW (295 PS)",
+          "Torque": "450 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "218 kW (295 PS)",
-      "Torque": "450 Nm",
-      "Battery": "75 kWh LFP",
-      "WLTP Range": "450 km",
-      "Charging (DC)": "0–80% in ~28 min (153kW)",
-      "Top Speed": "210 km/h",
-      "Drive": "RWD + Four-Wheel Steering",
+      "Motor Type": "Permanent Magnet Synchronous Motor(s)",
+      "Battery Type": "NMC/LFP (IM/Zhiji global spec)",
+      "Drive Type": "RWD/AWD depending on variant",
+      "Seating Capacity": "5",
+      "Body Type": "Electric Sedan/Fastback",
+      "Note": "No official Nepal distributor could be independently confirmed in current research — verify current official availability and pricing before quoting.",
       "Seating": "5",
-      "Length": "4,897 mm",
-      "Width": "1,960 mm",
-      "Height": "1,658 mm",
-      "Wheelbase": "2,950 mm",
-      "Ground Clearance": "170 mm",
-      "Boot Space": "665 L"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "26.3-inch mega-screen is class-leading",
-      "450km WLTP (realistic WLTP standard)",
-      "Four-wheel steering for agility",
-      "665L boot — largest in segment",
-      "Paramount Motors MG network for after-sales"
-    ],
-    "cons": [
-      "170mm ground clearance is low for Nepal roads",
-      "IM is a new brand in Nepal",
-      "Single variant only"
-    ],
-    "highlights": [
-      "26.3-inch Screen",
-      "450km WLTP",
-      "4-Wheel Steering",
-      "665L Boot"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/im/im6/exterior/ext-1-4d10ddd03f.jpg"
   },
   {
-    "id": 2401,
+    "id": 150,
     "slug": "kaiyi-equte-04-2024",
     "brand": "Kaiyi",
     "brandSlug": "kaiyi",
@@ -22718,7 +23904,9 @@ window.CARS_DB = [
     "baseEMI": 21000,
     "overview": "The Kaiyi e-Qute 04 is one of Nepal's most affordable new electric cars, targeting urban commuters. It delivers 301km range, supports DC fast charging, and comes with an 8-year battery/motor warranty.",
     "images": [
-      "/assets/images/cars/kaiyi/equte-04/front.jpg"
+      "/assets/images/car_images/kaiyi/e-qute-04/exterior/ext-1-ac8fa18f56.jpg",
+      "/assets/images/car_images/kaiyi/e-qute-04/exterior/ext-2-8b1f638172.jpg",
+      "/assets/images/car_images/kaiyi/e-qute-04/interior/int-1-cd82a3586b.jpg"
     ],
     "colors": [
       {
@@ -22761,49 +23949,28 @@ window.CARS_DB = [
           "power": "40 kW (54 PS)",
           "torque": "110 Nm",
           "efficiency": "301 km CLTC",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "40 kW (54 PS)",
+          "Torque": "110 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "40 kW (54 PS)",
-      "Torque": "110 Nm",
-      "Battery": "28.08 kWh LFP",
-      "Range (CLTC)": "301 km",
-      "Charging (AC)": "0–100% in ~7 hrs",
-      "Charging (DC)": "30%–80% in ~30 min",
-      "Top Speed": "100 km/h",
-      "Drive": "FWD",
-      "Seating": "5",
-      "Length": "3,625 mm",
-      "Width": "1,685 mm",
-      "Height": "1,580 mm",
-      "Ground Clearance": "165 mm",
-      "Boot Space": "237 L",
-      "Warranty": "8 years / 150,000 km (Battery & Motor)"
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Drive Type": "FWD",
+      "Seating Capacity": "4/5",
+      "Body Type": "Compact Electric Hatchback",
+      "Distributor": "Laxmi E Mobility (Official Kaiyi Nepal Distributor, since 2024)",
+      "Seating": "4/5",
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Very affordable at Rs. 25.96L",
-      "DC fast charging included",
-      "8-year battery warranty — longest warranty coverage",
-      "City-friendly compact dimensions"
-    ],
-    "cons": [
-      "Only 54PS — limited overtaking power",
-      "Low 165mm clearance",
-      "CLTC claims optimistic",
-      "Only 2 airbags"
-    ],
-    "highlights": [
-      "Sub-26L Price",
-      "DC Fast Charge",
-      "8-Year Warranty",
-      "City EV"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/kaiyi/e-qute-04/exterior/ext-1-ac8fa18f56.jpg"
   },
   {
-    "id": 2402,
+    "id": 151,
     "slug": "kaiyi-equte-02-2024",
     "brand": "Kaiyi",
     "brandSlug": "kaiyi",
@@ -22825,7 +23992,9 @@ window.CARS_DB = [
     "baseEMI": 19000,
     "overview": "The Kaiyi e-Qute 02 is the micro electric hatchback entry in Nepal — smallest and most affordable EV, targeting first-time EV buyers and city commuters on a tight budget.",
     "images": [
-      "/assets/images/cars/kaiyi/equte-02/front.jpg"
+      "/assets/images/car_images/kaiyi/e-qute-02/exterior/ext-1-654f3872dc.jpg",
+      "/assets/images/car_images/kaiyi/e-qute-02/exterior/ext-2-fc2ef2b839.png",
+      "/assets/images/car_images/kaiyi/e-qute-02/interior/int-1-0dec5f260a.png"
     ],
     "colors": [
       {
@@ -22863,40 +24032,28 @@ window.CARS_DB = [
           "power": "30 kW (41 PS)",
           "torque": "90 Nm",
           "efficiency": "~200 km CLTC",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "30 kW (41 PS)",
+          "Torque": "90 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "PMSM",
-      "Power": "30 kW (41 PS)",
-      "Battery": "LFP (exact kWh TBC)",
-      "Range": "~200 km CLTC",
-      "Drive": "FWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Drive Type": "FWD",
+      "Seating Capacity": "4",
+      "Body Type": "Mini Electric Hatchback",
+      "Distributor": "Laxmi E Mobility (Official Kaiyi Nepal Distributor, since 2024)",
       "Seating": "4",
-      "Length": "3,345 mm",
-      "Ground Clearance": "150 mm"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Cheapest EV available in Nepal",
-      "Ultra-compact for city use",
-      "Low running cost"
-    ],
-    "cons": [
-      "Very limited power",
-      "Only 4 seats",
-      "Very low clearance (150mm)",
-      "Very short range for inter-city"
-    ],
-    "highlights": [
-      "Cheapest Nepal EV",
-      "City Micro EV",
-      "Ultra-Compact",
-      "Low Running Cost"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/kaiyi/e-qute-02/exterior/ext-1-654f3872dc.jpg"
   },
   {
-    "id": 2501,
+    "id": 152,
     "slug": "skywell-be11-2024",
     "brand": "Skywell",
     "brandSlug": "skywell",
@@ -22918,7 +24075,13 @@ window.CARS_DB = [
     "baseEMI": 66000,
     "overview": "The Skywell BE11 is a premium Chinese EV SUV backed by Skyworth Group (electronics) and Nanjing Golden Dragon (EV buses). Available in two variants with an 8-year/200,000km battery warranty — longest in Nepal.",
     "images": [
-      "/assets/images/cars/skywell/be11/front.jpg"
+      "/assets/images/car_images/skywell/be11/exterior/ext-1-98a121e72c.png",
+      "/assets/images/car_images/skywell/be11/exterior/ext-2-071e72c2e0.png",
+      "/assets/images/car_images/skywell/be11/exterior/ext-3-ad068f18c3.jpg",
+      "/assets/images/car_images/skywell/be11/exterior/ext-4-d81dde121f.jpg",
+      "/assets/images/car_images/skywell/be11/exterior/ext-5-3da93fb202.jpg",
+      "/assets/images/car_images/skywell/be11/interior/int-1-1d777053da.jpg",
+      "/assets/images/car_images/skywell/be11/interior/int-2-13fbe6302e.jpg"
     ],
     "colors": [
       {
@@ -22963,7 +24126,9 @@ window.CARS_DB = [
           "power": "150 kW (204 PS)",
           "torque": "320 Nm",
           "efficiency": "500 km NEDC",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "150 kW (204 PS)",
+          "Torque": "320 Nm"
         }
       },
       {
@@ -22984,42 +24149,29 @@ window.CARS_DB = [
           "power": "150 kW (204 PS)",
           "torque": "320 Nm",
           "efficiency": "620 km NEDC",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "150 kW (204 PS)",
+          "Torque": "320 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "150 kW (204 PS)",
-      "Torque": "320 Nm",
-      "Battery": "67 kWh / 85 kWh",
-      "Range (NEDC)": "500 km / 620 km",
-      "Drive": "FWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Type": "NMC",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Body Type": "Mid-size Electric SUV",
+      "Note": "No official Nepal distributor could be independently confirmed in current research — verify current official availability and pricing before quoting.",
       "Seating": "5",
-      "Length": "4,700 mm",
-      "Boot Space": "467 L (1,141 L max)",
-      "Battery Warranty": "8 years / 200,000 km"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "8-year / 200,000 km battery warranty — longest in Nepal",
-      "Spacious 467L boot",
-      "Premium brand backing (Skyworth + Nanjing Golden Dragon)",
-      "Level 2 ADAS included"
-    ],
-    "cons": [
-      "NEDC range inflated vs real-world",
-      "Skywell brand recognition very low in Nepal",
-      "Only FWD"
-    ],
-    "highlights": [
-      "8yr/200km Warranty",
-      "620km NEDC",
-      "Level 2 ADAS",
-      "Spacious Boot"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/skywell/be11/exterior/ext-1-98a121e72c.png"
   },
   {
-    "id": 2601,
+    "id": 153,
     "slug": "tesla-model-y-nepal",
     "brand": "Tesla",
     "brandSlug": "tesla",
@@ -23041,7 +24193,10 @@ window.CARS_DB = [
     "baseEMI": 137000,
     "overview": "The Tesla Model Y is available in Nepal through grey market channels. No official distributor or after-sales support exists. Buyers should exercise caution regarding warranty, service, and parts availability. Pricing varies significantly.",
     "images": [
-      "/assets/images/cars/tesla/model-y/front.jpg"
+      "/assets/images/car_images/tesla/model-y/exterior/Model-Y-Hero-Tablet-US.avif",
+      "/assets/images/car_images/tesla/model-y/exterior/Model-Y-L-Hero-Tablet-NA.avif",
+      "/assets/images/car_images/tesla/model-y/interior/int-1-7920398af7.jpg",
+      "/assets/images/car_images/tesla/model-y/interior/int-2-2fd8e6fbf9.jpg"
     ],
     "colors": [
       {
@@ -23092,43 +24247,30 @@ window.CARS_DB = [
           "power": "255 kW (346 PS)",
           "torque": "340 Nm",
           "efficiency": "~500 km WLTP",
-          "transmission": "Single-Speed RWD"
+          "transmission": "Single-Speed RWD",
+          "Power": "255 kW (346 PS)",
+          "Torque": "340 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Induction / PMSM",
-      "Power": "255 kW RWD / 390 kW AWD",
-      "Battery": "78.1 kWh",
-      "WLTP Range": "~500 km (RWD)",
-      "Drive": "RWD / AWD",
-      "Seating": "5/7 (optional 3rd row)",
-      "Length": "4,751 mm",
-      "Ground Clearance": "167 mm",
-      "Boot Space": "854 L + 117 L (frunk)",
-      "Important Note": "NO OFFICIAL DISTRIBUTOR IN NEPAL. Grey market only. No warranty or official service support."
+      "Motor Type": "Dual/Single Permanent Magnet + Induction Motor",
+      "Drive Type": "RWD / AWD (Dual Motor)",
+      "Seating Capacity": "5 (7 optional)",
+      "Total Airbag Count": "8",
+      "Autopilot/ADAS": "Standard Autopilot; FSD optional (regulatory availability in Nepal unconfirmed)",
+      "Body Type": "Mid-size Electric Crossover",
+      "Distributor": "Tesla Nepal Pvt. Ltd. (Official Tesla Nepal Distributor — per 2026 MoU with Tesla Inc., including a reported ~40% Nepal price reduction at launch)",
+      "Seating": "5 (7 optional)",
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "World-class Autopilot ADAS",
-      "OTA software updates",
-      "Supercharger network globally",
-      "Best brand recognition in EV space"
-    ],
-    "cons": [
-      "NO official Nepal distributor or warranty",
-      "Service & parts extremely difficult to obtain",
-      "High price with no official support",
-      "Grey market import risk"
-    ],
-    "highlights": [
-      "World #1 EV",
-      "Autopilot L2",
-      "500km WLTP",
-      "No Official Dealer"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/tesla/model-y/exterior/Model-Y-Hero-Tablet-US.avif"
   },
   {
-    "id": 2701,
+    "id": 154,
     "slug": "seres-sf5-nepal",
     "brand": "SERES",
     "brandSlug": "seres",
@@ -23150,7 +24292,11 @@ window.CARS_DB = [
     "baseEMI": 85000,
     "overview": "The SERES SF5 is a range-extended electric SUV coupe co-developed with Huawei, featuring Huawei's DriveONE powertrain and smart cockpit. It extends EV range using a petrol range extender. Availability in Nepal is limited — contact official distributor for status.",
     "images": [
-      "/assets/images/cars/seres/sf5/front.jpg"
+      "/assets/images/car_images/seres/seres3/exterior/10.png",
+      "/assets/images/car_images/seres/seres3/exterior/4.png",
+      "/assets/images/car_images/seres/seres3/exterior/design.jpg",
+      "/assets/images/car_images/seres/seres3/interior/leather-seats.jpg",
+      "/assets/images/car_images/seres/seres3/interior/phone-seres-51info_4.jpg"
     ],
     "colors": [
       {
@@ -23188,39 +24334,28 @@ window.CARS_DB = [
           "power": "405 kW (551 PS) combined",
           "torque": "820 Nm",
           "efficiency": "1000+ km total range",
-          "transmission": "Single-Speed AWD"
+          "transmission": "Single-Speed AWD",
+          "Power": "405 kW (551 PS) combined",
+          "Torque": "820 Nm"
         }
       }
     ],
     "specs": {
-      "Powertrain": "EREV (Extended Range Electric)",
-      "Motor Power": "405 kW (551 PS)",
-      "Torque": "820 Nm",
-      "EV Range": "~150 km",
-      "Total Range": "1000+ km (with petrol extender)",
-      "Drive": "AWD",
-      "Note": "Limited Nepal availability — verify with official distributor before purchase."
+      "Motor Type": "Range-Extended EV (REEV) or BEV depending on global market spec",
+      "Drive Type": "AWD (dual motor, global spec)",
+      "Seating Capacity": "5",
+      "Body Type": "Electric/REEV SUV",
+      "Distributor": "MAW Enterprises Pvt. Ltd. (Official SERES Nepal Distributor)",
+      "Seating": "5",
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Huawei DriveONE technology",
-      "Extended range removes EV anxiety",
-      "Strong 551PS performance",
-      "Unique EREV concept"
-    ],
-    "cons": [
-      "Limited official presence in Nepal",
-      "Complex drivetrain — service concerns",
-      "Price is very premium"
-    ],
-    "highlights": [
-      "HUAWEI DriveONE",
-      "1000km Range",
-      "551PS",
-      "EREV Technology"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/seres/seres3/exterior/10.png"
   },
   {
-    "id": 2801,
+    "id": 155,
     "slug": "henrey-volts-nepal",
     "brand": "Henrey Volts",
     "brandSlug": "henrey-volts",
@@ -23242,7 +24377,10 @@ window.CARS_DB = [
     "baseEMI": 15000,
     "overview": "Henrey Volts is a budget micro-EV brand targeting the entry-level electric vehicle market in Nepal. Very limited official data is available. Contact the official distributor for current pricing and specifications.",
     "images": [
-      "/assets/images/cars/henrey-volts/mini-ev/front.jpg"
+      "/assets/images/car_images/henrey-volts/mini-ev/exterior/ext-1-a4442b0822.jpg",
+      "/assets/images/car_images/henrey-volts/mini-ev/exterior/ext-2-27823b3671.jpg",
+      "/assets/images/car_images/henrey-volts/mini-ev/interior/int-1-b43e4ff4eb.jpg",
+      "/assets/images/car_images/henrey-volts/mini-ev/interior/int-2-e6e424da66.jpg"
     ],
     "colors": [
       {
@@ -23277,37 +24415,28 @@ window.CARS_DB = [
           "power": "~20–30 kW",
           "torque": "~80 Nm",
           "efficiency": "~150–200 km",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "~20–30 kW",
+          "Torque": "~80 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "PMSM",
-      "Power": "~20–30 kW",
-      "Drive": "FWD",
-      "Seating": "2–4",
-      "Note": "Specifications unconfirmed — contact official Henrey Volts Nepal distributor for accurate pricing and specs."
+      "Motor Type": "Small PMSM (micro-EV)",
+      "Drive Type": "FWD",
+      "Seating Capacity": "4",
+      "Body Type": "Mini Electric Hatchback",
+      "Note": "No official Nepal distributor could be independently confirmed in current research — verify current official availability and pricing before quoting.",
+      "Seating": "4",
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Ultra-low price point",
-      "Simple to operate",
-      "Zero fuel cost for city use"
-    ],
-    "cons": [
-      "Very limited range",
-      "Limited safety features",
-      "Niche brand with minimal service network",
-      "Data unconfirmed"
-    ],
-    "highlights": [
-      "Ultra-Budget EV",
-      "City Commuter",
-      "Very Low Price",
-      "Limited Data"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/henrey-volts/mini-ev/exterior/ext-1-a4442b0822.jpg"
   },
   {
-    "id": 2901,
+    "id": 156,
     "slug": "ls-auto-ev-nepal",
     "brand": "LS Auto",
     "brandSlug": "ls-auto",
@@ -23329,7 +24458,9 @@ window.CARS_DB = [
     "baseEMI": 55000,
     "overview": "LS Auto is a Chinese EV brand with limited confirmed presence in Nepal. Contact the official distributor for current model availability, pricing, and specifications. Information listed is preliminary.",
     "images": [
-      "/assets/images/cars/ls-auto/ls6/front.jpg"
+      "/assets/images/car_images/ls-auto/ls6-ev/exterior/ext-1-78a8ee9001.jpg",
+      "/assets/images/car_images/ls-auto/ls6-ev/exterior/ext-2-d5cd529a0d.jpg",
+      "/assets/images/car_images/ls-auto/ls6-ev/interior/int-1-59544ef370.jpg"
     ],
     "colors": [
       {
@@ -23360,30 +24491,28 @@ window.CARS_DB = [
           "power": "~150 kW",
           "torque": "~320 Nm",
           "efficiency": "~400 km",
-          "transmission": "Single-Speed"
+          "transmission": "Single-Speed",
+          "Power": "~150 kW",
+          "Torque": "~320 Nm"
         }
       }
     ],
     "specs": {
-      "Note": "LS Auto Nepal data is limited. Contact official distributor for accurate pricing, specs and availability."
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Body Type": "Electric SUV",
+      "Note": "No official Nepal distributor could be independently confirmed in current research — verify current official availability and pricing before quoting.",
+      "Seating": "5",
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Affordable electric SUV option expected",
-      "Chinese EV tech standards"
-    ],
-    "cons": [
-      "Very limited official Nepal data",
-      "Unknown service support",
-      "Brand recognition near zero in Nepal"
-    ],
-    "highlights": [
-      "Chinese EV",
-      "Expected Affordable Price",
-      "Contact Distributor"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/ls-auto/ls6-ev/exterior/ext-1-78a8ee9001.jpg"
   },
   {
-    "id": 3001,
+    "id": 157,
     "slug": "audi-q4-etron-2024",
     "brand": "Audi",
     "brandSlug": "audi",
@@ -23450,7 +24579,9 @@ window.CARS_DB = [
           "power": "150 kW (204 PS)",
           "torque": "310 Nm",
           "efficiency": "341 km WLTP",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "150 kW (204 PS)",
+          "Torque": "310 Nm"
         }
       },
       {
@@ -23474,45 +24605,25 @@ window.CARS_DB = [
           "power": "220 kW (299 PS)",
           "torque": "460 Nm",
           "efficiency": "512 km WLTP",
-          "transmission": "Dual-Motor AWD"
+          "transmission": "Dual-Motor AWD",
+          "Power": "220 kW (299 PS)",
+          "Torque": "460 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "150 kW (FWD) / 220 kW (AWD)",
-      "Torque": "310 Nm / 460 Nm",
-      "Battery": "55 kWh (FWD) / 82 kWh (AWD)",
-      "WLTP Range": "341 km / 512 km",
-      "Drive": "FWD / quattro AWD",
-      "Seating": "5",
-      "Length": "4,588 mm",
-      "Width": "1,865 mm",
-      "Height": "1,632 mm",
-      "Ground Clearance": "180 mm",
-      "Boot Space": "520 L"
+      "Note": "LIKELY DUPLICATE/STALE ENTRY — variants show placeholder labels ('Base'/'Top quattro') with no real NPR pricing, and claims quattro AWD which contradicts the confirmed Nepal-spec RWD-only Q4 35 e-tron (see audi-q4-etron-2025, the properly priced and researched entry via Kaeros International). Recommend consolidating or removing this 2024 entry to avoid showing duplicate/conflicting Audi Q4 e-tron listings.",
+      "Importer": "UNCONFIRMED — see note; likely should reference Kaeros International like audi-q4-etron-2025",
+      "Fuel Type": "Electric",
+      "Body Type": "SUV"
     },
-    "pros": [
-      "Premium Audi badge and build quality",
-      "quattro AWD on top variant",
-      "Audi Virtual Cockpit (best-in-class instrument display)",
-      "AR HUD standard"
-    ],
-    "cons": [
-      "FWD range (341km) is limited",
-      "Very high price vs Chinese EVs with similar range",
-      "Limited Kairos service network vs BMW/MB"
-    ],
-    "highlights": [
-      "Audi Premium Badge",
-      "quattro AWD",
-      "AR HUD",
-      "512km WLTP"
-    ],
+    "pros": null,
+    "cons": null,
+    "highlights": null,
     "thumb": "/assets/images/car_images/audi/q4-e-tron/exterior/audi-q4-e-tron-exterior-rear-white-bg.jpg"
   },
   {
-    "id": 3101,
+    "id": 158,
     "slug": "lexus-ux-300e-nepal",
     "brand": "Lexus",
     "brandSlug": "lexus",
@@ -23534,7 +24645,9 @@ window.CARS_DB = [
     "baseEMI": 120000,
     "overview": "The Lexus UX 300e is Toyota's luxury EV brand entry into Nepal. Premium Japanese build quality, ultra-quiet cabin, and the iconic Lexus spindle grille design. Available through Lexus Nepal distributor.",
     "images": [
-      "/assets/images/cars/lexus/ux-300e/front.jpg"
+      "/assets/images/car_images/lexus/ux-300e/exterior/ext-1-30cf2545cf.jpg",
+      "/assets/images/car_images/lexus/ux-300e/exterior/ext-2-54dd49dbf4.jpg",
+      "/assets/images/car_images/lexus/ux-300e/interior/int-1-97520d2829.jpg"
     ],
     "colors": [
       {
@@ -23580,43 +24693,33 @@ window.CARS_DB = [
           "power": "150 kW (204 PS)",
           "torque": "300 Nm",
           "efficiency": "400 km WLTP",
-          "transmission": "Single-Speed FWD"
+          "transmission": "Single-Speed FWD",
+          "Power": "150 kW (204 PS)",
+          "Torque": "300 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Permanent Magnet Synchronous",
-      "Power": "150 kW (204 PS)",
-      "Torque": "300 Nm",
-      "Battery": "72.8 kWh",
-      "WLTP Range": "~400 km",
-      "Drive": "FWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Max Motor Power": "204 PS",
+      "Battery Capacity (kWh)": "54.35",
+      "Certified Range (km)": "~300–450 depending on standard",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "8",
+      "Body Type": "Compact Luxury Electric SUV",
+      "Note": "No official Lexus Nepal distributor could be independently confirmed in current research — verify before quoting.",
+      "Power": "204 PS",
       "Seating": "5",
-      "Length": "4,496 mm",
-      "Ground Clearance": "156 mm",
-      "Boot Space": "213 L"
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Lexus premium cabin quality — best-in-class NVH",
-      "Lexus Safety System+ 3.0",
-      "Toyota Group reliability",
-      "Premium brand prestige"
-    ],
-    "cons": [
-      "Very low 156mm ground clearance",
-      "Only 213L boot (small)",
-      "Premium price for modest range",
-      "FWD only"
-    ],
-    "highlights": [
-      "Lexus Premium",
-      "Safety System+ 3.0",
-      "Ultra-Quiet Cabin",
-      "Japanese Reliability"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/lexus/ux-300e/exterior/ext-1-30cf2545cf.jpg"
   },
   {
-    "id": 3201,
+    "id": 159,
     "slug": "mercedes-gla-2024",
     "brand": "Mercedes-Benz",
     "brandSlug": "mercedes-benz",
@@ -23638,7 +24741,9 @@ window.CARS_DB = [
     "baseEMI": 162000,
     "overview": "The Mercedes-Benz GLA is the entry-level luxury compact SUV in Nepal, combining the star badge with a premium MBUX infotainment system, comprehensive safety tech, and refined interior quality.",
     "images": [
-      "/assets/images/cars/mercedes-benz/gla-200/front.jpg"
+      "/assets/images/car_images/mercedes-benz/gla-200/exterior/ext-1-3453d101e0.jpg",
+      "/assets/images/car_images/mercedes-benz/gla-200/exterior/ext-2-e3c39faf5d.jpg",
+      "/assets/images/car_images/mercedes-benz/gla-200/interior/int-1-c9c75f079a.jpg"
     ],
     "colors": [
       {
@@ -23687,45 +24792,36 @@ window.CARS_DB = [
           "power": "163 PS @ 5500 rpm",
           "torque": "250 Nm @ 1600 rpm",
           "efficiency": "15.0 km/l",
-          "transmission": "7G-DCT"
+          "transmission": "7G-DCT",
+          "Power": "163 PS @ 5500 rpm",
+          "Torque": "250 Nm @ 1600 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.3L M282 Turbo, 4-Cylinder",
-      "Power": "163 PS @ 5500 rpm",
-      "Torque": "250 Nm @ 1600 rpm",
-      "Fuel Efficiency": "~15.0 km/l",
-      "Fuel Tank": "51 L",
+      "Engine Type": "1.3L Turbo Petrol",
+      "Displacement (cc)": "1,332",
+      "Max Engine Power": "163 PS",
+      "Max Engine Torque": "250 Nm",
+      "Transmission Type": "7G-DCT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7",
+      "Body Type": "Compact Luxury SUV",
+      "Distributor": "Deepak Gautam & Company Pvt. Ltd. (Official Mercedes-Benz Nepal Distributor, Durbar Marg, Kathmandu)",
+      "Power": "163 PS",
+      "Torque": "250 Nm",
       "Transmission": "7G-DCT",
-      "Drive": "FWD",
       "Seating": "5",
-      "Length": "4,418 mm",
-      "Width": "1,834 mm",
-      "Height": "1,611 mm",
-      "Ground Clearance": "152 mm",
-      "Boot Space": "435 L"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Mercedes prestige — status symbol in Nepal",
-      "MBUX system with voice control",
-      "Active safety suite standard",
-      "Premium cabin materials"
-    ],
-    "cons": [
-      "Very high price for a 1.3L engine",
-      "152mm clearance is very low for Nepal",
-      "Running costs (maintenance/parts) are very high"
-    ],
-    "highlights": [
-      "Mercedes Star",
-      "MBUX System",
-      "Premium Cabin",
-      "Status Symbol"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/mercedes-benz/gla-200/exterior/ext-1-3453d101e0.jpg"
   },
   {
-    "id": 3202,
+    "id": 160,
     "slug": "mercedes-glc-2024",
     "brand": "Mercedes-Benz",
     "brandSlug": "mercedes-benz",
@@ -23747,7 +24843,9 @@ window.CARS_DB = [
     "baseEMI": 225000,
     "overview": "The Mercedes-Benz GLC 300 is the mid-size luxury SUV in Nepal, offering 4MATIC AWD, a 2.0L turbocharged engine, the new MBUX Hyperscreen option, and comprehensive driver assistance systems.",
     "images": [
-      "/assets/images/cars/mercedes-benz/glc-300/front.jpg"
+      "/assets/images/car_images/mercedes-benz/glc-300/exterior/ext-1-9827db43d6.jpg",
+      "/assets/images/car_images/mercedes-benz/glc-300/exterior/ext-2-caf7952d7c.jpg",
+      "/assets/images/car_images/mercedes-benz/glc-300/interior/int-1-7415c268f6.jpg"
     ],
     "colors": [
       {
@@ -23792,43 +24890,34 @@ window.CARS_DB = [
           "power": "258 PS @ 5800 rpm",
           "torque": "400 Nm @ 1800 rpm",
           "efficiency": "12.8 km/l",
-          "transmission": "9G-Tronic"
+          "transmission": "9G-Tronic",
+          "Power": "258 PS @ 5800 rpm",
+          "Torque": "400 Nm @ 1800 rpm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L M254 Turbo, 4-Cylinder",
-      "Power": "258 PS @ 5800 rpm",
-      "Torque": "400 Nm @ 1800 rpm",
-      "Fuel Efficiency": "~12.8 km/l",
+      "Engine Type": "2.0L Turbo Petrol (Mild Hybrid)",
+      "Displacement (cc)": "1,991",
+      "Max Engine Power": "204–258 PS",
+      "Transmission Type": "9G-Tronic",
+      "Drive Type": "4MATIC AWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7",
+      "Body Type": "Mid-size Luxury SUV",
+      "Distributor": "Deepak Gautam & Company Pvt. Ltd. (Official Mercedes-Benz Nepal Distributor, Durbar Marg, Kathmandu)",
+      "Power": "204–258 PS",
       "Transmission": "9G-Tronic",
-      "Drive": "4MATIC AWD",
       "Seating": "5",
-      "Length": "4,716 mm",
-      "Ground Clearance": "164 mm",
-      "Boot Space": "620 L"
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "4MATIC AWD for all-terrain confidence",
-      "Burmester 3D audio — exceptional sound",
-      "9-speed smooth transmission",
-      "Benchmark luxury interior"
-    ],
-    "cons": [
-      "Rs. 2.75Cr price — ultra-premium",
-      "Limited to wealthy buyers",
-      "High maintenance cost in Nepal",
-      "164mm clearance still limited for rough roads"
-    ],
-    "highlights": [
-      "4MATIC AWD",
-      "Burmester Audio",
-      "MBUX 11.9-inch",
-      "Luxury Benchmark"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/mercedes-benz/glc-300/exterior/ext-1-9827db43d6.jpg"
   },
   {
-    "id": 3301,
+    "id": 161,
     "slug": "volvo-xc60-2024",
     "brand": "Volvo",
     "brandSlug": "volvo",
@@ -23850,7 +24939,11 @@ window.CARS_DB = [
     "baseEMI": 70000,
     "overview": "The Volvo XC60 is the Swedish luxury mid-size SUV famed for Volvo's safety heritage and Scandinavian design. Available in mild-hybrid B5 and plug-in hybrid T8 variants. Volvo's safety legacy is unmatched.",
     "images": [
-      "/assets/images/cars/volvo/xc60/front.jpg"
+      "/assets/images/car_images/volvo/volvo xc60/exterior/xc60-exterior-studio-gallery-4x5-india.avif",
+      "/assets/images/car_images/volvo/volvo xc60/exterior/xc60-spotlighthero-gallery-item2-4x5-india.avif",
+      "/assets/images/car_images/volvo/volvo xc60/exterior/xc60-spotlighthero-gallery-item3-4x5-india.avif",
+      "/assets/images/car_images/volvo/volvo xc60/interior/xc60-fuel-interior-spotlighthero-gallery2-4x5-india.avif",
+      "/assets/images/car_images/volvo/volvo xc60/interior/xc60-fuel-spotlighthero-4x5.avif"
     ],
     "colors": [
       {
@@ -23897,7 +24990,9 @@ window.CARS_DB = [
           "power": "250 PS",
           "torque": "350 Nm",
           "efficiency": "~14.5 km/l",
-          "transmission": "8AT"
+          "transmission": "8AT",
+          "Power": "250 PS",
+          "Torque": "350 Nm"
         }
       },
       {
@@ -23921,7 +25016,9 @@ window.CARS_DB = [
           "power": "250 PS",
           "torque": "350 Nm",
           "efficiency": "~14.5 km/l",
-          "transmission": "8AT"
+          "transmission": "8AT",
+          "Power": "250 PS",
+          "Torque": "350 Nm"
         }
       },
       {
@@ -23945,42 +25042,35 @@ window.CARS_DB = [
           "power": "455 PS combined",
           "torque": "709 Nm combined",
           "efficiency": "2.1 L/100km (WLTP combined)",
-          "transmission": "8AT + e-motor"
+          "transmission": "8AT + e-motor",
+          "Power": "455 PS combined",
+          "Torque": "709 Nm combined"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L B5 (Mild Hybrid) / T8 (PHEV)",
-      "Power": "250 PS (B5) / 455 PS (T8)",
-      "Torque": "350 Nm / 709 Nm",
-      "Transmission": "8AT",
-      "Drive": "AWD",
+      "Engine Type": "2.0L Turbo Petrol Mild Hybrid",
+      "Displacement (cc)": "1,969",
+      "Max Engine Power": "250 PS",
+      "Transmission Type": "8-Speed Automatic",
+      "Drive Type": "AWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7",
+      "Safety Rating": "Volvo's IntelliSafe suite standard",
+      "Body Type": "Mid-size Luxury SUV",
+      "Note": "No official Volvo Nepal distributor could be independently confirmed in current research — verify before quoting.",
+      "Power": "250 PS",
+      "Transmission": "8-Speed Automatic",
       "Seating": "5",
-      "Length": "4,688 mm",
-      "Ground Clearance": "216 mm",
-      "Boot Space": "529 L"
+      "Fuel Type": "Petrol Hybrid"
     },
-    "pros": [
-      "216mm ground clearance ideal for Nepal",
-      "Industry-leading safety heritage",
-      "PHEV variant offers 90km EV range",
-      "AWD standard across all variants",
-      "Volvo's City Safety and Pilot Assist ADAS"
-    ],
-    "cons": [
-      "Brand service support limited in Nepal",
-      "Price is premium for the segment",
-      "PHEV battery charging infrastructure needed"
-    ],
-    "highlights": [
-      "216mm Clearance",
-      "PHEV Available",
-      "AWD Standard",
-      "Volvo Safety"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/volvo/volvo xc60/exterior/xc60-exterior-studio-gallery-4x5-india.avif"
   },
   {
-    "id": 3302,
+    "id": 162,
     "slug": "volvo-xc90-2024",
     "brand": "Volvo",
     "brandSlug": "volvo",
@@ -24002,7 +25092,9 @@ window.CARS_DB = [
     "baseEMI": 85000,
     "overview": "The Volvo XC90 is the flagship 7-seat luxury SUV — iconic Scandinavian design, unrivalled safety credentials, and available as a plug-in hybrid T8. Perfect for Nepal's premium family SUV segment.",
     "images": [
-      "/assets/images/cars/volvo/xc90/front.jpg"
+      "/assets/images/car_images/volvo/xc90/exterior/ext-1-66a3f4ed96.jpg",
+      "/assets/images/car_images/volvo/xc90/exterior/ext-2-16f8a8c6fb.jpg",
+      "/assets/images/car_images/volvo/xc90/interior/int-1-a2994fb057.jpg"
     ],
     "colors": [
       {
@@ -24047,7 +25139,9 @@ window.CARS_DB = [
           "power": "455 PS combined",
           "torque": "709 Nm",
           "efficiency": "~85km EV range",
-          "transmission": "8AT"
+          "transmission": "8AT",
+          "Power": "455 PS combined",
+          "Torque": "709 Nm"
         }
       },
       {
@@ -24071,43 +25165,34 @@ window.CARS_DB = [
           "power": "455 PS combined",
           "torque": "709 Nm",
           "efficiency": "~85km EV range",
-          "transmission": "8AT"
+          "transmission": "8AT",
+          "Power": "455 PS combined",
+          "Torque": "709 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.0L T8 PHEV Twin Engine",
-      "Power": "455 PS combined",
-      "Torque": "709 Nm combined",
-      "EV Range": "~85 km (WLTP)",
-      "Transmission": "8AT",
-      "Drive": "AWD",
+      "Engine Type": "2.0L Turbo Petrol Mild Hybrid / T8 PHEV",
+      "Displacement (cc)": "1,969",
+      "Max Engine Power": "250–455 PS (T8)",
+      "Transmission Type": "8-Speed Automatic",
+      "Drive Type": "AWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "7",
+      "Body Type": "Full-size Luxury SUV",
+      "Note": "No official Volvo Nepal distributor could be independently confirmed in current research — verify before quoting.",
+      "Power": "250–455 PS (T8)",
+      "Transmission": "8-Speed Automatic",
       "Seating": "7",
-      "Length": "4,953 mm",
-      "Ground Clearance": "238 mm",
-      "Boot Space": "721 L (5-seat mode)"
+      "Fuel Type": "Petrol Hybrid"
     },
-    "pros": [
-      "238mm ground clearance — excellent for Nepal terrain",
-      "7-seater with premium materials",
-      "Bowers & Wilkins 19-speaker audio on Ultra",
-      "AWD PHEV with 85km EV range",
-      "Volvo safety standard — industry benchmark"
-    ],
-    "cons": [
-      "Premium price Rs. 1.03–1.13Cr",
-      "Charging infrastructure needed for PHEV",
-      "Large size challenging in narrow Kathmandu streets"
-    ],
-    "highlights": [
-      "238mm Clearance",
-      "7-Seater AWD",
-      "PHEV 85km EV",
-      "B&W Audio"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/volvo/xc90/exterior/ext-1-66a3f4ed96.jpg"
   },
   {
-    "id": 4001,
+    "id": 163,
     "slug": "foton-tunland-v-2024",
     "brand": "Foton",
     "brandSlug": "foton",
@@ -24129,7 +25214,9 @@ window.CARS_DB = [
     "baseEMI": 32000,
     "overview": "The Foton Tunland V is a budget-friendly Chinese diesel pickup truck widely used for commercial purposes in Nepal. Strong payload and towing capacity make it popular in businesses and agriculture.",
     "images": [
-      "/assets/images/cars/foton/tunland-v/front.jpg"
+      "/assets/images/car_images/foton/tunland-v/exterior/ext-1-f05605a3f7.jpg",
+      "/assets/images/car_images/foton/tunland-v/exterior/ext-2-83b8fc5c45.jpg",
+      "/assets/images/car_images/foton/tunland-v/interior/int-2-b69e62b3b5.jpg"
     ],
     "colors": [
       {
@@ -24167,40 +25254,26 @@ window.CARS_DB = [
           "power": "141 PS",
           "torque": "320 Nm",
           "efficiency": "~11 km/l",
-          "transmission": "6MT"
+          "transmission": "6MT",
+          "Power": "141 PS",
+          "Torque": "320 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.8L Diesel Turbo",
-      "Power": "141 PS",
-      "Torque": "320 Nm",
-      "Transmission": "6MT",
-      "Drive": "4WD",
-      "Seating": "5",
-      "Payload": "~1,000 kg",
-      "Towing": "~2,500 kg"
+      "Engine Type": "2.0L Turbo Diesel",
+      "Drive Type": "4x2 / 4x4",
+      "Body Type": "Pickup Truck",
+      "Note": "A Foton Motor Nepal presence (Facebook: 'Foton Motor Nepal') was found, but a formally named authorized distributor company was not independently confirmed. Verify before quoting.",
+      "Fuel Type": "Diesel"
     },
-    "pros": [
-      "Affordable Chinese pickup truck",
-      "High payload for commercial use",
-      "4WD capability",
-      "Low running costs"
-    ],
-    "cons": [
-      "Rough ride quality",
-      "Limited tech features",
-      "Brand service support limited vs Isuzu/Toyota"
-    ],
-    "highlights": [
-      "Budget Pickup",
-      "4WD",
-      "High Payload",
-      "Commercial Use"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/foton/tunland-v/exterior/ext-1-f05605a3f7.jpg"
   },
   {
-    "id": 4101,
+    "id": 164,
     "slug": "riddara-rf20-nepal",
     "brand": "Riddara",
     "brandSlug": "riddara",
@@ -24222,7 +25295,12 @@ window.CARS_DB = [
     "baseEMI": 52000,
     "overview": "The Riddara RF20 is an all-electric pickup truck distributed by CG Motors in Nepal. It offers a combination of modern EV technology with pickup truck utility — a unique proposition in the Nepali market.",
     "images": [
-      "/assets/images/cars/riddara/rf20/front.jpg"
+      "/assets/images/car_images/riddara/rd6/exterior/Front-Styling-in-Riddara-RD6-4WD.png",
+      "/assets/images/car_images/riddara/rd6/exterior/Rear-Styling-in-Riddara-RD6-4WD.png",
+      "/assets/images/car_images/riddara/rd6/exterior/Side-Styling-in-Riddara-RD6-4WD.png",
+      "/assets/images/car_images/riddara/rd6/interior/riddara-rd6-interior-dashboard.jpg",
+      "/assets/images/car_images/riddara/rd6/interior/riddara-rd6-interior-seats-front.jpg",
+      "/assets/images/car_images/riddara/rd6/interior/riddara-rd6-interior-seats-rear.jpg"
     ],
     "colors": [
       {
@@ -24259,35 +25337,26 @@ window.CARS_DB = [
           "power": "~200 kW",
           "torque": "~450 Nm",
           "efficiency": "~350 km",
-          "transmission": "Single-Speed AWD"
+          "transmission": "Single-Speed AWD",
+          "Power": "~200 kW",
+          "Torque": "~450 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "Dual PMSM",
-      "Drive": "AWD",
-      "Note": "Contact CG Motors Nepal for official pricing and specification confirmation."
+      "Engine Type": "Global spec unconfirmed for this variant",
+      "Drive Type": "4x2/4x4",
+      "Body Type": "SUV/Pickup",
+      "Note": "No official Nepal distributor could be independently confirmed in current research — verify current official availability and pricing before quoting.",
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Unique electric pickup concept in Nepal",
-      "AWD for off-road utility",
-      "Zero fuel cost for work trips",
-      "CG Motors backing"
-    ],
-    "cons": [
-      "Limited confirmed Nepal pricing",
-      "New category in Nepal (electric pickup)",
-      "Range vs payload tradeoff"
-    ],
-    "highlights": [
-      "Electric Pickup",
-      "AWD",
-      "Zero Emissions",
-      "CG Motors"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/riddara/rd6/exterior/Front-Styling-in-Riddara-RD6-4WD.png"
   },
   {
-    "id": 4201,
+    "id": 165,
     "slug": "wuling-hongguang-mini-ev",
     "brand": "Wuling",
     "brandSlug": "wuling",
@@ -24309,7 +25378,9 @@ window.CARS_DB = [
     "baseEMI": 14000,
     "overview": "The Wuling Hongguang Mini EV is the world's best-selling mini EV (by volume in China) now sporadically available in Nepal through limited channels. Very basic, ultra-budget, city-only micro car.",
     "images": [
-      "/assets/images/cars/wuling/hongguang-mini/front.jpg"
+      "/assets/images/car_images/wuling/hongguang-mini-ev/exterior/ext-1-270eb60083.jpg",
+      "/assets/images/car_images/wuling/hongguang-mini-ev/exterior/ext-2-c893c25846.jpg",
+      "/assets/images/car_images/wuling/hongguang-mini-ev/interior/int-1-89ce47ccf0.jpg"
     ],
     "colors": [
       {
@@ -24344,40 +25415,30 @@ window.CARS_DB = [
           "power": "20–30 kW",
           "torque": "85 Nm",
           "efficiency": "100–170 km",
-          "transmission": "Single-Speed"
+          "transmission": "Single-Speed",
+          "Power": "20–30 kW",
+          "Torque": "85 Nm"
         }
       }
     ],
     "specs": {
-      "Motor": "AC Motor",
-      "Power": "20–30 kW",
-      "Drive": "RWD",
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Battery Capacity (kWh)": "9.3–13.9 (global spec variants)",
+      "Certified Range (km)": "~120–170 depending on battery",
+      "Drive Type": "RWD",
+      "Seating Capacity": "4",
+      "Body Type": "Micro Electric Hatchback",
+      "Distributor": "EV Nepal Motors, a subsidiary of Bajra Group (Official Wuling Nepal Distributor)",
       "Seating": "4",
-      "Length": "2,917 mm",
-      "Ground Clearance": "120 mm",
-      "Note": "No confirmed official distributor in Nepal. Grey market imports only. Buyer beware."
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Ultra-affordable micro EV",
-      "Zero fuel cost",
-      "Compact for congested streets"
-    ],
-    "cons": [
-      "No official Nepal distributor",
-      "Very low clearance (120mm)",
-      "Very limited range",
-      "Minimal safety features",
-      "Not street-legal on all road types in Nepal"
-    ],
-    "highlights": [
-      "World Bestselling Mini EV",
-      "Ultra-Budget",
-      "City Only",
-      "No Official Dealer"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/wuling/hongguang-mini-ev/exterior/ext-1-270eb60083.jpg"
   },
   {
-    "id": 4301,
+    "id": 166,
     "slug": "lifan-myway-nepal",
     "brand": "Lifan",
     "brandSlug": "lifan",
@@ -24399,7 +25460,10 @@ window.CARS_DB = [
     "baseEMI": 24000,
     "overview": "Lifan previously distributed budget MPV and sedan models in Nepal. The Myway MPV was offered as an affordable 7-seater. Current availability and official distributor status should be confirmed directly.",
     "images": [
-      "/assets/images/cars/lifan/myway/front.jpg"
+      "/assets/images/car_images/lifan/myway/exterior/ext-1-7ac17f7614.jpg",
+      "/assets/images/car_images/lifan/myway/exterior/ext-2-28c2b49b8d.jpg",
+      "/assets/images/car_images/lifan/myway/interior/int-1-ac972dd9e3.jpg",
+      "/assets/images/car_images/lifan/myway/interior/int-2-8e78649ac8.jpg"
     ],
     "colors": [
       {
@@ -24431,32 +25495,28 @@ window.CARS_DB = [
           "power": "128 PS",
           "torque": "170 Nm",
           "efficiency": "~12 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "128 PS",
+          "Torque": "170 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "1.8L Naturally Aspirated",
-      "Note": "Verify current availability with Lifan Nepal distributor. Brand activity in Nepal is limited post-2022."
+      "Engine Type": "1.5L / 1.8L Petrol (Lifan Myway, global spec)",
+      "Drive Type": "FWD",
+      "Seating Capacity": "7",
+      "Body Type": "MPV",
+      "Note": "No official Lifan Nepal distributor could be independently confirmed in current research — verify current official availability and pricing before quoting.",
+      "Seating": "7",
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Very affordable 7-seater",
-      "Decent carrying capacity",
-      "Budget family transport"
-    ],
-    "cons": [
-      "Limited brand support",
-      "Older design",
-      "Parts availability concern"
-    ],
-    "highlights": [
-      "Budget 7-Seater",
-      "Family MPV",
-      "Low Price"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/lifan/myway/exterior/ext-1-7ac17f7614.jpg"
   },
   {
-    "id": 4401,
+    "id": 167,
     "slug": "swm-g01-nepal",
     "brand": "SWM",
     "brandSlug": "swm",
@@ -24478,7 +25538,14 @@ window.CARS_DB = [
     "baseEMI": 45000,
     "overview": "SWM (Stelvio Way Motorcycles) is an Italian-heritage Chinese SUV brand. Very limited official information is available for Nepal. Contact the official distributor for pricing and availability.",
     "images": [
-      "/assets/images/cars/swm/g01/front.jpg"
+      "/assets/images/car_images/swm/g01/exterior/ext-1-04a8de4e35.jpeg",
+      "/assets/images/car_images/swm/g01/exterior/ext-3-3891d7bac8.jpeg",
+      "/assets/images/car_images/swm/g01/exterior/ext-4-6464e6a55f.jpeg",
+      "/assets/images/car_images/swm/g01/exterior/ext-5-2ad8a882d7.jpg",
+      "/assets/images/car_images/swm/g01/exterior/ext-6-d0cbb163d6.jpg",
+      "/assets/images/car_images/swm/g01/interior/int-1-15a8f322ba.webp",
+      "/assets/images/car_images/swm/g01/interior/int-2-12858ada94.webp",
+      "/assets/images/car_images/swm/g01/interior/int-3-674f9d31b2.webp"
     ],
     "colors": [
       {
@@ -24513,31 +25580,26 @@ window.CARS_DB = [
           "power": "190 PS",
           "torque": "320 Nm",
           "efficiency": "~13 km/l",
-          "transmission": "7AT"
+          "transmission": "7AT",
+          "Power": "190 PS",
+          "Torque": "320 Nm"
         }
       }
     ],
     "specs": {
-      "Note": "Limited Nepal data. Contact official SWM distributor for confirmation."
+      "Engine Type": "1.5L Turbo Petrol (SWM G01, global spec)",
+      "Drive Type": "FWD",
+      "Body Type": "Compact SUV",
+      "Note": "No official Nepal distributor could be independently confirmed in current research — verify current official availability and pricing before quoting.",
+      "Fuel Type": "Petrol"
     },
-    "pros": [
-      "Italian-heritage brand positioning",
-      "Distinctive design",
-      "Mid-range price expected"
-    ],
-    "cons": [
-      "Very limited Nepal data",
-      "Unknown service network",
-      "Niche appeal"
-    ],
-    "highlights": [
-      "Italian Heritage",
-      "Distinctive Design",
-      "Contact Distributor"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/swm/g01/exterior/ext-1-04a8de4e35.jpeg"
   },
   {
-    "id": 4501,
+    "id": 168,
     "slug": "foday-explorer-nepal",
     "brand": "Foday",
     "brandSlug": "foday",
@@ -24559,7 +25621,10 @@ window.CARS_DB = [
     "baseEMI": 27000,
     "overview": "Foday offers budget diesel pickup trucks in Nepal, targeting commercial and agricultural buyers looking for basic reliable transport at a very low price point.",
     "images": [
-      "/assets/images/cars/foday/explorer/front.jpg"
+      "/assets/images/car_images/foday/explorer-f22/exterior/ext-1-9442be9f4c.jpg",
+      "/assets/images/car_images/foday/explorer-f22/exterior/ext-2-0be5f9c3a0.jpg",
+      "/assets/images/car_images/foday/explorer-f22/interior/int-1-466c184c4b.jpg",
+      "/assets/images/car_images/foday/explorer-f22/interior/int-2-1cb6bc4afe.jpg"
     ],
     "colors": [
       {
@@ -24590,33 +25655,26 @@ window.CARS_DB = [
           "power": "~110 PS",
           "torque": "~250 Nm",
           "efficiency": "~11 km/l",
-          "transmission": "5MT"
+          "transmission": "5MT",
+          "Power": "~110 PS",
+          "Torque": "~250 Nm"
         }
       }
     ],
     "specs": {
-      "Engine": "2.2L Diesel",
-      "Drive": "4WD",
-      "Note": "Budget commercial pickup. Contact Foday Nepal distributor for current pricing."
+      "Engine Type": "2.0L / 2.4L Diesel or Petrol (Foday Explorer, global spec)",
+      "Drive Type": "4WD",
+      "Body Type": "Off-Road SUV",
+      "Note": "No official Nepal distributor could be independently confirmed in current research — verify current official availability and pricing before quoting.",
+      "Fuel Type": "Diesel"
     },
-    "pros": [
-      "Very budget-friendly pickup",
-      "4WD for rough terrain",
-      "Commercial and agricultural use"
-    ],
-    "cons": [
-      "Basic cabin features",
-      "Limited service network",
-      "Niche commercial brand"
-    ],
-    "highlights": [
-      "Budget Pickup",
-      "4WD",
-      "Commercial Use"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/foday/explorer-f22/exterior/ext-1-9442be9f4c.jpg"
   },
   {
-    "id": 4601,
+    "id": 169,
     "slug": "jy-ev-nepal",
     "brand": "JY",
     "brandSlug": "jy",
@@ -24638,7 +25696,10 @@ window.CARS_DB = [
     "baseEMI": 38000,
     "overview": "JY is a Chinese EV brand with very limited confirmed presence in Nepal. No official distributor has been publicly confirmed as of 2025-26. Contact relevant Nepali importers for any updates.",
     "images": [
-      "/assets/images/cars/jy/ev/front.jpg"
+      "/assets/images/car_images/jy/air-ev/exterior/ext-1-a0c763af94.png",
+      "/assets/images/car_images/jy/air-ev/exterior/ext-2-0f2a27641d.png",
+      "/assets/images/car_images/jy/air-ev/interior/int-1-fd93bef2c8.jpg",
+      "/assets/images/car_images/jy/air-ev/interior/int-2-6f7237008c.jpg"
     ],
     "colors": [
       {
@@ -24664,30 +25725,26 @@ window.CARS_DB = [
           "power": "~120 kW",
           "torque": "~280 Nm",
           "efficiency": "~350 km",
-          "transmission": "Single-Speed"
+          "transmission": "Single-Speed",
+          "Power": "~120 kW",
+          "Torque": "~280 Nm"
         }
       }
     ],
     "specs": {
-      "Note": "No confirmed official distributor in Nepal. Pricing TBC."
+      "Motor Type": "Permanent Magnet Synchronous Motor",
+      "Drive Type": "FWD",
+      "Body Type": "Electric Vehicle (model unconfirmed)",
+      "Note": "This entry's exact model is marked 'TBC' (to be confirmed) in the data itself — recommend identifying the specific JY model before publishing detailed specs. No official Nepal distributor could be independently confirmed in current research — verify current official availability and pricing before quoting.",
+      "Fuel Type": "Electric"
     },
-    "pros": [
-      "Budget EV expected",
-      "Chinese EV tech quality"
-    ],
-    "cons": [
-      "No confirmed Nepal distributor",
-      "Very limited data",
-      "Unknown service support"
-    ],
-    "highlights": [
-      "Status: TBC",
-      "Contact Importers",
-      "Data Unconfirmed"
-    ]
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/jy/air-ev/exterior/ext-1-a0c763af94.png"
   },
   {
-    "id": 5001,
+    "id": 170,
     "slug": "omoda-e5-ev",
     "brand": "Omoda",
     "brandSlug": "omoda",
@@ -24701,13 +25758,25 @@ window.CARS_DB = [
     "isEV": true,
     "isNew": true,
     "isFeatured": true,
+    "isBestSeller": false,
     "tagline": "Futuristic Electric SUV",
     "rating": 4.6,
     "reviews": 15,
     "expertScore": 8,
     "baseEMI": 65000,
     "overview": "Omoda E5 is a futuristic electric crossover featuring advanced smart cabin features and a long-range battery suitable for Nepal's roads.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/chery/omoda-e5/front.png",
+      "/assets/images/car_images/chery/omoda-e5/side.webp",
+      "/assets/images/car_images/chery/omoda-e5/interior.jpg",
+      "/assets/images/car_images/chery/omoda-e5/colors/red.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/blue.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/black.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/white.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/grey.png",
+      "/assets/images/car_images/chery/omoda-e5/colors/silver.png",
+      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
+    ],
     "colors": [
       {
         "name": "Space Green",
@@ -24733,13 +25802,25 @@ window.CARS_DB = [
         "specs": {
           "power": "204 PS",
           "torque": "340 Nm",
-          "efficiency": "430 km range"
+          "efficiency": "430 km range",
+          "Power": "204 PS",
+          "Torque": "340 Nm"
         }
       }
-    ]
+    ],
+    "specs": {
+      "Note": "DUPLICATE of 'Chery Omoda E5' (chery-omoda-e5-2025), which has already been researched and corrected (Rs. 61.99L Single Tone / Rs. 62.49L Dual Tone via SPG Automobiles). Recommend removing/merging this 'Omoda'-branded duplicate.",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Official Chery/Omoda Nepal Distributor)",
+      "Fuel Type": "Electric",
+      "Body Type": "Crossover"
+    },
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/chery/omoda-e5/front.png"
   },
   {
-    "id": 5002,
+    "id": 171,
     "slug": "jeep-compass-trailhawk",
     "brand": "Jeep",
     "brandSlug": "jeep",
@@ -24753,13 +25834,16 @@ window.CARS_DB = [
     "isEV": false,
     "isNew": true,
     "isFeatured": true,
+    "isBestSeller": false,
     "tagline": "Legendary 4x4 Capability",
     "rating": 4.7,
     "reviews": 22,
     "expertScore": 9,
     "baseEMI": 110000,
     "overview": "The Jeep Compass offers unparalleled off-road capability combined with premium styling and comfort for any terrain.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
+    ],
     "colors": [
       {
         "name": "Exotica Red",
@@ -24785,13 +25869,37 @@ window.CARS_DB = [
         "specs": {
           "power": "170 PS",
           "torque": "350 Nm",
-          "efficiency": "14.5 km/l"
+          "efficiency": "14.5 km/l",
+          "Power": "170 PS",
+          "Torque": "350 Nm"
         }
       }
-    ]
+    ],
+    "specs": {
+      "Engine Type": "2.0L Multijet Diesel",
+      "Displacement (cc)": "1,956",
+      "Max Engine Power": "170 PS",
+      "Max Engine Torque": "350 Nm",
+      "Transmission Type": "9AT",
+      "Drive Type": "4WD (Active Drive Low)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Off-Road Compact SUV",
+      "Note": "Verify with MAW Life whether this Trailhawk trim is currently offered as a distinct Nepal-market variant alongside the standard Compass entry, to avoid duplicate listings.",
+      "Distributor": "MAW Life (Official Jeep Nepal Distributor)",
+      "Power": "170 PS",
+      "Torque": "350 Nm",
+      "Transmission": "9AT",
+      "Seating": "5",
+      "Fuel Type": "Diesel"
+    },
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
   },
   {
-    "id": 5003,
+    "id": 172,
     "slug": "gwm-haval-h6",
     "brand": "GWM",
     "brandSlug": "gwm",
@@ -24804,13 +25912,21 @@ window.CARS_DB = [
     "budgetTier": "50L - 1Cr",
     "isEV": false,
     "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Smart Crossover SUV",
     "rating": 4.5,
     "reviews": 18,
     "expertScore": 8,
     "baseEMI": 85000,
     "overview": "GWM Haval H6 represents advanced design, top-tier safety features, and a spacious interior ideal for families.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/haval/h6/front.jpg",
+      "/assets/images/car_images/haval/h6/front-hero.jpg",
+      "/assets/images/car_images/haval/h6/rear.jpg",
+      "/assets/images/car_images/haval/h6/interior.jpg",
+      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
+    ],
     "colors": [
       {
         "name": "Hamilton White",
@@ -24836,13 +25952,25 @@ window.CARS_DB = [
         "specs": {
           "power": "201 PS",
           "torque": "320 Nm",
-          "efficiency": "12.2 km/l"
+          "efficiency": "12.2 km/l",
+          "Power": "201 PS",
+          "Torque": "320 Nm"
         }
       }
-    ]
+    ],
+    "specs": {
+      "Note": "DUPLICATE: This entry duplicates a model already researched under the 'Haval' brand (haval-jolion-2025 / haval-h6-2025), which is GWM's SUV sub-brand as officially sold in Nepal via VG Impex Pvt. Ltd. Recommend removing/merging these 'GWM'-branded duplicates to avoid split, inconsistent listings for the same real vehicle. (This is also a second, further-duplicated H6 entry alongside gwm-haval-h6-2024.)",
+      "Distributor": "VG Impex Pvt. Ltd. (Official GWM/Haval Nepal Distributor)",
+      "Fuel Type": "Petrol",
+      "Body Type": "SUV"
+    },
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/haval/h6/front.jpg"
   },
   {
-    "id": 5004,
+    "id": 173,
     "slug": "renault-kiger-turbo",
     "brand": "Renault",
     "brandSlug": "renault",
@@ -24855,13 +25983,17 @@ window.CARS_DB = [
     "budgetTier": "Under 50L",
     "isEV": false,
     "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Sporty City SUV",
     "rating": 4.3,
     "reviews": 14,
     "expertScore": 7,
     "baseEMI": 42000,
     "overview": "Renault Kiger brings smart, sporty looks along with a highly efficient turbocharged engine perfect for city commutes.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
+    ],
     "colors": [
       {
         "name": "Caspian Blue",
@@ -24887,13 +26019,37 @@ window.CARS_DB = [
         "specs": {
           "power": "100 PS",
           "torque": "152 Nm",
-          "efficiency": "18.5 km/l"
+          "efficiency": "18.5 km/l",
+          "Power": "100 PS",
+          "Torque": "152 Nm"
         }
       }
-    ]
+    ],
+    "specs": {
+      "Engine Type": "1.0L Turbo Petrol",
+      "Displacement (cc)": "999",
+      "Max Engine Power": "100 PS",
+      "Max Engine Torque": "152 Nm",
+      "Transmission Type": "MT / CVT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Compact SUV",
+      "Distributor": "Advanced Automobiles Pvt. Ltd. (Official Renault Nepal Distributor)",
+      "Note": "Renault's officially confirmed Nepal lineup (per Advanced Automobiles) lists Kwid, Triber, Duster, Captur, Lodgy — Kiger was not mentioned; confirm current Nepal availability of Kiger Turbo with the distributor. This also duplicates the separate 'Kiger' entry (renault-kiger-2025) — consider consolidating into one Kiger listing with Turbo as a variant.",
+      "Power": "100 PS",
+      "Torque": "152 Nm",
+      "Transmission": "MT / CVT",
+      "Seating": "5",
+      "Fuel Type": "Petrol"
+    },
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
   },
   {
-    "id": 5005,
+    "id": 174,
     "slug": "skoda-kushaq-ts",
     "brand": "Skoda",
     "brandSlug": "skoda",
@@ -24906,13 +26062,17 @@ window.CARS_DB = [
     "budgetTier": "50L - 1Cr",
     "isEV": false,
     "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "European Engineered SUV",
     "rating": 4.6,
     "reviews": 16,
     "expertScore": 8,
     "baseEMI": 58000,
     "overview": "Skoda Kushaq is engineered for solid stability, high-speed control, and comfortable cruising with premium fit and finish.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
+    ],
     "colors": [
       {
         "name": "Honey Orange",
@@ -24938,13 +26098,34 @@ window.CARS_DB = [
         "specs": {
           "power": "115 PS",
           "torque": "178 Nm",
-          "efficiency": "17.8 km/l"
+          "efficiency": "17.8 km/l",
+          "Power": "115 PS",
+          "Torque": "178 Nm"
         }
       }
-    ]
+    ],
+    "specs": {
+      "Engine Type": "1.0L TSI / 1.5L TSI Turbo Petrol",
+      "Displacement (cc)": "999 / 1,498",
+      "Max Engine Power": "115–150 PS",
+      "Transmission Type": "6MT / 6AT / 7-DSG",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–6",
+      "Body Type": "Compact SUV",
+      "Distributor": "MAW Enterprises Pvt. Ltd. (Official Skoda Nepal Distributor)",
+      "Power": "115–150 PS",
+      "Transmission": "6MT / 6AT / 7-DSG",
+      "Seating": "5",
+      "Fuel Type": "Petrol"
+    },
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
   },
   {
-    "id": 5006,
+    "id": 175,
     "slug": "neta-v-ev",
     "brand": "Neta",
     "brandSlug": "neta",
@@ -24957,13 +26138,17 @@ window.CARS_DB = [
     "budgetTier": "Under 50L",
     "isEV": true,
     "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
     "tagline": "Smart Urban EV",
     "rating": 4.4,
     "reviews": 19,
     "expertScore": 7,
     "baseEMI": 36000,
     "overview": "Neta V offers a compact design coupled with smart technological inclusions, making it an excellent city commuter EV.",
-    "images": [],
+    "images": [
+      "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
+    ],
     "colors": [
       {
         "name": "Sky Blue",
@@ -24989,13 +26174,25 @@ window.CARS_DB = [
         "specs": {
           "power": "95 PS",
           "torque": "150 Nm",
-          "efficiency": "380 km range"
+          "efficiency": "380 km range",
+          "Power": "95 PS",
+          "Torque": "150 Nm"
         }
       }
-    ]
+    ],
+    "specs": {
+      "Note": "DUPLICATE of 'neta-v-2024' (same Neta V model) — recommend consolidating to avoid a split listing.",
+      "Distributor": "Chaudhary Group (Official Neta/Xpeng Nepal Dealership)",
+      "Fuel Type": "Electric",
+      "Body Type": "Hatchback"
+    },
+    "pros": null,
+    "cons": null,
+    "highlights": null,
+    "thumb": "/assets/images/car_images/chery/omoda-5/interior/chery-omoda-5-interior-seats-rear.jpg"
   },
   {
-    "id": 5007,
+    "id": 176,
     "slug": "proton-emas-7-2026",
     "brand": "Proton",
     "brandSlug": "proton",
@@ -25141,7 +26338,7 @@ window.CARS_DB = [
     "thumb": "/assets/images/car_images/proton/emas 7/exterior/superbStyle-img1-1024x630.jpg"
   },
   {
-    "id": 5008,
+    "id": 177,
     "slug": "tata-tiago-ev-2026",
     "brand": "Tata",
     "brandSlug": "tata",
@@ -25270,7 +26467,7 @@ window.CARS_DB = [
     "thumb": "/assets/images/car_images/Tata/Tiago/exterior/front-grille-CRWynnAj.avif"
   },
   {
-    "id": 5009,
+    "id": 178,
     "slug": "tata-punch-ev-2026",
     "brand": "Tata",
     "brandSlug": "tata",
@@ -25395,7 +26592,7 @@ window.CARS_DB = [
     "thumb": "/assets/images/car_images/Tata/punch/exterior/Punch.ev_1228x488.avif"
   },
   {
-    "id": 5010,
+    "id": 179,
     "slug": "leapmotor-a10-2026",
     "brand": "Leapmotor",
     "brandSlug": "leapmotor",
@@ -25505,7 +26702,7 @@ window.CARS_DB = [
     "thumb": "/assets/images/car_images/leap motors/a10/exterior/download.jpeg"
   },
   {
-    "id": 5011,
+    "id": 180,
     "slug": "arcfox-t1-2026",
     "brand": "Arcfox",
     "brandSlug": "arcfox",
@@ -25614,7 +26811,7 @@ window.CARS_DB = [
     "thumb": "/assets/images/car_images/arcfox t1/exterior/part1_1-1.png"
   },
   {
-    "id": 5012,
+    "id": 181,
     "slug": "chery-q-2026",
     "brand": "Chery",
     "brandSlug": "chery",
@@ -25709,5 +26906,4984 @@ window.CARS_DB = [
       "NAIMA 2026 Launch"
     ],
     "thumb": "/assets/images/car_images/chery/qq3/exterior/2027-Cgery-QQ3-hatchback-purple-press-image-1490x790p-1.webp"
+  },
+  {
+    "id": 183,
+    "slug": "bmw-x7-2026",
+    "brand": "BMW",
+    "brandSlug": "bmw",
+    "model": "X7",
+    "year": 2026,
+    "type": "Petrol",
+    "bodyType": "suv",
+    "body": "Full-size Luxury SUV",
+    "badge": "flagship",
+    "budgetTier": "Above 2Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "BMW's 7-seat flagship SUV — 375 bhp inline-6, Sky Lounge roof, full ADAS",
+    "rating": 4.3,
+    "reviews": 38,
+    "expertScore": 8.6,
+    "baseEMI": 1189835,
+    "overview": "The BMW X7 is BMW's flagship full-size luxury SUV in Nepal, brought in by Laxmi Premium Motors in the single xDrive40i M Sport specification. Powered by a 3.0L inline-6 petrol making 375 bhp and 540 Nm, it seats up to 7 across three rows and pairs a Sky Lounge panoramic roof with a 14.9-inch BMW Curved Display. At around Rs 7 crore it sits at the very top of Nepal's SUV market and reportedly sold out within a week of its local launch.",
+    "images": [
+      "/assets/images/car_images/bmw/x7/bmw-color_1.jpg",
+      "/assets/images/car_images/bmw/x7/bmw-color_2.jpg",
+      "/assets/images/car_images/bmw/x7/bmw-color_3.jpg",
+      "/assets/images/car_images/bmw/x7/exterior.jpg",
+      "/assets/images/car_images/bmw/x7/exterior1.jpg",
+      "/assets/images/car_images/bmw/x7/exterior2.jpg",
+      "/assets/images/car_images/bmw/x7/exterior3.jpg",
+      "/assets/images/car_images/bmw/x7/interior.jpg",
+      "/assets/images/car_images/bmw/x7/seat.jpg"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "xDrive40i M Sport (3.0L Inline-6 Petrol)",
+        "price": 70000000,
+        "label": "Rs. 7.00 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "3.0L Inline-6 Turbo Petrol (375 bhp)",
+          "8-Speed Steptronic Sport AT",
+          "xDrive Intelligent AWD",
+          "Sky Lounge Panoramic Roof",
+          "5-Zone Climate Control",
+          "BMW Curved Display (14.9in + 12.3in)"
+        ],
+        "specs": {
+          "power": "375 bhp @ 5,200–6,250 rpm",
+          "torque": "540 Nm @ 1,850–5,000 rpm",
+          "efficiency": "9 km/l (Nepal estimate)",
+          "transmission": "8-Speed Steptronic Sport AT",
+          "Power": "375 bhp @ 5,200–6,250 rpm",
+          "Torque": "540 Nm @ 1,850–5,000 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "3.0L Inline-6 Turbo Petrol",
+      "Displacement (cc)": "2,998",
+      "Max Engine Power": "375 bhp @ 5,200–6,250 rpm",
+      "Max Engine Torque": "540 Nm @ 1,850–5,000 rpm",
+      "Transmission Type": "8-Speed Steptronic Sport AT",
+      "Drive Type": "xDrive AWD",
+      "Seating Capacity": "7 (optional 6-seat layout)",
+      "Total Airbag Count": "8",
+      "Body Type": "Full-size Luxury SUV",
+      "Distributor": "Laxmi Premium Motors (Official BMW Nepal Distributor)",
+      "Power": "375 bhp",
+      "Torque": "540 Nm",
+      "Transmission": "8-Speed AT",
+      "Seating": "7",
+      "Fuel Type": "Petrol"
+    },
+    "pros": [
+      "Only true 7-seat full-size luxury SUV BMW sells in Nepal",
+      "540 Nm inline-6 delivers 0-100 km/h in 5.8 seconds",
+      "Sky Lounge panoramic roof with over 15,000 light patterns",
+      "Full ADAS suite with 8 airbags and 5-star Euro NCAP rating"
+    ],
+    "cons": [
+      "Single xDrive40i M Sport variant only — no diesel or long-wheelbase choice",
+      "At roughly Rs 7 crore, among the most expensive SUVs sold in Nepal",
+      "Very limited allocation — reportedly sold out within a week of launch"
+    ],
+    "highlights": [
+      "Sky Lounge Panoramic Roof",
+      "540 Nm Inline-6 Petrol",
+      "xDrive Intelligent AWD",
+      "14.9-inch BMW Curved Display",
+      "7-Seat Flagship Configuration"
+    ],
+    "thumb": "/assets/images/car_images/bmw/x7/bmw-color_1.jpg"
+  },
+  {
+    "id": 184,
+    "slug": "bmw-ix1-2026",
+    "brand": "BMW",
+    "brandSlug": "bmw",
+    "model": "iX1",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Compact Electric SUV",
+    "badge": "electric",
+    "budgetTier": "Above 3Cr",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Entry BMW electric SAV — 430–475 km range, 130 kW fast charging",
+    "rating": 4.1,
+    "reviews": 42,
+    "expertScore": 8.2,
+    "baseEMI": 561000,
+    "overview": "The BMW iX1 is Laxmi Premium Motors' entry-level all-electric SAV in Nepal, offered in a single eDrive20 specification with a 66.5 kWh battery good for a 430–475 km WLTP range and 130 kW DC fast charging. Nepal's revised FY2026/27 budget, which now taxes EVs on CIF value rather than motor power, pushed the iX1's price up sharply — from its 2024 launch figure of roughly Rs 1.50 crore to about Rs 3.30 crore by mid-2026. It remains BMW Nepal's most accessible electric model, with the BMW Curved Display and Harman Kardon audio standard.",
+    "images": [
+      "/assets/images/car_images/bmw/ix1/color_1.jpg",
+      "/assets/images/car_images/bmw/ix1/ext1.jpg",
+      "/assets/images/car_images/bmw/ix1/ext2.jpg",
+      "/assets/images/car_images/bmw/ix1/ext3.jpg",
+      "/assets/images/car_images/bmw/ix1/hero.jpg",
+      "/assets/images/car_images/bmw/ix1/int1.jpg",
+      "/assets/images/car_images/bmw/ix1/int2.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Alpine White",
+        "hex": "#F5F5F2"
+      },
+      {
+        "name": "Black Sapphire Metallic",
+        "hex": "#14151A"
+      },
+      {
+        "name": "Mineral White Metallic",
+        "hex": "#EFEDE7"
+      },
+      {
+        "name": "M Portimao Blue Metallic",
+        "hex": "#1C3B63"
+      },
+      {
+        "name": "Frozen Pure Grey Metallic",
+        "hex": "#9C9B93"
+      },
+      {
+        "name": "Cape York Green Metallic",
+        "hex": "#57624B"
+      },
+      {
+        "name": "Space Silver Metallic",
+        "hex": "#C6C6C4"
+      }
+    ],
+    "variants": [
+      {
+        "name": "eDrive20",
+        "price": 32996000,
+        "label": "Rs. 3.30 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "66.5 kWh Battery",
+          "430–475 km WLTP Range",
+          "150 kW (204 PS) Motor",
+          "130 kW DC Fast Charging",
+          "BMW Curved Display",
+          "Harman Kardon 12-Speaker Audio"
+        ],
+        "specs": {
+          "power": "204 PS (150 kW)",
+          "torque": "250 Nm",
+          "efficiency": "430–475 km range (WLTP)",
+          "transmission": "Single-Speed Auto",
+          "Power": "204 PS (150 kW)",
+          "Torque": "250 Nm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Single Electric Motor (eDrive20)",
+      "Displacement (cc)": "N/A (Electric)",
+      "Max Engine Power": "204 PS (150 kW)",
+      "Max Engine Torque": "250 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Compact Electric SUV",
+      "Distributor": "Laxmi Premium Motors (Official BMW Nepal Distributor)",
+      "Power": "204 PS",
+      "Torque": "250 Nm",
+      "Transmission": "Single-Speed Auto",
+      "Seating": "5",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "430–475 km WLTP range covers most Nepal road trips",
+      "130 kW DC fast charging support",
+      "BMW Curved Display and Harman Kardon audio standard",
+      "Widest color palette of BMW's Nepal EV lineup"
+    ],
+    "cons": [
+      "Price jumped roughly Rs 1.4–1.8 Cr in mid-2026 after Nepal's revised EV tax structure",
+      "Single eDrive20 variant only — no dual-motor xDrive option offered",
+      "170 km/h top speed lower than ICE BMW SUVs"
+    ],
+    "highlights": [
+      "66.5 kWh Battery, 430–475 km Range",
+      "150 kW / 204 PS Motor",
+      "BMW Curved Display",
+      "Harman Kardon 12-Speaker Audio"
+    ],
+    "thumb": "/assets/images/car_images/bmw/ix1/color_1.jpg"
+  },
+  {
+    "id": 185,
+    "slug": "bmw-ix2-2026",
+    "brand": "BMW",
+    "brandSlug": "bmw",
+    "model": "iX2",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "crossover",
+    "body": "Electric Coupe-Crossover",
+    "badge": "electric",
+    "budgetTier": "Above 1Cr",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Coupe-styled electric crossover — M Sport standard, 430–475 km range",
+    "rating": 4.2,
+    "reviews": 55,
+    "expertScore": 8.4,
+    "baseEMI": 306000,
+    "overview": "The BMW iX2 eDrive20 is BMW's coupe-styled electric crossover in Nepal, launched by Laxmi Premium Motors at Rs 1.7996 crore. It shares its 66.5 kWh battery, 204 PS motor, and 430–475 km WLTP range with the iX1 but wraps them in a sportier coupe-SUV silhouette with the M Sport package standard, Vernasca Mocha leather, and a panoramic glass roof. It is currently offered only in Brooklyn Grey.",
+    "images": [
+      "/assets/images/car_images/bmw/ix2/sideview.png",
+      "/assets/images/car_images/bmw/ix2/vehicle1.png"
+    ],
+    "colors": [
+      {
+        "name": "Brooklyn Grey",
+        "hex": "#6E6D68"
+      }
+    ],
+    "variants": [
+      {
+        "name": "eDrive20 M Sport",
+        "price": 17996000,
+        "label": "Rs. 1.80 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "66.5 kWh Battery",
+          "430–475 km WLTP Range",
+          "150 kW (204 PS) Motor",
+          "M Sport Package Standard",
+          "Vernasca Mocha Leather",
+          "Panoramic Glass Roof",
+          "Harman Kardon HiFi (12 speakers)"
+        ],
+        "specs": {
+          "power": "204 PS (150 kW)",
+          "torque": "250 Nm",
+          "efficiency": "430–475 km range (WLTP)",
+          "transmission": "Single-Speed Auto",
+          "Power": "204 PS (150 kW)",
+          "Torque": "250 Nm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Single Electric Motor (eDrive20)",
+      "Displacement (cc)": "N/A (Electric)",
+      "Max Engine Power": "204 PS (150 kW)",
+      "Max Engine Torque": "250 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Electric Coupe-Crossover",
+      "Distributor": "Laxmi Premium Motors (Official BMW Nepal Distributor)",
+      "Power": "204 PS",
+      "Torque": "250 Nm",
+      "Transmission": "Single-Speed Auto",
+      "Seating": "5",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Coupe-SUV styling with M Sport package as standard",
+      "Same 430–475 km range and fast charging as the iX1 at a lower price",
+      "Vernasca Mocha leather and panoramic glass roof standard",
+      "204 PS motor with 8.6s 0-100 km/h"
+    ],
+    "cons": [
+      "Only one color (Brooklyn Grey) currently offered",
+      "Single eDrive20 variant — no performance dual-motor version",
+      "Coupe roofline trims rear headroom versus the iX1"
+    ],
+    "highlights": [
+      "M Sport Package Standard",
+      "430–475 km WLTP Range",
+      "Harman Kardon HiFi",
+      "BMW Live Cockpit Professional"
+    ],
+    "thumb": "/assets/images/car_images/bmw/ix2/sideview.png"
+  },
+  {
+    "id": 186,
+    "slug": "skoda-kylaq-2026",
+    "brand": "Skoda",
+    "brandSlug": "skoda",
+    "model": "Kylaq",
+    "year": 2026,
+    "type": "Petrol",
+    "bodyType": "suv",
+    "body": "Compact SUV",
+    "badge": "value",
+    "budgetTier": "Under 50L",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Skoda's compact SUV comeback — 1.0 TSI turbo-petrol, 11 trims, 189mm clearance",
+    "rating": 4.3,
+    "reviews": 210,
+    "expertScore": 8.6,
+    "baseEMI": 78000,
+    "overview": "The Skoda Kylaq marks Skoda's return to the compact SUV segment in Nepal, launched by its official distributor MAW Group with prices spanning roughly Rs 45.90 lakh to Rs 70.90 lakh across 11 trim and transmission combinations from Classic to Prestige Plus. It runs a 999cc 3-cylinder TSI turbo-petrol making 114 bhp and 178 Nm, offered with 6-speed manual or automatic transmissions, and rides on a generous 189mm ground clearance suited to Nepal's roads.",
+    "images": [
+      "/assets/images/car_images/skoda/kylaq/kylaq-1.webp",
+      "/assets/images/car_images/skoda/kylaq/kylaq-2.webp",
+      "/assets/images/car_images/skoda/kylaq/kylaq-3.webp",
+      "/assets/images/car_images/skoda/kylaq/kylaq-4.webp"
+    ],
+    "colors": [
+      {
+        "name": "Arctic White",
+        "hex": "#F4F4F0"
+      },
+      {
+        "name": "Carbon Steel Grey",
+        "hex": "#4B4C4E"
+      },
+      {
+        "name": "Brilliant Silver",
+        "hex": "#C9C9C7"
+      },
+      {
+        "name": "Candy White",
+        "hex": "#FFFFFE"
+      },
+      {
+        "name": "Volcano Red",
+        "hex": "#AE1220"
+      },
+      {
+        "name": "Crystal Black",
+        "hex": "#0B0B0B"
+      }
+    ],
+    "variants": [
+      {
+        "name": "1.0 TSI Classic MT",
+        "price": 4590000,
+        "label": "Rs. 45.90 Lakh",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Manual",
+          "Dual Front Airbags"
+        ],
+        "specs": {
+          "power": "114 bhp",
+          "torque": "178 Nm",
+          "transmission": "6-Speed Manual",
+          "Power": "114 bhp",
+          "Torque": "178 Nm"
+        }
+      },
+      {
+        "name": "1.0 TSI Classic Plus MT",
+        "price": 4990000,
+        "label": "Rs. 49.90 Lakh",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Manual",
+          "Touchscreen Infotainment"
+        ],
+        "specs": {
+          "power": "114 bhp",
+          "torque": "178 Nm",
+          "transmission": "6-Speed Manual",
+          "Power": "114 bhp",
+          "Torque": "178 Nm"
+        }
+      },
+      {
+        "name": "1.0 TSI Classic Plus AT",
+        "price": 5290000,
+        "label": "Rs. 52.90 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Automatic",
+          "Touchscreen Infotainment"
+        ],
+        "specs": {
+          "power": "114 bhp",
+          "torque": "178 Nm",
+          "transmission": "6-Speed Automatic",
+          "Power": "114 bhp",
+          "Torque": "178 Nm"
+        }
+      },
+      {
+        "name": "1.0 TSI Signature MT",
+        "price": 5590000,
+        "label": "Rs. 55.90 Lakh",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Manual",
+          "Rear AC Vents"
+        ],
+        "specs": {
+          "power": "114 bhp",
+          "torque": "178 Nm",
+          "transmission": "6-Speed Manual",
+          "Power": "114 bhp",
+          "Torque": "178 Nm"
+        }
+      },
+      {
+        "name": "1.0 TSI Signature AT",
+        "price": 6090000,
+        "label": "Rs. 60.90 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Automatic",
+          "Rear AC Vents"
+        ],
+        "specs": {
+          "power": "114 bhp",
+          "torque": "178 Nm",
+          "transmission": "6-Speed Automatic",
+          "Power": "114 bhp",
+          "Torque": "178 Nm"
+        }
+      },
+      {
+        "name": "1.0 TSI Signature Plus MT",
+        "price": 5990000,
+        "label": "Rs. 59.90 Lakh",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Manual",
+          "Ventilated Front Seats"
+        ],
+        "specs": {
+          "power": "114 bhp",
+          "torque": "178 Nm",
+          "transmission": "6-Speed Manual",
+          "Power": "114 bhp",
+          "Torque": "178 Nm"
+        }
+      },
+      {
+        "name": "1.0 TSI Signature Plus AT",
+        "price": 6490000,
+        "label": "Rs. 64.90 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Automatic",
+          "Ventilated Front Seats"
+        ],
+        "specs": {
+          "power": "114 bhp",
+          "torque": "178 Nm",
+          "transmission": "6-Speed Automatic",
+          "Power": "114 bhp",
+          "Torque": "178 Nm"
+        }
+      },
+      {
+        "name": "1.0 TSI Prestige MT",
+        "price": 6490000,
+        "label": "Rs. 64.90 Lakh",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Manual",
+          "Sunroof"
+        ],
+        "specs": {
+          "power": "114 bhp",
+          "torque": "178 Nm",
+          "transmission": "6-Speed Manual",
+          "Power": "114 bhp",
+          "Torque": "178 Nm"
+        }
+      },
+      {
+        "name": "1.0 TSI Prestige AT",
+        "price": 6990000,
+        "label": "Rs. 69.90 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Automatic",
+          "Sunroof"
+        ],
+        "specs": {
+          "power": "114 bhp",
+          "torque": "178 Nm",
+          "transmission": "6-Speed Automatic",
+          "Power": "114 bhp",
+          "Torque": "178 Nm"
+        }
+      },
+      {
+        "name": "1.0 TSI Prestige Plus MT",
+        "price": 6590000,
+        "label": "Rs. 65.90 Lakh",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Manual",
+          "Sunroof",
+          "Full Feature Set"
+        ],
+        "specs": {
+          "power": "114 bhp",
+          "torque": "178 Nm",
+          "transmission": "6-Speed Manual",
+          "Power": "114 bhp",
+          "Torque": "178 Nm"
+        }
+      },
+      {
+        "name": "1.0 TSI Prestige Plus AT",
+        "price": 7090000,
+        "label": "Rs. 70.90 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Automatic",
+          "Sunroof",
+          "Full Feature Set"
+        ],
+        "specs": {
+          "power": "114 bhp",
+          "torque": "178 Nm",
+          "transmission": "6-Speed Automatic",
+          "Power": "114 bhp",
+          "Torque": "178 Nm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "1.0L 3-Cylinder TSI Turbo Petrol",
+      "Displacement (cc)": "999",
+      "Max Engine Power": "114 bhp",
+      "Max Engine Torque": "178 Nm",
+      "Transmission Type": "6-Speed MT / 6-Speed AT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "2–6 (varies by trim)",
+      "Body Type": "Compact SUV",
+      "Distributor": "MAW Group (Official Skoda Nepal Distributor)",
+      "Power": "114 bhp",
+      "Torque": "178 Nm",
+      "Transmission": "6MT / 6AT",
+      "Seating": "5",
+      "Fuel Type": "Petrol"
+    },
+    "pros": [
+      "Widest engine/trim spread in its class — 11 configurations from Classic to Prestige Plus",
+      "1.0L TSI turbo-petrol's 178 Nm feels strong for a compact SUV",
+      "6-speed automatic available from the Classic Plus trim upward",
+      "189mm ground clearance suits Nepal's roads"
+    ],
+    "cons": [
+      "Only one engine/transmission family (999cc TSI) — no diesel or hybrid option",
+      "Entry Classic MT trim likely light on features/airbags",
+      "Pricing between adjacent Signature and Prestige trims is closely bunched"
+    ],
+    "highlights": [
+      "1.0L TSI Turbo Petrol",
+      "178 Nm Torque",
+      "189mm Ground Clearance",
+      "6MT/6AT Across the Range"
+    ],
+    "thumb": "/assets/images/car_images/skoda/kylaq/kylaq-1.webp"
+  },
+  {
+    "id": 187,
+    "slug": "skoda-slavia-2026",
+    "brand": "Skoda",
+    "brandSlug": "skoda",
+    "model": "Slavia",
+    "year": 2026,
+    "type": "Petrol",
+    "bodyType": "sedan",
+    "body": "Mid-size Sedan",
+    "badge": "family",
+    "budgetTier": "Under 50L",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Premium mid-size sedan — 1.0 TSI turbo-petrol, 179mm clearance, 5-star NCAP",
+    "rating": 4.4,
+    "reviews": 260,
+    "expertScore": 8.8,
+    "baseEMI": 84900,
+    "overview": "The Skoda Slavia is MAW Expanze's premium mid-size sedan in Nepal, priced from roughly Rs 49.90 lakh (Active manual) to Rs 75.90 lakh (Style automatic) across five trim and transmission variants. It uses a 1.0L TSI 3-cylinder turbo-petrol producing 115 PS and 178 Nm through a 6-speed manual or torque-converter automatic, and Skoda positions it as the tallest, widest, and longest sedan in its class, with a segment-leading 179mm ground clearance and a 5-star Global NCAP safety rating.",
+    "images": [
+      "/assets/images/car_images/skoda/slavia/slavia-1.webp",
+      "/assets/images/car_images/skoda/slavia/slavia-2.webp",
+      "/assets/images/car_images/skoda/slavia/slavia-3.webp",
+      "/assets/images/car_images/skoda/slavia/slavia-4.webp"
+    ],
+    "colors": [
+      {
+        "name": "Crystal Blue",
+        "hex": "#1F3B57"
+      },
+      {
+        "name": "Tornado Red",
+        "hex": "#C1121F"
+      },
+      {
+        "name": "Brillant Silver",
+        "hex": "#C9C9C7"
+      },
+      {
+        "name": "Candy White",
+        "hex": "#FFFFFE"
+      },
+      {
+        "name": "Carbon Steel",
+        "hex": "#4B4C4E"
+      }
+    ],
+    "variants": [
+      {
+        "name": "1.0 TSI Active MT",
+        "price": 4990000,
+        "label": "Rs. 49.90 Lakh",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Manual",
+          "6 Airbags",
+          "LED Lighting"
+        ],
+        "specs": {
+          "power": "115 PS @ 5,000–5,500 rpm",
+          "torque": "178 Nm @ 1,750–4,500 rpm",
+          "efficiency": "17 km/l",
+          "transmission": "6-Speed Manual",
+          "Power": "115 PS @ 5,000–5,500 rpm",
+          "Torque": "178 Nm @ 1,750–4,500 rpm"
+        }
+      },
+      {
+        "name": "1.0 TSI Ambition MT",
+        "price": 5890000,
+        "label": "Rs. 58.90 Lakh",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Manual",
+          "10-inch Touchscreen",
+          "Electric Sunroof"
+        ],
+        "specs": {
+          "power": "115 PS @ 5,000–5,500 rpm",
+          "torque": "178 Nm @ 1,750–4,500 rpm",
+          "efficiency": "17 km/l",
+          "transmission": "6-Speed Manual",
+          "Power": "115 PS @ 5,000–5,500 rpm",
+          "Torque": "178 Nm @ 1,750–4,500 rpm"
+        }
+      },
+      {
+        "name": "1.0 TSI Ambition AT",
+        "price": 6590000,
+        "label": "Rs. 65.90 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Automatic",
+          "10-inch Touchscreen",
+          "Electric Sunroof"
+        ],
+        "specs": {
+          "power": "115 PS @ 5,000–5,500 rpm",
+          "torque": "178 Nm @ 1,750–4,500 rpm",
+          "efficiency": "17 km/l",
+          "transmission": "6-Speed Automatic",
+          "Power": "115 PS @ 5,000–5,500 rpm",
+          "Torque": "178 Nm @ 1,750–4,500 rpm"
+        }
+      },
+      {
+        "name": "1.0 TSI Style MT",
+        "price": 6790000,
+        "label": "Rs. 67.90 Lakh",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Manual",
+          "8-inch Digital Cockpit",
+          "Cruise Control"
+        ],
+        "specs": {
+          "power": "115 PS @ 5,000–5,500 rpm",
+          "torque": "178 Nm @ 1,750–4,500 rpm",
+          "efficiency": "17 km/l",
+          "transmission": "6-Speed Manual",
+          "Power": "115 PS @ 5,000–5,500 rpm",
+          "Torque": "178 Nm @ 1,750–4,500 rpm"
+        }
+      },
+      {
+        "name": "1.0 TSI Style AT",
+        "price": 7590000,
+        "label": "Rs. 75.90 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "999cc TSI Turbo Petrol",
+          "6-Speed Automatic",
+          "8-inch Digital Cockpit",
+          "Cruise Control"
+        ],
+        "specs": {
+          "power": "115 PS @ 5,000–5,500 rpm",
+          "torque": "178 Nm @ 1,750–4,500 rpm",
+          "efficiency": "17 km/l",
+          "transmission": "6-Speed Automatic",
+          "Power": "115 PS @ 5,000–5,500 rpm",
+          "Torque": "178 Nm @ 1,750–4,500 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "1.0L 3-Cylinder TSI Turbo Petrol",
+      "Displacement (cc)": "999",
+      "Max Engine Power": "115 PS @ 5,000–5,500 rpm",
+      "Max Engine Torque": "178 Nm @ 1,750–4,500 rpm",
+      "Transmission Type": "6-Speed MT / 6-Speed AT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Mid-size Sedan",
+      "Distributor": "MAW Expanze (Official Skoda Nepal Distributor)",
+      "Power": "115 PS",
+      "Torque": "178 Nm",
+      "Transmission": "6MT / 6AT",
+      "Seating": "5",
+      "Fuel Type": "Petrol"
+    },
+    "pros": [
+      "Segment-leading 179mm ground clearance and cabin space",
+      "5-star Global NCAP safety rating",
+      "10-inch touchscreen with wireless Android Auto/Apple CarPlay",
+      "Skoda calls it the tallest, widest, longest sedan in its class"
+    ],
+    "cons": [
+      "Only one engine option (1.0L 3-cylinder) — no larger petrol or diesel choice",
+      "Base Active trim is manual-only, limiting budget automatic buyers",
+      "Style AT sits roughly Rs 26 lakh above the Active MT base price"
+    ],
+    "highlights": [
+      "179mm Ground Clearance",
+      "115 PS 1.0 TSI Engine",
+      "10-inch Touchscreen",
+      "5-Star Global NCAP Rating"
+    ],
+    "thumb": "/assets/images/car_images/skoda/slavia/slavia-1.webp"
+  },
+  {
+    "id": 188,
+    "slug": "ford-ranger-3-2-xlt-2026",
+    "brand": "Ford",
+    "brandSlug": "ford",
+    "model": "Ranger 3.2L XLT",
+    "year": 2026,
+    "type": "Diesel",
+    "bodyType": "pickup",
+    "body": "Mid-size Pickup Truck",
+    "badge": "established",
+    "budgetTier": "Above 1.3Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Nepal's proven diesel workhorse — 3.2L TDCi power with genuine low-range 4WD",
+    "rating": 3.9,
+    "reviews": 45,
+    "expertScore": 7.8,
+    "baseEMI": 84000,
+    "overview": "The Ford Ranger 3.2L XLT A/T is Go Automobiles' long-running diesel pickup, sold in Nepal alongside the newer Next-Gen Ranger as a distinct, separately-priced model. Its 3.2L TDCi five-cylinder diesel produces 197 PS and 470 Nm, mated to a 6-speed automatic and genuine part-time 4WD with 800mm water wading depth. It remains a familiar, proven choice for Nepal's commercial and lifestyle pickup buyers who prioritize simplicity and torque over the latest cabin tech.",
+    "images": [
+      "/assets/images/car_images/ford/ranger-3-2-xlt/ranger-vehicle.png",
+      "/assets/images/car_images/ford/ranger-3-2-xlt/ranger-model.jpeg",
+      "/assets/images/car_images/ford/ranger-3-2-xlt/ranger-1.png",
+      "/assets/images/car_images/ford/ranger-3-2-xlt/ranger-2.png",
+      "/assets/images/car_images/ford/ranger-3-2-xlt/ranger-3.png"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "XLT A/T (3.2L Diesel)",
+        "price": 13990000,
+        "label": "Rs. 1.40 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "3.2L TDCi Diesel (197 PS)",
+          "6-Speed Automatic",
+          "4WD with Low Range",
+          "800mm Water Wading",
+          "6 Airbags",
+          "SYNC 3 Infotainment"
+        ],
+        "specs": {
+          "power": "197 PS @ 3,000 rpm",
+          "torque": "470 Nm @ 1,750–2,000 rpm",
+          "efficiency": "7 km/l",
+          "transmission": "6-Speed Automatic",
+          "Power": "197 PS @ 3,000 rpm",
+          "Torque": "470 Nm @ 1,750–2,000 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "3.2L TDCi Duratorq Diesel",
+      "Displacement (cc)": "3,198",
+      "Max Engine Power": "197 PS @ 3,000 rpm",
+      "Max Engine Torque": "470 Nm @ 1,750–2,000 rpm",
+      "Transmission Type": "6-Speed Automatic",
+      "Drive Type": "4WD (Part-time, Low Range)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Mid-size Pickup Truck",
+      "Distributor": "Go Automobiles (Official Ford Nepal Distributor)",
+      "Power": "197 PS @ 3,000 rpm",
+      "Torque": "470 Nm @ 1,750–2,000 rpm",
+      "Transmission": "6-Speed Automatic",
+      "Seating": "5",
+      "Fuel Type": "Diesel"
+    },
+    "pros": [
+      "197 PS/470 Nm 3.2L Duratorq diesel proven over years of real-world Nepal use",
+      "800mm water wading depth handles monsoon river crossings",
+      "Genuine part-time 4WD with low range for hill and off-road work"
+    ],
+    "cons": [
+      "Older-generation cabin tech vs the Next-Gen Ranger's 12-inch SYNC4 setup",
+      "Only one trim (XLT A/T) currently listed — limited configuration choice",
+      "7 km/l claimed mileage is thirsty for a family/commercial pickup"
+    ],
+    "highlights": [
+      "3.2L TDCi Diesel (197 PS/470 Nm)",
+      "800mm Water Wading",
+      "Proven Part-time 4WD"
+    ],
+    "thumb": "/assets/images/car_images/ford/ranger-3-2-xlt/ranger-vehicle.png"
+  },
+  {
+    "id": 189,
+    "slug": "jeep-wrangler-2026",
+    "brand": "Jeep",
+    "brandSlug": "jeep",
+    "model": "Wrangler",
+    "year": 2026,
+    "type": "Petrol",
+    "bodyType": "suv",
+    "body": "Off-Road SUV",
+    "badge": "iconic",
+    "budgetTier": "Above 2.7Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "The benchmark off-roader in Nepal — removable doors, Rock-Trac 4WD, legendary capability",
+    "rating": 4.6,
+    "reviews": 85,
+    "expertScore": 9.2,
+    "baseEMI": 173000,
+    "overview": "The Jeep Wrangler is the benchmark off-road SUV in Nepal, sold by Premium Auto Group in 2-door Rubicon and 4-door Unlimited Sahara/Rubicon body styles. All variants share a 2.0L turbo-petrol four making 268 bhp and 400 Nm, paired with an 8-speed ZF automatic and Rock-Trac 4WD with Tru-Lok locking differentials. Removable doors, a fold-down windshield, and a full-frame ladder chassis keep its open-air, go-anywhere character intact.",
+    "images": [
+      "/assets/images/car_images/jeep/wrangler/wrangler-rubicon-grey.jpg",
+      "/assets/images/car_images/jeep/wrangler/wrangler-black.jpg",
+      "/assets/images/car_images/jeep/wrangler/wrangler-refresh-exterior.png"
+    ],
+    "colors": [
+      {
+        "name": "Bright White",
+        "hex": "#F5F5F5"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Unlimited Sahara",
+        "price": 28800000,
+        "label": "Rs. 2.88 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "2.0L Turbo Petrol (268 bhp)",
+          "8-Speed ZF Automatic",
+          "Rock-Trac 4WD",
+          "4-Door Unlimited Body",
+          "Full-Length Sunrider Soft Top",
+          "Apple CarPlay/Android Auto"
+        ],
+        "specs": {
+          "power": "268 bhp @ 5,250 rpm",
+          "torque": "400 Nm @ 3,000 rpm",
+          "efficiency": "8 km/l",
+          "transmission": "8-Speed Automatic",
+          "Power": "268 bhp @ 5,250 rpm",
+          "Torque": "400 Nm @ 3,000 rpm"
+        }
+      },
+      {
+        "name": "Rubicon (2-Door)",
+        "price": 28900000,
+        "label": "Rs. 2.89 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "Tru-Lok Locking Differentials",
+          "Electronic Sway Bar Disconnect",
+          "255/75R17 Off-Road Tires",
+          "2-Door Body",
+          "Removable Doors & Roof"
+        ],
+        "specs": {
+          "power": "268 bhp @ 5,250 rpm",
+          "torque": "400 Nm @ 3,000 rpm",
+          "efficiency": "8 km/l",
+          "transmission": "8-Speed Automatic",
+          "Power": "268 bhp @ 5,250 rpm",
+          "Torque": "400 Nm @ 3,000 rpm"
+        }
+      },
+      {
+        "name": "Unlimited Rubicon",
+        "price": 35000000,
+        "label": "Rs. 3.50 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "4-Door Unlimited Body",
+          "Tru-Lok Locking Differentials",
+          "Dana 44 Heavy-Duty Axles",
+          "Electronic Sway Bar Disconnect",
+          "Rock-Trac 4WD"
+        ],
+        "specs": {
+          "power": "268 bhp @ 5,250 rpm",
+          "torque": "400 Nm @ 3,000 rpm",
+          "efficiency": "8 km/l",
+          "transmission": "8-Speed Automatic",
+          "Power": "268 bhp @ 5,250 rpm",
+          "Torque": "400 Nm @ 3,000 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "2.0L GDI Turbo Petrol",
+      "Displacement (cc)": "1,995",
+      "Max Engine Power": "268 bhp (272 PS) @ 5,250 rpm",
+      "Max Engine Torque": "400 Nm @ 3,000 rpm",
+      "Transmission Type": "8-Speed Automatic (ZF)",
+      "Drive Type": "4WD (Rock-Trac, part-time)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Off-Road SUV",
+      "Distributor": "Premium Auto Group (Official Jeep Nepal Distributor)",
+      "Power": "268 bhp @ 5,250 rpm",
+      "Torque": "400 Nm @ 3,000 rpm",
+      "Transmission": "8-Speed Automatic",
+      "Seating": "5",
+      "Fuel Type": "Petrol"
+    },
+    "pros": [
+      "268 bhp/400 Nm 2.0L turbo with genuine Rock-Trac 4WD and Tru-Lok lockers",
+      "Removable doors and fold-down windshield for open-air Nepal touring",
+      "Strong resale value and dedicated enthusiast community"
+    ],
+    "cons": [
+      "Starts near Rs 2.88 Cr — among the priciest 5-seat SUVs sold in Nepal",
+      "Boxy shape and 255/75R17 tires mean higher NVH on highway",
+      "Only a petrol engine is offered locally — no diesel option"
+    ],
+    "highlights": [
+      "Rock-Trac 4WD w/ Tru-Lok Diffs",
+      "Removable Doors & Roof",
+      "8-Speed ZF Automatic",
+      "255/75R17 Off-Road Tires"
+    ],
+    "thumb": "/assets/images/car_images/jeep/wrangler/wrangler-rubicon-grey.jpg"
+  },
+  {
+    "id": 190,
+    "slug": "jeep-grand-cherokee-2026",
+    "brand": "Jeep",
+    "brandSlug": "jeep",
+    "model": "Grand Cherokee",
+    "year": 2026,
+    "type": "Petrol",
+    "bodyType": "suv",
+    "body": "Full-Size Luxury SUV",
+    "badge": "premium",
+    "budgetTier": "Above 2Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Premium large SUV — 268 bhp turbo four, Quadra-Trac 4WD, genuine off-road luxury",
+    "rating": 4.3,
+    "reviews": 40,
+    "expertScore": 8.6,
+    "baseEMI": 143000,
+    "overview": "The Jeep Grand Cherokee is Premium Auto Group's flagship large SUV in Nepal, offered in Limited and Summit Reserve trims. Both use a 2.0L turbo-petrol four-cylinder rated at 268 bhp (272 PS) and 400 Nm, sent through an 8-speed automatic to Quadra-Trac I (Limited) or Quadra-Trac II (Summit Reserve) 4WD systems. It positions itself as a genuinely luxurious, off-road-capable alternative to Nepal's mainstream premium SUVs.",
+    "images": [
+      "/assets/images/car_images/jeep/grand-cherokee/gc-bright-white.jpg",
+      "/assets/images/car_images/jeep/grand-cherokee/gc-menu.webp"
+    ],
+    "colors": [
+      {
+        "name": "Bright White",
+        "hex": "#F5F5F5"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Limited",
+        "price": 23800000,
+        "label": "Rs. 2.38 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "18-inch Alloy Wheels",
+          "Bi-Xenon HID Headlights",
+          "Uconnect 4 with 7-inch Display",
+          "Leather-Trimmed Heated Seats",
+          "Quadra-Trac I 4WD"
+        ],
+        "specs": {
+          "power": "268 bhp @ 5,200 rpm",
+          "torque": "400 Nm @ 3,000 rpm",
+          "efficiency": "9 km/l",
+          "transmission": "8-Speed Automatic",
+          "Power": "268 bhp @ 5,200 rpm",
+          "Torque": "400 Nm @ 3,000 rpm"
+        }
+      },
+      {
+        "name": "Summit Reserve",
+        "price": 26500000,
+        "label": "Rs. 2.65 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "Quadra-Trac II 4WD",
+          "Premium Nappa Leather Seats",
+          "Panoramic Sunroof",
+          "Premium Audio System",
+          "Limited features+"
+        ],
+        "specs": {
+          "power": "268 bhp @ 5,200 rpm",
+          "torque": "400 Nm @ 3,000 rpm",
+          "efficiency": "9 km/l",
+          "transmission": "8-Speed Automatic",
+          "Power": "268 bhp @ 5,200 rpm",
+          "Torque": "400 Nm @ 3,000 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "2.0L Turbo Petrol (Hurricane I4)",
+      "Displacement (cc)": "1,995",
+      "Max Engine Power": "268 bhp (272 PS) @ 5,200 rpm",
+      "Max Engine Torque": "400 Nm @ 3,000 rpm",
+      "Transmission Type": "8-Speed Automatic (8HP50)",
+      "Drive Type": "4WD (Quadra-Trac I / Quadra-Trac II)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Full-Size Luxury SUV",
+      "Distributor": "Premium Auto Group (Official Jeep Nepal Distributor)",
+      "Power": "268 bhp @ 5,200 rpm",
+      "Torque": "400 Nm @ 3,000 rpm",
+      "Transmission": "8-Speed Automatic",
+      "Seating": "5",
+      "Fuel Type": "Petrol"
+    },
+    "pros": [
+      "268 bhp/400 Nm turbo-four with Quadra-Trac/Quadra-Drive 4WD systems",
+      "Bi-Xenon HID headlights and leather-trimmed heated seats standard on Limited",
+      "Summit Reserve adds Quadra-Trac II for serious off-road capability"
+    ],
+    "cons": [
+      "No V8 or diesel option currently listed for Nepal",
+      "Starts above Rs 2.38 Cr, a premium ask against rival large SUVs",
+      "Only two trims (Limited, Summit Reserve) offered locally"
+    ],
+    "highlights": [
+      "Quadra-Trac 4WD",
+      "268 bhp 2.0L Turbo",
+      "8-Speed 8HP50 Automatic",
+      "Bi-Xenon HID Headlights"
+    ],
+    "thumb": "/assets/images/car_images/jeep/grand-cherokee/gc-bright-white.jpg"
+  },
+  {
+    "id": 191,
+    "slug": "jeep-gladiator-2026",
+    "brand": "Jeep",
+    "brandSlug": "jeep",
+    "model": "Gladiator",
+    "year": 2026,
+    "type": "Petrol",
+    "bodyType": "pickup",
+    "body": "Off-Road Pickup Truck",
+    "badge": "niche",
+    "budgetTier": "Above 2Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Wrangler-based off-road pickup — 3.6L Pentastar V6, removable doors and roof, open cargo bed",
+    "rating": 4.2,
+    "reviews": 35,
+    "expertScore": 8.4,
+    "baseEMI": 143000,
+    "overview": "The Jeep Gladiator brings genuine Wrangler-based off-road pickup capability to Nepal, sold by Premium Auto Group in Sport S, Overland, and range-topping Rubicon trims. All three share a 3.6L Pentastar V6 making 285 bhp and 353 Nm through an 8-speed automatic and Selec-Trac/Rock-Trac 4x4, with the Rubicon adding Dana 44 axles for serious rock-crawling. It is a niche but capable pickup for buyers wanting Wrangler character with an open cargo bed.",
+    "images": [
+      "/assets/images/car_images/jeep/gladiator/gladiator-exterior.webp",
+      "/assets/images/car_images/jeep/gladiator/gladiator-capability-hero.webp",
+      "/assets/images/car_images/jeep/gladiator/gladiator-utility-feature.webp"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "Sport S",
+        "price": 23800000,
+        "label": "Rs. 2.38 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "3.6L Pentastar V6 (285 bhp)",
+          "8-Speed Automatic",
+          "Selec-Trac 4x4",
+          "Removable Doors & Roof",
+          "Open-Air Pickup Bed"
+        ],
+        "specs": {
+          "power": "285 bhp @ 6,400 rpm",
+          "torque": "353 Nm @ 4,400 rpm",
+          "efficiency": "7.7 km/l",
+          "transmission": "8-Speed Automatic",
+          "Power": "285 bhp @ 6,400 rpm",
+          "Torque": "353 Nm @ 4,400 rpm"
+        }
+      },
+      {
+        "name": "Overland",
+        "price": 25500000,
+        "label": "Rs. 2.55 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "17-inch Tech Silver Alloy Wheels",
+          "Black 3-Piece Freedom Hard Top",
+          "Uconnect 7-inch Touchscreen",
+          "Sport S features+"
+        ],
+        "specs": {
+          "power": "285 bhp @ 6,400 rpm",
+          "torque": "353 Nm @ 4,400 rpm",
+          "efficiency": "7.7 km/l",
+          "transmission": "8-Speed Automatic",
+          "Power": "285 bhp @ 6,400 rpm",
+          "Torque": "353 Nm @ 4,400 rpm"
+        }
+      },
+      {
+        "name": "Rubicon",
+        "price": 27200000,
+        "label": "Rs. 2.72 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "Dana 44 Front & Rear Axles",
+          "Tru-Lok Locking Differentials",
+          "Rock-Trac 4x4",
+          "33-inch Off-Road Tires",
+          "Overland features+"
+        ],
+        "specs": {
+          "power": "285 bhp @ 6,400 rpm",
+          "torque": "353 Nm @ 4,400 rpm",
+          "efficiency": "7.7 km/l",
+          "transmission": "8-Speed Automatic",
+          "Power": "285 bhp @ 6,400 rpm",
+          "Torque": "353 Nm @ 4,400 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "3.6L Pentastar V6 Petrol",
+      "Displacement (cc)": "3,604",
+      "Max Engine Power": "285 bhp @ 6,400 rpm",
+      "Max Engine Torque": "353 Nm @ 4,400 rpm",
+      "Transmission Type": "8-Speed Automatic",
+      "Drive Type": "4x4 (Selec-Trac / Rock-Trac on Rubicon)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Off-Road Pickup Truck",
+      "Distributor": "Premium Auto Group (Official Jeep Nepal Distributor)",
+      "Power": "285 bhp @ 6,400 rpm",
+      "Torque": "353 Nm @ 4,400 rpm",
+      "Transmission": "8-Speed Automatic",
+      "Seating": "5",
+      "Fuel Type": "Petrol"
+    },
+    "pros": [
+      "3.6L Pentastar V6 (285 bhp/353 Nm) with genuine pickup-bed utility",
+      "Rubicon trim gets Dana 44 axles and Rock-Trac 4x4 for serious rock-crawling",
+      "Removable doors and roof like the Wrangler for open-air driving"
+    ],
+    "cons": [
+      "Starts at Rs 2.38 Cr for a mid-size pickup — steep vs Ranger/Hilux pricing",
+      "Small bed and rear-seat space limit everyday practicality",
+      "Petrol-only V6 sips fuel heavily around town (~7.7 km/l)"
+    ],
+    "highlights": [
+      "3.6L Pentastar V6 (285 bhp)",
+      "Dana 44 Axles (Rubicon)",
+      "Removable Doors & Roof",
+      "8-Speed Automatic 4x4"
+    ],
+    "thumb": "/assets/images/car_images/jeep/gladiator/gladiator-exterior.webp"
+  },
+  {
+    "id": 192,
+    "slug": "jeep-meridian-2026",
+    "brand": "Jeep",
+    "brandSlug": "jeep",
+    "model": "Meridian",
+    "year": 2026,
+    "type": "Diesel",
+    "bodyType": "suv",
+    "body": "Three-Row SUV",
+    "badge": "family",
+    "budgetTier": "Above 1.5Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Jeep's 7-seat family SUV — 2.0L diesel 4x4, dual-pane sunroof, genuine Selec-Terrain capability",
+    "rating": 4,
+    "reviews": 55,
+    "expertScore": 8,
+    "baseEMI": 118700,
+    "overview": "The Jeep Meridian is Premium Auto Group's three-row SUV for Nepal, sold exclusively in the range-topping Limited(O) 4x4 trim. Its 2.0L Multijet II turbo-diesel produces 170 PS and 350 Nm through a 9-speed automatic transmission, giving genuine low-range-capable 4x4 alongside 7-seat family practicality, a dual-pane panoramic sunroof, and a 360-degree camera.",
+    "images": [
+      "/assets/images/car_images/jeep/meridian/meridian-red-angle.jpg",
+      "/assets/images/car_images/jeep/meridian/meridian-white-angle.jpg",
+      "/assets/images/car_images/jeep/meridian/meridian-grey-angle.jpg",
+      "/assets/images/car_images/jeep/meridian/meridian-black-angle.jpg",
+      "/assets/images/car_images/jeep/meridian/meridian-side-limited-o.png"
+    ],
+    "colors": [
+      {
+        "name": "Velvet Red",
+        "hex": "#8B0000"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Limited (O) 4x4",
+        "price": 19790000,
+        "label": "Rs. 1.98 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.0L Multijet Diesel (170 PS)",
+          "9-Speed Automatic",
+          "4x4 Selec-Terrain",
+          "7-Seat 3-Row Layout",
+          "Dual-Pane Panoramic Sunroof",
+          "360-Degree Camera"
+        ],
+        "specs": {
+          "power": "170 PS @ 3,750 rpm",
+          "torque": "350 Nm @ 1,750–2,500 rpm",
+          "efficiency": "14 km/l",
+          "transmission": "9-Speed Automatic",
+          "Power": "170 PS @ 3,750 rpm",
+          "Torque": "350 Nm @ 1,750–2,500 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "2.0L Multijet II Turbo Diesel",
+      "Displacement (cc)": "1,956",
+      "Max Engine Power": "170 PS @ 3,750 rpm",
+      "Max Engine Torque": "350 Nm @ 1,750–2,500 rpm",
+      "Transmission Type": "9-Speed Automatic",
+      "Drive Type": "4x4 (Selec-Terrain)",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "6",
+      "Body Type": "Three-Row SUV",
+      "Distributor": "Premium Auto Group (Official Jeep Nepal Distributor)",
+      "Power": "170 PS @ 3,750 rpm",
+      "Torque": "350 Nm @ 1,750–2,500 rpm",
+      "Transmission": "9-Speed Automatic",
+      "Seating": "7",
+      "Fuel Type": "Diesel"
+    },
+    "pros": [
+      "170 PS/350 Nm 2.0L diesel with genuine 4x4 Selec-Terrain capability",
+      "7-seat 3-row layout — rare among premium Nepal SUVs",
+      "Dual-pane panoramic sunroof and 360-degree camera on the Limited(O)"
+    ],
+    "cons": [
+      "Only the range-topping Limited(O) 4x4 trim is offered in Nepal",
+      "9-speed torque converter can feel busy hunting for gears in the hills",
+      "Only one confirmed color (Velvet Red) at launch"
+    ],
+    "highlights": [
+      "170 PS/350 Nm 2.0L Diesel 4x4",
+      "7-Seat 3-Row Layout",
+      "Dual-Pane Panoramic Sunroof",
+      "360-Degree Camera"
+    ],
+    "thumb": "/assets/images/car_images/jeep/meridian/meridian-red-angle.jpg"
+  },
+  {
+    "id": 193,
+    "slug": "hyundai-ioniq-9-2026",
+    "brand": "Hyundai",
+    "brandSlug": "hyundai",
+    "model": "Ioniq 9",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "7-Seat Electric SUV",
+    "badge": "flagship",
+    "budgetTier": "Above 2Cr",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Nepal's first three-row flagship EV — 620km range, 7 seats, panoramic curved display",
+    "rating": 4.3,
+    "reviews": 38,
+    "expertScore": 8.6,
+    "baseEMI": 131100,
+    "overview": "The Hyundai Ioniq 9 is Hyundai's flagship three-row all-electric SUV, launched in Nepal by Laxmi Intercontinental in June 2026 as the brand's largest and most premium EV offering. Built on the E-GMP platform with a 110.3 kWh battery, it delivers a WLTP-rated range of up to 620 km from a single Long Range RWD motor. Nepal-spec cars get 20-inch alloy wheels, a panoramic curved dual-12.3-inch display, AI-assisted Auto Terrain Mode, and a 10-airbag SmartSense safety suite.",
+    "images": [
+      "/assets/images/car_images/hyundai/ioniq-9/66056-HYUNDAISAVANNAH6233.jpg",
+      "/assets/images/car_images/hyundai/ioniq-9/66061-HYUNDAISAVANNAH7729.jpg",
+      "/assets/images/car_images/hyundai/ioniq-9/66067-HYUNDAISAVANNAH6227.jpg",
+      "/assets/images/car_images/hyundai/ioniq-9/66070-HYUNDAISAVANNAH6356.jpg",
+      "/assets/images/car_images/hyundai/ioniq-9/66079-HYUNDAISAVANNAH6260.jpg"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "Long Range RWD",
+        "price": 21996000,
+        "label": "Rs. 2.20 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "110.3 kWh Battery — 620 km WLTP Range",
+          "160 kW Electric Motor, 350 Nm Torque",
+          "20-inch Alloy Wheels (Nepal-spec)",
+          "Panoramic Curved Dual 12.3-inch Display",
+          "AI Auto Terrain Mode"
+        ],
+        "specs": {
+          "power": "160 kW (≈218 PS)",
+          "torque": "350 Nm",
+          "efficiency": "620 km range (WLTP)",
+          "transmission": "Single-speed AT",
+          "Power": "160 kW (≈218 PS)",
+          "Torque": "350 Nm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 110.3 kWh Battery",
+      "Displacement (cc)": "N/A (EV)",
+      "Max Engine Power": "160 kW (≈218 PS)",
+      "Max Engine Torque": "350 Nm",
+      "Transmission Type": "Single-speed AT",
+      "Drive Type": "RWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "10",
+      "Body Type": "Full-size 3-row SUV",
+      "Distributor": "Laxmi Intercontinental (Official Hyundai Nepal Distributor)",
+      "Power": "160 kW (≈218 PS)",
+      "Torque": "350 Nm",
+      "Transmission": "Single-speed AT",
+      "Seating": "7",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Genuine 3-row, 7-seat layout with 620km WLTP range",
+      "Fast DC charging — 10-80% in roughly 24 minutes",
+      "10-airbag SmartSense ADAS suite standard"
+    ],
+    "cons": [
+      "Only a single RWD Long Range trim offered in Nepal — no AWD/GT-Line",
+      "Among the most expensive EVs on sale in Nepal at over Rs 2 crore",
+      "No confirmed exterior colour options published for Nepal-spec cars"
+    ],
+    "highlights": [
+      "620 km WLTP Range",
+      "7-Seat 3-Row Layout",
+      "Panoramic Curved Display",
+      "10 Airbags",
+      "24-min DC Fast Charging"
+    ],
+    "thumb": "/assets/images/car_images/hyundai/ioniq-9/66056-HYUNDAISAVANNAH6233.jpg"
+  },
+  {
+    "id": 194,
+    "slug": "kia-sportage-2026",
+    "brand": "Kia",
+    "brandSlug": "kia",
+    "model": "Sportage",
+    "year": 2026,
+    "type": "Petrol",
+    "bodyType": "suv",
+    "body": "Mid-size SUV",
+    "badge": "top-rated",
+    "budgetTier": "Under 1.3Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Kia's turbo-petrol mid-size SUV — AWD, panoramic sunroof, full ADAS",
+    "rating": 4.2,
+    "reviews": 150,
+    "expertScore": 8.4,
+    "baseEMI": 75100,
+    "overview": "The Kia Sportage is Continental Trading Enterprises' mid-size SUV offering in Nepal, sold in GT-Line and X-Line trims sharing a 1,999cc petrol engine with AWD and a 6-speed automatic. It brings a panoramic sunroof, 12.3-inch touchscreen navigation, heated/ventilated front seats, and a 5-star Euro NCAP-rated ADAS suite to Nepal's mid-size SUV segment.",
+    "images": [
+      "/assets/images/car_images/kia/sportage/evnewsnepal-1.webp",
+      "/assets/images/car_images/kia/sportage/nepaldrives-1.jpg",
+      "/assets/images/car_images/kia/sportage/nepaldrives-2.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Fusion Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Gravity Grey",
+        "hex": "#5A5E63"
+      },
+      {
+        "name": "Jungle Green",
+        "hex": "#3B4A3E"
+      },
+      {
+        "name": "Snow White Pearl",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Steel Grey",
+        "hex": "#71797E"
+      },
+      {
+        "name": "Dawning Red",
+        "hex": "#8B1E23"
+      },
+      {
+        "name": "Vesta Blue",
+        "hex": "#3A5F7D"
+      },
+      {
+        "name": "Shadow Matte Grey",
+        "hex": "#4A4A4A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "GT-Line AT (2.0L Petrol AWD)",
+        "price": 12600000,
+        "label": "Rs. 1.26 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "1,999cc Petrol (154 bhp)",
+          "6-Speed Automatic",
+          "AWD",
+          "Panoramic Sunroof",
+          "12.3-inch Touchscreen Navigation"
+        ],
+        "specs": {
+          "power": "154 bhp",
+          "torque": "192 Nm",
+          "efficiency": "18.9 km/l (ARAI)",
+          "transmission": "6-Speed AT",
+          "Power": "154 bhp",
+          "Torque": "192 Nm"
+        }
+      },
+      {
+        "name": "X-Line AT (2.0L Petrol AWD)",
+        "price": 12900000,
+        "label": "Rs. 1.29 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "1,999cc Petrol (154 bhp)",
+          "6-Speed Automatic",
+          "AWD",
+          "8 Exterior Colour Options",
+          "Heated & Ventilated Front Seats"
+        ],
+        "specs": {
+          "power": "154 bhp",
+          "torque": "192 Nm",
+          "efficiency": "10.2 km/l (ARAI)",
+          "transmission": "6-Speed AT",
+          "Power": "154 bhp",
+          "Torque": "192 Nm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "1,999cc Petrol",
+      "Displacement (cc)": "1,999",
+      "Max Engine Power": "154 bhp",
+      "Max Engine Torque": "192 Nm",
+      "Transmission Type": "6-Speed AT",
+      "Drive Type": "AWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Mid-size SUV",
+      "Distributor": "Continental Trading Enterprises (Official Kia Nepal Distributor)",
+      "Power": "154 bhp",
+      "Torque": "192 Nm",
+      "Transmission": "6-Speed AT",
+      "Seating": "5",
+      "Fuel Type": "Petrol"
+    },
+    "pros": [
+      "AWD standard across both trims for Nepal's terrain",
+      "Panoramic sunroof and 12.3-inch touchscreen from base trim",
+      "5-star Euro NCAP rating with full ADAS suite"
+    ],
+    "cons": [
+      "Petrol-only lineup — no diesel or hybrid option in Nepal",
+      "Only two trims offered, both above Rs 1.25 crore",
+      "Boot space (591L) is midpack for the segment"
+    ],
+    "highlights": [
+      "AWD Standard",
+      "Panoramic Sunroof",
+      "12.3-inch Touchscreen",
+      "5-Star Euro NCAP",
+      "8 Exterior Colours"
+    ],
+    "thumb": "/assets/images/car_images/kia/sportage/evnewsnepal-1.webp"
+  },
+  {
+    "id": 195,
+    "slug": "kia-sorento-2026",
+    "brand": "Kia",
+    "brandSlug": "kia",
+    "model": "Sorento",
+    "year": 2026,
+    "type": "Hybrid",
+    "bodyType": "suv",
+    "body": "7-Seat SUV",
+    "badge": "premium",
+    "budgetTier": "Under 1.9Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Kia's premium 7-seat SUV — hybrid and diesel AWD options with tri-zone climate and Bose audio",
+    "rating": 4.3,
+    "reviews": 70,
+    "expertScore": 8.6,
+    "baseEMI": 101300,
+    "overview": "The Kia Sorento is Continental Trading Enterprises' premium 7-seat SUV in Nepal, offered in a 1.6L turbo-hybrid EX trim and a 2.2L diesel Executive trim, both with AWD. It comes with a 12.3-inch panoramic display, tri-zone climate control, a 12-speaker Bose audio system, heated/ventilated seats, and a 9-airbag, 5-star Euro NCAP safety package, backed by Kia's 7-year unlimited-km warranty.",
+    "images": [
+      "/assets/images/car_images/kia/sorento/evnewsnepal-about3.webp",
+      "/assets/images/car_images/kia/sorento/evnewsnepal-main.webp",
+      "/assets/images/car_images/kia/sorento/evnewsnepal-photo1.webp",
+      "/assets/images/car_images/kia/sorento/evnewsnepal-photo2.webp",
+      "/assets/images/car_images/kia/sorento/evnewsnepal-photo3.webp",
+      "/assets/images/car_images/kia/sorento/evnewsnepal-photo4.webp",
+      "/assets/images/car_images/kia/sorento/shivajyoti-1.jpg"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "Hybrid EX AWD (1.6L Turbo-Hybrid)",
+        "price": 16990000,
+        "label": "Rs. 1.70 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Hybrid",
+        "features": [
+          "1.6L Turbo-Hybrid (227 PS Combined)",
+          "6-Speed Automatic",
+          "AWD",
+          "12.3-inch Panoramic Display",
+          "Bose 12-Speaker Audio"
+        ],
+        "specs": {
+          "power": "227 PS Combined",
+          "torque": "350 Nm",
+          "efficiency": "Hybrid",
+          "transmission": "6-Speed AT",
+          "Power": "227 PS",
+          "Torque": "350 Nm"
+        }
+      },
+      {
+        "name": "Diesel Executive AWD (2.2L Diesel)",
+        "price": 18990000,
+        "label": "Rs. 1.90 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.2L CRDi Diesel (201 PS)",
+          "8-Speed DCT",
+          "AWD",
+          "440 Nm Torque for Hills",
+          "Tri-zone Climate Control"
+        ],
+        "specs": {
+          "power": "201 PS",
+          "torque": "440 Nm",
+          "efficiency": "Diesel",
+          "transmission": "8-Speed DCT",
+          "Power": "201 PS",
+          "Torque": "440 Nm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "1.6L Turbo-Hybrid / 2.2L Diesel",
+      "Displacement (cc)": "1,598 (Hybrid) / 2,151 (Diesel)",
+      "Max Engine Power": "201–227 PS",
+      "Max Engine Torque": "350–440 Nm",
+      "Transmission Type": "6AT (Hybrid) / 8-Speed DCT (Diesel)",
+      "Drive Type": "AWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "9",
+      "Body Type": "Full-size 7-Seat SUV",
+      "Distributor": "Continental Trading Enterprises (Official Kia Nepal Distributor)",
+      "Power": "201–227 PS",
+      "Torque": "350–440 Nm",
+      "Transmission": "6AT / 8DCT",
+      "Seating": "7",
+      "Fuel Type": "Hybrid / Diesel"
+    },
+    "pros": [
+      "Choice of hybrid or diesel AWD powertrains",
+      "9 airbags with 5-star Euro NCAP rating",
+      "Bose 12-speaker audio and tri-zone climate standard"
+    ],
+    "cons": [
+      "Diesel Executive trim crosses Rs 1.9 crore",
+      "Boot space with all 7 seats up is modest at 179L",
+      "No confirmed exterior colour list published by the distributor"
+    ],
+    "highlights": [
+      "7-Seat AWD SUV",
+      "Hybrid & Diesel Options",
+      "Bose 12-Speaker Audio",
+      "9 Airbags, 5-Star NCAP",
+      "7-Year Warranty"
+    ],
+    "thumb": "/assets/images/car_images/kia/sorento/evnewsnepal-about3.webp"
+  },
+  {
+    "id": 196,
+    "slug": "kia-carnival-2026",
+    "brand": "Kia",
+    "brandSlug": "kia",
+    "model": "Carnival",
+    "year": 2026,
+    "type": "Petrol / Hybrid",
+    "bodyType": "mpv",
+    "body": "Premium MPV",
+    "badge": "family",
+    "budgetTier": "Under 70L",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Kia's flagship 8-seat premium MPV — turbo-petrol and hybrid powertrain options",
+    "rating": 3.9,
+    "reviews": 32,
+    "expertScore": 7.8,
+    "baseEMI": 31300,
+    "overview": "The Kia Carnival is Kia's large premium MPV in Nepal, distributed by Continental Trading Enterprises, offered in petrol EX/Hi-Limousine and hybrid SX trims with an 8-seat, three-row cabin. It targets Nepal's premium family and corporate-shuttle buyers with captain's chairs, a panoramic sunroof, and a full ADAS suite shared with Kia's SUV range.",
+    "images": [
+      "/assets/images/car_images/kia/carnival/carnepal-1.jpg",
+      "/assets/images/car_images/kia/carnival/ccarprice-1.jpg"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "EX",
+        "price": 5252580,
+        "label": "Rs. 52.53 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "8-Seat 3-Row Cabin",
+          "Automatic Transmission",
+          "Captain's Chairs (2nd Row)",
+          "Panoramic Sunroof"
+        ],
+        "specs": {
+          "transmission": "Automatic",
+          "Transmission": "Automatic"
+        }
+      },
+      {
+        "name": "Hi Limousine",
+        "price": 6468100,
+        "label": "Rs. 64.68 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "VIP Limousine 2nd-Row Seating",
+          "Premium Interior Trim",
+          "Automatic Transmission"
+        ],
+        "specs": {
+          "transmission": "Automatic",
+          "Transmission": "Automatic"
+        }
+      },
+      {
+        "name": "Hybrid SX",
+        "price": 6828780,
+        "label": "Rs. 68.29 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Hybrid",
+        "features": [
+          "Turbo-Hybrid Powertrain",
+          "8-Seat Configuration",
+          "Panoramic Sunroof"
+        ],
+        "specs": {
+          "transmission": "Automatic",
+          "Transmission": "Automatic"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Turbo-Petrol / Turbo-Hybrid",
+      "Displacement (cc)": "Not officially published for Nepal-spec",
+      "Max Engine Power": "Not officially published for Nepal-spec",
+      "Max Engine Torque": "Not officially published for Nepal-spec",
+      "Transmission Type": "Automatic",
+      "Drive Type": "FWD",
+      "Seating Capacity": "8",
+      "Total Airbag Count": "6 (typical Kia MPV spec)",
+      "Body Type": "Premium MPV",
+      "Distributor": "Continental Trading Enterprises (Official Kia Nepal Distributor)",
+      "Power": "Not officially published for Nepal-spec",
+      "Torque": "Not officially published for Nepal-spec",
+      "Transmission": "Automatic",
+      "Seating": "8",
+      "Fuel Type": "Petrol / Hybrid"
+    },
+    "pros": [
+      "Spacious 8-seat, 3-row MPV cabin with captain's chair option",
+      "Hybrid SX trim available for lower running costs",
+      "Long-standing Kia MPV nameplate in Nepal since 2018"
+    ],
+    "cons": [
+      "Detailed engine displacement/power figures not officially published for Nepal-spec units",
+      "Only turbo-petrol and hybrid trims offered — no diesel option",
+      "Premium pricing on Hi Limousine and Hybrid SX trims crosses Rs 65 lakh"
+    ],
+    "highlights": [
+      "8-Seat 3-Row MPV",
+      "Captain's Chair Option",
+      "Turbo-Petrol & Hybrid Trims",
+      "Panoramic Sunroof"
+    ],
+    "thumb": "/assets/images/car_images/kia/carnival/carnepal-1.jpg"
+  },
+  {
+    "id": 197,
+    "slug": "kia-niro-ev-2026",
+    "brand": "Kia",
+    "brandSlug": "kia",
+    "model": "Niro EV",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "crossover",
+    "body": "Electric Crossover",
+    "badge": "electric",
+    "budgetTier": "Under 70L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Kia's compact electric crossover — 460km range, single Long Range trim",
+    "rating": 4.1,
+    "reviews": 55,
+    "expertScore": 8.2,
+    "baseEMI": 41700,
+    "overview": "The Kia Niro EV is Continental Trading Enterprises' compact electric crossover in Nepal, sold in a single Long Range trim with a 64.8 kWh battery delivering a WLTP-rated 460 km range from a 150 kW motor. It comes with a powered sunroof, 10.25-inch infotainment display, dual-zone climate control, and an 8-airbag ADAS suite, backed by an 8-year/160,000km battery warranty.",
+    "images": [
+      "/assets/images/car_images/kia/niro-ev/automobilehive-1.jpg",
+      "/assets/images/car_images/kia/niro-ev/automobilehive-2.jpg",
+      "/assets/images/car_images/kia/niro-ev/automobilehive-3.jpg",
+      "/assets/images/car_images/kia/niro-ev/automobilehive-interior.jpg",
+      "/assets/images/car_images/kia/niro-ev/evnepal-1-preview.png",
+      "/assets/images/car_images/kia/niro-ev/evnepal-1.avif"
+    ],
+    "colors": [
+      {
+        "name": "Snow White Pearl",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Cityscape Green",
+        "hex": "#4A5D45"
+      },
+      {
+        "name": "Mineral Blue",
+        "hex": "#2E4A5C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Long Range EV",
+        "price": 6990000,
+        "label": "Rs. 69.90 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "64.8 kWh Battery — 460 km WLTP Range",
+          "150 kW Motor (201 PS), 255 Nm Torque",
+          "80 kW DC Fast Charging (10-80% in 49 min)",
+          "Powered Sunroof",
+          "10.25-inch Infotainment"
+        ],
+        "specs": {
+          "power": "150 kW (201 PS)",
+          "torque": "255 Nm",
+          "efficiency": "460 km range (WLTP)",
+          "transmission": "Single-speed AT",
+          "Power": "150 kW (201 PS)",
+          "Torque": "255 Nm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 64.8 kWh Battery",
+      "Displacement (cc)": "N/A (EV)",
+      "Max Engine Power": "150 kW (201 PS)",
+      "Max Engine Torque": "255 Nm",
+      "Transmission Type": "Single-speed AT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "8",
+      "Body Type": "Compact Electric Crossover",
+      "Distributor": "Continental Trading Enterprises (Official Kia Nepal Distributor)",
+      "Power": "150 kW (201 PS)",
+      "Torque": "255 Nm",
+      "Transmission": "Single-speed AT",
+      "Seating": "5",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "460 km WLTP range among the best in its class",
+      "8-year/160,000km battery warranty",
+      "Dual-zone climate control and powered sunroof standard"
+    ],
+    "cons": [
+      "Only a single Long Range trim offered — no base/short-range option",
+      "363L boot space is modest for a family crossover",
+      "Ground clearance of 150mm is low for rough Nepali roads"
+    ],
+    "highlights": [
+      "460 km WLTP Range",
+      "150 kW / 255 Nm Motor",
+      "80kW DC Fast Charging",
+      "8-Year Battery Warranty",
+      "10.25-inch Display"
+    ],
+    "thumb": "/assets/images/car_images/kia/niro-ev/automobilehive-1.jpg"
+  },
+  {
+    "id": 198,
+    "slug": "kia-ev9-2026",
+    "brand": "Kia",
+    "brandSlug": "kia",
+    "model": "EV9",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "7-Seat Electric SUV",
+    "badge": "flagship",
+    "budgetTier": "Under 1.8Cr",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Kia's flagship 3-row electric SUV — 443km range, E-GMP platform, dual sunroofs",
+    "rating": 4.4,
+    "reviews": 60,
+    "expertScore": 8.8,
+    "baseEMI": 107200,
+    "overview": "The Kia EV9 is Continental Trading Enterprises' flagship all-electric 3-row SUV in Nepal, sold in a single Standard Range RWD trim built on Hyundai Motor Group's E-GMP platform. It pairs a 76.1 kWh battery with a 160 kW motor for a WLTP-rated 443 km range, and comes loaded with dual sunroofs, tri-zone climate control, twin 12.3-inch displays, ventilated leather seats, and Vehicle-to-Load capability.",
+    "images": [
+      "/assets/images/car_images/kia/ev9/evnepal-1.webp",
+      "/assets/images/car_images/kia/ev9/nepaldrives-1.jpg",
+      "/assets/images/car_images/kia/ev9/nepaldrives-2.jpg",
+      "/assets/images/car_images/kia/ev9/nepaldrives-3.jpg",
+      "/assets/images/car_images/kia/ev9/techlekh-1.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Aurora Black Pearl",
+        "hex": "#0B0B0D"
+      },
+      {
+        "name": "Ivory Silver",
+        "hex": "#D8D6D0"
+      },
+      {
+        "name": "Panthera Metal",
+        "hex": "#4A4A4A"
+      },
+      {
+        "name": "Pebble Grey",
+        "hex": "#8C8C87"
+      },
+      {
+        "name": "Snow White Pearl",
+        "hex": "#F5F5F5"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Standard Range RWD",
+        "price": 17990000,
+        "label": "Rs. 1.80 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "76.1 kWh Battery — 443 km WLTP Range",
+          "160 kW Motor (218 PS), 350 Nm Torque",
+          "Dual Sunroofs",
+          "Twin 12.3-inch Displays",
+          "Vehicle-to-Load (V2L)"
+        ],
+        "specs": {
+          "power": "160 kW (218 PS)",
+          "torque": "350 Nm",
+          "efficiency": "443 km range (WLTP)",
+          "transmission": "Single-speed AT",
+          "Power": "160 kW (218 PS)",
+          "Torque": "350 Nm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 76.1 kWh Battery",
+      "Displacement (cc)": "N/A (EV)",
+      "Max Engine Power": "160 kW (218 PS)",
+      "Max Engine Torque": "350 Nm",
+      "Transmission Type": "Single-speed AT",
+      "Drive Type": "RWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "7",
+      "Body Type": "Full-size 3-row Electric SUV",
+      "Distributor": "Continental Trading Enterprises (Official Kia Nepal Distributor)",
+      "Power": "160 kW (218 PS)",
+      "Torque": "350 Nm",
+      "Transmission": "Single-speed AT",
+      "Seating": "7",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Genuine 7-seat, 2+3+2 three-row EV layout",
+      "Dual sunroofs and twin 12.3-inch displays standard",
+      "Vehicle-to-Load lets the car power external devices"
+    ],
+    "cons": [
+      "Only Standard Range RWD offered — no GT-Line or Long Range/AWD variant in Nepal",
+      "443 km WLTP range trails some rivals at this price",
+      "Not yet independently crash-tested for the Nepal-spec version"
+    ],
+    "highlights": [
+      "443 km WLTP Range",
+      "Dual Sunroofs",
+      "Twin 12.3-inch Displays",
+      "Vehicle-to-Load (V2L)",
+      "2+3+2 Seven-Seat Layout"
+    ],
+    "thumb": "/assets/images/car_images/kia/ev9/evnepal-1.webp"
+  },
+  {
+    "id": 199,
+    "slug": "mercedes-benz-c-class-2026",
+    "brand": "Mercedes-Benz",
+    "brandSlug": "mercedes-benz",
+    "model": "C-Class",
+    "year": 2026,
+    "type": "Petrol / Diesel",
+    "bodyType": "sedan",
+    "body": "Executive Sedan",
+    "badge": "entry-luxury",
+    "budgetTier": "Above 1.5Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Mercedes-Benz's entry-luxury sedan in Nepal — MBUX tech, petrol or diesel",
+    "rating": 4.3,
+    "reviews": 68,
+    "expertScore": 8.6,
+    "baseEMI": 197900,
+    "overview": "The Mercedes-Benz C-Class (W206) is the brand's entry point into luxury sedans in Nepal, sold by official distributor Deepak Gautam & Company. It is offered as the petrol-mild-hybrid C200 Avantgarde and the diesel C220d AMG Line, both bringing the 11.9-inch portrait MBUX touchscreen, a 12.3-inch digital cluster, and a panoramic sunroof. As with all Mercedes-Benz Nepal models, cars are imported on demand rather than held as fixed showroom stock, so delivery timelines and final on-road pricing depend on the specific order.",
+    "images": [
+      "/assets/images/car_images/mercedes-benz/c-class/c-class-1.jpg",
+      "/assets/images/car_images/mercedes-benz/c-class/c-class-2.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Obsidian Black",
+        "hex": "#0B0B0C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "C200 Avantgarde (1.5L Turbo Petrol, EQ Boost)",
+        "price": 16500000,
+        "label": "Rs. 1.65 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "1.5L Turbo Petrol + EQ Boost mild hybrid",
+          "9G-TRONIC 9-Speed AT",
+          "11.9-inch MBUX touchscreen",
+          "12.3-inch digital cluster",
+          "Panoramic sunroof",
+          "Heated/ventilated front seats"
+        ],
+        "specs": {
+          "power": "204 PS @ 5,800–6,100 rpm (+20 PS EQ Boost)",
+          "torque": "300 Nm (+200 Nm EQ Boost)",
+          "efficiency": "14.74 km/l (ARAI)",
+          "transmission": "9G-TRONIC 9-Speed AT",
+          "Power": "204 PS @ 5,800–6,100 rpm",
+          "Torque": "300 Nm @ 1,800–4,000 rpm"
+        }
+      },
+      {
+        "name": "C220d AMG Line (2.0L Diesel)",
+        "price": 18500000,
+        "label": "Rs. 1.85 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.0L Diesel (200 PS)",
+          "9G-TRONIC 9-Speed AT",
+          "AMG Line exterior/interior",
+          "11.9-inch MBUX touchscreen",
+          "Panoramic sunroof",
+          "Adaptive cruise control",
+          "360° camera"
+        ],
+        "specs": {
+          "power": "200 PS @ 3,800 rpm",
+          "torque": "440 Nm @ 1,800–2,800 rpm",
+          "efficiency": "18.5 km/l (ARAI)",
+          "transmission": "9G-TRONIC 9-Speed AT",
+          "Power": "200 PS @ 3,800 rpm",
+          "Torque": "440 Nm @ 1,800–2,800 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "1.5L Turbo Petrol (EQ Boost mild hybrid) / 2.0L Diesel",
+      "Displacement (cc)": "1,497 (petrol) / 1,993 (diesel)",
+      "Max Engine Power": "200–204 PS",
+      "Max Engine Torque": "300–440 Nm",
+      "Transmission Type": "9G-TRONIC 9-Speed AT",
+      "Drive Type": "RWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7",
+      "Body Type": "Executive Sedan",
+      "Distributor": "Deepak Gautam & Company Pvt. Ltd. (Official Mercedes-Benz Nepal Distributor)",
+      "Power": "200–204 PS",
+      "Torque": "300–440 Nm",
+      "Transmission": "9G-TRONIC 9-Speed AT",
+      "Seating": "5",
+      "Fuel Type": "Petrol / Diesel"
+    },
+    "pros": [
+      "Lowest entry price into the Mercedes-Benz Nepal sedan lineup",
+      "Diesel C220d's 440 Nm torque suits highway and hill driving",
+      "Full MBUX digital cockpit and panoramic sunroof standard",
+      "7 airbags and 5-star Euro NCAP rating"
+    ],
+    "cons": [
+      "Demand-import model — no fixed showroom stock, prices confirmed only on order",
+      "Only one confirmed exterior color (Obsidian Black) publicly listed",
+      "Smaller boot (480 L) than rivals in this price band"
+    ],
+    "highlights": [
+      "11.9-inch Portrait MBUX Touchscreen",
+      "12.3-inch Digital Instrument Cluster",
+      "Panoramic Sunroof",
+      "9G-TRONIC 9-Speed Automatic"
+    ],
+    "thumb": "/assets/images/car_images/mercedes-benz/c-class/c-class-1.jpg"
+  },
+  {
+    "id": 200,
+    "slug": "mercedes-benz-e-class-2026",
+    "brand": "Mercedes-Benz",
+    "brandSlug": "mercedes-benz",
+    "model": "E-Class",
+    "year": 2026,
+    "type": "Petrol / Diesel",
+    "bodyType": "sedan",
+    "body": "Business Sedan",
+    "badge": "premium",
+    "budgetTier": "Above 2.5Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Mercedes-Benz's business-class sedan in Nepal — E200 petrol or E220d diesel",
+    "rating": 4.4,
+    "reviews": 55,
+    "expertScore": 8.8,
+    "baseEMI": 311900,
+    "overview": "The Mercedes-Benz E-Class (W214) is Nepal's step-up business sedan above the C-Class, distributed by Deepak Gautam & Company. It comes as the E200 Exclusive Line (petrol mild hybrid) and E220d AMG Line (diesel), both with a 14.4-inch MBUX touchscreen, 12.3-inch digital cockpit, and a panoramic sunroof. Like other Mercedes-Benz models in Nepal, it is sold on a demand-import basis, so pricing is confirmed per order rather than fixed showroom stock.",
+    "images": [
+      "/assets/images/car_images/mercedes-benz/e-class/e-class-1.jpg",
+      "/assets/images/car_images/mercedes-benz/e-class/e-class-2.jpg"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "E200 Exclusive Line (2.0L Turbo Petrol)",
+        "price": 26000000,
+        "label": "Rs. 2.60 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "2.0L Turbo Petrol mild hybrid (48V)",
+          "9G-TRONIC 9-Speed AT",
+          "14.4-inch MBUX touchscreen",
+          "12.3-inch digital cockpit",
+          "Panoramic sunroof",
+          "Heated/ventilated front seats with massage"
+        ],
+        "specs": {
+          "power": "204 PS @ 5,800 rpm",
+          "torque": "320 Nm @ 1,600–4,000 rpm",
+          "efficiency": "12 km/l (approx.)",
+          "transmission": "9G-TRONIC 9-Speed AT",
+          "Power": "204 PS @ 5,800 rpm",
+          "Torque": "320 Nm @ 1,600–4,000 rpm"
+        }
+      },
+      {
+        "name": "E220d AMG Line (2.0L Diesel)",
+        "price": 28500000,
+        "label": "Rs. 2.85 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.0L Diesel mild hybrid (48V)",
+          "9G-TRONIC 9-Speed AT",
+          "AMG Line exterior/interior",
+          "9 airbags",
+          "Adaptive cruise control (DISTRONIC)",
+          "360° camera"
+        ],
+        "specs": {
+          "power": "197 PS @ 3,600 rpm",
+          "torque": "440 Nm @ 1,800 rpm",
+          "efficiency": "N/A",
+          "transmission": "9G-TRONIC 9-Speed AT",
+          "Power": "197 PS @ 3,600 rpm",
+          "Torque": "440 Nm @ 1,800 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "2.0L Turbo Petrol (mild hybrid) / 2.0L Diesel (mild hybrid)",
+      "Displacement (cc)": "1,999 (petrol) / 1,993 (diesel)",
+      "Max Engine Power": "197–204 PS",
+      "Max Engine Torque": "320–440 Nm",
+      "Transmission Type": "9G-TRONIC 9-Speed AT",
+      "Drive Type": "RWD / 4MATIC (select variants)",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "9",
+      "Body Type": "Business Sedan",
+      "Distributor": "Deepak Gautam & Company Pvt. Ltd. (Official Mercedes-Benz Nepal Distributor)",
+      "Power": "197–204 PS",
+      "Torque": "320–440 Nm",
+      "Transmission": "9G-TRONIC 9-Speed AT",
+      "Seating": "5",
+      "Fuel Type": "Petrol / Diesel"
+    },
+    "pros": [
+      "540 L boot, among the largest in its class",
+      "14.4-inch MBUX touchscreen and 12.3-inch digital cockpit standard",
+      "9 airbags with 5-star Euro NCAP rating",
+      "E220d diesel's 440 Nm torque suits Nepal's highways"
+    ],
+    "cons": [
+      "Demand-import model — no fixed showroom stock, pricing quoted per order",
+      "No official exterior color options published for the Nepal lineup",
+      "Diesel variant carries a roughly Rs 25 lakh premium over petrol"
+    ],
+    "highlights": [
+      "14.4-inch MBUX Touchscreen",
+      "12.3-inch Digital Cockpit",
+      "Panoramic Sunroof",
+      "DISTRONIC Adaptive Cruise Control",
+      "360° Camera"
+    ],
+    "thumb": "/assets/images/car_images/mercedes-benz/e-class/e-class-1.jpg"
+  },
+  {
+    "id": 201,
+    "slug": "mercedes-benz-s-class-2026",
+    "brand": "Mercedes-Benz",
+    "brandSlug": "mercedes-benz",
+    "model": "S-Class",
+    "year": 2026,
+    "type": "Petrol",
+    "bodyType": "sedan",
+    "body": "Ultra-Luxury Sedan",
+    "badge": "flagship",
+    "budgetTier": "Above 4.5Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Mercedes-Benz's flagship long-wheelbase luxury sedan — S450 4MATIC",
+    "rating": 4.6,
+    "reviews": 32,
+    "expertScore": 9.2,
+    "baseEMI": 539357,
+    "overview": "The Mercedes-Benz S-Class (W223) is the brand's flagship sedan, sold in Nepal by Deepak Gautam & Company as the long-wheelbase S450 4MATIC. It pairs a 3.0L turbo inline-6 mild-hybrid petrol engine with AIRMATIC air suspension, a 12.8-inch OLED MBUX display, and a Burmester 4D surround sound system. Only a single starting price point is publicly confirmed for Nepal — as with the rest of the Mercedes-Benz range here, the S-Class is a demand-import model with no fixed showroom stock, so exact configuration and final pricing are quoted per order.",
+    "images": [
+      "/assets/images/car_images/mercedes-benz/s-class/s-class-1.jpg",
+      "/assets/images/car_images/mercedes-benz/s-class/s-class-2.jpg",
+      "/assets/images/car_images/mercedes-benz/s-class/s-class-3.jpg"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "S450 4MATIC (Long Wheelbase, 3.0L Turbo Petrol Mild Hybrid) — starting price only, exact trim breakdown not published",
+        "price": 45000000,
+        "label": "Rs. 4.50 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "3.0L Turbo Inline-6 mild hybrid (EQ Boost)",
+          "9G-TRONIC 9-Speed AT",
+          "4MATIC AWD",
+          "AIRMATIC air suspension",
+          "12.8-inch OLED MBUX display",
+          "Burmester 4D surround sound",
+          "Multi-contour massage seats"
+        ],
+        "specs": {
+          "power": "381 PS @ 5,800–6,100 rpm",
+          "torque": "500 Nm @ 1,800–5,000 rpm",
+          "efficiency": "N/A",
+          "transmission": "9G-TRONIC 9-Speed AT",
+          "Power": "381 PS @ 5,800–6,100 rpm",
+          "Torque": "500 Nm @ 1,800–5,000 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "3.0L Turbo Inline-6 Petrol (EQ Boost mild hybrid)",
+      "Displacement (cc)": "2,999",
+      "Max Engine Power": "381 PS",
+      "Max Engine Torque": "500 Nm",
+      "Transmission Type": "9G-TRONIC 9-Speed AT",
+      "Drive Type": "4MATIC AWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "10+",
+      "Body Type": "Ultra-Luxury Sedan (Long Wheelbase)",
+      "Distributor": "Deepak Gautam & Company Pvt. Ltd. (Official Mercedes-Benz Nepal Distributor)",
+      "Power": "381 PS",
+      "Torque": "500 Nm",
+      "Transmission": "9G-TRONIC 9-Speed AT",
+      "Seating": "5",
+      "Fuel Type": "Petrol"
+    },
+    "pros": [
+      "AIRMATIC air suspension tuned for ride comfort",
+      "12.8-inch OLED MBUX and Burmester 4D sound as standard flagship tech",
+      "Long-wheelbase-only for Nepal, maximizing rear-seat space",
+      "10+ airbags including PRE-SAFE Impulse Side"
+    ],
+    "cons": [
+      "Only one starting price publicly confirmed — full trim/options pricing available only on order",
+      "No official exterior color options published for the Nepal lineup",
+      "Highest entry cost in this batch, limiting demand to a very small buyer segment"
+    ],
+    "highlights": [
+      "12.8-inch OLED MBUX Display",
+      "Burmester 4D Surround Sound",
+      "AIRMATIC Air Suspension",
+      "Multi-Contour Massage Seats",
+      "PRE-SAFE Impulse Side"
+    ],
+    "thumb": "/assets/images/car_images/mercedes-benz/s-class/s-class-1.jpg"
+  },
+  {
+    "id": 202,
+    "slug": "mercedes-benz-gle-2026",
+    "brand": "Mercedes-Benz",
+    "brandSlug": "mercedes-benz",
+    "model": "GLE",
+    "year": 2026,
+    "type": "Petrol / Diesel",
+    "bodyType": "suv",
+    "body": "Large Luxury SUV",
+    "badge": "luxury",
+    "budgetTier": "Above 3.5Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Mercedes-Benz's large luxury SUV in Nepal — GLE 300d diesel or GLE 450 4MATIC LWB petrol",
+    "rating": 4.3,
+    "reviews": 41,
+    "expertScore": 8.6,
+    "baseEMI": 461450,
+    "overview": "The Mercedes-Benz GLE (V167) is Nepal's large luxury SUV offering, distributed by Deepak Gautam & Company across Kathmandu, Lalitpur, Bhaktapur, Pokhara, and Chitwan. It is available as the GLE 300d 4MATIC AMG Line diesel and the GLE 450 4MATIC LWB petrol mild hybrid, both with a 12.3-inch MBUX touchscreen, panoramic sunroof, and Burmester 3D sound. As a demand-import model, exact configuration and final pricing are confirmed per order rather than from fixed showroom stock.",
+    "images": [
+      "/assets/images/car_images/mercedes-benz/gle/gle-1.jpg",
+      "/assets/images/car_images/mercedes-benz/gle/gle-2.jpg"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "GLE 300d 4MATIC AMG Line (2.0L Diesel)",
+        "price": 38500000,
+        "label": "Rs. 3.85 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.0L Diesel mild hybrid (48V)",
+          "9G-TRONIC 9-Speed AT",
+          "4MATIC AWD",
+          "AMG Line exterior/interior",
+          "12.3-inch MBUX touchscreen",
+          "Panoramic sunroof"
+        ],
+        "specs": {
+          "power": "269 PS @ 4,200 rpm",
+          "torque": "550 Nm @ 1,800–2,200 rpm",
+          "efficiency": "N/A",
+          "transmission": "9G-TRONIC 9-Speed AT",
+          "Power": "269 PS @ 4,200 rpm",
+          "Torque": "550 Nm @ 1,800–2,200 rpm"
+        }
+      },
+      {
+        "name": "GLE 450 4MATIC LWB (3.0L Turbo Petrol Mild Hybrid, Long Wheelbase)",
+        "price": 41500000,
+        "label": "Rs. 4.15 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "3.0L Turbo Inline-6 mild hybrid (EQ Boost)",
+          "9G-TRONIC 9-Speed AT",
+          "4MATIC Fully Variable AWD",
+          "Long-wheelbase body",
+          "Burmester 3D surround sound",
+          "Heated/ventilated AMG front seats with massage"
+        ],
+        "specs": {
+          "power": "375 PS @ 5,500–6,100 rpm",
+          "torque": "500 Nm @ 1,600–4,500 rpm",
+          "efficiency": "N/A",
+          "transmission": "9G-TRONIC 9-Speed AT",
+          "Power": "375 PS @ 5,500–6,100 rpm",
+          "Torque": "500 Nm @ 1,600–4,500 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "2.0L Diesel (mild hybrid) / 3.0L Turbo Inline-6 Petrol (mild hybrid)",
+      "Displacement (cc)": "1,993 (diesel) / 2,999 (petrol)",
+      "Max Engine Power": "269–375 PS",
+      "Max Engine Torque": "500–550 Nm",
+      "Transmission Type": "9G-TRONIC 9-Speed AT",
+      "Drive Type": "4MATIC AWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "9",
+      "Body Type": "Large Luxury SUV",
+      "Distributor": "Deepak Gautam & Company Pvt. Ltd. (Official Mercedes-Benz Nepal Distributor)",
+      "Power": "269–375 PS",
+      "Torque": "500–550 Nm",
+      "Transmission": "9G-TRONIC 9-Speed AT",
+      "Seating": "5",
+      "Fuel Type": "Petrol / Diesel"
+    },
+    "pros": [
+      "550 Nm diesel torque well-suited to Nepal's hill terrain",
+      "630 L boot space, largest among this batch's SUVs",
+      "Burmester 3D sound and 12.3-inch MBUX standard",
+      "9 airbags, 5-star Euro NCAP rating"
+    ],
+    "cons": [
+      "Demand-import model — no fixed showroom stock, pricing quoted per order",
+      "No official exterior color options published for the Nepal lineup",
+      "LWB petrol variant commands a roughly Rs 30 lakh premium over the diesel"
+    ],
+    "highlights": [
+      "12.3-inch MBUX Touchscreen",
+      "Burmester 3D Surround Sound",
+      "4MATIC AWD",
+      "Panoramic Sunroof",
+      "AMG Line Massage Seats"
+    ],
+    "thumb": "/assets/images/car_images/mercedes-benz/gle/gle-1.jpg"
+  },
+  {
+    "id": 203,
+    "slug": "mercedes-benz-gls-2026",
+    "brand": "Mercedes-Benz",
+    "brandSlug": "mercedes-benz",
+    "model": "GLS",
+    "year": 2026,
+    "type": "Petrol / Diesel",
+    "bodyType": "suv",
+    "body": "Full-size Luxury SUV",
+    "badge": "ultra-luxury",
+    "budgetTier": "Above 4Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Mercedes-Benz's full-size 7-seat flagship SUV — GLS 450 4MATIC petrol or 450d diesel",
+    "rating": 4.5,
+    "reviews": 38,
+    "expertScore": 9,
+    "baseEMI": 534400,
+    "overview": "The Mercedes-Benz GLS (X167) is Nepal's largest and most expensive Mercedes-Benz SUV, sold by Deepak Gautam & Company as the GLS 450 4MATIC (petrol mild hybrid) and GLS 450d 4MATIC (diesel), both in 7-seat configuration. It brings 5-zone climate control, heated/ventilated front and rear seats with massage, and full ADAS. As a demand-import model, final specification and pricing are confirmed per order rather than from fixed showroom stock.",
+    "images": [
+      "/assets/images/car_images/mercedes-benz/gls/gls-1.jpg",
+      "/assets/images/car_images/mercedes-benz/gls/gls-2.jpg",
+      "/assets/images/car_images/mercedes-benz/gls/gls-3.jpg"
+    ],
+    "colors": [],
+    "variants": [
+      {
+        "name": "GLS 450 4MATIC (3.0L Turbo Petrol Mild Hybrid)",
+        "price": 44500000,
+        "label": "Rs. 4.45 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "3.0L Turbo Inline-6 mild hybrid (EQ Boost)",
+          "9G-TRONIC 9-Speed AT",
+          "4MATIC AWD",
+          "5-zone THERMOMATIC climate control",
+          "Panoramic sunroof",
+          "Heated/ventilated front & rear seats with massage",
+          "7-seat layout"
+        ],
+        "specs": {
+          "power": "375 PS @ 5,500–6,100 rpm",
+          "torque": "500 Nm @ 1,600–4,500 rpm",
+          "efficiency": "N/A",
+          "transmission": "9G-TRONIC 9-Speed AT",
+          "Power": "375 PS @ 5,500–6,100 rpm",
+          "Torque": "500 Nm @ 1,600–4,500 rpm"
+        }
+      },
+      {
+        "name": "GLS 450d 4MATIC (3.0L Turbo Diesel)",
+        "price": 48500000,
+        "label": "Rs. 4.85 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "3.0L Turbo Inline-6 Diesel (OM656)",
+          "9G-TRONIC 9-Speed AT",
+          "4MATIC AWD",
+          "5-zone THERMOMATIC climate control",
+          "Panoramic sunroof",
+          "7-seat layout",
+          "9 airbags"
+        ],
+        "specs": {
+          "power": "362 PS @ 4,000 rpm",
+          "torque": "750 Nm @ 1,350 rpm",
+          "efficiency": "11 km/l (ARAI, reference market)",
+          "transmission": "9G-TRONIC 9-Speed AT",
+          "Power": "362 PS @ 4,000 rpm",
+          "Torque": "750 Nm @ 1,350 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "3.0L Turbo Inline-6 Petrol (mild hybrid) / 3.0L Turbo Inline-6 Diesel (OM656)",
+      "Displacement (cc)": "2,999",
+      "Max Engine Power": "362–375 PS",
+      "Max Engine Torque": "500–750 Nm",
+      "Transmission Type": "9G-TRONIC 9-Speed AT",
+      "Drive Type": "4MATIC AWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "9",
+      "Body Type": "Full-size Luxury SUV",
+      "Distributor": "Deepak Gautam & Company Pvt. Ltd. (Official Mercedes-Benz Nepal Distributor)",
+      "Power": "362–375 PS",
+      "Torque": "500–750 Nm",
+      "Transmission": "9G-TRONIC 9-Speed AT",
+      "Seating": "7",
+      "Fuel Type": "Petrol / Diesel"
+    },
+    "pros": [
+      "7-seat layout, the only 3-row model in this batch",
+      "450d diesel's 750 Nm torque is class-leading for towing/hill driving",
+      "5-zone climate control and massage seats front and rear",
+      "9 airbags, 5-star Euro NCAP rating"
+    ],
+    "cons": [
+      "Highest-priced SUV in this batch — demand-import with pricing confirmed per order only",
+      "No official exterior color options published for the Nepal lineup",
+      "Smaller boot (355 L with all rows up) than the GLE despite the larger footprint"
+    ],
+    "highlights": [
+      "7-Seat 3-Row Layout",
+      "5-Zone THERMOMATIC Climate Control",
+      "750 Nm Diesel Torque (450d)",
+      "4MATIC AWD",
+      "Massage Seats Front & Rear"
+    ],
+    "thumb": "/assets/images/car_images/mercedes-benz/gls/gls-1.jpg"
+  },
+  {
+    "id": 204,
+    "slug": "ssangyong-korando-2026",
+    "brand": "SsangYong",
+    "brandSlug": "ssangyong",
+    "model": "Korando",
+    "year": 2026,
+    "type": "Petrol",
+    "bodyType": "suv",
+    "body": "Compact SUV",
+    "badge": "established",
+    "budgetTier": "Under 90L",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "IMS Motors' long-running compact SUV — turbo-petrol punch, sunroof, and leather on the loaded trim",
+    "rating": 4,
+    "reviews": 65,
+    "expertScore": 8,
+    "baseEMI": 47700,
+    "overview": "The SsangYong Korando has been sold in Nepal by IMS Motors since 2016 and remains on the lineup as the brand's compact SUV offering. It comes with a 1.5L turbocharged GDI petrol engine in MT Loaded and AT Semi Loaded trims, aimed at buyers who want a comfortably equipped SUV with a known Korean badge and an established local dealer network. It sits below the Tivoli-based XLV and above entry hatchback-based crossovers in IMS Motors' current Nepal range.",
+    "images": [
+      "/assets/images/car_images/ssangyong/korando/SsangYong_Korando_GIMS_2019_Le_Grand-Saconnex_GIMS1297.jpg",
+      "/assets/images/car_images/ssangyong/korando/SsangYong_Korando_GIMS_2019_Le_Grand-Saconnex_GIMS1292.jpg",
+      "/assets/images/car_images/ssangyong/korando/Ssangyong_Korando_TGDi_GLX_2022.jpg",
+      "/assets/images/car_images/ssangyong/korando/2021_SsangYong_Korando_C300_Front.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Space Black",
+        "hex": "#1C1C1C"
+      },
+      {
+        "name": "Dandy Blue",
+        "hex": "#2E4A6B"
+      },
+      {
+        "name": "Grand White",
+        "hex": "#F2F2F0"
+      },
+      {
+        "name": "Orange Pop",
+        "hex": "#D65A31"
+      }
+    ],
+    "variants": [
+      {
+        "name": "MT Loaded (1.5L Turbo Petrol)",
+        "price": 7999000,
+        "label": "Rs. 79.99 Lakh",
+        "popular": true,
+        "transmission": "MT",
+        "fuel": "Petrol",
+        "features": [
+          "1.5L Turbo GDI Petrol (163 PS)",
+          "6-Speed Manual",
+          "Dual Automatic Climate Control",
+          "Rear Camera & Parking Sensors",
+          "Touchscreen Infotainment with Bluetooth"
+        ],
+        "specs": {
+          "power": "163 PS @ 5,500 rpm",
+          "torque": "280 Nm @ 1,500-4,000 rpm",
+          "transmission": "6-Speed Manual",
+          "Power": "163 PS @ 5,500 rpm",
+          "Torque": "280 Nm @ 1,500-4,000 rpm"
+        }
+      },
+      {
+        "name": "AT Semi Loaded (1.5L Turbo Petrol)",
+        "price": 8999000,
+        "label": "Rs. 89.99 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Petrol",
+        "features": [
+          "1.5L Turbo GDI Petrol (163 PS)",
+          "6-Speed Automatic",
+          "Leather Seats",
+          "Daytime Running Lights",
+          "Keyless Entry"
+        ],
+        "specs": {
+          "power": "163 PS @ 5,500 rpm",
+          "torque": "280 Nm @ 1,500-4,000 rpm",
+          "transmission": "6-Speed Automatic",
+          "Power": "163 PS @ 5,500 rpm",
+          "Torque": "280 Nm @ 1,500-4,000 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "1.5L Turbo GDI Petrol",
+      "Displacement (cc)": "1,497",
+      "Max Engine Power": "163 PS @ 5,500 rpm",
+      "Max Engine Torque": "280 Nm @ 1,500-4,000 rpm",
+      "Transmission Type": "6MT / 6AT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Compact SUV",
+      "Distributor": "IMS Motors (Official SsangYong Distributor for Nepal)",
+      "Power": "163 PS @ 5,500 rpm",
+      "Torque": "280 Nm @ 1,500-4,000 rpm",
+      "Transmission": "6MT / 6AT",
+      "Seating": "5",
+      "Fuel Type": "Petrol"
+    },
+    "pros": [
+      "Turbo-petrol engine feels peppier than naturally aspirated rivals at this price",
+      "AT Semi Loaded trim adds leather seats and keyless entry",
+      "Backed by IMS Motors' decade-long SsangYong service network in Nepal"
+    ],
+    "cons": [
+      "FWD only in Nepal — no AWD/4WD option offered here",
+      "No diesel engine option available in the Nepal lineup",
+      "Infotainment and interior tech trail newer Korean and Chinese rivals in this price band"
+    ],
+    "highlights": [
+      "1.5L Turbo GDI Engine",
+      "Dual Automatic Climate Control",
+      "Leather Seats (AT trim)",
+      "Established IMS Motors Service Network"
+    ],
+    "thumb": "/assets/images/car_images/ssangyong/korando/SsangYong_Korando_GIMS_2019_Le_Grand-Saconnex_GIMS1297.jpg"
+  },
+  {
+    "id": 205,
+    "slug": "proton-emas-5-2026",
+    "brand": "Proton",
+    "brandSlug": "proton",
+    "model": "e.MAS 5",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Compact Electric SUV",
+    "badge": "electric",
+    "budgetTier": "Under 35L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Jagdamba Motors' first affordable EV crossover — CATL LFP battery, up to 325 km range",
+    "rating": 4.1,
+    "reviews": 45,
+    "expertScore": 8.2,
+    "baseEMI": 17900,
+    "overview": "The Proton e.MAS 5 launched in Nepal on 21 July 2026 through Jagdamba Motors, becoming the brand's second EV in the country after the e.MAS 7. Built on Geely's GMA platform and marketed in Malaysia as 'Malaysia's first affordable EV', it comes in Prime and Premium variants with CATL LFP batteries rated for 225 km and 325 km of WLTP range respectively. Introductory pricing for the first 100 Nepali buyers was set at Rs 29.99 lakh (Prime) and Rs 34.99 lakh (Premium), with regular pricing higher once that offer lapses.",
+    "images": [
+      "/assets/images/car_images/proton/emas-5/Proton-Emas5-21-scaled.jpg",
+      "/assets/images/car_images/proton/emas-5/Proton-Emas5-24-scaled.jpg",
+      "/assets/images/car_images/proton/emas-5/Proton-Emas5-23-scaled.jpg",
+      "/assets/images/car_images/proton/emas-5/Proton-Emas5-74-scaled.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Jade Green",
+        "hex": "#4C7A5E"
+      },
+      {
+        "name": "Marble Cream",
+        "hex": "#EFE6D8"
+      },
+      {
+        "name": "Quartz Rose",
+        "hex": "#D9B8B0"
+      },
+      {
+        "name": "Moonstone White",
+        "hex": "#F5F5F2"
+      },
+      {
+        "name": "Graphite Silver",
+        "hex": "#9A9A98"
+      },
+      {
+        "name": "Slate Grey",
+        "hex": "#5B5E62"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Prime (Single Motor)",
+        "price": 2999000,
+        "label": "Rs. 29.99 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "30.12 kWh CATL LFP Battery",
+          "58 kW (79 PS) Rear Motor",
+          "225 km WLTP Range",
+          "14.6-inch Touchscreen",
+          "Wireless Apple CarPlay/Android Auto"
+        ],
+        "specs": {
+          "power": "79 PS (58 kW)",
+          "torque": "130 Nm",
+          "battery": "30.12 kWh CATL LFP",
+          "range": "225 km (WLTP)",
+          "Power": "79 PS (58 kW)",
+          "Torque": "130 Nm"
+        }
+      },
+      {
+        "name": "Premium (Single Motor)",
+        "price": 3499000,
+        "label": "Rs. 34.99 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "40.16 kWh CATL LFP Battery",
+          "85 kW (116 PS) Rear Motor",
+          "325 km WLTP Range",
+          "360-Degree Camera",
+          "Adaptive Cruise Control & AEB"
+        ],
+        "specs": {
+          "power": "116 PS (85 kW)",
+          "torque": "150 Nm",
+          "battery": "40.16 kWh CATL LFP",
+          "range": "325 km (WLTP)",
+          "Power": "116 PS (85 kW)",
+          "Torque": "150 Nm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Single Electric Motor (Rear-Mounted)",
+      "Displacement (cc)": "N/A (Electric)",
+      "Max Engine Power": "79-116 PS",
+      "Max Engine Torque": "130-150 Nm",
+      "Transmission Type": "Single-Speed Reduction Gear",
+      "Drive Type": "RWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Compact Electric SUV",
+      "Distributor": "Jagdamba Motors (Official Proton Distributor for Nepal)",
+      "Battery": "30.12-40.16 kWh CATL LFP",
+      "Range (WLTP)": "225-325 km",
+      "Power": "79-116 PS",
+      "Torque": "130-150 Nm",
+      "Transmission": "Single-Speed AT",
+      "Seating": "5",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "One of the most affordable EV crossovers in its class in Nepal at launch",
+      "Premium variant's 325 km WLTP range and 40.16 kWh LFP battery are genuinely competitive",
+      "14.6-inch touchscreen with wireless Apple CarPlay/Android Auto and 375L boot plus 70L front trunk",
+      "Strong initial demand — about 200 bookings reported on launch day"
+    ],
+    "cons": [
+      "Prime variant's 79 PS/225 km range is modest for Nepal's hilly highways",
+      "Advertised launch pricing was an introductory offer limited to the first 100 buyers; regular pricing is higher",
+      "Proton and Jagdamba Motors lack a long-term EV service track record in Nepal compared to established EV brands"
+    ],
+    "highlights": [
+      "CATL LFP Battery",
+      "14.6-inch Touchscreen",
+      "Wireless Apple CarPlay/Android Auto",
+      "70L Front Trunk + 375L Rear Boot",
+      "ADAS on Premium (Adaptive Cruise, AEB)"
+    ],
+    "thumb": "/assets/images/car_images/proton/emas-5/Proton-Emas5-21-scaled.jpg"
+  },
+  {
+    "id": 206,
+    "slug": "tata-safari-2026",
+    "brand": "Tata",
+    "brandSlug": "tata",
+    "model": "Safari",
+    "year": 2026,
+    "type": "Diesel",
+    "bodyType": "suv",
+    "body": "Large SUV",
+    "badge": "flagship",
+    "budgetTier": "Under 1.4Cr",
+    "isEV": false,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Tata's flagship 7-seat SUV — 2.0L diesel, panoramic sunroof, 7 airbags",
+    "rating": 4.2,
+    "reviews": 68,
+    "expertScore": 8.4,
+    "baseEMI": 72600,
+    "overview": "The Tata Safari is Tata Motors' flagship 7-seat SUV in Nepal, sold exclusively through Sipradi Trading. It runs a 2.0L Kryotec diesel engine producing 170 PS and 350 Nm, paired with either a 6-speed manual or 6-speed automatic transmission, with FWD tuned for Nepal's hill terrain. All trims get a panoramic sunroof, 10-speaker JBL audio, and a 5-star Global NCAP safety rating with 7 airbags standard.",
+    "images": [
+      "/assets/images/car_images/tata/safari/safari-01.jpg",
+      "/assets/images/car_images/tata/safari/safari-02.jpg",
+      "/assets/images/car_images/tata/safari/safari-03.jpg",
+      "/assets/images/car_images/tata/safari/safari-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Gold",
+        "hex": "#C8A876"
+      },
+      {
+        "name": "Frost",
+        "hex": "#DCE3E5"
+      },
+      {
+        "name": "Ash",
+        "hex": "#8B8C89"
+      },
+      {
+        "name": "Sapphire",
+        "hex": "#2A4D6E"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Accomplished+ (6-Speed MT)",
+        "price": 12199000,
+        "label": "Rs. 1.22 Cr",
+        "popular": false,
+        "transmission": "MT",
+        "fuel": "Diesel",
+        "features": [
+          "2.0L Kryotec Diesel (170 PS)",
+          "6-Speed Manual",
+          "Panoramic Sunroof",
+          "7 Airbags",
+          "10-Speaker JBL Audio"
+        ],
+        "specs": {
+          "power": "170 PS @ 3,750 rpm",
+          "torque": "350 Nm @ 1,750–2,500 rpm",
+          "efficiency": "14-16 km/l",
+          "transmission": "6-Speed MT",
+          "Power": "170 PS @ 3,750 rpm",
+          "Torque": "350 Nm @ 1,750–2,500 rpm"
+        }
+      },
+      {
+        "name": "Accomplished+ AT",
+        "price": 12999000,
+        "label": "Rs. 1.30 Cr",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.0L Kryotec Diesel (170 PS)",
+          "6-Speed Automatic",
+          "12.3-inch Infotainment",
+          "360-Degree Camera",
+          "Electric Tailgate"
+        ],
+        "specs": {
+          "power": "170 PS @ 3,750 rpm",
+          "torque": "350 Nm @ 1,750–2,500 rpm",
+          "efficiency": "14-16 km/l",
+          "transmission": "6-Speed AT",
+          "Power": "170 PS @ 3,750 rpm",
+          "Torque": "350 Nm @ 1,750–2,500 rpm"
+        }
+      },
+      {
+        "name": "Accomplished+ Dark AT",
+        "price": 13199000,
+        "label": "Rs. 1.32 Cr",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Diesel",
+        "features": [
+          "2.0L Kryotec Diesel (170 PS)",
+          "6-Speed Automatic",
+          "Dark Edition Styling",
+          "19-inch Alloy Wheels",
+          "Ventilated Front Seats"
+        ],
+        "specs": {
+          "power": "170 PS @ 3,750 rpm",
+          "torque": "350 Nm @ 1,750–2,500 rpm",
+          "efficiency": "14-16 km/l",
+          "transmission": "6-Speed AT",
+          "Power": "170 PS @ 3,750 rpm",
+          "Torque": "350 Nm @ 1,750–2,500 rpm"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "2.0L Kryotec Turbocharged Diesel",
+      "Displacement (cc)": "1,956",
+      "Max Engine Power": "170 PS @ 3,750 rpm",
+      "Max Engine Torque": "350 Nm @ 1,750–2,500 rpm",
+      "Transmission Type": "6-Speed MT / 6-Speed AT",
+      "Drive Type": "FWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "7",
+      "Body Type": "Large SUV",
+      "Distributor": "Sipradi Trading (Official Tata Motors Distributor for Nepal)",
+      "Power": "170 PS @ 3,750 rpm",
+      "Torque": "350 Nm @ 1,750–2,500 rpm",
+      "Transmission": "6-Speed MT / 6-Speed AT",
+      "Seating": "7",
+      "Fuel Type": "Diesel"
+    },
+    "pros": [
+      "7 airbags and 5-star Global NCAP safety rating standard across the range",
+      "205mm ground clearance and FWD tuning suited to Nepal's hill roads",
+      "Panoramic sunroof, 10-speaker JBL audio, and 360-degree camera included"
+    ],
+    "cons": [
+      "FWD only — no 4WD option unlike some large-SUV rivals",
+      "Diesel-only powertrain, no petrol or hybrid choice",
+      "Manual transmission on base trim; AT only from mid-trim up"
+    ],
+    "highlights": [
+      "7-Seat Configuration",
+      "5-Star Global NCAP Rating",
+      "Panoramic Sunroof",
+      "JBL 10-Speaker Audio",
+      "360-Degree Camera"
+    ],
+    "thumb": "/assets/images/car_images/tata/safari/safari-01.jpg"
+  },
+  {
+    "id": 207,
+    "slug": "tata-curvv-ev-2026",
+    "brand": "Tata",
+    "brandSlug": "tata",
+    "model": "Curvv.ev",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric SUV Coupe",
+    "badge": "electric",
+    "budgetTier": "Under 60L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Tata's flagship electric coupe-SUV — 55kWh battery, up to 425km real-world range",
+    "rating": 4.1,
+    "reviews": 45,
+    "expertScore": 8.2,
+    "baseEMI": 33900,
+    "overview": "The Tata Curvv.ev is Tata Motors' flagship electric coupe-SUV in Nepal, launched by Sipradi Trading in a single top-spec Empowered +A variant. Its 55kWh battery delivers an ARAI-claimed 585km range (400-425km under Nepal's real-world C75 test conditions), with 150km of range added in just 15 minutes on a DC fast charger. The car brings a panoramic sunroof, 9-speaker JBL audio, and Level 2 ADAS to Nepal's growing EV segment.",
+    "images": [
+      "/assets/images/car_images/tata/curvv-ev/curvv-ev-01.jpg",
+      "/assets/images/car_images/tata/curvv-ev/curvv-ev-02.jpg",
+      "/assets/images/car_images/tata/curvv-ev/curvv-ev-03.jpg",
+      "/assets/images/car_images/tata/curvv-ev/curvv-ev-04.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Virtual Sunrise",
+        "hex": "#F4A93E"
+      },
+      {
+        "name": "Empowered Oxide",
+        "hex": "#6E5849"
+      },
+      {
+        "name": "Flame Red",
+        "hex": "#C41E3A"
+      },
+      {
+        "name": "Pristine White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Pure Grey",
+        "hex": "#8B8D8F"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Empowered +A",
+        "price": 5699000,
+        "label": "Rs. 56.99 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "55 kWh Battery",
+          "98 kW PMSM Motor",
+          "585km ARAI Range",
+          "Panoramic Sunroof",
+          "Level 2 ADAS"
+        ],
+        "specs": {
+          "power": "133 PS",
+          "torque": "215 Nm",
+          "efficiency": "400-425 km real-world range",
+          "transmission": "Single-Speed AT",
+          "Power": "133 PS",
+          "Torque": "215 Nm",
+          "Battery Capacity": "55 kWh",
+          "Range": "585 km ARAI / 400-425 km real-world"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 98 kW PMSM Motor",
+      "Displacement (cc)": "N/A",
+      "Max Engine Power": "133 PS",
+      "Max Engine Torque": "215 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "RWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Electric SUV Coupe",
+      "Distributor": "Sipradi Trading (Official Tata Motors Distributor for Nepal)",
+      "Battery Capacity": "55 kWh",
+      "Range": "585 km ARAI / 400-425 km real-world (C75)",
+      "Power": "133 PS",
+      "Torque": "215 Nm",
+      "Transmission": "Single-Speed AT",
+      "Seating": "5",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "585km ARAI range (400-425km real-world) — among the longest-range EVs in Nepal",
+      "150km of range added in just 15 minutes of DC fast charging",
+      "V2L/V2V charging lets it power external devices or other EVs"
+    ],
+    "cons": [
+      "Only one top-spec variant available — no lower-price entry option",
+      "Coupe-SUV roofline trims rear headroom versus boxier rivals",
+      "6 airbags — one fewer than some Mahindra EV rivals' 7"
+    ],
+    "highlights": [
+      "585km ARAI Range",
+      "V2L/V2V Charging",
+      "Panoramic Sunroof",
+      "JBL 9-Speaker Audio",
+      "Level 2 ADAS"
+    ],
+    "thumb": "/assets/images/car_images/tata/curvv-ev/curvv-ev-01.jpg"
+  },
+  {
+    "id": 208,
+    "slug": "tata-nexon-k3-ev-2026",
+    "brand": "Tata",
+    "brandSlug": "tata",
+    "model": "Nexon K3.ev",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Compact Electric SUV",
+    "badge": "electric",
+    "budgetTier": "Under 50L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Upgraded electric Nexon — 45kWh battery, 325km real-world range, 6 airbags",
+    "rating": 4,
+    "reviews": 52,
+    "expertScore": 8,
+    "baseEMI": 29200,
+    "overview": "The Tata Nexon K3.ev is the upgraded electric version of Tata's popular Nexon compact SUV, launched in Nepal at the NAIMA Nepal Mobility Expo 2026 by Sipradi Trading. It runs a 45kWh battery and 98kW motor for a real-world tested range of about 325km, with six airbags, a 360-degree camera, and blind-spot monitoring standard on its single Empowered LR variant. It sits as Tata's more affordable EV alongside the larger, pricier Curvv.ev.",
+    "images": [
+      "/assets/images/car_images/tata/nexon-k3-ev/00-Nexon-ev-side-view-left.jpg",
+      "/assets/images/car_images/tata/nexon-k3-ev/Nexon-ev-dashboard.jpg",
+      "/assets/images/car_images/tata/nexon-k3-ev/nexon-ev-img3.png",
+      "/assets/images/car_images/tata/nexon-k3-ev/nexon-ev-img4.png",
+      "/assets/images/car_images/tata/nexon-k3-ev/tatat-nexon.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Empowered Oxide",
+        "hex": "#6E5849"
+      },
+      {
+        "name": "Pristine White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Daytona Grey",
+        "hex": "#6B6E70"
+      },
+      {
+        "name": "Flame Red",
+        "hex": "#C41E3A"
+      },
+      {
+        "name": "Intensi Teal",
+        "hex": "#1F7A72"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Empowered LR (Long Range)",
+        "price": 4899000,
+        "label": "Rs. 48.99 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "45 kWh Battery",
+          "98 kW Motor",
+          "325km Real-World Range",
+          "6 Airbags",
+          "360-Degree Camera"
+        ],
+        "specs": {
+          "power": "~133 PS (98 kW)",
+          "torque": "215 Nm",
+          "efficiency": "325 km real-world range",
+          "transmission": "Single-Speed AT",
+          "Power": "~133 PS (98 kW)",
+          "Torque": "215 Nm",
+          "Battery Capacity": "45 kWh",
+          "Range": "325 km (real-world tested)"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 98 kW Motor",
+      "Displacement (cc)": "N/A",
+      "Max Engine Power": "~133 PS (98 kW)",
+      "Max Engine Torque": "215 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "FWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "6",
+      "Body Type": "Compact Electric SUV",
+      "Distributor": "Sipradi Trading (Official Tata Motors Distributor for Nepal)",
+      "Battery Capacity": "45 kWh",
+      "Range": "325 km (real-world tested)",
+      "Power": "~133 PS (98 kW)",
+      "Torque": "215 Nm",
+      "Transmission": "Single-Speed AT",
+      "Seating": "5",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "325km real-world range at a relatively accessible EV price point",
+      "Six airbags and 360-degree camera standard",
+      "Four-level brake regeneration and multiple drive modes suited to Nepal's roads"
+    ],
+    "cons": [
+      "Single variant only — no choice of battery size or trim",
+      "Range trails Tata's own Curvv.ev and Mahindra rivals",
+      "16-inch wheels are modest for the segment"
+    ],
+    "highlights": [
+      "325km Real-World Range",
+      "6 Airbags Standard",
+      "360-Degree Camera",
+      "12.3-inch Touchscreen",
+      "NAIMA 2026 Launch Model"
+    ],
+    "thumb": "/assets/images/car_images/tata/nexon-k3-ev/00-Nexon-ev-side-view-left.jpg"
+  },
+  {
+    "id": 209,
+    "slug": "mahindra-be-6-2026",
+    "brand": "Mahindra",
+    "brandSlug": "mahindra",
+    "model": "BE 6",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric SUV Coupe",
+    "badge": "electric",
+    "budgetTier": "Under 60L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Mahindra's coupe-styled electric SUV — 557km MIDC range, 7 airbags, 5-star BNCAP",
+    "rating": 4.3,
+    "reviews": 58,
+    "expertScore": 8.6,
+    "baseEMI": 33900,
+    "overview": "The Mahindra BE 6 is Mahindra's coupe-styled electric SUV launched in Nepal through Agni Group (Agni Incorporated) at the NAIMA Nepal Mobility Expo. All three packs share a 59kWh LFP battery and 99kW motor rated for 557km range (MIDC P1+P2), with 140kW DC fast charging taking it from 20-80% in about 20 minutes. It comes with 7 airbags, a 5-star Bharat NCAP rating, and a 16-speaker Harman Kardon Dolby Atmos sound system.",
+    "images": [
+      "/assets/images/car_images/mahindra/be-6/be6newbanner.jpg",
+      "/assets/images/car_images/mahindra/be-6/dex-1.webp",
+      "/assets/images/car_images/mahindra/be-6/everestwhite.webp",
+      "/assets/images/car_images/mahindra/be-6/stealthblack.jpg",
+      "/assets/images/car_images/mahindra/be-6/tangored.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Red",
+        "hex": "#C41E3A"
+      },
+      {
+        "name": "White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Blue",
+        "hex": "#2A4D8E"
+      },
+      {
+        "name": "Orange",
+        "hex": "#E2711D"
+      },
+      {
+        "name": "Grey",
+        "hex": "#7A7C7E"
+      },
+      {
+        "name": "Black",
+        "hex": "#1B1B1D"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Pack One Above",
+        "price": 5700000,
+        "label": "Rs. 57 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "59 kWh LFP Battery",
+          "99 kW Motor",
+          "557km MIDC Range",
+          "7 Airbags",
+          "L2+ ADAS"
+        ],
+        "specs": {
+          "power": "135 PS (99 kW)",
+          "torque": "380 Nm",
+          "efficiency": "557 km MIDC range",
+          "transmission": "Single-Speed AT",
+          "Power": "135 PS (99 kW)",
+          "Torque": "380 Nm",
+          "Battery Capacity": "59 kWh LFP",
+          "Range": "557 km (MIDC P1+P2)"
+        }
+      },
+      {
+        "name": "Pack Two",
+        "price": 6100000,
+        "label": "Rs. 61 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "59 kWh LFP Battery",
+          "99 kW Motor",
+          "Panoramic Sunroof",
+          "Harman Kardon 16-Speaker Audio",
+          "Roof-Mounted Selfie Camera"
+        ],
+        "specs": {
+          "power": "135 PS (99 kW)",
+          "torque": "380 Nm",
+          "efficiency": "557 km MIDC range",
+          "transmission": "Single-Speed AT",
+          "Power": "135 PS (99 kW)",
+          "Torque": "380 Nm",
+          "Battery Capacity": "59 kWh LFP",
+          "Range": "557 km (MIDC P1+P2)"
+        }
+      },
+      {
+        "name": "Pack Three Selection",
+        "price": 6800000,
+        "label": "Rs. 68 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "59 kWh LFP Battery",
+          "99 kW Motor",
+          "Twin Wireless Charging Pads",
+          "VisionX AR Head-Up Display",
+          "Brake-by-Wire"
+        ],
+        "specs": {
+          "power": "135 PS (99 kW)",
+          "torque": "380 Nm",
+          "efficiency": "557 km MIDC range",
+          "transmission": "Single-Speed AT",
+          "Power": "135 PS (99 kW)",
+          "Torque": "380 Nm",
+          "Battery Capacity": "59 kWh LFP",
+          "Range": "557 km (MIDC P1+P2)"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 99 kW PMSM Motor",
+      "Displacement (cc)": "N/A",
+      "Max Engine Power": "135 PS (99 kW)",
+      "Max Engine Torque": "380 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "RWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7",
+      "Body Type": "Electric SUV Coupe",
+      "Distributor": "Agni Group / Agni Incorporated (Official Mahindra Distributor for Nepal)",
+      "Battery Capacity": "59 kWh LFP",
+      "Range": "557 km (MIDC P1+P2)",
+      "Power": "135 PS (99 kW)",
+      "Torque": "380 Nm",
+      "Transmission": "Single-Speed AT",
+      "Seating": "5",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "557km MIDC range with 140kW DC fast charging (20-80% in ~20 min)",
+      "7 airbags and a 5-star Bharat NCAP rating",
+      "16-speaker Harman Kardon audio with Dolby Atmos and panoramic sunroof"
+    ],
+    "cons": [
+      "Coupe-SUV shape reduces rear headroom and cargo versus boxier SUVs",
+      "Only a 5-seat layout — no 7-seat option (that's the XEV 9S)",
+      "Rear-wheel drive only — no AWD variant offered"
+    ],
+    "highlights": [
+      "557km MIDC Range",
+      "7 Airbags, 5-Star BNCAP",
+      "Harman Kardon 16-Speaker Audio",
+      "L2+ ADAS",
+      "140kW DC Fast Charging"
+    ],
+    "thumb": "/assets/images/car_images/mahindra/be-6/be6newbanner.jpg"
+  },
+  {
+    "id": 210,
+    "slug": "mahindra-xev-9e-2026",
+    "brand": "Mahindra",
+    "brandSlug": "mahindra",
+    "model": "XEV 9e",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric SUV",
+    "badge": "premium",
+    "budgetTier": "Under 70L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Mahindra's flagship electric SUV — up to 656km MIDC range, triple 12.3-inch displays",
+    "rating": 4.4,
+    "reviews": 63,
+    "expertScore": 8.8,
+    "baseEMI": 41100,
+    "overview": "The Mahindra XEV 9e is Mahindra's flagship electric SUV in Nepal, launched by Agni Group (Agni Incorporated) at the NAIMA Nepal Mobility Expo. Pack 2 and Pack 3 Selection use a 59kWh battery and 99kW motor for up to 542km range, while the top Pack 3 steps up to a 79kWh battery and 199kW motor for up to 656km range (MIDC). It features triple 12.3-inch displays, a 16-speaker Harman Kardon system, and a full ADAS suite with brake-by-wire technology.",
+    "images": [
+      "/assets/images/car_images/mahindra/xev-9e/Stealth_Black_xev9e.webp",
+      "/assets/images/car_images/mahindra/xev-9e/seccolor-1.webp",
+      "/assets/images/car_images/mahindra/xev-9e/seccolor-3.webp",
+      "/assets/images/car_images/mahindra/xev-9e/sev9enewbanner.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Tango Red",
+        "hex": "#C0272D"
+      },
+      {
+        "name": "Everest White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Nebula Blue",
+        "hex": "#28405E"
+      },
+      {
+        "name": "Ruby Velvet",
+        "hex": "#7A1F32"
+      },
+      {
+        "name": "Desert Myst",
+        "hex": "#B9A98A"
+      },
+      {
+        "name": "Stealth Black",
+        "hex": "#1A1A1C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Pack 2",
+        "price": 6900000,
+        "label": "Rs. 69 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "59 kWh LFP Battery",
+          "99 kW Motor",
+          "542km MIDC Range",
+          "Triple 12.3-inch Displays",
+          "7 Airbags"
+        ],
+        "specs": {
+          "power": "135 PS (99 kW)",
+          "torque": "380 Nm",
+          "efficiency": "542 km MIDC range",
+          "transmission": "Single-Speed AT",
+          "Power": "135 PS (99 kW)",
+          "Torque": "380 Nm",
+          "Battery Capacity": "59 kWh LFP",
+          "Range": "542 km MIDC"
+        }
+      },
+      {
+        "name": "Pack 3 Selection",
+        "price": 7725000,
+        "label": "Rs. 77.25 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "59 kWh LFP Battery",
+          "99 kW Motor",
+          "Intelligent Adaptive Suspension",
+          "Harman Kardon 16-Speaker Audio",
+          "Ventilated Seats"
+        ],
+        "specs": {
+          "power": "135 PS (99 kW)",
+          "torque": "380 Nm",
+          "efficiency": "542 km MIDC range",
+          "transmission": "Single-Speed AT",
+          "Power": "135 PS (99 kW)",
+          "Torque": "380 Nm",
+          "Battery Capacity": "59 kWh LFP",
+          "Range": "542 km MIDC"
+        }
+      },
+      {
+        "name": "Pack 3",
+        "price": 9500000,
+        "label": "Rs. 95 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "79 kWh LFP Battery",
+          "199 kW Motor",
+          "656km MIDC Range",
+          "Gesture-Controlled Power Tailgate",
+          "Head-Up Display"
+        ],
+        "specs": {
+          "power": "271 PS (199 kW)",
+          "torque": "380 Nm",
+          "efficiency": "656 km MIDC / 533 km WLTP",
+          "transmission": "Single-Speed AT",
+          "Power": "271 PS (199 kW)",
+          "Torque": "380 Nm",
+          "Battery Capacity": "79 kWh LFP",
+          "Range": "656 km MIDC / 533 km WLTP"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 99–199 kW PMSM Motor",
+      "Displacement (cc)": "N/A",
+      "Max Engine Power": "135–271 PS (99–199 kW)",
+      "Max Engine Torque": "380 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "RWD",
+      "Seating Capacity": "5",
+      "Total Airbag Count": "7",
+      "Body Type": "Electric SUV",
+      "Distributor": "Agni Group / Agni Incorporated (Official Mahindra Distributor for Nepal)",
+      "Battery Capacity": "59–79 kWh LFP",
+      "Range": "542–656 km MIDC",
+      "Power": "135–271 PS (99–199 kW)",
+      "Torque": "380 Nm",
+      "Transmission": "Single-Speed AT",
+      "Seating": "5",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Up to 656km MIDC range on the 79kWh Pack 3 variant",
+      "Triple 12.3-inch displays and a 16-speaker Harman Kardon audio system",
+      "7 airbags, 5-star BNCAP, and a full ADAS suite with brake-by-wire"
+    ],
+    "cons": [
+      "Top Pack 3 trim crosses Rs 95 lakh, pushing well into luxury pricing",
+      "Entry Pack 2 trim shares the smaller 59kWh battery/99kW motor with the cheaper BE 6",
+      "Gesture tailgate and ventilated seats reserved for Pack 3 only"
+    ],
+    "highlights": [
+      "Up to 656km MIDC Range",
+      "Triple 12.3-inch Displays",
+      "7 Airbags, 5-Star BNCAP",
+      "Harman Kardon 16-Speaker Audio",
+      "Head-Up Display (Pack 3)"
+    ],
+    "thumb": "/assets/images/car_images/mahindra/xev-9e/Stealth_Black_xev9e.webp"
+  },
+  {
+    "id": 211,
+    "slug": "mahindra-xev-9s-2026",
+    "brand": "Mahindra",
+    "brandSlug": "mahindra",
+    "model": "XEV 9S",
+    "year": 2026,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric SUV",
+    "badge": "family",
+    "budgetTier": "Under 60L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": false,
+    "tagline": "Mahindra's first dedicated 7-seat electric SUV — up to 450km range, triple-screen dashboard",
+    "rating": 4.2,
+    "reviews": 38,
+    "expertScore": 8.4,
+    "baseEMI": 35700,
+    "overview": "The Mahindra XEV 9S is Mahindra's first dedicated three-row electric SUV, launched in Nepal at the NAIMA Nepal Mobility Expo 2026 (August 11-16) through Agni Group. The Pack One Above trim runs a 59kWh battery and 170kW motor for 350km range, while Pack Two Above steps up to a 79kWh battery and 210kW motor for 450km range, both rear-wheel drive with 380 Nm torque. It's aimed at Nepali families needing genuine 7-seat electric mobility.",
+    "images": [
+      "/assets/images/car_images/mahindra/xev-9s/XEV9S_WEB_BANNER_PRICE_1920x829.jpg",
+      "/assets/images/car_images/mahindra/xev-9s/XEV_9S_6_SEATER_Desktop.jpg",
+      "/assets/images/car_images/mahindra/xev-9s/mahindra-xev-9s-naima-2026.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Stealth Black",
+        "hex": "#1A1A1C"
+      },
+      {
+        "name": "Ruby Velvet",
+        "hex": "#7A1F32"
+      },
+      {
+        "name": "Nebula Blue",
+        "hex": "#28405E"
+      },
+      {
+        "name": "Midnight Black",
+        "hex": "#0E0E10"
+      },
+      {
+        "name": "Desert Myst",
+        "hex": "#B9A98A"
+      },
+      {
+        "name": "Everest White",
+        "hex": "#F5F5F5"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Pack One Above",
+        "price": 6000000,
+        "label": "Rs. 60 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "59 kWh Battery",
+          "170 kW Motor",
+          "350km Range",
+          "7-Seat Layout",
+          "18-inch Alloy Wheels"
+        ],
+        "specs": {
+          "power": "~231 PS (170 kW)",
+          "torque": "380 Nm",
+          "efficiency": "350 km range",
+          "transmission": "Single-Speed AT (RWD)",
+          "Power": "~231 PS (170 kW)",
+          "Torque": "380 Nm",
+          "Battery Capacity": "59 kWh",
+          "Range": "350 km"
+        }
+      },
+      {
+        "name": "Pack Two Above",
+        "price": 8650000,
+        "label": "Rs. 86.50 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "79 kWh Battery",
+          "210 kW Motor",
+          "450km Range",
+          "19-inch Alloy Wheels",
+          "Triple-Screen Dashboard"
+        ],
+        "specs": {
+          "power": "~286 PS (210 kW)",
+          "torque": "380 Nm",
+          "efficiency": "450 km range",
+          "transmission": "Single-Speed AT (RWD)",
+          "Power": "~286 PS (210 kW)",
+          "Torque": "380 Nm",
+          "Battery Capacity": "79 kWh",
+          "Range": "450 km"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 170–210 kW Motor",
+      "Displacement (cc)": "N/A",
+      "Max Engine Power": "~231–286 PS (170–210 kW)",
+      "Max Engine Torque": "380 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "RWD",
+      "Seating Capacity": "7",
+      "Total Airbag Count": "6–7",
+      "Body Type": "Electric SUV",
+      "Distributor": "Agni Group / Agni Incorporated (Official Mahindra Distributor for Nepal)",
+      "Battery Capacity": "59–79 kWh",
+      "Range": "350–450 km",
+      "Power": "~231–286 PS (170–210 kW)",
+      "Torque": "380 Nm",
+      "Transmission": "Single-Speed AT",
+      "Seating": "7",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Mahindra's first dedicated 7-seat electric SUV for larger families",
+      "450km range on the 79kWh Pack Two Above variant",
+      "Triple-screen dashboard and distinctive full-width LED light bar styling"
+    ],
+    "cons": [
+      "Base Pack One Above trim limited to 350km range",
+      "Only rear-wheel drive across both packs — no AWD option",
+      "Newest launch (Aug 2026) — limited real-world ownership data yet"
+    ],
+    "highlights": [
+      "7-Seat Electric SUV",
+      "Up to 450km Range",
+      "Triple-Screen Dashboard",
+      "Full-Width LED Light Bar",
+      "NAIMA 2026 Launch Model"
+    ],
+    "thumb": "/assets/images/car_images/mahindra/xev-9s/XEV9S_WEB_BANNER_PRICE_1920x829.jpg"
+  },
+  {
+    "id": 212,
+    "slug": "tata-tigor-ev-2025",
+    "brand": "Tata",
+    "brandSlug": "tata",
+    "model": "Tigor EV",
+    "year": 2025,
+    "type": "Electric",
+    "bodyType": "sedan",
+    "body": "Compact Electric Sedan",
+    "badge": "best-seller",
+    "budgetTier": "Under 35L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": true,
+    "tagline": "Nepal's most affordable electric sedan — a fleet and family favourite",
+    "rating": 4.1,
+    "reviews": 46,
+    "expertScore": 7.6,
+    "baseEMI": 18500,
+    "overview": "The Tata Tigor EV is a compact electric sedan sold in Nepal by Sipradi Trading, Tata Motors' official distributor. It pairs Tata's Ziptron powertrain — a 55 kW motor and a 26 kWh liquid-cooled battery — with an ARAI-certified range of 306 km, and comes with an 8-year / 160,000 km battery-and-motor warranty. A boot-equipped three-box body, low running costs and a GNCAP 4-star crash rating have made it one of the most common EVs in Kathmandu's ride-hailing and office fleets. It is offered in three trims: XE, XM and XZ+ (with a dual-tone option on the top trim).",
+    "images": [
+      "/assets/images/car_images/tata/tigor-ev/exterior/tigor-ev-exterior-front-charging.jpg",
+      "/assets/images/car_images/tata/tigor-ev/exterior/tigor-ev-exterior-front-teal.jpg",
+      "/assets/images/car_images/tata/tigor-ev/interior/int-1-dashboard.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Teal Blue",
+        "hex": "#1E6E7A"
+      },
+      {
+        "name": "Daytona Grey",
+        "hex": "#6B6E70"
+      },
+      {
+        "name": "Pristine White",
+        "hex": "#F5F5F5"
+      }
+    ],
+    "variants": [
+      {
+        "name": "XE",
+        "price": 2999000,
+        "label": "Rs. 29.99 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "26 kWh Liquid-Cooled Battery",
+          "55 kW (75 PS) Ziptron Motor",
+          "306 km ARAI Range",
+          "Dual Airbags",
+          "ABS with EBD",
+          "Rear Parking Sensors"
+        ],
+        "specs": {
+          "power": "75 PS (55 kW)",
+          "torque": "170 Nm",
+          "range": "306 km (ARAI)",
+          "battery": "26 kWh",
+          "Power": "75 PS (55 kW)",
+          "Torque": "170 Nm",
+          "Battery Capacity": "26 kWh",
+          "Range": "306 km (ARAI)"
+        }
+      },
+      {
+        "name": "XM",
+        "price": 3149000,
+        "label": "Rs. 31.49 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "26 kWh Liquid-Cooled Battery",
+          "55 kW (75 PS) Ziptron Motor",
+          "306 km ARAI Range",
+          "7-inch Touchscreen Infotainment",
+          "Android Auto & Apple CarPlay",
+          "Cruise Control"
+        ],
+        "specs": {
+          "power": "75 PS (55 kW)",
+          "torque": "170 Nm",
+          "range": "306 km (ARAI)",
+          "battery": "26 kWh",
+          "Power": "75 PS (55 kW)",
+          "Torque": "170 Nm",
+          "Battery Capacity": "26 kWh",
+          "Range": "306 km (ARAI)"
+        }
+      },
+      {
+        "name": "XZ+",
+        "price": 3299000,
+        "label": "Rs. 32.99 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "26 kWh Liquid-Cooled Battery",
+          "55 kW (75 PS) Ziptron Motor",
+          "306 km ARAI Range",
+          "Automatic Projector Headlamps",
+          "Push-Button Start & Smart Key",
+          "Digital Instrument Cluster",
+          "Leatherette Upholstery",
+          "Fast Charging (CCS2)"
+        ],
+        "specs": {
+          "power": "75 PS (55 kW)",
+          "torque": "170 Nm",
+          "range": "306 km (ARAI)",
+          "battery": "26 kWh",
+          "charging": "DC Fast (CCS2) ~0-80% in 60 min",
+          "Power": "75 PS (55 kW)",
+          "Torque": "170 Nm",
+          "Battery Capacity": "26 kWh",
+          "Range": "306 km (ARAI)"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — Ziptron 55 kW PMS Motor",
+      "Max Engine Power": "75 PS (55 kW)",
+      "Max Engine Torque": "170 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "FWD",
+      "Battery Capacity": "26 kWh liquid-cooled Lithium-ion (IP67)",
+      "Range": "306 km (ARAI-certified)",
+      "AC Charging": "3.3 kW / 7.2 kW wall box",
+      "DC Fast Charging": "CCS2, ~0–80% in about 60 minutes",
+      "Top Speed": "120 km/h",
+      "0–100 km/h": "~13 sec",
+      "Seating Capacity": "5",
+      "Boot Space": "316 L",
+      "Length": "3,993 mm",
+      "Width": "1,677 mm",
+      "Height": "1,532 mm",
+      "Wheelbase": "2,450 mm",
+      "Body Type": "Compact Electric Sedan",
+      "Total Airbag Count": "2",
+      "Safety Rating": "Global NCAP 4-star (adult occupant)",
+      "Battery & Motor Warranty": "8 years / 160,000 km",
+      "Distributor": "Sipradi Trading Pvt. Ltd. (Official Tata Motors Distributor for Nepal)",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "One of the cheapest ways into a brand-new EV in Nepal",
+      "Proper boot and sedan practicality rather than a hatchback",
+      "8-year / 160,000 km battery-and-motor warranty",
+      "Widely serviced by Sipradi's established Tata network"
+    ],
+    "cons": [
+      "26 kWh battery and 306 km rating are modest by 2025 standards",
+      "Only two airbags even on the top trim",
+      "Modest 55 kW performance; not built for the highway",
+      "Cabin plastics and screen lag behind newer Chinese EVs"
+    ],
+    "highlights": [
+      "306 km ARAI Range",
+      "8yr / 160,000 km Battery Warranty",
+      "Global NCAP 4-Star",
+      "From Rs. 29.99 Lakh"
+    ],
+    "thumb": "/assets/images/car_images/tata/tigor-ev/exterior/tigor-ev-exterior-front-charging.jpg"
+  },
+  {
+    "id": 213,
+    "slug": "icaur-v23-2025",
+    "brand": "iCAUR",
+    "brandSlug": "icaur",
+    "model": "V23",
+    "year": 2025,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric SUV",
+    "badge": "best-seller",
+    "budgetTier": "Under 50L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": true,
+    "tagline": "Retro-boxy electric SUV with genuine off-road attitude",
+    "rating": 4.3,
+    "reviews": 61,
+    "expertScore": 8,
+    "baseEMI": 30000,
+    "overview": "The iCAUR V23 is a retro-styled boxy electric SUV from iCAUR, Chery's lifestyle EV sub-brand, distributed in Nepal by SPG Automobiles. It launched at an introductory price of Rs. 47.99 Lakh (standard Rs. 49.99 Lakh) with a single rear-wheel-drive variant: a 100 kW motor, a 59.93 kWh CATL LFP battery and a 401 km CLTC range (roughly 300–320 km in Nepali conditions). Squared-off styling, round LED headlights, 210 mm of ground clearance and a minimalist cabin built around a 15.4-inch 2.5K screen on a Qualcomm Snapdragon 8155 chip give it a distinct character among Nepal's growing EV field.",
+    "images": [
+      "/assets/images/car_images/icaur/v23/exterior/icaur-v23-exterior-front.jpg",
+      "/assets/images/car_images/icaur/v23/exterior/icaur-v23-exterior-side.jpg",
+      "/assets/images/car_images/icaur/v23/exterior/icaur-v23-exterior-3.jpg",
+      "/assets/images/car_images/icaur/v23/exterior/icaur-v23-exterior-headlight.jpg",
+      "/assets/images/car_images/icaur/v23/exterior/icaur-v23-exterior-taillight.jpg",
+      "/assets/images/car_images/icaur/v23/interior/icaur-v23-interior-dashboard.jpg",
+      "/assets/images/car_images/icaur/v23/interior/icaur-v23-interior-2.jpg",
+      "/assets/images/car_images/icaur/v23/interior/icaur-v23-interior-steering.jpg",
+      "/assets/images/car_images/icaur/v23/interior/icaur-v23-interior-4.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Warm Orange",
+        "hex": "#D2451E"
+      },
+      {
+        "name": "Khaki White",
+        "hex": "#E8E3D7"
+      },
+      {
+        "name": "Starlight Silver",
+        "hex": "#C7CACB"
+      },
+      {
+        "name": "Carbon Crystal Black",
+        "hex": "#1A1A1C"
+      },
+      {
+        "name": "Texture Green",
+        "hex": "#5A6650"
+      },
+      {
+        "name": "Cyan Grey",
+        "hex": "#8A9A9A"
+      }
+    ],
+    "variants": [
+      {
+        "name": "V23 RWD",
+        "price": 4799000,
+        "label": "Rs. 47.99 Lakh (introductory)",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "100 kW (134 hp) Rear-Mounted Motor",
+          "59.93 kWh CATL LFP Battery",
+          "401 km CLTC Range",
+          "210 mm Ground Clearance",
+          "15.4-inch 2.5K Touchscreen (Snapdragon 8155)",
+          "540° Panoramic Camera",
+          "6 Airbags",
+          "Vehicle-to-Load (V2L)",
+          "Level 2 ADAS"
+        ],
+        "specs": {
+          "power": "134 hp (100 kW)",
+          "torque": "180 Nm",
+          "range": "401 km CLTC",
+          "battery": "59.93 kWh",
+          "Power": "134 hp (100 kW)",
+          "Torque": "180 Nm",
+          "Battery Capacity": "59.93 kWh",
+          "Range": "401 km (CLTC)"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — single rear motor",
+      "Max Engine Power": "100 kW (134 hp)",
+      "Max Engine Torque": "180 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "RWD",
+      "Battery Capacity": "59.93 kWh CATL LFP (Lithium Iron Phosphate)",
+      "Range": "401 km (CLTC); approx. 300–320 km real-world",
+      "Charging": "DC fast charge 30–80% in about 30 minutes",
+      "Vehicle-to-Load (V2L)": "Yes",
+      "Seating Capacity": "5",
+      "Length": "4,220 mm",
+      "Width": "1,915 mm",
+      "Height": "1,845 mm",
+      "Wheelbase": "2,735 mm",
+      "Ground Clearance": "210 mm",
+      "Body Type": "Boxy Electric SUV",
+      "Total Airbag Count": "6",
+      "Touchscreen Size": "15.4-inch 2.5K (Qualcomm Snapdragon 8155)",
+      "Driver Assistance": "Level 2 ADAS with 540° panoramic camera",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Chery / iCAUR Nepal)",
+      "Introductory Price": "Rs. 47.99 Lakh",
+      "Standard Price": "Rs. 49.99 Lakh",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Genuinely distinctive boxy design in a sea of lookalike SUVs",
+      "210 mm ground clearance and RWD suit rough roads and light trails",
+      "Big 15.4-inch screen on a fast Snapdragon 8155 chip",
+      "V2L lets it power appliances and camp gear"
+    ],
+    "cons": [
+      "Single variant — no long-range or dual-motor option in Nepal",
+      "Boxy shape hurts efficiency; real range well below the CLTC figure",
+      "100 kW is adequate rather than quick for the size",
+      "iCAUR is a brand-new nameplate with limited service history in Nepal"
+    ],
+    "highlights": [
+      "Retro-Boxy Off-Road Styling",
+      "401 km CLTC Range",
+      "210 mm Ground Clearance",
+      "15.4-inch Snapdragon 8155 Screen"
+    ],
+    "thumb": "/assets/images/car_images/icaur/v23/exterior/icaur-v23-exterior-front.jpg"
+  },
+  {
+    "id": 214,
+    "slug": "mg-s5-ev-2025",
+    "brand": "MG",
+    "brandSlug": "mg",
+    "model": "S5 EV",
+    "year": 2025,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric SUV",
+    "badge": "best-seller",
+    "budgetTier": "Under 55L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": true,
+    "tagline": "Rear-wheel-drive electric SUV on MG's Modular Scalable Platform",
+    "rating": 4.2,
+    "reviews": 38,
+    "expertScore": 7.9,
+    "baseEMI": 27000,
+    "overview": "The MG S5 EV is a compact electric SUV sold in Nepal by Paramount Motors. It shares the rear-wheel-drive Modular Scalable Platform with the MG4 and Cyberster and uses an ultra-thin 110 mm CATL battery pack. Three trims are offered: Comfort and Deluxe with a 49.1 kWh battery (up to 340 km WLTP) and a range-topping Luxury with a 62.2 kWh pack. All variants use a 99 kW PMSM motor, a 12.8-inch touchscreen and LED headlights, and Paramount backs the battery with an 8-year / 150,000 km warranty.",
+    "images": [
+      "/assets/images/car_images/mg/s5-ev/exterior/mg-s5-ev-exterior-front.jpg",
+      "/assets/images/car_images/mg/s5-ev/exterior/mg-s5-ev-exterior-side.jpg",
+      "/assets/images/car_images/mg/s5-ev/exterior/mg-s5-ev-exterior-rear-angle.jpg",
+      "/assets/images/car_images/mg/s5-ev/exterior/mg-s5-ev-exterior-rear.jpg",
+      "/assets/images/car_images/mg/s5-ev/exterior/mg-s5-ev-exterior-front-face.jpg",
+      "/assets/images/car_images/mg/s5-ev/interior/mg-s5-ev-interior-dashboard.jpg",
+      "/assets/images/car_images/mg/s5-ev/interior/mg-s5-ev-interior-screen.jpg",
+      "/assets/images/car_images/mg/s5-ev/interior/mg-s5-ev-interior-front-seats.jpg",
+      "/assets/images/car_images/mg/s5-ev/interior/mg-s5-ev-interior-rear-seats.jpg",
+      "/assets/images/car_images/mg/s5-ev/interior/mg-s5-ev-interior-cluster.jpg",
+      "/assets/images/car_images/mg/s5-ev/interior/mg-s5-ev-interior-detail.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Arctic White",
+        "hex": "#F5F5F5"
+      },
+      {
+        "name": "Black Pearl",
+        "hex": "#1A1A1C"
+      },
+      {
+        "name": "Dover White",
+        "hex": "#EAEae4"
+      },
+      {
+        "name": "Brighton Grey",
+        "hex": "#6E7276"
+      },
+      {
+        "name": "Fizzy Orange",
+        "hex": "#D96A2B"
+      },
+      {
+        "name": "Diamond Red",
+        "hex": "#9E1B22"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Comfort",
+        "price": 4399000,
+        "label": "Rs. 43.99 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "99 kW PMSM Motor (RWD)",
+          "49.1 kWh CATL Battery",
+          "340 km WLTP Range",
+          "12.8-inch Touchscreen",
+          "Wireless Apple CarPlay & Android Auto",
+          "6 Airbags",
+          "LED Headlights"
+        ],
+        "specs": {
+          "power": "134 PS (99 kW)",
+          "torque": "250 Nm",
+          "range": "340 km WLTP",
+          "battery": "49.1 kWh",
+          "Power": "134 PS (99 kW)",
+          "Torque": "250 Nm",
+          "Battery Capacity": "49.1 kWh",
+          "Range": "340 km (WLTP)"
+        }
+      },
+      {
+        "name": "Deluxe",
+        "price": 4999000,
+        "label": "Rs. 49.99 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "99 kW PMSM Motor (RWD)",
+          "49.1 kWh CATL Battery",
+          "340 km WLTP Range",
+          "Panoramic Sunroof",
+          "Wireless Phone Charging",
+          "Hands-Free Power Tailgate",
+          "Synthetic Leather Upholstery"
+        ],
+        "specs": {
+          "power": "134 PS (99 kW)",
+          "torque": "250 Nm",
+          "range": "340 km WLTP",
+          "battery": "49.1 kWh",
+          "Power": "134 PS (99 kW)",
+          "Torque": "250 Nm",
+          "Battery Capacity": "49.1 kWh",
+          "Range": "340 km (WLTP)"
+        }
+      },
+      {
+        "name": "Luxury",
+        "price": 5499000,
+        "label": "Rs. 54.99 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "99 kW PMSM Motor (RWD)",
+          "62.2 kWh CATL Battery",
+          "Extended Range (approx. 480 km WLTP)",
+          "Panoramic Sunroof",
+          "360° Camera",
+          "Level 2 Driver Assistance",
+          "Premium Audio"
+        ],
+        "specs": {
+          "power": "170 PS (125 kW)",
+          "torque": "250 Nm",
+          "range": "~480 km WLTP",
+          "battery": "62.2 kWh",
+          "Power": "170 PS (125 kW)",
+          "Torque": "250 Nm",
+          "Battery Capacity": "62.2 kWh",
+          "Range": "approx. 480 km (WLTP)"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — PMSM motor, rear-wheel drive",
+      "Max Engine Power": "99 kW (134 PS) — 125 kW (170 PS) on Luxury",
+      "Max Engine Torque": "250 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "RWD",
+      "Platform": "MG Modular Scalable Platform (MSP)",
+      "Battery Capacity": "49.1 kWh (Comfort/Deluxe) / 62.2 kWh (Luxury) — CATL, 110 mm thin pack",
+      "Range": "340 km WLTP (49.1 kWh); approx. 480 km WLTP (62.2 kWh)",
+      "Seating Capacity": "5",
+      "Length": "4,476 mm",
+      "Width": "1,849 mm",
+      "Height": "1,621 mm",
+      "Body Type": "Compact Electric SUV",
+      "Total Airbag Count": "6",
+      "Touchscreen Size": "12.8-inch",
+      "Battery Warranty": "8 years / 150,000 km",
+      "Distributor": "Paramount Motors (MG Motor Nepal)",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Rear-wheel-drive chassis shared with the well-reviewed MG4",
+      "Three trims and two battery sizes to choose from",
+      "Sharp, modern styling with full-width LED lighting",
+      "Long 8-year / 150,000 km battery warranty from Paramount"
+    ],
+    "cons": [
+      "Entry Comfort's 340 km WLTP is only average for the money",
+      "Long-range 62.2 kWh pack only on the pricey Luxury trim",
+      "MG's Nepal service network is still smaller than Hyundai's or Kia's",
+      "No all-wheel-drive option"
+    ],
+    "highlights": [
+      "Rear-Wheel Drive MSP Platform",
+      "Up to ~480 km WLTP (Luxury)",
+      "12.8-inch Touchscreen",
+      "8yr / 150,000 km Battery Warranty"
+    ],
+    "thumb": "/assets/images/car_images/mg/s5-ev/exterior/mg-s5-ev-exterior-front.jpg"
+  },
+  {
+    "id": 215,
+    "slug": "jaecoo-j5-2025",
+    "brand": "Jaecoo",
+    "brandSlug": "jaecoo",
+    "model": "J5",
+    "year": 2025,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric SUV",
+    "badge": "best-seller",
+    "budgetTier": "Under 65L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": true,
+    "tagline": "Upmarket electric SUV with a premium cabin and long range",
+    "rating": 4.3,
+    "reviews": 27,
+    "expertScore": 7.9,
+    "baseEMI": 34000,
+    "overview": "The Jaecoo J5 is a premium compact electric SUV from Jaecoo, Chery's upmarket brand, sold in Nepal by SPG Automobiles. It debuted at the NAIMA Auto Show in August 2025 with an introductory price of Rs. 56.99 Lakh (standard Rs. 60.99 Lakh). A 155 kW motor and a 58.9 kWh CATL LFP battery give a claimed range of up to 461 km and a 0–100 km/h time of 7.7 seconds. Equipment includes a 13.2-inch touchscreen, a 540° camera, an L2+ ADAS suite, a panoramic sunroof and ventilated front seats.",
+    "images": [
+      "/assets/images/car_images/chery/jaecoo-j5/exterior/jaecoo-j5-exterior-front.jpg",
+      "/assets/images/car_images/chery/jaecoo-j5/exterior/jaecoo-j5-exterior-white.webp",
+      "/assets/images/car_images/chery/jaecoo-j5/exterior/jaecoo-j5-exterior-lifestyle.jpg",
+      "/assets/images/car_images/chery/jaecoo-j5/exterior/jaecoo-j5-exterior-rear.jpg",
+      "/assets/images/car_images/chery/jaecoo-j5/interior/jaecoo-j5-interior-dashboard.jpg",
+      "/assets/images/car_images/chery/jaecoo-j5/interior/jaecoo-j5-interior-grey.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Snowy White",
+        "hex": "#F3F3F1"
+      },
+      {
+        "name": "Alpine Green",
+        "hex": "#5C6B5A"
+      },
+      {
+        "name": "Canyon Black",
+        "hex": "#1A1A1C"
+      },
+      {
+        "name": "Glacier Blue",
+        "hex": "#8FB2C9"
+      },
+      {
+        "name": "Zircon Gray",
+        "hex": "#9A9DA0"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Long Range",
+        "price": 5699000,
+        "label": "Rs. 56.99 Lakh (introductory)",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "155 kW (211 PS) PMSM Motor",
+          "58.9 kWh CATL LFP Battery",
+          "Up to 461 km Claimed Range",
+          "0–100 km/h in 7.7 s",
+          "13.2-inch Touchscreen",
+          "540° Panoramic Camera",
+          "L2+ ADAS Suite",
+          "Panoramic Sunroof",
+          "Ventilated & Heated Front Seats",
+          "6 Airbags",
+          "Wireless Apple CarPlay & Android Auto"
+        ],
+        "specs": {
+          "power": "211 PS (155 kW)",
+          "torque": "288 Nm",
+          "range": "up to 461 km",
+          "battery": "58.9 kWh",
+          "Power": "211 PS (155 kW)",
+          "Torque": "288 Nm",
+          "Battery Capacity": "58.9 kWh",
+          "Range": "up to 461 km (claimed)"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 155 kW PMSM",
+      "Max Engine Power": "211 PS (155 kW)",
+      "Max Engine Torque": "288 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "FWD",
+      "Battery Capacity": "58.9 kWh CATL LFP (Lithium Iron Phosphate)",
+      "Range": "up to 461 km (claimed); approx. 402 km WLTP",
+      "DC Fast Charging": "30–80% in about 28 minutes",
+      "0–100 km/h": "7.7 seconds",
+      "Seating Capacity": "5",
+      "Boot Space": "480 L",
+      "Length": "4,380 mm",
+      "Width": "1,860 mm",
+      "Height": "1,650 mm",
+      "Wheelbase": "2,620 mm",
+      "Ground Clearance": "185 mm",
+      "Body Type": "Compact Electric SUV",
+      "Total Airbag Count": "6",
+      "Touchscreen Size": "13.2-inch",
+      "Driver Assistance": "L2+ ADAS with 540° camera",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Omoda & Jaecoo Nepal)",
+      "Introductory Price": "Rs. 56.99 Lakh",
+      "Standard Price": "Rs. 60.99 Lakh",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Genuinely premium-feeling cabin and materials for the price",
+      "Strong 155 kW performance and a long claimed range",
+      "Well-equipped as standard — one trim, few options to worry about",
+      "Backed by SPG's growing Chery/Omoda/Jaecoo service network"
+    ],
+    "cons": [
+      "Rs. 57–61 Lakh puts it above mainstream EV SUVs",
+      "Single variant — no smaller-battery or cheaper option",
+      "Jaecoo is a very new brand in Nepal with little long-term data",
+      "Real-world range will fall short of the 461 km headline"
+    ],
+    "highlights": [
+      "Up to 461 km Range",
+      "0–100 km/h in 7.7 s",
+      "13.2-inch Touchscreen + 540° Camera",
+      "Panoramic Sunroof & Ventilated Seats"
+    ],
+    "thumb": "/assets/images/car_images/chery/jaecoo-j5/exterior/jaecoo-j5-exterior-front.jpg"
+  },
+  {
+    "id": 216,
+    "slug": "jaecoo-j6-2025",
+    "brand": "Jaecoo",
+    "brandSlug": "jaecoo",
+    "model": "J6",
+    "year": 2025,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric SUV",
+    "badge": "best-seller",
+    "budgetTier": "Under 75L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": true,
+    "tagline": "Boxy, off-road-styled electric SUV with a 500 km range",
+    "rating": 4.3,
+    "reviews": 21,
+    "expertScore": 7.9,
+    "baseEMI": 42000,
+    "overview": "The Jaecoo J6 is a squared-off, off-road-inspired electric SUV sold in Nepal by SPG Automobiles at Rs. 69.99 Lakh. Its single Long Range rear-wheel-drive variant uses a 135 kW motor and a 69.8 kWh LFP battery for a claimed 501 km range. Rugged touches include 625 mm of water-fording ability, a 55% hill-climb rating, nine drive modes and a lightweight aluminium body structure, while the cabin gets a 15.6-inch screen, a panoramic sunroof and heated and ventilated leatherette seats.",
+    "images": [
+      "/assets/images/car_images/chery/jaecoo-j6/exterior/jaecoo-j6-exterior-front-grey.png",
+      "/assets/images/car_images/chery/jaecoo-j6/exterior/jaecoo-j6-exterior-front-red.png",
+      "/assets/images/car_images/chery/jaecoo-j6/exterior/jaecoo-j6-exterior-drl.webp",
+      "/assets/images/car_images/chery/jaecoo-j6/exterior/jaecoo-j6-exterior-mirror.webp",
+      "/assets/images/car_images/chery/jaecoo-j6/exterior/jaecoo-j6-exterior-taillight.webp",
+      "/assets/images/car_images/chery/jaecoo-j6/interior/jaecoo-j6-interior-black.jpg",
+      "/assets/images/car_images/chery/jaecoo-j6/interior/jaecoo-j6-interior-white.jpg",
+      "/assets/images/car_images/chery/jaecoo-j6/interior/jaecoo-j6-interior-screen.webp",
+      "/assets/images/car_images/chery/jaecoo-j6/interior/jaecoo-j6-interior-space.webp",
+      "/assets/images/car_images/chery/jaecoo-j6/interior/jaecoo-j6-interior-audio.webp",
+      "/assets/images/car_images/chery/jaecoo-j6/interior/jaecoo-j6-interior-sunroof.webp",
+      "/assets/images/car_images/chery/jaecoo-j6/interior/jaecoo-j6-interior-seats.webp"
+    ],
+    "colors": [
+      {
+        "name": "Urban Grey",
+        "hex": "#8B8E90"
+      },
+      {
+        "name": "Platinum Silver",
+        "hex": "#C7CACB"
+      },
+      {
+        "name": "Arctic White",
+        "hex": "#F3F3F1"
+      },
+      {
+        "name": "Night Black",
+        "hex": "#1A1A1C"
+      },
+      {
+        "name": "Toronto Red",
+        "hex": "#9E1B22"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Long Range RWD",
+        "price": 6999000,
+        "label": "Rs. 69.99 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "135 kW (279 hp) Rear Motor",
+          "69.8 kWh LFP Battery",
+          "501 km Claimed Range",
+          "625 mm Water Fording",
+          "55% Hill Climb Ability",
+          "9 Intelligent Drive Modes",
+          "15.6-inch Ultra Screen",
+          "360° Camera + L2 ADAS",
+          "Panoramic Sunroof",
+          "Heated & Ventilated Leatherette Seats",
+          "19-inch Alloy Wheels"
+        ],
+        "specs": {
+          "power": "279 hp (135 kW)",
+          "torque": "385 Nm",
+          "range": "501 km (claimed)",
+          "battery": "69.8 kWh",
+          "Power": "279 hp (135 kW)",
+          "Torque": "385 Nm",
+          "Battery Capacity": "69.8 kWh",
+          "Range": "501 km (claimed)"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 135 kW rear motor",
+      "Max Engine Power": "135 kW (279 hp)",
+      "Max Engine Torque": "385 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "RWD",
+      "Battery Capacity": "69.8 kWh LFP (Lithium Iron Phosphate)",
+      "Range": "501 km (claimed)",
+      "Water Fording Depth": "625 mm",
+      "Hill Climb Ability": "up to 55% gradient",
+      "Drive Modes": "9 intelligent modes",
+      "Seating Capacity": "5",
+      "Boot Space": "450 L / 1,238 L folded",
+      "Length": "4,406 mm",
+      "Width": "1,910 mm",
+      "Height": "1,715 mm",
+      "Wheelbase": "2,715 mm",
+      "Ground Clearance": "~200 mm",
+      "Body Type": "Boxy Electric SUV",
+      "Body Structure": "Lightweight aluminium",
+      "Touchscreen Size": "15.6-inch",
+      "Wheels": "19-inch alloy",
+      "Distributor": "SPG Automobiles Pvt. Ltd. (Omoda & Jaecoo Nepal)",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Standout boxy design that looks like nothing else at the price",
+      "Real off-road hardware: 625 mm wading, 55% hill climb, 9 modes",
+      "Big 69.8 kWh battery and a 500 km-class claimed range",
+      "Generous kit — sunroof, 15.6-inch screen, ventilated seats standard"
+    ],
+    "cons": [
+      "Rs. 70 Lakh is premium-SUV money in Nepal",
+      "Boxy shape and 19-inch wheels hurt real-world efficiency",
+      "Single RWD variant — no dual-motor or AWD",
+      "New brand; resale and long-term reliability are unproven here"
+    ],
+    "highlights": [
+      "Boxy Off-Road Styling",
+      "501 km Claimed Range",
+      "625 mm Water Fording",
+      "15.6-inch Ultra Screen"
+    ],
+    "thumb": "/assets/images/car_images/chery/jaecoo-j6/exterior/jaecoo-j6-exterior-front-grey.png"
+  },
+  {
+    "id": 217,
+    "slug": "leapmotor-b10-2025",
+    "brand": "Leapmotor",
+    "brandSlug": "leapmotor",
+    "model": "B10",
+    "year": 2025,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric SUV",
+    "badge": "best-seller",
+    "budgetTier": "Under 60L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": true,
+    "tagline": "Tech-loaded compact electric SUV — Leapmotor's volume model",
+    "rating": 4.2,
+    "reviews": 24,
+    "expertScore": 7.9,
+    "baseEMI": 30000,
+    "overview": "The Leapmotor B10 is a compact electric SUV launched in Nepal by Shangri-La Motors, the official Leapmotor distributor, at the NAIMA Auto Expo 2025. It is the first model on Leapmotor's LEAP 3.5 platform and is offered in two rear-wheel-drive variants: Life with a 56.2 kWh battery (380 km WLTP) and Max with a 67.1 kWh battery (up to 600 km CLTC). Both use a 160 kW motor good for 0–100 km/h in 6.8 seconds, and share a 14.6-inch 2.5K central screen, an 8.8-inch driver display, Level 2 ADAS, OTA updates, a 1.83 m² fixed sunroof and a 12-speaker audio system.",
+    "images": [
+      "/assets/images/car_images/leap motors/b10/exterior/b10-exterior-front.jpg",
+      "/assets/images/car_images/leap motors/b10/exterior/b10-exterior-side-blue.png",
+      "/assets/images/car_images/leap motors/b10/exterior/b10-exterior-rear.jpg",
+      "/assets/images/car_images/leap motors/b10/exterior/b10-exterior-showroom.jpg",
+      "/assets/images/car_images/leap motors/b10/interior/b10-interior-dashboard.jpg",
+      "/assets/images/car_images/leap motors/b10/interior/b10-interior-console.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Light White",
+        "hex": "#F3F3F1"
+      },
+      {
+        "name": "Galaxy Silver",
+        "hex": "#C7CACB"
+      },
+      {
+        "name": "Terra Grey",
+        "hex": "#7C7F82"
+      },
+      {
+        "name": "Starry Night Blue",
+        "hex": "#7E92AC"
+      },
+      {
+        "name": "Dawn Purple",
+        "hex": "#8E7E9E"
+      },
+      {
+        "name": "Metallic Black",
+        "hex": "#1A1A1C"
+      }
+    ],
+    "variants": [
+      {
+        "name": "Life",
+        "price": 4999000,
+        "label": "Rs. 49.99 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "160 kW (215 hp) Rear Motor",
+          "56.2 kWh LFP Battery",
+          "380 km WLTP Range",
+          "0–100 km/h in 6.8 s",
+          "14.6-inch 2.5K Touchscreen",
+          "8.8-inch Driver Display",
+          "Level 2 ADAS",
+          "1.83 m² Fixed Sunroof",
+          "12-Speaker Audio",
+          "OTA Updates"
+        ],
+        "specs": {
+          "power": "215 hp (160 kW)",
+          "torque": "240 Nm",
+          "range": "380 km WLTP",
+          "battery": "56.2 kWh",
+          "Power": "215 hp (160 kW)",
+          "Torque": "240 Nm",
+          "Battery Capacity": "56.2 kWh",
+          "Range": "380 km (WLTP)"
+        }
+      },
+      {
+        "name": "Max",
+        "price": 5499000,
+        "label": "Rs. 54.99 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "160 kW (215 hp) Rear Motor",
+          "67.1 kWh LFP Battery",
+          "Up to 600 km CLTC Range (~460 km WLTP)",
+          "168 kW DC Fast Charging",
+          "14.6-inch 2.5K Touchscreen",
+          "Level 2 ADAS with more sensors",
+          "Ventilated & Heated Front Seats",
+          "64-Colour Ambient Lighting"
+        ],
+        "specs": {
+          "power": "215 hp (160 kW)",
+          "torque": "240 Nm",
+          "range": "up to 600 km CLTC",
+          "battery": "67.1 kWh",
+          "Power": "215 hp (160 kW)",
+          "Torque": "240 Nm",
+          "Battery Capacity": "67.1 kWh",
+          "Range": "up to 600 km (CLTC)"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 160 kW rear motor",
+      "Max Engine Power": "160 kW (215 hp)",
+      "Max Engine Torque": "240 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "RWD",
+      "Platform": "Leapmotor LEAP 3.5",
+      "Battery Capacity": "56.2 kWh (Life) / 67.1 kWh (Max) LFP",
+      "Range": "380 km WLTP (Life) / up to 600 km CLTC (Max)",
+      "DC Fast Charging": "up to 168 kW",
+      "AC Charging": "up to 11 kW",
+      "0–100 km/h": "6.8 seconds",
+      "Seating Capacity": "5",
+      "Boot Space": "430 L / 1,700 L folded, plus 25 L frunk",
+      "Length": "4,515 mm",
+      "Width": "1,885 mm",
+      "Height": "1,655 mm",
+      "Wheelbase": "2,735 mm",
+      "Body Type": "Compact Electric SUV",
+      "Touchscreen Size": "14.6-inch 2.5K",
+      "Battery Warranty": "8 years / 150,000 km",
+      "Vehicle Warranty": "4 years / 100,000 km",
+      "Distributor": "Shangri-La Motors (Leapmotor Nepal)",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Strong 160 kW performance and a genuinely quick 6.8 s 0–100",
+      "Max's big 67.1 kWh battery is one of the longest-range options near the price",
+      "Large 14.6-inch screen, 12 speakers and a full-length fixed sunroof",
+      "Backed by Stellantis, which co-owns and distributes Leapmotor globally"
+    ],
+    "cons": [
+      "Life's 380 km WLTP is only mid-pack for the money",
+      "Rear-wheel drive only; no AWD option",
+      "Leapmotor's Nepal service network is brand-new",
+      "Ride and software still trail the class benchmarks in early reviews"
+    ],
+    "highlights": [
+      "Up to 600 km CLTC (Max)",
+      "0–100 km/h in 6.8 s",
+      "14.6-inch 2.5K Screen",
+      "168 kW DC Fast Charging"
+    ],
+    "thumb": "/assets/images/car_images/leap motors/b10/exterior/b10-exterior-front.jpg"
+  },
+  {
+    "id": 218,
+    "slug": "dongfeng-nammi-vigo-2025",
+    "brand": "Dongfeng",
+    "brandSlug": "dongfeng",
+    "model": "Nammi Vigo",
+    "year": 2025,
+    "type": "Electric",
+    "bodyType": "suv",
+    "body": "Electric SUV",
+    "badge": "best-seller",
+    "budgetTier": "Under 45L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": true,
+    "tagline": "Value electric SUV with 350 km range and a big-screen cabin",
+    "rating": 4.1,
+    "reviews": 33,
+    "expertScore": 7.6,
+    "baseEMI": 24500,
+    "overview": "The Dongfeng Nammi Vigo is a compact electric SUV sold in Nepal by Dongfeng Nepal, using the brand's playful 'Rubik's Cube' design with triangular tail lights and semi-hidden door handles. Two trims are offered: E2 with a 44.94 kWh battery (300 km WLTP) and E2+ with a 51.87 kWh battery (350 km WLTP), both driven by a 99 kW permanent-magnet motor. Inside there is a 12.8-inch touchscreen, an 8.8-inch digital cluster and a 360° camera, with a DJI-developed Level 2 ADAS suite on the higher trim.",
+    "images": [
+      "/assets/images/car_images/dongfeng/nammi-vigo/exterior/nammi-vigo-exterior-front.jpg",
+      "/assets/images/car_images/dongfeng/nammi-vigo/exterior/nammi-vigo-exterior-side.jpg",
+      "/assets/images/car_images/dongfeng/nammi-vigo/exterior/nammi-vigo-exterior-rear.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Trending White",
+        "hex": "#F3F3F1"
+      },
+      {
+        "name": "Wild Green",
+        "hex": "#5C6B5A"
+      },
+      {
+        "name": "Fuguang Orange",
+        "hex": "#D96A2B"
+      },
+      {
+        "name": "Oil-Colored Yellow",
+        "hex": "#D8B24A"
+      },
+      {
+        "name": "Starfleece",
+        "hex": "#9A9DA0"
+      }
+    ],
+    "variants": [
+      {
+        "name": "E2",
+        "price": 4099000,
+        "label": "Rs. 40.99 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "99 kW Permanent-Magnet Motor",
+          "44.94 kWh LFP Battery",
+          "300 km WLTP Range",
+          "12.8-inch Touchscreen",
+          "8.8-inch Digital Cluster",
+          "360° Camera",
+          "6 Airbags"
+        ],
+        "specs": {
+          "power": "99 kW",
+          "torque": "—",
+          "range": "300 km WLTP",
+          "battery": "44.94 kWh",
+          "Power": "99 kW",
+          "Battery Capacity": "44.94 kWh",
+          "Range": "300 km (WLTP)"
+        }
+      },
+      {
+        "name": "E2+",
+        "price": 4399000,
+        "label": "Rs. 43.99 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "99 kW Permanent-Magnet Motor",
+          "51.87 kWh LFP Battery",
+          "350 km WLTP Range",
+          "DJI-developed Level 2 ADAS",
+          "12.8-inch Touchscreen",
+          "360° Camera",
+          "Leatherette Seats"
+        ],
+        "specs": {
+          "power": "99 kW",
+          "torque": "—",
+          "range": "350 km WLTP",
+          "battery": "51.87 kWh",
+          "Power": "99 kW",
+          "Battery Capacity": "51.87 kWh",
+          "Range": "350 km (WLTP)"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 99 kW permanent-magnet synchronous motor",
+      "Max Engine Power": "99 kW",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "FWD",
+      "Battery Capacity": "44.94 kWh (E2) / 51.87 kWh (E2+) LFP",
+      "Range": "300 km WLTP (E2) / 350 km WLTP (E2+)",
+      "DC Fast Charging": "30–80% in about 30 minutes",
+      "Seating Capacity": "5",
+      "Length": "4,306 mm",
+      "Width": "1,868 mm",
+      "Height": "1,654 mm",
+      "Wheelbase": "2,715 mm",
+      "Ground Clearance": "190 mm",
+      "Body Type": "Compact Electric SUV",
+      "Touchscreen Size": "12.8-inch",
+      "Digital Cluster": "8.8-inch",
+      "Driver Assistance": "DJI-developed Level 2 ADAS (E2+)",
+      "Distributor": "Dongfeng Nepal",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Lots of range and screen for the money — undercuts most rivals",
+      "DJI-developed driver assistance on the E2+ is unusual at this price",
+      "190 mm ground clearance copes with rough city roads",
+      "Distinctive, cheerful styling stands out in traffic"
+    ],
+    "cons": [
+      "Dongfeng's passenger-car service network in Nepal is still small",
+      "Entry E2's 300 km WLTP is modest",
+      "Front-wheel drive only",
+      "Limited brand recognition and unproven resale"
+    ],
+    "highlights": [
+      "350 km WLTP Range (E2+)",
+      "12.8-inch Screen + 360° Camera",
+      "DJI Level 2 ADAS",
+      "From Rs. 40.99 Lakh"
+    ],
+    "thumb": "/assets/images/car_images/dongfeng/nammi-vigo/exterior/nammi-vigo-exterior-front.jpg"
+  },
+  {
+    "id": 219,
+    "slug": "dongfeng-nammi-01-2025",
+    "brand": "Dongfeng",
+    "brandSlug": "dongfeng",
+    "model": "Nammi 01",
+    "year": 2025,
+    "type": "Electric",
+    "bodyType": "hatchback",
+    "body": "Electric Hatchback",
+    "badge": "best-seller",
+    "budgetTier": "Under 40L",
+    "isEV": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": true,
+    "tagline": "Compact electric hatchback built for tight city streets",
+    "rating": 4,
+    "reviews": 29,
+    "expertScore": 7.4,
+    "baseEMI": 19500,
+    "overview": "The Dongfeng Nammi 01 is a small, upright electric hatchback sold in Nepal by Dongfeng Nepal, styled with rounded 'cute' surfaces, through-style headlights, a contrast-colour roof, hidden door handles and frameless doors. It comes with two battery options — a 31.4 kWh pack (237 km WLTP) and a 42.3 kWh pack (317 km WLTP) — paired with a 50 kW motor producing 95 PS and 160 Nm. Despite the small footprint it packs a 12.8-inch central screen, wireless charging, a self-parking system, AutoHold and ventilated memory front seats, plus Level 2 ADAS with a 360° camera.",
+    "images": [
+      "/assets/images/car_images/dongfeng/nammi-01/exterior/nammi-01-exterior-front.jpg",
+      "/assets/images/car_images/dongfeng/nammi-01/exterior/nammi-01-exterior-rear.jpg",
+      "/assets/images/car_images/dongfeng/nammi-01/exterior/nammi-01-exterior-studio.png"
+    ],
+    "colors": [
+      {
+        "name": "Pearl White",
+        "hex": "#F3F3F1"
+      },
+      {
+        "name": "Taro Purple",
+        "hex": "#B7A7C9"
+      },
+      {
+        "name": "Avocado Green",
+        "hex": "#8FA06B"
+      },
+      {
+        "name": "Star Grey",
+        "hex": "#8B8E90"
+      },
+      {
+        "name": "Sky Blue",
+        "hex": "#9CC1D6"
+      }
+    ],
+    "variants": [
+      {
+        "name": "E2",
+        "price": 3249000,
+        "label": "Rs. 32.49 Lakh",
+        "popular": false,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "50 kW Motor (95 PS / 160 Nm)",
+          "31.4 kWh LFP Battery",
+          "237 km WLTP Range",
+          "12.8-inch Touchscreen",
+          "Dual Airbags, ABS, EBD",
+          "Hill Start Assist"
+        ],
+        "specs": {
+          "power": "95 PS (50 kW)",
+          "torque": "160 Nm",
+          "range": "237 km WLTP",
+          "battery": "31.4 kWh",
+          "Power": "95 PS (50 kW)",
+          "Torque": "160 Nm",
+          "Battery Capacity": "31.4 kWh",
+          "Range": "237 km (WLTP)"
+        }
+      },
+      {
+        "name": "E3",
+        "price": 3649000,
+        "label": "Rs. 36.49 Lakh",
+        "popular": true,
+        "transmission": "AT",
+        "fuel": "Electric",
+        "features": [
+          "50 kW Motor (95 PS / 160 Nm)",
+          "42.3 kWh LFP Battery",
+          "317 km WLTP Range",
+          "Wireless Phone Charging",
+          "Self-Parking System",
+          "AutoHold",
+          "Ventilated Memory Front Seats",
+          "Level 2 ADAS with 360° Camera"
+        ],
+        "specs": {
+          "power": "95 PS (50 kW)",
+          "torque": "160 Nm",
+          "range": "317 km WLTP",
+          "battery": "42.3 kWh",
+          "Power": "95 PS (50 kW)",
+          "Torque": "160 Nm",
+          "Battery Capacity": "42.3 kWh",
+          "Range": "317 km (WLTP)"
+        }
+      }
+    ],
+    "specs": {
+      "Engine Type": "Electric — 50 kW motor",
+      "Max Engine Power": "95 PS (50 kW)",
+      "Max Engine Torque": "160 Nm",
+      "Transmission Type": "Single-Speed Automatic",
+      "Drive Type": "FWD",
+      "Battery Capacity": "31.4 kWh (E2) / 42.3 kWh (E3) LFP",
+      "Range": "237 km WLTP (E2) / 317 km WLTP (E3)",
+      "AC Charging": "11 kW",
+      "DC Fast Charging": "30–80% in about 30 minutes",
+      "Top Speed": "140 km/h",
+      "Seating Capacity": "5",
+      "Body Type": "Compact Electric Hatchback",
+      "Touchscreen Size": "12.8-inch",
+      "Driver Assistance": "Level 2 ADAS with 360° camera (E3)",
+      "Distributor": "Dongfeng Nepal",
+      "Fuel Type": "Electric"
+    },
+    "pros": [
+      "Tiny footprint makes it ideal for Kathmandu's tight lanes and parking",
+      "Feature list — self-park, ventilated memory seats, 360° camera — is remarkable for the size",
+      "Low price and low running costs",
+      "Cheerful, characterful design"
+    ],
+    "cons": [
+      "Entry 31.4 kWh battery's 237 km rating is short for intercity trips",
+      "50 kW / 95 PS is strictly city-speed performance",
+      "Only two airbags on the base trim",
+      "Small distributor network and unproven resale value"
+    ],
+    "highlights": [
+      "Up to 317 km WLTP Range",
+      "12.8-inch Touchscreen",
+      "Self-Parking + Ventilated Seats",
+      "From Rs. 32.49 Lakh"
+    ],
+    "thumb": "/assets/images/car_images/dongfeng/nammi-01/exterior/nammi-01-exterior-front.jpg"
   }
 ];

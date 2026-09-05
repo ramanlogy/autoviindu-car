@@ -184,34 +184,9 @@
           </svg>
         </button>
         <div class="av-dd" role="menu">
-          <div class="av-acc">
-            <button class="av-acc-hd" type="button">Browse
-              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-            </button>
-            <div class="av-acc-body">
-              <a class="av-menu-link" href="#" onclick="AV.goTo('used');return false">All used cars</a>
-              <a class="av-menu-link" href="/sellyourcar">Sell or Trade your car</a>
-            </div>
-          </div>
-          <div class="av-acc">
-            <button class="av-acc-hd" type="button">Filter by
-              <svg class="av-acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-            </button>
-            <div class="av-acc-body">
-              <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'year'});return false">Year</a>
-              <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'price'});return false">Price range</a>
-              <a class="av-menu-link" href="#" onclick="AV.goTo('used',{filter:'lowest_km'});return false">Lowest KM
-                run</a>
-             
-            </div>
-          </div>
-
-          <a class="av-menu-link" href="#" onclick="AV.goTo('compare-used');return false">Compare used cars</a>
-          <a class="av-menu-cta" href="#" onclick="AV.goTo('used');return false">Browse all used cars →</a>
+          <a class="av-menu-link av-menu-link--top" href="/sellyourcar">Sell or Trade your car</a>
+          <a class="av-menu-link av-menu-link--top" href="#" onclick="AV.goTo('compare-used');return false">Compare used cars</a>
+          <a class="av-menu-cta" href="#" onclick="AV.goTo('used');return false">View all used cars →</a>
         </div>
       </div>
 
@@ -408,22 +383,13 @@
       </button>
       <div class="mm-sub" id="mm-used-sub">
 
-        <div class="mm-sub-label">Browse</div>
-        <div class="mm-sub-link" onclick="AV.goTo('used');closeMM()">All used cars</div>
-       
         <div class="mm-sub-link" onclick="window.location.href='/sellyourcar';closeMM()">Sell or Trade your car</div>
-
-        <div class="mm-sub-label">Filter by</div>
-        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'year'});closeMM()">Year</div>
-        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'price'});closeMM()">Price range</div>
-        <div class="mm-sub-link" onclick="AV.goTo('used',{filter:'lowest_km'});closeMM()">Lowest KM run</div>
-        
 
         <div class="mm-sub-link" onclick="AV.goTo('compare-used');closeMM()">Compare used cars</div>
 
         <div style="margin-top:16px;">
           <button class="btn btn-outline" style="width:100%;border-radius:var(--r8);"
-            onclick="AV.goTo('used');closeMM()">Browse all used cars →</button>
+            onclick="AV.goTo('used');closeMM()">View all used cars →</button>
         </div>
       </div>
     </div>

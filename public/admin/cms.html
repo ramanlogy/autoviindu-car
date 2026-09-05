@@ -1980,6 +1980,7 @@ function brandForm(b = {}) {
     <div class="form-group form-span-2"><label>Full Corporate Name</label><input id="bf-fullName" type="text" value="${b.fullName||''}" placeholder="e.g. Hyundai Motor Company"></div>
     <div class="form-group"><label>Origin Country</label><input id="bf-country" type="text" value="${b.country||''}"></div>
     <div class="form-group"><label>Founded Year</label><input id="bf-founded" type="number" value="${b.founded||''}"></div>
+    <div class="form-group"><label>Entered Nepal (Year)</label><input id="bf-enteredNepal" type="number" value="${b.enteredNepal||''}"></div>
     <div class="form-group"><label>Official Nepal Distributer</label><input id="bf-dealer" type="text" value="${b.nepalDealer||''}"></div>
     <div class="form-group"><label>Dealer Hotline Number</label><input id="bf-phone" type="text" value="${b.dealerPhone||''}"></div>
     <div class="form-group"><label>Brand Accent Color</label><input id="bf-color" type="color" value="${b.color||'#4f46e5'}"></div>
@@ -1997,6 +1998,7 @@ function readBrandForm() {
     fullName: document.getElementById('bf-fullName').value,
     country: document.getElementById('bf-country').value,
     founded: parseInt(document.getElementById('bf-founded').value) || null,
+    enteredNepal: parseInt(document.getElementById('bf-enteredNepal').value) || null,
     nepalDealer: document.getElementById('bf-dealer').value,
     dealerPhone: document.getElementById('bf-phone').value,
     color: document.getElementById('bf-color').value,
@@ -2010,7 +2012,10 @@ function readBrandForm() {
 // ── Hero slideshow banners ────────────────────────────────────────────────────
 let heroSlides = [];
 async function loadHero() {
-  const data = await api('GET', '/api/admin/site/homepage');
+  const [data] = await Promise.all([
+    api('GET', '/api/admin/site/homepage'),
+    allCars.length ? Promise.resolve() : api('GET', '/api/cars').then(c => { allCars = c; }),
+  ]);
   heroSlides = data.heroSlides || [];
   renderHeroSlides();
 }
@@ -2048,7 +2053,14 @@ function renderHeroSlides() {
           <div class="form-group"><label>Spec 2 Value</label><input type="text" value="${s.spec2Value||''}" oninput="heroSlides[${idx}].spec2Value=this.value" placeholder="e.g. Rs. 52k/mo"></div>
           <div class="form-group"><label>Spec 3 Label</label><input type="text" value="${s.spec3Label||''}" oninput="heroSlides[${idx}].spec3Label=this.value" placeholder="e.g. Safety"></div>
           <div class="form-group"><label>Spec 3 Value</label><input type="text" value="${s.spec3Value||''}" oninput="heroSlides[${idx}].spec3Value=this.value" placeholder="e.g. 6 Airbags"></div>
-          <div class="form-group form-span-2"><label>Model Link Slug (on click)</label><input type="text" value="${s.slug||''}" oninput="heroSlides[${idx}].slug=this.value" placeholder="e.g. hyundai-creta"></div>
+          <div class="form-group form-span-2">
+            <label>Which Car Does This Banner Link To?</label>
+            <select onchange="heroSlides[${idx}].slug=this.value">
+              <option value="">— Select a car —</option>
+              ${allCars.slice().sort((a, b) => `${a.brand} ${a.model}`.localeCompare(`${b.brand} ${b.model}`)).map(c => `<option value="${c.slug}" ${s.slug === c.slug ? 'selected' : ''}>${c.brand} ${c.model}${c.year ? ' (' + c.year + ')' : ''}</option>`).join('')}
+            </select>
+            ${s.slug && !allCars.some(c => c.slug === s.slug) ? `<div style="color:var(--danger,#dc2626);font-size:11px;margin-top:4px;">Currently linked to "${s.slug}", which is not in the car list — pick a car above to fix.</div>` : ''}
+          </div>
         </div>
       </div>
     </div>

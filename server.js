@@ -72,31 +72,44 @@ app.use((req, res, next) => {
   next();
 });
 
+// Nav/footer partials + per-page injected HTML used to be re-read and
+// re-processed from disk with *synchronous* fs calls on every single GET
+// request (every page nav, not just the first load). Node is single-threaded,
+// so that blocking I/O + regex work stalled the whole server under any
+// concurrent load — the "navigating freezes the site" symptom. These files
+// only change on deploy (the cPanel flow restarts the process on every git
+// pull), so it's safe to build them once and cache in memory.
+const NAV_PATH = path.join(__dirname, 'public', 'assets', 'partials', 'site-nav.html');
+const FOOTER_PATH = path.join(__dirname, 'public', 'assets', 'partials', 'site-footer.html');
+
+function nestedizePaths(html) {
+  return html
+    .replace(/src="assets\//g, 'src="../assets/')
+    .replace(/src="\/assets\//g, 'src="../assets/')
+    .replace(/href="assets\//g, 'href="../assets/')
+    .replace(/href="\/assets\//g, 'href="../assets/');
+}
+
+const _chromeVariants = {};
+function getChromeVariant(nested) {
+  const key = nested ? 'nested' : 'top';
+  if (_chromeVariants[key]) return _chromeVariants[key];
+  let navHtml = fs.readFileSync(NAV_PATH, 'utf-8');
+  let footerHtml = fs.readFileSync(FOOTER_PATH, 'utf-8');
+  if (nested) {
+    navHtml = nestedizePaths(navHtml);
+    footerHtml = nestedizePaths(footerHtml);
+  }
+  _chromeVariants[key] = { navHtml, footerHtml };
+  return _chromeVariants[key];
+}
+
 // Inject the shared site-nav / site-footer partials into a page's HTML string.
 // Used both by the static-page middleware below and by the dynamic /news/:slug route.
 function injectChrome(html, pathname) {
   try {
-    const navPath = path.join(__dirname, 'public', 'assets', 'partials', 'site-nav.html');
-    const footerPath = path.join(__dirname, 'public', 'assets', 'partials', 'site-footer.html');
-    if (!fs.existsSync(navPath) || !fs.existsSync(footerPath)) return html;
-
-    let navHtml = fs.readFileSync(navPath, 'utf-8');
-    let footerHtml = fs.readFileSync(footerPath, 'utf-8');
-
     const isNested = pathname.startsWith('/form/') || pathname.startsWith('/admin/');
-    if (isNested) {
-      // Fix relative asset paths in nav and footer templates for nested pages
-      navHtml = navHtml
-        .replace(/src="assets\//g, 'src="../assets/')
-        .replace(/src="\/assets\//g, 'src="../assets/')
-        .replace(/href="assets\//g, 'href="../assets/')
-        .replace(/href="\/assets\//g, 'href="../assets/');
-      footerHtml = footerHtml
-        .replace(/src="assets\//g, 'src="../assets/')
-        .replace(/src="\/assets\//g, 'src="../assets/')
-        .replace(/href="assets\//g, 'href="../assets/')
-        .replace(/href="\/assets\//g, 'href="../assets/');
-    }
+    const { navHtml, footerHtml } = getChromeVariant(isNested);
 
     // Inject navbar right after <body>
     const bodyTag = '<body>';
@@ -118,6 +131,13 @@ function injectChrome(html, pathname) {
   return html;
 }
 
+// Rendered pages don't change at runtime (content lives in the DB / JSON
+// data files, not these HTML shells), and the cPanel deploy flow restarts the
+// process on every git pull — so it's safe to cache each page's fully
+// injected HTML in memory after the first request instead of re-reading +
+// re-injecting from disk (synchronously!) on every single page view.
+const _pageHtmlCache = new Map();
+
 // Middleware to inject site-nav and site-footer server-side into non-index HTML pages
 app.use((req, res, next) => {
   if (req.method !== 'GET') return next();
@@ -134,17 +154,23 @@ app.use((req, res, next) => {
     target += '.html';
   }
 
+  const cached = _pageHtmlCache.get(target);
+  if (cached !== undefined) {
+    res.type('html').send(cached);
+    return;
+  }
+
   const fullPath = path.join(__dirname, 'public', target);
 
-  // If file exists, inject the shared nav/footer partials server-side
-  if (fs.existsSync(fullPath) && fs.statSync(fullPath).isFile()) {
-    try {
-      const raw = fs.readFileSync(fullPath, 'utf-8');
-      res.type('html').send(injectChrome(raw, pathname));
-      return;
-    } catch (e) {
-      console.error('[server] injection error:', e);
-    }
+  // If the file exists, inject the shared nav/footer partials server-side and cache the result
+  try {
+    const raw = fs.readFileSync(fullPath, 'utf-8');
+    const out = injectChrome(raw, pathname);
+    _pageHtmlCache.set(target, out);
+    res.type('html').send(out);
+    return;
+  } catch (e) {
+    if (e.code !== 'ENOENT') console.error('[server] injection error:', e);
   }
   next();
 });
@@ -556,12 +582,12 @@ async function writeSiteDb(key, data) {
       await prisma.brand.upsert({
         where: { slug: b.slug },
         update: { name: b.name, fullName: b.fullName, tagline: b.tagline, country: b.country,
-          founded: b.founded, nepalDealer: b.nepalDealer, dealerPhone: b.dealerPhone,
+          founded: b.founded, enteredNepal: b.enteredNepal, nepalDealer: b.nepalDealer, dealerPhone: b.dealerPhone,
           warranty: b.warranty, serviceNetwork: b.serviceNetwork, overview: b.overview,
           color: b.color, bgColor: b.bgColor, heroImage: b.heroImage, logo: b.logo,
           strengths: b.strengths || [] },
         create: { slug: b.slug, name: b.name, fullName: b.fullName, tagline: b.tagline,
-          country: b.country, founded: b.founded, nepalDealer: b.nepalDealer,
+          country: b.country, founded: b.founded, enteredNepal: b.enteredNepal, nepalDealer: b.nepalDealer,
           dealerPhone: b.dealerPhone, warranty: b.warranty, serviceNetwork: b.serviceNetwork,
           overview: b.overview, color: b.color, bgColor: b.bgColor, heroImage: b.heroImage,
           logo: b.logo, strengths: b.strengths || [] }
@@ -936,6 +962,7 @@ app.post('/api/admin/cars', apiAuth, async (req, res) => {
       }
     });
     res.json(car);
+    regenerateCarsDbJs().catch((e) => console.warn('[cars-db] regenerate failed:', e.message));
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
@@ -975,6 +1002,7 @@ app.patch('/api/admin/cars/:id', apiAuth, async (req, res) => {
       }
     });
     res.json(car);
+    regenerateCarsDbJs().catch((e) => console.warn('[cars-db] regenerate failed:', e.message));
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
@@ -982,6 +1010,7 @@ app.delete('/api/admin/cars/:id', apiAuth, async (req, res) => {
   try {
     await prisma.car.delete({ where: { id: parseInt(req.params.id) } });
     res.json({ success: true });
+    regenerateCarsDbJs().catch((e) => console.warn('[cars-db] regenerate failed:', e.message));
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
@@ -1240,6 +1269,8 @@ async function ensureNewsSchema() {
     `ALTER TABLE "NewsPost" ADD COLUMN "rating" REAL`,
     // Official manufacturer brochure PDF link per car (News/Reviews-era addition).
     `ALTER TABLE "Car" ADD COLUMN "brochureUrl" TEXT`,
+    // Year a brand's cars first went on sale in Nepal (Brand profile page).
+    `ALTER TABLE "Brand" ADD COLUMN "enteredNepal" INTEGER`,
   ];
   for (const sql of stmts) {
     try { await prisma.$executeRawUnsafe(sql); }
@@ -1273,6 +1304,56 @@ async function syncBrochureUrls() {
     catch (e) { console.warn('[brochure] update failed for', slug, e.message); }
   }
   if (set) console.log(`[brochure] linked ${set} car${set === 1 ? '' : 's'} to official brochure pages`);
+}
+
+// Seed researched "entered Nepal" year / Nepal dealer from scripts/brand-nepal-data.json.
+// Same pattern as syncBrochureUrls: production's dev.db is server-owned, so the
+// server fills in any brand still missing this data on boot. Admin edits win —
+// an existing value is left alone.
+async function syncBrandNepalData() {
+  const mapPath = path.join(__dirname, 'scripts', 'brand-nepal-data.json');
+  if (!fs.existsSync(mapPath)) return;
+  let map;
+  try { map = JSON.parse(fs.readFileSync(mapPath, 'utf-8')); }
+  catch (e) { console.warn('[brand-nepal] bad json:', e.message); return; }
+
+  const brands = await prisma.brand.findMany({ select: { id: true, slug: true, enteredNepal: true, nepalDealer: true } });
+  const bySlug = new Map(brands.map((b) => [b.slug, b]));
+
+  let set = 0;
+  for (const [slug, info] of Object.entries(map)) {
+    if (slug.startsWith('_')) continue;
+    const brand = bySlug.get(slug);
+    if (!brand) continue;
+    const data = {};
+    if (info.enteredNepal && !brand.enteredNepal) data.enteredNepal = info.enteredNepal;
+    if (info.nepalDealer && !brand.nepalDealer) data.nepalDealer = info.nepalDealer;
+    if (!Object.keys(data).length) continue;
+    try { await prisma.brand.update({ where: { id: brand.id }, data }); set++; }
+    catch (e) { console.warn('[brand-nepal] update failed for', slug, e.message); }
+  }
+  if (set) console.log(`[brand-nepal] filled Nepal market data for ${set} brand${set === 1 ? '' : 's'}`);
+}
+
+// The homepage (index.html) loads car data from this static snapshot instead
+// of hitting /api/cars, so it goes stale — and its thumbs break — whenever a
+// car is added/edited/deleted in the DB without this file being rewritten.
+// Regenerate it straight from dev.db (the source of truth) so thumbs always
+// match what's actually on disk.
+const CARS_DB_FIELDS = {
+  id: true, slug: true, brand: true, brandSlug: true, model: true, year: true,
+  type: true, bodyType: true, body: true, badge: true, budgetTier: true,
+  isEV: true, isNew: true, isFeatured: true, isBestSeller: true, tagline: true,
+  rating: true, reviews: true, expertScore: true, baseEMI: true, overview: true,
+  images: true, colors: true, variants: true, specs: true, pros: true, cons: true,
+  highlights: true, thumb: true,
+};
+
+async function regenerateCarsDbJs() {
+  const cars = await prisma.car.findMany({ select: CARS_DB_FIELDS, orderBy: { id: 'asc' } });
+  const body = `/* AutoViindu Auto-Generated Cars DB — regenerated from dev.db, do not hand-edit */\nwindow.CARS_DB = ${JSON.stringify(cars, null, 2)};\n`;
+  fs.writeFileSync(legacyCarsJsPath, body, 'utf-8');
+  return cars.length;
 }
 
 function legacyItemToPost(item, kind) {
@@ -1346,6 +1427,9 @@ async function seedCuratedSections() {
     await migrateLegacyNewsOnce();
     await seedCuratedSections();
     await syncBrochureUrls();
+    await syncBrandNepalData();
+    const n = await regenerateCarsDbJs();
+    console.log(`[cars-db] regenerated cars-db.js from dev.db (${n} cars)`);
   } catch (e) {
     console.error('[boot] DB upkeep failed:', e);
   }

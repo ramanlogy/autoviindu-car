@@ -317,19 +317,7 @@
   line-height: 1.4;
 }
 
-/* ── Comparison Modes ── */
-.cmp-mode-tabs {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-bottom: 12px;
-  margin-bottom: 12px;
-  border-bottom: 1px solid var(--border);
-}
-
-.cmp-mode-tabs::-webkit-scrollbar { display: none; }
-
+/* ── Comparison mode filter chips (car picker only) ── */
 .cmp-mode-tab {
   flex-shrink: 0;
   padding: 8px 16px;
@@ -357,14 +345,12 @@
   box-shadow: 0 4px 12px rgba(26, 107, 42, .2);
 }
 
-/* ── Category tabs ── */
+/* ── Category tabs (sit under the car images, pinned while scrolling) ── */
 .cmp-tabs {
   display: flex;
   gap: 6px;
   overflow-x: auto;
   scrollbar-width: none;
-  padding-bottom: 4px;
-  margin-bottom: 16px;
 }
 
 .cmp-tabs::-webkit-scrollbar { display: none; }
@@ -441,6 +427,25 @@
   position: sticky;
   left: 0;
   z-index: 3;
+}
+
+/* Second sticky header row: category tabs, pinned just below the image row */
+.cmp-table thead tr.cmp-tabs-row th {
+  top: var(--cmp-th-h, 195px);
+  background: var(--white);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cmp-tabs-spacer {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: var(--white);
+}
+
+.cmp-tabs-cell {
+  text-align: left;
 }
 
 .cmp-th-car {

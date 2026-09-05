@@ -43,7 +43,7 @@
     .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); flex-wrap:wrap; }
     .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
     .bc-inner a:hover { text-decoration:underline; }
-    .bc-inner i { width:12px; height:12px; }
+    .bc-inner i, .bc-inner svg { width:12px; height:12px; }
 
     /* PAGE */
     .page { padding:24px 0 64px; }
@@ -52,7 +52,7 @@
     .hero-strip { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:22px; }
     .hero-left { display:flex; align-items:flex-start; gap:16px; }
     .hero-avatar { width:64px; height:64px; border-radius:var(--r18); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; }
-    .hero-avatar i { width:32px; height:32px; color:var(--green); }
+    .hero-avatar i, .hero-avatar svg { width:32px; height:32px; color:var(--green); }
     .hero-avatar::before, .hero-avatar::after { content:''; position:absolute; border-radius:50%; background:var(--green-m); opacity:.55; }
     .hero-avatar::before { width:6px; height:6px; top:-4px; left:-6px; }
     .hero-avatar::after { width:9px; height:9px; top:10px; left:-13px; opacity:.3; }
@@ -61,7 +61,7 @@
     .hero-text p { font-size:14px; color:var(--ink4); margin-top:6px; }
     .safe-badge { display:flex; align-items:center; gap:10px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r14,14px); padding:12px 16px; max-width:260px; box-shadow:var(--sh1); }
     .safe-badge .lock { width:32px; height:32px; border-radius:var(--r10); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .safe-badge .lock i { width:16px; height:16px; color:var(--green); }
+    .safe-badge .lock i, .safe-badge .lock svg { width:16px; height:16px; color:var(--green); }
     .safe-badge strong { display:block; font-size:12.5px; font-weight:700; color:var(--ink2); }
     .safe-badge span { font-size:11.5px; color:var(--ink4); line-height:1.4; }
 
@@ -69,111 +69,91 @@
     .form-layout-inner { display:grid; grid-template-columns:1fr; gap:20px; align-items:start; }
     @media(min-width:960px){ .form-layout-inner{ grid-template-columns:1fr 320px; gap:24px; } }
 
-    /* FORM CARD */
-    .form-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); box-shadow:var(--sh2); padding:22px 18px 26px; }
-    @media(min-width:640px){ .form-wrap{ padding:30px 32px 32px; } }
+    /* FORM CARD — compact */
+    .form-wrap { background:var(--white); border:1px solid var(--border); border-radius:var(--r16); box-shadow:var(--sh1); padding:20px 18px 22px; }
+    @media(min-width:640px){ .form-wrap{ padding:24px 26px 26px; } }
 
-    .step { padding:22px 0; border-top:1px solid var(--border); }
-    .step:first-child { padding-top:0; border-top:none; }
-    .step-head { display:flex; align-items:flex-start; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
-    .step-head-toggle { margin-left:auto; margin-top:2px; }
-    @media(max-width:480px){ .step-head-toggle{ margin-left:38px; margin-top:8px; } }
-    .step-num { width:26px; height:26px; border-radius:50%; background:var(--grad); color:#fff; font-family:var(--font-d); font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 3px 8px rgba(26,107,42,.3); }
-    .step-title { font-family:var(--font-d); font-size:16.5px; font-weight:800; color:var(--ink2); }
-    .step-sub { font-size:12.5px; color:var(--ink4); margin-top:2px; }
-    .step-body { padding-left:38px; }
-    @media(max-width:420px){ .step-body{ padding-left:0; } }
+    /* FORM HEADER (in-card) */
+    .form-head { display:flex; align-items:flex-start; gap:12px; padding-bottom:16px; margin-bottom:18px; border-bottom:1px solid var(--border); }
+    .form-head-icon { width:38px; height:38px; border-radius:var(--r10); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .form-head-icon i, .form-head-icon svg { width:18px; height:18px; color:var(--green); }
+    .form-head-title { font-family:var(--font-d); font-size:16px; font-weight:800; color:var(--ink); }
+    .form-head-sub { font-size:12px; color:var(--ink4); margin-top:2px; }
 
-    /* ICON CARD GRID (step 1) */
-    .icon-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
-    @media(min-width:480px){ .icon-grid{ grid-template-columns:repeat(3,1fr); } }
-    @media(min-width:960px) and (max-width:1180px){ .icon-grid{ grid-template-columns:repeat(3,1fr); } }
-    .icon-card { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; text-align:center; border:1.5px solid var(--border); border-radius:var(--r12); padding:16px 8px; cursor:pointer; transition:all var(--ease); background:var(--white); }
-    .icon-card input { position:absolute; opacity:0; pointer-events:none; }
-    .icon-card i.ico { width:22px; height:22px; color:var(--ink4); transition:color var(--ease); }
-    .icon-card span { font-size:12.5px; font-weight:700; color:var(--ink3); line-height:1.3; }
-    .icon-card:hover { border-color:var(--green-m); }
-    .icon-card:has(input:checked) { border-color:var(--green); background:var(--green-l); box-shadow:0 0 0 3px rgba(26,107,42,.08); }
-    .icon-card:has(input:checked) i.ico, .icon-card:has(input:checked) span { color:var(--green); }
-    .icon-card .check { position:absolute; top:7px; right:7px; width:16px; height:16px; border-radius:50%; background:var(--green); display:none; align-items:center; justify-content:center; }
-    .icon-card .check i { width:10px; height:10px; color:#fff; }
-    .icon-card:has(input:checked) .check { display:flex; }
+    /* SECTION HEADERS — compact, no numbered badge */
+    .section-block { margin-bottom:18px; padding-top:18px; border-top:1px solid var(--border); }
+    .section-block:first-of-type { padding-top:0; border-top:none; }
+    .section-title { font-family:var(--font-d); font-size:11px; font-weight:800; color:var(--ink4); text-transform:uppercase; letter-spacing:.5px; margin-bottom:12px; }
+
+    /* FIELD BLOCK */
+    .f-block { margin-bottom:14px; }
+    .f-block:last-of-type { margin-bottom:0; }
+    .f-block-label { font-size:12.5px; font-weight:700; color:var(--ink3); margin-bottom:6px; }
+    .f-block-label span { color:var(--red); }
 
     /* FORM FIELDS */
-    .form-grid { display:grid; grid-template-columns:1fr; gap:14px; }
+    .form-grid { display:grid; grid-template-columns:1fr; gap:12px; }
     @media(min-width:560px){ .form-grid.cols-3{ grid-template-columns:repeat(3,1fr); } .form-grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
-    .form-group { display:flex; flex-direction:column; gap:6px; }
+    .form-group { display:flex; flex-direction:column; gap:5px; }
     .form-group.full { grid-column:1/-1; }
     .form-label { font-size:12.5px; font-weight:700; color:var(--ink3); }
     .form-label span { color:var(--red); }
     .input-icon { position:relative; }
-    .input-icon i { position:absolute; left:12px; top:50%; transform:translateY(-50%); width:15px; height:15px; color:var(--ink5); pointer-events:none; }
-    .input-icon .form-input, .input-icon .form-select { padding-left:36px; }
+    .input-icon i, .input-icon svg { position:absolute; left:11px; top:50%; transform:translateY(-50%); width:14px; height:14px; color:var(--ink5); pointer-events:none; }
+    .input-icon .form-input, .input-icon .form-select { padding-left:33px; }
     .form-input, .form-select, .form-textarea {
-      width:100%; padding:11px 13px; border:1.5px solid var(--border); border-radius:var(--r10);
-      font-family:var(--font-b); font-size:14px; color:var(--ink); background:var(--white);
+      width:100%; padding:9px 12px; border:1px solid var(--border); border-radius:var(--r10);
+      font-family:var(--font-b); font-size:13.5px; color:var(--ink); background:var(--white);
       transition:border-color var(--ease), box-shadow var(--ease); outline:none;
     }
     .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(26,107,42,.09); }
     .form-input::placeholder, .form-textarea::placeholder { color:var(--ink5); }
-    .form-textarea { resize:vertical; min-height:96px; }
-    .form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
+    .form-textarea { resize:vertical; min-height:84px; }
+    .form-select { appearance:none; cursor:pointer; padding-right:32px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
 
-    .pill-group { display:flex; flex-wrap:wrap; gap:8px; }
-    .pill-option { position:relative; display:flex; align-items:center; gap:7px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r10); padding:9px 14px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:all var(--ease); }
-    .pill-option input { position:absolute; opacity:0; pointer-events:none; }
-    .pill-option i { width:14px; height:14px; color:var(--ink5); transition:color var(--ease); }
-    .pill-option:hover { border-color:var(--green-m); }
-    .pill-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); }
-    .pill-option:has(input:checked) i { color:var(--green); }
+    /* TAG SELECT — multi-select fields shown as chips + a dropdown to add more */
+    .tag-select { display:flex; flex-direction:column; gap:8px; }
+    .tag-chips { display:flex; flex-wrap:wrap; gap:6px; }
+    .tag-chips:empty { display:none; }
+    .tag-chip { display:inline-flex; align-items:center; gap:6px; background:var(--green-l); color:var(--green-d); border-radius:var(--r8); padding:5px 6px 5px 10px; font-size:12px; font-weight:600; }
+    .tag-remove { display:flex; align-items:center; justify-content:center; width:16px; height:16px; border-radius:50%; border:none; background:rgba(26,107,42,.15); color:var(--green-d); font-size:13px; line-height:1; cursor:pointer; padding:0; }
+    .tag-remove:hover { background:rgba(26,107,42,.3); }
+    .tag-add-select { color:var(--ink4); }
 
-    .toggle-group { display:inline-flex; border:1.5px solid var(--border); border-radius:var(--r10); overflow:hidden; }
-    .toggle-option { position:relative; padding:9px 22px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; background:var(--white); border-right:1.5px solid var(--border); transition:all var(--ease); }
-    .toggle-option:last-child { border-right:none; }
-    .toggle-option input { position:absolute; opacity:0; pointer-events:none; }
-    .toggle-option:has(input:checked) { background:var(--green-l); color:var(--green); }
-
-    .field-hint { font-size:11.5px; color:var(--ink5); margin-top:8px; display:flex; align-items:flex-start; gap:6px; }
-    .field-hint i { width:13px; height:13px; color:var(--green-m); flex-shrink:0; margin-top:1px; }
+    .field-hint { font-size:11.5px; color:var(--ink5); margin-top:6px; display:flex; align-items:flex-start; gap:6px; }
+    .field-hint i, .field-hint svg { width:13px; height:13px; color:var(--green-m); flex-shrink:0; margin-top:1px; }
     .char-count { text-align:right; font-size:11px; color:var(--ink5); margin-top:4px; }
 
-    /* PICKUP CARDS */
-    .pickup-grid { display:grid; grid-template-columns:1fr; gap:10px; margin-bottom:14px; }
-    @media(min-width:520px){ .pickup-grid{ grid-template-columns:1fr 1fr; } }
-    .pickup-card { position:relative; display:flex; align-items:flex-start; gap:12px; border:1.5px solid var(--border); border-radius:var(--r12); padding:14px; cursor:pointer; transition:all var(--ease); }
-    .pickup-card input { position:absolute; opacity:0; pointer-events:none; }
-    .pickup-card .p-icon { width:42px; height:42px; border-radius:var(--r10); background:var(--bg2); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .pickup-card .p-icon i { width:20px; height:20px; color:var(--green); }
-    .pickup-card strong { display:block; font-size:13.5px; font-weight:700; color:var(--ink2); margin-bottom:2px; }
-    .pickup-card p { font-size:12px; color:var(--ink4); line-height:1.4; }
-    .pickup-card:hover { border-color:var(--green-m); }
-    .pickup-card:has(input:checked) { border-color:var(--green); background:var(--green-l); box-shadow:0 0 0 3px rgba(26,107,42,.08); }
-    .pickup-card .p-check { position:absolute; top:10px; right:10px; width:18px; height:18px; border-radius:50%; background:var(--green); display:none; align-items:center; justify-content:center; }
-    .pickup-card .p-check i { width:11px; height:11px; color:#fff; }
-    .pickup-card:has(input:checked) .p-check { display:flex; }
-
-    /* UPLOAD */
-    .upload-box { display:flex; align-items:center; gap:12px; border:1.5px dashed var(--border-d); border-radius:var(--r12); padding:14px; background:var(--bg); }
-    .upload-box .u-icon { width:38px; height:38px; border-radius:var(--r10); background:var(--white); border:1.5px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .upload-box .u-icon i { width:18px; height:18px; color:var(--ink4); }
-    .upload-box .u-text { flex:1; min-width:0; }
-    .upload-box .u-text strong { display:block; font-size:13px; font-weight:700; color:var(--ink2); }
-    .upload-box .u-text span { font-size:11.5px; color:var(--ink4); }
-    .upload-btn { flex-shrink:0; display:inline-flex; align-items:center; gap:6px; padding:8px 14px; border:1.5px solid var(--green); color:var(--green); background:var(--white); border-radius:var(--pill); font-size:12.5px; font-weight:700; cursor:pointer; transition:all var(--ease); white-space:nowrap; }
-    .upload-btn:hover { background:var(--green-l); }
-    .upload-btn i { width:13px; height:13px; }
-    .upload-filename { font-size:11.5px; color:var(--green); font-weight:600; margin-top:6px; }
+    /* UPLOAD — compact */
+    .upload-zone { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:8px; border:1px dashed var(--border-d); border-radius:var(--r12); padding:20px 14px; background:var(--bg); transition:all var(--ease); cursor:pointer; }
+    .upload-zone.drag-over { border-color:var(--green); background:var(--green-l); }
+    .upload-zone .u-icon { width:36px; height:36px; border-radius:50%; background:var(--white); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; }
+    .upload-zone .u-icon i, .upload-zone .u-icon svg { width:16px; height:16px; color:var(--ink4); }
+    .upload-zone strong { font-size:12.5px; font-weight:700; color:var(--ink2); }
+    .upload-zone span { font-size:11px; color:var(--ink4); }
+    .upload-btn { display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border:1px solid var(--border-d); color:var(--ink3); background:var(--white); border-radius:var(--r8); font-size:12px; font-weight:700; cursor:pointer; transition:all var(--ease); white-space:nowrap; margin-top:2px; }
+    .upload-btn:hover { border-color:var(--green); color:var(--green); background:var(--green-l); }
+    .upload-btn i, .upload-btn svg { width:12px; height:12px; }
+    .upload-filename { font-size:11px; color:var(--green); font-weight:600; margin-top:6px; text-align:center; }
+    .upload-grid { display:grid; grid-template-columns:1fr; gap:12px; }
+    @media(min-width:560px){ .upload-grid{ grid-template-columns:1fr 1fr; } }
+    .upload-col { display:flex; flex-direction:column; }
 
     /* SUBMIT */
-    .agree-row { display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--ink4); cursor:pointer; margin-top:22px; }
-    .agree-row input { margin-top:2px; flex-shrink:0; accent-color:var(--green); width:15px; height:15px; }
+    .agree-row { display:flex; align-items:flex-start; gap:8px; font-size:12px; color:var(--ink4); cursor:pointer; margin-top:4px; }
+    .agree-row input { margin-top:2px; flex-shrink:0; accent-color:var(--green); width:14px; height:14px; }
     .agree-row a { color:var(--green); font-weight:600; text-decoration:none; }
     .agree-row a:hover { text-decoration:underline; }
-    .form-submit { width:100%; padding:15px; background:var(--grad); color:#fff; border:none; border-radius:var(--pill); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:transform var(--ease), box-shadow var(--ease); margin-top:20px; display:flex; align-items:center; justify-content:center; gap:9px; box-shadow:0 8px 22px rgba(26,107,42,.28); }
-    .form-submit:hover { transform:translateY(-1px); box-shadow:0 10px 26px rgba(26,107,42,.34); }
-    .form-submit i { width:16px; height:16px; }
-    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:12px; display:flex; align-items:center; justify-content:center; gap:6px; }
-    .form-note i { width:12px; height:12px; color:var(--green-m); }
+
+    .form-footer { display:flex; align-items:center; justify-content:flex-end; gap:8px; margin-top:18px; padding-top:18px; border-top:1px solid var(--border); flex-wrap:wrap; }
+    .btn-reset { padding:10px 18px; background:var(--white); color:var(--ink3); border:1px solid var(--border-d); border-radius:var(--r10); font-family:var(--font-b); font-size:13px; font-weight:700; cursor:pointer; transition:all var(--ease); }
+    .btn-reset:hover { border-color:var(--ink4); color:var(--ink); }
+    .form-submit { padding:10px 22px; background:var(--green); color:#fff; border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:13px; font-weight:800; cursor:pointer; transition:background var(--ease); display:flex; align-items:center; justify-content:center; gap:8px; }
+    .form-submit:hover { background:var(--green-d); }
+    .form-submit i, .form-submit svg { width:14px; height:14px; }
+    @media(max-width:480px){ .form-footer{ justify-content:stretch; } .btn-reset, .form-submit{ flex:1; } }
+    .form-note { font-size:11px; color:var(--ink5); text-align:center; margin-top:12px; display:flex; align-items:center; justify-content:center; gap:6px; }
+    .form-note i, .form-note svg { width:12px; height:12px; color:var(--green-m); }
 
     /* SIDEBAR */
     .sidebar { display:flex; flex-direction:column; gap:16px; }
@@ -184,25 +164,27 @@
     .step-list { display:flex; flex-direction:column; }
     .step-list-item { display:flex; align-items:center; gap:12px; padding:9px 0; }
     .step-list-item .s-icon { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .step-list-item .s-icon i { width:15px; height:15px; }
+    .step-list-item .s-icon i, .step-list-item .s-icon svg { width:15px; height:15px; }
     .step-list-item p { font-size:13px; color:var(--ink3); font-weight:500; line-height:1.4; }
-    .s1 { background:var(--green-l); } .s1 i { color:var(--green); }
-    .s2 { background:var(--green-l2); } .s2 i { color:var(--green-m); }
-    .s3 { background:var(--blue-l); } .s3 i { color:var(--blue); }
-    .s4 { background:var(--amber-l); } .s4 i { color:var(--amber); }
-    .s5 { background:var(--pink-l); } .s5 i { color:var(--pink); }
+    .s1 { background:var(--green-l); } .s1 i, .s1 svg { color:var(--green); }
+    .s2 { background:var(--green-l2); } .s2 i, .s2 svg { color:var(--green-m); }
+    .s3 { background:var(--blue-l); } .s3 i, .s3 svg { color:var(--blue); }
+    .s4 { background:var(--amber-l); } .s4 i, .s4 svg { color:var(--amber); }
+    .s5 { background:var(--pink-l); } .s5 i, .s5 svg { color:var(--pink); }
 
     .contact-item { display:flex; align-items:center; gap:11px; padding:11px 0; border-bottom:1px solid var(--border); }
     .contact-item:last-child { border-bottom:none; padding-bottom:0; }
     .contact-item .c-icon { width:34px; height:34px; border-radius:var(--r10); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .contact-item .c-icon i { width:16px; height:16px; color:var(--green); }
+    .contact-item .c-icon i, .contact-item .c-icon svg { width:16px; height:16px; color:var(--green); }
     .contact-item strong { display:block; font-size:11.5px; font-weight:700; color:var(--ink4); text-transform:uppercase; letter-spacing:.3px; margin-bottom:1px; }
     .contact-item span { font-size:13.5px; color:var(--ink2); font-weight:600; }
+    .contact-item span a { color:var(--ink2); text-decoration:none; }
+    .contact-item span a:hover { color:var(--green); }
 
     .why-list { display:flex; flex-direction:column; gap:14px; }
     .why-item { display:flex; align-items:flex-start; gap:11px; }
     .why-item .w-icon { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .why-item .w-icon i { width:15px; height:15px; }
+    .why-item .w-icon i, .why-item .w-icon svg { width:15px; height:15px; }
     .why-item strong { display:block; font-size:13px; font-weight:700; color:var(--ink2); }
     .why-item span { font-size:12px; color:var(--ink4); }
     .side-card.why { background:var(--bg2); border-color:var(--border); }
@@ -211,7 +193,7 @@
     .success-state { display:none; text-align:center; padding:48px 20px; }
     .success-state.shown { display:flex; flex-direction:column; align-items:center; gap:16px; }
     .success-icon { width:64px; height:64px; background:var(--green-l); border-radius:50%; display:flex; align-items:center; justify-content:center; }
-    .success-icon i { width:32px; height:32px; color:var(--green); }
+    .success-icon i, .success-icon svg { width:32px; height:32px; color:var(--green); }
     .success-title { font-family:var(--font-d); font-size:26px; font-weight:800; color:var(--ink); }
     .success-desc { font-size:14px; color:var(--ink4); max-width:380px; line-height:1.7; }
     .success-back { display:inline-flex; align-items:center; gap:7px; padding:11px 22px; background:var(--grad); color:#fff; border-radius:var(--pill); font-size:13.5px; font-weight:700; text-decoration:none; transition:transform var(--ease); margin-top:8px; }
@@ -266,89 +248,87 @@
         <div class="form-wrap fade-up d2">
           <form id="booking-form" onsubmit="handleSubmit(event)">
 
-            <!-- Step 1: What can we help you with -->
-            <div class="step">
-              <div class="step-head">
-                <div class="step-num">1</div>
-                <div>
-                  <div class="step-title">What can we help you with?</div>
-                  <div class="step-sub">Choose the main issue or service you need.</div>
-                </div>
-              </div>
-              <div class="step-body">
-                <div class="icon-grid">
-                  <label class="icon-card">
-                    <input type="radio" name="category" value="general" checked>
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="wrench" class="ico"></i>
-                    <span>General Service</span>
-                  </label>
-                  <label class="icon-card">
-                    <input type="radio" name="category" value="mechanical">
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="cog" class="ico"></i>
-                    <span>Mechanical</span>
-                  </label>
-                  <label class="icon-card">
-                    <input type="radio" name="category" value="electrical">
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="battery-charging" class="ico"></i>
-                    <span>Electrical / Battery</span>
-                  </label>
-                  <label class="icon-card">
-                    <input type="radio" name="category" value="ac">
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="snowflake" class="ico"></i>
-                    <span>AC / Cooling</span>
-                  </label>
-                  <label class="icon-card">
-                    <input type="radio" name="category" value="ev-hybrid">
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="zap" class="ico"></i>
-                    <span>EV / Hybrid</span>
-                  </label>
-                  <label class="icon-card">
-                    <input type="radio" name="category" value="unsure">
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="help-circle" class="ico"></i>
-                    <span>Not sure</span>
-                  </label>
-                </div>
+            <div class="form-head">
+              <div class="form-head-icon"><i data-lucide="clipboard-list"></i></div>
+              <div>
+                <div class="form-head-title">Book a Service</div>
+                <div class="form-head-sub">Fill in your workshop, vehicle and issue details — takes about two minutes.</div>
               </div>
             </div>
 
-            <!-- Step 2: Tell us about your car -->
-            <div class="step">
-              <div class="step-head">
-                <div class="step-num">2</div>
-                <div>
-                  <div class="step-title">Tell us about your car</div>
-                  <div class="step-sub">So we can provide the right help.</div>
+            <!-- Workshop Service Details -->
+            <div class="section-block">
+              <div class="section-title">Workshop Service Details</div>
+
+              <div class="f-block">
+                <div class="form-grid cols-2">
+                  <div class="form-group">
+                    <label class="form-label">Type of workshop</label>
+                    <select class="form-select" name="workshop_type">
+                      <option value="authorized" selected>Authorized</option>
+                      <option value="independent">Independent</option>
+                      <option value="specific">Specific</option>
+                    </select>
+                  </div>
                 </div>
               </div>
-              <div class="step-body">
-                <div class="form-grid cols-3">
+
+              <div class="f-block">
+                <div class="f-block-label">Service category <span>*</span></div>
+                <div class="tag-select">
+                  <div class="tag-chips" id="chips-service_category">
+                    <span class="tag-chip" data-value="Regular Service">Regular Service<button type="button" class="tag-remove" onclick="removeTag(this)">&times;</button><input type="hidden" name="service_category" value="Regular Service"></span>
+                  </div>
+                  <select class="form-select tag-add-select" data-skip-submit="true" onchange="addTag(this,'service_category')">
+                    <option value="">+ Add a category…</option>
+                    <option value="Fix My Car">Fix My Car</option>
+                    <option value="Electrical & Battery">Electrical &amp; Battery</option>
+                    <option value="AC & Cooling">AC &amp; Cooling</option>
+                    <option value="Tyres & Wheels">Tyres &amp; Wheels</option>
+                    <option value="Body & Exterior">Body &amp; Exterior</option>
+                    <option value="EV & Hybrid Care">EV &amp; Hybrid Care</option>
+                  </select>
+                </div>
+                <div class="field-hint"><i data-lucide="sparkles"></i>Pick one or more categories.</div>
+              </div>
+            </div>
+
+            <!-- Vehicle Details -->
+            <div class="section-block">
+              <div class="section-title">Vehicle Details</div>
+
+              <div class="f-block">
+                <div class="form-grid cols-2">
                   <div class="form-group">
-                    <label class="form-label">Brand <span>*</span></label>
+                    <label class="form-label">Vehicle brand <span>*</span></label>
                     <div class="input-icon">
                       <i data-lucide="car"></i>
                       <select class="form-select" name="brand" required>
                         <option value="">Select brand</option>
                         <option>Maruti Suzuki</option><option>Hyundai</option><option>Toyota</option>
                         <option>MG</option><option>Kia</option><option>Honda</option><option>Skoda</option>
-                        <option>Tata</option><option>Mahindra</option><option>Other</option>
+                        <option>Tata</option><option>Mahindra</option><option>BYD</option><option>Other</option>
                       </select>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="form-label">Model <span>*</span></label>
+                    <label class="form-label">Model name <span>*</span></label>
                     <div class="input-icon">
                       <i data-lucide="car"></i>
-                      <input class="form-input" style="padding-left:36px" type="text" name="model" placeholder="e.g. Baleno, ZS EV" required>
+                      <input class="form-input" style="padding-left:33px" type="text" name="model" placeholder="e.g. Creta" required>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              <div class="f-block">
+                <div class="form-grid cols-2">
                   <div class="form-group">
-                    <label class="form-label">Year <span>*</span></label>
+                    <label class="form-label">Variant / trim</label>
+                    <input class="form-input" type="text" name="variant" placeholder="e.g. SX Diesel MT (optional)">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Year of manufacture <span>*</span></label>
                     <div class="input-icon">
                       <i data-lucide="calendar"></i>
                       <select class="form-select" name="year" required>
@@ -356,154 +336,251 @@
                         <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
                         <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
                         <option>2017</option><option>2016</option><option>2015</option><option>2014</option>
-                        <option>2013 or older</option>
+                        <option>2013</option><option>2012</option><option>2011</option><option>2010</option>
+                        <option>2009</option><option>2008</option><option>2007</option><option>2006</option>
+                        <option>2005</option><option>2004</option><option>2003</option><option>2002</option>
+                        <option>2001</option><option>2000</option>
                       </select>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div class="form-group" style="margin-top:14px">
-                  <label class="form-label">Fuel type <span>*</span></label>
-                  <div class="pill-group">
-                    <label class="pill-option"><input type="radio" name="fuel" value="petrol" checked><i data-lucide="droplet"></i>Petrol</label>
-                    <label class="pill-option"><input type="radio" name="fuel" value="diesel"><i data-lucide="fuel"></i>Diesel</label>
-                    <label class="pill-option"><input type="radio" name="fuel" value="ev"><i data-lucide="zap"></i>EV</label>
-                    <label class="pill-option"><input type="radio" name="fuel" value="hybrid"><i data-lucide="leaf"></i>Hybrid</label>
+              <div class="f-block">
+                <div class="form-grid cols-2">
+                  <div class="form-group">
+                    <label class="form-label">Fuel type <span>*</span></label>
+                    <select class="form-select" name="fuel">
+                      <option value="petrol" selected>Petrol</option>
+                      <option value="diesel">Diesel</option>
+                      <option value="ev">EV</option>
+                      <option value="hybrid">Hybrid</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Involved in a major accident? <span>*</span></label>
+                    <select class="form-select" name="accident">
+                      <option value="no" selected>No</option>
+                      <option value="yes">Yes</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="f-block">
+                <div class="form-grid cols-2">
+                  <div class="form-group">
+                    <label class="form-label">Current mileage / odometer <span>*</span></label>
+                    <div class="input-icon">
+                      <i data-lucide="gauge"></i>
+                      <input class="form-input" style="padding-left:33px" type="number" min="0" name="mileage" placeholder="e.g. 45000 (km)" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Last service date <span>*</span></label>
+                    <div class="input-icon">
+                      <i data-lucide="calendar"></i>
+                      <input class="form-input" style="padding-left:33px" type="date" name="last_service_date" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="f-block">
+                <div class="form-group">
+                  <label class="form-label">Last service type</label>
+                  <input class="form-input" type="text" name="last_service_type" placeholder="e.g. Oil change & filter (optional)">
+                </div>
+              </div>
+
+              <div class="f-block">
+                <div class="upload-grid">
+                  <div class="upload-col">
+                    <label class="form-label" style="margin-bottom:8px">Vehicle photo (optional)</label>
+                    <label class="upload-zone" id="upload-zone-photo">
+                      <div class="u-icon"><i data-lucide="camera"></i></div>
+                      <strong>Upload a photo</strong>
+                      <span>jpg, png — up to 10MB</span>
+                      <span class="upload-btn"><i data-lucide="folder-open"></i>Browse</span>
+                      <input type="file" id="photo-input" name="vehicle_photo" accept="image/*" style="display:none" onchange="showFileName(this,'file-name-photo')">
+                    </label>
+                    <div class="upload-filename" id="file-name-photo"></div>
+                  </div>
+                  <div class="upload-col">
+                    <label class="form-label" style="margin-bottom:8px">Previous service records (optional)</label>
+                    <label class="upload-zone" id="upload-zone-records">
+                      <div class="u-icon"><i data-lucide="file-text"></i></div>
+                      <strong>Upload records</strong>
+                      <span>pdf, jpg, png — up to 10MB</span>
+                      <span class="upload-btn"><i data-lucide="folder-open"></i>Browse</span>
+                      <input type="file" id="records-input" name="service_records" accept="image/*,.pdf" style="display:none" onchange="showFileName(this,'file-name-records')">
+                    </label>
+                    <div class="upload-filename" id="file-name-records"></div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Step 3: What's the problem -->
-            <div class="step">
-              <div class="step-head">
-                <div class="step-num">3</div>
-                <div>
-                  <div class="step-title">What's the problem?</div>
-                  <div class="step-sub">The more details you share, the better we can help.</div>
-                </div>
-              </div>
-              <div class="step-body">
-                <textarea class="form-textarea" id="issue-text" name="issue" maxlength="300" placeholder="Describe the issue or service you need…" required oninput="document.getElementById('char-count').textContent = this.value.length"></textarea>
+            <!-- Problem & Appointment Details -->
+            <div class="section-block">
+              <div class="section-title">Problem &amp; Appointment Details</div>
+
+              <div class="f-block">
+                <label class="form-label" for="issue-text">Description of problem / complaint <span>*</span></label>
+                <textarea class="form-textarea" id="issue-text" name="issue" maxlength="300" placeholder="e.g. My car makes a loud noise when braking" required oninput="document.getElementById('char-count').textContent = this.value.length" style="margin-top:5px"></textarea>
                 <div class="char-count"><span id="char-count">0</span>/300</div>
-                <div class="field-hint"><i data-lucide="sparkles"></i>Examples: AC not cooling, strange noise, brake issue, service light is on…</div>
+              </div>
+
+              <div class="f-block">
+                <div class="form-grid cols-2">
+                  <div class="form-group">
+                    <label class="form-label">Preferred appointment date <span>*</span></label>
+                    <div class="input-icon">
+                      <i data-lucide="calendar"></i>
+                      <input class="form-input" style="padding-left:33px" type="date" name="appointment_date" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Preferred appointment time <span>*</span></label>
+                    <select class="form-select" name="appointment_time">
+                      <option value="Morning (9am-12pm)" selected>Morning (9am–12pm)</option>
+                      <option value="Afternoon (12pm-4pm)">Afternoon (12pm–4pm)</option>
+                      <option value="Evening (4pm-7pm)">Evening (4pm–7pm)</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <!-- Step 4: Your details -->
-            <div class="step">
-              <div class="step-head">
-                <div class="step-num">4</div>
-                <div>
-                  <div class="step-title">Your details</div>
-                  <div class="step-sub">We'll only use this to contact you.</div>
-                </div>
-              </div>
-              <div class="step-body">
-                <div class="form-grid cols-3">
+            <!-- Personal Details -->
+            <div class="section-block">
+              <div class="section-title">Personal Details</div>
+
+              <div class="f-block">
+                <div class="form-grid cols-2">
                   <div class="form-group">
                     <label class="form-label">Full name <span>*</span></label>
                     <div class="input-icon">
                       <i data-lucide="user"></i>
-                      <input class="form-input" type="text" name="full_name" placeholder="Your name" required>
+                      <input class="form-input" style="padding-left:33px" type="text" name="full_name" placeholder="Your name" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="form-label">Mobile number <span>*</span></label>
                     <div class="input-icon">
                       <i data-lucide="phone"></i>
-                      <input class="form-input" type="tel" name="mobile" placeholder="+977 98XXXXXXXX" required>
+                      <input class="form-input" style="padding-left:33px" type="tel" name="mobile" placeholder="+977 98XXXXXXXX" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="f-block">
+                <div class="form-grid cols-2">
+                  <div class="form-group">
+                    <label class="form-label">WhatsApp number</label>
+                    <div class="input-icon">
+                      <i data-lucide="message-circle"></i>
+                      <input class="form-input" style="padding-left:33px" type="tel" name="whatsapp" placeholder="If different from mobile (optional)">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="form-label">Email (optional)</label>
+                    <label class="form-label">Alternative number</label>
                     <div class="input-icon">
-                      <i data-lucide="mail"></i>
-                      <input class="form-input" type="email" name="email" placeholder="you@example.com">
+                      <i data-lucide="phone"></i>
+                      <input class="form-input" style="padding-left:33px" type="tel" name="alt_number" placeholder="Optional">
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Step 5: How should we get the car -->
-            <div class="step">
-              <div class="step-head">
-                <div class="step-num">5</div>
-                <div>
-                  <div class="step-title">How should we get the car?</div>
-                  <div class="step-sub">Choose what's most convenient for you.</div>
-                </div>
-              </div>
-              <div class="step-body">
-                <div class="pickup-grid">
-                  <label class="pickup-card">
-                    <input type="radio" name="pickup" value="pickup" checked onclick="toggleAddress(true)">
-                    <div class="p-check"><i data-lucide="check"></i></div>
-                    <div class="p-icon"><i data-lucide="truck"></i></div>
-                    <div>
-                      <strong>Pick it up from me</strong>
-                      <p>We'll collect the car from your location.</p>
-                    </div>
-                  </label>
-                  <label class="pickup-card">
-                    <input type="radio" name="pickup" value="dropoff" onclick="toggleAddress(false)">
-                    <div class="p-check"><i data-lucide="check"></i></div>
-                    <div class="p-icon"><i data-lucide="map-pin"></i></div>
-                    <div>
-                      <strong>I'll bring it to you</strong>
-                      <p>I'll drop the car at your workshop.</p>
-                    </div>
-                  </label>
-                </div>
-                <div class="form-group" id="address-group">
-                  <label class="form-label">Pickup address</label>
+              <div class="f-block">
+                <div class="form-group">
+                  <label class="form-label">Email address</label>
                   <div class="input-icon">
-                    <i data-lucide="map-pin"></i>
-                    <input class="form-input" type="text" name="address" placeholder="Enter your pickup address">
+                    <i data-lucide="mail"></i>
+                    <input class="form-input" style="padding-left:33px" type="email" name="email" placeholder="you@example.com (optional)">
+                  </div>
+                </div>
+              </div>
+
+              <div class="f-block">
+                <div class="form-grid cols-2">
+                  <div class="form-group">
+                    <label class="form-label">Full address <span>*</span></label>
+                    <div class="input-icon">
+                      <i data-lucide="map-pin"></i>
+                      <input class="form-input" style="padding-left:33px" type="text" name="address" placeholder="Your full address" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">City / district <span>*</span></label>
+                    <div class="input-icon">
+                      <i data-lucide="map"></i>
+                      <select class="form-select" name="city" required>
+                        <option value="">Select city / district</option>
+                        <option>Kathmandu</option><option>Lalitpur</option><option>Bhaktapur</option>
+                        <option>Pokhara</option><option>Chitwan</option><option>Butwal</option><option>Other</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Step 6: Accident -->
-            <div class="step">
-              <div class="step-head">
-                <div class="step-num">6</div>
-                <div>
-                  <div class="step-title">Is this related to an accident?</div>
-                </div>
-                <div class="step-head-toggle">
-                  <div class="toggle-group">
-                    <label class="toggle-option"><input type="radio" name="accident" value="no" checked>No</label>
-                    <label class="toggle-option"><input type="radio" name="accident" value="yes">Yes</label>
-                  </div>
+            <!-- Pickup & Delivery -->
+            <div class="section-block">
+              <div class="section-title">Pickup &amp; Delivery</div>
+
+              <div class="f-block">
+                <div class="form-group">
+                  <label class="form-label">Do you need pick-up / drop-off service? <span>*</span></label>
+                  <select class="form-select" name="pickup_needed" onchange="togglePickup(this.value)">
+                    <option value="yes" selected>Yes, pick it up</option>
+                    <option value="no">No, I'll bring it</option>
+                  </select>
                 </div>
               </div>
-              <div class="step-body">
-                <div class="upload-box">
-                  <div class="u-icon"><i data-lucide="image"></i></div>
-                  <div class="u-text">
-                    <strong>Upload photos (optional)</strong>
-                    <span>Add photos of any damage or issue (if any)</span>
+
+              <div id="pickup-details">
+                <div class="f-block">
+                  <div class="form-group">
+                    <label class="form-label">Pickup address</label>
+                    <div class="input-icon">
+                      <i data-lucide="map-pin"></i>
+                      <input class="form-input" style="padding-left:33px" type="text" name="pickup_address" placeholder="Enter your pickup address">
+                    </div>
                   </div>
-                  <label class="upload-btn">
-                    <i data-lucide="upload"></i>Upload
-                    <input type="file" name="photos" accept="image/*,.pdf" style="display:none" onchange="showFileName(this)">
-                  </label>
                 </div>
-                <div class="upload-filename" id="file-name"></div>
+                <div class="f-block">
+                  <div class="form-group">
+                    <label class="form-label">Preferred pickup time</label>
+                    <select class="form-select" name="pickup_time">
+                      <option value="Morning" selected>Morning</option>
+                      <option value="Afternoon">Afternoon</option>
+                      <option value="Evening">Evening</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
 
+            <!-- Agreement & Submit -->
             <label class="agree-row">
-              <input type="checkbox" required>
-              I agree to partner with AutoViindu under the <a href="/about#terms">listed terms and conditions</a>.
+              <input type="checkbox" name="confirm_accurate" required>
+              I confirm that the vehicle details provided are accurate.
+            </label>
+            <label class="agree-row">
+              <input type="checkbox" name="agree_terms" required>
+              I agree to AutoViindu's <a href="/about#terms">terms and conditions</a> for workshop services.
             </label>
 
-            <button class="form-submit" type="submit">
-              <i data-lucide="send"></i>Submit Service Request
-            </button>
+            <div class="form-footer">
+              <button class="btn-reset" type="reset">Reset</button>
+              <button class="form-submit" type="submit">
+                <i data-lucide="send"></i>Submit Request
+              </button>
+            </div>
             <div class="form-note"><i data-lucide="shield-check"></i>We'll contact you within one business day.</div>
           </form>
 
@@ -537,11 +614,11 @@
             <div class="side-card-body">
               <div class="contact-item">
                 <div class="c-icon"><i data-lucide="phone"></i></div>
-                <div><strong>Call or WhatsApp</strong><span>+977 98XX-XXXXXX</span></div>
+                <div><strong>Call or WhatsApp</strong><span><a href="tel:+9779828364940">+977 9828364940</a></span></div>
               </div>
               <div class="contact-item">
                 <div class="c-icon"><i data-lucide="mail"></i></div>
-                <div><strong>Email</strong><span>service@autoviindu.com</span></div>
+                <div><strong>Email</strong><span><a href="mailto:info@autoviindu.com">info@autoviindu.com</a></span></div>
               </div>
               <div class="contact-item">
                 <div class="c-icon"><i data-lucide="clock"></i></div>
@@ -578,15 +655,81 @@
   <script>
     lucide.createIcons();
 
-    function toggleAddress(show) {
-      document.getElementById('address-group').style.display = show ? 'flex' : 'none';
-      document.querySelector('[name="address"]').required = show;
+    function togglePickup(value) {
+      const show = value === 'yes' || value === true;
+      document.getElementById('pickup-details').style.display = show ? '' : 'none';
     }
 
-    function showFileName(input) {
-      const el = document.getElementById('file-name');
+    function showFileName(input, outId) {
+      const el = document.getElementById(outId);
       el.textContent = input.files.length ? '✓ ' + input.files[0].name : '';
     }
+
+    document.querySelectorAll('.upload-zone').forEach((zone) => {
+      const input = zone.querySelector('input[type="file"]');
+      ['dragenter', 'dragover'].forEach(evt => {
+        zone.addEventListener(evt, (e) => { e.preventDefault(); zone.classList.add('drag-over'); });
+      });
+      ['dragleave', 'drop'].forEach(evt => {
+        zone.addEventListener(evt, (e) => { e.preventDefault(); zone.classList.remove('drag-over'); });
+      });
+      zone.addEventListener('drop', (e) => {
+        if (e.dataTransfer.files.length) {
+          input.files = e.dataTransfer.files;
+          input.dispatchEvent(new Event('change'));
+        }
+      });
+    });
+
+    // TAG SELECT — a compact "chips + add-dropdown" widget for multi-select fields
+    function addTag(selectEl, groupName) {
+      const value = selectEl.value;
+      if (!value) return;
+      const text = selectEl.options[selectEl.selectedIndex].text;
+      const chipsEl = document.getElementById('chips-' + groupName);
+      const chip = document.createElement('span');
+      chip.className = 'tag-chip';
+      chip.dataset.value = value;
+      chip.append(text);
+      const removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
+      removeBtn.className = 'tag-remove';
+      removeBtn.textContent = '×';
+      removeBtn.onclick = () => removeTag(removeBtn);
+      const hidden = document.createElement('input');
+      hidden.type = 'hidden';
+      hidden.name = groupName;
+      hidden.value = value;
+      chip.append(removeBtn, hidden);
+      chipsEl.appendChild(chip);
+      selectEl.remove(selectEl.selectedIndex);
+      selectEl.value = '';
+    }
+    function removeTag(btn) {
+      const chip = btn.closest('.tag-chip');
+      const tagSelectEl = chip.closest('.tag-select');
+      const select = tagSelectEl.querySelector('.tag-add-select');
+      const opt = document.createElement('option');
+      opt.value = chip.dataset.value;
+      opt.textContent = chip.dataset.value;
+      select.appendChild(opt);
+      chip.remove();
+    }
+
+    // Snapshot each tag-select's starting markup so Reset can restore it
+    // (native form reset doesn't know how to undo JS-added chip elements).
+    const tagSelectDefaults = new Map();
+    document.querySelectorAll('.tag-select').forEach(ts => tagSelectDefaults.set(ts, ts.innerHTML));
+
+    document.getElementById('booking-form').addEventListener('reset', () => {
+      setTimeout(() => {
+        document.getElementById('char-count').textContent = '0';
+        document.getElementById('file-name-photo').textContent = '';
+        document.getElementById('file-name-records').textContent = '';
+        togglePickup('yes');
+        tagSelectDefaults.forEach((html, ts) => { ts.innerHTML = html; });
+      }, 0);
+    });
 
     function handleSubmit(e) {
       e.preventDefault();
@@ -594,6 +737,7 @@
       const data = { formId: form.id || 'booking-form' };
       const elements = form.querySelectorAll('input, select, textarea');
       elements.forEach((el, i) => {
+        if (el.dataset.skipSubmit) return;
         let label = el.name || el.placeholder;
         if (!label) {
           const group = el.closest('.form-group') || el.closest('div');
@@ -604,7 +748,19 @@
         }
         if (!label) label = 'field_' + i;
 
-        if (el.type === 'radio' || el.type === 'checkbox') {
+        const accumulate = (value) => {
+          if (data[label] !== undefined) {
+            data[label] = Array.isArray(data[label]) ? data[label].concat(value) : [data[label], value];
+          } else {
+            data[label] = value;
+          }
+        };
+
+        if (el.type === 'checkbox') {
+          if (el.checked) accumulate(el.value || 'checked');
+        } else if (el.type === 'hidden') {
+          accumulate(el.value);
+        } else if (el.type === 'radio') {
           if (el.checked) data[label] = el.value || 'checked';
         } else if (el.type === 'file') {
           data[label] = el.files.length ? el.files[0].name : '';

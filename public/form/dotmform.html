@@ -18,11 +18,6 @@
     :root {
       --green:#1A6B2A; --green-d:#0F4A1C; --green-m:#2E8F45; --green-l:#EEF7F0; --green-l2:#E1F1E4;
       --grad: linear-gradient(135deg,#1A6B2A,#2E8F45);
-      --grad-blue: linear-gradient(135deg,#2563EB,#3B82F6);
-      --grad-amber: linear-gradient(135deg,#B8720F,#D98A16);
-      --grad-pink: linear-gradient(135deg,#C23A6C,#E24E82);
-      --grad-teal: linear-gradient(135deg,#0E8E7C,#22B8A0);
-      --teal:#0E8E7C; --teal-l:#E4F8F4;
       --ink:#0B0F14; --ink2:#1C2228; --ink3:#3D4754; --ink4:#6B7685; --ink5:#9AA3AE;
       --border:#E4E8ED; --border-d:#D6DCE2; --bg:#F5F8F6; --bg2:#ECF3EE; --white:#ffffff;
       --red:#C8271E; --red-l:#FFF0EF;
@@ -35,25 +30,10 @@
       --font-d: 'Plus Jakarta Sans', system-ui, sans-serif; --font-b: 'Inter', system-ui, sans-serif;
     }
     html { scroll-behavior:smooth; }
-    body {
-      font-family:var(--font-b); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; min-height:100vh;
-      background:
-        radial-gradient(680px 420px at 92% -6%, rgba(46,143,69,.10), transparent 60%),
-        radial-gradient(520px 360px at -6% 18%, rgba(59,130,246,.07), transparent 55%),
-        radial-gradient(600px 420px at 100% 60%, rgba(226,78,130,.05), transparent 55%),
-        var(--bg);
-      background-attachment:fixed;
-    }
+    body { font-family:var(--font-b); background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6; min-height:100vh; }
     ::selection { background:rgba(26,107,42,.15); }
     :focus-visible { outline:2px solid var(--green); outline-offset:3px; border-radius:4px; }
     img, svg { display:block; }
-    @keyframes floatSlow { 0%,100%{ transform:translateY(0) rotate(0deg);} 50%{ transform:translateY(-8px) rotate(3deg);} }
-    @keyframes floatSlow2 { 0%,100%{ transform:translateY(0) scale(1);} 50%{ transform:translateY(6px) scale(1.08);} }
-    @keyframes popIn { 0%{ transform:scale(0); opacity:0;} 60%{ transform:scale(1.25); opacity:1;} 100%{ transform:scale(1);} }
-    @keyframes shine { 0%{ transform:translateX(-120%) skewX(-15deg);} 100%{ transform:translateX(220%) skewX(-15deg);} }
-    @keyframes drawCheck { to{ stroke-dashoffset:0; } }
-    @keyframes confettiFall { 0%{ transform:translateY(-8px) rotate(0deg); opacity:0;} 15%{ opacity:1;} 100%{ transform:translateY(70px) rotate(220deg); opacity:0;} }
-    @keyframes gentlePulse { 0%,100%{ box-shadow:0 0 0 0 rgba(26,107,42,.18);} 50%{ box-shadow:0 0 0 8px rgba(26,107,42,0);} }
     .wrap { max-width:1180px; margin:0 auto; padding:0 16px; }
     @media(min-width:640px){ .wrap{ padding:0 28px; } }
     @media(min-width:1024px){ .wrap{ padding:0 40px; } }
@@ -63,7 +43,7 @@
     .bc-inner { display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink4); flex-wrap:wrap; }
     .bc-inner a { color:var(--green); text-decoration:none; font-weight:600; }
     .bc-inner a:hover { text-decoration:underline; }
-    .bc-inner i { width:12px; height:12px; }
+    .bc-inner i, .bc-inner svg { width:12px; height:12px; }
 
     /* PAGE */
     .page { padding:24px 0 64px; }
@@ -71,18 +51,17 @@
     /* HERO STRIP */
     .hero-strip { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:22px; }
     .hero-left { display:flex; align-items:flex-start; gap:16px; }
-    .hero-avatar { width:64px; height:64px; border-radius:var(--r18); background:var(--grad); display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; box-shadow:0 10px 24px rgba(26,107,42,.28); animation:gentlePulse 3.2s ease-in-out infinite; }
-    .hero-avatar i { width:30px; height:30px; color:#fff; }
-    .hero-avatar::before, .hero-avatar::after { content:''; position:absolute; border-radius:50%; }
-    .hero-avatar::before { width:9px; height:9px; top:-6px; left:-8px; background:var(--amber); animation:floatSlow 3.6s ease-in-out infinite; }
-    .hero-avatar::after { width:13px; height:13px; top:14px; left:-18px; background:var(--blue); opacity:.55; animation:floatSlow2 4.2s ease-in-out infinite .3s; }
+    .hero-avatar { width:64px; height:64px; border-radius:var(--r18); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; }
+    .hero-avatar i, .hero-avatar svg { width:32px; height:32px; color:var(--green); }
+    .hero-avatar::before, .hero-avatar::after { content:''; position:absolute; border-radius:50%; background:var(--green-m); opacity:.55; }
+    .hero-avatar::before { width:6px; height:6px; top:-4px; left:-6px; }
+    .hero-avatar::after { width:9px; height:9px; top:10px; left:-13px; opacity:.3; }
     .hero-text h1 { font-family:var(--font-d); font-size:clamp(22px,3.4vw,32px); font-weight:800; color:var(--ink); line-height:1.18; }
-    .hero-text h1 span { display:block; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .hero-text p { font-size:14px; color:var(--ink4); margin-top:6px; max-width:440px; }
-    .safe-badge { display:flex; align-items:center; gap:10px; background:var(--white); border:1.5px solid var(--border); border-radius:14px; padding:12px 16px; max-width:260px; box-shadow:var(--sh1); transition:transform var(--ease), box-shadow var(--ease); }
-    .safe-badge:hover { transform:translateY(-2px); box-shadow:var(--sh2); }
+    .hero-text h1 span { display:block; color:var(--green); }
+    .hero-text p { font-size:14px; color:var(--ink4); margin-top:6px; }
+    .safe-badge { display:flex; align-items:center; gap:10px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r14,14px); padding:12px 16px; max-width:260px; box-shadow:var(--sh1); }
     .safe-badge .lock { width:32px; height:32px; border-radius:var(--r10); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .safe-badge .lock i { width:16px; height:16px; color:var(--green); }
+    .safe-badge .lock i, .safe-badge .lock svg { width:16px; height:16px; color:var(--green); }
     .safe-badge strong { display:block; font-size:12.5px; font-weight:700; color:var(--ink2); }
     .safe-badge span { font-size:11.5px; color:var(--ink4); line-height:1.4; }
 
@@ -90,139 +69,116 @@
     .form-layout-inner { display:grid; grid-template-columns:1fr; gap:20px; align-items:start; }
     @media(min-width:960px){ .form-layout-inner{ grid-template-columns:1fr 320px; gap:24px; } }
 
-    /* FORM CARD */
-    .form-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r20); box-shadow:var(--sh2); padding:22px 18px 26px; }
-    @media(min-width:640px){ .form-wrap{ padding:30px 32px 32px; } }
+    /* FORM CARD — compact */
+    .form-wrap { background:var(--white); border:1px solid var(--border); border-radius:var(--r16); box-shadow:var(--sh1); padding:20px 18px 22px; }
+    @media(min-width:640px){ .form-wrap{ padding:24px 26px 26px; } }
 
-    .step { padding:22px 0; border-top:1px solid var(--border); opacity:0; transform:translateY(16px); transition:opacity .55s ease, transform .55s ease; }
-    .step:first-child { padding-top:0; border-top:none; }
-    .step.in-view { opacity:1; transform:translateY(0); }
-    .step-head { display:flex; align-items:flex-start; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
-    .step-head-toggle { margin-left:auto; margin-top:2px; }
-    @media(max-width:480px){ .step-head-toggle{ margin-left:38px; margin-top:8px; } }
-    .step-num { width:26px; height:26px; border-radius:50%; background:var(--grad); color:#fff; font-family:var(--font-d); font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 3px 8px rgba(26,107,42,.3); transition:transform var(--ease); }
-    .step:hover .step-num { transform:scale(1.08) rotate(-4deg); }
-    .step-num.n2 { background:var(--grad-teal); box-shadow:0 3px 8px rgba(14,142,124,.3); }
-    .step-num.n3 { background:var(--grad-blue); box-shadow:0 3px 8px rgba(37,99,235,.3); }
-    .step-num.n4 { background:var(--grad-amber); box-shadow:0 3px 8px rgba(184,114,15,.3); }
-    .step-num.n5 { background:var(--grad-pink); box-shadow:0 3px 8px rgba(194,58,108,.3); }
-    .step-title { font-family:var(--font-d); font-size:16.5px; font-weight:800; color:var(--ink2); }
-    .step-sub { font-size:12.5px; color:var(--ink4); margin-top:2px; }
-    .step-body { padding-left:38px; }
-    @media(max-width:420px){ .step-body{ padding-left:0; } }
+    /* FORM HEADER (in-card) */
+    .form-head { display:flex; align-items:flex-start; gap:12px; padding-bottom:16px; margin-bottom:18px; border-bottom:1px solid var(--border); }
+    .form-head-icon { width:38px; height:38px; border-radius:var(--r10); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .form-head-icon i, .form-head-icon svg { width:18px; height:18px; color:var(--green); }
+    .form-head-title { font-family:var(--font-d); font-size:16px; font-weight:800; color:var(--ink); }
+    .form-head-sub { font-size:12px; color:var(--ink4); margin-top:2px; }
 
-    /* ICON CARD GRID */
-    .icon-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
-    @media(min-width:480px){ .icon-grid{ grid-template-columns:repeat(3,1fr); } }
-    .icon-grid.cols-2 { grid-template-columns:repeat(2,1fr); }
-    .icon-card { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; text-align:center; border:1.5px solid var(--border); border-radius:var(--r12); padding:16px 8px; cursor:pointer; transition:transform var(--ease), border-color var(--ease), box-shadow var(--ease), background var(--ease); background:var(--white); }
-    .icon-card input { position:absolute; opacity:0; pointer-events:none; }
-    .icon-card i.ico { width:22px; height:22px; color:var(--ink4); transition:color var(--ease), transform var(--ease); }
-    .icon-card span { font-size:12.5px; font-weight:700; color:var(--ink3); line-height:1.3; }
-    .icon-card:hover { border-color:var(--green-m); transform:translateY(-3px); box-shadow:var(--sh1); }
-    .icon-card:hover i.ico { transform:scale(1.12); }
-    .icon-card:active { transform:translateY(-1px) scale(.98); }
-    .icon-card:has(input:checked) { border-color:var(--green); background:var(--green-l); box-shadow:0 0 0 3px rgba(26,107,42,.08), var(--sh1); transform:translateY(-2px); }
-    .icon-card:has(input:checked) i.ico, .icon-card:has(input:checked) span { color:var(--green); }
-    .icon-card .check { position:absolute; top:7px; right:7px; width:16px; height:16px; border-radius:50%; background:var(--green); display:none; align-items:center; justify-content:center; }
-    .icon-card .check i { width:10px; height:10px; color:#fff; }
-    .icon-card:has(input:checked) .check { display:flex; animation:popIn .32s cubic-bezier(.34,1.56,.64,1); }
+    /* SECTION HEADERS — compact, no numbered badge */
+    .section-block { margin-bottom:18px; padding-top:18px; border-top:1px solid var(--border); }
+    .section-block:first-of-type { padding-top:0; border-top:none; }
+    .section-title { font-family:var(--font-d); font-size:11px; font-weight:800; color:var(--ink4); text-transform:uppercase; letter-spacing:.5px; margin-bottom:12px; }
+    /* .section-sub is kept only for the dynamic Individual/Corporate helper line in section 4 (#details-sub), driven by switchType() */
+    .section-sub { font-size:11.5px; color:var(--ink4); margin-bottom:10px; }
+
+    /* FIELD BLOCK */
+    .f-block { margin-bottom:14px; }
+    .f-block:last-of-type { margin-bottom:0; }
+    .f-block-label { font-size:12.5px; font-weight:700; color:var(--ink3); margin-bottom:6px; }
+    .f-block-label span { color:var(--red); }
 
     /* FORM FIELDS */
-    .form-grid { display:grid; grid-template-columns:1fr; gap:14px; }
+    .form-grid { display:grid; grid-template-columns:1fr; gap:12px; }
     @media(min-width:560px){ .form-grid.cols-3{ grid-template-columns:repeat(3,1fr); } .form-grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
-    .form-group { display:flex; flex-direction:column; gap:6px; }
+    .form-group { display:flex; flex-direction:column; gap:5px; }
     .form-group.full { grid-column:1/-1; }
     .form-label { font-size:12.5px; font-weight:700; color:var(--ink3); }
     .form-label span { color:var(--red); }
     .input-icon { position:relative; }
-    .input-icon i { position:absolute; left:12px; top:50%; transform:translateY(-50%); width:15px; height:15px; color:var(--ink5); pointer-events:none; }
-    .input-icon .form-input, .input-icon .form-select { padding-left:36px; }
+    .input-icon i, .input-icon svg { position:absolute; left:11px; top:50%; transform:translateY(-50%); width:14px; height:14px; color:var(--ink5); pointer-events:none; }
+    .input-icon .form-input, .input-icon .form-select { padding-left:33px; }
     .form-input, .form-select, .form-textarea {
-      width:100%; padding:11px 13px; border:1.5px solid var(--border); border-radius:var(--r10);
-      font-family:var(--font-b); font-size:14px; color:var(--ink); background:var(--white);
+      width:100%; padding:9px 12px; border:1px solid var(--border); border-radius:var(--r10);
+      font-family:var(--font-b); font-size:13.5px; color:var(--ink); background:var(--white);
       transition:border-color var(--ease), box-shadow var(--ease); outline:none;
     }
     .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(26,107,42,.09); }
     .form-input::placeholder, .form-textarea::placeholder { color:var(--ink5); }
-    .form-textarea { resize:vertical; min-height:96px; }
-    .form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
+    .form-textarea { resize:vertical; min-height:84px; }
+    .form-select { appearance:none; cursor:pointer; padding-right:32px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7685' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
 
-    .pill-group { display:flex; flex-wrap:wrap; gap:8px; }
-    .pill-option { position:relative; display:flex; align-items:center; gap:7px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r10); padding:9px 14px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:transform var(--ease), border-color var(--ease), background var(--ease), box-shadow var(--ease); }
-    .pill-option input { position:absolute; opacity:0; pointer-events:none; }
-    .pill-option i { width:14px; height:14px; color:var(--ink5); transition:color var(--ease), transform var(--ease); }
-    .pill-option:hover { border-color:var(--green-m); transform:translateY(-2px); box-shadow:var(--sh1); }
-    .pill-option:hover i { transform:scale(1.15) rotate(-6deg); }
-    .pill-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); box-shadow:0 0 0 3px rgba(26,107,42,.08); }
-    .pill-option:has(input:checked) i { color:var(--green); }
-
-    .toggle-group { display:inline-flex; border:1.5px solid var(--border); border-radius:var(--r10); overflow:hidden; }
-    .toggle-option { position:relative; padding:9px 22px; font-size:13px; font-weight:700; color:var(--ink4); cursor:pointer; background:var(--white); border-right:1.5px solid var(--border); transition:background var(--ease), color var(--ease); }
-    .toggle-option:last-child { border-right:none; }
-    .toggle-option input { position:absolute; opacity:0; pointer-events:none; }
-    .toggle-option:hover { background:var(--bg2); }
-    .toggle-option:has(input:checked) { background:var(--green-l); color:var(--green); }
+    /* CHIP GRID (checkbox multi-select, e.g. Service Category) */
+    .chip-grid { display:flex; flex-wrap:wrap; gap:8px; }
+    .chip-option { position:relative; display:flex; align-items:center; gap:7px; background:var(--white); border:1.5px solid var(--border); border-radius:var(--r10); padding:9px 14px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink3); transition:all var(--ease); }
+    .chip-option input { position:absolute; opacity:0; pointer-events:none; }
+    .chip-option i, .chip-option svg { width:14px; height:14px; color:var(--ink5); }
+    .chip-option:hover { border-color:var(--green-m); }
+    .chip-option:has(input:checked) { background:var(--green-l); border-color:var(--green); color:var(--green); }
+    .chip-option:has(input:checked) i, .chip-option:has(input:checked) svg { color:var(--green); }
 
     .field-hint { font-size:11.5px; color:var(--ink5); margin-top:8px; display:flex; align-items:flex-start; gap:6px; }
-    .field-hint i { width:13px; height:13px; color:var(--green-m); flex-shrink:0; margin-top:1px; }
+    .field-hint i, .field-hint svg { width:13px; height:13px; color:var(--green-m); flex-shrink:0; margin-top:1px; }
+    .char-count { text-align:right; font-size:11px; color:var(--ink5); margin-top:4px; }
 
-    /* PICKUP-STYLE CARDS (used for yes/no choices) */
-    .pickup-grid { display:grid; grid-template-columns:1fr; gap:10px; }
-    @media(min-width:520px){ .pickup-grid{ grid-template-columns:1fr 1fr; } }
-    .pickup-card { position:relative; display:flex; align-items:flex-start; gap:12px; border:1.5px solid var(--border); border-radius:var(--r12); padding:14px; cursor:pointer; transition:transform var(--ease), border-color var(--ease), background var(--ease), box-shadow var(--ease); }
-    .pickup-card input { position:absolute; opacity:0; pointer-events:none; }
-    .pickup-card .p-icon { width:42px; height:42px; border-radius:var(--r10); background:var(--bg2); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:transform var(--ease), background var(--ease); }
-    .pickup-card .p-icon i { width:20px; height:20px; color:var(--green); }
-    .pickup-card strong { display:block; font-size:13.5px; font-weight:700; color:var(--ink2); margin-bottom:2px; }
-    .pickup-card p { font-size:12px; color:var(--ink4); line-height:1.4; }
-    .pickup-card:hover { border-color:var(--green-m); transform:translateY(-3px); box-shadow:var(--sh2); }
-    .pickup-card:hover .p-icon { transform:scale(1.08) rotate(-4deg); background:var(--green-l); }
-    .pickup-card:has(input:checked) { border-color:var(--green); background:var(--green-l); box-shadow:0 0 0 3px rgba(26,107,42,.08), var(--sh1); transform:translateY(-2px); }
-    .pickup-card .p-check { position:absolute; top:10px; right:10px; width:18px; height:18px; border-radius:50%; background:var(--green); display:none; align-items:center; justify-content:center; }
-    .pickup-card .p-check i { width:11px; height:11px; color:#fff; }
-    .pickup-card:has(input:checked) .p-check { display:flex; animation:popIn .32s cubic-bezier(.34,1.56,.64,1); }
+    /* UPLOAD */
+    .upload-zone { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:10px; border:1.5px dashed var(--border-d); border-radius:var(--r16); padding:24px 16px; background:var(--bg); transition:all var(--ease); cursor:pointer; }
+    .upload-zone.drag-over { border-color:var(--green); background:var(--green-l); }
+    .upload-zone .u-icon { width:40px; height:40px; border-radius:50%; background:var(--white); border:1.5px solid var(--border); display:flex; align-items:center; justify-content:center; }
+    .upload-zone .u-icon i, .upload-zone .u-icon svg { width:18px; height:18px; color:var(--ink4); }
+    .upload-zone strong { font-size:13px; font-weight:700; color:var(--ink2); }
+    .upload-zone span { font-size:11.5px; color:var(--ink4); }
+    .upload-btn { display:inline-flex; align-items:center; gap:6px; padding:9px 18px; border:1.5px solid var(--border-d); color:var(--ink3); background:var(--white); border-radius:var(--pill); font-size:12.5px; font-weight:700; cursor:pointer; transition:all var(--ease); white-space:nowrap; margin-top:4px; }
+    .upload-btn:hover { border-color:var(--green); color:var(--green); background:var(--green-l); }
+    .upload-btn i, .upload-btn svg { width:13px; height:13px; }
+    .upload-filename { font-size:11.5px; color:var(--green); font-weight:600; margin-top:8px; text-align:center; }
+    .upload-grid { display:grid; grid-template-columns:1fr; gap:14px; }
+    @media(min-width:560px){ .upload-grid{ grid-template-columns:1fr 1fr; } }
+    .upload-col { display:flex; flex-direction:column; }
 
     /* SUBMIT */
-    .agree-row { display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--ink4); cursor:pointer; margin-top:14px; }
-    .agree-row input { margin-top:2px; flex-shrink:0; accent-color:var(--green); width:15px; height:15px; }
+    .agree-row { display:flex; align-items:flex-start; gap:8px; font-size:12px; color:var(--ink4); cursor:pointer; margin-top:4px; }
+    .agree-row input { margin-top:2px; flex-shrink:0; accent-color:var(--green); width:14px; height:14px; }
     .agree-row a { color:var(--green); font-weight:600; text-decoration:none; }
     .agree-row a:hover { text-decoration:underline; }
-    .form-submit { position:relative; overflow:hidden; width:100%; padding:15px; background:var(--grad); color:#fff; border:none; border-radius:var(--pill); font-family:var(--font-b); font-size:15px; font-weight:800; cursor:pointer; transition:transform var(--ease), box-shadow var(--ease); margin-top:20px; display:flex; align-items:center; justify-content:center; gap:9px; box-shadow:0 8px 22px rgba(26,107,42,.28); }
-    .form-submit::after { content:''; position:absolute; top:0; left:0; width:40%; height:100%; background:linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent); transform:translateX(-120%) skewX(-15deg); }
-    .form-submit:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(26,107,42,.36); }
-    .form-submit:hover::after { animation:shine .9s ease; }
-    .form-submit:active { transform:translateY(0); }
-    .form-submit i { width:16px; height:16px; }
-    .form-note { font-size:11.5px; color:var(--ink5); text-align:center; margin-top:12px; display:flex; align-items:center; justify-content:center; gap:6px; }
-    .form-note i { width:12px; height:12px; color:var(--green-m); }
+
+    .form-footer { display:flex; align-items:center; justify-content:flex-end; gap:8px; margin-top:18px; padding-top:18px; border-top:1px solid var(--border); flex-wrap:wrap; }
+    .btn-reset { padding:10px 18px; background:var(--white); color:var(--ink3); border:1px solid var(--border-d); border-radius:var(--r10); font-family:var(--font-b); font-size:13px; font-weight:700; cursor:pointer; transition:all var(--ease); }
+    .btn-reset:hover { border-color:var(--ink4); color:var(--ink); }
+    .form-submit { padding:10px 22px; background:var(--green); color:#fff; border:none; border-radius:var(--r10); font-family:var(--font-b); font-size:13px; font-weight:800; cursor:pointer; transition:background var(--ease); display:flex; align-items:center; justify-content:center; gap:8px; }
+    .form-submit:hover { background:var(--green-d); }
+    .form-submit i, .form-submit svg { width:14px; height:14px; }
+    @media(max-width:480px){ .form-footer{ justify-content:stretch; } .btn-reset, .form-submit{ flex:1; } }
+    .form-note { font-size:11px; color:var(--ink5); text-align:center; margin-top:12px; display:flex; align-items:center; justify-content:center; gap:6px; }
+    .form-note i, .form-note svg { width:12px; height:12px; color:var(--green-m); }
 
     /* SIDEBAR */
     .sidebar { display:flex; flex-direction:column; gap:16px; }
-    .side-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r16); overflow:hidden; box-shadow:var(--sh1); transition:transform var(--ease), box-shadow var(--ease); }
-    .side-card:hover { transform:translateY(-2px); box-shadow:var(--sh2); }
+    .side-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r16); overflow:hidden; box-shadow:var(--sh1); }
     .side-card-head { padding:16px 18px 4px; }
     .side-card-title { font-family:var(--font-d); font-size:15px; font-weight:800; color:var(--ink2); }
     .side-card-body { padding:14px 18px 18px; }
     .step-list { display:flex; flex-direction:column; }
     .step-list-item { display:flex; align-items:center; gap:12px; padding:9px 0; }
-    .step-list-item { transition:transform var(--ease); }
-    .step-list-item:hover { transform:translateX(3px); }
-    .step-list-item .s-icon { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:transform var(--ease); }
-    .step-list-item:hover .s-icon { transform:scale(1.12) rotate(-6deg); }
-    .step-list-item .s-icon i { width:15px; height:15px; }
+    .step-list-item .s-icon { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .step-list-item .s-icon i, .step-list-item .s-icon svg { width:15px; height:15px; }
     .step-list-item p { font-size:13px; color:var(--ink3); font-weight:500; line-height:1.4; }
     .step-list-item p strong { display:block; font-size:13px; color:var(--ink2); font-weight:700; }
-    .s1 { background:var(--green-l); } .s1 i { color:var(--green); }
-    .s2 { background:var(--green-l2); } .s2 i { color:var(--green-m); }
-    .s3 { background:var(--blue-l); } .s3 i { color:var(--blue); }
-    .s4 { background:var(--amber-l); } .s4 i { color:var(--amber); }
-    .s5 { background:var(--pink-l); } .s5 i { color:var(--pink); }
+    .s1 { background:var(--green-l); } .s1 i, .s1 svg { color:var(--green); }
+    .s2 { background:var(--green-l2); } .s2 i, .s2 svg { color:var(--green-m); }
+    .s3 { background:var(--blue-l); } .s3 i, .s3 svg { color:var(--blue); }
+    .s4 { background:var(--amber-l); } .s4 i, .s4 svg { color:var(--amber); }
+    .s5 { background:var(--pink-l); } .s5 i, .s5 svg { color:var(--pink); }
 
     .contact-item { display:flex; align-items:center; gap:11px; padding:11px 0; border-bottom:1px solid var(--border); }
     .contact-item:last-child { border-bottom:none; padding-bottom:0; }
     .contact-item .c-icon { width:34px; height:34px; border-radius:var(--r10); background:var(--green-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .contact-item .c-icon i { width:16px; height:16px; color:var(--green); }
+    .contact-item .c-icon i, .contact-item .c-icon svg { width:16px; height:16px; color:var(--green); }
     .contact-item strong { display:block; font-size:11.5px; font-weight:700; color:var(--ink4); text-transform:uppercase; letter-spacing:.3px; margin-bottom:1px; }
     .contact-item span { font-size:13.5px; color:var(--ink2); font-weight:600; }
     .contact-item span a { color:var(--ink2); text-decoration:none; }
@@ -231,41 +187,25 @@
     .why-list { display:flex; flex-direction:column; gap:14px; }
     .why-item { display:flex; align-items:flex-start; gap:11px; }
     .why-item .w-icon { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .why-item .w-icon i { width:15px; height:15px; }
+    .why-item .w-icon i, .why-item .w-icon svg { width:15px; height:15px; }
     .why-item strong { display:block; font-size:13px; font-weight:700; color:var(--ink2); }
     .why-item span { font-size:12px; color:var(--ink4); }
     .side-card.why { background:var(--bg2); border-color:var(--border); }
 
     /* SUCCESS STATE */
-    .success-state { display:none; text-align:center; padding:48px 20px; position:relative; }
+    .success-state { display:none; text-align:center; padding:48px 20px; }
     .success-state.shown { display:flex; flex-direction:column; align-items:center; gap:16px; }
-    .success-icon { position:relative; width:72px; height:72px; background:var(--green-l); border-radius:50%; display:flex; align-items:center; justify-content:center; animation:popIn .5s cubic-bezier(.34,1.56,.64,1); }
-    .success-icon svg { width:36px; height:36px; }
-    .success-icon circle { fill:none; stroke:var(--green); stroke-width:2; stroke-dasharray:88; stroke-dashoffset:88; animation:drawCheck .6s ease .15s forwards; }
-    .success-icon path { fill:none; stroke:var(--green); stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:20; stroke-dashoffset:20; animation:drawCheck .35s ease .55s forwards; }
-    .confetti { position:absolute; top:20px; left:50%; width:0; height:0; }
-    .confetti i { position:absolute; width:6px; height:6px; border-radius:2px; opacity:0; animation:confettiFall 1.1s ease-out forwards; }
-    .confetti i:nth-child(1){ left:-70px; background:var(--green-m); animation-delay:.25s; }
-    .confetti i:nth-child(2){ left:-40px; background:var(--amber); animation-delay:.32s; top:-6px; }
-    .confetti i:nth-child(3){ left:-10px; background:var(--blue); animation-delay:.2s; }
-    .confetti i:nth-child(4){ left:20px; background:var(--pink); animation-delay:.38s; top:-4px; }
-    .confetti i:nth-child(5){ left:50px; background:var(--green); animation-delay:.28s; }
-    .confetti i:nth-child(6){ left:75px; background:var(--amber); animation-delay:.42s; top:-8px; }
+    .success-icon { width:64px; height:64px; background:var(--green-l); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    .success-icon i, .success-icon svg { width:32px; height:32px; color:var(--green); }
     .success-title { font-family:var(--font-d); font-size:26px; font-weight:800; color:var(--ink); }
     .success-desc { font-size:14px; color:var(--ink4); max-width:380px; line-height:1.7; }
-    .success-back { position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:7px; padding:11px 22px; background:var(--grad); color:#fff; border-radius:var(--pill); font-size:13.5px; font-weight:700; text-decoration:none; transition:transform var(--ease), box-shadow var(--ease); margin-top:8px; box-shadow:0 8px 18px rgba(26,107,42,.24); }
-    .success-back:hover { transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,107,42,.3); }
+    .success-back { display:inline-flex; align-items:center; gap:7px; padding:11px 22px; background:var(--grad); color:#fff; border-radius:var(--pill); font-size:13.5px; font-weight:700; text-decoration:none; transition:transform var(--ease); margin-top:8px; }
+    .success-back:hover { transform:translateY(-1px); }
 
     @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
     .fade-up { opacity:0; animation:fadeUp .5s ease forwards; }
     .d1{animation-delay:.04s} .d2{animation-delay:.1s} .d3{animation-delay:.16s}
-    @media (prefers-reduced-motion: reduce) {
-      .fade-up { animation:none; opacity:1; }
-      .step { transition:none; opacity:1; transform:none; }
-      .hero-avatar, .hero-avatar::before, .hero-avatar::after { animation:none; }
-      .form-submit::after, .success-icon circle, .success-icon path, .confetti i { animation:none; }
-      html { scroll-behavior:auto; }
-    }
+    @media (prefers-reduced-motion: reduce) { .fade-up { animation:none; opacity:1; } html { scroll-behavior:auto; } }
   </style>
 </head>
 <body>
@@ -311,114 +251,77 @@
         <div class="form-wrap fade-up d2">
           <form id="dotm-form" onsubmit="handleSubmit(event)">
 
-            <!-- Step 1: Who is this for -->
-            <div class="step">
-              <div class="step-head">
-                <div class="step-num">1</div>
-                <div>
-                  <div class="step-title">Who is this for?</div>
-                  <div class="step-sub">Choose the request type that applies to you.</div>
-                </div>
-              </div>
-              <div class="step-body">
-                <div class="icon-grid cols-2">
-                  <label class="icon-card">
-                    <input type="radio" name="request_type" value="individual" checked onclick="switchType('individual')">
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="user" class="ico"></i>
-                    <span>Individual</span>
-                  </label>
-                  <label class="icon-card">
-                    <input type="radio" name="request_type" value="corporate" onclick="switchType('corporate')">
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="building-2" class="ico"></i>
-                    <span>Corporate</span>
-                  </label>
-                </div>
+            <div class="form-head">
+              <div class="form-head-icon"><i data-lucide="file-text"></i></div>
+              <div>
+                <div class="form-head-title">DOTM Service Request</div>
+                <div class="form-head-sub">Fill in your service, vehicle and contact details — takes about two minutes.</div>
               </div>
             </div>
 
-            <!-- Step 2: Service required -->
-            <div class="step">
-              <div class="step-head">
-                <div class="step-num n2">2</div>
-                <div>
-                  <div class="step-title">Service required</div>
-                  <div class="step-sub">Choose a category and describe what you need.</div>
-                </div>
-              </div>
-              <div class="step-body">
-                <div class="icon-grid">
-                  <label class="icon-card">
-                    <input type="radio" name="category" value="registration" checked>
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="clipboard-list" class="ico"></i>
-                    <span>Vehicle Registration</span>
-                  </label>
-                  <label class="icon-card">
-                    <input type="radio" name="category" value="licensing">
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="id-card" class="ico"></i>
-                    <span>Licensing</span>
-                  </label>
-                  <label class="icon-card">
-                    <input type="radio" name="category" value="compliance">
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="file-check-2" class="ico"></i>
-                    <span>Documentation &amp; Compliance</span>
-                  </label>
-                  <label class="icon-card">
-                    <input type="radio" name="category" value="value-add">
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="star" class="ico"></i>
-                    <span>Value-Added Services</span>
-                  </label>
-                  <label class="icon-card">
-                    <input type="radio" name="category" value="other">
-                    <div class="check"><i data-lucide="check"></i></div>
-                    <i data-lucide="help-circle" class="ico"></i>
-                    <span>Other</span>
-                  </label>
-                </div>
+            <!-- 1. Who is this for -->
+            <div class="section-block">
+              <div class="section-title">Who is this for?</div>
 
-                <div class="form-group" style="margin-top:14px">
-                  <label class="form-label">Describe the specific service needed <span>*</span></label>
-                  <textarea class="form-textarea" name="service_description" placeholder="e.g. Bluebook renewal for my private vehicle, driving license upgrade from two-wheeler to four-wheeler, duplicate bluebook for lost certificate…" required></textarea>
-                  <div class="field-hint"><i data-lucide="sparkles"></i>The more detail you share, the faster we can confirm your request.</div>
-                </div>
+              <div class="f-block">
+                <div class="f-block-label">Type <span>*</span></div>
+                <select class="form-select" name="request_type" onchange="switchType(this.value)">
+                  <option value="individual" selected>Individual</option>
+                  <option value="corporate">Corporate (3+ vehicles)</option>
+                </select>
               </div>
             </div>
 
-            <!-- Step 3: Vehicle details -->
-            <div class="step">
-              <div class="step-head">
-                <div class="step-num n3">3</div>
-                <div>
-                  <div class="step-title">Vehicle details</div>
-                  <div class="step-sub">If applicable to your request.</div>
+            <!-- 2. Select Service Category -->
+            <div class="section-block">
+              <div class="section-title">Select Service Category</div>
+
+              <div class="f-block">
+                <div class="f-block-label">Service category <span>*</span></div>
+                <select class="form-select" name="category">
+                  <option value="licensing" selected>Licensing Services</option>
+                  <option value="compliance">Documentation and Compliance</option>
+                  <option value="value-add">Value Added Services</option>
+                  <option value="registration">Vehicle Registration Services</option>
+                  <option value="other">Other (please specify)</option>
+                </select>
+              </div>
+
+              <div class="f-block">
+                <label class="form-label" for="service-description">Describe the specific service needed <span>*</span></label>
+                <textarea class="form-textarea" id="service-description" name="service_description" placeholder="e.g. Bluebook renewal for my private vehicle, driving license upgrade from two-wheeler to four-wheeler, duplicate bluebook for lost certificate…" required style="margin-top:6px"></textarea>
+                <div class="field-hint"><i data-lucide="sparkles"></i>The more detail you share, the faster we can confirm your request.</div>
+              </div>
+            </div>
+
+            <!-- 3. Individual Vehicle Information -->
+            <div class="section-block">
+              <div class="section-title">Individual Vehicle Information</div>
+
+              <div class="f-block">
+                <div class="form-grid cols-2">
+                  <div class="form-group">
+                    <div class="f-block-label" style="margin-bottom:6px">Vehicle type</div>
+                    <select class="form-select" name="vtype">
+                      <option value="private" selected>Private</option>
+                      <option value="commercial">Commercial</option>
+                      <option value="government">Government</option>
+                      <option value="rental">Rental</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <div class="f-block-label" style="margin-bottom:6px">Fuel type</div>
+                    <select class="form-select" name="fuel">
+                      <option value="petrol" selected>Petrol</option>
+                      <option value="diesel">Diesel</option>
+                      <option value="ev">EV</option>
+                      <option value="hybrid">Hybrid</option>
+                    </select>
+                  </div>
                 </div>
               </div>
-              <div class="step-body">
-                <div class="form-group" style="margin-bottom:14px">
-                  <label class="form-label">Vehicle type</label>
-                  <div class="pill-group">
-                    <label class="pill-option"><input type="radio" name="vtype" value="private" checked><i data-lucide="car"></i>Private</label>
-                    <label class="pill-option"><input type="radio" name="vtype" value="commercial"><i data-lucide="truck"></i>Commercial</label>
-                    <label class="pill-option"><input type="radio" name="vtype" value="government"><i data-lucide="landmark"></i>Government</label>
-                    <label class="pill-option"><input type="radio" name="vtype" value="rental"><i data-lucide="key"></i>Rental</label>
-                  </div>
-                </div>
 
-                <div class="form-group" style="margin-bottom:16px">
-                  <label class="form-label">Fuel type</label>
-                  <div class="pill-group">
-                    <label class="pill-option"><input type="radio" name="fuel" value="petrol" checked><i data-lucide="droplet"></i>Petrol</label>
-                    <label class="pill-option"><input type="radio" name="fuel" value="diesel"><i data-lucide="fuel"></i>Diesel</label>
-                    <label class="pill-option"><input type="radio" name="fuel" value="ev"><i data-lucide="zap"></i>EV</label>
-                    <label class="pill-option"><input type="radio" name="fuel" value="hybrid"><i data-lucide="leaf"></i>Hybrid</label>
-                  </div>
-                </div>
-
+              <div class="f-block">
                 <div class="form-grid cols-3">
                   <div class="form-group">
                     <label class="form-label">Brand</label>
@@ -466,19 +369,14 @@
               </div>
             </div>
 
-            <!-- Step 4: Your details (individual / corporate) -->
-            <div class="step">
-              <div class="step-head">
-                <div class="step-num n4">4</div>
-                <div>
-                  <div class="step-title" id="details-title">Your details</div>
-                  <div class="step-sub" id="details-sub">We'll only use this to process and confirm your request.</div>
-                </div>
-              </div>
-              <div class="step-body">
+            <!-- 4. Your details (individual / corporate) -->
+            <div class="section-block">
+              <div class="section-title" id="details-title">Your Details</div>
+              <div class="section-sub" id="details-sub">We'll only use this to process and confirm your request.</div>
 
-                <!-- Individual pane -->
-                <div id="individual-pane">
+              <!-- Individual pane -->
+              <div id="individual-pane">
+                <div class="f-block">
                   <div class="form-grid cols-3">
                     <div class="form-group">
                       <label class="form-label">Full name <span>*</span></label>
@@ -521,9 +419,11 @@
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <!-- Corporate pane -->
-                <div id="corporate-pane" style="display:none">
+              <!-- Corporate pane -->
+              <div id="corporate-pane" style="display:none">
+                <div class="f-block">
                   <div class="form-grid cols-3">
                     <div class="form-group">
                       <label class="form-label">Registered company name <span>*</span></label>
@@ -601,80 +501,55 @@
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
 
-            <!-- Step 5: Preferences -->
-            <div class="step">
-              <div class="step-head">
-                <div class="step-num n5">5</div>
-                <div>
-                  <div class="step-title">Preferences</div>
-                  <div class="step-sub">Tell us how you'd like this handled.</div>
-                </div>
-              </div>
-              <div class="step-body">
+            <!-- 5. Preferences -->
+            <div class="section-block">
+              <div class="section-title">Preferences</div>
 
-                <div class="form-group" style="margin-bottom:16px">
-                  <label class="form-label">Do you need document pickup and delivery? <span>*</span></label>
-                  <div class="pickup-grid" style="margin-top:8px">
-                    <label class="pickup-card">
-                      <input type="radio" name="pickup" value="yes" checked>
-                      <div class="p-check"><i data-lucide="check"></i></div>
-                      <div class="p-icon"><i data-lucide="truck"></i></div>
-                      <div>
-                        <strong>Yes, pick up and deliver</strong>
-                        <p>Our agent collects and returns your documents.</p>
-                      </div>
-                    </label>
-                    <label class="pickup-card">
-                      <input type="radio" name="pickup" value="no">
-                      <div class="p-check"><i data-lucide="check"></i></div>
-                      <div class="p-icon"><i data-lucide="map-pin"></i></div>
-                      <div>
-                        <strong>No, I'll deliver myself</strong>
-                        <p>I'll bring and collect the documents directly.</p>
-                      </div>
-                    </label>
+              <div class="f-block">
+                <div class="form-grid cols-2">
+                  <div class="form-group">
+                    <div class="f-block-label" style="margin-bottom:6px">Pick-up/drop-off service? <span>*</span></div>
+                    <select class="form-select" name="pickup">
+                      <option value="yes" selected>Yes, pick up and deliver</option>
+                      <option value="no">No, I'll deliver myself</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <div class="f-block-label" style="margin-bottom:6px">Appointment/slot assistance? <span>*</span></div>
+                    <select class="form-select" name="appt">
+                      <option value="yes" selected>Yes</option>
+                      <option value="no">No</option>
+                    </select>
                   </div>
                 </div>
-
-                <div class="form-group">
-                  <label class="form-label">Do you want appointment and slot assistance?</label>
-                  <div class="toggle-group" style="margin-top:8px">
-                    <label class="toggle-option"><input type="radio" name="appt" value="yes" checked>Yes</label>
-                    <label class="toggle-option"><input type="radio" name="appt" value="no">No</label>
-                  </div>
-                </div>
-
               </div>
             </div>
 
+            <!-- 6. Agreement & Submit -->
             <label class="agree-row">
-              <input type="checkbox" required>
+              <input type="checkbox" name="confirm_accurate" required>
               I confirm the information provided is true and correct.
             </label>
             <label class="agree-row">
-              <input type="checkbox" required>
+              <input type="checkbox" name="agree_terms" required>
               I agree to AutoViindu's <a href="/about#terms">service terms and conditions</a>.
             </label>
 
-            <button class="form-submit" type="submit">
-              <i data-lucide="send"></i>Submit Request
-            </button>
+            <div class="form-footer">
+              <button class="btn-reset" type="reset">Reset</button>
+              <button class="form-submit" type="submit">
+                <i data-lucide="send"></i>Submit Request
+              </button>
+            </div>
             <div class="form-note"><i data-lucide="shield-check"></i>We'll respond within one business day.</div>
           </form>
 
           <!-- SUCCESS STATE -->
           <div class="success-state" id="success-state">
-            <div class="success-icon">
-              <div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <svg viewBox="0 0 36 36" fill="none">
-                <circle cx="18" cy="18" r="14"></circle>
-                <path d="M11 18.5l4.5 4.5L25.5 12"></path>
-              </svg>
-            </div>
+            <div class="success-icon"><i data-lucide="check-circle-2"></i></div>
             <div class="success-title">Request Submitted!</div>
             <div class="success-desc">Thank you. We have received your DOTM service request and will get back to you within one business day (Mon–Sat, 9am–6pm NST).</div>
             <a href="/dotm-services" class="success-back"><i data-lucide="arrow-left"></i>Back to DOTM Services</a>
@@ -743,26 +618,11 @@
   <script>
     lucide.createIcons();
 
-    // Reveal each step as it scrolls into view
-    if ('IntersectionObserver' in window) {
-      const stepObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            stepObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('.step').forEach(step => stepObserver.observe(step));
-    } else {
-      document.querySelectorAll('.step').forEach(step => step.classList.add('in-view'));
-    }
-
     function switchType(type) {
       const isIndividual = type === 'individual';
       document.getElementById('individual-pane').style.display = isIndividual ? '' : 'none';
       document.getElementById('corporate-pane').style.display = isIndividual ? 'none' : '';
-      document.getElementById('details-title').textContent = isIndividual ? 'Your details' : 'Corporate details';
+      document.getElementById('details-title').textContent = isIndividual ? 'Your Details' : 'Corporate Details';
       document.getElementById('details-sub').textContent = isIndividual
         ? "We'll only use this to process and confirm your request."
         : "Tell us about your company and primary contact.";
@@ -778,12 +638,17 @@
       });
     }
 
+    document.getElementById('dotm-form').addEventListener('reset', () => {
+      setTimeout(() => { switchType('individual'); }, 0);
+    });
+
     function handleSubmit(e) {
       e.preventDefault();
       const form = e.target;
       const data = { formId: form.id || 'dotm-form' };
       const elements = form.querySelectorAll('input, select, textarea');
       elements.forEach((el, i) => {
+        if (el.dataset.skipSubmit) return;
         let label = el.name || el.placeholder;
         if (!label) {
           const group = el.closest('.form-group') || el.closest('div');
@@ -794,8 +659,22 @@
         }
         if (!label) label = 'field_' + i;
 
-        if (el.type === 'radio' || el.type === 'checkbox') {
+        const accumulate = (value) => {
+          if (data[label] !== undefined) {
+            data[label] = Array.isArray(data[label]) ? data[label].concat(value) : [data[label], value];
+          } else {
+            data[label] = value;
+          }
+        };
+
+        if (el.type === 'checkbox') {
+          if (el.checked) accumulate(el.value || 'checked');
+        } else if (el.type === 'hidden') {
+          accumulate(el.value);
+        } else if (el.type === 'radio') {
           if (el.checked) data[label] = el.value || 'checked';
+        } else if (el.type === 'file') {
+          data[label] = el.files.length ? el.files[0].name : '';
         } else {
           data[label] = el.value;
         }

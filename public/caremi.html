@@ -1012,21 +1012,21 @@
       <div class="result-panel">
         <div class="result-inner">
           <div class="result-label"><i data-lucide="wallet"></i>Monthly EMI</div>
-          <div class="result-emi" id="emiDisplay">Rs 6,684</div>
-          <div class="result-period">per month &nbsp;&mdash;&nbsp; <strong id="monthsText">60 months</strong></div>
+          <div class="result-emi" id="emiDisplay">~Rs 6,684</div>
+          <div class="result-period">per month <span style="font-size:11px;opacity:.75">(approx)</span> &nbsp;&mdash;&nbsp; <strong id="monthsText">60 months</strong></div>
 
           <div class="result-grid">
             <div class="result-cell">
               <div class="result-cell-label">Loan amount</div>
-              <div class="result-cell-val" id="r-loan">Rs 4,00,000</div>
+              <div class="result-cell-val" id="r-loan">~Rs 4,00,000</div>
             </div>
             <div class="result-cell">
               <div class="result-cell-label">Total interest</div>
-              <div class="result-cell-val" id="r-int">Rs 1,01,036</div>
+              <div class="result-cell-val" id="r-int">~Rs 1,01,036</div>
             </div>
             <div class="result-cell">
               <div class="result-cell-label">Total payable</div>
-              <div class="result-cell-val" id="r-total">Rs 5,01,036</div>
+              <div class="result-cell-val" id="r-total">~Rs 5,01,036</div>
             </div>
             <div class="result-cell">
               <div class="result-cell-label">Interest share</div>
@@ -1305,11 +1305,11 @@
       const intPct = totalPay > 0 ? (totalInt / totalPay * 100) : 0;
       const loanPct = 100 - intPct;
 
-      document.getElementById('emiDisplay').textContent = inr(emi);
+      document.getElementById('emiDisplay').textContent = '~' + inr(emi);
       document.getElementById('monthsText').textContent = months + ' months';
-      document.getElementById('r-loan').textContent = inr(loan);
-      document.getElementById('r-int').textContent = inr(totalInt);
-      document.getElementById('r-total').textContent = inr(totalPay);
+      document.getElementById('r-loan').textContent = '~' + inr(loan);
+      document.getElementById('r-int').textContent = '~' + inr(totalInt);
+      document.getElementById('r-total').textContent = '~' + inr(totalPay);
       document.getElementById('r-pct').textContent = intPct.toFixed(1) + '%';
 
       document.getElementById('barP').style.width = loanPct.toFixed(2) + '%';

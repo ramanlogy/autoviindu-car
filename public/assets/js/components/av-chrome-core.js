@@ -90,7 +90,10 @@
         try { sessionStorage.setItem('av-nav-opts', JSON.stringify({ page: page, opts: opts })); } catch (_) { }
       }
 
-      location.href = root + '#' + page;
+      // root is '' on top-level pages (e.g. /about, /caremi) — that would just
+      // change the hash on the CURRENT static page instead of navigating to the
+      // SPA homepage, so the click would silently do nothing. Force '/' there.
+      location.href = (root || '/') + '#' + page;
     };
 
     AV.clearCompare = AV.clearCompare || function () {

@@ -339,7 +339,7 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
 .hero-slide .wrap { position: relative; z-index: 3; width: 100%; display: flex; align-items: center; justify-content: flex-start; pointer-events: none; }
 .slide-content { max-width: 440px; text-align: left; color: #f1f1f1ff; pointer-events: auto; display: flex; flex-direction: column; justify-content: center; }
 .slide-badge { display: inline-block; font-size: 11px; font-weight: 800; color: #1a6b2a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-.slide-title { font-family: var(--font-d); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; color: #e4dedeff; line-height: 1.1; margin-bottom: 12px; text-transform: uppercase; }
+.slide-title { font-family: var(--font-d); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; color: rgb(241, 235, 235); line-height: 1.1; margin-bottom: 12px; text-transform: uppercase; }
 .slide-price { font-size: 16px; font-weight: 700; color: #d5a215ff; margin-bottom: 16px; display: flex; align-items: center; }
 .slide-price-current { color: #1a6b2a; font-weight: 800; font-size: 22px; margin-left: 10px; }
 .slide-sub { font-size: 13.5px; color: #c9c9c9ff; line-height: 1.6; margin-bottom: 20px; }
@@ -792,10 +792,9 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
         return `
       <div class="hero-slide" data-idx="${idx}">
         <div class="slide-left-bg"></div>
-        <div class="slide-bg" style="background-image:url('${s.bg || ''}');">
+        <div class="slide-bg" style="background-image:url('${s.bg || ''}'); cursor:pointer;" onclick="${s.slug ? `AV.openDetail('${s.slug}')` : `AV.goTo('cars')`}">
           <div style="position:absolute; bottom:20px; right:20px; display:flex; gap:10px; z-index:3;">
-            <button class="slide-image-btn" onclick="window.location.href='/book-service'" style="background:rgba(255,255,255,0.9); color:#111; border:none; padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Book Service</button>
-            <button class="slide-image-btn" onclick="${s.slug ? `AV.openDetail('${s.slug}')` : `AV.goTo('cars')`}" style="background:rgba(15,22,18,0.75); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Explore Specs</button>
+            <button class="slide-image-btn" onclick="event.stopPropagation(); ${s.slug ? `AV.openDetail('${s.slug}')` : `AV.goTo('cars')`}" style="background:rgba(15,22,18,0.75); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:10px 18px; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:pointer; backdrop-filter:blur(8px);">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg> </button>
           </div>
         </div>
         <div class="wrap">
@@ -1095,7 +1094,7 @@ window.buildHomePageHTML = function buildHomePageHTML(ctx) {
         <div class="promo-card" onclick="window.location.href='/sellyourcar'">
           <div class="promo-card-img"><img src="/assets/images/hero_images/fortuner.jpg" alt="Know your car's true worth" loading="lazy"></div>
           <div class="promo-card-body">
-            <h3 class="promo-card-title">Wanna sell your car?</h3>
+            <h3 class="promo-card-title">Sell or Trade your car?</h3>
             <p class="promo-card-sub">Get a free valuation of your car</p>
             <button type="button" class="promo-card-btn" onclick="event.stopPropagation();window.location.href='/sellyourcar'">Get my offer ${IC.chevR || '→'}</button>
           </div>

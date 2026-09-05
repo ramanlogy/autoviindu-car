@@ -61,7 +61,8 @@
     /* HERO */
     .hero { background:linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%); padding:56px 0 0; position:relative; overflow:hidden; }
     .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
-    .hero-inner { position:relative; z-index:1; padding-bottom:56px; }
+    .hero-inner { position:relative; z-index:1; padding-bottom:56px; display:grid; grid-template-columns:1fr; gap:32px; align-items:center; }
+    @media(min-width:820px){ .hero-inner{ grid-template-columns:1.15fr .85fr; gap:24px; } }
     .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--pill); padding:5px 13px; font-size:11.5px; font-weight:700; color:rgba(255,255,255,.75); letter-spacing:.4px; text-transform:uppercase; margin-bottom:18px; }
     .hero-badge i { width:13px; height:13px; color:var(--green-m); }
     .hero h1 { font-family:var(--font-d); font-size:clamp(30px,5vw,52px); font-weight:800; color:#fff; line-height:1.08; margin-bottom:14px; }
@@ -70,6 +71,32 @@
     .hero-pills { display:flex; flex-wrap:wrap; gap:8px; }
     .hero-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:var(--pill); padding:7px 14px; font-size:12.5px; font-weight:600; color:rgba(255,255,255,.8); }
     .hero-pill i { width:13px; height:13px; color:var(--green-m); }
+    .hero-cta { display:inline-flex; align-items:center; gap:9px; background:#fff; color:var(--green-d); border-radius:var(--r10); padding:13px 24px; font-size:14.5px; font-weight:800; text-decoration:none; transition:all var(--ease); box-shadow:0 4px 18px rgba(0,0,0,.18); margin-top:4px; }
+    .hero-cta:hover { background:var(--green-l); transform:translateY(-1px); }
+    .hero-cta i { width:16px; height:16px; }
+
+    /* HERO VISUAL — 3D sparkle/care mark */
+    .hero-visual { display:none; }
+    @media(min-width:820px){
+      .hero-visual { display:flex; align-items:center; justify-content:center; }
+    }
+    .hero-visual-plate {
+      position:relative; width:220px; height:220px; border-radius:28px;
+      background: linear-gradient(160deg, rgba(255,255,255,.14), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.16);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 24px 60px rgba(4,20,8,.35), inset 0 1px 0 rgba(255,255,255,.12);
+    }
+    .hero-visual-plate svg.hv-icon { width:100px; height:100px; }
+    .hero-visual-chip {
+      position:absolute; display:flex; align-items:center; gap:7px;
+      background:#fff; border-radius:var(--r10); padding:9px 12px;
+      font-size:12px; font-weight:800; color:var(--ink2);
+      box-shadow:0 10px 28px rgba(4,20,8,.25);
+    }
+    .hero-visual-chip i, .hero-visual-chip svg { width:14px; height:14px; color:var(--g3); }
+    .hero-visual-chip.c1 { top:-14px; left:-30px; }
+    .hero-visual-chip.c2 { bottom:-10px; right:-38px; }
 
     /* NAV STRIP */
     .nav-strip { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:var(--nav); z-index:100; }
@@ -194,15 +221,42 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner fade-up">
-      <div class="hero-badge"><i data-lucide="wrench"></i>Automotive Services</div>
-      <h1>Other Services<br><em>All in One Place</em></h1>
-      <p class="hero-desc">Cosmetic care, specialized repairs, roadside assistance, and smart vehicle technology — all coordinated through AutoViindu.</p>
-      <div class="hero-pills">
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Cosmetic car care</span>
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Specialized workshops</span>
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Roadside assistance</span>
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Telematics &amp; smart fitments</span>
+    <div class="hero-inner">
+      <div class="fade-up">
+        <div class="hero-badge"><i data-lucide="wrench"></i>Automotive Services</div>
+        <h1>Other Services<br><em>All in One Place</em></h1>
+        <p class="hero-desc">Cosmetic care, specialized repairs, roadside assistance, and smart vehicle technology — all coordinated through AutoViindu.</p>
+        <div class="hero-pills">
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i>Cosmetic car care</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i>Specialized workshops</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i>Roadside assistance</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i>Telematics &amp; smart fitments</span>
+        </div>
+        <a href="/form/otherserviceform" class="hero-cta">
+          <i data-lucide="send"></i>Request a Service
+        </a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual-plate">
+          <svg class="hv-icon" viewBox="0 0 48 48">
+            <defs>
+              <linearGradient id="heroOthG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fbfbfa"/>
+                <stop offset="100%" stop-color="#c3c9c4"/>
+              </linearGradient>
+              <filter id="heroOthS" x="-60%" y="-30%" width="220%" height="200%">
+                <feDropShadow dx="0" dy="3" stdDeviation="2.4" flood-color="#0d140f" flood-opacity=".28"/>
+              </filter>
+            </defs>
+            <g filter="url(#heroOthS)">
+              <path d="M24 6l3.6 11.4L39 21l-11.4 3.6L24 36l-3.6-11.4L9 21l11.4-3.6z" fill="url(#heroOthG)"/>
+            </g>
+            <path d="M24 6l3.6 11.4L24 21z" fill="#fff" opacity=".4"/>
+            <path d="M36 30l1.6 4.4L42 36l-4.4 1.6L36 42l-1.6-4.4L30 36l4.4-1.6z" fill="url(#heroOthG)" opacity=".85"/>
+          </svg>
+          <span class="hero-visual-chip c1"><i data-lucide="sparkles"></i>Ceramic coating</span>
+          <span class="hero-visual-chip c2"><i data-lucide="life-buoy"></i>24/7 roadside help</span>
+        </div>
       </div>
     </div>
   </div>

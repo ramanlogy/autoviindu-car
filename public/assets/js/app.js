@@ -1453,13 +1453,14 @@
       function emiHTML(v, pfx) {
         const dp = 40, dr = 10.5;
         const loan = v.price * (1 - dp / 100);
+        const dpAmt = v.price - loan;
 
         const emiRow = (years, highlight) => {
           const dt = years * 12;
           const emi = calcEMI(loan, dr, dt);
           return `<div class="dp-emi-row${highlight ? ' highlight' : ''}">
             <span class="dp-emi-row-lbl">${years} yrs &mdash; ${dt} months</span>
-            <strong class="dp-emi-row-val">Rs. ${Math.round(emi).toLocaleString()}<span style="font-size:10px;font-weight:500;opacity:.7">/mo</span></strong>
+            <strong class="dp-emi-row-val">~Rs. ${Math.round(emi).toLocaleString()}<span style="font-size:10px;font-weight:500;opacity:.7">/mo</span></strong>
           </div>`;
         };
 
@@ -1468,11 +1469,15 @@
         <div class="dp-emi-summary">
           <div class="dp-emi-loan-amt">
             <span class="lbl">Loan Amount</span>
-            <span class="val">${window.Rs(Math.round(loan))}</span>
+            <span class="val">~${window.Rs(Math.round(loan))}</span>
           </div>
-          <div class="dp-emi-details">
-            <span>Down: <strong>40%</strong></span> &bull; <span>Rate: <strong>${dr}%</strong></span>
+          <div class="dp-emi-loan-amt">
+            <span class="lbl">Down Payment</span>
+            <span class="val">~${window.Rs(Math.round(dpAmt))}</span>
           </div>
+        </div>
+        <div class="dp-emi-details" style="margin:-4px 0 12px">
+          <span>Down: <strong>${dp}%</strong></span> &bull; <span>Rate: <strong>${dr}%</strong></span> &bull; <span style="opacity:.75">all figures approx</span>
         </div>
         <div class="dp-emi-rows">
           ${emiRow(5, false)}
@@ -3701,6 +3706,18 @@ ${variants.length > 0 ? `
 
     let cmpActiveMode = 'all';
 
+    /* ─ Keep the sticky spec-tabs pinned right under the car image row ─ */
+    function syncCmpHeaderHeight() {
+      const row = document.querySelector('.cmp-th-row');
+      if (!row) return;
+      document.documentElement.style.setProperty('--cmp-th-h', row.getBoundingClientRect().height + 'px');
+    }
+    if (!window._cmpResizeBound) {
+      window._cmpResizeBound = true;
+      let cmpResizeT;
+      window.addEventListener('resize', () => { clearTimeout(cmpResizeT); cmpResizeT = setTimeout(syncCmpHeaderHeight, 150); });
+    }
+
     /* ─ MODE-AWARE SPEC GROUPS ─ */
     function getCmpSpecGroups(mode) {
       /* Helper: build a row with optional per-mode label overrides */
@@ -3967,6 +3984,56 @@ ${variants.length > 0 ? `
 
     const CMP_SPEC_GROUPS = getCmpSpecGroups('all');
 
+    /* ─ Spec-key data is entered inconsistently across cars (e.g. "Boot Space" vs
+       "Boot Space (litres)", "Torque" vs "Max Engine Torque"). Normalize + fuzzy-match
+       so the compare table finds real values instead of showing "—" for everything
+       outside the row's exact expected key name. ─ */
+    function cmpNormKey(s) {
+      return String(s)
+        .toLowerCase()
+        .replace(/[–—]/g, '-')
+        .replace(/\([^)]*\)/g, '')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim();
+    }
+
+    function cmpFindSpec(car, aliasKey) {
+      const specs = car && car.specs;
+      if (!specs) return null;
+      const aliases = aliasKey.split('||').map(a => a.trim());
+
+      for (const a of aliases) {
+        if (specs[a] != null && specs[a] !== '') return specs[a];
+      }
+
+      const specKeys = Object.keys(specs);
+      for (const a of aliases) {
+        const na = cmpNormKey(a);
+        if (!na) continue;
+        const hit = specKeys.find(k => cmpNormKey(k) === na);
+        if (hit && specs[hit] !== '') return specs[hit];
+      }
+
+      for (const a of aliases) {
+        const na = cmpNormKey(a);
+        if (!na) continue;
+        const hit = specKeys.find(k => {
+          const nk = cmpNormKey(k);
+          return nk && (nk.includes(na) || na.includes(nk));
+        });
+        if (hit && specs[hit] !== '') return specs[hit];
+      }
+
+      return null;
+    }
+
+    function cmpDimensions(car) {
+      const L = cmpFindSpec(car, 'Length||Overall Length (mm)');
+      const W = cmpFindSpec(car, 'Width||Overall Width (mm)');
+      const H = cmpFindSpec(car, 'Height||Overall Height (mm)');
+      return (L && W && H) ? `${L} × ${W} × ${H}` : null;
+    }
+
     function cmpGetVal(car, row) {
       if (row.key === 'price') return carPrice(car);
       if (row.key === 'expertScore') return car.expertScore || 0;
@@ -3975,9 +4042,12 @@ ${variants.length > 0 ? `
       if (row.key === 'type') return car.type || '—';
       if (row.key === 'name') return (car.brand || '') + ' ' + (car.model || '') + (car.variant ? ' ' + car.variant : '');
       if (row.key === 'year') return car.year || car.modelYear || '—';
-      const keys = row.key.split('||');
-      for (const k of keys) { const v = car.specs?.[k.trim()]; if (v) return v; }
-      return '—';
+      if (row.key.indexOf('Dimensions') === 0) {
+        const dim = cmpDimensions(car);
+        if (dim) return dim;
+      }
+      const v = cmpFindSpec(car, row.key);
+      return v != null ? v : '—';
     }
 
     function cmpDisplayVal(car, row) {
@@ -4092,11 +4162,6 @@ ${variants.length > 0 ? `
       const cars = cols.map(s => carBySlug(s)).filter(Boolean);
       const activeGroups = getCmpSpecGroups(cmpActiveMode);
 
-      /* Mode selector tabs */
-      const modeTabs = CMP_MODES.map(m =>
-        `<button class="cmp-mode-tab${m.id === cmpActiveMode ? ' active' : ''}" data-cmp-mode="${m.id}" onclick="AV.cmpMode('${m.id}',this)">${m.label}</button>`
-      ).join('');
-
       /* Spec tabs */
       const specTabs = activeGroups.map((g, i) =>
         `<button class="cmp-tab${i === 0 ? ' active' : ''}" data-cmp-tab="${g.id}" onclick="AV.cmpTab('${g.id}',this)">${g.label}</button>`
@@ -4136,24 +4201,30 @@ ${variants.length > 0 ? `
       }).join('');
 
       return `
-      <div class="cmp-mode-tabs" role="tablist" aria-label="Comparison type">${modeTabs}</div>
-      <div class="cmp-tabs" role="tablist">${specTabs}</div>
       <div class="cmp-table-wrap">
         <div class="cmp-table-scroll">
           <table class="cmp-table">
-            <thead><tr>
-              <th class="cmp-th-label">Specification</th>
-              ${cars.map(c => `<th class="cmp-th-car">
-                <img src="${(c.images && c.images[0]) || c.img || ''}" alt="${c.brand}">
-                <div class="cmp-th-brand">${c.brand}</div>
-                <div class="cmp-th-model">${c.model}</div>
-                <div class="cmp-th-price">${carPriceLabel(c)}</div>
-                <div class="cmp-th-actions">
-                  <button class="cmp-th-btn cmp-th-btn-view" onclick="AV.openDetail('${c.slug || ''}')">${c.slug ? 'View' : 'Details'}</button>
-                  <button class="cmp-th-btn cmp-th-btn-rm" onclick="AV.toggleCompare('${carIdentifier(c)}')">Remove</button>
-                </div>
-              </th>`).join('')}
-            </tr></thead>
+            <thead>
+              <tr class="cmp-th-row">
+                <th class="cmp-th-label">Specification</th>
+                ${cars.map(c => `<th class="cmp-th-car">
+                  <img src="${(c.images && c.images[0]) || c.img || ''}" alt="${c.brand}">
+                  <div class="cmp-th-brand">${c.brand}</div>
+                  <div class="cmp-th-model">${c.model}</div>
+                  <div class="cmp-th-price">${carPriceLabel(c)}</div>
+                  <div class="cmp-th-actions">
+                    <button class="cmp-th-btn cmp-th-btn-view" onclick="AV.openDetail('${c.slug || ''}')">${c.slug ? 'View' : 'Details'}</button>
+                    <button class="cmp-th-btn cmp-th-btn-rm" onclick="AV.toggleCompare('${carIdentifier(c)}')">Remove</button>
+                  </div>
+                </th>`).join('')}
+              </tr>
+              <tr class="cmp-tabs-row">
+                <th class="cmp-tabs-spacer" aria-hidden="true"></th>
+                <th class="cmp-tabs-cell" colspan="${cars.length}">
+                  <div class="cmp-tabs" role="tablist">${specTabs}</div>
+                </th>
+              </tr>
+            </thead>
             <tbody>${groups}</tbody>
           </table>
         </div>
@@ -4297,7 +4368,7 @@ ${variants.length > 0 ? `
 
       updateCompareTray();
       if (count < 2) setTimeout(() => window._initCompareAnimation?.(), 50);
-      else setTimeout(() => AV.cmpTab('overview', document.querySelector('.cmp-tab')), 10);
+      else { setTimeout(() => AV.cmpTab('overview', document.querySelector('.cmp-tab')), 10); requestAnimationFrame(syncCmpHeaderHeight); }
     }
 
     /* ── USED-CAR COMPARISON PAGE ── */
@@ -4549,11 +4620,18 @@ ${variants.length > 0 ? `
         </div>`).join('');
 
         return `
-        <div class="cmp-tabs" role="tablist">${specTabs}</div>
         <div class="cmp-table-wrap">
           <div class="cmp-table-scroll">
             <table class="cmp-table">
-              <thead><tr><th class="cmp-th-label">Specification</th>${heads}</tr></thead>
+              <thead>
+                <tr class="cmp-th-row"><th class="cmp-th-label">Specification</th>${heads}</tr>
+                <tr class="cmp-tabs-row">
+                  <th class="cmp-tabs-spacer" aria-hidden="true"></th>
+                  <th class="cmp-tabs-cell" colspan="${uCars.length}">
+                    <div class="cmp-tabs" role="tablist">${specTabs}</div>
+                  </th>
+                </tr>
+              </thead>
               <tbody>${groups}</tbody>
             </table>
           </div>
@@ -4616,7 +4694,7 @@ ${variants.length > 0 ? `
       history.pushState({ page: 'compare-used' }, '', '#compare-used');
       if (count < 2) setTimeout(() => window._initCompareAnimation?.(), 50);
       lucide.createIcons();
-      if (count >= 2) setTimeout(() => AV.cmpTab('overview', document.querySelector('.cmp-tab')), 10);
+      if (count >= 2) { setTimeout(() => AV.cmpTab('overview', document.querySelector('.cmp-tab')), 10); requestAnimationFrame(syncCmpHeaderHeight); }
     }
 
     function toggleOverviewSpecs(btn) {
@@ -4667,9 +4745,9 @@ ${variants.length > 0 ? `
       const tableWrap = document.querySelector('.cmp-page');
       if (tableWrap && cars.length >= 2) {
         const verdictEl = tableWrap.querySelector('.cmp-verdict');
-        const tableStart = tableWrap.querySelector('.cmp-mode-tabs');
+        const tableStart = tableWrap.querySelector('.cmp-table-wrap');
         if (tableStart) {
-          /* replace everything from mode-tabs onwards (but keep picker) */
+          /* replace the table section (but keep verdict and picker) */
           const picker = tableWrap.querySelector('.cmp-picker-panel');
           const newTable = renderCmpTable(cols);
           /* Remove old table content, keep verdict and picker */
@@ -4691,6 +4769,7 @@ ${variants.length > 0 ? `
       /* Re-activate first spec tab */
       const firstTab = document.querySelector('.cmp-tab');
       if (firstTab) AV.cmpTab(firstTab.dataset.cmpTab, firstTab);
+      requestAnimationFrame(syncCmpHeaderHeight);
     }
 
     function cmpApplyFilters() {
@@ -5906,6 +5985,7 @@ ${variants.length > 0 ? `
       function emiHTML(pfx) {
         const dp = 20, dt = 60, dr = 10.5;
         const loan = car.priceNum * (1 - dp / 100);
+        const dpAmt = car.priceNum - loan;
         const emi = calcEMI(loan, dr, dt);
         const tot = emi * dt, intr = tot - loan;
         return `
@@ -5913,6 +5993,7 @@ ${variants.length > 0 ? `
         <div class="dp-emi-label">Down payment <span class="val" id="${pfx}-dpv">${dp}%</span></div>
         <input type="range" min="10" max="60" step="5" value="${dp}" id="${pfx}-dp"
           oninput="document.getElementById('${pfx}-dpv').textContent=this.value+'%';AV.emiCalcUsed('${id}','${pfx}')">
+        <div style="font-size:11px;color:var(--ink4);margin-top:4px">~<span id="${pfx}-dpamt">${Rs(Math.round(dpAmt))}</span> <span style="opacity:.75">approx</span></div>
       </div>
       <div class="dp-emi-field">
         <div class="dp-emi-label">Tenure <span class="val"><span id="${pfx}-ten">${dt}</span> months</span></div>
@@ -5931,13 +6012,13 @@ ${variants.length > 0 ? `
       </div>
       <div class="dp-emi-result">
         <div style="font-size:10px;color:var(--ink4);margin-bottom:2px">Monthly EMI</div>
-        <div class="dp-emi-amount" id="${pfx}-amt">Rs. ${Math.round(emi).toLocaleString()}</div>
-        <div style="font-size:11px;color:var(--ink4)">/month</div>
+        <div class="dp-emi-amount" id="${pfx}-amt">~Rs. ${Math.round(emi).toLocaleString()}</div>
+        <div style="font-size:11px;color:var(--ink4)">/month <span style="opacity:.75">(approx)</span></div>
       </div>
       <div class="dp-emi-break">
-        <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-loan">${Rs(Math.round(loan))}</div><div class="dp-emi-bd-lbl">Loan amount</div></div>
-        <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-int">${Rs(Math.round(intr))}</div><div class="dp-emi-bd-lbl">Interest</div></div>
-        <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-tot">${Rs(Math.round(tot))}</div><div class="dp-emi-bd-lbl">Total payable</div></div>
+        <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-loan">~${Rs(Math.round(loan))}</div><div class="dp-emi-bd-lbl">Loan amount</div></div>
+        <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-int">~${Rs(Math.round(intr))}</div><div class="dp-emi-bd-lbl">Interest</div></div>
+        <div class="dp-emi-bd"><div class="dp-emi-bd-val" id="${pfx}-tot">~${Rs(Math.round(tot))}</div><div class="dp-emi-bd-lbl">Total payable</div></div>
         <div class="dp-emi-bd"><div class="dp-emi-bd-val">${car.price}</div><div class="dp-emi-bd-lbl">Vehicle price</div></div>
       </div>
       <button onclick="alert('Finance: +977-9828364940')" class="dp-cta-ghost" style="margin-top:10px;width:100%">Apply for finance →</button>`;
@@ -6163,13 +6244,15 @@ ${variants.length > 0 ? `
         const ten = +(document.getElementById(`${pfx}-ten`)?.textContent || 60);
         const rate = +(document.getElementById(`${pfx}-rate`)?.value || 10.5);
         const loan = car.priceNum * (1 - dpPct / 100);
+        const dpAmt = car.priceNum - loan;
         const emi = calcEMI(loan, rate, ten);
         const tot = emi * ten;
         const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-        set(`${pfx}-amt`, `Rs. ${Math.round(emi).toLocaleString()}`);
-        set(`${pfx}-loan`, Rs(Math.round(loan)));
-        set(`${pfx}-int`, Rs(Math.round(tot - loan)));
-        set(`${pfx}-tot`, Rs(Math.round(tot)));
+        set(`${pfx}-dpamt`, Rs(Math.round(dpAmt)));
+        set(`${pfx}-amt`, `~Rs. ${Math.round(emi).toLocaleString()}`);
+        set(`${pfx}-loan`, `~${Rs(Math.round(loan))}`);
+        set(`${pfx}-int`, `~${Rs(Math.round(tot - loan))}`);
+        set(`${pfx}-tot`, `~${Rs(Math.round(tot))}`);
       };
 
       // Build the gallery after the HTML is in the DOM

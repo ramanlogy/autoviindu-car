@@ -59,34 +59,57 @@
     .bc-inner i { width:12px; height:12px; }
 
     /* HERO */
-    /* HERO — Clean, utility-focused light layout */
     .hero {
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
+      background: linear-gradient(145deg,#0B2A12 0%,#1A6B2A 60%,#1f8535 100%);
       padding: 56px 0 44px;
       position: relative;
       overflow: hidden;
     }
-    .hero-inner { position: relative; z-index: 1; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--pill); padding: 5px 13px; font-size: 11px; font-weight: 600; color: var(--ink3); letter-spacing: .4px; text-transform: uppercase; margin-bottom: 18px; }
-    .hero-badge i { width: 13px; height: 13px; color: var(--ink3); }
-    .hero h1 { font-family: var(--font-d); font-size: clamp(30px, 4.5vw, 48px); font-weight: 800; color: var(--ink); line-height: 1.15; margin-bottom: 14px; }
-    .hero h1 em { font-style: italic; color: inherit; }
-    .hero-desc { font-size: 15px; color: var(--ink3); max-width: 500px; line-height: 1.75; margin-bottom: 32px; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero-inner { position: relative; z-index: 1; display:grid; grid-template-columns:1fr; gap:32px; align-items:center; }
+    @media(min-width:820px){ .hero-inner{ grid-template-columns:1.15fr .85fr; gap:24px; } }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); border-radius: var(--pill); padding: 5px 13px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,.75); letter-spacing: .4px; text-transform: uppercase; margin-bottom: 18px; }
+    .hero-badge i { width: 13px; height: 13px; color: var(--green-m); }
+    .hero h1 { font-family: var(--font-d); font-size: clamp(30px, 4.5vw, 48px); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 14px; }
+    .hero h1 em { font-style: italic; color: var(--green-m); }
+    .hero-desc { font-size: 15px; color: rgba(255,255,255,.65); max-width: 500px; line-height: 1.75; margin-bottom: 32px; }
     .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
-    .hero-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--border); border-radius: var(--pill); padding: 7px 14px; font-size: 12px; font-weight: 500; color: var(--ink2); }
-    .hero-pill i { width: 13px; height: 13px; color: var(--g3); }
+    .hero-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: var(--pill); padding: 7px 14px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.85); }
+    .hero-pill i { width: 13px; height: 13px; color: var(--green-m); }
 
     /* HERO CTA */
     .hero-cta {
       display: inline-flex; align-items: center; gap: 9px;
-      background: var(--ink); color: #fff; text-decoration: none;
+      background: #fff; color: var(--green-d); text-decoration: none;
       padding: 13px 24px; border-radius: var(--r10);
       font-size: 14.5px; font-weight: 800; transition: all var(--ease);
-      box-shadow: 0 4px 20px rgba(0,0,0,.1);
+      box-shadow: 0 4px 18px rgba(0,0,0,.18);
     }
-    .hero-cta:hover { background: var(--ink2); transform: translateY(-1px); }
+    .hero-cta:hover { background: var(--green-l); transform: translateY(-1px); }
     .hero-cta i { width: 16px; height: 16px; }
+
+    /* HERO VISUAL — 3D document/registration mark */
+    .hero-visual { display:none; }
+    @media(min-width:820px){
+      .hero-visual { display:flex; align-items:center; justify-content:center; }
+    }
+    .hero-visual-plate {
+      position:relative; width:220px; height:220px; border-radius:28px;
+      background: linear-gradient(160deg, rgba(255,255,255,.14), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.16);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 24px 60px rgba(4,20,8,.35), inset 0 1px 0 rgba(255,255,255,.12);
+    }
+    .hero-visual-plate svg.hv-icon { width:100px; height:100px; }
+    .hero-visual-chip {
+      position:absolute; display:flex; align-items:center; gap:7px;
+      background:#fff; border-radius:var(--r10); padding:9px 12px;
+      font-size:12px; font-weight:800; color:var(--ink2);
+      box-shadow:0 10px 28px rgba(4,20,8,.25);
+    }
+    .hero-visual-chip i, .hero-visual-chip svg { width:14px; height:14px; color:var(--g3); }
+    .hero-visual-chip.c1 { top:-14px; left:-30px; }
+    .hero-visual-chip.c2 { bottom:-10px; right:-38px; }
 
     /* NAV STRIP */
     .nav-strip { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:var(--nav); z-index:100; }
@@ -232,21 +255,49 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner fade-up">
-      <div class="hero-badge"><i data-lucide="landmark"></i>Department of Transport Management</div>
-      <h1>DOTM Services<br><em>Done for You</em></h1>
-      <p class="hero-desc">Registration, licensing, and vehicle documentation — handled on your behalf. No queues, no confusion, no wasted trips to DOTM.</p>
-      <div class="hero-pills">
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Individual &amp; corporate</span>
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Document pickup &amp; delivery</span>
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>Appointment management</span>
-        <span class="hero-pill"><i data-lucide="check-circle-2"></i>SMS &amp; email status updates</span>
+    <div class="hero-inner">
+      <div class="fade-up">
+        <div class="hero-badge"><i data-lucide="landmark"></i>Department of Transport Management</div>
+        <h1>DOTM Services<br><em>Done for You</em></h1>
+        <p class="hero-desc">Registration, licensing, and vehicle documentation — handled on your behalf. No queues, no confusion, no wasted trips to DOTM.</p>
+        <div class="hero-pills">
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i>Individual &amp; corporate</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i>Document pickup &amp; delivery</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i>Appointment management</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i>SMS &amp; email status updates</span>
+        </div>
+        <!-- ★ HERO CTA BUTTON -->
+        <a href="/form/dotmform" class="hero-cta">
+          <i data-lucide="send"></i>
+          Request a Service
+        </a>
       </div>
-      <!-- ★ HERO CTA BUTTON -->
-      <a href="/form/dotmform" class="hero-cta">
-        <i data-dotm-lucide="send"></i>
-        Request a Service
-      </a>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual-plate">
+          <svg class="hv-icon" viewBox="0 0 48 48">
+            <defs>
+              <linearGradient id="heroDotmG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fbfbfa"/>
+                <stop offset="100%" stop-color="#c3c9c4"/>
+              </linearGradient>
+              <filter id="heroDotmS" x="-60%" y="-30%" width="220%" height="200%">
+                <feDropShadow dx="0" dy="3" stdDeviation="2.4" flood-color="#0d140f" flood-opacity=".28"/>
+              </filter>
+            </defs>
+            <g filter="url(#heroDotmS)">
+              <path d="M12 5h17l9 9v29a2 2 0 01-2 2H12a2 2 0 01-2-2V7a2 2 0 012-2z" fill="url(#heroDotmG)"/>
+              <path d="M29 5v9h9z" fill="#9aa39c"/>
+            </g>
+            <rect x="15" y="21" width="14" height="2.4" rx="1.2" fill="#fff" opacity=".55"/>
+            <rect x="15" y="27" width="18" height="2.4" rx="1.2" fill="#fff" opacity=".55"/>
+            <rect x="15" y="33" width="10" height="2.4" rx="1.2" fill="#fff" opacity=".55"/>
+            <circle cx="33" cy="34" r="8.5" fill="#1A6B2A"/>
+            <path d="M29.3 34.1l2.4 2.4 5-5.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="hero-visual-chip c1"><i data-lucide="clock"></i>Same-day booking</span>
+          <span class="hero-visual-chip c2"><i data-lucide="shield-check"></i>DOTM compliant</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
