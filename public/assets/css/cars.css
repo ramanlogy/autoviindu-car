@@ -1100,6 +1100,40 @@ a.dp-cta-primary[href^='tel'] { text-decoration: none !important; }
   color: #0f172a;
 }
 
+/* ─── VARIANT-SWITCH SKELETON ───
+   Applied briefly to the Overview / Features / Specifications containers while
+   their contents are swapped for the newly selected variant. */
+.dp-var-skel {
+  position: relative;
+  pointer-events: none;
+  min-height: 60px;
+}
+.dp-var-skel > * { opacity: 0 !important; }
+.dp-var-skel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(100deg, #eef1f4 30%, #f8fafc 50%, #eef1f4 70%);
+  background-size: 250% 100%;
+  animation: dpSkelShimmer 1.1s ease-in-out infinite;
+}
+@keyframes dpSkelShimmer {
+  0% { background-position: 150% 0; }
+  100% { background-position: -150% 0; }
+}
+.dp-var-reveal { animation: dpVarReveal 0.42s ease both; }
+@keyframes dpVarReveal {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: none; }
+}
+/* .dp-flash itself is defined alongside the variant-context banner in index.html */
+@media (prefers-reduced-motion: reduce) {
+  .dp-var-skel::after, .dp-var-reveal { animation: none; }
+  .dp-var-skel > * { opacity: 1 !important; }
+  .dp-var-skel::after { display: none; }
+}
+
 /* ─── SIDEBAR COLLAPSIBLE SECTIONS ─── */
 details summary::-webkit-details-marker {
   display: none;

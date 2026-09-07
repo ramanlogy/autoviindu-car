@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="/admin/js/car-form-schema.js"></script>
   <style>
     :root {
       --bg: #f8fafc;
@@ -273,6 +274,62 @@
     
     /* Layout fix */
     .tab-pane-container { display: flex; flex-direction: column; gap: 20px; }
+
+    /* ── Schema-driven Car Editor ── */
+    .modal.cf-wide { max-width: 1080px; }
+    .cf-search {
+      width: 100%; margin-bottom: 16px; padding: 10px 14px; font-size: 13px; font-family: inherit;
+      border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text);
+    }
+    .cf-search:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.1); }
+    .cf-acc { border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 10px; overflow: hidden; }
+    .cf-acc-head {
+      width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 12px 16px; background: #f8fafc; border: none; cursor: pointer;
+      font-size: 13px; font-weight: 700; font-family: inherit; color: var(--text); text-align: left;
+    }
+    .cf-acc-head:hover { background: #f1f5f9; }
+    .cf-caret { display: inline-block; transition: transform 0.15s; color: var(--text-muted); margin-right: 4px; }
+    .cf-acc.open .cf-caret { transform: rotate(90deg); }
+    .cf-acc-badge {
+      font-size: 11px; font-weight: 700; color: var(--text-muted); background: #fff;
+      border: 1px solid var(--border); border-radius: 20px; padding: 2px 9px; white-space: nowrap;
+    }
+    .cf-acc-badge.has { color: var(--green); border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.06); }
+    .cf-acc-body { padding: 18px 16px; }
+    .cf-acc:not(.open) .cf-acc-body { display: none; }
+    .cf-repeat-row { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; margin-bottom: 12px; background: #fafafa; }
+    .cf-repeat-row .form-grid { gap: 12px; }
+    .cf-row-del { margin-top: 12px; }
+
+    /* Toggle switch (shared with existing switch-row markup) */
+    .toggle { position: relative; display: inline-block; width: 40px; height: 22px; flex: none; }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider { position: absolute; inset: 0; background: #cbd5e1; border-radius: 22px; transition: 0.15s; cursor: pointer; }
+    .toggle-slider::before { content: ""; position: absolute; height: 16px; width: 16px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: 0.15s; }
+    .toggle input:checked + .toggle-slider { background: var(--primary); }
+    .toggle input:checked + .toggle-slider::before { transform: translateX(18px); }
+
+    /* ── Curated Homepage Sections panel ── */
+    #panel-sections { --text-2: var(--text-muted); --red: #dc2626; }
+    #panel-sections .empty { color: var(--text-muted); font-size: 13px; padding: 24px 4px; }
+    #panel-sections .tab-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+    #panel-sections .tab { padding: 8px 14px; border: 1px solid var(--border); background: var(--surface); border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; cursor: pointer; color: var(--text-muted); }
+    #panel-sections .tab.on { background: var(--primary); color: #fff; border-color: var(--primary); }
+    #panel-sections .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    #panel-sections .form-field { display: flex; flex-direction: column; gap: 4px; }
+    #panel-sections .form-field.full { grid-column: 1 / -1; }
+    #panel-sections .form-lbl { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+    #panel-sections .form-inp,
+    #panel-sections .form-ta,
+    #panel-sections .form-sel { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 10px; font-size: 13px; font-family: inherit; background: #fff; color: var(--text); width: 100%; }
+    #panel-sections .form-ta { resize: vertical; }
+    #panel-sections .section-hint { font-size: 12px; color: var(--text-muted); margin: 6px 0; }
+    #panel-sections .ico-btn { border: 1px solid var(--border); background: #fff; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 13px; line-height: 1; color: var(--text-muted); flex: none; }
+    #panel-sections .ico-btn:hover { background: #f1f5f9; }
+    #panel-sections .ico-btn.del { color: var(--red); }
+    #panel-sections .btn-green { background: #16a34a; color: #fff; }
+    #panel-sections .btn-dark { background: var(--text); color: #fff; }
   </style>
 </head>
 <body>
@@ -332,38 +389,47 @@
 
     <div class="sb-section">Forms & Submissions</div>
     <button class="sb-btn" id="nav-sell-car-leads" onclick="go('sell-car-leads')">
-      <i data-lucide="banknote"></i> Sell Your Car <span class="sb-badge red" id="badge-sell-car">0</span>
+      <i data-lucide="banknote"></i> Sell Your Car <span class="sb-badge red" id="badge-sell-car" style="display:none">0</span>
     </button>
     
     <!-- Collapsible Car Inquiries -->
     <button class="sb-btn" onclick="toggleSubmenu('sub-car-inquiries')">
       <i data-lucide="car"></i> Car Inquiries
-      <i data-lucide="chevron-down" style="margin-left:auto;width:12px;height:12px"></i>
+      <span style="margin-left:auto;display:flex;align-items:center;gap:6px">
+        <span class="sb-badge red" id="badge-group-car" style="display:none">0</span>
+        <i data-lucide="chevron-down" style="width:12px;height:12px"></i>
+      </span>
     </button>
     <div class="sb-submenu" id="sub-car-inquiries">
-      <button class="sb-sub-btn" id="nav-leads-testdrive" onclick="go('leads-testdrive')">🚗 Test Drive Bookings <span class="sb-badge red" id="badge-testdrive">0</span></button>
-      <button class="sb-sub-btn" id="nav-leads-brochure" onclick="go('leads-brochure')">📄 Brochure/PDF Requests <span class="sb-badge red" id="badge-brochure">0</span></button>
-      <button class="sb-sub-btn" id="nav-leads-requestinfo" onclick="go('leads-requestinfo')">ℹ️ Car Detail Requests <span class="sb-badge red" id="badge-requestinfo">0</span></button>
-      <button class="sb-sub-btn" id="nav-leads-usedcar" onclick="go('leads-usedcar')">🔄 Used Car Inquiries <span class="sb-badge red" id="badge-usedcar">0</span></button>
+      <button class="sb-sub-btn" id="nav-leads-testdrive" onclick="go('leads-testdrive')">🚗 Test Drive Bookings <span class="sb-badge red" id="badge-testdrive" style="display:none">0</span></button>
+      <button class="sb-sub-btn" id="nav-leads-brochure" onclick="go('leads-brochure')">📄 Brochure/PDF Requests <span class="sb-badge red" id="badge-brochure" style="display:none">0</span></button>
+      <button class="sb-sub-btn" id="nav-leads-requestinfo" onclick="go('leads-requestinfo')">ℹ️ Car Detail Requests <span class="sb-badge red" id="badge-requestinfo" style="display:none">0</span></button>
+      <button class="sb-sub-btn" id="nav-leads-usedcar" onclick="go('leads-usedcar')">🔄 Used Car Inquiries <span class="sb-badge red" id="badge-usedcar" style="display:none">0</span></button>
     </div>
 
     <!-- Collapsible Service Submissions Nav -->
     <button class="sb-btn" onclick="toggleSubmenu('sub-service-submissions')">
       <i data-lucide="clipboard-list"></i> Services Inquiries
-      <i data-lucide="chevron-down" style="margin-left:auto;width:12px;height:12px"></i>
+      <span style="margin-left:auto;display:flex;align-items:center;gap:6px">
+        <span class="sb-badge red" id="badge-group-service" style="display:none">0</span>
+        <i data-lucide="chevron-down" style="width:12px;height:12px"></i>
+      </span>
     </button>
     <div class="sb-submenu" id="sub-service-submissions">
-      <button class="sb-sub-btn" id="nav-service-dotm" onclick="go('service-dotm')">DOTM Services</button>
-      <button class="sb-sub-btn" id="nav-service-maint" onclick="go('service-maint')">Maintenance & Repair</button>
-      <button class="sb-sub-btn" id="nav-service-insure" onclick="go('service-insure')">Insurance Services</button>
-      <button class="sb-sub-btn" id="nav-service-parts" onclick="go('service-parts')">Parts & Accessories</button>
-      <button class="sb-sub-btn" id="nav-service-other" onclick="go('service-other')">Other Services</button>
-      <button class="sb-sub-btn" id="nav-service-general" onclick="go('service-general')">General Inquiries</button>
+      <button class="sb-sub-btn" id="nav-service-dotm" onclick="go('service-dotm')">DOTM Services <span class="sb-badge red" id="badge-dotm" style="display:none">0</span></button>
+      <button class="sb-sub-btn" id="nav-service-maint" onclick="go('service-maint')">Maintenance & Repair <span class="sb-badge red" id="badge-maint" style="display:none">0</span></button>
+      <button class="sb-sub-btn" id="nav-service-insure" onclick="go('service-insure')">Insurance Services <span class="sb-badge red" id="badge-insure" style="display:none">0</span></button>
+      <button class="sb-sub-btn" id="nav-service-parts" onclick="go('service-parts')">Parts & Accessories <span class="sb-badge red" id="badge-parts" style="display:none">0</span></button>
+      <button class="sb-sub-btn" id="nav-service-other" onclick="go('service-other')">Other Services <span class="sb-badge red" id="badge-other" style="display:none">0</span></button>
+      <button class="sb-sub-btn" id="nav-service-general" onclick="go('service-general')">General Inquiries <span class="sb-badge red" id="badge-general" style="display:none">0</span></button>
     </div>
 
     <div class="sb-section">Global Content</div>
     <button class="sb-btn" id="nav-hero" onclick="go('hero')">
       <i data-lucide="image"></i> Hero Slideshow
+    </button>
+    <button class="sb-btn" id="nav-sections" onclick="go('sections')">
+      <i data-lucide="list-checks"></i> Homepage Sections
     </button>
     <button class="sb-btn" id="nav-blog" onclick="go('blog')">
       <i data-lucide="book-open"></i> Blogs & Guides
@@ -1000,6 +1066,17 @@
       </div>
     </div>
 
+    <!-- PANEL: CURATED HOMEPAGE SECTIONS -->
+    <div class="panel" id="panel-sections">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Curated Homepage Sections</div>
+          <div class="page-sub">Choose which cars appear in Best Sellers, the homepage rows, the New Cars carousels, Upcoming Cars and the "Popular Cars" detail-page sidebar — no code needed.</div>
+        </div>
+      </div>
+      <div id="sections-panel"><div class="empty">Loading sections…</div></div>
+    </div>
+
   </div>
 </div>
 
@@ -1078,8 +1155,8 @@ function go(panel) {
   updateBatchBar();
 
   // Mark this category as seen so its notification badge clears
-  if (NOTIF_TYPES[panel]) {
-    setLastSeen(NOTIF_TYPES[panel].type, Date.now());
+  if (PANEL_TYPE[panel]) {
+    setLastSeen(PANEL_TYPE[panel], Date.now());
     updateNotificationBadges();
   }
 
@@ -1103,6 +1180,7 @@ const TITLES = {
   'service-other': 'Other Services Requests',
   'service-general': 'General Inquiries',
   hero: 'Homepage Slideshow Banners',
+  sections: 'Curated Homepage Sections',
   blog: 'Blogs & Guides',
   news: 'News Articles & Events',
   'services-config': 'Services Setup Config',
@@ -1128,6 +1206,7 @@ function loadPanel(p) {
   else if (p === 'service-other') loadServiceLeads('other');
   else if (p === 'service-general') loadServiceLeads('general');
   else if (p === 'hero') loadHero();
+  else if (p === 'sections') loadSections();
   else if (p === 'blog') loadBlogs();
   else if (p === 'news') { loadNews(); loadReviews(); loadEvents(); }
   else if (p === 'services-config') loadServices();
@@ -1136,7 +1215,11 @@ function loadPanel(p) {
 }
 
 // Modal closing
-function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  const box = document.getElementById('modalBox');
+  if (box) box.classList.remove('cf-wide');
+}
 
 // ── Batch Selections ──────────────────────────────────────────────────────────
 let selectedIds = [];
@@ -1196,28 +1279,90 @@ async function triggerBatchAction(action) {
   loadPanel(currentPanel);
 }
 
-// ── Notification badges (red pills next to Sell Car / Test Drive / Brochure / Request Info / Used Car nav items) ──
-const NOTIF_TYPES = {
-  'sell-car-leads':  { badge: 'badge-sell-car',  type: 'sellcar' },
-  'leads-testdrive': { badge: 'badge-testdrive', type: 'testdrive' },
-  'leads-brochure':  { badge: 'badge-brochure',  type: 'brochure' },
-  'leads-requestinfo': { badge: 'badge-requestinfo', type: 'requestinfo' },
-  'leads-usedcar':   { badge: 'badge-usedcar',   type: 'usedcarinquiry' },
+// ── Notification badges — red pills showing how many submissions of each kind
+//    have arrived since you last opened that section ("new since last click"). ──
+
+// Inquiry types exactly as stored on the Lead row (server normalizeFormType,
+// lower-cased). Anything not in this list is bucketed as "general".
+const KNOWN_TYPES = ['sellcar', 'testdrive', 'brochure', 'requestinfo', 'usedcarinquiry',
+  'dotm', 'maintenance', 'insurance', 'parts', 'otherservice'];
+
+// nav panel id → inquiry type it shows (used to mark a type "seen" on open)
+const PANEL_TYPE = {
+  'sell-car-leads': 'sellcar',
+  'leads-testdrive': 'testdrive',
+  'leads-brochure': 'brochure',
+  'leads-requestinfo': 'requestinfo',
+  'leads-usedcar': 'usedcarinquiry',
+  'service-dotm': 'dotm',
+  'service-maint': 'maintenance',
+  'service-insure': 'insurance',
+  'service-parts': 'parts',
+  'service-other': 'otherservice',
+  'service-general': 'general',
 };
+
+// inquiry type → the badge element id next to its nav item
+const TYPE_BADGE = {
+  sellcar: 'badge-sell-car',
+  testdrive: 'badge-testdrive',
+  brochure: 'badge-brochure',
+  requestinfo: 'badge-requestinfo',
+  usedcarinquiry: 'badge-usedcar',
+  dotm: 'badge-dotm',
+  maintenance: 'badge-maint',
+  insurance: 'badge-insure',
+  parts: 'badge-parts',
+  otherservice: 'badge-other',
+  general: 'badge-general',
+};
+
+// parent (collapsible) badge → the child types it sums up
+const GROUP_BADGE = {
+  'badge-group-car': ['testdrive', 'brochure', 'requestinfo', 'usedcarinquiry'],
+  'badge-group-service': ['dotm', 'maintenance', 'insurance', 'parts', 'otherservice', 'general'],
+};
+
+function leadType(l) {
+  const t = (l.inquiryType || '').toLowerCase().trim();
+  return KNOWN_TYPES.includes(t) ? t : 'general';
+}
 function getLastSeen(type) { return parseInt(localStorage.getItem('lastSeen_' + type) || '0', 10); }
 function setLastSeen(type, ts) { localStorage.setItem('lastSeen_' + type, String(ts)); }
 
+// First ever load: treat everything currently on file as already seen, so badges
+// start clean and only count submissions that land from now on.
+function initLastSeenOnce() {
+  if (localStorage.getItem('badgesInitAt')) return;
+  const now = Date.now();
+  // Keep any per-type "last seen" the older badge code already recorded.
+  Object.keys(TYPE_BADGE).forEach(t => {
+    if (!localStorage.getItem('lastSeen_' + t)) setLastSeen(t, now);
+  });
+  localStorage.setItem('badgesInitAt', String(now));
+}
+
+function paintBadge(id, count) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = count > 99 ? '99+' : count;
+  el.style.display = count > 0 ? '' : 'none';
+}
+
 async function updateNotificationBadges() {
+  // The section you're looking at right now counts as seen.
+  if (PANEL_TYPE[currentPanel]) setLastSeen(PANEL_TYPE[currentPanel], Date.now());
   let leads;
   try { leads = await api('GET', '/api/admin/leads'); } catch (e) { return; }
-  Object.values(NOTIF_TYPES).forEach(({ badge, type }) => {
-    const lastSeen = getLastSeen(type);
-    const count = leads.filter(l => (l.inquiryType || '').toLowerCase().trim() === type && new Date(l.createdAt).getTime() > lastSeen).length;
-    const el = document.getElementById(badge);
-    if (el) {
-      el.textContent = count;
-      el.style.display = count > 0 ? '' : 'none';
-    }
+  const counts = {};
+  leads.forEach(l => {
+    const t = leadType(l);
+    const ts = new Date(l.createdAt).getTime();
+    if (ts > getLastSeen(t)) counts[t] = (counts[t] || 0) + 1;
+  });
+  Object.entries(TYPE_BADGE).forEach(([type, badgeId]) => paintBadge(badgeId, counts[type] || 0));
+  Object.entries(GROUP_BADGE).forEach(([badgeId, types]) => {
+    paintBadge(badgeId, types.reduce((n, t) => n + (counts[t] || 0), 0));
   });
 }
 
@@ -1254,23 +1399,32 @@ async function loadDashboard() {
   document.getElementById('sb-new-car-count').textContent = data.totalNew || 0;
   document.getElementById('sb-used-car-count').textContent = data.totalUsed || 0;
 
-  // Render recent submissions list — one line per form, most recent first
-  const leads = await api('GET', '/api/admin/leads');
+  // Render recent submissions list — one line per form, most recent first.
+  // Store in the shared leadsData array so viewLeadDetail() works straight from
+  // the dashboard (a row click opens that submission's full detail).
+  leadsData = await api('GET', '/api/admin/leads');
   updateNotificationBadges();
 
-  const recent = leads.slice(0, 8);
+  const recent = leadsData.slice(0, 8);
   const container = document.getElementById('recentLeads');
   if (recent.length === 0) {
     container.innerHTML = '<div class="empty-state">No submissions yet.</div>';
   } else {
-    container.innerHTML = recent.map(l => `
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #f1f5f9">
+    container.innerHTML = recent.map(l => {
+      const isNew = new Date(l.createdAt).getTime() > getLastSeen(leadType(l));
+      return `
+      <div onclick="viewLeadDetail(${l.id})" title="Open this submission"
+           style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #f1f5f9;cursor:pointer"
+           onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background=''">
         <div style="min-width:0">
-          <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${inquiryLabel(l.inquiryType)} — ${l.name}</div>
+          <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
+            ${isNew ? '<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:6px;vertical-align:middle"></span>' : ''}${inquiryLabel(l.inquiryType)} — ${l.name}
+          </div>
           <div style="color:var(--text-muted);font-size:11px;margin-top:2px">${l.phone || l.email || ''} · ${timeAgo(l.createdAt)}</div>
         </div>
         <span class="badge ${l.status==='NEW'?'badge-blue':l.status==='CONTACTED'?'badge-yellow':'badge-green'}" style="flex-shrink:0">${l.status}</span>
-      </div>`).join('');
+      </div>`;
+    }).join('');
   }
 
   // Render brand distribution
@@ -1525,8 +1679,9 @@ function filterCars() {
 }
 
 function openAddCar() {
-  openModalTabs('Add New Car', carFormTabs({}), async () => {
-    const data = readCarFormTabs();
+  const schema = window.CAR_FORM_SCHEMA.NEW_CAR;
+  openSchemaEditor('Add New Car', schema, {}, async () => {
+    const data = readSchemaForm(schema);
     const res = await api('POST', '/api/admin/cars', data);
     if (res.id) { toast('Car listing created!'); closeModal(); loadNewCars(); }
     else toast(res.error || 'Server error', 'error');
@@ -1536,8 +1691,9 @@ function openAddCar() {
 function editCar(id) {
   const car = allCars.find(c => c.id === id);
   if (!car) return;
-  openModalTabs('Edit Car — ' + car.brand + ' ' + car.model, carFormTabs(car), async () => {
-    const data = readCarFormTabs();
+  const schema = window.CAR_FORM_SCHEMA.NEW_CAR;
+  openSchemaEditor('Edit Car — ' + car.brand + ' ' + car.model, schema, car, async () => {
+    const data = readSchemaForm(schema);
     const res = await api('PATCH', `/api/admin/cars/${id}`, data);
     if (res.id) { toast('Car specs saved!'); closeModal(); loadNewCars(); }
     else toast(res.error || 'Server error', 'error');
@@ -1582,217 +1738,255 @@ function openModalTabs(title, tabSet, saveFn) {
   document.getElementById('modalOverlay').classList.add('open');
 }
 
-// ── Multi-Tab Car Specification Editor Form ──────────────────────────────────
-function carFormTabs(c = {}) {
-  // Prep lists for dynamic inputs
-  const imagesList = c.images || [];
-  const colorsList = c.colors || [];
-  const variantsList = c.variants || [];
-  const specsList = c.specs && typeof c.specs === 'object' ? Object.entries(c.specs) : [];
+// ── Schema-driven Car / Used-Car Editor ─────────────────────────────────────
+// Both the "New Car" and "Used Car" admin forms are generated from
+// window.CAR_FORM_SCHEMA (see /admin/js/car-form-schema.js) so the categories &
+// field names always match what the public site renders. One builder, one reader.
+function cfEsc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
 
+let _cfRowDefs = {}; // store -> itemFields[]  (used by cfAddRow)
+
+function cfIsFilled(v) {
+  if (v == null) return false;
+  if (Array.isArray(v)) return v.length > 0;
+  if (typeof v === 'boolean') return v;
+  if (typeof v === 'object') return Object.keys(v).length > 0;
+  return String(v).trim() !== '';
+}
+
+// "kv" field <-> object. One "Name: value" per line; blank / colon-less lines skipped.
+function cfKvToText(obj) {
+  if (!obj || typeof obj !== 'object') return '';
+  return Object.entries(obj).map(([k, v]) => `${k}: ${v}`).join('\n');
+}
+function cfTextToKv(txt) {
+  const out = {};
+  String(txt || '').split('\n').forEach(line => {
+    const i = line.indexOf(':');
+    if (i < 1) return;
+    const k = line.slice(0, i).trim();
+    if (k) out[k] = line.slice(i + 1).trim();
+  });
+  return out;
+}
+
+function cfFieldValue(field, data) {
+  const bag = field.store === 'specs' ? (data.specs || {}) : data;
+  let v = bag ? bag[field.key] : undefined;
+  if ((v == null || v === '') && field.default != null) v = field.default;
+  return v;
+}
+
+// One field inside a "fields" section (top-level column or specs blob entry).
+function cfFieldHTML(field, data) {
+  const v = cfFieldValue(field, data);
+  const span = field.span === 2 ? ' form-span-2' : '';
+  const attrs = `class="cf-input" data-store="${field.store}" data-key="${cfEsc(field.key)}" data-type="${field.type}"`;
+  if (field.type === 'toggle') {
+    return `<div class="switch-row${span}"><span class="switch-label">${cfEsc(field.label)}</span>` +
+      `<label class="toggle"><input type="checkbox" ${attrs} ${v ? 'checked' : ''}><span class="toggle-slider"></span></label></div>`;
+  }
+  let control;
+  if (field.type === 'textarea') {
+    control = `<textarea ${attrs} rows="4" placeholder="${cfEsc(field.placeholder || '')}">${cfEsc(v)}</textarea>`;
+  } else if (field.type === 'list') {
+    control = `<textarea ${attrs} rows="4" placeholder="One value per line">${cfEsc(Array.isArray(v) ? v.join('\n') : (v || ''))}</textarea>`;
+  } else if (field.type === 'select') {
+    const opts = (field.options || []).map(o => `<option ${String(v == null ? '' : v) === String(o) ? 'selected' : ''}>${cfEsc(o)}</option>`).join('');
+    control = `<select ${attrs}>${opts}</select>`;
+  } else if (field.type === 'color') {
+    control = `<input type="color" ${attrs} value="${cfEsc(v || '#ffffff')}">`;
+  } else {
+    control = `<input type="${field.type === 'number' ? 'number' : 'text'}" ${attrs} value="${cfEsc(v)}" placeholder="${cfEsc(field.placeholder || '')}">`;
+  }
+  return `<div class="form-group${span}"><label>${cfEsc(field.label)}</label>${control}</div>`;
+}
+
+// One field inside a repeatable row (variant / colour). Read back by class cf-ritem.
+function cfRowItemHTML(field, val) {
+  const span = field.span === 2 ? ' form-span-2' : '';
+  const attrs = `class="cf-ritem" data-key="${cfEsc(field.key)}" data-type="${field.type}"`;
+  if (field.type === 'toggle') {
+    return `<div class="switch-row${span}"><span class="switch-label">${cfEsc(field.label)}</span>` +
+      `<label class="toggle"><input type="checkbox" ${attrs} ${val ? 'checked' : ''}><span class="toggle-slider"></span></label></div>`;
+  }
+  if (field.type === 'list') {
+    return `<div class="form-group${span}"><label>${cfEsc(field.label)}</label>` +
+      `<textarea ${attrs} rows="3" placeholder="One value per line">${cfEsc(Array.isArray(val) ? val.join('\n') : (val || ''))}</textarea></div>`;
+  }
+  if (field.type === 'kv') {
+    return `<div class="form-group${span}"><label>${cfEsc(field.label)}</label>` +
+      `<textarea ${attrs} rows="6" placeholder="${cfEsc(field.placeholder || 'Name: value')}">${cfEsc(cfKvToText(val))}</textarea></div>`;
+  }
+  if (field.type === 'color') {
+    return `<div class="form-group${span}"><label>${cfEsc(field.label)}</label><input type="color" ${attrs} value="${cfEsc(val || '#ffffff')}"></div>`;
+  }
+  return `<div class="form-group${span}"><label>${cfEsc(field.label)}</label>` +
+    `<input type="${field.type === 'number' ? 'number' : 'text'}" ${attrs} value="${cfEsc(val)}" placeholder="${cfEsc(field.placeholder || '')}"></div>`;
+}
+
+function cfRepeatRowHTML(store, rowData) {
+  rowData = rowData || {};
+  const fields = _cfRowDefs[store] || [];
+  const getV = f => rowData[f.key];
+  return `<div class="cf-repeat-row"><div class="form-grid">` +
+    fields.map(f => cfRowItemHTML(f, getV(f))).join('') +
+    `</div><button type="button" class="btn btn-danger btn-sm cf-row-del" onclick="this.closest('.cf-repeat-row').remove()">✕ Remove</button></div>`;
+}
+
+function cfImgRowHTML(url) {
+  return `<div class="list-editor-row"><input type="text" class="cf-img-input" value="${cfEsc(url)}" placeholder="https://image-url.com">` +
+    `<button type="button" class="btn btn-danger btn-sm" onclick="this.closest('.list-editor-row').remove()">✕</button></div>`;
+}
+
+window.cfAddRow = function (store) {
+  const c = document.getElementById('cf-repeat-' + store);
+  if (c) c.insertAdjacentHTML('beforeend', cfRepeatRowHTML(store, {}));
+};
+window.cfAddImg = function (store) {
+  const c = document.getElementById('cf-images-' + store);
+  if (c) c.insertAdjacentHTML('beforeend', cfImgRowHTML(''));
+};
+window.cfToggleAcc = function (btn) { btn.closest('.cf-acc').classList.toggle('open'); };
+window.cfFilterFields = function (inp) {
+  const q = inp.value.trim().toLowerCase();
+  const tab = inp.closest('.modal-tab-content') || inp.parentElement;
+  tab.querySelectorAll('.cf-acc').forEach(acc => {
+    let anyVisible = false;
+    acc.querySelectorAll('.form-group, .switch-row').forEach(row => {
+      const lbl = (row.querySelector('label, .switch-label') || {}).textContent || '';
+      const hit = !q || lbl.toLowerCase().includes(q);
+      row.style.display = hit ? '' : 'none';
+      if (hit) anyVisible = true;
+    });
+    if (q) { acc.classList.toggle('open', anyVisible); acc.style.display = anyVisible ? '' : 'none'; }
+    else { acc.style.display = ''; }
+  });
+};
+
+function cfSectionHTML(section, data) {
+  let body = '', filled = 0, total = 0;
+  if (section.kind === 'repeat') {
+    _cfRowDefs[section.store] = section.itemFields;
+    const rows = Array.isArray(data[section.store]) ? data[section.store] : [];
+    total = filled = rows.length;
+    body = `<div id="cf-repeat-${section.store}" class="cf-repeat">` +
+      rows.map(r => cfRepeatRowHTML(section.store, r)).join('') + `</div>` +
+      `<button type="button" class="btn btn-secondary btn-sm" style="margin-top:6px" onclick="cfAddRow('${section.store}')">+ Add</button>`;
+  } else if (section.kind === 'images') {
+    const imgs = Array.isArray(data[section.store]) ? data[section.store] : [];
+    total = filled = imgs.length;
+    body = `<div id="cf-images-${section.store}">` + imgs.map(cfImgRowHTML).join('') + `</div>` +
+      `<button type="button" class="btn btn-secondary btn-sm" style="margin-top:6px" onclick="cfAddImg('${section.store}')">+ Add Image URL</button>`;
+  } else { // fields
+    total = section.fields.length;
+    filled = section.fields.filter(f => cfIsFilled(cfFieldValue(f, data))).length;
+    body = `<div class="form-grid">` + section.fields.map(f => cfFieldHTML(f, data)).join('') + `</div>`;
+  }
+  const open = !!section.open || filled > 0;
+  const cnt = section.kind === 'fields' ? (filled + ' / ' + total) : String(total);
+  const badgeCls = filled > 0 ? 'cf-acc-badge has' : 'cf-acc-badge';
+  const title = cfEsc(section.title.replace(/^\d+\.\s*/, ''));
+  const note = section.note
+    ? `<p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin:-4px 0 14px">${cfEsc(section.note)}</p>`
+    : '';
+  return `<div class="cf-acc${open ? ' open' : ''}">` +
+    `<button type="button" class="cf-acc-head" onclick="cfToggleAcc(this)">` +
+    `<span><span class="cf-caret">▸</span>${title}</span><span class="${badgeCls}">${cnt}</span></button>` +
+    `<div class="cf-acc-body">${note}${body}</div></div>`;
+}
+
+// Build the {tabs, contents} object consumed by openModalTabs().
+function buildSchemaForm(schema, data) {
+  data = data || {};
+  _cfRowDefs = {};
   return {
-    tabs: ['Basic Specifications', 'Image URLs & Gallery', 'Price Variants', 'Color Options', 'Specs, Pros & Cons'],
-    contents: [
-      // Tab 1: Basics
-      `<div class="form-grid">
-        <div class="form-group"><label>Brand Name</label><input id="cf-brand" type="text" value="${c.brand||''}" placeholder="e.g. Hyundai"></div>
-        <div class="form-group"><label>Model Name</label><input id="cf-model" type="text" value="${c.model||''}" placeholder="e.g. Creta"></div>
-        <div class="form-group"><label>Model Year</label><input id="cf-year" type="number" value="${c.year||2024}"></div>
-        <div class="form-group"><label>Fuel Type / Engine</label><select id="cf-type">
-          <option ${c.type==='Petrol'?'selected':''}>Petrol</option>
-          <option ${c.type==='Diesel'?'selected':''}>Diesel</option>
-          <option ${c.type==='Electric'?'selected':''}>Electric</option>
-          <option ${c.type==='Hybrid'?'selected':''}>Hybrid</option>
-        </select></div>
-        <div class="form-group"><label>Body Type</label><input id="cf-bodyType" type="text" value="${c.bodyType||''}" placeholder="e.g. SUV, Hatchback"></div>
-        <div class="form-group"><label>Model Badge</label><input id="cf-badge" type="text" value="${c.badge||''}" placeholder="e.g. SX (O)"></div>
-        <div class="form-group"><label>Base Monthly EMI (NPR)</label><input id="cf-baseEMI" type="number" value="${c.baseEMI||''}"></div>
-        <div class="form-group"><label>Budget Range Tier</label><input id="cf-budgetTier" type="text" value="${c.budgetTier||''}" placeholder="e.g. mid"></div>
-        <div class="form-group"><label>Overall Rating (0-5 Stars)</label><input id="cf-rating" type="number" step="0.1" value="${c.rating||''}"></div>
-        <div class="form-group"><label>Expert Evaluation Score</label><input id="cf-expertScore" type="number" step="0.1" value="${c.expertScore||''}"></div>
-        <div class="form-group form-span-2"><label>Catchy Marketing Tagline</label><input id="cf-tagline" type="text" value="${c.tagline||''}"></div>
-        <div class="form-group form-span-2"><label>Car Overview Description</label><textarea id="cf-overview" rows="4">${c.overview||''}</textarea></div>
-        <div class="form-group form-span-2"><label>Thumbnail Image URL (used in listing cards)</label><input id="cf-thumb" type="text" value="${c.thumb||''}" placeholder="https://image-url.com/thumb.jpg"></div>
-      </div>
-      <div style="margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
-        <div class="switch-row"><span class="switch-label">Is Electric (EV)</span><label class="toggle"><input type="checkbox" id="cf-isEV" ${c.isEV?'checked':''}><span class="toggle-slider"></span></label></div>
-        <div class="switch-row"><span class="switch-label">Brand New</span><label class="toggle"><input type="checkbox" id="cf-isNew" ${c.isNew!==false?'checked':''}><span class="toggle-slider"></span></label></div>
-        <div class="switch-row"><span class="switch-label">Feature on Home</span><label class="toggle"><input type="checkbox" id="cf-isFeatured" ${c.isFeatured?'checked':''}><span class="toggle-slider"></span></label></div>
-        <div class="switch-row"><span class="switch-label">Best Seller Banner</span><label class="toggle"><input type="checkbox" id="cf-isBestSeller" ${c.isBestSeller?'checked':''}><span class="toggle-slider"></span></label></div>
-      </div>`,
-      
-      // Tab 2: Gallery
-      `<div>
-        <div class="detail-label" style="margin-bottom:12px;">Manage Photo URLs (order determines slideshow display)</div>
-        <div id="cf-images-container">
-          ${imagesList.map((img, idx) => `
-            <div class="list-editor-row" id="img-row-${idx}">
-              <input type="text" class="cf-image-url" value="${img}" placeholder="https://image-url.com">
-              <button class="btn btn-danger btn-sm" onclick="document.getElementById('img-row-${idx}').remove()">✕</button>
-            </div>
-          `).join('')}
-        </div>
-        <button class="btn btn-secondary btn-sm" style="margin-top:10px" onclick="addCarImageRow()">+ Add Image URL</button>
-      </div>`,
-
-      // Tab 3: Variants
-      `<div>
-        <div class="detail-label" style="margin-bottom:12px;">Add/Edit Engine Variants & Showroom Price</div>
-        <div id="cf-variants-container">
-          ${variantsList.map((v, idx) => `
-            <div class="list-editor-row" id="variant-row-${idx}">
-              <input type="text" class="cf-variant-name" value="${v.name||''}" placeholder="Variant name (e.g. S+ Diesel)">
-              <input type="number" class="cf-variant-price" value="${v.price||''}" placeholder="Ex-showroom Price (NPR)">
-              <button class="btn btn-danger btn-sm" onclick="document.getElementById('variant-row-${idx}').remove()">✕</button>
-            </div>
-          `).join('')}
-        </div>
-        <button class="btn btn-secondary btn-sm" style="margin-top:10px" onclick="addCarVariantRow()">+ Add Variant</button>
-      </div>`,
-
-      // Tab 4: Colors
-      `<div>
-        <div class="detail-label" style="margin-bottom:12px;">Available Exterior Color Options</div>
-        <div id="cf-colors-container">
-          ${colorsList.map((col, idx) => `
-            <div class="list-editor-row" id="color-row-${idx}">
-              <input type="text" class="cf-color-name" value="${col.name||''}" placeholder="Color name (e.g. Polar White)">
-              <input type="color" class="cf-color-hex" value="${col.hex||'#ffffff'}" oninput="this.nextElementSibling.value = this.value">
-              <input type="text" style="max-width:90px" value="${col.hex||'#ffffff'}" oninput="this.previousElementSibling.value = this.value">
-              <button class="btn btn-danger btn-sm" onclick="document.getElementById('color-row-${idx}').remove()">✕</button>
-            </div>
-          `).join('')}
-        </div>
-        <button class="btn btn-secondary btn-sm" style="margin-top:10px" onclick="addCarColorRow()">+ Add Color</button>
-      </div>`,
-
-      // Tab 5: Specs, Pros & Cons
-      `<div>
-        <div class="detail-label" style="margin-bottom:12px;">Technical Specification Sheet (shown as a table on the car page)</div>
-        <div id="cf-specs-container">
-          ${specsList.map(([k, v], idx) => `
-            <div class="list-editor-row" id="spec-row-${idx}">
-              <input type="text" class="cf-spec-key" value="${k}" placeholder="Spec name (e.g. Engine Type)">
-              <input type="text" class="cf-spec-value" value="${v}" placeholder="Value (e.g. 1.5L Petrol)">
-              <button class="btn btn-danger btn-sm" onclick="document.getElementById('spec-row-${idx}').remove()">✕</button>
-            </div>
-          `).join('')}
-        </div>
-        <button class="btn btn-secondary btn-sm" style="margin-top:10px" onclick="addCarSpecRow()">+ Add Spec Row</button>
-
-        <div class="form-grid" style="margin-top:24px;">
-          <div class="form-group form-span-2"><label>Pros (one per line)</label><textarea id="cf-pros" rows="5">${(c.pros||[]).join('\n')}</textarea></div>
-          <div class="form-group form-span-2"><label>Cons (one per line)</label><textarea id="cf-cons" rows="5">${(c.cons||[]).join('\n')}</textarea></div>
-          <div class="form-group form-span-2"><label>Highlights (one per line)</label><textarea id="cf-highlights" rows="5">${(c.highlights||[]).join('\n')}</textarea></div>
-        </div>
-      </div>`
-    ]
+    tabs: schema.tabs.map(t => t.name),
+    contents: schema.tabs.map(t =>
+      `<input class="cf-search" type="text" placeholder="Search fields in ${cfEsc(t.name)}…" oninput="cfFilterFields(this)">` +
+      t.sections.map(s => cfSectionHTML(s, data)).join('')
+    ),
   };
 }
 
-function addCarImageRow() {
-  const container = document.getElementById('cf-images-container');
-  const idx = container.children.length + '-' + Date.now();
-  container.insertAdjacentHTML('beforeend', `
-    <div class="list-editor-row" id="img-row-${idx}">
-      <input type="text" class="cf-image-url" placeholder="https://image-url.com">
-      <button class="btn btn-danger btn-sm" onclick="document.getElementById('img-row-${idx}').remove()">✕</button>
-    </div>
-  `);
-}
-
-function addCarVariantRow() {
-  const container = document.getElementById('cf-variants-container');
-  const idx = container.children.length + '-' + Date.now();
-  container.insertAdjacentHTML('beforeend', `
-    <div class="list-editor-row" id="variant-row-${idx}">
-      <input type="text" class="cf-variant-name" placeholder="Variant name (e.g. S+ Diesel)">
-      <input type="number" class="cf-variant-price" placeholder="Ex-showroom Price (NPR)">
-      <button class="btn btn-danger btn-sm" onclick="document.getElementById('variant-row-${idx}').remove()">✕</button>
-    </div>
-  `);
-}
-
-function addCarColorRow() {
-  const container = document.getElementById('cf-colors-container');
-  const idx = container.children.length + '-' + Date.now();
-  container.insertAdjacentHTML('beforeend', `
-    <div class="list-editor-row" id="color-row-${idx}">
-      <input type="text" class="cf-color-name" placeholder="Color name (e.g. Polar White)">
-      <input type="color" class="cf-color-hex" value="#3b82f6" oninput="this.nextElementSibling.value = this.value">
-      <input type="text" style="max-width:90px" value="#3b82f6" oninput="this.previousElementSibling.value = this.value">
-      <button class="btn btn-danger btn-sm" onclick="document.getElementById('color-row-${idx}').remove()">✕</button>
-    </div>
-  `);
-}
-
-function addCarSpecRow() {
-  const container = document.getElementById('cf-specs-container');
-  const idx = container.children.length + '-' + Date.now();
-  container.insertAdjacentHTML('beforeend', `
-    <div class="list-editor-row" id="spec-row-${idx}">
-      <input type="text" class="cf-spec-key" placeholder="Spec name (e.g. Engine Type)">
-      <input type="text" class="cf-spec-value" placeholder="Value (e.g. 1.5L Petrol)">
-      <button class="btn btn-danger btn-sm" onclick="document.getElementById('spec-row-${idx}').remove()">✕</button>
-    </div>
-  `);
-}
-
-// Reads every field out of the multi-tab car editor (carFormTabs) into a plain object
-// ready to POST/PATCH to /api/admin/cars. Every field in the form must be read here —
-// anything left out silently fails to save even though the field is visible on screen.
-function readCarFormTabs() {
-  const val = id => { const el = document.getElementById(id); return el ? el.value : ''; };
-  const checked = id => { const el = document.getElementById(id); return el ? el.checked : false; };
-
-  const brand = val('cf-brand');
-  const model = val('cf-model');
-  const year = parseInt(val('cf-year')) || 2024;
-
-  const images = Array.from(document.querySelectorAll('#cf-images-container .cf-image-url'))
-    .map(i => i.value.trim()).filter(Boolean);
-
-  const variants = Array.from(document.querySelectorAll('#cf-variants-container .list-editor-row')).map(row => ({
-    name: row.querySelector('.cf-variant-name').value.trim(),
-    price: parseInt(row.querySelector('.cf-variant-price').value) || 0,
-  })).filter(v => v.name || v.price);
-
-  const colors = Array.from(document.querySelectorAll('#cf-colors-container .list-editor-row')).map(row => ({
-    name: row.querySelector('.cf-color-name').value.trim(),
-    hex: row.querySelector('.cf-color-hex').value,
-  })).filter(c => c.name);
-
+// Walk the same schema and collect every field into an API-ready body object.
+function readSchemaForm(schema) {
+  const body = {};
   const specs = {};
-  document.querySelectorAll('#cf-specs-container .list-editor-row').forEach(row => {
-    const k = row.querySelector('.cf-spec-key').value.trim();
-    const v = row.querySelector('.cf-spec-value').value.trim();
-    if (k) specs[k] = v;
+  document.querySelectorAll('#modalBody .cf-input').forEach(el => {
+    const store = el.dataset.store, key = el.dataset.key, type = el.dataset.type;
+    let v;
+    if (type === 'toggle') v = el.checked;
+    else if (type === 'list') v = el.value.split('\n').map(s => s.trim()).filter(Boolean);
+    else if (type === 'number') { const raw = el.value.trim(); v = raw === '' ? null : Number(raw); }
+    else v = el.value.trim();
+
+    if (store === 'specs') {
+      if (cfIsFilled(v)) specs[key] = Array.isArray(v) ? v.join(', ') : v;
+    } else if (type === 'list') {
+      body[key] = v;
+    } else if (type === 'toggle') {
+      body[key] = v;
+    } else {
+      body[key] = (v === '' || v == null) ? null : v;
+    }
   });
 
-  const lines = txt => txt.split('\n').map(s => s.trim()).filter(Boolean);
+  schema.tabs.forEach(t => t.sections.forEach(sec => {
+    if (sec.kind === 'repeat') {
+      const cont = document.getElementById('cf-repeat-' + sec.store);
+      const rows = [];
+      if (cont) cont.querySelectorAll('.cf-repeat-row').forEach(rowEl => {
+        const row = {};
+        rowEl.querySelectorAll('.cf-ritem').forEach(el => {
+          const key = el.dataset.key, type = el.dataset.type;
+          let v;
+          if (type === 'toggle') v = el.checked;
+          else if (type === 'list') v = el.value.split('\n').map(s => s.trim()).filter(Boolean);
+          else if (type === 'kv') v = cfTextToKv(el.value);
+          else if (type === 'number') { const raw = el.value.trim(); v = raw === '' ? null : Number(raw); }
+          else v = el.value.trim();
+          row[key] = v;
+        });
+        if (sec.store === 'variants') {
+          const vs = (row.specs && typeof row.specs === 'object') ? row.specs : {};
+          // keep the trim's transmission reachable from specs too (site reads either)
+          if (row.transmission && !vs.Transmission) vs.Transmission = row.transmission;
+          row.specs = vs;
+          row.slug = slugify(row.name || 'variant');
+          row.price = row.price || 0;
+          if (row.name || row.price) rows.push(row);
+        } else if (sec.store === 'colors') {
+          if (row.name) rows.push(row);
+        } else {
+          rows.push(row);
+        }
+      });
+      body[sec.store] = rows;
+    }
+    if (sec.kind === 'images') {
+      const cont = document.getElementById('cf-images-' + sec.store);
+      const urls = [];
+      if (cont) cont.querySelectorAll('.cf-img-input').forEach(el => { const u = el.value.trim(); if (u) urls.push(u); });
+      body[sec.store] = urls;
+    }
+  }));
 
-  return {
-    brand, model, year,
-    brandSlug: slugify(brand),
-    type: val('cf-type'),
-    bodyType: val('cf-bodyType'),
-    badge: val('cf-badge') || null,
-    baseEMI: val('cf-baseEMI') ? parseInt(val('cf-baseEMI')) : null,
-    budgetTier: val('cf-budgetTier') || null,
-    rating: val('cf-rating') ? parseFloat(val('cf-rating')) : null,
-    expertScore: val('cf-expertScore') ? parseFloat(val('cf-expertScore')) : null,
-    tagline: val('cf-tagline') || null,
-    overview: val('cf-overview') || null,
-    thumb: val('cf-thumb') || (images[0] || null),
-    isEV: checked('cf-isEV'),
-    isNew: checked('cf-isNew'),
-    isFeatured: checked('cf-isFeatured'),
-    isBestSeller: checked('cf-isBestSeller'),
-    images, variants, colors, specs,
-    pros: lines(val('cf-pros')),
-    cons: lines(val('cf-cons')),
-    highlights: lines(val('cf-highlights')),
-  };
+  body.specs = specs;
+  if (body.brand) body.brandSlug = slugify(body.brand);
+  if ((!body.thumb || body.thumb == null) && body.images && body.images[0]) body.thumb = body.images[0];
+  return body;
+}
+
+// Opens the shared multi-tab editor and widens the modal for the big field grid.
+function openSchemaEditor(title, schema, data, saveFn) {
+  openModalTabs(title, buildSchemaForm(schema, data), saveFn);
+  const box = document.getElementById('modalBox');
+  if (box) box.classList.add('cf-wide');
 }
 
 // ── Used Cars Inventory ───────────────────────────────────────────────────────
@@ -1839,8 +2033,9 @@ function renderUsedCars(cars) {
 }
 
 function openAddUsedCar() {
-  openModal('Add Used Car Listing', usedCarForm({}), async () => {
-    const data = readUsedCarForm();
+  const schema = window.CAR_FORM_SCHEMA.USED_CAR;
+  openSchemaEditor('Add Used Car Listing', schema, {}, async () => {
+    const data = readSchemaForm(schema);
     const res = await api('POST', '/api/admin/used-cars', data);
     if (res.id) { toast('Used Car listing added!'); closeModal(); loadUsedCars(); }
     else toast(res.error || 'Server error', 'error');
@@ -1850,8 +2045,9 @@ function openAddUsedCar() {
 function editUsedCar(id) {
   const car = allUsedCars.find(c => c.id === id);
   if (!car) return;
-  openModal('Edit Used Car Listing', usedCarForm(car), async () => {
-    const data = readUsedCarForm();
+  const schema = window.CAR_FORM_SCHEMA.USED_CAR;
+  openSchemaEditor('Edit Used Car — ' + car.brand + ' ' + car.model, schema, car, async () => {
+    const data = readSchemaForm(schema);
     const res = await api('PATCH', `/api/admin/used-cars/${id}`, data);
     if (res.id) { toast('Changes saved!'); closeModal(); loadUsedCars(); }
     else toast(res.error || 'Server error', 'error');
@@ -1863,46 +2059,6 @@ async function deleteUsedCar(id) {
   await api('DELETE', `/api/admin/used-cars/${id}`);
   toast('Listing removed');
   loadUsedCars();
-}
-
-function usedCarForm(c = {}) {
-  return `<div class="form-grid">
-    <div class="form-group"><label>Make / Brand</label><input id="uf-brand" type="text" value="${c.brand||''}" placeholder="e.g. Maruti Suzuki"></div>
-    <div class="form-group"><label>Model Name</label><input id="uf-model" type="text" value="${c.model||''}" placeholder="e.g. Swift"></div>
-    <div class="form-group"><label>Year of Manufacture</label><input id="uf-year" type="number" value="${c.year||2020}"></div>
-    <div class="form-group"><label>Resale Listing Price</label><input id="uf-price" type="text" value="${c.price||''}" placeholder="e.g. Rs. 14.5 Lakhs"></div>
-    <div class="form-group"><label>Total Mileage (km)</label><input id="uf-mileage" type="text" value="${c.mileage||''}" placeholder="e.g. 45,000"></div>
-    <div class="form-group"><label>Fuel Type</label><select id="uf-fuelType">
-      <option ${c.fuelType==='Petrol'?'selected':''}>Petrol</option>
-      <option ${c.fuelType==='Diesel'?'selected':''}>Diesel</option>
-      <option ${c.fuelType==='Hybrid'?'selected':''}>Hybrid</option>
-      <option ${c.fuelType==='Electric'?'selected':''}>Electric</option>
-    </select></div>
-    <div class="form-group"><label>Transmission Type</label><select id="uf-transmission">
-      <option ${c.transmission==='Manual'?'selected':''}>Manual</option>
-      <option ${c.transmission==='Automatic'?'selected':''}>Automatic</option>
-    </select></div>
-    <div class="form-group"><label>Vehicle Condition Rating</label><input id="uf-condition" type="text" value="${c.condition||''}" placeholder="e.g. Excellent / Like New"></div>
-    <div class="form-group form-span-2"><label>Current Location (City/Area)</label><input id="uf-location" type="text" value="${c.location||''}" placeholder="e.g. Nayabazar, Kathmandu"></div>
-    <div class="form-group form-span-2"><label>Cover Picture URL</label><input id="uf-image" type="text" value="${(c.images && c.images[0])||''}" placeholder="https://image-url.com"></div>
-  </div>`;
-}
-
-function readUsedCarForm() {
-  const brand = document.getElementById('uf-brand').value;
-  const model = document.getElementById('uf-model').value;
-  const year = document.getElementById('uf-year').value;
-  return {
-    brand, model, year: parseInt(year),
-    slug: slugify(brand + '-' + model + '-' + year + '-' + Date.now()),
-    price: document.getElementById('uf-price').value,
-    mileage: document.getElementById('uf-mileage').value,
-    fuelType: document.getElementById('uf-fuelType').value,
-    transmission: document.getElementById('uf-transmission').value,
-    condition: document.getElementById('uf-condition').value,
-    location: document.getElementById('uf-location').value,
-    images: [document.getElementById('uf-image').value].filter(Boolean),
-  };
 }
 
 // ── Brands Profiles ───────────────────────────────────────────────────────────
@@ -2700,8 +2856,12 @@ function slugify(text) {
 }
 
 // ── Initialization on load ───────────────────────────────────────────────────
-loadDashboard();
+initLastSeenOnce();
+loadDashboard(); // also paints the nav badges
+// Keep the nav badges live without a page reload — re-check every 60s.
+setInterval(updateNotificationBadges, 60000);
 lucide.createIcons();
 </script>
+<script src="/admin/js/admin-cms-sections.js"></script>
 </body>
 </html>

@@ -455,36 +455,45 @@ app.get("/api/cars/used", async (req, res) => {
       }
       const features = Array.isArray(car.features) ? car.features : [];
       const images = Array.isArray(car.images) ? car.images : [];
+      // Admin editor stores the full Overview / Condition / Pricing / Feature-spec
+      // fields (see /admin/js/car-form-schema.js) inside the specs JSON blob.
+      const s = (car.specs && typeof car.specs === "object" && !Array.isArray(car.specs)) ? car.specs : {};
+      const pick = (...keys) => { for (const k of keys) { if (s[k] != null && s[k] !== "") return s[k]; } return undefined; };
       return {
         id: car.slug,
         brand: car.brand,
         model: car.model,
         year: car.year,
-        km: car.mileage || "0",
+        km: car.mileage || pick("Odometer Reading (km)") || "0",
         type: car.fuelType || "Unknown",
-        body: "Sedan",
+        body: pick("Body Type") || "Sedan",
         priceNum: priceNum,
         price: car.price || "Price on Request",
-        variant: features[0] || "",
+        variant: pick("Variant", "Trim Detail") || features[0] || "",
         transmission: car.transmission || "Manual",
-        owners: car.ownerCount || 1,
-        color: "Standard",
+        owners: car.ownerCount || Number(pick("Number of Owners")) || 1,
+        color: pick("Color") || "Standard",
         location: car.location || "",
-        rating: 4.2,
+        rating: Number(pick("Condition Score (ACS)")) || 4.2,
         reviews: 5,
         emiEst: Math.round(priceNum / 60) || 0,
-        certified: car.condition === "Excellent" || car.condition === "Certified",
+        certified: car.condition === "Excellent" || car.condition === "Certified" ||
+          /verified|premium/i.test(String(pick("Inspection Badge") || "")),
+        serviceHistory: pick("Service History"),
+        accidentHistory: pick("Accident History"),
+        condition: pick("Condition Grade") || car.condition || undefined,
         video: "",
         img: images[0] || "",
         images: images,
-        overview: `${car.brand} ${car.model} ${car.year} in excellent condition, located in ${car.location || "Nepal"}.`,
+        overview: pick("Overview") ||
+          `${car.brand} ${car.model} ${car.year} in ${car.condition || "good"} condition, located in ${car.location || "Nepal"}.`,
         highlights: features.slice(0, 4),
-        specs: {
+        specs: Object.assign({
           "Efficiency": car.mileage ? `${car.mileage} km/l` : "N/A",
           "Drive": "FWD",
           "Engine": car.fuelType,
           "Transmission": car.transmission
-        },
+        }, s),
         tags: features
       };
     });
@@ -691,10 +700,20 @@ app.post("/api/admin/media/upload", apiAuth, (req, res) => {
 });
 
 // ── Lead management (DB-backed) ──
+// Older leads stored a raw form id ("booking-form", "brochureDownload",
+// "Book Service", "unknown", …) in inquiryType instead of a clean category.
+// Re-derive the category from the original submission so every consumer — the
+// CMS panels, the notification badges, analytics — sees one canonical value.
+function leadCategory(lead) {
+  const fromRaw = normalizeFormType(lead.rawData || {});
+  if (fromRaw !== 'general') return fromRaw;
+  return normalizeFormType({ formType: lead.inquiryType || '' });
+}
+
 app.get("/api/admin/leads", apiAuth, async (req, res) => {
   try {
     const leads = await prisma.lead.findMany({ orderBy: { createdAt: 'desc' } });
-    res.json(leads);
+    res.json(leads.map((l) => ({ ...l, inquiryType: leadCategory(l) })));
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
@@ -757,8 +776,9 @@ app.get("/api/admin/analytics", apiAuth, async (req, res) => {
     });
     const topBrands = Object.entries(byBrand).sort((a, b) => b[1] - a[1]).slice(0, 8);
     const last7 = submissions.filter((s) => {
-      if (!s.timestamp) return false;
-      return Date.now() - new Date(s.timestamp).getTime() < 7 * 864e5;
+      const when = s.createdAt || s.timestamp;
+      if (!when) return false;
+      return Date.now() - new Date(when).getTime() < 7 * 864e5;
     }).length;
     res.json({
       totalNew: cars.length,
@@ -947,6 +967,7 @@ app.post('/api/admin/cars', apiAuth, async (req, res) => {
         isBestSeller: !!body.isBestSeller,
         tagline: body.tagline || null,
         rating: body.rating ? parseFloat(body.rating) : null,
+        reviews: body.reviews ? parseInt(body.reviews) : null,
         expertScore: body.expertScore ? parseFloat(body.expertScore) : null,
         baseEMI: body.baseEMI ? parseInt(body.baseEMI) : null,
         overview: body.overview || null,
@@ -987,6 +1008,7 @@ app.patch('/api/admin/cars/:id', apiAuth, async (req, res) => {
         ...(body.isBestSeller !== undefined && { isBestSeller: !!body.isBestSeller }),
         ...(body.tagline !== undefined && { tagline: body.tagline }),
         ...(body.rating !== undefined && { rating: body.rating ? parseFloat(body.rating) : null }),
+        ...(body.reviews !== undefined && { reviews: body.reviews ? parseInt(body.reviews) : null }),
         ...(body.expertScore !== undefined && { expertScore: body.expertScore ? parseFloat(body.expertScore) : null }),
         ...(body.baseEMI !== undefined && { baseEMI: body.baseEMI ? parseInt(body.baseEMI) : null }),
         ...(body.overview !== undefined && { overview: body.overview }),
@@ -1033,6 +1055,7 @@ app.post('/api/admin/used-cars', apiAuth, async (req, res) => {
         ownerCount: body.ownerCount ? parseInt(body.ownerCount) : null,
         images: body.images || [],
         features: body.features || [],
+        specs: body.specs || {},
       }
     });
     res.json(car);
@@ -1057,6 +1080,7 @@ app.patch('/api/admin/used-cars/:id', apiAuth, async (req, res) => {
         ...(body.location !== undefined && { location: body.location }),
         ...(body.images && { images: body.images }),
         ...(body.features && { features: body.features }),
+        ...(body.specs !== undefined && { specs: body.specs }),
       }
     });
     res.json(car);
@@ -1407,6 +1431,60 @@ async function migrateLegacyNewsOnce() {
   console.log(`[migrate] news/reviews → NewsPost table (${migrated} rows processed)`);
 }
 
+// Production's dev.db is server-owned and never deployed (deploy = git pull), so
+// cars added to the local dev.db don't reach the live site on their own. This
+// inserts any car in scripts/cars-seed.json whose slug isn't already live.
+// Existing cars are left untouched — admin edits on the server always win.
+// Regenerate the seed with: node scripts/export-cars-seed.js
+async function syncMissingCars() {
+  const seedPath = path.join(__dirname, 'scripts', 'cars-seed.json');
+  if (!fs.existsSync(seedPath)) return;
+  let seed;
+  try { seed = JSON.parse(fs.readFileSync(seedPath, 'utf-8')); }
+  catch (e) { console.warn('[cars-seed] bad json:', e.message); return; }
+  if (!Array.isArray(seed) || !seed.length) return;
+
+  const existing = await prisma.car.findMany({ select: { slug: true } });
+  const haveSlugs = new Set(existing.map((c) => c.slug));
+  const missing = seed.filter((c) => c && c.slug && !haveSlugs.has(c.slug));
+  if (!missing.length) return;
+
+  let added = 0;
+  for (const car of missing) {
+    const { id, createdAt, updatedAt, ...data } = car;
+    try {
+      await prisma.car.create({
+        data: {
+          ...data,
+          brandSlug: data.brandSlug || (data.brand || '').toLowerCase(),
+          year: data.year || new Date().getFullYear(),
+          type: data.type || 'Unknown',
+          bodyType: data.bodyType || 'Unknown',
+        },
+      });
+      added++;
+    } catch (e) {
+      console.warn('[cars-seed] create failed for', car.slug, e.message);
+    }
+  }
+  if (added) console.log(`[cars-seed] added ${added} missing car${added === 1 ? '' : 's'} from seed`);
+}
+
+// One-time cleanup: rewrite any lead whose inquiryType isn't already a clean
+// category (see leadCategory). Runs every boot but only touches rows that need it.
+async function backfillLeadCategories() {
+  const leads = await prisma.lead.findMany({ select: { id: true, inquiryType: true, rawData: true } });
+  let fixed = 0;
+  for (const lead of leads) {
+    const cat = leadCategory(lead);
+    if (cat && cat !== lead.inquiryType) {
+      try { await prisma.lead.update({ where: { id: lead.id }, data: { inquiryType: cat } }); fixed++; }
+      catch (e) { console.warn('[leads] recategorize failed for', lead.id, e.message); }
+    }
+  }
+  if (fixed) console.log(`[leads] recategorized ${fixed} submission${fixed === 1 ? '' : 's'} to clean form categories`);
+}
+
 async function seedCuratedSections() {
   const existing = await prisma.siteContent.findUnique({ where: { key: 'curated-sections' } });
   if (existing) return;
@@ -1426,6 +1504,8 @@ async function seedCuratedSections() {
     await ensureNewsSchema();
     await migrateLegacyNewsOnce();
     await seedCuratedSections();
+    await backfillLeadCategories();
+    await syncMissingCars();
     await syncBrochureUrls();
     await syncBrandNepalData();
     const n = await regenerateCarsDbJs();

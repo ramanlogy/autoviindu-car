@@ -1118,6 +1118,96 @@
       const vi = () => activeVariant[slug];
       const vr = () => car.variants[vi()];
 
+      /* ── Variant-awareness helpers ──────────────────────────────────────
+         Which spec / feature rows actually change when you switch variant.
+         Used to (a) tag those rows with a "by variant" pill so the reader
+         knows what depends on the trim, and (b) flash them on switch so the
+         change is impossible to miss. ------------------------------------ */
+      const _vnorm = s => String(s == null ? '' : s).trim();
+      const _lc = s => _vnorm(s).toLowerCase();
+      const effSpec = (v, key) => {
+        const lk = _lc(key);
+        const vs = (v && v.specs) || {};
+        for (const k of Object.keys(vs)) if (_lc(k) === lk && _vnorm(vs[k])) return _vnorm(vs[k]);
+        const cs = car.specs || {};
+        for (const k of Object.keys(cs)) if (_lc(k) === lk && _vnorm(cs[k])) return _vnorm(cs[k]);
+        return '';
+      };
+      const variesSpec = (key) => {
+        if (!Array.isArray(car.variants) || car.variants.length < 2) return false;
+        const seen = new Set();
+        for (const v of car.variants) { const e = effSpec(v, key); if (e) seen.add(e); }
+        return seen.size > 1;
+      };
+      const variesSpecAny = (keys) => (Array.isArray(keys) ? keys : [keys]).some(variesSpec);
+      const _featKey = s => _lc(String(s).split('(')[0]);
+      const variesFeature = (name) => {
+        if (!Array.isArray(car.variants) || car.variants.length < 2) return false;
+        const key = _featKey(name);
+        if (key.length < 3) return false;
+        let has = 0, miss = 0;
+        for (const v of car.variants) {
+          const set = ((v && v.features) || []).map(_featKey);
+          set.includes(key) ? has++ : miss++;
+        }
+        return has > 0 && miss > 0;
+      };
+      const varPill = ' <span class="dp-vpill">by variant</span>';
+      /* True when the row's value can change with the trim (spec key match OR feature match). */
+      const rowVaries = (field) => variesSpec(field) || variesFeature(field);
+
+      /* Small banner under the variant tabs — always states which trim the
+         specs/features below belong to, and whether that trim has its own
+         data or is falling back to the shared car spec sheet. */
+      function varContextHTML(v) {
+        const dedicated = !!(v && v.specs && Object.keys(v.specs).length);
+        return `<span class="dvc-dot"></span>` +
+          `Specs &amp; features shown for <strong>${v.name}</strong>` +
+          `<span class="dvc-price">${window.Rs(v.price)}</span>` +
+          `<span class="dvc-tag ${dedicated ? 'is-on' : 'is-off'}">${dedicated ? 'variant-specific data' : 'shared data'}</span>`;
+      }
+
+      /* The Overview tab's quick grid — variant-first, rebuilt on every switch. */
+      function overviewGrid(v) {
+        const sp = k => effSpec(v, k);
+        const isEV = _lc(car.type).includes('electric') || _lc(car.type).includes('ev');
+        const A = {
+          Transmission: ['Transmission Type', 'Transmission'],
+          Power: ['Max Engine Power', 'Power'],
+          'Motor Power': ['Max Motor Power', 'Power'],
+          Range: ['Certified Range (km)', 'Real-world Range (km)', 'Range'],
+          Mileage: ['Certified Fuel Efficiency (km/l)', 'Fuel Efficiency', 'Mileage'],
+          Battery: ['Battery Capacity (kWh)'],
+          Engine: ['Displacement (cc)', 'Engine'],
+          Torque: ['Max Motor Torque', 'Max Engine Torque', 'Torque'],
+          'Drive Type': ['Drive Type', 'Drivetrain'],
+        };
+        const battery = sp('Battery Capacity (kWh)');
+        const rows = [
+          ['Vehicle', `${car.brand} ${car.model} ${car.year}`, false],
+          ['Body Type', car.body || car.bodyType || 'N/A', false],
+          ['Fuel Type', car.type || sp('Fuel Type') || 'Petrol', false],
+          ['Transmission', sp('Transmission Type') || sp('Transmission') || (isEV ? 'Single-Speed Automatic' : 'Manual'), true],
+          isEV ? ['Motor Power', sp('Max Motor Power') || sp('Power') || '', true]
+               : ['Power', sp('Max Engine Power') || sp('Power') || '', true],
+          ['Torque', sp('Max Motor Torque') || sp('Max Engine Torque') || sp('Torque') || '', true],
+          isEV ? ['Range', sp('Certified Range (km)') || sp('Real-world Range (km)') || sp('Range') || '', true]
+               : ['Mileage', sp('Certified Fuel Efficiency (km/l)') || sp('Fuel Efficiency') || sp('Mileage') || '', true],
+          isEV ? ['Battery', battery ? battery + (/kwh/i.test(battery) ? '' : ' kWh') : '', true]
+               : ['Engine', sp('Displacement (cc)') || sp('Engine') || '', true],
+          ['Drive Type', sp('Drive Type') || sp('Drivetrain') || '', true],
+          ['Seating', sp('Seating Capacity') || sp('Seating') || '5', false],
+          ['Boot Space', sp('Boot Space (litres)') || sp('Boot Space') || '', false],
+        ].filter(r => r[0] === 'Vehicle' || _vnorm(r[1]));
+        return `<div class="dp-spec-grid" style="border-top:1px solid var(--border);">` +
+          rows.map(([l, val, vk]) => {
+            const varies = vk && variesSpecAny(A[l] || [l]);
+            return `<div class="dp-spec-row${varies ? ' dp-spec-row--v' : ''}">` +
+              `<div class="dp-spec-label">${l}${varies ? varPill : ''}</div>` +
+              `<div class="dp-spec-val">${val}</div></div>`;
+          }).join('') + `</div>`;
+      }
+
       /* ── SVG icon paths (inner content only, wrapped by svgI()) ── */
       const _P = {
         cal: `<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>`,
@@ -1354,7 +1444,8 @@
           let visibleHTML = '';
           let hiddenHTML = '';
           validRows.forEach((r, i) => {
-            const rowHTML = `<div class="dp-spec-row"><div class="dp-spec-label">${r.field}</div><div class="dp-spec-val">${r.val}</div></div>`;
+            const varies = rowVaries(r.field);
+            const rowHTML = `<div class="dp-spec-row${varies ? ' dp-spec-row--v' : ''}"><div class="dp-spec-label">${r.field}${varies ? varPill : ''}</div><div class="dp-spec-val">${r.val}</div></div>`;
             if (i < PREVIEW_ROWS) visibleHTML += rowHTML;
             else hiddenHTML += rowHTML;
           });
@@ -1707,8 +1798,9 @@
 
       <!-- Variant tabs -->
       <div class="dp-var-wrap">
-        <div class="dp-var-lbl">Choose variant</div>
+        <div class="dp-var-lbl">Choose variant${car.variants.length > 1 ? ' &mdash; specs &amp; features below update instantly' : ''}</div>
         <div class="dp-var-tabs" id="dp-vtabs">${varTabs()}</div>
+        ${car.variants.length > 1 ? `<div class="dp-var-context" id="dp-var-context">${varContextHTML(v0)}</div>` : ''}
       </div>
 
       <!-- Tabs Navigation -->
@@ -1720,15 +1812,7 @@
 
       <!-- Tab: Overview -->
       <div class="dp-tab-pane active" id="dp-tab-overview">
-        <div class="dp-spec-grid" style="border-top:1px solid var(--border);">
-          <div class="dp-spec-row"><div class="dp-spec-label">Vehicle Description</div><div class="dp-spec-val">${car.brand} ${car.model} ${car.year}</div></div>
-          <div class="dp-spec-row"><div class="dp-spec-label">Body Type</div><div class="dp-spec-val">${car.body || 'N/A'}</div></div>
-          <div class="dp-spec-row"><div class="dp-spec-label">Fuel Type</div><div class="dp-spec-val">${car.type || (v0.specs && v0.specs['Fuel Type']) || 'Petrol'}</div></div>
-          <div class="dp-spec-row"><div class="dp-spec-label">Transmission</div><div class="dp-spec-val">${(v0.specs && v0.specs['Transmission']) || 'Manual'}</div></div>
-          <div class="dp-spec-row"><div class="dp-spec-label">Power</div><div class="dp-spec-val">${(v0.specs && (v0.specs['Power'] || v0.specs['Motor Power'])) || car.specs?.['Power'] || car.specs?.['Motor Power'] || '—'}</div></div>
-          <div class="dp-spec-row"><div class="dp-spec-label">Seating</div><div class="dp-spec-val">${(v0.specs && v0.specs['Seating']) || car.specs?.['Seating'] || '5'}</div></div>
-          <div class="dp-spec-row"><div class="dp-spec-label">Boot Space</div><div class="dp-spec-val">${(v0.specs && v0.specs['Boot Space']) || car.specs?.['Boot Space'] || '—'}</div></div>
-        </div>
+        <div id="ov-quick-grid">${overviewGrid(v0)}</div>
 
         ${car.tagline || car.overview ? `
         <div style="padding:14px 16px;background:var(--white);border-bottom:1px solid var(--border)">
@@ -1834,6 +1918,28 @@
         }
       };
 
+      /* Briefly skeletonise a set of containers, run the DOM update while they're
+         covered, then reveal — makes a variant switch feel like the Overview /
+         Features / Specifications content is being re-fetched for that trim. */
+      function dpVariantSwap(ids, updateFn) {
+        const els = ids.map(id => document.getElementById(id)).filter(Boolean);
+        const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !els.length) { updateFn(); return; }
+        els.forEach(el => el.classList.add('dp-var-skel'));
+        requestAnimationFrame(() => setTimeout(() => {
+          updateFn();
+          els.forEach(el => {
+            el.classList.remove('dp-var-skel');
+            el.classList.add('dp-var-reveal');
+            setTimeout(() => el.classList.remove('dp-var-reveal'), 460);
+          });
+          requestAnimationFrame(() => {
+            document.querySelectorAll('#dp-tab-overview .dp-spec-row--v, #spec-body .dp-spec-row--v, #feat-body .dp-spec-row--v')
+              .forEach(el => { el.classList.remove('dp-flash'); void el.offsetWidth; el.classList.add('dp-flash'); });
+          });
+        }, 260));
+      }
+
       /* ── Variant switch — updates EVERYTHING instantly ── */
       AV.switchVariant = function (s, idx) {
         if (s !== slug) return;
@@ -1850,21 +1956,20 @@
         setText('dp-var-note', `${v.name} · Contact for on-road price`);
         setText('dp-mob-price', window.Rs(v.price));
 
-        /* key info grid */
-        const ki = document.getElementById('dp-ki');
-        if (ki) ki.innerHTML = kiGrid(v);
+        /* variant context banner (pulse to draw the eye) */
+        const ctx = document.getElementById('dp-var-context');
+        if (ctx) { ctx.innerHTML = varContextHTML(v); ctx.classList.remove('pulse'); void ctx.offsetWidth; ctx.classList.add('pulse'); }
 
-        /* quick stats strip */
-        const qs = document.getElementById('dp-qs');
-        if (qs) qs.innerHTML = qsStrip(v);
-
-        /* spec table */
-        const sp = document.getElementById('spec-body');
-        if (sp) sp.innerHTML = specTable(v);
-
-        /* features */
-        const ft = document.getElementById('feat-body');
-        if (ft) ft.innerHTML = featGrid(v);
+        /* Overview / Features / Specifications — skeleton flash so the switch
+           reads as "these now describe the <variant> trim". */
+        dpVariantSwap(['dp-ki', 'dp-qs', 'ov-quick-grid', 'spec-body', 'feat-body'], () => {
+          const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+          set('dp-ki', kiGrid(v));
+          set('dp-qs', qsStrip(v));
+          set('ov-quick-grid', overviewGrid(v));
+          set('spec-body', specTable(v));
+          set('feat-body', featGrid(v));
+        });
 
         /* both EMI calculators */
         const emiSb = document.getElementById('emi-sb-wrap');
