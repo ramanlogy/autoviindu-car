@@ -6872,14 +6872,19 @@ ${variants.length > 0 ? `
         root.innerHTML = (window.AV_detailSkeleton && window.AV_detailSkeleton())
           || '<div style="padding:64px 24px;text-align:center;color:var(--ink3)">Loading car details\u2026</div>';
       }
-      // Save current filter/search state into the current history entry so Back restores it
+      // Save current filter/search state into the current history entry so Back
+      // restores it — but ONLY when we're actually leaving the car-listing view.
+      // If a car is opened from the homepage (hero image, home carousels, etc.)
+      // we must leave that history entry alone so Back returns to the homepage,
+      // not to the New Cars listing.
       if (!opts.skipHistory && window._sf) {
-        const currentState = history.state || {};
-        if (!currentState.page || currentState.page === 'cars' || currentState.page === 'home' || currentState.page === 'electric' || currentState.page === 'hybrid') {
+        const h = location.hash || '';
+        const onListing = h === '#cars' || h === '#electric' || h === '#hybrid' || h === '#petrol' || h === '#diesel';
+        if (onListing) {
           history.replaceState(
             { page: 'cars', opts: { q: window._sf.q || '', brands: (window._sf.brands || []).slice(), fuels: (window._sf.fuels || []).slice(), bodies: (window._sf.bodies || []).slice() } },
             '',
-            location.hash || '#cars'
+            h
           );
         }
       }
