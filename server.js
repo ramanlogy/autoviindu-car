@@ -19,6 +19,11 @@ const prisma = new PrismaClient({ adapter: _prismaAdapter });
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Behind the cPanel/LiteSpeed reverse proxy the client IP arrives in
+// X-Forwarded-For. Trust one proxy hop so express-rate-limit can read the real
+// IP instead of throwing ERR_ERL_UNEXPECTED_X_FORWARDED_FOR on every hit.
+app.set('trust proxy', 1);
+
 // ── Security Headers ────────────────────────────────────────────────────────────
 app.use(helmet({
   contentSecurityPolicy: false,   // disable CSP so inline scripts/styles work
