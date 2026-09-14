@@ -774,8 +774,8 @@ var map = L.map('map', {
   zoomControl:false, maxBounds:NEPAL_BOUNDS.pad(0.06), maxBoundsViscosity:1.0, worldCopyJump:false
 });
 L.control.zoom({ position:'bottomleft' }).addTo(map);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution:'© OpenStreetMap', maxZoom:19, minZoom:6, noWrap:true
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  attribution:'© OpenStreetMap contributors © CARTO', maxZoom:19, minZoom:6, noWrap:true, subdomains:'abcd'
 }).addTo(map);
 map.fitBounds(NEPAL_BOUNDS, { padding:[6,6] });
 
